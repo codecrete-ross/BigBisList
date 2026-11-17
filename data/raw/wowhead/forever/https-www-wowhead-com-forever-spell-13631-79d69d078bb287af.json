@@ -1,0 +1,33 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchant Shield - Lesser Stamina 5 sec cast Tools: Runed Golden Rod Reagents: Lesser Mystic Essence Permanently enchant a shield to give 5 Stamina.",
+  "entity_id": 13631,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:15+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11134,
+      "name": "Lesser Mystic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11134"
+    },
+    {
+      "id": 13631,
+      "name": "Enchant Shield - Lesser Stamina",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13631"
+    }
+  ],
+  "name": "Enchant Shield - Lesser Stamina",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 13631,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/13631",
+  "url": "https://www.wowhead.com/forever/spell=13631"
+}

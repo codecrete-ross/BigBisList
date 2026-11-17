@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Leather Girdle Item Level 33 Binds when picked up Unique Waist Leather 61 Armor +4 Stamina +30 Armor Requires Level 28 Requires The League of Arathor - Honored Equip: + 24 Attack Power. Sell Price: 17 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20117,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 61,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +24 Attack Power."
+    ],
+    "id": 20117,
+    "item_level": 33,
+    "name": "Highlander's Leather Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 28,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20117"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    }
+  ],
+  "name": "Highlander's Leather Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Leather Girdle Item Level 33 Binds when picked up Unique Waist Leather 61 Armor +4 Stamina +30 Armor Requires Level 28 Requires The League of Arathor - Honored Equip: + 24 Attack Power. Sell Price: 17 88",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20117",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20117",
+  "url": "https://www.wowhead.com/forever/item=20117"
+}

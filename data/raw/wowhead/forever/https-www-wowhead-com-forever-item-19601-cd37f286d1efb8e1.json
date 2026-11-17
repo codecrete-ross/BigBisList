@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Jewel of Kajaro Item Level 65 Binds when picked up Unique Neck +8 Stamina +13 Intellect +8 Spirit Classes: Mage Equip: Increases damage and healing done by magical spells and effects by up to 9 . Equip: Reduces the cooldown of Counterspell by 2 sec. Illusionist's Attire (0/5) Jewel of Kajaro Hazza'rah's Charm of Magic Zandalar Illusionist's Wraps Zandalar Illusionist's Mantle Zandalar Illusionist's Robe (2) Set : Increases damage and healing done by magical spells and effects by up to 12. (3) Set : Decreases the mana cost of Arcane Intellect and Arcane Brilliance by 5%. (5) Set : Reduces the casting time of your Flamestrike spell by 1 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19601,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Reduces the cooldown of Counterspell by 2 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+      "Equip: Reduces the cooldown of Counterspell by 2 sec."
+    ],
+    "id": 19601,
+    "item_level": 65,
+    "name": "Jewel of Kajaro",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 9417,
+        "text": "Increases damage and healing done by magical spells and effects by up to 12."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24489,
+        "text": "Decreases the mana cost of Arcane Intellect and Arcane Brilliance by 5%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24491,
+        "text": "Reduces the casting time of your Flamestrike spell by 1 sec."
+      }
+    ],
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 9.0,
+      "spirit": 8.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19601"
+  },
+  "linked_entities": [
+    {
+      "id": 19601,
+      "name": "Jewel of Kajaro",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19601"
+    },
+    {
+      "id": 19845,
+      "name": "Zandalar Illusionist's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19845"
+    },
+    {
+      "id": 19846,
+      "name": "Zandalar Illusionist's Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19846"
+    },
+    {
+      "id": 19959,
+      "name": "Hazza'rah's Charm of Magic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19959"
+    },
+    {
+      "id": 20034,
+      "name": "Zandalar Illusionist's Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20034"
+    },
+    {
+      "id": 9417,
+      "name": "Increases damage and healing done by magical spells and effects by up to 12.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9417"
+    },
+    {
+      "id": 24429,
+      "name": "Reduces the cooldown of Counterspell by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24429"
+    },
+    {
+      "id": 24489,
+      "name": "Decreases the mana cost of Arcane Intellect and Arcane Brilliance by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24489"
+    },
+    {
+      "id": 24491,
+      "name": "Reduces the casting time of your Flamestrike spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24491"
+    }
+  ],
+  "name": "Jewel of Kajaro",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19601",
+  "url": "https://www.wowhead.com/forever/item=19601"
+}

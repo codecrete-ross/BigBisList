@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scout's Medallion Item Level 23 Binds when picked up Unique Neck +6 Agility +2 Stamina Requires Level 18 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 20442,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20442,
+    "item_level": 23,
+    "name": "Scout's Medallion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20442"
+  },
+  "linked_entities": [],
+  "name": "Scout's Medallion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20442",
+  "url": "https://www.wowhead.com/forever/item=20442"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crown of the Penitent Item Level 61 Binds when picked up Head Cloth 64 Armor +20 Intellect Restores + 6 mana per 5 sec. Durability 45 / 45 Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects. Sell Price: 1 30 57",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 13216,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 64,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 10,
+          "spell_damage": 3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects."
+    ],
+    "id": 13216,
+    "item_level": 61,
+    "name": "Crown of the Penitent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 10.0,
+      "intellect": 20.0,
+      "mp5": 6.0,
+      "spell_damage": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13216"
+  },
+  "linked_entities": [],
+  "name": "Crown of the Penitent",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c374b335be5f5f2be6922ef78088a9c74378fd52772c227a4a21154717c49d53",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13216",
+  "url": "https://www.wowhead.com/forever/item=13216"
+}

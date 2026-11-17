@@ -49,9 +49,9 @@ for _, size in ipairs({{1020,560}, {1160,660}}) do
                 if row.boundData then
                     local mid = centerY(row)
                     near(centerY(row.iconButton), mid, label .. " icon center")
-                    if row.boundMode == "gear" then
-                        near(centerY(row.findButton), mid, label .. " equipment action center")
-                        near((row.slotText:GetTop()+row.rankText:GetBottom())/2, mid, label .. " equipment text center")
+                    if row.__bigBisBoundRenderEntry.nextAction then
+                        H.expectBounded(row.reasonText, row, label .. " action reason")
+                        H.expectBounded(row.sourceText, row, label .. " action source")
                     else
                         local lastText = row.subText:IsShown() and row.subText or row.nameText
                         near((row.nameText:GetTop()+lastText:GetBottom())/2, mid, label .. " item identity center")
@@ -67,7 +67,7 @@ for _, size in ipairs({{1020,560}, {1160,660}}) do
             end
             if ui.listToolbar:IsVisible() then
                 local controls = {}
-                for _, control in ipairs({ui.searchFrame, ui.filterToggleButton, ui.sortDropdown, ui.groupDropdown, ui.upgradeModeDropdown, ui.wishlistRelevanceDropdown, ui.inspectorToggleButton}) do
+                for _, control in ipairs({ui.slotPickerButton, ui.upgradesViewButton, ui.searchFrame, ui.filterToggleButton, ui.sortDropdown, ui.groupDropdown, ui.upgradeModeDropdown, ui.wishlistRelevanceDropdown, ui.inspectorToggleButton}) do
                     if control:IsVisible() and control:GetParent() == ui.listToolbar then controls[#controls+1] = control end
                 end
                 for _, control in ipairs(ui.enhancementSwitchButtons or {}) do if control:IsVisible() then controls[#controls+1] = control end end

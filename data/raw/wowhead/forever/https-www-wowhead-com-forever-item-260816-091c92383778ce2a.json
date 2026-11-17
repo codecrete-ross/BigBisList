@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "EZ-Thro Thorium Grenade Item Level 57 Use: Inflicts 300 to 500 Fire damage and stuns targets for 3 sec in a 3 yd radius. Any damage will break the effect. (1 Min Cooldown) \"Anyone can use grenades with EZ-Thro!\" Max Stack: 10 Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 260816,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Inflicts 300 to 500 Fire damage and stuns targets for 3 sec in a 3 yd radius. Any damage will break the effect. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 260816,
+    "item_level": 57,
+    "name": "EZ-Thro Thorium Grenade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Inflicts 300 to 500 Fire damage and stuns targets for 3 sec in a 3 yd radius. Any damage will break the effect. (1 Min Cooldown) \"Anyone can use grenades with EZ-Thro!\" Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=260816"
+  },
+  "linked_entities": [
+    {
+      "id": 1269330,
+      "name": "Inflicts 300 to 500 Fire damage and stuns targets for 3 sec in a 3 yd radius. Any damage will break the effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1269330"
+    }
+  ],
+  "name": "EZ-Thro Thorium Grenade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "b6ed5fdfa09e33fef8b424a58f6fd07550e6fa931fc99acd046520e6b194a64c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260816",
+  "url": "https://www.wowhead.com/forever/item=260816"
+}

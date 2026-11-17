@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gem of Trapped Innocents Item Level 92 Binds when picked up Neck +9 Stamina +7 Intellect Requires Level 60 Equip: Improves your chance to get a critical strike by 2.0%. Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 10 27 77 Dropped by: Kel'Thuzad Drop Chance: 12.12%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 23057,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 23057,
+    "item_level": 92,
+    "name": "Gem of Trapped Innocents",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 2.0,
+      "intellect": 7.0,
+      "spell_power": 15.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23057"
+  },
+  "linked_entities": [],
+  "name": "Gem of Trapped Innocents",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.12,
+      "entity_name": "Kel'Thuzad",
+      "source_url": "https://www.wowhead.com/forever/item=23057",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23057",
+  "url": "https://www.wowhead.com/forever/item=23057"
+}

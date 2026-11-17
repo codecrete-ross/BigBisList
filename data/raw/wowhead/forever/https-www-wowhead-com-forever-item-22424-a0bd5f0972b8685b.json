@@ -1,0 +1,165 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Redemption Wristguards Item Level 88 Binds when picked up Wrist Plate 431 Armor +22 Stamina +15 Intellect Restores + 4 mana per 5 sec. Durability 55 / 55 Requires Level 60 Equip: Increases healing done by magical spells and effects by up to 31 . Redemption Armor (0/9) Redemption Boots Redemption Girdle Redemption Handguards Redemption Headpiece Redemption Legguards Redemption Spaulders Redemption Tunic Redemption Wristguards Ring of Redemption (2) Set : Increases the amount healed by your Judgement of Light by 20. (4) Set : Reduces cooldown on your Lay on Hands by 12 min. (6) Set : Your Flash of Light and Holy Light spells have a chance to imbue your target with Holy Power. (Proc chance: 10%) (8) Set : Your Cleanse spell also heals the target for 200. Sell Price: 5 7 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 22424,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 431,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 31.",
+        "stats": {
+          "healing_power": 31
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 31."
+    ],
+    "id": 22424,
+    "item_level": 88,
+    "name": "Redemption Wristguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 28775,
+        "text": "Increases the amount healed by your Judgement of Light by 20."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 28774,
+        "text": "Reduces cooldown on your Lay on Hands by 12 min."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 28789,
+        "text": "Your Flash of Light and Holy Light spells have a chance to imbue your target with Holy Power. (Proc chance: 10%)"
+      },
+      {
+        "pieces": 8,
+        "spell_id": 28787,
+        "text": "Your Cleanse spell also heals the target for 200."
+      }
+    ],
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 31.0,
+      "intellect": 15.0,
+      "mp5": 4.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22424"
+  },
+  "linked_entities": [
+    {
+      "id": 22424,
+      "name": "Redemption Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22424"
+    },
+    {
+      "id": 22425,
+      "name": "Redemption Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22425"
+    },
+    {
+      "id": 22426,
+      "name": "Redemption Handguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22426"
+    },
+    {
+      "id": 22427,
+      "name": "Redemption Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22427"
+    },
+    {
+      "id": 22428,
+      "name": "Redemption Headpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22428"
+    },
+    {
+      "id": 22429,
+      "name": "Redemption Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22429"
+    },
+    {
+      "id": 22430,
+      "name": "Redemption Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22430"
+    },
+    {
+      "id": 22431,
+      "name": "Redemption Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22431"
+    },
+    {
+      "id": 23066,
+      "name": "Ring of Redemption",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23066"
+    },
+    {
+      "id": 28774,
+      "name": "Reduces cooldown on your Lay on Hands by 12 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28774"
+    },
+    {
+      "id": 28775,
+      "name": "Increases the amount healed by your Judgement of Light by 20.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28775"
+    },
+    {
+      "id": 28787,
+      "name": "Your Cleanse spell also heals the target for 200.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28787"
+    },
+    {
+      "id": 28789,
+      "name": "Your Flash of Light and Holy Light spells have a chance to imbue your target with Holy Power. (Proc chance: 10%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28789"
+    }
+  ],
+  "name": "Redemption Wristguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22424",
+  "url": "https://www.wowhead.com/forever/item=22424"
+}

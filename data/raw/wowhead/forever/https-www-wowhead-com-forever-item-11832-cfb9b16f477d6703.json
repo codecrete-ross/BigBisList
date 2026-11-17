@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Burst of Knowledge Item Level 58 Binds when picked up Unique-Equipped Trinket Restores + 8 mana per 5 sec. Requires Level 53 Use: Reduces the Mana cost of all spells by 150 for 10 sec. (6 Min Cooldown) Sell Price: 1 80 47 Dropped by: Ambassador Flamelash Drop Chance: 9.63%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 11832,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces the Mana cost of all spells by 150 for 10 sec. (6 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 11832,
+    "item_level": 58,
+    "name": "Burst of Knowledge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 8.0
+    },
+    "use_effects": [
+      "Use: Reduces the Mana cost of all spells by 150 for 10 sec. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=11832"
+  },
+  "linked_entities": [
+    {
+      "id": 15646,
+      "name": "Reduces the Mana cost of all spells by 150 for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15646"
+    }
+  ],
+  "name": "Burst of Knowledge",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.63,
+      "entity_name": "Ambassador Flamelash",
+      "source_url": "https://www.wowhead.com/forever/item=11832",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "59937688011d80a36b1deda8961e3c6468ba861975aa6b3e3ae9026127132f71",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11832",
+  "url": "https://www.wowhead.com/forever/item=11832"
+}

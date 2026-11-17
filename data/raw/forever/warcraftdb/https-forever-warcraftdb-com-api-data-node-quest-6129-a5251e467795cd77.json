@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/6129"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:26.864936+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15866,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6129",
+      "subject_id": 6129,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 14,
+    "name": "Curing the Sick",
+    "quest_id": 6129,
+    "reward_item_roles": {
+      "15866": "items"
+    },
+    "side": "Horde",
+    "zone": "Druid"
+  },
+  "source_content_digest": "1a566f66c17f71ece416a697fcb286069fbc366eb3c7bc4b0152278b3d5be545",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/6129"
+}

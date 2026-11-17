@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Runic Cane Item Level 19 Binds when equipped Held In Off-hand +3 Stamina Requires Level 14 Sell Price: 6 66 Dropped by: Brokespear Drop Chance: 21.52%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 7559,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 7559,
+    "item_level": 19,
+    "name": "Runic Cane",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 14,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7559"
+  },
+  "linked_entities": [],
+  "name": "Runic Cane",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.52,
+      "entity_name": "Brokespear",
+      "source_url": "https://www.wowhead.com/forever/item=7559",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "112710a88a7d4e6c6ccfdf69d851f8e80afdf01603e6c07dc32eeec63113d529",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7559",
+  "url": "https://www.wowhead.com/forever/item=7559"
+}

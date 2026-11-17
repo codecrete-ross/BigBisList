@@ -1,0 +1,537 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Documented Forever emulator API in the Druid/faction contexts, after the pinned correction layer; curated records.",
+  "faction_quests": {
+    "Alliance": [
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 6121,
+        "name": "Lessons Anew",
+        "parentQuest": 0,
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 4294967304,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 4217,
+            "2": 270459
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3702
+          }
+        },
+        "id": 6122,
+        "name": "The Principal Source",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6121
+        },
+        "questFlags": 0,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 4294967304,
+        "requiredSpell": 0,
+        "sourceItemId": 15844,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3702
+          }
+        },
+        "id": 6123,
+        "name": "Gathering the Cure",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6122
+        },
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3702
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 6124,
+        "name": "Curing the Sick",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6123
+        },
+        "questFlags": 0,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSpell": 0,
+        "sourceItemId": 15826,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3702
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 4217
+          }
+        },
+        "id": 6125,
+        "name": "Power over Poison",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6124
+        },
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 26,
+        "name": "A Lesson to Learn",
+        "parentQuest": 0,
+        "questFlags": 8,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 4217
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11799
+          }
+        },
+        "id": 29,
+        "name": "Trial of the Lake",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 26
+        },
+        "questFlags": 10,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSourceItems": {
+          "1": 15877
+        },
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 2,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 272,
+        "name": "Trial of the Sea Lion",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 29
+        },
+        "questFlags": 8,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 4294967304,
+        "requiredSourceItems": {
+          "1": 15883,
+          "2": 15882
+        },
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11799
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 4217
+          }
+        },
+        "id": 5061,
+        "name": "Aquatic Form",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 272
+        },
+        "questFlags": 0,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 8,
+        "requiredSpell": 0,
+        "sourceItemId": 15885,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      }
+    ],
+    "Horde": [
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 6126,
+        "name": "Lessons Anew",
+        "parentQuest": 0,
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3033,
+            "2": 262560
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3448
+          }
+        },
+        "id": 6127,
+        "name": "The Principal Source",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6126
+        },
+        "questFlags": 0,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 15842,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3448
+          }
+        },
+        "id": 6128,
+        "name": "Gathering the Cure",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6127
+        },
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3448
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 6129,
+        "name": "Curing the Sick",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6128
+        },
+        "questFlags": 0,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 15826,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3448
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3033
+          }
+        },
+        "id": 6130,
+        "name": "Power over Poison",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 6129
+        },
+        "questFlags": 8,
+        "questLevel": 14,
+        "requiredClasses": 1024,
+        "requiredLevel": 14,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 27,
+        "name": "A Lesson to Learn",
+        "parentQuest": 0,
+        "questFlags": 8,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 3033
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11799
+          }
+        },
+        "id": 28,
+        "name": "Trial of the Lake",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 27
+        },
+        "questFlags": 10,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSourceItems": {
+          "1": 15877
+        },
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 2,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 11802
+          }
+        },
+        "id": 30,
+        "name": "Trial of the Sea Lion",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 28
+        },
+        "questFlags": 8,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSourceItems": {
+          "1": 15883,
+          "2": 15882
+        },
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11799
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 3033
+          }
+        },
+        "id": 31,
+        "name": "Aquatic Form",
+        "parentQuest": 0,
+        "preQuestSingle": {
+          "1": 30
+        },
+        "questFlags": 0,
+        "questLevel": 16,
+        "requiredClasses": 1024,
+        "requiredLevel": 16,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 32,
+        "requiredSpell": 0,
+        "sourceItemId": 15885,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 11802
+          }
+        }
+      }
+    ]
+  },
+  "fetched_at": "2026-11-06T05:44:01.907300+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "questiedb",
+  "review_scope": "Night Elf and Tauren only. Includes complete Power over Poison preparation; no unverified ability to skip that training or broader Skyborne eligibility is asserted.",
+  "supporting_input_urls": [
+    "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverQuestDB.lua"
+  ],
+  "url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever/legacy/classicQuestFixes.lua"
+}

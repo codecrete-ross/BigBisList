@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lunar Idol Item Level 5 Binds when picked up Unique Relic Idol Classes: Druid Engrave your chest or robe with the Fury of Stormrage rune: Reduces the mana cost of Wrath by 100% and each time you deal damage with Wrath you have a 12% chance for your next cast of Healing Touch within 15 sec to be instant and castable in any shapeshift form. Allows Wrath to be cast while in Tree of Life form. \"Defeat 6 creatures affected by your Moonfire, then use to learn a new ability.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 208414,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 208414,
+    "item_level": 5,
+    "name": "Lunar Idol",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=208414"
+  },
+  "linked_entities": [
+    {
+      "id": 410061,
+      "name": "Engrave your chest or robe with the Fury of Stormrage rune: Reduces the mana cost of Wrath by 100% and each time you deal damage with Wrath you have a 12% chance for your next cast of Healing Touch within 15 sec to be instant and castable in any shapeshift form. Allows Wrath to be cast while in Tree of Life form.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410061"
+    },
+    {
+      "id": 414799,
+      "name": "Reduces the mana cost of Wrath by 100% and each time you deal damage with Wrath you have a 12% chance for your next cast of Healing Touch within 15 sec to be instant and castable in any shapeshift form. Allows Wrath to be cast while in Tree of Life form.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414799"
+    }
+  ],
+  "name": "Lunar Idol",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "12e1dec8fe20f535df0b4ae85ab788e8d678cb4986b27715015057ff61520761",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/208414",
+  "url": "https://www.wowhead.com/forever/item=208414"
+}

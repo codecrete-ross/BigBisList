@@ -1,0 +1,38 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Sweet Amber Bring Grimbooze Thunderbrew a bundle of Charred Oak. Requirements: - Bundle of Charred Oak",
+  "entity_id": 53,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:28:54+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Sweet Amber",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "public_page_reviewed_at": "2026-11-06T04:18:01.933451+00:00",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 744,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=53",
+      "subject_id": 53,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "instruction_summary": "Bring a Bundle of Charred Oak to Grimbooze Thunderbrew and receive the boot flask.",
+    "reward_item_id": 744,
+    "series": [
+      48,
+      49,
+      50,
+      51,
+      53
+    ]
+  },
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/53",
+  "url": "https://www.wowhead.com/forever/quest=53"
+}

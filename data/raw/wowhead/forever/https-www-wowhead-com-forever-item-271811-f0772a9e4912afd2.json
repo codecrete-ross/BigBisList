@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clacking Carapace Spaulders Item Level 43 Binds when picked up Shoulder Mail 199 Armor +7 Agility +14 Stamina Equip: + 8 Attack Power. Sell Price: 77 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 271811,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 199,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +8 Attack Power.",
+        "stats": {
+          "attack_power": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +8 Attack Power."
+    ],
+    "id": 271811,
+    "item_level": 43,
+    "name": "Clacking Carapace Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "attack_power": 8.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=271811"
+  },
+  "linked_entities": [],
+  "name": "Clacking Carapace Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5ac0e6a60964b45b27326705bb7f2b311dad21cb79f635e2a33ba24517d54668",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/271811",
+  "url": "https://www.wowhead.com/forever/item=271811"
+}

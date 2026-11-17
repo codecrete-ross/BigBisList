@@ -43,9 +43,9 @@ function BigBiSList:RefreshMinimapButton()
         return
     end
 
-    self:EnsureDatabase()
-    BigBiSListDB.profile.minimap.hide = BigBiSListDB.profile.minimap.hide == true
-    LDBIcon:Refresh(BROKER_NAME, BigBiSListDB.profile.minimap)
+    local minimap = self:GetAccountDB().profile.minimap
+    minimap.hide = minimap.hide == true
+    LDBIcon:Refresh(BROKER_NAME, minimap)
     self.minimapButton = LDBIcon:GetMinimapButton(BROKER_NAME)
 end
 
@@ -54,7 +54,7 @@ function BigBiSList:InitMinimapButton()
         return
     end
 
-    self:EnsureDatabase()
+    local minimap = self:GetAccountDB().profile.minimap
 
     local LDB = LibStub("LibDataBroker-1.1", true)
     local LDBIcon = LibStub("LibDBIcon-1.0", true)
@@ -66,7 +66,7 @@ function BigBiSList:InitMinimapButton()
     self.minimapIcon = LDBIcon
 
     if not LDBIcon:IsRegistered(BROKER_NAME) then
-        LDBIcon:Register(BROKER_NAME, self.minimapDataObject, BigBiSListDB.profile.minimap)
+        LDBIcon:Register(BROKER_NAME, self.minimapDataObject, minimap)
     end
 
     self.minimapIconRegistered = true

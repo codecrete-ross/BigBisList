@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodsail Admiral's Hat Item Level 60 Binds when picked up Head Durability 45 / 45 Use: Right Click to summon and dismiss your Blood Parrot. (5 Sec Cooldown) Sell Price: 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12185,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Right Click to summon and dismiss your Blood Parrot. (5 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 12185,
+    "item_level": 60,
+    "name": "Bloodsail Admiral's Hat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Right Click to summon and dismiss your Blood Parrot. (5 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12185"
+  },
+  "linked_entities": [
+    {
+      "id": 17567,
+      "name": "Right Click to summon and dismiss your Blood Parrot.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17567"
+    }
+  ],
+  "name": "Bloodsail Admiral's Hat",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12185",
+  "url": "https://www.wowhead.com/forever/item=12185"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shen'dralar Relic Item Level 60 Binds when picked up Unique-Equipped Trinket +9 Stamina +7 to All Resistances Requires Level 55 Use: Dispel 1 beneficial magic effect from the target enemy and 1 additional magic effect every 4 sec for 8 sec. (7 Min Cooldown) Sell Price: 1 94 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 277559,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispel 1 beneficial magic effect from the target enemy and 1 additional magic effect every 4 sec for 8 sec. (7 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 277559,
+    "item_level": 60,
+    "name": "Shen'dralar Relic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 9.0
+    },
+    "use_effects": [
+      "Use: Dispel 1 beneficial magic effect from the target enemy and 1 additional magic effect every 4 sec for 8 sec. (7 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=277559"
+  },
+  "linked_entities": [
+    {
+      "id": 1302359,
+      "name": "Dispel 1 beneficial magic effect from the target enemy and 1 additional magic effect every 4 sec for 8 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302359"
+    }
+  ],
+  "name": "Shen'dralar Relic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9fa1d31621d191b3edc349dc94be4fc2e0d26d5968b1c8b132c5fc626ba1c5d0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277559",
+  "url": "https://www.wowhead.com/forever/item=277559"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mutant Scale Breastplate Item Level 23 Binds when picked up Chest Mail 194 Armor +10 Strength +4 Stamina Durability 120 / 120 Requires Level 18 Sell Price: 15 30 Dropped by: Mutanus the Devourer Drop Chance: 23.59%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 6627,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 194,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6627,
+    "item_level": 23,
+    "name": "Mutant Scale Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "stamina": 4.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6627"
+  },
+  "linked_entities": [],
+  "name": "Mutant Scale Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.59,
+      "entity_name": "Mutanus the Devourer",
+      "source_url": "https://www.wowhead.com/forever/item=6627",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6627",
+  "url": "https://www.wowhead.com/forever/item=6627"
+}

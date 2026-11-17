@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dwarven Hand Cannon Item Level 58 Binds when equipped Ranged Gun 66 - 124 Damage Speed 2.90 (32.76 damage per second) Durability 90 / 90 Requires Level 53 Chance on hit: Fires a Flaming Cannonball at your target for 39 to 59 Fire damage. Sell Price: 4 50 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:45.8860739Z",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 2099,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 32.76,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Fires a Flaming Cannonball at your target for 39 to 59 Fire damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Fires a Flaming Cannonball at your target for 39 to 59 Fire damage."
+    ],
+    "id": 2099,
+    "item_level": 58,
+    "name": "Dwarven Hand Cannon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 53,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 124,
+    "weapon_min_damage": 66,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2099"
+  },
+  "linked_entities": [
+    {
+      "id": 29639,
+      "name": "Fires a Flaming Cannonball at your target for 39 to 59 Fire damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29639"
+    }
+  ],
+  "name": "Dwarven Hand Cannon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "5b71870f1dffbe609259f366f4647648eef5b685f22472b2fef720900fda7ce3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2099",
+  "url": "https://www.wowhead.com/forever/item=2099"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Buckler of the Seas Item Level 20 Binds when picked up Off Hand Shield 411 Armor 7 Block +2 Spirit Durability 65 / 65 Equip: Increases damage and healing done by magical spells and effects by up to 2 . Sell Price: 9 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 1557,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 411,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 2.",
+        "stats": {
+          "spell_power": 2.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+    ],
+    "id": 1557,
+    "item_level": 20,
+    "name": "Buckler of the Seas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 7.0,
+      "spell_power": 2.0,
+      "spirit": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=1557"
+  },
+  "linked_entities": [],
+  "name": "Buckler of the Seas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1557",
+  "url": "https://www.wowhead.com/forever/item=1557"
+}

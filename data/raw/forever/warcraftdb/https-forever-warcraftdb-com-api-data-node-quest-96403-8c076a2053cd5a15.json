@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/96403"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:38.154981+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 279898,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96403",
+      "subject_id": 96403,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 10,
+    "name": "Important Heirlooms",
+    "quest_id": 96403,
+    "reward_item_roles": {
+      "279898": "choices",
+      "280096": "choices"
+    },
+    "side": "Both",
+    "zone": "The Hall of Thanes"
+  },
+  "source_content_digest": "895c49d4e57df386a2931fff8dfb65f21433cd329b0ee7b26b29ef4e5a8d38ff",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/96403"
+}

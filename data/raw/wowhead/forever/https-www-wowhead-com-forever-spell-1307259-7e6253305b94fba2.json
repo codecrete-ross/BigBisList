@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mana Well Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307259,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307259,
+      "name": "Mana Well",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307259"
+    }
+  ],
+  "name": "Mana Well",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "23a1050290faa833844986cc204e13ea134cdfc744c2607d9cd8ccdcb2fd797f",
+  "spell_id": 1307259,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307259",
+  "url": "https://www.wowhead.com/forever/spell=1307259"
+}

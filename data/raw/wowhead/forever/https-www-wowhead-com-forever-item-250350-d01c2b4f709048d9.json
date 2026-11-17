@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Ferocity Item Level 55 Requires Level 55 Use: Drink to increase your Strength and Agility by 18. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20 Sell Price: 1 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250350,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Drink to increase your Strength and Agility by 18. Lasts for 30 min. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 250350,
+    "item_level": 55,
+    "name": "Elixir of Ferocity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Drink to increase your Strength and Agility by 18. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250350"
+  },
+  "linked_entities": [
+    {
+      "id": 1250985,
+      "name": "Drink to increase your Strength and Agility by 18. Lasts for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1250985"
+    }
+  ],
+  "name": "Elixir of Ferocity",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "d65d128923c63cb67e51c172dfd3e4c3f81b84bcf7e34e1e147f3c91d5a96556",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250350",
+  "url": "https://www.wowhead.com/forever/item=250350"
+}

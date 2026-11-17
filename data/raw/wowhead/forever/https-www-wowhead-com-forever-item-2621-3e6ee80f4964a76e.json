@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Cowl of Necromancy Item Level 36 Binds when equipped Head Cloth 39 Armor -5 Stamina +15 Intellect Durability 45 / 45 Requires Level 31 Sell Price: 23 57 Dropped by: Shadowforge Darkweaver Drop Chance: 1.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 2621,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 39,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 2621,
+    "item_level": 36,
+    "name": "Cowl of Necromancy",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 31,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2621"
+  },
+  "linked_entities": [],
+  "name": "Cowl of Necromancy",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.0,
+      "entity_name": "Shadowforge Darkweaver",
+      "source_url": "https://www.wowhead.com/forever/item=2621",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "48131564b4277e55150d023c555166feb43ec4f1339335e8bad7b91106f5d363",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2621",
+  "url": "https://www.wowhead.com/forever/item=2621"
+}

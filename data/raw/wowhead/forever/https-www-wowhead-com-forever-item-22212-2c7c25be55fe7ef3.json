@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Golem Fitted Pauldrons Item Level 56 Binds when picked up Shoulder Mail 250 Armor +13 Agility +17 Stamina +6 Intellect Durability 70 / 70 Requires Level 51 Sell Price: 1 81 49 Dropped by: Phalanx Drop Chance: 22.89%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 22212,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 250,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22212,
+    "item_level": 56,
+    "name": "Golem Fitted Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 13.0,
+      "intellect": 6.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22212"
+  },
+  "linked_entities": [],
+  "name": "Golem Fitted Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.89,
+      "entity_name": "Phalanx",
+      "source_url": "https://www.wowhead.com/forever/item=22212",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1c650584c6f330fccd3396fc7d85cb719317a741c7f609d6ece74fe5ec1816a2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22212",
+  "url": "https://www.wowhead.com/forever/item=22212"
+}

@@ -1,0 +1,74 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Burning Blade Medallion Bring the Burning Blade Medallion to Zureetha Fargaze, outside The Den. Requirements: - Burning Blade Medallion",
+  "entity_id": 794,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:57.148Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Burning Blade Medallion",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 3145,
+        "name": "Zureetha Fargaze"
+      },
+      "start": {
+        "entity_id": 3145,
+        "name": "Zureetha Fargaze"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Durotar"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 118,
+      "object_name": "Minor Healing Potion",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=794",
+      "subject_id": 794,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4921,
+      "object_name": "Dust-covered Leggings",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=794",
+      "subject_id": 794,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4922,
+      "object_name": "Jagged Chain Vest",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=794",
+      "subject_id": 794,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 6713,
+      "object_name": "Ripped Pants",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=794",
+      "subject_id": 794,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/794",
+  "url": "https://www.wowhead.com/forever/quest=794"
+}

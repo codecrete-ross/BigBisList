@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Evocator's Blade Item Level 25 Binds when equipped Main Hand Dagger 12 - 23 Damage Speed 1.60 (10.94 damage per second) +2 Intellect +5 Spirit Durability 50 / 50 Requires Level 20 Equip: Increases damage and healing done by magical spells and effects by up to 28 . Sell Price: 32 58",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 2567,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 10.94,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 2567,
+    "item_level": 25,
+    "name": "Evocator's Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 2.0,
+      "spell_power": 28.0,
+      "spirit": 5.0
+    },
+    "weapon_max_damage": 23,
+    "weapon_min_damage": 12,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2567"
+  },
+  "linked_entities": [],
+  "name": "Evocator's Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2567",
+  "url": "https://www.wowhead.com/forever/item=2567"
+}

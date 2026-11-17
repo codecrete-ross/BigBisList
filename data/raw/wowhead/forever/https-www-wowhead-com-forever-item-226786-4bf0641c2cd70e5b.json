@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feralheart Headdress Item Level 60 Binds when picked up Head Leather 150 Armor +16 Stamina +17 Intellect +16 Spirit Durability 70 / 70 Classes: Druid Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects. Feralheart Raiment (0/8) Item #226821 Item #226822 Item #226820 Item #226819 Item #226818 Item #226817 Item #226816 Item #226815 Sell Price: 2 54 81",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 226786,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 150,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 33,
+          "spell_damage": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+    ],
+    "id": 226786,
+    "item_level": 60,
+    "name": "Feralheart Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 33.0,
+      "intellect": 17.0,
+      "spell_damage": 11.0,
+      "spirit": 16.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226786"
+  },
+  "linked_entities": [],
+  "name": "Feralheart Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "77e63c27b187945f5eba604df407f5521f467768c2ffeabe88724498e1e40842",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226786",
+  "url": "https://www.wowhead.com/forever/item=226786"
+}

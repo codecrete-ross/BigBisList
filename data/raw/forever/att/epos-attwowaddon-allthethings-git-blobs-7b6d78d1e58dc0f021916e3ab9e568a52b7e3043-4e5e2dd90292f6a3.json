@@ -1,0 +1,52 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "licence": "Public quest reference facts",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "confidence": "guide_lead",
+  "fetched_at": "2026-11-11T01:28:36+00:00",
+  "flavor": "forever",
+  "git_blob": "7b6d78d1e58dc0f021916e3ab9e568a52b7e3043",
+  "page_type": "reference",
+  "provider": "att",
+  "records": [
+    {
+      "item_id": 290333,
+      "min_level": 45,
+      "quest_giver_id": 240482,
+      "quest_id": 89013,
+      "side": "Alliance"
+    },
+    {
+      "item_id": 290333,
+      "min_level": 45,
+      "quest_id": 91608,
+      "side": "Horde"
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 290333,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/7b6d78d1e58dc0f021916e3ab9e568a52b7e3043",
+      "subject_id": 89013,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "guide_lead",
+      "object_id": 290333,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/7b6d78d1e58dc0f021916e3ab9e568a52b7e3043",
+      "subject_id": 91608,
+      "subject_type": "quest"
+    }
+  ],
+  "source_content_digest": "623cd50adacfd99e597d35274d78c5220b70018dfe49971d3edd5832a7cce430",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/7b6d78d1e58dc0f021916e3ab9e568a52b7e3043"
+}

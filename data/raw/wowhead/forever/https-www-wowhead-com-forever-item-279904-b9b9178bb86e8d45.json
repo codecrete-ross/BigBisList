@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalline Pauldrons Item Level 62 Binds when picked up Shoulder Mail 274 Armor +19 Stamina Equip: Improves your chance to get a critical strike by 0.5%. Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 2 59 72",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 279904,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 274,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 279904,
+    "item_level": 62,
+    "name": "Crystalline Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "spell_power": 15.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279904"
+  },
+  "linked_entities": [],
+  "name": "Crystalline Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "892dd1bef6f86d10bc712984101c134562949982c7f3b2f81a88c8683a801069",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279904",
+  "url": "https://www.wowhead.com/forever/item=279904"
+}

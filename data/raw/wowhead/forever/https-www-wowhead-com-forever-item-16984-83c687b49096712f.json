@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Black Dragonscale Boots Item Level 61 Binds when equipped Feet Mail 270 Armor +10 Stamina +24 Fire Resistance Durability 70 / 70 Requires Level 56 Equip: + 28 Attack Power. Sell Price: 3 26 53",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 16984,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 270,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +28 Attack Power."
+    ],
+    "id": 16984,
+    "item_level": 61,
+    "name": "Black Dragonscale Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 56,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "fire_resistance": 24.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16984"
+  },
+  "linked_entities": [],
+  "name": "Black Dragonscale Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16984",
+  "url": "https://www.wowhead.com/forever/item=16984"
+}

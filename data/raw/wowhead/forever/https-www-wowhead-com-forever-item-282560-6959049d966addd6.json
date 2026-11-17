@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Earth-Infused Rockguards Item Level 47 Binds when picked up Shoulder Mail 213 Armor +13 Stamina +10 Intellect Requires Level 42 Equip: Increases damage and healing done by magical spells and effects by up to 8 . Sell Price: 14 49",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 282560,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 213,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+    ],
+    "id": 282560,
+    "item_level": 47,
+    "name": "Earth-Infused Rockguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 8.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=282560"
+  },
+  "linked_entities": [],
+  "name": "Earth-Infused Rockguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a5f893d4c2320f5b1815937a56041b53bd655d0da342aa86ec565e1abbaba2aa",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/282560",
+  "url": "https://www.wowhead.com/forever/item=282560"
+}

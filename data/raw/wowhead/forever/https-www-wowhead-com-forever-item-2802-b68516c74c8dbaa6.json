@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Blazing Emblem Item Level 43 Binds when equipped Unique-Equipped Trinket +15 Fire Resistance Requires Level 38 Use: Increases Fire resistance by 33 and absorbs 465 Fire damage. Lasts 15 sec. (10 Min Cooldown) Sell Price: 16 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 2802,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Fire resistance by 33 and absorbs 465 Fire damage. Lasts 15 sec. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 2802,
+    "item_level": 43,
+    "name": "Blazing Emblem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 15.0
+    },
+    "use_effects": [
+      "Use: Increases Fire resistance by 33 and absorbs 465 Fire damage. Lasts 15 sec. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2802"
+  },
+  "linked_entities": [
+    {
+      "id": 13744,
+      "name": "Increases Fire resistance by 33 and absorbs 465 Fire damage. Lasts 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13744"
+    }
+  ],
+  "name": "Blazing Emblem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7399f51292a65d241bf87825ca107cec27f558053d68abd256e9b4c3ed3f055d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2802",
+  "url": "https://www.wowhead.com/forever/item=2802"
+}

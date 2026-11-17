@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Deprecated Brooch of the Night Watch Item Level 40 Binds when equipped Unique Trinket Use: Increases time between target's attacks by 20% and reduces their movement speed by 40% for 15 sec. (1 Min Cooldown) Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 1854,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases time between target's attacks by 20% and reduces their movement speed by 40% for 15 sec. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 1854,
+    "item_level": 40,
+    "name": "Deprecated Brooch of the Night Watch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "poor",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases time between target's attacks by 20% and reduces their movement speed by 40% for 15 sec. (1 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1854"
+  },
+  "linked_entities": [
+    {
+      "id": 1139,
+      "name": "Increases time between target's attacks by 20% and reduces their movement speed by 40% for 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1139"
+    }
+  ],
+  "name": "Deprecated Brooch of the Night Watch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "poor",
+  "related_tables": {},
+  "source_content_digest": "d8c8b3f69c66750f42cd5abd1a958467fa58f5945957fa6976c6ab0cebe55ec8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1854",
+  "url": "https://www.wowhead.com/forever/item=1854"
+}

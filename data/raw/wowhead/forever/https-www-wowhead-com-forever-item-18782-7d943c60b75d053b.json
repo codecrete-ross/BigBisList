@@ -1,0 +1,59 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Top Half of Advanced Armorsmithing: Volume II Item Level 60 Unique Requires Level 50 Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume II. Dropped by: Rattlegore Drop Chance: 8.43%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:07:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18782,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume II.",
+        "type": "use"
+      }
+    ],
+    "id": 18782,
+    "item_level": 60,
+    "name": "Top Half of Advanced Armorsmithing: Volume II",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume II."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18782"
+  },
+  "linked_entities": [
+    {
+      "id": 23232,
+      "name": "Combines the Top and Bottom Half of Advanced Armorsmithing: Volume II.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23232"
+    }
+  ],
+  "name": "Top Half of Advanced Armorsmithing: Volume II",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.43,
+      "entity_name": "Rattlegore",
+      "source_url": "https://www.wowhead.com/forever/item=18782",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18782",
+  "url": "https://www.wowhead.com/forever/item=18782"
+}

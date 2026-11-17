@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Coppercloth Gloves Item Level 15 Binds when equipped Hands Cloth 17 Armor +3 Strength Durability 18 / 18 Requires Level 10 Sell Price: 1 39 Dropped by: Dalaran Miner Drop Chance: 5.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 4767,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 17,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4767,
+    "item_level": 15,
+    "name": "Coppercloth Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 10,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "strength": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4767"
+  },
+  "linked_entities": [],
+  "name": "Coppercloth Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 5.56,
+      "entity_name": "Dalaran Miner",
+      "source_url": "https://www.wowhead.com/forever/item=4767",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4767",
+  "url": "https://www.wowhead.com/forever/item=4767"
+}

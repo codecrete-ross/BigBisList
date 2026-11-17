@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Raptorbane Armor Item Level 29 Binds when picked up Chest Leather 92 Armor +3 Stamina Durability 85 / 85 Equip: + 16 Attack Power. Equip: + 15 Attack Power against Beasts. Sell Price: 20 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 3566,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 92,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +15 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +16 Attack Power.",
+      "Equip: +15 Attack Power against Beasts."
+    ],
+    "id": 3566,
+    "item_level": 29,
+    "name": "Raptorbane Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 16.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3566"
+  },
+  "linked_entities": [],
+  "name": "Raptorbane Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3566",
+  "url": "https://www.wowhead.com/forever/item=3566"
+}

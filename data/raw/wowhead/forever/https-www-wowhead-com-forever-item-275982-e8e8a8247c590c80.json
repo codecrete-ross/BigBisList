@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warden's Signet of Brilliance Item Level 65 Binds when picked up Unique-Equipped: Watcher's Ring (1) Finger +12 Stamina Requires Level 60 Requires The Watchers - Exalted Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 17 .",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 275982,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 17.",
+        "stats": {
+          "spell_power": 17.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 17."
+    ],
+    "id": 275982,
+    "item_level": 65,
+    "name": "Warden's Signet of Brilliance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "spell_power": 17.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275982"
+  },
+  "linked_entities": [
+    {
+      "id": 2819,
+      "name": "The Watchers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2819"
+    }
+  ],
+  "name": "Warden's Signet of Brilliance",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Warden's Signet of Brilliance Item Level 65 Binds when picked up Unique-Equipped: Watcher's Ring (1) Finger +12 Stamina Requires Level 60 Requires The Watchers - Exalted Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 17 .",
+      "reputation": "The Watchers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=275982",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275982",
+  "url": "https://www.wowhead.com/forever/item=275982"
+}

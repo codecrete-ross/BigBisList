@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Winds of Tanaris Item Level 53 Binds when picked up Unique-Equipped Trinket +12 Nature Resistance Requires Level 48 Equip: + 16 Attack Power. Use: Slows nearby enemies by 50% for 10 sec, increased to 80% in Desert areas. (5 Min Cooldown) Sell Price: 1 37 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 286556,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Slows nearby enemies by 50% for 10 sec, increased to 80% in Desert areas. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 286556,
+    "item_level": 53,
+    "name": "Winds of Tanaris",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 16.0,
+      "nature_resistance": 12.0
+    },
+    "use_effects": [
+      "Use: Slows nearby enemies by 50% for 10 sec, increased to 80% in Desert areas. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=286556"
+  },
+  "linked_entities": [
+    {
+      "id": 1320579,
+      "name": "Slows nearby enemies by 50% for 10 sec, increased to 80% in Desert areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1320579"
+    }
+  ],
+  "name": "Winds of Tanaris",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3681d38970159deecf06441797aa46d09a33eca0f4c02dd6187ee1a0a98e098b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286556",
+  "url": "https://www.wowhead.com/forever/item=286556"
+}

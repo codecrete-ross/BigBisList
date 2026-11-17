@@ -1,0 +1,440 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; provenance facts only",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "provenance_review_only",
+  "fetched_at": "2026-11-06T08:47:13.128607+00:00",
+  "field_origins": [
+    {
+      "entities": [
+        6981,
+        3369,
+        3370
+      ],
+      "fields": [
+        "requiredLevel",
+        "preQuestSingle"
+      ],
+      "finding": "Raw Forever rows retain the converted Classic level-15 chain. This is not an independent Forever observation.",
+      "origin": "inherited_classic_base"
+    },
+    {
+      "entities": [
+        5061,
+        31
+      ],
+      "fields": [
+        "requiredRaces"
+      ],
+      "finding": "Final Aquatic Form quests retain Night Elf/Tauren masks. A Skyborne correction on an earlier step does not prove final-step eligibility.",
+      "origin": "inherited_classic_base"
+    },
+    {
+      "entities": [
+        263411,
+        263412
+      ],
+      "fields": [
+        "questRewards"
+      ],
+      "finding": "Generated item relationships cite Forever Wowhead. They do not independently corroborate that same reward table.",
+      "origin": "copied_wowhead_generated_delta"
+    },
+    {
+      "entities": [
+        94411
+      ],
+      "fields": [
+        "questLevel",
+        "startedBy",
+        "finishedBy",
+        "objectives"
+      ],
+      "finding": "The trace adds identity/objectives/endpoints, not reward relationships or a new minimum level. It cannot resolve the moved-reward conflict.",
+      "origin": "forever_trace_observations"
+    },
+    {
+      "entities": [
+        263435,
+        263436
+      ],
+      "fields": [
+        "questRewards",
+        "vendors",
+        "npcDrops"
+      ],
+      "finding": "Generated metadata gives names, item levels and relic subtypes; no acquisition route is published in the composed data. Absence of fields is not unavailability.",
+      "origin": "unpublished"
+    }
+  ],
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "content_digest": "e1ae93bc7b0ace50028e8dc42efb2f88f6ad09f13aa2d4b0bc94a6f471ec32c7",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverQuestDB.lua"
+    },
+    {
+      "content_digest": "dddf865bef126a9e6841f45220c34f2bac7a61c77dde55a05e66e6541cdd5f77",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverItemDB.lua"
+    },
+    {
+      "content_digest": "276858aa5535eabe36e1875338733f67e404235764380d58619dfb9a29f601f1",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/conversion.json"
+    },
+    {
+      "content_digest": "d65f16232c6b7216a23c28ef4fb2165920e417265aa861e7ff66e145ac53b09c",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever/generated/foreverBaseQuest.lua"
+    },
+    {
+      "content_digest": "90dca46efbf5f6d0fbfb1f4d6b4c816e199e71d6926a95ac575bf129abba5d7c",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever/generated/foreverBaseItem.lua"
+    },
+    {
+      "content_digest": "f706f365950040472cabab89c29dad47e0082ed4b7a42d0fa0c42ec8976d2b69",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever/traces/foreverQuestTraces.lua"
+    },
+    {
+      "content_digest": "e87c14e362d414e6fec8fb8871d25e2dcad6e68b1a49a93867b18be3dc0b9cbb",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever/traces/foreverItemTraces.lua"
+    },
+    {
+      "content_digest": "05b94b31b6e554af679383a5a82f60133ac5ac493a18bc5d06a83a7319bd47bd",
+      "source_url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/docs/forever-delta-base.md"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "questiedb",
+  "records": [
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB"
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 15
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 0
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "3": {
+              "1": 10441
+            }
+          }
+        }
+      },
+      "id": 6981,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 6981
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 15
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 8589934770
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": {
+              "1": 8418
+            }
+          }
+        }
+      },
+      "id": 3369,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 6981
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 15
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 4294967373
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": {
+              "1": 8418
+            }
+          }
+        }
+      },
+      "id": 3370,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 272
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 16
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 8
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": {
+              "1": 11802
+            }
+          }
+        }
+      },
+      "id": 5061,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 30
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 16
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 32
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": {
+              "1": 11802
+            }
+          }
+        }
+      },
+      "id": 31,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 92595
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 4
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 8589934770
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": {
+              "1": 251902
+            }
+          }
+        }
+      },
+      "id": 94411,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "preQuestGroup": {
+          "owner": "QuestieDB"
+        },
+        "preQuestSingle": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 1526
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 10
+        },
+        "requiredRaces": {
+          "owner": "QuestieDB",
+          "value": 8589934770
+        },
+        "startedBy": {
+          "owner": "QuestieDB",
+          "value": {
+            "2": {
+              "1": 61934
+            }
+          }
+        }
+      },
+      "id": 1527,
+      "kind": "quest"
+    },
+    {
+      "fields": {
+        "npcDrops": {
+          "owner": "QuestieDB"
+        },
+        "questRewards": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 3369,
+            "2": 3370
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 0
+        },
+        "vendors": {
+          "owner": "QuestieDB"
+        }
+      },
+      "id": 10657,
+      "kind": "item"
+    },
+    {
+      "fields": {
+        "npcDrops": {
+          "owner": "QuestieDB"
+        },
+        "questRewards": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 31,
+            "2": 5061,
+            "3": 94411
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 16
+        },
+        "vendors": {
+          "owner": "QuestieDB"
+        }
+      },
+      "id": 263411,
+      "kind": "item"
+    },
+    {
+      "fields": {
+        "npcDrops": {
+          "owner": "QuestieDB"
+        },
+        "questRewards": {
+          "owner": "QuestieDB",
+          "value": {
+            "1": 1527,
+            "2": 94411,
+            "3": 94468,
+            "4": 97257
+          }
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 10
+        },
+        "vendors": {
+          "owner": "QuestieDB"
+        }
+      },
+      "id": 263412,
+      "kind": "item"
+    },
+    {
+      "fields": {
+        "npcDrops": {
+          "owner": "QuestieDB"
+        },
+        "questRewards": {
+          "owner": "QuestieDB"
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 0
+        },
+        "vendors": {
+          "owner": "QuestieDB"
+        }
+      },
+      "id": 263435,
+      "kind": "item"
+    },
+    {
+      "fields": {
+        "npcDrops": {
+          "owner": "QuestieDB"
+        },
+        "questRewards": {
+          "owner": "QuestieDB"
+        },
+        "requiredLevel": {
+          "owner": "QuestieDB",
+          "value": 0
+        },
+        "vendors": {
+          "owner": "QuestieDB"
+        }
+      },
+      "id": 263436,
+      "kind": "item"
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/tree/80866960788084ae1592abf66a08f0d306458a95/src/corrections/Forever"
+}

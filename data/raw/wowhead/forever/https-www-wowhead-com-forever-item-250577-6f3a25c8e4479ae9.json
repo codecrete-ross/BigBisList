@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sentinel's Pauldrons Item Level 47 Binds when picked up Shoulder Plate 375 Armor +8 Strength +13 Stamina Requires Level 42 Equip: Increased Defense + 10. Sell Price: 1 23 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 250577,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 375,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +10.",
+        "stats": {
+          "defense": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +10."
+    ],
+    "id": 250577,
+    "item_level": 47,
+    "name": "Sentinel's Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "defense": 10.0,
+      "stamina": 13.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250577"
+  },
+  "linked_entities": [],
+  "name": "Sentinel's Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250577",
+  "url": "https://www.wowhead.com/forever/item=250577"
+}

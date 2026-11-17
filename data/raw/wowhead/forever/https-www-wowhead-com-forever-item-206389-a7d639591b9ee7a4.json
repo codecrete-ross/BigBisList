@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brimstone Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 Engrave your belt with the Fire Nova rune: Your Fire Nova Totem spell is replaced with Fire Nova, which causes your current Fire totem to emit damage at its location. \"Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206389,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206389,
+    "item_level": 5,
+    "name": "Brimstone Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206389"
+  },
+  "linked_entities": [
+    {
+      "id": 408339,
+      "name": "Your Fire Nova Totem spell is replaced with Fire Nova, which causes your current Fire totem to emit damage at its location.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408339"
+    },
+    {
+      "id": 410093,
+      "name": "Engrave your belt with the Fire Nova rune: Your Fire Nova Totem spell is replaced with Fire Nova, which causes your current Fire totem to emit damage at its location.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410093"
+    }
+  ],
+  "name": "Brimstone Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "e29e8c3eee3d5531555d731e010635dc560d90abf8cab53e2075effbbd3f4353",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206389",
+  "url": "https://www.wowhead.com/forever/item=206389"
+}

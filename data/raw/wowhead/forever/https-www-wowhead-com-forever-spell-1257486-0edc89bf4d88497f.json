@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Earthenweave Vest 1 min cast Reagents: Bolt of Runecloth (8), Essence of Earth , Rune Thread Earthenweave Vest Item Level 59 Binds when equipped Chest Cloth 76 Armor +17 Spirit Requires Level 54 Equip: Increases healing done by up to 40 and damage done by up to 14 for all magical spells and effects. Sell Price: 1 52 62",
+  "entity_id": 1257486,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:26+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 254121,
+      "name": "Earthenweave Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254121"
+    },
+    {
+      "id": 1257486,
+      "name": "Earthenweave Vest",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257486"
+    }
+  ],
+  "name": "Earthenweave Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 254121,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1257486",
+      "subject_id": 1257486,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1257486,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1257486",
+  "url": "https://www.wowhead.com/forever/spell=1257486"
+}

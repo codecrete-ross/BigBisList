@@ -1,0 +1,138 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Beastmaster's Belt Item Level 65 Binds when picked up Waist Mail 214 Armor +16 Agility +16 Stamina +10 Intellect Durability 40 / 40 Beastmaster Armor (0/8) Beastmaster's Belt Beastmaster's Bindings Beastmaster's Boots Beastmaster's Cap Beastmaster's Gloves Beastmaster's Mantle Beastmaster's Pants Beastmaster's Tunic (2) Set : +8 All Resistances. (4) Set : Your normal ranged attacks have a 4% chance of restoring 200 mana. (Proc chance: 4%) (6) Set : +40 Attack Power. (8) Set : +200 Armor. Sell Price: 1 84 32",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 22010,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 214,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22010,
+    "item_level": 65,
+    "name": "Beastmaster's Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27785,
+        "text": "Your normal ranged attacks have a 4% chance of restoring 200 mana. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "intellect": 10.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22010"
+  },
+  "linked_entities": [
+    {
+      "id": 22010,
+      "name": "Beastmaster's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22010"
+    },
+    {
+      "id": 22011,
+      "name": "Beastmaster's Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22011"
+    },
+    {
+      "id": 22013,
+      "name": "Beastmaster's Cap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22013"
+    },
+    {
+      "id": 22015,
+      "name": "Beastmaster's Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22015"
+    },
+    {
+      "id": 22016,
+      "name": "Beastmaster's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22016"
+    },
+    {
+      "id": 22017,
+      "name": "Beastmaster's Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22017"
+    },
+    {
+      "id": 22060,
+      "name": "Beastmaster's Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22060"
+    },
+    {
+      "id": 22061,
+      "name": "Beastmaster's Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22061"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27785,
+      "name": "Your normal ranged attacks have a 4% chance of restoring 200 mana. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27785"
+    }
+  ],
+  "name": "Beastmaster's Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22010",
+  "url": "https://www.wowhead.com/forever/item=22010"
+}

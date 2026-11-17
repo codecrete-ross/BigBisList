@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Backstab 60 Energy Melee Range Instant Requires Rogue Requires level 4 Backstab the target, causing 150% weapon damage plus 10 to the target. Must be behind the target. Requires a dagger in the main hand. Awards 1 combo point.",
+  "entity_id": 53,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:22+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 53,
+      "name": "Backstab",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=53"
+    }
+  ],
+  "name": "Backstab",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "36ea6f7b2ededa40c14b61ec21cf4f7c58a78fe029627abad217dcb7105f0490",
+  "spell_id": 53,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/53",
+  "url": "https://www.wowhead.com/forever/spell=53"
+}

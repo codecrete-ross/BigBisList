@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Night Watchman's Torch Item Level 1 Binds when picked up Unique Use: Light the Night Watchman's Torch. (30 Sec Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 280612,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Light the Night Watchman's Torch. (30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 280612,
+    "item_level": 1,
+    "name": "Night Watchman's Torch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Light the Night Watchman's Torch. (30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=280612"
+  },
+  "linked_entities": [
+    {
+      "id": 1309410,
+      "name": "Light the Night Watchman's Torch.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1309410"
+    }
+  ],
+  "name": "Night Watchman's Torch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280612",
+  "url": "https://www.wowhead.com/forever/item=280612"
+}

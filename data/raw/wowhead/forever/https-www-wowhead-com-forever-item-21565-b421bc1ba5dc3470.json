@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rune of Perfection Item Level 45 Binds when picked up Unique-Equipped: Rune of Battle (1) Trinket +8 Stamina Requires Level 40 Equip: Your spells pierce 3 Magical Resistances. Gain an additional 7 Spell Piercing in Forest and Grassland areas. Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21565,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your spells pierce 3 Magical Resistances. Gain an additional 7 Spell Piercing in Forest and Grassland areas.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your spells pierce 3 Magical Resistances. Gain an additional 7 Spell Piercing in Forest and Grassland areas."
+    ],
+    "id": 21565,
+    "item_level": 45,
+    "name": "Rune of Perfection",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21565"
+  },
+  "linked_entities": [
+    {
+      "id": 1317443,
+      "name": "Your spells pierce 3 Magical Resistances. Gain an additional 7 Spell Piercing in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317443"
+    }
+  ],
+  "name": "Rune of Perfection",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21565",
+  "url": "https://www.wowhead.com/forever/item=21565"
+}

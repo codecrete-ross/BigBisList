@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Screecher Belt Item Level 27 Binds when picked up Waist Leather 50 Armor +3 Stamina +5 Intellect +2 Spirit Durability 30 / 30 Equip: + 12 Attack Power. Sell Price: 8 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 16987,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power."
+    ],
+    "id": 16987,
+    "item_level": 27,
+    "name": "Screecher Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0,
+      "intellect": 5.0,
+      "spirit": 2.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16987"
+  },
+  "linked_entities": [],
+  "name": "Screecher Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16987",
+  "url": "https://www.wowhead.com/forever/item=16987"
+}

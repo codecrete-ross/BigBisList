@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slime-encrusted Pads Item Level 25 Binds when picked up Shoulder Cloth 32 Armor Restores + 3 mana per 5 sec. Restores + 10 health per 5 sec. Durability 45 / 45 Requires Level 20 Sell Price: 9 77 Dropped by: Mutanus the Devourer Drop Chance: 29.41%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 6461,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 32,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +3 mana per 5 sec.",
+        "stats": {
+          "mp5": 3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +10 health per 5 sec.",
+        "stats": {
+          "hp5": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 6461,
+    "item_level": 25,
+    "name": "Slime-encrusted Pads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hp5": 10.0,
+      "mp5": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6461"
+  },
+  "linked_entities": [],
+  "name": "Slime-encrusted Pads",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.41,
+      "entity_name": "Mutanus the Devourer",
+      "source_url": "https://www.wowhead.com/forever/item=6461",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6461",
+  "url": "https://www.wowhead.com/forever/item=6461"
+}

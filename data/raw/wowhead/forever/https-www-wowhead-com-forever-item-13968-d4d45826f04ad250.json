@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eye of the Beast Item Level 63 Binds when picked up Unique-Equipped Trinket Equip: Improves your chance to get a Critical Strike with Spells by 1.0%. Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown) Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13968,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%."
+    ],
+    "id": 13968,
+    "item_level": 63,
+    "name": "Eye of the Beast",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13968"
+  },
+  "linked_entities": [
+    {
+      "id": 1287840,
+      "name": "Increases your Spell Hit chance by 7% for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1287840"
+    },
+    {
+      "id": 1318956,
+      "name": "Improves your chance to get a Critical Strike with Spells by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318956"
+    }
+  ],
+  "name": "Eye of the Beast",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "53ba90a956387f19159eaa1b3110b36c22a0d6d8783d71df93ce93786c87cff4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13968",
+  "url": "https://www.wowhead.com/forever/item=13968"
+}

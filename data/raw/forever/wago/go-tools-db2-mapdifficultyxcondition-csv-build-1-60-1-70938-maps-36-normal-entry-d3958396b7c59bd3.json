@@ -1,0 +1,123 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "collected_from": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T03:59:44.4734247Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T03:59:44.4734247Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 19410,
+      "collected_at": "2026-11-13T03:59:46.9129781Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-encounters",
+      "source_content_digest": "8e0b39eacaef229c083dff18ad4926ccf8fd3babd586ac0a2300586bb00ad245",
+      "source_url": "https://wago.tools/db2/DungeonEncounter/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "condition_tuning": {
+      "AllowedMaxOffset": "0",
+      "AllowedMinOffset": "0",
+      "DMGPrimaryStatScalingCurveID": "0",
+      "DMGScalingCurveID": "0",
+      "ExpansionID": "0",
+      "Flags": "0",
+      "HPPrimaryStatScalingCurveID": "0",
+      "HPScalingCurveID": "0",
+      "ID": "7420",
+      "ILevel": "0",
+      "LfgMaxLevel": "0",
+      "LfgMinLevel": "0",
+      "MaxLevelScalingOffset": "0",
+      "MaxLevelSquish": "60",
+      "MinLevelScalingOffset": "0",
+      "MinLevelSquish": "10",
+      "PrimaryStatScalingModPlayerDataElementCharacterID": "0",
+      "PrimaryStatScalingModPlayerDataElementCharacterMultiplier": "0",
+      "XpMultQuest": "1"
+    },
+    "encounter": "Mr. Smite",
+    "encounter_id": 2745,
+    "entry_condition": {
+      "FailureDescription_lang": "You are not high enough level to enter this Dungeon.",
+      "ID": "4166",
+      "MapDifficultyID": "10",
+      "OrderIndex": "1",
+      "PlayerConditionID": "159263"
+    },
+    "map_id": 36,
+    "normal_difficulty": {
+      "ContentTuningID": "5240",
+      "DifficultyID": "1",
+      "Flags": "0",
+      "ID": "10",
+      "ItemContext": "0",
+      "ItemContextPickerID": "0",
+      "LockID": "0",
+      "MapID": "36",
+      "MaxPlayers": "5",
+      "Message_lang": "You must be at least level 10 to enter.",
+      "ResetInterval": "0",
+      "WorldStateExpressionID": "0"
+    },
+    "reviewed_entry_level": 10,
+    "zone": "Deadmines"
+  },
+  "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+  "url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/36/normal-entry"
+}

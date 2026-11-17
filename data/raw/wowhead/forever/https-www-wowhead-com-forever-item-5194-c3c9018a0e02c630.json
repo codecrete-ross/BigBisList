@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Taskmaster Axe Item Level 23 Binds when picked up Two-Hand Axe 31 - 48 Damage Speed 2.70 (14.63 damage per second) +8 Stamina +8 Spirit Durability 80 / 80 Requires Level 18 Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects. Sell Price: 31 89 Dropped by: Sneed Drop Chance: 27.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 5194,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 14.63,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 45,
+          "spell_damage": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 45 and damage done by up to 15 for all magical spells and effects."
+    ],
+    "id": 5194,
+    "item_level": 23,
+    "name": "Taskmaster Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 45.0,
+      "spell_damage": 15.0,
+      "spirit": 8.0,
+      "stamina": 8.0
+    },
+    "weapon_max_damage": 48,
+    "weapon_min_damage": 31,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5194"
+  },
+  "linked_entities": [],
+  "name": "Taskmaster Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.49,
+      "entity_name": "Sneed",
+      "source_url": "https://www.wowhead.com/forever/item=5194",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5194",
+  "url": "https://www.wowhead.com/forever/item=5194"
+}

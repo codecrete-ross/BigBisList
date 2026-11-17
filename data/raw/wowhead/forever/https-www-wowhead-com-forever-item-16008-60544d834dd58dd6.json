@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Master Engineer's Goggles Item Level 58 Binds when equipped Head Cloth 61 Armor +16 Stamina +17 Spirit Durability 45 / 45 Requires Engineering (280) Sell Price: 1 17 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 16008,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 61,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 16008,
+    "item_level": 58,
+    "name": "Master Engineer's Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 17.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16008"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Master Engineer's Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Master Engineer's Goggles Item Level 58 Binds when equipped Head Cloth 61 Armor +16 Stamina +17 Spirit Durability 45 / 45 Requires Engineering (280) Sell Price: 1 17 39",
+      "scope": "equip_or_use",
+      "skill": 280,
+      "source_url": "https://www.wowhead.com/forever/item=16008",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c91da3101f911566ec97bbd9d08b996760dae0cf6bb1bd804b05c2cf0f63577a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16008",
+  "url": "https://www.wowhead.com/forever/item=16008"
+}

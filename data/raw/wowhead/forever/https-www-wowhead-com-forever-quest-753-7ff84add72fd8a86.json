@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 753,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:43.636Z",
+  "flavor": "forever",
+  "name": "A Humble Task",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2981,
+        "name": "Chief Hawkwind"
+      },
+      "start": {
+        "entity_id": 2991,
+        "name": "Greatmother Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=753"
+}

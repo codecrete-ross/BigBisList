@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Track Humanoids Instant Requires Druid Requires level 32 Requires Cat Form Shows the location of all nearby humanoids on the minimap. Only one type of thing can be tracked at a time.",
+  "entity_id": 5225,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5225,
+      "name": "Track Humanoids",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5225"
+    }
+  ],
+  "name": "Track Humanoids",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "b1095d9367357f6778855381f9229ec2170fb1bb8886b18d18b65779b813d40b",
+  "spell_id": 5225,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5225",
+  "url": "https://www.wowhead.com/forever/spell=5225"
+}

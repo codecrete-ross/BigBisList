@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dregmetal Spaulders Item Level 55 Binds when picked up Shoulder Mail 246 Armor +8 Strength +6 Stamina +17 Intellect +9 Spirit Durability 70 / 70 Requires Level 50 Sell Price: 1 71 22 Dropped by: Grizzle Drop Chance: 20.73%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 11722,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 246,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 11722,
+    "item_level": 55,
+    "name": "Dregmetal Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spirit": 9.0,
+      "stamina": 6.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11722"
+  },
+  "linked_entities": [],
+  "name": "Dregmetal Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.73,
+      "entity_name": "Grizzle",
+      "source_url": "https://www.wowhead.com/forever/item=11722",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cbfe7c65853c239239565fd25f4019310aaf853a176288fedffdb74b79aa287e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11722",
+  "url": "https://www.wowhead.com/forever/item=11722"
+}

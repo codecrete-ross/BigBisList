@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Hunt Continues Grull Hawkwind in Camp Narache wants you to bring him 10 Mountain Cougar Pelts. Requirements: - Mountain Cougar Pelt x 10",
+  "entity_id": 750,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:42.245Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Hunt Continues",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      },
+      "start": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4908,
+      "object_name": "Nomadic Bracers",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=750",
+      "subject_id": 750,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4913,
+      "object_name": "Painted Chain Belt",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=750",
+      "subject_id": 750,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/750",
+  "url": "https://www.wowhead.com/forever/quest=750"
+}

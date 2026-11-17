@@ -1,0 +1,740 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins (Vedatis S.A.S.)",
+      "source": "https://db.icy-veins.com/wow-forever/items/"
+    }
+  ],
+  "catalog_coverage": {
+    "complete": true,
+    "inventory_types": [
+      28
+    ],
+    "level_max": 59,
+    "level_min": 1,
+    "qualities": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "slots": [
+      "Idol",
+      "Libram",
+      "Totem"
+    ],
+    "total": 132
+  },
+  "catalog_kind": "counted_listing",
+  "client_build": "1.60.1.70938",
+  "confidence": "catalog_identity_only",
+  "fetched_at": "2026-11-13T23:53:21.105264+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 144631,
+      "collected_at": "2026-11-13T23:53:20.830321+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-armor-idols",
+      "source_content_digest": "d7d5da391b335a0f46fe94df07be85ce485c4b1cab387c90dd8efc1b12b5f6d8",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/idols/"
+    },
+    {
+      "bytes": 138702,
+      "collected_at": "2026-11-13T23:53:21.105264+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-armor-librams",
+      "source_content_digest": "be3a26e16a0fb68e00f9f5c17e21c8a229555f33fe6b0598bd5dc38644dfe661",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/librams/"
+    },
+    {
+      "bytes": 146635,
+      "collected_at": "2026-11-13T23:53:20.826322+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-armor-totems",
+      "source_content_digest": "e8b887a4d9a7aa8a703c3c78eab8f4b02aca0d9fadab4ee683c977e69334020c",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/totems/"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "icyveins",
+  "reconciliation": {
+    "ahledger_matches": 122,
+    "client_matches": 132,
+    "listing_only_ids": []
+  },
+  "records": [
+    {
+      "item_id": 22316,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 22345,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 22395,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 22396,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 22397,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 22398,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 22399,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 22400,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 22401,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 22402,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 23004,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 23005,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 23006,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 23197,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 23198,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 23199,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 23200,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 23201,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 23202,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 23203,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 23204,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 205218,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 205420,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 206376,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206381,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206382,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206383,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206384,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206385,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206386,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206387,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206388,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206389,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206390,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206391,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 206954,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 208414,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 208689,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 208849,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 208851,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 209574,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 209575,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 209576,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 210195,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 210534,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 211472,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 213513,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 213594,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 215435,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 215436,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 216490,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 220605,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 220606,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 220607,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 220915,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 221457,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 221464,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 225838,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 227444,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 228173,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 228174,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 228175,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 228176,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 228177,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 228178,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 228179,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 228180,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 228181,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 228182,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 228183,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 231811,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 232389,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 232390,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 232391,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 232392,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 232409,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 232416,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 232419,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 232420,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 232421,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 232423,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 232424,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 233596,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 233597,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 233602,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 234000,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 234001,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 234002,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 234468,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 234469,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 234474,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 234475,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 234476,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 234477,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 234478,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 234479,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 234480,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 236271,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 236276,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 236308,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 239103,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 249396,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 249397,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 249398,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 249441,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 249442,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 249443,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 263411,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 263412,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 263435,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 263436,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 272427,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 272428,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 272429,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 272430,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 272431,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 272432,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 272433,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 272434,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 272435,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 272436,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 274477,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 278278,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 278440,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 278460,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 278963,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 278969,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 279247,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 279248,
+      "slot": "Relic",
+      "subclass": "Libram"
+    },
+    {
+      "item_id": 279249,
+      "slot": "Relic",
+      "subclass": "Totem"
+    },
+    {
+      "item_id": 279250,
+      "slot": "Relic",
+      "subclass": "Idol"
+    },
+    {
+      "item_id": 279251,
+      "slot": "Relic",
+      "subclass": "Idol"
+    }
+  ],
+  "relationships": [],
+  "url": "https://db.icy-veins.com/wow-forever/items/#inventory-type-28"
+}

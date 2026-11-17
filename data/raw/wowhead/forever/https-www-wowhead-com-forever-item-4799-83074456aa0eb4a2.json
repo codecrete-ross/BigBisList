@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Antiquated Cloak Item Level 23 Binds when equipped Back 18 Armor +4 Spirit Requires Level 18 Sell Price: 6 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 4799,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 18,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4799,
+    "item_level": 23,
+    "name": "Antiquated Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 18,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "spirit": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4799"
+  },
+  "linked_entities": [],
+  "name": "Antiquated Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4799",
+  "url": "https://www.wowhead.com/forever/item=4799"
+}

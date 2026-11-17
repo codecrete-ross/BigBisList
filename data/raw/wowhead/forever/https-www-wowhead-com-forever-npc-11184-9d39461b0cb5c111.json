@@ -1,0 +1,525 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Wixxrak Weaponsmith & Gunsmith Level 53 Humanoid (Normal) Everlook",
+  "entity_id": 11184,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:21:03.142Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2516,
+      "name": "Light Shot",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2516"
+    },
+    {
+      "id": 2519,
+      "name": "Heavy Shot",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2519"
+    },
+    {
+      "id": 2528,
+      "name": "Falchion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2528"
+    },
+    {
+      "id": 2529,
+      "name": "Zweihander",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2529"
+    },
+    {
+      "id": 2530,
+      "name": "Francisca",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2530"
+    },
+    {
+      "id": 2531,
+      "name": "Great Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2531"
+    },
+    {
+      "id": 2532,
+      "name": "Morning Star",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2532"
+    },
+    {
+      "id": 2533,
+      "name": "War Maul",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2533"
+    },
+    {
+      "id": 2534,
+      "name": "Rondel",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2534"
+    },
+    {
+      "id": 2535,
+      "name": "War Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2535"
+    },
+    {
+      "id": 3023,
+      "name": "Large Bore Blunderbuss",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3023"
+    },
+    {
+      "id": 3024,
+      "name": "BKP 2700 \"Enforcer\"",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3024"
+    },
+    {
+      "id": 3025,
+      "name": "BKP 42 \"Ultra\"",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3025"
+    },
+    {
+      "id": 3033,
+      "name": "Solid Shot",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3033"
+    },
+    {
+      "id": 11284,
+      "name": "Accurate Slugs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11284"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 15 of 15",
+    "1 - 15 of 15"
+  ],
+  "location_name": "Winterspring",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          61.6,
+          38
+        ]
+      ]
+    },
+    "zone": 618
+  },
+  "name": "Wixxrak",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 53",
+    "React: A\u00a0H",
+    "Faction: Everlook",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 3,189"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2516,
+      "object_name": "Light Shot",
+      "object_type": "item",
+      "price_copper": 10,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Light Shot",
+        "5",
+        "",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Bullet",
+        "10"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2519,
+      "object_name": "Heavy Shot",
+      "object_type": "item",
+      "price_copper": 50,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Heavy Shot",
+        "15",
+        "10",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Bullet",
+        "50"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2528,
+      "object_name": "Falchion",
+      "object_type": "item",
+      "price_copper": 51836,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Falchion",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "5 18 36"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2529,
+      "object_name": "Zweihander",
+      "object_type": "item",
+      "price_copper": 65031,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Zweihander",
+        "46",
+        "41",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "6 50 31"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2530,
+      "object_name": "Francisca",
+      "object_type": "item",
+      "price_copper": 52219,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Francisca",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "5 22 19"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2531,
+      "object_name": "Great Axe",
+      "object_type": "item",
+      "price_copper": 56169,
+      "relation": "sells",
+      "required_level": 39,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Great Axe",
+        "44",
+        "39",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "5 61 69"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2532,
+      "object_name": "Morning Star",
+      "object_type": "item",
+      "price_copper": 52608,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Morning Star",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "5 26 8"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2533,
+      "object_name": "War Maul",
+      "object_type": "item",
+      "price_copper": 61107,
+      "relation": "sells",
+      "required_level": 40,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "War Maul",
+        "45",
+        "40",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "6 11 7"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2534,
+      "object_name": "Rondel",
+      "object_type": "item",
+      "price_copper": 45431,
+      "relation": "sells",
+      "required_level": 39,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Rondel",
+        "44",
+        "39",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "4 54 31"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2535,
+      "object_name": "War Staff",
+      "object_type": "item",
+      "price_copper": 61556,
+      "relation": "sells",
+      "required_level": 40,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "War Staff",
+        "45",
+        "40",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "6 15 56"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3023,
+      "object_name": "Large Bore Blunderbuss",
+      "object_type": "item",
+      "price_copper": 3771,
+      "relation": "sells",
+      "required_level": 16,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Large Bore Blunderbuss",
+        "21",
+        "16",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Gun",
+        "37 71"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3024,
+      "object_name": "BKP 2700 \"Enforcer\"",
+      "object_type": "item",
+      "price_copper": 7098,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "BKP 2700 \"Enforcer\"",
+        "26",
+        "21",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Gun",
+        "70 98"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3025,
+      "object_name": "BKP 42 \"Ultra\"",
+      "object_type": "item",
+      "price_copper": 18478,
+      "relation": "sells",
+      "required_level": 31,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "BKP 42 \"Ultra\"",
+        "36",
+        "31",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Gun",
+        "1 84 78"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3033,
+      "object_name": "Solid Shot",
+      "object_type": "item",
+      "price_copper": 300,
+      "relation": "sells",
+      "required_level": 25,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Solid Shot",
+        "30",
+        "25",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Bullet",
+        "3"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 11284,
+      "object_name": "Accurate Slugs",
+      "object_type": "item",
+      "price_copper": 1000,
+      "relation": "sells",
+      "required_level": 40,
+      "source_url": "https://www.wowhead.com/forever/npc=11184",
+      "subject_id": 11184,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Accurate Slugs",
+        "45",
+        "40",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Bullet",
+        "10"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/11184",
+  "url": "https://www.wowhead.com/forever/npc=11184"
+}

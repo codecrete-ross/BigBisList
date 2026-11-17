@@ -1,0 +1,288 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client table exports from Wago.tools.",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T03:48:46.0979132Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 752,
+      "collected_at": "2026-11-13T03:39:26.9683472Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "blizzard-wowf",
+      "source_content_digest": "dba52275d6dd88b459081539e5f3d378588c9fdc596fcd6c5c1bdada00c4d534",
+      "source_url": "https://us.version.battle.net/wowf/versions"
+    },
+    {
+      "bytes": 14266,
+      "collected_at": "2026-11-13T04:11:19.9423996Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-skills",
+      "source_content_digest": "f3867d43ab42d1f5278e6e5028d0151bc06e4ef8e5cbd790a20df6ee57aa654d",
+      "source_url": "https://wago.tools/db2/SkillLine/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 14266,
+      "collected_at": "2026-11-13T04:16:54.8520824Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-skillline",
+      "source_content_digest": "f3867d43ab42d1f5278e6e5028d0151bc06e4ef8e5cbd790a20df6ee57aa654d",
+      "source_url": "https://wago.tools/db2/SkillLine/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5248,
+      "collected_at": "2026-11-13T04:11:19.7664802Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-skillraceclass",
+      "source_content_digest": "2193908c90f65d38fa9bc68907217fd759c132ccdc9f882cd3bc5acecabba322",
+      "source_url": "https://wago.tools/db2/SkillRaceClassInfo/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 5248,
+      "collected_at": "2026-11-13T03:48:46.0979132Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-skillraceclass",
+      "source_content_digest": "2193908c90f65d38fa9bc68907217fd759c132ccdc9f882cd3bc5acecabba322",
+      "source_url": "https://wago.tools/db2/SkillRaceClassInfo/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 18653,
+      "collected_at": "2026-11-13T04:11:21.5386368Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-chrraces",
+      "source_content_digest": "8d61c45ec7d23535c3916642ae4b3a8341e38ac0cdca817144536b954488bd23",
+      "source_url": "https://wago.tools/db2/ChrRaces/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 18653,
+      "collected_at": "2026-11-13T03:48:47.3354540Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-chrraces",
+      "source_content_digest": "8d61c45ec7d23535c3916642ae4b3a8341e38ac0cdca817144536b954488bd23",
+      "source_url": "https://wago.tools/db2/ChrRaces/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 407526,
+      "collected_at": "2026-11-13T04:16:55.1033734Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-skillabilities",
+      "source_content_digest": "13ef58a08253125e3e9dca642a39bc480187987e90cfbe5c8be30e1ab3c8be0a",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 407525,
+      "collected_at": "2026-11-13T03:59:43.6962950Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-skills",
+      "source_content_digest": "6696abd03ef90ad250a12ac23778616c292c46f6a0082130fbe187c96ead0aa0",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "changed_skill_abilities": [
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 1861,
+        "skill_line": 164
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52641,
+        "skill_line": 129
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52642,
+        "skill_line": 182
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52643,
+        "skill_line": 186
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52644,
+        "skill_line": 393
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52645,
+        "skill_line": 164
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52646,
+        "skill_line": 171
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52647,
+        "skill_line": 165
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52648,
+        "skill_line": 197
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52649,
+        "skill_line": 333
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 52650,
+        "skill_line": 202
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 56361,
+        "skill_line": 197
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57006,
+        "skill_line": 171
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57011,
+        "skill_line": 202
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh",
+          "TrivialSkillLineRankLow"
+        ],
+        "id": 57015,
+        "skill_line": 165
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57016,
+        "skill_line": 186
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57017,
+        "skill_line": 393
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57018,
+        "skill_line": 197
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57020,
+        "skill_line": 164
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57021,
+        "skill_line": 185
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57022,
+        "skill_line": 333
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57024,
+        "skill_line": 129
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57025,
+        "skill_line": 356
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57026,
+        "skill_line": 182
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 57200,
+        "skill_line": 185
+      },
+      {
+        "changed_fields": [
+          "TrivialSkillLineRankHigh"
+        ],
+        "id": 58290,
+        "skill_line": 185
+      }
+    ],
+    "proficiency_and_race_tables_identical": true,
+    "unchanged_profession_eligibility": true
+  },
+  "source_content_digest": "2193908c90f65d38fa9bc68907217fd759c132ccdc9f882cd3bc5acecabba322",
+  "url": "https://wago.tools/db2/SkillRaceClassInfo/csv?build=1.60.1.70938#forever-leveling-eligibility"
+}

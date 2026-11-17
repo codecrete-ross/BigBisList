@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Deepdive Helmet Item Level 46 Binds when equipped Head Cloth 49 Armor +4 Stamina Durability 45 / 45 Requires Engineering (230) Equip: Water breathing lasts 100% longer than normal. Sell Price: 52 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10506,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 49,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Water breathing lasts 100% longer than normal.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Water breathing lasts 100% longer than normal."
+    ],
+    "id": 10506,
+    "item_level": 46,
+    "name": "Deepdive Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10506"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 1320643,
+      "name": "Water breathing lasts 100% longer than normal.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1320643"
+    }
+  ],
+  "name": "Deepdive Helmet",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Deepdive Helmet Item Level 46 Binds when equipped Head Cloth 49 Armor +4 Stamina Durability 45 / 45 Requires Engineering (230) Equip: Water breathing lasts 100% longer than normal. Sell Price: 52 27",
+      "scope": "equip_or_use",
+      "skill": 230,
+      "source_url": "https://www.wowhead.com/forever/item=10506",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "0cc9f89c58924fb48bc90623f0e8780032ae7b7a048ace8a51b59ef29a044042",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10506",
+  "url": "https://www.wowhead.com/forever/item=10506"
+}

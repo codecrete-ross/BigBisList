@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Sunder Armor Rank 1 15 Rage Melee Range Instant Requires Warrior Requires level 10 Requires Melee Weapon Sunders the target's armor, reducing it by 90 per Sunder Armor and causes a high amount of threat. Can be applied up to 5 times. Lasts 30 sec.",
+  "entity_id": 7386,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:09+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7386,
+      "name": "Sunder Armor",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7386"
+    }
+  ],
+  "name": "Sunder Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "f84920049939bbdf38b110fd690589368e927f5c38c96cef37a47c7d261cd56f",
+  "spell_id": 7386,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/7386",
+  "url": "https://www.wowhead.com/forever/spell=7386"
+}

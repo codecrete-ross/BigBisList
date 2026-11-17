@@ -1,0 +1,154 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Arcanite Champion Item Level 63 Requires Blacksmithing (300) Requires Master Swordsmith Use: Teaches you how to make an Arcanite Champion. Sell Price: 2 Dropped by: Goraluk Anvilcrack Drop Chance: 8.69%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Two Hand",
+      "item_id": 12790,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "dps": 53.82,
+        "id": 12790,
+        "name": "Arcanite Champion",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Two Hand",
+        "source_summary": "",
+        "weapon_max_damage": 220,
+        "weapon_min_damage": 146,
+        "weapon_speed": 3.4,
+        "weapon_subtype": "Sword",
+        "weapon_type": "Two Hand",
+        "wowhead_url": "https://www.wowhead.com/forever/item=12790"
+      },
+      "name": "Arcanite Champion",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=12790"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:01:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12834,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Arcanite Champion.",
+        "type": "use"
+      }
+    ],
+    "id": 12834,
+    "item_level": 63,
+    "name": "Plans: Arcanite Champion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make an Arcanite Champion."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12834"
+  },
+  "linked_entities": [
+    {
+      "id": 12360,
+      "name": "Arcanite Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12360"
+    },
+    {
+      "id": 12644,
+      "name": "Dense Grinding Stone",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12644"
+    },
+    {
+      "id": 12790,
+      "name": "Arcanite Champion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12790"
+    },
+    {
+      "id": 12799,
+      "name": "Large Opal",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12799"
+    },
+    {
+      "id": 12800,
+      "name": "Azerothian Diamond",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12800"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 12811,
+      "name": "Righteous Orb",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12811"
+    },
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 16916,
+      "name": "Heal yourself for 270 to 450 and increase your Strength by 120 for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16916"
+    },
+    {
+      "id": 16990,
+      "name": "Teaches you how to make an Arcanite Champion.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16990"
+    }
+  ],
+  "name": "Plans: Arcanite Champion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Arcanite Champion Item Level 63 Requires Blacksmithing (300) Requires Master Swordsmith Use: Teaches you how to make an Arcanite Champion. Sell Price: 2 Dropped by: Goraluk Anvilcrack Drop Chance: 8.69%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=12834",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.69,
+      "entity_name": "Goraluk Anvilcrack",
+      "source_url": "https://www.wowhead.com/forever/item=12834",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    16990
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12834",
+  "url": "https://www.wowhead.com/forever/item=12834"
+}

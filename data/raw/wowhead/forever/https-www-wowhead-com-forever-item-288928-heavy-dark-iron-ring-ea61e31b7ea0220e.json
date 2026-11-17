@@ -1,0 +1,74 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=288928/heavy-dark-iron-ring"
+    },
+    {
+      "credit": "60.tools",
+      "source": "https://www.60.tools/items/288928-heavy-dark-iron-ring"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 966,
+      "collected_at": "2026-11-13T06:25:06.8510020Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-tooltip-288928",
+      "source_content_digest": "57bdb491900cdd25e36f591982bbdad8d3fc56ba99cd4b960e97687016f475a5",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/288928"
+    },
+    {
+      "bytes": 129910,
+      "collected_at": "2026-11-13T06:29:22.9643040Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-60-288928",
+      "source_content_digest": "c7fbe1d4f9b974f670c5e3a862bd2c90b892ce9f3af94b94735e817b523aec70",
+      "source_url": "https://www.60.tools/items/288928-heavy-dark-iron-ring"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:25:06.4472422Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "beta-main-288928",
+      "source_content_digest": "301c61b7b7781c719a97ca48aef4d3bc02ba7f3e1fc092b69df66e9f46c8b94e",
+      "source_url": "https://www.wowhead.com/forever/item=288928/heavy-dark-iron-ring"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability": "unavailable_to_players",
+    "capture_method": "indexed_search_excerpt",
+    "corroboration": "60.tools also identifies this exact item as an October 22 beta celebration reward.",
+    "current_tooltip_additional_stats": {
+      "armor": 53
+    },
+    "digest_input": "normalized indexed item-page finding",
+    "historical_event_evidence": [
+      "https://daybreakforever.com/blog/molten-core-loot-at-level-30",
+      "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt",
+      "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633"
+    ],
+    "item_id": 288928,
+    "item_name": "Heavy Dark Iron Ring",
+    "page_crawl_age_at_review": "2 days ago"
+  },
+  "source_content_digest": "60976f8542ab58573fc501a8aea788f976436f5e870a4410b3f8caa4de4c9707",
+  "unavailable_item_ids": [
+    288928
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=288928/heavy-dark-iron-ring"
+}

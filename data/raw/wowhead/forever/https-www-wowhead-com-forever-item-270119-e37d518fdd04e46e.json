@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dark Iron Signet Item Level 54 Binds when picked up Finger +5 Stamina Equip: Improves your chance to get a critical strike by 0.5%. Equip: + 14 Attack Power. Sell Price: 1 24 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 270119,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +14 Attack Power.",
+        "stats": {
+          "attack_power": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%."
+    ],
+    "id": 270119,
+    "item_level": 54,
+    "name": "Dark Iron Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 14.0,
+      "crit_percent": 0.5,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270119"
+  },
+  "linked_entities": [],
+  "name": "Dark Iron Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "ca2bc2b0670a17172bcfb089d0b2c906da152680a0d05bf2f7a5de02d4d2d5e2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270119",
+  "url": "https://www.wowhead.com/forever/item=270119"
+}

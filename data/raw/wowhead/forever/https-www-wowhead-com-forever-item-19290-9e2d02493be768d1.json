@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmoon Card: Twisting Nether Item Level 66 Binds when picked up Unique Trinket Requires Level 60 Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana. Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19290,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Gives the wearer a 10% chance of being able to resurrect with 20% health and mana."
+    ],
+    "id": 19290,
+    "item_level": 66,
+    "name": "Darkmoon Card: Twisting Nether",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19290"
+  },
+  "linked_entities": [
+    {
+      "id": 23701,
+      "name": "Gives the wearer a 10% chance of being able to resurrect with 20% health and mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23701"
+    }
+  ],
+  "name": "Darkmoon Card: Twisting Nether",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19290",
+  "url": "https://www.wowhead.com/forever/item=19290"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmoon Ring Item Level 55 Binds when picked up Finger +14 Stamina Restores + 14 health per 5 sec. Requires Level 50 Sell Price: 1 51 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 19302,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +14 health per 5 sec.",
+        "stats": {
+          "hp5": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 19302,
+    "item_level": 55,
+    "name": "Darkmoon Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hp5": 14.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19302"
+  },
+  "linked_entities": [],
+  "name": "Darkmoon Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19302",
+  "url": "https://www.wowhead.com/forever/item=19302"
+}

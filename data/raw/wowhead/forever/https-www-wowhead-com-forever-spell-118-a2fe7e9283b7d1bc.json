@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Polymorph 60 Mana 30 yd range 1.5 sec cast Requires Mage Requires level 8 Transforms the enemy into a sheep, forcing it to wander around for up to 20 sec. While wandering, the sheep cannot attack or cast spells but will regenerate very quickly. Any damage will transform the target back into its normal form. Only one target can be polymorphed at a time. Only works on Beasts, Humanoids and Critters.",
+  "entity_id": 118,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:32+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 118,
+      "name": "Polymorph",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=118"
+    }
+  ],
+  "name": "Polymorph",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "77a0da3c671a07492893ad006d012b00c1f5381f8971ffd29036d8b8d738eec2",
+  "spell_id": 118,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/118",
+  "url": "https://www.wowhead.com/forever/spell=118"
+}

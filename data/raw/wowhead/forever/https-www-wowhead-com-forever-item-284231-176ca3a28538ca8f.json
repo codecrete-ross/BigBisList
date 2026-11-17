@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sayaad Charm Item Level 63 Binds when picked up Unique-Equipped Trinket +20 Shadow Resistance Requires Level 58 Use: Charms the target, preventing all actions for up to 15 sec. Any damage caused will remove the effect. Only works against Humanoids. (15 Min Cooldown) \"Not quite as seductive as a Sayaad.\" Sell Price: 2 24 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 284231,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Charms the target, preventing all actions for up to 15 sec. Any damage caused will remove the effect. Only works against Humanoids. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 284231,
+    "item_level": 63,
+    "name": "Sayaad Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 20.0
+    },
+    "use_effects": [
+      "Use: Charms the target, preventing all actions for up to 15 sec. Any damage caused will remove the effect. Only works against Humanoids. (15 Min Cooldown) \"Not quite as seductive as a Sayaad.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=284231"
+  },
+  "linked_entities": [
+    {
+      "id": 1315557,
+      "name": "Charms the target, preventing all actions for up to 15 sec. Any damage caused will remove the effect. Only works against Humanoids.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315557"
+    }
+  ],
+  "name": "Sayaad Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "51d2c94ca01b55ee74cf5c164319d5dd4f517f70f7634c67958286ae926fba4d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284231",
+  "url": "https://www.wowhead.com/forever/item=284231"
+}

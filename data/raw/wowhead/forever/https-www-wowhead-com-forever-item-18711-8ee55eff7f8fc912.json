@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Arena Bands Item Level 50 Binds when equipped Wrist Mail 131 Armor +6 Stamina Durability 40 / 40 Requires Level 45 Equip: + 28 Attack Power. Sell Price: 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 18711,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 131,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +28 Attack Power."
+    ],
+    "id": 18711,
+    "item_level": 50,
+    "name": "Arena Bands",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18711"
+  },
+  "linked_entities": [],
+  "name": "Arena Bands",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18711",
+  "url": "https://www.wowhead.com/forever/item=18711"
+}

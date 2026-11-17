@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bands of Serra'kis Item Level 27 Binds when picked up Wrist Leather 43 Armor +6 Strength +3 Stamina Durability 30 / 30 Requires Level 22 Sell Price: 10 20 Dropped by: Old Serra'kis Drop Chance: 33.41%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 6902,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6902,
+    "item_level": 27,
+    "name": "Bands of Serra'kis",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6902"
+  },
+  "linked_entities": [],
+  "name": "Bands of Serra'kis",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.41,
+      "entity_name": "Old Serra'kis",
+      "source_url": "https://www.wowhead.com/forever/item=6902",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6902",
+  "url": "https://www.wowhead.com/forever/item=6902"
+}

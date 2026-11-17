@@ -1,0 +1,67 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Large Copper Bomb Item Level 26 Requires Engineering (105) Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown) Max Stack: 10 Sell Price: 1 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:43:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 4370,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 4370,
+    "item_level": 26,
+    "name": "Large Copper Bomb",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown) Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=4370"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 4065,
+      "name": "Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=4065"
+    }
+  ],
+  "name": "Large Copper Bomb",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Large Copper Bomb Item Level 26 Requires Engineering (105) Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown) Max Stack: 10 Sell Price: 1 75",
+      "scope": "equip_or_use",
+      "skill": 105,
+      "source_url": "https://www.wowhead.com/forever/item=4370",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "03550459adea8256e703f68260259e693dcd44b159019777edfc75b3af305278",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4370",
+  "url": "https://www.wowhead.com/forever/item=4370"
+}

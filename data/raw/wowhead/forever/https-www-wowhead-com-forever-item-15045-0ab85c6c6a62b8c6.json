@@ -1,0 +1,101 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Green Dragonscale Breastplate Item Level 52 Binds when equipped Chest Mail 311 Armor +10 Stamina +11 Nature Resistance Durability 120 / 120 Requires Level 47 Equip: Increases healing done by up to 10 and damage done by up to 21 for all magical spells and effects. Green Dragon Mail (0/3) Green Dragonscale Breastplate Green Dragonscale Leggings Green Dragonscale Gauntlets (2) Set : Restores 3 mana per 5 sec. (3) Set : Allows 15% of your Mana regeneration to continue while casting. Sell Price: 1 99 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:46:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 15045,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 311,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 10 and damage done by up to 21 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 10,
+          "spell_damage": 21
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 10 and damage done by up to 21 for all magical spells and effects."
+    ],
+    "id": 15045,
+    "item_level": 52,
+    "name": "Green Dragonscale Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 21625,
+        "text": "Restores 3 mana per 5 sec."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 21894,
+        "text": "Allows 15% of your Mana regeneration to continue while casting."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 10.0,
+      "nature_resistance": 11.0,
+      "spell_damage": 21.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15045"
+  },
+  "linked_entities": [
+    {
+      "id": 15045,
+      "name": "Green Dragonscale Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15045"
+    },
+    {
+      "id": 15046,
+      "name": "Green Dragonscale Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15046"
+    },
+    {
+      "id": 20296,
+      "name": "Green Dragonscale Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20296"
+    },
+    {
+      "id": 21625,
+      "name": "Restores 3 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21625"
+    },
+    {
+      "id": 21894,
+      "name": "Allows 15% of your Mana regeneration to continue while casting.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21894"
+    }
+  ],
+  "name": "Green Dragonscale Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15045",
+  "url": "https://www.wowhead.com/forever/item=15045"
+}

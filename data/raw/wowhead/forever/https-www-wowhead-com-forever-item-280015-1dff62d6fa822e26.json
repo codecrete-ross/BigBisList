@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Venomvessel Ring Item Level 63 Binds when picked up Unique-Equipped Finger +11 Stamina +9 Spirit Requires Level 58 Equip: Improves your chance to hit by 1.1%. Sell Price: 2 39 65",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 280015,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.1%.",
+        "stats": {
+          "hit_percent": 1.1
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.1%."
+    ],
+    "id": 280015,
+    "item_level": 63,
+    "name": "Venomvessel Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.1,
+      "spirit": 9.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=280015"
+  },
+  "linked_entities": [],
+  "name": "Venomvessel Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c55ad5df2b746ac7f7eab816bce7469891c045c123f8837269d9f3bb6196db5c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280015",
+  "url": "https://www.wowhead.com/forever/item=280015"
+}

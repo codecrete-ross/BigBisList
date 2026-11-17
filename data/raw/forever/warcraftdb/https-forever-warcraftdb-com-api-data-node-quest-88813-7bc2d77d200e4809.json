@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/88813"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:49.742292+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 260208,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/88813",
+      "subject_id": 88813,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "The Head of the Serpent",
+    "quest_id": 88813,
+    "reward_item_roles": {
+      "260208": "choices",
+      "260209": "choices"
+    },
+    "side": "Alliance",
+    "zone": "Azshara"
+  },
+  "source_content_digest": "afcd3d7536a0c7548a2c95fd62e6d5d1826b24133fe27649934b45d1a2a9cc07",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/88813"
+}

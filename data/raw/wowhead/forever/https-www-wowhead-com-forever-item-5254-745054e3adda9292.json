@@ -1,0 +1,65 @@
+{
+  "armor_tooltip_review": {
+    "base_armor": 67,
+    "bonus_armor": 20,
+    "collected_at": "2026-11-11T06:02:24.995830+00:00",
+    "endpoint": "https://nether.wowhead.com/forever/tooltip/item/5254",
+    "previous_evidence": {
+      "content_digest": "c606492cbc75fdb2dfcf9c9398ce6c122eb0ac49012362e8aee7568b0ee73ed8",
+      "evidence_id": "wowhead:745054e3adda9292d5715962"
+    },
+    "source_content_digest": "87bfee86ea749b2b3efb828d543c7bd837ad00fb0e99f1fc52607abeff4b7006"
+  },
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rugged Spaulders Item Level 22 Binds when picked up Shoulder Leather 67 Armor +20 Armor +2 Arcane Resistance +2 Fire Resistance +2 Nature Resistance +2 Frost Resistance +2 Shadow Resistance Durability 40 / 40 Requires Level 17 Sell Price: 8 49 Dropped by: Rethilgore Drop Chance: 81.62%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 5254,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 87,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5254,
+    "item_level": 22,
+    "name": "Rugged Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 2.0,
+      "fire_resistance": 2.0,
+      "frost_resistance": 2.0,
+      "nature_resistance": 2.0,
+      "shadow_resistance": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5254"
+  },
+  "linked_entities": [],
+  "name": "Rugged Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 81.62,
+      "entity_name": "Rethilgore",
+      "source_url": "https://www.wowhead.com/forever/item=5254",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5254",
+  "url": "https://www.wowhead.com/forever/item=5254"
+}

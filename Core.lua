@@ -57,6 +57,10 @@ end
 
 function BigBiSList:ShowStatus()
     printLine(self.displayName .. " " .. self.version .. " loaded.")
+    if self.isForever and GetBuildInfo then
+        local version, build, _, interface = GetBuildInfo()
+        printLine("WoW Forever " .. tostring(version) .. "." .. tostring(build) .. " · Interface " .. tostring(interface))
+    end
     printLine("Data: " .. self:GetDataSummary() .. ".")
 end
 
@@ -159,6 +163,7 @@ local function retryDetectedPlayerSelection()
         return
     end
 
+    if BigBiSList.isForever then BigBiSList:RefreshTooltipPlayerContext() end
     local changed = BigBiSList:ApplyDetectedPlayerSelection()
     if BigBiSList.ApplyDetectedPlayerLevel and BigBiSList:ApplyDetectedPlayerLevel() then
         changed = true
@@ -173,16 +178,27 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("PLAYER_TALENT_UPDATE")
-frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
+pcall(frame.RegisterEvent, frame, "PLAYER_TALENT_UPDATE")
+pcall(frame.RegisterEvent, frame, "CHARACTER_POINTS_CHANGED")
+if BigBiSList.isForever then
+    pcall(frame.RegisterEvent, frame, "TRAIT_CONFIG_UPDATED")
+    pcall(frame.RegisterEvent, frame, "ACTIVE_COMBAT_CONFIG_CHANGED")
+end
 frame:RegisterEvent("PLAYER_LEVEL_UP")
 frame:SetScript("OnEvent", function(_, event, loadedAddon)
     if event == "PLAYER_LOGIN"
         or event == "PLAYER_ENTERING_WORLD"
         or event == "PLAYER_TALENT_UPDATE"
         or event == "CHARACTER_POINTS_CHANGED"
+        or event == "TRAIT_CONFIG_UPDATED"
+        or event == "ACTIVE_COMBAT_CONFIG_CHANGED"
         or event == "PLAYER_LEVEL_UP" then
+        if addonInitialized and BigBiSList.ForeverScoring then
+            BigBiSList.ForeverScoring:Invalidate()
+            BigBiSList:RefreshUI("query", event)
+        end
         retryDetectedPlayerSelection()
+        if addonInitialized and BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
         return
     end
 
@@ -194,6 +210,7 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
     BigBiSList:ResetClassSpecAutoSelection()
     BigBiSList:InitUIEvents()
     BigBiSList:InitTooltip()
+    if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:Initialize() end
     BigBiSList:InitMinimapButton()
     addonInitialized = true
     retryDetectedPlayerSelection()

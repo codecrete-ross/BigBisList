@@ -1,0 +1,148 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_equipped_effect_identity",
+  "fetched_at": "2026-11-13T03:59:42.2317300Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 851160,
+      "collected_at": "2026-11-13T22:51:25.852059+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellnames",
+      "source_content_digest": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The exact ItemXItemEffect and ItemEffect rows identify these passive relic effects. Spell names identify the candidate. Without the item requirement or the grant conditions they leave availability open.",
+    "items": [
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "-1",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "-1",
+          "ID": "236112",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "1306786",
+          "TriggerType": "1"
+        },
+        "item_id": 278278,
+        "spell_name": "Libram of the Wild Sky"
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "-1",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "-1",
+          "ID": "236136",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "1307208",
+          "TriggerType": "1"
+        },
+        "item_id": 278440,
+        "spell_name": "Totem of The Undergrove"
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "-1",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "-1",
+          "ID": "236200",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "1307400",
+          "TriggerType": "1"
+        },
+        "item_id": 278460,
+        "spell_name": "Idol of the Wild Court"
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "-1",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "-1",
+          "ID": "236455",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "1308939",
+          "TriggerType": "1"
+        },
+        "item_id": 278963,
+        "spell_name": "Totem of Elders"
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "-1",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "-1",
+          "ID": "236474",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "1309062",
+          "TriggerType": "1"
+        },
+        "item_id": 278969,
+        "spell_name": "Idol of Primal Attraction"
+      }
+    ]
+  },
+  "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+  "url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938#/sealed-forever-relic-effects"
+}

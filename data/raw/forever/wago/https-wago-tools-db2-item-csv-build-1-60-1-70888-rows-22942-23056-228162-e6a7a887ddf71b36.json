@@ -1,0 +1,69 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "catalog_kind": "client_metadata",
+  "client_build": "1.60.1.70888",
+  "confidence": "client_metadata_only",
+  "equipment_source_rows": [
+    {
+      "ClassID": 2,
+      "ID": 22942,
+      "InventoryType": 21,
+      "SubclassID": 4
+    },
+    {
+      "ClassID": 2,
+      "ID": 23056,
+      "InventoryType": 21,
+      "SubclassID": 4
+    },
+    {
+      "ClassID": 2,
+      "ID": 228162,
+      "InventoryType": 21,
+      "SubclassID": 15
+    }
+  ],
+  "fetched_at": "2026-11-11T01:18:52+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "records": 32008,
+      "sha256": "037ac6248ce1fceaad391fb0ec717cdb7ae1e8999e8c976c11b086a05deb5c57",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70888"
+    }
+  ],
+  "inventory_type_reference": {
+    "content_digest": "c7258f902655762a7a9b4080872389411488a63788d680f0451db747399b9bbd",
+    "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h",
+    "symbol": "INVTYPE_WEAPONMAINHAND",
+    "value": 21
+  },
+  "page_type": "catalog",
+  "provider": "wago",
+  "records": [
+    {
+      "item_id": 22942,
+      "slot": "Main Hand",
+      "weapon_subtype": "Mace"
+    },
+    {
+      "item_id": 23056,
+      "slot": "Main Hand",
+      "weapon_subtype": "Mace"
+    },
+    {
+      "item_id": 228162,
+      "slot": "Main Hand",
+      "weapon_subtype": "Dagger"
+    }
+  ],
+  "relationships": [],
+  "source_content_digest": "037ac6248ce1fceaad391fb0ec717cdb7ae1e8999e8c976c11b086a05deb5c57",
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70888#/rows/22942,23056,228162"
+}

@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "ForeverDB public quest observations",
+      "source": "https://foreverdb.net/quest/97225-forgotten-loa-idols"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T05:56:50.503505+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "foreverdb",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 281268,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://foreverdb.net/quest/97225-forgotten-loa-idols",
+      "subject_id": 97225,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_min_level": 4,
+    "observed_turn_in_level": 5,
+    "quest_id": 97225,
+    "quest_level": 9,
+    "reward_item_ids": [
+      281268
+    ]
+  },
+  "source_content_digest": "e25bfe62ff11600a8b1144938d96a15272e93ef192c0a6693907eb2e6c465ef5",
+  "url": "https://foreverdb.net/quest/97225-forgotten-loa-idols"
+}

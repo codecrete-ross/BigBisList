@@ -1,0 +1,40 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Create Elemental Totem Instant Requires level 1 Reagents: Silvery Claws (11), Irontree Heart",
+  "entity_id": 13909,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:21.4931165Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11172,
+      "name": "Silvery Claws",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11172"
+    },
+    {
+      "id": 11173,
+      "name": "Irontree Heart",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11173"
+    },
+    {
+      "id": 13909,
+      "name": "Create Elemental Totem",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13909"
+    }
+  ],
+  "name": "Create Elemental Totem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "5693821fb93154312dcd79e4194334c30b37d7d281ffd2c5b79cbc8d6adb3283",
+  "spell_id": 13909,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/13909?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/spell=13909"
+}

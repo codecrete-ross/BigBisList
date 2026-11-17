@@ -1,0 +1,143 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Dreadweave Cowl Item Level 71 Binds when picked up Head Cloth 81 Armor +32 Stamina +18 Intellect Durability 50 / 50 Classes: Warlock Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 21 . Champion's Threads (0/6) Blood Guard's Dreadweave Handwraps Blood Guard's Dreadweave Walkers Champion's Dreadweave Cowl Champion's Dreadweave Spaulders Legionnaire's Dreadweave Legguards Legionnaire's Dreadweave Tunic (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Reduces the casting time of your Immolate spell by 0.2 sec. (6) Set : +20 Stamina. Sell Price: 1 24 43",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227090,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 81,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 21.",
+        "stats": {
+          "spell_power": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 21."
+    ],
+    "id": 227090,
+    "item_level": 71,
+    "name": "Champion's Dreadweave Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23047,
+        "text": "Reduces the casting time of your Immolate spell by 0.2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 18.0,
+      "spell_power": 21.0,
+      "stamina": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227090"
+  },
+  "linked_entities": [
+    {
+      "id": 227090,
+      "name": "Champion's Dreadweave Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227090"
+    },
+    {
+      "id": 227092,
+      "name": "Champion's Dreadweave Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227092"
+    },
+    {
+      "id": 227094,
+      "name": "Legionnaire's Dreadweave Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227094"
+    },
+    {
+      "id": 227097,
+      "name": "Legionnaire's Dreadweave Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227097"
+    },
+    {
+      "id": 227098,
+      "name": "Blood Guard's Dreadweave Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227098"
+    },
+    {
+      "id": 227099,
+      "name": "Blood Guard's Dreadweave Handwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227099"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23047,
+      "name": "Reduces the casting time of your Immolate spell by 0.2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23047"
+    }
+  ],
+  "name": "Champion's Dreadweave Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8525c6ef428b81cf46a659682f4fe886a935915db98c7e13b44d9c554d7f9408",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227090",
+  "url": "https://www.wowhead.com/forever/item=227090"
+}

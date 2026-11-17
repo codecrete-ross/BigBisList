@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Frost Trap 60 Mana Instant 30 sec cooldown Requires Hunter Requires level 28 Place a Frost trap that creates an ice slick around itself for 30 sec when the first enemy approaches it. All enemies within 10 yards will be slowed by 60% while in the area of effect. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+  "entity_id": 13809,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:42+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 13809,
+      "name": "Frost Trap",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13809"
+    }
+  ],
+  "name": "Frost Trap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "34525f42f8b2a459423da176545ef2f7756d5e9f1054ca182b841fcfc6f0d7b0",
+  "spell_id": 13809,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/13809",
+  "url": "https://www.wowhead.com/forever/spell=13809"
+}

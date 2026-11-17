@@ -1,0 +1,175 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Wildheart Gloves Item Level 59 Binds when equipped Hands Leather 105 Armor +9 Intellect +21 Spirit Durability 35 / 35 Requires Level 54 Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. Wildheart Raiment (0/8) Wildheart Belt Wildheart Boots Wildheart Bracers Wildheart Cowl Wildheart Vest Wildheart Spaulders Wildheart Kilt Wildheart Gloves (2) Set : +8 All Resistances. (3) Set : Increases damage and healing done by magical spells and effects by up to 18. (3) Set : +30 Attack Power. (4) Set : When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown) (5) Set : Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage. (6) Set : Restores 8 mana per 5 sec. Sell Price: 1 19 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 16717,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 105,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 11,
+          "spell_damage": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
+    ],
+    "id": 16717,
+    "item_level": 59,
+    "name": "Wildheart Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302708,
+        "text": "When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450608,
+        "text": "Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 11.0,
+      "intellect": 9.0,
+      "spell_damage": 4.0,
+      "spirit": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16717"
+  },
+  "linked_entities": [
+    {
+      "id": 16706,
+      "name": "Wildheart Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16706"
+    },
+    {
+      "id": 16714,
+      "name": "Wildheart Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16714"
+    },
+    {
+      "id": 16715,
+      "name": "Wildheart Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16715"
+    },
+    {
+      "id": 16716,
+      "name": "Wildheart Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16716"
+    },
+    {
+      "id": 16717,
+      "name": "Wildheart Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16717"
+    },
+    {
+      "id": 16718,
+      "name": "Wildheart Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16718"
+    },
+    {
+      "id": 16719,
+      "name": "Wildheart Kilt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16719"
+    },
+    {
+      "id": 16720,
+      "name": "Wildheart Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16720"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450608,
+      "name": "Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450608"
+    },
+    {
+      "id": 1302708,
+      "name": "When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302708"
+    }
+  ],
+  "name": "Wildheart Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16717",
+  "url": "https://www.wowhead.com/forever/item=16717"
+}

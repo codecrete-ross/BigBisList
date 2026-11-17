@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Fear 15% of base mana 20 yd range 1.5 sec cast Requires Warlock Requires level 8 Strikes fear in the enemy, causing it to run in fear for up to 10 sec. Damage caused may interrupt the effect. Only 1 target can be feared at a time.",
+  "entity_id": 5782,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:32+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5782,
+      "name": "Fear",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5782"
+    }
+  ],
+  "name": "Fear",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "2bd6a7c3a05c096cfefac4c7d6ad72e4fadafe2e8d478ed31a45ed862b27bdd8",
+  "spell_id": 5782,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5782",
+  "url": "https://www.wowhead.com/forever/spell=5782"
+}

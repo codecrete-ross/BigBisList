@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/1035"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:08.347928+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 17047,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/1035",
+      "subject_id": 1035,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 20,
+    "name": "Fallen Sky Lake",
+    "quest_id": 1035,
+    "quest_level": 30,
+    "reward_item_ids": [
+      17047
+    ],
+    "zone": "Ashenvale"
+  },
+  "source_content_digest": "ee59ca01467c8f778099bd8b1ce35de9bd5a0223c62df94b274634f7d3f14e15",
+  "url": "https://guide.wow4ever.se/en/quests/1035"
+}

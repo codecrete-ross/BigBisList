@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Satin Shoulderpads Item Level 63 Binds when picked up Unique Shoulder Cloth 67 Armor +16 Stamina +15 Intellect Classes: Priest Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Champion's Raiment (0/6) Blood Guard's Satin Boots Blood Guard's Satin Gloves Legionnaire's Satin Vestments Legionnaire's Satin Trousers Champion's Satin Shoulderpads Champion's Satin Cowl (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Increases the duration of your Psychic Scream spell by 1 sec. (6) Set : +15 Stamina. Sell Price: 84 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 17613,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 17613,
+    "item_level": 63,
+    "name": "Champion's Satin Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23044,
+        "text": "Increases the duration of your Psychic Scream spell by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 12.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17613"
+  },
+  "linked_entities": [
+    {
+      "id": 17610,
+      "name": "Champion's Satin Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17610"
+    },
+    {
+      "id": 17611,
+      "name": "Legionnaire's Satin Trousers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17611"
+    },
+    {
+      "id": 17612,
+      "name": "Legionnaire's Satin Vestments",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17612"
+    },
+    {
+      "id": 17613,
+      "name": "Champion's Satin Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17613"
+    },
+    {
+      "id": 17616,
+      "name": "Blood Guard's Satin Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17616"
+    },
+    {
+      "id": 17617,
+      "name": "Blood Guard's Satin Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17617"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    },
+    {
+      "id": 23044,
+      "name": "Increases the duration of your Psychic Scream spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23044"
+    }
+  ],
+  "name": "Champion's Satin Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17613",
+  "url": "https://www.wowhead.com/forever/item=17613"
+}

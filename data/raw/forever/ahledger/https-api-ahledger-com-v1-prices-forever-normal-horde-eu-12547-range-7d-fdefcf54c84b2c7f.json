@@ -1,0 +1,136 @@
+{
+  "attribution": [
+    {
+      "credit": "Prices from AHledger (ahledger.com)",
+      "licence": "AHledger data terms",
+      "licenceUrl": "https://ahledger.com/developers",
+      "source": "https://ahledger.com"
+    }
+  ],
+  "confidence": "observed_auction_listing",
+  "fetched_at": "2026-11-13T04:31:37.2880149Z",
+  "flavor": "forever",
+  "market": "forever/normal/horde/eu",
+  "observed_at": "2026-11-12T10:12:34+00:00",
+  "observed_faction": "Horde",
+  "page_type": "observations",
+  "provider": "ahledger",
+  "records": [
+    {
+      "item_id": 12547,
+      "minimum_buyout_copper": null,
+      "quantity": 0
+    }
+  ],
+  "relationships": [],
+  "reviewed_page_facts": {
+    "latest_scan": {
+      "item_id": 12547,
+      "minimum_buyout_copper": null,
+      "quantity": 0
+    },
+    "positive_hourly_observations": [
+      {
+        "auctions": 1,
+        "median": 97025,
+        "min": 50000,
+        "p25": 50000,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T18:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T19:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T20:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T21:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T22:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-11T23:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 112700,
+        "min": 112700,
+        "p25": 112700,
+        "p75": 112700,
+        "quantity": 1,
+        "t": "2026-11-12T00:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 74100,
+        "min": 74100,
+        "p25": 74100,
+        "p75": 74100,
+        "quantity": 1,
+        "t": "2026-11-12T06:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 74100,
+        "min": 74100,
+        "p25": 74100,
+        "p75": 74100,
+        "quantity": 1,
+        "t": "2026-11-12T08:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 74100,
+        "min": 74100,
+        "p25": 74100,
+        "p75": 74100,
+        "quantity": 1,
+        "t": "2026-11-12T09:00:00.000Z"
+      },
+      {
+        "auctions": 1,
+        "median": 74100,
+        "min": 74100,
+        "p25": 74100,
+        "p75": 74100,
+        "quantity": 1,
+        "t": "2026-11-12T10:00:00.000Z"
+      }
+    ]
+  },
+  "source_content_digest": "da56a2acf41ae2d20a4a0f38ca0313e068f6d4bb306de96a7f6613cc20d34979",
+  "url": "https://api.ahledger.com/v1/prices/forever.normal.horde.eu/12547?range=7d"
+}

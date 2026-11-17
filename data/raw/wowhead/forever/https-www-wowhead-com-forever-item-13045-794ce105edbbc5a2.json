@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Viscous Hammer Item Level 35 Binds when equipped Two-Hand Mace 70 - 105 Damage Speed 2.90 (30.17 damage per second) +3 Strength +6 Stamina Durability 100 / 100 Requires Level 30 Equip: + 34 Attack Power. Sell Price: 1 8 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:44:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 13045,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 30.17,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +34 Attack Power.",
+        "stats": {
+          "attack_power": 34
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +34 Attack Power."
+    ],
+    "id": 13045,
+    "item_level": 35,
+    "name": "Viscous Hammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 30,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0,
+      "stamina": 6.0,
+      "strength": 3.0
+    },
+    "weapon_max_damage": 105,
+    "weapon_min_damage": 70,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13045"
+  },
+  "linked_entities": [],
+  "name": "Viscous Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13045",
+  "url": "https://www.wowhead.com/forever/item=13045"
+}

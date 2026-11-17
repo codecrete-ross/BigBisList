@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Salve and Salvation Item Level 38 Binds when picked up Held In Off-hand +9 Spirit +50 Armor Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects. Sell Price: 43 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T06:24:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 276898,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 9,
+          "spell_damage": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects."
+    ],
+    "id": 276898,
+    "item_level": 38,
+    "name": "Salve and Salvation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 9.0,
+      "spell_damage": 3.0,
+      "spirit": 9.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=276898"
+  },
+  "linked_entities": [],
+  "name": "Salve and Salvation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9ffd3b64a3eef43dab18ddae2eebdca1ab110cee36bc081aeebab307cfea2830",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276898",
+  "url": "https://www.wowhead.com/forever/item=276898"
+}

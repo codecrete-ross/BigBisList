@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Totemic Leather Hood Item Level 25 Binds when picked up Head Leather 76 Armor +10 Stamina Durability 50 / 50 Requires Level 20 Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 11 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 252448,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 76,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 252448,
+    "item_level": 25,
+    "name": "Totemic Leather Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 9.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=252448"
+  },
+  "linked_entities": [],
+  "name": "Totemic Leather Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9f8810184370df819ad886acba36ffcd3ed96fe6e0f522ede6802d5532a456d2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252448",
+  "url": "https://www.wowhead.com/forever/item=252448"
+}

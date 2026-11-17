@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Earthen Wrath Item Level 62 Binds when picked up Unique Finger +8 Intellect Restores + 3 mana per 5 sec. Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 1 7 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 21179,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +3 mana per 5 sec.",
+        "stats": {
+          "mp5": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 21179,
+    "item_level": 62,
+    "name": "Band of Earthen Wrath",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 8.0,
+      "mp5": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21179"
+  },
+  "linked_entities": [],
+  "name": "Band of Earthen Wrath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21179",
+  "url": "https://www.wowhead.com/forever/item=21179"
+}

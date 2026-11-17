@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "The Forever Era",
+      "licence": "Public game-server observations. Quest text \u00a9 Blizzard Entertainment.",
+      "source": "https://theforeverera.com/en/quests/3369/"
+    }
+  ],
+  "client_build": "1.60.1.70862",
+  "confidence": "published_forever_server_observation",
+  "fetched_at": "2026-11-11T05:15:41+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "foreverera",
+  "relationships": [
+    {
+      "confidence": "published_forever_server_observation",
+      "object_id": 10657,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://theforeverera.com/en/quests/3369/",
+      "subject_id": 3369,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_forever_server_observation",
+      "object_id": 10658,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://theforeverera.com/en/quests/3369/",
+      "subject_id": 3369,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "documented_prerequisite_quest_id": 6981,
+    "min_level": 10,
+    "prerequisite_provenance": "CMaNGOS Classic-DB cross-checked with the live quest chain",
+    "reward_choice_ids": [
+      10657,
+      10658
+    ],
+    "reward_observed_on": "2026-11-08"
+  },
+  "source_content_digest": "326912f76a5acdce1b94a031f58a880b30c9b290174fcdd09c2670d41df1a22f",
+  "url": "https://theforeverera.com/en/quests/3369/"
+}

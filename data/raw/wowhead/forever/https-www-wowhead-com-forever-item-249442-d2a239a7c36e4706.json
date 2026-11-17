@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Invocation Item Level 45 Binds when picked up Relic Libram Requires Level 40 Equip: Reduces the mana cost of your Seal spells by 5%. Sell Price: 26 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 249442,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the mana cost of your Seal spells by 5%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the mana cost of your Seal spells by 5%."
+    ],
+    "id": 249442,
+    "item_level": 45,
+    "name": "Libram of Invocation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=249442"
+  },
+  "linked_entities": [
+    {
+      "id": 1249005,
+      "name": "Reduces the mana cost of your Seal spells by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249005"
+    }
+  ],
+  "name": "Libram of Invocation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "dfba0018dd56d022ed737df47abf854d7a1fb37cc6ca7ec6221ade74c2d87369",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249442",
+  "url": "https://www.wowhead.com/forever/item=249442"
+}

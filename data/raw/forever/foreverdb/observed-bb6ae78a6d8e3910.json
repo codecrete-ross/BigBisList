@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "ForeverDB public quest observations",
+      "source": "https://foreverdb.net/quest/549-wanted-syndicate-personnel"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T05:56:50.503505+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "foreverdb",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 276720,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://foreverdb.net/quest/549-wanted-syndicate-personnel",
+      "subject_id": 549,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_min_level": 17,
+    "observed_turn_in_level": 21,
+    "quest_id": 549,
+    "quest_level": 22,
+    "reward_item_ids": [
+      276720
+    ]
+  },
+  "source_content_digest": "8cd0b697c85f69e8b53d194bfae0b95d8a8a06783423545a3c1cc9e48800b13b",
+  "url": "https://foreverdb.net/quest/549-wanted-syndicate-personnel"
+}

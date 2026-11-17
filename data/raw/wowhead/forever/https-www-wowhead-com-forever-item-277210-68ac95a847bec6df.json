@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pyrewood Signet Ring Item Level 25 Binds when picked up Finger +4 Agility +4 Stamina Classes: Rogue Equip: Improves your chance to hit by 0.4%. Sell Price: 13 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 277210,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.4%.",
+        "stats": {
+          "hit_percent": 0.4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.4%."
+    ],
+    "id": 277210,
+    "item_level": 25,
+    "name": "Pyrewood Signet Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "hit_percent": 0.4,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277210"
+  },
+  "linked_entities": [],
+  "name": "Pyrewood Signet Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ea60972c52451a49d03eb2e7318910f1951d8c3b67505b78ad84148d58c89dc7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277210",
+  "url": "https://www.wowhead.com/forever/item=277210"
+}

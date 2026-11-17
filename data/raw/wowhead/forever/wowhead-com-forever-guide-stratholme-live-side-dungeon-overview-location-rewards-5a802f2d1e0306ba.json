@@ -1,0 +1,84 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards"
+    },
+    {
+      "credit": "All The Things Forever dungeon catalog",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4ec52f12c1e0f3678f27a378eabe3ca518079876"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_forever_dungeon_drop",
+  "fetched_at": "2026-11-13T23:27:35.590332+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 187909,
+      "collected_at": "2026-11-13T23:27:35.590332+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-stratholme-live-guide",
+      "source_content_digest": "15195c8df77339be22c43af00a71907da4baa7cb01f4d06934a2460e2e16437b",
+      "source_url": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 1301,
+      "collected_at": "2026-11-13T23:25:00.588025+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22334",
+      "source_content_digest": "be077818bc68d0b4709ff55d2c8f9a26650be151e2e3abcad3a88083b29247ee",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22334"
+    },
+    {
+      "bytes": 1336,
+      "collected_at": "2026-11-13T23:37:38.042088+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-classic-band-of-mending",
+      "source_content_digest": "a710aebea5d9c3e8fa1e47121d008892c99ea8f5d9c2c27a721446e911c48f50",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/22334"
+    },
+    {
+      "bytes": 38500,
+      "collected_at": "2026-11-13T23:29:50.064676+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-current-stratholme",
+      "source_content_digest": "a7c72e4a4b619c9b376383f007ea142b562cf7d3481302fe2a169244367cad2e",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4ec52f12c1e0f3678f27a378eabe3ca518079876"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_forever_drop",
+      "object_id": 22334,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards",
+      "subject_id": 10812,
+      "subject_name": "Grand Crusader Dathrohan",
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "dungeon_map_id": 329,
+    "equip_level": 57,
+    "factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "finding": "The Forever tooltip associates the ring with Grand Crusader Dathrohan and the current guide includes the ring under that encounter. The guide also reports a separate summoned-encounter cache. Only the direct boss route is in this approval.",
+    "item_id": 22334,
+    "npc_id": 10812,
+    "reviewed_route_minimum": 50,
+    "transformed_npc_id": 10813
+  },
+  "source_content_digest": "15195c8df77339be22c43af00a71907da4baa7cb01f4d06934a2460e2e16437b",
+  "url": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards"
+}

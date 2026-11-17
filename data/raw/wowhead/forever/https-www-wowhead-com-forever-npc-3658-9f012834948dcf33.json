@@ -1,0 +1,525 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Lizzarik Weapon Dealer Level 19 Humanoid (Normal) Ratchet",
+  "entity_id": 3658,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:30.349Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 851,
+      "name": "Cutlass",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=851"
+    },
+    {
+      "id": 852,
+      "name": "Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=852"
+    },
+    {
+      "id": 853,
+      "name": "Hatchet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=853"
+    },
+    {
+      "id": 854,
+      "name": "Quarter Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=854"
+    },
+    {
+      "id": 858,
+      "name": "Lesser Healing Potion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=858"
+    },
+    {
+      "id": 1196,
+      "name": "Tabar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1196"
+    },
+    {
+      "id": 1197,
+      "name": "Giant Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1197"
+    },
+    {
+      "id": 1198,
+      "name": "Claymore",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1198"
+    },
+    {
+      "id": 2207,
+      "name": "Jambiya",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2207"
+    },
+    {
+      "id": 2455,
+      "name": "Minor Mana Potion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2455"
+    },
+    {
+      "id": 4765,
+      "name": "Enamelled Broadsword",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4765"
+    },
+    {
+      "id": 4766,
+      "name": "Feral Blade",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4766"
+    },
+    {
+      "id": 4777,
+      "name": "Ironwood Maul",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4777"
+    },
+    {
+      "id": 4778,
+      "name": "Heavy Spiked Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4778"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 14 of 14",
+    "1 - 14 of 14"
+  ],
+  "location_name": "The Barrens",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          52.4,
+          30.6
+        ],
+        [
+          52.8,
+          31
+        ],
+        [
+          58,
+          38
+        ],
+        [
+          58.6,
+          38.4
+        ],
+        [
+          59.4,
+          38.8
+        ],
+        [
+          60,
+          38.8
+        ],
+        [
+          60.4,
+          38.4
+        ],
+        [
+          60.8,
+          38.2
+        ],
+        [
+          61.8,
+          38.2
+        ]
+      ]
+    },
+    "zone": 17
+  },
+  "name": "Lizzarik",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 19",
+    "React: A\u00a0H",
+    "Faction: Ratchet",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 449"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 851,
+      "object_name": "Cutlass",
+      "object_type": "item",
+      "price_copper": 2023,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cutlass",
+        "15",
+        "10",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "20 23"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 852,
+      "object_name": "Mace",
+      "object_type": "item",
+      "price_copper": 1739,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Mace",
+        "14",
+        "9",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "17 39"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 853,
+      "object_name": "Hatchet",
+      "object_type": "item",
+      "price_copper": 2409,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Hatchet",
+        "16",
+        "11",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "24 9"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 854,
+      "object_name": "Quarter Staff",
+      "object_type": "item",
+      "price_copper": 3022,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Quarter Staff",
+        "16",
+        "11",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "30 22"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 858,
+      "object_name": "Lesser Healing Potion",
+      "object_type": "item",
+      "price_copper": 100,
+      "relation": "sells",
+      "required_level": 3,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(3)",
+        "Lesser Healing Potion",
+        "13",
+        "3",
+        "",
+        "",
+        "",
+        "Crafted, Drop, Quest, Vendor, Fished, Pickpocketed",
+        "Potion",
+        "1"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1196,
+      "object_name": "Tabar",
+      "object_type": "item",
+      "price_copper": 2214,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tabar",
+        "14",
+        "9",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "22 14"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1197,
+      "object_name": "Giant Mace",
+      "object_type": "item",
+      "price_copper": 2666,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Giant Mace",
+        "15",
+        "10",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "26 66"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1198,
+      "object_name": "Claymore",
+      "object_type": "item",
+      "price_copper": 2676,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Claymore",
+        "15",
+        "10",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "26 76"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2207,
+      "object_name": "Jambiya",
+      "object_type": "item",
+      "price_copper": 2390,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Jambiya",
+        "16",
+        "11",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "23 90"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2455,
+      "object_name": "Minor Mana Potion",
+      "object_type": "item",
+      "price_copper": 40,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(3)",
+        "Minor Mana Potion",
+        "15",
+        "5",
+        "",
+        "",
+        "",
+        "Crafted, Drop, Quest, Vendor, Fished",
+        "Potion",
+        "40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4765,
+      "object_name": "Enamelled Broadsword",
+      "object_type": "item",
+      "price_copper": 2877,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Enamelled Broadsword",
+        "14",
+        "9",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "28 77"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4766,
+      "object_name": "Feral Blade",
+      "object_type": "item",
+      "price_copper": 2407,
+      "relation": "sells",
+      "required_level": 8,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Feral Blade",
+        "13",
+        "8",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "24 7"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4777,
+      "object_name": "Ironwood Maul",
+      "object_type": "item",
+      "price_copper": 7040,
+      "relation": "sells",
+      "required_level": 13,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Ironwood Maul",
+        "18",
+        "13",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "70 40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4778,
+      "object_name": "Heavy Spiked Mace",
+      "object_type": "item",
+      "price_copper": 7350,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3658",
+      "subject_id": 3658,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Heavy Spiked Mace",
+        "19",
+        "14",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "73 50"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3658",
+  "url": "https://www.wowhead.com/forever/npc=3658"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Flamestarter's Signet Item Level 40 Binds when picked up Unique-Equipped Finger +10 Intellect Requires Level 35 Equip: Increases damage done by Fire spells and effects by up to 9. Sell Price: 54 34 Dropped by: \"Pyromancer\" Braxton Drop Chance: 80.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 286651,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 9.",
+        "stats": {
+          "fire_damage": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Fire spells and effects by up to 9."
+    ],
+    "id": 286651,
+    "item_level": 40,
+    "name": "Flamestarter's Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 35,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "fire_damage": 9.0,
+      "intellect": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=286651"
+  },
+  "linked_entities": [],
+  "name": "Flamestarter's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 80.0,
+      "entity_name": "\"Pyromancer\" Braxton",
+      "source_url": "https://www.wowhead.com/forever/item=286651",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "edd38bb257353d40ef58e8f1b04eb7d54967b051d66b5cb3026744aec2e53b17",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286651",
+  "url": "https://www.wowhead.com/forever/item=286651"
+}

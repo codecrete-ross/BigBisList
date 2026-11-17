@@ -1,0 +1,137 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Scarlet Belt Item Level 37 Binds when equipped Waist Mail 136 Armor +12 Strength +10 Stamina Durability 35 / 35 Requires Level 32 Chain of the Scarlet Crusade (0/6) Scarlet Belt Scarlet Boots Scarlet Chestpiece Scarlet Gauntlets Scarlet Leggings Scarlet Wristguards (2) Set : +10 Shadow Resistance. (3) Set : +30 Attack Power against Undead. (4) Set : Taking damage has a 15% chance to grant Enraging Light for 10 sec, causing your melee attacks to deal 20 Holy damage. Deals 3 times as much damage to Undead. (Proc chance: 15%, 15s cooldown) (5) Set : Improves your chance to hit by 1.0%. (6) Set : Taking damage while at or below 20% health grants you a shield, absorbing 480 damage for 10 sec. This effect can only trigger once every 4 min. (4m cooldown) Sell Price: 31 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 10329,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 136,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10329,
+    "item_level": 37,
+    "name": "Scarlet Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 32,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14673,
+        "text": "+10 Shadow Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18074,
+        "text": "+30 Attack Power against Undead."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1293674,
+        "text": "Taking damage has a 15% chance to grant Enraging Light for 10 sec, causing your melee attacks to deal 20 Holy damage. Deals 3 times as much damage to Undead. (Proc chance: 15%, 15s cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 432639,
+        "text": "Improves your chance to hit by 1.0%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1293670,
+        "text": "Taking damage while at or below 20% health grants you a shield, absorbing 480 damage for 10 sec. This effect can only trigger once every 4 min. (4m cooldown)"
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 10.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10329"
+  },
+  "linked_entities": [
+    {
+      "id": 10328,
+      "name": "Scarlet Chestpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10328"
+    },
+    {
+      "id": 10329,
+      "name": "Scarlet Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10329"
+    },
+    {
+      "id": 10330,
+      "name": "Scarlet Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10330"
+    },
+    {
+      "id": 10331,
+      "name": "Scarlet Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10331"
+    },
+    {
+      "id": 10332,
+      "name": "Scarlet Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10332"
+    },
+    {
+      "id": 10333,
+      "name": "Scarlet Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10333"
+    },
+    {
+      "id": 14673,
+      "name": "+10 Shadow Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14673"
+    },
+    {
+      "id": 18074,
+      "name": "+30 Attack Power against Undead.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18074"
+    },
+    {
+      "id": 432639,
+      "name": "Improves your chance to hit by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=432639"
+    },
+    {
+      "id": 1293670,
+      "name": "Taking damage while at or below 20% health grants you a shield, absorbing 480 damage for 10 sec. This effect can only trigger once every 4 min. (4m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293670"
+    },
+    {
+      "id": 1293674,
+      "name": "Taking damage has a 15% chance to grant Enraging Light for 10 sec, causing your melee attacks to deal 20 Holy damage. Deals 3 times as much damage to Undead. (Proc chance: 15%, 15s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293674"
+    }
+  ],
+  "name": "Scarlet Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10329",
+  "url": "https://www.wowhead.com/forever/item=10329"
+}

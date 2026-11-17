@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Scroll of Wit Item Level 55 Binds when picked up Classes: Mage Use: Use on Witchblade to create a powerful weapon. Max Stack: 5 Sell Price: 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T21:54:21.720283+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1002,
+      "collected_at": "2026-11-13T21:54:21.720283+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "scroll-of-wit-tooltip",
+      "source_content_digest": "817a320facdb20870420ea55a42b4da3864509dcdd08afe8264b5ad2de894317",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/277504"
+    }
+  ],
+  "inventory_slot": null,
+  "item_id": 277504,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Use on Witchblade to create a powerful weapon.",
+        "type": "use"
+      }
+    ],
+    "id": 277504,
+    "item_level": 55,
+    "name": "Scroll of Wit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Use on Witchblade to create a powerful weapon. Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=277504"
+  },
+  "linked_entities": [
+    {
+      "id": 1302294,
+      "name": "Use on Witchblade to create a powerful weapon.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302294"
+    }
+  ],
+  "name": "Scroll of Wit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "817a320facdb20870420ea55a42b4da3864509dcdd08afe8264b5ad2de894317",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=277504"
+}

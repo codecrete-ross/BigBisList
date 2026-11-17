@@ -1,0 +1,297 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Public enUS hotfix caches archived by Raidbots.",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "credit": "WoWSims game data export",
+      "source": "https://raw.githubusercontent.com/wowsims/gamedata/59b7950457aa85299f17a3065908bfdf68651275/items/items.txt"
+    }
+  ],
+  "catalog_kind": "client_hotfix",
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T19:11:04.471432+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 752,
+      "collected_at": "2026-11-13T19:09:56.357196+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-builds",
+      "source_content_digest": "dba52275d6dd88b459081539e5f3d378588c9fdc596fcd6c5c1bdada00c4d534",
+      "source_url": "https://us.version.battle.net/wowf/versions"
+    },
+    {
+      "bytes": 23241,
+      "collected_at": "2026-11-13T19:09:56.438710+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-index",
+      "source_content_digest": "d5fe3797f2cdb35b853a06caaa0cce98ff9b1144bb10a8e41b11a831ceaeb94e",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "bytes": 7469270,
+      "collected_at": "2026-11-13T19:11:04.471432+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-cache-0",
+      "source_content_digest": "4a5bee0931ec9dd38b64d8f50982923d0564cd7a150d65737296595978555d63",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-87DoPdEP9mER6NVTVY3UsD.bin"
+    },
+    {
+      "bytes": 7455575,
+      "collected_at": "2026-11-13T19:11:04.739399+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-cache-1",
+      "source_content_digest": "6b16ea84555a2b6544f5187906c751a89b1ef5fed6b7ff551a8bb7be3fcf7a76",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-24yFLnJFiHhrVDPavj9Lia.bin"
+    },
+    {
+      "bytes": 202,
+      "collected_at": "2026-11-13T19:11:04.545896+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowsims-state-current",
+      "source_content_digest": "7e790632853c7741a82d5edd608a6b2ebbc82f298aaa26d7b5fde219042f8d60",
+      "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/59b7950457aa85299f17a3065908bfdf68651275/state.json"
+    },
+    {
+      "bytes": 4795922,
+      "collected_at": "2026-11-13T19:11:04.323380+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowsims-items-current",
+      "source_content_digest": "8d41d518ff527b460d45559a74e57cc914e1140790fb08504b3881e04ff28b4a",
+      "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/59b7950457aa85299f17a3065908bfdf68651275/items/items.txt"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "raidbots",
+  "records": [
+    {
+      "armor_type": "Leather",
+      "binding": 1,
+      "class_mask": 8,
+      "hotfix_push": 17004042,
+      "item_id": 226826,
+      "item_level": 65,
+      "item_set_id": 1676,
+      "name": "Darkmantle Spaulders",
+      "race_mask": 18446744073709551615,
+      "record_digest": "4fb73a20418ed5efc53436e143d22630b9fd3ccda3f5ced2e8a217ce220ed423",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Leather"
+    },
+    {
+      "armor_type": "Mail",
+      "binding": 1,
+      "class_mask": 4,
+      "hotfix_push": 17004100,
+      "item_id": 226884,
+      "item_level": 65,
+      "item_set_id": 1669,
+      "name": "Beastmaster's Mantle",
+      "race_mask": 18446744073709551615,
+      "record_digest": "e697c3ca2ad4f0cc3c9e5a38ac05fc2334e59d60dd8375896631dfd495081375",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Mail"
+    },
+    {
+      "armor_type": "Cloth",
+      "binding": 1,
+      "class_mask": 256,
+      "hotfix_push": 17004128,
+      "item_id": 226912,
+      "item_level": 65,
+      "item_set_id": 1681,
+      "name": "Deathmist Mantle",
+      "race_mask": 18446744073709551615,
+      "record_digest": "eaff36ae2f6b4776775c53ff4fae013a3d827773685c07c43b732a385db38287",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Cloth"
+    },
+    {
+      "armor_type": "Cloth",
+      "binding": 1,
+      "class_mask": 128,
+      "hotfix_push": 17004152,
+      "item_id": 226936,
+      "item_level": 65,
+      "item_set_id": 1671,
+      "name": "Sorcerer's Mantle",
+      "race_mask": 18446744073709551615,
+      "record_digest": "5a2b57a1ce5ab1f40b2e38489f444aaf5947b0989de8526e22441fee30e555da",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Cloth"
+    }
+  ],
+  "relationships": [],
+  "reviewed_page_facts": {
+    "baseline_cache": {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T16:54:48.3453520Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-current",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    },
+    "finding": "The equipment rows establish exact binding and equip eligibility. They carry no acquisition requirements.",
+    "new_quest_unique_bit_ids": [
+      96075,
+      96076,
+      96087,
+      96088
+    ],
+    "newly_populated_item_sparse_rows": [
+      {
+        "inventory_type": 3,
+        "item_id": 226826,
+        "name": "Darkmantle Spaulders",
+        "record_digest": "4fb73a20418ed5efc53436e143d22630b9fd3ccda3f5ced2e8a217ce220ed423"
+      },
+      {
+        "inventory_type": 7,
+        "item_id": 226827,
+        "name": "Darkmantle Pants",
+        "record_digest": "8c642e01f4fda6f2a269ece805c229e239b01a768e43933b59559a973f2e2f5e"
+      },
+      {
+        "inventory_type": 8,
+        "item_id": 226831,
+        "name": "Darkmantle Footpads",
+        "record_digest": "c3314c7c3cd76b806ee99a89a8abc0bb2451420d71583ed71f36a18a3e6e515f"
+      },
+      {
+        "inventory_type": 8,
+        "item_id": 226881,
+        "name": "Beastmaster's Treads",
+        "record_digest": "e5c4b5c4600bb2aed6ad62e9b085adfd962b6d905af7181e7f7a075e9b3cb391"
+      },
+      {
+        "inventory_type": 7,
+        "item_id": 226882,
+        "name": "Beastmaster's Pants",
+        "record_digest": "6908c8cbd62592240c06ffff2701675eaad9e5eb5db71d830c87a195c8b98850"
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226884,
+        "name": "Beastmaster's Mantle",
+        "record_digest": "e697c3ca2ad4f0cc3c9e5a38ac05fc2334e59d60dd8375896631dfd495081375"
+      },
+      {
+        "inventory_type": 8,
+        "item_id": 226908,
+        "name": "Deathmist Sandals",
+        "record_digest": "abc8d7c9c95304d5e528b82e81e45dd7f360fd8e96abdd97d563afed78914b50"
+      },
+      {
+        "inventory_type": 7,
+        "item_id": 226910,
+        "name": "Deathmist Leggings",
+        "record_digest": "9e5eab41e3f02f2169449f938cbee9d8be95dd133348ab28a9ac326e12d85cda"
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226912,
+        "name": "Deathmist Mantle",
+        "record_digest": "eaff36ae2f6b4776775c53ff4fae013a3d827773685c07c43b732a385db38287"
+      },
+      {
+        "inventory_type": 8,
+        "item_id": 226931,
+        "name": "Sorcerer's Sandals",
+        "record_digest": "ef9e6ade35ca62182558f7c28e52d017acf515370bb1d9a066ffb0ce2373f932"
+      },
+      {
+        "inventory_type": 7,
+        "item_id": 226933,
+        "name": "Sorcerer's Leggings",
+        "record_digest": "5845de4e3897c9ea2c1188bc59a1208768405df032994dc108c39d78e7515398"
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226936,
+        "name": "Sorcerer's Mantle",
+        "record_digest": "5a2b57a1ce5ab1f40b2e38489f444aaf5947b0989de8526e22441fee30e555da"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 272936,
+        "name": "Deadwood Key",
+        "record_digest": "e0d1f983a5ccf54db4e0b573cd158f9ee2b8cf385acc3ea273039cb79e6535f0"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 272973,
+        "name": "Drop of Stolen Life",
+        "record_digest": "a6fe5832fd4777b15943e7f84d5541c422e6ccf918772aedba75239586337996"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 273642,
+        "name": "Ring of the Fallen Soldier",
+        "record_digest": "ab3a7d01dae4aaf9306345376a73a3d3a8268a79c30cf8e9600425ddea432f92"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 273772,
+        "name": "Blackthorne Intelligence",
+        "record_digest": "02417cca05af0b592b3b02a11370a04c95755fba83cec0ee61113d7f5b1828e3"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 273799,
+        "name": "Thomas's Ring",
+        "record_digest": "1154e364f3d37c4043750130cd98cfa20e344da59b319ba3208a8cc7cd30faf8"
+      },
+      {
+        "inventory_type": 0,
+        "item_id": 274162,
+        "name": "Venom-dripping Heart",
+        "record_digest": "09cad64c733b101474470b7a3c31fdae5793905b5de84930d2652bc41ca864a9"
+      }
+    ],
+    "quest_requirement_rows": 0,
+    "verified_current_caches": [
+      {
+        "build": 70938,
+        "created": "2026-11-13T18:31:41.742Z",
+        "entries": 95317,
+        "pushIds": 5970,
+        "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-87DoPdEP9mER6NVTVY3UsD.bin",
+        "verified": true,
+        "version": "forever"
+      },
+      {
+        "build": 70938,
+        "created": "2026-11-13T18:23:29.583Z",
+        "entries": 95052,
+        "pushIds": 5964,
+        "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-24yFLnJFiHhrVDPavj9Lia.bin",
+        "verified": true,
+        "version": "forever"
+      }
+    ]
+  },
+  "source_content_digest": "4a5bee0931ec9dd38b64d8f50982923d0564cd7a150d65737296595978555d63",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-87DoPdEP9mER6NVTVY3UsD.bin"
+}

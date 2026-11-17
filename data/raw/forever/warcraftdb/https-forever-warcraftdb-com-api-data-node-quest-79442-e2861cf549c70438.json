@@ -1,0 +1,58 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/79442"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:34:45.572641+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 280604,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79442",
+      "subject_id": 79442,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 280605,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79442",
+      "subject_id": 79442,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 280607,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79442",
+      "subject_id": 79442,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 280696,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79442",
+      "subject_id": 79442,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "min_level": null,
+    "name": "The Tempest's Weapons",
+    "previous_chain_quest_id": 79366,
+    "quest_id": 79442,
+    "quest_level": 40,
+    "side": "Horde",
+    "start_item_id": 212792
+  },
+  "source_content_digest": "a773f9654ab7d9dce4999c6c88f3f2f316a107d19c9305757462d155f6eb077f",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/79442"
+}

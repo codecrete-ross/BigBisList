@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cultist's Armguards Item Level 29 Binds when picked up Wrist Leather 44 Armor +7 Stamina Durability 35 / 35 Equip: + 10 Attack Power. Sell Price: 11 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 270032,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +10 Attack Power."
+    ],
+    "id": 270032,
+    "item_level": 29,
+    "name": "Cultist's Armguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270032"
+  },
+  "linked_entities": [],
+  "name": "Cultist's Armguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270032",
+  "url": "https://www.wowhead.com/forever/item=270032"
+}

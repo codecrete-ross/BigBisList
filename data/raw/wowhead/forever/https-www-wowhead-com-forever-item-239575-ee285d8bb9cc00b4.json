@@ -1,0 +1,164 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crown of Revelation Sanctified Item Level 98 Binds when picked up Head Cloth 119 Armor +19 Stamina +20 Intellect Durability 60 / 60 Classes: Priest Requires Level 60 Equip: Improves your chance to get a critical strike by 2.0%. Equip: Increases damage done by Shadow spells and effects by up to 69. Equip: Increases the damage dealt by your damage over time spells by 2%. Raiments of Revelation (0/8) Crown of Revelation Mantle of Revelation Girdle of Revelation Pants of Revelation Boots of Revelation Wrists of Revelation Hands of Revelation Garb of Revelation (2) Set : Your Mind Flay and Mind Sear no longer lose duration from taking damage during their channel. In addition, they deal 10% increased damage per other periodic Shadow effect you have on the target, up to a maximum increase of 30%. (4) Set : Your Mind Blast deals 100% reduced threat, and gains 20% damage increase from each stack of Mind Spike on the target. (6) Set : Damage done by your Mind Flay now increases the longer you channel the spell. Each time it deals damage, subsequent damage will increase by 285000%. This resets on each new channel. Sell Price: 8 9 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 239575,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 119,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 69.",
+        "stats": {
+          "shadow_damage": 69
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases the damage dealt by your damage over time spells by 2%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%."
+    ],
+    "id": 239575,
+    "item_level": 98,
+    "name": "Crown of Revelation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226585,
+        "text": "Your Mind Flay and Mind Sear no longer lose duration from taking damage during their channel. In addition, they deal 10% increased damage per other periodic Shadow effect you have on the target, up to a maximum increase of 30%."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226591,
+        "text": "Your Mind Blast deals 100% reduced threat, and gains 20% damage increase from each stack of Mind Spike on the target."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226595,
+        "text": "Damage done by your Mind Flay now increases the longer you channel the spell. Each time it deals damage, subsequent damage will increase by 285000%. This resets on each new channel."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 2.0,
+      "intellect": 20.0,
+      "shadow_damage": 69.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=239575"
+  },
+  "linked_entities": [
+    {
+      "id": 239565,
+      "name": "Garb of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239565"
+    },
+    {
+      "id": 239572,
+      "name": "Boots of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239572"
+    },
+    {
+      "id": 239574,
+      "name": "Hands of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239574"
+    },
+    {
+      "id": 239575,
+      "name": "Crown of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239575"
+    },
+    {
+      "id": 239577,
+      "name": "Pants of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239577"
+    },
+    {
+      "id": 239581,
+      "name": "Mantle of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239581"
+    },
+    {
+      "id": 239582,
+      "name": "Girdle of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239582"
+    },
+    {
+      "id": 239583,
+      "name": "Wrists of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239583"
+    },
+    {
+      "id": 1222994,
+      "name": "Increases the damage dealt by your damage over time spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1222994"
+    },
+    {
+      "id": 1226585,
+      "name": "Your Mind Flay and Mind Sear no longer lose duration from taking damage during their channel. In addition, they deal 10% increased damage per other periodic Shadow effect you have on the target, up to a maximum increase of 30%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226585"
+    },
+    {
+      "id": 1226591,
+      "name": "Your Mind Blast deals 100% reduced threat, and gains 20% damage increase from each stack of Mind Spike on the target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226591"
+    },
+    {
+      "id": 1226595,
+      "name": "Damage done by your Mind Flay now increases the longer you channel the spell. Each time it deals damage, subsequent damage will increase by 285000%. This resets on each new channel.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226595"
+    }
+  ],
+  "name": "Crown of Revelation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "9c91c18014b01039cf1777f8a02916022481e37576fec483cc14466b8db9cc07",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/239575",
+  "url": "https://www.wowhead.com/forever/item=239575"
+}

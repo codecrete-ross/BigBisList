@@ -1,0 +1,56 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "First Aid Kit Item Level 4 Requires First Aid (20) Use: Unpacks a first aid kit that allows you and others sitting nearby to gain [( 60 < 12 ? 3 : ( 60 < 24 ? 8 : ( 60 < 36 ? 21 : ( 60 < 48 ? 34 : ( 60 < 60 ? 45 : 56)))))] increased Stamina, mutually exclusive with Power Word: Fortitude. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279968,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Unpacks a first aid kit that allows you and others sitting nearby to gain [(60 < 12 ? 3 : (60 < 24 ? 8 : (60 < 36 ? 21 : (60 < 48 ? 34 : (60 < 60 ? 45 : 56)))))] increased Stamina, mutually exclusive with Power Word: Fortitude.",
+        "type": "use"
+      }
+    ],
+    "id": 279968,
+    "item_level": 4,
+    "name": "First Aid Kit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Unpacks a first aid kit that allows you and others sitting nearby to gain [(60 < 12 ? 3 : (60 < 24 ? 8 : (60 < 36 ? 21 : (60 < 48 ? 34 : (60 < 60 ? 45 : 56)))))] increased Stamina, mutually exclusive with Power Word: Fortitude. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279968"
+  },
+  "linked_entities": [
+    {
+      "id": 129,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=129"
+    },
+    {
+      "id": 1307244,
+      "name": "Unpacks a first aid kit that allows you and others sitting nearby to gain [( 60 < 12 ? 3 : ( 60 < 24 ? 8 : ( 60 < 36 ? 21 : ( 60 < 48 ? 34 : ( 60 < 60 ? 45 : 56)))))] increased Stamina, mutually exclusive with Power Word: Fortitude. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307244"
+    }
+  ],
+  "name": "First Aid Kit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279968",
+  "url": "https://www.wowhead.com/forever/item=279968"
+}

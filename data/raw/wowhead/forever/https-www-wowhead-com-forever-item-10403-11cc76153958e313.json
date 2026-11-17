@@ -1,0 +1,139 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blackened Defias Belt Item Level 22 Binds when picked up Waist Leather 50 Armor Durability 25 / 25 Requires Level 17 Equip: + 18 Attack Power. Defias Leather (0/5) Blackened Defias Armor Blackened Defias Belt Blackened Defias Boots Blackened Defias Gloves Blackened Defias Leggings (2) Set : +5 Arcane Resistance. (3) Set : +15 Attack Power against Humanoids. (4) Set : Grants your melee attacks a 5% chance when striking from behind to hit a vital point, causing the target to Bleed for 68 to 83 Physical damage over 5 sec. (Proc chance: 5%) (5) Set : Increased Daggers +1. Sell Price: 5 69 Dropped by: Captain Greenskin Drop Chance: 26.62%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 10403,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power.",
+        "stats": {
+          "attack_power": 18
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +18 Attack Power."
+    ],
+    "id": 10403,
+    "item_level": 22,
+    "name": "Blackened Defias Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14707,
+        "text": "+5 Arcane Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1292025,
+        "text": "+15 Attack Power against Humanoids."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1292028,
+        "text": "Grants your melee attacks a 5% chance when striking from behind to hit a vital point, causing the target to Bleed for 68 to 83 Physical damage over 5 sec. (Proc chance: 5%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 7534,
+        "text": "Increased Daggers +1."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10403"
+  },
+  "linked_entities": [
+    {
+      "id": 10399,
+      "name": "Blackened Defias Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10399"
+    },
+    {
+      "id": 10400,
+      "name": "Blackened Defias Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10400"
+    },
+    {
+      "id": 10401,
+      "name": "Blackened Defias Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10401"
+    },
+    {
+      "id": 10402,
+      "name": "Blackened Defias Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10402"
+    },
+    {
+      "id": 10403,
+      "name": "Blackened Defias Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10403"
+    },
+    {
+      "id": 7534,
+      "name": "Increased Daggers +1.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7534"
+    },
+    {
+      "id": 14707,
+      "name": "+5 Arcane Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14707"
+    },
+    {
+      "id": 1292025,
+      "name": "+15 Attack Power against Humanoids.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292025"
+    },
+    {
+      "id": 1292028,
+      "name": "Grants your melee attacks a 5% chance when striking from behind to hit a vital point, causing the target to Bleed for 68 to 83 Physical damage over 5 sec. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292028"
+    }
+  ],
+  "name": "Blackened Defias Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 26.62,
+      "entity_name": "Captain Greenskin",
+      "source_url": "https://www.wowhead.com/forever/item=10403",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10403",
+  "url": "https://www.wowhead.com/forever/item=10403"
+}

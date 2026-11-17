@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Alex's Ring of Audacity Item Level 60 Finger Equip: Increased Defense + 1,000.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 12947,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +1,000.",
+        "stats": {
+          "defense": 1
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +1,000."
+    ],
+    "id": 12947,
+    "item_level": 60,
+    "name": "Alex's Ring of Audacity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "artifact",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12947"
+  },
+  "linked_entities": [],
+  "name": "Alex's Ring of Audacity",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "artifact",
+  "related_tables": {},
+  "source_content_digest": "ef563aa377144a64035b8e5d26e0095313e5675a064d68d2bb44ce8793973715",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12947",
+  "url": "https://www.wowhead.com/forever/item=12947"
+}

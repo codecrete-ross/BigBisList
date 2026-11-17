@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227376"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:09:03.2000979Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 945,
+      "collected_at": "2026-11-13T06:09:03.2000979Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227376",
+      "source_content_digest": "77854a3f01ea4fe803590a886f69f677a23bdcc049aa3aad7589bf5f91e9aa5f",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227376"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 227003,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227376",
+      "subject_id": 227376,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227376,
+    "contents_name_on_tooltip": "Pauldrons of The Five Thunders",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 227003,
+    "title": "Eruption's Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "77854a3f01ea4fe803590a886f69f677a23bdcc049aa3aad7589bf5f91e9aa5f",
+  "url": "https://www.wowhead.com/forever/item=227376"
+}

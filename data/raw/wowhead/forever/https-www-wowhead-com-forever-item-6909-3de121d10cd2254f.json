@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Strike of the Hydra Item Level 31 Binds when picked up Two-Hand Sword 67 - 102 Damage Speed 3.30 (25.61 damage per second) Durability 100 / 100 Requires Level 26 Chance on hit: Inflict 42 Fire and 14 Frost damage, slow the target by 50% for 5 sec, reduce armor by 50, and inflict 7 Nature damage every 3 sec for 12 sec. Sell Price: 74 12 Dropped by: Aku'mai Drop Chance: 22.90%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 6909,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 25.61,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Inflict 42 Fire and 14 Frost damage, slow the target by 50% for 5 sec, reduce armor by 50, and inflict 7 Nature damage every 3 sec for 12 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Inflict 42 Fire and 14 Frost damage, slow the target by 50% for 5 sec, reduce armor by 50, and inflict 7 Nature damage every 3 sec for 12 sec."
+    ],
+    "id": 6909,
+    "item_level": 31,
+    "name": "Strike of the Hydra",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 26,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 102,
+    "weapon_min_damage": 67,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6909"
+  },
+  "linked_entities": [
+    {
+      "id": 1292657,
+      "name": "Inflict 42 Fire and 14 Frost damage, slow the target by 50% for 5 sec, reduce armor by 50, and inflict 7 Nature damage every 3 sec for 12 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292657"
+    }
+  ],
+  "name": "Strike of the Hydra",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.9,
+      "entity_name": "Aku'mai",
+      "source_url": "https://www.wowhead.com/forever/item=6909",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6909",
+  "url": "https://www.wowhead.com/forever/item=6909"
+}

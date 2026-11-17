@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ironfoe Item Level 60 Binds when picked up Unique-Equipped Main Hand Mace 73 - 136 Damage Speed 2.40 (43.54 damage per second) Durability 105 / 105 Requires Level 55 Equip: Attacks have a chance to grant 2 extra attacks on your next swing. Attacks against Orcs are 2 times as likely to activate this effect. (Proc chance: 6%, 100ms cooldown) Sell Price: 6 63 22 Dropped by: Emperor Dagran Thaurissan Drop Chance: 0.94%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:48.7549657Z",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 11684,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 43.54,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Attacks have a chance to grant 2 extra attacks on your next swing. Attacks against Orcs are 2 times as likely to activate this effect. (Proc chance: 6%, 100ms cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Attacks have a chance to grant 2 extra attacks on your next swing. Attacks against Orcs are 2 times as likely to activate this effect. (Proc chance: 6%, 100ms cooldown)"
+    ],
+    "id": 11684,
+    "item_level": 60,
+    "name": "Ironfoe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 55,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 136,
+    "weapon_min_damage": 73,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11684"
+  },
+  "linked_entities": [
+    {
+      "id": 1301046,
+      "name": "Attacks have a chance to grant 2 extra attacks on your next swing. Attacks against Orcs are 2 times as likely to activate this effect. (Proc chance: 6%, 100ms cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301046"
+    }
+  ],
+  "name": "Ironfoe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.94,
+      "entity_name": "Emperor Dagran Thaurissan",
+      "source_url": "https://www.wowhead.com/forever/item=11684",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "b3629c90d11bebcc71febf9c35f064e0e84758663716b83f693201a1fbbbc455",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11684",
+  "url": "https://www.wowhead.com/forever/item=11684"
+}

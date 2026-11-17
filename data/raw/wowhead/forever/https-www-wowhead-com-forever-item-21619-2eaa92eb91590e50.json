@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gloves of the Messiah Item Level 78 Binds when picked up Hands Cloth 74 Armor +13 Stamina +17 Intellect Restores + 10 mana per 5 sec. Durability 35 / 35 Requires Level 60 Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects. Sell Price: 3 18 46 Dropped by: Princess Huhuran Drop Chance: 16.22%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 21619,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 74,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 26,
+          "spell_damage": 9
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +10 mana per 5 sec.",
+        "stats": {
+          "mp5": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects."
+    ],
+    "id": 21619,
+    "item_level": 78,
+    "name": "Gloves of the Messiah",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 26.0,
+      "intellect": 17.0,
+      "mp5": 10.0,
+      "spell_damage": 9.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21619"
+  },
+  "linked_entities": [],
+  "name": "Gloves of the Messiah",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 16.22,
+      "entity_name": "Princess Huhuran",
+      "source_url": "https://www.wowhead.com/forever/item=21619",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21619",
+  "url": "https://www.wowhead.com/forever/item=21619"
+}

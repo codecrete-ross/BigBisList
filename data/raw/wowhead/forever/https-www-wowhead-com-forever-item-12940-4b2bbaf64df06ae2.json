@@ -1,0 +1,95 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dal'Rend's Sacred Charge Item Level 63 Binds when picked up Main Hand Sword 81 - 151 Damage Speed 2.80 (41.43 damage per second) +4 Strength Durability 90 / 90 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Dal'Rend's Arms (0/2) Dal'Rend's Sacred Charge Dal'Rend's Tribal Guardian (2) Set : +50 Attack Power. Sell Price: 5 75 82 Dropped by: Warchief Rend Blackhand Drop Chance: 7.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:45.7836276Z",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 12940,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.43,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 12940,
+    "item_level": 63,
+    "name": "Dal'Rend's Sacred Charge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14056,
+        "text": "+50 Attack Power."
+      }
+    ],
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "strength": 4.0
+    },
+    "weapon_max_damage": 151,
+    "weapon_min_damage": 81,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12940"
+  },
+  "linked_entities": [
+    {
+      "id": 12939,
+      "name": "Dal'Rend's Tribal Guardian",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12939"
+    },
+    {
+      "id": 12940,
+      "name": "Dal'Rend's Sacred Charge",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12940"
+    },
+    {
+      "id": 14056,
+      "name": "+50 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14056"
+    }
+  ],
+  "name": "Dal'Rend's Sacred Charge",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.74,
+      "entity_name": "Warchief Rend Blackhand",
+      "source_url": "https://www.wowhead.com/forever/item=12940",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a10b379d54e94df80cb97af170696ad32c65d08100412ff8ea601f736ddc52fd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12940",
+  "url": "https://www.wowhead.com/forever/item=12940"
+}

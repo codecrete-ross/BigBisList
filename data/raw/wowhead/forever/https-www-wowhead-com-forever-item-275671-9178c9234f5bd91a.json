@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Agent Beverage Item Level 59 Binds when picked up Held In Off-hand +4 Spirit Equip: Reduces the hit chance of Charm effects against you by 6%. Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown) \"Shaken, not stirred\" Sell Price: 1 50 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 275671,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Charm effects against you by 6%.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Charm effects against you by 6%."
+    ],
+    "id": 275671,
+    "item_level": 59,
+    "name": "Field Agent Beverage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 4.0
+    },
+    "use_effects": [
+      "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown) \"Shaken, not stirred\""
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=275671"
+  },
+  "linked_entities": [
+    {
+      "id": 1297448,
+      "name": "Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297448"
+    },
+    {
+      "id": 1297455,
+      "name": "Reduces the hit chance of Charm effects against you by 6%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297455"
+    }
+  ],
+  "name": "Field Agent Beverage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "9b9eee07bfe8f80019fb7ba1bfaa638530d003a1dd21f5263c2f4d6c5fe582e4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275671",
+  "url": "https://www.wowhead.com/forever/item=275671"
+}

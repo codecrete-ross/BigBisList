@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Imbue Blade Item Effect 10 sec cast Reagents: Witchblade Use on Witchblade to create a powerful weapon.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T21:54:21.927302+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 546,
+      "collected_at": "2026-11-13T21:54:21.927302+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "create-wits-edge-tooltip",
+      "source_content_digest": "ce21ef7822bc348d3a2ef8de00c02e2c0069666c805adde198121faea09dfd5d",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/spell/1302294"
+    }
+  ],
+  "name": "Imbue Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "source_content_digest": "ce21ef7822bc348d3a2ef8de00c02e2c0069666c805adde198121faea09dfd5d",
+  "spell_id": 1302294,
+  "url": "https://www.wowhead.com/forever/spell=1302294"
+}

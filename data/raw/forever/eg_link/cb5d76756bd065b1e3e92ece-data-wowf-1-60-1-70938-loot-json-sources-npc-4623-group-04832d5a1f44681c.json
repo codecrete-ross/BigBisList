@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "observations": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json#/sources/npc:4623|group",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json#/sources/npc:4623|group"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "collected_from": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json",
+  "confidence": "observed_forever_loot",
+  "fetched_at": "2026-11-13T05:23:34.6401722-08:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 63011,
+      "collected_at": "2026-11-13T05:31:51.7774119-08:00",
+      "http": "200",
+      "name": "eg-70938-creatures",
+      "source_content_digest": "02b9ab80a86fd2eb26daf7c9fe8358359fe3b0a2add4f3391d566f0c2bc5756d",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/creatures.json"
+    },
+    {
+      "bytes": 946,
+      "collected_at": "2026-11-13T05:31:51.2667415-08:00",
+      "http": "200",
+      "name": "tip-dokebi-mantle-current",
+      "source_content_digest": "081d9b21b7b09bfb3a42387b2f208cab8101afcbd7ca747767bdc1420e9fa2ae",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/14587"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "observed_forever_loot",
+      "object_id": 14587,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json#/sources/npc:4623|group",
+      "subject_id": 4623,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "item_id": 14587,
+    "loot_windows": 3,
+    "map_id": 47,
+    "mode": "normal",
+    "npc_id": 4623,
+    "npc_name": "Quilguard Champion",
+    "observed_at": "2026-11-13",
+    "observed_drops": 1,
+    "reporters": 1
+  },
+  "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json#/sources/npc:4623|group"
+}

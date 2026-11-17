@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skull of Impending Doom Item Level 41 Binds when picked up Held In Off-hand +7 Intellect Use: Increase your run speed by 60% for 10 sec, but deals 100 to 500 damage and drains 100 to 500 mana every 2 seconds. (5 Min Cooldown) Sell Price: 56 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 4984,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase your run speed by 60% for 10 sec, but deals 100 to 500 damage and drains 100 to 500 mana every 2 seconds. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 4984,
+    "item_level": 41,
+    "name": "Skull of Impending Doom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0
+    },
+    "use_effects": [
+      "Use: Increase your run speed by 60% for 10 sec, but deals 100 to 500 damage and drains 100 to 500 mana every 2 seconds. (5 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4984"
+  },
+  "linked_entities": [
+    {
+      "id": 5024,
+      "name": "Increase your run speed by 60% for 10 sec, but deals 100 to 500 damage and drains 100 to 500 mana every 2 seconds.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5024"
+    }
+  ],
+  "name": "Skull of Impending Doom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4984",
+  "url": "https://www.wowhead.com/forever/item=4984"
+}

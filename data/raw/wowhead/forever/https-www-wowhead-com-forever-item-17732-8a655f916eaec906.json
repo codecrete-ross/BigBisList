@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rotgrip Mantle Item Level 53 Binds when picked up Shoulder Cloth 57 Armor +18 Intellect Durability 50 / 50 Requires Level 48 Equip: Increases damage and healing done by magical spells and effects by up to 13 . Sell Price: 1 1 14 Dropped by: Rotgrip Drop Chance: 35.53%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 17732,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 57,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 13.",
+        "stats": {
+          "spell_power": 13.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 13."
+    ],
+    "id": 17732,
+    "item_level": 53,
+    "name": "Rotgrip Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_power": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17732"
+  },
+  "linked_entities": [],
+  "name": "Rotgrip Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 35.53,
+      "entity_name": "Rotgrip",
+      "source_url": "https://www.wowhead.com/forever/item=17732",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1da851c5115ffc89d2c432ebc8895b0a98335384f00e537ae24ae4c08d9b01be",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17732",
+  "url": "https://www.wowhead.com/forever/item=17732"
+}

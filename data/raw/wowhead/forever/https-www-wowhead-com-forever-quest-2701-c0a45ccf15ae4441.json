@@ -1,0 +1,38 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Heroes of Old Open the chest and claim your reward.",
+  "entity_id": 2701,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:28:10+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Heroes of Old",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "public_page_reviewed_at": "2026-11-06T04:18:01.933451+00:00",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 10659,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=2701",
+      "subject_id": 2701,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "instruction_summary": "Open the reward chest beside Corporal Thund Splithoof to receive the shard. The later Kirith and Razelikh quests are not prerequisites for this reward.",
+    "reward_item_id": 10659,
+    "series": [
+      2783,
+      2801,
+      2681,
+      2702,
+      2701
+    ]
+  },
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/2701",
+  "url": "https://www.wowhead.com/forever/quest=2701"
+}

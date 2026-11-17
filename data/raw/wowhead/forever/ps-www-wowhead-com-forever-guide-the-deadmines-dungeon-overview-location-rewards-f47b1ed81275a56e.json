@@ -1,0 +1,110 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "credit": "Rexas Forever public observations",
+      "source": "https://forever.rexas.tools/dungeons"
+    }
+  ],
+  "collected_from": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards",
+  "confidence": "corroborated_forever_dungeon_loot",
+  "fetched_at": "2026-11-13T16:54:24.5603388Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 159674,
+      "collected_at": "2026-11-13T16:54:24.5603388Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-deadmines",
+      "source_content_digest": "7c16dfe7b00b47b8a4fa265213cf5543d01375258d98d98ad6f50855bf24ef39",
+      "source_url": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 15114,
+      "collected_at": "2026-11-13T17:04:55.3216785Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "rexas-deadmines-detail",
+      "source_content_digest": "1b7309e481303f9ab44834f896d2e948c5efff6181890c6d4546bf4acf5ed4af",
+      "source_url": "https://forever.rexas.tools/api/dungeons/36?b=wowf"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 1445,
+      "collected_at": "2026-11-13T16:54:22.1626045Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-thiefs",
+      "source_content_digest": "d693157f430ccb2797abcb3ec0e7e37b7ea2806918e19af8ebd0ba4148194deb",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/5192"
+    },
+    {
+      "bytes": 1706,
+      "collected_at": "2026-11-13T16:59:48.1424226Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-firstmate",
+      "source_content_digest": "23ab42f6bc17bf4540f3c9e5bd91d504e63b9bc38ce52f54149868e3186ca5df",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/284715"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "corroborated_forever_dungeon_loot",
+      "object_id": 5192,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards",
+      "subject_id": 646,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "corroborated_forever_dungeon_loot",
+      "object_id": 284715,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards",
+      "subject_id": 646,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "boss_id": 2745,
+    "difficulty": "Normal",
+    "eg_observed_build": "1.60.1.70888",
+    "eg_observed_through": "2026-11-13",
+    "eligible_factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "item_ids": [
+      5192,
+      284715
+    ],
+    "map_id": 36,
+    "npc_id": 646,
+    "npc_name": "Mr. Smite",
+    "party_key": null
+  },
+  "source_content_digest": "7c16dfe7b00b47b8a4fa265213cf5543d01375258d98d98ad6f50855bf24ef39",
+  "url": "https://www.wowhead.com/forever/guide/the-deadmines-dungeon-overview-location-rewards"
+}

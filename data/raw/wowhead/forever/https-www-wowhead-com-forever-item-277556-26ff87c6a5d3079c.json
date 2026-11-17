@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Razza's Heart Item Level 60 Binds when picked up Unique-Equipped This Item Begins a Quest Trinket +15 Nature Resistance Requires Level 55 Sell Price: 1 60 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 277556,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 277556,
+    "item_level": 60,
+    "name": "Razza's Heart",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277556"
+  },
+  "linked_entities": [
+    {
+      "id": 97270,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=97270"
+    }
+  ],
+  "name": "Razza's Heart",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c72b4fc46ca07c96fd655c105b744cf85ad377112020aab4aa3b93ae7938aeaf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277556",
+  "url": "https://www.wowhead.com/forever/item=277556"
+}

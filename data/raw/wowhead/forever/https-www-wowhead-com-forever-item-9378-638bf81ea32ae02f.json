@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Shovelphlange's Mining Axe Item Level 40 Binds when equipped Unique One-Hand Axe 53 - 100 Damage Speed 2.80 (27.32 damage per second) +7 Strength Durability 90 / 90 Requires Level 35 Equip: + 11 Attack Power. Sell Price: 1 13 80 Dropped by: Digmaster Shovelphlange Drop Chance: 15.80%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 9378,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 27.32,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +11 Attack Power.",
+        "stats": {
+          "attack_power": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +11 Attack Power."
+    ],
+    "id": 9378,
+    "item_level": 40,
+    "name": "Shovelphlange's Mining Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 35,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 11.0,
+      "strength": 7.0
+    },
+    "weapon_max_damage": 100,
+    "weapon_min_damage": 53,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9378"
+  },
+  "linked_entities": [],
+  "name": "Shovelphlange's Mining Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 15.8,
+      "entity_name": "Digmaster Shovelphlange",
+      "source_url": "https://www.wowhead.com/forever/item=9378",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9378",
+  "url": "https://www.wowhead.com/forever/item=9378"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Expert Goldminer's Helmet Item Level 40 Binds when equipped Head Leather 99 Armor +7 Agility +8 Stamina Durability 60 / 60 Requires Level 35 Equip: Reduces chance to be Dodged or Parried by 1.1%. Equip: Increased Axes + 1. Sell Price: 42 20 Dropped by: Digmaster Shovelphlange Drop Chance: 10.16%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 9375,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 99,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.1%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Increased Axes +1.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 1.1%."
+    ],
+    "id": 9375,
+    "item_level": 40,
+    "name": "Expert Goldminer's Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 35,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9375"
+  },
+  "linked_entities": [],
+  "name": "Expert Goldminer's Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.16,
+      "entity_name": "Digmaster Shovelphlange",
+      "source_url": "https://www.wowhead.com/forever/item=9375",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "154f9256aa5adac5380ffd9f98d8612dab15dc3df92d07d0833d7da2935890bd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9375",
+  "url": "https://www.wowhead.com/forever/item=9375"
+}

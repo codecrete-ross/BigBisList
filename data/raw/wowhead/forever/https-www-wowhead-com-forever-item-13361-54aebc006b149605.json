@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skullforge Reaver Item Level 63 Binds when picked up One-Hand Sword 72 - 135 Damage Speed 2.50 (41.40 damage per second) Durability 90 / 90 Requires Level 58 Chance on hit: Drains target for 21 Shadow damage every 1 sec and transfers it to the caster. Lasts for 10 sec. Sell Price: 5 75 82 Dropped by: Baron Rivendare Drop Chance: 6.79%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:04.3857750Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 13361,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.4,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Drains target for 21 Shadow damage every 1 sec and transfers it to the caster. Lasts for 10 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Drains target for 21 Shadow damage every 1 sec and transfers it to the caster. Lasts for 10 sec."
+    ],
+    "id": 13361,
+    "item_level": 63,
+    "name": "Skullforge Reaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "One Hand",
+    "source_summary": "",
+    "weapon_max_damage": 135,
+    "weapon_min_damage": 72,
+    "weapon_speed": 2.5,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13361"
+  },
+  "linked_entities": [
+    {
+      "id": 17484,
+      "name": "Drains target for 21 Shadow damage every 1 sec and transfers it to the caster. Lasts for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17484"
+    }
+  ],
+  "name": "Skullforge Reaver",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 6.79,
+      "entity_name": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/item=13361",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d0a6d1fe187c6fbba2c0513581afa85efa9494b836e8e7d39510952382d2c1f4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13361",
+  "url": "https://www.wowhead.com/forever/item=13361"
+}

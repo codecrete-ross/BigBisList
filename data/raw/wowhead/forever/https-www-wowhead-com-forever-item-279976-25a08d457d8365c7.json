@@ -1,0 +1,66 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Enchanted Lute Item Level 4 Requires Enchanting (20) Use: Summons an enchanted lute that allows you and others sitting nearby to gain [( 60 < 10 ? 28 : ( 60 < 20 ? 71 : ( 60 < 30 ? 114 : ( 60 < 40 ? 163 : ( 60 < 50 ? 211 : ( 60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279976,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Summons an enchanted lute that allows you and others sitting nearby to gain [(60 < 10 ? 28 : (60 < 20 ? 71 : (60 < 30 ? 114 : (60 < 40 ? 163 : (60 < 50 ? 211 : (60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild.",
+        "type": "use"
+      }
+    ],
+    "id": 279976,
+    "item_level": 4,
+    "name": "Enchanted Lute",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Summons an enchanted lute that allows you and others sitting nearby to gain [(60 < 10 ? 28 : (60 < 20 ? 71 : (60 < 30 ? 114 : (60 < 40 ? 163 : (60 < 50 ? 211 : (60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279976"
+  },
+  "linked_entities": [
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1307234,
+      "name": "Summons an enchanted lute that allows you and others sitting nearby to gain [( 60 < 10 ? 28 : ( 60 < 20 ? 71 : ( 60 < 30 ? 114 : ( 60 < 40 ? 163 : ( 60 < 50 ? 211 : ( 60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307234"
+    }
+  ],
+  "name": "Enchanted Lute",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Enchanted Lute Item Level 4 Requires Enchanting (20) Use: Summons an enchanted lute that allows you and others sitting nearby to gain [( 60 < 10 ? 28 : ( 60 < 20 ? 71 : ( 60 < 30 ? 114 : ( 60 < 40 ? 163 : ( 60 < 50 ? 211 : ( 60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+      "scope": "equip_or_use",
+      "skill": 20,
+      "source_url": "https://www.wowhead.com/forever/item=279976",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279976",
+  "url": "https://www.wowhead.com/forever/item=279976"
+}

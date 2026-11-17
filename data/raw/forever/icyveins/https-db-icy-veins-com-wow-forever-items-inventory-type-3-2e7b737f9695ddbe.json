@@ -1,0 +1,5514 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins (Vedatis S.A.S.)",
+      "source": "https://db.icy-veins.com/wow-forever/items/"
+    }
+  ],
+  "catalog_coverage": {
+    "complete": true,
+    "inventory_types": [
+      3
+    ],
+    "level_max": 59,
+    "level_min": 1,
+    "qualities": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "slots": [
+      "Shoulder"
+    ],
+    "total": 1294
+  },
+  "catalog_kind": "counted_listing",
+  "client_build": "1.60.1.70938",
+  "confidence": "catalog_identity_only",
+  "fetched_at": "2026-11-13T23:55:32.540015+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 153647,
+      "collected_at": "2026-11-13T23:55:26.718332+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p1",
+      "source_content_digest": "6c81a1756d09e0a74c93ba3b6600fbbee5c7e04720888d87686b4cf7763c4024",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=1"
+    },
+    {
+      "bytes": 154903,
+      "collected_at": "2026-11-13T23:55:26.679825+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p2",
+      "source_content_digest": "977cae619163f520b3b1877da89aac2c023e75ba9269d64dfacc575987d2d5ab",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=2"
+    },
+    {
+      "bytes": 155208,
+      "collected_at": "2026-11-13T23:55:26.721332+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p3",
+      "source_content_digest": "9dcac6a6e5bdd591dae8202db88b7cba54f6f6b27a1a997bbe3123d1ca5534b1",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=3"
+    },
+    {
+      "bytes": 155186,
+      "collected_at": "2026-11-13T23:55:26.994064+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p4",
+      "source_content_digest": "c8e7c05dcd4eca5999d27e2d1055210fde1591fb31b34a76706584c7efbb3db8",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=4"
+    },
+    {
+      "bytes": 154906,
+      "collected_at": "2026-11-13T23:55:27.132218+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p5",
+      "source_content_digest": "a2b68ad9c342eb6f71e9bd0f89aca647665af85b2905998841e1a047506223cf",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=5"
+    },
+    {
+      "bytes": 154307,
+      "collected_at": "2026-11-13T23:55:27.133219+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p6",
+      "source_content_digest": "680030b46dcc411c1fd64b3dc66bbefa140746f4b2a4f15438c336abfc4b0bcc",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=6"
+    },
+    {
+      "bytes": 153699,
+      "collected_at": "2026-11-13T23:55:27.449874+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p7",
+      "source_content_digest": "12c47acc383f2ccbf76a1315fd9325ad20145d0f9d5f92226477650bce5d5cec",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=7"
+    },
+    {
+      "bytes": 122325,
+      "collected_at": "2026-11-13T23:55:27.441873+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cloth-shoulder-id-p8",
+      "source_content_digest": "0f5a845a73e1b1e42a532152cdc4d05fe07c32502695f43f5229e27f719dd1e0",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cloth/shoulder/?sort=id&dir=desc&page=8"
+    },
+    {
+      "bytes": 153847,
+      "collected_at": "2026-11-13T23:55:27.598435+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p1",
+      "source_content_digest": "ed9867734467cc993be7bc2e5ed702b1b3051d91a21248bc693a730e79d0805d",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=1"
+    },
+    {
+      "bytes": 154119,
+      "collected_at": "2026-11-13T23:55:27.746718+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p2",
+      "source_content_digest": "9d6d7c7a8a0ead582bf1ce6f2297cf95479eba02d621d7c4f4ee10632d738a63",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=2"
+    },
+    {
+      "bytes": 155328,
+      "collected_at": "2026-11-13T23:55:27.746718+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p3",
+      "source_content_digest": "d2552bc6cc0cf673525d418385e275f94847e0b8be01e7d60807096b1c3cdc65",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=3"
+    },
+    {
+      "bytes": 155311,
+      "collected_at": "2026-11-13T23:55:27.903661+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p4",
+      "source_content_digest": "c12261de795f2255ee979f16a4478b92894e048fe745a6fe239f0b2812b92f4f",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=4"
+    },
+    {
+      "bytes": 154937,
+      "collected_at": "2026-11-13T23:55:28.071762+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p5",
+      "source_content_digest": "13795729edec4b15d4374a8745120c5563f26ba1ecc191c0e9d7655eb5035507",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=5"
+    },
+    {
+      "bytes": 154736,
+      "collected_at": "2026-11-13T23:55:28.071762+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p6",
+      "source_content_digest": "89f842b3baa460fb59cd4cf5c9af5210bb22f2f5a13a373570bfc99807303820",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=6"
+    },
+    {
+      "bytes": 153243,
+      "collected_at": "2026-11-13T23:55:28.223022+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-leather-shoulder-id-p7",
+      "source_content_digest": "182a4eb2d7a6c6475f842631a12a8b60f7810f4831ee6d03bab2551fcce3f5ab",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/leather/shoulder/?sort=id&dir=desc&page=7"
+    },
+    {
+      "bytes": 153579,
+      "collected_at": "2026-11-13T23:55:28.376145+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p1",
+      "source_content_digest": "71c559c8c333e77844a63b3a06de63c3820508b64758e615254ffcffc2b84751",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=1"
+    },
+    {
+      "bytes": 154020,
+      "collected_at": "2026-11-13T23:55:28.394215+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p2",
+      "source_content_digest": "5789ab1f2f619d024c086129aa28f15174e9ee8e56f0185da402f39b402b9e45",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=2"
+    },
+    {
+      "bytes": 155021,
+      "collected_at": "2026-11-13T23:55:28.527244+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p3",
+      "source_content_digest": "5a8e3b5705a670d5ddca3d95f2042b1664004e2cdcbfcab265341d2b086b9f37",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=3"
+    },
+    {
+      "bytes": 154987,
+      "collected_at": "2026-11-13T23:55:28.681284+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p4",
+      "source_content_digest": "330b7f59f16a310fed46ba80a5914e8038923f06fd168e74b778727a385d7d8c",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=4"
+    },
+    {
+      "bytes": 154666,
+      "collected_at": "2026-11-13T23:55:28.705793+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p5",
+      "source_content_digest": "5ffd8ad5cd6d64c217d44796301be66f76ec4feff7e8f2422d23153e26daae93",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=5"
+    },
+    {
+      "bytes": 154106,
+      "collected_at": "2026-11-13T23:55:28.836307+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p6",
+      "source_content_digest": "6d961ff6cbeaf94b72841ef35177e7d27e481d62495cf0a2723313efc1eb9f13",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=6"
+    },
+    {
+      "bytes": 132941,
+      "collected_at": "2026-11-13T23:55:28.984602+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-mail-shoulder-id-p7",
+      "source_content_digest": "ea2a507a0ca39c8ffd909e863b7ac3c10ca76f6c12769508d7edb7d0795f3c5d",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/mail/shoulder/?sort=id&dir=desc&page=7"
+    },
+    {
+      "bytes": 153682,
+      "collected_at": "2026-11-13T23:55:31.951097+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-plate-shoulder-id-p1",
+      "source_content_digest": "3182a7938e0b49987196a43f2a91fbf3fe37b0083b449356bbdcedf89064d689",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/plate/shoulder/?sort=id&dir=desc&page=1"
+    },
+    {
+      "bytes": 154453,
+      "collected_at": "2026-11-13T23:55:32.005737+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-plate-shoulder-id-p2",
+      "source_content_digest": "c568626778303b0c4628a2124a59020e3c6f8a21c1dbc360eebdf92a12bcd98f",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/plate/shoulder/?sort=id&dir=desc&page=2"
+    },
+    {
+      "bytes": 154724,
+      "collected_at": "2026-11-13T23:55:32.098028+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-plate-shoulder-id-p3",
+      "source_content_digest": "c54d40af21f7808e866320090aa0975a6da10f6c41625a32efd9410972b0971b",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/plate/shoulder/?sort=id&dir=desc&page=3"
+    },
+    {
+      "bytes": 154467,
+      "collected_at": "2026-11-13T23:55:32.407046+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-plate-shoulder-id-p4",
+      "source_content_digest": "b38d25d507f882ed55cff03a51a36f9aa0ce898d4a10d47fa6c8c2cee1314059",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/plate/shoulder/?sort=id&dir=desc&page=4"
+    },
+    {
+      "bytes": 122518,
+      "collected_at": "2026-11-13T23:55:32.540015+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-plate-shoulder-id-p5",
+      "source_content_digest": "f359df3a607c7a8203e288aa715c65bee38ded501af61a45148572a492f7fd85",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/plate/shoulder/?sort=id&dir=desc&page=5"
+    },
+    {
+      "bytes": 103666,
+      "collected_at": "2026-11-13T23:53:21.238399+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-cosmetic-shoulder",
+      "source_content_digest": "2e9af8f7bcd3e9e4b3480a1b6549dc73b0b4faec6e755b1cd317f2bf2d461a54",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/cosmetic/shoulder/"
+    },
+    {
+      "bytes": 98907,
+      "collected_at": "2026-11-13T23:54:45.951673+00:00",
+      "curl_exit": 0,
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "http": "200",
+      "name": "icy-miscellaneous-shoulder-id-p1",
+      "source_content_digest": "0d5539a231627ef25c00cfbbee2544922d879d98a79f09ac4691ee29a2630df4",
+      "source_url": "https://db.icy-veins.com/wow-forever/items/armor/miscellaneous/shoulder/?sort=id&dir=desc"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "icyveins",
+  "reconciliation": {
+    "ahledger_matches": 1086,
+    "client_matches": 1294,
+    "listing_only_ids": []
+  },
+  "records": [
+    {
+      "item_id": 905,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 906,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 907,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 908,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 909,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1272,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1371,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1379,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1424,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1432,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1435,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1445,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1508,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1545,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1736,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1744,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1752,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1760,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1769,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1777,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1785,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1793,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1801,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1809,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 1960,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 2264,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 2278,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 2647,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 2655,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 2913,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3007,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3159,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3219,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3221,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3226,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3231,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3246,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3271,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3324,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3333,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3436,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3459,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3480,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3481,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3560,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3579,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3748,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3765,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3798,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3806,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3814,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3840,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3841,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3942,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3950,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3958,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3967,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3975,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3983,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 3998,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4006,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4014,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4123,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4140,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4196,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4197,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4251,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4252,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4314,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4315,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4442,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4443,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4657,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4661,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4664,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4667,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4670,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4673,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4679,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4682,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4685,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4688,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4691,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4694,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4698,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4700,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4705,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4709,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4718,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4721,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4725,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4728,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4729,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4731,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4733,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4734,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4737,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4764,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4810,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4811,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4812,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4815,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4833,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4835,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4855,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4856,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4857,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4858,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4934,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 4955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5254,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5274,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5319,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5404,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5607,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5820,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 5964,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6189,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6388,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6395,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6399,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6404,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6461,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6566,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6579,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6588,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6597,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6606,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6617,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6664,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6685,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6697,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6747,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 6792,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7057,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7059,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7060,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7352,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7367,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7408,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7415,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7424,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7435,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7445,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7459,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7473,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7482,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7491,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7523,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7532,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7543,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7684,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7712,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7718,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7727,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7750,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7755,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7913,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7918,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7928,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 7932,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8086,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8111,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8124,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8133,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8144,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8163,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8192,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8207,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8210,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8250,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8263,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8272,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8281,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8288,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8301,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8310,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 8319,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9292,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9389,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9411,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9430,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9476,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9531,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9536,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9647,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9796,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9807,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9817,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9824,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9834,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9842,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9850,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9863,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9872,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9881,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9894,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9904,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9912,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9923,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9934,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9941,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9965,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 9971,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10027,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10028,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10029,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10038,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10063,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10075,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10085,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10092,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10100,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10113,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10125,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10134,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10142,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10153,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10163,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10170,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10172,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10189,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10200,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10209,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10210,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10228,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10237,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10245,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10253,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10263,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10274,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10281,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10287,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10374,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10383,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10390,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10405,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10407,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10657,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10745,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10774,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 10783,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11310,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11502,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11605,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11624,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11632,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11685,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11722,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11782,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11842,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11871,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11874,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11884,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11889,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11916,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 11963,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12082,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12109,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12407,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12428,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12557,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12588,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12610,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12617,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12625,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12927,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 12998,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13013,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13066,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13103,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13115,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13116,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13131,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13132,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13133,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13166,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13185,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13257,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13358,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13374,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13405,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13533,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13538,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13867,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 13961,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14112,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14126,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14139,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14157,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14169,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14170,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14182,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14186,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14201,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14223,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14232,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14243,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14247,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14266,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14273,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14278,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14296,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14298,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14316,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14325,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14335,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14368,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14378,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14389,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14397,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14412,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14423,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14432,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14443,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14452,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14463,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14503,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14538,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14548,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14552,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14566,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14573,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14587,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14596,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14603,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14633,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14660,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14669,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14678,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14688,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14728,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14749,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14758,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14767,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14776,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14787,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14797,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14806,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14817,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14830,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14841,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14851,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14860,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14868,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14901,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14909,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14921,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14929,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14937,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14946,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14963,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14971,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 14981,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15019,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15049,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15051,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15055,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15058,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15061,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15067,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15081,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15096,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15116,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15127,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15140,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15150,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15158,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15169,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15177,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15187,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15313,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15338,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15345,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15357,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15368,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15375,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15386,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15395,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15432,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15441,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15457,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15496,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15505,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15513,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15523,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15531,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15542,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15553,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15562,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15574,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15583,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15597,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15608,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15617,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15628,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15638,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15647,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15656,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15666,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15677,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15686,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15693,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15698,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15784,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15792,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15812,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 15822,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16031,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16038,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16061,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16122,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16134,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16143,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16144,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16147,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16148,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16149,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16154,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16160,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16162,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16415,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16420,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16423,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16427,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16432,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16436,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16444,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16449,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16457,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16468,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16476,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16480,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16492,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16501,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16507,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16516,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16524,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16528,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16536,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16544,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16551,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16562,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16568,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16580,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16669,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16679,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16689,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16695,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16701,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16708,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16718,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16729,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16733,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16739,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16793,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16797,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16807,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16816,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16823,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16832,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16836,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16844,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16848,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16856,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16868,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16902,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16917,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16924,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16932,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16937,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16945,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16953,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16961,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16980,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16988,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 16995,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17047,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17569,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17573,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17580,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17590,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17601,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17604,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17613,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17622,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17695,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17732,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17749,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17769,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 17779,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18320,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18374,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18384,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18493,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18494,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18528,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18681,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18686,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18699,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18720,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18742,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18747,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18757,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18810,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 18829,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19037,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19050,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19058,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19059,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19111,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19139,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19370,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19373,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19389,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19394,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19507,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19689,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19691,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19695,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19831,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19835,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19841,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19845,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19849,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 19928,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20055,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20056,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20057,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20058,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20059,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20060,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20061,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20140,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20158,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20175,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20176,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20184,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20194,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20203,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20249,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20273,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20289,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20308,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20322,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20330,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20344,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20357,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20406,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20517,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20633,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20637,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20680,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20683,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20686,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 20689,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21330,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21335,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21345,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21350,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21354,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21361,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21367,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21376,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21391,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21424,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21435,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21443,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21447,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21453,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21454,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21468,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21474,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21639,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21665,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21683,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21684,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21686,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21694,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21699,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 21805,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22001,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22008,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22016,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22068,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22073,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22082,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22093,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22101,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22112,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22234,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22241,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22305,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22405,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22412,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22419,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22429,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22439,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22467,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22479,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22491,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22499,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22507,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22515,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22758,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22940,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22941,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22967,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22968,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 22983,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23034,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23243,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23252,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23254,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23256,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23258,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23260,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23262,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23264,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23277,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23307,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23309,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23311,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23313,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23315,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23317,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23319,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23324,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23664,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 23667,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 134112,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209676,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209678,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209679,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209692,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209824,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 209828,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 210773,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 211468,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213301,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213302,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213303,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213304,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213305,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 213413,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 215113,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 215365,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 216925,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 217250,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 217283,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 217298,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 217307,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220527,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220528,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220529,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220532,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220738,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220739,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220740,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220741,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220742,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220743,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220744,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220745,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220747,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220748,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220749,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220750,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220751,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220795,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220796,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220808,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220818,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220823,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220824,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220825,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220841,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220849,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220852,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220853,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220870,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220871,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220876,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220877,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220887,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220894,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220901,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 220905,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221381,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221386,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221392,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221399,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221400,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221411,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221416,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221424,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221431,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221432,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 221783,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223073,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223181,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223216,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223237,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223238,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223239,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223521,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223531,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223544,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 223987,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226444,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226478,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226491,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226492,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226527,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226543,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226550,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226560,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226566,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226576,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226581,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226588,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226605,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226611,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226624,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226632,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226640,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226644,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226653,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226665,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226674,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226706,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226710,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226716,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226726,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226735,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226741,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226753,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226756,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226768,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226778,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226785,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226790,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226798,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226817,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226826,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226837,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226847,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226858,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226867,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226875,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226884,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226891,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226899,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226912,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226915,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226923,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226936,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226939,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226951,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226963,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226969,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226979,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226987,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 226995,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227003,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227011,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227019,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227027,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227035,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227042,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227045,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227054,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227056,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227068,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227069,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227078,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227084,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227091,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227092,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227102,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227104,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227119,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227120,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227130,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227136,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227145,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227148,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227154,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227160,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227166,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227172,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227175,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227184,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227190,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227201,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227207,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227808,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227818,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227830,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227834,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227853,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227859,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227866,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227873,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227888,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 227947,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228001,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228010,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228036,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228058,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228059,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228065,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228092,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228258,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228279,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228283,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228475,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228512,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228520,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228546,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228562,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228583,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228590,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228605,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 228700,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230013,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230024,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230096,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230102,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230240,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230251,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230256,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230740,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230754,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230912,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 230996,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231025,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231033,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231039,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231047,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231057,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231066,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231077,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231096,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231106,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231114,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231160,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231170,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231176,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231184,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231192,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231201,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231209,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231217,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231225,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231235,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231243,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231251,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231259,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231321,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231325,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231333,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231338,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231349,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231534,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231537,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231547,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231551,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231557,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231565,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231572,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231576,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231583,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231592,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231594,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231602,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231611,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231621,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231628,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231631,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231645,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231651,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231654,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231659,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231665,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231672,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231681,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231684,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231693,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231699,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 231705,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232081,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232089,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232097,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232105,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232113,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232121,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232129,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232137,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232145,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232153,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232161,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232169,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232177,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232185,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232193,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232201,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232209,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232217,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232225,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232233,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232241,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232249,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 232257,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233376,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233379,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233383,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233387,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233394,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233401,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233403,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233409,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233413,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233496,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233521,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233563,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233566,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233567,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233592,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233593,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233658,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233663,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233668,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233671,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233677,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233681,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233684,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233689,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233697,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233702,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233707,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233713,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233717,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233722,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233793,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233804,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 233833,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234078,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234082,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234109,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234111,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234171,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234174,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 234312,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236008,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236017,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236026,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236035,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236044,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236052,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236065,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236070,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236084,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236089,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236102,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236108,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236122,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236126,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236135,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236145,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236153,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236163,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236172,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236189,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236194,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236203,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236226,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236228,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236260,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236262,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236294,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236295,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 236298,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 238265,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 238273,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 238281,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 238289,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239516,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239524,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239534,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239542,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239552,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239559,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239581,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 239586,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240021,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240025,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240033,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240046,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240054,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240062,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240070,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240078,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240086,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240098,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240106,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240125,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240135,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240143,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 240150,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 241079,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 241080,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 241152,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 241153,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 241154,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242806,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242814,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242819,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242827,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242835,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242847,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242853,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242861,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242870,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242881,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 242889,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 244229,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 246061,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250486,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250539,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250541,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250576,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250577,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250578,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250579,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250580,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 250586,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252534,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252535,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252536,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252537,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252538,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252554,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252556,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252558,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252566,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252567,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252568,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252569,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252583,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 252592,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254033,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254049,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254051,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254053,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254055,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254057,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254059,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254119,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 254127,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 260169,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270023,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270024,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270039,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270044,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270046,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 270098,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271730,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271743,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271754,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271764,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271811,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271953,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271954,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271955,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271956,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271957,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 271959,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272103,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272104,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272105,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272106,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272107,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272108,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272469,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272475,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272489,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272501,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272509,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272516,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272527,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272533,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272545,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272549,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272558,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272565,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272574,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272637,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272640,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272642,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272648,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272650,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272670,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272678,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272680,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272724,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272729,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272732,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272736,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272741,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272745,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272753,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272758,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272766,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272777,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272785,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272789,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272801,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272804,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272817,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272820,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272855,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272957,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 272958,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273028,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273047,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273051,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273334,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273343,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273351,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273360,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273375,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273387,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273392,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273400,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273407,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273415,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273423,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273433,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273804,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273886,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273890,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273894,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273898,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273902,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273906,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273910,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273914,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273918,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273922,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273926,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273930,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273934,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273938,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273942,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273946,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 273950,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274181,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274190,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274197,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274205,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274213,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274222,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274233,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274241,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274247,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274255,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274607,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274638,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274660,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274751,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 274996,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 275036,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 275666,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 275737,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 276210,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 276218,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 276540,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 276720,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 276741,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277041,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277043,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277045,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277047,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277049,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277051,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277053,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277055,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277117,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277220,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277228,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 277236,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278212,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278263,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278297,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278312,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278394,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278410,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278421,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278425,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278431,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278441,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278442,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278481,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278526,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278607,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278613,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278660,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278915,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278922,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278925,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278942,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278946,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278959,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278968,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 278987,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279181,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279255,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279464,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279482,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279487,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279829,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279830,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279839,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279842,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279879,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279889,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279903,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 279904,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280075,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280363,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280454,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280876,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280882,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280897,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280903,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280909,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280917,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280923,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280929,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280935,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280942,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280944,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280956,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280962,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280976,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280987,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280993,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 280999,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281275,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281276,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281277,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281278,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281538,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281676,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281686,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281694,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281702,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 281710,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 282004,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 282021,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 282560,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 282704,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 282717,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 284064,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 284105,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 284399,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 285191,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 286552,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287001,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287008,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287014,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287022,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287027,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287042,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 287628,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288825,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288835,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288844,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288850,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288862,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288870,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288874,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288882,
+      "slot": "Shoulder"
+    },
+    {
+      "item_id": 288894,
+      "slot": "Shoulder"
+    }
+  ],
+  "relationships": [],
+  "url": "https://db.icy-veins.com/wow-forever/items/#inventory-type-3"
+}

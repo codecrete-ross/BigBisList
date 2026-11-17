@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soulstaff Item Level 30 Binds when picked up Two-Hand Staff 26 - 40 Damage Speed 1.80 (18.33 damage per second) +11 Stamina +11 Spirit Durability 100 / 100 Requires Level 25 Equip: Increases damage and healing done by magical spells and effects by up to 34 . Sell Price: 6 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 249393,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 18.33,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 249393,
+    "item_level": 30,
+    "name": "Soulstaff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 34.0,
+      "spirit": 11.0,
+      "stamina": 11.0
+    },
+    "weapon_max_damage": 40,
+    "weapon_min_damage": 26,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=249393"
+  },
+  "linked_entities": [],
+  "name": "Soulstaff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a0e5f0a333a8f73873d3f2cc183bca7f12ea0838077d36e6901c022f1826b16a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249393",
+  "url": "https://www.wowhead.com/forever/item=249393"
+}

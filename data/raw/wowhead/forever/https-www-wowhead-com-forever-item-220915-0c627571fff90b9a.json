@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of the Raging Shambler Item Level 50 Binds when picked up Unique Relic Idol Classes: Druid Engrave your helm with the Improved Barkskin rune: Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted. \"Kill 5 enemies with Nature damage while affected by Barkskin. Then, use this idol to learn a new ability.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 220915,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 220915,
+    "item_level": 50,
+    "name": "Idol of the Raging Shambler",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=220915"
+  },
+  "linked_entities": [
+    {
+      "id": 431388,
+      "name": "Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=431388"
+    },
+    {
+      "id": 431449,
+      "name": "Engrave your helm with the Improved Barkskin rune: Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=431449"
+    }
+  ],
+  "name": "Idol of the Raging Shambler",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "f8c29125d6fa7607b99ffe92f45b1ade7d43c7be39e14cab85b45fc8065e4aa1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220915",
+  "url": "https://www.wowhead.com/forever/item=220915"
+}

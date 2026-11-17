@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bonescraper Item Level 62 Binds when picked up One-Hand Dagger 40 - 74 Damage Speed 1.40 (40.71 damage per second) Durability 65 / 65 Requires Level 57 Equip: + 30 Attack Power. Sell Price: 5 48 40 Dropped by: Baron Rivendare Drop Chance: 6.85%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:05.0240596Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 13368,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.71,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power.",
+        "stats": {
+          "attack_power": 30
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +30 Attack Power."
+    ],
+    "id": 13368,
+    "item_level": 62,
+    "name": "Bonescraper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0
+    },
+    "weapon_max_damage": 74,
+    "weapon_min_damage": 40,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13368"
+  },
+  "linked_entities": [],
+  "name": "Bonescraper",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 6.85,
+      "entity_name": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/item=13368",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "61aa91ebc33baa1e4a52a68963dbf520813eee0e27b5cb169aacf8576d6b9905",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13368",
+  "url": "https://www.wowhead.com/forever/item=13368"
+}

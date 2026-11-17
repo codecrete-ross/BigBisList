@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Blessings Item Level 10 Binds when picked up Unique Relic Libram Classes: Paladin Engrave your chest with the Hallowed Ground rune: Your Consecration now also heals party members within its area for 200% of Consecration's damage value. \"Learn a new ability after giving blessings to 5 different players\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 208849,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 208849,
+    "item_level": 10,
+    "name": "Libram of Blessings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=208849"
+  },
+  "linked_entities": [
+    {
+      "id": 425618,
+      "name": "Engrave your chest with the Hallowed Ground rune: Your Consecration now also heals party members within its area for 200% of Consecration's damage value.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=425618"
+    },
+    {
+      "id": 458287,
+      "name": "Your Consecration now also heals party members within its area for 200% of Consecration's damage value.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=458287"
+    }
+  ],
+  "name": "Libram of Blessings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d4e575e2b1987782b8713abfd64c8329bdbabb478339d87e23f5f6a63daf2b1c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/208849",
+  "url": "https://www.wowhead.com/forever/item=208849"
+}

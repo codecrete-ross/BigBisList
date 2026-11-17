@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Battle Tabard of the Defilers Item Level 20 Binds when picked up Unique Tabard Requires The Defilers - Exalted Sell Price: 1 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 20131,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20131,
+    "item_level": 20,
+    "name": "Battle Tabard of the Defilers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=20131"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    }
+  ],
+  "name": "Battle Tabard of the Defilers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Battle Tabard of the Defilers Item Level 20 Binds when picked up Unique Tabard Requires The Defilers - Exalted Sell Price: 1 25",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20131",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20131",
+  "url": "https://www.wowhead.com/forever/item=20131"
+}

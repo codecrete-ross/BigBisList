@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Wintersaber Hide Lined Gloves Item Level 59 Binds when equipped Hands Cloth 48 Armor +7 Stamina Requires Level 54 Equip: Increases movement speed while mounted by 6% in Winterspring. Sell Price: 5 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:34.5214105Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 284266,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 48,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases movement speed while mounted by 6% in Winterspring.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases movement speed while mounted by 6% in Winterspring."
+    ],
+    "id": 284266,
+    "item_level": 59,
+    "name": "Wintersaber Hide Lined Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 54,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284266"
+  },
+  "linked_entities": [
+    {
+      "id": 1315778,
+      "name": "Increases movement speed while mounted by 6% in Winterspring.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315778"
+    }
+  ],
+  "name": "Wintersaber Hide Lined Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "e9b2a20714f7ba875821f38044ccd01da31dd0b4bb36ad01f5a4497e438af3da",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284266",
+  "url": "https://www.wowhead.com/forever/item=284266"
+}

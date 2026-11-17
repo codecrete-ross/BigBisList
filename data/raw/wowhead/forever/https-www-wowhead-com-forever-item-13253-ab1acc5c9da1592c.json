@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hands of Power Item Level 60 Binds when picked up Hands Cloth 53 Armor +9 Intellect +8 Spirit Durability 30 / 30 Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 23 . Sell Price: 99 48 Dropped by: Quartermaster Zigris Drop Chance: 14.21%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:02.7808582Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 13253,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 53,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 13253,
+    "item_level": 60,
+    "name": "Hands of Power",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 9.0,
+      "spell_power": 23.0,
+      "spirit": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13253"
+  },
+  "linked_entities": [],
+  "name": "Hands of Power",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.21,
+      "entity_name": "Quartermaster Zigris",
+      "source_url": "https://www.wowhead.com/forever/item=13253",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "de51e2d618148b50baa4b4deab008d7410cb059cca52d7c5866bb97dd1ba9ea8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13253",
+  "url": "https://www.wowhead.com/forever/item=13253"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seal of the Dawn Item Level 61 Binds when picked up Unique-Equipped: Trinket of the Dawn (1) Trinket Equip: + 78 Attack Power against Undead.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13209,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +78 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +78 Attack Power against Undead."
+    ],
+    "id": 13209,
+    "item_level": 61,
+    "name": "Seal of the Dawn",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13209"
+  },
+  "linked_entities": [],
+  "name": "Seal of the Dawn",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8efe630b425faa5ff0dc96152f75f00e219a8506830e1247282acd202721a854",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13209",
+  "url": "https://www.wowhead.com/forever/item=13209"
+}

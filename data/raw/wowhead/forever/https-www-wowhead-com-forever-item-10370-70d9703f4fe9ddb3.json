@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Imbued Plate Girdle Item Level 57 Binds when equipped Waist Plate 305 Armor +13 Strength +12 Stamina Durability 40 / 40 Requires Level 52 Sell Price: 69 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 10370,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 305,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10370,
+    "item_level": 57,
+    "name": "Imbued Plate Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 52,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 12.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10370"
+  },
+  "linked_entities": [],
+  "name": "Imbued Plate Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10370",
+  "url": "https://www.wowhead.com/forever/item=10370"
+}

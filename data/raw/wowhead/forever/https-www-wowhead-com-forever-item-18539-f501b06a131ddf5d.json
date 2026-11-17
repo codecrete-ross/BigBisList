@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Reliquary of Purity Item Level 1 Quest Item Unique Use: Seal a Felvine Shard inside the Reliquary of Purity.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:17.5340232Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18539,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Seal a Felvine Shard inside the Reliquary of Purity.",
+        "type": "use"
+      }
+    ],
+    "id": 18539,
+    "item_level": 1,
+    "name": "Reliquary of Purity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Seal a Felvine Shard inside the Reliquary of Purity."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18539"
+  },
+  "linked_entities": [
+    {
+      "id": 22949,
+      "name": "Seal a Felvine Shard inside the Reliquary of Purity.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22949"
+    }
+  ],
+  "name": "Reliquary of Purity",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "1c412430e3e004e6ad72da27cfa866d6db202c80f6d2c2e58f867c1c79aaa694",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18539",
+  "url": "https://www.wowhead.com/forever/item=18539"
+}

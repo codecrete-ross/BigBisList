@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mage Armor 270 Mana Instant Requires Mage Requires level 34 Increases your resistance to all magic by 5 and allows 50% of your mana regeneration to continue while casting. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
+  "entity_id": 6117,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:38+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6117,
+      "name": "Mage Armor",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6117"
+    }
+  ],
+  "name": "Mage Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "f609c6efced330a960a0001719ddfacb11b36051c9470ca22b83cd0cf03aa138",
+  "spell_id": 6117,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/6117",
+  "url": "https://www.wowhead.com/forever/spell=6117"
+}

@@ -1,0 +1,41 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment",
+      "source": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-11-2026"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "dated_publisher_service_status",
+  "fetched_at": "2026-11-13T21:37:14.774839+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 48351,
+      "collected_at": "2026-11-13T21:37:14.774839+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-latest-hotfixes",
+      "source_content_digest": "b78d179efcf03df7ed2f3ecef4100a7e6ccd9b7699624dd2b8ad9a87879b6fff",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-11-2026"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "blizzard",
+  "reviewed_page_facts": {
+    "care_package_item_id": 281680,
+    "care_package_named_in_notice": false,
+    "finding": "The dated outage notice concerns the Item Restoration service. It establishes neither the Care Package's source nor whether it grants these exact Restored items.",
+    "item_restoration_service_disabled": true,
+    "notice_date": "2026-11-11",
+    "reviewed_candidate_item_ids": [
+      281686,
+      281694,
+      281702,
+      281718,
+      281730
+    ]
+  },
+  "source_content_digest": "b78d179efcf03df7ed2f3ecef4100a7e6ccd9b7699624dd2b8ad9a87879b6fff",
+  "url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-11-2026#item-restoration"
+}

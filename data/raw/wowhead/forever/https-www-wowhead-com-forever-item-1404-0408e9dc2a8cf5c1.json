@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tidal Charm Item Level 41 Binds when picked up Trinket Requires Level 36 Use: Stuns target for 3 sec. Naga are Stunned for 5 sec and refund 80% of the cooldown. (15 Min Cooldown) Sell Price: 47 64 Dropped by: Prince Nazjak Drop Chance: 57.24%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 1404,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Stuns target for 3 sec. Naga are Stunned for 5 sec and refund 80% of the cooldown. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 1404,
+    "item_level": 41,
+    "name": "Tidal Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 36,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Stuns target for 3 sec. Naga are Stunned for 5 sec and refund 80% of the cooldown. (15 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1404"
+  },
+  "linked_entities": [
+    {
+      "id": 835,
+      "name": "Stuns target for 3 sec. Naga are Stunned for 5 sec and refund 80% of the cooldown.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=835"
+    }
+  ],
+  "name": "Tidal Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 57.24,
+      "entity_name": "Prince Nazjak",
+      "source_url": "https://www.wowhead.com/forever/item=1404",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "a99e5effea5891831efd00edde2d782fb6ae37d8af00dd5382c867fe399de712",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1404",
+  "url": "https://www.wowhead.com/forever/item=1404"
+}

@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heathen's Brand Item Level 60 Binds when picked up Unique Neck +8 Strength +8 Stamina +6 Intellect +7 Spirit Classes: Paladin",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19585,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19585,
+    "item_level": 60,
+    "name": "Heathen's Brand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "spirit": 7.0,
+      "stamina": 8.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19585"
+  },
+  "linked_entities": [],
+  "name": "Heathen's Brand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19585",
+  "url": "https://www.wowhead.com/forever/item=19585"
+}

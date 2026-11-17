@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ancient Mattock Item Level 61 Binds when equipped One-Hand Axe 73 - 136 Damage Speed 2.60 (40.19 damage per second) +8 Stamina +8 Spirit Requires Level 56 Use: Sift through an Un'Goro Dirt Pile. (2 Min Cooldown) Sell Price: 5 40 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:36.0308022Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 287045,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 40.19,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Sift through an Un'Goro Dirt Pile. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 287045,
+    "item_level": 61,
+    "name": "Ancient Mattock",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 8.0,
+      "stamina": 8.0
+    },
+    "use_effects": [
+      "Use: Sift through an Un'Goro Dirt Pile. (2 Min Cooldown)"
+    ],
+    "weapon_max_damage": 136,
+    "weapon_min_damage": 73,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=287045"
+  },
+  "linked_entities": [
+    {
+      "id": 1325180,
+      "name": "Sift through an Un'Goro Dirt Pile.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1325180"
+    }
+  ],
+  "name": "Ancient Mattock",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0310a06a37a166f04742d11c25a4b73d9f5fddc49b40dffe7dce8ce357be778d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287045",
+  "url": "https://www.wowhead.com/forever/item=287045"
+}

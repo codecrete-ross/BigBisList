@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Draconian Deflector Item Level 63 Binds when picked up Off Hand Shield 2153 Armor 40 Block +7 Stamina +8 Fire Resistance Durability 100 / 100 Requires Level 58 Equip: Increased Defense + 10. Sell Price: 3 68 52 Dropped by: General Drakkisath Drop Chance: 22.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:53.3472741Z",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 12602,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 2153,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +10.",
+        "stats": {
+          "defense": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +10."
+    ],
+    "id": 12602,
+    "item_level": 63,
+    "name": "Draconian Deflector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 40.0,
+      "defense": 10.0,
+      "fire_resistance": 8.0,
+      "stamina": 7.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12602"
+  },
+  "linked_entities": [],
+  "name": "Draconian Deflector",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.01,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=12602",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2d6d3bc3c05953394c4276b89867d736f055316a7f0671d140305925d5794258",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12602",
+  "url": "https://www.wowhead.com/forever/item=12602"
+}

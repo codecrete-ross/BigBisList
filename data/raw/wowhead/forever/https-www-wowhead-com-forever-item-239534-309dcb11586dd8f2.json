@@ -1,0 +1,163 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dawnstalker Pauldrons Sanctified Item Level 98 Binds when picked up Shoulder Mail 458 Armor +34 Agility +13 Stamina Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 40 Attack Power. Dawnstalker Prowess (0/8) Dawnstalker Visor Dawnstalker Pauldrons Dawnstalker Breastplate Dawnstalker Belt Dawnstalker Leggings Dawnstalker Greaves Dawnstalker Vambraces Dawnstalker Gauntlets (2) Set : Your Strikes and Mongoose Bite deal 20% increased damage to targets afflicted with your Serpent Sting or Wyvern Strike. (4) Set : Your melee critical strikes increase your attack speed by 20% for 10 sec. (6) Set : Increases the bonus damage from Raptor Fury by an additional 10% per stack. Sell Price: 10 19 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 239534,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 458,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +40 Attack Power.",
+        "stats": {
+          "attack_power": 40
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 239534,
+    "item_level": 98,
+    "name": "Dawnstalker Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226340,
+        "text": "Your Strikes and Mongoose Bite deal 20% increased damage to targets afflicted with your Serpent Sting or Wyvern Strike."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226359,
+        "text": "Your melee critical strikes increase your attack speed by 20% for 10 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226365,
+        "text": "Increases the bonus damage from Raptor Fury by an additional 10% per stack."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "attack_power": 40.0,
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=239534"
+  },
+  "linked_entities": [
+    {
+      "id": 239529,
+      "name": "Dawnstalker Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239529"
+    },
+    {
+      "id": 239530,
+      "name": "Dawnstalker Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239530"
+    },
+    {
+      "id": 239531,
+      "name": "Dawnstalker Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239531"
+    },
+    {
+      "id": 239532,
+      "name": "Dawnstalker Visor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239532"
+    },
+    {
+      "id": 239533,
+      "name": "Dawnstalker Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239533"
+    },
+    {
+      "id": 239534,
+      "name": "Dawnstalker Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239534"
+    },
+    {
+      "id": 239535,
+      "name": "Dawnstalker Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239535"
+    },
+    {
+      "id": 239536,
+      "name": "Dawnstalker Vambraces",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239536"
+    },
+    {
+      "id": 1226340,
+      "name": "Your Strikes and Mongoose Bite deal 20% increased damage to targets afflicted with your Serpent Sting or Wyvern Strike.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226340"
+    },
+    {
+      "id": 1226359,
+      "name": "Your melee critical strikes increase your attack speed by 20% for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226359"
+    },
+    {
+      "id": 1226365,
+      "name": "Increases the bonus damage from Raptor Fury by an additional 10% per stack.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226365"
+    }
+  ],
+  "name": "Dawnstalker Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "7fec3a11ff00e5822e59dd1ada280946ea2689a1bc3090b8e9502e6d6c84232b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/239534",
+  "url": "https://www.wowhead.com/forever/item=239534"
+}

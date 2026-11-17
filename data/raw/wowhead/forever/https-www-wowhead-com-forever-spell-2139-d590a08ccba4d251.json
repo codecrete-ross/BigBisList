@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Counterspell 100 Mana 30 yd range Instant 30 sec cooldown Requires Mage Requires level 24 Counters the enemy's spellcast, preventing any spell from that school of magic from being cast for 10 sec. Generates a high amount of threat.",
+  "entity_id": 2139,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:05+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2139,
+      "name": "Counterspell",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2139"
+    }
+  ],
+  "name": "Counterspell",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "f4eacf8f52ffa1d42326ad5d0ec03aebb416b6dd502b6930e0deaf40e0ab6708",
+  "spell_id": 2139,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/2139",
+  "url": "https://www.wowhead.com/forever/spell=2139"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Revive 75% of base mana 30 yd range 10 sec cast Requires Druid Requires level 12 Brings a dead player back to life with 70 health and 135 mana. Cannot be cast when in combat.",
+  "entity_id": 437138,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:09+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 437138,
+      "name": "Revive",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=437138"
+    }
+  ],
+  "name": "Revive",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "41e1965e5c93bb8afb5285ef40b759fd7b028b483186ac5d70a6abc44fa1392b",
+  "spell_id": 437138,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/437138",
+  "url": "https://www.wowhead.com/forever/spell=437138"
+}

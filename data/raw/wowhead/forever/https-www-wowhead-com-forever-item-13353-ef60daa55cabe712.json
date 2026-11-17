@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Book of the Dead Item Level 63 Binds when picked up Held In Off-hand +8 Stamina +15 Intellect +10 Spirit Requires Level 58 Equip: Increases damage done by Shadow spells and effects by up to 16. Use: Summons a Skeleton that will protect you for 1 min. (15 Min Cooldown) Sell Price: 3 7 10 Dropped by: Grand Crusader Dathrohan Drop Chance: 5.75%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 13353,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 16.",
+        "stats": {
+          "shadow_damage": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Summons a Skeleton that will protect you for 1 min. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13353,
+    "item_level": 63,
+    "name": "Book of the Dead",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 58,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "shadow_damage": 16.0,
+      "spirit": 10.0,
+      "stamina": 8.0
+    },
+    "use_effects": [
+      "Use: Summons a Skeleton that will protect you for 1 min. (15 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13353"
+  },
+  "linked_entities": [
+    {
+      "id": 17490,
+      "name": "Summons a Skeleton that will protect you for 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17490"
+    }
+  ],
+  "name": "Book of the Dead",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 5.75,
+      "entity_name": "Grand Crusader Dathrohan",
+      "source_url": "https://www.wowhead.com/forever/item=13353",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "30d3f4f03961455063762c1c3cc402da933bde2e2bec07e8387c30332b443a80",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13353",
+  "url": "https://www.wowhead.com/forever/item=13353"
+}

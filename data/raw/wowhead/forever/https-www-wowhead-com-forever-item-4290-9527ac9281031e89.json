@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dust Bowl Item Level 18 Binds when equipped Off Hand Shield 378 Armor 6 Block +2 Strength +2 Spirit Durability 60 / 60 Requires Level 13 Sell Price: 7 15 Dropped by: Dust Devil Drop Chance: 1.39%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:56:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 4290,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 378,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4290,
+    "item_level": 18,
+    "name": "Dust Bowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 13,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 6.0,
+      "spirit": 2.0,
+      "strength": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4290"
+  },
+  "linked_entities": [],
+  "name": "Dust Bowl",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.39,
+      "entity_name": "Dust Devil",
+      "source_url": "https://www.wowhead.com/forever/item=4290",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4290",
+  "url": "https://www.wowhead.com/forever/item=4290"
+}

@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legionnaire's Dreadweave Tunic Item Level 68 Binds when picked up Unique Chest Cloth 96 Armor +20 Stamina +20 Intellect Durability 80 / 80 Classes: Warlock Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 25 . Champion's Dreadgear (0/6) Blood Guard's Dreadweave Handwraps Blood Guard's Dreadweave Walkers Champion's Dreadweave Cowl Champion's Dreadweave Spaulders Legionnaire's Dreadweave Legguards Legionnaire's Dreadweave Tunic (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Reduces the casting time of your Immolate spell by 0.2 sec. (6) Set : +20 Stamina. Sell Price: 1 47 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 22884,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 96,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 22884,
+    "item_level": 68,
+    "name": "Legionnaire's Dreadweave Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23047,
+        "text": "Reduces the casting time of your Immolate spell by 0.2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "spell_power": 25.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22884"
+  },
+  "linked_entities": [
+    {
+      "id": 22855,
+      "name": "Blood Guard's Dreadweave Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22855"
+    },
+    {
+      "id": 22865,
+      "name": "Blood Guard's Dreadweave Handwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22865"
+    },
+    {
+      "id": 22881,
+      "name": "Legionnaire's Dreadweave Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22881"
+    },
+    {
+      "id": 22884,
+      "name": "Legionnaire's Dreadweave Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22884"
+    },
+    {
+      "id": 23255,
+      "name": "Champion's Dreadweave Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23255"
+    },
+    {
+      "id": 23256,
+      "name": "Champion's Dreadweave Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23256"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23047,
+      "name": "Reduces the casting time of your Immolate spell by 0.2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23047"
+    }
+  ],
+  "name": "Legionnaire's Dreadweave Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22884",
+  "url": "https://www.wowhead.com/forever/item=22884"
+}

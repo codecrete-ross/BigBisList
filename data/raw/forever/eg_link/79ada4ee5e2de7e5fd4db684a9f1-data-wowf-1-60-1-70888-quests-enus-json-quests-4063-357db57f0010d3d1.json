@@ -1,0 +1,82 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/4063"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 12109,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/4063",
+      "subject_id": 4063,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T22:20:44.8861670Z",
+        "linked_reward_ids": [],
+        "min_level": 52,
+        "name": "The Rise of the Machines",
+        "side": "Horde",
+        "source_content_digest": "49ebfa3d11ceb67e70a40208e35d8a5004f1f3b4c139a278af1b210744e629a5",
+        "source_url": "https://questing.wiki/wow-forever/quests/4063/",
+        "upstream_checked_at": "2026-09-30",
+        "upstream_url": "https://www.wowhead.com/forever/quest=4063",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "fetched_at": "2026-11-12T21:22:55.040565+00:00",
+        "linked_reward_ids": [
+          12108,
+          12109,
+          12110,
+          12111
+        ],
+        "min_level": 52,
+        "name": "The Rise of the Machines",
+        "side": "Horde",
+        "source_content_digest": "9b1541679094c66321fbc5962cef3eab8690832df0f30069e5034e56dde49b8e",
+        "source_url": "https://bindonforever.com/quest/4063",
+        "zone": "Badlands"
+      },
+      {
+        "fetched_at": "2026-11-11T08:11:12.249989+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "The Rise of the Machines",
+        "side": "Both",
+        "source_content_digest": "7745365fbf70aa81a53a7964d3063c280881e952b3bcc7427cf194f603797b24",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4063",
+        "zone": "Blackrock Depths"
+      }
+    ],
+    "name": "The Rise of the Machines",
+    "observation_count": 4,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 4063,
+    "reported_min_level": 52,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "12109": "choices"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/4063"
+}

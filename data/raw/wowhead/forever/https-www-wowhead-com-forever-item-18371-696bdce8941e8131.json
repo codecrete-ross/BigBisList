@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mindtap Talisman Item Level 61 Binds when picked up Unique-Equipped Trinket Restores + 6 mana per 5 sec. Requires Level 56 Use: Tap your mind, restoring 1250 mana over 10 sec, but reducing Intellect by 60 for 2 min. (7 Min Cooldown) Sell Price: 2 8 91 Dropped by: Magister Kalendris Drop Chance: 8.64%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18371,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Tap your mind, restoring 1250 mana over 10 sec, but reducing Intellect by 60 for 2 min. (7 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 18371,
+    "item_level": 61,
+    "name": "Mindtap Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 6.0
+    },
+    "use_effects": [
+      "Use: Tap your mind, restoring 1250 mana over 10 sec, but reducing Intellect by 60 for 2 min. (7 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18371"
+  },
+  "linked_entities": [
+    {
+      "id": 1302205,
+      "name": "Tap your mind, restoring 1250 mana over 10 sec, but reducing Intellect by 60 for 2 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302205"
+    }
+  ],
+  "name": "Mindtap Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.64,
+      "entity_name": "Magister Kalendris",
+      "source_url": "https://www.wowhead.com/forever/item=18371",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a0d487380a6dc1f70c3bbe28dbe5e8fb302a4b0f00b72074be8664d1ca8d5634",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18371",
+  "url": "https://www.wowhead.com/forever/item=18371"
+}

@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Lizardhide Boots Item Level 63 Binds when picked up Unique Feet Leather 121 Armor +8 Agility +16 Stamina +8 Intellect +60 Armor Durability 50 / 50 Requires Level 58 Requires The League of Arathor - Revered Equip: + 16 Attack Power. Equip: Run speed increased slightly. The Highlander's Will (0/3) Highlander's Lizardhide Boots Highlander's Lizardhide Girdle Highlander's Lizardhide Shoulders (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 2 6 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 20053,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 121,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Run speed increased slightly.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +16 Attack Power.",
+      "Equip: Run speed increased slightly."
+    ],
+    "id": 20053,
+    "item_level": 63,
+    "name": "Highlander's Lizardhide Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18384,
+        "text": "Improves your chance to get a critical strike with spells by 1.0%."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0,
+      "attack_power": 16.0,
+      "intellect": 8.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20053"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 20046,
+      "name": "Highlander's Lizardhide Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20046"
+    },
+    {
+      "id": 20053,
+      "name": "Highlander's Lizardhide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20053"
+    },
+    {
+      "id": 20060,
+      "name": "Highlander's Lizardhide Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20060"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 18384,
+      "name": "Improves your chance to get a critical strike with spells by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18384"
+    },
+    {
+      "id": 23990,
+      "name": "Run speed increased slightly.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23990"
+    }
+  ],
+  "name": "Highlander's Lizardhide Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Lizardhide Boots Item Level 63 Binds when picked up Unique Feet Leather 121 Armor +8 Agility +16 Stamina +8 Intellect +60 Armor Durability 50 / 50 Requires Level 58 Requires The League of Arathor - Revered Equip: + 16 Attack Power. Equip: Run speed increased slightly. The Highlander's Will (0/3) Highlander's Lizardhide Boots Highlander's Lizardhide Girdle Highlander's Lizardhide Shoulders (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 2 6 47",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20053",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20053",
+  "url": "https://www.wowhead.com/forever/item=20053"
+}

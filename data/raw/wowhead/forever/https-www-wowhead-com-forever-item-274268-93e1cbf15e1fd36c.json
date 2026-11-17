@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dark Iron Map Item Level 1 Binds when picked up Unique This Item Begins a Quest \"The map is heavily annotated with Dark Iron runes.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 274268,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274268,
+    "item_level": 1,
+    "name": "Dark Iron Map",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274268"
+  },
+  "linked_entities": [
+    {
+      "id": 96391,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=96391"
+    }
+  ],
+  "name": "Dark Iron Map",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274268",
+  "url": "https://www.wowhead.com/forever/item=274268"
+}

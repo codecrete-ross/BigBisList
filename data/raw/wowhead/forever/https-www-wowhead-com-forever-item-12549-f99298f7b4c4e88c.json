@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Braincage Item Level 52 Binds when equipped Head Mail 253 Armor +5 Stamina +20 Intellect +9 Spirit Durability 70 / 70 Requires Level 47 Equip: Improves your chance to hit by 1.0%. Sell Price: 1 43 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12549,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 253,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 12549,
+    "item_level": 52,
+    "name": "Braincage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 20.0,
+      "spirit": 9.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12549"
+  },
+  "linked_entities": [],
+  "name": "Braincage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "31c43b90266fc8df23862e9bec5f1214293e50b211bc531a72a05074f3cc7564",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12549",
+  "url": "https://www.wowhead.com/forever/item=12549"
+}

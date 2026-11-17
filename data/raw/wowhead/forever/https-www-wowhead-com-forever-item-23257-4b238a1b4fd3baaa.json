@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Leather Helm Item Level 71 Binds when picked up Unique Head Leather 158 Armor +23 Stamina +80 Armor Durability 60 / 60 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 36 Attack Power. Sell Price: 1 56 72",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:16:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 23257,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +36 Attack Power.",
+        "stats": {
+          "attack_power": 36
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 23257,
+    "item_level": 71,
+    "name": "Champion's Leather Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "stamina": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23257"
+  },
+  "linked_entities": [],
+  "name": "Champion's Leather Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23257",
+  "url": "https://www.wowhead.com/forever/item=23257"
+}

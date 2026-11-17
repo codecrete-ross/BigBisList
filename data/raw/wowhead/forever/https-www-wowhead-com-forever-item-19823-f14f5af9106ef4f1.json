@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Zandalar Vindicator's Belt Item Level 61 Binds when picked up Waist Plate 391 Armor +25 Strength +10 Stamina Durability 55 / 55 Classes: Warrior Equip: Improves your chance to get a critical strike by 1.0%. Vindicator's Battlegear (0/5) Gri'lek's Charm of Might Rage of Mugamba Zandalar Vindicator's Armguards Zandalar Vindicator's Belt Zandalar Vindicator's Breastplate (2) Set : Increases your chance to block attacks with a shield by 2%. (3) Set : Decreases the cooldown of Intimidating Shout by 15 sec. (5) Set : Decrease the rage cost of Whirlwind by 3.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 19823,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 391,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 19823,
+    "item_level": 61,
+    "name": "Zandalar Vindicator's Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 13675,
+        "text": "Increases your chance to block attacks with a shield by 2%."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24456,
+        "text": "Decreases the cooldown of Intimidating Shout by 15 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24431,
+        "text": "Decrease the rage cost of Whirlwind by 3."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 10.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19823"
+  },
+  "linked_entities": [
+    {
+      "id": 19577,
+      "name": "Rage of Mugamba",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19577"
+    },
+    {
+      "id": 19822,
+      "name": "Zandalar Vindicator's Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19822"
+    },
+    {
+      "id": 19823,
+      "name": "Zandalar Vindicator's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19823"
+    },
+    {
+      "id": 19824,
+      "name": "Zandalar Vindicator's Armguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19824"
+    },
+    {
+      "id": 19951,
+      "name": "Gri'lek's Charm of Might",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19951"
+    },
+    {
+      "id": 13675,
+      "name": "Increases your chance to block attacks with a shield by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13675"
+    },
+    {
+      "id": 24431,
+      "name": "Decrease the rage cost of Whirlwind by 3.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24431"
+    },
+    {
+      "id": 24456,
+      "name": "Decreases the cooldown of Intimidating Shout by 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24456"
+    }
+  ],
+  "name": "Zandalar Vindicator's Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19823",
+  "url": "https://www.wowhead.com/forever/item=19823"
+}

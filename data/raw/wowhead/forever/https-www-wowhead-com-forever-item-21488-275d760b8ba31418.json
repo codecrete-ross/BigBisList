@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fetish of Chitinous Spikes Item Level 73 Binds when picked up Unique Trinket Requires Level 60 Use: Spikes sprout from you causing 25 Nature damage to attackers when hit. Lasts 30 sec. (3 Min Cooldown) \"Ouch\" Sell Price: 6 78 12 Dropped by: Buru the Gorger Drop Chance: 19.45%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21488,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Spikes sprout from you causing 25 Nature damage to attackers when hit. Lasts 30 sec. (3 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 21488,
+    "item_level": 73,
+    "name": "Fetish of Chitinous Spikes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Spikes sprout from you causing 25 Nature damage to attackers when hit. Lasts 30 sec. (3 Min Cooldown) \"Ouch\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21488"
+  },
+  "linked_entities": [
+    {
+      "id": 26168,
+      "name": "Spikes sprout from you causing 25 Nature damage to attackers when hit. Lasts 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26168"
+    }
+  ],
+  "name": "Fetish of Chitinous Spikes",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.45,
+      "entity_name": "Buru the Gorger",
+      "source_url": "https://www.wowhead.com/forever/item=21488",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21488",
+  "url": "https://www.wowhead.com/forever/item=21488"
+}

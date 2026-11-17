@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Leafre's Ring of Precise Spell Power Item Level 66 Binds when picked up Finger Equip: Increases damage and healing done by magical spells and effects by up to 100 . Sell Price: 9 14 53",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 276765,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 100.",
+        "stats": {
+          "spell_power": 100.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 100."
+    ],
+    "id": 276765,
+    "item_level": 66,
+    "name": "Leafre's Ring of Precise Spell Power",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 100.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276765"
+  },
+  "linked_entities": [],
+  "name": "Leafre's Ring of Precise Spell Power",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "729ccd3a78e2ecb1305b5037e86794df96262b178d6a42a65e75c0a141f45ac0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276765",
+  "url": "https://www.wowhead.com/forever/item=276765"
+}

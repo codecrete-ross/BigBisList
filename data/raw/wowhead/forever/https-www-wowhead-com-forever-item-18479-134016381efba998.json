@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Carrion Scorpid Helm Item Level 60 Binds when picked up Head Mail 262 Armor +14 Stamina Durability 60 / 60 Requires Level 55 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 1 87 36 Dropped by: Mizzle the Crafty",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18479,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 262,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 18479,
+    "item_level": 60,
+    "name": "Carrion Scorpid Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 55,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "spell_power": 18.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18479"
+  },
+  "linked_entities": [],
+  "name": "Carrion Scorpid Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Mizzle the Crafty",
+      "source_url": "https://www.wowhead.com/forever/item=18479",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d4f6dad0853338c186ba0316235b5ce2c0b500c4e7238c6cd989de21c93cb393",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18479",
+  "url": "https://www.wowhead.com/forever/item=18479"
+}

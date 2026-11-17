@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Deliverance Item Level 40 Binds when picked up Unique Relic Libram Classes: Paladin Requires Level 18 Engrave your boots with the Sacred Shield rune: Each time the target takes damage they gain a Sacred Shield, absorbing [36 * (38.258376 + 0.904195 * 60 + 0.161311 * 60 * 60) / 100] damage and increasing the Paladin's chance to critically hit with Flash of Light by 50% for up to 6 sec. In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional 100% over 12 sec. They cannot gain this effect more than once every 6 sec. Lasts 1 min. This spell cannot be on more than one target at any one time. \"Learn a new ability after using Blessing of Freedom to free others from movement impairing effects 5 times.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 213513,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 213513,
+    "item_level": 40,
+    "name": "Libram of Deliverance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 18,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=213513"
+  },
+  "linked_entities": [
+    {
+      "id": 412019,
+      "name": "Each time the target takes damage they gain a Sacred Shield, absorbing [36 * (38.258376 + 0.904195 * 60 + 0.161311 * 60 * 60) / 100] damage and increasing the Paladin's chance to critically hit with Flash of Light by 50% for up to 6 sec. In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional 100% over 12 sec. They cannot gain this effect more than once every 6 sec. Lasts 1 min. This spell cannot be on more than one target at any one time.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=412019"
+    },
+    {
+      "id": 416028,
+      "name": "Engrave your boots with the Sacred Shield rune: Each time the target takes damage they gain a Sacred Shield, absorbing [36 * (38.258376 + 0.904195 * 60 + 0.161311 * 60 * 60) / 100] damage and increasing the Paladin's chance to critically hit with Flash of Light by 50% for up to 6 sec. In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional 100% over 12 sec. They cannot gain this effect more than once every 6 sec. Lasts 1 min. This spell cannot be on more than one target at any one time.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=416028"
+    }
+  ],
+  "name": "Libram of Deliverance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "6a56b874bf87df523ba51ff9b12815db1ceb80293abf692988870b0bca94773d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/213513",
+  "url": "https://www.wowhead.com/forever/item=213513"
+}

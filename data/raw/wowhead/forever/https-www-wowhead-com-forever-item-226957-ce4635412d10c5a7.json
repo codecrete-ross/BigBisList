@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Virtuous Cowl Item Level 60 Binds when picked up Head Cloth 75 Armor +15 Stamina +18 Intellect +12 Spirit Durability 60 / 60 Classes: Priest Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 26 . Vestments of the Virtuous (0/8) Item #226967 Item #226968 Item #226966 Item #226965 Item #226964 Item #226963 Item #226961 Item #226962 Sell Price: 2 7 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 226957,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+        "stats": {
+          "spell_power": 26.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+    ],
+    "id": 226957,
+    "item_level": 60,
+    "name": "Virtuous Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 18.0,
+      "spell_power": 26.0,
+      "spirit": 12.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226957"
+  },
+  "linked_entities": [],
+  "name": "Virtuous Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "59651b00ee4c61b4c07aa1decc8e38d322c083649624346d24545524935c4d99",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226957",
+  "url": "https://www.wowhead.com/forever/item=226957"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nat Pagle's Extreme Angler FC-5000 Item Level 50 Binds when picked up Unique Two-Hand Fishing Pole 93 - 140 Damage Speed 3.00 (38.83 damage per second) Durability 55 / 55 Requires Fishing (100) Equip: Increased Fishing + 25. \"Limited Edition\" Sell Price: 2 85 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 19022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.83,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Fishing +25.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Fishing +25."
+    ],
+    "id": 19022,
+    "item_level": 50,
+    "name": "Nat Pagle's Extreme Angler FC-5000",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 140,
+    "weapon_min_damage": 93,
+    "weapon_speed": 3.0,
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19022"
+  },
+  "linked_entities": [
+    {
+      "id": 356,
+      "name": "Fishing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=356"
+    }
+  ],
+  "name": "Nat Pagle's Extreme Angler FC-5000",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19022",
+  "url": "https://www.wowhead.com/forever/item=19022"
+}

@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Devilsaur Tooth Item Level 52 Binds when picked up Unique Trinket +7 Agility Classes: Hunter Use: Reduces the Mana cost of your next Revive Pet cast within 30 sec by 100%. (10 Min Cooldown) Sell Price: 1 27 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19992,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces the Mana cost of your next Revive Pet cast within 30 sec by 100%. (10 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 19992,
+    "item_level": 52,
+    "name": "Devilsaur Tooth",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0
+    },
+    "use_effects": [
+      "Use: Reduces the Mana cost of your next Revive Pet cast within 30 sec by 100%. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19992"
+  },
+  "linked_entities": [
+    {
+      "id": 24353,
+      "name": "Reduces the Mana cost of your next Revive Pet cast within 30 sec by 100%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24353"
+    }
+  ],
+  "name": "Devilsaur Tooth",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "60053f100153b2699408eb70904b509c64ef59a676e35b3499c96a615427a8c0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19992",
+  "url": "https://www.wowhead.com/forever/item=19992"
+}

@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heart of the Scale Item Level 61 Binds when picked up Unique Trinket Requires Level 56 Use: Increases Fire Resistance by 20 and deals 20 Fire damage to anyone who strikes you with a melee attack for 5 min. (30 Min Cooldown) Sell Price: 1 5 39 Dropped by: Overlord Wyrmthalak Drop Chance: 9.36%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:02:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13164,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Fire Resistance by 20 and deals 20 Fire damage to anyone who strikes you with a melee attack for 5 min. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13164,
+    "item_level": 61,
+    "name": "Heart of the Scale",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases Fire Resistance by 20 and deals 20 Fire damage to anyone who strikes you with a melee attack for 5 min. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13164"
+  },
+  "linked_entities": [
+    {
+      "id": 17275,
+      "name": "Increases Fire Resistance by 20 and deals 20 Fire damage to anyone who strikes you with a melee attack for 5 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17275"
+    }
+  ],
+  "name": "Heart of the Scale",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.36,
+      "entity_name": "Overlord Wyrmthalak",
+      "source_url": "https://www.wowhead.com/forever/item=13164",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13164",
+  "url": "https://www.wowhead.com/forever/item=13164"
+}

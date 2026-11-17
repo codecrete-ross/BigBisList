@@ -1,0 +1,140 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Swarmtender's Footpads Item Level 1 Binds when picked up Requires Tailoring (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Swarmtender's Footpads. Sell Price: 1 87 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Feet",
+      "item_id": 275609,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 275609,
+        "name": "Swarmtender's Footpads",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Feet",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=275609"
+      },
+      "name": "Swarmtender's Footpads",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=275609"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 275585,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Swarmtender's Footpads.",
+        "type": "use"
+      }
+    ],
+    "id": 275585,
+    "item_level": 1,
+    "name": "Pattern: Swarmtender's Footpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Swarmtender's Footpads."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=275585"
+  },
+  "linked_entities": [
+    {
+      "id": 609,
+      "name": "Cenarion Circle",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=609"
+    },
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14343,
+      "name": "Small Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14343"
+    },
+    {
+      "id": 275609,
+      "name": "Swarmtender's Footpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=275609"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 1297125,
+      "name": "Teaches you how to craft Swarmtender's Footpads.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297125"
+    }
+  ],
+  "name": "Pattern: Swarmtender's Footpads",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Swarmtender's Footpads Item Level 1 Binds when picked up Requires Tailoring (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Swarmtender's Footpads. Sell Price: 1 87 50",
+      "reputation": "Cenarion Circle",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=275585",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Swarmtender's Footpads Item Level 1 Binds when picked up Requires Tailoring (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Swarmtender's Footpads. Sell Price: 1 87 50",
+      "scope": "equip_or_use",
+      "skill": 295,
+      "source_url": "https://www.wowhead.com/forever/item=275585",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1297125
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275585",
+  "url": "https://www.wowhead.com/forever/item=275585"
+}

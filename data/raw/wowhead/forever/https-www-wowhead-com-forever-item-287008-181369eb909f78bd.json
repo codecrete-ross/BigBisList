@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ogre Magi's Mantle Item Level 45 Binds when equipped Shoulder Cloth 49 Armor +13 Stamina +6 Intellect Requires Level 40 Equip: Improves your chance to hit by 1.0%. Sell Price: 59 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 287008,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 49,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 287008,
+    "item_level": 45,
+    "name": "Ogre Magi's Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 6.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287008"
+  },
+  "linked_entities": [],
+  "name": "Ogre Magi's Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5555500020a17f348e62bb7124224fdcdd214426b69c0ede53ec285ba794e5a8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287008",
+  "url": "https://www.wowhead.com/forever/item=287008"
+}

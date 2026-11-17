@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Plate Spaulders Item Level 65 Binds when picked up Unique Shoulder Plate 553 Armor +18 Strength +17 Agility +20 Stamina Durability 100 / 100 Requires Level 60 Requires The League of Arathor - Exalted The Highlander's Resolution (0/3) Highlander's Plate Girdle Highlander's Plate Greaves Highlander's Plate Spaulders (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with melee attacks by 1.0%. Sell Price: 2 46 54",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 20057,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 553,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20057,
+    "item_level": 65,
+    "name": "Highlander's Plate Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 7597,
+        "text": "Improves your chance to get a critical strike with melee attacks by 1.0%."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "stamina": 20.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20057"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 20041,
+      "name": "Highlander's Plate Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20041"
+    },
+    {
+      "id": 20048,
+      "name": "Highlander's Plate Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20048"
+    },
+    {
+      "id": 20057,
+      "name": "Highlander's Plate Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20057"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 7597,
+      "name": "Improves your chance to get a critical strike with melee attacks by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7597"
+    }
+  ],
+  "name": "Highlander's Plate Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20057",
+  "url": "https://www.wowhead.com/forever/item=20057"
+}

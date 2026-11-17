@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grime-Encrusted Ring Item Level 28 Binds when picked up Unique This Item Begins a Quest Requires Level 28 Dropped by: Dark Iron Agent Drop Chance: 48.24%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:17.0829250Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 9326,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 9326,
+    "item_level": 28,
+    "name": "Grime-Encrusted Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 28,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9326"
+  },
+  "linked_entities": [
+    {
+      "id": 2945,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=2945"
+    }
+  ],
+  "name": "Grime-Encrusted Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 48.24,
+      "entity_name": "Dark Iron Agent",
+      "source_url": "https://www.wowhead.com/forever/item=9326",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "b19766205f64a05799b9989cfc446c5cfd81ae55b06e37eb8decbb3990c7186c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9326?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=9326"
+}

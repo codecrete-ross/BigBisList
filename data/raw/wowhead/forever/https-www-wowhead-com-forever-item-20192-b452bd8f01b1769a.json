@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Leather Girdle Item Level 43 Binds when picked up Unique Waist Leather 73 Armor +4 Stamina +40 Armor Durability 35 / 35 Requires Level 38 Requires The Defilers - Honored Equip: + 30 Attack Power. Sell Price: 41 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20192,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 73,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power.",
+        "stats": {
+          "attack_power": 30
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +30 Attack Power."
+    ],
+    "id": 20192,
+    "item_level": 43,
+    "name": "Defiler's Leather Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20192"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    }
+  ],
+  "name": "Defiler's Leather Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Leather Girdle Item Level 43 Binds when picked up Unique Waist Leather 73 Armor +4 Stamina +40 Armor Durability 35 / 35 Requires Level 38 Requires The Defilers - Honored Equip: + 30 Attack Power. Sell Price: 41 87",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20192",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20192",
+  "url": "https://www.wowhead.com/forever/item=20192"
+}

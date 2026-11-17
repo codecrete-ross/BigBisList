@@ -1,0 +1,159 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legplates of Valor Item Level 61 Binds when picked up Legs Plate 557 Armor +23 Strength +11 Agility +15 Stamina +4 Spirit + 17 Block Value Durability 100 / 100 Requires Level 56 Battlegear of Valor (0/8) Belt of Valor Boots of Valor Bracers of Valor Breastplate of Valor Gauntlets of Valor Helm of Valor Legplates of Valor Spaulders of Valor (2) Set : +8 All Resistances. (3) Set : +15 Strength. (4) Set : When struck in combat, has a 10% chance to remove a Disarm effect from yourself. Can only occur once every 60 sec. (Proc chance: 10%, 1m cooldown) (5) Set : Chance on melee attack to heal for 88 to 132 and generate 10 Rage (6) Set : Restores 15 health per 5 sec. Sell Price: 3 65 60 Dropped by: Baron Rivendare Drop Chance: 10.91%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 16732,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 557,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16732,
+    "item_level": 61,
+    "name": "Legplates of Valor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 13198,
+        "text": "+15 Strength."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302721,
+        "text": "When struck in combat, has a 10% chance to remove a Disarm effect from yourself. Can only occur once every 60 sec. (Proc chance: 10%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450587,
+        "text": "Chance on melee attack to heal for 88 to 132 and generate 10 Rage"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 21347,
+        "text": "Restores 15 health per 5 sec."
+      }
+    ],
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "spirit": 4.0,
+      "stamina": 15.0,
+      "strength": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16732"
+  },
+  "linked_entities": [
+    {
+      "id": 16730,
+      "name": "Breastplate of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16730"
+    },
+    {
+      "id": 16731,
+      "name": "Helm of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16731"
+    },
+    {
+      "id": 16732,
+      "name": "Legplates of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16732"
+    },
+    {
+      "id": 16733,
+      "name": "Spaulders of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16733"
+    },
+    {
+      "id": 16734,
+      "name": "Boots of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16734"
+    },
+    {
+      "id": 16735,
+      "name": "Bracers of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16735"
+    },
+    {
+      "id": 16736,
+      "name": "Belt of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16736"
+    },
+    {
+      "id": 16737,
+      "name": "Gauntlets of Valor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16737"
+    },
+    {
+      "id": 13198,
+      "name": "+15 Strength.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13198"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 21347,
+      "name": "Restores 15 health per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21347"
+    },
+    {
+      "id": 450587,
+      "name": "Chance on melee attack to heal for 88 to 132 and generate 10 Rage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450587"
+    },
+    {
+      "id": 1302721,
+      "name": "When struck in combat, has a 10% chance to remove a Disarm effect from yourself. Can only occur once every 60 sec. (Proc chance: 10%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302721"
+    }
+  ],
+  "name": "Legplates of Valor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.91,
+      "entity_name": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/item=16732",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16732",
+  "url": "https://www.wowhead.com/forever/item=16732"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Plate Armor Item Level 74 Binds when picked up Unique Chest Plate 835 Armor +16 Strength +14 Agility +33 Stamina +40 Armor Durability 165 / 165 Classes: Warrior Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 2 61 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 16541,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 835,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 16541,
+    "item_level": 74,
+    "name": "Warlord's Plate Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "crit_percent": 1.0,
+      "stamina": 33.0,
+      "strength": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16541"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Plate Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16541",
+  "url": "https://www.wowhead.com/forever/item=16541"
+}

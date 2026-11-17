@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3924"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:59:17.428095+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 11855,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3924",
+      "subject_id": 3924,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 10,
+    "name": "Samophlange Manual",
+    "quest_id": 3924,
+    "quest_level": 19,
+    "reward_item_ids": [
+      11855
+    ],
+    "zone": "The Barrens"
+  },
+  "source_content_digest": "fd526a982d677061446132a72662f17a89e3ca5c31f29c68eb717d49da7590cf",
+  "url": "https://guide.wow4ever.se/en/quests/3924"
+}

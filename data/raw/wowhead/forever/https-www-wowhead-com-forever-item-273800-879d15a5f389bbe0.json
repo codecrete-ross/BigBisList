@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thomas's Ring Item Level 58 Binds when picked up Finger +9 Spirit Equip: + 20 Attack Power. Sell Price: 1 52 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 273800,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +20 Attack Power."
+    ],
+    "id": 273800,
+    "item_level": 58,
+    "name": "Thomas's Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "spirit": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273800"
+  },
+  "linked_entities": [],
+  "name": "Thomas's Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "e52497b908a4d98acc51f3507a1d0737cb3e705bf33afa7adefd555f7e9c3a3a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273800",
+  "url": "https://www.wowhead.com/forever/item=273800"
+}

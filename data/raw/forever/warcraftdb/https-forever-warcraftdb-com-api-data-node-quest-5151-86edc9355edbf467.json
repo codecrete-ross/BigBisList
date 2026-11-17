@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/5151"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:23.331989+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15467,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/5151",
+      "subject_id": 5151,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 24,
+    "name": "Hypercapacitor Gizmo",
+    "quest_id": 5151,
+    "reward_item_ids": [
+      15467,
+      287066
+    ],
+    "zone": "Thousand Needles"
+  },
+  "source_content_digest": "20cb2bec771d3411fd23af7fa9dcb9a68b6a289414a957ef80a3265037f8a9f1",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/5151"
+}

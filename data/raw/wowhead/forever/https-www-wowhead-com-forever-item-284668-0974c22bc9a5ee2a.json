@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Apothecary's Concoction Item Level 24 Binds when equipped Held In Off-hand -5 Stamina Restores + 2 mana per 5 sec. Restores + 5 health per 5 sec. Requires Level 19 Sell Price: 9 54 Dropped by: Apothecary Falthis Drop Chance: 0.30%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 284668,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +2 mana per 5 sec.",
+        "stats": {
+          "mp5": 2
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +5 health per 5 sec.",
+        "stats": {
+          "hp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 284668,
+    "item_level": 24,
+    "name": "Apothecary's Concoction",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 19,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "hp5": 5.0,
+      "mp5": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=284668"
+  },
+  "linked_entities": [],
+  "name": "Apothecary's Concoction",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.3,
+      "entity_name": "Apothecary Falthis",
+      "source_url": "https://www.wowhead.com/forever/item=284668",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d64ace9ecb95b098f801a8bad69d48cf2de7bad085c82bacac0c55c1430c04d4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284668",
+  "url": "https://www.wowhead.com/forever/item=284668"
+}

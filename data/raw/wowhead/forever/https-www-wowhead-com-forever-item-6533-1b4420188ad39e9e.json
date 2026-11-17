@@ -1,0 +1,56 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Aquadynamic Fish Attractor Item Level 30 Requires Fishing (100) Use: When applied to your fishing pole, increases Fishing by 100 for 5 minutes. Max Stack: 20 Sell Price: 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6533,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: When applied to your fishing pole, increases Fishing by 100 for 5 minutes.",
+        "type": "conditional"
+      }
+    ],
+    "id": 6533,
+    "item_level": 30,
+    "name": "Aquadynamic Fish Attractor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: When applied to your fishing pole, increases Fishing by 100 for 5 minutes. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6533"
+  },
+  "linked_entities": [
+    {
+      "id": 356,
+      "name": "Fishing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=356"
+    },
+    {
+      "id": 8089,
+      "name": "When applied to your fishing pole, increases Fishing by 100 for 5 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8089"
+    }
+  ],
+  "name": "Aquadynamic Fish Attractor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6533",
+  "url": "https://www.wowhead.com/forever/item=6533"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of the Ogre King Item Level 63 Binds when picked up Unique-Equipped Finger +14 Strength +13 Stamina Requires Level 58 Sell Price: 2 30 33 Dropped by: King Gordok Drop Chance: 23.52%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18522,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18522,
+    "item_level": 63,
+    "name": "Band of the Ogre King",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 13.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18522"
+  },
+  "linked_entities": [],
+  "name": "Band of the Ogre King",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.52,
+      "entity_name": "King Gordok",
+      "source_url": "https://www.wowhead.com/forever/item=18522",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b8b80569333f0d79c5c39908f5df16db0fbe24054bfe11eac6690a0e2649267a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18522",
+  "url": "https://www.wowhead.com/forever/item=18522"
+}

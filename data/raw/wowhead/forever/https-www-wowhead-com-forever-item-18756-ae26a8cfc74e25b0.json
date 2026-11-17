@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dreadguard's Protector Item Level 62 Binds when picked up Off Hand Shield 2121 Armor 39 Block +18 Strength +5 Stamina Requires Level 57 Sell Price: 3 50 98 Dropped by: Lord Hel'nurath Drop Chance: 23.95%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T09:52:35.1627391Z",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 18756,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 2121,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18756,
+    "item_level": 62,
+    "name": "Dreadguard's Protector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 39.0,
+      "stamina": 5.0,
+      "strength": 18.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18756"
+  },
+  "linked_entities": [],
+  "name": "Dreadguard's Protector",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "guide_lead",
+      "drop_percent": 23.95,
+      "entity_name": "Lord Hel'nurath",
+      "source_url": "https://www.wowhead.com/forever/item=18756",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d55546dfa223a2218da9f33ab337482cdb95db80eec016a4f9503fdf9c6630d2",
+  "source_review_note": "The current tooltip confirms level 57. Verify whether the named source is a live Forever observation before approving a drop route.",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=18756"
+}

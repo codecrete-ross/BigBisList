@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Splinthide Shoulders Item Level 55 Binds when picked up Shoulder Leather 118 Armor +11 Strength +10 Stamina +10 Intellect Durability 60 / 60 Requires Level 50 Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 1 42 43 Dropped by: Eviscerator Drop Chance: 31.67%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 11685,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 118,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 11685,
+    "item_level": 55,
+    "name": "Splinthide Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 9.0,
+      "stamina": 10.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11685"
+  },
+  "linked_entities": [],
+  "name": "Splinthide Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.67,
+      "entity_name": "Eviscerator",
+      "source_url": "https://www.wowhead.com/forever/item=11685",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "367d0fdbeea0d7952e2e1e4e9dae5a6eb09a9b41475b2356453c7800dd07942f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11685",
+  "url": "https://www.wowhead.com/forever/item=11685"
+}

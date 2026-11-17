@@ -1,0 +1,158 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Frostfire Shoulderpads Item Level 86 Binds when picked up Shoulder Cloth 97 Armor +17 Stamina +18 Intellect +9 Spirit Durability 60 / 60 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 36 . Frostfire Regalia (0/9) Frostfire Belt Frostfire Bindings Frostfire Circlet Frostfire Gloves Frostfire Leggings Frostfire Robe Frostfire Sandals Frostfire Shoulderpads Frostfire Ring (2) Set : Reduces cooldown on your Evocation by 1 minute. (4) Set : Gives your Mage Armor a chance when struck by a harmful spell to increase resistance against that school of magic by 35 for 30 sec. (Proc chance: 20%) (6) Set : Your damage spells have a chance to cause your target to take up to 200 increased damage from subsequent spells. (Proc chance: 20%) (8) Set : Your damage spells have a chance to displace you, causing the next spell cast to generate no threat. (Proc chance: 15%) Sell Price: 6 76 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 22499,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 97,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
+        "stats": {
+          "spell_power": 36.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+    ],
+    "id": 22499,
+    "item_level": 86,
+    "name": "Frostfire Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 28763,
+        "text": "Reduces cooldown on your Evocation by 1 minute."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 28764,
+        "text": "Gives your Mage Armor a chance when struck by a harmful spell to increase resistance against that school of magic by 35 for 30 sec. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 28771,
+        "text": "Your damage spells have a chance to cause your target to take up to 200 increased damage from subsequent spells. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 8,
+        "spell_id": 28761,
+        "text": "Your damage spells have a chance to displace you, causing the next spell cast to generate no threat. (Proc chance: 15%)"
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_power": 36.0,
+      "spirit": 9.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22499"
+  },
+  "linked_entities": [
+    {
+      "id": 22496,
+      "name": "Frostfire Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22496"
+    },
+    {
+      "id": 22497,
+      "name": "Frostfire Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22497"
+    },
+    {
+      "id": 22498,
+      "name": "Frostfire Circlet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22498"
+    },
+    {
+      "id": 22499,
+      "name": "Frostfire Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22499"
+    },
+    {
+      "id": 22500,
+      "name": "Frostfire Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22500"
+    },
+    {
+      "id": 22501,
+      "name": "Frostfire Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22501"
+    },
+    {
+      "id": 22502,
+      "name": "Frostfire Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22502"
+    },
+    {
+      "id": 22503,
+      "name": "Frostfire Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22503"
+    },
+    {
+      "id": 23062,
+      "name": "Frostfire Ring",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23062"
+    },
+    {
+      "id": 28761,
+      "name": "Your damage spells have a chance to displace you, causing the next spell cast to generate no threat. (Proc chance: 15%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28761"
+    },
+    {
+      "id": 28763,
+      "name": "Reduces cooldown on your Evocation by 1 minute.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28763"
+    },
+    {
+      "id": 28764,
+      "name": "Gives your Mage Armor a chance when struck by a harmful spell to increase resistance against that school of magic by 35 for 30 sec. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28764"
+    },
+    {
+      "id": 28771,
+      "name": "Your damage spells have a chance to cause your target to take up to 200 increased damage from subsequent spells. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28771"
+    }
+  ],
+  "name": "Frostfire Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22499",
+  "url": "https://www.wowhead.com/forever/item=22499"
+}

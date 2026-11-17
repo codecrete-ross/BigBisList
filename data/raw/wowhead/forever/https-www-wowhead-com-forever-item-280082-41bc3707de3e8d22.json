@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Sorrow Item Level 57 Binds when picked up Two-Hand Staff 104 - 157 Damage Speed 3.60 (36.25 damage per second) +15 Intellect +21 Spirit Requires Level 52 Equip: Improves your chance to hit by 1.5%. Equip: Increases damage and healing done by magical spells and effects by up to 66 . Sell Price: 5 27 89",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:33.9828122Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 280082,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 36.25,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.5%.",
+        "stats": {
+          "hit_percent": 1.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 66.",
+        "stats": {
+          "spell_power": 66.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.5%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 66."
+    ],
+    "id": 280082,
+    "item_level": 57,
+    "name": "Staff of Sorrow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.5,
+      "intellect": 15.0,
+      "spell_power": 66.0,
+      "spirit": 21.0
+    },
+    "weapon_max_damage": 157,
+    "weapon_min_damage": 104,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280082"
+  },
+  "linked_entities": [],
+  "name": "Staff of Sorrow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "11e4e14eae1ab1d82ad3f88bce040ac8561dab72aad2b5e7d1acd3e2c3e1e5ab",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280082?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=280082"
+}

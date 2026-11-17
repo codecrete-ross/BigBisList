@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wildfire Cape Item Level 61 Binds when picked up Back 43 Armor +20 Fire Resistance Requires Level 56 Sell Price: 1 56 68 Dropped by: Pyroguard Emberseer Drop Chance: 25.90%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:56.3041561Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 12905,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 12905,
+    "item_level": 61,
+    "name": "Wildfire Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12905"
+  },
+  "linked_entities": [],
+  "name": "Wildfire Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 25.9,
+      "entity_name": "Pyroguard Emberseer",
+      "source_url": "https://www.wowhead.com/forever/item=12905",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d016d7dfb0fe2439e90ebc96450ffcd1a02a11b91ddcdc915f5ab288394dbea4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12905",
+  "url": "https://www.wowhead.com/forever/item=12905"
+}

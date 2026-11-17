@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thorn Protecting Girdle Item Level 36 Binds when picked up Waist Mail 122 Armor +8 Stamina Durability 35 / 35 Equip: + 12 Attack Power. Equip: + 9 Attack Power against Elementals. Sell Price: 23 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 279836,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +9 Attack Power against Elementals.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power.",
+      "Equip: +9 Attack Power against Elementals."
+    ],
+    "id": 279836,
+    "item_level": 36,
+    "name": "Thorn Protecting Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279836"
+  },
+  "linked_entities": [],
+  "name": "Thorn Protecting Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279836",
+  "url": "https://www.wowhead.com/forever/item=279836"
+}

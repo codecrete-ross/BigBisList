@@ -1,0 +1,150 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Mail Epaulets Item Level 71 Binds when picked up Shoulder Mail 311 Armor +24 Stamina +10 Intellect Restores + 2 mana per 5 sec. Durability 70 / 70 Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by magical spells and effects by up to 29 . Champion's Wartide (0/6) Blood Guard's Mail Boots Blood Guard's Mail Gloves Champion's Mail Epaulets Champion's Mail Skullcap Legionnaire's Mail Chestguard Legionnaire's Mail Pants (2) Set : Increases healing done by spells and effects by up to 44. (4) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : +20 Stamina. Sell Price: 1 96 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227166,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 311,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "healing_power": 29
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +2 mana per 5 sec.",
+        "stats": {
+          "mp5": 2
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 227166,
+    "item_level": 71,
+    "name": "Champion's Mail Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 17371,
+        "text": "Increases healing done by spells and effects by up to 44."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 22804,
+        "text": "Improves your chance to get a critical strike with all Shock spells by 2%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 29.0,
+      "intellect": 10.0,
+      "mp5": 2.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227166"
+  },
+  "linked_entities": [
+    {
+      "id": 227166,
+      "name": "Champion's Mail Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227166"
+    },
+    {
+      "id": 227167,
+      "name": "Legionnaire's Mail Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227167"
+    },
+    {
+      "id": 227168,
+      "name": "Champion's Mail Skullcap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227168"
+    },
+    {
+      "id": 227169,
+      "name": "Blood Guard's Mail Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227169"
+    },
+    {
+      "id": 227170,
+      "name": "Blood Guard's Mail Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227170"
+    },
+    {
+      "id": 227171,
+      "name": "Legionnaire's Mail Chestguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227171"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 17371,
+      "name": "Increases healing done by spells and effects by up to 44.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17371"
+    },
+    {
+      "id": 22804,
+      "name": "Improves your chance to get a critical strike with all Shock spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22804"
+    }
+  ],
+  "name": "Champion's Mail Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "efabc0d0e5364771920428f2a3b49bd1c4b301ea3023a9f96f428f4f9b9d3b59",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227166",
+  "url": "https://www.wowhead.com/forever/item=227166"
+}

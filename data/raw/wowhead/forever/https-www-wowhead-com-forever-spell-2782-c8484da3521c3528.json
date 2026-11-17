@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Remove Curse 10% of base mana 30 yd range Instant Requires Druid Requires level 24 Dispels 1 Curse or Bane from a friendly target.",
+  "entity_id": 2782,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:35+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2782,
+      "name": "Remove Curse",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2782"
+    }
+  ],
+  "name": "Remove Curse",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "9b99dea4b3b63f223fb47370b77ddf2141cdb9b92170c16d04b1bf33a28bb07c",
+  "spell_id": 2782,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/2782",
+  "url": "https://www.wowhead.com/forever/spell=2782"
+}

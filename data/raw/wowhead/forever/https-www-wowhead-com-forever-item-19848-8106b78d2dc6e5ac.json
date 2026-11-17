@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Zandalar Demoniac's Wraps Item Level 61 Binds when picked up Wrist Cloth 41 Armor +15 Stamina +8 Intellect Durability 35 / 35 Classes: Warlock Equip: Increases damage and healing done by magical spells and effects by up to 16 . Demoniac's Threads (0/5) Kezan's Unstoppable Taint Hazza'rah's Charm of Destruction Zandalar Demoniac's Wraps Zandalar Demoniac's Mantle Zandalar Demoniac's Robe (2) Set : Increases damage and healing done by magical spells and effects by up to 12. (3) Set : Increases the damage of Corruption by 2%. (5) Set : Decreases the cooldown of Death Coil by 15%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 19848,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 41,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 19848,
+    "item_level": 61,
+    "name": "Zandalar Demoniac's Wraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 9417,
+        "text": "Increases damage and healing done by magical spells and effects by up to 12."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24486,
+        "text": "Increases the damage of Corruption by 2%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24487,
+        "text": "Decreases the cooldown of Death Coil by 15%."
+      }
+    ],
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "spell_power": 16.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19848"
+  },
+  "linked_entities": [
+    {
+      "id": 19605,
+      "name": "Kezan's Unstoppable Taint",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19605"
+    },
+    {
+      "id": 19848,
+      "name": "Zandalar Demoniac's Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19848"
+    },
+    {
+      "id": 19849,
+      "name": "Zandalar Demoniac's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19849"
+    },
+    {
+      "id": 19957,
+      "name": "Hazza'rah's Charm of Destruction",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19957"
+    },
+    {
+      "id": 20033,
+      "name": "Zandalar Demoniac's Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20033"
+    },
+    {
+      "id": 9417,
+      "name": "Increases damage and healing done by magical spells and effects by up to 12.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9417"
+    },
+    {
+      "id": 24486,
+      "name": "Increases the damage of Corruption by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24486"
+    },
+    {
+      "id": 24487,
+      "name": "Decreases the cooldown of Death Coil by 15%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24487"
+    }
+  ],
+  "name": "Zandalar Demoniac's Wraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19848",
+  "url": "https://www.wowhead.com/forever/item=19848"
+}

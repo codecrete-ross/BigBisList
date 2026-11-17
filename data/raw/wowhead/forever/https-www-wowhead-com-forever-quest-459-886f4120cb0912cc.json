@@ -1,0 +1,74 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Woodland Protector Collect 8 Fel Moss and bring them to Tarindrella. Requirements: - Fel Moss x 8",
+  "entity_id": 459,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:34.163Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Woodland Protector",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 1992,
+        "name": "Tarindrella"
+      },
+      "start": {
+        "entity_id": 1992,
+        "name": "Tarindrella"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Teldrassil"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 961,
+      "object_name": "Healing Herb",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=459",
+      "subject_id": 459,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 5398,
+      "object_name": "Canopy Leggings",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=459",
+      "subject_id": 459,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 5399,
+      "object_name": "Tracking Boots",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=459",
+      "subject_id": 459,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 11190,
+      "object_name": "Viny Gloves",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=459",
+      "subject_id": 459,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/459",
+  "url": "https://www.wowhead.com/forever/quest=459"
+}

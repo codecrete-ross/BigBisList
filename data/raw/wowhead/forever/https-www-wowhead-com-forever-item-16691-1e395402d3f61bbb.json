@@ -1,0 +1,173 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Devout Sandals Item Level 59 Binds when picked up Feet Cloth 58 Armor +9 Stamina +10 Intellect +17 Spirit Durability 40 / 40 Requires Level 54 Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. Vestments of the Devout (0/8) Devout Belt Devout Sandals Devout Bracers Devout Crown Devout Gloves Devout Mantle Devout Skirt Devout Robe (2) Set : +8 All Resistances. (3) Set : Increases damage and healing done by magical spells and effects by up to 18. (4) Set : When struck in combat has a 2% chance of shielding the wearer in a protective shield which will absorb 488 damage. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown) (5) Set : Your spellcasts have a 5% chance to energize you for 200 mana. (Proc chance: 5%) (6) Set : Restores 8 mana per 5 sec. Sell Price: 1 42 11 Dropped by: Maleki the Pallid Drop Chance: 18.18%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 16691,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 58,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 11,
+          "spell_damage": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
+    ],
+    "id": 16691,
+    "item_level": 59,
+    "name": "Devout Sandals",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27778,
+        "text": "When struck in combat has a 2% chance of shielding the wearer in a protective shield which will absorb 488 damage. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450576,
+        "text": "Your spellcasts have a 5% chance to energize you for 200 mana. (Proc chance: 5%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 11.0,
+      "intellect": 10.0,
+      "spell_damage": 4.0,
+      "spirit": 17.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16691"
+  },
+  "linked_entities": [
+    {
+      "id": 16690,
+      "name": "Devout Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16690"
+    },
+    {
+      "id": 16691,
+      "name": "Devout Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16691"
+    },
+    {
+      "id": 16692,
+      "name": "Devout Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16692"
+    },
+    {
+      "id": 16693,
+      "name": "Devout Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16693"
+    },
+    {
+      "id": 16694,
+      "name": "Devout Skirt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16694"
+    },
+    {
+      "id": 16695,
+      "name": "Devout Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16695"
+    },
+    {
+      "id": 16696,
+      "name": "Devout Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16696"
+    },
+    {
+      "id": 16697,
+      "name": "Devout Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16697"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27778,
+      "name": "When struck in combat has a 2% chance of shielding the wearer in a protective shield which will absorb 488 damage. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27778"
+    },
+    {
+      "id": 450576,
+      "name": "Your spellcasts have a 5% chance to energize you for 200 mana. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450576"
+    }
+  ],
+  "name": "Devout Sandals",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.18,
+      "entity_name": "Maleki the Pallid",
+      "source_url": "https://www.wowhead.com/forever/item=16691",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16691",
+  "url": "https://www.wowhead.com/forever/item=16691"
+}

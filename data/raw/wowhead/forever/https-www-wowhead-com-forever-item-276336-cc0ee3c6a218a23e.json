@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Yashiro's Spirit Bead Item Level 60 Binds when picked up Held In Off-hand +12 Spirit Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects. Sell Price: 1 61 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T06:24:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 276336,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 15,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 276336,
+    "item_level": 60,
+    "name": "Yashiro's Spirit Bead",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 15.0,
+      "spell_damage": 5.0,
+      "spirit": 12.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=276336"
+  },
+  "linked_entities": [],
+  "name": "Yashiro's Spirit Bead",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "6f227f1e617426dc6eff409d9c2bbf1ebe9782ae483c7a6a0e466ffd5cf60398",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276336",
+  "url": "https://www.wowhead.com/forever/item=276336"
+}

@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deprecated Scarlet Badge Item Level 40 Binds when picked up Unique Trinket Use: Heals a friendly target for 127 to 150. (2 Min Cooldown) Sell Price: 3 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 1184,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals a friendly target for 127 to 150. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 1184,
+    "item_level": 40,
+    "name": "Deprecated Scarlet Badge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "poor",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals a friendly target for 127 to 150. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1184"
+  },
+  "linked_entities": [
+    {
+      "id": 547,
+      "name": "Heals a friendly target for 127 to 150.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=547"
+    }
+  ],
+  "name": "Deprecated Scarlet Badge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "poor",
+  "related_tables": {},
+  "source_content_digest": "3265633476f1e57341b6ae0fdc5b517b94fe9db0e0db7416fbcf2dca81a53654",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1184",
+  "url": "https://www.wowhead.com/forever/item=1184"
+}

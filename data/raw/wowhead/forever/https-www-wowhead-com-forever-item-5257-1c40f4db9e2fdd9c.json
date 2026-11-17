@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dark Hooded Cape Item Level 39 Binds when equipped Back 28 Armor +4 Strength +10 Agility Requires Level 34 Sell Price: 31 59 Dropped by: Nimar the Slayer Drop Chance: 9.83%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 5257,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 28,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 5257,
+    "item_level": 39,
+    "name": "Dark Hooded Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 34,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "strength": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5257"
+  },
+  "linked_entities": [],
+  "name": "Dark Hooded Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.83,
+      "entity_name": "Nimar the Slayer",
+      "source_url": "https://www.wowhead.com/forever/item=5257",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5257",
+  "url": "https://www.wowhead.com/forever/item=5257"
+}

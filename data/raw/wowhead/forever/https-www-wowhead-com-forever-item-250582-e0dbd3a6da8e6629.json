@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sentinel's Wristguards Item Level 50 Binds when picked up Wrist Plate 231 Armor +6 Strength +11 Stamina Requires Level 45 Equip: Increased Defense + 8. Sell Price: 94 26",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 250582,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 231,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +8.",
+        "stats": {
+          "defense": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +8."
+    ],
+    "id": 250582,
+    "item_level": 50,
+    "name": "Sentinel's Wristguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "defense": 8.0,
+      "stamina": 11.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250582"
+  },
+  "linked_entities": [],
+  "name": "Sentinel's Wristguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250582",
+  "url": "https://www.wowhead.com/forever/item=250582"
+}

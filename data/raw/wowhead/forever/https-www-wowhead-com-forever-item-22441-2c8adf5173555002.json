@@ -1,0 +1,166 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cryptstalker Handguards Item Level 88 Binds when picked up Hands Mail 346 Armor +24 Agility +21 Stamina +15 Intellect Restores + 4 mana per 5 sec. Durability 50 / 50 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Cryptstalker Armor (0/9) Cryptstalker Boots Cryptstalker Girdle Cryptstalker Handguards Cryptstalker Headpiece Cryptstalker Legguards Cryptstalker Spaulders Cryptstalker Tunic Cryptstalker Wristguards Ring of the Cryptstalker (2) Set : Increases the duration of your Rapid Fire by 4 secs. (4) Set : Increases Attack Power by 50 for both you and your pet. (6) Set : Your ranged critical hits cause an Adrenaline Rush, granting you 50 mana. (8) Set : Reduces the mana cost of your Multi-Shot and Aimed Shot by 20. Sell Price: 7 52 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 22441,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 346,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 22441,
+    "item_level": 88,
+    "name": "Cryptstalker Handguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 28755,
+        "text": "Increases the duration of your Rapid Fire by 4 secs."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 28756,
+        "text": "Increases Attack Power by 50 for both you and your pet."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 28752,
+        "text": "Your ranged critical hits cause an Adrenaline Rush, granting you 50 mana."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 28751,
+        "text": "Reduces the mana cost of your Multi-Shot and Aimed Shot by 20."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "agility": 24.0,
+      "crit_percent": 1.0,
+      "intellect": 15.0,
+      "mp5": 4.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22441"
+  },
+  "linked_entities": [
+    {
+      "id": 22436,
+      "name": "Cryptstalker Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22436"
+    },
+    {
+      "id": 22437,
+      "name": "Cryptstalker Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22437"
+    },
+    {
+      "id": 22438,
+      "name": "Cryptstalker Headpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22438"
+    },
+    {
+      "id": 22439,
+      "name": "Cryptstalker Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22439"
+    },
+    {
+      "id": 22440,
+      "name": "Cryptstalker Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22440"
+    },
+    {
+      "id": 22441,
+      "name": "Cryptstalker Handguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22441"
+    },
+    {
+      "id": 22442,
+      "name": "Cryptstalker Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22442"
+    },
+    {
+      "id": 22443,
+      "name": "Cryptstalker Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22443"
+    },
+    {
+      "id": 23067,
+      "name": "Ring of the Cryptstalker",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23067"
+    },
+    {
+      "id": 28751,
+      "name": "Reduces the mana cost of your Multi-Shot and Aimed Shot by 20.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28751"
+    },
+    {
+      "id": 28752,
+      "name": "Your ranged critical hits cause an Adrenaline Rush, granting you 50 mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28752"
+    },
+    {
+      "id": 28755,
+      "name": "Increases the duration of your Rapid Fire by 4 secs.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28755"
+    },
+    {
+      "id": 28756,
+      "name": "Increases Attack Power by 50 for both you and your pet.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28756"
+    }
+  ],
+  "name": "Cryptstalker Handguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22441",
+  "url": "https://www.wowhead.com/forever/item=22441"
+}

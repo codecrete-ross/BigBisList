@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/3341"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:34.777133+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 270081,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/3341",
+      "subject_id": 3341,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 37,
+    "name": "Bring the End",
+    "quest_id": 3341,
+    "reward_item_ids": [
+      10823,
+      10824,
+      270081
+    ],
+    "zone": "Razorfen Downs"
+  },
+  "source_content_digest": "8dd285667467c372e70f5a6b9f60c11e0409077a79e982138d1258ae6f1a4c44",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/3341"
+}

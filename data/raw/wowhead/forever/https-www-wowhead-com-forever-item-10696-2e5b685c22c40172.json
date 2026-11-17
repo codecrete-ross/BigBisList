@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Enchanted Azsharite Felbane Sword Item Level 60 Binds when picked up Main Hand Sword 50 - 93 Damage Speed 2.00 (35.75 damage per second) Durability 75 / 75 Equip: + 18 Attack Power. Equip: + 15 Attack Power against Demons. Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. \"Etched across the blade: Rakh'likh\" Sell Price: 4 18 90",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 10696,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 35.75,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power.",
+        "stats": {
+          "attack_power": 18
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +15 Attack Power against Demons.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate.",
+        "type": "use"
+      }
+    ],
+    "id": 10696,
+    "item_level": 60,
+    "name": "Enchanted Azsharite Felbane Sword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 18.0
+    },
+    "use_effects": [
+      "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. \"Etched across the blade: Rakh'likh\""
+    ],
+    "weapon_max_damage": 93,
+    "weapon_min_damage": 50,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10696"
+  },
+  "linked_entities": [
+    {
+      "id": 12938,
+      "name": "Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12938"
+    }
+  ],
+  "name": "Enchanted Azsharite Felbane Sword",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10696",
+  "url": "https://www.wowhead.com/forever/item=10696"
+}

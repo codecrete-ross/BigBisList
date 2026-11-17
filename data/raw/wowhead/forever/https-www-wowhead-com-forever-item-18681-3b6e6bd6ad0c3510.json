@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Burial Shawl Item Level 61 Binds when picked up Shoulder Cloth 65 Armor +4 Stamina +16 Intellect Durability 50 / 50 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 20 . Sell Price: 1 56 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18681,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 65,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 18681,
+    "item_level": 61,
+    "name": "Burial Shawl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "spell_power": 20.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18681"
+  },
+  "linked_entities": [],
+  "name": "Burial Shawl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "966a3efbb28447c8959928f116362188eecd111b089770a49a5bef367e526e0a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18681",
+  "url": "https://www.wowhead.com/forever/item=18681"
+}

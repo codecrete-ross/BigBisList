@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Ring of Righteous Flame (TEST) Item Level 2 Finger Use: Hurls a fiery ball that causes 15 to 23 Fire damage and an additional 2 Fire damage over 4 sec. Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 996,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Hurls a fiery ball that causes 15 to 23 Fire damage and an additional 2 Fire damage over 4 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 996,
+    "item_level": 2,
+    "name": "Ring of Righteous Flame (TEST)",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Ring",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Hurls a fiery ball that causes 15 to 23 Fire damage and an additional 2 Fire damage over 4 sec."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=996"
+  },
+  "linked_entities": [
+    {
+      "id": 133,
+      "name": "Hurls a fiery ball that causes 15 to 23 Fire damage and an additional 2 Fire damage over 4 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=133"
+    }
+  ],
+  "name": "Ring of Righteous Flame (TEST)",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "81b09db97c2ff3536ae7c55d469095d018ed9818a3d16be0e959f67c6623f1de",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/996",
+  "url": "https://www.wowhead.com/forever/item=996"
+}

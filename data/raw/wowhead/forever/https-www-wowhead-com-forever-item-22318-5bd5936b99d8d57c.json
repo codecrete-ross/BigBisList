@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Malgen's Long Bow Item Level 61 Binds when picked up Ranged Bow 63 - 118 Damage Speed 2.90 (31.21 damage per second) +4 Stamina Requires Level 56 Equip: + 18 Attack Power. Sell Price: 3 91 71",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T03:53:09.3263879Z",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 22318,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 31.21,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power.",
+        "stats": {
+          "attack_power": 18
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +18 Attack Power."
+    ],
+    "id": 22318,
+    "item_level": 61,
+    "name": "Malgen's Long Bow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 18.0,
+      "stamina": 4.0
+    },
+    "weapon_max_damage": 118,
+    "weapon_min_damage": 63,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22318"
+  },
+  "linked_entities": [],
+  "name": "Malgen's Long Bow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "50a2e8cbae059fc4d7a70996028adce7b95a1a7e9d684f397798dd79c9213d7e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22318",
+  "url": "https://www.wowhead.com/forever/item=22318"
+}

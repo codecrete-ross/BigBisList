@@ -14,6 +14,7 @@ Widgets.Theme = {
     selected = { 0.18, 0.15, 0.075, 0.98 },
     border = { 0.26, 0.26, 0.29, 1 },
     accent = { 0.92, 0.76, 0.32, 1 },
+    bisGold = { 1, 0.82, 0.32, 1 },
     text = { 0.90, 0.90, 0.92, 1 },
     muted = { 0.68, 0.68, 0.72, 1 },
     disabled = { 0.42, 0.42, 0.46, 1 },
@@ -352,6 +353,53 @@ function Widgets:SetCellText(label, text, maxLines, lineHeight, width)
     return displayed, truncated
 end
 
+local QUALITY_COLORS = {
+    [0] = { 0x9d, 0x9d, 0x9d }, { 0xff, 0xff, 0xff }, { 0x1e, 0xff, 0x00 },
+    { 0x00, 0x70, 0xdd }, { 0xa3, 0x35, 0xee }, { 0xff, 0x80, 0x00 },
+}
+
+function Widgets:GetRankColor(quality)
+    local getColor = GetItemQualityColor or (C_Item and C_Item.GetItemQualityColor)
+    local r, g, b
+    if getColor then r, g, b = getColor(quality) end
+    if r then return r, g, b end
+    local fallback = QUALITY_COLORS[quality]
+    return fallback[1] / 255, fallback[2] / 255, fallback[3] / 255
+end
+
+function Widgets:SetEquippedBiS(frame, active)
+    local highlight = frame.bisHighlight
+    if not highlight then
+        if not active then return end
+        local gold = self.Theme.bisGold
+        local fill = frame:CreateTexture(nil, "ARTWORK", nil, -2)
+        fill:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
+        fill:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+        fill:SetColorTexture(gold[1], gold[2], gold[3], 0.12)
+        highlight = { fill }
+        for _, side in ipairs({ "TOP", "BOTTOM" }) do
+            local y = side == "TOP" and -2 or 2
+            local edge = frame:CreateTexture(nil, "OVERLAY")
+            edge:SetPoint(side .. "LEFT", frame, side .. "LEFT", 2, y)
+            edge:SetPoint(side .. "RIGHT", frame, side .. "RIGHT", -2, y)
+            edge:SetHeight(1)
+            edge:SetColorTexture(unpack(gold))
+            highlight[#highlight + 1] = edge
+        end
+        for _, side in ipairs({ "LEFT", "RIGHT" }) do
+            local x = side == "LEFT" and 2 or -2
+            local edge = frame:CreateTexture(nil, "OVERLAY")
+            edge:SetPoint("TOP" .. side, frame, "TOP" .. side, x, -2)
+            edge:SetPoint("BOTTOM" .. side, frame, "BOTTOM" .. side, x, 2)
+            edge:SetWidth(1)
+            edge:SetColorTexture(unpack(gold))
+            highlight[#highlight + 1] = edge
+        end
+        frame.bisHighlight = highlight
+    end
+    for _, texture in ipairs(highlight) do texture:SetShown(active == true) end
+end
+
 function Widgets:CreateStatusBadge(parent, text, width, height, bg, border)
     local badge = self:CreatePanel(nil, parent, bg, border)
     badge.__bigBisStatusBadge = true
@@ -684,6 +732,10 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
     clickCover:SetAllPoints(frame)
     clickCover:EnableMouse(true)
     clickCover:RegisterForClicks("LeftButtonUp")
+    -- Keep native outside-click dismissal from closing the menu before OnClick.
+    function clickCover:HandlesGlobalMouseEvent(buttonName, event)
+        return event == "GLOBAL_MOUSE_DOWN" and buttonName == "LeftButton"
+    end
     if clickCover.SetFrameLevel then
         local nativeLevel = nativeButton and nativeButton.GetFrameLevel and nativeButton:GetFrameLevel() or 0
         local frameLevel = frame.GetFrameLevel and frame:GetFrameLevel() or 0

@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_use",
+  "boe": null,
+  "description": "Piccolo of the Flaming Fire Item Level 58 Binds when used Toy Requires Level 53 Use: Causes nearby players to dance. (1 Min Cooldown) Sell Price: 1 7 34 Dropped by: Hearthsinger Forresten Drop Chance: 19.66%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 13379,
+  "item_kind": "non_equipment",
+  "item_stats": {
+    "binding": "bind_on_use",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Causes nearby players to dance. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13379,
+    "item_level": 58,
+    "name": "Piccolo of the Flaming Fire",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Causes nearby players to dance. (1 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13379"
+  },
+  "linked_entities": [
+    {
+      "id": 18400,
+      "name": "Causes nearby players to dance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18400"
+    }
+  ],
+  "name": "Piccolo of the Flaming Fire",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.66,
+      "entity_name": "Hearthsinger Forresten",
+      "source_url": "https://www.wowhead.com/forever/item=13379",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "770a33374d2245aa17093c9568b251e87612bd809faad14e64989ae6115e06f2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13379",
+  "url": "https://www.wowhead.com/forever/item=13379"
+}

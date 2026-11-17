@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Goggles of Gem Hunting Item Level 1 Quest Item Unique Head Equip: Nearby elven gems appear on the minimap.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 4491,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Nearby elven gems appear on the minimap.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Nearby elven gems appear on the minimap."
+    ],
+    "id": 4491,
+    "item_level": 1,
+    "name": "Goggles of Gem Hunting",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4491"
+  },
+  "linked_entities": [
+    {
+      "id": 4152,
+      "name": "Nearby elven gems appear on the minimap.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=4152"
+    }
+  ],
+  "name": "Goggles of Gem Hunting",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "19c025b990e3af7e69386bd47412e16bef51b0d0a7f57dbe79e76816e7c166bd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4491",
+  "url": "https://www.wowhead.com/forever/item=4491"
+}

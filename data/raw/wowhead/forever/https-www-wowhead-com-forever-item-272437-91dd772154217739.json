@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Adaptive Combat Assistant Item Level 65 Binds when picked up Unique-Equipped: Undermine Trinkets (1) Trinket Requires Level 60 Equip: Reduces chance to be Dodged or Parried by 2.0%. Use: Absorbs 450 damage for 15 sec. If this shield expires before 15 sec, 90 to 110 Nature damage will be dealt to all enemies in melee range. (1 Min, 30 Sec Cooldown) Sell Price: 1 62 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 272437,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 2.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Use: Absorbs 450 damage for 15 sec. If this shield expires before 15 sec, 90 to 110 Nature damage will be dealt to all enemies in melee range. (1 Min, 30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 2.0%."
+    ],
+    "id": 272437,
+    "item_level": 65,
+    "name": "Adaptive Combat Assistant",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Absorbs 450 damage for 15 sec. If this shield expires before 15 sec, 90 to 110 Nature damage will be dealt to all enemies in melee range. (1 Min, 30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=272437"
+  },
+  "linked_entities": [
+    {
+      "id": 1291097,
+      "name": "Absorbs 450 damage for 15 sec. If this shield expires before 15 sec, 90 to 110 Nature damage will be dealt to all enemies in melee range.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291097"
+    }
+  ],
+  "name": "Adaptive Combat Assistant",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272437",
+  "url": "https://www.wowhead.com/forever/item=272437"
+}

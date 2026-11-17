@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/1031"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:15.847719+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 5820,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/1031",
+      "subject_id": 1031,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 26,
+    "name": "The Branch of Cenarius",
+    "quest_id": 1031,
+    "quest_level": 32,
+    "reward_item_ids": [
+      5820
+    ],
+    "zone": "Ashenvale"
+  },
+  "source_content_digest": "9245539e9c4d6f9ef6d162a60ecb7eae568e7917c03260a5d53d2b650ad07fb8",
+  "url": "https://guide.wow4ever.se/en/quests/1031"
+}

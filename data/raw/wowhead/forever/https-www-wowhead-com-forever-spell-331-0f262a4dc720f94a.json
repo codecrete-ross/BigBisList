@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Healing Wave Level 60 25 Mana 40 yd range 1.5 sec cast Requires Shaman Requires level 1 Heals a friendly target for 37 to 47.",
+  "entity_id": 331,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:47+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 331,
+      "name": "Healing Wave",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=331"
+    }
+  ],
+  "name": "Healing Wave",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "5b398d2af146eed6cd9b5713e6cce622449a7bd6056bd3e5f365f7db084e88b5",
+  "spell_id": 331,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/331",
+  "url": "https://www.wowhead.com/forever/spell=331"
+}

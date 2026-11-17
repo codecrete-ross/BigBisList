@@ -1,0 +1,36 @@
+{
+  "confidence": "quest_page_and_composed_api",
+  "description": "Call of Fire Bring the Torch of Eternal Flame to Kranal Fiss in the Barrens.",
+  "entity_id": 1527,
+  "fetch_method": "public_web_page",
+  "fetched_at": "2026-11-06T02:44:49.503662+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Call of Fire",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 263412,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=1527",
+      "subject_id": 1527,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "instruction_summary": "Take the eternal torch back to Kranal Fiss; the rewards include Totem of Charged Flames.",
+    "series": [
+      1522,
+      1524,
+      1525,
+      1526,
+      1527
+    ]
+  },
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/1527",
+  "url": "https://www.wowhead.com/forever/quest=1527"
+}

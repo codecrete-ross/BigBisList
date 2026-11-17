@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tarnished Elven Ring Item Level 61 Binds when picked up Unique-Equipped Finger +10 Agility +10 Arcane Resistance Requires Level 56 Equip: Improves your chance to hit by 1.0%. Sell Price: 2 8 91 Dropped by: Mizzle the Crafty",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18500,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 18500,
+    "item_level": 61,
+    "name": "Tarnished Elven Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "arcane_resistance": 10.0,
+      "hit_percent": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18500"
+  },
+  "linked_entities": [],
+  "name": "Tarnished Elven Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Mizzle the Crafty",
+      "source_url": "https://www.wowhead.com/forever/item=18500",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f143b81a67c6e6ea3b6f1ee27857492d3e3e14eb650f58db11c5a5aa90678829",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18500",
+  "url": "https://www.wowhead.com/forever/item=18500"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stoneshield Cloak Item Level 56 Binds when equipped Back 40 Armor +6 Stamina +150 Armor Requires Level 51 Sell Price: 1 20 46",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:50.0993753Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 12551,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 40,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 12551,
+    "item_level": 56,
+    "name": "Stoneshield Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12551"
+  },
+  "linked_entities": [],
+  "name": "Stoneshield Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6abdb3343b4fab89bf958186d7f1874a30d4d2c7060304090a765603151de541",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12551",
+  "url": "https://www.wowhead.com/forever/item=12551"
+}

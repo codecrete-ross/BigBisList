@@ -1,0 +1,187 @@
+{
+  "attribution": [
+    {
+      "credit": "SenseOS client-data research",
+      "licence": "Public game facts; source attribution retained",
+      "licenceUrl": "https://senseos.gg/guides/wow-forever/weapon-skills/",
+      "source": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+    }
+  ],
+  "confidence": "reported_client_skill_rows",
+  "fact_tables": [
+    {
+      "headers": [
+        "Class",
+        "Weapon skills",
+        "Armour"
+      ],
+      "rows": [
+        [
+          "Druid",
+          "Daggers , Feral Combat (new) , Fist Weapons , Maces , Polearms (20) , Staves , Two-Handed Maces",
+          "Cloth , Leather"
+        ],
+        [
+          "Hunter",
+          "Axes , Bows , Crossbows , Daggers , Dual Wield (20) , Fist Weapons , Guns , Polearms (20) , Staves , Swords , Thrown , Two-Handed Axes , Two-Handed Swords",
+          "Cloth , Leather , Mail (40)"
+        ],
+        [
+          "Mage",
+          "Daggers , Staves , Swords , Wands",
+          "Cloth"
+        ],
+        [
+          "Paladin",
+          "Axes , Maces , Polearms (20) , Swords , Two-Handed Axes , Two-Handed Maces , Two-Handed Swords",
+          "Cloth , Leather , Mail , Plate Mail (40) , Shield"
+        ],
+        [
+          "Priest",
+          "Daggers , Maces , Staves , Wands",
+          "Cloth"
+        ],
+        [
+          "Rogue",
+          "Axes (new) , Bows , Crossbows , Daggers , Dual Wield (10) , Fist Weapons , Guns , Maces , Swords , Thrown",
+          "Cloth , Leather"
+        ],
+        [
+          "Shaman",
+          "Axes , Daggers , Dual Wield , Fist Weapons , Maces , Staves , Two-Handed Axes , Two-Handed Maces",
+          "Cloth , Leather , Mail (40) , Shield"
+        ],
+        [
+          "Warlock",
+          "Daggers , Staves , Swords , Wands",
+          "Cloth"
+        ],
+        [
+          "Warrior",
+          "Axes , Bows , Crossbows , Daggers , Dual Wield (20) , Fist Weapons , Guns , Maces , Polearms (20) , Staves , Swords , Thrown , Two-Handed Axes , Two-Handed Maces , Two-Handed Swords",
+          "Cloth , Leather , Mail , Plate Mail (40) , Shield"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Change",
+        "Who",
+        "Source"
+      ],
+      "rows": [
+        [
+          "One-handed axes added",
+          "Rogue",
+          "Blizzard\u2019s Rogue deep dive says it widens what Rogues can use; the client lists Axes (new)"
+        ],
+        [
+          "Feral Combat added as a weapon skill",
+          "Druid",
+          "New in the client; Blizzard\u2019s Druid deep dive says Bear, Cat and Dire Bear Form now hit as hard per second as your equipped weapon, and weapon enchants and procs work in forms"
+        ],
+        [
+          "Two-handed axes and maces no longer a talent",
+          "Shaman",
+          "Moved to baseline in the Shaman deep dive ; the client lists both from level 1"
+        ],
+        [
+          "Weapon specialization talents merged into one",
+          "Warrior",
+          "Weaponmaster: axes and polearms raise critical strike chance, maces and staves get through part of the target\u2019s armour, swords can give an extra attack ( Warrior deep dive )"
+        ],
+        [
+          "Weapon specialization talents merged into one",
+          "Rogue",
+          "Hack and Slash covers daggers, maces, swords and fist weapons and adds axes, which get the sword\u2019s extra-attack chance ( Rogue deep dive )"
+        ],
+        [
+          "Racial weapon bonuses removed",
+          "Human , Dwarf , Orc , Troll",
+          "See below"
+        ],
+        [
+          "Weapon swaps within one global cooldown again",
+          "Everyone",
+          "A macro can swap a two-hander for a sword and shield in one go ( 8 October notes )"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Weapon Master",
+        "City",
+        "Faction"
+      ],
+      "rows": [
+        [
+          "Woo Ping",
+          "Stormwind City",
+          "Alliance"
+        ],
+        [
+          "Buliwyf Stonehand",
+          "Ironforge",
+          "Alliance"
+        ],
+        [
+          "Bixi Wobblebonk",
+          "Ironforge",
+          "Alliance"
+        ],
+        [
+          "Ilyenia Moonfire",
+          "Darnassus",
+          "Alliance"
+        ],
+        [
+          "Hanashi",
+          "Orgrimmar",
+          "Horde"
+        ],
+        [
+          "Sayoc",
+          "Orgrimmar",
+          "Horde"
+        ],
+        [
+          "Ansekhwa",
+          "Thunder Bluff",
+          "Horde"
+        ],
+        [
+          "Archibald",
+          "Undercity",
+          "Horde"
+        ]
+      ]
+    }
+  ],
+  "fetched_at": "2026-11-06T01:33:53.902948+00:00",
+  "flavor": "forever",
+  "page_type": "guide",
+  "provider": "senseos",
+  "reported_client_build": "1.60.1.70790",
+  "reviewed_facts": {
+    "hunter_dual_wield_level": 20,
+    "mail_training_level": {
+      "Hunter": 40,
+      "Shaman": 40
+    },
+    "plate_training_level": {
+      "Paladin": 40,
+      "Warrior": 40
+    },
+    "rogue_dual_wield_level": 10,
+    "warrior_dual_wield_level": 20,
+    "weapon_master_stock_and_costs_confirmed": false,
+    "weapon_racial_bonuses_present": false
+  },
+  "source_content_digest": "ab310abf2046932c79e5f00ea62ad6d467229b2c027a3e040ba5898cd2e3d13b",
+  "title": "Weapon skills in WoW Forever: what every class can use, where to train, and what changed",
+  "unconfirmed_rows": [
+    "Shaman Dual Wield",
+    "Druid Polearms"
+  ],
+  "url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+}

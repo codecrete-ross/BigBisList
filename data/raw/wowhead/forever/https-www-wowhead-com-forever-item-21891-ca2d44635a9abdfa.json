@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shard of the Fallen Star Item Level 75 Binds when picked up Trinket Requires Level 60 Use: Calls down a meteor, burning all enemies within the area for 400 to 442 total Fire damage. (3 Min Cooldown) Sell Price: 9 93 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21891,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Calls down a meteor, burning all enemies within the area for 400 to 442 total Fire damage. (3 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 21891,
+    "item_level": 75,
+    "name": "Shard of the Fallen Star",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Calls down a meteor, burning all enemies within the area for 400 to 442 total Fire damage. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21891"
+  },
+  "linked_entities": [
+    {
+      "id": 26789,
+      "name": "Calls down a meteor, burning all enemies within the area for 400 to 442 total Fire damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26789"
+    }
+  ],
+  "name": "Shard of the Fallen Star",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21891",
+  "url": "https://www.wowhead.com/forever/item=21891"
+}

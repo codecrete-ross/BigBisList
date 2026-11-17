@@ -159,6 +159,8 @@ function methods:IsClampedToScreen() return self.clamped end
 for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "RegisterEvent", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
     methods[name] = function() end
 end
+function methods:SetColorTexture(r, g, b, a) self.colorTexture = { r, g, b, a } end
+function methods:SetTextColor(r, g, b, a) self.textColor = { r, g, b, a } end
 CreateFrame = function(kind, name, parent, template)
     local node = make(kind, name, parent)
     if template and template:find("UICheckButtonTemplate", 1, true) then
@@ -268,8 +270,16 @@ function H.settle()
     end
     error("UI geometry or refresh timers did not settle after 30 passes")
 end
-function H.load()
-    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+function H.load(flavor)
+    local forever = flavor == "forever"
+    assert(loadfile(forever and "DataForever.lua" or "Data.lua"))("BigBiSList")
+    assert(loadfile("Config.lua"))("BigBiSList")
+    if forever then
+        assert(loadfile("ForeverScoring.lua"))("BigBiSList")
+        assert(loadfile("ForeverGearRating.lua"))("BigBiSList")
+    end
+    for _, file in ipairs({ "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+    if forever then assert(loadfile("AcquisitionHighlights.lua"))("BigBiSList") end
     BigBiSList:EnsureDatabase()
     BigBiSList:InitTooltip()
     return BigBiSList.UI

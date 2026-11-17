@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "First Sergeant's Plate Bracers Item Level 50 Binds when picked up Unique Wrist Plate 231 Armor +6 Strength +14 Stamina Durability 45 / 45 Classes: Warrior Requires Level 45 Sell Price: 28 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 18430,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 231,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18430,
+    "item_level": 50,
+    "name": "First Sergeant's Plate Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 14.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18430"
+  },
+  "linked_entities": [],
+  "name": "First Sergeant's Plate Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18430",
+  "url": "https://www.wowhead.com/forever/item=18430"
+}

@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Drakestone Item Level 54 Binds when picked up Held In Off-hand <Random enchantment> Requires Level 49 Equip: Increases damage done to Dragonkin by magical spells and effects by up to 11. Sell Price: 1 42 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 10796,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done to Dragonkin by magical spells and effects by up to 11.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done to Dragonkin by magical spells and effects by up to 11."
+    ],
+    "id": 10796,
+    "item_level": 54,
+    "name": "Drakestone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 49,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10796"
+  },
+  "linked_entities": [],
+  "name": "Drakestone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ce006956c3ffeff621b16e1a9673ae02f6ba2630d307738e0bb1691d6cdbf5b4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10796",
+  "url": "https://www.wowhead.com/forever/item=10796"
+}

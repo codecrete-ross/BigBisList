@@ -1,0 +1,1896 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T15:23:11.1507488Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 88972,
+      "collected_at": "2026-11-13T15:23:11.1507488Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-1-0-molten-core",
+      "source_content_digest": "e08b168226a18531078fe5412c3514ec084f0a3f74bc20d5609ae63df4516bb7",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/18b04294440bf715925292d7ee5b1174bc8a58eb"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 30895,
+      "collected_at": "2026-11-13T14:15:29.2426825Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-launch",
+      "source_content_digest": "7fb53128ca0e58bc0244332457535bb1965a83f929b454152b60a2db2f361b4b",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009/world-of-warcraft-forever-raid-overview-locations-raid-sizes-and-attunement"
+    },
+    {
+      "bytes": 122522,
+      "collected_at": "2026-11-13T15:28:37.4318904Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-stranglethorn",
+      "source_content_digest": "876e7a9bc633f85c8b179fd0dfce0dc5cb6dc755be27062f9d8b9eb482a2b582",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/e6a5af01f2fccdce7c8dd2840beacf52b42fd36a"
+    },
+    {
+      "bytes": 139259,
+      "collected_at": "2026-11-13T15:28:38.0520254Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-sod-stranglethorn",
+      "source_content_digest": "4f90c397d2303e6a38a98aafce427e48d33b762fb3ec92eddbe293f23623dc0d",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/150ae1479eb05e0b5eefabcfce1badc1c423629a"
+    },
+    {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T15:03:40.6311251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-1500",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    },
+    {
+      "bytes": 59692,
+      "collected_at": "2026-11-13T15:23:12.2480552Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-1-6-blackwing-lair",
+      "source_content_digest": "223632263f169514a4a3001a1616d66ad0a5febfc1fdd2b1ef7144798ff35a1b",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d7ca5f41086b85c599dbbafb76fb12d1b873a83e"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 1012217,
+      "collected_at": "2026-11-13T15:02:36.4298079Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-meta-1502",
+      "source_content_digest": "d45ce274ee10356831e14593d6a19a507087a3417fe737acee37b0ae61ef513d",
+      "source_url": "https://playfulls.com/db/meta.d45ce274ee.json"
+    },
+    {
+      "bytes": 1363081,
+      "collected_at": "2026-11-13T15:02:37.5538161Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-gear-1502",
+      "source_content_digest": "4ea88c1804f5c9807dd608447d601c89ffe0c7b9edeb0661b73f01cf9258c960",
+      "source_url": "https://playfulls.com/db/gear.4ea88c1804.json"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "reviewed_page_facts": {
+    "att_commit": "1c4d146b518a3c2cda6d2488a27be6e2638d5360",
+    "att_path": ".contrib/.db/season of discovery/dungeons & raids/1.0 Molten Core.lua",
+    "exact_forever_item_grant_matches": [],
+    "finding": "The exact item IDs are listed in the pinned seasonal Molten Core module. The current Forever phase or entry conditions gate the related raid and checked dependencies. The public Forever item, loot, vendor and quest evidence supplies no competing acquisition for these exact IDs. No seasonal equip requirement or item stats are imported.",
+    "map_id": 409,
+    "reported_items": [
+      {
+        "current_inventory_type": 3,
+        "item_id": 216925,
+        "name": "Felheart Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 836,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226444,
+        "name": "Nightslayer Shoulder Pads",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 764,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226478,
+        "name": "Nightslayer Pauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 774,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226527,
+        "name": "Giantstalker's Epaulets",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 680,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226543,
+        "name": "Giantstalker's Spauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 670,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226550,
+        "name": "Felheart Shoulder Pads",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 826,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226560,
+        "name": "Arcanist Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 691,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226566,
+        "name": "Arcanist Shoulders",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 701,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226576,
+        "name": "Mantle of Prophecy",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 753,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226581,
+        "name": "Shoulderpads of Prophecy",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 743,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227537,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1238
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1282
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1335
+          },
+          {
+            "item_id": 227537,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1376
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226611,
+        "name": "Earthfury Epaulets",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 805,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226624,
+        "name": "Earthfury Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 795,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226632,
+        "name": "Earthfury Pauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 815,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226640,
+        "name": "Earthfury Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 785,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227752,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1239
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1283
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1336
+          },
+          {
+            "item_id": 227752,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1377
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226644,
+        "name": "Cenarion Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 649,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226653,
+        "name": "Cenarion Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 639,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226665,
+        "name": "Cenarion Shoulders",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 629,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 226674,
+        "name": "Cenarion Pauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 622,
+            "source_line": 659,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 227762,
+            "source_context": "n(228436, {\t-- Sulfuron Harbinger",
+            "source_line": 1240
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228435, {\t-- Golemagg the Incinerator",
+            "source_line": 1284
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228437, {\t-- Majordomo Executus",
+            "source_line": 1337
+          },
+          {
+            "item_id": 227762,
+            "source_context": "n(228438, {\t-- Ragnaros",
+            "source_line": 1378
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 227454,
+        "name": "Tidal Loop",
+        "reported_routes": [
+          {
+            "source_context_line": 94,
+            "source_line": 105,
+            "source_name": "A Hero's Reward",
+            "subject": 84545,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "depends_on": "Molten Core boss hands",
+            "quest_id": 6824,
+            "reported_minimum": 55
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 227455,
+        "name": "Ocean's Breeze",
+        "reported_routes": [
+          {
+            "source_context_line": 94,
+            "source_line": 104,
+            "source_name": "A Hero's Reward",
+            "subject": 84545,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "depends_on": "Molten Core boss hands",
+            "quest_id": 6824,
+            "reported_minimum": 55
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228242,
+        "name": "Heavy Dark Iron Ring",
+        "reported_routes": [
+          {
+            "source_context_line": 1113,
+            "source_line": 1128,
+            "source_name": "Lucifron",
+            "subject": 228429,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1155,
+            "source_line": 1170,
+            "source_name": "Gehennas",
+            "subject": 228431,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1214,
+            "source_line": 1229,
+            "source_name": "Shazzrah",
+            "subject": 228434,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1232,
+            "source_line": 1274,
+            "source_name": "Sulfuron Harbinger",
+            "subject": 228436,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228243,
+        "name": "Ring of Spell Power",
+        "reported_routes": [
+          {
+            "source_context_line": 1113,
+            "source_line": 1129,
+            "source_name": "Lucifron",
+            "subject": 228429,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1155,
+            "source_line": 1171,
+            "source_name": "Gehennas",
+            "subject": 228431,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1214,
+            "source_line": 1230,
+            "source_name": "Shazzrah",
+            "subject": 228434,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1232,
+            "source_line": 1275,
+            "source_name": "Sulfuron Harbinger",
+            "subject": 228436,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 228258,
+        "name": "Deep Earth Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 1135,
+            "source_line": 1145,
+            "source_name": "Magmadar",
+            "subject": 228430,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1173,
+            "source_line": 1186,
+            "source_name": "Garr",
+            "subject": 228432,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1195,
+            "source_line": 1204,
+            "source_name": "Baron Geddon",
+            "subject": 228433,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1277,
+            "source_line": 1311,
+            "source_name": "Golemagg the Incinerator",
+            "subject": 228435,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 23,
+        "item_id": 228259,
+        "name": "Fire Runed Grimoire",
+        "reported_routes": [
+          {
+            "source_context_line": 1135,
+            "source_line": 1143,
+            "source_name": "Magmadar",
+            "subject": 228430,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1173,
+            "source_line": 1185,
+            "source_name": "Garr",
+            "subject": 228432,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1195,
+            "source_line": 1203,
+            "source_name": "Baron Geddon",
+            "subject": 228433,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1277,
+            "source_line": 1308,
+            "source_name": "Golemagg the Incinerator",
+            "subject": 228435,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 4,
+          "level_min": 1,
+          "slot": "Off Hand"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228261,
+        "name": "Quick Strike Ring",
+        "reported_routes": [
+          {
+            "source_context_line": 1135,
+            "source_line": 1152,
+            "source_name": "Magmadar",
+            "subject": 228430,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1173,
+            "source_line": 1192,
+            "source_name": "Garr",
+            "subject": 228432,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1195,
+            "source_line": 1210,
+            "source_name": "Baron Geddon",
+            "subject": 228433,
+            "subject_type": "npc_or_loot_group"
+          },
+          {
+            "source_context_line": 1277,
+            "source_line": 1317,
+            "source_name": "Golemagg the Incinerator",
+            "subject": 228435,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228268,
+        "name": "Seal of the Archmagus",
+        "reported_routes": [
+          {
+            "source_context_line": 1195,
+            "source_line": 1211,
+            "source_name": "Baron Geddon",
+            "subject": 228433,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228274,
+        "name": "Cauterizing Band",
+        "reported_routes": [
+          {
+            "source_context_line": 1320,
+            "source_line": 1366,
+            "source_name": "Majordomo Executus",
+            "subject": 228437,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 228279,
+        "name": "Fireguard Shoulders",
+        "reported_routes": [
+          {
+            "source_context_line": 1320,
+            "source_line": 1360,
+            "source_name": "Majordomo Executus",
+            "subject": 228437,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 228283,
+        "name": "Wild Growth Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 1320,
+            "source_line": 1361,
+            "source_name": "Majordomo Executus",
+            "subject": 228437,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228286,
+        "name": "Band of Accuria",
+        "reported_routes": [
+          {
+            "source_context_line": 1369,
+            "source_line": 1408,
+            "source_name": "Ragnaros",
+            "subject": 228438,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 11,
+        "item_id": 228287,
+        "name": "Band of Sulfuras",
+        "reported_routes": [
+          {
+            "source_context_line": 1369,
+            "source_line": 1409,
+            "source_name": "Ragnaros",
+            "subject": 228438,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232081,
+        "name": "Stormrage Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 885,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231251,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232089,
+        "name": "Stormrage Pauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 895,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231235,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232097,
+        "name": "Stormrage Shoulderpads",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 875,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231259,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232105,
+        "name": "Stormrage Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 905,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231243,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232113,
+        "name": "Dragonstalker's Pauldrons",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 916,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231066,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232121,
+        "name": "Dragonstalker's Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 926,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231057,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232129,
+        "name": "Netherwind Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 937,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231106,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232137,
+        "name": "Netherwind Shoulders",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 947,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231114,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232169,
+        "name": "Mantle of Transcendence",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 989,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231170,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232177,
+        "name": "Pauldrons of Transcendence",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 999,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231160,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232185,
+        "name": "Bloodfang Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1010,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231039,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232193,
+        "name": "Bloodfang Shoulderpads",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1020,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231047,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232201,
+        "name": "Mantle of Ten Storms",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1041,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231217,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232209,
+        "name": "Epaulets of Ten Storms",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1051,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231201,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232217,
+        "name": "Spaulders of Ten Storms",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1031,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231225,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232225,
+        "name": "Pauldrons of Ten Storms",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1061,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231209,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232233,
+        "name": "Nemesis Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1072,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231077,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "current_inventory_type": 3,
+        "item_id": 232241,
+        "name": "Nemesis Shoulderpads",
+        "reported_routes": [
+          {
+            "source_context_line": 869,
+            "source_line": 1082,
+            "source_name": "Duke Hydraxis",
+            "subject": 227819,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "item_id": 231096,
+            "kind": "Blackwing Lair seasonal armor exchange",
+            "map_id": 469,
+            "source_label": "sod-att-1-6-blackwing-lair"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      }
+    ],
+    "reviewed_access_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/409",
+    "source_ruleset": "season_of_discovery"
+  },
+  "source_content_digest": "e08b168226a18531078fe5412c3514ec084f0a3f74bc20d5609ae63df4516bb7",
+  "unavailable_item_ids": [
+    216925,
+    226444,
+    226478,
+    226527,
+    226543,
+    226550,
+    226560,
+    226566,
+    226576,
+    226581,
+    226611,
+    226624,
+    226632,
+    226640,
+    226644,
+    226653,
+    226665,
+    226674,
+    227454,
+    227455,
+    228242,
+    228243,
+    228258,
+    228259,
+    228261,
+    228268,
+    228274,
+    228279,
+    228283,
+    228286,
+    228287,
+    232081,
+    232089,
+    232097,
+    232105,
+    232113,
+    232121,
+    232129,
+    232137,
+    232169,
+    232177,
+    232185,
+    232193,
+    232201,
+    232209,
+    232217,
+    232225,
+    232233,
+    232241
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/18b04294440bf715925292d7ee5b1174bc8a58eb"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Waterlogged Shoulderpads Item Level 41 Binds when equipped Shoulder Leather 93 Armor +12 Stamina +8 Intellect Requires Level 36 Equip: Improves your chance to hit by 0.5%. Sell Price: 53 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 287001,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 93,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 287001,
+    "item_level": 41,
+    "name": "Waterlogged Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 36,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5,
+      "intellect": 8.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287001"
+  },
+  "linked_entities": [],
+  "name": "Waterlogged Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "59e65b36bf6216dc45069b78c1b8475ebbc0a7fd82e80f097724b181348a3403",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287001",
+  "url": "https://www.wowhead.com/forever/item=287001"
+}

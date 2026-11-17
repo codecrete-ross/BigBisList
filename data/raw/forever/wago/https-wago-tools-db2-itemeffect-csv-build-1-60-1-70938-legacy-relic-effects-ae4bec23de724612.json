@@ -1,0 +1,150 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Wowhead Classic historical tooltips",
+      "source": "https://www.wowhead.com/classic/"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_effect_historical_item_identity",
+  "fetched_at": "2026-11-13T03:59:42.2317300Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 851160,
+      "collected_at": "2026-11-13T22:51:25.852059+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellnames",
+      "source_content_digest": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1004,
+      "collected_at": "2026-11-13T22:51:25.734542+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "seasonal-dalton-1",
+      "source_content_digest": "95e84b96952662f7923b93dcfedcc372e42f44ee19d900cc354156ab743fce3d",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/226122"
+    },
+    {
+      "bytes": 1034,
+      "collected_at": "2026-11-13T22:51:25.833056+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "seasonal-dalton-2",
+      "source_content_digest": "cf8c82d2368946de5846d0db0f1ca1d8333a69f01081e5f8d83b66e4c50005fb",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/226523"
+    },
+    {
+      "bytes": 1086,
+      "collected_at": "2026-11-13T22:51:25.797056+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "seasonal-dalton-3",
+      "source_content_digest": "c48b181017527271468aa3ede5b6848f73a168d1e5a427e9be99157ec4c0f37f",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/226545"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The exact historical variants are Season of Discovery combat-squire summons. Each currently retains the matching spell identity. The level 50 on the archived tooltips describes the seasonal versions. The current Forever item rows and acquisition minimums are still missing.",
+    "items": [
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "30000",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "15000",
+          "ID": "187478",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "459170",
+          "TriggerType": "0"
+        },
+        "historical_classic_minimum": 50,
+        "historical_name": "Dalton's Horn",
+        "item_id": 226122
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "30000",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "15000",
+          "ID": "187798",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "459207",
+          "TriggerType": "0"
+        },
+        "historical_classic_minimum": 50,
+        "historical_name": "Dalton's Horn",
+        "item_id": 226523
+      },
+      {
+        "client_effect": {
+          "CategoryCoolDownMSec": "30000",
+          "Charges": "0",
+          "ChrSpecializationID": "0",
+          "CoolDownMSec": "15000",
+          "ID": "187813",
+          "LegacySlotIndex": "0",
+          "PlayerConditionID": "0",
+          "SpellCategoryID": "0",
+          "SpellID": "459232",
+          "TriggerType": "0"
+        },
+        "historical_classic_minimum": 50,
+        "historical_name": "Dalton's Horn",
+        "item_id": 226545
+      }
+    ]
+  },
+  "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+  "url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938#/legacy-relic-effects"
+}

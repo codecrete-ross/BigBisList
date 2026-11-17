@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Chained Essence of Eranikus Item Level 60 Binds when picked up Unique Trinket Use: Creates a cloud of poison in a 0 yard radius around the caster. Enemies inside the cloud suffer 140 Nature damage every 2 sec. Deals 2 times as much damage to Trolls. Lasts for 20 sec. (10 Min Cooldown) Sell Price: 1 65 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 10455,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Creates a cloud of poison in a 0 yard radius around the caster. Enemies inside the cloud suffer 140 Nature damage every 2 sec. Deals 2 times as much damage to Trolls. Lasts for 20 sec. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10455,
+    "item_level": 60,
+    "name": "Chained Essence of Eranikus",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Creates a cloud of poison in a 0 yard radius around the caster. Enemies inside the cloud suffer 140 Nature damage every 2 sec. Deals 2 times as much damage to Trolls. Lasts for 20 sec. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10455"
+  },
+  "linked_entities": [
+    {
+      "id": 12766,
+      "name": "Creates a cloud of poison in a 0 yard radius around the caster. Enemies inside the cloud suffer 140 Nature damage every 2 sec. Deals 2 times as much damage to Trolls. Lasts for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12766"
+    }
+  ],
+  "name": "Chained Essence of Eranikus",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "503617ac51928165344d38122f1305ce9fe3d3c6dd2e80cebb28f2bd7da83c92",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10455",
+  "url": "https://www.wowhead.com/forever/item=10455"
+}

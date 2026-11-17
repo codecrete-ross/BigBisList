@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Miner's Cape Item Level 22 Binds when picked up Back 20 Armor +5 Stamina Requires Level 17 Equip: Increased Mining + 2. Equip: + 4 Attack Power. Equip: + 6 Attack Power against Elementals. Sell Price: 6 77 Dropped by: Miner Johnson Drop Chance: 55.04%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 5444,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 20,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Mining +2.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +4 Attack Power.",
+        "stats": {
+          "attack_power": 4
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +6 Attack Power against Elementals.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Mining +2.",
+      "Equip: +4 Attack Power.",
+      "Equip: +6 Attack Power against Elementals."
+    ],
+    "id": 5444,
+    "item_level": 22,
+    "name": "Miner's Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 4.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5444"
+  },
+  "linked_entities": [],
+  "name": "Miner's Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 55.04,
+      "entity_name": "Miner Johnson",
+      "source_url": "https://www.wowhead.com/forever/item=5444",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5444",
+  "url": "https://www.wowhead.com/forever/item=5444"
+}

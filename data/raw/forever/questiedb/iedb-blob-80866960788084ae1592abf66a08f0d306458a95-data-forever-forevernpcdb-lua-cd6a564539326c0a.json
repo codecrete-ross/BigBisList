@@ -1,0 +1,65 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Pinned Forever emulator API after corrections; exact two item/NPC associations.",
+  "fetched_at": "2026-11-06T05:15:00.834926+00:00",
+  "flavor": "forever",
+  "npc_records": [
+    {
+      "factionID": 24,
+      "id": 4278,
+      "maxLevel": 24,
+      "minLevel": 24,
+      "name": "Commander Springvale",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 18,
+      "id": 6243,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Gelihast",
+      "npcFlags": 0,
+      "zoneID": 719
+    }
+  ],
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "class": 4,
+      "id": 273643,
+      "itemLevel": 26,
+      "name": "Worgenbane Talisman",
+      "npcDrops": {
+        "1": 4278
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 273840,
+      "itemLevel": 29,
+      "name": "Cursed Murloc Eye",
+      "npcDrops": {
+        "1": 6243
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 0
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverNpcDB.lua"
+}

@@ -1,0 +1,68 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Goblin Jumper Cables XL Item Level 53 Unique-Equipped Trinket Requires Engineering (265) Use: Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat. (30 Min Cooldown) Sell Price: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18587,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 18587,
+    "item_level": 53,
+    "name": "Goblin Jumper Cables XL",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18587"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 22999,
+      "name": "Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22999"
+    }
+  ],
+  "name": "Goblin Jumper Cables XL",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Jumper Cables XL Item Level 53 Unique-Equipped Trinket Requires Engineering (265) Use: Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat. (30 Min Cooldown) Sell Price: 20",
+      "scope": "equip_or_use",
+      "skill": 265,
+      "source_url": "https://www.wowhead.com/forever/item=18587",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "d12e8de497037dcc5e4a66c3cccf1052c7a9505d3ff75b59f067d0be5ba3b094",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18587",
+  "url": "https://www.wowhead.com/forever/item=18587"
+}

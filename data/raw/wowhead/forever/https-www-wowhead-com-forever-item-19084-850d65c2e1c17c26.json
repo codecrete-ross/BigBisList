@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stormpike Soldier's Cloak Item Level 60 Binds when picked up Back 43 Armor +11 Stamina +5 Frost Resistance Requires Level 55 Equip: + 24 Attack Power. Sell Price: 1 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 19084,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +24 Attack Power."
+    ],
+    "id": 19084,
+    "item_level": 60,
+    "name": "Stormpike Soldier's Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "frost_resistance": 5.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19084"
+  },
+  "linked_entities": [],
+  "name": "Stormpike Soldier's Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19084",
+  "url": "https://www.wowhead.com/forever/item=19084"
+}

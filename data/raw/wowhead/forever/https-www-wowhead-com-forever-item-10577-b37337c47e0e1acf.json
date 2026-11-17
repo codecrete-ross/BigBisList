@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Goblin Mortar Item Level 41 Binds when equipped Unique-Equipped Trinket Requires Engineering (205) Use: Inflicts 393 to 531 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown) 6 Charges Sell Price: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 10577,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Inflicts 393 to 531 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10577,
+    "item_level": 41,
+    "name": "Goblin Mortar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Inflicts 393 to 531 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown) 6 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10577"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 13237,
+      "name": "Inflicts 393 to 531 Fire damage and stuns the targets in a 5 yard radius for 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13237"
+    }
+  ],
+  "name": "Goblin Mortar",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Mortar Item Level 41 Binds when equipped Unique-Equipped Trinket Requires Engineering (205) Use: Inflicts 393 to 531 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown) 6 Charges Sell Price: 20",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=10577",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "63745f4e782039a273184f1d188883fee51dacd454e461215a42ab9bb4dfb10b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10577",
+  "url": "https://www.wowhead.com/forever/item=10577"
+}

@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Briarwood Reed Item Level 60 Binds when picked up Unique-Equipped Trinket Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas. Equip: Unable to be tracked. Sell Price: 1 98 96 Dropped by: Jed Runewatcher Drop Chance: 30.30%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 12930,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Unable to be tracked.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas."
+    ],
+    "id": 12930,
+    "item_level": 60,
+    "name": "Briarwood Reed",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12930"
+  },
+  "linked_entities": [
+    {
+      "id": 1301707,
+      "name": "Unable to be tracked.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301707"
+    },
+    {
+      "id": 1318326,
+      "name": "Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318326"
+    }
+  ],
+  "name": "Briarwood Reed",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.3,
+      "entity_name": "Jed Runewatcher",
+      "source_url": "https://www.wowhead.com/forever/item=12930",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "568c78e76d83eec2d19e21b9fac37dcbd13627de0026547664d6480f3f71b331",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12930",
+  "url": "https://www.wowhead.com/forever/item=12930"
+}

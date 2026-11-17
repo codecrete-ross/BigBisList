@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/508"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:20.462666+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 3765,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/508",
+      "subject_id": 508,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 29,
+    "name": "Taretha's Gift",
+    "quest_id": 508,
+    "quest_level": 40,
+    "reward_item_ids": [
+      3765
+    ],
+    "zone": "Hillsbrad Foothills"
+  },
+  "source_content_digest": "441d82afc5d528872f809960e7ce5981e8887a42b6d32a90cd5e363584e9deaf",
+  "url": "https://guide.wow4ever.se/en/quests/508"
+}

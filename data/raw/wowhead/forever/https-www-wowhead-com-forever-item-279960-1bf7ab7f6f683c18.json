@@ -1,0 +1,56 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Lodestone Item Level 4 Requires Mining (20) Use: Erects a lodestone that allows you and others sitting nearby to gain [( 60 < 12 ? 12 : ( 60 < 22 ? 20 : ( 60 < 32 ? 32 : ( 60 < 42 ? 49 : ( 60 < 52 ? 67 : 90)))))] increased melee Attack Power, mutually exclusive with Blessing of Might. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279960,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Erects a lodestone that allows you and others sitting nearby to gain [(60 < 12 ? 12 : (60 < 22 ? 20 : (60 < 32 ? 32 : (60 < 42 ? 49 : (60 < 52 ? 67 : 90)))))] increased melee Attack Power, mutually exclusive with Blessing of Might.",
+        "type": "use"
+      }
+    ],
+    "id": 279960,
+    "item_level": 4,
+    "name": "Lodestone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Erects a lodestone that allows you and others sitting nearby to gain [(60 < 12 ? 12 : (60 < 22 ? 20 : (60 < 32 ? 32 : (60 < 42 ? 49 : (60 < 52 ? 67 : 90)))))] increased melee Attack Power, mutually exclusive with Blessing of Might. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279960"
+  },
+  "linked_entities": [
+    {
+      "id": 186,
+      "name": "Mining",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=186"
+    },
+    {
+      "id": 1307254,
+      "name": "Erects a lodestone that allows you and others sitting nearby to gain [( 60 < 12 ? 12 : ( 60 < 22 ? 20 : ( 60 < 32 ? 32 : ( 60 < 42 ? 49 : ( 60 < 52 ? 67 : 90)))))] increased melee Attack Power, mutually exclusive with Blessing of Might. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307254"
+    }
+  ],
+  "name": "Lodestone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279960",
+  "url": "https://www.wowhead.com/forever/item=279960"
+}

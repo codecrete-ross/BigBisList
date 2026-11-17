@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Divine Shield 110 Mana Instant 5 min cooldown Requires Paladin Requires level 50 Protects the paladin from all damage and spells for 12 sec, but reduces all damage you deal by 50%. Applies Forbearance for 1 min. Cannot be cast while Forbearance is active.",
+  "entity_id": 1020,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:35+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1020,
+      "name": "Divine Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1020"
+    }
+  ],
+  "name": "Divine Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "b8a9f0e4ff87f15c52977873a0324e6e4bdfede95d857f6a38726a8e98c1b7df",
+  "spell_id": 1020,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1020",
+  "url": "https://www.wowhead.com/forever/spell=1020"
+}

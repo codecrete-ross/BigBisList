@@ -1,0 +1,72 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=288927/quick-strike-ring"
+    },
+    {
+      "credit": "60.tools",
+      "source": "https://www.60.tools/items/288927-quick-strike-ring"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1047,
+      "collected_at": "2026-11-13T06:25:05.9117562Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-tooltip-288927",
+      "source_content_digest": "5c0f8dc67145f0bfec172b3f64466d6832c665d5c1d419dd283484c33e457770",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/288927"
+    },
+    {
+      "bytes": 129833,
+      "collected_at": "2026-11-13T06:29:22.4031043Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-60-288927",
+      "source_content_digest": "071ba336b346b2da6f54700e1f9d43b40760b2b01344337dda392e5c2c600917",
+      "source_url": "https://www.60.tools/items/288927-quick-strike-ring"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:25:05.5382238Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "beta-main-288927",
+      "source_content_digest": "1c9a197018fc583501591a52a4d445df01b5f1e96069f628cdf32bb71df7bb3b",
+      "source_url": "https://www.wowhead.com/forever/item=288927/quick-strike-ring"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability": "unavailable_to_players",
+    "capture_method": "indexed_search_excerpt",
+    "corroboration": "60.tools also identifies this exact item as an October 22 beta celebration reward.",
+    "current_tooltip_additional_stats": {},
+    "digest_input": "normalized indexed item-page finding",
+    "historical_event_evidence": [
+      "https://daybreakforever.com/blog/molten-core-loot-at-level-30",
+      "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt",
+      "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633"
+    ],
+    "item_id": 288927,
+    "item_name": "Quick Strike Ring",
+    "page_crawl_age_at_review": "2 days ago"
+  },
+  "source_content_digest": "02b0dce44f957759b2771ea370f23e855f992c99577bec357008b21f80f2233f",
+  "unavailable_item_ids": [
+    288927
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=288927/quick-strike-ring"
+}

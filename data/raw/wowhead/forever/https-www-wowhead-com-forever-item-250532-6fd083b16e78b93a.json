@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crusader's Silvered Chain Helm Item Level 25 Binds when picked up Head Mail 163 Armor +9 Stamina Durability 65 / 65 Requires Level 20 Equip: Increases damage and healing done by magical spells and effects by up to 11 . Sell Price: 14 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 250532,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 163,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 11.",
+        "stats": {
+          "spell_power": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "id": 250532,
+    "item_level": 25,
+    "name": "Crusader's Silvered Chain Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 11.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250532"
+  },
+  "linked_entities": [],
+  "name": "Crusader's Silvered Chain Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1c04e5e25894b223a0e15c14369e113f27026f5346e0dc1b922cbe7901ac2e3f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250532",
+  "url": "https://www.wowhead.com/forever/item=250532"
+}

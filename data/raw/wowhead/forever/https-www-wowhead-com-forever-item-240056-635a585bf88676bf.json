@@ -1,0 +1,159 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fireleaf Circlet Sanctified Item Level 98 Binds when picked up Head Cloth 119 Armor +17 Stamina +19 Intellect Durability 60 / 60 Classes: Mage Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases your attack speed and casting speed by 3.0%. Equip: Increases damage and healing done by magical spells and effects by up to 60 . Fireleaf Regalia (0/8) Fireleaf Circlet Fireleaf Shoulderpads Fireleaf Belt Fireleaf Leggings Fireleaf Sandals Fireleaf Bindings Fireleaf Gloves Fireleaf Robe (2) Set : Your Living Bomb now deals damage every 4000 sec, and will detonate if the target dies. In addition, the effect of Glaciate from the rune of Ice Lance now stacks up to 4 times, and Spellfrost Bolt grants 2 stacks each time it hits. (4) Set : Casting Deep Freeze increases the remaining duration of your Icy Veins spell by 10 sec. Casting Pyroblast cancels 2 stacks of the effect from your Balefire Bolt. (6) Set : Reduces the cooldown on your Frozen Orb spell by 25 sec. Each time Glaciate is consumed, the cooldown on your Deep Freeze is reduced by 1.0 sec per stack consumed. Reduces the cooldown on Fire Blast by 5 sec and Fire Blast now refreshes the duration of your Living Bomb on the target. Sell Price: 7 43 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 240056,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 119,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your attack speed and casting speed by 3.0%.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 60.",
+        "stats": {
+          "spell_power": 60.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+    ],
+    "id": 240056,
+    "item_level": 98,
+    "name": "Fireleaf Circlet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226423,
+        "text": "Your Living Bomb now deals damage every 4000 sec, and will detonate if the target dies. In addition, the effect of Glaciate from the rune of Ice Lance now stacks up to 4 times, and Spellfrost Bolt grants 2 stacks each time it hits."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226446,
+        "text": "Casting Deep Freeze increases the remaining duration of your Icy Veins spell by 10 sec. Casting Pyroblast cancels 2 stacks of the effect from your Balefire Bolt."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226432,
+        "text": "Reduces the cooldown on your Frozen Orb spell by 25 sec. Each time Glaciate is consumed, the cooldown on your Deep Freeze is reduced by 1.0 sec per stack consumed. Reduces the cooldown on Fire Blast by 5 sec and Fire Blast now refreshes the duration of your Living Bomb on the target."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 19.0,
+      "spell_power": 60.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240056"
+  },
+  "linked_entities": [
+    {
+      "id": 240052,
+      "name": "Fireleaf Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240052"
+    },
+    {
+      "id": 240053,
+      "name": "Fireleaf Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240053"
+    },
+    {
+      "id": 240054,
+      "name": "Fireleaf Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240054"
+    },
+    {
+      "id": 240055,
+      "name": "Fireleaf Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240055"
+    },
+    {
+      "id": 240056,
+      "name": "Fireleaf Circlet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240056"
+    },
+    {
+      "id": 240057,
+      "name": "Fireleaf Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240057"
+    },
+    {
+      "id": 240058,
+      "name": "Fireleaf Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240058"
+    },
+    {
+      "id": 240059,
+      "name": "Fireleaf Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240059"
+    },
+    {
+      "id": 1226423,
+      "name": "Your Living Bomb now deals damage every 4000 sec, and will detonate if the target dies. In addition, the effect of Glaciate from the rune of Ice Lance now stacks up to 4 times, and Spellfrost Bolt grants 2 stacks each time it hits.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226423"
+    },
+    {
+      "id": 1226432,
+      "name": "Reduces the cooldown on your Frozen Orb spell by 25 sec. Each time Glaciate is consumed, the cooldown on your Deep Freeze is reduced by 1.0 sec per stack consumed. Reduces the cooldown on Fire Blast by 5 sec and Fire Blast now refreshes the duration of your Living Bomb on the target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226432"
+    },
+    {
+      "id": 1226446,
+      "name": "Casting Deep Freeze increases the remaining duration of your Icy Veins spell by 10 sec. Casting Pyroblast cancels 2 stacks of the effect from your Balefire Bolt.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226446"
+    }
+  ],
+  "name": "Fireleaf Circlet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "9c9a6b7e6697f6dc59be7b775523252e23e5f6bf894297e2b035fc482c78c219",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240056",
+  "url": "https://www.wowhead.com/forever/item=240056"
+}

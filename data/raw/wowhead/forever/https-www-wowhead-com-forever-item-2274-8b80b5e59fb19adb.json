@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Sapper's Gloves Item Level 17 Binds when equipped Hands Mail 99 Armor +3 Strength +2 Agility Durability 25 / 25 Requires Level 12 Sell Price: 2 89 Dropped by: Dark Iron Sapper Drop Chance: 1.88%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 2274,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 99,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 2274,
+    "item_level": 17,
+    "name": "Sapper's Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 12,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "agility": 2.0,
+      "strength": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2274"
+  },
+  "linked_entities": [],
+  "name": "Sapper's Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.88,
+      "entity_name": "Dark Iron Sapper",
+      "source_url": "https://www.wowhead.com/forever/item=2274",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2274",
+  "url": "https://www.wowhead.com/forever/item=2274"
+}

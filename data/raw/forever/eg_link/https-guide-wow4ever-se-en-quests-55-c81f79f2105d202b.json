@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/55"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:51.470509+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 7344,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://guide.wow4ever.se/en/quests/55",
+      "subject_id": 55,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 20,
+    "name": "Morbent Fel",
+    "quest_id": 55,
+    "quest_level": 32,
+    "reward_item_ids": [
+      7344
+    ],
+    "zone": "Duskwood"
+  },
+  "source_content_digest": "2e8938175391edb0d0cef956e9f9c06521616bb788cad40aa2a023f4f1753ed7",
+  "url": "https://guide.wow4ever.se/en/quests/55"
+}

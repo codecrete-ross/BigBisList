@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/7847"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:58.394138+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 19115,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/7847",
+      "subject_id": 7847,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Return to Primal Torntusk",
+    "quest_id": 7847,
+    "reward_item_roles": {
+      "19114": "choices",
+      "19115": "choices",
+      "270111": "choices"
+    },
+    "side": "Both",
+    "zone": "The Hinterlands"
+  },
+  "source_content_digest": "cdac1ad457cbd62b94b0489c75c631e4e736b98b5021d8c96fc2eba23689246c",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/7847"
+}

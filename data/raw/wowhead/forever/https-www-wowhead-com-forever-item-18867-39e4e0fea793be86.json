@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Battle Hammer Item Level 78 Binds when picked up Two-Hand Mace 235 - 353 Damage Speed 3.80 (77.37 damage per second) +26 Strength +41 Stamina Durability 120 / 120 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 6 25 42",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 18867,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 77.37,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 18867,
+    "item_level": 78,
+    "name": "Grand Marshal's Battle Hammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 41.0,
+      "strength": 26.0
+    },
+    "weapon_max_damage": 353,
+    "weapon_min_damage": 235,
+    "weapon_speed": 3.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18867"
+  },
+  "linked_entities": [],
+  "name": "Grand Marshal's Battle Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18867",
+  "url": "https://www.wowhead.com/forever/item=18867"
+}

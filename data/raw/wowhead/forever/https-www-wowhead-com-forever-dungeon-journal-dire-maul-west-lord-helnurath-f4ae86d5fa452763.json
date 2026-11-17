@@ -1,0 +1,94 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever dungeon journal and tooltip data",
+      "source": "https://www.wowhead.com/forever/dungeon-journal/dire-maul-west/lord-helnurath"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_forever_summoned_dungeon_drop",
+  "fetched_at": "2026-11-14T00:28:34.318021+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 90269,
+      "collected_at": "2026-11-14T00:28:34.318021+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-journal-hel",
+      "source_content_digest": "bdbed1b103dcaa5a579a7180fda9ec670f6fcc016fccac95cf874843cc9832db",
+      "source_url": "https://www.wowhead.com/forever/dungeon-journal/dire-maul-west/lord-helnurath"
+    },
+    {
+      "bytes": 1164,
+      "collected_at": "2026-11-13T23:25:00.910751+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-18754",
+      "source_content_digest": "b05cfa390ba65988ac1fcc933ec933f7d3b8ad69ae612fbb0a7bb9fca5e62292",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18754"
+    },
+    {
+      "bytes": 1166,
+      "collected_at": "2026-11-13T23:37:37.830825+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-classic-fel-bracers",
+      "source_content_digest": "3265bc5f487aabfdb1951695fbb419d35ccf6fe3ecf6b602c9771b79a3439dc2",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/18754"
+    },
+    {
+      "bytes": 212,
+      "collected_at": "2026-11-14T00:37:30.447480+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-hel-npc-14506",
+      "source_content_digest": "c3507cf48bb038cef086e332759ed3bcb9d1b0ce7faae34eb9f9977896fc6ec7",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/npc/14506"
+    },
+    {
+      "bytes": 613,
+      "collected_at": "2026-11-14T00:37:30.041302+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-17683",
+      "source_content_digest": "0afefc2eb6e668dbea6419f63f33567296e1a77506aa1ed46299a778a02963af",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18249"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_forever_drop",
+      "object_id": 18754,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/dungeon-journal/dire-maul-west/lord-helnurath",
+      "subject_id": 14506,
+      "subject_name": "Lord Hel'nurath",
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "activation_item_ids": [
+      18663,
+      18629,
+      18670
+    ],
+    "dungeon_map_id": 429,
+    "equip_level": 57,
+    "factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "finding": "The Forever tooltip names Lord Hel'nurath. The Forever journal describes the group summon with a Warlock holding all three ritual items. The recipient can be another party member. Drop rate is excluded from ranking.",
+    "group_access_key_id": 18249,
+    "item_id": 18754,
+    "npc_id": 14506,
+    "reviewed_route_minimum": 50
+  },
+  "source_content_digest": "bdbed1b103dcaa5a579a7180fda9ec670f6fcc016fccac95cf874843cc9832db",
+  "url": "https://www.wowhead.com/forever/dungeon-journal/dire-maul-west/lord-helnurath"
+}

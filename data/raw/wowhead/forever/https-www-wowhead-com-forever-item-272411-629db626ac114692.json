@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arcanoweave Cloak Item Level 65 Binds when picked up Back 46 Armor +8 Intellect Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 16 . Sell Price: 1 64 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 272411,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 46,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 272411,
+    "item_level": 65,
+    "name": "Arcanoweave Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 8.0,
+      "spell_power": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272411"
+  },
+  "linked_entities": [],
+  "name": "Arcanoweave Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272411",
+  "url": "https://www.wowhead.com/forever/item=272411"
+}

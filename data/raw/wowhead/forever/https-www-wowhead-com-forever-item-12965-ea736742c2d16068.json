@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spiritshroud Leggings Item Level 63 Binds when picked up Legs Cloth 78 Armor +13 Stamina +16 Intellect +16 Spirit Durability 65 / 65 Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 19 . Sell Price: 2 30 33 Dropped by: The Beast Drop Chance: 21.54%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:58.4414860Z",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 12965,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 78,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 19.",
+        "stats": {
+          "spell_power": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 19."
+    ],
+    "id": 12965,
+    "item_level": 63,
+    "name": "Spiritshroud Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "spell_power": 19.0,
+      "spirit": 16.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12965"
+  },
+  "linked_entities": [],
+  "name": "Spiritshroud Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.54,
+      "entity_name": "The Beast",
+      "source_url": "https://www.wowhead.com/forever/item=12965",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "87ece8f65dd4a2911917c20f5a538858d72329912d5c5387e8351fe2000060c1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12965",
+  "url": "https://www.wowhead.com/forever/item=12965"
+}

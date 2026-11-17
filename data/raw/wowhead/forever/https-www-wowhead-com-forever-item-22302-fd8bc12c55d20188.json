@@ -1,0 +1,178 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ironweave Cowl Item Level 63 Binds when picked up Head Cloth 73 Armor +24 Stamina +15 Intellect +130 Armor Durability 50 / 50 Classes: Priest , Mage , Warlock Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 11 . Ironweave Battlesuit (0/8) Ironweave Belt Ironweave Boots Ironweave Bracers Ironweave Cowl Ironweave Gloves Ironweave Mantle Ironweave Pants Ironweave Robe (2) Set : +200 Armor. (3) Set : Decreases the magical resistances of your spell targets by 5. (4) Set : Reduces the hit chance of Silence and Interrupt effects against you by 10%. (5) Set : Increases damage and healing done by magical spells and effects by up to 23. (6) Set : The Ironweave hardens under duress, reducing damage taken while Stunned by 15%. Sell Price: 1 72 74 Dropped by: Lord Valthalak Drop Chance: 22.76%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22302,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 73,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 11.",
+        "stats": {
+          "spell_power": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "id": 22302,
+    "item_level": 63,
+    "name": "Ironweave Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 26283,
+        "text": "Decreases the magical resistances of your spell targets by 5."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27733,
+        "text": "Reduces the hit chance of Silence and Interrupt effects against you by 10%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1302374,
+        "text": "The Ironweave hardens under duress, reducing damage taken while Stunned by 15%."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 11.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22302"
+  },
+  "linked_entities": [
+    {
+      "id": 22301,
+      "name": "Ironweave Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22301"
+    },
+    {
+      "id": 22302,
+      "name": "Ironweave Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22302"
+    },
+    {
+      "id": 22303,
+      "name": "Ironweave Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22303"
+    },
+    {
+      "id": 22304,
+      "name": "Ironweave Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22304"
+    },
+    {
+      "id": 22305,
+      "name": "Ironweave Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22305"
+    },
+    {
+      "id": 22306,
+      "name": "Ironweave Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22306"
+    },
+    {
+      "id": 22311,
+      "name": "Ironweave Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22311"
+    },
+    {
+      "id": 22313,
+      "name": "Ironweave Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22313"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 26283,
+      "name": "Decreases the magical resistances of your spell targets by 5.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26283"
+    },
+    {
+      "id": 27733,
+      "name": "Reduces the hit chance of Silence and Interrupt effects against you by 10%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27733"
+    },
+    {
+      "id": 1302374,
+      "name": "The Ironweave hardens under duress, reducing damage taken while Stunned by 15%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302374"
+    }
+  ],
+  "name": "Ironweave Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.76,
+      "entity_name": "Lord Valthalak",
+      "source_url": "https://www.wowhead.com/forever/item=22302",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b99cdba93c3fd740de2d3d4b0df93e0b5dc3ee176a860684f8e0a6a4caa2ad18",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22302",
+  "url": "https://www.wowhead.com/forever/item=22302"
+}

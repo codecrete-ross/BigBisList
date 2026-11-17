@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Duskwraith Helmet Sanctified Item Level 98 Binds when picked up Head Leather 223 Armor +26 Strength +49 Agility +12 Stamina Durability 70 / 70 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 2.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases your attack speed and casting speed by 1.0%. Duskwraith Armor (0/8) Duskwraith Helmet Duskwraith Pauldrons Duskwraith Breastplate Duskwraith Waistguard Duskwraith Legplates Duskwraith Sabatons Duskwraith Bracers Duskwraith Gauntlets (2) Set : While Just a Flesh Wound is not active, your Backstab, Sinister Strike, Saber Slash, and Mutilate deal 20% increased damage per your active Poison or Bleed effect afflicting the target, up to a maximum increase of 60%. (4) Set : Your Poison and autoattack critical strikes have a 10% chance to grant you a combo point. (Proc chance: 10%) (6) Set : Increases Ambush, Eviscerate, Crimson Tempest, and Envenom damage by 50%. Sell Price: 9 29 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 239560,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 223,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+        "stats": {
+          "hit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your attack speed and casting speed by 1.0%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 2.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 239560,
+    "item_level": 98,
+    "name": "Duskwraith Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226843,
+        "text": "While Just a Flesh Wound is not active, your Backstab, Sinister Strike, Saber Slash, and Mutilate deal 20% increased damage per your active Poison or Bleed effect afflicting the target, up to a maximum increase of 60%."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226869,
+        "text": "Your Poison and autoattack critical strikes have a 10% chance to grant you a combo point. (Proc chance: 10%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226871,
+        "text": "Increases Ambush, Eviscerate, Crimson Tempest, and Envenom damage by 50%."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 49.0,
+      "crit_percent": 1.0,
+      "hit_percent": 2.0,
+      "stamina": 12.0,
+      "strength": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=239560"
+  },
+  "linked_entities": [
+    {
+      "id": 239555,
+      "name": "Duskwraith Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239555"
+    },
+    {
+      "id": 239556,
+      "name": "Duskwraith Waistguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239556"
+    },
+    {
+      "id": 239557,
+      "name": "Duskwraith Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239557"
+    },
+    {
+      "id": 239558,
+      "name": "Duskwraith Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239558"
+    },
+    {
+      "id": 239559,
+      "name": "Duskwraith Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239559"
+    },
+    {
+      "id": 239560,
+      "name": "Duskwraith Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239560"
+    },
+    {
+      "id": 239561,
+      "name": "Duskwraith Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239561"
+    },
+    {
+      "id": 239562,
+      "name": "Duskwraith Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239562"
+    },
+    {
+      "id": 1226843,
+      "name": "While Just a Flesh Wound is not active, your Backstab, Sinister Strike, Saber Slash, and Mutilate deal 20% increased damage per your active Poison or Bleed effect afflicting the target, up to a maximum increase of 60%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226843"
+    },
+    {
+      "id": 1226869,
+      "name": "Your Poison and autoattack critical strikes have a 10% chance to grant you a combo point. (Proc chance: 10%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226869"
+    },
+    {
+      "id": 1226871,
+      "name": "Increases Ambush, Eviscerate, Crimson Tempest, and Envenom damage by 50%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226871"
+    }
+  ],
+  "name": "Duskwraith Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "359f6c0abc6d3762d73343cd795b43fefb310070a8d3641c5194a8ff4b6a167a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/239560",
+  "url": "https://www.wowhead.com/forever/item=239560"
+}

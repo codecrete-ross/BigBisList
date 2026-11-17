@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Icy Depths Item Level 77 Binds when picked up Unique Finger +19 Stamina +20 Frost Resistance Requires Level 60 Equip: Underwater Breath lasts 50% longer than normal. Sell Price: 82 80 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 21526,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Underwater Breath lasts 50% longer than normal.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Underwater Breath lasts 50% longer than normal."
+    ],
+    "id": 21526,
+    "item_level": 77,
+    "name": "Band of Icy Depths",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 20.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21526"
+  },
+  "linked_entities": [
+    {
+      "id": 11789,
+      "name": "Underwater Breath lasts 50% longer than normal.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11789"
+    }
+  ],
+  "name": "Band of Icy Depths",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21526",
+  "url": "https://www.wowhead.com/forever/item=21526"
+}

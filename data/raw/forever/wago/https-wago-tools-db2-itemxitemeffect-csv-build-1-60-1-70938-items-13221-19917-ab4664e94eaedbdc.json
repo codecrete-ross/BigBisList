@@ -1,0 +1,44 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T03:59:42.2317300Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 677,
+      "collected_at": "2026-11-13T04:39:36.6176457Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-offhand-13221",
+      "source_content_digest": "1c3304d339320bdc9a93ca56436addde73c1396051db8b3ba67ec3faf5b02410",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/13221"
+    },
+    {
+      "bytes": 715,
+      "collected_at": "2026-11-13T04:39:36.8746566Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-offhand-19917",
+      "source_content_digest": "82f6aa62bdd199a4951673e918c8e5e741a619f3e755d03d101fcf8de0f9b2ad",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19917"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "item_effect_links": [],
+    "statless_held_item_ids": [
+      13221,
+      19917
+    ]
+  },
+  "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+  "url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938#/items/13221,19917"
+}

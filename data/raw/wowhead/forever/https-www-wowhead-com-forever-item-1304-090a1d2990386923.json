@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Riding Gloves Item Level 20 Binds when picked up Hands Cloth 21 Armor +3 Agility +3 Intellect Durability 20 / 20 Sell Price: 2 79",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:44:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 1304,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 21,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 1304,
+    "item_level": 20,
+    "name": "Riding Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "intellect": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=1304"
+  },
+  "linked_entities": [],
+  "name": "Riding Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1304",
+  "url": "https://www.wowhead.com/forever/item=1304"
+}

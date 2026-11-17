@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of the Huntress Item Level 60 Binds when picked up Unique Relic Idol Classes: Druid Engrave your cloak with the Improved Swipe rune: While in Cat Form, your Swipe ability becomes Swipe (Cat), and while in Bear Form, your Swipe ability strikes up to 7 additional enemies. Swipe (Cat) Swipe nearby enemies, inflicting 250% weapon damage and generating 1 combo point on your current target. \"Kill 5 sleeping targets while in Cat Form. Then, use this idol to learn a new ability.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 227444,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 227444,
+    "item_level": 60,
+    "name": "Idol of the Huntress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=227444"
+  },
+  "linked_entities": [
+    {
+      "id": 411128,
+      "name": "Swipe nearby enemies, inflicting 250% weapon damage and generating 1 combo point on your current target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=411128"
+    },
+    {
+      "id": 439510,
+      "name": "While in Cat Form, your Swipe ability becomes Swipe (Cat), and while in Bear Form, your Swipe ability strikes up to 7 additional enemies. Swipe (Cat) Swipe nearby enemies, inflicting 250% weapon damage and generating 1 combo point on your current target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=439510"
+    },
+    {
+      "id": 439765,
+      "name": "Engrave your cloak with the Improved Swipe rune: While in Cat Form, your Swipe ability becomes Swipe (Cat), and while in Bear Form, your Swipe ability strikes up to 7 additional enemies. Swipe (Cat) Swipe nearby enemies, inflicting 250% weapon damage and generating 1 combo point on your current target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=439765"
+    }
+  ],
+  "name": "Idol of the Huntress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "7953b1b8cd4ee17f645a95267903e9946b0ea72239f61ac08e18ea9c2b3aad46",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227444",
+  "url": "https://www.wowhead.com/forever/item=227444"
+}

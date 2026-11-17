@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Helm of Narv Item Level 59 Binds when equipped Head Mail 309 Armor +18 Agility +32 Stamina Durability 85 / 85 Requires Level 54 Equip: + 22 Attack Power. Sell Price: 2 76 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 2245,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 309,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +22 Attack Power.",
+        "stats": {
+          "attack_power": 22
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +22 Attack Power."
+    ],
+    "id": 2245,
+    "item_level": 59,
+    "name": "Helm of Narv",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 54,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "attack_power": 22.0,
+      "stamina": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2245"
+  },
+  "linked_entities": [],
+  "name": "Helm of Narv",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2245",
+  "url": "https://www.wowhead.com/forever/item=2245"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Beastsmasher Item Level 55 Binds when picked up Main Hand Mace 48 - 90 Damage Speed 2.10 (32.86 damage per second) Durability 75 / 75 Equip: + 16 Attack Power. Equip: + 15 Attack Power against Beasts. Sell Price: 3 27 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 11906,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 32.86,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +15 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +16 Attack Power.",
+      "Equip: +15 Attack Power against Beasts."
+    ],
+    "id": 11906,
+    "item_level": 55,
+    "name": "Beastsmasher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 16.0
+    },
+    "weapon_max_damage": 90,
+    "weapon_min_damage": 48,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11906"
+  },
+  "linked_entities": [],
+  "name": "Beastsmasher",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11906",
+  "url": "https://www.wowhead.com/forever/item=11906"
+}

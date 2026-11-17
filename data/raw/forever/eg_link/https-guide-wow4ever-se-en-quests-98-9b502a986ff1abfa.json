@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/98"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:20.693500+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 2043,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98",
+      "subject_id": 98,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 270053,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98",
+      "subject_id": 98,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 22,
+    "name": "The Legend of Stalvan",
+    "quest_id": 98,
+    "quest_level": 35,
+    "reward_item_ids": [
+      2043,
+      270053
+    ],
+    "zone": "Duskwood"
+  },
+  "source_content_digest": "924f813decc1094e5338e2de61aed53ce83ba893d274175fe7bb12753eb1eec2",
+  "url": "https://guide.wow4ever.se/en/quests/98"
+}

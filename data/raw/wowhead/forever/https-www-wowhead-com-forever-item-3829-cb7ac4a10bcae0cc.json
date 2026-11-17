@@ -1,0 +1,59 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Frost Oil Item Level 40 Requires Level 30 Use: When applied to a melee weapon it gives a 10% chance of casting Frostbolt at the opponent when it hits. Lasts 30 minutes. Max Stack: 5 Sell Price: 1 50 Dropped by: Cenarion Hold Infantry",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 3829,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: When applied to a melee weapon it gives a 10% chance of casting Frostbolt at the opponent when it hits. Lasts 30 minutes.",
+        "type": "conditional"
+      }
+    ],
+    "id": 3829,
+    "item_level": 40,
+    "name": "Frost Oil",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 30,
+    "source_summary": "",
+    "use_effects": [
+      "Use: When applied to a melee weapon it gives a 10% chance of casting Frostbolt at the opponent when it hits. Lasts 30 minutes. Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=3829"
+  },
+  "linked_entities": [
+    {
+      "id": 3595,
+      "name": "When applied to a melee weapon it gives a 10% chance of casting Frostbolt at the opponent when it hits. Lasts 30 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3595"
+    }
+  ],
+  "name": "Frost Oil",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Cenarion Hold Infantry",
+      "source_url": "https://www.wowhead.com/forever/item=3829",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "b6283a50f442b1f09b0730542143275100518f8ffc2ddb74c11eed0f9946f23c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3829",
+  "url": "https://www.wowhead.com/forever/item=3829"
+}

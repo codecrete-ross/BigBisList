@@ -1,0 +1,124 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Lieutenant's Chain Helmet Item Level 55 Binds when picked up Head Mail 266 Armor +16 Agility +12 Stamina +10 Intellect Durability 70 / 70 Classes: Hunter Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Knight-Lieutenant's Chain (0/6) Knight's Chain Armor Knight's Chain Legplates Knight-Lieutenant's Chain Epaulets Knight-Lieutenant's Chain Helmet Sergeant Major's Chain Gauntlets Sergeant Major's Chain Sabatons (3) Set : +15 Stamina. (6) Set : +30 Attack Power. Sell Price: 1 66 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 220822,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 266,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 220822,
+    "item_level": 55,
+    "name": "Knight-Lieutenant's Chain Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "crit_percent": 1.0,
+      "intellect": 10.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220822"
+  },
+  "linked_entities": [
+    {
+      "id": 220822,
+      "name": "Knight-Lieutenant's Chain Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220822"
+    },
+    {
+      "id": 220825,
+      "name": "Knight-Lieutenant's Chain Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220825"
+    },
+    {
+      "id": 220828,
+      "name": "Knight's Chain Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220828"
+    },
+    {
+      "id": 220829,
+      "name": "Sergeant Major's Chain Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220829"
+    },
+    {
+      "id": 220832,
+      "name": "Knight's Chain Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220832"
+    },
+    {
+      "id": 220837,
+      "name": "Sergeant Major's Chain Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220837"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Knight-Lieutenant's Chain Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "109cda4d8c1571f42a10a322ed3a1dd918b614e58459b3f02c8b9d37f1a3af52",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220822",
+  "url": "https://www.wowhead.com/forever/item=220822"
+}

@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Mail Headguard Item Level 71 Binds when picked up Head Mail 337 Armor +23 Strength +36 Stamina +6 Intellect Durability 70 / 70 Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Champion's Earthshaker (0/6) Blood Guard's Mail Greaves Blood Guard's Mail Vices Champion's Mail Headguard Champion's Mail Pauldrons Legionnaire's Mail Hauberk Legionnaire's Mail Legguards (2) Set : +40 Attack Power. (4) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : +20 Stamina. Sell Price: 1 94 54",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227155,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 337,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 227155,
+    "item_level": 71,
+    "name": "Champion's Mail Headguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 22804,
+        "text": "Improves your chance to get a critical strike with all Shock spells by 2%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 6.0,
+      "stamina": 36.0,
+      "strength": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227155"
+  },
+  "linked_entities": [
+    {
+      "id": 227154,
+      "name": "Champion's Mail Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227154"
+    },
+    {
+      "id": 227155,
+      "name": "Champion's Mail Headguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227155"
+    },
+    {
+      "id": 227156,
+      "name": "Legionnaire's Mail Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227156"
+    },
+    {
+      "id": 227157,
+      "name": "Legionnaire's Mail Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227157"
+    },
+    {
+      "id": 227158,
+      "name": "Blood Guard's Mail Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227158"
+    },
+    {
+      "id": 227159,
+      "name": "Blood Guard's Mail Vices",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227159"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 22804,
+      "name": "Improves your chance to get a critical strike with all Shock spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22804"
+    }
+  ],
+  "name": "Champion's Mail Headguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6ae6964e8790e91ccf43f6b1cb2bf5107c1576c313954617a4beacf09b3f6363",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227155",
+  "url": "https://www.wowhead.com/forever/item=227155"
+}

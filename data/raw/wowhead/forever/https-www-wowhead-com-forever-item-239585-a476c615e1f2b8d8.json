@@ -1,0 +1,158 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Circlet of Revelation Sanctified Item Level 98 Binds when picked up Head Cloth 119 Armor +13 Stamina +16 Intellect +14 Spirit Durability 60 / 60 Classes: Priest Requires Level 60 Equip: Improves your chance to get a critical strike by 2.0%. Equip: Increases healing done by up to 110 and damage done by up to 37 for all magical spells and effects. Vestments of Revelation (0/8) Circlet of Revelation Shoulderpads of Revelation Belt of Revelation Leggings of Revelation Sandals of Revelation Bindings of Revelation Gloves of Revelation Robe of Revelation (2) Set : Reduces the cooldown of Power Word: Barrier by 30 sec and Surge of Light now also makes Prayer of Healing and Greater Heal instant cast. (4) Set : Power Word: Shield casts instantly heal the target for 20% of the absorb value and Serendipity empowered spells have their healing increased by 10% per stack. (6) Set : Increases the healing of Circle of Healing and Penance by 25%. Additionally, the cooldown of your Spirit of the Redeemer is reduced by 0.0200 sec and your healing is increased by 20% while your Spirit of the Redeemer is active. Sell Price: 8 9 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 239585,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 119,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 110 and damage done by up to 37 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 110,
+          "spell_damage": 37
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%.",
+      "Equip: Increases healing done by up to 110 and damage done by up to 37 for all magical spells and effects."
+    ],
+    "id": 239585,
+    "item_level": 98,
+    "name": "Circlet of Revelation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226499,
+        "text": "Reduces the cooldown of Power Word: Barrier by 30 sec and Surge of Light now also makes Prayer of Healing and Greater Heal instant cast."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226565,
+        "text": "Power Word: Shield casts instantly heal the target for 20% of the absorb value and Serendipity empowered spells have their healing increased by 10% per stack."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226501,
+        "text": "Increases the healing of Circle of Healing and Penance by 25%. Additionally, the cooldown of your Spirit of the Redeemer is reduced by 0.0200 sec and your healing is increased by 20% while your Spirit of the Redeemer is active."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 2.0,
+      "healing_power": 110.0,
+      "intellect": 16.0,
+      "spell_damage": 37.0,
+      "spirit": 14.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=239585"
+  },
+  "linked_entities": [
+    {
+      "id": 239584,
+      "name": "Gloves of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239584"
+    },
+    {
+      "id": 239585,
+      "name": "Circlet of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239585"
+    },
+    {
+      "id": 239586,
+      "name": "Shoulderpads of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239586"
+    },
+    {
+      "id": 239587,
+      "name": "Leggings of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239587"
+    },
+    {
+      "id": 239588,
+      "name": "Bindings of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239588"
+    },
+    {
+      "id": 239589,
+      "name": "Sandals of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239589"
+    },
+    {
+      "id": 239590,
+      "name": "Belt of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239590"
+    },
+    {
+      "id": 239591,
+      "name": "Robe of Revelation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239591"
+    },
+    {
+      "id": 1226499,
+      "name": "Reduces the cooldown of Power Word: Barrier by 30 sec and Surge of Light now also makes Prayer of Healing and Greater Heal instant cast.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226499"
+    },
+    {
+      "id": 1226501,
+      "name": "Increases the healing of Circle of Healing and Penance by 25%. Additionally, the cooldown of your Spirit of the Redeemer is reduced by 0.0200 sec and your healing is increased by 20% while your Spirit of the Redeemer is active.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226501"
+    },
+    {
+      "id": 1226565,
+      "name": "Power Word: Shield casts instantly heal the target for 20% of the absorb value and Serendipity empowered spells have their healing increased by 10% per stack.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226565"
+    }
+  ],
+  "name": "Circlet of Revelation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "3bd3d3e261646e46a97e3012e1ab97edd02eab69366a1ad66d3af2fbf1800e4b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/239585",
+  "url": "https://www.wowhead.com/forever/item=239585"
+}

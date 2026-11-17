@@ -1,0 +1,149 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defias Enforcer's Shoulderpads Item Level 53 Binds when picked up Shoulder Leather 115 Armor +13 Stamina Requires Level 48 Equip: Improves your chance to get a critical strike by 0.5%. Equip: + 28 Attack Power. Defias Enforcer's Garb (0/5) Defias Enforcer's Mask Defias Enforcer's Shoulderpads Defias Enforcer's Chest Defias Enforcer's Legguards Defias Enforcer's Prowlers (2) Set : +10 Fire Resistance. (3) Set : +15 Stamina. (4) Set : Increased Swords +1. (5) Set : Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps. Sell Price: 1 20 60 Dropped by: The Questioner Drop Chance: 100.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 276741,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 115,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%."
+    ],
+    "id": 276741,
+    "item_level": 53,
+    "name": "Defias Enforcer's Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1324673,
+        "text": "+10 Fire Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1324674,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1324675,
+        "text": "Increased Swords +1."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1324684,
+        "text": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_percent": 0.5,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276741"
+  },
+  "linked_entities": [
+    {
+      "id": 276741,
+      "name": "Defias Enforcer's Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=276741"
+    },
+    {
+      "id": 276746,
+      "name": "Defias Enforcer's Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=276746"
+    },
+    {
+      "id": 287019,
+      "name": "Defias Enforcer's Mask",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287019"
+    },
+    {
+      "id": 287020,
+      "name": "Defias Enforcer's Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287020"
+    },
+    {
+      "id": 287021,
+      "name": "Defias Enforcer's Prowlers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287021"
+    },
+    {
+      "id": 1324673,
+      "name": "+10 Fire Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324673"
+    },
+    {
+      "id": 1324674,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324674"
+    },
+    {
+      "id": 1324675,
+      "name": "Increased Swords +1.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324675"
+    },
+    {
+      "id": 1324684,
+      "name": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324684"
+    }
+  ],
+  "name": "Defias Enforcer's Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 100.0,
+      "entity_name": "The Questioner",
+      "source_url": "https://www.wowhead.com/forever/item=276741",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5bd23539a6976930b18690e1fb6f9b408339604c5bf5015e1628f8be805fdea9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276741",
+  "url": "https://www.wowhead.com/forever/item=276741"
+}

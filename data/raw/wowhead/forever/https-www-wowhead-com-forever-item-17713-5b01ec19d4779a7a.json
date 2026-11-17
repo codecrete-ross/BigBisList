@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blackstone Ring Item Level 54 Binds when picked up Unique-Equipped Finger +6 Stamina Requires Level 49 Equip: Improves your chance to hit by 1.0%. Equip: + 20 Attack Power. Sell Price: 1 42 95 Dropped by: Princess Theradras Drop Chance: 24.51%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 17713,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 17713,
+    "item_level": 54,
+    "name": "Blackstone Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 49,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "hit_percent": 1.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17713"
+  },
+  "linked_entities": [],
+  "name": "Blackstone Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.51,
+      "entity_name": "Princess Theradras",
+      "source_url": "https://www.wowhead.com/forever/item=17713",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "997ebe60325e1c21dc1f3aad744476ca3f1d1a62af1f61e66e150c98adb71933",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17713",
+  "url": "https://www.wowhead.com/forever/item=17713"
+}

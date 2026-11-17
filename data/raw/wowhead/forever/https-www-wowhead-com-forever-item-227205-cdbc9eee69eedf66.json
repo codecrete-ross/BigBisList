@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Dragonhide Headdress Item Level 71 Binds when picked up Head Leather 158 Armor +30 Stamina +19 Intellect +15 Spirit Durability 60 / 60 Classes: Druid Requires Level 60 Equip: Increases healing done by magical spells and effects by up to 40 . Champion's Refuge (0/6) Blood Guard's Dragonhide Gauntlets Blood Guard's Dragonhide Greaves Champion's Dragonhide Headdress Champion's Dragonhide Pauldrons Legionnaire's Dragonhide Legguards Legionnaire's Dragonhide Tunic (2) Set : Increases healing done by spells and effects by up to 44. (4) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : +20 Stamina. Sell Price: 1 54 38 Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227205,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 40.",
+        "stats": {
+          "healing_power": 40
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 40."
+    ],
+    "id": 227205,
+    "item_level": 71,
+    "name": "Champion's Dragonhide Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 17371,
+        "text": "Increases healing done by spells and effects by up to 44."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 40.0,
+      "intellect": 19.0,
+      "spirit": 15.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227205"
+  },
+  "linked_entities": [
+    {
+      "id": 227202,
+      "name": "Legionnaire's Dragonhide Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227202"
+    },
+    {
+      "id": 227203,
+      "name": "Blood Guard's Dragonhide Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227203"
+    },
+    {
+      "id": 227204,
+      "name": "Blood Guard's Dragonhide Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227204"
+    },
+    {
+      "id": 227205,
+      "name": "Champion's Dragonhide Headdress",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227205"
+    },
+    {
+      "id": 227206,
+      "name": "Legionnaire's Dragonhide Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227206"
+    },
+    {
+      "id": 227207,
+      "name": "Champion's Dragonhide Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227207"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 17371,
+      "name": "Increases healing done by spells and effects by up to 44.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17371"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Champion's Dragonhide Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6c3a9832d3671353131508dbd13d30ccd17e98e7caebadce80a95e23c2e6a79a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227205",
+  "url": "https://www.wowhead.com/forever/item=227205"
+}

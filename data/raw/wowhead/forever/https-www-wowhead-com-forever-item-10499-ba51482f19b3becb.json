@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Bright-Eye Goggles Item Level 35 Binds when equipped Head Cloth 38 Armor +9 Stamina +9 Spirit Durability 45 / 45 Requires Engineering (175) Sell Price: 21 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10499,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10499,
+    "item_level": 35,
+    "name": "Bright-Eye Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 9.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10499"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Bright-Eye Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Bright-Eye Goggles Item Level 35 Binds when equipped Head Cloth 38 Armor +9 Stamina +9 Spirit Durability 45 / 45 Requires Engineering (175) Sell Price: 21 5",
+      "scope": "equip_or_use",
+      "skill": 175,
+      "source_url": "https://www.wowhead.com/forever/item=10499",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "26fb64b9349fefb795216f820ca98bc2a22846704e1bf7e214dad49bab30b91d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10499",
+  "url": "https://www.wowhead.com/forever/item=10499"
+}

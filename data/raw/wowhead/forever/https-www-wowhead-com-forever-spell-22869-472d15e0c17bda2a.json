@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mooncloth Gloves 1 min cast Reagents: Bolt of Runecloth (12), Mooncloth (6), Golden Pearl (2), Rune Thread (2) Mooncloth Gloves Item Level 62 Binds when equipped Hands Cloth 55 Armor +9 Stamina +16 Intellect Durability 30 / 30 Requires Level 57 Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects. Sell Price: 1 12 19",
+  "entity_id": 22869,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:41+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 13926,
+      "name": "Golden Pearl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13926"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 18409,
+      "name": "Mooncloth Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18409"
+    },
+    {
+      "id": 22869,
+      "name": "Mooncloth Gloves",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22869"
+    }
+  ],
+  "name": "Mooncloth Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 18409,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=22869",
+      "subject_id": 22869,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 22869,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/22869",
+  "url": "https://www.wowhead.com/forever/spell=22869"
+}

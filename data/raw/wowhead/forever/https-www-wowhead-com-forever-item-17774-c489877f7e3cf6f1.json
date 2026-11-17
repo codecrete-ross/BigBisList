@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of the Chosen Item Level 48 Binds when picked up Unique-Equipped Trinket Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown) Sell Price: 81 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 17774,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)"
+    ],
+    "id": 17774,
+    "item_level": 48,
+    "name": "Mark of the Chosen",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17774"
+  },
+  "linked_entities": [
+    {
+      "id": 21969,
+      "name": "Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21969"
+    }
+  ],
+  "name": "Mark of the Chosen",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "ca3459fd0003e537977fb92b99a58730e0ec236f246113df27483272807c85bf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17774",
+  "url": "https://www.wowhead.com/forever/item=17774"
+}

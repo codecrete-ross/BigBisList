@@ -1,0 +1,111 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client tables from Wago.tools.",
+      "source": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_client_item_effects",
+  "fetched_at": "2026-11-13T03:59:43.4491189Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3924683,
+      "collected_at": "2026-11-13T04:11:22.5338788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-spelleffect",
+      "source_content_digest": "da2fb074eedb51bd1246ef53666044c0b757bdb67340c3969b712caa8481ac2b",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 36721,
+      "collected_at": "2026-11-13T04:16:58.3880233Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-itbonus",
+      "source_content_digest": "44b61eec8dbe7c22aa69a5031c38cb5521d217d2c7965987db20d3af2b5212bc",
+      "source_url": "https://wago.tools/db2/ItemXBonusTree/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "prior_effect_review": {
+    "content_digest": "1047db92856df5e4b4c217815a1147055fe3164fb3c5d1b344dc5d717b539981",
+    "evidence_id": "wago:4a359231960790a1c892bfb4"
+  },
+  "provider": "wago",
+  "reviewed_item_effects": [
+    {
+      "finding": "The statless ring reveals quest targets for Dawn Waker through the Arcane Marker aura. The current spells show invisibility detection in category 15 and its marker trigger. The observed effects provide puzzle access. The reviewed tooltip and spells show no combat gearing benefit for the level 1\u20133 ring scope.",
+      "gearing_benefit": false,
+      "item_id": 264908,
+      "reviewed_spell_ids": [
+        1313580,
+        1314017
+      ],
+      "spell_effect_rows": [
+        {
+          "DifficultyID": 0,
+          "Effect": 3,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1345008,
+          "SpellID": 1313580
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 19,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 15,
+          "EffectTriggerSpell": 0,
+          "ID": 1345677,
+          "SpellID": 1314017
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 64,
+          "EffectAura": 0,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 500,
+          "EffectTriggerSpell": 1313580,
+          "ID": 1345678,
+          "SpellID": 1314017
+        }
+      ],
+      "tooltip_effects": []
+    }
+  ],
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/items/264908"
+}

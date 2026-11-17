@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Runescale Girdle Item Level 21 Binds when equipped Waist Mail 96 Armor +5 Strength Durability 30 / 30 Requires Level 16 Sell Price: 4 19 Dropped by: Trigore the Lasher Drop Chance: 61.14%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 5425,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 96,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 5425,
+    "item_level": 21,
+    "name": "Runescale Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 16,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5425"
+  },
+  "linked_entities": [],
+  "name": "Runescale Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 61.14,
+      "entity_name": "Trigore the Lasher",
+      "source_url": "https://www.wowhead.com/forever/item=5425",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5425",
+  "url": "https://www.wowhead.com/forever/item=5425"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Kajaric Icon Item Level 25 Binds when picked up Unique Relic Totem Classes: Shaman Engrave your gloves with the Lava Burst rune: You hurl molten lava at the target, dealing 114 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage. \"Learn a new ability after taking damage from lava 5 times. (Reduces damage from some sources of lava)\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206387,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206387,
+    "item_level": 25,
+    "name": "Kajaric Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206387"
+  },
+  "linked_entities": [
+    {
+      "id": 408490,
+      "name": "You hurl molten lava at the target, dealing 114 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408490"
+    },
+    {
+      "id": 410095,
+      "name": "Engrave your gloves with the Lava Burst rune: You hurl molten lava at the target, dealing 114 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410095"
+    }
+  ],
+  "name": "Kajaric Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "3b8d4e29960aacd8be827239e26fe230b3166567d837d816f7fcfd2705b677f0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206387",
+  "url": "https://www.wowhead.com/forever/item=206387"
+}

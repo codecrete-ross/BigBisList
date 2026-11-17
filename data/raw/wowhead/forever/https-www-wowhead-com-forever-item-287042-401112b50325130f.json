@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Pauldrons of the Stone Guardian Item Level 61 Binds when equipped Shoulder Plate 478 Armor +12 Stamina +11 Spirit Requires Level 56 Equip: Increased Defense + 6. Equip: + 24 Attack Power. Sell Price: 2 72 83",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:45.1770438Z",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 287042,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 478,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +6.",
+        "stats": {
+          "defense": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +6.",
+      "Equip: +24 Attack Power."
+    ],
+    "id": 287042,
+    "item_level": 61,
+    "name": "Pauldrons of the Stone Guardian",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "defense": 6.0,
+      "spirit": 11.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287042"
+  },
+  "linked_entities": [],
+  "name": "Pauldrons of the Stone Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4e11efccdd15278db3f7399aaaa4ebaaa991d02d74f9de5e32a6ca387380923b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287042?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=287042"
+}

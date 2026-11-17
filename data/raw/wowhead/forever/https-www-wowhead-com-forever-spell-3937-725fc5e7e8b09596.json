@@ -1,0 +1,84 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Large Copper Bomb 8 sec cast Tools: Blacksmith Hammer Reagents: Copper Bar (3), Coarse Blasting Powder (4), Silver Contact Large Copper Bomb (3) Item Level 26 Requires Engineering (105) Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown) Max Stack: 10 Sell Price: 1 75",
+  "entity_id": 3937,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:50+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2840,
+      "name": "Copper Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2840"
+    },
+    {
+      "id": 4364,
+      "name": "Coarse Blasting Powder",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4364"
+    },
+    {
+      "id": 4370,
+      "name": "Large Copper Bomb",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4370"
+    },
+    {
+      "id": 4404,
+      "name": "Silver Contact",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4404"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 3937,
+      "name": "Large Copper Bomb",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3937"
+    },
+    {
+      "id": 4065,
+      "name": "Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=4065"
+    }
+  ],
+  "name": "Large Copper Bomb",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Large Copper Bomb 8 sec cast Tools: Blacksmith Hammer Reagents: Copper Bar (3), Coarse Blasting Powder (4), Silver Contact Large Copper Bomb (3) Item Level 26 Requires Engineering (105) Use: Inflicts 43 to 57 Fire damage and stuns targets in a 5 yard radius for 1 sec. Any damage will break the effect. (1 Min Cooldown) Max Stack: 10 Sell Price: 1 75",
+      "scope": "cast_enchant",
+      "skill": 105,
+      "source_url": "https://www.wowhead.com/forever/spell=3937",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 4370,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=3937",
+      "subject_id": 3937,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "73e57ce4e72d34ff4c54301e4c76494c78363070650af7f10ca52935303ddc4c",
+  "spell_id": 3937,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/3937",
+  "url": "https://www.wowhead.com/forever/spell=3937"
+}

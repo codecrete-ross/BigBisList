@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Flesh Item Level 60 Binds when picked up Unique-Equipped Finger +6 Strength +3 Agility +16 Stamina +40 Armor Requires Level 55 Sell Price: 1 98 96 Dropped by: Ramstein the Gorger Drop Chance: 11.83%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13373,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13373,
+    "item_level": 60,
+    "name": "Band of Flesh",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "stamina": 16.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13373"
+  },
+  "linked_entities": [],
+  "name": "Band of Flesh",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.83,
+      "entity_name": "Ramstein the Gorger",
+      "source_url": "https://www.wowhead.com/forever/item=13373",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8acb2d486ea0ddeec61011e6ca7f23a7edd0eecc0f872a95fba11a5b4be26c54",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13373",
+  "url": "https://www.wowhead.com/forever/item=13373"
+}

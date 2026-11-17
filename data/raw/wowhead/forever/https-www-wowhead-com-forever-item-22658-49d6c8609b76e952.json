@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Glacial Cloak Item Level 80 Binds when equipped Back 61 Armor +18 Stamina +24 Frost Resistance Requires Level 60 Sell Price: 5 30 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 22658,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 61,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 22658,
+    "item_level": 80,
+    "name": "Glacial Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 24.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22658"
+  },
+  "linked_entities": [],
+  "name": "Glacial Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22658",
+  "url": "https://www.wowhead.com/forever/item=22658"
+}

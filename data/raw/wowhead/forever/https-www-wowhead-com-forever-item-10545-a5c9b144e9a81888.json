@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gnomish Goggles Item Level 42 Binds when picked up Head Cloth 45 Armor +9 Agility +9 Stamina +9 Spirit Durability 45 / 45 Requires Engineering (210) Sell Price: 39 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10545,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 45,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 10545,
+    "item_level": 42,
+    "name": "Gnomish Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "spirit": 9.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10545"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Gnomish Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Goggles Item Level 42 Binds when picked up Head Cloth 45 Armor +9 Agility +9 Stamina +9 Spirit Durability 45 / 45 Requires Engineering (210) Sell Price: 39 29",
+      "scope": "equip_or_use",
+      "skill": 210,
+      "source_url": "https://www.wowhead.com/forever/item=10545",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "6125a317423d86594c324716c31b144c7c1012f8e649f8d45f2becd90bcb9cbb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10545",
+  "url": "https://www.wowhead.com/forever/item=10545"
+}

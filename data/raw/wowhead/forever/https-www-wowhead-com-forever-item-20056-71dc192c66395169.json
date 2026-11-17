@@ -1,0 +1,104 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Mail Pauldrons Item Level 65 Binds when picked up Unique Shoulder Mail 312 Armor +11 Strength +10 Agility +18 Stamina +17 Intellect Restores + 4 mana per 5 sec. Requires Level 60 Requires The League of Arathor - Exalted The Highlander's Fortitude (0/3) Highlander's Mail Girdle Highlander's Mail Greaves Highlander's Mail Pauldrons (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 3 70 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 20056,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 312,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 20056,
+    "item_level": 65,
+    "name": "Highlander's Mail Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18384,
+        "text": "Improves your chance to get a critical strike with spells by 1.0%."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "intellect": 17.0,
+      "mp5": 4.0,
+      "stamina": 18.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20056"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 20044,
+      "name": "Highlander's Mail Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20044"
+    },
+    {
+      "id": 20051,
+      "name": "Highlander's Mail Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20051"
+    },
+    {
+      "id": 20056,
+      "name": "Highlander's Mail Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20056"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 18384,
+      "name": "Improves your chance to get a critical strike with spells by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18384"
+    }
+  ],
+  "name": "Highlander's Mail Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20056",
+  "url": "https://www.wowhead.com/forever/item=20056"
+}

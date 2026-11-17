@@ -1,0 +1,581 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "CMaNGOS Classic DB contributors (historical item identities)",
+      "licence": "GPL-3.0",
+      "licenceUrl": "https://raw.githubusercontent.com/cmangos/classic-db/09000ea8d7333856727204e4e2d30f772149b7a8/LICENSE.md",
+      "source": "https://github.com/cmangos/classic-db/tree/09000ea8d7333856727204e4e2d30f772149b7a8"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "credit": "AoWoW Database Viewer (AzerothCore)",
+      "source": "https://aowow.oldmanwarcraft.com/"
+    },
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_legacy_display_equipment",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 12959882,
+      "collected_at": "2026-11-13T20:38:19.567013+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-db-cmangos",
+      "source_content_digest": "4f92db520868ab4e566726f68b5b2e380ae781209beaf22237b4f7f04600d0c0",
+      "source_url": "https://raw.githubusercontent.com/cmangos/classic-db/09000ea8d7333856727204e4e2d30f772149b7a8/Full_DB/ClassicDB_1_12_1_z2815.sql.gz"
+    },
+    {
+      "bytes": 5004,
+      "collected_at": "2026-11-13T20:47:54.667910+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "cmangos-readme",
+      "source_content_digest": "e6547f5dd10dcf9c6ee91abe7e96a69772a0cd697c95c19d95789794a23bc546",
+      "source_url": "https://raw.githubusercontent.com/cmangos/classic-db/09000ea8d7333856727204e4e2d30f772149b7a8/README.md"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T20:23:09.523134+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "item-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 497917,
+      "collected_at": "2026-11-13T20:10:03.507107+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "itemsearchname",
+      "source_content_digest": "96230873a8525ce4fe903bb2695ffc8309e3a81148794bc7cf7b546fd284b4e1",
+      "source_url": "https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 462919,
+      "collected_at": "2026-11-13T14:51:27.6974051Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemmodifiedappearance",
+      "source_content_digest": "7f92e0fb84ec92fc7d4512a6f60dbf96cc976794b009dea8e964d79cfe830973",
+      "source_url": "https://wago.tools/db2/ItemModifiedAppearance/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3658058,
+      "collected_at": "2026-11-13T20:41:27.538445+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-effects",
+      "source_content_digest": "846e1a43c1371ce33e1037a132d5cf6d15b2809d9205205488f263484a935e74",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 36721,
+      "collected_at": "2026-11-13T14:51:27.7921868Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemxbonustree",
+      "source_content_digest": "44b61eec8dbe7c22aa69a5031c38cb5521d217d2c7965987db20d3af2b5212bc",
+      "source_url": "https://wago.tools/db2/ItemXBonusTree/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 7492268,
+      "collected_at": "2026-11-13T20:39:08.074987+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "verified-current",
+      "source_content_digest": "f646f700427bacfa23a71995a4d206c44874ed1037240a0b11ad5440e252352e",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-qLWVgDAdBMiTBbMWPnzSEU.bin"
+    },
+    {
+      "bytes": 65615,
+      "collected_at": "2026-11-13T20:20:27.439493+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-4642",
+      "source_content_digest": "8cd5133c12831b4ca967a07d0db6e1ddb356751b99c63eee3146a28088924e1e",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=4642"
+    },
+    {
+      "bytes": 27254,
+      "collected_at": "2026-11-13T20:20:30.179988+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-11182",
+      "source_content_digest": "7db9f0fb61185a7801a07105c9c9aab635c1a248a1c3bcbc7c1d3ec1f852be49",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=11182"
+    },
+    {
+      "bytes": 27254,
+      "collected_at": "2026-11-13T20:20:32.759348+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-11183",
+      "source_content_digest": "1635e75fe28ae03106fc3bdfeb67766eb36538a2ca4a43684467e39fe2ec03c5",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=11183"
+    },
+    {
+      "bytes": 65905,
+      "collected_at": "2026-11-13T20:20:33.429535+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-12948",
+      "source_content_digest": "2f1c6015070c0e52985f2aee334ccd5f22e14f929c7485a7c39f2f49e90ba780",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=12948"
+    },
+    {
+      "bytes": 83986,
+      "collected_at": "2026-11-13T20:20:33.152489+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-13294",
+      "source_content_digest": "f4ba1f880f7c984191f0c335e93de81a7f9b3a99c5f36176d1eee66542b37085",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=13294"
+    },
+    {
+      "bytes": 64221,
+      "collected_at": "2026-11-13T20:20:35.810229+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-19294",
+      "source_content_digest": "6276445a3733f64937f62827d2b2072c4dba1e0037f4b06152ca68b19be51f29",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=19294"
+    },
+    {
+      "bytes": 23716,
+      "collected_at": "2026-11-13T20:20:35.745929+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-21169",
+      "source_content_digest": "1da76cae829dfd94e30842a992dc3f62a6b63cf209bc23a4188c92314938e836",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=21169"
+    },
+    {
+      "bytes": 23716,
+      "collected_at": "2026-11-13T20:20:36.048968+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-21170",
+      "source_content_digest": "6a95d36ae3af34aef48a9dd41efba9002db8ea08dc46ad038eb179245a6c84dc",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=21170"
+    },
+    {
+      "bytes": 30438,
+      "collected_at": "2026-11-13T20:20:38.804315+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-21172",
+      "source_content_digest": "076156552f92e208bd8d74537bf5572c37ca0f0601d25c085fa1200047e520b3",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=21172"
+    },
+    {
+      "bytes": 627,
+      "collected_at": "2026-11-13T20:44:46.891478+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-star-active",
+      "source_content_digest": "cc866f8c9260d99af1c35b8aeaf18b15c1c13b379b82475b47e110843dc4a19a",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/4646"
+    },
+    {
+      "bytes": 727,
+      "collected_at": "2026-11-13T20:44:46.877353+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-flower-active",
+      "source_content_digest": "71cad09b885626c2aaa5346f361ffdce78783d59ecaf3d8a7f48468a85ca83bb",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19295"
+    },
+    {
+      "bytes": 717,
+      "collected_at": "2026-11-13T20:44:46.877353+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-mug-active-filled",
+      "source_content_digest": "9fb2f5b688e815d2f68610579d14fbb0795cdef69d3cd7c74e542a9c356e7c38",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/21171"
+    },
+    {
+      "bytes": 752,
+      "collected_at": "2026-11-13T20:44:47.006165+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-mug-active-empty",
+      "source_content_digest": "c94282141e2dfed6e1a17d2b52b12b31464bdbdef45ade93306354f85926496f",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/21174"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "exact_items": [
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "157821",
+          "ItemAppearanceID": "63803",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "4642",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "4",
+          "ID": "4642",
+          "IconFileDataID": "134116",
+          "InventoryType": "23",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=4642",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Star of Xil'yeh",
+        "item_id": 4642
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "160221",
+          "ItemAppearanceID": "65211",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "11182",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "0",
+          "ID": "11182",
+          "IconFileDataID": "136240",
+          "InventoryType": "14",
+          "SubclassID": "8"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=11182",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "gfdgdf",
+        "item_id": 11182
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "160222",
+          "ItemAppearanceID": "65211",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "11183",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "0",
+          "ID": "11183",
+          "IconFileDataID": "136240",
+          "InventoryType": "14",
+          "SubclassID": "8"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=11183",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "xdds",
+        "item_id": 11183
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "160697",
+          "ItemAppearanceID": "65472",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "12948",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "4",
+          "ID": "12948",
+          "IconFileDataID": "134754",
+          "InventoryType": "23",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=12948",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Monster - Item, Handheld Holy Symbol",
+        "item_id": 12948
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "160930",
+          "ItemAppearanceID": "66963",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "13294",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "0",
+          "ID": "13294",
+          "IconFileDataID": "132394",
+          "InventoryType": "3",
+          "SubclassID": "8"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=13294",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "dsds",
+        "item_id": 13294
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "163846",
+          "ItemAppearanceID": "64293",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "19294",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "4",
+          "ID": "19294",
+          "IconFileDataID": "133939",
+          "InventoryType": "23",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=19294",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Darkmoon Boquet",
+        "item_id": 19294
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "164470",
+          "ItemAppearanceID": "64008",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "21169",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "15",
+          "ID": "21169",
+          "IconFileDataID": "132791",
+          "InventoryType": "22",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=21169",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Empty Festive Mug",
+        "item_id": 21169
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "164471",
+          "ItemAppearanceID": "64008",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "21170",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "15",
+          "ID": "21170",
+          "IconFileDataID": "132792",
+          "InventoryType": "22",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=21170",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Filled Festive Mug",
+        "item_id": 21170
+      },
+      {
+        "current_attached_spell_ids": [],
+        "current_creation_spell_ids": [],
+        "current_display_row": {
+          "Flags": "0",
+          "ID": "164472",
+          "ItemAppearanceID": "64008",
+          "ItemAppearanceModifierID": "0",
+          "ItemID": "21172",
+          "OrderIndex": "0",
+          "TransmogSourceTypeEnum": "9"
+        },
+        "current_item_fields": {
+          "ClassID": "15",
+          "ID": "21172",
+          "IconFileDataID": "132791",
+          "InventoryType": "23",
+          "SubclassID": "0"
+        },
+        "historical_access_index": "https://aowow.oldmanwarcraft.com/?item=21172",
+        "historical_equip_template": "No armor, weapon damage, block, stat bonuses or attached spells",
+        "historical_item_name": "Empty Festive Mugg",
+        "item_id": 21172
+      }
+    ],
+    "finding": "Each exact ID is a statless historical prop or placeholder explicitly marked unavailable in the legacy index. Current client slot, item class and icon preserve its identity. The current display and effect tables corroborate the prop identities. The separate player quest object, flower and holiday mug IDs are independently identifiable in current Forever evidence.",
+    "live_player_item_controls": [
+      {
+        "distinguishing_tooltip": "Quest Item",
+        "item_id": 4646,
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4646"
+      },
+      {
+        "distinguishing_tooltip": "Held In Off-hand",
+        "item_id": 19295,
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19295"
+      },
+      {
+        "distinguishing_tooltip": "Drink me.",
+        "item_id": 21171,
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21171"
+      },
+      {
+        "distinguishing_tooltip": "Festive Keg",
+        "item_id": 21174,
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21174"
+      }
+    ],
+    "observed_player_acquisitions": []
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    4642,
+    11182,
+    11183,
+    12948,
+    13294,
+    19294,
+    21169,
+    21170,
+    21172
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-display-props"
+}

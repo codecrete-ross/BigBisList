@@ -1,0 +1,148 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soulcrusher Helmet Sanctified Item Level 98 Binds when picked up Head Mail 496 Armor +45 Strength +18 Stamina +23 Intellect Durability 85 / 85 Classes: Shaman Requires Level 60 Equip: Increases your attack speed and casting speed by 2.0%. Equip: Reduces chance to be Dodged or Parried by 2.0%. The Soulcrusher's Rage (0/8) Soulcrusher Helmet Soulcrusher Epaulets Soulcrusher Armor Soulcrusher Belt Soulcrusher Leggings Soulcrusher Treads Soulcrusher Vambraces Soulcrusher Grips (2) Set : While Static Shock is active, Lava Lash, Lava Burst, and Stormstrike have a 100% chance to add a charge to your Lightning Shield. If charges exceed 9, Lightning Shield will immediately deal damage to your target instead of adding charges. (4) Set : Reduces the cooldown on your Fire Nova Totem by 60%, increases its damage by 200%, and reduces its mana cost by 60%. Additionally, your Fire Nova Totem now activates instantly on cast. (6) Set : Maelstrom Weapon can now stack up to 10 charges. When using a two-handed weapon, gain 2 charges at a time. Casts with over 5 charges increase that spell's damage or healing dealt by 20% per excess charge. Casts while at 10 charges will consume all charges and cast twice. Sell Price: 11 49 49",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 240131,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 496,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your attack speed and casting speed by 2.0%.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 2.0%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 2.0%."
+    ],
+    "id": 240131,
+    "item_level": 98,
+    "name": "Soulcrusher Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226984,
+        "text": "While Static Shock is active, Lava Lash, Lava Burst, and Stormstrike have a 100% chance to add a charge to your Lightning Shield. If charges exceed 9, Lightning Shield will immediately deal damage to your target instead of adding charges."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226986,
+        "text": "Reduces the cooldown on your Fire Nova Totem by 60%, increases its damage by 200%, and reduces its mana cost by 60%. Additionally, your Fire Nova Totem now activates instantly on cast."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226997,
+        "text": "Maelstrom Weapon can now stack up to 10 charges. When using a two-handed weapon, gain 2 charges at a time. Casts with over 5 charges increase that spell's damage or healing dealt by 20% per excess charge. Casts while at 10 charges will consume all charges and cast twice."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "stamina": 18.0,
+      "strength": 45.0
+    },
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=240131"
+  },
+  "linked_entities": [
+    {
+      "id": 240128,
+      "name": "Soulcrusher Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240128"
+    },
+    {
+      "id": 240129,
+      "name": "Soulcrusher Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240129"
+    },
+    {
+      "id": 240130,
+      "name": "Soulcrusher Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240130"
+    },
+    {
+      "id": 240131,
+      "name": "Soulcrusher Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240131"
+    },
+    {
+      "id": 240134,
+      "name": "Soulcrusher Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240134"
+    },
+    {
+      "id": 240135,
+      "name": "Soulcrusher Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240135"
+    },
+    {
+      "id": 240136,
+      "name": "Soulcrusher Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240136"
+    },
+    {
+      "id": 240137,
+      "name": "Soulcrusher Vambraces",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240137"
+    },
+    {
+      "id": 1226984,
+      "name": "While Static Shock is active, Lava Lash, Lava Burst, and Stormstrike have a 100% chance to add a charge to your Lightning Shield. If charges exceed 9, Lightning Shield will immediately deal damage to your target instead of adding charges.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226984"
+    },
+    {
+      "id": 1226986,
+      "name": "Reduces the cooldown on your Fire Nova Totem by 60%, increases its damage by 200%, and reduces its mana cost by 60%. Additionally, your Fire Nova Totem now activates instantly on cast.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226986"
+    },
+    {
+      "id": 1226997,
+      "name": "Maelstrom Weapon can now stack up to 10 charges. When using a two-handed weapon, gain 2 charges at a time. Casts with over 5 charges increase that spell's damage or healing dealt by 20% per excess charge. Casts while at 10 charges will consume all charges and cast twice.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226997"
+    }
+  ],
+  "name": "Soulcrusher Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "cdacedf8549d8cfe580ea7f34c57f7201005402100c7879a5871ae7513b414a8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240131",
+  "url": "https://www.wowhead.com/forever/item=240131"
+}

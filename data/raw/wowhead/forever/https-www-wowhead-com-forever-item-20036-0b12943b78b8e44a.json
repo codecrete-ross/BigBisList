@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fire Ruby Item Level 52 Binds when picked up Unique Trinket Classes: Mage Equip: Increases damage done by Fire spells and effects by up to 14. Use: Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed. (5 Min Cooldown) \"Unpredictability leads to both victory and death.\" Sell Price: 1 27 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 20036,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 14.",
+        "stats": {
+          "fire_damage": 14
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 20036,
+    "item_level": 52,
+    "name": "Fire Ruby",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_damage": 14.0
+    },
+    "use_effects": [
+      "Use: Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed. (5 Min Cooldown) \"Unpredictability leads to both victory and death.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20036"
+  },
+  "linked_entities": [
+    {
+      "id": 24389,
+      "name": "Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24389"
+    }
+  ],
+  "name": "Fire Ruby",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3a2021e0c57879485fcea47afbecaa6628b170e69d1499fbfeea64f31283922f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20036",
+  "url": "https://www.wowhead.com/forever/item=20036"
+}

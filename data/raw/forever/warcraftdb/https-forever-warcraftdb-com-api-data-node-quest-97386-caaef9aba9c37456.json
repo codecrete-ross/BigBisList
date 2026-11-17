@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97386"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:32.461205+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 277980,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97386",
+      "subject_id": 97386,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Horde",
+    "min_level": 38,
+    "name": "The Offense of Grom'gol",
+    "quest_id": 97386,
+    "reward_item_ids": [
+      277979,
+      277980,
+      277981
+    ],
+    "zone": "Stranglethorn Vale"
+  },
+  "source_content_digest": "6c9120bf0ab998a872a36e371ba9abcb5741ef37207c248e2acf2e7b8592a6be",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97386"
+}

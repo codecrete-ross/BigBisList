@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Black Book Item Level 76 Binds when picked up Unique Trinket Classes: Warlock Requires Level 60 Use: Empowers your pet, increasing pet damage by 100% and increasing pet armor by 100% for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, or Felhunter. (5 Min Cooldown) Sell Price: 7 20 39 Dropped by: Razorgore the Untamed Drop Chance: 20.08%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19337,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Empowers your pet, increasing pet damage by 100% and increasing pet armor by 100% for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, or Felhunter. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19337,
+    "item_level": 76,
+    "name": "The Black Book",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Empowers your pet, increasing pet damage by 100% and increasing pet armor by 100% for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, or Felhunter. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19337"
+  },
+  "linked_entities": [
+    {
+      "id": 23720,
+      "name": "Empowers your pet, increasing pet damage by 100% and increasing pet armor by 100% for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, or Felhunter.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23720"
+    }
+  ],
+  "name": "The Black Book",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.08,
+      "entity_name": "Razorgore the Untamed",
+      "source_url": "https://www.wowhead.com/forever/item=19337",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19337",
+  "url": "https://www.wowhead.com/forever/item=19337"
+}

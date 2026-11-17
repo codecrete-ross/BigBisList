@@ -1,0 +1,2514 @@
+{
+  "client_build": "1.60.1.70888",
+  "new_decisions_digest": "c8a541868be60a445e9af9430f8835865c6ceca27914bebeeac2c684677337b5",
+  "old_decisions_digest": "5a38fde911a0de0724301ef57f0006dc1e36d39ad131d164d8a3ff5a046367d5",
+  "rankings": [
+    {
+      "candidate_digest": "ea3396cd7c5c2ec4974895e05188744d4e71698f52e43b709bb0cf1db3637037",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "4734b59fc3c9c99d00af9a575a9b222d7d9ccf587655dd0565fa6e938ab3c208",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 27,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "ea3396cd7c5c2ec4974895e05188744d4e71698f52e43b709bb0cf1db3637037",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "4734b59fc3c9c99d00af9a575a9b222d7d9ccf587655dd0565fa6e938ab3c208",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 27,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "ea3396cd7c5c2ec4974895e05188744d4e71698f52e43b709bb0cf1db3637037",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "4734b59fc3c9c99d00af9a575a9b222d7d9ccf587655dd0565fa6e938ab3c208",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        },
+        {
+          "content_digest": "4c1f9b018b075f556e60f8c9ba42a87e4c66f8ace268009acc4d5b86661ea883",
+          "evidence_id": "wowhead:ae9c6ddc2ac9d18943491c0b"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 27,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "09bdd1127f45a30af56ea0d3d801e3102c4e8dcdf659b14600aa242400436d50",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 28,
+      "level_min": 28,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "2e6c9a8e72d84228d725b896161d724d6add739af3405a14376755e7de5edbac",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "64e00113a49ae3225d2669ee6eb1b448cab5ba6813a63b4c2ec8c6c50b3e4d06",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "370e564f5a0ecfd34851f10bc417e42c507e474acac1c93fb2534afe182c20ba",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "e25feccc407fc64c2b9acc718af53171e2042ad54699738cce477c545b8b309c",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "a739cd3d6f7665f5b99d51dd0c92ba13f02e1e58e0207d9345707ae4309d5788",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "8d20cacc69dc644f664692650f470d7f65cf53e61b44f6949a70211721f1af1a",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 52,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "7618e91c05981495375bc8993d72ef35219be4684e382f4cc89ccbb78c3e92ff",
+      "choices": [
+        {
+          "item_id": 2246,
+          "variant_id": null
+        },
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 59,
+      "level_min": 53,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "09bdd1127f45a30af56ea0d3d801e3102c4e8dcdf659b14600aa242400436d50",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 28,
+      "level_min": 28,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "2e6c9a8e72d84228d725b896161d724d6add739af3405a14376755e7de5edbac",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "64e00113a49ae3225d2669ee6eb1b448cab5ba6813a63b4c2ec8c6c50b3e4d06",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "370e564f5a0ecfd34851f10bc417e42c507e474acac1c93fb2534afe182c20ba",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "e25feccc407fc64c2b9acc718af53171e2042ad54699738cce477c545b8b309c",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "a739cd3d6f7665f5b99d51dd0c92ba13f02e1e58e0207d9345707ae4309d5788",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "8d20cacc69dc644f664692650f470d7f65cf53e61b44f6949a70211721f1af1a",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 52,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "7618e91c05981495375bc8993d72ef35219be4684e382f4cc89ccbb78c3e92ff",
+      "choices": [
+        {
+          "item_id": 2246,
+          "variant_id": null
+        },
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 59,
+      "level_min": 53,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "09bdd1127f45a30af56ea0d3d801e3102c4e8dcdf659b14600aa242400436d50",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 28,
+      "level_min": 28,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "2e6c9a8e72d84228d725b896161d724d6add739af3405a14376755e7de5edbac",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "64e00113a49ae3225d2669ee6eb1b448cab5ba6813a63b4c2ec8c6c50b3e4d06",
+      "choices": [
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "370e564f5a0ecfd34851f10bc417e42c507e474acac1c93fb2534afe182c20ba",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "e25feccc407fc64c2b9acc718af53171e2042ad54699738cce477c545b8b309c",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "a739cd3d6f7665f5b99d51dd0c92ba13f02e1e58e0207d9345707ae4309d5788",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "8d20cacc69dc644f664692650f470d7f65cf53e61b44f6949a70211721f1af1a",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 52,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "7618e91c05981495375bc8993d72ef35219be4684e382f4cc89ccbb78c3e92ff",
+      "choices": [
+        {
+          "item_id": 2246,
+          "variant_id": null
+        },
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 282283,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Alliance",
+      "level_max": 59,
+      "level_min": 53,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        1,
+        3,
+        4,
+        7,
+        95
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "ee50f563aa0b71ad085d710730991dce150a7732c3e179aec0603a10d645cae8",
+      "choices": [
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        },
+        {
+          "item_id": 12985,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "a3d62ba35840cf2777b8bd0b96cc148221017189e215d09e87b91c4b341ba3ca",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 28,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "f39759b6f3e978e42b85b825d789cf586d49b1c34daf5f6345492ec41d088043",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 9447,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "41fa8cb4d4784fb390525b492c0cc6be072548e5367bb7882cab084b1c196312",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6693,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "6ab08e6b49975f44a0655d09249f4be06e7ade4fc0093a0aae05e6d243ec0804",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "f25ca3d3011adec42788a01904f0cb42b307885628e8f7ad850b89b62558d1e6",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 278018,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "1baeb5bac77daa181e9425ab49fe013dcaecd3fed212fd96ffad2007c1a20f4d",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "147dff7e8ec11bc335e68eaf3ec81f5fae79c452aa448e2fa1c814be250eb675",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 54,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "deb2c9749c15f21b58f51879101a904b65ca7f58c479423d861f1b3ec0b7d662",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 55,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Assassination Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips",
+      "spec": "Assassination"
+    },
+    {
+      "candidate_digest": "ee50f563aa0b71ad085d710730991dce150a7732c3e179aec0603a10d645cae8",
+      "choices": [
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        },
+        {
+          "item_id": 12985,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "a3d62ba35840cf2777b8bd0b96cc148221017189e215d09e87b91c4b341ba3ca",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 28,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "f39759b6f3e978e42b85b825d789cf586d49b1c34daf5f6345492ec41d088043",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 9447,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "41fa8cb4d4784fb390525b492c0cc6be072548e5367bb7882cab084b1c196312",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6693,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "6ab08e6b49975f44a0655d09249f4be06e7ade4fc0093a0aae05e6d243ec0804",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "f25ca3d3011adec42788a01904f0cb42b307885628e8f7ad850b89b62558d1e6",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 278018,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "1baeb5bac77daa181e9425ab49fe013dcaecd3fed212fd96ffad2007c1a20f4d",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "147dff7e8ec11bc335e68eaf3ec81f5fae79c452aa448e2fa1c814be250eb675",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 54,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "deb2c9749c15f21b58f51879101a904b65ca7f58c479423d861f1b3ec0b7d662",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 55,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Combat Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips",
+      "spec": "Combat"
+    },
+    {
+      "candidate_digest": "ee50f563aa0b71ad085d710730991dce150a7732c3e179aec0603a10d645cae8",
+      "choices": [
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        },
+        {
+          "item_id": 12985,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 21,
+      "level_min": 19,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "a3d62ba35840cf2777b8bd0b96cc148221017189e215d09e87b91c4b341ba3ca",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6463,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 28,
+      "level_min": 22,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "f39759b6f3e978e42b85b825d789cf586d49b1c34daf5f6345492ec41d088043",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 9447,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 29,
+      "level_min": 29,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "41fa8cb4d4784fb390525b492c0cc6be072548e5367bb7882cab084b1c196312",
+      "choices": [
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        },
+        {
+          "item_id": 6693,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 34,
+      "level_min": 30,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "6ab08e6b49975f44a0655d09249f4be06e7ade4fc0093a0aae05e6d243ec0804",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 1156,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 35,
+      "level_min": 35,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "f25ca3d3011adec42788a01904f0cb42b307885628e8f7ad850b89b62558d1e6",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        },
+        {
+          "item_id": 278018,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 40,
+      "level_min": 36,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "1baeb5bac77daa181e9425ab49fe013dcaecd3fed212fd96ffad2007c1a20f4d",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 46,
+      "level_min": 41,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "147dff7e8ec11bc335e68eaf3ec81f5fae79c452aa448e2fa1c814be250eb675",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 54,
+      "level_min": 47,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    },
+    {
+      "candidate_digest": "deb2c9749c15f21b58f51879101a904b65ca7f58c479423d861f1b3ec0b7d662",
+      "choices": [
+        {
+          "item_id": 7686,
+          "variant_id": null
+        },
+        {
+          "item_id": 10634,
+          "variant_id": null
+        },
+        {
+          "item_id": 6321,
+          "variant_id": null
+        }
+      ],
+      "class": "Rogue",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 55,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        2,
+        5,
+        8,
+        96
+      ],
+      "reason": "Reviewed the updated Rogue Subtlety Ring pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Ring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips",
+      "spec": "Subtlety"
+    }
+  ],
+  "reason": "Re-reviewed build bound ranking ranges with verified new gear and acquisition routes. Compared the choices and scores in every affected scope with the previous audit.",
+  "reviewed_at": "2026-11-10"
+}

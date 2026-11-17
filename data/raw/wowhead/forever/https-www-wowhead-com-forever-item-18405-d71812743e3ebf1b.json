@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Belt of the Archmage Item Level 62 Binds when equipped Waist Cloth 54 Armor +10 Stamina +16 Intellect Durability 35 / 35 Requires Level 57 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 20 . Sell Price: 1 47 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:56:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 18405,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 54,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 18405,
+    "item_level": 62,
+    "name": "Belt of the Archmage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 16.0,
+      "spell_power": 20.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18405"
+  },
+  "linked_entities": [],
+  "name": "Belt of the Archmage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18405",
+  "url": "https://www.wowhead.com/forever/item=18405"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Reliquary Mantle Item Level 33 Binds when picked up Shoulder Mail 171 Armor +12 Stamina Durability 70 / 70 Requires Level 28 Equip: Improves your chance to hit by 0.4%. Sell Price: 32 76 Dropped by: Relic Guardian Drop Chance: 33.52%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 273028,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 171,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.4%.",
+        "stats": {
+          "hit_percent": 0.4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.4%."
+    ],
+    "id": 273028,
+    "item_level": 33,
+    "name": "Reliquary Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 28,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.4,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273028"
+  },
+  "linked_entities": [],
+  "name": "Reliquary Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.52,
+      "entity_name": "Relic Guardian",
+      "source_url": "https://www.wowhead.com/forever/item=273028",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b7bb5bea4b3ab3563de0d89696f6aa018e9e5af36c6e43091681b9c7d0896c76",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273028",
+  "url": "https://www.wowhead.com/forever/item=273028"
+}

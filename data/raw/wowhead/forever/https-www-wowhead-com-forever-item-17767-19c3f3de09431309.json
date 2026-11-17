@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloomsprout Headpiece Item Level 51 Binds when picked up Head Mail 249 Armor +15 Stamina +10 Nature Resistance Durability 70 / 70 Requires Level 46 Equip: + 36 Attack Power. Sell Price: 1 35 62 Dropped by: Meshlok the Harvester Drop Chance: 29.82%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 17767,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 249,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +36 Attack Power.",
+        "stats": {
+          "attack_power": 36
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +36 Attack Power."
+    ],
+    "id": 17767,
+    "item_level": 51,
+    "name": "Bloomsprout Headpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "nature_resistance": 10.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17767"
+  },
+  "linked_entities": [],
+  "name": "Bloomsprout Headpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.82,
+      "entity_name": "Meshlok the Harvester",
+      "source_url": "https://www.wowhead.com/forever/item=17767",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6958064e15f64a9bc84ef946ced0eec4ec538edb0b0cc3dcb16e47d6e0d7d740",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17767",
+  "url": "https://www.wowhead.com/forever/item=17767"
+}

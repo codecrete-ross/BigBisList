@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Chain Pauldrons Item Level 74 Binds when picked up Shoulder Mail 353 Armor +13 Strength +13 Agility +31 Stamina +10 Intellect +50 Armor Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: + 28 Attack Power. Field Marshal's Prowess (0/6) Field Marshal's Chain Greathelm Field Marshal's Chain Pauldrons Field Marshal's Chain Armor Marshal's Chain Legplates Marshal's Chain Sabatons Marshal's Chain Grips (2) Set : +20 Stamina. (3) Set : Increases the duration of your Wing Clip by 2 sec. (Proc chance: 4%) (6) Set : +40 Attack Power. Sell Price: 2 95 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:42:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 231557,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 353,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 231557,
+    "item_level": 74,
+    "name": "Field Marshal's Chain Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 459584,
+        "text": "Increases the duration of your Wing Clip by 2 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 13.0,
+      "attack_power": 28.0,
+      "hit_percent": 1.0,
+      "intellect": 10.0,
+      "stamina": 31.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231557"
+  },
+  "linked_entities": [
+    {
+      "id": 231557,
+      "name": "Field Marshal's Chain Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231557"
+    },
+    {
+      "id": 231558,
+      "name": "Marshal's Chain Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231558"
+    },
+    {
+      "id": 231560,
+      "name": "Marshal's Chain Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231560"
+    },
+    {
+      "id": 231561,
+      "name": "Marshal's Chain Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231561"
+    },
+    {
+      "id": 231562,
+      "name": "Field Marshal's Chain Greathelm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231562"
+    },
+    {
+      "id": 231563,
+      "name": "Field Marshal's Chain Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231563"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 459584,
+      "name": "Increases the duration of your Wing Clip by 2 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=459584"
+    }
+  ],
+  "name": "Field Marshal's Chain Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "8e3e327b89232aa7c557d5142e03de9a14052f292427f13e086cfcf0811e7e4c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231557",
+  "url": "https://www.wowhead.com/forever/item=231557"
+}

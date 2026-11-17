@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Shadowburn Level 60 130 Mana 30 yd range Instant 15 sec cooldown Requires Warlock Requires level 24 Reagents: Soul Shard Instantly blasts the target for 81 to 91 Shadow damage. If the target dies within 8 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.",
+  "entity_id": 18867,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:16+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6265,
+      "name": "Soul Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6265"
+    },
+    {
+      "id": 18867,
+      "name": "Shadowburn",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18867"
+    }
+  ],
+  "name": "Shadowburn",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d0f1aa2731ef6099ba5e684c5789be6c481f685fa63c8b4302e09516c4f68300",
+  "spell_id": 18867,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/18867",
+  "url": "https://www.wowhead.com/forever/spell=18867"
+}

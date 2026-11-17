@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Butcher's Slicer Item Level 23 Binds when picked up One-Hand Sword 30 - 57 Damage Speed 2.90 (15.00 damage per second) +3 Stamina Durability 65 / 65 Requires Level 18 Equip: + 6 Attack Power. Sell Price: 25 51 Dropped by: Razorclaw the Butcher Drop Chance: 39.55%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 6633,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +6 Attack Power.",
+        "stats": {
+          "attack_power": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +6 Attack Power."
+    ],
+    "id": 6633,
+    "item_level": 23,
+    "name": "Butcher's Slicer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 6.0,
+      "stamina": 3.0
+    },
+    "weapon_max_damage": 57,
+    "weapon_min_damage": 30,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6633"
+  },
+  "linked_entities": [],
+  "name": "Butcher's Slicer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 39.55,
+      "entity_name": "Razorclaw the Butcher",
+      "source_url": "https://www.wowhead.com/forever/item=6633",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6633",
+  "url": "https://www.wowhead.com/forever/item=6633"
+}

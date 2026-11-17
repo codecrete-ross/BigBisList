@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pimgib's Collar Item Level 60 Binds when picked up Unique-Equipped Trinket Classes: Warlock Requires Level 55 Equip: Increases damage done by Fire spells and effects by up to 14. Equip: Restores 9 mana per 5 sec to your Imp. Sell Price: 1 98 96 Dropped by: Pimgib Drop Chance: 24.35%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18354,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 14.",
+        "stats": {
+          "fire_damage": 14
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 9 mana per 5 sec to your Imp.",
+        "stats": {
+          "mp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 9 mana per 5 sec to your Imp."
+    ],
+    "id": 18354,
+    "item_level": 60,
+    "name": "Pimgib's Collar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_damage": 14.0,
+      "mp5": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18354"
+  },
+  "linked_entities": [
+    {
+      "id": 22855,
+      "name": "Restores 9 mana per 5 sec to your Imp.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22855"
+    }
+  ],
+  "name": "Pimgib's Collar",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.35,
+      "entity_name": "Pimgib",
+      "source_url": "https://www.wowhead.com/forever/item=18354",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "33818980ac8bdeed0e69e1ab8aa200ded63b26926447cdb2a49ebf256ff93058",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18354",
+  "url": "https://www.wowhead.com/forever/item=18354"
+}

@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/96676"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:45.301333+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 275671,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96676",
+      "subject_id": 96676,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 275685,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96676",
+      "subject_id": 96676,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Unsealing Blackthorne Pact",
+    "quest_id": 96676,
+    "reward_item_roles": {
+      "275669": "choices",
+      "275671": "items",
+      "275685": "choices"
+    },
+    "side": "Alliance",
+    "zone": "Mount Hyjal"
+  },
+  "source_content_digest": "519e9de319308c2cb9ce06a99796b800a734e00c865b27a05020c8d23efd9c4d",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/96676"
+}

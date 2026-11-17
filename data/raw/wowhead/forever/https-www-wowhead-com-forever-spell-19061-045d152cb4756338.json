@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Living Shoulders 1 min cast Reagents: Rugged Leather (12), Living Essence (4), Rune Thread Living Shoulders Item Level 54 Binds when equipped Shoulder Leather 117 Armor +8 Stamina +13 Spirit +3 Nature Resistance Durability 60 / 60 Requires Level 49 Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects. Sell Price: 1 38 3",
+  "entity_id": 19061,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:28+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12803,
+      "name": "Living Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12803"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15061,
+      "name": "Living Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15061"
+    },
+    {
+      "id": 19061,
+      "name": "Living Shoulders",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19061"
+    }
+  ],
+  "name": "Living Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 15061,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=19061",
+      "subject_id": 19061,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 19061,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/19061",
+  "url": "https://www.wowhead.com/forever/spell=19061"
+}

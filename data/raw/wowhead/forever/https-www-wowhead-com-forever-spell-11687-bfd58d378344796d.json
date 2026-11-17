@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Life Tap Level 60 Instant Requires Warlock Requires level 36 Converts [( 220 + Spirit) * (1)] Health into [( 220 + Spirit) * (1)] Mana for you. Spirit increases the amount converted.",
+  "entity_id": 11687,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:23+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11687,
+      "name": "Life Tap",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11687"
+    }
+  ],
+  "name": "Life Tap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8a15fa08c4ede717190b4b5360e869b24d3e7510f4fe3bfa20a62319f6d46508",
+  "spell_id": 11687,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/11687",
+  "url": "https://www.wowhead.com/forever/spell=11687"
+}

@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Headchopper Item Level 46 Binds when equipped Two-Hand Axe 97 - 146 Damage Speed 3.40 (35.74 damage per second) +10 Strength Durability 85 / 85 Requires Level 41 Equip: Improves your chance to get a critical strike by 1.1%. Sell Price: 1 82 34 Dropped by: Mosh'Ogg Butcher Drop Chance: 27.08%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:45.0978329Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 1680,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 35.74,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.1%.",
+        "stats": {
+          "crit_percent": 1.1
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.1%."
+    ],
+    "id": 1680,
+    "item_level": 46,
+    "name": "Headchopper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 41,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.1,
+      "strength": 10.0
+    },
+    "weapon_max_damage": 146,
+    "weapon_min_damage": 97,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=1680"
+  },
+  "linked_entities": [],
+  "name": "Headchopper",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.08,
+      "entity_name": "Mosh'Ogg Butcher",
+      "source_url": "https://www.wowhead.com/forever/item=1680",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2c83d1fe2029e0ad6b47a644eaa3327c09fe07bec481e9e3c0fc9506d3a800b8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1680",
+  "url": "https://www.wowhead.com/forever/item=1680"
+}

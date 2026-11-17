@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "First Sergeant's Leather Armguards Item Level 63 Binds when picked up Unique Wrist Leather 77 Armor +7 Agility +17 Stamina Durability 35 / 35 Classes: Rogue Requires Level 58 Sell Price: 68 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 16497,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 77,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16497,
+    "item_level": 63,
+    "name": "First Sergeant's Leather Armguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16497"
+  },
+  "linked_entities": [],
+  "name": "First Sergeant's Leather Armguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16497",
+  "url": "https://www.wowhead.com/forever/item=16497"
+}

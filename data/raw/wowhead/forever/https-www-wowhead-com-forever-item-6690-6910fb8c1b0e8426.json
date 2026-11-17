@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ferine Leggings Item Level 34 Binds when picked up Legs Leather 96 Armor +12 Intellect Durability 65 / 65 Requires Level 29 Equip: + 26 Attack Power. Sell Price: 39 46 Dropped by: Agathelos the Raging Drop Chance: 59.52%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 6690,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 96,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +26 Attack Power.",
+        "stats": {
+          "attack_power": 26
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +26 Attack Power."
+    ],
+    "id": 6690,
+    "item_level": 34,
+    "name": "Ferine Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 29,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 26.0,
+      "intellect": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6690"
+  },
+  "linked_entities": [],
+  "name": "Ferine Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 59.52,
+      "entity_name": "Agathelos the Raging",
+      "source_url": "https://www.wowhead.com/forever/item=6690",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6690",
+  "url": "https://www.wowhead.com/forever/item=6690"
+}

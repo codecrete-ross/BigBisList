@@ -1,0 +1,51 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Tender Strider Meat Item Level 1 Quest Item Unique Use: Serves Kyle his lunch! \"Kyle would delight in taking a bite out of this succulent treat!\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 287505,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Serves Kyle his lunch!",
+        "type": "use"
+      }
+    ],
+    "id": 287505,
+    "item_level": 1,
+    "name": "Tender Strider Meat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Serves Kyle his lunch! \"Kyle would delight in taking a bite out of this succulent treat!\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=287505"
+  },
+  "linked_entities": [
+    {
+      "id": 1323075,
+      "name": "Serves Kyle his lunch!",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1323075"
+    }
+  ],
+  "name": "Tender Strider Meat",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287505",
+  "url": "https://www.wowhead.com/forever/item=287505"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Viscera Spaulders Item Level 41 Binds when picked up Shoulder Mail 193 Armor +9 Strength +10 Stamina +70 Armor Durability 70 / 70 Requires Level 36 Sell Price: 64 54 Dropped by: Deathless Marrow Drop Chance: 27.20%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 274607,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 193,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274607,
+    "item_level": 41,
+    "name": "Viscera Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 36,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "stamina": 10.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274607"
+  },
+  "linked_entities": [],
+  "name": "Viscera Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.2,
+      "entity_name": "Deathless Marrow",
+      "source_url": "https://www.wowhead.com/forever/item=274607",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1bdf25df014d0cb1e04a8f10714352612ec7db70bb4785577c2e62d28195d874",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274607",
+  "url": "https://www.wowhead.com/forever/item=274607"
+}

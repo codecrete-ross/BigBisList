@@ -51,8 +51,8 @@ example, a bug fix plus a new filter is a minor release.
    version. Every reachable numeric tag must have a dated entry with bullet notes.
 6. Update release-specific README references and the fallback version in
    `Config.lua`.
-7. Regenerate `Data.lua` only when canonical data or generator behavior changed.
-   Never hand-edit generated Lua.
+7. Regenerate the affected client payload when canonical data or generator
+   behavior changes. Pass the client explicitly with `--flavor`.
 8. Run the release environment's Python with `tools/generate_release_notes.py`.
    Commit the generated `RELEASE_NOTES.md`: it contains all sections sharing the
    current version's exact `MAJOR.MINOR`, including its initial `.0`, newest
@@ -101,7 +101,7 @@ gate. Do not tag from a partial run.
 
 ## Manual Release Evidence
 
-Automated checks do not replace a TBC Anniversary client smoke test. For any
+Run smoke tests on each supported client. For any
 runtime, UI, saved-state, or migration change, record the client build, tester,
 date, and outcome. Exercise the affected behavior and, when applicable:
 
@@ -109,6 +109,33 @@ date, and outcome. Exercise the affected behavior and, when applicable:
 - Endgame/Leveling switching, responsive columns, inspectors, and dropdowns;
 - acquisition paths, tooltips, ownership, wishlist, and ignore actions;
 - `/bbltest`, `/bbl status`, and `/bbltest perf`.
+
+For the first Forever release, record the
+[pilot checks](forever-pilot.md), including quest progress, waypoint behavior,
+and the client-specific package load lists. After automated ingestion, verify
+that CurseForge recognizes both client flavors.
+
+Forever source review and live acceptance are separate gates. Reviewed profile
+documents may use `source_reviewed` before the user's gameplay session. Standard
+local deployment requires both strict data families (`leveling` and `bis_lists`).
+The explicit local Forever prerelease command
+`scripts/deploy.ps1 -Flavor forever -Prerelease -NoClean` permits uncovered
+leveling combinations. It checks leveling for validation errors, requires strict
+pre-raid coverage, and verifies generated and installed files. Public publishing
+requires both strict audits and
+`data/canonical/forever/live_acceptance.json` to pass
+`python tools/scrape_wowhead.py live-acceptance-audit --flavor forever`;
+the authoritative `-FullData` gate runs that audit itself.
+
+Record `status: accepted`, the tester, date, client build, supporting evidence
+URL, reason, and `artifact_digest`. Obtain the digest from
+`tools.forever.release_artifact_digest()` after generation; it covers the
+Forever manifest and its listed runtime files. All keys in
+`tools.forever.LIVE_ACCEPTANCE_CHECKS` must be true, and `performance` must
+include measured `startup_ms` and `first_open_ms`. A later runtime or data
+change invalidates that acceptance. Leave this document pending until the
+user supplies the actual gameplay results; offline tests do not establish
+live acceptance.
 
 Record the automated gate result, content-schedule review, and in-game result in
 the release PR or handoff. A skipped applicable check must include its reason,

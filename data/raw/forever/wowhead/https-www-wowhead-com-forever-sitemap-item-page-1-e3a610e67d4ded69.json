@@ -1,0 +1,146 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever public sitemap and exact item tooltips",
+      "source": "https://www.wowhead.com/forever/sitemap/item?page=1"
+    },
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "public_sitemap_identity_reconciliation",
+  "fetched_at": "2026-11-13T20:52:24.050685+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 21311,
+      "collected_at": "2026-11-13T20:52:02.079676+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-site-index",
+      "source_content_digest": "fc1f589edcce0054a793246b826bbee5ac31e6175dbc4b088a8178bbc4b8375c",
+      "source_url": "https://www.wowhead.com/sitemap"
+    },
+    {
+      "bytes": 3932761,
+      "collected_at": "2026-11-13T20:52:24.050685+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-forever-item-sitemap",
+      "source_content_digest": "6594a9ba718168279db47c95fccf3c0f47f958719236dbc7915bf2ed7ad20a6f",
+      "source_url": "https://www.wowhead.com/forever/sitemap/item?page=1"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T20:23:09.523134+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "item-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 497917,
+      "collected_at": "2026-11-13T20:10:03.507107+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "itemsearchname",
+      "source_content_digest": "96230873a8525ce4fe903bb2695ffc8309e3a81148794bc7cf7b546fd284b4e1",
+      "source_url": "https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "additional_scoped_equipment_ids": [],
+    "advertised_item_sitemap_pages": 1,
+    "build_item_records": 32008,
+    "client_equipment_rows_in_sitemap": 4379,
+    "finding": "The published sitemap and the current client agree on the scoped item identities after checking four sitemap-only IDs individually. The sitemap provides page identities without equipment fields or the advertised totals of the slot and quality listings.",
+    "indexed_item_ids_digest": "e596fa4d02fc51d57373396b40842ad800ac9f42638dea1f20d9faad93a84f96",
+    "known_item_tooltip_ids_covered": 6548,
+    "newest_page_modification": "2026-11-13T18:22:29+00:00",
+    "scoped_item_ids_in_inventory": 4394,
+    "unique_item_ids": 25559,
+    "wowhead_ids_outside_exact_build_tables": [
+      {
+        "disposition": "non_equipment",
+        "equip_slot": null,
+        "item_id": 253400,
+        "name": "Seal of True Sight",
+        "source_url": "https://www.wowhead.com/forever/item=253400/seal-of-true-sight",
+        "tooltip": {
+          "bytes": 525,
+          "collected_at": "2026-11-13T20:53:19.707823+00:00",
+          "curl_exit": 0,
+          "http": "200",
+          "name": "sitemap-tip-253400",
+          "source_content_digest": "afefb748134ed2992231eab3d8cffe2788df652dbd3f6eb164eff51e92592233",
+          "source_url": "https://nether.wowhead.com/forever/tooltip/item/253400"
+        }
+      },
+      {
+        "disposition": "non_equipment",
+        "equip_slot": null,
+        "item_id": 254380,
+        "name": "Arcane-Infused Net",
+        "source_url": "https://www.wowhead.com/forever/item=254380/arcane-infused-net",
+        "tooltip": {
+          "bytes": 556,
+          "collected_at": "2026-11-13T20:53:19.707823+00:00",
+          "curl_exit": 0,
+          "http": "200",
+          "name": "sitemap-tip-254380",
+          "source_content_digest": "71cd82383b600b3ff5694199bc801165cab07b8955206e245ce8c5b70c9453d3",
+          "source_url": "https://nether.wowhead.com/forever/tooltip/item/254380"
+        }
+      },
+      {
+        "disposition": "non_equipment",
+        "equip_slot": null,
+        "item_id": 257029,
+        "name": "Shen'dar Ledgers",
+        "source_url": "https://www.wowhead.com/forever/item=257029/shendar-ledgers",
+        "tooltip": {
+          "bytes": 608,
+          "collected_at": "2026-11-13T20:53:20.031471+00:00",
+          "curl_exit": 0,
+          "http": "200",
+          "name": "sitemap-tip-257029",
+          "source_content_digest": "d671d54df85f999e089d21636c6cacd5937c5f02b049c3f0c9c0568afbf00a3d",
+          "source_url": "https://nether.wowhead.com/forever/tooltip/item/257029"
+        }
+      },
+      {
+        "disposition": "non_equipment",
+        "equip_slot": null,
+        "item_id": 257127,
+        "name": "Roasted Zephyrseed Pie",
+        "source_url": "https://www.wowhead.com/forever/item=257127/roasted-zephyrseed-pie",
+        "tooltip": {
+          "bytes": 534,
+          "collected_at": "2026-11-13T20:53:21.055679+00:00",
+          "curl_exit": 0,
+          "http": "200",
+          "name": "sitemap-tip-257127",
+          "source_content_digest": "ccf2e211edf20b80e459af12b1ecd85075dde51e6a7238b3b17a6de542c5705b",
+          "source_url": "https://nether.wowhead.com/forever/tooltip/item/257127"
+        }
+      }
+    ]
+  },
+  "source_content_digest": "6594a9ba718168279db47c95fccf3c0f47f958719236dbc7915bf2ed7ad20a6f",
+  "url": "https://www.wowhead.com/forever/sitemap/item?page=1"
+}

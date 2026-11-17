@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Archivist Cape Item Level 61 Binds when picked up Back 43 Armor <Random enchantment> Restores + 4 mana per 5 sec. Requires Level 56 Sell Price: 1 56 68 Dropped by: Archivist Galford Drop Chance: 21.42%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:05.7879077Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 13386,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 13386,
+    "item_level": 61,
+    "name": "Archivist Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "mp5": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13386"
+  },
+  "linked_entities": [],
+  "name": "Archivist Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.42,
+      "entity_name": "Archivist Galford",
+      "source_url": "https://www.wowhead.com/forever/item=13386",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "fc10a14028335790c8c068ab08b0b0a262bc3b429a6f4929091629d19a27a0ef",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13386",
+  "url": "https://www.wowhead.com/forever/item=13386"
+}

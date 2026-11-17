@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Soran'ruk Item Level 25 Binds when picked up Two-Hand Staff 36 - 55 Damage Speed 2.90 (15.69 damage per second) +14 Stamina Durability 75 / 75 Classes: Warlock Equip: Increases damage done by Fire spells and effects by up to 34. Equip: Increases damage done by Shadow spells and effects by up to 34. Sell Price: 40 72",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 15109,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.69,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 34.",
+        "stats": {
+          "fire_damage": 34
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 34.",
+        "stats": {
+          "shadow_damage": 34
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Fire spells and effects by up to 34.",
+      "Equip: Increases damage done by Shadow spells and effects by up to 34."
+    ],
+    "id": 15109,
+    "item_level": 25,
+    "name": "Staff of Soran'ruk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "fire_damage": 34.0,
+      "shadow_damage": 34.0,
+      "stamina": 14.0
+    },
+    "weapon_max_damage": 55,
+    "weapon_min_damage": 36,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=15109"
+  },
+  "linked_entities": [],
+  "name": "Staff of Soran'ruk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15109",
+  "url": "https://www.wowhead.com/forever/item=15109"
+}

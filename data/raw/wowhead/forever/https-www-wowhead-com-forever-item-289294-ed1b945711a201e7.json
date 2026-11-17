@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thunderfury, Blessed Blade of the Windseeker Item Level 45 Binds when picked up Unique One-Hand Sword 45 - 84 Damage Speed 1.90 (33.95 damage per second) +3 Agility +5 Stamina +5 Fire Resistance +5 Nature Resistance Chance on hit: Blasts your enemy with lightning, dealing 300 Nature damage and then jumping to additional nearby enemies. Each jump reduces that victim's Nature resistance by 25. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec. Sell Price: 25 53 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 289294,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 33.95,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts your enemy with lightning, dealing 300 Nature damage and then jumping to additional nearby enemies. Each jump reduces that victim's Nature resistance by 25. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts your enemy with lightning, dealing 300 Nature damage and then jumping to additional nearby enemies. Each jump reduces that victim's Nature resistance by 25. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec."
+    ],
+    "id": 289294,
+    "item_level": 45,
+    "name": "Thunderfury, Blessed Blade of the Windseeker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "legendary",
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "fire_resistance": 5.0,
+      "nature_resistance": 5.0,
+      "stamina": 5.0
+    },
+    "weapon_max_damage": 84,
+    "weapon_min_damage": 45,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=289294"
+  },
+  "linked_entities": [
+    {
+      "id": 21992,
+      "name": "Blasts your enemy with lightning, dealing 300 Nature damage and then jumping to additional nearby enemies. Each jump reduces that victim's Nature resistance by 25. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21992"
+    }
+  ],
+  "name": "Thunderfury, Blessed Blade of the Windseeker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "legendary",
+  "related_tables": {},
+  "source_content_digest": "f1b4a1d90604b97b930a020e1f6f8eb5abf87315eb9b6d32fed0d4dd7d1d2065",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/289294",
+  "url": "https://www.wowhead.com/forever/item=289294"
+}

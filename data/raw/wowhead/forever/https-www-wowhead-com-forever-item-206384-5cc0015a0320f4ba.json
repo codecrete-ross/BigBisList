@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Astral Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 \"Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206384,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206384,
+    "item_level": 5,
+    "name": "Astral Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206384"
+  },
+  "linked_entities": [],
+  "name": "Astral Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "90fa2e024e19e677801da248765082c8202cec3ede2571fd52db3d9467c5dfe8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206384",
+  "url": "https://www.wowhead.com/forever/item=206384"
+}

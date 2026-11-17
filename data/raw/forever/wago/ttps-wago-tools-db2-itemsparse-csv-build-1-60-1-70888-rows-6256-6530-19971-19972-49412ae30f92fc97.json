@@ -1,0 +1,54 @@
+{
+  "attribution": [
+    {
+      "credit": "Wago Tools",
+      "source": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888#/rows/6256,6530,19971,19972"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "client_db2_rows",
+  "fetched_at": "2026-11-11T06:45:25+00:00",
+  "flavor": "forever",
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "export_build": "1.60.1.70888",
+    "rows": {
+      "6256": {
+        "AllowableClass": "-1",
+        "Bonding": "0",
+        "Display_lang": "Fishing Pole",
+        "RequiredLevel": "0",
+        "RequiredSkill": "0",
+        "RequiredSkillRank": "0"
+      },
+      "6530": {
+        "AllowableClass": "-1",
+        "Bonding": "0",
+        "Display_lang": "Nightcrawlers",
+        "RequiredLevel": "0",
+        "RequiredSkill": "356",
+        "RequiredSkillRank": "50"
+      },
+      "19971": {
+        "AllowableClass": "-1",
+        "Bonding": "1",
+        "Display_lang": "High Test Eternium Fishing Line",
+        "RequiredLevel": "0",
+        "RequiredSkill": "356",
+        "RequiredSkillRank": "150"
+      },
+      "19972": {
+        "AllowableClass": "-1",
+        "Bonding": "1",
+        "Display_lang": "Lucky Fishing Hat",
+        "RequiredLevel": "0",
+        "RequiredSkill": "356",
+        "RequiredSkillRank": "1"
+      }
+    },
+    "table": "ItemSparse"
+  },
+  "source_content_digest": "ced52fc6e5ca345805cfe3c015c05426c138aebd23ff1ad8a26cff5f1fe08be9",
+  "url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888#/rows/6256,6530,19971,19972"
+}

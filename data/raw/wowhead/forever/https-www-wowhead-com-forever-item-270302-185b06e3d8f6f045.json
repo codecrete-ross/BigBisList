@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Chakuyak's Pelt Item Level 1 Quest Item Dropped by: Chakuyak Drop Chance: 85.57%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 270302,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 270302,
+    "item_level": 1,
+    "name": "Chakuyak's Pelt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=270302"
+  },
+  "linked_entities": [],
+  "name": "Chakuyak's Pelt",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 85.57,
+      "entity_name": "Chakuyak",
+      "source_url": "https://www.wowhead.com/forever/item=270302",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270302",
+  "url": "https://www.wowhead.com/forever/item=270302"
+}

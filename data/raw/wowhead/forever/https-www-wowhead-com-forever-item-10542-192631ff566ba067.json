@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Goblin Mining Helmet Item Level 41 Binds when picked up Head Mail 190 Armor +15 Stamina Durability 60 / 60 Requires Engineering (205) Equip: Increased Mining + 5. Sell Price: 52 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10542,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 190,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Mining +5.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Mining +5."
+    ],
+    "id": 10542,
+    "item_level": 41,
+    "name": "Goblin Mining Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10542"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Goblin Mining Helmet",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Mining Helmet Item Level 41 Binds when picked up Head Mail 190 Armor +15 Stamina Durability 60 / 60 Requires Engineering (205) Equip: Increased Mining + 5. Sell Price: 52 55",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=10542",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "0f8e37db1587b4a2b1258a1e2b2b7361537cc464fe7f6744d6d569ac08e3190f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10542",
+  "url": "https://www.wowhead.com/forever/item=10542"
+}

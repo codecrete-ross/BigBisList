@@ -1,0 +1,46 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Gnoll Kindred Bracers Item Level 14 Wrist Leather 28 Armor Durability 20 / 20 Requires Level 9 Sell Price: 87 Dropped by: Redridge Thrasher Drop Chance: 1.44%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 1213,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 28,
+    "armor_type": "Leather",
+    "binding": "unknown",
+    "id": 1213,
+    "item_level": 14,
+    "name": "Gnoll Kindred Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 9,
+    "slot": "Wrist",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=1213"
+  },
+  "linked_entities": [],
+  "name": "Gnoll Kindred Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.44,
+      "entity_name": "Redridge Thrasher",
+      "source_url": "https://www.wowhead.com/forever/item=1213",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1213",
+  "url": "https://www.wowhead.com/forever/item=1213"
+}

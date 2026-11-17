@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Conjure Food Level 60 60 Mana 3 sec cast Requires Mage Requires level 6 Conjures 20 muffins, providing the mage and his allies with something to eat. Conjured items disappear if logged out for more than 15 minutes.",
+  "entity_id": 587,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:34+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 587,
+      "name": "Conjure Food",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=587"
+    }
+  ],
+  "name": "Conjure Food",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "b3c555a394513ea1c321c2f59764ed587bf506115f2b8a72687fcc04b4e40a99",
+  "spell_id": 587,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/587",
+  "url": "https://www.wowhead.com/forever/spell=587"
+}

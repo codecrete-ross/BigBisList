@@ -1,0 +1,72 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=288930/cauterizing-band"
+    },
+    {
+      "credit": "60.tools",
+      "source": "https://www.60.tools/items/288930-cauterizing-band"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1062,
+      "collected_at": "2026-11-13T06:25:07.9091564Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-tooltip-288930",
+      "source_content_digest": "5aab705f4d22bd7c1c9a6dd07a63faf5a41040f1e7588bef2ba6d27e86a4d1e3",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/288930"
+    },
+    {
+      "bytes": 129344,
+      "collected_at": "2026-11-13T06:29:24.0493292Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-60-288930",
+      "source_content_digest": "20750ac41efe394a44b73092bc0be6228a21af4adef4748e0fefec17e9ba6718",
+      "source_url": "https://www.60.tools/items/288930-cauterizing-band"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:25:07.6208856Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "beta-main-288930",
+      "source_content_digest": "3722165785052f179ca7dafc468afd02ecc0d59cf6802fecab884f3525331b60",
+      "source_url": "https://www.wowhead.com/forever/item=288930/cauterizing-band"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability": "unavailable_to_players",
+    "capture_method": "indexed_search_excerpt",
+    "corroboration": "60.tools also identifies this exact item as an October 22 beta celebration reward.",
+    "current_tooltip_additional_stats": {},
+    "digest_input": "normalized indexed item-page finding",
+    "historical_event_evidence": [
+      "https://daybreakforever.com/blog/molten-core-loot-at-level-30",
+      "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt",
+      "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633"
+    ],
+    "item_id": 288930,
+    "item_name": "Cauterizing Band",
+    "page_crawl_age_at_review": "2 days ago"
+  },
+  "source_content_digest": "b4952f1595aaeda2413ad4196ca6cb8de88a040868e0f100483d60cb09558ede",
+  "unavailable_item_ids": [
+    288930
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=288930/cauterizing-band"
+}

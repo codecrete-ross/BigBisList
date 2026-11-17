@@ -1,0 +1,64 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Swiftstrike Steak Item Level 55 Requires Level 45 Use: Restores 2065 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 20 Agility for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20 Sell Price: 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250072,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 2065 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 20 Agility for 15 min. Additionally, experience gained from kills is increased by 5%.",
+        "type": "use"
+      }
+    ],
+    "id": 250072,
+    "item_level": 55,
+    "name": "Swiftstrike Steak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 45,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 2065 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 20 Agility for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250072"
+  },
+  "linked_entities": [
+    {
+      "id": 1131,
+      "name": "Restores 2065 health over 30 sec. Must remain seated while eating.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1131"
+    },
+    {
+      "id": 1243969,
+      "name": "Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1243969"
+    },
+    {
+      "id": 1248399,
+      "name": "Restores 2065 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 20 Agility for 15 min. Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248399"
+    }
+  ],
+  "name": "Swiftstrike Steak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "cbfcfaa3aba009925f1c18a0a03082c7eac6cef2225a18e8690d6b223b9f69f7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250072",
+  "url": "https://www.wowhead.com/forever/item=250072"
+}

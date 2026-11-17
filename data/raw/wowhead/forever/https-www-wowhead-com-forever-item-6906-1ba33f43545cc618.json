@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Algae Fists Item Level 28 Binds when picked up Hands Mail 132 Armor +8 Strength +5 Stamina +5 Nature Resistance Durability 40 / 40 Requires Level 23 Sell Price: 13 36 Dropped by: Gelihast Drop Chance: 42.83%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 6906,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 132,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6906,
+    "item_level": 28,
+    "name": "Algae Fists",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 23,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 5.0,
+      "stamina": 5.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6906"
+  },
+  "linked_entities": [],
+  "name": "Algae Fists",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 42.83,
+      "entity_name": "Gelihast",
+      "source_url": "https://www.wowhead.com/forever/item=6906",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6906",
+  "url": "https://www.wowhead.com/forever/item=6906"
+}

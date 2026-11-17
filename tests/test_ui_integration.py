@@ -58,8 +58,10 @@ for _, size in ipairs({ { 1020, 560 }, { 1160, 660 } }) do
                 assert(ui.contentScroll:GetWidth() > 0 and ui.contentScroll:GetHeight() > 0, label .. " has no content viewport")
                 for _, entry in ipairs((ui.renderModel and ui.renderModel.entries) or {}) do
                     assert(entry.height >= 0, label .. " has negative row height")
-                    if entry.kind == "row" and tab ~= "Equipped" then
-                        assert(entry.height == (density == "compact" and 40 or 56), label .. " row density mismatch")
+                    if entry.kind == "row" then
+                        local expected = entry.nextAction and (density == "compact" and 54 or 64)
+                            or (density == "compact" and 40 or 56)
+                        assert(entry.height == expected, label .. " row density mismatch")
                     end
                 end
                 H.expectRowsBounded(ui, label)
@@ -67,7 +69,7 @@ for _, size in ipairs({ { 1020, 560 }, { 1160, 660 } }) do
                     local width = ui.contentPanel:GetWidth()
                     local viewportHeight = ui.contentScroll:GetHeight()
                     local queries = ui:GetPerformanceStats().queryBuilds
-                    if size[1] == 1160 and density == "comfortable" and tab ~= "Equipped" then
+                    if size[1] == 1160 and density == "comfortable" and ui.renderModel and ui.renderModel.columnMode then
                         assert(viewportHeight >= 7 * 56, label .. " cannot show seven complete rows")
                     end
                     assert(#(ui.activeRenderFrames or {}) <= math.ceil(viewportHeight / 28) + 8, label .. " realization is not bounded by the viewport")

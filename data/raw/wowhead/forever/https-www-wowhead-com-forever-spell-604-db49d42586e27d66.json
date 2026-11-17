@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Dampen Magic 100 Mana 30 yd range Instant Requires Mage Requires level 12 Dampens magic used against the targeted party member, decreasing damage taken from spells by up to 15 and healing spells by up to 30. Lasts 10 min.",
+  "entity_id": 604,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:36+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 604,
+      "name": "Dampen Magic",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=604"
+    }
+  ],
+  "name": "Dampen Magic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "a36f098d794f7e3bd8511a26190d63ad528285bc8a1d7873f02a6447149353f7",
+  "spell_id": 604,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/604",
+  "url": "https://www.wowhead.com/forever/spell=604"
+}

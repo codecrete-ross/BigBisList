@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crescent Key Item Level 1 Binds when picked up Unique Dropped by: Pusillin Drop Chance: 80.63%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18249,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18249,
+    "item_level": 1,
+    "name": "Crescent Key",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18249"
+  },
+  "linked_entities": [],
+  "name": "Crescent Key",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 80.63,
+      "entity_name": "Pusillin",
+      "source_url": "https://www.wowhead.com/forever/item=18249",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "e03e5738ba40978b97b44bb079bfa3258e947fd0d74243461cefa99e28bf5527",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18249",
+  "url": "https://www.wowhead.com/forever/item=18249"
+}

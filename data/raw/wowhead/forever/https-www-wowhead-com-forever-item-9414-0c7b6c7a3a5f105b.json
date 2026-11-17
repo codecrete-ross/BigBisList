@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Oilskin Leggings Item Level 47 Binds when picked up Legs Leather 122 Armor +18 Agility +11 Spirit Durability 65 / 65 Requires Level 42 Equip: Increases Feral Combat +1. Sell Price: 1 13 39 Dropped by: Grimlok Drop Chance: 29.21%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 9414,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases Feral Combat +1.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases Feral Combat +1."
+    ],
+    "id": 9414,
+    "item_level": 47,
+    "name": "Oilskin Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "spirit": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9414"
+  },
+  "linked_entities": [
+    {
+      "id": 1320726,
+      "name": "Increases Feral Combat +1.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1320726"
+    }
+  ],
+  "name": "Oilskin Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.21,
+      "entity_name": "Grimlok",
+      "source_url": "https://www.wowhead.com/forever/item=9414",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9414",
+  "url": "https://www.wowhead.com/forever/item=9414"
+}

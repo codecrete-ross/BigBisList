@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feardred's Cleansed Amulet Item Level 52 Binds when picked up Neck +8 Spirit Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 1 11 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 259892,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 259892,
+    "item_level": 52,
+    "name": "Feardred's Cleansed Amulet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 9.0,
+      "spirit": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=259892"
+  },
+  "linked_entities": [],
+  "name": "Feardred's Cleansed Amulet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "40078b960c3cdab7c3e0012d420ee093844e639ffe1f5d5a781095cb8d7c08d8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/259892",
+  "url": "https://www.wowhead.com/forever/item=259892"
+}

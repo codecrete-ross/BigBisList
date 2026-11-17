@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Truestrike Shoulders Item Level 61 Binds when picked up Shoulder Leather 129 Armor +10 Stamina Durability 60 / 60 Requires Level 56 Equip: Improves your chance to hit by 1.5%. Equip: + 24 Attack Power. Sell Price: 1 96 38 Dropped by: Pyroguard Emberseer Drop Chance: 12.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 12927,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 129,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.5%.",
+        "stats": {
+          "hit_percent": 1.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.5%."
+    ],
+    "id": 12927,
+    "item_level": 61,
+    "name": "Truestrike Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "hit_percent": 1.5,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12927"
+  },
+  "linked_entities": [],
+  "name": "Truestrike Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.27,
+      "entity_name": "Pyroguard Emberseer",
+      "source_url": "https://www.wowhead.com/forever/item=12927",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f2a510339ba0e586ce66c154665ba56e27c0b686f9e9028aec0b627a4feadfbb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12927",
+  "url": "https://www.wowhead.com/forever/item=12927"
+}

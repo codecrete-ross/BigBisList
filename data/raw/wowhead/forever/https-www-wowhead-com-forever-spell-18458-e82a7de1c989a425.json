@@ -1,0 +1,91 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Robe of the Void 1 min cast Reagents: Bolt of Runecloth (12), Demonic Rune (20), Felcloth (40), Essence of Fire (8), Essence of Undeath (8), Rune Thread (2), Viridian Dye (10) Robe of the Void Item Level 62 Binds when picked up Chest Cloth 96 Armor +10 Stamina +9 Intellect Durability 100 / 100 Classes: Warlock Requires Level 57 Equip: Increases damage and healing done by magical spells and effects by up to 46 . Use: Heal your pet for 450 to 750. (10 Min Cooldown) Sell Price: 2 89 20",
+  "entity_id": 18458,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:25+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7078,
+      "name": "Essence of Fire",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7078"
+    },
+    {
+      "id": 12662,
+      "name": "Demonic Rune",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12662"
+    },
+    {
+      "id": 12808,
+      "name": "Essence of Undeath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12808"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14153,
+      "name": "Robe of the Void",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14153"
+    },
+    {
+      "id": 14256,
+      "name": "Felcloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14256"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 249431,
+      "name": "Viridian Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249431"
+    },
+    {
+      "id": 18386,
+      "name": "Heal your pet for 450 to 750.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18386"
+    },
+    {
+      "id": 18458,
+      "name": "Robe of the Void",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18458"
+    }
+  ],
+  "name": "Robe of the Void",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 14153,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=18458",
+      "subject_id": 18458,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 18458,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/18458",
+  "url": "https://www.wowhead.com/forever/spell=18458"
+}

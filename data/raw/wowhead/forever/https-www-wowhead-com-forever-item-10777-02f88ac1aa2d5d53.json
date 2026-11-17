@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arachnid Gloves Item Level 42 Binds when picked up Hands Leather 79 Armor <Random enchantment> +10 Nature Resistance Durability 35 / 35 Requires Level 37 Sell Price: 38 89 Dropped by: Tuten'kash Drop Chance: 30.32%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 10777,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 79,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 10777,
+    "item_level": 42,
+    "name": "Arachnid Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10777"
+  },
+  "linked_entities": [],
+  "name": "Arachnid Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.32,
+      "entity_name": "Tuten'kash",
+      "source_url": "https://www.wowhead.com/forever/item=10777",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10777",
+  "url": "https://www.wowhead.com/forever/item=10777"
+}

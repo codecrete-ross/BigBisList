@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1880"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:34.683537+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 7507,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1880",
+      "subject_id": 1880,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": 10,
+    "name": "Mage-tastic Gizmonitor",
+    "quest_id": 1880,
+    "reward_item_roles": {
+      "7507": "choices",
+      "9514": "choices"
+    },
+    "side": "Both",
+    "zone": "Mage"
+  },
+  "source_content_digest": "258206b806d560ded68457e4536bc2b2e084e2821b5a28e77d032364f74b0a3e",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1880"
+}

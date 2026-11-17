@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ooze Rummagers Item Level 59 Binds when picked up Hands Cloth 52 Armor +17 Stamina +17 Spirit Requires Level 54 Equip: You have a small chance to find additional ore when mining Ooze Covered Thorium Veins. Sell Price: 96 23",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:37.4827850Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 285066,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 52,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: You have a small chance to find additional ore when mining Ooze Covered Thorium Veins.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: You have a small chance to find additional ore when mining Ooze Covered Thorium Veins."
+    ],
+    "id": 285066,
+    "item_level": 59,
+    "name": "Ooze Rummagers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "spirit": 17.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=285066"
+  },
+  "linked_entities": [
+    {
+      "id": 1317446,
+      "name": "You have a small chance to find additional ore when mining Ooze Covered Thorium Veins.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317446"
+    }
+  ],
+  "name": "Ooze Rummagers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0481aaea5108e05ee49c44dab76dd970554c70c88c0d2da415ba39dcfd9326f4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/285066?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=285066"
+}

@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/206"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:49.420060+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 4125,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/206",
+      "subject_id": 206,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Mai'Zoth",
+    "quest_id": 206,
+    "reward_item_ids": [
+      4125,
+      270096,
+      270097
+    ],
+    "zone": "Stranglethorn Vale"
+  },
+  "source_content_digest": "d065e6c43680b1239a41c013cec597ff10cb42cc8add7d623b3fe3601da246f5",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/206"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Moonshadow Hood Item Level 52 Binds when picked up Head Leather 122 Armor +15 Intellect Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 1 14 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22273,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 22273,
+    "item_level": 52,
+    "name": "Moonshadow Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 15.0,
+      "spell_power": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22273"
+  },
+  "linked_entities": [],
+  "name": "Moonshadow Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6d1a93f96947aa0cdefe01c7c2a3f2a2d02201dc97fe7a514fe2be388271455a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22273",
+  "url": "https://www.wowhead.com/forever/item=22273"
+}

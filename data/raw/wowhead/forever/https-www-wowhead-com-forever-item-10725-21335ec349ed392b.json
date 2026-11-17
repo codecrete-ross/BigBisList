@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gnomish Battle Chicken Item Level 46 Binds when picked up Unique-Equipped Trinket Requires Engineering (230) Use: Creates a Battle Chicken that will fight for you for 1.5 min or until it is destroyed. (30 Min Cooldown) Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 10725,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Creates a Battle Chicken that will fight for you for 1.5 min or until it is destroyed. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10725,
+    "item_level": 46,
+    "name": "Gnomish Battle Chicken",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Creates a Battle Chicken that will fight for you for 1.5 min or until it is destroyed. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10725"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 23133,
+      "name": "Creates a Battle Chicken that will fight for you for 1.5 min or until it is destroyed.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23133"
+    }
+  ],
+  "name": "Gnomish Battle Chicken",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Battle Chicken Item Level 46 Binds when picked up Unique-Equipped Trinket Requires Engineering (230) Use: Creates a Battle Chicken that will fight for you for 1.5 min or until it is destroyed. (30 Min Cooldown) Sell Price: 15",
+      "scope": "equip_or_use",
+      "skill": 230,
+      "source_url": "https://www.wowhead.com/forever/item=10725",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "3047052040cb27f5b2c4b076b1a34b25bfbb64973b6082f67355d2f5b81e502a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10725",
+  "url": "https://www.wowhead.com/forever/item=10725"
+}

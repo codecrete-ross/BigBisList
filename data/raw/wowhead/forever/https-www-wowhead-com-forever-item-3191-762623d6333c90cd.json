@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arced War Axe Item Level 26 Binds when picked up Two-Hand Axe 57 - 86 Damage Speed 3.30 (21.67 damage per second) +9 Strength +9 Stamina Durability 80 / 80 Requires Level 21 Sell Price: 46 2 Dropped by: Commander Springvale Drop Chance: 33.54%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 3191,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 21.67,
+    "id": 3191,
+    "item_level": 26,
+    "name": "Arced War Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 9.0,
+      "strength": 9.0
+    },
+    "weapon_max_damage": 86,
+    "weapon_min_damage": 57,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3191"
+  },
+  "linked_entities": [],
+  "name": "Arced War Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.54,
+      "entity_name": "Commander Springvale",
+      "source_url": "https://www.wowhead.com/forever/item=3191",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3191",
+  "url": "https://www.wowhead.com/forever/item=3191"
+}

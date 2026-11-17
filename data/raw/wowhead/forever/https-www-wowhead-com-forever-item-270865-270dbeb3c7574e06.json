@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Titan Relic Item Level 1 Binds when picked up Unique This Item Begins a Quest \"Fragmented remnants of the construct, refracting light like a kaleidoscope.\" Dropped by: Relic Guardian Drop Chance: 26.78%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 270865,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 270865,
+    "item_level": 1,
+    "name": "Titan Relic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=270865"
+  },
+  "linked_entities": [
+    {
+      "id": 95810,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=95810"
+    }
+  ],
+  "name": "Titan Relic",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 26.78,
+      "entity_name": "Relic Guardian",
+      "source_url": "https://www.wowhead.com/forever/item=270865",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270865",
+  "url": "https://www.wowhead.com/forever/item=270865"
+}

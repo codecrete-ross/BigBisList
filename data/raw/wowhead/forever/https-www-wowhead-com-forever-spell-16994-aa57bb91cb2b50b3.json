@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Arcanite Reaper 1 min cast Tools: Blacksmith Hammer Reagents: Arcanite Bar (20), Enchanted Leather (6), Dense Grinding Stone (2) Arcanite Reaper Item Level 63 Binds when equipped Two-Hand Axe 153 - 256 Damage Speed 3.80 (53.82 damage per second) +13 Stamina Durability 100 / 100 Requires Level 58 Equip: + 62 Attack Power. Sell Price: 7 30 36",
+  "entity_id": 16994,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:05+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 12360,
+      "name": "Arcanite Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12360"
+    },
+    {
+      "id": 12644,
+      "name": "Dense Grinding Stone",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12644"
+    },
+    {
+      "id": 12784,
+      "name": "Arcanite Reaper",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12784"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 16994,
+      "name": "Arcanite Reaper",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16994"
+    }
+  ],
+  "name": "Arcanite Reaper",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 12784,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=16994",
+      "subject_id": 16994,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 16994,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16994",
+  "url": "https://www.wowhead.com/forever/spell=16994"
+}

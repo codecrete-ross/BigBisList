@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/6845"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T21:22:15.187045+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 18400,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6845",
+      "subject_id": 6845,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 18402,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6845",
+      "subject_id": 6845,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Uncovering Past Secrets",
+    "quest_id": 6845,
+    "reward_item_roles": {
+      "18400": "choices",
+      "18402": "choices"
+    },
+    "side": "Both",
+    "zone": "Moonglade"
+  },
+  "source_content_digest": "3ab52f28a41391bc51d49b5df881d2fbe1533c7e578e1541a78646a0a63e81bc",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/6845"
+}

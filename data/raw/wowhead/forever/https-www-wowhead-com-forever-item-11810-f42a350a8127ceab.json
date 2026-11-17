@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Force of Will Item Level 60 Binds when picked up Unique-Equipped Trinket Requires Level 55 Equip: Increased Defense + 4. Equip: When struck in combat has a chance to reduce all damage taken by 51 for 10 sec. (30s cooldown) Sell Price: 1 98 96 Dropped by: General Angerforge Drop Chance: 7.50%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 11810,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: When struck in combat has a chance to reduce all damage taken by 51 for 10 sec. (30s cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat has a chance to reduce all damage taken by 51 for 10 sec. (30s cooldown)"
+    ],
+    "id": 11810,
+    "item_level": 60,
+    "name": "Force of Will",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11810"
+  },
+  "linked_entities": [
+    {
+      "id": 15594,
+      "name": "When struck in combat has a chance to reduce all damage taken by 51 for 10 sec. (30s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15594"
+    }
+  ],
+  "name": "Force of Will",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.5,
+      "entity_name": "General Angerforge",
+      "source_url": "https://www.wowhead.com/forever/item=11810",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8c868ae74bebbd248881061bd895c62307d006e369bc663ec28dc80220f97cdf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11810",
+  "url": "https://www.wowhead.com/forever/item=11810"
+}

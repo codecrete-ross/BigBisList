@@ -1,0 +1,139 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Demon Forged Breastplate Item Level 57 Binds when picked up Requires Blacksmithing (260) Requires Armorsmith Use: Teaches you how to make a Demon Forged Breastplate. Sell Price: 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Chest",
+      "item_id": 12628,
+      "item_stats": {
+        "armor_type": "Plate",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 12628,
+        "name": "Demon Forged Breastplate",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Chest",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=12628"
+      },
+      "name": "Demon Forged Breastplate",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=12628"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:01:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12696,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Demon Forged Breastplate.",
+        "type": "use"
+      }
+    ],
+    "id": 12696,
+    "item_level": 57,
+    "name": "Plans: Demon Forged Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Demon Forged Breastplate."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12696"
+  },
+  "linked_entities": [
+    {
+      "id": 7910,
+      "name": "Star Ruby",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7910"
+    },
+    {
+      "id": 12359,
+      "name": "Thorium Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12359"
+    },
+    {
+      "id": 12361,
+      "name": "Blue Sapphire",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12361"
+    },
+    {
+      "id": 12628,
+      "name": "Demon Forged Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12628"
+    },
+    {
+      "id": 12662,
+      "name": "Demonic Rune",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12662"
+    },
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 16611,
+      "name": "When struck has a 3% chance of stealing 240 life from the attacker over 4 sec. (Proc chance: 3%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16611"
+    },
+    {
+      "id": 16667,
+      "name": "Teaches you how to make a Demon Forged Breastplate.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16667"
+    }
+  ],
+  "name": "Plans: Demon Forged Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Demon Forged Breastplate Item Level 57 Binds when picked up Requires Blacksmithing (260) Requires Armorsmith Use: Teaches you how to make a Demon Forged Breastplate. Sell Price: 50",
+      "scope": "equip_or_use",
+      "skill": 260,
+      "source_url": "https://www.wowhead.com/forever/item=12696",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Demon Forged Breastplate Item Level 57 Binds when picked up Requires Blacksmithing (260) Requires Armorsmith Use: Teaches you how to make a Demon Forged Breastplate. Sell Price: 50",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=12696",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    16667
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12696",
+  "url": "https://www.wowhead.com/forever/item=12696"
+}

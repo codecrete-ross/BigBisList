@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Obsidian Bauble Item Level 58 Binds when picked up Held In Off-hand +9 Intellect Requires Level 53 Equip: Improves your chance to get a critical strike by 0.5%. Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 1 80 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 18316,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 18316,
+    "item_level": 58,
+    "name": "Obsidian Bauble",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "intellect": 9.0,
+      "spell_power": 15.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18316"
+  },
+  "linked_entities": [],
+  "name": "Obsidian Bauble",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "fce219805b4ea62a723933008dbe1003f2c83698554004abe7c0deb65619a97b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18316",
+  "url": "https://www.wowhead.com/forever/item=18316"
+}

@@ -1,0 +1,35 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Job Opening: Guard Captain of Revantusk Village Level 51 You have been tasked with the decimation of 20 Vilebranch Berserkers, 20 Vilebranch Shadow Hunters, 20 Vilebranch Blood Drinkers, and 20 Vilebranch Soul Eaters. Should you complete this task, return to Primal Torntusk at Revantusk Village in the Hinterlands. Requirements: - Vilebranch Berserker x 20 - Vilebranch Shadow Hunter x 20 - Vilebranch Blood Drinker x 20 - Vilebranch Soul Eater x 20",
+  "entity_id": 7862,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:35+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Job Opening: Guard Captain of Revantusk Village",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "public_page_reviewed_at": "2026-11-06T04:18:01.933451+00:00",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 19120,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=7862",
+      "subject_id": 7862,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "finish_name": "Primal Torntusk",
+    "instruction_summary": "Read Call to Arms! in Revantusk Village. With a group, defeat twenty each of Vilebranch Berserkers, Shadow Hunters, Blood Drinkers and Soul Eaters, then return to Primal Torntusk.",
+    "min_level": 46,
+    "reward_item_id": 19120,
+    "side": "Horde",
+    "start_name": "Call to Arms!"
+  },
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/7862",
+  "url": "https://www.wowhead.com/forever/quest=7862"
+}

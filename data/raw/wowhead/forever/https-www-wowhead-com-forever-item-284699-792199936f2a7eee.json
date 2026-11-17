@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Still Water Band Item Level 29 Binds when equipped Finger +4 Stamina Requires Level 24 Equip: Underwater breath lasts 50% longer than normal. Sell Price: 15 67",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284699,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Underwater breath lasts 50% longer than normal.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Underwater breath lasts 50% longer than normal."
+    ],
+    "id": 284699,
+    "item_level": 29,
+    "name": "Still Water Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 24,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284699"
+  },
+  "linked_entities": [
+    {
+      "id": 1316928,
+      "name": "Underwater breath lasts 50% longer than normal.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1316928"
+    }
+  ],
+  "name": "Still Water Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2415fd0dd437b6d961aa19a08c762c062ed153703faa42dc8a0ded791866f90a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284699",
+  "url": "https://www.wowhead.com/forever/item=284699"
+}

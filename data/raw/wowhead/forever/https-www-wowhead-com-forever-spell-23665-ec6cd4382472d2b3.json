@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Argent Shoulders 1 min cast Reagents: Mooncloth (5), Guardian Stone (2), Ironweb Spider Silk (2) Argent Shoulders Item Level 61 Binds when equipped Shoulder Cloth 65 Armor +7 Spirit +5 Shadow Resistance Durability 50 / 50 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 25 . Sell Price: 1 75 41",
+  "entity_id": 23665,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:56+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 12809,
+      "name": "Guardian Stone",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12809"
+    },
+    {
+      "id": 14227,
+      "name": "Ironweb Spider Silk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14227"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 19059,
+      "name": "Argent Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19059"
+    },
+    {
+      "id": 23665,
+      "name": "Argent Shoulders",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23665"
+    }
+  ],
+  "name": "Argent Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 19059,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=23665",
+      "subject_id": 23665,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 23665,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/23665",
+  "url": "https://www.wowhead.com/forever/spell=23665"
+}

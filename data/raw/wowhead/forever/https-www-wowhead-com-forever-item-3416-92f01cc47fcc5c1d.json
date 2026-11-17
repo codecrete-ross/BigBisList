@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Martyr's Chain Item Level 28 Binds when equipped Chest Mail 211 Armor +9 Strength +9 Stamina Durability 110 / 110 Requires Level 23 Equip: Dying inflicts 420 Holy damage to all enemies within 15 yds. Sell Price: 26 73",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 3416,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 211,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Dying inflicts 420 Holy damage to all enemies within 15 yds.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Dying inflicts 420 Holy damage to all enemies within 15 yds."
+    ],
+    "id": 3416,
+    "item_level": 28,
+    "name": "Martyr's Chain",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 23,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "stamina": 9.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3416"
+  },
+  "linked_entities": [
+    {
+      "id": 1292749,
+      "name": "Dying inflicts 420 Holy damage to all enemies within 15 yds.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292749"
+    }
+  ],
+  "name": "Martyr's Chain",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3416",
+  "url": "https://www.wowhead.com/forever/item=3416"
+}

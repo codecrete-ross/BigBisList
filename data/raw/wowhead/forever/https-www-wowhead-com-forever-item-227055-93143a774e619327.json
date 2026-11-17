@@ -1,0 +1,150 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Leather Helm Item Level 71 Binds when picked up Head Leather 158 Armor +35 Stamina +80 Armor Durability 60 / 60 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 36 Attack Power. Lieutenant Commander's Vestments (0/6) Knight-Captain's Leather Chestpiece Knight-Captain's Leather Legguards Knight-Lieutenant's Leather Grips Knight-Lieutenant's Leather Walkers Lieutenant Commander's Leather Helm Lieutenant Commander's Leather Shoulders (2) Set : +40 Attack Power. (4) Set : Reduces the cooldown of your Gouge ability by 1 sec. (6) Set : +20 Stamina. Sell Price: 1 57 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227055,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +36 Attack Power.",
+        "stats": {
+          "attack_power": 36
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 227055,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Leather Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23048,
+        "text": "Reduces the cooldown of your Gouge ability by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "stamina": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227055"
+  },
+  "linked_entities": [
+    {
+      "id": 227054,
+      "name": "Lieutenant Commander's Leather Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227054"
+    },
+    {
+      "id": 227055,
+      "name": "Lieutenant Commander's Leather Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227055"
+    },
+    {
+      "id": 227058,
+      "name": "Knight-Captain's Leather Chestpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227058"
+    },
+    {
+      "id": 227061,
+      "name": "Knight-Captain's Leather Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227061"
+    },
+    {
+      "id": 227064,
+      "name": "Knight-Lieutenant's Leather Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227064"
+    },
+    {
+      "id": 227065,
+      "name": "Knight-Lieutenant's Leather Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227065"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23048,
+      "name": "Reduces the cooldown of your Gouge ability by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23048"
+    }
+  ],
+  "name": "Lieutenant Commander's Leather Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "111de4958777a3c47ebcc31154e23f89a901cc541030a30381320827af1e0ee4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227055",
+  "url": "https://www.wowhead.com/forever/item=227055"
+}

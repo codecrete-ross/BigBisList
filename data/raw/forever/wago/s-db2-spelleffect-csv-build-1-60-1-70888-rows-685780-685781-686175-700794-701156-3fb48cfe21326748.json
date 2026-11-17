@@ -1,0 +1,62 @@
+{
+  "attribution": [
+    {
+      "credit": "Wago Tools",
+      "source": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888#/rows/685780,685781,686175,700794,701156"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "client_db2_rows",
+  "fetched_at": "2026-11-11T06:45:25+00:00",
+  "flavor": "forever",
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "export_build": "1.60.1.70888",
+    "rows": {
+      "685780": {
+        "Effect": "36",
+        "EffectAura": "0",
+        "EffectBasePointsF": "0",
+        "EffectMiscValue_0": "0",
+        "EffectTriggerSpell": "7620",
+        "SpellID": "7733"
+      },
+      "685781": {
+        "Effect": "44",
+        "EffectAura": "0",
+        "EffectBasePointsF": "1",
+        "EffectMiscValue_0": "356",
+        "EffectTriggerSpell": "0",
+        "SpellID": "7733"
+      },
+      "686175": {
+        "Effect": "6",
+        "EffectAura": "30",
+        "EffectBasePointsF": "50",
+        "EffectMiscValue_0": "356",
+        "EffectTriggerSpell": "0",
+        "SpellID": "8083"
+      },
+      "700794": {
+        "Effect": "53",
+        "EffectAura": "0",
+        "EffectBasePointsF": "0",
+        "EffectMiscValue_0": "2603",
+        "EffectTriggerSpell": "0",
+        "SpellID": "24302"
+      },
+      "701156": {
+        "Effect": "6",
+        "EffectAura": "30",
+        "EffectBasePointsF": "5",
+        "EffectMiscValue_0": "356",
+        "EffectTriggerSpell": "0",
+        "SpellID": "24303"
+      }
+    },
+    "table": "SpellEffect"
+  },
+  "source_content_digest": "da2fb074eedb51bd1246ef53666044c0b757bdb67340c3969b712caa8481ac2b",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888#/rows/685780,685781,686175,700794,701156"
+}

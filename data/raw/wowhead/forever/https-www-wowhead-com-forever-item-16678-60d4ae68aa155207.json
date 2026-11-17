@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Beaststalker's Pants Item Level 61 Binds when picked up Legs Mail 315 Armor +6 Strength +26 Agility +6 Stamina +10 Intellect +12 Spirit Durability 90 / 90 Requires Level 56 Beaststalker Armor (0/8) Beaststalker's Belt Beaststalker's Boots Beaststalker's Bindings Beaststalker's Cap Beaststalker's Tunic Beaststalker's Pants Beaststalker's Mantle Beaststalker's Gloves (2) Set : +8 All Resistances. (3) Set : +30 Attack Power. (4) Set : When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown) (5) Set : Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%) (6) Set : Restores 8 mana per 5 sec. Sell Price: 3 13 37 Dropped by: Baron Rivendare Drop Chance: 10.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 16678,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 315,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16678,
+    "item_level": 61,
+    "name": "Beaststalker's Pants",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302712,
+        "text": "When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450577,
+        "text": "Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 26.0,
+      "intellect": 10.0,
+      "spirit": 12.0,
+      "stamina": 6.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16678"
+  },
+  "linked_entities": [
+    {
+      "id": 16674,
+      "name": "Beaststalker's Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16674"
+    },
+    {
+      "id": 16675,
+      "name": "Beaststalker's Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16675"
+    },
+    {
+      "id": 16676,
+      "name": "Beaststalker's Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16676"
+    },
+    {
+      "id": 16677,
+      "name": "Beaststalker's Cap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16677"
+    },
+    {
+      "id": 16678,
+      "name": "Beaststalker's Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16678"
+    },
+    {
+      "id": 16679,
+      "name": "Beaststalker's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16679"
+    },
+    {
+      "id": 16680,
+      "name": "Beaststalker's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16680"
+    },
+    {
+      "id": 16681,
+      "name": "Beaststalker's Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16681"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450577,
+      "name": "Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450577"
+    },
+    {
+      "id": 1302712,
+      "name": "When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302712"
+    }
+  ],
+  "name": "Beaststalker's Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.49,
+      "entity_name": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/item=16678",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16678",
+  "url": "https://www.wowhead.com/forever/item=16678"
+}

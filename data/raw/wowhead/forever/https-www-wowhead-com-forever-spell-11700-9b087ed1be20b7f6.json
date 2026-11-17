@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Drain Life 300 Mana 20 yd range Channeled (5 sec cast) Requires Warlock Requires level 54 Transfers 51 health every 1 second from the target to the caster. Lasts 5 sec.",
+  "entity_id": 11700,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:26+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11700,
+      "name": "Drain Life",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11700"
+    }
+  ],
+  "name": "Drain Life",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "6ce7589fcfab69aa81843d294752de1d7a3ffb5c94a70e6b65f49a7716de8606",
+  "spell_id": 11700,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/11700",
+  "url": "https://www.wowhead.com/forever/spell=11700"
+}

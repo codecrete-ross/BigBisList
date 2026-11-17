@@ -1,0 +1,149 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Imperial Plate Helm Item Level 59 Binds when equipped Head Plate 456 Armor +18 Strength +17 Stamina Durability 70 / 70 Requires Level 54 Imperial Plate (0/8) Imperial Plate Belt Imperial Plate Boots Imperial Plate Bracers Imperial Plate Chest Imperial Plate Helm Imperial Plate Leggings Imperial Plate Shoulders Imperial Plate Gauntlets (2) Set : Increased Defense +7. (3) Set : Improves your chance to hit by 1.0%. (4) Set : Imperial discipline prevents your movement speed from being reduced below 80%. (5) Set : +20 Strength. (6) Set : Improves your chance to get a critical strike by 1.0%. Sell Price: 1 21 6",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:43:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12427,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 456,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 12427,
+    "item_level": 59,
+    "name": "Imperial Plate Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 54,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 13385,
+        "text": "Increased Defense +7."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1251990,
+        "text": "Improves your chance to hit by 1.0%."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302372,
+        "text": "Imperial discipline prevents your movement speed from being reduced below 80%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1251984,
+        "text": "+20 Strength."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1251991,
+        "text": "Improves your chance to get a critical strike by 1.0%."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "stamina": 17.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12427"
+  },
+  "linked_entities": [
+    {
+      "id": 12422,
+      "name": "Imperial Plate Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12422"
+    },
+    {
+      "id": 12424,
+      "name": "Imperial Plate Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12424"
+    },
+    {
+      "id": 12425,
+      "name": "Imperial Plate Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12425"
+    },
+    {
+      "id": 12426,
+      "name": "Imperial Plate Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12426"
+    },
+    {
+      "id": 12427,
+      "name": "Imperial Plate Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12427"
+    },
+    {
+      "id": 12428,
+      "name": "Imperial Plate Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12428"
+    },
+    {
+      "id": 12429,
+      "name": "Imperial Plate Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12429"
+    },
+    {
+      "id": 250589,
+      "name": "Imperial Plate Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250589"
+    },
+    {
+      "id": 13385,
+      "name": "Increased Defense +7.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13385"
+    },
+    {
+      "id": 1251984,
+      "name": "+20 Strength.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1251984"
+    },
+    {
+      "id": 1251990,
+      "name": "Improves your chance to hit by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1251990"
+    },
+    {
+      "id": 1251991,
+      "name": "Improves your chance to get a critical strike by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1251991"
+    },
+    {
+      "id": 1302372,
+      "name": "Imperial discipline prevents your movement speed from being reduced below 80%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302372"
+    }
+  ],
+  "name": "Imperial Plate Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12427",
+  "url": "https://www.wowhead.com/forever/item=12427"
+}

@@ -1,0 +1,42 @@
+{
+  "attribution": [
+    {
+      "credit": "All The Things, Forever Timbermaw Hold catalog",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d2ef72b76aa5e67525651c6b0d79d5ae86f02aa6"
+    }
+  ],
+  "confidence": "forever_catalog_route_lead",
+  "fetched_at": "2026-11-13T22:41:20.423870+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 17100,
+      "collected_at": "2026-11-13T22:41:20.423870+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-f-timbermaw-hold",
+      "source_content_digest": "095eb357d23a7e2d46f3422cd56dce610d045126ccc18f9a786f2b765f14aa3e",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d2ef72b76aa5e67525651c6b0d79d5ae86f02aa6"
+    },
+    {
+      "bytes": 436,
+      "collected_at": "2026-11-13T22:40:21.972363+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "everloot-edge-16768",
+      "source_content_digest": "e08b5671fc056a7d4d80c0f17d078c259a4daa5640ba283da1194d4d941e47c8",
+      "source_url": "https://everloot.app/api/edges?to_kind=item&to_id=16768&limit=50"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "reviewed_page_facts": {
+    "finding": "The pinned Forever module specifies Gorn One Eye and Honored for item 16768. There is no published purchase in the current Everloot response. The catalog may preserve the inherited condition. A live path to Honored and a purchase by an early character remain unverified.",
+    "item_id": 16768,
+    "reputation": "Timbermaw Hold",
+    "standing": "Honored",
+    "vendor_npc_id": 11555
+  },
+  "source_content_digest": "095eb357d23a7e2d46f3422cd56dce610d045126ccc18f9a786f2b765f14aa3e",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d2ef72b76aa5e67525651c6b0d79d5ae86f02aa6"
+}

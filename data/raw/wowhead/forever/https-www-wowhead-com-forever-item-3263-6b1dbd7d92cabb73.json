@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Webbed Pants Item Level 3 Legs Cloth 6 Armor Durability 25 / 25 Sell Price: 4 Dropped by: Night Web Spider Drop Chance: 0.95%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 3263,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 6,
+    "armor_type": "Cloth",
+    "binding": "unknown",
+    "id": 3263,
+    "item_level": 3,
+    "name": "Webbed Pants",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Legs",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3263"
+  },
+  "linked_entities": [],
+  "name": "Webbed Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.95,
+      "entity_name": "Night Web Spider",
+      "source_url": "https://www.wowhead.com/forever/item=3263",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3263",
+  "url": "https://www.wowhead.com/forever/item=3263"
+}

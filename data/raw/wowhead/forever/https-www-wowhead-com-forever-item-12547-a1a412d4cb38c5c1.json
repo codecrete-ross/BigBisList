@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Mar Alom's Grip Item Level 56 Binds when equipped Hands Leather 100 Armor +12 Stamina +10 Intellect +8 Spirit Durability 35 / 35 Requires Level 51 Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects. Sell Price: 1 1 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T04:30:40.4330465Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 12547,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 100,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 22,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 12547,
+    "item_level": 56,
+    "name": "Mar Alom's Grip",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "intellect": 10.0,
+      "spell_damage": 7.0,
+      "spirit": 8.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12547"
+  },
+  "linked_entities": [],
+  "name": "Mar Alom's Grip",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "078a9cd93aa27a878b1770fc4294fd6f7ce2b27d369bf77f41eb81af3f6239e3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12547",
+  "url": "https://www.wowhead.com/forever/item=12547"
+}

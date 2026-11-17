@@ -1,0 +1,47 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Test Relic Item Level 20 Relic Libram +3 Intellect +10 Fire Resistance +10 Shadow Resistance Requires Level 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 22316,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 22316,
+    "item_level": 20,
+    "name": "Test Relic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 10,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 10.0,
+      "intellect": 3.0,
+      "shadow_resistance": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22316"
+  },
+  "linked_entities": [],
+  "name": "Test Relic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1dfe65892bbe40f76e40d99ea1c2435b94e633afb235acddde43b719aa5df51c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22316",
+  "url": "https://www.wowhead.com/forever/item=22316"
+}

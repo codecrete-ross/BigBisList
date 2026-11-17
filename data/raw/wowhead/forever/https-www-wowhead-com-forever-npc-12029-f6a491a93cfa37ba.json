@@ -1,0 +1,429 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Narianna Bowyer Level 51 Humanoid (Normal) Cenarion Circle",
+  "entity_id": 12029,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:21:04.776Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2504,
+      "name": "Worn Shortbow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2504"
+    },
+    {
+      "id": 2505,
+      "name": "Polished Shortbow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2505"
+    },
+    {
+      "id": 2506,
+      "name": "Hornwood Recurve Bow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2506"
+    },
+    {
+      "id": 2507,
+      "name": "Laminated Recurve Bow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2507"
+    },
+    {
+      "id": 2512,
+      "name": "Rough Arrow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2512"
+    },
+    {
+      "id": 2515,
+      "name": "Sharp Arrow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2515"
+    },
+    {
+      "id": 3026,
+      "name": "Reinforced Bow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3026"
+    },
+    {
+      "id": 3027,
+      "name": "Heavy Recurve Bow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3027"
+    },
+    {
+      "id": 3030,
+      "name": "Razor Arrow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3030"
+    },
+    {
+      "id": 5439,
+      "name": "Small Quiver",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5439"
+    },
+    {
+      "id": 11308,
+      "name": "Sylvan Shortbow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11308"
+    },
+    {
+      "id": 11362,
+      "name": "Medium Quiver",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11362"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 12 of 12",
+    "1 - 12 of 12"
+  ],
+  "location_name": "Moonglade",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          53.2,
+          42.6
+        ]
+      ]
+    },
+    "zone": 493
+  },
+  "name": "Narianna",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 51",
+    "React: A\u00a0H",
+    "Faction: Cenarion Circle",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 2,980"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2504,
+      "object_name": "Worn Shortbow",
+      "object_type": "item",
+      "price_copper": 29,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Worn Shortbow",
+        "2",
+        "",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "29"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2505,
+      "object_name": "Polished Shortbow",
+      "object_type": "item",
+      "price_copper": 60,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Shortbow",
+        "4",
+        "",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "60"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2506,
+      "object_name": "Hornwood Recurve Bow",
+      "object_type": "item",
+      "price_copper": 285,
+      "relation": "sells",
+      "required_level": 3,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Hornwood Recurve Bow",
+        "8",
+        "3",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "2 85"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2507,
+      "object_name": "Laminated Recurve Bow",
+      "object_type": "item",
+      "price_copper": 1751,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Laminated Recurve Bow",
+        "16",
+        "11",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "17 51"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2512,
+      "object_name": "Rough Arrow",
+      "object_type": "item",
+      "price_copper": 10,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Rough Arrow",
+        "5",
+        "",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Arrow",
+        "10"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2515,
+      "object_name": "Sharp Arrow",
+      "object_type": "item",
+      "price_copper": 50,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Sharp Arrow",
+        "15",
+        "10",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Arrow",
+        "50"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3026,
+      "object_name": "Reinforced Bow",
+      "object_type": "item",
+      "price_copper": 3812,
+      "relation": "sells",
+      "required_level": 16,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Bow",
+        "21",
+        "16",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "38 12"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3027,
+      "object_name": "Heavy Recurve Bow",
+      "object_type": "item",
+      "price_copper": 6349,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Recurve Bow",
+        "25",
+        "20",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "63 49"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3030,
+      "object_name": "Razor Arrow",
+      "object_type": "item",
+      "price_copper": 300,
+      "relation": "sells",
+      "required_level": 25,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "200",
+        "Razor Arrow",
+        "30",
+        "25",
+        "",
+        "",
+        "Ammo",
+        "Vendors",
+        "Arrow",
+        "3"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 5439,
+      "object_name": "Small Quiver",
+      "object_type": "item",
+      "price_copper": 100,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Small Quiver",
+        "5",
+        "",
+        "",
+        "",
+        "Bag",
+        "Vendors",
+        "Quiver",
+        "1"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 11308,
+      "object_name": "Sylvan Shortbow",
+      "object_type": "item",
+      "price_copper": 78828,
+      "relation": "sells",
+      "required_level": 44,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nStats changed",
+        "(1)",
+        "Sylvan Shortbow",
+        "49",
+        "44",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "7 88 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 11362,
+      "object_name": "Medium Quiver",
+      "object_type": "item",
+      "price_copper": 1000,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=12029",
+      "subject_id": 12029,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Medium Quiver",
+        "15",
+        "10",
+        "",
+        "",
+        "Bag",
+        "Vendors",
+        "Quiver",
+        "10"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/12029",
+  "url": "https://www.wowhead.com/forever/npc=12029"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Zandalarian Hero Charm Item Level 68 Binds when picked up Unique Trinket Use: Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing. (2 Min Cooldown) Sell Price: 11 13 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19950,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19950,
+    "item_level": 68,
+    "name": "Zandalarian Hero Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19950"
+  },
+  "linked_entities": [
+    {
+      "id": 24658,
+      "name": "Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24658"
+    }
+  ],
+  "name": "Zandalarian Hero Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19950",
+  "url": "https://www.wowhead.com/forever/item=19950"
+}

@@ -1,0 +1,39 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/296"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:10:58.766582+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 270039,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/296",
+      "subject_id": 296,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 22,
+    "name": "Ormer's Revenge",
+    "quest_id": 296,
+    "reward_item_ids": [
+      3493,
+      3566,
+      3682,
+      5246,
+      270039
+    ],
+    "zone": "Wetlands"
+  },
+  "source_content_digest": "06110e2ee4d6c7184f5f8ba0cd3c256152c99e6eefc4b336481ec3712a8546ef",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/296"
+}

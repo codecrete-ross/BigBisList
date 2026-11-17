@@ -1,0 +1,127 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Maelstrom's Wrath Item Level 65 Binds when picked up Unique Neck +15 Agility +9 Stamina +6 Intellect Classes: Hunter Equip: Decreases the cooldown of Feign Death by 2 sec. Predator's Armor (0/5) Maelstrom's Wrath Renataki's Charm of Beasts Zandalar Predator's Bracers Zandalar Predator's Belt Zandalar Predator's Mantle (2) Set : +20 Attack Power. (3) Set : Decreases the cooldown of Concussive Shot by 1 sec. (5) Set : Increases the duration of Serpent Sting by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19621,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Decreases the cooldown of Feign Death by 2 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Decreases the cooldown of Feign Death by 2 sec."
+    ],
+    "id": 19621,
+    "item_level": 65,
+    "name": "Maelstrom's Wrath",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 9331,
+        "text": "+20 Attack Power."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24465,
+        "text": "Decreases the cooldown of Concussive Shot by 1 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24467,
+        "text": "Increases the duration of Serpent Sting by 3 sec."
+      }
+    ],
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "intellect": 6.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19621"
+  },
+  "linked_entities": [
+    {
+      "id": 19621,
+      "name": "Maelstrom's Wrath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19621"
+    },
+    {
+      "id": 19831,
+      "name": "Zandalar Predator's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19831"
+    },
+    {
+      "id": 19832,
+      "name": "Zandalar Predator's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19832"
+    },
+    {
+      "id": 19833,
+      "name": "Zandalar Predator's Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19833"
+    },
+    {
+      "id": 19953,
+      "name": "Renataki's Charm of Beasts",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19953"
+    },
+    {
+      "id": 9331,
+      "name": "+20 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9331"
+    },
+    {
+      "id": 24432,
+      "name": "Decreases the cooldown of Feign Death by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24432"
+    },
+    {
+      "id": 24465,
+      "name": "Decreases the cooldown of Concussive Shot by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24465"
+    },
+    {
+      "id": 24467,
+      "name": "Increases the duration of Serpent Sting by 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24467"
+    }
+  ],
+  "name": "Maelstrom's Wrath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19621",
+  "url": "https://www.wowhead.com/forever/item=19621"
+}

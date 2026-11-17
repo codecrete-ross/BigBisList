@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gyth's Skull Item Level 60 Binds when picked up Head Plate 509 Armor <Random enchantment> +20 Stamina Durability 80 / 80 Requires Level 55 Equip: Increased Defense + 9. Sell Price: 2 60 64 Dropped by: Gyth Drop Chance: 20.20%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:57.6456083Z",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12952,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 509,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +9.",
+        "stats": {
+          "defense": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +9."
+    ],
+    "id": 12952,
+    "item_level": 60,
+    "name": "Gyth's Skull",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "defense": 9.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12952"
+  },
+  "linked_entities": [],
+  "name": "Gyth's Skull",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.2,
+      "entity_name": "Gyth",
+      "source_url": "https://www.wowhead.com/forever/item=12952",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "79cd130c2bfbb2eadf69ffca5e3308845b8a1af6a0401ab455f73b74183c2a4f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12952",
+  "url": "https://www.wowhead.com/forever/item=12952"
+}

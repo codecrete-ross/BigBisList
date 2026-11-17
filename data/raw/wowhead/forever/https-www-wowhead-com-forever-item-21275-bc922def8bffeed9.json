@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blessed Qiraji Augur Staff Item Level 79 Binds when picked up Unique Two-Hand Staff 140 - 211 Damage Speed 3.00 (58.50 damage per second) +23 Stamina +24 Intellect Restores + 15 mana per 5 sec. Durability 120 / 120 Requires Level 60 Equip: Increases healing done by up to 203 and damage done by up to 67 for all magical spells and effects. \"The weapon is infused and reinforced with Elementium.\" Sell Price: 19 95 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 21275,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 58.5,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 203 and damage done by up to 67 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 203,
+          "spell_damage": 67
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +15 mana per 5 sec.",
+        "stats": {
+          "mp5": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 203 and damage done by up to 67 for all magical spells and effects. \"The weapon is infused and reinforced with Elementium.\""
+    ],
+    "id": 21275,
+    "item_level": 79,
+    "name": "Blessed Qiraji Augur Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 203.0,
+      "intellect": 24.0,
+      "mp5": 15.0,
+      "spell_damage": 67.0,
+      "stamina": 23.0
+    },
+    "weapon_max_damage": 211,
+    "weapon_min_damage": 140,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=21275"
+  },
+  "linked_entities": [],
+  "name": "Blessed Qiraji Augur Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21275",
+  "url": "https://www.wowhead.com/forever/item=21275"
+}

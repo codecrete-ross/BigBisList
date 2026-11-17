@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Dragonhide Hauberk Item Level 74 Binds when picked up Unique Chest Leather 220 Armor +25 Strength +14 Agility +19 Stamina +13 Intellect +40 Armor Durability 120 / 120 Classes: Druid Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 21 . Sell Price: 3 36 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 16549,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 220,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 21.",
+        "stats": {
+          "spell_power": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 21."
+    ],
+    "id": 16549,
+    "item_level": 74,
+    "name": "Warlord's Dragonhide Hauberk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "crit_percent": 1.0,
+      "intellect": 13.0,
+      "spell_power": 21.0,
+      "stamina": 19.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16549"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Dragonhide Hauberk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16549",
+  "url": "https://www.wowhead.com/forever/item=16549"
+}

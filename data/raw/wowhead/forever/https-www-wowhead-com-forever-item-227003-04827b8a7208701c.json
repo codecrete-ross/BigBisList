@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of The Five Thunders Item Level 65 Binds when picked up Shoulder Mail 286 Armor +11 Stamina +12 Intellect Durability 70 / 70 Classes: Shaman Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 19 . The Five Thunders (0/8) Item #227039 Item #227040 Item #227038 Item #227037 Item #227036 Item #227035 Item #227034 Item #227033 Sell Price: 2 83 73",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227003,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 286,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 19.",
+        "stats": {
+          "spell_power": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 19."
+    ],
+    "id": 227003,
+    "item_level": 65,
+    "name": "Pauldrons of The Five Thunders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 12.0,
+      "spell_power": 19.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227003"
+  },
+  "linked_entities": [],
+  "name": "Pauldrons of The Five Thunders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6a817488a8ee4f86346b252bf61b1aea804edb462ff9d170017d271c4b09d1d4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227003",
+  "url": "https://www.wowhead.com/forever/item=227003"
+}

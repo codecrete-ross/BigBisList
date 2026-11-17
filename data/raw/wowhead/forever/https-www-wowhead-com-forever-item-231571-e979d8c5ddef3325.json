@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Chain Helm Item Level 74 Binds when picked up Head Mail 382 Armor +34 Agility +42 Stamina +12 Intellect +50 Armor Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Warlord's Pursuit (0/6) Warlord's Chain Helm Warlord's Chain Shoulders Warlord's Chain Hauberk General's Chain Legguards General's Chain Greaves General's Chain Vices (2) Set : +20 Stamina. (3) Set : Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%) (6) Set : +20 Agility. Sell Price: 2 99 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 231571,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 382,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 231571,
+    "item_level": 74,
+    "name": "Warlord's Chain Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23158,
+        "text": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14384,
+        "text": "+20 Agility."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "crit_percent": 1.0,
+      "intellect": 12.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231571"
+  },
+  "linked_entities": [
+    {
+      "id": 231570,
+      "name": "General's Chain Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231570"
+    },
+    {
+      "id": 231571,
+      "name": "Warlord's Chain Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231571"
+    },
+    {
+      "id": 231572,
+      "name": "Warlord's Chain Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231572"
+    },
+    {
+      "id": 231573,
+      "name": "Warlord's Chain Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231573"
+    },
+    {
+      "id": 231574,
+      "name": "General's Chain Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231574"
+    },
+    {
+      "id": 231575,
+      "name": "General's Chain Vices",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231575"
+    },
+    {
+      "id": 14384,
+      "name": "+20 Agility.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14384"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23158,
+      "name": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23158"
+    }
+  ],
+  "name": "Warlord's Chain Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "a6d2600b32a468093bfbdf2ba4d5dfcaa4a028fa56277bd3c21fa79ba7ec7ae7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231571",
+  "url": "https://www.wowhead.com/forever/item=231571"
+}

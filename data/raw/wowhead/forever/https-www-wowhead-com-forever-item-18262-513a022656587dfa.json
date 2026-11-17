@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elemental Sharpening Stone Item Level 60 Requires Level 50 Use: Increase critical chance on a melee weapon by 2% for 30 minutes. Max Stack: 20 Sell Price: 12 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18262,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase critical chance on a melee weapon by 2% for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 18262,
+    "item_level": 60,
+    "name": "Elemental Sharpening Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increase critical chance on a melee weapon by 2% for 30 minutes. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18262"
+  },
+  "linked_entities": [
+    {
+      "id": 22756,
+      "name": "Increase critical chance on a melee weapon by 2% for 30 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22756"
+    }
+  ],
+  "name": "Elemental Sharpening Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18262",
+  "url": "https://www.wowhead.com/forever/item=18262"
+}

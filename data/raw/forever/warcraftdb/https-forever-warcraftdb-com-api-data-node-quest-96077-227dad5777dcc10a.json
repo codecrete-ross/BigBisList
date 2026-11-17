@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/96077"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:43.370564+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 273800,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96077",
+      "subject_id": 96077,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Belle's Ring",
+    "quest_id": 96077,
+    "reward_item_roles": {
+      "273800": "items"
+    },
+    "side": "Alliance",
+    "zone": "Mount Hyjal"
+  },
+  "source_content_digest": "82989f9233a4cf788a41e12b0dfe4f86019c2ad595390e5dd4ffe5e54f846c3a",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/96077"
+}

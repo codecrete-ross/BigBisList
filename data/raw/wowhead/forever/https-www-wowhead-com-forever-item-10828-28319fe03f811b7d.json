@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dire Nail Item Level 56 Binds when picked up Main Hand Dagger 38 - 72 Damage Speed 1.50 (36.67 damage per second) <Random enchantment> +5 Shadow Resistance Durability 65 / 65 Requires Level 51 Sell Price: 4 1 54 Dropped by: Shade of Eranikus Drop Chance: 16.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 10828,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 36.67,
+    "id": 10828,
+    "item_level": 56,
+    "name": "Dire Nail",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 5.0
+    },
+    "weapon_max_damage": 72,
+    "weapon_min_damage": 38,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10828"
+  },
+  "linked_entities": [],
+  "name": "Dire Nail",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 16.74,
+      "entity_name": "Shade of Eranikus",
+      "source_url": "https://www.wowhead.com/forever/item=10828",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d21bb5961cb788c59d2c4fa1b98af95a610ea08521b6468b3e1bb33337bf3cf7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10828",
+  "url": "https://www.wowhead.com/forever/item=10828"
+}

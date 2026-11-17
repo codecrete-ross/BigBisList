@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hand of Justice Item Level 58 Binds when picked up Unique-Equipped Trinket Requires Level 53 Equip: + 12 Attack Power. Equip: 1% chance on Melee hit to gain 1 extra attack. Attacks against Dwarves are 3 times as likely to activate this effect. (Proc chance: 3%, 2s cooldown) Sell Price: 1 80 47 Dropped by: Emperor Dagran Thaurissan Drop Chance: 13.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 11815,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: 1% chance on Melee hit to gain 1 extra attack. Attacks against Dwarves are 3 times as likely to activate this effect. (Proc chance: 3%, 2s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: 1% chance on Melee hit to gain 1 extra attack. Attacks against Dwarves are 3 times as likely to activate this effect. (Proc chance: 3%, 2s cooldown)"
+    ],
+    "id": 11815,
+    "item_level": 58,
+    "name": "Hand of Justice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11815"
+  },
+  "linked_entities": [
+    {
+      "id": 15600,
+      "name": "1% chance on Melee hit to gain 1 extra attack. Attacks against Dwarves are 3 times as likely to activate this effect. (Proc chance: 3%, 2s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15600"
+    }
+  ],
+  "name": "Hand of Justice",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 13.56,
+      "entity_name": "Emperor Dagran Thaurissan",
+      "source_url": "https://www.wowhead.com/forever/item=11815",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f127c06492cee2793e2c1b70cb036b6ad1d9bdc24cc32f7ca6adac1b6dcfcf3f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11815",
+  "url": "https://www.wowhead.com/forever/item=11815"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Corpsefeeder's Carapace Item Level 1 Binds when picked up Unique This Item Begins a Quest Dropped by: Corpsefeeder Drop Chance: 87.50%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T02:54:13.1636988Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 259893,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 259893,
+    "item_level": 1,
+    "name": "Corpsefeeder's Carapace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=259893"
+  },
+  "linked_entities": [
+    {
+      "id": 93574,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=93574"
+    }
+  ],
+  "name": "Corpsefeeder's Carapace",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 87.5,
+      "entity_name": "Corpsefeeder",
+      "source_url": "https://www.wowhead.com/forever/item=259893",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "33fac09b779b8b029cb6300d099f6ab344c244c6b6c590a9bb313c9daf3d5866",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/259893",
+  "url": "https://www.wowhead.com/forever/item=259893"
+}

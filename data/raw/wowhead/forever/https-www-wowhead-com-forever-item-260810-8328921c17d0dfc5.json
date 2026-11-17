@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "SAF-T Disposable Parachute Item Level 50 Binds when equipped Back 31 Armor Use: Reduces your fall speed for 10 sec. (30 Min Cooldown) 3 Charges \"SAF-T in case you need to jump.\" Sell Price: 46 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 260810,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 31,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 260810,
+    "item_level": 50,
+    "name": "SAF-T Disposable Parachute",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Back",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown) 3 Charges \"SAF-T in case you need to jump.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=260810"
+  },
+  "linked_entities": [
+    {
+      "id": 12438,
+      "name": "Reduces your fall speed for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12438"
+    }
+  ],
+  "name": "SAF-T Disposable Parachute",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "06f7ba85dd48bc69151362c917187ce73249e0d97bd0ca624b1793818a4fc18c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260810",
+  "url": "https://www.wowhead.com/forever/item=260810"
+}

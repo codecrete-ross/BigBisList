@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Worgenbane Talisman Item Level 26 Binds when picked up Unique-Equipped Trinket Restores + 2 mana per 5 sec. Requires Level 21 Use: Stuns target Worgen for 4 sec. (5 Min Cooldown) Sell Price: 14 33 Dropped by: Commander Springvale Drop Chance: 1.67%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:11:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 273643,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Stuns target Worgen for 4 sec. (5 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +2 mana per 5 sec.",
+        "stats": {
+          "mp5": 2
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 273643,
+    "item_level": 26,
+    "name": "Worgenbane Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 2.0
+    },
+    "use_effects": [
+      "Use: Stuns target Worgen for 4 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=273643"
+  },
+  "linked_entities": [
+    {
+      "id": 1292252,
+      "name": "Stuns target Worgen for 4 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292252"
+    }
+  ],
+  "name": "Worgenbane Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.67,
+      "entity_name": "Commander Springvale",
+      "source_url": "https://www.wowhead.com/forever/item=273643",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "847418277c88703575f7eaf30ab43a05befd67fa2e6549f386217457def08280",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273643",
+  "url": "https://www.wowhead.com/forever/item=273643"
+}

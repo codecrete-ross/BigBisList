@@ -1,0 +1,525 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Vexspindle Cloth & Leather Armor Merchant Level 24 Humanoid (Normal) Ratchet",
+  "entity_id": 3492,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:26.883Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 200,
+      "name": "Thick Cloth Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=200"
+    },
+    {
+      "id": 201,
+      "name": "Thick Cloth Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=201"
+    },
+    {
+      "id": 202,
+      "name": "Thick Cloth Shoes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=202"
+    },
+    {
+      "id": 203,
+      "name": "Thick Cloth Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=203"
+    },
+    {
+      "id": 236,
+      "name": "Cured Leather Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=236"
+    },
+    {
+      "id": 237,
+      "name": "Cured Leather Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=237"
+    },
+    {
+      "id": 238,
+      "name": "Cured Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=238"
+    },
+    {
+      "id": 239,
+      "name": "Cured Leather Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239"
+    },
+    {
+      "id": 1849,
+      "name": "Cured Leather Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1849"
+    },
+    {
+      "id": 1850,
+      "name": "Cured Leather Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1850"
+    },
+    {
+      "id": 3597,
+      "name": "Thick Cloth Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3597"
+    },
+    {
+      "id": 3598,
+      "name": "Thick Cloth Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3598"
+    },
+    {
+      "id": 4794,
+      "name": "Wolf Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4794"
+    },
+    {
+      "id": 4795,
+      "name": "Bear Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4795"
+    },
+    {
+      "id": 4796,
+      "name": "Owl Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4796"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 15 of 15",
+    "1 - 15 of 15"
+  ],
+  "location_name": "The Barrens",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          62.2,
+          38.4
+        ]
+      ]
+    },
+    "zone": 17
+  },
+  "name": "Vexspindle",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 24",
+    "React: A\u00a0H",
+    "Faction: Ratchet",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 664"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 200,
+      "object_name": "Thick Cloth Vest",
+      "object_type": "item",
+      "price_copper": 2270,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Vest",
+        "22",
+        "17",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Cloth Armor",
+        "22 70"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 201,
+      "object_name": "Thick Cloth Pants",
+      "object_type": "item",
+      "price_copper": 2278,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Pants",
+        "22",
+        "17",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Cloth Armor",
+        "22 78"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 202,
+      "object_name": "Thick Cloth Shoes",
+      "object_type": "item",
+      "price_copper": 1714,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Shoes",
+        "22",
+        "17",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Cloth Armor",
+        "17 14"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 203,
+      "object_name": "Thick Cloth Gloves",
+      "object_type": "item",
+      "price_copper": 1147,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Gloves",
+        "22",
+        "17",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Cloth Armor",
+        "11 47"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 236,
+      "object_name": "Cured Leather Armor",
+      "object_type": "item",
+      "price_copper": 2795,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Armor",
+        "22",
+        "17",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Leather Armor",
+        "27 95"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 237,
+      "object_name": "Cured Leather Pants",
+      "object_type": "item",
+      "price_copper": 2805,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Pants",
+        "22",
+        "17",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "28 5"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 238,
+      "object_name": "Cured Leather Boots",
+      "object_type": "item",
+      "price_copper": 2112,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Boots",
+        "22",
+        "17",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "21 12"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 239,
+      "object_name": "Cured Leather Gloves",
+      "object_type": "item",
+      "price_copper": 1413,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Gloves",
+        "22",
+        "17",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Leather Armor",
+        "14 13"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1849,
+      "object_name": "Cured Leather Belt",
+      "object_type": "item",
+      "price_copper": 1388,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Belt",
+        "22",
+        "17",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Leather Armor",
+        "13 88"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1850,
+      "object_name": "Cured Leather Bracers",
+      "object_type": "item",
+      "price_copper": 1393,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Bracers",
+        "22",
+        "17",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "13 93"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3597,
+      "object_name": "Thick Cloth Belt",
+      "object_type": "item",
+      "price_copper": 1081,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Belt",
+        "22",
+        "17",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "10 81"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3598,
+      "object_name": "Thick Cloth Bracers",
+      "object_type": "item",
+      "price_copper": 1085,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Thick Cloth Bracers",
+        "22",
+        "17",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Cloth Armor",
+        "10 85"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4794,
+      "object_name": "Wolf Bracers",
+      "object_type": "item",
+      "price_copper": 3515,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Wolf Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 15"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4795,
+      "object_name": "Bear Bracers",
+      "object_type": "item",
+      "price_copper": 3528,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Bear Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4796,
+      "object_name": "Owl Bracers",
+      "object_type": "item",
+      "price_copper": 3540,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3492",
+      "subject_id": 3492,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Owl Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 40"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3492",
+  "url": "https://www.wowhead.com/forever/npc=3492"
+}

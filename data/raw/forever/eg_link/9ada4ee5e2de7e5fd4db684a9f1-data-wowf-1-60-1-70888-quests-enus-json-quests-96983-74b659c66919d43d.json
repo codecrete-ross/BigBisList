@@ -1,0 +1,69 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/96983"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 276336,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/96983",
+      "subject_id": 96983,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T21:22:27.652188+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "Yashiro's Windwalk",
+        "side": "Both",
+        "source_content_digest": "058c38a838bea67efa5d4548fb0577061f54f2e8f2c335edd1eb5f8144e0957d",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96983",
+        "zone": "Mount Hyjal"
+      },
+      {
+        "client_build": "1.60.1.70888",
+        "fetched_at": "2026-11-12T22:28:21.1080560Z",
+        "linked_reward_ids": [
+          276335,
+          276336
+        ],
+        "min_level": 56,
+        "name": "Yashiro's Windwalk",
+        "side": null,
+        "source_content_digest": "4a99cffa16caec945bc10f529a683fb7f1db3e7a27f412226fcccb0bd44b7717",
+        "source_url": "https://www.60.tools/quests/96983-yashiros-windwalk",
+        "zone": "Mount Hyjal"
+      }
+    ],
+    "name": "Yashiro's Windwalk",
+    "observation_count": 3,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 96983,
+    "reported_min_level": 56,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "276336": "choices"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/96983"
+}

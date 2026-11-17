@@ -1,0 +1,138 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Silk Mantle Item Level 71 Binds when picked up Shoulder Cloth 75 Armor +21 Stamina +11 Intellect +4 Spirit +60 Armor Durability 50 / 50 Classes: Mage Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 15 . Lieutenant Commander's Regalia (0/6) Knight-Captain's Silk Legguards Knight-Captain's Silk Tunic Item #227116 Knight-Lieutenant's Silk Walkers Lieutenant Commander's Silk Cowl Lieutenant Commander's Silk Mantle (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Reduces the cooldown of your Blink spell by 2 sec. (6) Set : +20 Stamina. Sell Price: 1 29 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227102,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 227102,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Silk Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23025,
+        "text": "Reduces the cooldown of your Blink spell by 2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 11.0,
+      "spell_power": 15.0,
+      "spirit": 4.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227102"
+  },
+  "linked_entities": [
+    {
+      "id": 227102,
+      "name": "Lieutenant Commander's Silk Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227102"
+    },
+    {
+      "id": 227103,
+      "name": "Lieutenant Commander's Silk Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227103"
+    },
+    {
+      "id": 227108,
+      "name": "Knight-Captain's Silk Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227108"
+    },
+    {
+      "id": 227109,
+      "name": "Knight-Captain's Silk Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227109"
+    },
+    {
+      "id": 227112,
+      "name": "Knight-Lieutenant's Silk Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227112"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23025,
+      "name": "Reduces the cooldown of your Blink spell by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23025"
+    }
+  ],
+  "name": "Lieutenant Commander's Silk Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "783a809e7cdef56d28da2c0268d2866d723441dddd7a486cbf73b0aa91a7ab03",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227102",
+  "url": "https://www.wowhead.com/forever/item=227102"
+}

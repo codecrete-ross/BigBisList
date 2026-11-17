@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Kreeg's Mug Item Level 60 Binds when picked up Held In Off-hand +10 Stamina -20 Intellect +6 Spirit Requires Level 55 Equip: Reduces the hit chance of Fear effects against you by 10%. Sell Price: 1 98 96 Dropped by: Stomper Kreeg Drop Chance: 89.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T03:49:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 18425,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Fear effects against you by 10%.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Fear effects against you by 10%."
+    ],
+    "id": 18425,
+    "item_level": 60,
+    "name": "Kreeg's Mug",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 6.0,
+      "stamina": 10.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18425"
+  },
+  "linked_entities": [
+    {
+      "id": 1302346,
+      "name": "Reduces the hit chance of Fear effects against you by 10%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302346"
+    }
+  ],
+  "name": "Kreeg's Mug",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 89.86,
+      "entity_name": "Stomper Kreeg",
+      "source_url": "https://www.wowhead.com/forever/item=18425",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "863c8ecd3bdd278374d8e2b8fa1de9012daf15fc7b0137d5c468a6f7548e4d19",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18425",
+  "url": "https://www.wowhead.com/forever/item=18425"
+}

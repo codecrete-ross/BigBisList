@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Primal Hakkari Sash Item Level 1 Binds when picked up Classes: Priest , Warlock , Druid \"A legendary Paragon of Power from the old Gurubashi Empire.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T05:26:29.0173266Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 19720,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19720,
+    "item_level": 1,
+    "name": "Primal Hakkari Sash",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Warlock",
+        "Druid"
+      ]
+    },
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19720"
+  },
+  "linked_entities": [],
+  "name": "Primal Hakkari Sash",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "9dd90ebfc244e5c0d920863cefdaa53dce4a886d9db419cfbf39b0f4ea5b370f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19720",
+  "url": "https://www.wowhead.com/forever/item=19720"
+}

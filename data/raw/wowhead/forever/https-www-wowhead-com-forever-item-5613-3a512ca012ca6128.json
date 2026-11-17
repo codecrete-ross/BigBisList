@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of the Purifier Item Level 23 Binds when picked up Two-Hand Staff 33 - 50 Damage Speed 3.70 (11.22 damage per second) +8 Spirit Durability 70 / 70 Equip: Increases damage and healing done by magical spells and effects by up to 16 . Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (5 Min Cooldown) 3 Charges Sell Price: 26 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 5613,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 11.22,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 5613,
+    "item_level": 23,
+    "name": "Staff of the Purifier",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 16.0,
+      "spirit": 8.0
+    },
+    "use_effects": [
+      "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (5 Min Cooldown) 3 Charges"
+    ],
+    "weapon_max_damage": 50,
+    "weapon_min_damage": 33,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5613"
+  },
+  "linked_entities": [
+    {
+      "id": 14134,
+      "name": "Purifies the friendly target, removing 1 disease effect and 1 poison effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14134"
+    }
+  ],
+  "name": "Staff of the Purifier",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5613",
+  "url": "https://www.wowhead.com/forever/item=5613"
+}

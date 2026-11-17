@@ -3,7 +3,29 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or "BigBiSList"
 BigBiSList.displayName = "Big BiS List"
-BigBiSList.maxLevelingLevel = 69
+local datasetMeta = BigBiSListData and BigBiSListData.meta or {}
+BigBiSList.flavor = datasetMeta.flavor or "anniversary"
+BigBiSList.isForever = BigBiSList.flavor == "forever"
+BigBiSList.supportsLeveling = not BigBiSList.isForever or datasetMeta.supports_leveling == true
+BigBiSList.maxLevelingLevel = (datasetMeta.level_cap or 70) - 1
+
+function BigBiSList.IsReadableValue(value)
+    return not issecretvalue or not issecretvalue(value)
+end
+
+local function activeAccountDB()
+    if BigBiSList.isForever then
+        return BigBiSListDB and BigBiSListDB.forever
+    end
+    return BigBiSListDB
+end
+
+local function activeCharacterDB()
+    if BigBiSList.isForever then
+        return BigBiSListCharDB and BigBiSListCharDB.forever
+    end
+    return BigBiSListCharDB
+end
 
 local function addonMetadata(field)
     if C_AddOns and C_AddOns.GetAddOnMetadata then
@@ -31,7 +53,7 @@ local DEFAULT_CONTENT_MODE = "endgame"
 
 local CONTENT_MODES = {
     endgame = true,
-    leveling = true,
+    leveling = BigBiSList.supportsLeveling,
 }
 
 local ENDGAME_PHASE_KEYS = {
@@ -43,6 +65,13 @@ local ENDGAME_PHASE_KEYS = {
     SWP = true,
 }
 
+if BigBiSList.isForever then
+    ENDGAME_PHASE_KEYS = {}
+    for _, phase in ipairs(BigBiSListData.phases or {}) do
+        ENDGAME_PHASE_KEYS[phase.key] = true
+    end
+end
+
 local MODE_DEFAULT_TABS = {
     endgame = "Upgrades",
     leveling = "Gear Guide",
@@ -53,7 +82,7 @@ local MODE_TABS = {
         Upgrades = true,
         ["By Slot"] = true,
         Equipped = true,
-        Enhance = true,
+        Enhance = not BigBiSList.isForever,
         Wishlist = true,
         Settings = true,
     },
@@ -262,6 +291,7 @@ BigBiSList.defaults = {
             items = {},
             links = {},
         },
+        tooltipTalentSpecs = {},
         wishlist = {},
         ignoredItems = {},
     },
@@ -321,7 +351,7 @@ local function normalizeContentModeState(char)
     char.selection = char.selection or {}
     local selection = char.selection
     local legacyLevelingPhase = selection.phase == LEVELING_PHASE_KEY or char.selectedPhase == LEVELING_PHASE_KEY
-    local mode = legacyLevelingPhase and "leveling" or normalizeContentMode(selection.mode)
+    local mode = normalizeContentMode(legacyLevelingPhase and "leveling" or selection.mode)
     local activeTab = normalizeTabName(selection.tab or char.selectedTab)
 
     if type(selection.lastTabs) ~= "table" then
@@ -604,7 +634,7 @@ local function migrateLevelingLevel(char)
 end
 
 local function playerClassFromToken(classToken)
-    if type(classToken) ~= "string" then
+    if not BigBiSList.IsReadableValue(classToken) or type(classToken) ~= "string" then
         return nil
     end
 
@@ -648,7 +678,7 @@ local function specNameForClass(className, specName)
         end
     end
 
-    local alias = SPEC_NAME_ALIASES[className] and SPEC_NAME_ALIASES[className][normalized]
+    local alias = not BigBiSList.isForever and SPEC_NAME_ALIASES[className] and SPEC_NAME_ALIASES[className][normalized]
     if alias then
         for _, spec in ipairs(specsForClass(className)) do
             if spec.name == alias then
@@ -681,13 +711,52 @@ function BigBiSList:DetectPlayerClass()
     return nil
 end
 
+local function strongestForeverTalentGroup()
+    local configID = C_ClassTalents.GetActiveConfigID()
+    local config = configID and C_Traits.GetConfigInfo(configID)
+    if not config or not config.treeIDs or #config.treeIDs ~= 1 then return nil end
+
+    local groupIDs, groupNames = {}, {}
+    local display = C_Traits.GetGroupDisplayInfoByTreeID(config.treeIDs[1])
+    for _, group in ipairs(display) do
+        groupIDs[#groupIDs + 1] = group.groupID
+        groupNames[group.groupID] = group.displayName
+    end
+    if #groupIDs == 0 then return nil end
+
+    local strongest, mostSpent = nil, 0
+    for _, group in ipairs(C_Traits.GetGroupCurrencyInfo(configID, groupIDs)) do
+        local name = groupNames[group.traitNodeGroupID]
+        local currency = group.currencyInfos and group.currencyInfos[1]
+        local spent = currency and currency.spent
+        if name and BigBiSList.IsReadableValue(spent) and type(spent) == "number" then
+            if spent > mostSpent then
+                strongest, mostSpent = name, spent
+            elseif spent > 0 and spent == mostSpent then
+                strongest = nil
+            end
+        end
+    end
+    return strongest, display
+end
+
 function BigBiSList:DetectPlayerSpec(className)
-    if not className or not GetNumTalentTabs or not GetTalentTabInfo then
+    if not className then return nil end
+    if self.isForever then
+        if not C_ClassTalents or not C_Traits then return nil end
+        local ok, groupName, display = pcall(strongestForeverTalentGroup)
+        if ok and self.IsReadableValue(groupName) then
+            return specNameForClass(className, groupName), display
+        end
+        return nil
+    end
+
+    if not GetNumTalentTabs or not GetTalentTabInfo then
         return nil
     end
 
     local ok, tabCount = pcall(GetNumTalentTabs)
-    if not ok or type(tabCount) ~= "number" then
+    if not ok or not self.IsReadableValue(tabCount) or type(tabCount) ~= "number" then
         return nil
     end
 
@@ -698,7 +767,8 @@ function BigBiSList:DetectPlayerSpec(className)
         local tabOk, first, second, third, fourth, fifth = pcall(GetTalentTabInfo, tabIndex)
         local tabName = type(first) == "string" and first or second
         local pointsSpent = type(third) == "number" and third or fifth
-        if tabOk and type(tabName) == "string" and type(pointsSpent) == "number" then
+        if tabOk and self.IsReadableValue(tabName) and self.IsReadableValue(pointsSpent)
+            and type(tabName) == "string" and type(pointsSpent) == "number" then
             if pointsSpent > selectedPoints then
                 selectedTabName = tabName
                 selectedPoints = pointsSpent
@@ -723,15 +793,23 @@ function BigBiSList:GetDetectedPlayerSelection()
     end
 
     local detectedSpec = self:DetectPlayerSpec(className)
+    local specDetected = detectedSpec ~= nil
+    if BigBiSList.isForever then
+        local selection = activeCharacterDB() and activeCharacterDB().selection
+        if selection and selection.class == className then
+            detectedSpec = detectedSpec or specNameForClass(className, selection.spec)
+        end
+    end
 
     return {
         class = className,
         spec = detectedSpec or firstSpecNameForClass(className),
-        specDetected = detectedSpec ~= nil,
+        specDetected = specDetected,
     }
 end
 
 function clampLevel(value)
+    if not BigBiSList.IsReadableValue(value) then return nil end
     local level = tonumber(value)
     if not level then
         return nil
@@ -755,10 +833,74 @@ function BigBiSList:GetDetectedPlayerLevel()
     return nil
 end
 
+function BigBiSList:GetTooltipPlayerContext()
+    if not self.isForever then return nil end
+    local character = self:GetCharacterDB()
+    local cached = self.tooltipPlayerContext
+    if cached and cached.character == character then return cached end
+
+    local class = self:DetectPlayerClass()
+    local ok, level = pcall(UnitLevel, "player")
+    if not class or not ok or not self.IsReadableValue(level) or type(level) ~= "number" or not (level >= 1) then return nil end
+    local cap = self.maxLevelingLevel + 1
+    level = math.min(cap, math.floor(level))
+
+    local groupAPI = C_SpecializationInfo and C_SpecializationInfo.GetActiveSpecGroup
+    local groupOK, group = pcall(groupAPI)
+    local countOK, count = pcall(GetNumSpecGroups)
+    local dual = countOK and self.IsReadableValue(count) and count == 2
+    if not groupOK or not self.IsReadableValue(group) or (group ~= 1 and group ~= 2) then
+        group = not dual and 1 or nil
+    end
+    dual = dual or group == 2
+    local remembered = character.tooltipTalentSpecs
+    local active, display = self:DetectPlayerSpec(class)
+    if group and active then remembered[group] = active end
+    active = active or (group and specNameForClass(class, remembered[group]))
+    local secondary = dual and group and specNameForClass(class, remembered[3 - group])
+
+    local icons = {}
+    if self.IsReadableValue(display) and type(display) == "table" then
+        for _, groupInfo in ipairs(display) do
+            local icon = groupInfo.icon
+            local name = self.IsReadableValue(groupInfo.displayName) and specNameForClass(class, groupInfo.displayName)
+            if name and self.IsReadableValue(icon) and type(icon) == "number" and icon > 0 then icons[name] = icon end
+        end
+    end
+    local specs, seen = {}, {}
+    local function add(spec, role)
+        if spec and not seen[spec] then
+            specs[#specs + 1] = { name = spec, role = role, icon = icons[spec] }
+            seen[spec] = true
+        end
+    end
+    add(active, "active")
+    add(secondary, "dual")
+    for _, spec in ipairs(specsForClass(class)) do add(spec.name, "other") end
+
+    cached = { character = character, class = class, spec = active, specs = specs, level = level,
+        phase = level == cap and "PR" or LEVELING_PHASE_KEY }
+    self.tooltipPlayerContext = cached
+    return cached
+end
+
+if BigBiSList.isForever then
+    BigBiSList.defaults.profile.gearHighlights = {
+        quest = true, vendor = true, loot = true, roll = true, auction = true,
+        trade = true, mail = true, crafting = true, bags = true, bank = true, animate = true,
+    }
+end
+
+function BigBiSList:RefreshTooltipPlayerContext()
+    self.tooltipPlayerContext = nil
+    self:GetTooltipPlayerContext()
+    if self.AcquisitionHighlights then self.AcquisitionHighlights:ScheduleRefresh() end
+end
+
 function BigBiSList:ApplyDetectedPlayerLevel()
     self:EnsureDatabase()
 
-    local char = BigBiSListCharDB
+    local char = activeCharacterDB()
     char.leveling = char.leveling or {}
     local detectedLevel = self:GetDetectedPlayerLevel()
     local selectedLevel = clampLevel(char.leveling.selectedLevel)
@@ -790,22 +932,22 @@ end
 function BigBiSList:GetSelectedLevelingLevel()
     self:EnsureDatabase()
     self:ApplyDetectedPlayerLevel()
-    return clampLevel(BigBiSListCharDB.leveling and BigBiSListCharDB.leveling.selectedLevel) or MAX_LEVELING_LEVEL
+    return clampLevel(activeCharacterDB().leveling and activeCharacterDB().leveling.selectedLevel) or MAX_LEVELING_LEVEL
 end
 
 function BigBiSList:SetSelectedLevelingLevel(level, manual)
     self:EnsureDatabase()
-    BigBiSListCharDB.leveling = BigBiSListCharDB.leveling or {}
-    BigBiSListCharDB.leveling.selectedLevel = clampLevel(level) or MAX_LEVELING_LEVEL
+    activeCharacterDB().leveling = activeCharacterDB().leveling or {}
+    activeCharacterDB().leveling.selectedLevel = clampLevel(level) or MAX_LEVELING_LEVEL
     if manual then
-        BigBiSListCharDB.leveling.manualLevel = true
+        activeCharacterDB().leveling.manualLevel = true
         self:ApplyDetectedPlayerLevel()
     end
 end
 
 function BigBiSList:ResetLevelAutoSelection()
     self:EnsureDatabase()
-    BigBiSListCharDB.leveling.manualLevel = false
+    activeCharacterDB().leveling.manualLevel = false
     return self:ApplyDetectedPlayerLevel()
 end
 
@@ -907,11 +1049,11 @@ local function ensureTooltipSpecFilters(db)
 end
 
 function BigBiSList:EnsureTooltipSpecFilters()
-    if not BigBiSListDB or not BigBiSListDB.profile or not BigBiSListDB.profile.tooltips then
+    if not activeAccountDB() or not activeAccountDB().profile or not activeAccountDB().profile.tooltips then
         return nil
     end
 
-    return ensureTooltipSpecFilters(BigBiSListDB)
+    return ensureTooltipSpecFilters(activeAccountDB())
 end
 
 function BigBiSList:GetTooltipSpecFilterKey(specFilters)
@@ -950,9 +1092,9 @@ end
 function BigBiSList:ApplyDetectedPlayerSelection()
     self:EnsureDatabase()
 
-    local changed = applyDetectedPlayerSelection(BigBiSListCharDB)
+    local changed = applyDetectedPlayerSelection(activeCharacterDB())
     if changed then
-        syncSelectionAliases(BigBiSListCharDB)
+        syncSelectionAliases(activeCharacterDB())
     end
 
     return changed
@@ -964,12 +1106,12 @@ end
 
 function BigBiSList:GetSelection()
     self:EnsureDatabase()
-    return BigBiSListCharDB.selection
+    return activeCharacterDB().selection
 end
 
 function BigBiSList:GetContentMode()
     self:EnsureDatabase()
-    return BigBiSListCharDB.selection.mode
+    return activeCharacterDB().selection.mode
 end
 
 function BigBiSList:SetContentMode(mode)
@@ -979,11 +1121,12 @@ function BigBiSList:SetContentMode(mode)
         return false
     end
 
-    local selection = BigBiSListCharDB.selection
+    local selection = activeCharacterDB().selection
     local previousMode = selection.mode
     local previousTab = selection.tab
-    setContentModeOnChar(BigBiSListCharDB, mode)
-    syncSelectionAliases(BigBiSListCharDB)
+    setContentModeOnChar(activeCharacterDB(), mode)
+    if self.isForever then activeCharacterDB().foreverModeSelected = true end
+    syncSelectionAliases(activeCharacterDB())
 
     return selection.mode ~= previousMode or selection.tab ~= previousTab
 end
@@ -991,7 +1134,7 @@ end
 function BigBiSList:GetEffectivePhaseKey(selection)
     if selection == nil then
         self:EnsureDatabase()
-        selection = BigBiSListCharDB.selection
+        selection = activeCharacterDB().selection
     end
 
     if selection.mode == "leveling" or selection.phase == LEVELING_PHASE_KEY then
@@ -1007,37 +1150,37 @@ function BigBiSList:GetViewState(viewName)
     self:EnsureDatabase()
 
     if viewName == nil then
-        viewName = BigBiSListCharDB.selection.tab
+        viewName = activeCharacterDB().selection.tab
     end
     local viewKey = normalizeViewStateKey(viewName)
-    return viewKey and BigBiSListCharDB.viewState[viewKey] or nil
+    return viewKey and activeCharacterDB().viewState[viewKey] or nil
 end
 
 function BigBiSList:IsInspectorVisible()
     self:EnsureDatabase()
-    return BigBiSListDB.profile.window.inspectorVisible == true
+    return activeAccountDB().profile.window.inspectorVisible == true
 end
 
 function BigBiSList:SetInspectorVisible(visible)
     self:EnsureDatabase()
-    BigBiSListDB.profile.window.inspectorVisible = visible ~= false
+    activeAccountDB().profile.window.inspectorVisible = visible ~= false
 end
 
 function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     self:EnsureDatabase()
 
-    local selection = BigBiSListCharDB.selection
+    local selection = activeCharacterDB().selection
     if className then
         selection.class = className
-        BigBiSListCharDB.selectedClass = className
+        activeCharacterDB().selectedClass = className
     end
     if specName then
         selection.spec = specName
-        BigBiSListCharDB.selectedSpec = specName
+        activeCharacterDB().selectedSpec = specName
     end
     if phaseKey then
         if phaseKey == LEVELING_PHASE_KEY then
-            setContentModeOnChar(BigBiSListCharDB, "leveling")
+            setContentModeOnChar(activeCharacterDB(), "leveling")
         elseif isEndgamePhaseKey(phaseKey) then
             selection.phase = phaseKey
         end
@@ -1050,15 +1193,19 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
         end
     end
 
-    syncSelectionAliases(BigBiSListCharDB)
+    syncSelectionAliases(activeCharacterDB())
     if (className or specName) and self.classSpecAutoSelectionActive == false then
-        reconcileClassSpecAutoSelection(BigBiSListCharDB, self:GetDetectedPlayerSelection())
+        reconcileClassSpecAutoSelection(activeCharacterDB(), self:GetDetectedPlayerSelection())
     end
+end
+
+function BigBiSList:GetAccountDB()
+    return self:EnsureDatabase()
 end
 
 function BigBiSList:GetCharacterDB()
     self:EnsureDatabase()
-    return BigBiSListCharDB
+    return activeCharacterDB()
 end
 
 local initializedAccountDB
@@ -1066,9 +1213,9 @@ local initializedProfileDB
 local initializedCharacterDB
 
 local function databaseInitializationIsCurrent(addon)
-    local accountDB = BigBiSListDB
+    local accountDB = activeAccountDB()
     local profileDB = type(accountDB) == "table" and accountDB.profile or nil
-    local characterDB = BigBiSListCharDB
+    local characterDB = activeCharacterDB()
 
     if accountDB ~= initializedAccountDB
         or profileDB ~= initializedProfileDB
@@ -1082,6 +1229,12 @@ local function databaseInitializationIsCurrent(addon)
         or accountDB.char ~= nil then
         return false
     end
+    if addon.isForever and addon.supportsLeveling and not characterDB.foreverLevelingMigrated then
+        local ok, level = pcall(UnitLevel or function() return nil end, "player")
+        if ok and addon.IsReadableValue(level) and type(level) == "number" and level > 0 then
+            return false
+        end
+    end
 
     local tooltips = profileDB.tooltips
     if addon.GetClassSpecIndex
@@ -1092,42 +1245,57 @@ local function databaseInitializationIsCurrent(addon)
 end
 
 function BigBiSList:EnsureDatabase()
-    local accountDB = BigBiSListDB
+    local accountDB = activeAccountDB()
     if databaseInitializationIsCurrent(self) then
         return accountDB
     end
 
     BigBiSListDB = BigBiSListDB or {}
-    BigBiSListDB.profile = BigBiSListDB.profile or {}
-    BigBiSListDB.char = nil
     BigBiSListCharDB = BigBiSListCharDB or {}
+    if self.isForever then
+        if type(BigBiSListDB.forever) ~= "table" then BigBiSListDB.forever = {} end
+        if type(BigBiSListCharDB.forever) ~= "table" then BigBiSListCharDB.forever = {} end
+    end
+    accountDB = activeAccountDB()
+    local characterDB = activeCharacterDB()
+    accountDB.profile = accountDB.profile or {}
+    accountDB.char = nil
 
-    local profilePreviousVersion = BigBiSListDB.profile.defaultsVersion
-    local charPreviousVersion = BigBiSListCharDB.defaultsVersion
+    local profilePreviousVersion = accountDB.profile.defaultsVersion
+    local charPreviousVersion = characterDB.defaultsVersion
 
-    migrateSelection(BigBiSListCharDB)
-    migrateMinimapSettings(BigBiSListDB)
-    applyDefaults(BigBiSListDB.profile, self.defaults.profile)
-    applyDefaults(BigBiSListCharDB, self.defaults.char)
-    migrateSelection(BigBiSListCharDB)
-    migrateLegacyDefaults(BigBiSListCharDB, charPreviousVersion)
-    normalizeContentModeState(BigBiSListCharDB)
-    migrateViewState(BigBiSListCharDB, charPreviousVersion)
-    migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
-    migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
-    migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
-    migrateWorkspaceFilters(BigBiSListCharDB, charPreviousVersion)
-    migrateLevelingLevel(BigBiSListCharDB)
-    BigBiSListCharDB.manualClassSpecSelection = nil
-    ensureTooltipSpecFilters(BigBiSListDB)
+    migrateSelection(characterDB)
+    migrateMinimapSettings(accountDB)
+    applyDefaults(accountDB.profile, self.defaults.profile)
+    applyDefaults(characterDB, self.defaults.char)
+    migrateSelection(characterDB)
+    migrateLegacyDefaults(characterDB, charPreviousVersion)
+    normalizeContentModeState(characterDB)
+    migrateViewState(characterDB, charPreviousVersion)
+    migrateTooltipSpecFilterDefaults(accountDB, profilePreviousVersion)
+    migrateSplitDropSourceFilter(characterDB, charPreviousVersion)
+    migrateFacetedFilters(characterDB, charPreviousVersion)
+    migrateWorkspaceFilters(characterDB, charPreviousVersion)
+    migrateLevelingLevel(characterDB)
+    if self.isForever and self.supportsLeveling and not characterDB.foreverLevelingMigrated then
+        local ok, level = pcall(UnitLevel or function() return nil end, "player")
+        if ok and self.IsReadableValue(level) and type(level) == "number" and level > 0 then
+            if not characterDB.foreverModeSelected then
+                setContentModeOnChar(characterDB, level < 60 and "leveling" or "endgame")
+            end
+            characterDB.foreverLevelingMigrated = true
+        end
+    end
+    characterDB.manualClassSpecSelection = nil
+    ensureTooltipSpecFilters(accountDB)
 
-    syncSelectionAliases(BigBiSListCharDB)
-    BigBiSListDB.profile.defaultsVersion = DEFAULTS_VERSION
-    BigBiSListCharDB.defaultsVersion = DEFAULTS_VERSION
+    syncSelectionAliases(characterDB)
+    accountDB.profile.defaultsVersion = DEFAULTS_VERSION
+    characterDB.defaultsVersion = DEFAULTS_VERSION
 
-    initializedAccountDB = BigBiSListDB
-    initializedProfileDB = BigBiSListDB.profile
-    initializedCharacterDB = BigBiSListCharDB
+    initializedAccountDB = accountDB
+    initializedProfileDB = accountDB.profile
+    initializedCharacterDB = characterDB
 
-    return BigBiSListDB
+    return accountDB
 end

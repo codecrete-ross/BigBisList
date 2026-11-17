@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 920,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:27:00.293Z",
+  "flavor": "forever",
+  "name": "Tenaron's Summons",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 3514,
+        "name": "Tenaron Stormgrip"
+      },
+      "start": {
+        "entity_id": 2082,
+        "name": "Gilshalan Windwalker"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Teldrassil"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=920"
+}

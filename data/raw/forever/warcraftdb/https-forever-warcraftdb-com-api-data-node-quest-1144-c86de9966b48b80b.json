@@ -1,0 +1,63 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1144"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:51.585923+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 6748,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1144",
+      "subject_id": 1144,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 6749,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1144",
+      "subject_id": 1144,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 6750,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1144",
+      "subject_id": 1144,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 274078,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1144",
+      "subject_id": 1144,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 22,
+    "name": "Willix the Importer",
+    "quest_id": 1144,
+    "reward_item_roles": {
+      "6748": "choices",
+      "6749": "choices",
+      "6750": "choices",
+      "274078": "choices"
+    },
+    "side": "Both",
+    "zone": "Razorfen Kraul"
+  },
+  "source_content_digest": "cc1085914b75b474446e61b6ddf3651f3541d5038d4772213b9e0d9853a5ea18",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1144"
+}

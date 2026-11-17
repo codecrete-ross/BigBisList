@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scarlet Forgemaster's Bindings Item Level 64 Binds when picked up Wrist Plate 292 Armor +11 Agility +11 Stamina Requires Level 59 Equip: + 33 Attack Power against Undead. Sell Price: 2 17 65",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:33.8807281Z",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 284091,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 292,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +33 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +33 Attack Power against Undead."
+    ],
+    "id": 284091,
+    "item_level": 64,
+    "name": "Scarlet Forgemaster's Bindings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 59,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284091"
+  },
+  "linked_entities": [],
+  "name": "Scarlet Forgemaster's Bindings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4cf1740a9f3269d051868d591ea490e454adc88394e92dc8e20b0b50cc220a13",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284091",
+  "url": "https://www.wowhead.com/forever/item=284091"
+}

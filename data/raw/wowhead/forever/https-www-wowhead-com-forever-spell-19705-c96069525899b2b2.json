@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Well Fed Instant",
+  "entity_id": 19705,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:31+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 19705,
+      "name": "Well Fed",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19705"
+    }
+  ],
+  "name": "Well Fed",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8e1ccc6878855453a385d440d484514ff3a99de787096d38a257f7aecb6e0579",
+  "spell_id": 19705,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/19705",
+  "url": "https://www.wowhead.com/forever/spell=19705"
+}

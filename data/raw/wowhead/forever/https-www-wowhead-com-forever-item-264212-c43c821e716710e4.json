@@ -1,0 +1,136 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Schematic: EZ-Thro Bronze Mortar Item Level 38 Requires Engineering (190) Use: Teaches you how to make EZ-Thro Bronze Mortar. Sell Price: 6",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Trinket",
+      "item_id": 260802,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 260802,
+        "name": "EZ-Thro Bronze Mortar",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "common",
+        "slot": "Trinket",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=260802"
+      },
+      "name": "EZ-Thro Bronze Mortar",
+      "normalized_requirements": [],
+      "quality": "common",
+      "url": "https://www.wowhead.com/forever/item=260802"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T02:02:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 264212,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make EZ-Thro Bronze Mortar.",
+        "type": "use"
+      }
+    ],
+    "id": 264212,
+    "item_level": 38,
+    "name": "Schematic: EZ-Thro Bronze Mortar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make EZ-Thro Bronze Mortar."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=264212"
+  },
+  "linked_entities": [
+    {
+      "id": 2319,
+      "name": "Medium Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2319"
+    },
+    {
+      "id": 4371,
+      "name": "Bronze Tube",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4371"
+    },
+    {
+      "id": 4377,
+      "name": "Heavy Blasting Powder",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4377"
+    },
+    {
+      "id": 4387,
+      "name": "Iron Strut",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4387"
+    },
+    {
+      "id": 260801,
+      "name": "EZ-Thro Fireproof Fuse",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=260801"
+    },
+    {
+      "id": 260802,
+      "name": "EZ-Thro Bronze Mortar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=260802"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 1266915,
+      "name": "Teaches you how to make EZ-Thro Bronze Mortar.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1266915"
+    },
+    {
+      "id": 1269268,
+      "name": "Inflicts 85 to 115 Fire damage and stuns targets in a 5 yd radius for 2 sec. Any damage will break the effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1269268"
+    }
+  ],
+  "name": "Schematic: EZ-Thro Bronze Mortar",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: EZ-Thro Bronze Mortar Item Level 38 Requires Engineering (190) Use: Teaches you how to make EZ-Thro Bronze Mortar. Sell Price: 6",
+      "scope": "equip_or_use",
+      "skill": 190,
+      "source_url": "https://www.wowhead.com/forever/item=264212",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "b3caaf2cd0e697a90c659d5919c97422b2eaa6acd6b3d42d4f0533e55f997fc8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1266915
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/264212",
+  "url": "https://www.wowhead.com/forever/item=264212"
+}

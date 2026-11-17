@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lifestone Item Level 56 Binds when equipped Unique-Equipped Trinket Restores + 15 health per 5 sec. Requires Level 51 Use: Restores 640 to 960 Health, increased by 1% for each 1% of your Health missing. (8 Min Cooldown) Sell Price: 2 14 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 833,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 640 to 960 Health, increased by 1% for each 1% of your Health missing. (8 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +15 health per 5 sec.",
+        "stats": {
+          "hp5": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 833,
+    "item_level": 56,
+    "name": "Lifestone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 51,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hp5": 15.0
+    },
+    "use_effects": [
+      "Use: Restores 640 to 960 Health, increased by 1% for each 1% of your Health missing. (8 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=833"
+  },
+  "linked_entities": [
+    {
+      "id": 17712,
+      "name": "Restores 640 to 960 Health, increased by 1% for each 1% of your Health missing.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17712"
+    }
+  ],
+  "name": "Lifestone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "9f07501bc38b3a4267cca79bbeab044090a571fbf5198ff1d0d60931cf2e1fb2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/833",
+  "url": "https://www.wowhead.com/forever/item=833"
+}

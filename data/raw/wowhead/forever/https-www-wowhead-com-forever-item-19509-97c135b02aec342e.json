@@ -1,0 +1,61 @@
+{
+  "armor_tooltip_review": {
+    "base_armor": 180,
+    "bonus_armor": 90,
+    "collected_at": "2026-11-11T06:02:24.973631+00:00",
+    "endpoint": "https://nether.wowhead.com/forever/tooltip/item/19509",
+    "previous_evidence": {
+      "content_digest": "4f341c6c7ca571597633a1d655c591fdf5913524d1d988bd55c59b7231c1bd2a",
+      "evidence_id": "wowhead:97c135b02aec342e9dced222"
+    },
+    "source_content_digest": "defeea203a164b3c893f54c0b7b67c33199a7678334a11dae0fe1792989402bb"
+  },
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dusty Mail Boots Item Level 42 Binds when picked up Feet Mail 180 Armor +14 Stamina +90 Armor Durability 50 / 50 Requires Level 37 Sell Price: 69 76 Dropped by: High Inquisitor Fairbanks Drop Chance: 31.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 19509,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 270,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19509,
+    "item_level": 42,
+    "name": "Dusty Mail Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19509"
+  },
+  "linked_entities": [],
+  "name": "Dusty Mail Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.74,
+      "entity_name": "High Inquisitor Fairbanks",
+      "source_url": "https://www.wowhead.com/forever/item=19509",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19509",
+  "url": "https://www.wowhead.com/forever/item=19509"
+}

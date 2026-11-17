@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Chaplain's Mitre Item Level 53 Binds when equipped Head Cloth 62 Armor +22 Stamina +10 Spirit Requires Level 48 Equip: Increases healing done by magical spells and effects by up to 26 . Sell Price: 98 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 287017,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 62,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 26.",
+        "stats": {
+          "healing_power": 26
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 26."
+    ],
+    "id": 287017,
+    "item_level": 53,
+    "name": "Chaplain's Mitre",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 26.0,
+      "spirit": 10.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287017"
+  },
+  "linked_entities": [],
+  "name": "Chaplain's Mitre",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7a445836470ae16bfafa611d4654818b495739da1c52b730ec02b0fbb8cb2bf6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287017",
+  "url": "https://www.wowhead.com/forever/item=287017"
+}

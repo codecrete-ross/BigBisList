@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/6922"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:44.920333+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 16887,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6922",
+      "subject_id": 6922,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 21,
+    "name": "Baron Aquanis",
+    "quest_id": 6922,
+    "reward_item_roles": {
+      "16886": "choices",
+      "16887": "choices",
+      "270043": "choices"
+    },
+    "side": "Horde",
+    "zone": "Ashenvale"
+  },
+  "source_content_digest": "910caa890e8ce41725fc07cd812630c374174605668471cb54a69b4b83205f45",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/6922"
+}

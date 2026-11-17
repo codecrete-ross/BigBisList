@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Bileblister Boots 3 sec cast Reagents: Rugged Leather (15), Enchanted Leather (3), Essence of Air (3), Rune Thread (6) Bileblister Boots Item Level 58 Binds when equipped Feet Leather 114 Armor +8 Spirit +8 Nature Resistance Requires Level 53 Equip: Increases damage and healing done by magical spells and effects by up to 22 . Sell Price: 1 74 51",
+  "entity_id": 1297128,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:31+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7082,
+      "name": "Essence of Air",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7082"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 275612,
+      "name": "Bileblister Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=275612"
+    },
+    {
+      "id": 1297128,
+      "name": "Bileblister Boots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297128"
+    }
+  ],
+  "name": "Bileblister Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 275612,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1297128",
+      "subject_id": 1297128,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1297128,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1297128",
+  "url": "https://www.wowhead.com/forever/spell=1297128"
+}

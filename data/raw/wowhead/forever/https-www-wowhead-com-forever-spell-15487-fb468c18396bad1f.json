@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Silence Talent 225 Mana 20 yd range Instant 45 sec cooldown Requires Priest Silences the target, preventing them from casting spells for 5 sec and interrupting their spellcasts for 3 sec.",
+  "entity_id": 15487,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:11+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 15487,
+      "name": "Silence",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15487"
+    }
+  ],
+  "name": "Silence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "98363fc9e436b9915e297348a8e69daead25a75ac818fe39f3d3130533e968e0",
+  "spell_id": 15487,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/15487",
+  "url": "https://www.wowhead.com/forever/spell=15487"
+}

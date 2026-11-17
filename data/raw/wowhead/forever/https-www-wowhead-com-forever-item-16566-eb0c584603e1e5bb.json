@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Chain Helmet Item Level 74 Binds when picked up Unique Head Mail 382 Armor +34 Agility +28 Stamina +12 Intellect +50 Armor Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 2 99 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 16566,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 382,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 16566,
+    "item_level": 74,
+    "name": "Warlord's Chain Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "crit_percent": 1.0,
+      "intellect": 12.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16566"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Chain Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16566",
+  "url": "https://www.wowhead.com/forever/item=16566"
+}

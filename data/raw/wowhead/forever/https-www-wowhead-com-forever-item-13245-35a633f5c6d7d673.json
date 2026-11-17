@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Kresh's Back Item Level 23 Binds when picked up Off Hand Shield 528 Armor 10 Block Durability 80 / 80 Requires Level 18 Equip: Increased Defense + 5. Sell Price: 16 32 Dropped by: Kresh Drop Chance: 17.75%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 13245,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 528,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +5.",
+        "stats": {
+          "defense": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +5."
+    ],
+    "id": 13245,
+    "item_level": 23,
+    "name": "Kresh's Back",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 10.0,
+      "defense": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13245"
+  },
+  "linked_entities": [],
+  "name": "Kresh's Back",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.75,
+      "entity_name": "Kresh",
+      "source_url": "https://www.wowhead.com/forever/item=13245",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13245",
+  "url": "https://www.wowhead.com/forever/item=13245"
+}

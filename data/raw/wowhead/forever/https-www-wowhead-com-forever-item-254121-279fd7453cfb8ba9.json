@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Earthenweave Vest Item Level 59 Binds when equipped Chest Cloth 76 Armor +17 Spirit Requires Level 54 Equip: Increases healing done by up to 40 and damage done by up to 14 for all magical spells and effects. Sell Price: 1 52 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 254121,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 76,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 40 and damage done by up to 14 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 40,
+          "spell_damage": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 40 and damage done by up to 14 for all magical spells and effects."
+    ],
+    "id": 254121,
+    "item_level": 59,
+    "name": "Earthenweave Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 54,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 40.0,
+      "spell_damage": 14.0,
+      "spirit": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=254121"
+  },
+  "linked_entities": [],
+  "name": "Earthenweave Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/254121",
+  "url": "https://www.wowhead.com/forever/item=254121"
+}

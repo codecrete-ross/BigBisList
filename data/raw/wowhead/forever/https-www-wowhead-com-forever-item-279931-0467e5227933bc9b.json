@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lost Researcher's Hood Item Level 62 Binds when picked up Head Cloth 71 Armor +16 Stamina +19 Intellect +11 Nature Resistance Equip: Increases healing done by up to 29 and damage done by up to 10 for all magical spells and effects. Sell Price: 1 64 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 279931,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 71,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 29 and damage done by up to 10 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 29,
+          "spell_damage": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 29 and damage done by up to 10 for all magical spells and effects."
+    ],
+    "id": 279931,
+    "item_level": 62,
+    "name": "Lost Researcher's Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 29.0,
+      "intellect": 19.0,
+      "nature_resistance": 11.0,
+      "spell_damage": 10.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279931"
+  },
+  "linked_entities": [],
+  "name": "Lost Researcher's Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ac111aa8af43f0084ad6865f4c631eb4b840c5e4c0f960865e5402870d8e1865",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279931",
+  "url": "https://www.wowhead.com/forever/item=279931"
+}

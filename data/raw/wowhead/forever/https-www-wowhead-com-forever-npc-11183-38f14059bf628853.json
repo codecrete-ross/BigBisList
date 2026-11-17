@@ -1,0 +1,493 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Blixxrak Light Armor Merchant Level 55 Humanoid (Normal) Everlook",
+  "entity_id": 11183,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:21:01.804Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2435,
+      "name": "Embroidered Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2435"
+    },
+    {
+      "id": 2437,
+      "name": "Embroidered Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2437"
+    },
+    {
+      "id": 2438,
+      "name": "Embroidered Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2438"
+    },
+    {
+      "id": 2440,
+      "name": "Embroidered Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2440"
+    },
+    {
+      "id": 2470,
+      "name": "Reinforced Leather Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2470"
+    },
+    {
+      "id": 2471,
+      "name": "Reinforced Leather Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2471"
+    },
+    {
+      "id": 2472,
+      "name": "Reinforced Leather Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2472"
+    },
+    {
+      "id": 2473,
+      "name": "Reinforced Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2473"
+    },
+    {
+      "id": 2474,
+      "name": "Reinforced Leather Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2474"
+    },
+    {
+      "id": 2475,
+      "name": "Reinforced Leather Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2475"
+    },
+    {
+      "id": 3587,
+      "name": "Embroidered Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3587"
+    },
+    {
+      "id": 3588,
+      "name": "Embroidered Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3588"
+    },
+    {
+      "id": 3892,
+      "name": "Embroidered Hat",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3892"
+    },
+    {
+      "id": 3893,
+      "name": "Reinforced Leather Cap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3893"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 14 of 14",
+    "1 - 14 of 14"
+  ],
+  "location_name": "Winterspring",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          61.6,
+          37.8
+        ]
+      ]
+    },
+    "zone": 618
+  },
+  "name": "Blixxrak",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 55",
+    "React: A\u00a0H",
+    "Faction: Everlook",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 3,398"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2435,
+      "object_name": "Embroidered Armor",
+      "object_type": "item",
+      "price_copper": 27683,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Armor",
+        "50",
+        "45",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Cloth Armor",
+        "2 76 83"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2437,
+      "object_name": "Embroidered Pants",
+      "object_type": "item",
+      "price_copper": 27890,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Pants",
+        "50",
+        "45",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Cloth Armor",
+        "2 78 90"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2438,
+      "object_name": "Embroidered Boots",
+      "object_type": "item",
+      "price_copper": 20996,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Boots",
+        "50",
+        "45",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Cloth Armor",
+        "2 9 96"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2440,
+      "object_name": "Embroidered Gloves",
+      "object_type": "item",
+      "price_copper": 14099,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Gloves",
+        "50",
+        "45",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Cloth Armor",
+        "1 40 99"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2470,
+      "object_name": "Reinforced Leather Vest",
+      "object_type": "item",
+      "price_copper": 33952,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Vest",
+        "50",
+        "45",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Leather Armor",
+        "3 39 52"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2471,
+      "object_name": "Reinforced Leather Belt",
+      "object_type": "item",
+      "price_copper": 17040,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Belt",
+        "50",
+        "45",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Leather Armor",
+        "1 70 40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2472,
+      "object_name": "Reinforced Leather Pants",
+      "object_type": "item",
+      "price_copper": 34211,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Pants",
+        "50",
+        "45",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "3 42 11"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2473,
+      "object_name": "Reinforced Leather Boots",
+      "object_type": "item",
+      "price_copper": 25753,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Boots",
+        "50",
+        "45",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "2 57 53"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2474,
+      "object_name": "Reinforced Leather Bracers",
+      "object_type": "item",
+      "price_copper": 17233,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Bracers",
+        "50",
+        "45",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "1 72 33"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2475,
+      "object_name": "Reinforced Leather Gloves",
+      "object_type": "item",
+      "price_copper": 17298,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Gloves",
+        "50",
+        "45",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Leather Armor",
+        "1 72 98"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3587,
+      "object_name": "Embroidered Belt",
+      "object_type": "item",
+      "price_copper": 14314,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Belt",
+        "50",
+        "45",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "1 43 14"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3588,
+      "object_name": "Embroidered Bracers",
+      "object_type": "item",
+      "price_copper": 14365,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Bracers",
+        "50",
+        "45",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Cloth Armor",
+        "1 43 65"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3892,
+      "object_name": "Embroidered Hat",
+      "object_type": "item",
+      "price_copper": 21940,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Embroidered Hat",
+        "50",
+        "45",
+        "",
+        "",
+        "Head",
+        "Vendors",
+        "Cloth Armor",
+        "2 19 40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3893,
+      "object_name": "Reinforced Leather Cap",
+      "object_type": "item",
+      "price_copper": 27523,
+      "relation": "sells",
+      "required_level": 45,
+      "source_url": "https://www.wowhead.com/forever/npc=11183",
+      "subject_id": 11183,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Reinforced Leather Cap",
+        "50",
+        "45",
+        "",
+        "",
+        "Head",
+        "Vendors",
+        "Leather Armor",
+        "2 75 23"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/11183",
+  "url": "https://www.wowhead.com/forever/npc=11183"
+}

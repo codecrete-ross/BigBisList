@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sunderseer Mantle Item Level 61 Binds when picked up Shoulder Cloth 65 Armor +4 Stamina +17 Intellect +11 Spirit Durability 50 / 50 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 8 . Equip: Your spells pierce 3 Magical Resistance. Sell Price: 1 56 68 Dropped by: Crystal Fang Drop Chance: 33.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 13185,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 65,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your spells pierce 3 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+    ],
+    "id": 13185,
+    "item_level": 61,
+    "name": "Sunderseer Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spell_power": 8.0,
+      "spirit": 11.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13185"
+  },
+  "linked_entities": [],
+  "name": "Sunderseer Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.17,
+      "entity_name": "Crystal Fang",
+      "source_url": "https://www.wowhead.com/forever/item=13185",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "02d9fa3a3b7bd38f43913831d77e0baf2cba6aff8181f43f5deb4b7ef4fa4eca",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13185",
+  "url": "https://www.wowhead.com/forever/item=13185"
+}

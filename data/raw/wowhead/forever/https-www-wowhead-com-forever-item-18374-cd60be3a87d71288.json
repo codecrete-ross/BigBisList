@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Flamescarred Shoulders Item Level 62 Binds when picked up Shoulder Leather 131 Armor +11 Strength +12 Agility +10 Stamina +10 Fire Resistance Durability 60 / 60 Requires Level 57 Sell Price: 2 6 20 Dropped by: Magister Kalendris Drop Chance: 19.77%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18374,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 131,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18374,
+    "item_level": 62,
+    "name": "Flamescarred Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "fire_resistance": 10.0,
+      "stamina": 10.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18374"
+  },
+  "linked_entities": [],
+  "name": "Flamescarred Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.77,
+      "entity_name": "Magister Kalendris",
+      "source_url": "https://www.wowhead.com/forever/item=18374",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6bf557a714846cfc9f665c225436d20a6ed5317ef324892c8ab3f75f08cdddd2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18374",
+  "url": "https://www.wowhead.com/forever/item=18374"
+}

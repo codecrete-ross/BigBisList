@@ -1,0 +1,1492 @@
+{
+  "class_equipment": {
+    "Druid": {
+      "armor_types": [
+        "Cloth",
+        "Leather"
+      ],
+      "two_hand_weapon_types": [
+        "Mace",
+        "Polearm",
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Fist Weapon",
+        "Mace",
+        "Polearm",
+        "Staff"
+      ]
+    },
+    "Hunter": {
+      "armor_types": [
+        "Cloth",
+        "Leather",
+        "Mail"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Polearm",
+        "Staff",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Polearm",
+        "Staff",
+        "Sword",
+        "Thrown"
+      ]
+    },
+    "Mage": {
+      "armor_types": [
+        "Cloth"
+      ],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Staff",
+        "Sword",
+        "Wand"
+      ]
+    },
+    "Paladin": {
+      "armor_types": [
+        "Cloth",
+        "Leather",
+        "Mail",
+        "Plate"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Sword"
+      ]
+    },
+    "Priest": {
+      "armor_types": [
+        "Cloth"
+      ],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Mace",
+        "Staff",
+        "Wand"
+      ]
+    },
+    "Rogue": {
+      "armor_types": [
+        "Cloth",
+        "Leather"
+      ],
+      "two_hand_weapon_types": [],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Mace",
+        "Sword",
+        "Thrown"
+      ]
+    },
+    "Shaman": {
+      "armor_types": [
+        "Cloth",
+        "Leather",
+        "Mail"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Staff"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Dagger",
+        "Fist Weapon",
+        "Mace",
+        "Staff"
+      ]
+    },
+    "Warlock": {
+      "armor_types": [
+        "Cloth"
+      ],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Staff",
+        "Sword",
+        "Wand"
+      ]
+    },
+    "Warrior": {
+      "armor_types": [
+        "Cloth",
+        "Leather",
+        "Mail",
+        "Plate"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Staff",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Mace",
+        "Polearm",
+        "Staff",
+        "Sword",
+        "Thrown"
+      ]
+    }
+  },
+  "common_slots": [
+    "Head",
+    "Neck",
+    "Shoulder",
+    "Back",
+    "Chest",
+    "Wrist",
+    "Hands",
+    "Waist",
+    "Legs",
+    "Feet",
+    "Ring",
+    "Trinket"
+  ],
+  "live_review_status": "pending_user_acceptance",
+  "profiles": [
+    {
+      "class": "Druid",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "evidence_refs": [
+          {
+            "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
+            "evidence_id": "wowhead:9470b820f60f1d752f9f7702"
+          },
+          {
+            "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+            "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+          },
+          {
+            "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+            "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+          },
+          {
+            "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+            "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+          }
+        ],
+        "profile_digest": "037b473d1a88c953de6d248bfb2491a0d2e9f397d015d425be27631ebd7e0a0f",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
+        "reviewed_at": "2026-11-14",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-leveling-tips"
+      },
+      "review_history": [
+        {
+          "client_build": "1.60.1.70790",
+          "evidence_refs": [
+            {
+              "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
+              "evidence_id": "wowhead:9470b820f60f1d752f9f7702"
+            }
+          ],
+          "profile_digest": "860d03eddf8200c1678f173e6b547eb4104ce02d85fd1b6dd7a9529efc1834aa",
+          "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+          "reviewed_at": "2026-11-06",
+          "reviewer": "Codex (offline source review)",
+          "source_url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-leveling-tips"
+        }
+      ],
+      "role": "caster",
+      "spec": "Balance",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Idol"
+      ],
+      "weights": {
+        "arcane_damage": 1,
+        "nature_damage": 1
+      }
+    },
+    {
+      "class": "Druid",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "evidence_refs": [
+          {
+            "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+            "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+          },
+          {
+            "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+            "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+          },
+          {
+            "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+            "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+          },
+          {
+            "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+            "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+          }
+        ],
+        "profile_digest": "2aa6927204e5af0889bdc59e8a752744391666d82bd1f20296e9fb5f982f2d37",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
+        "reviewed_at": "2026-11-14",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/tank-leveling-tips"
+      },
+      "review_history": [
+        {
+          "client_build": "1.60.1.70790",
+          "evidence_refs": [
+            {
+              "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+              "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+            }
+          ],
+          "profile_digest": "bc566106ce1074020927db8719a0be318bbd44fa3d14d0f95d0552ea086d5797",
+          "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+          "reviewed_at": "2026-11-06",
+          "reviewer": "Codex (offline source review)",
+          "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/tank-leveling-tips"
+        }
+      ],
+      "role": "tank",
+      "spec": "Feral tank",
+      "weapon_slots": [
+        "Two Hand",
+        "Idol"
+      ],
+      "weights": {
+        "agility": 1.1,
+        "block_value": 0,
+        "dps": 1.5
+      }
+    },
+    {
+      "class": "Druid",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "evidence_refs": [
+          {
+            "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
+            "evidence_id": "wowhead:f9f23ac357cf2b65d8ac66af"
+          },
+          {
+            "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+            "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+          },
+          {
+            "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+            "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+          },
+          {
+            "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+            "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+          }
+        ],
+        "profile_digest": "be459b41d5ee8f7d780f80dea5235f285f12f388f6b83c5a705b9371aaa7ab94",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
+        "reviewed_at": "2026-11-14",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips"
+      },
+      "review_history": [
+        {
+          "client_build": "1.60.1.70790",
+          "evidence_refs": [
+            {
+              "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
+              "evidence_id": "wowhead:f9f23ac357cf2b65d8ac66af"
+            }
+          ],
+          "profile_digest": "49a9a4834a31f5c70219d6849a33f7d47694e4be3dd65f03a569272e074f4090",
+          "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+          "reviewed_at": "2026-11-06",
+          "reviewer": "Codex (offline source review)",
+          "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips"
+        }
+      ],
+      "role": "melee",
+      "spec": "Feral dps",
+      "weapon_slots": [
+        "Two Hand",
+        "Idol"
+      ],
+      "weights": {
+        "agility": 2,
+        "dps": 4.5
+      }
+    },
+    {
+      "class": "Druid",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "evidence_refs": [
+          {
+            "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
+            "evidence_id": "wowhead:cd5ccd2dd8a0599a8fe0c263"
+          },
+          {
+            "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+            "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+          },
+          {
+            "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+            "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+          },
+          {
+            "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+            "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+          }
+        ],
+        "profile_digest": "d4deac855cdd7bc1571023de4a3c4e38d5ef5907ea3cf859d246bdfd1c576767",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
+        "reviewed_at": "2026-11-14",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/healer-leveling-tips"
+      },
+      "review_history": [
+        {
+          "client_build": "1.60.1.70790",
+          "evidence_refs": [
+            {
+              "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
+              "evidence_id": "wowhead:cd5ccd2dd8a0599a8fe0c263"
+            }
+          ],
+          "profile_digest": "c6304268d2645d4f32d5f7fcc948a203a8d30e5e524c32fa96a21884e57b5259",
+          "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+          "reviewed_at": "2026-11-06",
+          "reviewer": "Codex (offline source review)",
+          "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/healer-leveling-tips"
+        }
+      ],
+      "role": "healer",
+      "spec": "Restoration",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Idol"
+      ],
+      "weights": {
+        "spirit": 0.65
+      }
+    },
+    {
+      "class": "Hunter",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "e0b4c8a341dec3aa1bd27aed37918ad00b2b8ceb216e3e8a7cfd254aab3817c1",
+            "evidence_id": "wowhead:127cfc77e5619de5f766ce77"
+          }
+        ],
+        "profile_digest": "1b2987af68f6083949518f99af1559a15747c5a12a34d11860291ce0dd6e75f9",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/dps-leveling-tips"
+      },
+      "role": "ranged",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Beast mastery",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "agility": 1.8
+      }
+    },
+    {
+      "class": "Hunter",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "e584d4b2c349263413b991295b23069b909180ff3ef6d482a55ea52a7f1c05f4",
+            "evidence_id": "wowhead:90e56a8e62a9e78ef37dabef"
+          }
+        ],
+        "profile_digest": "bf1051917889392c92816da60d5727fcedec08d0db844267efb52c955272f926",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/marksmanship/dps-leveling-tips"
+      },
+      "role": "ranged",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Marksmanship",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "intellect": 0.65
+      }
+    },
+    {
+      "class": "Hunter",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "64c1c44a17ddbd0e23e9cd4c03b2821d3bd62e79285057714cd725dc3e8e8746",
+            "evidence_id": "wowhead:801b470f77c36ff4a14908a7"
+          }
+        ],
+        "profile_digest": "24e97b88444e1070e8db2d8bd5dcd4943a716dbb7ab38deecc0275a4ece65dfc",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/survival/dps-leveling-tips"
+      },
+      "role": "ranged",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Survival",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "agility": 2.1,
+        "dps": 3
+      }
+    },
+    {
+      "class": "Mage",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "a9f9d4ea4b1d32512ee3f1a7922079b3c6ea7cff3ebf81f3bbaf49bcf43afdc1",
+            "evidence_id": "wowhead:380057c05f18abe6299a3a4f"
+          }
+        ],
+        "profile_digest": "a2b754201a79b3a67de16437337fa9a2c6332b7661243ddbb833d0212a4b4c3a",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Arcane",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "arcane_damage": 1,
+        "intellect": 0.95
+      }
+    },
+    {
+      "class": "Mage",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "514cd15a30de3a7677d0466d23aadcc1caaff28823f378341ae03ca833abcb6b",
+            "evidence_id": "wowhead:f1f7c1d018c7bfa9dd72c5ca"
+          }
+        ],
+        "profile_digest": "cb640f51dcf3171a735de084d502b5a6d2fe9b29affa7f8578da3189816ebfdc",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/fire/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Fire",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "crit_percent": 9,
+        "fire_damage": 1
+      }
+    },
+    {
+      "class": "Mage",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "08aec3dc34184ca8b018ed82510c7b36b3c1c082919997750990bef39a1a0403",
+            "evidence_id": "wowhead:8349bf59d332c5d070dafa1e"
+          }
+        ],
+        "profile_digest": "d22c541b7153ec048200b887152b6ad157e216f366d5619018b247c52f4b482e",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/frost/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Frost",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "frost_damage": 1
+      }
+    },
+    {
+      "class": "Paladin",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "0394abc4a264092648e56c10b83fbaf1bfb9ecf3419451b00c673caddb6498bb",
+            "evidence_id": "wowhead:5d0160f74993ef3c9f647e4b"
+          }
+        ],
+        "profile_digest": "3d58f6863b2f9b432d85df30962ba21fb5cf3975fe8b6994c9b0cc47bd9e11c2",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/holy/healer-leveling-tips"
+      },
+      "role": "healer",
+      "spec": "Holy",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Libram"
+      ],
+      "weights": {
+        "crit_percent": 8,
+        "intellect": 0.9
+      }
+    },
+    {
+      "class": "Paladin",
+      "require_shield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "b2f3815af10e69036b6a4c8c751154bd850f6c6c5f443d9d17913682671c5348",
+            "evidence_id": "wowhead:d8f4616b504129cce7990ce0"
+          }
+        ],
+        "profile_digest": "c7e8dab70b6b9719d33389229beac15ad637045c910954dccd3249641375ef8d",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/tank-leveling-tips"
+      },
+      "role": "tank",
+      "spec": "Protection",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Libram"
+      ],
+      "weights": {
+        "block_value": 0.9,
+        "spell_power": 1.1
+      }
+    },
+    {
+      "class": "Paladin",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "698edc81d8c82c4a639ce98b346cdb181551f88d048e0fabdb3abb045ca4c30c",
+            "evidence_id": "wowhead:905db3ea6e0f73854009dda5"
+          }
+        ],
+        "profile_digest": "64689ebf34110f0135ed4ea2ead9b78ab2c45de902fa3f56e57d5819472d87ef",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/retribution/dps-leveling-tips"
+      },
+      "role": "melee",
+      "spec": "Retribution",
+      "weapon_slots": [
+        "Two Hand",
+        "Libram"
+      ],
+      "weights": {
+        "dps": 5,
+        "spell_power": 0.65
+      }
+    },
+    {
+      "class": "Priest",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "37bbfaef4d4cd901c668282013380f6730a5f566faff167f19456a50339c317b",
+            "evidence_id": "wowhead:50b4254c4157d9742fddc907"
+          }
+        ],
+        "profile_digest": "23b886e8fc872e85da0f91b6aa0ab8e01323e62f2a3141e004158c88d216515c",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/healer-leveling-tips"
+      },
+      "role": "healer",
+      "spec": "Discipline",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "intellect": 0.9,
+        "spell_power": 0.65
+      }
+    },
+    {
+      "class": "Priest",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "c6e701f19f491767d08635766b62c7ca2d5268186860f160b144ae14aef44684",
+            "evidence_id": "wowhead:22c4c680c2ee4d9a85df176a"
+          }
+        ],
+        "profile_digest": "a7331519fcc409384a6428b9852f239b8a76386250776ae7ae7d35d3e92c467c",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/holy/healer-leveling-tips"
+      },
+      "role": "healer",
+      "spec": "Holy",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "spirit": 0.9
+      }
+    },
+    {
+      "class": "Priest",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "5b1200d13a2cf89604a9edb79716ede59ded2144829b237bf85ad48ce11cee9b",
+            "evidence_id": "wowhead:8c91b04559b4439246a33268"
+          }
+        ],
+        "profile_digest": "cc1960abb582bdf566fd31909b7da8717380d7aee1b23b5f0e4f1ed363d11340",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/shadow/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Shadow",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "shadow_damage": 1
+      }
+    },
+    {
+      "class": "Rogue",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+            "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+          }
+        ],
+        "profile_digest": "8a5f34ac5fd1de3a1d01c4680792e6e28df80d5e3df88bac1588d1124d4f8870",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips"
+      },
+      "role": "melee",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "slot_weapon_types": {
+        "Main Hand": [
+          "Dagger"
+        ],
+        "Off Hand": [
+          "Dagger"
+        ]
+      },
+      "spec": "Assassination",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "agility": 1.9,
+        "crit_percent": 7
+      }
+    },
+    {
+      "class": "Rogue",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+            "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+          }
+        ],
+        "profile_digest": "54140e599691b4b1acd25aa9226d246f0d9c3c9214ee09e3e46cd1944cd4131f",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips"
+      },
+      "role": "melee",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Combat",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "dps": 6,
+        "hit_percent": 12
+      }
+    },
+    {
+      "class": "Rogue",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+            "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+          }
+        ],
+        "profile_digest": "540650c90f35331f29c95c38fde53ce23ea0a45879d69bf36129d3e86ff30c1b",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips"
+      },
+      "role": "melee",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Subtlety",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "agility": 2,
+        "weapon_speed": 1
+      }
+    },
+    {
+      "class": "Shaman",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "5f85c4a4a3dd8945944ff2daad06cfc025be9ae53cd27bba62499f4388cb3c00",
+            "evidence_id": "wowhead:a68b41ba52a277fe701d87f5"
+          }
+        ],
+        "profile_digest": "83e2dba78a014317e09f531fb1a4b9cc9a796e05253ea2c9ac7976e24d836f48",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/shaman/elemental/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Elemental",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Totem"
+      ],
+      "weights": {
+        "crit_percent": 9,
+        "nature_damage": 1
+      }
+    },
+    {
+      "class": "Shaman",
+      "review": {
+        "client_build": "1.60.1.70888",
+        "evidence_refs": [
+          {
+            "content_digest": "1ab763a30efe6219d03270368ce78770b0f5dd03e0ba0d354b05213dc38bc357",
+            "evidence_id": "blizzard:9ca230d13f2da574203cdb2c"
+          },
+          {
+            "content_digest": "49840d94f9a4cfaacfcf6278165dd6a966a85be9ca11683930386df095e6017e",
+            "evidence_id": "blizzard_forums:e5ff0cd0e9022de9416b4620"
+          },
+          {
+            "content_digest": "b8d26f0e416a17eacf0ee4a51e987fc85ae1753d06f0baecf81ff3c6e325641f",
+            "evidence_id": "wowhead:abed24aabc371f1f1fd642a3"
+          }
+        ],
+        "profile_digest": "800099f5ef1c0c99078a4603b69f6de5fbbf3e29262f38fd1214bb6e2e29db4c",
+        "reason": "Blizzard's November 10 hotfix moves Enhancement toward weapon damage, Strength and Attack Power. Intellect and spell damage retain secondary editorial weights. Conditional effects and set bonuses stay separate from the flat-stat comparison.",
+        "reviewed_at": "2026-11-11",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-10-2026"
+      },
+      "review_history": [
+        {
+          "client_build": "1.60.1.70790",
+          "evidence_refs": [
+            {
+              "content_digest": "b8d26f0e416a17eacf0ee4a51e987fc85ae1753d06f0baecf81ff3c6e325641f",
+              "evidence_id": "wowhead:abed24aabc371f1f1fd642a3"
+            }
+          ],
+          "profile_digest": "28515ffff7ff3641779dbd60d209e0245841e3f39f5d5d2f1031c278dad6c245",
+          "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+          "reviewed_at": "2026-11-06",
+          "reviewer": "Codex (offline source review)",
+          "source_url": "https://www.wowhead.com/forever/guide/classes/shaman/enhancement/dps-leveling-tips"
+        }
+      ],
+      "role": "melee",
+      "spec": "Enhancement",
+      "weapon_slots": [
+        "Two Hand",
+        "Totem"
+      ],
+      "weights": {
+        "dps": 4.5,
+        "intellect": 0.5,
+        "spell_damage": 0.35,
+        "spell_power": 0.35
+      }
+    },
+    {
+      "class": "Shaman",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "f9b63be6bfc193de27f6a534cf3a6d87d74f6bc381666fc626ca8fcc90d76a50",
+            "evidence_id": "wowhead:4978e4ea10e1c6187f1c24e8"
+          }
+        ],
+        "profile_digest": "dbe5e158c8ee78f5f5a65a735af51082bf8b212f427e3fd1e61b1e7f0e84a5b9",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/shaman/restoration/healer-leveling-tips"
+      },
+      "role": "healer",
+      "spec": "Restoration",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Totem"
+      ],
+      "weights": {
+        "mp5": 1.9
+      }
+    },
+    {
+      "class": "Warlock",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "7939e57828261c6510fc7dea7014647a9861cf5e634abaca07536aa0ef9db9a1",
+            "evidence_id": "wowhead:41e6a7c0acfca9dafe317113"
+          }
+        ],
+        "profile_digest": "2d67ba03c1f11e889b725505c80a72eb6628bf4a1272cb23158c72a19c2ecafb",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/affliction/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Affliction",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "crit_percent": 4,
+        "shadow_damage": 1,
+        "spirit": 0.55
+      }
+    },
+    {
+      "class": "Warlock",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "7b30f2c8aad2a39abfdda18efcc6ce01a5d47192891ff07dbc779b45a3569683",
+            "evidence_id": "wowhead:171da391f1d22549cc8a8b48"
+          }
+        ],
+        "profile_digest": "79c354d5187f7349bb2628051c9a28e1c4941a6b262bb9e612a40cde5ca1d9f2",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/demonology/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Demonology",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "fire_damage": 0.65,
+        "spirit": 0.55,
+        "stamina": 0.4
+      }
+    },
+    {
+      "class": "Warlock",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "0d0f3562222a1f715de05ad1a18aed4a50c29ac449e0d282aed67193e0495574",
+            "evidence_id": "wowhead:3ee59cbc8a3bfff49d93661f"
+          }
+        ],
+        "profile_digest": "6aba86a94a95293fe085aa45e6105bfab81a31e4427747baa97e4f7a96f01273",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/destruction/dps-leveling-tips"
+      },
+      "role": "caster",
+      "spec": "Destruction",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "crit_percent": 8,
+        "fire_damage": 1,
+        "spirit": 0.55
+      }
+    },
+    {
+      "class": "Warrior",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "7908688c6eba41246882d67c3f1dea3de74bc4b49be5bf5a67e483b91155b1ba",
+            "evidence_id": "wowhead:b17494331940602fbee2b775"
+          }
+        ],
+        "profile_digest": "c096bfa7a1a07aaa03d1a38e15b4e204b107256309fb37965ec3c7975213b8f4",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
+      },
+      "role": "melee",
+      "spec": "Arms",
+      "weapon_slots": [
+        "Two Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "strength": 1.9,
+        "weapon_speed": 2
+      }
+    },
+    {
+      "class": "Warrior",
+      "dual_wield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "5cb8f13ed8f51c134163739a609a7a2e6e01198f410a1a8a292161ec409967b5",
+            "evidence_id": "wowhead:2ac8e5fe5e6c12984022cac3"
+          }
+        ],
+        "profile_digest": "0d678e6e1266438368e05b37b019d286e40b144b4ad54b9876c0ee4ca42304cd",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/fury/dps-leveling-tips"
+      },
+      "role": "melee",
+      "slot_aliases": {
+        "Off Hand": [
+          "Off Hand",
+          "Main Hand"
+        ]
+      },
+      "spec": "Fury",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "dps": 6,
+        "hit_percent": 11
+      }
+    },
+    {
+      "class": "Warrior",
+      "require_shield": true,
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "013e0e57d3060cccaabd5803792f7781ef7edd703a413a1b14d443bdf8204e96",
+            "evidence_id": "wowhead:58e496238afbe8a232f58275"
+          }
+        ],
+        "profile_digest": "7cafaacf74820593cf27536caa9608be7921153f2516767a00ad6d852e199df4",
+        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips"
+      },
+      "role": "tank",
+      "spec": "Protection",
+      "weapon_slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weights": {
+        "block_value": 1,
+        "dps": 2.5
+      }
+    }
+  ],
+  "review": {
+    "client_build": "1.60.1.70938",
+    "evidence_refs": [
+      {
+        "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
+        "evidence_id": "wowhead:9470b820f60f1d752f9f7702"
+      },
+      {
+        "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
+        "evidence_id": "wowhead:f9f23ac357cf2b65d8ac66af"
+      },
+      {
+        "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+        "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+      },
+      {
+        "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
+        "evidence_id": "wowhead:cd5ccd2dd8a0599a8fe0c263"
+      },
+      {
+        "content_digest": "e0b4c8a341dec3aa1bd27aed37918ad00b2b8ceb216e3e8a7cfd254aab3817c1",
+        "evidence_id": "wowhead:127cfc77e5619de5f766ce77"
+      },
+      {
+        "content_digest": "e584d4b2c349263413b991295b23069b909180ff3ef6d482a55ea52a7f1c05f4",
+        "evidence_id": "wowhead:90e56a8e62a9e78ef37dabef"
+      },
+      {
+        "content_digest": "64c1c44a17ddbd0e23e9cd4c03b2821d3bd62e79285057714cd725dc3e8e8746",
+        "evidence_id": "wowhead:801b470f77c36ff4a14908a7"
+      },
+      {
+        "content_digest": "a9f9d4ea4b1d32512ee3f1a7922079b3c6ea7cff3ebf81f3bbaf49bcf43afdc1",
+        "evidence_id": "wowhead:380057c05f18abe6299a3a4f"
+      },
+      {
+        "content_digest": "514cd15a30de3a7677d0466d23aadcc1caaff28823f378341ae03ca833abcb6b",
+        "evidence_id": "wowhead:f1f7c1d018c7bfa9dd72c5ca"
+      },
+      {
+        "content_digest": "08aec3dc34184ca8b018ed82510c7b36b3c1c082919997750990bef39a1a0403",
+        "evidence_id": "wowhead:8349bf59d332c5d070dafa1e"
+      },
+      {
+        "content_digest": "0394abc4a264092648e56c10b83fbaf1bfb9ecf3419451b00c673caddb6498bb",
+        "evidence_id": "wowhead:5d0160f74993ef3c9f647e4b"
+      },
+      {
+        "content_digest": "b2f3815af10e69036b6a4c8c751154bd850f6c6c5f443d9d17913682671c5348",
+        "evidence_id": "wowhead:d8f4616b504129cce7990ce0"
+      },
+      {
+        "content_digest": "698edc81d8c82c4a639ce98b346cdb181551f88d048e0fabdb3abb045ca4c30c",
+        "evidence_id": "wowhead:905db3ea6e0f73854009dda5"
+      },
+      {
+        "content_digest": "37bbfaef4d4cd901c668282013380f6730a5f566faff167f19456a50339c317b",
+        "evidence_id": "wowhead:50b4254c4157d9742fddc907"
+      },
+      {
+        "content_digest": "c6e701f19f491767d08635766b62c7ca2d5268186860f160b144ae14aef44684",
+        "evidence_id": "wowhead:22c4c680c2ee4d9a85df176a"
+      },
+      {
+        "content_digest": "5b1200d13a2cf89604a9edb79716ede59ded2144829b237bf85ad48ce11cee9b",
+        "evidence_id": "wowhead:8c91b04559b4439246a33268"
+      },
+      {
+        "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+        "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+      },
+      {
+        "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+        "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+      },
+      {
+        "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+        "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+      },
+      {
+        "content_digest": "5f85c4a4a3dd8945944ff2daad06cfc025be9ae53cd27bba62499f4388cb3c00",
+        "evidence_id": "wowhead:a68b41ba52a277fe701d87f5"
+      },
+      {
+        "content_digest": "b8d26f0e416a17eacf0ee4a51e987fc85ae1753d06f0baecf81ff3c6e325641f",
+        "evidence_id": "wowhead:abed24aabc371f1f1fd642a3"
+      },
+      {
+        "content_digest": "f9b63be6bfc193de27f6a534cf3a6d87d74f6bc381666fc626ca8fcc90d76a50",
+        "evidence_id": "wowhead:4978e4ea10e1c6187f1c24e8"
+      },
+      {
+        "content_digest": "7939e57828261c6510fc7dea7014647a9861cf5e634abaca07536aa0ef9db9a1",
+        "evidence_id": "wowhead:41e6a7c0acfca9dafe317113"
+      },
+      {
+        "content_digest": "7b30f2c8aad2a39abfdda18efcc6ce01a5d47192891ff07dbc779b45a3569683",
+        "evidence_id": "wowhead:171da391f1d22549cc8a8b48"
+      },
+      {
+        "content_digest": "0d0f3562222a1f715de05ad1a18aed4a50c29ac449e0d282aed67193e0495574",
+        "evidence_id": "wowhead:3ee59cbc8a3bfff49d93661f"
+      },
+      {
+        "content_digest": "7908688c6eba41246882d67c3f1dea3de74bc4b49be5bf5a67e483b91155b1ba",
+        "evidence_id": "wowhead:b17494331940602fbee2b775"
+      },
+      {
+        "content_digest": "5cb8f13ed8f51c134163739a609a7a2e6e01198f410a1a8a292161ec409967b5",
+        "evidence_id": "wowhead:2ac8e5fe5e6c12984022cac3"
+      },
+      {
+        "content_digest": "013e0e57d3060cccaabd5803792f7781ef7edd703a413a1b14d443bdf8204e96",
+        "evidence_id": "wowhead:58e496238afbe8a232f58275"
+      },
+      {
+        "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+        "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+      },
+      {
+        "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+        "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+      },
+      {
+        "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+        "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+      }
+    ],
+    "reason": "Offline source review of all 28 profile policies and independent ranking inputs. Data review is separate from the user gameplay acceptance required before publishing. Unknown gear, procs, acquisition gates and missing slots remain uncovered; no metadata-only item or empty guide is counted as a completed slot. The Druid two-handed weapon pool includes polearms under the verified training rule.",
+    "reviewed_at": "2026-11-14",
+    "reviewer": "Codex (offline source review)",
+    "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips"
+  },
+  "review_history": [
+    {
+      "client_build": "1.60.1.70790",
+      "evidence_refs": [
+        {
+          "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
+          "evidence_id": "wowhead:9470b820f60f1d752f9f7702"
+        },
+        {
+          "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
+          "evidence_id": "wowhead:f9f23ac357cf2b65d8ac66af"
+        },
+        {
+          "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+          "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+        },
+        {
+          "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
+          "evidence_id": "wowhead:cd5ccd2dd8a0599a8fe0c263"
+        },
+        {
+          "content_digest": "e0b4c8a341dec3aa1bd27aed37918ad00b2b8ceb216e3e8a7cfd254aab3817c1",
+          "evidence_id": "wowhead:127cfc77e5619de5f766ce77"
+        },
+        {
+          "content_digest": "e584d4b2c349263413b991295b23069b909180ff3ef6d482a55ea52a7f1c05f4",
+          "evidence_id": "wowhead:90e56a8e62a9e78ef37dabef"
+        },
+        {
+          "content_digest": "64c1c44a17ddbd0e23e9cd4c03b2821d3bd62e79285057714cd725dc3e8e8746",
+          "evidence_id": "wowhead:801b470f77c36ff4a14908a7"
+        },
+        {
+          "content_digest": "a9f9d4ea4b1d32512ee3f1a7922079b3c6ea7cff3ebf81f3bbaf49bcf43afdc1",
+          "evidence_id": "wowhead:380057c05f18abe6299a3a4f"
+        },
+        {
+          "content_digest": "514cd15a30de3a7677d0466d23aadcc1caaff28823f378341ae03ca833abcb6b",
+          "evidence_id": "wowhead:f1f7c1d018c7bfa9dd72c5ca"
+        },
+        {
+          "content_digest": "08aec3dc34184ca8b018ed82510c7b36b3c1c082919997750990bef39a1a0403",
+          "evidence_id": "wowhead:8349bf59d332c5d070dafa1e"
+        },
+        {
+          "content_digest": "0394abc4a264092648e56c10b83fbaf1bfb9ecf3419451b00c673caddb6498bb",
+          "evidence_id": "wowhead:5d0160f74993ef3c9f647e4b"
+        },
+        {
+          "content_digest": "b2f3815af10e69036b6a4c8c751154bd850f6c6c5f443d9d17913682671c5348",
+          "evidence_id": "wowhead:d8f4616b504129cce7990ce0"
+        },
+        {
+          "content_digest": "698edc81d8c82c4a639ce98b346cdb181551f88d048e0fabdb3abb045ca4c30c",
+          "evidence_id": "wowhead:905db3ea6e0f73854009dda5"
+        },
+        {
+          "content_digest": "37bbfaef4d4cd901c668282013380f6730a5f566faff167f19456a50339c317b",
+          "evidence_id": "wowhead:50b4254c4157d9742fddc907"
+        },
+        {
+          "content_digest": "c6e701f19f491767d08635766b62c7ca2d5268186860f160b144ae14aef44684",
+          "evidence_id": "wowhead:22c4c680c2ee4d9a85df176a"
+        },
+        {
+          "content_digest": "5b1200d13a2cf89604a9edb79716ede59ded2144829b237bf85ad48ce11cee9b",
+          "evidence_id": "wowhead:8c91b04559b4439246a33268"
+        },
+        {
+          "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
+          "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
+        },
+        {
+          "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
+          "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
+        },
+        {
+          "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
+          "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
+        },
+        {
+          "content_digest": "5f85c4a4a3dd8945944ff2daad06cfc025be9ae53cd27bba62499f4388cb3c00",
+          "evidence_id": "wowhead:a68b41ba52a277fe701d87f5"
+        },
+        {
+          "content_digest": "b8d26f0e416a17eacf0ee4a51e987fc85ae1753d06f0baecf81ff3c6e325641f",
+          "evidence_id": "wowhead:abed24aabc371f1f1fd642a3"
+        },
+        {
+          "content_digest": "f9b63be6bfc193de27f6a534cf3a6d87d74f6bc381666fc626ca8fcc90d76a50",
+          "evidence_id": "wowhead:4978e4ea10e1c6187f1c24e8"
+        },
+        {
+          "content_digest": "7939e57828261c6510fc7dea7014647a9861cf5e634abaca07536aa0ef9db9a1",
+          "evidence_id": "wowhead:41e6a7c0acfca9dafe317113"
+        },
+        {
+          "content_digest": "7b30f2c8aad2a39abfdda18efcc6ce01a5d47192891ff07dbc779b45a3569683",
+          "evidence_id": "wowhead:171da391f1d22549cc8a8b48"
+        },
+        {
+          "content_digest": "0d0f3562222a1f715de05ad1a18aed4a50c29ac449e0d282aed67193e0495574",
+          "evidence_id": "wowhead:3ee59cbc8a3bfff49d93661f"
+        },
+        {
+          "content_digest": "7908688c6eba41246882d67c3f1dea3de74bc4b49be5bf5a67e483b91155b1ba",
+          "evidence_id": "wowhead:b17494331940602fbee2b775"
+        },
+        {
+          "content_digest": "5cb8f13ed8f51c134163739a609a7a2e6e01198f410a1a8a292161ec409967b5",
+          "evidence_id": "wowhead:2ac8e5fe5e6c12984022cac3"
+        },
+        {
+          "content_digest": "013e0e57d3060cccaabd5803792f7781ef7edd703a413a1b14d443bdf8204e96",
+          "evidence_id": "wowhead:58e496238afbe8a232f58275"
+        }
+      ],
+      "reason": "Offline source review of all 28 profile policies and independent ranking inputs. Data review is separate from the user gameplay acceptance required before publishing. Unknown gear, procs, acquisition gates and missing slots remain uncovered; no metadata-only item or empty guide is counted as a completed slot.",
+      "reviewed_at": "2026-11-06",
+      "reviewer": "Codex (offline source review)",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips"
+    }
+  ],
+  "role_weights": {
+    "caster": {
+      "crit_percent": 6,
+      "haste_percent": 5,
+      "hit_percent": 10,
+      "intellect": 0.55,
+      "spell_damage": 1,
+      "spell_power": 1,
+      "spirit": 0.15,
+      "stamina": 0.2
+    },
+    "healer": {
+      "crit_percent": 5,
+      "healing_power": 1,
+      "intellect": 0.7,
+      "mp5": 1.6,
+      "spell_power": 1,
+      "spirit": 0.55,
+      "stamina": 0.2
+    },
+    "melee": {
+      "agility": 1.2,
+      "attack_power": 0.8,
+      "crit_percent": 7,
+      "dps": 5,
+      "expertise": 1,
+      "haste_percent": 6,
+      "hit_percent": 10,
+      "stamina": 0.2,
+      "strength": 1.6
+    },
+    "ranged": {
+      "agility": 2,
+      "attack_power": 0.6,
+      "crit_percent": 7,
+      "haste_percent": 6,
+      "hit_percent": 11,
+      "intellect": 0.4,
+      "ranged_attack_power": 1,
+      "ranged_dps": 6,
+      "stamina": 0.2
+    },
+    "tank": {
+      "agility": 0.65,
+      "armor": 0.08,
+      "block_value": 0.55,
+      "defense": 1.25,
+      "dodge_percent": 9,
+      "hit_percent": 5,
+      "parry_percent": 8,
+      "stamina": 2
+    }
+  },
+  "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303313",
+  "status": "source_reviewed",
+  "version": "forever-pre-raid-reviewed-4"
+}

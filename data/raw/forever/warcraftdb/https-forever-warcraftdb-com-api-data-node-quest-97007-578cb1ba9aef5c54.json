@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97007"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:45.953242+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 276333,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97007",
+      "subject_id": 97007,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Wood Remains",
+    "quest_id": 97007,
+    "reward_item_roles": {
+      "276332": "choices",
+      "276333": "choices",
+      "276334": "choices"
+    },
+    "side": "Horde",
+    "zone": "Mount Hyjal"
+  },
+  "source_content_digest": "01f865e1f5189c987a94136b48f253d44c4aa7a5491b17e209b584b1d7174703",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97007"
+}

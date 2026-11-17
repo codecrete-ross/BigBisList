@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Soulcatcher Halo Item Level 51 Binds when equipped Head Cloth 59 Armor +25 Intellect +5 Shadow Resistance Durability 50 / 50 Requires Level 46 Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects. Sell Price: 90 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10630,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 59,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 18,
+          "spell_damage": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects."
+    ],
+    "id": 10630,
+    "item_level": 51,
+    "name": "Soulcatcher Halo",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 18.0,
+      "intellect": 25.0,
+      "shadow_resistance": 5.0,
+      "spell_damage": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10630"
+  },
+  "linked_entities": [],
+  "name": "Soulcatcher Halo",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f43d8070616cd801185613e69ba70df3eac2cb7cf379a2d2c2fae597b8561028",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10630",
+  "url": "https://www.wowhead.com/forever/item=10630"
+}

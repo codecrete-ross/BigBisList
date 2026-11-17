@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gloomshroud Armor Item Level 25 Binds when equipped Chest Leather 94 Armor +5 Strength +8 Stamina +8 Spirit Durability 95 / 95 Requires Level 20 Equip: When struck in combat inflicts 2 Shadow damage to the attacker. Sell Price: 16 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 1489,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 94,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: When struck in combat inflicts 2 Shadow damage to the attacker.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat inflicts 2 Shadow damage to the attacker."
+    ],
+    "id": 1489,
+    "item_level": 25,
+    "name": "Gloomshroud Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "spirit": 8.0,
+      "stamina": 8.0,
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=1489"
+  },
+  "linked_entities": [
+    {
+      "id": 1292160,
+      "name": "When struck in combat inflicts 2 Shadow damage to the attacker.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292160"
+    }
+  ],
+  "name": "Gloomshroud Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1489",
+  "url": "https://www.wowhead.com/forever/item=1489"
+}

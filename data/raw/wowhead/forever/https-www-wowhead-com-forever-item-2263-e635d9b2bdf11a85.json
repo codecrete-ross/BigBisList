@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Phytoblade Item Level 25 Binds when picked up Main Hand Sword 25 - 47 Damage Speed 2.80 (12.86 damage per second) Durability 65 / 65 Requires Herbalism (100) Chance on hit: Blasts a target for 35 Nature damage. Sell Price: 26 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 2263,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 12.86,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 35 Nature damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 35 Nature damage."
+    ],
+    "id": 2263,
+    "item_level": 25,
+    "name": "Phytoblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 47,
+    "weapon_min_damage": 25,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2263"
+  },
+  "linked_entities": [
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=182"
+    },
+    {
+      "id": 14119,
+      "name": "Blasts a target for 35 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14119"
+    }
+  ],
+  "name": "Phytoblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2263",
+  "url": "https://www.wowhead.com/forever/item=2263"
+}

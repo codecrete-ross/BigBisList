@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sorcerer's Mantle Item Level 65 Binds when picked up Shoulder Cloth 69 Armor +11 Stamina +16 Intellect Durability 50 / 50 Classes: Mage Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sorcerer's Regalia (0/8) Item #226943 Item #226944 Item #226942 Item #226941 Item #226940 Item #226939 Item #226938 Item #226937 Sell Price: 1 97 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 226936,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 69,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 226936,
+    "item_level": 65,
+    "name": "Sorcerer's Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 16.0,
+      "spell_power": 7.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226936"
+  },
+  "linked_entities": [],
+  "name": "Sorcerer's Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8bbe167ff188b456d961947306aebc252764759781101ca91291c489f17a4305",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226936",
+  "url": "https://www.wowhead.com/forever/item=226936"
+}

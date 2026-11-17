@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Crest Item Level 90 Binds when picked up Unique Trinket Requires Level 60 Equip: + 64 Attack Power. Use: Increases Attack Power by 260 for 20 sec. (2 Min Cooldown) Sell Price: 9 11 60 Dropped by: Sapphiron Drop Chance: 21.47%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 23041,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +64 Attack Power.",
+        "stats": {
+          "attack_power": 64
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases Attack Power by 260 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 23041,
+    "item_level": 90,
+    "name": "Slayer's Crest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 64.0
+    },
+    "use_effects": [
+      "Use: Increases Attack Power by 260 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=23041"
+  },
+  "linked_entities": [
+    {
+      "id": 28777,
+      "name": "Increases Attack Power by 260 for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28777"
+    }
+  ],
+  "name": "Slayer's Crest",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.47,
+      "entity_name": "Sapphiron",
+      "source_url": "https://www.wowhead.com/forever/item=23041",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23041",
+  "url": "https://www.wowhead.com/forever/item=23041"
+}

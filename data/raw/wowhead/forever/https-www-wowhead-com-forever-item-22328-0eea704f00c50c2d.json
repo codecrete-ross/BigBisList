@@ -1,0 +1,82 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=22328"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Legplates of Vigilance Item Level 63 Binds when picked up Legs Plate 575 Armor +22 Stamina Requires Level 58 Equip: Increased Defense + 15. Equip: Improves your chance to hit by 1.0%. Sell Price: 4 3 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T23:25:00.601028+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1057,
+      "collected_at": "2026-11-13T23:25:00.601028+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22328",
+      "source_content_digest": "d0cea58390d0d26a79cb47093a1aa35e1c1ac7249cffad1cef5af6400a62d66c",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22328"
+    }
+  ],
+  "inventory_slot": "Legs",
+  "item_id": 22328,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 575,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +15.",
+        "stats": {
+          "defense": 15
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 22328,
+    "item_level": 63,
+    "name": "Legplates of Vigilance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "defense": 15.0,
+      "hit_percent": 1.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22328"
+  },
+  "linked_entities": [],
+  "name": "Legplates of Vigilance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d0cea58390d0d26a79cb47093a1aa35e1c1ac7249cffad1cef5af6400a62d66c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=22328"
+}

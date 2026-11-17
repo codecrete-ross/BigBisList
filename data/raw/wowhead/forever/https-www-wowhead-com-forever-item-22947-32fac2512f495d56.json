@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pendant of Forgotten Names Item Level 85 Binds when picked up Neck +18 Intellect +18 Spirit Restores + 7 mana per 5 sec. Requires Level 60 Sell Price: 8 83 55 Dropped by: Maexxna Drop Chance: 17.89%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 22947,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 22947,
+    "item_level": 85,
+    "name": "Pendant of Forgotten Names",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "mp5": 7.0,
+      "spirit": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22947"
+  },
+  "linked_entities": [],
+  "name": "Pendant of Forgotten Names",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.89,
+      "entity_name": "Maexxna",
+      "source_url": "https://www.wowhead.com/forever/item=22947",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22947",
+  "url": "https://www.wowhead.com/forever/item=22947"
+}

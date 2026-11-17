@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stormcaller's Hauberk Item Level 88 Binds when picked up Chest Mail 553 Armor +11 Strength +10 Agility +24 Stamina +24 Intellect +11 Spirit Durability 140 / 140 Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 32 . Stormcaller's Garb (0/5) Stormcaller's Diadem Stormcaller's Footguards Stormcaller's Hauberk Stormcaller's Leggings Stormcaller's Pauldrons (3) Set : Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%) (5) Set : -0 seconds on the casting time of your Chain Heal spell. Sell Price: 15 20 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21374,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 553,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+        "stats": {
+          "spell_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 32."
+    ],
+    "id": 21374,
+    "item_level": 88,
+    "name": "Stormcaller's Hauberk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26119,
+        "text": "Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26122,
+        "text": "-0 seconds on the casting time of your Chain Heal spell."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "crit_percent": 1.0,
+      "intellect": 24.0,
+      "spell_power": 32.0,
+      "spirit": 11.0,
+      "stamina": 24.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21374"
+  },
+  "linked_entities": [
+    {
+      "id": 21372,
+      "name": "Stormcaller's Diadem",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21372"
+    },
+    {
+      "id": 21373,
+      "name": "Stormcaller's Footguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21373"
+    },
+    {
+      "id": 21374,
+      "name": "Stormcaller's Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21374"
+    },
+    {
+      "id": 21375,
+      "name": "Stormcaller's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21375"
+    },
+    {
+      "id": 21376,
+      "name": "Stormcaller's Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21376"
+    },
+    {
+      "id": 26119,
+      "name": "Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26119"
+    },
+    {
+      "id": 26122,
+      "name": "-0 seconds on the casting time of your Chain Heal spell.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26122"
+    }
+  ],
+  "name": "Stormcaller's Hauberk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21374",
+  "url": "https://www.wowhead.com/forever/item=21374"
+}

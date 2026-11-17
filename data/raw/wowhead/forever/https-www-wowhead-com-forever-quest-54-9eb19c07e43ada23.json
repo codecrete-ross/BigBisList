@@ -1,0 +1,44 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Report to Goldshire Take Marshal McBride's Documents to Marshal Dughan in Goldshire.",
+  "entity_id": 54,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:18.248Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Report to Goldshire",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 240,
+        "name": "Marshal Dughan"
+      },
+      "start": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 6078,
+      "object_name": "Pikeman Shield",
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=54",
+      "subject_id": 54,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/54",
+  "url": "https://www.wowhead.com/forever/quest=54"
+}

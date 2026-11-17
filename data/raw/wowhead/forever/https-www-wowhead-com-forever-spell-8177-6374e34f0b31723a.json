@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Grounding Totem 6% of base mana Instant 15 sec cooldown Requires Shaman Requires level 30 Tools: Air Totem Summons a Grounding Totem with 5 health at the feet of the caster that will redirect one harmful spell cast on a nearby party member to itself every 10 seconds. Will not redirect area of effect spells. Lasts 45 sec.",
+  "entity_id": 8177,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:23+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 8177,
+      "name": "Grounding Totem",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8177"
+    }
+  ],
+  "name": "Grounding Totem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "1fdca51e1f98f243429d88b0bffee2c3c2084f88a72d3e9a655340d8d0f60e9c",
+  "spell_id": 8177,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/8177",
+  "url": "https://www.wowhead.com/forever/spell=8177"
+}

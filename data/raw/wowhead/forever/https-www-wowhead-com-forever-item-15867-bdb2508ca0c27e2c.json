@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Prismcharm Item Level 60 Binds when picked up Trinket Use: Increases all resistances by 27 for 30 sec. (5 Min Cooldown) Sell Price: 1 65 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 15867,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases all resistances by 27 for 30 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 15867,
+    "item_level": 60,
+    "name": "Prismcharm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases all resistances by 27 for 30 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=15867"
+  },
+  "linked_entities": [
+    {
+      "id": 19638,
+      "name": "Increases all resistances by 27 for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19638"
+    }
+  ],
+  "name": "Prismcharm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "1d63cbf89d425336a1e71e950da512eff49ff18bca70e7e2d72db792ee59df33",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15867",
+  "url": "https://www.wowhead.com/forever/item=15867"
+}

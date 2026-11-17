@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seedcloud Buckler Item Level 24 Binds when picked up Off Hand Shield 547 Armor 11 Block +5 Intellect Durability 90 / 90 Requires Level 19 Equip: Increases damage and healing done by magical spells and effects by up to 5 . Sell Price: 18 45 Dropped by: Verdan the Everliving Drop Chance: 38.09%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 6630,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 547,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 5.",
+        "stats": {
+          "spell_power": 5.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 5."
+    ],
+    "id": 6630,
+    "item_level": 24,
+    "name": "Seedcloud Buckler",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 19,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 11.0,
+      "intellect": 5.0,
+      "spell_power": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6630"
+  },
+  "linked_entities": [],
+  "name": "Seedcloud Buckler",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 38.09,
+      "entity_name": "Verdan the Everliving",
+      "source_url": "https://www.wowhead.com/forever/item=6630",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6630",
+  "url": "https://www.wowhead.com/forever/item=6630"
+}

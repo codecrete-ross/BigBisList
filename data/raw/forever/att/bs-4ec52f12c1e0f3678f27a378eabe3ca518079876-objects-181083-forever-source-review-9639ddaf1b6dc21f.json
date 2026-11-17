@@ -1,0 +1,107 @@
+{
+  "attribution": [
+    {
+      "credit": "All The Things Forever dungeon catalog",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4ec52f12c1e0f3678f27a378eabe3ca518079876"
+    },
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_tooltip_with_unverified_cache_relationship",
+  "fetched_at": "2026-11-13T23:29:50.064676+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 38500,
+      "collected_at": "2026-11-13T23:29:50.064676+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-current-stratholme",
+      "source_content_digest": "a7c72e4a4b619c9b376383f007ea142b562cf7d3481302fe2a169244367cad2e",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4ec52f12c1e0f3678f27a378eabe3ca518079876"
+    },
+    {
+      "bytes": 187909,
+      "collected_at": "2026-11-13T23:27:35.590332+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-stratholme-live-guide",
+      "source_content_digest": "15195c8df77339be22c43af00a71907da4baa7cb01f4d06934a2460e2e16437b",
+      "source_url": "https://www.wowhead.com/forever/guide/stratholme-live-side-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 761,
+      "collected_at": "2026-11-14T00:37:29.943068+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-brazier-22051",
+      "source_content_digest": "59a58f63e12c5a1a3d3bc727660377226175ad6bdd8d70460c73f2c52cfe8bb6",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22051"
+    },
+    {
+      "bytes": 605,
+      "collected_at": "2026-11-14T00:37:30.241934+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-brazier-quest-8968",
+      "source_content_digest": "ac72d621016f9020c9474fa702be6fbf5f8cfc6bc4a8a4e092b02689be21c5dd",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/quest/8968"
+    },
+    {
+      "bytes": 1149,
+      "collected_at": "2026-11-13T23:25:00.703542+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22327",
+      "source_content_digest": "19b8832d4df2f05b757df5d7e14dfd356692c28021972f23f53a7401b2c20f6d",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22327"
+    },
+    {
+      "bytes": 1057,
+      "collected_at": "2026-11-13T23:25:00.601028+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22328",
+      "source_content_digest": "d0cea58390d0d26a79cb47093a1aa35e1c1ac7249cffad1cef5af6400a62d66c",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22328"
+    },
+    {
+      "bytes": 1158,
+      "collected_at": "2026-11-14T00:39:03.624692+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-classic-22327",
+      "source_content_digest": "2b953ed0a92cdd6077ae9137d9b621a9e6ae1797fd88a6626b4380876ade568e",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/22327"
+    },
+    {
+      "bytes": 1131,
+      "collected_at": "2026-11-14T00:39:03.658199+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-classic-22328",
+      "source_content_digest": "3ce914620596805c5f9806546d502c1addaf82380079c70d0865561ccbb542c7",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/22328"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "reviewed_page_facts": {
+    "activation_item_id": 22051,
+    "cache_object_id": 181083,
+    "candidate_item_ids": [
+      22327,
+      22328
+    ],
+    "finding": "The current tooltips give exact stats at level 58. The guide and ATT catalog report the same cache, but neither records a live loot observation for either item.",
+    "npc_ids": [
+      16101,
+      16102
+    ]
+  },
+  "source_content_digest": "a7c72e4a4b619c9b376383f007ea142b562cf7d3481302fe2a169244367cad2e",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4ec52f12c1e0f3678f27a378eabe3ca518079876#/objects/181083/forever-source-review"
+}

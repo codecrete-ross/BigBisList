@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Horned Viking Helmet Item Level 42 Binds when picked up Head Plate 303 Armor +10 Agility +15 Stamina Durability 80 / 80 Requires Level 40 Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (30 Min Cooldown) Sell Price: 80 87 Dropped by: Eric \"The Swift\" Drop Chance: 7.99%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 9394,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 303,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 9394,
+    "item_level": 42,
+    "name": "Horned Viking Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=9394"
+  },
+  "linked_entities": [
+    {
+      "id": 22641,
+      "name": "Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22641"
+    }
+  ],
+  "name": "Horned Viking Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.99,
+      "entity_name": "Eric \"The Swift\"",
+      "source_url": "https://www.wowhead.com/forever/item=9394",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9394",
+  "url": "https://www.wowhead.com/forever/item=9394"
+}

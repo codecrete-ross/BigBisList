@@ -1,0 +1,98 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet of the Soulless Rider Item Level 62 Binds when picked up Finger +14 Strength +9 Spirit Requires Level 57 Equip: Improves your chance to hit by 0.5%. Rider of the Plaguelands (0/3) Signet of the Soulless Rider Blade of Senseless Slaughter Horseman's Unyielding Shroud (2) Set : Increases movement speed while mounted by 5% in Eastern and Western Plaguelands. (3) Set : Chance on melee attack to lash the target, inflicting 140 Shadow damage. Sell Price: 2 17 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284102,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 284102,
+    "item_level": 62,
+    "name": "Signet of the Soulless Rider",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1315080,
+        "text": "Increases movement speed while mounted by 5% in Eastern and Western Plaguelands."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1315077,
+        "text": "Chance on melee attack to lash the target, inflicting 140 Shadow damage."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5,
+      "spirit": 9.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284102"
+  },
+  "linked_entities": [
+    {
+      "id": 284100,
+      "name": "Horseman's Unyielding Shroud",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284100"
+    },
+    {
+      "id": 284101,
+      "name": "Blade of Senseless Slaughter",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284101"
+    },
+    {
+      "id": 284102,
+      "name": "Signet of the Soulless Rider",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284102"
+    },
+    {
+      "id": 1315077,
+      "name": "Chance on melee attack to lash the target, inflicting 140 Shadow damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315077"
+    },
+    {
+      "id": 1315080,
+      "name": "Increases movement speed while mounted by 5% in Eastern and Western Plaguelands.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315080"
+    }
+  ],
+  "name": "Signet of the Soulless Rider",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e2424d0d5f24de3a5c422fbb508020818d22883f8b72b86e44e2e28f02e586b1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284102",
+  "url": "https://www.wowhead.com/forever/item=284102"
+}

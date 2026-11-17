@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Choker of the Fire Lord Item Level 30 Binds when equipped Neck +3 Stamina +3 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 8 91 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:10:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 288926,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 288926,
+    "item_level": 30,
+    "name": "Choker of the Fire Lord",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 3.0,
+      "spell_power": 15.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=288926"
+  },
+  "linked_entities": [],
+  "name": "Choker of the Fire Lord",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "f220dce581a0ed3f18b5fa7883e58419d461f01107ea63dcff4f1e2a5af5e01f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/288926",
+  "url": "https://www.wowhead.com/forever/item=288926"
+}

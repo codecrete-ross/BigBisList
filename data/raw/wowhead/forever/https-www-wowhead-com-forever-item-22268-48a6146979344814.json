@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Draconic Infused Emblem Item Level 63 Binds when picked up Trinket +15 Fire Resistance Requires Level 58 Equip: Chance on harmful spellcast to increase your spell damage and healing by up to 35 for 10 sec. This spell damage increase is doubled against Dragonkin. Sell Price: 2 30 33 Dropped by: General Drakkisath Drop Chance: 6.80%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 22268,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Chance on harmful spellcast to increase your spell damage and healing by up to 35 for 10 sec. This spell damage increase is doubled against Dragonkin.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Chance on harmful spellcast to increase your spell damage and healing by up to 35 for 10 sec. This spell damage increase is doubled against Dragonkin."
+    ],
+    "id": 22268,
+    "item_level": 63,
+    "name": "Draconic Infused Emblem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22268"
+  },
+  "linked_entities": [
+    {
+      "id": 1318931,
+      "name": "Chance on harmful spellcast to increase your spell damage and healing by up to 35 for 10 sec. This spell damage increase is doubled against Dragonkin.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318931"
+    }
+  ],
+  "name": "Draconic Infused Emblem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 6.8,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=22268",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a9ff5559f2d275d3e5f2e1f72b6c7f3b39cc9956054d88814d85f51f78898211",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22268",
+  "url": "https://www.wowhead.com/forever/item=22268"
+}

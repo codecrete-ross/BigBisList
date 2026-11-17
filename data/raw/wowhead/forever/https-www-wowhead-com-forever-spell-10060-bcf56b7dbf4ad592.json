@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Power Infusion Talent 20% of base mana 30 yd range Instant 3 min cooldown Requires Priest Requires level 40 Infuses the target with power, increasing their spell damage and healing done by 20% for 15 sec.",
+  "entity_id": 10060,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:32+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10060,
+      "name": "Power Infusion",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10060"
+    }
+  ],
+  "name": "Power Infusion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ebce5915e898c1cf84693652aeeae8c02f696880d892fda7eda26f4eb9e3fd12",
+  "spell_id": 10060,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10060",
+  "url": "https://www.wowhead.com/forever/spell=10060"
+}

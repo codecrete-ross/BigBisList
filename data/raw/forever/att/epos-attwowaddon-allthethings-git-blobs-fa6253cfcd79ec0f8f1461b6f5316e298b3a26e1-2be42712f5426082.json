@@ -1,0 +1,111 @@
+{
+  "attribution": [
+    {
+      "credit": "All The Things Forever Scholomance catalog",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fa6253cfcd79ec0f8f1461b6f5316e298b3a26e1"
+    },
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/guide/scholomance-dungeon-overview-location-rewards"
+    },
+    {
+      "credit": "Azeroth Wiki",
+      "source": "https://azeroth.wiki/forever/dungeons/scholomance/vectus"
+    },
+    {
+      "credit": "Endgame Tools, public item observation",
+      "source": "https://endgametools.com/en/wow-forever/items/18691"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_forever_dungeon_drop",
+  "fetched_at": "2026-11-13T22:41:19.533495+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 37280,
+      "collected_at": "2026-11-13T22:41:19.533495+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-f-scholomance",
+      "source_content_digest": "7fbe2dfc2eb91704a1dbd76221edf33b928def514b620a45d4670f9041d257df",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fa6253cfcd79ec0f8f1461b6f5316e298b3a26e1"
+    },
+    {
+      "bytes": 1169,
+      "collected_at": "2026-11-13T22:40:30.389868+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-live-pendant",
+      "source_content_digest": "be919cf4f5876ce01afe7bf4a44686dac6375d407bcd02cd85ed14d965819c96",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18691"
+    },
+    {
+      "bytes": 266277,
+      "collected_at": "2026-11-13T22:39:19.633436+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-live-scholo-guide",
+      "source_content_digest": "ccbeb6e9cd9bc1ab6cfe7bb9291c760b43449ce3e7f78719a0d329ebd37c2196",
+      "source_url": "https://www.wowhead.com/forever/guide/scholomance-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 144624,
+      "collected_at": "2026-11-13T22:51:25.650523+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "vectus-forever-boss",
+      "source_content_digest": "198ba1c5035523c17f015ead98769f7de763339c0bce2eccf13b1d379b6350b3",
+      "source_url": "https://azeroth.wiki/forever/dungeons/scholomance/vectus"
+    },
+    {
+      "bytes": 60360,
+      "collected_at": "2026-11-13T22:40:30.955612+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "endgame-live-pendant",
+      "source_content_digest": "c84f7c3937d5ba3f0c76038f4c3ca3c588465301b83876bd782aea0341e8d5e4",
+      "source_url": "https://endgametools.com/en/wow-forever/items/18691"
+    },
+    {
+      "bytes": 701,
+      "collected_at": "2026-11-13T22:51:25.673031+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-dawns-use",
+      "source_content_digest": "19c69b1fdb1da9ce97e17c7fcc73ccd07583da3b427866cea8d4a95ce269cd85",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/12368"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_forever_drop",
+      "object_id": 18691,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fa6253cfcd79ec0f8f1461b6f5316e298b3a26e1",
+      "subject_id": 10432,
+      "subject_name": "Vectus",
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "activation_item_id": 12368,
+    "equip_level": 56,
+    "factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "finding": "Vectus drops this pendant. The level-57 reviewed route uses the shared Scholomance entrance and a group member with Dawn's Gambit to activate the Viewing Room encounter. The pendant separately requires level 56 to equip. Do not publish a rate from the limited tooltip sample.",
+    "item_id": 18691,
+    "map_id": 289,
+    "npc_id": 10432,
+    "quest_id": 4771,
+    "reviewed_route_level": 57
+  },
+  "source_content_digest": "7fbe2dfc2eb91704a1dbd76221edf33b928def514b620a45d4670f9041d257df",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fa6253cfcd79ec0f8f1461b6f5316e298b3a26e1"
+}

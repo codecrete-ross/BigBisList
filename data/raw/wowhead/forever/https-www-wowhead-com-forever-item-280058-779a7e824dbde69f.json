@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Impish Chain Hood Item Level 59 Binds when picked up Head Mail 284 Armor +19 Stamina +16 Spirit Requires Level 54 Equip: + 34 Attack Power. Sell Price: 2 9 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 280058,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 284,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +34 Attack Power.",
+        "stats": {
+          "attack_power": 34
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +34 Attack Power."
+    ],
+    "id": 280058,
+    "item_level": 59,
+    "name": "Impish Chain Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0,
+      "spirit": 16.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=280058"
+  },
+  "linked_entities": [],
+  "name": "Impish Chain Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7d25a558c90b7ef71b4248daad52a026303b19c58c4492e5d60cdacd85b8d942",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280058",
+  "url": "https://www.wowhead.com/forever/item=280058"
+}

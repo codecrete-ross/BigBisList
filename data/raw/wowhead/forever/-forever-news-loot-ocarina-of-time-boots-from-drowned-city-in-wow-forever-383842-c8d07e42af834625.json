@@ -1,0 +1,82 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever Dungeon Guide",
+      "source": "https://www.wowhead.com/forever/guide/the-drowned-city-dungeon-overview-location-rewards"
+    },
+    {
+      "credit": "Sykellisonas, public Wowhead player report",
+      "source": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842"
+    },
+    {
+      "credit": "All The Things, Forever dungeon encounter IDs",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d72247117427642b1ab33624c0e5f6de9d7f8d19"
+    }
+  ],
+  "confidence": "published_live_discovery_with_player_report",
+  "fetched_at": "2026-11-13T22:39:22.413829+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 79735,
+      "collected_at": "2026-11-13T22:39:22.413829+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wat-forever-news",
+      "source_content_digest": "9029501d1db539fb109052ae6d700c479548dc8008240cc55c939d1283c230e3",
+      "source_url": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842"
+    },
+    {
+      "bytes": 146210,
+      "collected_at": "2026-11-13T22:39:19.464401+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-live-drowned-guide",
+      "source_content_digest": "3cb5c0d90c2a0b0947c86a935b7db1d594cd038340a7854de20daa1a843f670b",
+      "source_url": "https://www.wowhead.com/forever/guide/the-drowned-city-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 11425,
+      "collected_at": "2026-11-13T22:41:19.469460+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-f-the-drowned-city",
+      "source_content_digest": "4c4a64088463c4d297d27377e1d31c458fd5fcfff75b167cd88b7460f81d645e",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/d72247117427642b1ab33624c0e5f6de9d7f8d19"
+    },
+    {
+      "bytes": 1013,
+      "collected_at": "2026-11-13T22:40:30.614633+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-live-iron-boots",
+      "source_content_digest": "eb9e34818da3a7d192997334fe4ab2ae2549c2fa0a64692648972b5dc344c533",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/271718"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_forever_drop",
+      "object_id": 271718,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842",
+      "subject_id": 263886,
+      "subject_name": "Primeval Elemental",
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "drop_npc_id": 263886,
+    "finding": "The dungeon loot guide identifies Primeval Elemental. A player reports obtaining the boots from the underwater boss and slowing to walking speed on land. Additional encounters need individual source checks before registering another route.",
+    "item_id": 271718,
+    "known_effect": "Walk along the bottom underwater. Greatly reduced movement speed on land.",
+    "map_id": 2970,
+    "reviewed_route_level": 35
+  },
+  "source_content_digest": "9029501d1db539fb109052ae6d700c479548dc8008240cc55c939d1283c230e3",
+  "url": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842"
+}

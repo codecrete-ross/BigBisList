@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cursed Murloc Eye Item Level 29 Binds when picked up Unique-Equipped Trinket Requires Level 24 Equip: Spells and attacks deal 2 Shadow damage. Deals 4 times as much damage to Murlocs. Sell Price: 19 87 Dropped by: Gelihast Drop Chance: 4.33%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:13:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 273840,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Spells and attacks deal 2 Shadow damage. Deals 4 times as much damage to Murlocs.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Spells and attacks deal 2 Shadow damage. Deals 4 times as much damage to Murlocs."
+    ],
+    "id": 273840,
+    "item_level": 29,
+    "name": "Cursed Murloc Eye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 24,
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=273840"
+  },
+  "linked_entities": [
+    {
+      "id": 1292674,
+      "name": "Spells and attacks deal 2 Shadow damage. Deals 4 times as much damage to Murlocs.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292674"
+    }
+  ],
+  "name": "Cursed Murloc Eye",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.33,
+      "entity_name": "Gelihast",
+      "source_url": "https://www.wowhead.com/forever/item=273840",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5f366712606b34dea4905d5f6779f3ddcdb80845ed2e0ea51b504b7d6b52e34d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273840",
+  "url": "https://www.wowhead.com/forever/item=273840"
+}

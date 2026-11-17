@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blindwatcher's Sight Item Level 26 Binds when picked up Head Cloth 35 Armor Requires Level 21 Equip: Reduces the hit chance of Disorient effects against you by 7%. Sell Price: 10 82 Dropped by: Odo the Blindwatcher Drop Chance: 1.72%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 273645,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Disorient effects against you by 7%.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Disorient effects against you by 7%."
+    ],
+    "id": 273645,
+    "item_level": 26,
+    "name": "Blindwatcher's Sight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=273645"
+  },
+  "linked_entities": [
+    {
+      "id": 1292268,
+      "name": "Reduces the hit chance of Disorient effects against you by 7%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292268"
+    }
+  ],
+  "name": "Blindwatcher's Sight",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.72,
+      "entity_name": "Odo the Blindwatcher",
+      "source_url": "https://www.wowhead.com/forever/item=273645",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "43739175d6d9a980f9dbb46c1da8e1201cf461ea78139faac34c45c06c50129b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273645",
+  "url": "https://www.wowhead.com/forever/item=273645"
+}

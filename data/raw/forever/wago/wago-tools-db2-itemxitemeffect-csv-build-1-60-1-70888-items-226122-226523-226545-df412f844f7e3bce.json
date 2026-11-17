@@ -1,0 +1,98 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client tables from Wago.tools.",
+      "source": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70888"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "client_item_effect_links",
+  "fetched_at": "2026-11-13T01:11:17.5668203Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 254286,
+      "collected_at": "2026-11-13T01:11:17.5668203Z",
+      "http": 200,
+      "name": "wago-ItemXItemEffect",
+      "source_content_digest": "15dc36eec90ca5768e00469cb8065aedf82efcf205ca03281daf6aac69ca1885",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 412614,
+      "collected_at": "2026-11-13T01:11:17.8086129Z",
+      "http": 200,
+      "name": "wago-ItemEffect",
+      "source_content_digest": "d7b8b53248beb9e1bdbacdcf3106ff5edacadb36548a48ff4777074caba67ff3",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70888"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "item_effects": [
+      {
+        "item_effect_links": [
+          {
+            "ID": 122549,
+            "ItemEffectID": 187478,
+            "ItemID": 226122
+          }
+        ],
+        "item_effects": [
+          {
+            "Charges": 0,
+            "ID": 187478,
+            "PlayerConditionID": 0,
+            "SpellID": 459170,
+            "TriggerType": 0
+          }
+        ],
+        "item_id": 226122,
+        "spell_url": "https://www.wowhead.com/forever/spell=459170"
+      },
+      {
+        "item_effect_links": [
+          {
+            "ID": 122897,
+            "ItemEffectID": 187798,
+            "ItemID": 226523
+          }
+        ],
+        "item_effects": [
+          {
+            "Charges": 0,
+            "ID": 187798,
+            "PlayerConditionID": 0,
+            "SpellID": 459207,
+            "TriggerType": 0
+          }
+        ],
+        "item_id": 226523,
+        "spell_url": "https://www.wowhead.com/forever/spell=459207"
+      },
+      {
+        "item_effect_links": [
+          {
+            "ID": 122912,
+            "ItemEffectID": 187813,
+            "ItemID": 226545
+          }
+        ],
+        "item_effects": [
+          {
+            "Charges": 0,
+            "ID": 187813,
+            "PlayerConditionID": 0,
+            "SpellID": 459232,
+            "TriggerType": 0
+          }
+        ],
+        "item_id": 226545,
+        "spell_url": "https://www.wowhead.com/forever/spell=459232"
+      }
+    ]
+  },
+  "source_content_digest": "15dc36eec90ca5768e00469cb8065aedf82efcf205ca03281daf6aac69ca1885",
+  "url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70888#/items/226122,226523,226545"
+}

@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pirate's Eye Patch Item Level 52 Binds when picked up Head Leather 122 Armor +12 Agility +20 Stamina Equip: Reduces the hit chance of Fear effects against you by 4%. \"Arrrrrgh!\" Sell Price: 1 13 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 19986,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Fear effects against you by 4%.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Fear effects against you by 4%. \"Arrrrrgh!\""
+    ],
+    "id": 19986,
+    "item_level": 52,
+    "name": "Pirate's Eye Patch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19986"
+  },
+  "linked_entities": [
+    {
+      "id": 24351,
+      "name": "Reduces the hit chance of Fear effects against you by 4%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24351"
+    }
+  ],
+  "name": "Pirate's Eye Patch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ad50e7bca3b14c1b677ed6c87bad62f2c076829d8e5a0d1a5ee4e226571f0bda",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19986",
+  "url": "https://www.wowhead.com/forever/item=19986"
+}

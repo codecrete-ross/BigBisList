@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Foreman Pants Item Level 13 Binds when equipped Legs Cloth 22 Armor +2 Strength +2 Stamina Durability 35 / 35 Requires Level 8 Sell Price: 1 19 Dropped by: Gibblewilt Drop Chance: 45.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 10554,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 22,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10554,
+    "item_level": 13,
+    "name": "Foreman Pants",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 8,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "stamina": 2.0,
+      "strength": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10554"
+  },
+  "linked_entities": [],
+  "name": "Foreman Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 45.17,
+      "entity_name": "Gibblewilt",
+      "source_url": "https://www.wowhead.com/forever/item=10554",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10554",
+  "url": "https://www.wowhead.com/forever/item=10554"
+}

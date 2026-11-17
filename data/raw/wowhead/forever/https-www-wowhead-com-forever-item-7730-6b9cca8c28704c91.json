@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Cobalt Crusher Item Level 34 Binds when equipped Two-Hand Mace 74 - 111 Damage Speed 3.20 (28.91 damage per second) Durability 100 / 100 Requires Level 29 Chance on hit: Blasts a target for 127 to 139 Frost damage. Sell Price: 98 65",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 7730,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 28.91,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 127 to 139 Frost damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 127 to 139 Frost damage."
+    ],
+    "id": 7730,
+    "item_level": 34,
+    "name": "Cobalt Crusher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 29,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 111,
+    "weapon_min_damage": 74,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7730"
+  },
+  "linked_entities": [
+    {
+      "id": 18204,
+      "name": "Blasts a target for 127 to 139 Frost damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18204"
+    }
+  ],
+  "name": "Cobalt Crusher",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7730",
+  "url": "https://www.wowhead.com/forever/item=7730"
+}

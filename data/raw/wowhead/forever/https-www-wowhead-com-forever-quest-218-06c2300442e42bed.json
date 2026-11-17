@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Stolen Journal Grelin Whitebeard wants you to kill Grik'nir the Cold, and retrieve his journal. Requirements: - Grelin Whitebeard's Journal",
+  "entity_id": 218,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:27.697Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Stolen Journal",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 786,
+        "name": "Grelin Whitebeard"
+      },
+      "start": {
+        "entity_id": 786,
+        "name": "Grelin Whitebeard"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Dun Morogh"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 5581,
+      "object_name": "Smooth Walking Staff",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=218",
+      "subject_id": 218,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 6176,
+      "object_name": "Dwarven Kite Shield",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=218",
+      "subject_id": 218,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/218",
+  "url": "https://www.wowhead.com/forever/quest=218"
+}

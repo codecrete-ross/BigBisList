@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mind Quickening Gem Item Level 76 Binds when picked up Unique Trinket Classes: Mage Requires Level 60 Use: Quickens the mind, increasing the Mage's casting speed by 33% for 20 sec. (5 Min Cooldown) Sell Price: 7 20 39 Dropped by: Vaelastrasz the Corrupt Drop Chance: 19.11%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19339,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Quickens the mind, increasing the Mage's casting speed by 33% for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19339,
+    "item_level": 76,
+    "name": "Mind Quickening Gem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Quickens the mind, increasing the Mage's casting speed by 33% for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19339"
+  },
+  "linked_entities": [
+    {
+      "id": 23723,
+      "name": "Quickens the mind, increasing the Mage's casting speed by 33% for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23723"
+    }
+  ],
+  "name": "Mind Quickening Gem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.11,
+      "entity_name": "Vaelastrasz the Corrupt",
+      "source_url": "https://www.wowhead.com/forever/item=19339",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19339",
+  "url": "https://www.wowhead.com/forever/item=19339"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Inscribed Leather Pants Item Level 20 Binds when equipped Legs Leather 68 Armor +4 Stamina +4 Intellect Durability 55 / 55 Requires Level 15 Sell Price: 7 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 2986,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 68,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 2986,
+    "item_level": 20,
+    "name": "Inscribed Leather Pants",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 15,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "intellect": 4.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2986"
+  },
+  "linked_entities": [],
+  "name": "Inscribed Leather Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2986",
+  "url": "https://www.wowhead.com/forever/item=2986"
+}

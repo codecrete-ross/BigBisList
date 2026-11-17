@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warder's Wristguards Item Level 50 Binds when picked up Wrist Plate 231 Armor +11 Stamina Requires Level 45 Equip: Increased Defense + 8. Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sell Price: 94 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 250583,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 231,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +8.",
+        "stats": {
+          "defense": 8
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 250583,
+    "item_level": 50,
+    "name": "Warder's Wristguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "defense": 8.0,
+      "spell_power": 7.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250583"
+  },
+  "linked_entities": [],
+  "name": "Warder's Wristguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250583",
+  "url": "https://www.wowhead.com/forever/item=250583"
+}

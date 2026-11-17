@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Greater Strength Item Level 48 Requires Level 48 Use: Increases your Strength by 25 for 1 hour. (3 Sec Cooldown) Max Stack: 20 Sell Price: 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 9206,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your Strength by 25 for 1 hour. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 9206,
+    "item_level": 48,
+    "name": "Elixir of Greater Strength",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 48,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your Strength by 25 for 1 hour. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=9206"
+  },
+  "linked_entities": [
+    {
+      "id": 11405,
+      "name": "Increases your Strength by 25 for 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11405"
+    }
+  ],
+  "name": "Elixir of Greater Strength",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9206",
+  "url": "https://www.wowhead.com/forever/item=9206"
+}

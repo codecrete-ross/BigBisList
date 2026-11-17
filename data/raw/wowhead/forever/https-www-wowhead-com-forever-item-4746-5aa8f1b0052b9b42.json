@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Doomsayer's Robe Item Level 42 Binds when picked up Chest Cloth 55 Armor -11 Stamina +18 Spirit Durability 70 / 70 Equip: Increases healing done by up to 16 and damage done by up to 6 for all magical spells and effects. Sell Price: 51 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 4746,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 55,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 16 and damage done by up to 6 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 16,
+          "spell_damage": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 16 and damage done by up to 6 for all magical spells and effects."
+    ],
+    "id": 4746,
+    "item_level": 42,
+    "name": "Doomsayer's Robe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 16.0,
+      "spell_damage": 6.0,
+      "spirit": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4746"
+  },
+  "linked_entities": [],
+  "name": "Doomsayer's Robe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4746",
+  "url": "https://www.wowhead.com/forever/item=4746"
+}

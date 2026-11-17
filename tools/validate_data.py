@@ -13,7 +13,7 @@ if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DATA_FAMILIES, units_covered_by_source
-from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
+from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, add_flavor_argument, canonical_json
 from tools.reputations import CANONICAL_REPUTATIONS, infer_source_side
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.progression import validate_pre_raid_paths, validate_schedules
@@ -834,12 +834,24 @@ def validate() -> ValidationResult:
     return ValidationResult(not errors, errors, summary)
 
 
+def validate_dataset(flavor: str) -> ValidationResult:
+    if flavor == "anniversary":
+        return validate()
+    if flavor == "forever":
+        from tools.forever import validate as validate_forever
+
+        errors, summary = validate_forever()
+        return ValidationResult(not errors, errors, summary)
+    raise ValueError(f"Unknown dataset flavor: {flavor}")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate Big BiS List canonical JSON.")
+    add_flavor_argument(parser)
     parser.add_argument("--json", action="store_true", help="Print machine-readable output.")
     args = parser.parse_args(argv)
 
-    result = validate()
+    result = validate_dataset(args.flavor)
     payload = {"ok": result.ok, "errors": result.errors, "summary": result.summary}
 
     if args.json:

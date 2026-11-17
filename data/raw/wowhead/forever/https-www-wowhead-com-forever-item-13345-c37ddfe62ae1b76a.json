@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seal of Rivendare Item Level 63 Binds when picked up Unique-Equipped Finger +17 Intellect Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 8 . Sell Price: 2 30 33 Dropped by: Baron Rivendare Drop Chance: 13.34%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13345,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+    ],
+    "id": 13345,
+    "item_level": 63,
+    "name": "Seal of Rivendare",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spell_power": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13345"
+  },
+  "linked_entities": [],
+  "name": "Seal of Rivendare",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 13.34,
+      "entity_name": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/item=13345",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1a27712aae427f736a3731d87ae0c2cbe5209dfe847a5ddffd9dbfabc90284c9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13345",
+  "url": "https://www.wowhead.com/forever/item=13345"
+}

@@ -1,0 +1,194 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 776,
+      "collected_at": "2026-11-13T18:36:24.0130709Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-eye",
+      "source_content_digest": "e2f8d9c59ddd542e273f205060eadf9c759c009652f90fe9ca4660b0585ab2a6",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/21221"
+    },
+    {
+      "bytes": 644,
+      "collected_at": "2026-11-13T18:36:24.3671232Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-eye",
+      "source_content_digest": "5769cbb9012dfad13fed9e2925ecb67aaec85256d65512ec992878c6ca144685",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/21221"
+    },
+    {
+      "bytes": 187462,
+      "collected_at": "2026-11-13T18:36:22.7737555Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-reward-page-234803",
+      "source_content_digest": "64fddaaae1a796babe75c4695a0a6d69141f2706fcebcc4beafac33d0abe29e7",
+      "source_url": "https://www.wowhead.com/classic/item=234803"
+    },
+    {
+      "bytes": 59452,
+      "collected_at": "2026-11-13T18:36:26.5530646Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-quest-86670",
+      "source_content_digest": "d4fc018ae351ad1aafebf809213b5290c60def50de4626afec69562e570134d5",
+      "source_url": "https://www.wowhead.com/classic/quest=86670/the-savior-of-kalimdor"
+    },
+    {
+      "bytes": 5502,
+      "collected_at": "2026-11-13T18:36:24.7184358Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wdb-quest-86670",
+      "source_content_digest": "8f8ef917fe67f7cc373ab8bca9c587c94cdb4c3f1dfbbd109182e0ec860a56f1",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/86670"
+    },
+    {
+      "bytes": 109258,
+      "collected_at": "2026-11-13T15:23:14.4607876Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-2-6-temple-of-ahn-qiraj",
+      "source_content_digest": "c59858fd2a19b4312f985541d7579a72c54852a40e3bd8070e098d33575592d6",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fc9bcb864cddbf17215d660df1f6fd41373b2feb"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 30663,
+      "collected_at": "2026-11-13T18:23:21.5996105Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-raids",
+      "source_content_digest": "4a122cc6587c1c8a2096593f4d01f731ecaaa93da8196bce9bfa24f336f0fd2c",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "historical_quest_minimum": 60,
+    "historical_reward_id": 234803,
+    "quest_id": 86670,
+    "quest_starter": {
+      "binding": "bind_on_pickup",
+      "item_id": 21221,
+      "map_id": 531,
+      "name": "Eye of C'Thun",
+      "required_level": 60,
+      "source": "C'Thun"
+    },
+    "raid_gate_evidence": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/531",
+    "review_boundary": "Current quest text identifies the Eye. The exact reward choice is recorded in the archived quest and item pages. The current WarcraftDB record omits item choices.",
+    "shared_item_fields": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "ID": "234803",
+      "IconFileDataID": "133424",
+      "InventoryType": "11",
+      "ItemGroupSoundsID": "14",
+      "Material": "4",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "0"
+    }
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    234803
+  ],
+  "unavailable_scope": {
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/quest-86670-reward-234803"
+}

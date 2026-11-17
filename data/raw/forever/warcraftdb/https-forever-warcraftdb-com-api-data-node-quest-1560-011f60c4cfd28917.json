@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1560"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:13:00.573445+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 9642,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1560",
+      "subject_id": 1560,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Tooga's Quest",
+    "quest_id": 1560,
+    "reward_item_roles": {
+      "9638": "choices",
+      "9642": "choices"
+    },
+    "side": "Both",
+    "zone": "Tanaris"
+  },
+  "source_content_digest": "50e3facf7a04947c6048d60c38f7a0ded1165cfc0426d115b2ccb82acfdd1125",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1560"
+}

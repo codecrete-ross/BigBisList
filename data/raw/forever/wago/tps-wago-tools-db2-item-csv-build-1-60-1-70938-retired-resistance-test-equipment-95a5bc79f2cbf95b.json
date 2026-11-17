@@ -1,0 +1,522 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 752,
+      "collected_at": "2026-11-13T18:23:14.7344896Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "game-versions",
+      "source_content_digest": "dba52275d6dd88b459081539e5f3d378588c9fdc596fcd6c5c1bdada00c4d534",
+      "source_url": "https://us.version.battle.net/wowf/versions"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 8561018,
+      "collected_at": "2026-11-13T17:48:16.9269649Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-sparse",
+      "source_content_digest": "eef48b88d1af6ea23872155819dc59342204b2f34c0b613df0405ef06f7a5145",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 179571,
+      "collected_at": "2026-11-13T18:23:26.3162280Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16061",
+      "source_content_digest": "2b2bc29551194e42aae5439fd645b69cc843ab95c3bf769015fa7851d4fd9e43",
+      "source_url": "https://www.wowhead.com/classic/item=16061"
+    },
+    {
+      "bytes": 1079,
+      "collected_at": "2026-11-13T18:23:26.6673364Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16061",
+      "source_content_digest": "71441e3e7215534e6b3b7bce87c8f7759b79a0210be4649bad49cfce58eae6a3",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16061"
+    },
+    {
+      "bytes": 179633,
+      "collected_at": "2026-11-13T18:23:28.1253781Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16122",
+      "source_content_digest": "7d90366b36ee45bb124409e46f7b89f82d2827d34ccd03665e628cc55255fec3",
+      "source_url": "https://www.wowhead.com/classic/item=16122"
+    },
+    {
+      "bytes": 1086,
+      "collected_at": "2026-11-13T18:23:28.3439490Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16122",
+      "source_content_digest": "a12ffe74cd0c99e96779015ce230ae146b95426f403104141eb771e52b519bee",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16122"
+    },
+    {
+      "bytes": 179606,
+      "collected_at": "2026-11-13T18:23:29.8725517Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16134",
+      "source_content_digest": "e83dfa47f314a046b61c5729c159761f06191e69a7848a5e7d9713b74314dd23",
+      "source_url": "https://www.wowhead.com/classic/item=16134"
+    },
+    {
+      "bytes": 1085,
+      "collected_at": "2026-11-13T18:23:30.1071481Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16134",
+      "source_content_digest": "6303977e835ada13eb2608fee0420ab3c7a11cb93dc808d5aa737167b52a2583",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16134"
+    },
+    {
+      "bytes": 165472,
+      "collected_at": "2026-11-13T18:23:31.5623247Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16143",
+      "source_content_digest": "fce6f400916341cdeb2fdffd0ece6de2dd6e9e111b4eb2a795634e294f1c0ef4",
+      "source_url": "https://www.wowhead.com/classic/item=16143"
+    },
+    {
+      "bytes": 1079,
+      "collected_at": "2026-11-13T18:23:31.8584726Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16143",
+      "source_content_digest": "447ff427880fc9c2147397e16656ecb60092c92331169518156dfc56b5b6f020",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16143"
+    },
+    {
+      "bytes": 168822,
+      "collected_at": "2026-11-13T18:23:33.2800091Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16144",
+      "source_content_digest": "133d84116f49aa17320d7986e63a1e27a3dd7c5af6c29a75cf524bb3ca53b0e7",
+      "source_url": "https://www.wowhead.com/classic/item=16144"
+    },
+    {
+      "bytes": 1089,
+      "collected_at": "2026-11-13T18:23:33.4951383Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16144",
+      "source_content_digest": "a54443dba2ea669dcc65d60da1723c3a3984aebcdbe36ca3542eefcb317a267d",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16144"
+    },
+    {
+      "bytes": 179635,
+      "collected_at": "2026-11-13T18:23:34.8335998Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16147",
+      "source_content_digest": "72192ba64cd5ac0c87ff360162f89ee87a2bfaded4b0562eb1274d01232581c1",
+      "source_url": "https://www.wowhead.com/classic/item=16147"
+    },
+    {
+      "bytes": 1087,
+      "collected_at": "2026-11-13T18:23:35.0955259Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16147",
+      "source_content_digest": "3dac680b35807f7006aea57ddb5834b306fe04466345c8914289e549c6508b72",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16147"
+    },
+    {
+      "bytes": 168854,
+      "collected_at": "2026-11-13T18:23:36.5096330Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16148",
+      "source_content_digest": "0f44806e4e0f00636f14690348caca59c464b026447ff973e8a65677fc4eb9fe",
+      "source_url": "https://www.wowhead.com/classic/item=16148"
+    },
+    {
+      "bytes": 1093,
+      "collected_at": "2026-11-13T18:23:36.7499618Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16148",
+      "source_content_digest": "b07ba61f5fe3547501b201bea0ac6863e572abf66999e29a52d43b4c99352400",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16148"
+    },
+    {
+      "bytes": 165504,
+      "collected_at": "2026-11-13T18:23:37.9282087Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16149",
+      "source_content_digest": "47159f7e9689536277253caf859207249347cd83a028af297de984db4e006da4",
+      "source_url": "https://www.wowhead.com/classic/item=16149"
+    },
+    {
+      "bytes": 1083,
+      "collected_at": "2026-11-13T18:23:38.2014366Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16149",
+      "source_content_digest": "6b430d7b866e1ab6c479e00fe686672198740b365604fdcb8babf20ebbdd47f6",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16149"
+    },
+    {
+      "bytes": 179635,
+      "collected_at": "2026-11-13T18:23:39.7767212Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-16154",
+      "source_content_digest": "b01769d8b949d774fb0c436f99fea5e7ff0e6c6ec44ea8f411faf7a20bbd8b3c",
+      "source_url": "https://www.wowhead.com/classic/item=16154"
+    },
+    {
+      "bytes": 1087,
+      "collected_at": "2026-11-13T18:23:40.0153478Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-16154",
+      "source_content_digest": "c25117f9f2dacbac375584abc565e5569644d4b7ffeb41f4bfed95b2fec98fb6",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16154"
+    },
+    {
+      "bytes": 183458,
+      "collected_at": "2026-11-13T18:23:40.9422906Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-page-17108",
+      "source_content_digest": "9f8563022ac8f7536bc394fbfc6e84f180d5f0099c60fa6c5d29fc3dee595528",
+      "source_url": "https://www.wowhead.com/classic/item=17108"
+    },
+    {
+      "bytes": 1141,
+      "collected_at": "2026-11-13T18:23:41.2233488Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-tip-17108",
+      "source_content_digest": "3a0c5abc7006986bb1ba6943090427b969dfa15c22fee4b90ef63478adc94f24",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/17108"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "comparison": "Every field shared by the two client Item schemas matches for each exact ID.",
+    "creation_spell_matches": [],
+    "exact_item_matches": {
+      "16061": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Fire Res Shoulders Cloth",
+        "historical_page": "https://www.wowhead.com/classic/item=16061",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16061",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16061",
+          "IconFileDataID": "135049",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "7",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "1"
+        }
+      },
+      "16122": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Nature Res Shoulders Cloth",
+        "historical_page": "https://www.wowhead.com/classic/item=16122",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16122",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16122",
+          "IconFileDataID": "135049",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "7",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "1"
+        }
+      },
+      "16134": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Nature Res Shoulders Mail",
+        "historical_page": "https://www.wowhead.com/classic/item=16134",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16134",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16134",
+          "IconFileDataID": "135049",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "10",
+          "Material": "5",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "3"
+        }
+      },
+      "16143": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Frost Res Shoulder Mail",
+        "historical_page": "https://www.wowhead.com/classic/item=16143",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16143",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16143",
+          "IconFileDataID": "135040",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "10",
+          "Material": "5",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "3"
+        }
+      },
+      "16144": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Frost Res Shoulders Leather",
+        "historical_page": "https://www.wowhead.com/classic/item=16144",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16144",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16144",
+          "IconFileDataID": "135039",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "8",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "2"
+        }
+      },
+      "16147": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Shadow Res Shoulders Cloth",
+        "historical_page": "https://www.wowhead.com/classic/item=16147",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16147",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16147",
+          "IconFileDataID": "135049",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "7",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "1"
+        }
+      },
+      "16148": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Shadow Res Shoulders Leather",
+        "historical_page": "https://www.wowhead.com/classic/item=16148",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16148",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16148",
+          "IconFileDataID": "135039",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "8",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "2"
+        }
+      },
+      "16149": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Shadow Res Shoulder Mail",
+        "historical_page": "https://www.wowhead.com/classic/item=16149",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16149",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16149",
+          "IconFileDataID": "135040",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "10",
+          "Material": "5",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "3"
+        }
+      },
+      "16154": {
+        "historical_min_equip_level": 30,
+        "historical_name": "Test Arcane Res Shoulders Cloth",
+        "historical_page": "https://www.wowhead.com/classic/item=16154",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/16154",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "16154",
+          "IconFileDataID": "135049",
+          "InventoryType": "3",
+          "ItemGroupSoundsID": "7",
+          "Material": "7",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "1"
+        }
+      },
+      "17108": {
+        "historical_min_equip_level": 60,
+        "historical_name": "Mark of Deflection",
+        "historical_page": "https://www.wowhead.com/classic/item=17108",
+        "historical_player_access": "explicitly unavailable",
+        "historical_tooltip": "https://nether.wowhead.com/classic/tooltip/item/17108",
+        "shared_item_fields": {
+          "AmmunitionType": "0",
+          "ClassID": "4",
+          "ContentTuningID": "0",
+          "ID": "17108",
+          "IconFileDataID": "133364",
+          "InventoryType": "11",
+          "ItemGroupSoundsID": "14",
+          "Material": "3",
+          "SheatheType": "0",
+          "Sound_override_subclassID": "-1",
+          "SubclassID": "0"
+        }
+      }
+    },
+    "observed_player_acquisitions": [],
+    "review_boundary": "The legacy tooltip is retained as historical evidence."
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    16061,
+    16122,
+    16134,
+    16143,
+    16144,
+    16147,
+    16148,
+    16149,
+    16154,
+    17108
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/retired-resistance-test-equipment"
+}

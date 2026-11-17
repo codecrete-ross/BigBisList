@@ -1,0 +1,56 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Incense Candle Item Level 4 Requires Herbalism (20) Use: Ignites an incense candle that allows you and others sitting nearby to gain [( 60 < 14 ? 2 : ( 60 < 28 ? 6 : ( 60 < 42 ? 12 : ( 60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279962,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Ignites an incense candle that allows you and others sitting nearby to gain [(60 < 14 ? 2 : (60 < 28 ? 6 : (60 < 42 ? 12 : (60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect.",
+        "type": "use"
+      }
+    ],
+    "id": 279962,
+    "item_level": 4,
+    "name": "Incense Candle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Ignites an incense candle that allows you and others sitting nearby to gain [(60 < 14 ? 2 : (60 < 28 ? 6 : (60 < 42 ? 12 : (60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279962"
+  },
+  "linked_entities": [
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=182"
+    },
+    {
+      "id": 1307251,
+      "name": "Ignites an incense candle that allows you and others sitting nearby to gain [( 60 < 14 ? 2 : ( 60 < 28 ? 6 : ( 60 < 42 ? 12 : ( 60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307251"
+    }
+  ],
+  "name": "Incense Candle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279962",
+  "url": "https://www.wowhead.com/forever/item=279962"
+}

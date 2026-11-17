@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blackmist Armguards Item Level 63 Binds when picked up Wrist Leather 77 Armor +5 Strength +13 Stamina +7 Shadow Resistance Durability 35 / 35 Requires Level 58 Equip: Improves your chance to hit by 1.0%. Sell Price: 1 45 10 Dropped by: The Beast Drop Chance: 20.85%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:59.1110610Z",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 12966,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 77,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 12966,
+    "item_level": 63,
+    "name": "Blackmist Armguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "shadow_resistance": 7.0,
+      "stamina": 13.0,
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12966"
+  },
+  "linked_entities": [],
+  "name": "Blackmist Armguards",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.85,
+      "entity_name": "The Beast",
+      "source_url": "https://www.wowhead.com/forever/item=12966",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "900cb21854a76dffb5d830194cda922e9e58939438221582411d7818aa454fdd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12966",
+  "url": "https://www.wowhead.com/forever/item=12966"
+}

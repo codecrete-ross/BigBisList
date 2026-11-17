@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Book of Aquor Item Level 1 Quest Item Unique Use: Summons Aquementas. (5 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:18.1892068Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 11169,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Summons Aquementas. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 11169,
+    "item_level": 1,
+    "name": "Book of Aquor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Summons Aquementas. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=11169"
+  },
+  "linked_entities": [
+    {
+      "id": 13978,
+      "name": "Summons Aquementas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13978"
+    }
+  ],
+  "name": "Book of Aquor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "6a8cee774a42260a1691910ccf18351049682a2e11314f6a8214f10bc2a02aa7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11169?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=11169"
+}

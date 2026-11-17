@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stromgarde Hood Item Level 39 Binds when picked up Head Cloth 42 Armor +8 Stamina +110 Armor Equip: Improves your chance to hit by 0.5%. Sell Price: 31 98",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 278567,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 42,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 278567,
+    "item_level": 39,
+    "name": "Stromgarde Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=278567"
+  },
+  "linked_entities": [],
+  "name": "Stromgarde Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "427e0c7019257b7da3477254ea882adcaf3af83320402ffff404e8b77a24c5f1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/278567",
+  "url": "https://www.wowhead.com/forever/item=278567"
+}

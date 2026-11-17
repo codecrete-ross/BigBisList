@@ -1,0 +1,492 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Veenix Venture Co. Merchant Level 24 Humanoid (Normal)",
+  "entity_id": 4086,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:33.783Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 922,
+      "name": "Dacian Falx",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=922"
+    },
+    {
+      "id": 923,
+      "name": "Longsword",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=923"
+    },
+    {
+      "id": 924,
+      "name": "Maul",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=924"
+    },
+    {
+      "id": 925,
+      "name": "Flail",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=925"
+    },
+    {
+      "id": 926,
+      "name": "Battle Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=926"
+    },
+    {
+      "id": 927,
+      "name": "Double Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=927"
+    },
+    {
+      "id": 928,
+      "name": "Long Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=928"
+    },
+    {
+      "id": 2209,
+      "name": "Kris",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2209"
+    },
+    {
+      "id": 4817,
+      "name": "Blessed Claymore",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4817"
+    },
+    {
+      "id": 4818,
+      "name": "Executioner's Sword",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4818"
+    },
+    {
+      "id": 4836,
+      "name": "Fireproof Orb",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4836"
+    },
+    {
+      "id": 4837,
+      "name": "Strength of Will",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4837"
+    },
+    {
+      "id": 4838,
+      "name": "Orb of Power",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4838"
+    },
+    {
+      "id": 7561,
+      "name": "Schematic: Goblin Jumper Cables",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7561"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 14 of 14",
+    "1 - 14 of 14"
+  ],
+  "location_name": "Stonetalon Mountains",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          58.2,
+          51.6
+        ]
+      ]
+    },
+    "zone": 406
+  },
+  "name": "Veenix",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 24",
+    "React: A\u00a0H",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 664"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 922,
+      "object_name": "Dacian Falx",
+      "object_type": "item",
+      "price_copper": 12038,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Dacian Falx",
+        "26",
+        "21",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "1 20 38"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 923,
+      "object_name": "Longsword",
+      "object_type": "item",
+      "price_copper": 8743,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Longsword",
+        "26",
+        "21",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "87 43"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 924,
+      "object_name": "Maul",
+      "object_type": "item",
+      "price_copper": 10972,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Maul",
+        "26",
+        "21",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "1 9 72"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 925,
+      "object_name": "Flail",
+      "object_type": "item",
+      "price_copper": 7797,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Flail",
+        "25",
+        "20",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "77 97"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 926,
+      "object_name": "Battle Axe",
+      "object_type": "item",
+      "price_copper": 9784,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Battle Axe",
+        "25",
+        "20",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "97 84"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 927,
+      "object_name": "Double Axe",
+      "object_type": "item",
+      "price_copper": 6953,
+      "relation": "sells",
+      "required_level": 19,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Double Axe",
+        "24",
+        "19",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "69 53"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 928,
+      "object_name": "Long Staff",
+      "object_type": "item",
+      "price_copper": 9860,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Long Staff",
+        "25",
+        "20",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "98 60"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2209,
+      "object_name": "Kris",
+      "object_type": "item",
+      "price_copper": 7115,
+      "relation": "sells",
+      "required_level": 19,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Kris",
+        "24",
+        "19",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "71 15"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4817,
+      "object_name": "Blessed Claymore",
+      "object_type": "item",
+      "price_copper": 12311,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Blessed Claymore",
+        "22",
+        "17",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "1 23 11"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4818,
+      "object_name": "Executioner's Sword",
+      "object_type": "item",
+      "price_copper": 14273,
+      "relation": "sells",
+      "required_level": 19,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Executioner's Sword",
+        "24",
+        "19",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "1 42 73"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4836,
+      "object_name": "Fireproof Orb",
+      "object_type": "item",
+      "price_copper": 8002,
+      "relation": "sells",
+      "required_level": 23,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Fireproof Orb",
+        "28",
+        "23",
+        "",
+        "",
+        "Held In Off-hand",
+        "Vendors",
+        "Off-hand Frill",
+        "80 2"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4837,
+      "object_name": "Strength of Will",
+      "object_type": "item",
+      "price_copper": 8002,
+      "relation": "sells",
+      "required_level": 25,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Strength of Will",
+        "30",
+        "25",
+        "",
+        "",
+        "Held In Off-hand",
+        "Vendors",
+        "Off-hand Frill",
+        "80 2"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4838,
+      "object_name": "Orb of Power",
+      "object_type": "item",
+      "price_copper": 8002,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Orb of Power",
+        "26",
+        "21",
+        "",
+        "",
+        "Held In Off-hand",
+        "Vendors",
+        "Off-hand Frill",
+        "80 2"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 7561,
+      "object_name": "Schematic: Goblin Jumper Cables",
+      "object_type": "item",
+      "price_copper": 2000,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=4086",
+      "subject_id": 4086,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nDetails changed",
+        "(1)",
+        "Schematic: Goblin Jumper Cables",
+        "33",
+        "5",
+        "",
+        "",
+        "",
+        "Drop, Vendor",
+        "Engineering Schematic",
+        "20"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/4086",
+  "url": "https://www.wowhead.com/forever/npc=4086"
+}

@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Insightful Hood Item Level 61 Binds when picked up Head Leather 139 Armor +12 Stamina +15 Intellect +9 Spirit Durability 60 / 60 Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects. Sell Price: 1 96 38 Dropped by: Cho'Rush the Observer Drop Chance: 42.26%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18490,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 139,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 24,
+          "spell_damage": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases healing done by up to 24 and damage done by up to 8 for all magical spells and effects."
+    ],
+    "id": 18490,
+    "item_level": 61,
+    "name": "Insightful Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 24.0,
+      "intellect": 15.0,
+      "spell_damage": 8.0,
+      "spirit": 9.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18490"
+  },
+  "linked_entities": [],
+  "name": "Insightful Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 42.26,
+      "entity_name": "Cho'Rush the Observer",
+      "source_url": "https://www.wowhead.com/forever/item=18490",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1a0604bee22f07d69b8c5606213c714d51242a929db4f9ce2cbf1cdd5681795e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18490",
+  "url": "https://www.wowhead.com/forever/item=18490"
+}

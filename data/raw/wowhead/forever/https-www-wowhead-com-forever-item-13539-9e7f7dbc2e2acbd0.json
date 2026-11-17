@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Banshee's Touch Item Level 60 Binds when picked up Hands Plate 392 Armor +10 Strength +9 Stamina +13 Arcane Resistance +13 Frost Resistance Durability 40 / 40 Requires Level 55 Sell Price: 1 75 9 Dropped by: Baroness Anastari Drop Chance: 10.72%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:09.9941544Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 13539,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 392,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13539,
+    "item_level": 60,
+    "name": "Banshee's Touch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 13.0,
+      "frost_resistance": 13.0,
+      "stamina": 9.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13539"
+  },
+  "linked_entities": [],
+  "name": "Banshee's Touch",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.72,
+      "entity_name": "Baroness Anastari",
+      "source_url": "https://www.wowhead.com/forever/item=13539",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "893577c8ee2bb2a5eefc8ef1c0163fa18e106cac4258ade325cbde0636cf5164",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13539",
+  "url": "https://www.wowhead.com/forever/item=13539"
+}

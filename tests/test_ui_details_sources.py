@@ -44,6 +44,24 @@ local function render()
     block=ui:CreateDetailsSourceItems(panel,anchor,option,"reward:100:selected",context)
 end
 ui.RefreshDetails=function() render() end
+local function revealSourceCard(id)
+    local function findCard()
+        for _, sourceBlock in ipairs(ui.detailsWidgetPools["source-items"] or {}) do
+            for _, card in ipairs(sourceBlock.cards) do
+                if card:IsVisible() and card.identity.itemId == id then return card, sourceBlock end
+            end
+        end
+    end
+    local card, sourceBlock = findCard()
+    if card then return card, sourceBlock end
+    for _, routes in ipairs(ui.detailsWidgetPools["source-routes"] or {}) do
+        if routes:IsVisible() and not ui:IsDetailsSectionExpanded(routes.sectionKey, routes.defaultExpanded) then
+            routes.header:Click(); H.settle()
+            card, sourceBlock = findCard()
+            if card then return card, sourceBlock end
+        end
+    end
+end
 ''' + body + r'''
 assert(#H.errors==0,table.concat(H.errors,"\n"))
 ''', capture_output=True, text=True, timeout=90)
@@ -232,20 +250,13 @@ assert(not ui.detailsWidgetPools["source-items"][1]:IsVisible())
 BigBiSList.GetAccessOptionSourceItems=actualSourceItems
 ui.RefreshDetails=actualRefreshDetails
 ui:Open(); H.settle(); ui:SetTab("By Slot"); ui:SetPhase("T6"); H.settle()
-local function visibleCard(id)
-    for _,sourceBlock in ipairs(ui.detailsWidgetPools["source-items"] or {}) do
-        for _,card in ipairs(sourceBlock.cards or {}) do
-            if card:IsVisible() and card.identity.itemId==id then return card end
-        end
-    end
-end
 local reward={item_id=31039,slot="Head",name="Thunderheart Cover"}
 for _,size in ipairs({{1020,560},{1160,660}}) do
     for _,density in ipairs({"comfortable","compact"}) do
         BigBiSListDB.profile.window.density=density
         ui.frame:SetSize(size[1],size[2]); H.settle()
         ui:ShowInspectorFor(reward.item_id,reward,"phase"); H.settle()
-        local card=visibleCard(31096)
+        local card=revealSourceCard(31096)
         assert(card,"real token source was not rendered through RefreshDetails")
         assert(card.originRows[1].rate:GetText()=="57.8%","reported token rate missing")
         H.expectBounded(card,ui.detailsContent,"real token card")
@@ -256,14 +267,14 @@ for _,size in ipairs({{1020,560},{1160,660}}) do
 end
 local starterReward={item_id=30007,slot="Neck",name="The Darkener's Grasp"}
 ui:ShowInspectorFor(starterReward.item_id,starterReward,"phase"); H.settle()
-local starter=visibleCard(32405)
+local starter=revealSourceCard(32405)
 assert(starter and starter.originRows[1].rate:GetText()=="91.5%","quest starter item/rate not rendered")
 ui:ShowInspectorFor(reward.item_id,reward,"phase"); H.settle()
 assert(ui:OpenSlotComparison(reward,"phase")); H.settle()
 local comparison=ui.slotComparison
 ui:ShowComparisonDetails(reward); H.settle()
 local selectedKey,reference=ui.selectedRowKey,comparison.reference
-local token=visibleCard(31096)
+local token=revealSourceCard(31096)
 assert(token and ui.detailsBackButton.label:GetText()=="Back to comparison")
 token.identity:Click()
 assert(ui.slotComparison==comparison and comparison.detailsOpen and comparison.reference==reference)
@@ -293,9 +304,8 @@ BigBiSList.GetAccessOptionSourceItems=actualSourceItems
 ui.RefreshDetails=actualRefreshDetails
 ui:Open(); H.settle(); ui:SetTab("By Slot"); ui:SetPhase("T6"); H.settle()
 ui:ShowInspectorFor(31039,{item_id=31039,name="Thunderheart Cover",slot="Head"},"phase"); H.settle()
-local source=ui.detailsWidgetPools["source-items"][1]
-local card=source.cards[1]
-assert(card.identity.itemId==31096 and card:IsVisible())
+local card,source=revealSourceCard(31096)
+assert(card and card.identity.itemId==31096 and card:IsVisible())
 local signature=ui.detailsRenderSignature
 ui:Close()
 for _,frame in ipairs(H.frames) do

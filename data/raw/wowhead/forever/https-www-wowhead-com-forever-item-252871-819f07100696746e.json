@@ -1,0 +1,121 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Mender's Leather Gauntlets Item Level 55 Requires Leatherworking (250) Use: Teaches you how to craft Mender's Leather Gauntlets. Sell Price: 40",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Hands",
+      "item_id": 252551,
+      "item_stats": {
+        "armor_type": "Leather",
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 252551,
+        "name": "Mender's Leather Gauntlets",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Hands",
+        "source_summary": "",
+        "stats": {
+          "intellect": 9.0,
+          "stamina": 6.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=252551"
+      },
+      "name": "Mender's Leather Gauntlets",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=252551"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 252871,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Mender's Leather Gauntlets.",
+        "type": "use"
+      }
+    ],
+    "id": 252871,
+    "item_level": 55,
+    "name": "Pattern: Mender's Leather Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Mender's Leather Gauntlets."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=252871"
+  },
+  "linked_entities": [
+    {
+      "id": 4304,
+      "name": "Thick Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4304"
+    },
+    {
+      "id": 5500,
+      "name": "Iridescent Pearl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5500"
+    },
+    {
+      "id": 8172,
+      "name": "Cured Thick Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8172"
+    },
+    {
+      "id": 252551,
+      "name": "Mender's Leather Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252551"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1255036,
+      "name": "Teaches you how to craft Mender's Leather Gauntlets.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1255036"
+    }
+  ],
+  "name": "Pattern: Mender's Leather Gauntlets",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Mender's Leather Gauntlets Item Level 55 Requires Leatherworking (250) Use: Teaches you how to craft Mender's Leather Gauntlets. Sell Price: 40",
+      "scope": "equip_or_use",
+      "skill": 250,
+      "source_url": "https://www.wowhead.com/forever/item=252871",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1255036
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252871",
+  "url": "https://www.wowhead.com/forever/item=252871"
+}

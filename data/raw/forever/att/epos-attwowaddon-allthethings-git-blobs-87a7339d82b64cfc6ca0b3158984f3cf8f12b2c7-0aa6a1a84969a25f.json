@@ -1,0 +1,587 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "WoW Classic Item Caches, reproducing Wowhead seasonal tooltips",
+      "source": "https://github.com/Napalmsteak/WoW-Classic-Item-Caches/tree/eff4560809de2e852e9164183e3edf5a795edd20"
+    },
+    {
+      "credit": "Warcraft Wiki contributors",
+      "source": "https://warcraft.wiki.gg/wiki/Mark_of_Hakkar_(Season_of_Discovery)"
+    },
+    {
+      "credit": "EG Link observations",
+      "source": "https://guide.wow4ever.se/en/quests/3447"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T15:23:18.9186154Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 65176,
+      "collected_at": "2026-11-13T15:23:18.9186154Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-the-temple-of-atal-hakkar",
+      "source_content_digest": "e716b78a0ceb2b949b39efaf7ba199c6f6e1c605f059afac2a81b06a2870ab42",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/87a7339d82b64cfc6ca0b3158984f3cf8f12b2c7"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 30895,
+      "collected_at": "2026-11-13T14:15:29.2426825Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-launch",
+      "source_content_digest": "7fb53128ca0e58bc0244332457535bb1965a83f929b454152b60a2db2f361b4b",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009/world-of-warcraft-forever-raid-overview-locations-raid-sizes-and-attunement"
+    },
+    {
+      "bytes": 122522,
+      "collected_at": "2026-11-13T15:28:37.4318904Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-stranglethorn",
+      "source_content_digest": "876e7a9bc633f85c8b179fd0dfce0dc5cb6dc755be27062f9d8b9eb482a2b582",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/e6a5af01f2fccdce7c8dd2840beacf52b42fd36a"
+    },
+    {
+      "bytes": 139259,
+      "collected_at": "2026-11-13T15:28:38.0520254Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-sod-stranglethorn",
+      "source_content_digest": "4f90c397d2303e6a38a98aafce427e48d33b762fb3ec92eddbe293f23623dc0d",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/150ae1479eb05e0b5eefabcfce1badc1c423629a"
+    },
+    {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T15:03:40.6311251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-1500",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    },
+    {
+      "bytes": 24520,
+      "collected_at": "2026-11-13T15:23:21.1067598Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-sod-3",
+      "source_content_digest": "f64d2267ead0f349f0003bda1c168900d1692a8f2e25f47fb6fe1ae3ad6421f5",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24078318/season-of-discovery-phase-3-is-now-live"
+    },
+    {
+      "bytes": 25160,
+      "collected_at": "2026-11-13T09:11:24.8307427Z",
+      "http": "200",
+      "name": "att-dungeon-atal-hakkar",
+      "source_content_digest": "f6d45ee474ef54d79754aa2753ba56ec387dc2726ded4fe6b02d1795cb4a27f5",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f24c32a1a93fbaa3284278a8775356599e45b30c"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 1012217,
+      "collected_at": "2026-11-13T15:02:36.4298079Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-meta-1502",
+      "source_content_digest": "d45ce274ee10356831e14593d6a19a507087a3417fe737acee37b0ae61ef513d",
+      "source_url": "https://playfulls.com/db/meta.d45ce274ee.json"
+    },
+    {
+      "bytes": 1363081,
+      "collected_at": "2026-11-13T15:02:37.5538161Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-gear-1502",
+      "source_content_digest": "4ea88c1804f5c9807dd608447d601c89ffe0c7b9edeb0661b73f01cf9258c960",
+      "source_url": "https://playfulls.com/db/gear.4ea88c1804.json"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 15980938,
+      "collected_at": "2026-11-13T15:50:52.2009496Z",
+      "http": "200",
+      "name": "napalmsteak-pinned-sod",
+      "source_content_digest": "4561f4eb9a6fce40ba66906f1772e75f401f13d8eb466def256accd2c1f1c7e2",
+      "source_url": "https://raw.githubusercontent.com/Napalmsteak/WoW-Classic-Item-Caches/eff4560809de2e852e9164183e3edf5a795edd20/Season%20of%20Discovery%20Cache.json"
+    },
+    {
+      "bytes": 43277,
+      "collected_at": "2026-11-13T15:54:42.2804925Z",
+      "http": "200",
+      "name": "seasonal-hakkar-wiki",
+      "source_content_digest": "f640a764517fc745392ffff32ba8aee682c9831393dddcb9ce70f6f2a7026714",
+      "source_url": "https://warcraft.wiki.gg/wiki/Mark_of_Hakkar_(Season_of_Discovery)"
+    },
+    {
+      "bytes": 76392,
+      "collected_at": "2026-11-13T15:54:43.2901790Z",
+      "http": "200",
+      "name": "live-circle-quest",
+      "source_content_digest": "e2da07363619dcf8e12ceaf8d91fc676f06a05bf8eb07a223f5927914bea9f33",
+      "source_url": "https://guide.wow4ever.se/en/quests/3447"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "reviewed_page_facts": {
+    "archived_binding_scope": "Season of Discovery tooltips for these exact IDs only",
+    "att_commit": "1c4d146b518a3c2cda6d2488a27be6e2638d5360",
+    "att_path": ".contrib/.db/season of discovery/dungeons & raids/The Temple of Atal'hakkar.lua",
+    "exact_forever_item_grant_matches": [],
+    "finding": "The exact item IDs are listed in the pinned seasonal Sunken Temple module. The current Forever dungeon's normal entry and tuning place the reported instance routes above each reviewed range. The seasonal raid branch is documented separately. The public Forever item, loot, vendor and quest evidence supplies no competing acquisition for these exact IDs. No seasonal equip requirement or item stats are imported. The archived seasonal tooltips show pickup binding for the exact rewards. The archive establishes binding on the seasonal branch. Any current Forever trade or grant of the exact item reopens review.",
+    "map_id": 109,
+    "reported_items": [
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 3,
+        "item_id": 220527,
+        "name": "Atal'ai Berserker's Mantle",
+        "reported_routes": [
+          {
+            "source_context_line": 1038,
+            "source_line": 1047,
+            "source_name": "Atal'alarion <Guardian of the Idol>",
+            "subject": 218624,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 3,
+        "item_id": 220528,
+        "name": "Atal'ai Huntsman's Shoulders",
+        "reported_routes": [
+          {
+            "source_context_line": 1078,
+            "source_line": 1087,
+            "source_name": "Gasher",
+            "subject": 221637,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 3,
+        "item_id": 220532,
+        "name": "Reinforced Atal'ai Spaulders",
+        "reported_routes": [
+          {
+            "source_context_line": 1078,
+            "source_line": 1088,
+            "source_name": "Gasher",
+            "subject": 221637,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 28,
+        "item_id": 220605,
+        "name": "Libram of Sacrilege",
+        "reported_routes": [
+          {
+            "source_context_line": 1133,
+            "source_line": 1150,
+            "source_name": "Jammal'an the Prophet",
+            "subject": 218721,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 19,
+          "level_min": 1,
+          "slot": "Libram"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 28,
+        "item_id": 220607,
+        "name": "Totem of Tormented Ancestry",
+        "reported_routes": [
+          {
+            "source_context_line": 1153,
+            "source_line": 1170,
+            "source_name": "Hazzas",
+            "subject": 221943,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 9,
+          "level_min": 1,
+          "slot": "Totem"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 220626,
+        "name": "Drakeclaw Band of the Berserker",
+        "reported_routes": [
+          {
+            "source_context_line": 536,
+            "source_line": 545,
+            "source_name": "A Broken Ritual (A)",
+            "subject": 82081,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 552,
+            "source_line": 561,
+            "source_name": "A Broken Ritual (H)",
+            "subject": 82083,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 220627,
+        "name": "Drakeclaw Band of the Stalker",
+        "reported_routes": [
+          {
+            "source_context_line": 536,
+            "source_line": 549,
+            "source_name": "A Broken Ritual (A)",
+            "subject": 82081,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 552,
+            "source_line": 565,
+            "source_name": "A Broken Ritual (H)",
+            "subject": 82083,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 220628,
+        "name": "Drakeclaw Band of the Harbinger",
+        "reported_routes": [
+          {
+            "source_context_line": 536,
+            "source_line": 547,
+            "source_name": "A Broken Ritual (A)",
+            "subject": 82081,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 552,
+            "source_line": 563,
+            "source_name": "A Broken Ritual (H)",
+            "subject": 82083,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 220629,
+        "name": "Drakeclaw Band of the Blood Prophet",
+        "reported_routes": [
+          {
+            "source_context_line": 536,
+            "source_line": 546,
+            "source_name": "A Broken Ritual (A)",
+            "subject": 82081,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 552,
+            "source_line": 562,
+            "source_name": "A Broken Ritual (H)",
+            "subject": 82083,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 220630,
+        "name": "Drakeclaw Band of the Juggernaut",
+        "reported_routes": [
+          {
+            "source_context_line": 536,
+            "source_line": 548,
+            "source_name": "A Broken Ritual (A)",
+            "subject": 82081,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 552,
+            "source_line": 564,
+            "source_name": "A Broken Ritual (H)",
+            "subject": 82083,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "alternate_label_review": {
+          "finding": "The archive gives a generic label with no NPC. The exact seasonal item is listed in the Hakkari Urn from Secret of the Circle. The Forever quest also awards the urn.",
+          "reported_label": "World drops"
+        },
+        "archived_seasonal_binding": "pickup",
+        "current_inventory_type": 11,
+        "item_id": 223327,
+        "name": "Mark of Hakkar",
+        "reported_routes": [
+          {
+            "source_context_line": 780,
+            "source_line": 791,
+            "source_name": "Secret of the Circle",
+            "subject": 82097,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      }
+    ],
+    "reviewed_access_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/109",
+    "source_ruleset": "season_of_discovery"
+  },
+  "source_content_digest": "e716b78a0ceb2b949b39efaf7ba199c6f6e1c605f059afac2a81b06a2870ab42",
+  "unavailable_item_ids": [
+    220527,
+    220528,
+    220532,
+    220605,
+    220607,
+    220626,
+    220627,
+    220628,
+    220629,
+    220630,
+    223327
+  ],
+  "unavailable_scope": {
+    "level_max": 19,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/87a7339d82b64cfc6ca0b3158984f3cf8f12b2c7"
+}

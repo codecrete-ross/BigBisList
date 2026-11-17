@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Lightning Shield 370 Mana Instant Requires Shaman Requires level 56 The caster is surrounded by 3 balls of lightning. When a spell, melee or ranged attack hits the caster, the attacker will be struck for 178 Nature damage. This expends one lightning ball. Only one ball will fire every few seconds. Lasts 10 min. (3.5s cooldown)",
+  "entity_id": 10432,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:46+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10432,
+      "name": "Lightning Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10432"
+    }
+  ],
+  "name": "Lightning Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "741cd081a589a1ef37796f6ff6e9bb159a90fa5d2d73291308174b04548ca518",
+  "spell_id": 10432,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10432",
+  "url": "https://www.wowhead.com/forever/spell=10432"
+}

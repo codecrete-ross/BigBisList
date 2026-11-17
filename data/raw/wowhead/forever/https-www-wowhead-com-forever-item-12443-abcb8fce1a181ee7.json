@@ -1,0 +1,53 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Knucklebone Pouch (DND) Item Level 1 Held In Off-hand Use: Empty to create a Charm Pouch. Sell Price: 1 78 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 12443,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Empty to create a Charm Pouch.",
+        "type": "use"
+      }
+    ],
+    "id": 12443,
+    "item_level": 1,
+    "name": "Knucklebone Pouch (DND)",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Empty to create a Charm Pouch."
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12443"
+  },
+  "linked_entities": [
+    {
+      "id": 16197,
+      "name": "Empty to create a Charm Pouch.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16197"
+    }
+  ],
+  "name": "Knucklebone Pouch (DND)",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "90c1bf77e98f6437d34d7e91cb4f1cdb8f93108d20c8e5ef4e8493dc70794839",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12443",
+  "url": "https://www.wowhead.com/forever/item=12443"
+}

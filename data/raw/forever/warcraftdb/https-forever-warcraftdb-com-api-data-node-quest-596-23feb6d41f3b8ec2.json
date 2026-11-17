@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/596"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:30.323802+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 4135,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/596",
+      "subject_id": 596,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 30,
+    "name": "Bloody Bone Necklaces",
+    "quest_id": 596,
+    "reward_item_ids": [
+      4135
+    ],
+    "zone": "Stranglethorn Vale"
+  },
+  "source_content_digest": "6590348ddd018c1038ac89d60ef32980726483b53922da46c9a94592caa59403",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/596"
+}

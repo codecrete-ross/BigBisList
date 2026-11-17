@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/96609"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:57.270056+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 276904,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96609",
+      "subject_id": 96609,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": null,
+    "name": "A Taste of Home",
+    "quest_id": 96609,
+    "reward_item_ids": [
+      276896,
+      276903,
+      276904
+    ],
+    "zone": "City of Dalaran"
+  },
+  "source_content_digest": "1eb5eb512f5ddfb84cf79f7d6b9e01b451d5b3dad7df6d15efa49e64e236f872",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/96609"
+}

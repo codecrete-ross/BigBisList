@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Idol of Swiftness Item Level 65 Binds when equipped Relic Idol Requires Level 60 Equip: Reduces the cooldown of your Swiftmend spell by 3 sec. Sell Price: 2 51 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:11:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 279250,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the cooldown of your Swiftmend spell by 3 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the cooldown of your Swiftmend spell by 3 sec."
+    ],
+    "id": 279250,
+    "item_level": 65,
+    "name": "Idol of Swiftness",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279250"
+  },
+  "linked_entities": [
+    {
+      "id": 1306488,
+      "name": "Reduces the cooldown of your Swiftmend spell by 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306488"
+    }
+  ],
+  "name": "Idol of Swiftness",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279250",
+  "url": "https://www.wowhead.com/forever/item=279250"
+}

@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=16768/furbolg-medicine-pouch"
+    }
+  ],
+  "confidence": "published_forever_vendor_lead",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 188997,
+      "collected_at": "2026-11-13T07:07:22.2878272Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "twink-gorn-pouch",
+      "source_content_digest": "1146f8def85db35b23c68ee927b78abe041d4809003a887e123426874de3e158",
+      "source_url": "https://forevertwinking.com/items/furbolg-medicine-pouch"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 16768,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://www.wowhead.com/forever/item=16768/furbolg-medicine-pouch",
+      "subject_id": 11555,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "capture_method": "indexed_search_excerpt",
+    "digest_input": "normalized indexed vendor row",
+    "item_id": 16768,
+    "location": "Felwood",
+    "npc_id": 11555,
+    "observation_limit": "No purchase or observed level is attached to the listing. The historical comments do not verify a current reputation gate.",
+    "published_cost_copper": 158823
+  },
+  "source_content_digest": "f575bac004fa4dca284b74d0ee79f19bfd0e2bc1f01f2c5990981a5695a0dc08",
+  "url": "https://www.wowhead.com/forever/item=16768/furbolg-medicine-pouch"
+}

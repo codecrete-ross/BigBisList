@@ -1,0 +1,33 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchant Shield - Greater Stamina 5 sec cast Tools: Runed Truesilver Rod Reagents: Dream Dust (6) Permanently enchant a shield to give +9 Stamina.",
+  "entity_id": 20017,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 20017,
+      "name": "Enchant Shield - Greater Stamina",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20017"
+    }
+  ],
+  "name": "Enchant Shield - Greater Stamina",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 20017,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20017",
+  "url": "https://www.wowhead.com/forever/spell=20017"
+}

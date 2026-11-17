@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/89053"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:49.100159+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 260201,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/89053",
+      "subject_id": 89053,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Your Final Reward",
+    "quest_id": 89053,
+    "reward_item_roles": {
+      "260201": "choices",
+      "260205": "choices",
+      "260207": "choices"
+    },
+    "side": "Alliance",
+    "zone": "Azshara"
+  },
+  "source_content_digest": "6192dbe62f0c9aca487483ec6052c77eb6def39aa2e4032c5da62eafc659967d",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/89053"
+}

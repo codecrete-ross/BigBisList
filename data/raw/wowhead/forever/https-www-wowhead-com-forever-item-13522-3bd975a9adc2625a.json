@@ -1,0 +1,142 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Recipe: Flask of Chromatic Resistance Item Level 60 Requires Alchemy (300) Use: Teaches you how to make a Flask of Chromatic Resistance. Sell Price: 1 Dropped by: Gyth Drop Chance: 4.22%",
+  "embedded_items": [
+    {
+      "binding": "unknown",
+      "boe": null,
+      "inventory_slot": null,
+      "item_id": 13513,
+      "item_stats": {
+        "binding": "unknown",
+        "id": 13513,
+        "name": "Flask of Chromatic Resistance",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "common",
+        "source_summary": "",
+        "stats": {
+          "arcane_resistance": 25.0,
+          "fire_resistance": 25.0,
+          "frost_resistance": 25.0,
+          "holy_resistance": 25.0,
+          "nature_resistance": 25.0,
+          "shadow_resistance": 25.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=13513"
+      },
+      "name": "Flask of Chromatic Resistance",
+      "normalized_requirements": [],
+      "quality": "common",
+      "url": "https://www.wowhead.com/forever/item=13513"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:03:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 13522,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Flask of Chromatic Resistance.",
+        "type": "use"
+      }
+    ],
+    "id": 13522,
+    "item_level": 60,
+    "name": "Recipe: Flask of Chromatic Resistance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Flask of Chromatic Resistance."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13522"
+  },
+  "linked_entities": [
+    {
+      "id": 8925,
+      "name": "Crystal Vial",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8925"
+    },
+    {
+      "id": 13465,
+      "name": "Mountain Silversage",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13465"
+    },
+    {
+      "id": 13467,
+      "name": "Icecap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13467"
+    },
+    {
+      "id": 13468,
+      "name": "Black Lotus",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13468"
+    },
+    {
+      "id": 13513,
+      "name": "Flask of Chromatic Resistance",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13513"
+    },
+    {
+      "id": 171,
+      "name": "Alchemy",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=171"
+    },
+    {
+      "id": 17629,
+      "name": "Increases your resistance to all schools of magic by 25 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death and stacks with all other resistance spells and items.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17629"
+    },
+    {
+      "id": 17638,
+      "name": "Teaches you how to make a Flask of Chromatic Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17638"
+    }
+  ],
+  "name": "Recipe: Flask of Chromatic Resistance",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of Chromatic Resistance Item Level 60 Requires Alchemy (300) Use: Teaches you how to make a Flask of Chromatic Resistance. Sell Price: 1 Dropped by: Gyth Drop Chance: 4.22%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=13522",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.22,
+      "entity_name": "Gyth",
+      "source_url": "https://www.wowhead.com/forever/item=13522",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17638
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13522",
+  "url": "https://www.wowhead.com/forever/item=13522"
+}

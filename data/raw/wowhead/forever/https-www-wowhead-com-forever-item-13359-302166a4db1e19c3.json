@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crown of Tyranny Item Level 63 Binds when picked up Head Mail 301 Armor +25 Stamina -10 Spirit Durability 70 / 70 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 40 Attack Power. Sell Price: 2 60 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 13359,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 301,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +40 Attack Power.",
+        "stats": {
+          "attack_power": 40
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 13359,
+    "item_level": 63,
+    "name": "Crown of Tyranny",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 40.0,
+      "crit_percent": 1.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13359"
+  },
+  "linked_entities": [],
+  "name": "Crown of Tyranny",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "17c99f948144d321eeb9d00fa182bc4d33970da0e7913ec4070b8a4f9d031160",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13359",
+  "url": "https://www.wowhead.com/forever/item=13359"
+}

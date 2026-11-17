@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eye of Orgrimmar Item Level 60 Binds when picked up Finger +7 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 18 . Equip: Your spells pierce 2 Magical Resistance. Sell Price: 1 98 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 12545,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your spells pierce 2 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 12545,
+    "item_level": 60,
+    "name": "Eye of Orgrimmar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "spell_power": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12545"
+  },
+  "linked_entities": [],
+  "name": "Eye of Orgrimmar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "40205e956f88d40b0bff56c1882ceb8750f0502a00876b3e4249b115652f93cc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12545",
+  "url": "https://www.wowhead.com/forever/item=12545"
+}

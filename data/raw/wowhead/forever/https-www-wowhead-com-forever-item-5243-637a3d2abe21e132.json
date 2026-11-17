@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Firebelcher Item Level 23 Binds when picked up Ranged Wand 27 - 52 Fire Damage Speed 1.70 (23.24 damage per second) Durability 45 / 45 Requires Level 18 Equip: Chance on hit to blast the target for 25 to 31 Fire damage. (10ms cooldown) Sell Price: 19 13 Dropped by: Deviate Faerie Dragon Drop Chance: 41.44%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 5243,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 23.24,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Chance on hit to blast the target for 25 to 31 Fire damage. (10ms cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Chance on hit to blast the target for 25 to 31 Fire damage. (10ms cooldown)"
+    ],
+    "id": 5243,
+    "item_level": 23,
+    "name": "Firebelcher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 52,
+    "weapon_min_damage": 27,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5243"
+  },
+  "linked_entities": [
+    {
+      "id": 1291686,
+      "name": "Chance on hit to blast the target for 25 to 31 Fire damage. (10ms cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291686"
+    }
+  ],
+  "name": "Firebelcher",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 41.44,
+      "entity_name": "Deviate Faerie Dragon",
+      "source_url": "https://www.wowhead.com/forever/item=5243",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5243",
+  "url": "https://www.wowhead.com/forever/item=5243"
+}

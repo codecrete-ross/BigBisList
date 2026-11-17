@@ -1,0 +1,93 @@
+{
+  "attribution": [
+    {
+      "credit": "Daybreak Forever",
+      "source": "https://daybreakforever.com/static/forever/datamine.json#/live_items/167"
+    }
+  ],
+  "binding": "bind_on_equip",
+  "boe": true,
+  "confidence": "server_item_stats",
+  "export_build": "1.60.1.70888",
+  "export_capture_date": "2026-11-10",
+  "export_generated_at": "2026-11-10 21:28 UTC",
+  "fetched_at": "2026-11-11T05:56:50.503505+00:00",
+  "flavor": "forever",
+  "historical_item_identity": {
+    "event_date": "2026-10-22",
+    "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt"
+  },
+  "inventory_slot": "Head",
+  "item_id": 288872,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 91,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 288872,
+    "item_level": 30,
+    "name": "Giantstalker's Helmet",
+    "parse_confidence": "server_item_stats",
+    "quality": "epic",
+    "required_level": 1,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Head",
+    "stats": {
+      "agility": 11,
+      "crit_rating": 7,
+      "fire_resistance": 5,
+      "intellect": 7,
+      "spirit": 4,
+      "stamina": 11
+    }
+  },
+  "name": "Giantstalker's Helmet",
+  "page_type": "item",
+  "provider": "daybreak",
+  "quality": "epic",
+  "review_limits": [
+    "acquisition",
+    "complete effects",
+    "uniqueness",
+    "set bonuses"
+  ],
+  "source_content_digest": "b444dd766fa89fd9477859fb285c96231d2a50fb9c663a3acd24813d1a9d2bbd",
+  "source_item_stats": [
+    [
+      "Agility",
+      11,
+      false
+    ],
+    [
+      "Intellect",
+      7,
+      false
+    ],
+    [
+      "Spirit",
+      4,
+      false
+    ],
+    [
+      "Stamina",
+      11,
+      false
+    ],
+    [
+      "Fire Resistance",
+      5,
+      false
+    ],
+    [
+      "Critical Strike",
+      7,
+      true
+    ]
+  ],
+  "url": "https://daybreakforever.com/static/forever/datamine.json#/live_items/167"
+}

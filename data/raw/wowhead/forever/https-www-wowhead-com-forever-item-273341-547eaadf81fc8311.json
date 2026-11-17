@@ -1,0 +1,142 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Premier Warlord's Mail Helm Item Level 65 Binds when picked up Head Mail 338 Armor +34 Stamina +14 Intellect Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 16 . Warlord's Thunderfist (0/6) Premier Champion's Mail Gauntlets Premier Centurion's Mail Boots Premier General's Mail Leggings Premier Warlord's Mail Armor Premier General's Mail Spaulders Premier Warlord's Mail Helm (2) Set : +20 Stamina. (3) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : Increases damage and healing done by magical spells and effects by up to 23.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 273341,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 338,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 273341,
+    "item_level": 65,
+    "name": "Premier Warlord's Mail Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 22804,
+        "text": "Improves your chance to get a critical strike with all Shock spells by 2%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 14.0,
+      "spell_power": 16.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273341"
+  },
+  "linked_entities": [
+    {
+      "id": 273336,
+      "name": "Premier Centurion's Mail Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273336"
+    },
+    {
+      "id": 273337,
+      "name": "Premier Champion's Mail Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273337"
+    },
+    {
+      "id": 273340,
+      "name": "Premier Warlord's Mail Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273340"
+    },
+    {
+      "id": 273341,
+      "name": "Premier Warlord's Mail Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273341"
+    },
+    {
+      "id": 273342,
+      "name": "Premier General's Mail Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273342"
+    },
+    {
+      "id": 273343,
+      "name": "Premier General's Mail Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273343"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 22804,
+      "name": "Improves your chance to get a critical strike with all Shock spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22804"
+    }
+  ],
+  "name": "Premier Warlord's Mail Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273341",
+  "url": "https://www.wowhead.com/forever/item=273341"
+}

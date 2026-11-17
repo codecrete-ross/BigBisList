@@ -1,0 +1,85 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Invulnerable Mail 1 min cast Reagents: Pristine Leather (20), Enchanted Leather (30), Huge Emerald (6), Azerothian Diamond (6), Pristine Scale (10), Rune Thread (2) Invulnerable Mail Item Level 63 Binds when equipped Chest Mail 404 Armor +20 Stamina Durability 140 / 140 Requires Level 57 Equip: When struck in combat has a 5% chance to make you invulnerable to melee damage for 3 sec. This effect can only occur once every 10 sec. (Proc chance: 5%, 10s cooldown) Sell Price: 4 38 36",
+  "entity_id": 16746,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:53+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 12364,
+      "name": "Huge Emerald",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12364"
+    },
+    {
+      "id": 12641,
+      "name": "Invulnerable Mail",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12641"
+    },
+    {
+      "id": 12800,
+      "name": "Azerothian Diamond",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12800"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 249427,
+      "name": "Pristine Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249427"
+    },
+    {
+      "id": 249429,
+      "name": "Pristine Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249429"
+    },
+    {
+      "id": 16620,
+      "name": "When struck in combat has a 5% chance to make you invulnerable to melee damage for 3 sec. This effect can only occur once every 10 sec. (Proc chance: 5%, 10s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16620"
+    },
+    {
+      "id": 16746,
+      "name": "Invulnerable Mail",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16746"
+    }
+  ],
+  "name": "Invulnerable Mail",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 12641,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=16746",
+      "subject_id": 16746,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 16746,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16746",
+  "url": "https://www.wowhead.com/forever/spell=16746"
+}

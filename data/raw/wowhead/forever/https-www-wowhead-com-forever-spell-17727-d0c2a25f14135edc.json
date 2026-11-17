@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Create Spellstone 750 Mana 5 sec cast Requires Warlock Requires level 48 Reagents: Soul Shard Creates a Greater Spellstone which can be used to enchant your weapon with Shadow, increasing your spell haste by 2% and the damage done by your Shadow spells by up to 17. Conjured items disappear if logged out for more than 15 minutes.",
+  "entity_id": 17727,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:42+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6265,
+      "name": "Soul Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6265"
+    },
+    {
+      "id": 17727,
+      "name": "Create Spellstone",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17727"
+    }
+  ],
+  "name": "Create Spellstone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "e19c541b7ea4e7874c2f3cf6088cce87c0844123544bf60de31223ec498ac2c8",
+  "spell_id": 17727,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17727",
+  "url": "https://www.wowhead.com/forever/spell=17727"
+}

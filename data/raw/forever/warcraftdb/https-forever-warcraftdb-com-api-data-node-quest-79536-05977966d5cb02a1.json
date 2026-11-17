@@ -1,0 +1,45 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/79536"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:50.465285+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281634,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79536",
+      "subject_id": 79536,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281635,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/79536",
+      "subject_id": 79536,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 20,
+    "name": "Greater Friend of the Library",
+    "quest_id": 79536,
+    "reward_item_roles": {
+      "281634": "choices",
+      "281635": "choices"
+    },
+    "side": "Both",
+    "zone": "Special"
+  },
+  "source_content_digest": "dba95b44d51075a572b6b037b1c7d719752f28cbadfe818ce9cf92cb448cf3e8",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/79536"
+}

@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wind Rider Staff Item Level 20 Binds when picked up Two-Hand Staff 21 - 33 Damage Speed 2.80 (9.64 damage per second) +6 Spirit Durability 65 / 65 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 17 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 5306,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 9.64,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 5306,
+    "item_level": 20,
+    "name": "Wind Rider Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 12.0,
+      "spirit": 6.0
+    },
+    "weapon_max_damage": 33,
+    "weapon_min_damage": 21,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5306"
+  },
+  "linked_entities": [],
+  "name": "Wind Rider Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5306",
+  "url": "https://www.wowhead.com/forever/item=5306"
+}

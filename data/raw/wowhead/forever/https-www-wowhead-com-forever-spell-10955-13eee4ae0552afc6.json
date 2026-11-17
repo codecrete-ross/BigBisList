@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Shackle Undead 150 Mana 30 yd range 1.5 sec cast Requires Priest Requires level 60 Shackles the target undead enemy for up to 50 sec. The shackled unit is unable to move, attack or cast spells. Any damage caused will release the target. Only one target can be shackled at a time.",
+  "entity_id": 10955,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:03+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10955,
+      "name": "Shackle Undead",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10955"
+    }
+  ],
+  "name": "Shackle Undead",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d9e4cccd81918bd4e31a794d1b539c71545ff1719ab94550b9e1410ebeed9192",
+  "spell_id": 10955,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10955",
+  "url": "https://www.wowhead.com/forever/spell=10955"
+}

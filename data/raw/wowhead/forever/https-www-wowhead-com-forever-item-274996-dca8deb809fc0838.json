@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Resistance Breaker Spaulder Item Level 44 Binds when picked up Shoulder Mail 202 Armor +10 Agility +15 Stamina Durability 70 / 70 Requires Level 39 Sell Price: 78 29 Dropped by: Slavecrusher Grox Drop Chance: 37.50%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 274996,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 202,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274996,
+    "item_level": 44,
+    "name": "Resistance Breaker Spaulder",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 39,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274996"
+  },
+  "linked_entities": [],
+  "name": "Resistance Breaker Spaulder",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 37.5,
+      "entity_name": "Slavecrusher Grox",
+      "source_url": "https://www.wowhead.com/forever/item=274996",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8f5fd782b8d8b751b2d8fb54b7bef2b14134535635b6b62d2d57056b23a3579f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274996",
+  "url": "https://www.wowhead.com/forever/item=274996"
+}

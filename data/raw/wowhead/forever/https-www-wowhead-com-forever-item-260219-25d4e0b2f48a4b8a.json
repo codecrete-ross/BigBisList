@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Engraved Band Item Level 62 Binds when picked up Unique-Equipped Finger +14 Strength +10 Spirit Equip: Improves your chance to get a critical strike by 0.5%. Sell Price: 2 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 260219,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%."
+    ],
+    "id": 260219,
+    "item_level": 62,
+    "name": "Engraved Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "spirit": 10.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=260219"
+  },
+  "linked_entities": [],
+  "name": "Engraved Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ce4cc170edf72b0430038814349855de2e8209cff624d7615d60bf841e23d33a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260219",
+  "url": "https://www.wowhead.com/forever/item=260219"
+}

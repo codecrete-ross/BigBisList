@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Moon Robes of Elune Item Level 10 Binds when picked up Chest Cloth 19 Armor +1 Spirit Durability 40 / 40 Classes: Priest Sell Price: 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 16604,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 19,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16604,
+    "item_level": 10,
+    "name": "Moon Robes of Elune",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "spirit": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16604"
+  },
+  "linked_entities": [],
+  "name": "Moon Robes of Elune",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16604",
+  "url": "https://www.wowhead.com/forever/item=16604"
+}

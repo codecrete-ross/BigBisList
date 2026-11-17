@@ -1,0 +1,159 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shadowcraft Cap Item Level 62 Binds when picked up Head Leather 141 Armor +6 Strength +20 Agility +20 Stamina +13 Spirit Durability 60 / 60 Requires Level 57 Shadowcraft Armor (0/8) Shadowcraft Belt Shadowcraft Boots Shadowcraft Bracers Shadowcraft Tunic Shadowcraft Spaulders Shadowcraft Pants Shadowcraft Gloves Shadowcraft Cap (2) Set : +8 All Resistances. (3) Set : +30 Attack Power. (4) Set : When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown) (5) Set : Chance on melee attack to restore 20 Energy. (6) Set : Restores 15 health per 5 sec. Sell Price: 2 6 20 Dropped by: Darkmaster Gandling Drop Chance: 11.12%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:05:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 16707,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 141,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16707,
+    "item_level": 62,
+    "name": "Shadowcraft Cap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302698,
+        "text": "When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 27787,
+        "text": "Chance on melee attack to restore 20 Energy."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 21347,
+        "text": "Restores 15 health per 5 sec."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "spirit": 13.0,
+      "stamina": 20.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16707"
+  },
+  "linked_entities": [
+    {
+      "id": 16707,
+      "name": "Shadowcraft Cap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16707"
+    },
+    {
+      "id": 16708,
+      "name": "Shadowcraft Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16708"
+    },
+    {
+      "id": 16709,
+      "name": "Shadowcraft Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16709"
+    },
+    {
+      "id": 16710,
+      "name": "Shadowcraft Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16710"
+    },
+    {
+      "id": 16711,
+      "name": "Shadowcraft Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16711"
+    },
+    {
+      "id": 16712,
+      "name": "Shadowcraft Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16712"
+    },
+    {
+      "id": 16713,
+      "name": "Shadowcraft Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16713"
+    },
+    {
+      "id": 16721,
+      "name": "Shadowcraft Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16721"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 21347,
+      "name": "Restores 15 health per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21347"
+    },
+    {
+      "id": 27787,
+      "name": "Chance on melee attack to restore 20 Energy.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27787"
+    },
+    {
+      "id": 1302698,
+      "name": "When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302698"
+    }
+  ],
+  "name": "Shadowcraft Cap",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.12,
+      "entity_name": "Darkmaster Gandling",
+      "source_url": "https://www.wowhead.com/forever/item=16707",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16707",
+  "url": "https://www.wowhead.com/forever/item=16707"
+}

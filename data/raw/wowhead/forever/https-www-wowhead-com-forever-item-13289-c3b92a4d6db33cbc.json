@@ -1,0 +1,54 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Egan's Blaster Item Level 1 Quest Item Unique Ranged Use: Use to free Spectral and Ghostly Citizens.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:15.6355690Z",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 13289,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Use to free Spectral and Ghostly Citizens.",
+        "type": "use"
+      }
+    ],
+    "id": 13289,
+    "item_level": 1,
+    "name": "Egan's Blaster",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Ranged",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Use to free Spectral and Ghostly Citizens."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13289"
+  },
+  "linked_entities": [
+    {
+      "id": 17368,
+      "name": "Use to free Spectral and Ghostly Citizens.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17368"
+    }
+  ],
+  "name": "Egan's Blaster",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "fb5026d0566c296cd3b529fa25ae78ccfdda05e5627fbec5e8fee91843dea46a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13289",
+  "url": "https://www.wowhead.com/forever/item=13289"
+}

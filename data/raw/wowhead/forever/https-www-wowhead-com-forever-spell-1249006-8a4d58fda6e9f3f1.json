@@ -1,0 +1,86 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Libram of Invocation 10 sec cast Tools: Runed Silver Rod Reagents: Large Radiant Shard (3), Greater Nether Essence (3), Dream Dust (4), Magenta Dye (2), Cerulean Dye , Scroll of Strength II (4) Creates a libram of invocation. Libram of Invocation (0) Item Level 45 Binds when picked up Relic Libram Requires Level 40 Equip: Reduces the mana cost of your Seal spells by 5%. Sell Price: 26 55",
+  "entity_id": 1249006,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T04:56:49+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2289,
+      "name": "Scroll of Strength II",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2289"
+    },
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 11178,
+      "name": "Large Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11178"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249442,
+      "name": "Libram of Invocation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249442"
+    },
+    {
+      "id": 1249005,
+      "name": "Reduces the mana cost of your Seal spells by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249005"
+    },
+    {
+      "id": 1249006,
+      "name": "Libram of Invocation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249006"
+    }
+  ],
+  "name": "Libram of Invocation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249442,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1249006",
+      "subject_id": 1249006,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "2b0781592bd3fb04191e62045aff24c2223a5a73b199c5a8cf9a5bde5b6b2014",
+  "spell_id": 1249006,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1249006",
+  "url": "https://www.wowhead.com/forever/spell=1249006"
+}

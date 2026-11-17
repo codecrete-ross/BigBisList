@@ -1,0 +1,70 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=18982/ring-of-critical-testing-4"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 916,
+      "collected_at": "2026-11-13T07:14:05.5519375Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-18982",
+      "source_content_digest": "8bb025701d7ecbf708fd02e2a2c53fe501910d54c8c9fc83c9e518aa0dc5bad7",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18982"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:46.6655896Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-18982",
+      "source_content_digest": "fe5cf54d397590cdbcb1a13e2da45ad755771334f035cb8a810e71fbd42f4b16",
+      "source_url": "https://www.wowhead.com/forever/item=18982/ring-of-critical-testing-4"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "capture_method": "indexed_item_page",
+    "client_required_level_field": 0,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Ring of Critical Testing 4 Item Level 60 Binds when picked up Finger Equip: Improves your chance to get a critical strike by 50.0%. Sell Price: 5 60 12",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 18982,
+    "item_level": 60,
+    "name": "Ring of Critical Testing 4",
+    "page_crawl_age": "last month",
+    "page_line": 20,
+    "presentation_difference": "The indexed page uses +700 Critical Strike. The current endpoint displays the 50% effect. The exact ID, slot, level and binding agree. No stats are imported from this indexed page.",
+    "source_locale": "en",
+    "source_url": "https://www.wowhead.com/forever/item=18982/ring-of-critical-testing-4",
+    "tooltip_identity": "Finger with +700 Critical Strike"
+  },
+  "source_content_digest": "a682f03d062dc0d7a49d29b5d78138825d32da012518b13698b2aecbdf9ff6e7",
+  "unavailable_item_ids": [
+    18982
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=18982/ring-of-critical-testing-4"
+}

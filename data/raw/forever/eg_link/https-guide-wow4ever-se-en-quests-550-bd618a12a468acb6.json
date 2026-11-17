@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/550"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:17.449025+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 3760,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://guide.wow4ever.se/en/quests/550",
+      "subject_id": 550,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 19,
+    "name": "Battle of Hillsbrad",
+    "quest_id": 550,
+    "quest_level": 32,
+    "reward_item_ids": [
+      3760
+    ],
+    "zone": "Hillsbrad Foothills"
+  },
+  "source_content_digest": "3eea12a794569c483039074a48f9ca3c4227dac98a9ba1f92ad1bcc4033c9096",
+  "url": "https://guide.wow4ever.se/en/quests/550"
+}

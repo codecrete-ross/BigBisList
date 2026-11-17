@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Crooked Staff Item Level 3 Two-Hand Staff 4 - 7 Damage Speed 3.30 (1.67 damage per second) Durability 25 / 25 Sell Price: 14 Dropped by: Bristleback Shaman Drop Chance: 1.31%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 1388,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 1.67,
+    "id": 1388,
+    "item_level": 3,
+    "name": "Crooked Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 7,
+    "weapon_min_damage": 4,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=1388"
+  },
+  "linked_entities": [],
+  "name": "Crooked Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.31,
+      "entity_name": "Bristleback Shaman",
+      "source_url": "https://www.wowhead.com/forever/item=1388",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1388",
+  "url": "https://www.wowhead.com/forever/item=1388"
+}

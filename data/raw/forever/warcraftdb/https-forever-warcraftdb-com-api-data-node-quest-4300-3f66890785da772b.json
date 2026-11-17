@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4300"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:44.882106+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 11862,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4300",
+      "subject_id": 4300,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Bone-Bladed Weapons",
+    "quest_id": 4300,
+    "reward_item_roles": {
+      "11862": "choices",
+      "11863": "choices",
+      "11864": "choices"
+    },
+    "side": "Both",
+    "zone": "Orgrimmar"
+  },
+  "source_content_digest": "f51b6f55245b5e2df0fc8a5d3513d3a4b5821536cb2b5d687a4c9a5c0d066297",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4300"
+}

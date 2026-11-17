@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Southsea Head Bucket Item Level 45 Binds when picked up Head Plate 355 Armor +6 Strength +15 Stamina Durability 70 / 70 Equip: Increased Defense + 4. Sell Price: 48 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 20640,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 355,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 20640,
+    "item_level": 45,
+    "name": "Southsea Head Bucket",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0,
+      "stamina": 15.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20640"
+  },
+  "linked_entities": [],
+  "name": "Southsea Head Bucket",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20640",
+  "url": "https://www.wowhead.com/forever/item=20640"
+}

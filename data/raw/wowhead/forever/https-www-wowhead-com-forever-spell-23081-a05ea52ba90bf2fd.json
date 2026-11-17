@@ -1,0 +1,95 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Hyper-Radiant Flame Reflector 45 sec cast Tools: Blacksmith Hammer , Arclight Spanner Reagents: Dark Iron Bar (4), Truesilver Transformer (3), Essence of Water (6), Star Ruby (4), Azerothian Diamond (2) Hyper-Radiant Flame Reflector Item Level 58 Binds when equipped Unique-Equipped Trinket +18 Fire Resistance Requires Level 53 Requires Engineering (290) Use: Reflects Fire spells back at their caster for 5 sec. (5 Min Cooldown) Sell Price: 1 25",
+  "entity_id": 23081,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:48+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 7910,
+      "name": "Star Ruby",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7910"
+    },
+    {
+      "id": 11371,
+      "name": "Dark Iron Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11371"
+    },
+    {
+      "id": 12800,
+      "name": "Azerothian Diamond",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12800"
+    },
+    {
+      "id": 18631,
+      "name": "Truesilver Transformer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18631"
+    },
+    {
+      "id": 18638,
+      "name": "Hyper-Radiant Flame Reflector",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18638"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 23081,
+      "name": "Hyper-Radiant Flame Reflector",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23081"
+    },
+    {
+      "id": 23097,
+      "name": "Reflects Fire spells back at their caster for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23097"
+    }
+  ],
+  "name": "Hyper-Radiant Flame Reflector",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Hyper-Radiant Flame Reflector 45 sec cast Tools: Blacksmith Hammer , Arclight Spanner Reagents: Dark Iron Bar (4), Truesilver Transformer (3), Essence of Water (6), Star Ruby (4), Azerothian Diamond (2) Hyper-Radiant Flame Reflector Item Level 58 Binds when equipped Unique-Equipped Trinket +18 Fire Resistance Requires Level 53 Requires Engineering (290) Use: Reflects Fire spells back at their caster for 5 sec. (5 Min Cooldown) Sell Price: 1 25",
+      "scope": "cast_enchant",
+      "skill": 290,
+      "source_url": "https://www.wowhead.com/forever/spell=23081",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 18638,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=23081",
+      "subject_id": 23081,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 23081,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/23081",
+  "url": "https://www.wowhead.com/forever/spell=23081"
+}

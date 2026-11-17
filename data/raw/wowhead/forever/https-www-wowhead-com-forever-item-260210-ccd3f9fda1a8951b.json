@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "A Bigger Shield Item Level 56 Binds when picked up Off Hand Shield 1930 Armor 35 Block +7 Agility +7 Stamina Equip: Increased Defense + 4. Sell Price: 2 11 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 260210,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1930,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 260210,
+    "item_level": 56,
+    "name": "A Bigger Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "block_value": 35.0,
+      "defense": 4.0,
+      "stamina": 7.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=260210"
+  },
+  "linked_entities": [],
+  "name": "A Bigger Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260210",
+  "url": "https://www.wowhead.com/forever/item=260210"
+}

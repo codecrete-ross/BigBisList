@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blackhand's Command Item Level 55 Binds when picked up Unique This Item Begins a Quest Requires Level 55 \"A letter of command from Rend Blackhand.\" Dropped by: Scarshield Quartermaster Drop Chance: 76.68%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:07:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18987,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18987,
+    "item_level": 55,
+    "name": "Blackhand's Command",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18987"
+  },
+  "linked_entities": [
+    {
+      "id": 7761,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=7761"
+    }
+  ],
+  "name": "Blackhand's Command",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 76.68,
+      "entity_name": "Scarshield Quartermaster",
+      "source_url": "https://www.wowhead.com/forever/item=18987",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18987",
+  "url": "https://www.wowhead.com/forever/item=18987"
+}

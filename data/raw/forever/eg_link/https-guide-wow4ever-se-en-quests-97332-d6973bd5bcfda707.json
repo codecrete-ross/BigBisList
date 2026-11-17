@@ -1,0 +1,65 @@
+{
+  "attribution": [
+    {
+      "credit": "EG Link (Efficient Games)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/97332"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "entity_id": 97332,
+  "fetched_at": "2026-11-11T02:59:30+00:00",
+  "flavor": "forever",
+  "name": "Twice Misplaced Trust",
+  "page_type": "quest",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 278017,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/97332",
+      "subject_id": 97332,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 278018,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/97332",
+      "subject_id": 97332,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 278019,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/97332",
+      "subject_id": 97332,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "finish_npc_id": 259961,
+    "min_level": 36,
+    "next_quest_ids": [],
+    "objective_item_id": 277974,
+    "prerequisite_quest_ids": [
+      97328,
+      97331
+    ],
+    "quest_level": 41,
+    "reward_choice_ids": [
+      278017,
+      278018,
+      278019
+    ],
+    "side": "Both"
+  },
+  "source_content_digest": "9f3732f19ab2ae282a81967f309362aa3b5ef8ec35c5cf85b749a2c82c6c4176",
+  "url": "https://guide.wow4ever.se/en/quests/97332"
+}

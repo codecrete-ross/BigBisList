@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scarab Brooch Item Level 78 Binds when picked up Unique Trinket Requires Level 60 Use: Your magical heals provide the target with a shield that absorbs damage equal to 15% of the amount healed for 30 sec. (3 Min Cooldown) Sell Price: 8 30 30 Dropped by: Viscidus Drop Chance: 14.93%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21625,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Your magical heals provide the target with a shield that absorbs damage equal to 15% of the amount healed for 30 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21625,
+    "item_level": 78,
+    "name": "Scarab Brooch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Your magical heals provide the target with a shield that absorbs damage equal to 15% of the amount healed for 30 sec. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21625"
+  },
+  "linked_entities": [
+    {
+      "id": 26467,
+      "name": "Your magical heals provide the target with a shield that absorbs damage equal to 15% of the amount healed for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26467"
+    }
+  ],
+  "name": "Scarab Brooch",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.93,
+      "entity_name": "Viscidus",
+      "source_url": "https://www.wowhead.com/forever/item=21625",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21625",
+  "url": "https://www.wowhead.com/forever/item=21625"
+}

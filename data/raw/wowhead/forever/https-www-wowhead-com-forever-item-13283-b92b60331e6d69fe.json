@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Magus Ring Item Level 59 Binds when picked up Unique-Equipped Finger +8 Stamina +12 Intellect +7 Spirit Requires Level 54 Equip: Improves your chance to hit by 0.5%. Sell Price: 1 89 49 Dropped by: Spirestone Lord Magus Drop Chance: 46.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13283,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 13283,
+    "item_level": 59,
+    "name": "Magus Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5,
+      "intellect": 12.0,
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13283"
+  },
+  "linked_entities": [],
+  "name": "Magus Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 46.49,
+      "entity_name": "Spirestone Lord Magus",
+      "source_url": "https://www.wowhead.com/forever/item=13283",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d218ea70b596e195feea0dfb694cb31d26fef5fa6247c2227ea29a36a626d66e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13283",
+  "url": "https://www.wowhead.com/forever/item=13283"
+}

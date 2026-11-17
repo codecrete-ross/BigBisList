@@ -1,0 +1,233 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "The Alpha Project archival item database",
+      "source": "https://db.thealphaproject.eu/?action=show_item&id=905"
+    },
+    {
+      "credit": "AoWoW Database Viewer (AzerothCore)",
+      "source": "https://aowow.oldmanwarcraft.com/?item=905"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_legacy_test_equipment",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T20:23:09.523134+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "item-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 497917,
+      "collected_at": "2026-11-13T20:10:03.507107+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "itemsearchname",
+      "source_content_digest": "96230873a8525ce4fe903bb2695ffc8309e3a81148794bc7cf7b546fd284b4e1",
+      "source_url": "https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 462919,
+      "collected_at": "2026-11-13T14:51:27.6974051Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemmodifiedappearance",
+      "source_content_digest": "7f92e0fb84ec92fc7d4512a6f60dbf96cc976794b009dea8e964d79cfe830973",
+      "source_url": "https://wago.tools/db2/ItemModifiedAppearance/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 23151,
+      "collected_at": "2026-11-13T20:18:09.103887+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "alpha-item-905",
+      "source_content_digest": "12e0210f31b3b89cb7634e0b769fe4cde21241c74cf8086dfae01c4209fce0b7",
+      "source_url": "https://db.thealphaproject.eu/?action=show_item&id=905"
+    },
+    {
+      "bytes": 38836,
+      "collected_at": "2026-11-13T20:20:27.548003+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-905",
+      "source_content_digest": "4adbfaeb0d9f9d918e06001bfeb23a460a663e10a452ea778577b54b16e77401",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=905"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "current_adjacent_test_items": [
+      {
+        "item_id": 906,
+        "name": "Tan Leather Shoulderpads (Test)"
+      },
+      {
+        "item_id": 907,
+        "name": "Black Mail Shoulderpads of might (Test)"
+      },
+      {
+        "item_id": 908,
+        "name": "Plate Shoulderpad (Test)"
+      },
+      {
+        "item_id": 909,
+        "name": "Silver Mail Shoulderpads (Test)"
+      }
+    ],
+    "current_appearance_rows": [
+      {
+        "Flags": "0",
+        "ID": "156171",
+        "ItemAppearanceID": "63354",
+        "ItemAppearanceModifierID": "0",
+        "ItemID": "905",
+        "OrderIndex": "0",
+        "TransmogSourceTypeEnum": "9"
+      },
+      {
+        "Flags": "0",
+        "ID": "156172",
+        "ItemAppearanceID": "63355",
+        "ItemAppearanceModifierID": "0",
+        "ItemID": "906",
+        "OrderIndex": "0",
+        "TransmogSourceTypeEnum": "9"
+      },
+      {
+        "Flags": "0",
+        "ID": "156173",
+        "ItemAppearanceID": "63356",
+        "ItemAppearanceModifierID": "0",
+        "ItemID": "907",
+        "OrderIndex": "0",
+        "TransmogSourceTypeEnum": "9"
+      },
+      {
+        "Flags": "0",
+        "ID": "156174",
+        "ItemAppearanceID": "63357",
+        "ItemAppearanceModifierID": "0",
+        "ItemID": "908",
+        "OrderIndex": "0",
+        "TransmogSourceTypeEnum": "9"
+      },
+      {
+        "Flags": "0",
+        "ID": "156175",
+        "ItemAppearanceID": "63358",
+        "ItemAppearanceModifierID": "0",
+        "ItemID": "909",
+        "OrderIndex": "0",
+        "TransmogSourceTypeEnum": "9"
+      }
+    ],
+    "current_stats_disclosed": false,
+    "finding": "Exact item 905 is Brown Leather Shoulderpads (Test) in the original alpha archive and is explicitly unavailable to players in the preserved item database. All shared Item fields match the current Forever client row, and its appearance classification matches four adjacent current test shoulders. The reviewed Forever acquisition records show no replacement grant for the exact ID.",
+    "historical_classification": "test equipment",
+    "historical_name": "Brown Leather Shoulderpads (Test)",
+    "historical_player_access": "explicitly unavailable",
+    "item_id": 905,
+    "observed_player_acquisitions": [],
+    "shared_item_fields": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "ID": "905",
+      "IconFileDataID": "135039",
+      "InventoryType": "3",
+      "ItemGroupSoundsID": "7",
+      "Material": "7",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "1"
+    }
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    905
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1,
+    "slot": "Shoulder"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-test-shoulder-905"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1740"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:41.554995+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 6898,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1740",
+      "subject_id": 1740,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": 20,
+    "name": "The Orb of Soran'ruk",
+    "quest_id": 1740,
+    "reward_item_roles": {
+      "15109": "choices",
+      "6898": "choices"
+    },
+    "side": "Both",
+    "zone": "Warlock"
+  },
+  "source_content_digest": "ca99e6d41d7865a22a7b1710662f620cc1b7479cd384c26db7e96b458e8dec41",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1740"
+}

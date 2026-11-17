@@ -1,0 +1,45 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/304"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:25.636276+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 2917,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/304",
+      "subject_id": 304,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 270050,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/304",
+      "subject_id": 304,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 26,
+    "name": "A Grim Task",
+    "quest_id": 304,
+    "reward_item_ids": [
+      2916,
+      2917,
+      270050
+    ],
+    "zone": "Wetlands"
+  },
+  "source_content_digest": "fb0d8d858c1793a5e5439243aacee175eb183abf5eec39babfb53fc0625218b7",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/304"
+}

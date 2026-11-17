@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "client_build": "1.60.1.70888",
+  "description": "Belt of Heroism Item Level 65 Binds when picked up Waist Plate 380 Armor +15 Strength +10 Agility +14 Stamina Restores + 14 health per 5 sec. Durability 45 / 45 Classes: Warrior Battlegear of Heroism (0/8) Item #226879 Item #226880 Item #226878 Item #226877 Item #226876 Item #226875 Item #226874 Item #226873 Sell Price: 2 32 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:22:38.8025615Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 226864,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 380,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +14 health per 5 sec.",
+        "stats": {
+          "hp5": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 226864,
+    "item_level": 65,
+    "name": "Belt of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "hp5": 14.0,
+      "stamina": 14.0,
+      "strength": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226864"
+  },
+  "linked_entities": [],
+  "name": "Belt of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "server_push_evidence": {
+    "collected_at": "2026-11-12T22:21:14.5385638Z",
+    "source_content_digest": "d0234c0444898e7d835eba230ebe43a9e27abe22be7cb0de4f1f16e44f3cd6e7",
+    "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/f3848e07ab826d0dfb5c0075c813ea66fad57490/patches/1.60.1.70888/hotfix-17004077%2B4/items.txt"
+  },
+  "source_content_digest": "5f39dfa0a4fd2fe3a368825dfb7ca7df892b4b98df4dbc88f1b9812abc79d03f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226864",
+  "url": "https://www.wowhead.com/forever/item=226864"
+}

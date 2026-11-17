@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Juju Might Item Level 60 Binds when picked up Use: Increases attack power by 40 for 10 min. (1 Min Cooldown) Max Stack: 20 Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12460,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases attack power by 40 for 10 min. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 12460,
+    "item_level": 60,
+    "name": "Juju Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases attack power by 40 for 10 min. (1 Min Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12460"
+  },
+  "linked_entities": [
+    {
+      "id": 16329,
+      "name": "Increases attack power by 40 for 10 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16329"
+    }
+  ],
+  "name": "Juju Might",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "66b9ffc5fa721c1aaf8de163726846678de5d1e778dbaeafacccdc7edc8cb2d4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12460",
+  "url": "https://www.wowhead.com/forever/item=12460"
+}

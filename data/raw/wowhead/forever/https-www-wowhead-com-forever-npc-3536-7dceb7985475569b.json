@@ -1,0 +1,460 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Kris Legace Freewheeling Tradeswoman Level 32 Humanoid (Normal)",
+  "entity_id": 3536,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:34.957Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 236,
+      "name": "Cured Leather Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=236"
+    },
+    {
+      "id": 237,
+      "name": "Cured Leather Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=237"
+    },
+    {
+      "id": 238,
+      "name": "Cured Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=238"
+    },
+    {
+      "id": 239,
+      "name": "Cured Leather Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239"
+    },
+    {
+      "id": 1849,
+      "name": "Cured Leather Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1849"
+    },
+    {
+      "id": 1850,
+      "name": "Cured Leather Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1850"
+    },
+    {
+      "id": 4794,
+      "name": "Wolf Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4794"
+    },
+    {
+      "id": 4795,
+      "name": "Bear Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4795"
+    },
+    {
+      "id": 4796,
+      "name": "Owl Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4796"
+    },
+    {
+      "id": 4830,
+      "name": "Saber Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4830"
+    },
+    {
+      "id": 4831,
+      "name": "Stalking Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4831"
+    },
+    {
+      "id": 4832,
+      "name": "Mystic Sarong",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4832"
+    },
+    {
+      "id": 210330,
+      "name": "Hot Tip",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=210330"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 13 of 13",
+    "1 - 13 of 13"
+  ],
+  "location_name": "Hillsbrad Foothills",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          80,
+          39
+        ]
+      ]
+    },
+    "zone": 267
+  },
+  "name": "Kris Legace",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 32",
+    "React: A\u00a0H",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 1,163"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 236,
+      "object_name": "Cured Leather Armor",
+      "object_type": "item",
+      "price_copper": 2795,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Armor",
+        "22",
+        "17",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Leather Armor",
+        "27 95"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 237,
+      "object_name": "Cured Leather Pants",
+      "object_type": "item",
+      "price_copper": 2805,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Pants",
+        "22",
+        "17",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "28 5"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 238,
+      "object_name": "Cured Leather Boots",
+      "object_type": "item",
+      "price_copper": 2112,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Boots",
+        "22",
+        "17",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "21 12"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 239,
+      "object_name": "Cured Leather Gloves",
+      "object_type": "item",
+      "price_copper": 1413,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Gloves",
+        "22",
+        "17",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Leather Armor",
+        "14 13"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1849,
+      "object_name": "Cured Leather Belt",
+      "object_type": "item",
+      "price_copper": 1388,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Belt",
+        "22",
+        "17",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Leather Armor",
+        "13 88"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1850,
+      "object_name": "Cured Leather Bracers",
+      "object_type": "item",
+      "price_copper": 1393,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cured Leather Bracers",
+        "22",
+        "17",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "13 93"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4794,
+      "object_name": "Wolf Bracers",
+      "object_type": "item",
+      "price_copper": 3515,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Wolf Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 15"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4795,
+      "object_name": "Bear Bracers",
+      "object_type": "item",
+      "price_copper": 3528,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Bear Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4796,
+      "object_name": "Owl Bracers",
+      "object_type": "item",
+      "price_copper": 3540,
+      "relation": "sells",
+      "required_level": 20,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Owl Bracers",
+        "25",
+        "20",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "35 40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4830,
+      "object_name": "Saber Leggings",
+      "object_type": "item",
+      "price_copper": 9474,
+      "relation": "sells",
+      "required_level": 23,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Saber Leggings",
+        "28",
+        "23",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "94 74"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4831,
+      "object_name": "Stalking Pants",
+      "object_type": "item",
+      "price_copper": 7858,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Stalking Pants",
+        "26",
+        "21",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "78 58"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4832,
+      "object_name": "Mystic Sarong",
+      "object_type": "item",
+      "price_copper": 10497,
+      "relation": "sells",
+      "required_level": 24,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Mystic Sarong",
+        "29",
+        "24",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "1 4 97"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 210330,
+      "object_name": "Hot Tip",
+      "object_type": "item",
+      "price_copper": 7500,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=3536",
+      "subject_id": 3536,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unconfirmed",
+        "",
+        "Hot Tip",
+        "20",
+        "",
+        "",
+        "",
+        "",
+        "Kris Legace\nVendor in Hillsbrad Foothills",
+        "Junk",
+        "75"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3536",
+  "url": "https://www.wowhead.com/forever/npc=3536"
+}

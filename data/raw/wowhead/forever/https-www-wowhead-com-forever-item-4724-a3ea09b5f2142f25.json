@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Humbert's Helm Item Level 30 Binds when equipped Head Leather 76 Armor +7 Agility +8 Stamina Durability 50 / 50 Requires Level 25 Sell Price: 17 63 Dropped by: Dun Garok Rifleman Drop Chance: 3.91%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 4724,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 76,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4724,
+    "item_level": 30,
+    "name": "Humbert's Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 25,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4724"
+  },
+  "linked_entities": [],
+  "name": "Humbert's Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 3.91,
+      "entity_name": "Dun Garok Rifleman",
+      "source_url": "https://www.wowhead.com/forever/item=4724",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4724",
+  "url": "https://www.wowhead.com/forever/item=4724"
+}

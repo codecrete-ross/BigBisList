@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/893"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:59:12.188661+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 5323,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/893",
+      "subject_id": 893,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 17,
+    "name": "Weapons of Choice",
+    "quest_id": 893,
+    "quest_level": 24,
+    "reward_item_ids": [
+      5323
+    ],
+    "zone": "The Barrens"
+  },
+  "source_content_digest": "47da0156a888b0ddfebab8f050647931b5b60e6894540fa7eba68a3b659c6b8d",
+  "url": "https://guide.wow4ever.se/en/quests/893"
+}

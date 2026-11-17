@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Barov Peasant Caller Item Level 62 Binds when picked up Trinket Use: Calls forth 3 servants of the House Barov that will fight, cook, and clean for you. (6 Min Cooldown) Sell Price: 2 19 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 14022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Calls forth 3 servants of the House Barov that will fight, cook, and clean for you. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 14022,
+    "item_level": 62,
+    "name": "Barov Peasant Caller",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Calls forth 3 servants of the House Barov that will fight, cook, and clean for you. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14022"
+  },
+  "linked_entities": [
+    {
+      "id": 18307,
+      "name": "Calls forth 3 servants of the House Barov that will fight, cook, and clean for you.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18307"
+    }
+  ],
+  "name": "Barov Peasant Caller",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3ceb43995a337df9a463126d9c1b6652b56c2da9f3a3f91ddce06a763e0f31f3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14022",
+  "url": "https://www.wowhead.com/forever/item=14022"
+}

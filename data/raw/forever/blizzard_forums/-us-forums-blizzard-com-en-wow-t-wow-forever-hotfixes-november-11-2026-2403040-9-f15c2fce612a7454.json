@@ -1,0 +1,44 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment",
+      "source": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-11-2026/2403040/9"
+    }
+  ],
+  "confidence": "official_live_hotfix_confirmation",
+  "fetched_at": "2026-11-13T21:54:22.619728+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 18123,
+      "collected_at": "2026-11-13T21:54:22.619728+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "shaman-tuning-live",
+      "source_content_digest": "248103c5a6b42d29e6bff4b5ef067a4f00a9f001803cc0a83e15936f5daabe3a",
+      "source_url": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-11-2026/2403040/9"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "blizzard_forums",
+  "reviewed_page_facts": {
+    "deployment_utc": "2026-11-12T18:45:00Z",
+    "finding": "Blizzard confirms deployment of the tuning already reviewed for the existing Enhancement weights.",
+    "maelstrom_weapon_procs_per_minute_by_rank": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "mental_dexterity_intellect_to_attack_power_percent": [
+      33,
+      66,
+      100
+    ],
+    "stormstrike_cooldown_seconds": 8,
+    "stormstrike_weapon_damage_percent": 100
+  },
+  "source_content_digest": "248103c5a6b42d29e6bff4b5ef067a4f00a9f001803cc0a83e15936f5daabe3a",
+  "url": "https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-11-2026/2403040/9"
+}

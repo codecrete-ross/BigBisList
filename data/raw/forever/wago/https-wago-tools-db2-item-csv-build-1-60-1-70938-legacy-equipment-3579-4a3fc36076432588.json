@@ -1,0 +1,172 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "AoWoW Database Viewer (AzerothCore)",
+      "source": "https://aowow.oldmanwarcraft.com/?item=3579"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_legacy_unavailable_equipment",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 497917,
+      "collected_at": "2026-11-13T03:39:31.5846724Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-search",
+      "source_content_digest": "96230873a8525ce4fe903bb2695ffc8309e3a81148794bc7cf7b546fd284b4e1",
+      "source_url": "https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 47049,
+      "collected_at": "2026-11-13T20:20:27.252356+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-3579",
+      "source_content_digest": "cd5001a7fdccaa9a4219e961710d0a69b5b56abe6b02ad01a497c0468963a8f1",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=3579"
+    },
+    {
+      "bytes": 462919,
+      "collected_at": "2026-11-13T14:51:27.6974051Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemmodifiedappearance",
+      "source_content_digest": "7f92e0fb84ec92fc7d4512a6f60dbf96cc976794b009dea8e964d79cfe830973",
+      "source_url": "https://wago.tools/db2/ItemModifiedAppearance/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "current_appearance_row": {
+      "Flags": "0",
+      "ID": "157382",
+      "ItemAppearanceID": "64371",
+      "ItemAppearanceModifierID": "0",
+      "ItemID": "3579",
+      "OrderIndex": "0",
+      "TransmogSourceTypeEnum": "9"
+    },
+    "current_item_name_and_requirements_disclosed": false,
+    "finding": "The preserved database explicitly marks NPC Equip 3579 unavailable to players. All shared item fields match the current client and the appearance source type matches the adjacent reviewed test equipment. The reviewed Forever quest, vendor, loot and creation records contain no replacement grant for this exact ID.",
+    "historical_archive_name": "NPC Equip 3579",
+    "historical_equip_level": 2,
+    "historical_player_access": "explicitly unavailable",
+    "item_id": 3579,
+    "observed_player_grants": [],
+    "reviewed_test_equipment_comparator": {
+      "Flags": "0",
+      "ID": "156171",
+      "ItemAppearanceID": "63354",
+      "ItemAppearanceModifierID": "0",
+      "ItemID": "905",
+      "OrderIndex": "0",
+      "TransmogSourceTypeEnum": "9"
+    },
+    "shared_item_fields": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "ID": "3579",
+      "IconFileDataID": "135040",
+      "InventoryType": "3",
+      "ItemGroupSoundsID": "10",
+      "Material": "5",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "3"
+    }
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    3579
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1,
+    "slot": "Shoulder"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-equipment/3579"
+}

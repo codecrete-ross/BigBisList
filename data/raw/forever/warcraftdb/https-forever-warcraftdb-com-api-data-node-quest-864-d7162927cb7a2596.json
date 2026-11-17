@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/864"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:10.002985+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 11502,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/864",
+      "subject_id": 864,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Return to Apothecary Zinge",
+    "quest_id": 864,
+    "reward_item_ids": [
+      9634,
+      9635,
+      11502
+    ],
+    "zone": "Undercity"
+  },
+  "source_content_digest": "eeedb8bbe0c0a419c770c2dc706f87eae99685c04cf8e96e072e71c4b05a3fbe",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/864"
+}

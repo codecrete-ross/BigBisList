@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Electrified Dagger Item Level 65 Binds when picked up Unique One-Hand Dagger 53 - 100 Damage Speed 1.80 (42.50 damage per second) +10 Agility Durability 65 / 65 Requires Level 60 Chance on hit: Blasts a target for 45 Nature damage. Sell Price: 6 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 19100,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 42.5,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 45 Nature damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 45 Nature damage."
+    ],
+    "id": 19100,
+    "item_level": 65,
+    "name": "Electrified Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0
+    },
+    "weapon_max_damage": 100,
+    "weapon_min_damage": 53,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19100"
+  },
+  "linked_entities": [
+    {
+      "id": 23592,
+      "name": "Blasts a target for 45 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23592"
+    }
+  ],
+  "name": "Electrified Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19100",
+  "url": "https://www.wowhead.com/forever/item=19100"
+}

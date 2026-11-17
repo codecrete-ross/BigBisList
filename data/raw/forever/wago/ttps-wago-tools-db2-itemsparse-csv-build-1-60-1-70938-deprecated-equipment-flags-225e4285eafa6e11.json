@@ -1,0 +1,391 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client export from Wago.tools.",
+      "source": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888"
+    },
+    {
+      "credit": "TrinityCore item flag definitions",
+      "source": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_client_equipment_flag",
+  "fetched_at": "2026-11-13T03:39:29.5555154Z",
+  "flag_definition": {
+    "collected_at": "2026-11-12T21:55:37.916636+00:00",
+    "effect": "cannot_equip_or_use",
+    "field": "Flags_0",
+    "mask": 16,
+    "name": "ITEM_FLAG_DEPRECATED",
+    "source_content_digest": "c7258f902655762a7a9b4080872389411488a63788d680f0451db747399b9bbd",
+    "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h"
+  },
+  "flavor": "forever",
+  "input_source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938",
+  "page_type": "reference",
+  "prior_flag_review": {
+    "content_digest": "5c048a55337842643d85e1d67565b72a2b5a3e609e8209607d51fc15de8f5728",
+    "evidence_id": "wago:4dedf9f4d6da2aae509a8116"
+  },
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "equipment_restrictions": [
+      {
+        "flags_0": 16,
+        "item_id": 1272,
+        "name": "Deprecated Fine Spun Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1272"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1371,
+        "name": "Deprecated Ragged Leather Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1371"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1379,
+        "name": "Deprecated Frayed Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1379"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1424,
+        "name": "Deprecated Worn Leather Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1424"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1432,
+        "name": "Deprecated Patchwork Cloth Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1432"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1435,
+        "name": "Deprecated Bridge Worker's Yoke",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1435"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1508,
+        "name": "Deprecated Patched Leather Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1508"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1545,
+        "name": "Deprecated Mantle of the Seas",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1545"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1736,
+        "name": "Deprecated Worn Mail Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1736"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 1960,
+        "name": "Deprecated Ironforge Chain Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=1960"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 2647,
+        "name": "Deprecated Loose Chain Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=2647"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 2655,
+        "name": "Deprecated Flimsy Chain Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=2655"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3007,
+        "name": "Deprecated Dark Iron Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3007"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3159,
+        "name": "Deprecated Crusader's Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3159"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3219,
+        "name": "Deprecated Mantle of Nobility",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3219"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3221,
+        "name": "Deprecated Sage Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3221"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3226,
+        "name": "Deprecated Watchman Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3226"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3271,
+        "name": "Deprecated Flax Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3271"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3333,
+        "name": "Deprecated Scarlet Captain's Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3333"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3436,
+        "name": "Deprecated Quilted Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3436"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 3459,
+        "name": "Deprecated Weathered Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=3459"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4657,
+        "name": "Deprecated Warrior's Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4657"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4664,
+        "name": "Deprecated Burnt Leather Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4664"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4667,
+        "name": "Deprecated Battle Chain Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4667"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4670,
+        "name": "Deprecated Ancestral Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4670"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4673,
+        "name": "Deprecated Tribal Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4673"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4679,
+        "name": "Deprecated Brackwater Pauldrons",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4679"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4682,
+        "name": "Deprecated Magister's Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4682"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4685,
+        "name": "Deprecated Runic Cloth Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4685"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4688,
+        "name": "Deprecated Hunting Spaulders",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4688"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4691,
+        "name": "Deprecated Ceremonial Leather Mantle",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4691"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4764,
+        "name": "Deprecated Avenger Shoulders",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4764"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4812,
+        "name": "Deprecated Crimson Shoulders",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4812"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4815,
+        "name": "Deprecated Heavy Brass Shoulder",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4815"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4934,
+        "name": "Deprecated Heavy Cord Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4934"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 4955,
+        "name": "Deprecated Nomadic Shoulderpads",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=4955"
+      },
+      {
+        "flags_0": 18,
+        "item_id": 5408,
+        "name": "Deprecated Minor Bloodstone",
+        "scope_maximum": 4,
+        "slot": "Off Hand",
+        "tooltip_url": "https://www.wowhead.com/forever/item=5408"
+      },
+      {
+        "flags_0": 16,
+        "item_id": 5607,
+        "name": "Deprecated Graystone Shoulders",
+        "scope_maximum": 14,
+        "slot": "Shoulder",
+        "tooltip_url": "https://www.wowhead.com/forever/item=5607"
+      },
+      {
+        "flags_0": 80,
+        "item_id": 11170,
+        "name": "Deprecated Silver Totem of Aquementas",
+        "scope_maximum": 4,
+        "slot": "Off Hand",
+        "tooltip_url": "https://www.wowhead.com/forever/item=11170"
+      }
+    ]
+  },
+  "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+  "unavailable_item_ids": [
+    1272,
+    1371,
+    1379,
+    1424,
+    1432,
+    1435,
+    1508,
+    1545,
+    1736,
+    1960,
+    2647,
+    2655,
+    3007,
+    3159,
+    3219,
+    3221,
+    3226,
+    3271,
+    3333,
+    3436,
+    3459,
+    4657,
+    4664,
+    4667,
+    4670,
+    4673,
+    4679,
+    4682,
+    4685,
+    4688,
+    4691,
+    4764,
+    4812,
+    4815,
+    4934,
+    4955,
+    5408,
+    5607,
+    11170
+  ],
+  "url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938#deprecated-equipment-flags"
+}

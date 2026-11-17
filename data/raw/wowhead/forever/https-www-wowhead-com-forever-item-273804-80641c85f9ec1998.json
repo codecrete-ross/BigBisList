@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Executioner Mantle Item Level 26 Binds when picked up Shoulder Leather 72 Armor +9 Spirit Durability 60 / 60 Requires Level 21 Equip: + 10 Attack Power. Sell Price: 14 24 Dropped by: Targorr the Dread Drop Chance: 1.50%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 273804,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 72,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +10 Attack Power."
+    ],
+    "id": 273804,
+    "item_level": 26,
+    "name": "Executioner Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "spirit": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273804"
+  },
+  "linked_entities": [],
+  "name": "Executioner Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.5,
+      "entity_name": "Targorr the Dread",
+      "source_url": "https://www.wowhead.com/forever/item=273804",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "84d75b5c7615da113c159bf4813a65ee0b62d9e1f3dc7c021b2d2bff7e4cdd62",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273804",
+  "url": "https://www.wowhead.com/forever/item=273804"
+}

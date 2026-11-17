@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Serpentine Skuller Item Level 60 Binds when picked up Ranged Wand 58 - 109 Shadow Damage Speed 1.40 (59.64 damage per second) +9 Shadow Resistance Durability 65 / 65 Requires Level 51 Equip: Your spells pierce 2 Magical Resistance. Sell Price: 3 73 6 Dropped by: Jed Runewatcher Drop Chance: 33.31%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:44.5457595Z",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 12605,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.64,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your spells pierce 2 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your spells pierce 2 Magical Resistance."
+    ],
+    "id": 12605,
+    "item_level": 60,
+    "name": "Serpentine Skuller",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 9.0
+    },
+    "weapon_max_damage": 109,
+    "weapon_min_damage": 58,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12605"
+  },
+  "linked_entities": [],
+  "name": "Serpentine Skuller",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.31,
+      "entity_name": "Jed Runewatcher",
+      "source_url": "https://www.wowhead.com/forever/item=12605",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c31327418868dffa218a9849c158ec8d852e954e45f8fdfa964d0970dd5a4042",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12605",
+  "url": "https://www.wowhead.com/forever/item=12605"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Fear Ward 100 Mana 30 yd range Instant 3 min cooldown Requires Priest Requires level 20 Wards the friendly target against Fear. The next Fear effect used against the target will fail, using up the ward. Lasts 3 min.",
+  "entity_id": 6346,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:46+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6346,
+      "name": "Fear Ward",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6346"
+    }
+  ],
+  "name": "Fear Ward",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8cb7647f9d5fda6207db6afaf6f67eda02f4747b2875eff60a53651318c2a3f1",
+  "spell_id": 6346,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/6346",
+  "url": "https://www.wowhead.com/forever/spell=6346"
+}

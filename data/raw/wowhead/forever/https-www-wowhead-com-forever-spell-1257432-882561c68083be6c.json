@@ -1,0 +1,68 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Earthen Silk Slippers 25 sec cast Reagents: Bolt of Silk Cloth (4), Elemental Earth , Fine Thread (2), Heavy Leather (2) Earthen Silk Slippers Item Level 36 Binds when equipped Feet Cloth 33 Armor +7 Spirit Durability 35 / 35 Requires Level 31 Equip: Increases healing done by up to 17 and damage done by up to 6 for all magical spells and effects. Sell Price: 23 51",
+  "entity_id": 1257432,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T03:02:19.2769896Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2321,
+      "name": "Fine Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2321"
+    },
+    {
+      "id": 4234,
+      "name": "Heavy Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4234"
+    },
+    {
+      "id": 4305,
+      "name": "Bolt of Silk Cloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4305"
+    },
+    {
+      "id": 7067,
+      "name": "Elemental Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7067"
+    },
+    {
+      "id": 254013,
+      "name": "Earthen Silk Slippers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254013"
+    },
+    {
+      "id": 1257432,
+      "name": "Earthen Silk Slippers",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257432"
+    }
+  ],
+  "name": "Earthen Silk Slippers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 254013,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1257432",
+      "subject_id": 1257432,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "c86c46c69055fbce29267a1e523b324c219c3d3656ba4239251db53159153d58",
+  "spell_id": 1257432,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1257432",
+  "url": "https://www.wowhead.com/forever/spell=1257432"
+}

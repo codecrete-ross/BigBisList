@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lapidis Tankard of Tidesippe Item Level 59 Binds when equipped Held In Off-hand -15 Agility +5 Intellect +16 Spirit Requires Level 54 Use: Restores 1915 mana over 30 sec. Must remain seated while drinking. (10 Min Cooldown) Sell Price: 55 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 4696,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 1915 mana over 30 sec. Must remain seated while drinking. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 4696,
+    "item_level": 59,
+    "name": "Lapidis Tankard of Tidesippe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "spirit": 16.0
+    },
+    "use_effects": [
+      "Use: Restores 1915 mana over 30 sec. Must remain seated while drinking. (10 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4696"
+  },
+  "linked_entities": [
+    {
+      "id": 1135,
+      "name": "Restores 1915 mana over 30 sec. Must remain seated while drinking.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1135"
+    }
+  ],
+  "name": "Lapidis Tankard of Tidesippe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e626e0feb4ca7c1262b71e513752ee920960d1c978e12158733a35260430a16e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4696",
+  "url": "https://www.wowhead.com/forever/item=4696"
+}

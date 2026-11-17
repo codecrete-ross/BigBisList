@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/3701"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:47.098360+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 12102,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/3701",
+      "subject_id": 3701,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "The Smoldering Ruins of Thaurissan",
+    "quest_id": 3701,
+    "reward_item_ids": [
+      12102
+    ],
+    "zone": "Ironforge"
+  },
+  "source_content_digest": "50b2f5ac8cedd7e6d38535873eefd0bfaaf704b23c706ec7ab48930eaf4d5677",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/3701"
+}

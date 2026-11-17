@@ -1886660,6 +1886660,9 @@ BigBiSListData = {
             "available_until_phase",
             "tradeable",
             "activity_zones",
+            "quest_steps",
+            "destination",
+            "attribution",
         },
         ["source_record"] = {
             "id",

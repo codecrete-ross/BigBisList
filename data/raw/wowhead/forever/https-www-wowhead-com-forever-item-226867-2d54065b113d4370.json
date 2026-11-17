@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of Heroism Item Level 65 Binds when picked up Shoulder Plate 507 Armor +12 Strength +10 Agility +18 Stamina Durability 80 / 80 Classes: Warrior Equip: Increased Defense + 5. Battlegear of Heroism (0/8) Item #226879 Item #226880 Item #226878 Item #226877 Item #226876 Item #226875 Item #226874 Item #226873 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T04:30:41.5294263Z",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 226867,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 507,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +5.",
+        "stats": {
+          "defense": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +5."
+    ],
+    "id": 226867,
+    "item_level": 65,
+    "name": "Pauldrons of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "defense": 5.0,
+      "stamina": 18.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226867"
+  },
+  "linked_entities": [],
+  "name": "Pauldrons of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7efbc2fd1e81b4408393119d49fd7182809f2946752779c5f28382ab957ae9f2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226867",
+  "url": "https://www.wowhead.com/forever/item=226867"
+}

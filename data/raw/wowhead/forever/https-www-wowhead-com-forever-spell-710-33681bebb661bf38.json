@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Banish 100 Mana 30 yd range 1.5 sec cast Requires Warlock Requires level 28 Banishes the enemy target, preventing all action but making it invulnerable for up to 20 sec. Only one target can be banished at a time. Only works on Demons and Elementals.",
+  "entity_id": 710,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:04+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 710,
+      "name": "Banish",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=710"
+    }
+  ],
+  "name": "Banish",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "b9b420b6843c2c1d368b879b10f3776488b406b67e76ba9ddf2fd5bbcd32c9b5",
+  "spell_id": 710,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/710",
+  "url": "https://www.wowhead.com/forever/spell=710"
+}

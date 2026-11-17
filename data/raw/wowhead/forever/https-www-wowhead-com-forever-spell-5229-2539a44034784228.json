@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enrage Instant 1 min cooldown Requires Druid Requires level 12 Requires Bear Form, Dire Bear Form Instantly generates 10 Rage and another 20 Rage over 10 sec, but reduces base armor by 27% in Bear Form and 16% in Dire Bear Form. The druid is considered in combat for the duration.",
+  "entity_id": 5229,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5229,
+      "name": "Enrage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5229"
+    }
+  ],
+  "name": "Enrage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d4e578075bad838c3e6db6b43c4d50c7ea9a12ccaa72cc88fd2de031afff1ec4",
+  "spell_id": 5229,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5229",
+  "url": "https://www.wowhead.com/forever/spell=5229"
+}

@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/3825"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:43.766100+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 11868,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/3825",
+      "subject_id": 3825,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Ogre Head On A Stick = Party",
+    "quest_id": 3825,
+    "reward_item_ids": [
+      11867,
+      11868
+    ],
+    "zone": "Burning Steppes"
+  },
+  "source_content_digest": "c5111b67d18d560739c85d2492a77ce77f68aaac5aeaeb6f10cdb78f6a9b9b8e",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/3825"
+}

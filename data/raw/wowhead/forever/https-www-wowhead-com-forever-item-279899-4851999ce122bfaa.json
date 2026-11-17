@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Catacomb Cloak Item Level 17 Binds when picked up Back 15 Armor +2 Stamina Equip: + 3 Attack Power. Equip: + 4 Attack Power against Humanoids. Sell Price: 2 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 279899,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 15,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +3 Attack Power.",
+        "stats": {
+          "attack_power": 3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +4 Attack Power against Humanoids.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +3 Attack Power.",
+      "Equip: +4 Attack Power against Humanoids."
+    ],
+    "id": 279899,
+    "item_level": 17,
+    "name": "Catacomb Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 3.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279899"
+  },
+  "linked_entities": [],
+  "name": "Catacomb Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279899",
+  "url": "https://www.wowhead.com/forever/item=279899"
+}

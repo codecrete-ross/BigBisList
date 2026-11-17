@@ -1,0 +1,44 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Sharing the Land Kill 10 Palemane Tanners, 8 Palemane Skinners, and 5 Palemane Poachers, then return to Baine Bloodhoof in Bloodhoof Village. Requirements: - Palemane Tanner x 10 - Palemane Skinner x 8 - Palemane Poacher x 5",
+  "entity_id": 745,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:37.940Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Sharing the Land",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2993,
+        "name": "Baine Bloodhoof"
+      },
+      "start": {
+        "entity_id": 2993,
+        "name": "Baine Bloodhoof"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4960,
+      "object_name": "Flash Pellet",
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=745",
+      "subject_id": 745,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/745",
+  "url": "https://www.wowhead.com/forever/quest=745"
+}

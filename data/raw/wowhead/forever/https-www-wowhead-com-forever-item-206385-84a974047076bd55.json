@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clastic Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 Engrave your pants with the Way of Earth rune: While Rockbiter Weapon is active on your main hand weapon and you have a shield equipped, you deal 65% increased threat, gain 30% increased health, take 10% reduced damage, gain 6% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells but has its range reduced to melee range. However, the range of your Lightning Bolt, Chain Lightning, Chain Heal, Healing Wave, and Lava Burst spells is reduced by 20 yards. \"Learn a new ability after defeating 20 enemies with Earth Shock.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206385,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206385,
+    "item_level": 5,
+    "name": "Clastic Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206385"
+  },
+  "linked_entities": [
+    {
+      "id": 408531,
+      "name": "While Rockbiter Weapon is active on your main hand weapon and you have a shield equipped, you deal 65% increased threat, gain 30% increased health, take 10% reduced damage, gain 6% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells but has its range reduced to melee range. However, the range of your Lightning Bolt, Chain Lightning, Chain Heal, Healing Wave, and Lava Burst spells is reduced by 20 yards.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408531"
+    },
+    {
+      "id": 410107,
+      "name": "Engrave your pants with the Way of Earth rune: While Rockbiter Weapon is active on your main hand weapon and you have a shield equipped, you deal 65% increased threat, gain 30% increased health, take 10% reduced damage, gain 6% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells but has its range reduced to melee range. However, the range of your Lightning Bolt, Chain Lightning, Chain Heal, Healing Wave, and Lava Burst spells is reduced by 20 yards.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410107"
+    }
+  ],
+  "name": "Clastic Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "ec14ce53b4473763e111d378830c90d602728c30c8807947ab678f1fd06ae11e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206385",
+  "url": "https://www.wowhead.com/forever/item=206385"
+}

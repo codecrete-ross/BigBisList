@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Winter's Chill Talent Requires Mage Requires level 1 Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 0% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
+  "entity_id": 11180,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:05+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11180,
+      "name": "Winter's Chill",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11180"
+    }
+  ],
+  "name": "Winter's Chill",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "fe4d92dca9987c19377567593f86d1c7ae408ab261a0e2d43e7a02668cca9674",
+  "spell_id": 11180,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/11180",
+  "url": "https://www.wowhead.com/forever/spell=11180"
+}

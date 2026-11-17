@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=906/tan-leather-shoulderpads-test"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 745,
+      "collected_at": "2026-11-13T07:14:04.5798985Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-906",
+      "source_content_digest": "99e26b59b03daf036ba124c6ce862559e2c4ccecef5203c50c3dc4e5c0e5041c",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/906"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:46.2399237Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-906",
+      "source_content_digest": "e732c491453846fc9f99b7902ce7f05adbb40ceeb1f0cb1396278ec8d58743f7",
+      "source_url": "https://www.wowhead.com/forever/item=906/tan-leather-shoulderpads-test"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "capture_method": "indexed_item_page",
+    "client_required_level_field": 1,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Tan Leather Shoulderpads (Test) Item Level 1 Shoulder Cloth 2 Armor Sell Price: 1",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 906,
+    "item_level": 1,
+    "name": "Tan Leather Shoulderpads (Test)",
+    "page_crawl_age": "last month",
+    "page_line": 19,
+    "source_locale": "en",
+    "source_url": "https://www.wowhead.com/forever/item=906/tan-leather-shoulderpads-test",
+    "tooltip_identity": "Shoulder Cloth"
+  },
+  "source_content_digest": "d29e606d46e160808ae3e1f83f6b1c988aeba4acc3701de3bb4b62a9b08f02c9",
+  "unavailable_item_ids": [
+    906
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1,
+    "slot": "Shoulder"
+  },
+  "url": "https://www.wowhead.com/forever/item=906/tan-leather-shoulderpads-test"
+}

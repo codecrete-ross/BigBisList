@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Acolyte's Silvered Chain Helm Item Level 25 Binds when picked up Head Mail 163 Armor +9 Stamina Durability 65 / 65 Requires Level 20 Equip: Increases healing done by up to 21 and damage done by up to 7 for all magical spells and effects. Sell Price: 14 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 250531,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 163,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 21 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 21,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 21 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 250531,
+    "item_level": 25,
+    "name": "Acolyte's Silvered Chain Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 21.0,
+      "spell_damage": 7.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250531"
+  },
+  "linked_entities": [],
+  "name": "Acolyte's Silvered Chain Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f8da3cc0aad2b07e8013e995b0cdd43bff406064b7edb1d24c65ff9d1455019f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250531",
+  "url": "https://www.wowhead.com/forever/item=250531"
+}

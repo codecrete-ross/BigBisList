@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Seal of Righteousness Level 60 200 Mana Instant Requires Paladin Requires level 58 Fills the Paladin with holy spirit for 30 sec, granting each melee attack an additional [( 2068 / 87 + (0.0765 * Spell Power))] to [( 2068 / 25 + (0.12 * Spell Power))] Holy damage. Slower weapons cause more Holy damage per swing. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will cause 187 to 203 Holy damage to an enemy.",
+  "entity_id": 20293,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:49+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 20293,
+      "name": "Seal of Righteousness",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20293"
+    }
+  ],
+  "name": "Seal of Righteousness",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "14b4358d7b68dfba2c9cc94bfbd369907d5428a257ca7c218cbf8753a4a0a82a",
+  "spell_id": 20293,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20293",
+  "url": "https://www.wowhead.com/forever/spell=20293"
+}

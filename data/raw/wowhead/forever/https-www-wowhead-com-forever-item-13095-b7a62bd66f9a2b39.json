@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Assault Band Item Level 44 Binds when equipped Unique Finger +7 Stamina +5 Spirit Requires Level 39 Equip: + 20 Attack Power. Sell Price: 66 46",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:44:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13095,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +20 Attack Power."
+    ],
+    "id": 13095,
+    "item_level": 44,
+    "name": "Assault Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 39,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "spirit": 5.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13095"
+  },
+  "linked_entities": [],
+  "name": "Assault Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13095",
+  "url": "https://www.wowhead.com/forever/item=13095"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Lesser Cleric's Elixir Item Level 25 Requires Level 25 Use: Drink to increase healing done by spells and effects by up to 20. Lasts 30 min. (3 Sec Cooldown) Max Stack: 20 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250331,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Drink to increase healing done by spells and effects by up to 20. Lasts 30 min. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 250331,
+    "item_level": 25,
+    "name": "Lesser Cleric's Elixir",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 25,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Drink to increase healing done by spells and effects by up to 20. Lasts 30 min. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250331"
+  },
+  "linked_entities": [
+    {
+      "id": 1250924,
+      "name": "Drink to increase healing done by spells and effects by up to 20. Lasts 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1250924"
+    }
+  ],
+  "name": "Lesser Cleric's Elixir",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "2bdcfe7d3f4dfb3fc541374e5a005dbd5d78f3b8742ce481ad13a8a70c9eca51",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250331",
+  "url": "https://www.wowhead.com/forever/item=250331"
+}

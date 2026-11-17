@@ -1,0 +1,27 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Improved Wrath Item Effect Requires Druid Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)",
+  "entity_id": 1248996,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:11:54+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1248996,
+      "name": "Improved Wrath",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248996"
+    }
+  ],
+  "name": "Improved Wrath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 1248996,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1248996",
+  "url": "https://www.wowhead.com/forever/spell=1248996"
+}

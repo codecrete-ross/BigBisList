@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "EG Link (Efficient Games)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/31"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "entity_id": 31,
+  "fetched_at": "2026-11-11T04:38:03+00:00",
+  "flavor": "forever",
+  "page_type": "quest",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 263411,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://guide.wow4ever.se/en/quests/31",
+      "subject_id": 31,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "faction": "Horde",
+    "finish_npc": "Turak Runetotem",
+    "minimum_level": 16,
+    "previous_quest_id": 30,
+    "quest_id": 31,
+    "reward_item_id": 263411
+  },
+  "source_content_digest": "21cf1c0a7ca8d677fdd475d0dac95784d1f3aa16fa009ba20b276c28a8de3bf2",
+  "url": "https://guide.wow4ever.se/en/quests/31"
+}

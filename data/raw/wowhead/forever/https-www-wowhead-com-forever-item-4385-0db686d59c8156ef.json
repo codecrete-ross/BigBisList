@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Green Tinted Goggles Item Level 30 Binds when equipped Head Cloth 35 Armor +8 Stamina +7 Spirit Durability 45 / 45 Requires Engineering (150) Sell Price: 14 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 4385,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4385,
+    "item_level": 30,
+    "name": "Green Tinted Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4385"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Green Tinted Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Green Tinted Goggles Item Level 30 Binds when equipped Head Cloth 35 Armor +8 Stamina +7 Spirit Durability 45 / 45 Requires Engineering (150) Sell Price: 14 10",
+      "scope": "equip_or_use",
+      "skill": 150,
+      "source_url": "https://www.wowhead.com/forever/item=4385",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "4b3c4b428d09808c4ba55a8b573e16d6fefd21b40b12f71ce2ce225905392a77",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4385",
+  "url": "https://www.wowhead.com/forever/item=4385"
+}

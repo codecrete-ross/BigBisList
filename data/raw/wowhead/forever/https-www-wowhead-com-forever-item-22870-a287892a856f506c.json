@@ -1,0 +1,143 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Silk Handwraps Item Level 66 Binds when picked up Unique Hands Cloth 58 Armor +12 Stamina +10 Intellect +40 Armor Durability 30 / 30 Classes: Mage Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 18 . Equip: Increases the damage absorbed by your Mana Shield by 285. Champion's Arcanum (0/6) Blood Guard's Silk Handwraps Blood Guard's Silk Walkers Champion's Silk Cowl Champion's Silk Mantle Legionnaire's Silk Legguards Legionnaire's Silk Tunic (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Reduces the cooldown of your Blink spell by 2 sec. (6) Set : +20 Stamina. Sell Price: 68 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 22870,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 58,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases the damage absorbed by your Mana Shield by 285.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 22870,
+    "item_level": 66,
+    "name": "Blood Guard's Silk Handwraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23025,
+        "text": "Reduces the cooldown of your Blink spell by 2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 18.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22870"
+  },
+  "linked_entities": [
+    {
+      "id": 22860,
+      "name": "Blood Guard's Silk Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22860"
+    },
+    {
+      "id": 22870,
+      "name": "Blood Guard's Silk Handwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22870"
+    },
+    {
+      "id": 22883,
+      "name": "Legionnaire's Silk Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22883"
+    },
+    {
+      "id": 22886,
+      "name": "Legionnaire's Silk Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22886"
+    },
+    {
+      "id": 23263,
+      "name": "Champion's Silk Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23263"
+    },
+    {
+      "id": 23264,
+      "name": "Champion's Silk Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23264"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23025,
+      "name": "Reduces the cooldown of your Blink spell by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23025"
+    },
+    {
+      "id": 23037,
+      "name": "Increases the damage absorbed by your Mana Shield by 285.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23037"
+    }
+  ],
+  "name": "Blood Guard's Silk Handwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22870",
+  "url": "https://www.wowhead.com/forever/item=22870"
+}

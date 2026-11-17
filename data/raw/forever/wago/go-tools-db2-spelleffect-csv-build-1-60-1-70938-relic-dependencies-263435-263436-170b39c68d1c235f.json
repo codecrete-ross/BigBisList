@@ -1,0 +1,197 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/0f202e892f1a15c8192c232351824eccb99efd8a/data/wowf/1.60.1.70938/quests.enUS.json"
+    }
+  ],
+  "call_of_earth_rewards": [
+    {
+      "min_level": 4,
+      "quest_id": 1518,
+      "race_mask": "ffffffffffffffff",
+      "teach_spell": 8073
+    },
+    {
+      "min_level": 4,
+      "quest_id": 1521,
+      "race_mask": "ffffffffffffffff",
+      "teach_spell": 8073
+    },
+    {
+      "min_level": 3,
+      "quest_id": 92468,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "teach_spell": 8073
+    },
+    {
+      "min_level": 4,
+      "quest_id": 94375,
+      "race_mask": "55155555b1354c4d",
+      "teach_spell": 8073
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_effect_and_quest_identity",
+  "early_mask_matching_spell_levels": [
+    {
+      "BaseLevel": 6,
+      "ID": 98275,
+      "SpellID": 2484,
+      "SpellLevel": 6
+    },
+    {
+      "BaseLevel": 8,
+      "ID": 98938,
+      "SpellID": 5730,
+      "SpellLevel": 8
+    },
+    {
+      "BaseLevel": 4,
+      "ID": 100001,
+      "SpellID": 8071,
+      "SpellLevel": 4
+    },
+    {
+      "BaseLevel": 1,
+      "ID": 102336,
+      "SpellID": 16190,
+      "SpellLevel": 1
+    },
+    {
+      "BaseLevel": 0,
+      "ID": 141774,
+      "SpellID": 425874,
+      "SpellLevel": 1
+    }
+  ],
+  "fetched_at": "2026-11-13T03:59:43.4491189Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 316009,
+      "collected_at": "2026-11-13T09:48:07.7491384Z",
+      "http": "200",
+      "name": "wago-70938-spelllevels",
+      "source_content_digest": "8bb6142b47be66c5110c7f64e53bbc27223a1d2bde739dafde1eec5c92a42649",
+      "source_url": "https://wago.tools/db2/SpellLevels/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 168499,
+      "collected_at": "2026-11-13T09:48:08.1233999Z",
+      "http": "200",
+      "name": "wago-70938-spellclassoptions",
+      "source_content_digest": "cfb30a095a14699ea4ea508cd87c870d5fc21a6cbcaea2d43125ce30e6e664e6",
+      "source_url": "https://wago.tools/db2/SpellClassOptions/csv?build=1.60.1.70938"
+    },
+    {
+      "attempted_at": "2026-11-16T05:08:51.747555+00:00",
+      "host": "raw.githubusercontent.com",
+      "source_content_digest": "89467979a869b38b0529de918cc79dbec277c5d5e7e73602638144323765be52",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/0f202e892f1a15c8192c232351824eccb99efd8a/data/wowf/1.60.1.70938/quests.enUS.json",
+      "status": 200
+    }
+  ],
+  "item_effect_links": [
+    {
+      "ItemEffectID": 227633,
+      "ItemID": 263435,
+      "spell_id": 1270490
+    },
+    {
+      "ItemEffectID": 227634,
+      "ItemID": 263436,
+      "spell_id": 1270492
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "pylon_spell_effects": [
+    {
+      "Effect": 3,
+      "EffectIndex": 1,
+      "EffectMiscValue_0": 114846,
+      "EffectMiscValue_1": 263435,
+      "ID": 1308270,
+      "SpellID": 1289727
+    },
+    {
+      "Effect": 3,
+      "EffectIndex": 2,
+      "EffectMiscValue_0": 114847,
+      "EffectMiscValue_1": 263436,
+      "ID": 1308271,
+      "SpellID": 1289727
+    }
+  ],
+  "reviewed_page_facts": {
+    "pylon_spell_finding": "The exact numbers in the script match the quest's monster credit targets. It supplies no item grant evidence for these relic IDs.",
+    "totem_affinity_finding": "The live quest export includes a Stoneskin Totem teaching reward from level three on the Windshaper branch. Low-level client rows for Mana Tide and Decoy share the modifier's mask. A client spell-level row alone does not establish a trainer, starting spell, or other playable unlock."
+  },
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "totem_affinity_effect": {
+    "EffectAura": 108,
+    "EffectMiscValue_0": 14,
+    "EffectSpellClassMask_0": 537399320,
+    "ID": 1282549,
+    "SpellID": 1270492
+  },
+  "typed_quest_evidence": {
+    "item_rewards": [],
+    "objectives": [
+      {
+        "amount": 1,
+        "id": 471842,
+        "objectId": 263435,
+        "storageIndex": 0,
+        "text": "Western pylon repaired",
+        "type": "monster",
+        "typeId": 0
+      },
+      {
+        "amount": 1,
+        "id": 471843,
+        "objectId": 263436,
+        "storageIndex": 1,
+        "text": "Eastern pylon repaired",
+        "type": "monster",
+        "typeId": 0
+      }
+    ],
+    "quest_id": 96018
+  },
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/relic-dependencies/263435,263436"
+}

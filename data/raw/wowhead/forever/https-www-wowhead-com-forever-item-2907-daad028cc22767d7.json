@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dwarven Tree Chopper Item Level 20 Binds when picked up Two-Hand Axe 34 - 52 Damage Speed 3.30 (13.03 damage per second) Durability 65 / 65 Equip: Reduces chance to be Dodged or Parried by 0.6%. Sell Price: 17 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 2907,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 13.03,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 0.6%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 0.6%."
+    ],
+    "id": 2907,
+    "item_level": 20,
+    "name": "Dwarven Tree Chopper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 52,
+    "weapon_min_damage": 34,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2907"
+  },
+  "linked_entities": [],
+  "name": "Dwarven Tree Chopper",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2907",
+  "url": "https://www.wowhead.com/forever/item=2907"
+}

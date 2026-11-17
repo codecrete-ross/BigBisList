@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stitches' Femur Item Level 30 Binds when picked up Unique Held In Off-hand Requires Level 25 Sell Price: 6 25 Dropped by: Stitches Drop Chance: 95.09%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 3360,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 3360,
+    "item_level": 30,
+    "name": "Stitches' Femur",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 25,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3360"
+  },
+  "linked_entities": [],
+  "name": "Stitches' Femur",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 95.09,
+      "entity_name": "Stitches",
+      "source_url": "https://www.wowhead.com/forever/item=3360",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3360",
+  "url": "https://www.wowhead.com/forever/item=3360"
+}

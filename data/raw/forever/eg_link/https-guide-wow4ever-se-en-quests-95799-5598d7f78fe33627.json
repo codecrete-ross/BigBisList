@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/95799"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:00.373196+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 279880,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/95799",
+      "subject_id": 95799,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 30,
+    "name": "Findings for the Explorer's League",
+    "quest_id": 95799,
+    "quest_level": 40,
+    "reward_item_ids": [
+      279880
+    ],
+    "zone": "Ironforge"
+  },
+  "source_content_digest": "910a04a81a0d9cab3de1bf1db1dc894dc0db561f7f10d26d4e1c9d9fa6fa82dc",
+  "url": "https://guide.wow4ever.se/en/quests/95799"
+}

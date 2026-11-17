@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Sting of the Scorpid Get 10 Scorpid Worker Tails for Gornek in the Den. Requirements: - Scorpid Worker Tail x 10",
+  "entity_id": 789,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:53.732Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Sting of the Scorpid",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 3143,
+        "name": "Gornek"
+      },
+      "start": {
+        "entity_id": 3143,
+        "name": "Gornek"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Durotar"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4919,
+      "object_name": "Soft Wool Belt",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=789",
+      "subject_id": 789,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4920,
+      "object_name": "Battleworn Cape",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=789",
+      "subject_id": 789,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/789",
+  "url": "https://www.wowhead.com/forever/quest=789"
+}

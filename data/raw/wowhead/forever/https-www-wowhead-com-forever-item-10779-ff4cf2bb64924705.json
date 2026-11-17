@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Demon's Blood Item Level 60 Binds when picked up Trinket Restores + 11 health per 5 sec. +15 Shadow Resistance Equip: Increased Defense + 4. Sell Price: 1 65 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 10779,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +11 health per 5 sec.",
+        "stats": {
+          "hp5": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 10779,
+    "item_level": 60,
+    "name": "Demon's Blood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0,
+      "hp5": 11.0,
+      "shadow_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10779"
+  },
+  "linked_entities": [],
+  "name": "Demon's Blood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10779",
+  "url": "https://www.wowhead.com/forever/item=10779"
+}

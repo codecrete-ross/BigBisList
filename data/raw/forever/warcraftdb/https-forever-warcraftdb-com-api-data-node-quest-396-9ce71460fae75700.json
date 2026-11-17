@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/396"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:16.527360+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 2933,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/396",
+      "subject_id": 396,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 16,
+    "name": "An Audience with the King",
+    "quest_id": 396,
+    "reward_item_ids": [
+      2933
+    ],
+    "zone": "Stormwind City"
+  },
+  "source_content_digest": "001763399ba3deb49928bb46060f4137e5a3db139c6f09aded92f6112256ba34",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/396"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feralheart Faceguard Item Level 60 Binds when picked up Head Leather 150 Armor +18 Strength +11 Agility +30 Stamina +70 Armor Durability 70 / 70 Classes: Druid Equip: Increased Defense + 4. Feralheart Raiment (0/8) Item #226821 Item #226822 Item #226820 Item #226819 Item #226818 Item #226817 Item #226816 Item #226815 Sell Price: 2 50 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 226801,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 150,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 226801,
+    "item_level": 60,
+    "name": "Feralheart Faceguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "defense": 4.0,
+      "stamina": 30.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226801"
+  },
+  "linked_entities": [],
+  "name": "Feralheart Faceguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "6dffdb5c32f0f43acb442750beb1897ed87346342e2c1580f0c2cb01cd095278",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226801",
+  "url": "https://www.wowhead.com/forever/item=226801"
+}

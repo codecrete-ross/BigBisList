@@ -1,0 +1,124 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Lieutenant's Restored Leather Helm Item Level 55 Binds when picked up Head Leather 128 Armor +13 Stamina +13 Intellect +13 Spirit +20 Armor Durability 60 / 60 Classes: Druid Requires Level 50 Equip: Increases healing done by magical spells and effects by up to 24 . Knight-Lieutenant's Restored Leather (0/6) Knight's Restored Leather Jerkin Knight's Restored Leather Leggings Knight-Lieutenant's Restored Leather Helm Knight-Lieutenant's Restored Leather Spaulders Sergeant Major's Restored Leather Boots Sergeant Major's Restored Leather Gloves (3) Set : +15 Stamina. (6) Set : Increases healing done by spells and effects by up to 33. Sell Price: 1 37 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 220874,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 128,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 24.",
+        "stats": {
+          "healing_power": 24
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 24."
+    ],
+    "id": 220874,
+    "item_level": 55,
+    "name": "Knight-Lieutenant's Restored Leather Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9318,
+        "text": "Increases healing done by spells and effects by up to 33."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 24.0,
+      "intellect": 13.0,
+      "spirit": 13.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220874"
+  },
+  "linked_entities": [
+    {
+      "id": 220874,
+      "name": "Knight-Lieutenant's Restored Leather Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220874"
+    },
+    {
+      "id": 220876,
+      "name": "Knight-Lieutenant's Restored Leather Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220876"
+    },
+    {
+      "id": 220878,
+      "name": "Knight's Restored Leather Jerkin",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220878"
+    },
+    {
+      "id": 220880,
+      "name": "Sergeant Major's Restored Leather Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220880"
+    },
+    {
+      "id": 220882,
+      "name": "Knight's Restored Leather Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220882"
+    },
+    {
+      "id": 220884,
+      "name": "Sergeant Major's Restored Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220884"
+    },
+    {
+      "id": 9318,
+      "name": "Increases healing done by spells and effects by up to 33.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9318"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Knight-Lieutenant's Restored Leather Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "47b4a1f2af496e91ba0170aef1c31de7b9d3f499c3469dc1fd69bcb67d886625",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220874",
+  "url": "https://www.wowhead.com/forever/item=220874"
+}

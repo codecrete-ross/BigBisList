@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonslayer's Signet Item Level 65 Binds when picked up Unique-Equipped Finger +11 Stamina +11 Intellect +6 Fire Resistance Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sell Price: 3 38 58",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18403,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 18403,
+    "item_level": 65,
+    "name": "Dragonslayer's Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "fire_resistance": 6.0,
+      "intellect": 11.0,
+      "spell_power": 7.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18403"
+  },
+  "linked_entities": [],
+  "name": "Dragonslayer's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18403",
+  "url": "https://www.wowhead.com/forever/item=18403"
+}

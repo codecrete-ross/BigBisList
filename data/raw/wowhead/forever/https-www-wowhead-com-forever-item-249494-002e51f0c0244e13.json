@@ -1,0 +1,188 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Libram of Invocation Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft a Libram of Invocation. Creates a libram of invocation. Sell Price: 10 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Libram",
+      "item_id": 249442,
+      "item_stats": {
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 249442,
+        "name": "Libram of Invocation",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "restrictions": {
+          "classes": [
+            "Paladin"
+          ]
+        },
+        "slot": "Libram",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=249442"
+      },
+      "name": "Libram of Invocation",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=249442"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T04:56:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249494,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Libram of Invocation.",
+        "type": "use"
+      }
+    ],
+    "id": 249494,
+    "item_level": 42,
+    "name": "Formula: Libram of Invocation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft a Libram of Invocation. Creates a libram of invocation."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=249494"
+  },
+  "linked_entities": [
+    {
+      "id": 2289,
+      "name": "Scroll of Strength II",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2289"
+    },
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 11178,
+      "name": "Large Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11178"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249442,
+      "name": "Libram of Invocation",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249442"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1249005,
+      "name": "Reduces the mana cost of your Seal spells by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249005"
+    },
+    {
+      "id": 1249006,
+      "name": "Teaches you how to craft a Libram of Invocation.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249006"
+    }
+  ],
+  "name": "Formula: Libram of Invocation",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Libram of Invocation Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft a Libram of Invocation. Creates a libram of invocation. Sell Price: 10 50",
+      "reputation": "this faction",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=249494",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Libram of Invocation Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft a Libram of Invocation. Creates a libram of invocation. Sell Price: 10 50",
+      "scope": "equip_or_use",
+      "skill": 210,
+      "source_url": "https://www.wowhead.com/forever/item=249494",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "reviewed_page_facts": {
+    "collected_at": "2026-11-06T05:04:27.907673+00:00",
+    "costs": [
+      {
+        "amount": 120,
+        "currency_id": 3402,
+        "name": "Merchant's Favor"
+      }
+    ],
+    "creates_item_id": 249442,
+    "reputation_gate": "Friendly with the vendor organization",
+    "reputation_note": "Tooltip says this faction. Organization identity is inferred from the named vendor NPC faction plus commerce guide; the inference is explicit.",
+    "retrieval_method": "public_web_search_result",
+    "sold_by": [
+      {
+        "name": "Beneris",
+        "npc_id": 248199,
+        "side": "Horde",
+        "stock": "unlimited",
+        "zone": "The Barrens"
+      },
+      {
+        "name": "Alynsia",
+        "npc_id": 256732,
+        "side": "Alliance",
+        "stock": "unlimited",
+        "zone": "Redridge Mountains"
+      }
+    ],
+    "teaches_spell_id": 1249006
+  },
+  "source_content_digest": "bf5b3c83a43a46d72a9d336b310627b82485498f7d45a646d8094bfad98cc900",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1249006
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249494",
+  "url": "https://www.wowhead.com/forever/item=249494"
+}

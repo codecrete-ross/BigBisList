@@ -1,0 +1,72 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=288929/band-of-sulfuras"
+    },
+    {
+      "credit": "60.tools",
+      "source": "https://www.60.tools/items/288929-band-of-sulfuras"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 906,
+      "collected_at": "2026-11-13T06:25:07.3954503Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-tooltip-288929",
+      "source_content_digest": "0b8e721c4cccc8718c36b3982477e9ebfba9dc93591a6e0dd2a87f405456aa20",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/288929"
+    },
+    {
+      "bytes": 129393,
+      "collected_at": "2026-11-13T06:29:23.5976216Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-60-288929",
+      "source_content_digest": "650158a8bca16d5e9fa17e398b2eb448a7e44cfe3ce26e90f9da09caa7f4b0eb",
+      "source_url": "https://www.60.tools/items/288929-band-of-sulfuras"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:25:07.0237786Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "beta-main-288929",
+      "source_content_digest": "5e4d72eae7f1babc28c95808953c4f459e1af5383afafa4d029430904c1e9b29",
+      "source_url": "https://www.wowhead.com/forever/item=288929/band-of-sulfuras"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability": "unavailable_to_players",
+    "capture_method": "indexed_search_excerpt",
+    "corroboration": "60.tools also identifies this exact item as an October 22 beta celebration reward.",
+    "current_tooltip_additional_stats": {},
+    "digest_input": "normalized indexed item-page finding",
+    "historical_event_evidence": [
+      "https://daybreakforever.com/blog/molten-core-loot-at-level-30",
+      "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt",
+      "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633"
+    ],
+    "item_id": 288929,
+    "item_name": "Band of Sulfuras",
+    "page_crawl_age_at_review": "2 days ago"
+  },
+  "source_content_digest": "67f6452e68c1eb37133f5a3c9f8a61b477652b2dab71aefe446cd53b85c75d20",
+  "unavailable_item_ids": [
+    288929
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=288929/band-of-sulfuras"
+}

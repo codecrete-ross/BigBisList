@@ -1,0 +1,85 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Ironfeather Leggings 12.5 sec cast Reagents: Rugged Leather (20), Ironfeather (120), Jade (4), Cured Rugged Hide (2), Rune Thread (4), Pristine Scale (10), Fel Leather (20) Ironfeather Leggings Item Level 61 Binds when equipped Legs Leather 164 Armor +18 Intellect Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 38 . Sell Price: 3 36 39",
+  "entity_id": 1255012,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:06+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1529,
+      "name": "Jade",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1529"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15420,
+      "name": "Ironfeather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15420"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 249429,
+      "name": "Pristine Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249429"
+    },
+    {
+      "id": 252486,
+      "name": "Ironfeather Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252486"
+    },
+    {
+      "id": 1255012,
+      "name": "Ironfeather Leggings",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1255012"
+    }
+  ],
+  "name": "Ironfeather Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 252486,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1255012",
+      "subject_id": 1255012,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1255012,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1255012",
+  "url": "https://www.wowhead.com/forever/spell=1255012"
+}

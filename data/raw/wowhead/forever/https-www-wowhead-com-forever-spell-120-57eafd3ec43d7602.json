@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Cone of Cold Level 60 210 Mana Instant 10 sec cooldown Requires Mage Requires level 26 Targets in a cone in front of the caster take ( 96.2913 * 1 ) to ( 105.709 * 1 ) Frost damage and are slowed by 40% for 6 sec. The first 4 targets hit by this cone are slowed by an additional 10% for an additional 3 sec.",
+  "entity_id": 120,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:32+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 120,
+      "name": "Cone of Cold",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=120"
+    }
+  ],
+  "name": "Cone of Cold",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "bebe8cdf781567f686b2c257da979ee1804bcb028c6e6a264e8748f665b9c0f5",
+  "spell_id": 120,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/120",
+  "url": "https://www.wowhead.com/forever/spell=120"
+}

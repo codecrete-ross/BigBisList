@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Verigan's Fist Item Level 31 Binds when picked up Two-Hand Mace 65 - 99 Damage Speed 3.20 (25.63 damage per second) +5 Stamina +6 Intellect +10 Spirit Durability 100 / 100 Classes: Paladin Chance on hit: Ignite the target in the flames of the Great Forge, dealing 39 to 59 Holyfire damage. Deals 3 times as much damage to Fire Elementals and Earth Elementals. Sell Price: 74 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 6953,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 25.63,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Ignite the target in the flames of the Great Forge, dealing 39 to 59 Holyfire damage. Deals 3 times as much damage to Fire Elementals and Earth Elementals.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Ignite the target in the flames of the Great Forge, dealing 39 to 59 Holyfire damage. Deals 3 times as much damage to Fire Elementals and Earth Elementals."
+    ],
+    "id": 6953,
+    "item_level": 31,
+    "name": "Verigan's Fist",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "spirit": 10.0,
+      "stamina": 5.0
+    },
+    "weapon_max_damage": 99,
+    "weapon_min_damage": 65,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6953"
+  },
+  "linked_entities": [
+    {
+      "id": 1322218,
+      "name": "Ignite the target in the flames of the Great Forge, dealing 39 to 59 Holyfire damage. Deals 3 times as much damage to Fire Elementals and Earth Elementals.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1322218"
+    }
+  ],
+  "name": "Verigan's Fist",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6953",
+  "url": "https://www.wowhead.com/forever/item=6953"
+}

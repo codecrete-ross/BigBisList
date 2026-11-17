@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tome of Devouring Shadows Item Level 52 Binds when picked up Held In Off-hand +6 Nature Resistance Equip: Increases damage done by Shadow spells and effects by up to 20. \"Some secrets are best left unknown.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 19989,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 20.",
+        "stats": {
+          "shadow_damage": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Shadow spells and effects by up to 20."
+    ],
+    "id": 19989,
+    "item_level": 52,
+    "name": "Tome of Devouring Shadows",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 6.0,
+      "shadow_damage": 20.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19989"
+  },
+  "linked_entities": [],
+  "name": "Tome of Devouring Shadows",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "bfc44e7091c37eb9a5b6eeb77e5c42a740c2e8b93dc88a1c4d7503f65315a887",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19989",
+  "url": "https://www.wowhead.com/forever/item=19989"
+}

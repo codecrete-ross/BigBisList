@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Vanish Rank 1 Instant 5 min cooldown Requires Rogue Requires level 22 Reagents: Flash Powder Allows the rogue to vanish from sight, entering an improved stealth mode for 10 sec. Also breaks movement impairing effects.",
+  "entity_id": 1856,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:07+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5140,
+      "name": "Flash Powder",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5140"
+    },
+    {
+      "id": 1856,
+      "name": "Vanish",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1856"
+    }
+  ],
+  "name": "Vanish",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "9077000396efa884edfec6abe92273519ab96a2bda52143c3cb00a3f2d1eeb50",
+  "spell_id": 1856,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1856",
+  "url": "https://www.wowhead.com/forever/spell=1856"
+}

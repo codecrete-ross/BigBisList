@@ -1,0 +1,27 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Supreme Power Item Effect Instant 1 sec cooldown Increases damage done by magical spells and effects by up to 150 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death.",
+  "entity_id": 17628,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:09+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 17628,
+      "name": "Supreme Power",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17628"
+    }
+  ],
+  "name": "Supreme Power",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 17628,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17628",
+  "url": "https://www.wowhead.com/forever/spell=17628"
+}

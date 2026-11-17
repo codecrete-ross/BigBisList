@@ -1,0 +1,946 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Clearcasting 100 yd range Instant Requires Druid Requires level 10 Modifies Power Cost -100%: Bash , Bash , Bash , Claw , Claw , Claw , Claw , Claw , Demoralizing Roar , Demoralizing Roar , Demoralizing Roar , Demoralizing Roar , Demoralizing Roar , Entangling Roots , Entangling Roots , Entangling Roots , Entangling Roots , Entangling Roots , Entangling Roots , Feral Charge , Feral Charge (Bear) , Ferocious Bite , Ferocious Bite , Ferocious Bite , Ferocious Bite , Ferocious Bite , Ferocious Bite , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Healing Touch , Hurricane , Hurricane , Hurricane , Insect Swarm , Insect Swarm , Insect Swarm , Insect Swarm , Insect Swarm , Lacerate , Lacerate , Lacerate , Lacerate , Lacerate , Lifebloom , Maul , Maul , Maul , Maul , Maul , Maul , Maul , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Moonfire , Nature's Grasp , Nature's Grasp , Nature's Grasp , Nature's Grasp , Nature's Grasp , Nature's Grasp , Nourish , Pounce , Pounce , Pounce , Primal Bite , Primal Bite , Primal Bite , Rake , Rake , Rake , Rake , Ravage , Ravage , Ravage , Ravage , Regrowth , Regrowth , Regrowth , Regrowth , Regrowth , Regrowth , Regrowth , Regrowth , Regrowth , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rejuvenation , Rip , Rip , Rip , Rip , Rip , Rip , Shred , Shred , Shred , Shred , Shred , Skull Bash , Starfall , Starfire , Starfire , Starfire , Starfire , Starfire , Starfire , Starfire , Sunfire , Sunfire , Sunfire , Swiftmend , Swipe , Swipe , Swipe , Swipe , Swipe , Swipe , Thorns , Thorns , Thorns , Thorns , Thorns , Thorns , Tranquility , Tranquility , Tranquility , Tranquility , Wild Growth , Wild Growth , Wild Growth",
+  "entity_id": 16870,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:28+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 99,
+      "name": "Demoralizing Roar",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=99"
+    },
+    {
+      "id": 339,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=339"
+    },
+    {
+      "id": 467,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=467"
+    },
+    {
+      "id": 740,
+      "name": "Tranquility",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=740"
+    },
+    {
+      "id": 769,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=769"
+    },
+    {
+      "id": 774,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=774"
+    },
+    {
+      "id": 779,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=779"
+    },
+    {
+      "id": 780,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=780"
+    },
+    {
+      "id": 782,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=782"
+    },
+    {
+      "id": 1058,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1058"
+    },
+    {
+      "id": 1062,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1062"
+    },
+    {
+      "id": 1075,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1075"
+    },
+    {
+      "id": 1079,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1079"
+    },
+    {
+      "id": 1082,
+      "name": "Claw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1082"
+    },
+    {
+      "id": 1430,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1430"
+    },
+    {
+      "id": 1735,
+      "name": "Demoralizing Roar",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1735"
+    },
+    {
+      "id": 1822,
+      "name": "Rake",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1822"
+    },
+    {
+      "id": 1823,
+      "name": "Rake",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1823"
+    },
+    {
+      "id": 1824,
+      "name": "Rake",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1824"
+    },
+    {
+      "id": 2090,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2090"
+    },
+    {
+      "id": 2091,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2091"
+    },
+    {
+      "id": 2912,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2912"
+    },
+    {
+      "id": 3029,
+      "name": "Claw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3029"
+    },
+    {
+      "id": 3627,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3627"
+    },
+    {
+      "id": 5185,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5185"
+    },
+    {
+      "id": 5186,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5186"
+    },
+    {
+      "id": 5187,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5187"
+    },
+    {
+      "id": 5188,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5188"
+    },
+    {
+      "id": 5189,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5189"
+    },
+    {
+      "id": 5195,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5195"
+    },
+    {
+      "id": 5196,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5196"
+    },
+    {
+      "id": 5201,
+      "name": "Claw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5201"
+    },
+    {
+      "id": 5211,
+      "name": "Bash",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5211"
+    },
+    {
+      "id": 5221,
+      "name": "Shred",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5221"
+    },
+    {
+      "id": 5570,
+      "name": "Insect Swarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5570"
+    },
+    {
+      "id": 6778,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6778"
+    },
+    {
+      "id": 6785,
+      "name": "Ravage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6785"
+    },
+    {
+      "id": 6787,
+      "name": "Ravage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6787"
+    },
+    {
+      "id": 6798,
+      "name": "Bash",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6798"
+    },
+    {
+      "id": 6800,
+      "name": "Shred",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6800"
+    },
+    {
+      "id": 6807,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6807"
+    },
+    {
+      "id": 6808,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6808"
+    },
+    {
+      "id": 6809,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6809"
+    },
+    {
+      "id": 8903,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8903"
+    },
+    {
+      "id": 8910,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8910"
+    },
+    {
+      "id": 8914,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8914"
+    },
+    {
+      "id": 8918,
+      "name": "Tranquility",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8918"
+    },
+    {
+      "id": 8921,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8921"
+    },
+    {
+      "id": 8924,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8924"
+    },
+    {
+      "id": 8925,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8925"
+    },
+    {
+      "id": 8926,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8926"
+    },
+    {
+      "id": 8927,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8927"
+    },
+    {
+      "id": 8928,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8928"
+    },
+    {
+      "id": 8929,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8929"
+    },
+    {
+      "id": 8936,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8936"
+    },
+    {
+      "id": 8938,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8938"
+    },
+    {
+      "id": 8939,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8939"
+    },
+    {
+      "id": 8940,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8940"
+    },
+    {
+      "id": 8941,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8941"
+    },
+    {
+      "id": 8949,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8949"
+    },
+    {
+      "id": 8950,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8950"
+    },
+    {
+      "id": 8951,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8951"
+    },
+    {
+      "id": 8972,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8972"
+    },
+    {
+      "id": 8983,
+      "name": "Bash",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8983"
+    },
+    {
+      "id": 8992,
+      "name": "Shred",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8992"
+    },
+    {
+      "id": 9005,
+      "name": "Pounce",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9005"
+    },
+    {
+      "id": 9490,
+      "name": "Demoralizing Roar",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9490"
+    },
+    {
+      "id": 9492,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9492"
+    },
+    {
+      "id": 9493,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9493"
+    },
+    {
+      "id": 9745,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9745"
+    },
+    {
+      "id": 9747,
+      "name": "Demoralizing Roar",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9747"
+    },
+    {
+      "id": 9750,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9750"
+    },
+    {
+      "id": 9752,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9752"
+    },
+    {
+      "id": 9754,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9754"
+    },
+    {
+      "id": 9756,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9756"
+    },
+    {
+      "id": 9758,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9758"
+    },
+    {
+      "id": 9823,
+      "name": "Pounce",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9823"
+    },
+    {
+      "id": 9827,
+      "name": "Pounce",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9827"
+    },
+    {
+      "id": 9829,
+      "name": "Shred",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9829"
+    },
+    {
+      "id": 9830,
+      "name": "Shred",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9830"
+    },
+    {
+      "id": 9833,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9833"
+    },
+    {
+      "id": 9834,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9834"
+    },
+    {
+      "id": 9835,
+      "name": "Moonfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9835"
+    },
+    {
+      "id": 9839,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9839"
+    },
+    {
+      "id": 9840,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9840"
+    },
+    {
+      "id": 9841,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9841"
+    },
+    {
+      "id": 9849,
+      "name": "Claw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9849"
+    },
+    {
+      "id": 9850,
+      "name": "Claw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9850"
+    },
+    {
+      "id": 9852,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9852"
+    },
+    {
+      "id": 9853,
+      "name": "Entangling Roots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9853"
+    },
+    {
+      "id": 9856,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9856"
+    },
+    {
+      "id": 9857,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9857"
+    },
+    {
+      "id": 9858,
+      "name": "Regrowth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9858"
+    },
+    {
+      "id": 9862,
+      "name": "Tranquility",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9862"
+    },
+    {
+      "id": 9863,
+      "name": "Tranquility",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9863"
+    },
+    {
+      "id": 9866,
+      "name": "Ravage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9866"
+    },
+    {
+      "id": 9867,
+      "name": "Ravage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9867"
+    },
+    {
+      "id": 9875,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9875"
+    },
+    {
+      "id": 9876,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9876"
+    },
+    {
+      "id": 9880,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9880"
+    },
+    {
+      "id": 9881,
+      "name": "Maul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9881"
+    },
+    {
+      "id": 9888,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9888"
+    },
+    {
+      "id": 9889,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9889"
+    },
+    {
+      "id": 9894,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9894"
+    },
+    {
+      "id": 9896,
+      "name": "Rip",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9896"
+    },
+    {
+      "id": 9898,
+      "name": "Demoralizing Roar",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9898"
+    },
+    {
+      "id": 9904,
+      "name": "Rake",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9904"
+    },
+    {
+      "id": 9908,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9908"
+    },
+    {
+      "id": 9910,
+      "name": "Thorns",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9910"
+    },
+    {
+      "id": 16689,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16689"
+    },
+    {
+      "id": 16810,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16810"
+    },
+    {
+      "id": 16811,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16811"
+    },
+    {
+      "id": 16812,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16812"
+    },
+    {
+      "id": 16813,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16813"
+    },
+    {
+      "id": 16870,
+      "name": "Clearcasting",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16870"
+    },
+    {
+      "id": 16914,
+      "name": "Hurricane",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16914"
+    },
+    {
+      "id": 16979,
+      "name": "Feral Charge (Bear)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16979"
+    },
+    {
+      "id": 17329,
+      "name": "Nature's Grasp",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17329"
+    },
+    {
+      "id": 17401,
+      "name": "Hurricane",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17401"
+    },
+    {
+      "id": 17402,
+      "name": "Hurricane",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17402"
+    },
+    {
+      "id": 18562,
+      "name": "Swiftmend",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18562"
+    },
+    {
+      "id": 22568,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22568"
+    },
+    {
+      "id": 22827,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22827"
+    },
+    {
+      "id": 22828,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22828"
+    },
+    {
+      "id": 22829,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22829"
+    },
+    {
+      "id": 24974,
+      "name": "Insect Swarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24974"
+    },
+    {
+      "id": 24975,
+      "name": "Insect Swarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24975"
+    },
+    {
+      "id": 24976,
+      "name": "Insect Swarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24976"
+    },
+    {
+      "id": 24977,
+      "name": "Insect Swarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24977"
+    },
+    {
+      "id": 25297,
+      "name": "Healing Touch",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25297"
+    },
+    {
+      "id": 25298,
+      "name": "Starfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25298"
+    },
+    {
+      "id": 25299,
+      "name": "Rejuvenation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25299"
+    },
+    {
+      "id": 31018,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=31018"
+    },
+    {
+      "id": 407995,
+      "name": "Primal Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=407995"
+    },
+    {
+      "id": 408120,
+      "name": "Wild Growth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408120"
+    },
+    {
+      "id": 408124,
+      "name": "Lifebloom",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408124"
+    },
+    {
+      "id": 408247,
+      "name": "Nourish",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408247"
+    },
+    {
+      "id": 410176,
+      "name": "Skull Bash",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410176"
+    },
+    {
+      "id": 411128,
+      "name": "Swipe",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=411128"
+    },
+    {
+      "id": 414644,
+      "name": "Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414644"
+    },
+    {
+      "id": 414684,
+      "name": "Sunfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414684"
+    },
+    {
+      "id": 414687,
+      "name": "Sunfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414687"
+    },
+    {
+      "id": 414689,
+      "name": "Sunfire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414689"
+    },
+    {
+      "id": 439748,
+      "name": "Starfall",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=439748"
+    },
+    {
+      "id": 1235826,
+      "name": "Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1235826"
+    },
+    {
+      "id": 1235827,
+      "name": "Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1235827"
+    },
+    {
+      "id": 1238069,
+      "name": "Primal Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1238069"
+    },
+    {
+      "id": 1238070,
+      "name": "Primal Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1238070"
+    },
+    {
+      "id": 1238122,
+      "name": "Feral Charge",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1238122"
+    },
+    {
+      "id": 1238214,
+      "name": "Wild Growth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1238214"
+    },
+    {
+      "id": 1238215,
+      "name": "Wild Growth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1238215"
+    },
+    {
+      "id": 1328616,
+      "name": "Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1328616"
+    },
+    {
+      "id": 1328617,
+      "name": "Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1328617"
+    },
+    {
+      "id": 1328618,
+      "name": "Ferocious Bite",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1328618"
+    }
+  ],
+  "name": "Clearcasting",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "6d8f1910493bc43fb749578d4f36e93a530a364b361b404c02eb2cf96c388e73",
+  "spell_id": 16870,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16870",
+  "url": "https://www.wowhead.com/forever/spell=16870"
+}

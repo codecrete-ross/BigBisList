@@ -1,0 +1,68 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Formula: Enchant Weapon - Minor Beastslayer Item Level 20 Requires Enchanting (90) Use: Teaches you how to permanently enchant a melee weapon so it does +2 damage to beasts. Permanently enchant a Melee Weapon to do 2 additional points of damage to Beasts. Sell Price: 1 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6348,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a melee weapon so it does +2 damage to beasts.",
+        "type": "use"
+      }
+    ],
+    "id": 6348,
+    "item_level": 20,
+    "name": "Formula: Enchant Weapon - Minor Beastslayer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a melee weapon so it does +2 damage to beasts. Permanently enchant a Melee Weapon to do 2 additional points of damage to Beasts."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6348"
+  },
+  "linked_entities": [
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 7786,
+      "name": "Teaches you how to permanently enchant a melee weapon so it does +2 damage to beasts.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7786"
+    }
+  ],
+  "name": "Formula: Enchant Weapon - Minor Beastslayer",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Minor Beastslayer Item Level 20 Requires Enchanting (90) Use: Teaches you how to permanently enchant a melee weapon so it does +2 damage to beasts. Permanently enchant a Melee Weapon to do 2 additional points of damage to Beasts. Sell Price: 1 25",
+      "scope": "equip_or_use",
+      "skill": 90,
+      "source_url": "https://www.wowhead.com/forever/item=6348",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    7786
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6348",
+  "url": "https://www.wowhead.com/forever/item=6348"
+}

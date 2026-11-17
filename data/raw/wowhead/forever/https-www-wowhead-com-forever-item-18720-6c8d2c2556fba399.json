@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shroud of the Nathrezim Item Level 63 Binds when picked up Shoulder Cloth 67 Armor +16 Intellect +8 Spirit Durability 50 / 50 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sell Price: 1 72 74",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18720,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 18720,
+    "item_level": 63,
+    "name": "Shroud of the Nathrezim",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 16.0,
+      "spell_power": 7.0,
+      "spirit": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18720"
+  },
+  "linked_entities": [],
+  "name": "Shroud of the Nathrezim",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e226e8306e1ac276c4aaf121f2b66730a199a283af2ef2bccd0a6a377e779124",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18720",
+  "url": "https://www.wowhead.com/forever/item=18720"
+}

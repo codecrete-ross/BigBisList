@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Red Dragonscale Breastplate Item Level 61 Binds when equipped Chest Mail 360 Armor +20 Fire Resistance Durability 120 / 120 Requires Level 56 Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects. Sell Price: 2 98 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:08:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 15047,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 360,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 57,
+          "spell_damage": 19
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects."
+    ],
+    "id": 15047,
+    "item_level": 61,
+    "name": "Red Dragonscale Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 20.0,
+      "healing_power": 57.0,
+      "spell_damage": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15047"
+  },
+  "linked_entities": [],
+  "name": "Red Dragonscale Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15047",
+  "url": "https://www.wowhead.com/forever/item=15047"
+}

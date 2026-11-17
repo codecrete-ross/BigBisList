@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Prayer of Mending 390 Mana 40 yd range Instant 10 sec cooldown Requires Priest Requires level 60 Places a spell on the target that heals them for [(413 + (Healing * 0.42899999 )) * ( 1 * 1 )] the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yds. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
+  "entity_id": 1240827,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:59+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1240827,
+      "name": "Prayer of Mending",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1240827"
+    }
+  ],
+  "name": "Prayer of Mending",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8dc9e672991a07245baf7ca5045b3823cdd43133181db3d20787a318b44566e8",
+  "spell_id": 1240827,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1240827",
+  "url": "https://www.wowhead.com/forever/spell=1240827"
+}

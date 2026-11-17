@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Arcanite Dragonling Item Level 60 Binds when equipped Unique-Equipped Trinket Requires Level 50 Requires Engineering (300) Use: Activates your Arcanite Dragonling to fight for you for 1 min. (1 Hour Cooldown) Sell Price: 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:55:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 16022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Activates your Arcanite Dragonling to fight for you for 1 min. (1 Hour Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 16022,
+    "item_level": 60,
+    "name": "Arcanite Dragonling",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Activates your Arcanite Dragonling to fight for you for 1 min. (1 Hour Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=16022"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 19804,
+      "name": "Activates your Arcanite Dragonling to fight for you for 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19804"
+    }
+  ],
+  "name": "Arcanite Dragonling",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Arcanite Dragonling Item Level 60 Binds when equipped Unique-Equipped Trinket Requires Level 50 Requires Engineering (300) Use: Activates your Arcanite Dragonling to fight for you for 1 min. (1 Hour Cooldown) Sell Price: 4",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=16022",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16022",
+  "url": "https://www.wowhead.com/forever/item=16022"
+}

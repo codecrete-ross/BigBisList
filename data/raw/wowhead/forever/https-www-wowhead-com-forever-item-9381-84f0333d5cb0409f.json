@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Earthen Rod Item Level 38 Binds when equipped Ranged Wand 42 - 79 Nature Damage Speed 1.70 (35.59 damage per second) +5 Nature Resistance Durability 65 / 65 Requires Level 33 Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects. Sell Price: 85 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 9381,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 35.59,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 9,
+          "spell_damage": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 9 and damage done by up to 3 for all magical spells and effects."
+    ],
+    "id": 9381,
+    "item_level": 38,
+    "name": "Earthen Rod",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 33,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 9.0,
+      "nature_resistance": 5.0,
+      "spell_damage": 3.0
+    },
+    "weapon_max_damage": 79,
+    "weapon_min_damage": 42,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9381"
+  },
+  "linked_entities": [],
+  "name": "Earthen Rod",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9381",
+  "url": "https://www.wowhead.com/forever/item=9381"
+}

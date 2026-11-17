@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sulfurous Icon Item Level 1 Binds when picked up Unique Relic Totem Classes: Shaman Engrave your gloves with the Molten Blast rune: Blast up to 10 enemies in a cone in front of you for [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 72 / 100 + 5 / 100 * Attack Power] to [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 108 / 100 + 5 / 100 * Attack Power] Fire damage. This ability generates a high amount of threat. Flame Shock periodic damage has a 10% chance to reset the cooldown on Molten Blast. \"Learn a new ability after defeating 10 enemies with Earth Shock.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206388,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206388,
+    "item_level": 1,
+    "name": "Sulfurous Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206388"
+  },
+  "linked_entities": [
+    {
+      "id": 425339,
+      "name": "Blast up to 10 enemies in a cone in front of you for [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 72 / 100 + 5 / 100 * Attack Power] to [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 108 / 100 + 5 / 100 * Attack Power] Fire damage. This ability generates a high amount of threat. Flame Shock periodic damage has a 10% chance to reset the cooldown on Molten Blast.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=425339"
+    },
+    {
+      "id": 425344,
+      "name": "Engrave your gloves with the Molten Blast rune: Blast up to 10 enemies in a cone in front of you for [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 72 / 100 + 5 / 100 * Attack Power] to [(7.583798 + 0.471881 * 60 + 0.036599 * 60 * 60) * 108 / 100 + 5 / 100 * Attack Power] Fire damage. This ability generates a high amount of threat. Flame Shock periodic damage has a 10% chance to reset the cooldown on Molten Blast.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=425344"
+    }
+  ],
+  "name": "Sulfurous Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "1913783db32e223afeefd791effb02c1f8e72cd15bc272446cff98393e4c6d97",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206388",
+  "url": "https://www.wowhead.com/forever/item=206388"
+}

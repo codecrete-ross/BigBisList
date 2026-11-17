@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/5151"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:22.214120+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 15467,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/5151",
+      "subject_id": 5151,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 24,
+    "name": "Hypercapacitor Gizmo",
+    "quest_id": 5151,
+    "quest_level": 30,
+    "reward_item_ids": [
+      15467
+    ],
+    "zone": "Thousand Needles"
+  },
+  "source_content_digest": "140293e92981928dd74b5c876809078ed689250d37cd58e7810076220a9d06c6",
+  "url": "https://guide.wow4ever.se/en/quests/5151"
+}

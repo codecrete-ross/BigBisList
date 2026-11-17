@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gauntlets of Undead Slaying Item Level 63 Binds when picked up Hands Plate 410 Armor +15 Stamina Durability 45 / 45 Equip: + 30 Attack Power. Equip: + 30 Attack Power against Undead. Battlegear of Undead Slaying (0/3) Item #23090 Item #23087 Gauntlets of Undead Slaying (3) Set : Increases your damage against undead by 2%. Sell Price: 1 19 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 23078,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 410,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power.",
+        "stats": {
+          "attack_power": 30
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +30 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +30 Attack Power.",
+      "Equip: +30 Attack Power against Undead."
+    ],
+    "id": 23078,
+    "item_level": 63,
+    "name": "Gauntlets of Undead Slaying",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 29068,
+        "text": "Increases your damage against undead by 2%."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23078"
+  },
+  "linked_entities": [
+    {
+      "id": 23078,
+      "name": "Gauntlets of Undead Slaying",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23078"
+    },
+    {
+      "id": 29068,
+      "name": "Increases your damage against undead by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29068"
+    }
+  ],
+  "name": "Gauntlets of Undead Slaying",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23078",
+  "url": "https://www.wowhead.com/forever/item=23078"
+}

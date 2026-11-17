@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Longevity Item Level 83 Binds when picked up Unique Relic Idol Requires Level 60 Equip: Gain up to 25 mana each time you cast Healing Touch. Sell Price: 5 84 79 Dropped by: Instructor Razuvious Drop Chance: 16.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 23004,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Gain up to 25 mana each time you cast Healing Touch.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Gain up to 25 mana each time you cast Healing Touch."
+    ],
+    "id": 23004,
+    "item_level": 83,
+    "name": "Idol of Longevity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=23004"
+  },
+  "linked_entities": [
+    {
+      "id": 28847,
+      "name": "Gain up to 25 mana each time you cast Healing Touch.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28847"
+    }
+  ],
+  "name": "Idol of Longevity",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 16.01,
+      "entity_name": "Instructor Razuvious",
+      "source_url": "https://www.wowhead.com/forever/item=23004",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23004",
+  "url": "https://www.wowhead.com/forever/item=23004"
+}

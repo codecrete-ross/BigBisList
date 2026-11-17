@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scented Runewood Brooch Item Level 58 Binds when picked up Trinket Equip: Harmful spell casts and attacks against Furbolg have a chance to deal 84 to 126 Nature damage. Use: Charm target Furbolg for 20 sec. Only works on targets not in combat. (5 Min Cooldown) Sell Price: 1 53 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 269741,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Harmful spell casts and attacks against Furbolg have a chance to deal 84 to 126 Nature damage.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Charm target Furbolg for 20 sec. Only works on targets not in combat. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Harmful spell casts and attacks against Furbolg have a chance to deal 84 to 126 Nature damage."
+    ],
+    "id": 269741,
+    "item_level": 58,
+    "name": "Scented Runewood Brooch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Charm target Furbolg for 20 sec. Only works on targets not in combat. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=269741"
+  },
+  "linked_entities": [
+    {
+      "id": 1296664,
+      "name": "Charm target Furbolg for 20 sec. Only works on targets not in combat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1296664"
+    },
+    {
+      "id": 1318323,
+      "name": "Harmful spell casts and attacks against Furbolg have a chance to deal 84 to 126 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318323"
+    }
+  ],
+  "name": "Scented Runewood Brooch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/269741",
+  "url": "https://www.wowhead.com/forever/item=269741"
+}

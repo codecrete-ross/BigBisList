@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet of Expertise Item Level 45 Binds when picked up Unique-Equipped Trinket Requires Blacksmithing (185) Use: Summons a Hammer of Expertise. (3 Hrs Cooldown) \"Honorable Member of the Mithril Order\" Sell Price: 64 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 8703,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Summons a Hammer of Expertise. (3 Hrs Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 8703,
+    "item_level": 45,
+    "name": "Signet of Expertise",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Summons a Hammer of Expertise. (3 Hrs Cooldown) \"Honorable Member of the Mithril Order\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=8703"
+  },
+  "linked_entities": [
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 11209,
+      "name": "Summons a Hammer of Expertise.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11209"
+    }
+  ],
+  "name": "Signet of Expertise",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Signet of Expertise Item Level 45 Binds when picked up Unique-Equipped Trinket Requires Blacksmithing (185) Use: Summons a Hammer of Expertise. (3 Hrs Cooldown) \"Honorable Member of the Mithril Order\" Sell Price: 64 92",
+      "scope": "equip_or_use",
+      "skill": 185,
+      "source_url": "https://www.wowhead.com/forever/item=8703",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c35f9e582dc27fca8641f821895857d3a3b83796bca0260498885af97be839d2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/8703",
+  "url": "https://www.wowhead.com/forever/item=8703"
+}

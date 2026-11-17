@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cape of the Brotherhood Item Level 24 Binds when picked up Back 21 Armor +5 Agility +3 Stamina Requires Level 19 Sell Price: 8 65 Dropped by: Edwin VanCleef Drop Chance: 22.91%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 5193,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 21,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5193,
+    "item_level": 24,
+    "name": "Cape of the Brotherhood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 19,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 5.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5193"
+  },
+  "linked_entities": [],
+  "name": "Cape of the Brotherhood",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.91,
+      "entity_name": "Edwin VanCleef",
+      "source_url": "https://www.wowhead.com/forever/item=5193",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5193",
+  "url": "https://www.wowhead.com/forever/item=5193"
+}

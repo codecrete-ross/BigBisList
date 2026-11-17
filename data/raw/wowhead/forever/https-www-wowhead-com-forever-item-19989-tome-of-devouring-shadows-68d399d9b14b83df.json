@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=19989/tome-of-devouring-shadows"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 879,
+      "collected_at": "2026-11-13T07:14:05.9359639Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-19989",
+      "source_content_digest": "bfc44e7091c37eb9a5b6eeb77e5c42a740c2e8b93dc88a1c4d7503f65315a887",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19989"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:46.8277043Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-19989",
+      "source_content_digest": "05801e6481c3cb8e35857e1f2a3f903eb4d605e956c93effd18a934b87c9167a",
+      "source_url": "https://www.wowhead.com/forever/item=19989/tome-of-devouring-shadows"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "capture_method": "indexed_item_page",
+    "client_required_level_field": 0,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Tome of Devouring Shadows Item Level 52 Binds when picked up Held In Off-hand +6 Nature Resistance Equip: Increases damage done by Shadow spells and effects by up to 20. \"Some secrets are best left unknown.\"",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 19989,
+    "item_level": 52,
+    "name": "Tome of Devouring Shadows",
+    "page_crawl_age": "2 days ago",
+    "page_line": 21,
+    "source_locale": "en",
+    "source_url": "https://www.wowhead.com/forever/item=19989/tome-of-devouring-shadows",
+    "tooltip_identity": "Held in off-hand with +6 Nature Resistance and up to +20 Shadow Spell Damage"
+  },
+  "source_content_digest": "1de6e177188da073f26f4f908693900f37e4f5f34719624e978029039b8d3ae9",
+  "unavailable_item_ids": [
+    19989
+  ],
+  "unavailable_scope": {
+    "level_max": 4,
+    "level_min": 1,
+    "slot": "Off Hand"
+  },
+  "url": "https://www.wowhead.com/forever/item=19989/tome-of-devouring-shadows"
+}

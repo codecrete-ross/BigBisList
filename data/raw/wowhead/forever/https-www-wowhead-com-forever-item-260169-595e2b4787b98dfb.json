@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Amice of Sorrow Item Level 52 Binds when picked up Shoulder Cloth 51 Armor +14 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 80 73",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 260169,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 51,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 260169,
+    "item_level": 52,
+    "name": "Amice of Sorrow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=260169"
+  },
+  "linked_entities": [],
+  "name": "Amice of Sorrow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "6adbd5fcf4fd007ee0d4dca96e0d22f373ffe3f487a984b0490b693ce43a6dfd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260169",
+  "url": "https://www.wowhead.com/forever/item=260169"
+}

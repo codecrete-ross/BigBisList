@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Lesser Healing Potion Item Level 13 Requires Level 3 Use: Restores 140 to 180 health. (2 Min Cooldown) Max Stack: 5 Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 858,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 140 to 180 health. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 858,
+    "item_level": 13,
+    "name": "Lesser Healing Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 3,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 140 to 180 health. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=858"
+  },
+  "linked_entities": [
+    {
+      "id": 440,
+      "name": "Restores 140 to 180 health.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=440"
+    }
+  ],
+  "name": "Lesser Healing Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/858",
+  "url": "https://www.wowhead.com/forever/item=858"
+}

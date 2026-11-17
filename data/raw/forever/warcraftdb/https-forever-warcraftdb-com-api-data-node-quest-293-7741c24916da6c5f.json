@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/293"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:46.054133+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 2943,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/293",
+      "subject_id": 293,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 22,
+    "name": "Cleansing the Eye",
+    "quest_id": 293,
+    "reward_item_ids": [
+      2943
+    ],
+    "zone": "Wetlands"
+  },
+  "source_content_digest": "7ce8f374d96c4717ec43ab049c1e7f591f83875dfdf3bae471df62d142ad3bab",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/293"
+}

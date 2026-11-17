@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eternally Frozen Band Item Level 62 Binds when picked up Unique Finger +15 Frost Resistance Requires Level 57 Equip: Increases damage done by Frost spells and effects by up to 16. Sell Price: 2 15 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284253,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Frost spells and effects by up to 16.",
+        "stats": {
+          "frost_damage": 16
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Frost spells and effects by up to 16."
+    ],
+    "id": 284253,
+    "item_level": 62,
+    "name": "Eternally Frozen Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "frost_damage": 16.0,
+      "frost_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284253"
+  },
+  "linked_entities": [],
+  "name": "Eternally Frozen Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8b4075794f5d76ae949570340a17b39ec27291dfe645e8a87be55c7c92f4625d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284253",
+  "url": "https://www.wowhead.com/forever/item=284253"
+}

@@ -1,0 +1,131 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Inscribed Skullcap Item Level 55 Binds when picked up Head Mail 266 Armor +18 Stamina +11 Intellect Durability 70 / 70 Classes: Shaman Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by magical spells and effects by up to 15 . Blood Guard's Inscribed Mail (0/6) Blood Guard's Inscribed Skullcap Blood Guard's Inscribed Shoulder Pads Stone Guard's Inscribed Chestpiece Stone Guard's Inscribed Legplates First Sergeant's Inscribed Sabatons First Sergeant's Inscribed Gauntlets (3) Set : +15 Stamina. (6) Set : Increases healing done by spells and effects by up to 33. Sell Price: 1 66 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 220842,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 266,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "healing_power": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 220842,
+    "item_level": 55,
+    "name": "Blood Guard's Inscribed Skullcap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9318,
+        "text": "Increases healing done by spells and effects by up to 33."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 15.0,
+      "intellect": 11.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220842"
+  },
+  "linked_entities": [
+    {
+      "id": 220838,
+      "name": "Stone Guard's Inscribed Chestpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220838"
+    },
+    {
+      "id": 220839,
+      "name": "Stone Guard's Inscribed Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220839"
+    },
+    {
+      "id": 220840,
+      "name": "First Sergeant's Inscribed Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220840"
+    },
+    {
+      "id": 220841,
+      "name": "Blood Guard's Inscribed Shoulder Pads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220841"
+    },
+    {
+      "id": 220842,
+      "name": "Blood Guard's Inscribed Skullcap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220842"
+    },
+    {
+      "id": 220843,
+      "name": "First Sergeant's Inscribed Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220843"
+    },
+    {
+      "id": 9318,
+      "name": "Increases healing done by spells and effects by up to 33.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9318"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Blood Guard's Inscribed Skullcap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d3978e10391a430e96cfbd9ca2845f23fcdae3e9269899e80bbb91d3f6beae82",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220842",
+  "url": "https://www.wowhead.com/forever/item=220842"
+}

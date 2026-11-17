@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Camp Tent Item Effect 1 yd range 10 sec cast 1 hour cooldown Builds a tent that allows you and others sitting nearby to increase Rested experience to 5% of a level. No effect if Rested experience already exceeds that value. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307230,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:15+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307230,
+      "name": "Camp Tent",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307230"
+    }
+  ],
+  "name": "Camp Tent",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "7b20f931f7e71fa2b02e9a01a558c7f8a7a5047b60678445ab3050803432f58d",
+  "spell_id": 1307230,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307230",
+  "url": "https://www.wowhead.com/forever/spell=1307230"
+}

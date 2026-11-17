@@ -1,0 +1,158 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dreamwalker Handguards Item Level 88 Binds when picked up Hands Leather 158 Armor +17 Stamina +22 Intellect +16 Spirit Durability 40 / 40 Requires Level 60 Equip: Increases healing done by magical spells and effects by up to 53 . Dreamwalker Raiment (0/9) Dreamwalker Boots Dreamwalker Girdle Dreamwalker Handguards Dreamwalker Headpiece Dreamwalker Legguards Dreamwalker Spaulders Dreamwalker Tunic Dreamwalker Wristguards Ring of the Dreamwalker (2) Set : Your Rejuvenation ticks have a chance to restore 60 mana, 8 energy, or 2 rage to your target. (4) Set : Reduces the mana cost of your Healing Touch, Regrowth, Rejuvenation, and Tranquility spells by 3%. (6) Set : Your initial cast and Regrowth ticks will increase the maximum health of your target by up to 50, stacking up to 7 times. (8) Set : On Healing Touch critical hits, you regain 30% of the mana cost of the spell. Sell Price: 6 72 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 22493,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "healing_power": 53
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 53."
+    ],
+    "id": 22493,
+    "item_level": 88,
+    "name": "Dreamwalker Handguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 28716,
+        "text": "Your Rejuvenation ticks have a chance to restore 60 mana, 8 energy, or 2 rage to your target."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 28743,
+        "text": "Reduces the mana cost of your Healing Touch, Regrowth, Rejuvenation, and Tranquility spells by 3%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 28744,
+        "text": "Your initial cast and Regrowth ticks will increase the maximum health of your target by up to 50, stacking up to 7 times."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 28719,
+        "text": "On Healing Touch critical hits, you regain 30% of the mana cost of the spell."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 53.0,
+      "intellect": 22.0,
+      "spirit": 16.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22493"
+  },
+  "linked_entities": [
+    {
+      "id": 22488,
+      "name": "Dreamwalker Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22488"
+    },
+    {
+      "id": 22489,
+      "name": "Dreamwalker Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22489"
+    },
+    {
+      "id": 22490,
+      "name": "Dreamwalker Headpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22490"
+    },
+    {
+      "id": 22491,
+      "name": "Dreamwalker Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22491"
+    },
+    {
+      "id": 22492,
+      "name": "Dreamwalker Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22492"
+    },
+    {
+      "id": 22493,
+      "name": "Dreamwalker Handguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22493"
+    },
+    {
+      "id": 22494,
+      "name": "Dreamwalker Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22494"
+    },
+    {
+      "id": 22495,
+      "name": "Dreamwalker Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22495"
+    },
+    {
+      "id": 23064,
+      "name": "Ring of the Dreamwalker",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23064"
+    },
+    {
+      "id": 28716,
+      "name": "Your Rejuvenation ticks have a chance to restore 60 mana, 8 energy, or 2 rage to your target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28716"
+    },
+    {
+      "id": 28719,
+      "name": "On Healing Touch critical hits, you regain 30% of the mana cost of the spell.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28719"
+    },
+    {
+      "id": 28743,
+      "name": "Reduces the mana cost of your Healing Touch, Regrowth, Rejuvenation, and Tranquility spells by 3%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28743"
+    },
+    {
+      "id": 28744,
+      "name": "Your initial cast and Regrowth ticks will increase the maximum health of your target by up to 50, stacking up to 7 times.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28744"
+    }
+  ],
+  "name": "Dreamwalker Handguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22493",
+  "url": "https://www.wowhead.com/forever/item=22493"
+}

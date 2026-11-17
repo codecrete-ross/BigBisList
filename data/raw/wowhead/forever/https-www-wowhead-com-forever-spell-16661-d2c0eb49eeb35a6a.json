@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Storm Gauntlets 1 min cast Reagents: Rugged Leather (20), Enchanted Leather (4), Essence of Water (4), Blue Sapphire (4), Rune Thread Storm Gauntlets Item Level 59 Binds when equipped Hands Mail 218 Armor +7 Stamina Durability 40 / 40 Requires Level 54 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Equip: Adds 3 Lightning damage to your melee attacks. Sell Price: 1 40 99",
+  "entity_id": 16661,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:49+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12361,
+      "name": "Blue Sapphire",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12361"
+    },
+    {
+      "id": 12632,
+      "name": "Storm Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12632"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 16615,
+      "name": "Adds 3 Lightning damage to your melee attacks.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16615"
+    },
+    {
+      "id": 16661,
+      "name": "Storm Gauntlets",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16661"
+    }
+  ],
+  "name": "Storm Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 12632,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=16661",
+      "subject_id": 16661,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 16661,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16661",
+  "url": "https://www.wowhead.com/forever/spell=16661"
+}

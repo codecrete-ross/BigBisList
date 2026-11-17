@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dog Whistle Item Level 30 Binds when picked up Unique-Equipped Trinket +5 Shadow Resistance Requires Level 25 Use: Summons a tracking hound that will protect you for 3 min. (10 Min Cooldown) Sell Price: 21 56 Dropped by: Houndmaster Loksey Drop Chance: 25.03%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 3456,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Summons a tracking hound that will protect you for 3 min. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 3456,
+    "item_level": 30,
+    "name": "Dog Whistle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 5.0
+    },
+    "use_effects": [
+      "Use: Summons a tracking hound that will protect you for 3 min. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=3456"
+  },
+  "linked_entities": [
+    {
+      "id": 9515,
+      "name": "Summons a tracking hound that will protect you for 3 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9515"
+    }
+  ],
+  "name": "Dog Whistle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 25.03,
+      "entity_name": "Houndmaster Loksey",
+      "source_url": "https://www.wowhead.com/forever/item=3456",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8b72f9813b96039553fd3ed519698afa1ecc0b67e9d1bf57fea062ae15eb329a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3456",
+  "url": "https://www.wowhead.com/forever/item=3456"
+}

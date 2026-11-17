@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Healing Potion Item Level 22 Requires Level 12 Use: Restores 280 to 360 health. (2 Min Cooldown) Max Stack: 5 Sell Price: 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:26:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 929,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 280 to 360 health. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 929,
+    "item_level": 22,
+    "name": "Healing Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 12,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 280 to 360 health. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=929"
+  },
+  "linked_entities": [
+    {
+      "id": 441,
+      "name": "Restores 280 to 360 health.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=441"
+    }
+  ],
+  "name": "Healing Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "dcfb1fb32a91a91b8676abc9844785afa13ba1340033f43cf5fbaf8a9e742cfb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/929",
+  "url": "https://www.wowhead.com/forever/item=929"
+}

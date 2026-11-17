@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Scroll of Protection Item Level 10 Use: Increases the target's Armor by 60 for 30 min. Max Stack: 5 Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 3013,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases the target's Armor by 60 for 30 min.",
+        "type": "use"
+      }
+    ],
+    "id": 3013,
+    "item_level": 10,
+    "name": "Scroll of Protection",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases the target's Armor by 60 for 30 min. Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=3013"
+  },
+  "linked_entities": [
+    {
+      "id": 8091,
+      "name": "Increases the target's Armor by 60 for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8091"
+    }
+  ],
+  "name": "Scroll of Protection",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3013",
+  "url": "https://www.wowhead.com/forever/item=3013"
+}

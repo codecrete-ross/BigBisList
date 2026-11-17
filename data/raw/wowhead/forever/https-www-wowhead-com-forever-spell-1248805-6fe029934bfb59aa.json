@@ -1,0 +1,58 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchant Weapon - Revelation 5 sec cast Tools: Runed Silver Rod Reagents: Soul Dust (8), Large Glimmering Shard (6), Greater Astral Essence (2), Cerulean Dye (4), Sulfuric Acid (4) Permanently enchant a Melee Weapon to have a chance to trigger Revelation when a non-periodic spell fails to critically strike. Revelation grants 100% increased critical strike chance to the next non-periodic spell cast. Revelation's chance to trigger is diminished as your critical strike chance increases.",
+  "entity_id": 1248805,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:02+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11082,
+      "name": "Greater Astral Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11082"
+    },
+    {
+      "id": 11083,
+      "name": "Soul Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11083"
+    },
+    {
+      "id": 11084,
+      "name": "Large Glimmering Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11084"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249410,
+      "name": "Sulfuric Acid",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249410"
+    },
+    {
+      "id": 1248805,
+      "name": "Enchant Weapon - Revelation",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248805"
+    }
+  ],
+  "name": "Enchant Weapon - Revelation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "09494e68adb59ac2ead81c2d1c200b38204ba607abedf17c6c37ac111d61ab55",
+  "spell_id": 1248805,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1248805",
+  "url": "https://www.wowhead.com/forever/spell=1248805"
+}

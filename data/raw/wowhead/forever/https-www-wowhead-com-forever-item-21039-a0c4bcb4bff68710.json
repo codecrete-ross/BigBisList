@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Narain's Turban Item Level 1 Binds when picked up Use: Transforms the appearance of the recipient to resemble Narain Soothfancy. \"Use with Narain's Robe to disguise yourself as Narain!\" Sell Price: 1 Dropped by: Merithra of the Dream",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 21039,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Transforms the appearance of the recipient to resemble Narain Soothfancy.",
+        "type": "use"
+      }
+    ],
+    "id": 21039,
+    "item_level": 1,
+    "name": "Narain's Turban",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Transforms the appearance of the recipient to resemble Narain Soothfancy. \"Use with Narain's Robe to disguise yourself as Narain!\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21039"
+  },
+  "linked_entities": [
+    {
+      "id": 25688,
+      "name": "Transforms the appearance of the recipient to resemble Narain Soothfancy.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25688"
+    }
+  ],
+  "name": "Narain's Turban",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Merithra of the Dream",
+      "source_url": "https://www.wowhead.com/forever/item=21039",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21039",
+  "url": "https://www.wowhead.com/forever/item=21039"
+}

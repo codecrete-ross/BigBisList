@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lichbane Item Level 59 Binds when picked up Unique-Equipped Trinket +4 Arcane Resistance +4 Fire Resistance +4 Nature Resistance +4 Frost Resistance +4 Shadow Resistance Use: Stuns target Undead for 6 sec. (5 Min Cooldown) Sell Price: 1 63 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 275347,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Stuns target Undead for 6 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 275347,
+    "item_level": 59,
+    "name": "Lichbane",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 4.0,
+      "fire_resistance": 4.0,
+      "frost_resistance": 4.0,
+      "nature_resistance": 4.0,
+      "shadow_resistance": 4.0
+    },
+    "use_effects": [
+      "Use: Stuns target Undead for 6 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=275347"
+  },
+  "linked_entities": [
+    {
+      "id": 1296564,
+      "name": "Stuns target Undead for 6 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1296564"
+    }
+  ],
+  "name": "Lichbane",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "68a7328bdc0608671ecee1e06fa377e3e16ccd3693774b1fa225af821b8c8f5d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275347",
+  "url": "https://www.wowhead.com/forever/item=275347"
+}

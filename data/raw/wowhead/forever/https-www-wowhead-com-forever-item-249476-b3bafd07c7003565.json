@@ -1,0 +1,166 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Mystic Mushroom Item Level 26 Binds when picked up Requires Enchanting (130) Use: Teaches you how to craft a Mystic Mushroom. Creates a mystic mushroom. Sell Price: 6 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Idol",
+      "item_id": 249396,
+      "item_stats": {
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 249396,
+        "name": "Mystic Mushroom",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "restrictions": {
+          "classes": [
+            "Druid"
+          ]
+        },
+        "slot": "Idol",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=249396"
+      },
+      "name": "Mystic Mushroom",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=249396"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T04:56:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249476,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Mystic Mushroom.",
+        "type": "use"
+      }
+    ],
+    "id": 249476,
+    "item_level": 26,
+    "name": "Formula: Mystic Mushroom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft a Mystic Mushroom. Creates a mystic mushroom."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=249476"
+  },
+  "linked_entities": [
+    {
+      "id": 4605,
+      "name": "Red-speckled Mushroom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4605"
+    },
+    {
+      "id": 10939,
+      "name": "Greater Magic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10939"
+    },
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 10978,
+      "name": "Small Glimmering Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10978"
+    },
+    {
+      "id": 249396,
+      "name": "Mystic Mushroom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249396"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1248751,
+      "name": "Increases Spirit by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248751"
+    },
+    {
+      "id": 1248752,
+      "name": "Teaches you how to craft a Mystic Mushroom.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248752"
+    }
+  ],
+  "name": "Formula: Mystic Mushroom",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Mystic Mushroom Item Level 26 Binds when picked up Requires Enchanting (130) Use: Teaches you how to craft a Mystic Mushroom. Creates a mystic mushroom. Sell Price: 6 50",
+      "scope": "equip_or_use",
+      "skill": 130,
+      "source_url": "https://www.wowhead.com/forever/item=249476",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "reviewed_page_facts": {
+    "collected_at": "2026-11-06T05:04:27.907673+00:00",
+    "costs": [
+      {
+        "amount": 45,
+        "currency_id": 3402,
+        "name": "Merchant's Favor"
+      }
+    ],
+    "creates_item_id": 249396,
+    "reputation_gate": null,
+    "reputation_note": null,
+    "retrieval_method": "public_web_search_result",
+    "sold_by": [
+      {
+        "name": "Beneris",
+        "npc_id": 248199,
+        "side": "Horde",
+        "stock": "unlimited",
+        "zone": "The Barrens"
+      },
+      {
+        "name": "Alynsia",
+        "npc_id": 256732,
+        "side": "Alliance",
+        "stock": "unlimited",
+        "zone": "Redridge Mountains"
+      }
+    ],
+    "teaches_spell_id": 1248752
+  },
+  "source_content_digest": "c080e71a6a56418b9f2a378e2d30a22b9ad2dcfd18fbb713299a97465c5d9e96",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1248752
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249476",
+  "url": "https://www.wowhead.com/forever/item=249476"
+}

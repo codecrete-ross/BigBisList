@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Shadow Wand Item Level 14 Binds when equipped Ranged Wand 10 - 19 Shadow Damage Speed 1.40 (10.36 damage per second) Durability 35 / 35 Requires Level 9 Equip: Increases damage done by Shadow spells and effects by up to 1. Sell Price: 4 43",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 5071,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 10.36,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 1.",
+        "stats": {
+          "shadow_damage": 1
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Shadow spells and effects by up to 1."
+    ],
+    "id": 5071,
+    "item_level": 14,
+    "name": "Shadow Wand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 9,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "shadow_damage": 1.0
+    },
+    "weapon_max_damage": 19,
+    "weapon_min_damage": 10,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5071"
+  },
+  "linked_entities": [],
+  "name": "Shadow Wand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5071",
+  "url": "https://www.wowhead.com/forever/item=5071"
+}

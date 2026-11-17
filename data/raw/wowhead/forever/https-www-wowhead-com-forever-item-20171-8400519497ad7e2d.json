@@ -1,0 +1,116 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Lizardhide Girdle Item Level 63 Binds when picked up Unique Waist Leather 99 Armor +7 Stamina +17 Intellect +60 Armor Durability 35 / 35 Requires Level 58 Requires The Defilers - Honored Equip: Improves your chance to get a critical strike by 1.0%. The Defiler's Will (0/3) Defiler's Lizardhide Boots Defiler's Lizardhide Girdle Defiler's Lizardhide Shoulders (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 1 40 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20171,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 99,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 20171,
+    "item_level": 63,
+    "name": "Defiler's Lizardhide Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18384,
+        "text": "Improves your chance to get a critical strike with spells by 1.0%."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 17.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20171"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    },
+    {
+      "id": 20167,
+      "name": "Defiler's Lizardhide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20167"
+    },
+    {
+      "id": 20171,
+      "name": "Defiler's Lizardhide Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20171"
+    },
+    {
+      "id": 20175,
+      "name": "Defiler's Lizardhide Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20175"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 18384,
+      "name": "Improves your chance to get a critical strike with spells by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18384"
+    }
+  ],
+  "name": "Defiler's Lizardhide Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Lizardhide Girdle Item Level 63 Binds when picked up Unique Waist Leather 99 Armor +7 Stamina +17 Intellect +60 Armor Durability 35 / 35 Requires Level 58 Requires The Defilers - Honored Equip: Improves your chance to get a critical strike by 1.0%. The Defiler's Will (0/3) Defiler's Lizardhide Boots Defiler's Lizardhide Girdle Defiler's Lizardhide Shoulders (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 1 40 29",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20171",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20171",
+  "url": "https://www.wowhead.com/forever/item=20171"
+}

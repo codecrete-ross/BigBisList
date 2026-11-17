@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wrex's Pinky Ring Item Level 52 Binds when picked up Unique-Equipped Finger +11 Agility +9 Stamina Restores + 9 health per 5 sec. Requires Level 47 Sell Price: 1 27 13",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 276734,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +9 health per 5 sec.",
+        "stats": {
+          "hp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 276734,
+    "item_level": 52,
+    "name": "Wrex's Pinky Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "hp5": 9.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276734"
+  },
+  "linked_entities": [],
+  "name": "Wrex's Pinky Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "adcfd77ba0561cf627c59cf975c859df610f5c51f960ac3477248583afe0c433",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276734",
+  "url": "https://www.wowhead.com/forever/item=276734"
+}

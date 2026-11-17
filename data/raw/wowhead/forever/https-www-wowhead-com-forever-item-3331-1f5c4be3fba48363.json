@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Melrache's Cape Item Level 12 Back 11 Armor Requires Level 7 Sell Price: 1 1 Dropped by: Captain Melrache Drop Chance: 3.67%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 3331,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 11,
+    "binding": "unknown",
+    "id": 3331,
+    "item_level": 12,
+    "name": "Melrache's Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 7,
+    "slot": "Back",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3331"
+  },
+  "linked_entities": [],
+  "name": "Melrache's Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 3.67,
+      "entity_name": "Captain Melrache",
+      "source_url": "https://www.wowhead.com/forever/item=3331",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3331",
+  "url": "https://www.wowhead.com/forever/item=3331"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Icy Scale Spaulders Item Level 83 Binds when picked up Shoulder Mail 393 Armor +25 Stamina +33 Frost Resistance Durability 85 / 85 Sell Price: 9 59 26 Dropped by: Grobbulus Drop Chance: 19.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 22967,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 393,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22967,
+    "item_level": 83,
+    "name": "Icy Scale Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 33.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22967"
+  },
+  "linked_entities": [],
+  "name": "Icy Scale Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.56,
+      "entity_name": "Grobbulus",
+      "source_url": "https://www.wowhead.com/forever/item=22967",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22967",
+  "url": "https://www.wowhead.com/forever/item=22967"
+}

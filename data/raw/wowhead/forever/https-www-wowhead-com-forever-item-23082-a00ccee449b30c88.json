@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handguards of Undead Slaying Item Level 63 Binds when picked up Hands Mail 231 Armor +15 Stamina Durability 40 / 40 Equip: + 30 Attack Power. Equip: + 30 Attack Power against Undead. Garb of the Undead Slayer (0/3) Item #23088 Handguards of Undead Slaying Item #23092 (3) Set : Increases your damage against undead by 2%. Sell Price: 1 68 51",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 23082,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 231,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power.",
+        "stats": {
+          "attack_power": 30
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +30 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +30 Attack Power.",
+      "Equip: +30 Attack Power against Undead."
+    ],
+    "id": 23082,
+    "item_level": 63,
+    "name": "Handguards of Undead Slaying",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 29068,
+        "text": "Increases your damage against undead by 2%."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23082"
+  },
+  "linked_entities": [
+    {
+      "id": 23082,
+      "name": "Handguards of Undead Slaying",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23082"
+    },
+    {
+      "id": 29068,
+      "name": "Increases your damage against undead by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29068"
+    }
+  ],
+  "name": "Handguards of Undead Slaying",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23082",
+  "url": "https://www.wowhead.com/forever/item=23082"
+}

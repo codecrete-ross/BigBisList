@@ -1,0 +1,150 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of Heroism Item Level 60 Binds when picked up Head Plate 556 Armor +18 Strength +32 Stamina Durability 100 / 100 Equip: Improves your chance to get a critical strike by 1.0%. Battlegear of Heroism (0/8) Belt of Heroism Boots of Heroism Bracers of Heroism Breastplate of Heroism Gauntlets of Heroism Helm of Heroism Legplates of Heroism Spaulders of Heroism (2) Set : +8 All Resistances. (4) Set : Chance on melee attack to heal you for 88 to 132. (6) Set : +40 Attack Power. (8) Set : +200 Armor. Sell Price: 1 99 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 21999,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 556,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 21999,
+    "item_level": 60,
+    "name": "Helm of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27419,
+        "text": "Chance on melee attack to heal you for 88 to 132."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 32.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21999"
+  },
+  "linked_entities": [
+    {
+      "id": 21994,
+      "name": "Belt of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21994"
+    },
+    {
+      "id": 21995,
+      "name": "Boots of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21995"
+    },
+    {
+      "id": 21996,
+      "name": "Bracers of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21996"
+    },
+    {
+      "id": 21997,
+      "name": "Breastplate of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21997"
+    },
+    {
+      "id": 21998,
+      "name": "Gauntlets of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21998"
+    },
+    {
+      "id": 21999,
+      "name": "Helm of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21999"
+    },
+    {
+      "id": 22000,
+      "name": "Legplates of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22000"
+    },
+    {
+      "id": 22001,
+      "name": "Spaulders of Heroism",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22001"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27419,
+      "name": "Chance on melee attack to heal you for 88 to 132.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27419"
+    }
+  ],
+  "name": "Helm of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21999",
+  "url": "https://www.wowhead.com/forever/item=21999"
+}

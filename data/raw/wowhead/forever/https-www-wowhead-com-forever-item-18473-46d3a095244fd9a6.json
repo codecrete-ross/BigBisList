@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Royal Seal of Eldre'Thalas Item Level 62 Binds when picked up Unique Trinket +10 Agility +15 Nature Resistance Classes: Hunter Equip: + 45 Attack Power against Demons. \"Blessed by the Shen'dralar Ancients.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18473,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +45 Attack Power against Demons.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +45 Attack Power against Demons."
+    ],
+    "id": 18473,
+    "item_level": 62,
+    "name": "Royal Seal of Eldre'Thalas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "nature_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18473"
+  },
+  "linked_entities": [],
+  "name": "Royal Seal of Eldre'Thalas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "580f0c564f11f6f81748a12e54bf8d866d83a5b5d9ad06a57853de82e9feaec5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18473",
+  "url": "https://www.wowhead.com/forever/item=18473"
+}

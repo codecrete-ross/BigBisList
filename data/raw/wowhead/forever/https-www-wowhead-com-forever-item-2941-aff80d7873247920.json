@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Prison Shank Item Level 28 Binds when picked up One-Hand Dagger 22 - 42 Damage Speed 1.80 (17.78 damage per second) +6 Agility +2 Stamina Durability 60 / 60 Requires Level 23 Sell Price: 44 55 Dropped by: Bruegal Ironknuckle Drop Chance: 19.82%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 2941,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 17.78,
+    "id": 2941,
+    "item_level": 28,
+    "name": "Prison Shank",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 23,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "stamina": 2.0
+    },
+    "weapon_max_damage": 42,
+    "weapon_min_damage": 22,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2941"
+  },
+  "linked_entities": [],
+  "name": "Prison Shank",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.82,
+      "entity_name": "Bruegal Ironknuckle",
+      "source_url": "https://www.wowhead.com/forever/item=2941",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2941",
+  "url": "https://www.wowhead.com/forever/item=2941"
+}

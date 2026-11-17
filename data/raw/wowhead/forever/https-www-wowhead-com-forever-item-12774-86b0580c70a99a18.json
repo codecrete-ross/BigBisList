@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dawn's Edge Item Level 55 Binds when equipped One-Hand Axe 53 - 100 Damage Speed 2.10 (36.43 damage per second) Durability 90 / 90 Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 3 60 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:43:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 12774,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 36.43,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 12774,
+    "item_level": 55,
+    "name": "Dawn's Edge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0
+    },
+    "weapon_max_damage": 100,
+    "weapon_min_damage": 53,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12774"
+  },
+  "linked_entities": [],
+  "name": "Dawn's Edge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12774",
+  "url": "https://www.wowhead.com/forever/item=12774"
+}

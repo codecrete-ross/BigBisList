@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Zandalar Predator's Belt Item Level 61 Binds when picked up Waist Mail 221 Armor +20 Agility +12 Stamina +12 Intellect +9 Spirit Durability 50 / 50 Classes: Hunter Equip: Improves your chance to hit by 1.0%. Predator's Armor (0/5) Maelstrom's Wrath Renataki's Charm of Beasts Zandalar Predator's Bracers Zandalar Predator's Belt Zandalar Predator's Mantle (2) Set : +20 Attack Power. (3) Set : Decreases the cooldown of Concussive Shot by 1 sec. (5) Set : Increases the duration of Serpent Sting by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 19832,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 221,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 19832,
+    "item_level": 61,
+    "name": "Zandalar Predator's Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 9331,
+        "text": "+20 Attack Power."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24465,
+        "text": "Decreases the cooldown of Concussive Shot by 1 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24467,
+        "text": "Increases the duration of Serpent Sting by 3 sec."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "hit_percent": 1.0,
+      "intellect": 12.0,
+      "spirit": 9.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19832"
+  },
+  "linked_entities": [
+    {
+      "id": 19621,
+      "name": "Maelstrom's Wrath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19621"
+    },
+    {
+      "id": 19831,
+      "name": "Zandalar Predator's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19831"
+    },
+    {
+      "id": 19832,
+      "name": "Zandalar Predator's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19832"
+    },
+    {
+      "id": 19833,
+      "name": "Zandalar Predator's Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19833"
+    },
+    {
+      "id": 19953,
+      "name": "Renataki's Charm of Beasts",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19953"
+    },
+    {
+      "id": 9331,
+      "name": "+20 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9331"
+    },
+    {
+      "id": 24465,
+      "name": "Decreases the cooldown of Concussive Shot by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24465"
+    },
+    {
+      "id": 24467,
+      "name": "Increases the duration of Serpent Sting by 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24467"
+    }
+  ],
+  "name": "Zandalar Predator's Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19832",
+  "url": "https://www.wowhead.com/forever/item=19832"
+}

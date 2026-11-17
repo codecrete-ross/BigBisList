@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glowing Lizardscale Cloak Item Level 23 Binds when picked up Back 20 Armor +6 Agility +2 Nature Resistance Requires Level 18 Sell Price: 7 65 Dropped by: Skum Drop Chance: 45.20%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 6449,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 20,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6449,
+    "item_level": 23,
+    "name": "Glowing Lizardscale Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "nature_resistance": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6449"
+  },
+  "linked_entities": [],
+  "name": "Glowing Lizardscale Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 45.2,
+      "entity_name": "Skum",
+      "source_url": "https://www.wowhead.com/forever/item=6449",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6449",
+  "url": "https://www.wowhead.com/forever/item=6449"
+}

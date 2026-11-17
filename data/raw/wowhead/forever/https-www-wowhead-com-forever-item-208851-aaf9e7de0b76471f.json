@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Justice Item Level 10 Binds when picked up Unique Relic Libram Classes: Paladin Engrave your gloves with the Hand of Reckoning rune: \"Learn a new ability after slaying 10 enemies stunned by Hammer of Justice\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 208851,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 208851,
+    "item_level": 10,
+    "name": "Libram of Justice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=208851"
+  },
+  "linked_entities": [
+    {
+      "id": 410001,
+      "name": "Engrave your gloves with the Hand of Reckoning rune:",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410001"
+    }
+  ],
+  "name": "Libram of Justice",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d104d822712e48e44fd84f2c6bbb835d6667d439e071afc59571e2d8e841016e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/208851",
+  "url": "https://www.wowhead.com/forever/item=208851"
+}

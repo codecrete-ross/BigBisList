@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Lamellar Chestplate Item Level 74 Binds when picked up Unique Chest Plate 835 Armor +21 Strength +21 Stamina +20 Intellect Restores + 5 mana per 5 sec. Durability 165 / 165 Classes: Paladin Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 25 . Sell Price: 2 66 54",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 16473,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 835,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 16473,
+    "item_level": 74,
+    "name": "Field Marshal's Lamellar Chestplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 20.0,
+      "mp5": 5.0,
+      "spell_power": 25.0,
+      "stamina": 21.0,
+      "strength": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16473"
+  },
+  "linked_entities": [],
+  "name": "Field Marshal's Lamellar Chestplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16473",
+  "url": "https://www.wowhead.com/forever/item=16473"
+}

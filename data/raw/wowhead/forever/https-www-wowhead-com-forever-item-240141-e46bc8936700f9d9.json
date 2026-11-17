@@ -1,0 +1,169 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heretic Cowl Sanctified Item Level 98 Binds when picked up Head Cloth 119 Armor +13 Stamina +13 Intellect +19 Spirit Durability 60 / 60 Classes: Warlock Requires Level 60 Equip: Improves your chance to hit by 2.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases your attack speed and casting speed by 2.0%. Equip: Increases damage and healing done by magical spells and effects by up to 62 . Heretic Raiment (0/8) Heretic Cowl Heretic Shoulderpads Heretic Belt Heretic Leggings Heretic Sandals Heretic Bindings Heretic Gloves Heretic Robe (2) Set : Your Shadow and Fire non-periodic critical strikes cause the target to Burn for 25% of the damage they deal over 4 sec. (4) Set : Your Shadow Bolt, Haunt, Chaos Bolt, Shadow Cleave, and Soul Fire deal 30% more damage to targets afflicted with your Corruption. (6) Set : Your periodic critical strikes grant 20% spellcasting haste for 15 sec, and your Backdraft grants an additional 12% spellcasting haste. Sell Price: 7 86 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 240141,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 119,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+        "stats": {
+          "hit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your attack speed and casting speed by 2.0%.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 62.",
+        "stats": {
+          "spell_power": 62.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 2.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 62."
+    ],
+    "id": 240141,
+    "item_level": 98,
+    "name": "Heretic Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1227175,
+        "text": "Your Shadow and Fire non-periodic critical strikes cause the target to Burn for 25% of the damage they deal over 4 sec."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1227186,
+        "text": "Your Shadow Bolt, Haunt, Chaos Bolt, Shadow Cleave, and Soul Fire deal 30% more damage to targets afflicted with your Corruption."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1227196,
+        "text": "Your periodic critical strikes grant 20% spellcasting haste for 15 sec, and your Backdraft grants an additional 12% spellcasting haste."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "hit_percent": 2.0,
+      "intellect": 13.0,
+      "spell_power": 62.0,
+      "spirit": 19.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240141"
+  },
+  "linked_entities": [
+    {
+      "id": 240138,
+      "name": "Heretic Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240138"
+    },
+    {
+      "id": 240139,
+      "name": "Heretic Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240139"
+    },
+    {
+      "id": 240140,
+      "name": "Heretic Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240140"
+    },
+    {
+      "id": 240141,
+      "name": "Heretic Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240141"
+    },
+    {
+      "id": 240142,
+      "name": "Heretic Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240142"
+    },
+    {
+      "id": 240143,
+      "name": "Heretic Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240143"
+    },
+    {
+      "id": 240144,
+      "name": "Heretic Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240144"
+    },
+    {
+      "id": 240145,
+      "name": "Heretic Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240145"
+    },
+    {
+      "id": 1227175,
+      "name": "Your Shadow and Fire non-periodic critical strikes cause the target to Burn for 25% of the damage they deal over 4 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227175"
+    },
+    {
+      "id": 1227186,
+      "name": "Your Shadow Bolt, Haunt, Chaos Bolt, Shadow Cleave, and Soul Fire deal 30% more damage to targets afflicted with your Corruption.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227186"
+    },
+    {
+      "id": 1227196,
+      "name": "Your periodic critical strikes grant 20% spellcasting haste for 15 sec, and your Backdraft grants an additional 12% spellcasting haste.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227196"
+    }
+  ],
+  "name": "Heretic Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "bdb54c7e2f12dc3171824331e7036d3fdb9610663fa4e1e1300fe7d02066b58e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240141",
+  "url": "https://www.wowhead.com/forever/item=240141"
+}

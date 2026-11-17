@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of the Wild Item Level 25 Binds when picked up Unique Relic Idol Classes: Druid Engrave your chest or robe with the Wild Strikes rune: While you are in Cat Form, Bear Form, or Dire Bear Form, party or raid members within 100 yards gain increased combat ferocity. Each melee hit has a 20% chance of granting the attacker an extra attack with 20% additional Attack Power. No effect if the target is already benefitting from Windfury Totem. \"Heal 10 different beasts, then use this idol to learn a new ability.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 210534,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 210534,
+    "item_level": 25,
+    "name": "Idol of the Wild",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=210534"
+  },
+  "linked_entities": [
+    {
+      "id": 407977,
+      "name": "While you are in Cat Form, Bear Form, or Dire Bear Form, party or raid members within 100 yards gain increased combat ferocity. Each melee hit has a 20% chance of granting the attacker an extra attack with 20% additional Attack Power. No effect if the target is already benefitting from Windfury Totem.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=407977"
+    },
+    {
+      "id": 410021,
+      "name": "Engrave your chest or robe with the Wild Strikes rune: While you are in Cat Form, Bear Form, or Dire Bear Form, party or raid members within 100 yards gain increased combat ferocity. Each melee hit has a 20% chance of granting the attacker an extra attack with 20% additional Attack Power. No effect if the target is already benefitting from Windfury Totem.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410021"
+    }
+  ],
+  "name": "Idol of the Wild",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2455e0382ae3607b46667d7ee206f8a865248cf553cd03c3c7eb4b8a26ac13b6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/210534",
+  "url": "https://www.wowhead.com/forever/item=210534"
+}

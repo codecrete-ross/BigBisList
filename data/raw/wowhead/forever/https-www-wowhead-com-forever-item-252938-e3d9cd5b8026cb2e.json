@@ -1,0 +1,156 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Blue Dragonscale Helm Item Level 60 Requires Leatherworking (300) Use: Teaches you how to craft Blue Dragonscale Helm. Sell Price: 75",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Head",
+      "item_id": 252604,
+      "item_stats": {
+        "armor_type": "Mail",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "effect_stats": [
+          {
+            "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.itemEffects:1",
+            "stats": {
+              "spell_power": 25.0
+            },
+            "type": "passive"
+          }
+        ],
+        "equip_effects": [
+          "Equip: Increases damage and healing done by magical spells and effects by up to 25.itemEffects:1 pvpEquippvpEquip"
+        ],
+        "id": 252604,
+        "name": "Blue Dragonscale Helm",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "epic",
+        "slot": "Head",
+        "source_summary": "",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=252604"
+      },
+      "name": "Blue Dragonscale Helm",
+      "normalized_requirements": [],
+      "quality": "epic",
+      "url": "https://www.wowhead.com/forever/item=252604"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 252938,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Blue Dragonscale Helm.",
+        "type": "use"
+      }
+    ],
+    "id": 252938,
+    "item_level": 60,
+    "name": "Pattern: Blue Dragonscale Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Blue Dragonscale Helm."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=252938"
+  },
+  "linked_entities": [
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15415,
+      "name": "Blue Dragonscale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15415"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 249429,
+      "name": "Pristine Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249429"
+    },
+    {
+      "id": 252604,
+      "name": "Blue Dragonscale Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252604"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1254969,
+      "name": "Teaches you how to craft Blue Dragonscale Helm.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1254969"
+    }
+  ],
+  "name": "Pattern: Blue Dragonscale Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Blue Dragonscale Helm Item Level 60 Requires Leatherworking (300) Use: Teaches you how to craft Blue Dragonscale Helm. Sell Price: 75",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=252938",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1254969
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252938",
+  "url": "https://www.wowhead.com/forever/item=252938"
+}

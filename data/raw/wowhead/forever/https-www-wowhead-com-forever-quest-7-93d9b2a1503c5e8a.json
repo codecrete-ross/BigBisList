@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 7,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:21:09.464Z",
+  "flavor": "forever",
+  "name": "Kobold Camp Cleanup",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      },
+      "start": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=7"
+}

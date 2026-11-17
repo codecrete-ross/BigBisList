@@ -1,0 +1,49 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Craftsman's Writ: Golden Rod Acquire the items requested by the customer and deliver them to the location marked on your map. This writ must be in your possession to complete the transaction. Requirements: - Craftsman's Writ: Golden Rod - Golden Rod",
+  "entity_id": 94221,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:02:18+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Craftsman's Writ: Golden Rod",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "relationships": [],
+  "reviewed_page_facts": {
+    "collected_at": "2026-11-06T05:04:27.907673+00:00",
+    "finish_npc": "Muggol Breezebeard",
+    "finish_npc_id": 257296,
+    "min_level": 1,
+    "note": "Writ must be in inventory. No historical-comment coordinates are approved.",
+    "repeatability": "daily",
+    "reputation": [
+      {
+        "amount": 75,
+        "name": "Azeroth Commerce Authority"
+      },
+      {
+        "amount": 75,
+        "name": "Durotar Supply and Logistics"
+      }
+    ],
+    "required_items": [
+      {
+        "amount": 1,
+        "item_id": 264021,
+        "name": "Craftsman's Writ: Golden Rod"
+      },
+      {
+        "amount": 1,
+        "name": "Golden Rod"
+      }
+    ],
+    "retrieval_method": "public_web_search_result",
+    "side": "Both",
+    "zone": "Arathi Highlands"
+  },
+  "source_content_digest": "6206eb81f98305655963e9071a62dd1522b6ef8a594cb692dc0644930847de83",
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/94221",
+  "url": "https://www.wowhead.com/forever/quest=94221"
+}

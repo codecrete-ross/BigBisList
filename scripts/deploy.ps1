@@ -1,11 +1,15 @@
 param(
-    [string]$ClientRoot = "G:\Battle.net Games\World of Warcraft\_anniversary_",
+    [string]$ClientRoot,
     [string]$AddonName = "BigBiSList",
+    [string]$LuaPath,
     [switch]$NoClean,
-    [switch]$AllowOtherClient
+    [switch]$AllowOtherClient,
+    [switch]$Prerelease,
+    [ValidateSet("anniversary", "forever")][string]$Flavor = "anniversary"
 )
 
 $ErrorActionPreference = "Stop"
+$PSNativeCommandUseErrorActionPreference = $false
 
 function Get-FullPath {
     param([Parameter(Mandatory = $true)][string]$Path)
@@ -26,7 +30,12 @@ function Assert-SafeAddonTarget {
 }
 
 $repoRoot = Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")
-$tocPath = Join-Path $repoRoot "$AddonName.toc"
+$expectedClient = if ($Flavor -eq "forever") { "_forever_" } else { "_anniversary_" }
+$tocName = if ($Flavor -eq "forever") { "${AddonName}_Camelot.toc" } else { "$AddonName.toc" }
+$tocPath = Join-Path $repoRoot $tocName
+if (-not $ClientRoot) {
+    $ClientRoot = Join-Path "G:\Battle.net Games\World of Warcraft" $expectedClient
+}
 if (-not (Test-Path -LiteralPath $tocPath -PathType Leaf)) {
     throw "Could not find addon TOC: $tocPath"
 }
@@ -34,13 +43,45 @@ if (-not (Test-Path -LiteralPath $tocPath -PathType Leaf)) {
 $clientRootPath = Resolve-Path -LiteralPath $ClientRoot
 $clientRootFull = Get-FullPath $clientRootPath
 $clientLeaf = Split-Path -Leaf $clientRootFull.TrimEnd("\")
-if (-not $AllowOtherClient -and $clientLeaf -ne "_anniversary_") {
-    throw "Refusing to deploy to non-anniversary client root: $clientRootFull. Pass -AllowOtherClient to override."
+if (-not $AllowOtherClient -and $clientLeaf -ne $expectedClient) {
+    throw "The $Flavor payload requires a $expectedClient client root. Pass -AllowOtherClient to override."
+}
+if ($Prerelease -and ($Flavor -ne "forever" -or $clientLeaf -ne "_forever_")) {
+    throw "The local prerelease option requires a Forever client."
 }
 
 $addonsRoot = Join-Path $clientRootFull "Interface\AddOns"
 $targetRoot = Join-Path $addonsRoot $AddonName
 Assert-SafeAddonTarget -TargetPath $targetRoot -AddonName $AddonName
+
+if ($Flavor -eq "forever") {
+    $pythonPath = Join-Path $repoRoot "build\release-venv\Scripts\python.exe"
+    if (-not (Test-Path -LiteralPath $pythonPath -PathType Leaf)) {
+        $pythonPath = (Get-Command python -ErrorAction Stop).Source
+    }
+    $levelingOutput = & $pythonPath (Join-Path $repoRoot "tools\scrape_wowhead.py") coverage --flavor forever --family leveling --summary --strict
+    $levelingExit = $LASTEXITCODE
+    if ($levelingExit -ne 0) {
+        if (-not $Prerelease -or $levelingExit -ne 1) {
+            throw "Forever leveling coverage is incomplete; the installed addon has not been changed."
+        }
+        $leveling = ($levelingOutput -join "`n") | ConvertFrom-Json
+        if ($leveling.ok -ne $false -or $null -eq $leveling.summary.uncovered_combinations -or
+            $leveling.summary.uncovered_combinations -le 0 -or $leveling.summary.review_issues -ne 0 -or
+            $leveling.summary.reviewed_rules -ne $true -or @($leveling.errors).Count -ne 0) {
+            throw "Forever leveling has validation errors or stale reviews. Resolve them before deploying a prerelease."
+        }
+        Write-Warning "Local Forever prerelease with $($leveling.summary.uncovered_combinations) uncovered leveling combinations."
+    }
+    & $pythonPath (Join-Path $repoRoot "tools\scrape_wowhead.py") coverage --flavor forever --family bis_lists --summary --strict
+    if ($LASTEXITCODE -ne 0) {
+        throw "Forever pre-raid coverage is incomplete; the installed addon has not been changed."
+    }
+    & $pythonPath (Join-Path $repoRoot "tools\generate_lua.py") --flavor forever --check
+    if ($LASTEXITCODE -ne 0) {
+        throw "Forever bundled data is stale or invalid; the installed addon has not been changed."
+    }
+}
 
 $tocEntries = [System.Collections.Generic.List[string]]::new()
 $iconTexture = $null
@@ -60,7 +101,7 @@ foreach ($tocLine in Get-Content -LiteralPath $tocPath) {
 }
 
 $deployEntries = [System.Collections.Generic.List[string]]::new()
-[void]$deployEntries.Add("$AddonName.toc")
+[void]$deployEntries.Add($tocName)
 foreach ($entry in $tocEntries) {
     if (-not $deployEntries.Contains($entry)) {
         [void]$deployEntries.Add($entry)
@@ -89,7 +130,7 @@ if (Test-Path -LiteralPath $assetsRoot -PathType Container) {
 }
 
 $luac = Get-Command luac -ErrorAction SilentlyContinue
-if ($luac) {
+if ($LuaPath -or $luac) {
     $luaFiles = [System.Collections.Generic.List[string]]::new()
     foreach ($entry in $deployEntries) {
         if ([System.IO.Path]::GetExtension($entry) -ieq ".lua") {
@@ -97,7 +138,11 @@ if ($luac) {
         }
     }
     if ($luaFiles.Count -gt 0) {
-        & $luac.Source -p @luaFiles
+        if ($LuaPath) {
+            $luaFiles | & $LuaPath -e 'for file in io.lines() do assert(loadfile(file)) end'
+        } else {
+            & $luac.Source -p @luaFiles
+        }
         if ($LASTEXITCODE -ne 0) {
             throw "Lua compile preflight failed; refusing to deploy."
         }
@@ -128,8 +173,12 @@ foreach ($entry in $deployEntries) {
         Copy-Item -LiteralPath $source -Destination $targetParent -Recurse -Force
     } else {
         Copy-Item -LiteralPath $source -Destination $target -Force
+        if ((Get-FileHash -LiteralPath $source).Hash -ne (Get-FileHash -LiteralPath $target).Hash) {
+            throw "Verification failed for installed entry $entry."
+        }
     }
     $copied += 1
 }
 
-Write-Host "Deployed $copied addon entries to $targetRoot"
+$packageLabel = if ($Prerelease) { "Forever prerelease" } else { "$Flavor addon" }
+Write-Host "Deployed $copied entries for the $packageLabel to $targetRoot"

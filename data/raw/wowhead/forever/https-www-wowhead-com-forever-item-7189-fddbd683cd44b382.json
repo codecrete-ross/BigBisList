@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Goblin Rocket Boots Item Level 45 Binds when equipped Feet Cloth 41 Armor Durability 35 / 35 Use: These dangerous looking boots significantly increase your run speed for 20 sec. They are prone to explode however, so use with caution. (5 Min Cooldown) Sell Price: 47 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 7189,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 41,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: These dangerous looking boots significantly increase your run speed for 20 sec. They are prone to explode however, so use with caution. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 7189,
+    "item_level": 45,
+    "name": "Goblin Rocket Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Feet",
+    "source_summary": "",
+    "use_effects": [
+      "Use: These dangerous looking boots significantly increase your run speed for 20 sec. They are prone to explode however, so use with caution. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=7189"
+  },
+  "linked_entities": [
+    {
+      "id": 8892,
+      "name": "These dangerous looking boots significantly increase your run speed for 20 sec. They are prone to explode however, so use with caution.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8892"
+    }
+  ],
+  "name": "Goblin Rocket Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "5a77c737d4bf1329207127a445846b96abd101dc1a8c034e1989102ffffa3de9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7189",
+  "url": "https://www.wowhead.com/forever/item=7189"
+}

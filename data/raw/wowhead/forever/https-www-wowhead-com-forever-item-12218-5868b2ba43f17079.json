@@ -1,0 +1,63 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Monster Omelet Item Level 45 Requires Level 35 Use: Restores 1338 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 15 Stamina for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20 Sell Price: 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12218,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 1338 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 15 Stamina for 15 min. Additionally, experience gained from kills is increased by 5%.",
+        "type": "use"
+      }
+    ],
+    "id": 12218,
+    "item_level": 45,
+    "name": "Monster Omelet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 35,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 1338 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 15 Stamina for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12218"
+  },
+  "linked_entities": [
+    {
+      "id": 1129,
+      "name": "Restores 1338 health over 30 sec. Must remain seated while eating.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1129"
+    },
+    {
+      "id": 1243969,
+      "name": "Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1243969"
+    },
+    {
+      "id": 1248394,
+      "name": "Restores 1338 health over 30 sec. Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 15 Stamina for 15 min. Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248394"
+    }
+  ],
+  "name": "Monster Omelet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12218",
+  "url": "https://www.wowhead.com/forever/item=12218"
+}

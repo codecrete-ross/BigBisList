@@ -1,0 +1,72 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=288931/ring-of-spell-power"
+    },
+    {
+      "credit": "60.tools",
+      "source": "https://www.60.tools/items/288931-ring-of-spell-power"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 947,
+      "collected_at": "2026-11-13T06:25:08.5053778Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-tooltip-288931",
+      "source_content_digest": "f2db81e8719f4cdded3377984e23d6362fba399b30ea0b0e03b077d13abde76c",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/288931"
+    },
+    {
+      "bytes": 129129,
+      "collected_at": "2026-11-13T06:29:25.0051729Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "beta-60-288931",
+      "source_content_digest": "31ac888f0e9cbb1f68bb45e66cc79d688420ce2809d9e1d7d93eada51c814717",
+      "source_url": "https://www.60.tools/items/288931-ring-of-spell-power"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:25:08.2495948Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "beta-main-288931",
+      "source_content_digest": "74d560532fda4dab2fd61d8fddcc42b1fc28119f033338f4004ea44d063785af",
+      "source_url": "https://www.wowhead.com/forever/item=288931/ring-of-spell-power"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability": "unavailable_to_players",
+    "capture_method": "indexed_page_text",
+    "corroboration": "60.tools also identifies this exact item as an October 22 beta celebration reward.",
+    "current_tooltip_additional_stats": {},
+    "digest_input": "normalized indexed item-page finding",
+    "historical_event_evidence": [
+      "https://daybreakforever.com/blog/molten-core-loot-at-level-30",
+      "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt",
+      "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633"
+    ],
+    "item_id": 288931,
+    "item_name": "Ring of Spell Power",
+    "page_crawl_age_at_review": "yesterday"
+  },
+  "source_content_digest": "84c3d8fc5c4566df5cba9f009741f801904e8c45e4b45890f457ac124250cfb3",
+  "unavailable_item_ids": [
+    288931
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=288931/ring-of-spell-power"
+}

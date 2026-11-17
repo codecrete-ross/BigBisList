@@ -1,0 +1,148 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Pinned documented Forever emulator API after Static/Derived/Dynamic composition; curated Skyborne Call of Fire records.",
+  "fetched_at": "2026-11-06T04:23:29.841032+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 268592
+        }
+      },
+      "id": 97243,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934592,
+      "requiredSpell": 0,
+      "sourceItemId": 6653,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 252382,
+          "2": 254082
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 268592
+        }
+      },
+      "id": 97244,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 97243
+      },
+      "questFlags": 0,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934592,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 268592
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 268592
+        }
+      },
+      "id": 97245,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 97244
+      },
+      "questFlags": 0,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934592,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 268592
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 252382
+        }
+      },
+      "id": 97257,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 97245
+      },
+      "questFlags": 0,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934592,
+      "requiredSpell": 0,
+      "sourceItemId": 277329,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 268592
+        }
+      }
+    }
+  ],
+  "reward_item_records": [
+    {
+      "class": 4,
+      "id": 263412,
+      "itemLevel": 10,
+      "name": "Totem of Charged Flames",
+      "questRewards": {
+        "1": 1527,
+        "2": 94411,
+        "3": 94468,
+        "4": 97257
+      },
+      "requiredLevel": 10,
+      "startQuest": 0,
+      "subClass": 9
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverQuestDB.lua?plain=1"
+}

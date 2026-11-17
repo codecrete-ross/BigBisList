@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of the Dragon Lord Item Level 61 Binds when picked up Finger Requires Level 56 Use: A protective mana shield surrounds the caster absorbing 500 damage. While the shield holds, increases mana regeneration by 22 every 5 sec for 30 min. (30 Min Cooldown) Sell Price: 2 78 55 Dropped by: Overlord Wyrmthalak Drop Chance: 1.71%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13143,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: A protective mana shield surrounds the caster absorbing 500 damage. While the shield holds, increases mana regeneration by 22 every 5 sec for 30 min. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13143,
+    "item_level": 61,
+    "name": "Mark of the Dragon Lord",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 56,
+    "slot": "Ring",
+    "source_summary": "",
+    "use_effects": [
+      "Use: A protective mana shield surrounds the caster absorbing 500 damage. While the shield holds, increases mana regeneration by 22 every 5 sec for 30 min. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13143"
+  },
+  "linked_entities": [
+    {
+      "id": 17252,
+      "name": "A protective mana shield surrounds the caster absorbing 500 damage. While the shield holds, increases mana regeneration by 22 every 5 sec for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17252"
+    }
+  ],
+  "name": "Mark of the Dragon Lord",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.71,
+      "entity_name": "Overlord Wyrmthalak",
+      "source_url": "https://www.wowhead.com/forever/item=13143",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "e212320fe1205e67e2cdee1ae60aae6e2da91c70f49f965e72a7e1855caf8bab",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13143",
+  "url": "https://www.wowhead.com/forever/item=13143"
+}

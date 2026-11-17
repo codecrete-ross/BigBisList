@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Minor Mana Oil Item Level 30 Requires Level 20 Use: While applied to target weapon it restores 5 mana to the caster every 5 seconds and increases healing done by up to 10. Lasts for 30 minutes. 5 Charges Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 20745,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: While applied to target weapon it restores 5 mana to the caster every 5 seconds and increases healing done by up to 10. Lasts for 30 minutes.",
+        "type": "conditional"
+      }
+    ],
+    "id": 20745,
+    "item_level": 30,
+    "name": "Minor Mana Oil",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 20,
+    "source_summary": "",
+    "use_effects": [
+      "Use: While applied to target weapon it restores 5 mana to the caster every 5 seconds and increases healing done by up to 10. Lasts for 30 minutes. 5 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20745"
+  },
+  "linked_entities": [
+    {
+      "id": 25118,
+      "name": "While applied to target weapon it restores 5 mana to the caster every 5 seconds and increases healing done by up to 10. Lasts for 30 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25118"
+    }
+  ],
+  "name": "Minor Mana Oil",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "d35349f527073f18b2a342eec55746bd794bff760a0a9d478956f64ae1a0f4cc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20745",
+  "url": "https://www.wowhead.com/forever/item=20745"
+}

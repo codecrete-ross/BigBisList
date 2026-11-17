@@ -1,0 +1,163 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dreadmist Wraps Item Level 59 Binds when equipped Hands Cloth 52 Armor +13 Stamina +9 Intellect +14 Spirit Durability 30 / 30 Requires Level 54 Equip: Improves your chance to hit by 1.0%. Dreadmist Raiment (0/8) Dreadmist Belt Dreadmist Bracers Dreadmist Leggings Dreadmist Mantle Dreadmist Robe Dreadmist Sandals Dreadmist Mask Dreadmist Wraps (2) Set : +8 All Resistances. (3) Set : Increases damage and healing done by magical spells and effects by up to 18. (4) Set : When struck in combat has a 2% chance of causing the attacker to flee in terror for 2 sec. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown) (5) Set : Your spellcasts have a 5% chance to heal you for 270 to 330. (Proc chance: 5%) (6) Set : Restores 8 mana per 5 sec. Sell Price: 94 74",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:05:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 16705,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 52,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 16705,
+    "item_level": 59,
+    "name": "Dreadmist Wraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27780,
+        "text": "When struck in combat has a 2% chance of causing the attacker to flee in terror for 2 sec. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450585,
+        "text": "Your spellcasts have a 5% chance to heal you for 270 to 330. (Proc chance: 5%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 9.0,
+      "spirit": 14.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16705"
+  },
+  "linked_entities": [
+    {
+      "id": 16698,
+      "name": "Dreadmist Mask",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16698"
+    },
+    {
+      "id": 16699,
+      "name": "Dreadmist Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16699"
+    },
+    {
+      "id": 16700,
+      "name": "Dreadmist Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16700"
+    },
+    {
+      "id": 16701,
+      "name": "Dreadmist Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16701"
+    },
+    {
+      "id": 16702,
+      "name": "Dreadmist Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16702"
+    },
+    {
+      "id": 16703,
+      "name": "Dreadmist Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16703"
+    },
+    {
+      "id": 16704,
+      "name": "Dreadmist Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16704"
+    },
+    {
+      "id": 16705,
+      "name": "Dreadmist Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16705"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27780,
+      "name": "When struck in combat has a 2% chance of causing the attacker to flee in terror for 2 sec. Can only occur once every 60 sec. (Proc chance: 2%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27780"
+    },
+    {
+      "id": 450585,
+      "name": "Your spellcasts have a 5% chance to heal you for 270 to 330. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450585"
+    }
+  ],
+  "name": "Dreadmist Wraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16705",
+  "url": "https://www.wowhead.com/forever/item=16705"
+}

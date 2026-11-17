@@ -1,0 +1,62 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=271718"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Linken's Boots of Iron Item Level 38 Binds when picked up Feet Mail 169 Armor +8 Agility +12 Stamina Durability 60 / 60 Requires Level 33 \"Incredibly heavy, useless boots. Who made these?\" Sell Price: 52 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T22:40:30.614633+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1013,
+      "collected_at": "2026-11-13T22:40:30.614633+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-live-iron-boots",
+      "source_content_digest": "eb9e34818da3a7d192997334fe4ab2ae2549c2fa0a64692648972b5dc344c533",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/271718"
+    }
+  ],
+  "inventory_slot": "Feet",
+  "item_id": 271718,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 169,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 271718,
+    "item_level": 38,
+    "name": "Linken's Boots of Iron",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 33,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=271718"
+  },
+  "linked_entities": [],
+  "name": "Linken's Boots of Iron",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "eb9e34818da3a7d192997334fe4ab2ae2549c2fa0a64692648972b5dc344c533",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=271718"
+}

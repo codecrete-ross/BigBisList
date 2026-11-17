@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Workshop Key Item Level 1 Binds when picked up Unique Dropped by: Electrocutioner 6000 Drop Chance: 79.95%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6893,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6893,
+    "item_level": 1,
+    "name": "Workshop Key",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6893"
+  },
+  "linked_entities": [],
+  "name": "Workshop Key",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 79.95,
+      "entity_name": "Electrocutioner 6000",
+      "source_url": "https://www.wowhead.com/forever/item=6893",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "ca281477620868a1d6284f1124540e6a89b9ac9a8f5285695219505edd9941e9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6893",
+  "url": "https://www.wowhead.com/forever/item=6893"
+}

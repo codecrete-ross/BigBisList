@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Balance of Nature Kill 7 Young Nightsabers and 4 Young Thistle Boars and return to Conservator Ilthalaine. Requirements: - Young Nightsaber x 7 - Young Thistle Boar x 4",
+  "entity_id": 456,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:30.064Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Balance of Nature",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2079,
+        "name": "Conservator Ilthalaine"
+      },
+      "start": {
+        "entity_id": 2079,
+        "name": "Conservator Ilthalaine"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Teldrassil"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 5394,
+      "object_name": "Archery Training Gloves",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=456",
+      "subject_id": 456,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 11187,
+      "object_name": "Stemleaf Bracers",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=456",
+      "subject_id": 456,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/456",
+  "url": "https://www.wowhead.com/forever/quest=456"
+}

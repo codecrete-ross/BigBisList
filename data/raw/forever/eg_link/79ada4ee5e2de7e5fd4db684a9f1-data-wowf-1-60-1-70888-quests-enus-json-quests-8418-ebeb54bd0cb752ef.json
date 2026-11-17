@@ -1,0 +1,70 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/8418"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 20505,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/8418",
+      "subject_id": 8418,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T21:23:41.361391+00:00",
+        "linked_reward_ids": [
+          20504,
+          20505,
+          20512,
+          20620
+        ],
+        "min_level": 50,
+        "name": "Forging the Mightstone",
+        "side": "Alliance",
+        "source_content_digest": "645d6f2d07b2a1544f1a8577a5ebe98a177ee9c1779bb4b413c48209e07fda55",
+        "source_url": "https://bindonforever.com/quest/8418",
+        "zone": "Western Plaguelands"
+      },
+      {
+        "fetched_at": "2026-11-12T21:22:19.474512+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "Forging the Mightstone",
+        "side": "Both",
+        "source_content_digest": "8558db8859d5b190b789de69c71b585b139c613ca873c64922989f9069da0b53",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/8418",
+        "zone": "Paladin"
+      }
+    ],
+    "name": "Forging the Mightstone",
+    "observation_count": 2,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 8418,
+    "reported_min_level": 50,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "20505": "items"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/8418"
+}

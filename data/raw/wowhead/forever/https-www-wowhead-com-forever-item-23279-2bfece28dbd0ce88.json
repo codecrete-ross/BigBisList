@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Lieutenant's Chain Vices Item Level 66 Binds when picked up Unique Hands Mail 242 Armor +18 Agility +16 Stamina Durability 40 / 40 Classes: Hunter Requires Level 60 Equip: Increases the damage done by your Multi-Shot by 4%. Lieutenant Commander's Pursuance (0/6) Knight-Captain's Chain Hauberk Knight-Captain's Chain Legguards Knight-Lieutenant's Chain Greaves Knight-Lieutenant's Chain Vices Lieutenant Commander's Chain Helm Lieutenant Commander's Chain Shoulders (2) Set : +20 Agility. (4) Set : Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%) (6) Set : +20 Stamina. Sell Price: 1 1 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:16:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 23279,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 242,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases the damage done by your Multi-Shot by 4%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases the damage done by your Multi-Shot by 4%."
+    ],
+    "id": 23279,
+    "item_level": 66,
+    "name": "Knight-Lieutenant's Chain Vices",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14384,
+        "text": "+20 Agility."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23158,
+        "text": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23279"
+  },
+  "linked_entities": [
+    {
+      "id": 23278,
+      "name": "Knight-Lieutenant's Chain Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23278"
+    },
+    {
+      "id": 23279,
+      "name": "Knight-Lieutenant's Chain Vices",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23279"
+    },
+    {
+      "id": 23292,
+      "name": "Knight-Captain's Chain Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23292"
+    },
+    {
+      "id": 23293,
+      "name": "Knight-Captain's Chain Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23293"
+    },
+    {
+      "id": 23306,
+      "name": "Lieutenant Commander's Chain Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23306"
+    },
+    {
+      "id": 23307,
+      "name": "Lieutenant Commander's Chain Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23307"
+    },
+    {
+      "id": 14384,
+      "name": "+20 Agility.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14384"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23158,
+      "name": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23158"
+    },
+    {
+      "id": 28539,
+      "name": "Increases the damage done by your Multi-Shot by 4%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28539"
+    }
+  ],
+  "name": "Knight-Lieutenant's Chain Vices",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23279",
+  "url": "https://www.wowhead.com/forever/item=23279"
+}

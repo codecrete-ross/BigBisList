@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Denwatcher's Shoulders Item Level 60 Binds when picked up Shoulder Mail 266 Armor +10 Stamina +10 Intellect +10 Spirit Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 2 24 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18494,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 266,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 18494,
+    "item_level": 60,
+    "name": "Denwatcher's Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 18.0,
+      "spirit": 10.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18494"
+  },
+  "linked_entities": [],
+  "name": "Denwatcher's Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ee5bd6cfca9fb65cc5030013a1287d9b8d0bb2c80bb1b53eeafecc07ca63ceba",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18494",
+  "url": "https://www.wowhead.com/forever/item=18494"
+}

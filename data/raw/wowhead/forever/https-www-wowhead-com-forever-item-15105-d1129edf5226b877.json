@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Noh'Orahil Item Level 40 Binds when picked up Two-Hand Staff 46 - 70 Damage Speed 2.70 (21.48 damage per second) +3 Stamina +4 Intellect Durability 85 / 85 Classes: Warlock Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage done by Fire spells and effects by up to 39. Sell Price: 1 43 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 15105,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 21.48,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 39.",
+        "stats": {
+          "fire_damage": 39
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 15105,
+    "item_level": 40,
+    "name": "Staff of Noh'Orahil",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "fire_damage": 39.0,
+      "intellect": 4.0,
+      "stamina": 3.0
+    },
+    "weapon_max_damage": 70,
+    "weapon_min_damage": 46,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=15105"
+  },
+  "linked_entities": [],
+  "name": "Staff of Noh'Orahil",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15105",
+  "url": "https://www.wowhead.com/forever/item=15105"
+}

@@ -1,0 +1,73 @@
+{
+  "attribution": [
+    {
+      "credit": "ForeverChanges server item observations",
+      "source": "https://foreverchanges.pro/item/276632/wits-edge"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_server_item_corroboration",
+  "fetched_at": "2026-11-13T21:57:34.422197+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 154895,
+      "collected_at": "2026-11-13T21:57:34.422197+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wits-edge-live-stats",
+      "source_content_digest": "e5fd8d4c50bc5a544b6926085d2431dd8e1f5a8ec75de0e26b217e5501d1ca7a",
+      "source_url": "https://foreverchanges.pro/item/276632/wits-edge"
+    },
+    {
+      "bytes": 1699,
+      "collected_at": "2026-11-13T21:54:21.721284+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wits-edge-tooltip",
+      "source_content_digest": "fa268e099f8ae3ca83c85b1ae528a00e90e20f76741411b5cb6cc28fe8e187c6",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/276632"
+    },
+    {
+      "bytes": 588,
+      "collected_at": "2026-11-13T21:54:21.852230+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wits-end-tooltip",
+      "source_content_digest": "31fe417672a36d63ca1de5ade0952eadf41d0831663542ab2fb96fb064e1cb56",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/spell/1300141"
+    },
+    {
+      "bytes": 58941,
+      "collected_at": "2026-11-13T21:57:33.995759+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wits-edge-live-conversion",
+      "source_content_digest": "213ca81d909d2116fb4d8fa05b4ee0fd079330536769041588ce13310369d0e3",
+      "source_url": "https://endgametools.com/en/wow-forever/items/276632"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "foreverchanges",
+  "reviewed_page_facts": {
+    "binding": "bind_on_pickup",
+    "class": "Mage",
+    "equip_level": 57,
+    "finding": "The server record and exact Wowhead tooltip agree on the relevant stats, equip restriction, and effect.",
+    "intellect": 4,
+    "item_id": 276632,
+    "item_level": 65,
+    "melee_clearcasting_proc_percent": 15,
+    "slot": "Main Hand",
+    "spell_penetration": 5,
+    "spell_power": 74,
+    "weapon_damage": [
+      39,
+      74
+    ],
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Sword"
+  },
+  "source_content_digest": "e5fd8d4c50bc5a544b6926085d2431dd8e1f5a8ec75de0e26b217e5501d1ca7a",
+  "url": "https://foreverchanges.pro/item/276632/wits-edge"
+}

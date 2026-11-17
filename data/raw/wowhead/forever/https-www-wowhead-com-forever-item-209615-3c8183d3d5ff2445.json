@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Insignia of the Alliance Item Level 1 Binds when picked up Unique Trinket Classes: Warlock Use: Dispels all Charm, Fear and Polymorph effects. (5 Min Cooldown) Sell Price: 5 Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 209615,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispels all Charm, Fear and Polymorph effects. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 209615,
+    "item_level": 1,
+    "name": "Insignia of the Alliance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Dispels all Charm, Fear and Polymorph effects. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=209615"
+  },
+  "linked_entities": [
+    {
+      "id": 23273,
+      "name": "Dispels all Charm, Fear and Polymorph effects.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23273"
+    }
+  ],
+  "name": "Insignia of the Alliance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/209615",
+  "url": "https://www.wowhead.com/forever/item=209615"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Windfury Totem 250 Mana Instant Requires Shaman Requires level 52 Tools: Air Totem Summons a Windfury Totem with 5 health at the feet of the caster. The totem enhances the melee attacks of all party or raid members within 30 yards. Each main hand hit has a 20% chance of granting the attacker 1 extra attack with (246 * 1 ) extra melee attack power. Lasts 5 min.",
+  "entity_id": 10614,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:52+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10614,
+      "name": "Windfury Totem",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10614"
+    }
+  ],
+  "name": "Windfury Totem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "9e79f92d58c08da6f03110bd7b7b01517b8642caae246f492dfd1776f56001cc",
+  "spell_id": 10614,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10614",
+  "url": "https://www.wowhead.com/forever/spell=10614"
+}

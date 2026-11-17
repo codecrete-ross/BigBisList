@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Enigma Boots Item Level 78 Binds when picked up Feet Cloth 82 Armor +15 Stamina +15 Intellect +6 Spirit Restores + 4 mana per 5 sec. Durability 50 / 50 Classes: Mage Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 28 . Enigma Vestments (0/5) Enigma Boots Enigma Circlet Enigma Leggings Enigma Robes Enigma Shoulderpads (3) Set : Your Blizzard spell has a 30% chance to be uninterruptible. (5) Set : Grants +5% increased spell hit chance for 20 sec when one of your spells is resisted. Sell Price: 4 84 53",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 21344,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 82,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 21344,
+    "item_level": 78,
+    "name": "Enigma Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26127,
+        "text": "Your Blizzard spell has a 30% chance to be uninterruptible."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26128,
+        "text": "Grants +5% increased spell hit chance for 20 sec when one of your spells is resisted."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 15.0,
+      "mp5": 4.0,
+      "spell_power": 28.0,
+      "spirit": 6.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21344"
+  },
+  "linked_entities": [
+    {
+      "id": 21343,
+      "name": "Enigma Robes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21343"
+    },
+    {
+      "id": 21344,
+      "name": "Enigma Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21344"
+    },
+    {
+      "id": 21345,
+      "name": "Enigma Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21345"
+    },
+    {
+      "id": 21346,
+      "name": "Enigma Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21346"
+    },
+    {
+      "id": 21347,
+      "name": "Enigma Circlet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21347"
+    },
+    {
+      "id": 26127,
+      "name": "Your Blizzard spell has a 30% chance to be uninterruptible.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26127"
+    },
+    {
+      "id": 26128,
+      "name": "Grants +5% increased spell hit chance for 20 sec when one of your spells is resisted.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26128"
+    }
+  ],
+  "name": "Enigma Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21344",
+  "url": "https://www.wowhead.com/forever/item=21344"
+}

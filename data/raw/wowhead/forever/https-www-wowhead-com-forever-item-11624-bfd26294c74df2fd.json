@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Kentic Amice Item Level 52 Binds when picked up Shoulder Cloth 56 Armor +6 Stamina +13 Intellect +6 Spirit Durability 50 / 50 Requires Level 47 Equip: Increases damage and healing done by magical spells and effects by up to 14 . Sell Price: 95 41 Dropped by: High Interrogator Gerstahn Drop Chance: 26.69%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 11624,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 56,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+        "stats": {
+          "spell_power": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+    ],
+    "id": 11624,
+    "item_level": 52,
+    "name": "Kentic Amice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 14.0,
+      "spirit": 6.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11624"
+  },
+  "linked_entities": [],
+  "name": "Kentic Amice",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 26.69,
+      "entity_name": "High Interrogator Gerstahn",
+      "source_url": "https://www.wowhead.com/forever/item=11624",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5afd58a536048c5853c1214aa8d66f54de02e174f128f6da4c703f7c66f20c25",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11624",
+  "url": "https://www.wowhead.com/forever/item=11624"
+}

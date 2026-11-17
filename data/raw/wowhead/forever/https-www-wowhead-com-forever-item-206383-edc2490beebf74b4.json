@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lithic Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 Engrave your pants with the Earth Shield rune: Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30% and causing attacks to heal the shielded target for [28 * (29.888200 + 0.690312 * 60 + 0.136267 * 60 * 60) / 100]. This effect can only occur once every few seconds. 9 charges. Lasts 10 min. Earth Shield can only be placed on one target at a time. \"Learn a new ability after blocking 20 attacks with your shield.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206383,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206383,
+    "item_level": 5,
+    "name": "Lithic Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206383"
+  },
+  "linked_entities": [
+    {
+      "id": 408514,
+      "name": "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30% and causing attacks to heal the shielded target for [28 * (29.888200 + 0.690312 * 60 + 0.136267 * 60 * 60) / 100]. This effect can only occur once every few seconds. 9 charges. Lasts 10 min. Earth Shield can only be placed on one target at a time.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408514"
+    },
+    {
+      "id": 410101,
+      "name": "Engrave your pants with the Earth Shield rune: Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30% and causing attacks to heal the shielded target for [28 * (29.888200 + 0.690312 * 60 + 0.136267 * 60 * 60) / 100]. This effect can only occur once every few seconds. 9 charges. Lasts 10 min. Earth Shield can only be placed on one target at a time.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410101"
+    }
+  ],
+  "name": "Lithic Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "ec893cbfea9d070b00205b11a30234c9c95dd6f10bf804a6642953856d2a9a87",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206383",
+  "url": "https://www.wowhead.com/forever/item=206383"
+}

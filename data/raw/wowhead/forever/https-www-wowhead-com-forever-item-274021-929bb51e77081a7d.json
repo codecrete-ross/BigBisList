@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Barrens Headband Item Level 1 Binds when picked up Head Requires Ratchet - Revered Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274021,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274021,
+    "item_level": 1,
+    "name": "Barrens Headband",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274021"
+  },
+  "linked_entities": [
+    {
+      "id": 470,
+      "name": "Ratchet",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=470"
+    }
+  ],
+  "name": "Barrens Headband",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Barrens Headband Item Level 1 Binds when picked up Head Requires Ratchet - Revered Sell Price: 1",
+      "reputation": "Ratchet",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=274021",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b69fd2849283b9cf39a2316a3af6d6f4281e6354cb1a3b1352d90b82e3342da3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274021",
+  "url": "https://www.wowhead.com/forever/item=274021"
+}

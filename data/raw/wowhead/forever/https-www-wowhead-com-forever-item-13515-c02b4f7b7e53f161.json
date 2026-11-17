@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ramstein's Lightning Bolts Item Level 60 Binds when picked up Unique-Equipped Trinket Requires Level 55 Use: Harness the power of lightning to strike the target, stunning them for 2 sec. Stuns players in water for 2 times as long. (5 Min Cooldown) Sell Price: 1 98 96 Dropped by: Ramstein the Gorger Drop Chance: 12.28%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13515,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Harness the power of lightning to strike the target, stunning them for 2 sec. Stuns players in water for 2 times as long. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13515,
+    "item_level": 60,
+    "name": "Ramstein's Lightning Bolts",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Harness the power of lightning to strike the target, stunning them for 2 sec. Stuns players in water for 2 times as long. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13515"
+  },
+  "linked_entities": [
+    {
+      "id": 1299443,
+      "name": "Harness the power of lightning to strike the target, stunning them for 2 sec. Stuns players in water for 2 times as long.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1299443"
+    }
+  ],
+  "name": "Ramstein's Lightning Bolts",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.28,
+      "entity_name": "Ramstein the Gorger",
+      "source_url": "https://www.wowhead.com/forever/item=13515",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7ee9174c2ac0f05b7c1c1d455dcbb05ffea5fc7b065930fbf639b7c3ee09270f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13515",
+  "url": "https://www.wowhead.com/forever/item=13515"
+}

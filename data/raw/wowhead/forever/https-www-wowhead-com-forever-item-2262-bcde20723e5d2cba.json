@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Mark of Kern Item Level 36 Binds when equipped Unique-Equipped Finger +4 Stamina Requires Level 31 Equip: + 20 Attack Power. Sell Price: 38 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 2262,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +20 Attack Power."
+    ],
+    "id": 2262,
+    "item_level": 36,
+    "name": "Mark of Kern",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 31,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2262"
+  },
+  "linked_entities": [],
+  "name": "Mark of Kern",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2262",
+  "url": "https://www.wowhead.com/forever/item=2262"
+}

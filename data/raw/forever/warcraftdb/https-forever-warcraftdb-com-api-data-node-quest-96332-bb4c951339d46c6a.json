@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/96332"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:44.002400+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 279829,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/96332",
+      "subject_id": 96332,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 48,
+    "name": "A Little Payback",
+    "quest_id": 96332,
+    "reward_item_roles": {
+      "279824": "choices",
+      "279826": "choices",
+      "279829": "choices"
+    },
+    "side": "Horde",
+    "zone": "Alcaz Prison"
+  },
+  "source_content_digest": "ecfa7bafb90c53c15beee6723b095739fca970a9e556554b5053d635354e8755",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/96332"
+}

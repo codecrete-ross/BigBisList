@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Naga Priestess's Mantle Item Level 40 Binds when picked up Shoulder Cloth 40 Armor +8 Stamina +6 Spirit Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects. Sell Price: 31 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 279889,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 40,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 10,
+          "spell_damage": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 10 and damage done by up to 3 for all magical spells and effects."
+    ],
+    "id": 279889,
+    "item_level": 40,
+    "name": "Naga Priestess's Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 10.0,
+      "spell_damage": 3.0,
+      "spirit": 6.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279889"
+  },
+  "linked_entities": [],
+  "name": "Naga Priestess's Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "64089af2107fd2e7bd2ae63bb1f8d1fe22f50678492ea3ea711b1bb12c5f35e6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279889",
+  "url": "https://www.wowhead.com/forever/item=279889"
+}

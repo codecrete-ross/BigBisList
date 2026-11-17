@@ -627,8 +627,8 @@ BigBiSList = {}
 dofile("UI.lua")
 
 local UI = BigBiSList.UI
-local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
-local expectedValueKeys = { planner = "value", phase = "rank", leveling = "value", enhance = "value", wishlist = "expansion", gear = "currentRank" }
+local modes = { "planner", "phase", "leveling", "enhance", "wishlist" }
+local expectedValueKeys = { planner = "value", phase = "rank", leveling = "value", enhance = "value", wishlist = "expansion" }
 for _, mode in ipairs(modes) do
     for _, compact in ipairs({ false, true }) do
         local definitions = UI:GetViewColumnDefinitions(mode, compact)
@@ -1206,6 +1206,7 @@ local function fakeFrame(height)
     function frame:SetPoint(...) self.pointCount = self.pointCount + 1 end
     function frame:Show() self.shown = true; self.showCount = self.showCount + 1 end
     function frame:Hide() self.shown = false; self.hideCount = self.hideCount + 1 end
+    function frame:IsShown() return self.shown end
     function frame:GetHeight() return self.height end
     function frame:SetWidth(width) self.width = width end
     function frame:GetWidth() return self.width or 1200 end
@@ -1237,6 +1238,9 @@ UI.body = fakeFrame()
 UI.details = fakeFrame()
 UI.detailsHeader = fakeFrame()
 UI.detailsBackButton = fakeFrame()
+UI.detailsBackButton.label = { SetText = function() end }
+UI.gearFrame = fakeFrame()
+UI.slotContextFrame = fakeFrame()
 UI.contentRegion = fakeFrame()
 UI.contentPanel = fakeFrame()
 UI.listToolbar = fakeFrame()
@@ -1244,6 +1248,7 @@ UI.filterDrawer = fakeFrame(140)
 UI.filterDrawerOpen = false
 UI.inspectorToggleButton = { SetSelected = function() end }
 UI.ViewSupportsFilters = function() return true end
+UI.GetSelection = function() return { tab = "Wishlist" } end
 UI.IsInspectorVisible = function() return inspectorVisible end
 UI.RefreshFilterDrawer = function() end
 UI.GetActiveFilterChips = function() return {} end
@@ -1325,6 +1330,7 @@ local function frame()
     function value:SetPoint(...) table.insert(self.points, { ... }) end
     function value:Show() self.shown = true end
     function value:Hide() self.shown = false end
+    function value:IsShown() return self.shown end
     function value:SetShown(shown) self.shown = shown end
     function value:SetWidth(width) self.width = width end
     function value:GetWidth() return self.width or 1200 end
@@ -1338,14 +1344,19 @@ UI.body = frame()
 UI.details = frame()
 UI.detailsHeader = frame()
 UI.detailsBackButton = frame()
+UI.detailsBackButton.label = { SetText = function() end }
+UI.gearFrame = frame()
+UI.slotContextFrame = frame()
 UI.contentRegion = frame()
 UI.contentPanel = frame()
+UI.contentScroll = frame()
 UI.listToolbar = frame()
 UI.filterDrawer = frame()
 UI.fixedActiveFilterBar = frame()
 UI.inspectorToggleButton = { SetSelected = function() end }
 UI.filterDrawerOpen = false
 UI.ViewSupportsFilters = function() return true end
+UI.GetSelection = function() return { tab = "Wishlist" } end
 UI.IsInspectorVisible = function() return false end
 UI.RefreshFixedActiveFilterBar = function() return 28 end
 UI.RefreshFilterDrawer = function() end

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Shifting Tides Item Level 16 Binds when picked up Relic Idol Classes: Druid Equip: Reduces the mana cost of shapeshifting spells by 40. Sell Price: 2 34",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 263411,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the mana cost of shapeshifting spells by 40.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the mana cost of shapeshifting spells by 40."
+    ],
+    "id": 263411,
+    "item_level": 16,
+    "name": "Idol of Shifting Tides",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=263411"
+  },
+  "linked_entities": [
+    {
+      "id": 1270470,
+      "name": "Reduces the mana cost of shapeshifting spells by 40.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1270470"
+    }
+  ],
+  "name": "Idol of Shifting Tides",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/263411",
+  "url": "https://www.wowhead.com/forever/item=263411"
+}

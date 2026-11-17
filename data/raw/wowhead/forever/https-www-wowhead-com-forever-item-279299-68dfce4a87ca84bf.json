@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Idol of Swiftness Item Level 1 Binds when picked up Requires Enchanting (300) Use: Teaches you how to craft Idol of Swiftness. Sell Price: 12 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Idol",
+      "item_id": 279250,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 279250,
+        "name": "Idol of Swiftness",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "epic",
+        "restrictions": {
+          "classes": [
+            "Druid"
+          ]
+        },
+        "slot": "Idol",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=279250"
+      },
+      "name": "Idol of Swiftness",
+      "normalized_requirements": [],
+      "quality": "epic",
+      "url": "https://www.wowhead.com/forever/item=279250"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279299,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Idol of Swiftness.",
+        "type": "use"
+      }
+    ],
+    "id": 279299,
+    "item_level": 1,
+    "name": "Formula: Idol of Swiftness",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Idol of Swiftness."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279299"
+  },
+  "linked_entities": [
+    {
+      "id": 16203,
+      "name": "Greater Eternal Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16203"
+    },
+    {
+      "id": 16204,
+      "name": "Illusion Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16204"
+    },
+    {
+      "id": 20725,
+      "name": "Nexus Crystal",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20725"
+    },
+    {
+      "id": 274030,
+      "name": "Malleable Essence of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=274030"
+    },
+    {
+      "id": 279250,
+      "name": "Idol of Swiftness",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279250"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1306488,
+      "name": "Reduces the cooldown of your Swiftmend spell by 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306488"
+    },
+    {
+      "id": 1306524,
+      "name": "Teaches you how to craft Idol of Swiftness.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306524"
+    }
+  ],
+  "name": "Formula: Idol of Swiftness",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Idol of Swiftness Item Level 1 Binds when picked up Requires Enchanting (300) Use: Teaches you how to craft Idol of Swiftness. Sell Price: 12 50",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=279299",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1306524
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279299",
+  "url": "https://www.wowhead.com/forever/item=279299"
+}

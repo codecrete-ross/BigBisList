@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Maelstrom's Tendril Item Level 68 Binds when picked up Unique Neck +15 Agility +9 Stamina +6 Intellect Classes: Hunter",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19620,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19620,
+    "item_level": 68,
+    "name": "Maelstrom's Tendril",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "intellect": 6.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19620"
+  },
+  "linked_entities": [],
+  "name": "Maelstrom's Tendril",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19620",
+  "url": "https://www.wowhead.com/forever/item=19620"
+}

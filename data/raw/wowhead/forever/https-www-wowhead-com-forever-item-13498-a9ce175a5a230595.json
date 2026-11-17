@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handcrafted Mastersmith Leggings Item Level 60 Binds when picked up Legs Plate 548 Armor +25 Strength +12 Stamina Requires Level 55 Equip: Reduces chance to be Dodged or Parried by 1.0%. Sell Price: 3 48 19 Dropped by: Goraluk Anvilcrack Drop Chance: 52.37%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:49.7220416Z",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 13498,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 548,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+    ],
+    "id": 13498,
+    "item_level": 60,
+    "name": "Handcrafted Mastersmith Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "stamina": 12.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13498"
+  },
+  "linked_entities": [],
+  "name": "Handcrafted Mastersmith Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 52.37,
+      "entity_name": "Goraluk Anvilcrack",
+      "source_url": "https://www.wowhead.com/forever/item=13498",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1ef03cbfa883de81da05aa8e71a4c1a5bd8eb3f1ae58594689e4ad74caf68203",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13498",
+  "url": "https://www.wowhead.com/forever/item=13498"
+}

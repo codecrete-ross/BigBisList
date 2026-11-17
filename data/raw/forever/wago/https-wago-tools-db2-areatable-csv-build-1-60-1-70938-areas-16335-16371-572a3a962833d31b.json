@@ -1,0 +1,123 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Icy Veins beta New Avalon field report",
+      "source": "https://www.icy-veins.com/wow-forever/news/wow-forever-is-hiding-instance-portals-nobody-can-enter-yet/"
+    },
+    {
+      "credit": "Forever.be secondary beta reporting",
+      "source": "https://wowforever.be/news/hidden-instance-portals-hint-at-future-content/"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_area_metadata_with_beta_access_observation",
+  "fetched_at": "2026-11-14T00:17:44.382263+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 152398,
+      "collected_at": "2026-11-14T00:17:44.382263+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-forever-area",
+      "source_content_digest": "9aac5960ef4b8f3c01d9f46f399628ce7bb633ff865709d59fb59d9ce4cb43df",
+      "source_url": "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 200469,
+      "collected_at": "2026-11-14T00:27:37.881011+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "icy-no-mans-land",
+      "source_content_digest": "bf01f7a14d111e00e47ec12336473613192351823b370c32525a4e19af754955",
+      "source_url": "https://www.icy-veins.com/wow-forever/news/wow-forever-is-hiding-instance-portals-nobody-can-enter-yet/"
+    },
+    {
+      "bytes": 60857,
+      "collected_at": "2026-11-14T00:16:28.920372+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-be-new-avalon",
+      "source_content_digest": "81afef340dbdb18c541b17f23fff47f255020f4d3bb3fc971dc1c47462ac34f0",
+      "source_url": "https://wowforever.be/news/hidden-instance-portals-hint-at-future-content/"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "current_area_rows": [
+      {
+        "AmbienceID": "2973",
+        "Ambient_multiplier": "0",
+        "AreaBit": "12981",
+        "AreaName_lang": "New Avalon",
+        "ContentTuningID": "0",
+        "ContinentID": "0",
+        "ExplorationLevel": "55",
+        "FactionGroupMask": "0",
+        "Flags_0": "1074003968",
+        "Flags_1": "0",
+        "ID": "16335",
+        "IntroSound": "0",
+        "LiquidTypeID_0": "0",
+        "LiquidTypeID_1": "0",
+        "LiquidTypeID_2": "0",
+        "LiquidTypeID_3": "0",
+        "MountFlags": "0",
+        "ParentAreaID": "139",
+        "PvpCombatWorldStateID": "-1",
+        "SoundProviderPref": "0",
+        "SoundProviderPrefUnderwater": "0",
+        "UwAmbience": "2172",
+        "UwIntroSound": "0",
+        "UwZoneMusic": "0",
+        "WildBattlePetLevelMax": "0",
+        "WildBattlePetLevelMin": "0",
+        "WindSettingsID": "0",
+        "ZoneMusic": "3161",
+        "ZoneName": "NewAvalon"
+      },
+      {
+        "AmbienceID": "2973",
+        "Ambient_multiplier": "0",
+        "AreaBit": "0",
+        "AreaName_lang": "New Avalon",
+        "ContentTuningID": "0",
+        "ContinentID": "2856",
+        "ExplorationLevel": "0",
+        "FactionGroupMask": "0",
+        "Flags_0": "1073741824",
+        "Flags_1": "128",
+        "ID": "16371",
+        "IntroSound": "0",
+        "LiquidTypeID_0": "0",
+        "LiquidTypeID_1": "0",
+        "LiquidTypeID_2": "0",
+        "LiquidTypeID_3": "0",
+        "MountFlags": "15",
+        "ParentAreaID": "16236",
+        "PvpCombatWorldStateID": "-1",
+        "SoundProviderPref": "0",
+        "SoundProviderPrefUnderwater": "0",
+        "UwAmbience": "2172",
+        "UwIntroSound": "0",
+        "UwZoneMusic": "0",
+        "WildBattlePetLevelMax": "0",
+        "WildBattlePetLevelMin": "0",
+        "WindSettingsID": "0",
+        "ZoneMusic": "3161",
+        "ZoneName": "ScarletEnclaveNewAvalon"
+      }
+    ],
+    "finding": "The current outdoor and raid areas are separate. The beta observation describes a teleport from outdoor New Avalon. The current client area rows do not establish whether that server-side gate remains active.",
+    "historical_observation_at": "2026-10-23T20:17:46+00:00",
+    "outdoor_area_id": 16335,
+    "raid_area_id": 16371
+  },
+  "source_content_digest": "9aac5960ef4b8f3c01d9f46f399628ce7bb633ff865709d59fb59d9ce4cb43df",
+  "url": "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonblood Greatsword Item Level 62 Binds when picked up Two-Hand Sword 148 - 223 Damage Speed 3.50 (53.00 damage per second) +14 Strength +26 Stamina Requires Level 57 Equip: + 42 Attack Power against Dragonkin. \"Bathed in the blood of the great drake Hematos.\" Sell Price: 28 54",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:35.0687008Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 282085,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 53.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +42 Attack Power against Dragonkin.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +42 Attack Power against Dragonkin."
+    ],
+    "id": 282085,
+    "item_level": 62,
+    "name": "Dragonblood Greatsword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 26.0,
+      "strength": 14.0
+    },
+    "weapon_max_damage": 223,
+    "weapon_min_damage": 148,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=282085"
+  },
+  "linked_entities": [],
+  "name": "Dragonblood Greatsword",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f5fa90901d13e2fe96b59bfc7b98f0c41712eff641ec575e40c4e68325160bd3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/282085?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=282085"
+}

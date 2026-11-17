@@ -1,0 +1,123 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Earthen Silk Slippers Item Level 36 Requires Tailoring (145) Use: Teaches you how to craft Earthen Silk Slippers. Sell Price: 2 95",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Feet",
+      "item_id": 254013,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 254013,
+        "name": "Earthen Silk Slippers",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "uncommon",
+        "slot": "Feet",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=254013"
+      },
+      "name": "Earthen Silk Slippers",
+      "normalized_requirements": [],
+      "quality": "uncommon",
+      "url": "https://www.wowhead.com/forever/item=254013"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 254014,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Earthen Silk Slippers.",
+        "type": "use"
+      }
+    ],
+    "id": 254014,
+    "item_level": 36,
+    "name": "Pattern: Earthen Silk Slippers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Earthen Silk Slippers."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=254014"
+  },
+  "linked_entities": [
+    {
+      "id": 2321,
+      "name": "Fine Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2321"
+    },
+    {
+      "id": 4234,
+      "name": "Heavy Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4234"
+    },
+    {
+      "id": 4305,
+      "name": "Bolt of Silk Cloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4305"
+    },
+    {
+      "id": 7067,
+      "name": "Elemental Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7067"
+    },
+    {
+      "id": 254013,
+      "name": "Earthen Silk Slippers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254013"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 1257432,
+      "name": "Teaches you how to craft Earthen Silk Slippers.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257432"
+    }
+  ],
+  "name": "Pattern: Earthen Silk Slippers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Earthen Silk Slippers Item Level 36 Requires Tailoring (145) Use: Teaches you how to craft Earthen Silk Slippers. Sell Price: 2 95",
+      "scope": "equip_or_use",
+      "skill": 145,
+      "source_url": "https://www.wowhead.com/forever/item=254014",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1257432
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/254014",
+  "url": "https://www.wowhead.com/forever/item=254014"
+}

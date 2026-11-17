@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Raptorclaw Shoulders Item Level 29 Binds when picked up Shoulder Leather 69 Armor +3 Intellect Durability 50 / 50 Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sell Price: 14 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 270039,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 69,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 270039,
+    "item_level": 29,
+    "name": "Raptorclaw Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 3.0,
+      "spell_power": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270039"
+  },
+  "linked_entities": [],
+  "name": "Raptorclaw Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270039",
+  "url": "https://www.wowhead.com/forever/item=270039"
+}

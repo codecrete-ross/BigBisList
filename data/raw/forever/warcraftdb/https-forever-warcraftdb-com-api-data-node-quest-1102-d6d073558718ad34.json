@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1102"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:09:23.970994+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 4197,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1102",
+      "subject_id": 1102,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 29,
+    "name": "A Vengeful Fate",
+    "quest_id": 1102,
+    "reward_item_ids": [
+      4197,
+      6725,
+      6742,
+      274084
+    ],
+    "zone": "Razorfen Kraul"
+  },
+  "source_content_digest": "0ad3311fd6376d995dde9a4d7e7c1217b03dfc3066e1bdf2d2ac70e3121f9da2",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1102"
+}

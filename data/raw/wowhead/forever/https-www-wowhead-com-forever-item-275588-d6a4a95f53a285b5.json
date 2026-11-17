@@ -1,0 +1,140 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Bileblister Boots Item Level 1 Binds when picked up Requires Leatherworking (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Bileblister Boots. Sell Price: 1 87 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Feet",
+      "item_id": 275612,
+      "item_stats": {
+        "armor_type": "Leather",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 275612,
+        "name": "Bileblister Boots",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Feet",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=275612"
+      },
+      "name": "Bileblister Boots",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=275612"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 275588,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Bileblister Boots.",
+        "type": "use"
+      }
+    ],
+    "id": 275588,
+    "item_level": 1,
+    "name": "Pattern: Bileblister Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Bileblister Boots."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=275588"
+  },
+  "linked_entities": [
+    {
+      "id": 609,
+      "name": "Cenarion Circle",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=609"
+    },
+    {
+      "id": 7082,
+      "name": "Essence of Air",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7082"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 275612,
+      "name": "Bileblister Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=275612"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1297128,
+      "name": "Teaches you how to craft Bileblister Boots.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297128"
+    }
+  ],
+  "name": "Pattern: Bileblister Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Bileblister Boots Item Level 1 Binds when picked up Requires Leatherworking (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Bileblister Boots. Sell Price: 1 87 50",
+      "reputation": "Cenarion Circle",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=275588",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Bileblister Boots Item Level 1 Binds when picked up Requires Leatherworking (295) Requires Cenarion Circle - Honored Use: Teaches you how to craft Bileblister Boots. Sell Price: 1 87 50",
+      "scope": "equip_or_use",
+      "skill": 295,
+      "source_url": "https://www.wowhead.com/forever/item=275588",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1297128
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275588",
+  "url": "https://www.wowhead.com/forever/item=275588"
+}

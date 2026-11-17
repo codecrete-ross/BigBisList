@@ -1,0 +1,858 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T17:36:00.9057280Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 291447,
+      "collected_at": "2026-11-13T17:36:00.9057280Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spellreagents",
+      "source_content_digest": "be6e987755f7097348eb072073ae3175b3d56016f43f90615a081d33d6affff6",
+      "source_url": "https://wago.tools/db2/SpellReagents/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T17:36:01.4139314Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T17:36:01.3083983Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1095,
+      "collected_at": "2026-11-13T17:36:01.1478137Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spelllearnspell",
+      "source_content_digest": "b6d101c650376c26eb39ced0e62368cf3c9bb602934b6235b58961e1e28d40d7",
+      "source_url": "https://wago.tools/db2/SpellLearnSpell/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 25486,
+      "collected_at": "2026-11-13T17:42:02.2403733Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spelltotems",
+      "source_content_digest": "43be02451227ce8a588e95ce9f8804b818a4e02cb7c5b9db0126266e65227471",
+      "source_url": "https://wago.tools/db2/SpellTotems/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 109258,
+      "collected_at": "2026-11-13T15:23:14.4607876Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-2-6-temple-of-ahn-qiraj",
+      "source_content_digest": "c59858fd2a19b4312f985541d7579a72c54852a40e3bd8070e098d33575592d6",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/fc9bcb864cddbf17215d660df1f6fd41373b2feb"
+    },
+    {
+      "bytes": 163035,
+      "collected_at": "2026-11-13T17:42:00.7637486Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-sod-reagents",
+      "source_content_digest": "8c151f1a2483e7f364d1fc0225a2e82a662aa7a98c1ca27e151db779d5f5f890",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24148555/hotfixes-december-9-2024"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T17:42:01.8332031Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-forever-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 66458,
+      "collected_at": "2026-11-13T17:43:45.3645044Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-aq",
+      "source_content_digest": "f3c39e31b0ec4dc29a7b525cdc8d1b8fef6aa511b35d27b1ec70c00aef2a9e06",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/6eddaa818ac9ea4cf182ae72e40c10d6e4c37fea"
+    },
+    {
+      "bytes": 2831,
+      "collected_at": "2026-11-13T17:43:43.9111472Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-aq-crafting",
+      "source_content_digest": "8454b062c1c3f7f407a6a95c6c4eec7399f434815e0aadd5464e1741c4197afd",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/7e39a645c3dfe45df97526399956d14cd6dd4b8a"
+    },
+    {
+      "bytes": 51544,
+      "collected_at": "2026-11-13T17:43:43.4876352Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-crafting-launch",
+      "source_content_digest": "706f75450c1cd358a915631ea98b474c5177871dc87d2f2d1887c7383e48381b",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/00aea649409eaf1dcd400e48b4b9ee8d12442a0d"
+    },
+    {
+      "bytes": 17982,
+      "collected_at": "2026-11-13T17:43:44.3554644Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-enchanting",
+      "source_content_digest": "5ca3ece9122fc9ce9a89d5740640912d46fcc5e2c2aaacd9ec28a0fe8548d127",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/aea14e42166d4254f2f7638bb6d1ba89c1237d43"
+    },
+    {
+      "bytes": 4205,
+      "collected_at": "2026-11-13T16:15:19.1222679Z",
+      "http": "200",
+      "name": "att-forever-black-market-auction-house",
+      "source_content_digest": "a84243d2ba99ef50de6c531b6a1b849fd475b2fff12aa64ad59830018afb8527",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/6565ec304ae6992fe5bb9c1a02d9f39e6b47cd6a"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 347875,
+      "collected_at": "2026-11-13T03:08:20.5292790Z",
+      "http": 200,
+      "name": "eg-70888-trainers",
+      "source_content_digest": "dc6b89950dce88e3e1674829e0f410251b9ee143d3b155c95aa6eea3fdc23a12",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/trainers.json"
+    },
+    {
+      "bytes": 855550,
+      "collected_at": "2026-11-13T03:08:21.0500731Z",
+      "http": 200,
+      "name": "eg-70862-trainers",
+      "source_content_digest": "1efa38813578ef20f733af4567a6dd3c7e1428245eb9932d360a60ea5200734a",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70862/trainers.json"
+    },
+    {
+      "bytes": 2991,
+      "collected_at": "2026-11-13T17:51:07.6129896Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-234238",
+      "source_content_digest": "e40a42020e51daba0a186186021f45b8ad397204c9b20b0e6038b6938b626ca5",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/234238"
+    },
+    {
+      "bytes": 2731,
+      "collected_at": "2026-11-13T17:51:07.8899942Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-234241",
+      "source_content_digest": "8493a02ef106b648a7ed15bd739308e2af2dae0a803aa23ac974c14ff49d660e",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/234241"
+    },
+    {
+      "bytes": 2384,
+      "collected_at": "2026-11-13T17:51:08.0999061Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-234275",
+      "source_content_digest": "6ca8768175bcbf17ad953cecbd01cadf4e647227a95e03ddad9bcd79bcaa5d5e",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/234275"
+    },
+    {
+      "bytes": 2341,
+      "collected_at": "2026-11-13T17:51:08.3807022Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-234276",
+      "source_content_digest": "45c0da8e068b60db2beddd4534a3a5e338ec9b18723dc2ce3971e273384f4719",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/234276"
+    },
+    {
+      "bytes": 2444,
+      "collected_at": "2026-11-13T17:51:08.6511184Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-234277",
+      "source_content_digest": "37f37bd0976ad8376ec9fb50eb42819a7f0519f33aec27aeba3f0eb044a173b6",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/234277"
+    },
+    {
+      "bytes": 2433,
+      "collected_at": "2026-11-13T17:51:09.0049403Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235133",
+      "source_content_digest": "621605dc9684edf2f42ec7fbb6a65a3fb51e3f141c57d56cf651fe3ff1b57f47",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235133"
+    },
+    {
+      "bytes": 2381,
+      "collected_at": "2026-11-13T17:51:09.2522581Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235134",
+      "source_content_digest": "ba16bdab6000b89dd7d47b979286d4884eb1b3b076ea4e520e50bc9b853cd123",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235134"
+    },
+    {
+      "bytes": 2445,
+      "collected_at": "2026-11-13T17:51:09.4878322Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235135",
+      "source_content_digest": "590dde2f7bb9a7d6b85f5af75cc7b736b32699246a6cc85ee93b08de5064ee3b",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235135"
+    },
+    {
+      "bytes": 2438,
+      "collected_at": "2026-11-13T17:51:09.7626290Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235136",
+      "source_content_digest": "b38de64e5081427d44e74e881d2e46e8bd103bf1f5c4b7ff5b406939ab7bc63e",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235136"
+    },
+    {
+      "bytes": 2418,
+      "collected_at": "2026-11-13T17:51:10.0334434Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235137",
+      "source_content_digest": "1f72c22991e7d7a94a67b2eea003120253031c87c1c140aae9333daa2df8fedc",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235137"
+    },
+    {
+      "bytes": 2382,
+      "collected_at": "2026-11-13T17:51:10.3209242Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235138",
+      "source_content_digest": "2f95930f1c7d22ab5ae91c1efecc8ba7edc268195110910592c7ecc1237b964d",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235138"
+    },
+    {
+      "bytes": 2437,
+      "collected_at": "2026-11-13T17:51:10.5817571Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235139",
+      "source_content_digest": "811c2af8415dfcf2ef7fa4c3f870676ecf8d9cf41c96368e82cbb34b3d0f8e88",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235139"
+    },
+    {
+      "bytes": 2455,
+      "collected_at": "2026-11-13T17:51:10.8680317Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235140",
+      "source_content_digest": "c7a38e99234fb063c88b0b6bd13168772e1af8a16f2b91c7bc7ba2c8abda284d",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235140"
+    },
+    {
+      "bytes": 2415,
+      "collected_at": "2026-11-13T17:51:11.1829119Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "classic-plan-235141",
+      "source_content_digest": "60ee81ede187b2a0e9e01ee0f41b99f0e774fcc92c9f80a07d0424489b1fc590",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/235141"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "additional_recipe_or_output_acquisitions_in_reviewed_sources": [],
+    "historical_gilded_scarab_recipe_lines": [
+      {
+        "creates_spell_id": 1213523,
+        "exact_current_recipe_spell_links": [
+          234238
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1603,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/234238",
+        "item_id": 233804,
+        "name": "Razorbramble Shoulderpads",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 234238,
+        "required_reagents": [
+          [
+            234007,
+            15
+          ],
+          [
+            12810,
+            8
+          ],
+          [
+            234009,
+            8
+          ],
+          [
+            15407,
+            8
+          ]
+        ],
+        "required_totem_category": 0
+      },
+      {
+        "creates_spell_id": 1213530,
+        "exact_current_recipe_spell_links": [
+          234241
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1607,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/234241",
+        "item_id": 233833,
+        "name": "Vampiric Shawl",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 234241,
+        "required_reagents": [
+          [
+            234009,
+            15
+          ],
+          [
+            14342,
+            8
+          ],
+          [
+            12810,
+            8
+          ],
+          [
+            14341,
+            1
+          ]
+        ],
+        "required_totem_category": 0
+      },
+      {
+        "creates_spell_id": 1213628,
+        "exact_current_recipe_spell_links": [
+          234275
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1572,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/234275",
+        "item_id": 234000,
+        "name": "Enchanted Prayer Tome",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 234275,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234008,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1213633,
+        "exact_current_recipe_spell_links": [
+          234276
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1573,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/234276",
+        "item_id": 234001,
+        "name": "Enchanted Totem",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 234276,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234012,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            3
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1213635,
+        "exact_current_recipe_spell_links": [
+          234277
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1574,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/234277",
+        "item_id": 234002,
+        "name": "Enchanted Mushroom",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 234277,
+        "required_reagents": [
+          [
+            20725,
+            2
+          ],
+          [
+            234012,
+            20
+          ],
+          [
+            12810,
+            3
+          ],
+          [
+            234011,
+            4
+          ],
+          [
+            234010,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216024,
+        "exact_current_recipe_spell_links": [
+          235141
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1577,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235141",
+        "item_id": 234468,
+        "name": "Idol of Ursin Power",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235141,
+        "required_reagents": [
+          [
+            20725,
+            2
+          ],
+          [
+            234012,
+            20
+          ],
+          [
+            12810,
+            3
+          ],
+          [
+            234011,
+            4
+          ],
+          [
+            234010,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216022,
+        "exact_current_recipe_spell_links": [
+          235140
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1576,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235140",
+        "item_id": 234469,
+        "name": "Idol of Feline Ferocity",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235140,
+        "required_reagents": [
+          [
+            20725,
+            2
+          ],
+          [
+            234012,
+            20
+          ],
+          [
+            12810,
+            3
+          ],
+          [
+            234011,
+            4
+          ],
+          [
+            234010,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216020,
+        "exact_current_recipe_spell_links": [
+          235139
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1575,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235139",
+        "item_id": 234474,
+        "name": "Idol of Sidereal Wrath",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235139,
+        "required_reagents": [
+          [
+            20725,
+            2
+          ],
+          [
+            234012,
+            20
+          ],
+          [
+            12810,
+            3
+          ],
+          [
+            234011,
+            4
+          ],
+          [
+            234010,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216007,
+        "exact_current_recipe_spell_links": [
+          235134
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1579,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235134",
+        "item_id": 234475,
+        "name": "Libram of the Exorcist",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235134,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234008,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216010,
+        "exact_current_recipe_spell_links": [
+          235135
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1580,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235135",
+        "item_id": 234476,
+        "name": "Libram of Sanctity",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235135,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234008,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216005,
+        "exact_current_recipe_spell_links": [
+          235133
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1578,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235133",
+        "item_id": 234477,
+        "name": "Libram of Righteousness",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235133,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234008,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            4
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216016,
+        "exact_current_recipe_spell_links": [
+          235137
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1587,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235137",
+        "item_id": 234478,
+        "name": "Totem of Thunderous Strikes",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235137,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234012,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            3
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216018,
+        "exact_current_recipe_spell_links": [
+          235138
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1588,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235138",
+        "item_id": 234479,
+        "name": "Totem of Flowing Magma",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235138,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234012,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            3
+          ]
+        ],
+        "required_totem_category": 377
+      },
+      {
+        "creates_spell_id": 1216014,
+        "exact_current_recipe_spell_links": [
+          235136
+        ],
+        "historical_output_binding": "equip",
+        "historical_recipe_source_line": 1586,
+        "historical_recipe_source_npc_id": 234193,
+        "historical_recipe_tooltip_url": "https://nether.wowhead.com/classic/tooltip/item/235136",
+        "item_id": 234480,
+        "name": "Totem of Pyroclastic Thunder",
+        "recipe_item_historical_binding": "pickup",
+        "recipe_item_id": 235136,
+        "required_reagents": [
+          [
+            20725,
+            3
+          ],
+          [
+            234012,
+            10
+          ],
+          [
+            234003,
+            2
+          ],
+          [
+            12810,
+            3
+          ]
+        ],
+        "required_totem_category": 377
+      }
+    ],
+    "map_id": 531,
+    "raid_gate_evidence": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/531"
+  },
+  "source_content_digest": "be6e987755f7097348eb072073ae3175b3d56016f43f90615a081d33d6affff6",
+  "unavailable_item_ids": [
+    233804,
+    233833,
+    234000,
+    234001,
+    234002,
+    234468,
+    234469,
+    234474,
+    234475,
+    234476,
+    234477,
+    234478,
+    234479,
+    234480
+  ],
+  "unavailable_scope": {
+    "level_max": 19,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/SpellReagents/csv?build=1.60.1.70938#/ahn-qiraj-gilded-scarab-recipes"
+}

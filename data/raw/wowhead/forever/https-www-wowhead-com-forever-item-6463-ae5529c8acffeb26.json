@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deep Fathom Ring Item Level 24 Binds when picked up Unique-Equipped Finger +3 Stamina + 2 Spell Penetration Requires Level 19 Sell Price: 11 53 Dropped by: Mutanus the Devourer Drop Chance: 30.21%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 6463,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6463,
+    "item_level": 24,
+    "name": "Deep Fathom Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 19,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6463"
+  },
+  "linked_entities": [],
+  "name": "Deep Fathom Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.21,
+      "entity_name": "Mutanus the Devourer",
+      "source_url": "https://www.wowhead.com/forever/item=6463",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6463",
+  "url": "https://www.wowhead.com/forever/item=6463"
+}

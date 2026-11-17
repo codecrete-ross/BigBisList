@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sentinel's Gloves Item Level 55 Binds when picked up Hands Plate 361 Armor +9 Strength +16 Stamina Requires Level 50 Equip: Increased Defense + 11. Sell Price: 1 32 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 250552,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 361,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +11.",
+        "stats": {
+          "defense": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +11."
+    ],
+    "id": 250552,
+    "item_level": 55,
+    "name": "Sentinel's Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "defense": 11.0,
+      "stamina": 16.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250552"
+  },
+  "linked_entities": [],
+  "name": "Sentinel's Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250552",
+  "url": "https://www.wowhead.com/forever/item=250552"
+}

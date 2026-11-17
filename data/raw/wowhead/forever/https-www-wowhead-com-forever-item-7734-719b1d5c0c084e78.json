@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Six Demon Bag Item Level 51 Binds when equipped Unique-Equipped Trinket Requires Level 46 Use: Blasts enemies in front of you with the power of wind, fire, all that kind of thing! (30 Min Cooldown) Sell Price: 1 20 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 7734,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Blasts enemies in front of you with the power of wind, fire, all that kind of thing! (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 7734,
+    "item_level": 51,
+    "name": "Six Demon Bag",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Blasts enemies in front of you with the power of wind, fire, all that kind of thing! (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=7734"
+  },
+  "linked_entities": [
+    {
+      "id": 14537,
+      "name": "Blasts enemies in front of you with the power of wind, fire, all that kind of thing!",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14537"
+    }
+  ],
+  "name": "Six Demon Bag",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4016a7c45f9a2954d2f49d8f530ae0508728b7b33c68b14a3cc18dd5477e4c5e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7734",
+  "url": "https://www.wowhead.com/forever/item=7734"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/126"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:59:08.346532+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 1319,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/126",
+      "subject_id": 126,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 15,
+    "name": "Howling in the Hills",
+    "quest_id": 126,
+    "quest_level": 25,
+    "reward_item_ids": [
+      1319
+    ],
+    "zone": "Redridge Mountains"
+  },
+  "source_content_digest": "9425f2350ba4ba465d011836525dd34c56a4e1bc08f4acf9e72f55017a0a9b75",
+  "url": "https://guide.wow4ever.se/en/quests/126"
+}

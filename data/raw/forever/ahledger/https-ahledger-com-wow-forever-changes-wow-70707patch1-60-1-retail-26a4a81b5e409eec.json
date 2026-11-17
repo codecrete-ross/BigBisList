@@ -1,0 +1,57 @@
+{
+  "attribution": [
+    {
+      "credit": "AHledger",
+      "licence": "AHledger data terms",
+      "licenceUrl": "https://ahledger.com/developers",
+      "source": "https://ahledger.com/wow-forever/changes/WOW-70707patch1.60.1_Retail"
+    }
+  ],
+  "client_build": "1.60.1.70707",
+  "confidence": "published_build_comparison",
+  "fetched_at": "2026-11-13T08:05:23.998501+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 24733,
+      "collected_at": "2026-11-13T07:57:57.4038103+00:00",
+      "http": "429",
+      "name": "ahledger-build-70707",
+      "source_content_digest": "6bd16204b18a7f75bc6993b6224aff1fc3c353dfdd77f638896928110a6f45ad",
+      "source_url": "https://ahledger.com/wow-forever/changes/WOW-70707patch1.60.1_Retail"
+    },
+    {
+      "bytes": 24732,
+      "collected_at": "2026-11-13T07:57:57.6558891+00:00",
+      "http": "429",
+      "name": "ahledger-build-70840",
+      "source_content_digest": "69edf67e1161f723b468b3e8b94d783e58ccad159dc09117d97d6b2ff8f441e4",
+      "source_url": "https://ahledger.com/wow-forever/changes/WOW-70840patch1.60.1_Retail"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "ahledger",
+  "reviewed_page_facts": {
+    "build": "1.60.1.70707",
+    "capture_method": "indexed published build comparison",
+    "corroborating_build_comparison": "https://ahledger.com/wow-forever/changes/WOW-70840patch1.60.1_Retail",
+    "items": [
+      {
+        "item_id": 274978,
+        "listing_url": "https://ahledger.com/items/274978-leafres-ring-of-great-resistance"
+      },
+      {
+        "item_id": 276765,
+        "listing_url": "https://ahledger.com/items/276765-leafres-ring-of-precise-spell-power"
+      },
+      {
+        "item_id": 285326,
+        "listing_url": "https://ahledger.com/items/285326-leafres-ring-of-armor-piercing"
+      }
+    ],
+    "observation_limit": "Removal concerns the item-table comparison. The separate exact Wowhead pages report player availability.",
+    "section": "Removed"
+  },
+  "source_content_digest": "407d83959489a7a4a7b70d9081d9e652d35159887db0bc54516e7bd328e66fd7",
+  "url": "https://ahledger.com/wow-forever/changes/WOW-70707patch1.60.1_Retail"
+}

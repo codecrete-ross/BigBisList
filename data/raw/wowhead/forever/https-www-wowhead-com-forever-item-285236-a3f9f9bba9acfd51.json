@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "collected_from": "https://nether.wowhead.com/forever/tooltip/item/285236",
+  "description": "Worn Ranger's Dagger Item Level 8 Binds when picked up One-Hand Dagger 5 - 10 Damage Speed 1.70 (4.41 damage per second) Durability 25 / 25 Requires Level 3 Sell Price: 24 Dropped by: Slydris Drop Chance: 20.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T10:32:23.6560642Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 285236,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 4.41,
+    "id": 285236,
+    "item_level": 8,
+    "name": "Worn Ranger's Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "slot": "One Hand",
+    "source_summary": "",
+    "weapon_max_damage": 10,
+    "weapon_min_damage": 5,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=285236"
+  },
+  "linked_entities": [],
+  "name": "Worn Ranger's Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.17,
+      "entity_name": "Slydris",
+      "source_url": "https://www.wowhead.com/forever/item=285236",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "78a32d7606572e95e0e55f99ec094ba91b1bdbbd54262e8c4e7c177b27b894bd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=285236"
+}

@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Doomcaller's Robes Item Level 88 Binds when picked up Chest Cloth 133 Armor +23 Stamina +17 Intellect +7 Spirit + 5 Spell Penetration Durability 100 / 100 Classes: Warlock Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 41 . Doomcaller's Attire (0/5) Doomcaller's Circlet Doomcaller's Footwraps Doomcaller's Mantle Doomcaller's Robes Doomcaller's Trousers (3) Set : 5% increased damage on your Immolate spell. (5) Set : Reduces the mana cost of Shadow Bolt by 15%. Sell Price: 10 14 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21334,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 133,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 41.",
+        "stats": {
+          "spell_power": 41.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 41."
+    ],
+    "id": 21334,
+    "item_level": 88,
+    "name": "Doomcaller's Robes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26116,
+        "text": "5% increased damage on your Immolate spell."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26117,
+        "text": "Reduces the mana cost of Shadow Bolt by 15%."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 17.0,
+      "spell_power": 41.0,
+      "spirit": 7.0,
+      "stamina": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21334"
+  },
+  "linked_entities": [
+    {
+      "id": 21334,
+      "name": "Doomcaller's Robes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21334"
+    },
+    {
+      "id": 21335,
+      "name": "Doomcaller's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21335"
+    },
+    {
+      "id": 21336,
+      "name": "Doomcaller's Trousers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21336"
+    },
+    {
+      "id": 21337,
+      "name": "Doomcaller's Circlet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21337"
+    },
+    {
+      "id": 21338,
+      "name": "Doomcaller's Footwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21338"
+    },
+    {
+      "id": 26116,
+      "name": "5% increased damage on your Immolate spell.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26116"
+    },
+    {
+      "id": 26117,
+      "name": "Reduces the mana cost of Shadow Bolt by 15%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26117"
+    }
+  ],
+  "name": "Doomcaller's Robes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21334",
+  "url": "https://www.wowhead.com/forever/item=21334"
+}

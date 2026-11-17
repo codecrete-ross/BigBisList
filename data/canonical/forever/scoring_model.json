@@ -1,0 +1,504 @@
+{
+  "approvals": {
+    "Paladin/Protection/leveling": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "9783a77ac839774d7bb49702ee3f9e45b27fa8b390581a5e27181e85d9c86a54",
+      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Paladin/Protection/pre_raid": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "d4ba4aea76ce85dc8aad2322394909b01e0b2b49440012aceed065f2e5d9e121",
+      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Paladin/Retribution/leveling": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "e0793fe80a2465c251b45706bd3a4eb95517a1701d69a48a5995ae66f0d6935f",
+      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Paladin/Retribution/pre_raid": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "5f47d8334a1fb770b2ece8f78740bb3a42b074b856767f7a1a2623a632ed9174",
+      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Shaman/Enhancement/leveling": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "5a4d0738ec9df55943edf3a9986d74ccec8402046f357b60c1289d9fad90807d",
+      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Shaman/Enhancement/pre_raid": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "01aaa201d601612790b6154742473f10616508d383ce4e482548bf352bd4b6e5",
+      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Shaman/Restoration/leveling": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "692014d861df41f1ae18209361f3dc50d9f9365e434a122d2385f3bada4490a9",
+      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Shaman/Restoration/pre_raid": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "b36aa5e0a118a4950d68ba4bb0893f9bafde6426936d7dd34630a6feba3af320",
+      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Warrior/Protection/leveling": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "02927f4d7868935ba63aca7096d3443f8653658dc0f3f60bd0a2238a09434e43",
+      "reason": "Rechecked the same Defiance mechanics and eligible pool after separating ranged weapon DPS from melee weapon DPS. Defiance still requires a shield and never scales the DPS of a ranged weapon. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    },
+    "Warrior/Protection/pre_raid": {
+      "client_build": "1.60.1.70959",
+      "evidence_refs": [
+        {
+          "content_digest": "93356d2daa88697094832b2cc01e2669c1311747acf679747f759277aa8c2176",
+          "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+        }
+      ],
+      "input_digest": "4ace4f0e760be0d7c54121bab24a160e14e0fb9661a0813ade5b25cf8815938d",
+      "reason": "Reviewed the shielded level-63 8% melee hit cap and the autoattack-only threat contribution of gear Attack Power using 14 points per raw DPS. Strength supplies 2 Attack Power and 0.05 block value. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
+      "reviewed_at": "2026-11-17",
+      "reviewer": "codex",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"
+    }
+  },
+  "client_build": "1.60.1.70959",
+  "flat_sets": [
+    {
+      "pieces": 3,
+      "set_id": 188,
+      "spell_id": 9346
+    },
+    {
+      "pieces": 3,
+      "set_id": 189,
+      "spell_id": 13198
+    }
+  ],
+  "profiles": {
+    "Paladin/Protection": {
+      "operations": [
+        {
+          "effect": 0,
+          "entry": 130026,
+          "kind": "scale",
+          "stats": [
+            "intellect"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 141292,
+          "kind": "scale",
+          "stats": [
+            "strength"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 130354,
+          "kind": "scale",
+          "stats": [
+            "armor"
+          ]
+        },
+        {
+          "condition": "shield",
+          "effect": 0,
+          "entry": 137872,
+          "kind": "scale",
+          "stats": [
+            "block_value"
+          ]
+        }
+      ],
+      "scenario_overrides": {
+        "pre_raid": {
+          "evidence": [
+            "https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696"
+          ],
+          "weights": {
+            "holy_damage": 1.1,
+            "intellect": 0.55,
+            "mp5": 1.6,
+            "spell_damage": 1.1
+          }
+        }
+      },
+      "unresolved": [
+        "Block-based mana returns and Shieldsworn uptime",
+        "Holy versus physical hit caps and passive critical strike protection",
+        "Encounter damage mix and Holy Strike threat rates",
+        "On-use damage over full leveling pulls"
+      ]
+    },
+    "Paladin/Retribution": {
+      "ability": {
+        "entry": 130425,
+        "spell": 20425
+      },
+      "operations": [
+        {
+          "effect": 0,
+          "entry": 137880,
+          "from_stat": "intellect",
+          "kind": "convert",
+          "stats": [
+            "spell_damage"
+          ]
+        }
+      ],
+      "unresolved": [
+        "Judgement of Command proc rates and weapon interactions",
+        "Hammer of Wrath uptime",
+        "Encounter hit caps"
+      ],
+      "weights": {
+        "intellect": 0.5,
+        "spell_damage": 0.65,
+        "spell_power": 0.65
+      }
+    },
+    "Shaman/Enhancement": {
+      "operations": [
+        {
+          "effect": 0,
+          "entry": 129416,
+          "kind": "scale",
+          "stats": [
+            "intellect"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 129415,
+          "from_stat": "intellect",
+          "kind": "convert",
+          "stats": [
+            "attack_power"
+          ]
+        },
+        {
+          "effect": 1,
+          "entry": 129404,
+          "from_stat": "intellect",
+          "kind": "convert",
+          "stats": [
+            "spell_damage"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 129404,
+          "from_stat": "intellect",
+          "kind": "convert",
+          "stats": [
+            "healing_power"
+          ]
+        }
+      ],
+      "unresolved": [
+        "Windfury, Maelstrom Weapon and Stormstrike uptime",
+        "Encounter hit and expertise caps"
+      ]
+    },
+    "Shaman/Restoration": {
+      "operations": [
+        {
+          "effect": 0,
+          "entry": 129416,
+          "kind": "scale",
+          "stats": [
+            "intellect"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 129385,
+          "kind": "scale",
+          "stats": [
+            "healing_power",
+            "spell_power"
+          ]
+        },
+        {
+          "effect": 0,
+          "entry": 129389,
+          "kind": "efficiency",
+          "stats": [
+            "intellect",
+            "mp5",
+            "spirit"
+          ]
+        }
+      ],
+      "unresolved": [
+        "Water Shield and Mana Tide uptime",
+        "Encounter-specific overhealing and mana recovery",
+        "Time in the five-second rule for Mindfulness"
+      ]
+    },
+    "Warrior/Protection": {
+      "operations": [
+        {
+          "condition": "shield",
+          "effect": 0,
+          "entry": 137848,
+          "kind": "scale",
+          "stats": [
+            "dps",
+            "attack_power"
+          ]
+        }
+      ],
+      "scenario_overrides": {
+        "pre_raid": {
+          "caps": {
+            "hit_percent": 8
+          },
+          "conversions": [
+            {
+              "factor": 2,
+              "from_stat": "strength",
+              "stat": "attack_power"
+            },
+            {
+              "condition": "shield",
+              "factor": 0.05,
+              "from_stat": "strength",
+              "stat": "block_value"
+            }
+          ],
+          "evidence": [
+            "https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-stat-priority"
+          ],
+          "weights": {
+            "attack_power": 0.17857142857142858
+          }
+        }
+      },
+      "unresolved": [
+        "Block rage from Shield Specialization and defense caps",
+        "Direct Attack Power scaling of Sunder Armor, Thunder Clap and Revenge",
+        "Parry and dodge reductions against level-63 bosses"
+      ]
+    }
+  },
+  "racial_spells": [
+    {
+      "race_id": 1,
+      "skill_ability_id": 11731,
+      "spell_id": 20598
+    }
+  ],
+  "scenarios": {
+    "leveling": {
+      "basis": "Reviewed leveling weights for combat and recovery against outdoor enemies at the player's level",
+      "enemy": "same_level",
+      "version": "outdoor-leveling-1"
+    },
+    "pre_raid": {
+      "basis": "Reviewed pre-raid role weights for sustained raid combat",
+      "enemy": "first_tier_raid_boss",
+      "version": "first-tier-pre-raid-1"
+    }
+  },
+  "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
+  "traits": {
+    "129385": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 16178
+    },
+    "129389": {
+      "effects": [
+        0,
+        1,
+        2
+      ],
+      "spell": 16179
+    },
+    "129394": {
+      "effects": [
+        0
+      ],
+      "spell": 1223033
+    },
+    "129404": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 30812
+    },
+    "129415": {
+      "effects": [
+        0
+      ],
+      "spell": 415140
+    },
+    "129416": {
+      "effects": [
+        0
+      ],
+      "spell": 17485
+    },
+    "130018": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 1310904
+    },
+    "130026": {
+      "effects": [
+        0
+      ],
+      "spell": 20257
+    },
+    "130354": {
+      "effects": [
+        0
+      ],
+      "spell": 20143
+    },
+    "130360": {
+      "effects": [
+        0
+      ],
+      "spell": 20096
+    },
+    "130362": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 20189
+    },
+    "130425": {
+      "effects": [],
+      "spell": 20375
+    },
+    "130705": {
+      "effects": [
+        0
+      ],
+      "spell": 12297
+    },
+    "130706": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 12298
+    },
+    "137848": {
+      "effects": [
+        0
+      ],
+      "spell": 12792
+    },
+    "137872": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 20150
+    },
+    "137880": {
+      "effects": [
+        0,
+        1
+      ],
+      "spell": 1311084
+    },
+    "141292": {
+      "effects": [
+        0
+      ],
+      "spell": 20262
+    }
+  },
+  "version": "forever-character-scoring-1"
+}

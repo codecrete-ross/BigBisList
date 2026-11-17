@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Seed Hybridizer Item Level 60 Requires Herbalism (300) Use: Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279947,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby.",
+        "type": "use"
+      }
+    ],
+    "id": 279947,
+    "item_level": 60,
+    "name": "Seed Hybridizer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279947"
+  },
+  "linked_entities": [
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=182"
+    },
+    {
+      "id": 1307387,
+      "name": "Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307387"
+    }
+  ],
+  "name": "Seed Hybridizer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "de1c098098cbd043bb051a8c40eb76385026c41679185b08b8a29e663c0b7efd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279947",
+  "url": "https://www.wowhead.com/forever/item=279947"
+}

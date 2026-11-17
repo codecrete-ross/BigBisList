@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Arcane Blast Level 60 15% of base mana 30 yd range 1.5 sec cast Requires Mage Requires level 60 Blasts the target with energy, dealing 231 to 267 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
+  "entity_id": 1239700,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:57+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1239700,
+      "name": "Arcane Blast",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1239700"
+    }
+  ],
+  "name": "Arcane Blast",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "1c748c9d418b64e5ab92309323c294abc82046fa4b942063f657b84584f8be81",
+  "spell_id": 1239700,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1239700",
+  "url": "https://www.wowhead.com/forever/spell=1239700"
+}

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Coldrage Dagger Item Level 43 Binds when picked up One-Hand Dagger 30 - 57 Damage Speed 1.50 (29.00 damage per second) +3 Frost Resistance Requires Level 38 Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec. Sell Price: 1 66 69 Dropped by: Amnennar the Coldbringer Drop Chance: 31.44%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 10761,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 29.0,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec."
+    ],
+    "id": 10761,
+    "item_level": 43,
+    "name": "Coldrage Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 3.0
+    },
+    "weapon_max_damage": 57,
+    "weapon_min_damage": 30,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10761"
+  },
+  "linked_entities": [
+    {
+      "id": 1293790,
+      "name": "Launches a bolt of frost at the enemy causing 34 to 50 Frost damage and slowing movement speed by 50% for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293790"
+    }
+  ],
+  "name": "Coldrage Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.44,
+      "entity_name": "Amnennar the Coldbringer",
+      "source_url": "https://www.wowhead.com/forever/item=10761",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10761",
+  "url": "https://www.wowhead.com/forever/item=10761"
+}

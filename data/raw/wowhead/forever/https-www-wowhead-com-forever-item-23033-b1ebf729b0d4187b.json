@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Icy Scale Coif Item Level 83 Binds when picked up Head Mail 425 Armor +18 Agility +24 Stamina +44 Frost Resistance Durability 85 / 85 Requires Level 60 Sell Price: 9 31 64 Dropped by: Heigan the Unclean Drop Chance: 18.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 23033,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 425,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 23033,
+    "item_level": 83,
+    "name": "Icy Scale Coif",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "frost_resistance": 44.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23033"
+  },
+  "linked_entities": [],
+  "name": "Icy Scale Coif",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.74,
+      "entity_name": "Heigan the Unclean",
+      "source_url": "https://www.wowhead.com/forever/item=23033",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23033",
+  "url": "https://www.wowhead.com/forever/item=23033"
+}

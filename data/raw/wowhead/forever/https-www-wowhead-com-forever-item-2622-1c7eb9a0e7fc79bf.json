@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Nimar's Tribal Headdress Item Level 39 Binds when equipped Head Cloth 42 Armor +6 Stamina +7 Intellect +11 Spirit Durability 45 / 45 Requires Level 34 Sell Price: 26 3 Dropped by: Nimar the Slayer Drop Chance: 82.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 2622,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 42,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 2622,
+    "item_level": 39,
+    "name": "Nimar's Tribal Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "spirit": 11.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=2622"
+  },
+  "linked_entities": [],
+  "name": "Nimar's Tribal Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 82.01,
+      "entity_name": "Nimar the Slayer",
+      "source_url": "https://www.wowhead.com/forever/item=2622",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "95b9dd3f126c1120bbaced87086faeab1f6afef95205c9a35194ac2ca5de0c66",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2622",
+  "url": "https://www.wowhead.com/forever/item=2622"
+}

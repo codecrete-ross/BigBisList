@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Staff of Jordan Item Level 40 Binds when equipped Two-Hand Staff 88 - 133 Damage Speed 3.70 (29.86 damage per second) +20 Intellect +10 Spirit Durability 120 / 120 Requires Level 35 Equip: Improves your chance to hit by 1.5%. Equip: Increases damage and healing done by magical spells and effects by up to 60 . Sell Price: 2 17 70",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 873,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 29.86,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.5%.",
+        "stats": {
+          "hit_percent": 1.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 60.",
+        "stats": {
+          "spell_power": 60.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.5%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 60."
+    ],
+    "id": 873,
+    "item_level": 40,
+    "name": "Staff of Jordan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 35,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.5,
+      "intellect": 20.0,
+      "spell_power": 60.0,
+      "spirit": 10.0
+    },
+    "weapon_max_damage": 133,
+    "weapon_min_damage": 88,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=873"
+  },
+  "linked_entities": [],
+  "name": "Staff of Jordan",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/873",
+  "url": "https://www.wowhead.com/forever/item=873"
+}

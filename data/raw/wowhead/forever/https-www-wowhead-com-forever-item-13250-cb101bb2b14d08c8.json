@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Head of Balnazzar Item Level 1 Binds when picked up Unique This Item Begins a Quest Requires Level 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:03:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 13250,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13250,
+    "item_level": 1,
+    "name": "Head of Balnazzar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13250"
+  },
+  "linked_entities": [
+    {
+      "id": 5262,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=5262"
+    }
+  ],
+  "name": "Head of Balnazzar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13250",
+  "url": "https://www.wowhead.com/forever/item=13250"
+}

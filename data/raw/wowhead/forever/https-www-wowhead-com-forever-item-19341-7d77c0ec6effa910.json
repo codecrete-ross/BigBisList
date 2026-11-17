@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lifegiving Gem Item Level 76 Binds when picked up Unique Trinket Classes: Warrior Requires Level 60 Use: Heals yourself for 15% of your maximum health, and increases your maximum health by 15% for 20 sec. (5 Min Cooldown) Sell Price: 7 20 39 Dropped by: Broodlord Lashlayer Drop Chance: 18.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19341,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals yourself for 15% of your maximum health, and increases your maximum health by 15% for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19341,
+    "item_level": 76,
+    "name": "Lifegiving Gem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals yourself for 15% of your maximum health, and increases your maximum health by 15% for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19341"
+  },
+  "linked_entities": [
+    {
+      "id": 23725,
+      "name": "Heals yourself for 15% of your maximum health, and increases your maximum health by 15% for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23725"
+    }
+  ],
+  "name": "Lifegiving Gem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.17,
+      "entity_name": "Broodlord Lashlayer",
+      "source_url": "https://www.wowhead.com/forever/item=19341",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19341",
+  "url": "https://www.wowhead.com/forever/item=19341"
+}

@@ -1,0 +1,73 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Gilded Gloves 1 min cast Reagents: Bolt of Runecloth (8), Heavy Silken Thread (4), Magenta Dye (4), Cerulean Dye (4), Gold Bar (4) Gilded Gloves Item Level 55 Binds when picked up Hands Cloth 49 Armor +9 Stamina +10 Intellect +8 Spirit Requires Level 50 Equip: Increases healing done by up to 29 and damage done by up to 10 for all magical spells and effects. Sell Price: 79 15",
+  "entity_id": 1257473,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:22+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 3577,
+      "name": "Gold Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3577"
+    },
+    {
+      "id": 8343,
+      "name": "Heavy Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8343"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 254095,
+      "name": "Gilded Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254095"
+    },
+    {
+      "id": 1257473,
+      "name": "Gilded Gloves",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257473"
+    }
+  ],
+  "name": "Gilded Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 254095,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1257473",
+      "subject_id": 1257473,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1257473,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1257473",
+  "url": "https://www.wowhead.com/forever/spell=1257473"
+}

@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fiery Plate Gauntlets Item Level 58 Binds when equipped Hands Plate 379 Armor +10 Fire Resistance Durability 45 / 45 Requires Level 53 Equip: Adds 4 Fire damage to your weapon attack. Sell Price: 89 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:07:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 12631,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 379,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Adds 4 Fire damage to your weapon attack.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Adds 4 Fire damage to your weapon attack."
+    ],
+    "id": 12631,
+    "item_level": 58,
+    "name": "Fiery Plate Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12631"
+  },
+  "linked_entities": [
+    {
+      "id": 7721,
+      "name": "Adds 4 Fire damage to your weapon attack.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7721"
+    }
+  ],
+  "name": "Fiery Plate Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12631",
+  "url": "https://www.wowhead.com/forever/item=12631"
+}

@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stronghold Gauntlets Item Level 62 Binds when equipped Hands Plate 441 Armor +18 Stamina Durability 55 / 55 Requires Level 57 Equip: Increases your chance to Parry an attack by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Immune to Disarm. Sell Price: 1 52 71",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:55:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 12639,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 441,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your chance to Parry an attack by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Immune to Disarm.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your chance to Parry an attack by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 12639,
+    "item_level": 62,
+    "name": "Stronghold Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12639"
+  },
+  "linked_entities": [
+    {
+      "id": 7219,
+      "name": "Immune to Disarm.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7219"
+    }
+  ],
+  "name": "Stronghold Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12639",
+  "url": "https://www.wowhead.com/forever/item=12639"
+}

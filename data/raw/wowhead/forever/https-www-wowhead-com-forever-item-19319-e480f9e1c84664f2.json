@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Harpy Hide Quiver Item Level 60 Binds when picked up Unique 16 Slot Quiver Requires Level 55 Equip: Increases ranged attack speed by 15%. Sell Price: 8 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 19319,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases ranged attack speed by 15%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases ranged attack speed by 15%."
+    ],
+    "id": 19319,
+    "item_level": 60,
+    "name": "Harpy Hide Quiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19319"
+  },
+  "linked_entities": [
+    {
+      "id": 29414,
+      "name": "Increases ranged attack speed by 15%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29414"
+    }
+  ],
+  "name": "Harpy Hide Quiver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19319",
+  "url": "https://www.wowhead.com/forever/item=19319"
+}

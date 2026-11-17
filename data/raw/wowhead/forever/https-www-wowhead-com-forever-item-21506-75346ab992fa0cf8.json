@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pendant of the Shifting Sands Item Level 70 Binds when picked up Neck +14 Strength +21 Stamina Requires Level 60 Equip: Increased Defense + 4. Sell Price: 11 16 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 21506,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 21506,
+    "item_level": 70,
+    "name": "Pendant of the Shifting Sands",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0,
+      "stamina": 21.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21506"
+  },
+  "linked_entities": [],
+  "name": "Pendant of the Shifting Sands",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21506",
+  "url": "https://www.wowhead.com/forever/item=21506"
+}

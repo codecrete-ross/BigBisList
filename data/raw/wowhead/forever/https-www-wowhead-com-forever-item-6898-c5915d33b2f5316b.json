@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Orb of Soran'ruk Item Level 25 Binds when picked up Held In Off-hand Classes: Warlock Equip: Increases damage done by Fire spells and effects by up to 9. Equip: Increases damage done by Shadow spells and effects by up to 9. Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown) Sell Price: 13 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 6898,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 9.",
+        "stats": {
+          "fire_damage": 9
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 9.",
+        "stats": {
+          "shadow_damage": 9
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 6898,
+    "item_level": 25,
+    "name": "Orb of Soran'ruk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "fire_damage": 9.0,
+      "shadow_damage": 9.0
+    },
+    "use_effects": [
+      "Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6898"
+  },
+  "linked_entities": [
+    {
+      "id": 18956,
+      "name": "Restores 48 health every 3 sec for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18956"
+    }
+  ],
+  "name": "Orb of Soran'ruk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6898",
+  "url": "https://www.wowhead.com/forever/item=6898"
+}

@@ -1,0 +1,66 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Sharpening Wheel Item Level 4 Requires Blacksmithing (20) Use: Constructs a sharpening wheel that grants you and others sitting nearby [( 60 < 24 ? 6 : ( 60 < 38 ? 11 : ( 60 < 52 ? 20 : 34)))] increased Strength, mutually exclusive with Strength of Earth Totem. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279944,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Constructs a sharpening wheel that grants you and others sitting nearby [(60 < 24 ? 6 : (60 < 38 ? 11 : (60 < 52 ? 20 : 34)))] increased Strength, mutually exclusive with Strength of Earth Totem.",
+        "type": "use"
+      }
+    ],
+    "id": 279944,
+    "item_level": 4,
+    "name": "Sharpening Wheel",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Constructs a sharpening wheel that grants you and others sitting nearby [(60 < 24 ? 6 : (60 < 38 ? 11 : (60 < 52 ? 20 : 34)))] increased Strength, mutually exclusive with Strength of Earth Totem. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279944"
+  },
+  "linked_entities": [
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 1307392,
+      "name": "Constructs a sharpening wheel that grants you and others sitting nearby [( 60 < 24 ? 6 : ( 60 < 38 ? 11 : ( 60 < 52 ? 20 : 34)))] increased Strength, mutually exclusive with Strength of Earth Totem. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307392"
+    }
+  ],
+  "name": "Sharpening Wheel",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Sharpening Wheel Item Level 4 Requires Blacksmithing (20) Use: Constructs a sharpening wheel that grants you and others sitting nearby [( 60 < 24 ? 6 : ( 60 < 38 ? 11 : ( 60 < 52 ? 20 : 34)))] increased Strength, mutually exclusive with Strength of Earth Totem. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+      "scope": "equip_or_use",
+      "skill": 20,
+      "source_url": "https://www.wowhead.com/forever/item=279944",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279944",
+  "url": "https://www.wowhead.com/forever/item=279944"
+}

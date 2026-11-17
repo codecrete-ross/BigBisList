@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Smoking Heart of the Mountain Item Level 55 Binds when picked up Trinket +7 Fire Resistance +7 Nature Resistance +7 Frost Resistance +7 Shadow Resistance Requires Level 50 Use: Increases armor by 520 for 20 sec. (6 Min Cooldown) Sell Price: 1 51 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 11811,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases armor by 520 for 20 sec. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 11811,
+    "item_level": 55,
+    "name": "Smoking Heart of the Mountain",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 7.0,
+      "frost_resistance": 7.0,
+      "nature_resistance": 7.0,
+      "shadow_resistance": 7.0
+    },
+    "use_effects": [
+      "Use: Increases armor by 520 for 20 sec. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=11811"
+  },
+  "linked_entities": [
+    {
+      "id": 1300752,
+      "name": "Increases armor by 520 for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1300752"
+    }
+  ],
+  "name": "Smoking Heart of the Mountain",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "67b62ea8a94d1798cf8c2c263f46ad87a26eef6832f87386ba90be9aec1cfafa",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11811",
+  "url": "https://www.wowhead.com/forever/item=11811"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Sewing Machine Item Level 60 Requires Leatherworking (300) Use: Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. May be placed over a Camp Tent to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279945,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby.",
+        "type": "use"
+      }
+    ],
+    "id": 279945,
+    "item_level": 60,
+    "name": "Sewing Machine",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. May be placed over a Camp Tent to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279945"
+  },
+  "linked_entities": [
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1307391,
+      "name": "Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. May be placed over a Camp Tent to replace it. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307391"
+    }
+  ],
+  "name": "Sewing Machine",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Sewing Machine Item Level 60 Requires Leatherworking (300) Use: Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. May be placed over a Camp Tent to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=279945",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "10674609e80b8077abf65417ba808559304bd27ef48070a87bd0f1f99167b2a6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279945",
+  "url": "https://www.wowhead.com/forever/item=279945"
+}

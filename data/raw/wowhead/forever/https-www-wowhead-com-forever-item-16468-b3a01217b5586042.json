@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Chain Spaulders Item Level 74 Binds when picked up Unique Shoulder Mail 353 Armor +26 Agility +21 Stamina +10 Intellect +50 Armor Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to hit by 1.0%. Sell Price: 2 95 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16468,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 353,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 16468,
+    "item_level": 74,
+    "name": "Field Marshal's Chain Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 26.0,
+      "hit_percent": 1.0,
+      "intellect": 10.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16468"
+  },
+  "linked_entities": [],
+  "name": "Field Marshal's Chain Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16468",
+  "url": "https://www.wowhead.com/forever/item=16468"
+}

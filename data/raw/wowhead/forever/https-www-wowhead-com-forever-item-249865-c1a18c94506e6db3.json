@@ -1,0 +1,71 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Peace Tea Item Level 5 Use: Restores 151.2 mana over 18 sec. Must remain seated while drinking. If you spend at least 10 sec eating, you will become well fed and gain 2 Healing Power for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20 Sell Price: 1 Dropped by: Windfury Harpy Drop Chance: 0.92%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249865,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 151.2 mana over 18 sec. Must remain seated while drinking. If you spend at least 10 sec eating, you will become well fed and gain 2 Healing Power for 15 min. Additionally, experience gained from kills is increased by 5%.",
+        "type": "use"
+      }
+    ],
+    "id": 249865,
+    "item_level": 5,
+    "name": "Peace Tea",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 151.2 mana over 18 sec. Must remain seated while drinking. If you spend at least 10 sec eating, you will become well fed and gain 2 Healing Power for 15 min. Additionally, experience gained from kills is increased by 5%. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=249865"
+  },
+  "linked_entities": [
+    {
+      "id": 430,
+      "name": "Restores 151.2 mana over 18 sec. Must remain seated while drinking.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=430"
+    },
+    {
+      "id": 1243969,
+      "name": "Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1243969"
+    },
+    {
+      "id": 1249920,
+      "name": "Restores 151.2 mana over 18 sec. Must remain seated while drinking. If you spend at least 10 sec eating, you will become well fed and gain 2 Healing Power for 15 min. Additionally, experience gained from kills is increased by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249920"
+    }
+  ],
+  "name": "Peace Tea",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.92,
+      "entity_name": "Windfury Harpy",
+      "source_url": "https://www.wowhead.com/forever/item=249865",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "97474afec68a3e87648eb41ff1cfde520375b4932be8e5242ac3dbbf081c45dd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249865",
+  "url": "https://www.wowhead.com/forever/item=249865"
+}

@@ -6,9 +6,15 @@ BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 local UI = {}
 BigBiSList.UI = UI
 
+local function accountDB()
+    if BigBiSList.isForever then return BigBiSList:GetAccountDB() end
+    return BigBiSListDB
+end
+
 local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel or 69
-local ENDGAME_TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }
+local ENDGAME_TAB_NAMES = BigBiSList.isForever and { "Upgrades", "By Slot", "Equipped", "Wishlist" }
+    or { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }
 local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist" }
 local TAB_NAMES = { "Upgrades", "By Slot", "Gear Guide", "Equipped", "Enhance", "Wishlist", "Settings" }
 local TAB_NAME_ALIASES = {
@@ -259,7 +265,7 @@ local QUALITY_COLORS = {
 local RANK_FILTER_LABELS = {
     all = "All ranks",
     bis = "BiS only",
-    ranked = "Alts only",
+    ranked = BigBiSList.isForever and "Alternatives" or "Alts only",
     situational = "Sidegrades",
     pvp = "PvP only",
     unrealistic = "Hard to obtain",
@@ -339,6 +345,10 @@ local PLANNER_TIER_SECTIONS = {
     { key = "strong_targets", title = "Future best in slot" },
     { key = "useful_backups", title = "Alternatives" },
     { key = "only_if_easy", title = "Optional" },
+}
+local FOREVER_PLANNER_SECTION_TITLES = {
+    ["Best in slot now"] = "Top targets",
+    ["Future best in slot"] = "Plan ahead",
 }
 
 local function clamp(value, minValue, maxValue)
@@ -512,7 +522,8 @@ end
 
 local function displayRankInfo(data, mode)
     if data and data.display_rank_label then
-        return data.display_rank_label, data.display_rank_kind or "backup"
+        local label = BigBiSList.isForever and BigBiSList:GetGuideRatingDisplay(data.display_rank_label) or data.display_rank_label
+        return label, data.display_rank_kind or "backup"
     end
 
     if mode == "leveling" then
@@ -530,7 +541,7 @@ local function displayRankInfo(data, mode)
         local variant = bisVariantLabel(data)
         return variant and ("BiS: " .. variant) or "BiS", "best"
     elseif data.rank_group == "ranked" then
-        return "Alt", "ranked"
+        return BigBiSList.isForever and "Alternative" or "Alt", "ranked"
     elseif data.rank_group == "situational" then
         return "Sidegrade", "situational"
     elseif data.rank_group == "pvp" then
@@ -538,7 +549,7 @@ local function displayRankInfo(data, mode)
     elseif data.rank_group == "unrealistic" then
         return "Hard", "hard"
     elseif rank and rank > 1 then
-        return "Alt", "ranked"
+        return BigBiSList.isForever and "Alternative" or "Alt", "ranked"
     end
 
     return "Optional", "backup"
@@ -560,9 +571,10 @@ local function rankMeaning(data, mode)
     elseif kind == "hard" then
         return label .. ": strong item with unusually difficult access."
     elseif kind == "chase_first" then
-        return label .. ": highest-priority available upgrade."
+        return BigBiSList.isForever and (label .. " · Highest upgrade priority") or (label .. ": highest-priority available upgrade.")
     elseif kind == "strong_targets" then
-        return label .. ": available now with later best-in-slot value."
+        return BigBiSList.isForever and (label .. " · Priority from current and later guide ratings")
+            or (label .. ": available now with later best-in-slot value.")
     elseif kind == "useful_backups" then
         return label .. ": worthwhile alt or sidegrade pickup."
     elseif kind == "enhance" then
@@ -615,9 +627,9 @@ local function fixedColumn(key, label, width, options)
 end
 
 local TABLE_COLUMN_CONFIG = {}
-for _, mode in ipairs({ "planner", "phase", "leveling", "enhance", "wishlist", "gear" }) do
-    local valueKey = mode == "phase" and "rank" or (mode == "wishlist" and "expansion" or (mode == "gear" and "currentRank" or "value"))
-    local valueLabel = ({ phase = "Recommendation", planner = "Recommendation", wishlist = "Recommendation", gear = "Current rating", leveling = "Level / benefit" })[mode] or "Benefit"
+for _, mode in ipairs({ "planner", "phase", "leveling", "enhance", "wishlist" }) do
+    local valueKey = mode == "phase" and "rank" or (mode == "wishlist" and "expansion" or "value")
+    local valueLabel = ({ phase = "Recommendation", planner = "Recommendation", wishlist = "Recommendation", leveling = "Level / benefit" })[mode] or "Benefit"
     TABLE_COLUMN_CONFIG[mode] = {
         wide = {
             columnDefinition("item", mode == "enhance" and "Enhancement" or "Item", 220, 300, 480, 8),
@@ -750,55 +762,67 @@ local function getContainerNumSlotsSafe(bag)
     local ok, result
     if C_Container and C_Container.GetContainerNumSlots then
         ok, result = pcall(C_Container.GetContainerNumSlots, bag)
-        if ok then
-            return result or 0
-        end
     elseif GetContainerNumSlots then
         ok, result = pcall(GetContainerNumSlots, bag)
-        if ok then
-            return result or 0
-        end
     end
-    return 0
+    if ok and BigBiSList.IsReadableValue(result) and type(result) == "number" and result >= 0 then
+        return result, true
+    end
+    return 0, false
 end
 
 local function getContainerItemIDSafe(bag, slot)
     local ok, result
     if C_Container and C_Container.GetContainerItemID then
         ok, result = pcall(C_Container.GetContainerItemID, bag, slot)
-        if ok then
-            return result
+        if ok and (not issecretvalue or not issecretvalue(result)) then
+            return result, true
         end
     elseif GetContainerItemID then
         ok, result = pcall(GetContainerItemID, bag, slot)
-        if ok then
-            return result
+        if ok and (not issecretvalue or not issecretvalue(result)) then
+            return result, true
         end
     end
-    return nil
+    return nil, false
 end
 
 local function getContainerItemLinkSafe(bag, slot)
     local ok, result
     if C_Container and C_Container.GetContainerItemLink then
         ok, result = pcall(C_Container.GetContainerItemLink, bag, slot)
-        if ok then
-            return result
+        if ok and (not issecretvalue or not issecretvalue(result)) then
+            return result, true
         end
     elseif GetContainerItemLink then
         ok, result = pcall(GetContainerItemLink, bag, slot)
-        if ok then
-            return result
+        if ok and (not issecretvalue or not issecretvalue(result)) then
+            return result, true
         end
     end
-    return nil
+    return nil, false
 end
 
-local function getInventorySlotId(slotDefinition)
-    if GetInventorySlotInfo and slotDefinition.inventorySlotName then
-        local slotId = GetInventorySlotInfo(slotDefinition.inventorySlotName)
-        if slotId then
-            return slotId
+local function ownedItemGUID(bag, slot)
+    local api = C_Item and C_Item.GetItemGUID
+    if not api or not ItemLocation then return nil end
+    local ok, location
+    if bag ~= nil and ItemLocation.CreateFromBagAndSlot then
+        ok, location = pcall(ItemLocation.CreateFromBagAndSlot, ItemLocation, bag, slot)
+    elseif bag == nil and ItemLocation.CreateFromEquipmentSlot then
+        ok, location = pcall(ItemLocation.CreateFromEquipmentSlot, ItemLocation, slot)
+    end
+    if not ok then return nil end
+    local hasGUID, guid = pcall(api, location)
+    if hasGUID and BigBiSList.IsReadableValue(guid) and type(guid) == "string" and guid ~= "" then return guid end
+end
+
+local function getInventorySlotInfo(slotDefinition)
+    local lookup = C_PaperDollInfo and C_PaperDollInfo.GetInventorySlotInfo or GetInventorySlotInfo
+    if lookup and slotDefinition.inventorySlotName then
+        local ok, slotId, texture = pcall(lookup, slotDefinition.inventorySlotName)
+        if ok and BigBiSList.IsReadableValue(slotId) and type(slotId) == "number" then
+            return slotId, BigBiSList.IsReadableValue(texture) and texture or nil
         end
     end
     return slotDefinition.inventorySlotId
@@ -807,20 +831,33 @@ end
 local function getInventoryItemLinkSafe(slotId)
     if GetInventoryItemLink and slotId then
         local ok, itemLink = pcall(GetInventoryItemLink, "player", slotId)
-        if ok then
+        if ok and (not issecretvalue or not issecretvalue(itemLink)) then
             return itemLink
         end
     end
     return nil
 end
 
-local function getItemEquipLocation(itemId)
-    if GetItemInfoInstant and itemId then
-        local ok, _, _, _, equipLocation = pcall(GetItemInfoInstant, itemId)
-        if ok and equipLocation ~= nil then return equipLocation end
+function UI:GetItemInfo(itemId)
+    local api = BigBiSList.isForever and C_Item and C_Item.GetItemInfo or GetItemInfo
+    if not api then return nil end
+    if not BigBiSList.isForever then return api(itemId) end
+    local ok, name, link, quality, itemLevel, requiredLevel, className, subclassName, count, equipLocation, icon = pcall(api, itemId)
+    if ok and BigBiSList.IsReadableValue(name) and BigBiSList.IsReadableValue(link)
+        and BigBiSList.IsReadableValue(quality) and BigBiSList.IsReadableValue(equipLocation)
+        and BigBiSList.IsReadableValue(icon) then
+        return name, link, quality, itemLevel, requiredLevel, className, subclassName, count, equipLocation, icon
     end
-    if GetItemInfo and itemId then
-        local ok, _, _, _, _, _, _, _, _, equipLocation = pcall(GetItemInfo, itemId)
+end
+
+local function getItemEquipLocation(itemId)
+    local instant = BigBiSList.isForever and C_Item and C_Item.GetItemInfoInstant or GetItemInfoInstant
+    if instant and itemId then
+        local ok, _, _, _, equipLocation = pcall(instant, itemId)
+        if ok and (not issecretvalue or not issecretvalue(equipLocation)) and equipLocation ~= nil then return equipLocation end
+    end
+    if itemId then
+        local ok, _, _, _, _, _, _, _, _, equipLocation = pcall(UI.GetItemInfo, UI, itemId)
         if ok then return equipLocation end
     end
     return nil
@@ -883,6 +920,7 @@ local function slotLabelForEquipLocation(equipLocation)
 end
 
 local function ownershipStateLabel(state)
+    if state == "unknown" then return "Unknown" end
     return OWNERSHIP_LABELS[state or "missing"] or OWNERSHIP_LABELS.missing
 end
 
@@ -1160,8 +1198,9 @@ local function collectProfessionState()
         return professions
     end
 
+    -- A secondary profession can be present after an empty primary slot.
     local professionSlots = { GetProfessions() }
-    for _, professionIndex in ipairs(professionSlots) do
+    for _, professionIndex in pairs(professionSlots) do
         if professionIndex then
             local name, _, rank = GetProfessionInfo(professionIndex)
             if name and name ~= "" then
@@ -1259,7 +1298,14 @@ function UI:GetItemContext()
 end
 
 function UI:GetItemContextFilters()
-    if self.slotComparison then return {} end
+    local comparison = self.slotComparison
+    if comparison then
+        if comparison.statRank then
+            return { class = comparison.class, level = comparison.level, _leveling = comparison.phase == LEVELING_PHASE_KEY,
+                race = BigBiSList:GetPlayerRaceName(), faction = BigBiSList:GetPlayerFactionName() }
+        end
+        return {}
+    end
     return self:GetFilters()
 end
 
@@ -1381,7 +1427,7 @@ function UI:ValidateSelection()
         detectedPhase = "PR"
     end
 
-    if phaseKey == LEVELING_PHASE_KEY then
+    if phaseKey == LEVELING_PHASE_KEY and BigBiSList.supportsLeveling then
         selection.mode = "leveling"
         phaseKey = detectedPhase
     elseif not phaseExists(phaseKey) then
@@ -1400,17 +1446,37 @@ function UI:ValidateSelection()
     BigBiSList:SetSelection(className, specName, phaseKey, tabName)
 end
 
-function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinition)
+function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinition, guid)
     itemId = tonumber(itemId) or (itemLink and tonumber(itemLink:match("item:(%d+)")))
     if not itemId then return end
+    if BigBiSList.isForever then
+        owned.variants = owned.variants or {}
+        owned.variantUnknownItems = owned.variantUnknownItems or {}
+        local variantId = BigBiSList:GetItemVariantIdFromLink(itemLink)
+        if variantId then
+            local state = location == "bags" and "bag" or location
+            if (OWNERSHIP_PRIORITY[state] or 0) > (OWNERSHIP_PRIORITY[owned.variants[variantId]] or 0) then
+                owned.variants[variantId] = state
+            end
+        elseif not itemLink then owned.variantUnknownItems[itemId] = true end
+        if itemLink and BigBiSList.ForeverGearRating then
+            owned.gearStatLinks = owned.gearStatLinks or {}
+            local existing = owned.gearStatLinks[itemLink]
+            if not existing or (location == "equipped" and existing.state ~= "equipped") then
+                owned.gearStatLinks[itemLink] = {
+                    item_id = itemId, item_link = itemLink, state = location == "bags" and "bag" or location,
+                }
+            end
+        end
+        if location == "bags" and owned.gearCopies then
+            owned.gearCopies[#owned.gearCopies + 1] = { item_id = itemId, item_link = itemLink, state = "bag", guid = guid }
+        end
+    end
     local item = BigBiSList.GetItemData and BigBiSList:GetItemData(itemId)
     local entry = owned.inventoryItems[itemId] or { item_id = itemId, locations = {} }
     owned.inventoryItems[itemId] = entry
-    local cachedName, cachedLink
-    if GetItemInfo then
-        local ok, name, link = pcall(GetItemInfo, itemId)
-        if ok then cachedName, cachedLink = name, link end
-    end
+    local ok, cachedName, cachedLink = pcall(UI.GetItemInfo, UI, itemId)
+    if not ok then cachedName, cachedLink = nil, nil end
     local presentation = self.itemPresentationCache and self.itemPresentationCache[itemId]
     entry.item_link = entry.item_link or itemLink or cachedLink or (presentation and presentation.link)
     entry.name = entry.name or itemNameFromLink(itemLink) or cachedName or (presentation and presentation.name) or (item and item.name)
@@ -1436,14 +1502,19 @@ end
 function UI:BuildOwnedItems()
     self:CountPerformance("ownershipBuilds")
     local char = BigBiSList:GetCharacterDB()
+    local bankCache = not BigBiSList.isForever and char.bankCache
+    local statBank = BigBiSList.isForever and char.bankCache.scanned and char.bankCache
 
     local owned = {
         equippedSlots = {},
+        unreadableEquipmentSlots = {},
         enhancementItems = {},
         inventoryItems = {},
-        bankScanned = char.bankCache and char.bankCache.scanned or false,
-        bankUpdatedAt = char.bankCache and char.bankCache.updatedAt or "",
-        bankLinkCount = char.bankCache and char.bankCache.links and #char.bankCache.links or 0,
+        bankScanned = bankCache and bankCache.scanned or false,
+        bankUpdatedAt = bankCache and bankCache.updatedAt or "",
+        bankLinkCount = bankCache and bankCache.links and #bankCache.links or 0,
+        gearCopies = BigBiSList.ForeverGearRating and {} or nil,
+        inventoryIncomplete = BigBiSList.isForever and not GetInventoryItemID or false,
     }
 
     local function addEnhancedItem(itemLink, state, locationLabel, slotDefinition)
@@ -1468,44 +1539,59 @@ function UI:BuildOwnedItems()
         })
     end
 
-    if GetInventoryItemID then
-        for _, slotDefinition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
-            local slotId = getInventorySlotId(slotDefinition)
-            local itemId = slotId and GetInventoryItemID("player", slotId)
-            if itemId then
-                local itemLink = getInventoryItemLinkSafe(slotId)
-                owned[itemId] = "equipped"
-                owned.equippedSlots[slotDefinition.key] = {
-                    item_id = itemId,
-                    item_link = itemLink,
-                    slotId = slotId,
-                    slot = slotDefinition.label,
-                }
-                self:AddOwnedInventoryItem(owned, itemId, itemLink, "equipped", slotDefinition)
-                addEnhancedItem(itemLink, "equipped", "Equipped", slotDefinition)
+    for _, slotDefinition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+        local slotId = getInventorySlotInfo(slotDefinition)
+        local readable, itemId
+        if GetInventoryItemID and slotId then
+            local ok, value = pcall(GetInventoryItemID, "player", slotId)
+            readable = ok and BigBiSList.IsReadableValue(value)
+            if readable and type(value) == "number" and value > 0 then itemId = value end
+        end
+        local itemLink
+        if itemId or not readable then itemLink = getInventoryItemLinkSafe(slotId) end
+        if not readable and itemLink then itemId = tonumber(itemLink:match("item:(%d+)")) end
+        if itemId then
+            owned[itemId] = "equipped"
+            owned.equippedSlots[slotDefinition.key] = {
+                item_id = itemId,
+                item_link = itemLink,
+                slotId = slotId,
+                slot = slotDefinition.label,
+                guid = owned.gearCopies and ownedItemGUID(nil, slotId),
+            }
+            self:AddOwnedInventoryItem(owned, itemId, itemLink, "equipped", slotDefinition)
+            addEnhancedItem(itemLink, "equipped", "Equipped", slotDefinition)
 
-                if slotDefinition.key == "MainHand" and getItemEquipLocation(itemId) == "INVTYPE_2HWEAPON" then
-                    owned.equippedTwoHand = true
-                end
+            if slotDefinition.key == "MainHand" and getItemEquipLocation(itemId) == "INVTYPE_2HWEAPON" then
+                owned.equippedTwoHand = true
             end
+        elseif not readable then
+            owned.unreadableEquipmentSlots[slotDefinition.key] = true
+            if BigBiSList.isForever then owned.inventoryIncomplete = true end
         end
     end
 
     for bag = 0, 4 do
-        local numSlots = getContainerNumSlotsSafe(bag)
+        local numSlots, bagReadable = getContainerNumSlotsSafe(bag)
+        if BigBiSList.isForever and not bagReadable then owned.bagsIncomplete = true end
 
         for slot = 1, numSlots do
-            local itemId = getContainerItemIDSafe(bag, slot)
+            local itemId, slotReadable = getContainerItemIDSafe(bag, slot)
             local itemLink = getContainerItemLinkSafe(bag, slot)
+            if BigBiSList.isForever and not itemId and itemLink then
+                itemId = tonumber(itemLink:match("item:(%d+)"))
+            end
+            if BigBiSList.isForever and not slotReadable and not itemId then owned.bagsIncomplete = true end
             if itemId and not owned[itemId] then
                 owned[itemId] = "bag"
             end
-            self:AddOwnedInventoryItem(owned, itemId, itemLink, "bags")
+            local guid = owned.gearCopies and itemLink and ownedItemGUID(bag, slot)
+            self:AddOwnedInventoryItem(owned, itemId, itemLink, "bags", nil, guid)
             addEnhancedItem(itemLink, "bag", "Bags")
         end
     end
+    if owned.bagsIncomplete then owned.inventoryIncomplete = true end
 
-    local bankCache = char.bankCache
     if bankCache and bankCache.items then
         for itemIdText in pairs(bankCache.items) do
             local itemId = tonumber(itemIdText)
@@ -1523,7 +1609,29 @@ function UI:BuildOwnedItems()
         end
     end
 
+    if statBank and owned.gearCopies then
+        -- A withdrawal can reach the bag snapshot before the next readable bank scan.
+        local carried = {}
+        for _, entry in pairs(owned.equippedSlots) do if entry.guid then carried[entry.guid] = true end end
+        for _, entry in ipairs(owned.gearCopies) do if entry.guid then carried[entry.guid] = true end end
+        for index, link in ipairs(statBank.links or {}) do
+            local itemId = type(link) == "string" and tonumber(link:match("item:(%d+)"))
+            local guid = statBank.guids and statBank.guids[index]
+            if itemId and not (guid and carried[guid]) then
+                owned.gearCopies[#owned.gearCopies + 1] = { item_id = itemId, item_link = link, state = "bank" }
+            end
+        end
+    end
+
     return owned
+end
+
+function UI:GetOwnedSnapshot()
+    local character = BigBiSList:GetCharacterDB()
+    if self.ownedCharacter and self.ownedCharacter ~= character then self.currentOwned = nil end
+    self.ownedCharacter = character
+    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
+    return self.currentOwned
 end
 
 function UI:BuildAccessState()
@@ -1532,6 +1640,7 @@ function UI:BuildAccessState()
         professions = collectProfessionState(),
         reputations = collectReputationState(),
         playerSide = getPlayerSide(),
+        playerRace = BigBiSList.GetPlayerRaceName and BigBiSList:GetPlayerRaceName(),
     }
 end
 
@@ -1639,7 +1748,7 @@ end
 local function optionMatchesPlayerSide(option, accessState)
     local playerSide = accessState and accessState.playerSide
     local optionSide = option and option.side
-    return not playerSide or not optionSide or optionSide == playerSide
+    return not playerSide or not optionSide or optionSide == "Both" or optionSide == playerSide
 end
 
 local function optionHasZone(option, zone)
@@ -1848,6 +1957,14 @@ local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIn
 end
 
 function UI:EvaluateAccessOption(option, accessState)
+    if BigBiSList.isForever and BigBiSList.AccessOptionMatchesCharacter then
+        local selection = self:GetItemContext() or {}
+        local leveling = self:IsLevelingMode()
+        if not BigBiSList:AccessOptionMatchesCharacter(option, {
+            faction = accessState.playerSide, race = accessState.playerRace, class = selection.class,
+            level = leveling and (selection.level or BigBiSList:GetSelectedLevelingLevel()) or nil, _leveling = leveling,
+        }) then return {status = "unavailable", option = option} end
+    end
     local evaluation = self:EvaluateRequirementList(option and option.requirements, accessState)
     evaluation.option = option
     return evaluation
@@ -2122,6 +2239,13 @@ function UI:GetRowSellerDisplayGroups(data, selectedOption)
     }
 end
 
+function UI:GetSelectedAcquisitionRoute(data)
+    local access = self:GetAccessEvaluation(data)
+    local option = access.optionEvaluation and access.optionEvaluation.option
+    local sellerGroups = self:GetRowSellerDisplayGroups(data, option)
+    return sellerGroups.selected or option, access, sellerGroups
+end
+
 function UI:FormatSellerOptions(options)
     local blocks = {}
     for _, option in ipairs(options or {}) do
@@ -2276,35 +2400,52 @@ end
 
 function UI:ScanBankItems()
     local char = BigBiSList:GetCharacterDB()
+    local strict, tabs = BigBiSList.isForever, {}
+    if strict then
+        local characterBank = Enum and Enum.BankType and Enum.BankType.Character
+        local fetch = C_Bank and C_Bank.FetchPurchasedBankTabIDs
+        if not self.personalBankOpen or characterBank == nil or not fetch then return false end
+        local ok, bankTabs = pcall(fetch, characterBank)
+        if not ok or not BigBiSList.IsReadableValue(bankTabs) or type(bankTabs) ~= "table" then return false end
+        tabs = bankTabs
+    else
+        tabs[1] = BANK_CONTAINER or -1
+        local firstBankBag = (NUM_BAG_SLOTS or 4) + 1
+        for bag = firstBankBag, firstBankBag + (NUM_BANKBAGSLOTS or 7) - 1 do
+            tabs[#tabs + 1] = bag
+        end
+    end
 
-    local cache = char.bankCache
-    cache.items = {}
-    cache.links = {}
-
-    local function addContainerItems(bag)
-        local numSlots = getContainerNumSlotsSafe(bag)
+    local cache = { items = {}, links = {} }
+    if strict then cache.guids = {} end
+    for _, bag in ipairs(tabs) do
+        if strict and (not BigBiSList.IsReadableValue(bag) or type(bag) ~= "number") then return false end
+        local numSlots, slotsReadable = getContainerNumSlotsSafe(bag)
+        if strict and not slotsReadable then return false end
         for slot = 1, numSlots do
-            local itemId = getContainerItemIDSafe(bag, slot)
-            local itemLink = getContainerItemLinkSafe(bag, slot)
+            local itemId, idReadable = getContainerItemIDSafe(bag, slot)
+            local itemLink, linkReadable = getContainerItemLinkSafe(bag, slot)
+            if strict then
+                local linkId = type(itemLink) == "string" and tonumber(itemLink:match("item:(%d+)"))
+                if not idReadable or not linkReadable or (itemLink and not linkId) or (itemId and itemId ~= linkId) then
+                    return false
+                end
+                itemId = linkId
+            end
             if itemId then
                 cache.items[tostring(itemId)] = true
             end
             if itemLink then
                 table.insert(cache.links, itemLink)
+                if strict then cache.guids[#cache.links] = ownedItemGUID(bag, slot) end
             end
         end
     end
 
-    addContainerItems(BANK_CONTAINER or -1)
-
-    local firstBankBag = (NUM_BAG_SLOTS or 4) + 1
-    local lastBankBag = firstBankBag + (NUM_BANKBAGSLOTS or 7) - 1
-    for bag = firstBankBag, lastBankBag do
-        addContainerItems(bag)
-    end
-
     cache.scanned = true
     cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
+    char.bankCache = cache
+    return true
 end
 
 local INVALIDATION_EXPANSION = {
@@ -2373,6 +2514,7 @@ function UI:Invalidate(domains, reason)
     if expanded.ownership then
         self.currentOwned = nil
         self.currentEnhancementAppliedCache = nil
+        if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:ScheduleRefresh() end
     end
     if expanded.access then
         self.currentAccess = nil
@@ -2406,9 +2548,12 @@ function UI:GetAvailabilityFilters()
     local char = BigBiSList:GetCharacterDB()
     self.currentCharacterDB = char
     self.currentAccess = self.currentAccess or self:BuildAccessState()
-    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
+    self:GetOwnedSnapshot()
     local accessState = self.currentAccess
     filters.faction = accessState and accessState.playerSide or "all"
+    filters.race = accessState and accessState.playerRace
+    filters.class = (self:GetSelection() or {}).class
+    filters._leveling = self:IsLevelingMode()
     filters.level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
     filters.ownedItems = self.currentOwned
     filters.ignoredItems = char.ignoredItems
@@ -2593,7 +2738,7 @@ function UI:BuildFilterPayload()
     local char = BigBiSList:GetCharacterDB()
     self.currentCharacterDB = char
     self.currentAccess = self.currentAccess or self:BuildAccessState()
-    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
+    self:GetOwnedSnapshot()
     self.currentFilterPayload = {
         search = filters.search,
         sourceType = filters.sourceType,
@@ -2614,6 +2759,9 @@ function UI:BuildFilterPayload()
         binding = filters.binding,
         boe = filters.boe,
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
+        race = self.currentAccess and self.currentAccess.playerRace,
+        class = (self:GetSelection() or {}).class,
+        _leveling = self:IsLevelingMode(),
         longevity = filters.longevity,
         level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL,
         slots = filters.slots,
@@ -2684,11 +2832,11 @@ function UI:SanitizeFilterPayloadForView(payload)
 end
 
 function UI:SaveWindow()
-    if not self.frame or not BigBiSListDB then
+    if not self.frame or not accountDB() then
         return
     end
 
-    local window = BigBiSListDB.profile.window
+    local window = accountDB().profile.window
     local point, _, relativePoint, x, y = self.frame:GetPoint(1)
     window.point = point or "CENTER"
     window.relativePoint = relativePoint or "CENTER"
@@ -2740,7 +2888,7 @@ function UI:ApplyResizeBounds()
 end
 
 function UI:RestoreWindow()
-    local window = BigBiSListDB.profile.window
+    local window = accountDB().profile.window
     local minWidth, minHeight, maxWidth, maxHeight = self:GetResizeBounds()
     local width = clamp(window.width or DEFAULT_WIDTH, minWidth, maxWidth)
     local height = clamp(window.height or DEFAULT_HEIGHT, minHeight, maxHeight)
@@ -2752,7 +2900,7 @@ function UI:RestoreWindow()
 end
 
 function UI:ResetWindowLayout()
-    local window = BigBiSListDB.profile.window
+    local window = accountDB().profile.window
     window.point = "CENTER"
     window.relativePoint = "CENTER"
     window.x = 0
@@ -3060,12 +3208,18 @@ function UI:SelectSort(sortKey)
     self:ScheduleRefresh(nil, "sort")
 end
 
+function UI:IsLevelingActivityView()
+    return BigBiSList.isForever and self:GetViewKey() == "gearGuide"
+        and self:IsLevelingMode() and self:GetViewState().groupBy == "activity"
+end
+
 function UI:GetGroupingDropdownItems()
     local tab = self:GetSelection().tab
     local state = self:GetViewState()
     local values = (tab == "Upgrades") and { "priority", "activity", "none" }
         or ((tab == "Wishlist") and { "activity", "none" } or { "slot", "activity", "none" })
     local items = filterDropdownItems(values, { priority = "By priority", activity = "By activity", slot = "By slot", none = "Ungrouped" }, state.groupBy or (tab == "Upgrades" and "priority" or (tab == "Wishlist" and "none" or "slot")))
+    if self:IsLevelingActivityView() and not self.levelingActivity then return items end
     items[#items+1] = { text = "Expand all sections", value = "expand", notCheckable = true }
     items[#items+1] = { text = "Collapse all sections", value = "collapse", notCheckable = true }
     for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
@@ -3078,9 +3232,9 @@ function UI:SelectGrouping(value)
     if value == "expand" or value == "collapse" then
         local state = self:GetViewState()
         state.collapsedGroups = {}
-        if value == "collapse" then
-            for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
-                if entry.kind == "section" then state.collapsedGroups[entry.sectionKey] = true end
+        for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
+            if entry.kind == "section" and (value == "collapse" or entry.defaultCollapsed) then
+                state.collapsedGroups[entry.sectionKey] = value == "collapse"
             end
         end
         self:Invalidate("presentation", "group-collapse"); self:ScheduleRefresh(nil, "group-collapse")
@@ -3125,7 +3279,8 @@ function UI:GetRowKey(data, mode)
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
     if not entityId then return nil end
-    return table.concat({ entityType, tostring(entityId), tostring(data.slot or data.slot_key or ""), tostring(data.variant_id or data.variant_label or data.rank_label or "") }, "\031")
+    return table.concat({ entityType, tostring(entityId), tostring(data.slot or data.slot_key or ""),
+        tostring(data.stat_identity or data.variant_id or data.variant_label or data.rank_label or "") }, "\031")
 end
 
 function UI:GetNavigationContextKey()
@@ -3133,7 +3288,12 @@ function UI:GetNavigationContextKey()
     local progression = self:IsLevelingMode()
         and (BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL)
         or selection.phase
-    return table.concat({ self:GetViewKey(), tostring(selection.mode), tostring(selection.class), tostring(selection.spec), tostring(progression) }, "\031")
+    local key = { self:GetViewKey(), tostring(selection.mode), tostring(selection.class), tostring(selection.spec), tostring(progression) }
+    if self:IsLevelingActivityView() then
+        key[#key + 1] = "activity"
+        key[#key + 1] = self.levelingActivity or ""
+    end
+    return table.concat(key, "\031")
 end
 
 function UI:ClearSelectedRow()
@@ -3166,9 +3326,10 @@ function UI:CaptureNavigationState()
 end
 
 function UI:BeginNavigationChange(reason)
+    self:SetSlotPickerOpen(false)
     if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then self:CloseSlotComparison() end
     if not self.pendingNavigation then self:CaptureNavigationState() end
-    local restore = reason == "tab" or reason == "content-mode"
+    local restore = reason == "tab" or reason == "content-mode" or reason == "activity-overview"
     self.pendingNavigation = { restore = restore, reset = not restore }
     if reason ~= "filter" then self:ClearSelectedRow() end
 end
@@ -3262,8 +3423,8 @@ function UI:SetInspectorVisible(visible)
     end
     if BigBiSList.SetInspectorVisible then
         BigBiSList:SetInspectorVisible(visible)
-    elseif BigBiSListDB and BigBiSListDB.profile and BigBiSListDB.profile.window then
-        BigBiSListDB.profile.window.inspectorVisible = visible and true or false
+    elseif accountDB() and accountDB().profile and accountDB().profile.window then
+        accountDB().profile.window.inspectorVisible = visible and true or false
     end
     self:Invalidate({ "layout", "details" }, "inspector")
     if not visible and self.dirtyDomains then
@@ -3286,7 +3447,7 @@ function UI:IsInspectorVisible()
     elseif BigBiSList.IsInspectorVisible then
         return BigBiSList:IsInspectorVisible()
     end
-    local window = BigBiSListDB and BigBiSListDB.profile and BigBiSListDB.profile.window
+    local window = accountDB() and accountDB().profile and accountDB().profile.window
     return window and window.inspectorVisible == true
 end
 
@@ -3350,13 +3511,13 @@ function UI:SetLevelingLevel(level)
     self:ScheduleRefresh(nil, "level")
 end
 
-function UI:SetTab(tabName)
+function UI:SetTab(tabName, reason)
     if normalizeTabName(tabName) == normalizeTabName(self:GetSelection().tab) then return end
     if normalizeTabName(self:GetSelection().tab) ~= "Settings" then
         self.lastWorkspaceTab = self:GetSelection().tab
         if normalizeTabName(tabName) == "Settings" then self.settingsReturnTab = self.lastWorkspaceTab end
     end
-    self:BeginNavigationChange("tab")
+    self:BeginNavigationChange(reason or "tab")
     BigBiSList:SetSelection(nil, nil, nil, normalizeTabName(tabName))
     if BigBiSList.Widgets.CloseDropdownMenus then
         BigBiSList.Widgets:CloseDropdownMenus()
@@ -3367,6 +3528,7 @@ end
 
 function UI:SetFilter(key, value)
     self:BeginNavigationChange("filter")
+    if key == "slots" and self:GetViewKey() == "gearGuide" then self.levelingSlotReference = nil end
     local filters = self:GetFilters()
     filters[key] = value
     self:Invalidate("query", "filter")
@@ -3418,6 +3580,7 @@ end
 
 function UI:ToggleSlot(slotName)
     self:BeginNavigationChange("filter")
+    if self:GetViewKey() == "gearGuide" then self.levelingSlotReference = nil end
     local filters = self:GetFilters()
     filters.slots = filters.slots or {}
     filters.slots[slotName] = not filters.slots[slotName] or nil
@@ -3452,6 +3615,7 @@ function UI:ClearFilters()
 
     local tabName = normalizeTabName((self:GetSelection() or {}).tab)
     if tabName == "Gear Guide" then
+        self.levelingSlotReference = nil
         self:GetViewState("Gear Guide").recommendationCategory = "all"
     elseif tabName == "Enhance" then
         local state = self:GetViewState("Enhance")
@@ -3531,6 +3695,11 @@ function UI:RestoreAllHiddenItems()
     self:ScheduleRefresh(nil, "restore-items")
 end
 
+local function equippedLinkName(data, mode)
+    local link = mode == "gear" and data and data.item_link
+    return link and link:match("|h%[(.-)%]|h")
+end
+
 local function applyItemPresentation(button, itemId, bindToken, presentation)
     if not button or button.itemId ~= itemId or button.itemBindToken ~= bindToken then
         return
@@ -3545,15 +3714,17 @@ local function applyItemPresentation(button, itemId, bindToken, presentation)
     end
     if presentation.name and button.boundNameText then
         local label = button.boundNameText
-        BigBiSList.Widgets:SetCellText(label, presentation.name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
+        local name = equippedLinkName(button.detailData, button.detailMode) or presentation.name
+        BigBiSList.Widgets:SetCellText(label, name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
     end
-    if presentation.link then
+    if presentation.link and not (button.detailData and button.detailData.item_link) then
         button.itemLink = presentation.link
     end
-    if presentation.quality and button.boundNameText and GetItemQualityColor then
-        local r, g, b = GetItemQualityColor(presentation.quality)
+    if presentation.quality and button.boundNameText then
+        local r, g, b = BigBiSList.Widgets:GetRankColor(presentation.quality)
         button.boundNameText:SetTextColor(r, g, b, 1)
     end
+    if presentation.name and button.OnItemNameChanged then button:OnItemNameChanged() end
 end
 
 local function ensureEntityButtonScripts(button)
@@ -3608,12 +3779,12 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     button.entityId = itemId
     button.itemId = itemId
     button.spellId = nil
-    button.itemLink = nil
+    button.itemLink = detailData and detailData.item_link or nil
     button.spellLink = nil
     button.detailData = detailData
     button.detailMode = detailMode
     button.boundNameText = nameText
-    button.boundFallbackName = fallbackName or ("Item " .. tostring(itemId))
+    button.boundFallbackName = equippedLinkName(detailData, detailMode) or fallbackName or ("Item " .. tostring(itemId))
     button.icon:SetDesaturated(false)
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
@@ -3634,11 +3805,7 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
         return
     end
 
-    local itemName, itemLink, itemQuality, itemTexture
-    if GetItemInfo then
-        local loadedName, loadedLink, loadedQuality, _, _, _, _, _, _, loadedTexture = GetItemInfo(itemId)
-        itemName, itemLink, itemQuality, itemTexture = loadedName, loadedLink, loadedQuality, loadedTexture
-    end
+    local itemName, itemLink, itemQuality, _, _, _, _, _, _, itemTexture = self:GetItemInfo(itemId)
     if itemName and itemTexture then
         cached = { name = itemName, link = itemLink, quality = itemQuality, texture = itemTexture, loaded = true }
         self.itemPresentationCache[itemId] = cached
@@ -3670,11 +3837,7 @@ function UI:RequestItemPresentation(itemId)
         local loadedName = itemObject.GetItemName and itemObject:GetItemName()
         local loadedLink = itemObject.GetItemLink and itemObject:GetItemLink()
         local loadedIcon = itemObject.GetItemIcon and itemObject:GetItemIcon()
-        local loadedQuality
-        if GetItemInfo then
-            local _, _, quality = GetItemInfo(itemId)
-            loadedQuality = quality
-        end
+        local _, _, loadedQuality = UI:GetItemInfo(itemId)
         local presentation = {
             name = loadedName,
             link = loadedLink,
@@ -3689,13 +3852,36 @@ function UI:RequestItemPresentation(itemId)
         for subscriber, token in pairs(completed and completed.subscribers or {}) do
             applyItemPresentation(subscriber, itemId, token, presentation)
         end
+        if completed and completed.statRating and BigBiSList.ForeverGearRating then
+            BigBiSList.ForeverGearRating:InvalidateItem(itemId)
+        end
         if completed and completed.ownedMetadata then
             UI.ownedItemMetadataResolved = UI.ownedItemMetadataResolved or {}
             UI.ownedItemMetadataResolved[itemId] = true
             UI:Invalidate("ownership", "owned-item-info")
             UI:ScheduleRefresh(nil, "owned-item-info")
+        elseif completed and completed.statRating then
+            UI:Invalidate("query", "gear-stats")
+            UI:ScheduleRefresh(nil, "gear-stats")
+        end
+        if completed and (completed.statRating or completed.ownedMetadata) and BigBiSList.isForever
+            and BigBiSList.ScheduleItemTooltipRefresh then
+            BigBiSList:ScheduleItemTooltipRefresh(itemId)
+        end
+        if completed and completed.statRating and BigBiSList.AcquisitionHighlights then
+            BigBiSList.AcquisitionHighlights:ScheduleRefresh()
         end
     end)
+end
+
+function UI:QueueStatLoads(pending)
+    for itemId in pairs(pending or {}) do
+        self.pendingItemLoads = self.pendingItemLoads or {}
+        local request = self.pendingItemLoads[itemId] or { subscribers = {} }
+        self.pendingItemLoads[itemId] = request
+        request.statRating = true
+        self:RequestItemPresentation(itemId)
+    end
 end
 
 function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, detailMode)
@@ -3832,8 +4018,8 @@ local function enhancementInstanceItemName(instance)
         return itemName
     end
 
-    if GetItemInfo and instance and instance.item_id then
-        itemName = GetItemInfo(instance.item_id)
+    if instance and instance.item_id then
+        itemName = UI:GetItemInfo(instance.item_id)
         if itemName and itemName ~= "" then
             return itemName
         end
@@ -3876,8 +4062,7 @@ function UI:GetEnhancementAppliedMatches(data)
         return {}
     end
 
-    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
-    local owned = self.currentOwned
+    local owned = self:GetOwnedSnapshot()
     local matches = {}
     for _, instance in ipairs(owned.enhancementItems or {}) do
         if data.enhancement_kind == "gem" then
@@ -3963,12 +4148,18 @@ function UI:GetOwnershipState(itemId, itemIds)
         end
     end
 
-    return bestState or "missing"
+    return bestState or (self.currentOwned and self.currentOwned.inventoryIncomplete and "unknown") or "missing"
 end
 
 function UI:GetRowOwnershipState(data)
     if not data then
         return nil
+    end
+    if BigBiSList.isForever and data.variant_id then
+        local owned = self.currentOwned or {}
+        return (owned.variants and owned.variants[data.variant_id])
+            or ((owned.inventoryIncomplete or (owned.variantUnknownItems and owned.variantUnknownItems[data.item_id])) and "unknown")
+            or "missing"
     end
     if data.enhancement_kind == "gem" or data.enhancement_kind == "enchant" then
         local summary = self:GetEnhancementAppliedSummary(data)
@@ -3977,6 +4168,9 @@ function UI:GetRowOwnershipState(data)
         data.ownership_detail = summary.detail
         data.ownership_lines = summary.lines
         return summary.state
+    end
+    if data.ownership_state == "missing" and self.currentOwned and self.currentOwned.inventoryIncomplete then
+        return "unknown"
     end
     if data.ownership_state then
         return data.ownership_state
@@ -4095,10 +4289,11 @@ end
 
 function UI:GetHistoryRecommendationText(data)
     local history = self:GetRowRecommendationHistory(data)
-    if not history then return data and data.rank_label or "No guide data" end
+    if not history then return BigBiSList:GetGuideRatingDisplay(data and data.rank_label) or "No guide data" end
     local cell = history.selected and history.selected.matched and history.selected or history.latest_earlier
     local label = cell and ((cell.phase_label or BigBiSList:GetPhaseDisplayName(cell.phase)) .. ": " .. cell.label)
         or (history.selected and history.selected.label) or "No guide data"
+    if BigBiSList.isForever then label = BigBiSList:GetGuideRatingDisplay(label) end
     local future = history.future_summary
     return label .. (future and future.has_future and ("\n" .. future.text) or "")
 end
@@ -4306,15 +4501,15 @@ function UI:CreateListColumnHeader(parent, yOffset, mode, header)
 end
 
 function UI:GetDensityMetrics()
-    local compact = BigBiSListDB and BigBiSListDB.profile.window.density == "compact"
+    local compact = accountDB() and accountDB().profile.window.density == "compact"
     return compact and 40 or 56, compact and 24 or 32, compact and 1 or 2
 end
 
 function UI:HandleEntityGesture(data, mode, buttonName, owner)
     if not data then return end
     local id = data.entity_id or data.spell_id or data.item_id
-    local link
-    if data.item_id and GetItemInfo then local _, itemLink = GetItemInfo(data.item_id); link = itemLink end
+    local link = data.item_link
+    if data.item_id and not link then local _, itemLink = UI:GetItemInfo(data.item_id); link = itemLink end
     if data.spell_id and GetSpellLink then link = GetSpellLink(data.spell_id) end
     if buttonName == "RightButton" then self:ShowItemActionMenu(data, mode, owner); return end
     if buttonName ~= "LeftButton" then return end
@@ -4332,12 +4527,14 @@ function UI:ShowItemActionMenu(data, mode, owner)
     add("Open item reference", function()
         local link
         if data.spell_id and GetSpellLink then link = GetSpellLink(data.spell_id)
-        elseif itemId then link = "item:" .. tostring(itemId) end
-        if link and SetItemRef then SetItemRef(link, link, "LeftButton") end
+        elseif itemId then link = data.item_link or ("item:" .. tostring(itemId)) end
+        if link and SetItemRef then SetItemRef(link:match("|H([^|]+)|h") or link, link, "LeftButton") end
     end)
     if itemId then
-        if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
-            add("Use as reference", function() self:SetComparisonReference(itemId) end)
+        local comparison = self.slotComparison
+        if comparison and (not comparison.statRank or data.reference_context) then
+            local target = BigBiSList.isForever and data.reference_context or itemId
+            add(BigBiSList.isForever and "Compare to this" or "Use as reference", function() self:SetComparisonReference(target) end)
         end
         if not self.slotComparison and self.OpenSlotComparison and data.slot and mode ~= "leveling" and mode ~= "enhance" then
             add("Compare slot", function() self:OpenSlotComparison(data, mode) end)
@@ -4478,7 +4675,6 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     end
     bindCell("rank", self:GetRowRecommendationText(data, mode))
     bindCell("value", self:GetRowRecommendationText(data, mode))
-    bindCell("currentRank", data.recommendation_summary or data.overlay or "Not ranked")
     bindCell("expansion", self:GetWishlistExpansionText(data))
     bindCell("source", source, {0.70,0.77,0.84})
     bindCell("location", location, {0.65,0.67,0.72})
@@ -4519,7 +4715,7 @@ function UI:CreateVirtualSectionHeader(parent, yOffset, text, header, entry)
             if not UI:IsCurrentRenderFrame(button) then return end
             local state = UI:GetViewState()
             state.collapsedGroups = state.collapsedGroups or {}
-            state.collapsedGroups[button.sectionKey] = not state.collapsedGroups[button.sectionKey]
+            state.collapsedGroups[button.sectionKey] = not button.__bigBisBoundRenderEntry.collapsed
             UI:Invalidate("presentation", "section-toggle"); UI:ScheduleRefresh(nil, "section-toggle")
         end)
         header.compareButton = widgets:CreateTextButton(header, "Compare slot", 98, 28, function(button)
@@ -4799,13 +4995,16 @@ function UI:AddListRenderEntry(model, entry)
     model.cursor = entry.bottom
 end
 
-function UI:AddListSection(model, title, mode)
+function UI:AddListSection(model, title, mode, defaultCollapsed, savedTitle)
     model.columnMode = model.columnMode or mode
-    local key = mode .. ":" .. title
-    local collapsed = self:GetViewState().collapsedGroups or {}
-    local entry = { kind = "section", title = title, sectionKey = key, count = 0, height = 28, collapsed = collapsed[key] == true }
+    local key = (mode or "list") .. ":" .. (savedTitle or title)
+    local collapsed = (self:GetViewState().collapsedGroups or {})[key]
+    if collapsed == nil then collapsed = defaultCollapsed end
+    local entry = { kind = "section", title = title, sectionKey = key, count = 0, height = 28,
+        collapsed = collapsed == true, defaultCollapsed = defaultCollapsed }
     model.activeSection = entry
     self:AddListRenderEntry(model, entry)
+    return entry
 end
 
 function UI:AddListRow(model, data, mode)
@@ -4822,8 +5021,13 @@ function UI:AddListRow(model, data, mode)
     })
 end
 
-function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle)
+function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle, notes)
     local model = self:NewListRenderModel()
+    for _, text in ipairs(notes or {}) do
+        local width = math.max(200, ((self.contentChild and self.contentChild:GetWidth()) or 640) - 24)
+        local height = 12 + 14 * math.ceil(#text / math.max(1, math.floor(width / 7)))
+        self:AddListRenderEntry(model, { kind = "note", text = text, height = math.max(28, height) })
+    end
     if groupBy == "none" then
         for _, row in ipairs(self:SortDisplayRows(rows, mode)) do self:AddListRow(model, row, mode) end
     else
@@ -4844,7 +5048,8 @@ function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle)
         end
         if groupBy == "activity" or groupBy == "source" then table.sort(order) end
         for _, title in ipairs(order) do
-            self:AddListSection(model, title, mode)
+            local displayed = groupBy == "priority" and BigBiSList.isForever and FOREVER_PLANNER_SECTION_TITLES[title] or title
+            self:AddListSection(model, displayed, mode, nil, title)
             if groupBy == "slot" and mode ~= "leveling" then
                 model.activeSection.compareSlot = groups[title][1] and groups[title][1].slot
             end
@@ -4991,7 +5196,7 @@ function UI:RenderListModel(model)
         if self.contentListLayer then self.contentListLayer:Show() end
         if self.resultCountText then
             local count = model.rowCount or 0
-            self.resultCountText:SetText(tostring(count) .. (count == 1 and " result" or " results"))
+            self.resultCountText:SetText(model.resultText or (tostring(count) .. (count == 1 and " result" or " results")))
         end
         self:CountPerformance("modelRows", model.rowCount or 0)
         self:SetContentHeight(-(model.cursor + 30))
@@ -5054,8 +5259,8 @@ function UI:UpdateVirtualList(force)
                     break
                 end
                 if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
-                    local poolKind = entry.kind
-                    if entry.kind == "row" then
+                    local poolKind = entry.nextAction and "planner-action" or entry.kind
+                    if entry.kind == "row" and not entry.nextAction then
                         poolKind = entry.kind .. ":" .. tostring(entry.mode or "phase") .. ":" .. (compact and "compact" or "wide")
                     end
                     bindingPoolKind = poolKind
@@ -5064,16 +5269,16 @@ function UI:UpdateVirtualList(force)
                     if alreadyTracked then
                         self:TrackRenderFrame(poolKind, frame)
                     end
-                    if entry.kind == "row" then
-                        if entry.columnIndex then
-                            frame = self:CreateGearCard(child, -entry.top, entry.data, frame, entry.rowHeight, entry.columnIndex)
-                        else
-                            frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
-                        end
+                    if entry.nextAction then
+                        frame = self:CreateNextUpgradeCard(child, -entry.top, entry.nextAction, frame, entry.rowHeight)
+                    elseif entry.kind == "row" then
+                        frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
                     elseif entry.kind == "section" then
                         frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame, entry)
                     elseif entry.kind == "note" then
-                        frame = self:CreateVirtualNote(child, -entry.top, entry.text, frame)
+                        frame = self:CreateVirtualNote(child, -entry.top, entry.text, frame, entry.height)
+                    elseif entry.kind == "action" then
+                        frame = self:CreateVirtualListAction(child, -entry.top, entry, frame)
                     end
                     if frame then
                         if not alreadyTracked then
@@ -5286,16 +5491,193 @@ function UI:SortDisplayRows(rows, mode)
     return sortedRows
 end
 
+local function hasVerifiedLevelingRoute(row)
+    local display = row.acquisition_display
+    local option = display and display.option
+    return option and option.source_type and option.source_type ~= "unknown"
+        and display.status == "ready" and display.source_match ~= nil
+end
+
+function UI:GetLevelingActivities(groups, selection, level, filters)
+    return self:GetCachedViewQuery("leveling-activities:" .. level, function()
+        local ordered, byName, counted, seen = {}, {}, {}, {}
+        local aliases = {Deadmines = "The Deadmines", ["Trade/AH"] = "Trade / Auction House"}
+        local function activityFor(row)
+            local name = BigBiSList:GetActivityGroup(row)
+            name = aliases[name] or name
+            local activity = byName[name]
+            if not activity then
+                activity = {name = name, rows = {}, upcoming = {}, itemCount = 0, missingCount = 0}
+                byName[name] = activity
+                ordered[#ordered + 1] = activity
+                counted[activity] = {}
+            end
+            return activity
+        end
+
+        for _, group in ipairs(groups) do
+            for _, row in ipairs(group.items) do
+                local activity = activityFor(row)
+                local identity = row.variant_id or row.item_id
+                local counts = counted[activity]
+                activity.rows[#activity.rows + 1] = row
+                if not counts[identity] then
+                    activity.itemCount = activity.itemCount + 1
+                    counts[identity] = "counted"
+                end
+                if counts[identity] ~= "missing" and hasVerifiedLevelingRoute(row) and self:GetRowOwnershipState(row) == "missing" then
+                    activity.missingCount = activity.missingCount + 1
+                    counts[identity] = "missing"
+                end
+                seen[identity] = true
+            end
+        end
+
+        for nextLevel = level + 1, math.min(level + 3, MAX_LEVELING_LEVEL) do
+            local nextGroups = BigBiSList:GetLevelingRows(selection.class, selection.spec, nextLevel, filters)
+            for _, group in ipairs(nextGroups) do
+                for _, row in ipairs(group.items) do
+                    local identity = row.variant_id or row.item_id
+                    if not seen[identity] then
+                        local upcoming = activityFor(row).upcoming
+                        upcoming[#upcoming + 1] = {row = row, level = nextLevel}
+                        seen[identity] = true
+                    end
+                end
+            end
+        end
+
+        table.sort(ordered, function(a, b)
+            local currentA, currentB = a.itemCount > 0, b.itemCount > 0
+            if currentA ~= currentB then return currentA end
+            if a.missingCount ~= b.missingCount then return a.missingCount > b.missingCount end
+            return lower(a.name) < lower(b.name)
+        end)
+        return {ordered = ordered, byName = byName}
+    end)
+end
+
+function UI:GetLevelingQuestActions(rows, selection, level)
+    local actions = {}
+    if not self.GetAcquisitionQuestProgress or BigBiSList:DetectPlayerClass() ~= selection.class
+        or BigBiSList:GetDetectedPlayerLevel() ~= level then return actions end
+
+    local seen = {}
+    for index, row in ipairs(rows) do
+        local display = row.acquisition_display
+        local source = display and display.option and display.option.source
+        if source and source.quest_steps and #source.quest_steps > 0
+            and hasVerifiedLevelingRoute(row) and self:GetRowOwnershipState(row) == "missing" then
+            local route, access = self:GetSelectedAcquisitionRoute(row)
+            if route == display.option
+                and (access.status == "ready" or access.status == "ready_alternate" or access.status == "check_prereq") then
+                local quest = self:GetAcquisitionQuestProgress(source)
+                if quest and quest.destination and not seen[quest.step.quest_id] then
+                    actions[#actions + 1] = {quest = quest, row = row, order = index}
+                    seen[quest.step.quest_id] = true
+                end
+            end
+        end
+    end
+    table.sort(actions, function(a, b)
+        local turnInA, turnInB = a.quest.turnIn == true, b.quest.turnIn == true
+        if turnInA ~= turnInB then return turnInA end
+        return a.order < b.order
+    end)
+    return actions
+end
+
+function UI:SetLevelingActivity(name)
+    if not self:IsLevelingActivityView() or self.levelingActivity == name then return end
+    self:BeginNavigationChange(name and "activity" or "activity-overview")
+    self.levelingActivity = name
+    self:Invalidate("presentation", "leveling-activity")
+    self:ScheduleRefresh(nil, "leveling-activity")
+end
+
+function UI:RenderLevelingActivities(groups, selection, level, filters, emptyText)
+    local activities = self:GetLevelingActivities(groups, selection, level, filters)
+    local activity = activities.byName[self.levelingActivity]
+    if self.levelingActivity and not activity then
+        self.levelingActivity = nil
+        self:ApplyBodyLayout()
+    end
+    if #activities.ordered == 0 then self:RenderEmpty(emptyText); return end
+
+    local model = self:NewListRenderModel()
+    if not activity then
+        for _, destination in ipairs(activities.ordered) do
+            local name, count = destination.name, destination.itemCount
+            local detail = count > 0 and (count .. (count == 1 and " item" or " items")
+                .. " · " .. destination.missingCount .. " unowned with known sources")
+                or ("Recommended at level " .. destination.upcoming[1].level)
+            self:AddListRenderEntry(model, {kind = "action", title = name, detail = detail, height = 30,
+                activate = function() self:SetLevelingActivity(name) end})
+            self:AddListGap(model, 4)
+        end
+        model.rowCount = #activities.ordered
+        model.resultText = model.rowCount .. (model.rowCount == 1 and " activity" or " activities")
+        self:RenderListModel(model)
+        return
+    end
+
+    local rows = self:SortDisplayRows(activity.rows, "leveling")
+    local actions = self:GetLevelingQuestActions(rows, selection, level)
+    if #actions > 0 then
+        self:AddListRenderEntry(model, {kind = "note", text = "Next quest steps", height = 22})
+        for index = 1, math.min(3, #actions) do
+            local quest, row = actions[index].quest, actions[index].row
+            self:AddListRenderEntry(model, {kind = "action", title = (quest.turnIn and "Turn in " or "Pick up ") .. quest.step.name,
+                detail = quest.destination.name, height = 30,
+                activate = function() self:ShowInspectorFor(row.item_id, row, "leveling") end})
+            self:AddListGap(model, 4)
+        end
+        self:AddListGap(model, 6)
+    end
+    for _, row in ipairs(rows) do self:AddListRow(model, row, "leveling") end
+    if #activity.upcoming > 0 then
+        if #rows == 0 then model.resultText = #activity.upcoming .. " upcoming" end
+        self:AddListGap(model)
+        local section = self:AddListSection(model, "Next levels", nil, true, "Coming up")
+        section.count = #activity.upcoming
+        if not section.collapsed then
+            for _, preview in ipairs(activity.upcoming) do
+                local row = preview.row
+                self:AddListRenderEntry(model, {kind = "note", height = 32,
+                    text = "Level " .. preview.level .. " · " .. row.name .. " · " .. self:GetRowSlotDisplay(row)})
+            end
+        end
+    end
+    self:RenderListModel(model)
+end
+
 function UI:RenderLevelingTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local level = BigBiSList:GetSelectedLevelingLevel()
-    local groups = self:GetCachedViewQuery("leveling", function() return BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters) end)
+    local groups = self:GetCachedViewQuery("leveling:" .. level, function() return BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters) end)
+    local notes = {}
+    if BigBiSList.isForever then
+        local rules = (BigBiSListData or {}).leveling_availability_rules or {}
+        local policy = (rules.spec_policies or {})[selection.class .. "/" .. selection.spec] or {}
+        local seen = {}
+        for _, slots in ipairs({rules.common_slots or {}, policy.slots or {}}) do
+            for _, slot in ipairs(slots) do
+                if not seen[slot] and (not filters.slots or next(filters.slots) == nil or filters.slots[slot]) then
+                    seen[slot] = true
+                    local availability = BigBiSList:GetLevelingSlotStatus(selection.class, selection.spec, level, slot, filters)
+                    if availability.state == "no_useful_item" then notes[#notes+1] = slot .. ": " .. availability.reason end
+                end
+            end
+        end
+    end
+    local emptyText = #notes > 0 and table.concat(notes, "\n\n") or "No leveling picks match this level and filters."
+    if self:IsLevelingActivityView() then self:RenderLevelingActivities(groups, selection, level, filters, emptyText); return end
     local rows = {}
     for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows+1] = row end end
-    if #rows == 0 then self:RenderEmpty("No leveling picks match this level and filters."); return end
-    self:RenderGroupedRows(rows, "leveling", self:GetViewState().groupBy or "slot", "Level " .. level)
+    if #rows == 0 then self:RenderEmpty(emptyText); return end
+    self:RenderGroupedRows(rows, "leveling", self:GetViewState().groupBy or "slot", "Level " .. level, notes)
 end
 
 function UI:RenderPhaseTab()
@@ -5309,63 +5691,668 @@ function UI:RenderPhaseTab()
     self:RenderGroupedRows(rows, "phase", self:GetViewState().groupBy or "slot", "BiS List")
 end
 
+function UI:GetNextUpgradeActions(rows)
+    local actions, shown = {}, {}
+    for _, row in ipairs(rows) do
+        if row.higher_rated and self:GetRowOwnershipState(row) == "bag" and not shown[row.item_id] then
+            actions[#actions + 1] = { data = row, reason = UPGRADE_MODE_LABELS.higher_rated, source = OWNERSHIP_LABELS.bag }
+            shown[row.item_id] = true
+            if #actions == 3 then return actions end
+        end
+    end
+    local livePhase = BigBiSList:GetCurrentPhaseKey()
+    local liveIndex = BigBiSList:GetAvailabilityPhaseIndex(livePhase)
+    for _, row in ipairs(rows) do
+        if row.upgrade_candidate and row.hasCurrent and not shown[row.item_id] and self:GetRowOwnershipState(row) == "missing" then
+            local route, access = self:GetSelectedAcquisitionRoute(row)
+            if route and route.source_type ~= "unknown" and (access.status == "ready" or access.status == "ready_alternate")
+                and not isReportedOnlyAccessOption(route) and optionIsPhaseAvailable(route, liveIndex) then
+                local source = self:GetAccessOptionDisplayText(route) or accessSourceBadgeLabel(route) or ""
+                local location = trim(route.location_area or route.zone)
+                if location ~= "" and not lower(source):find(lower(location), 1, true) then
+                    source = source ~= "" and (source .. " · " .. location) or location
+                end
+                actions[#actions + 1] = { data = row, reason = (row.reasons or {})[1] or row.rank_label, source = source }
+                shown[row.item_id] = true
+                if #actions == 3 then break end
+            end
+        end
+    end
+    return actions
+end
+
+function UI:CreateNextUpgradeCard(parent, yOffset, action, row, height)
+    local widgets = BigBiSList.Widgets
+    if not row then
+        row = widgets:CreateItemRow(parent, height)
+        row.iconButton = widgets:CreateIconButton(row, 34)
+        row.nameText = widgets:CreateWrappedLabel(row, "", "GameFontNormal")
+        row.reasonText = widgets:CreateLabel(row, "", "GameFontHighlightSmall")
+        row.sourceText = widgets:CreateLabel(row, "", "GameFontHighlightSmall")
+        row.sourceText:SetTextColor(0.66, 0.79, 0.86)
+        row:SetScript("OnMouseUp", function(owner, mouse)
+            if owner:IsVisible() then self:HandleEntityGesture(owner.boundData, "planner", mouse, owner) end
+        end)
+        row.__bigBisManaged = true
+    end
+    local data = action.data
+    local width = self:GetTableViewportWidth(parent, 760)
+    row:SetParent(parent)
+    row:ClearAllPoints()
+    row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    row:SetSize(width, height)
+    row:Show()
+    row.boundData, row.boundMode = data, "planner"
+    row:SetSelected(self.selectedRowKey == self:GetRowKey(data, "planner") and self.selectedRowKey ~= nil)
+    row:SetHovered(false)
+    row.iconButton:SetPoint("LEFT", row, "LEFT", 10, 0)
+    row.nameText:SetPoint("LEFT", row, "LEFT", 54, 14)
+    row.reasonText:SetPoint("LEFT", row, "LEFT", 54, 0)
+    row.sourceText:SetPoint("LEFT", row, "LEFT", 54, -14)
+    local textWidth = math.max(1, width - 64)
+    row.nameText:SetWidth(textWidth)
+    self:SetItemButton(row.iconButton, data.item_id, row.nameText, data.name, data.item and data.item.quality, data, "planner")
+    widgets:SetCellText(row.nameText, row.nameText.fullText or data.name, 1, 14, textWidth)
+    local reason = action.reason and (data.slot .. " · " .. action.reason) or data.slot
+    widgets:SetCellText(row.reasonText, reason, 1, 13, textWidth)
+    widgets:SetCellText(row.sourceText, action.source, 1, 13, textWidth)
+    return row
+end
+
+function UI:ToggleUpgradesView()
+    self:BeginNavigationChange("filter")
+    self.upgradesView = self.upgradesView == "list" and "actions" or "list"
+    self:Invalidate("presentation", "upgrade-view")
+    self:ScheduleRefresh(nil, "upgrade-view")
+end
+
 function UI:RenderPlannerTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local rows = self:GetCachedViewQuery("planner", function() return BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters) end)
+    local actions = self:GetNextUpgradeActions(rows)
+    local hasActions = #actions > 0
+    if self.hasNextUpgradeActions ~= hasActions then
+        self.hasNextUpgradeActions = hasActions
+        self:LayoutPrimaryControls()
+    end
+    if hasActions and self.upgradesView ~= "list" then
+        local model = self:NewListRenderModel()
+        local height = self:GetDensityMetrics() == 40 and 54 or 64
+        for _, action in ipairs(actions) do
+            self:AddListRenderEntry(model, { kind = "row", data = action.data, mode = "planner", nextAction = action,
+                height = height, rowHeight = height })
+            self:AddListGap(model)
+        end
+        model.rowCount = #actions
+        self:RenderListModel(model)
+        return
+    end
     if #rows == 0 then self:RenderEmpty("No upgrade candidates match your gear and filters."); return end
     self:RenderGroupedRows(rows, "planner", self:GetViewState().groupBy or "priority", "Upgrades")
 end
 
-function UI:CreateGearCard(parent, y, data, row, height, column)
+local PAPER_DOLL = {
+    left = { "Head", "Neck", "Shoulder", "Back", "Chest", "Wrist" },
+    right = { "Hands", "Waist", "Legs", "Feet", "Finger0", "Finger1", "Trinket0", "Trinket1" },
+    weapons = { "MainHand", "OffHand", "Ranged" },
+    filters = { Finger0 = "Rings", Finger1 = "Rings", Trinket0 = "Trinkets", Trinket1 = "Trinkets",
+        MainHand = "Main Hand", OffHand = "Off Hand", Ranged = "Ranged/Relic" },
+}
+
+local function createPaperDollButton(parent, definition, label)
     local widgets = BigBiSList.Widgets
-    if not row then
-        row = widgets:CreateItemRow(parent, height)
-        row.iconButton = widgets:CreateIconButton(row, 32)
-        row.nameText = widgets:CreateWrappedLabel(row, "", "GameFontNormal")
-        row.slotText = widgets:CreateLabel(row, "")
-        row.rankText = widgets:CreateLabel(row, "")
-        row.findButton = widgets:CreateTextButton(row, "Find upgrades", 100, 28, function(button)
-            local data = button.row.boundData
-            local target = UI:IsLevelingMode() and "Gear Guide" or "Upgrades"
-            UI:SetTab(target); UI:ClearFilters()
-            local filters = UI:GetFilters()
-            for _, slot in ipairs(data.dataSlots or {}) do filters.slots[slot] = true end
-            UI:Invalidate("query", "equipment-upgrades"); UI:ScheduleRefresh(nil, "equipment-upgrades")
-        end)
-        row.findButton.row = row
-        row.iconButton:HookScript("OnEnter", function() row:SetHovered(true) end)
-        row.iconButton:HookScript("OnLeave", function() row:SetHovered(false) end)
-        row.findButton:HookScript("OnEnter", function() row:SetHovered(true) end)
-        row.findButton:HookScript("OnLeave", function() row:SetHovered(false) end)
-        row:SetScript("OnMouseUp", function(button, mouse) UI:HandleEntityGesture(button.boundData, "gear", mouse, button) end)
-        row.__bigBisManaged = true
+    local button = widgets:CreateTextButton(parent, label, 124, 30)
+    local _, texture = getInventorySlotInfo(definition)
+    button.slotTexture = texture
+    button.slotKey = definition.key
+    button.iconButton = widgets:CreateIconButton(button, 26)
+    button.iconButton:EnableMouse(false)
+    button.iconButton:SetPoint("LEFT", button, "LEFT", 5, 0)
+    button.iconButton.icon:SetTexture(texture)
+    button.label:ClearAllPoints()
+    button.label:SetJustifyH("LEFT")
+    button.label:SetPoint("LEFT", button.iconButton, "RIGHT", 6, 0)
+    button.label:SetPoint("RIGHT", button, "RIGHT", -4, 0)
+    return button
+end
+
+local function layoutPaperDoll(host, buttons, sideWidth, weaponWidth, size, gap, top)
+    for index, keys in ipairs({ PAPER_DOLL.left, PAPER_DOLL.right }) do
+        local point = index == 1 and "TOPLEFT" or "TOPRIGHT"
+        local row = 0
+        for _, key in ipairs(keys) do
+            local button = buttons[key]
+            if button then
+                button:ClearAllPoints()
+                button:SetPoint(point, host, point, 0, -top - row * (size + gap))
+                button:SetSize(sideWidth, size)
+                button.iconButton:SetSize(size - 6, size - 6)
+                row = row + 1
+            end
+        end
     end
-    local width = math.floor((self:GetTableViewportWidth(parent, 720) - 12)/2)
-    row:SetParent(parent); row:Show(); row:ClearAllPoints()
-    row:SetPoint("TOPLEFT", parent, "TOPLEFT", (column-1)*(width+12), y); row:SetSize(width, height)
-    row.boundData = data; row.boundMode = "gear"; row.detailData = data
-    row:SetSelected(self.selectedRowKey ~= nil and self.selectedRowKey == self:GetRowKey(data, "gear")); row:SetHovered(false)
-    local _, iconSize = self:GetDensityMetrics()
-    local textX = 8 + iconSize + 8
-    local textWidth = math.max(60, width - textX - 112)
-    row.iconButton:SetSize(iconSize, iconSize)
-    row.iconButton:ClearAllPoints(); row.iconButton:SetPoint("LEFT", row, "LEFT", 8, 0)
-    row.slotText:ClearAllPoints(); row.slotText:SetPoint("TOPLEFT", row, "LEFT", textX, 21.5)
-    widgets:SetCellText(row.slotText, data.slot, 1, 12, textWidth)
-    row.slotText:SetTextColor(0.60,0.61,0.66)
-    row.nameText:ClearAllPoints(); row.nameText:SetPoint("TOPLEFT", row.slotText, "BOTTOMLEFT", 0, -2)
-    row.nameText:SetWidth(textWidth); row.nameText.maxLines = 1; row.nameText.lineHeight = 14
-    if data.item_id then self:SetItemButton(row.iconButton, data.item_id, row.nameText, data.name, data.item and data.item.quality, data, "gear")
-    else self:ResetEntityButton(row.iconButton, row.nameText, data.disabledReason or "Empty slot") end
-    widgets:SetCellText(row.nameText, row.nameText.fullText or data.name or "", 1, 14, textWidth)
-    row.rankText:ClearAllPoints(); row.rankText:SetPoint("TOPLEFT", row.nameText, "BOTTOMLEFT", 0, -2)
-    widgets:SetCellText(row.rankText, data.recommendation_summary or "Not ranked", 1, 13, textWidth)
-    row.rankText:SetTextColor(0.68,0.72,0.76)
-    row.findButton:ClearAllPoints(); row.findButton:SetPoint("RIGHT", row, "RIGHT", -4, 0)
-    row.findButton:SetEnabled(not data.disabledReason)
-    return row, height
+    for index, key in ipairs(PAPER_DOLL.weapons) do
+        local button = buttons[key]
+        button:ClearAllPoints()
+        button:SetPoint("BOTTOM", host, "BOTTOM", (index - 2) * (weaponWidth + gap), top)
+        button:SetSize(weaponWidth, size)
+        button.iconButton:SetSize(size - 6, size - 6)
+    end
+end
+
+function UI:GetFocusedBrowseSlot()
+    local view = self:GetViewKey()
+    if view ~= "bisList" and view ~= "gearGuide" then return nil end
+    local slot
+    for key, enabled in pairs(self:GetFilters().slots or {}) do
+        if enabled then
+            if slot then return nil end
+            slot = key
+        end
+    end
+    return slot == "Ring" and "Rings" or (slot == "Trinket" and "Trinkets" or slot)
+end
+
+function UI:CreateSlotPicker()
+    local widgets = BigBiSList.Widgets
+    local overlay = CreateFrame("Button", nil, self.body)
+    overlay:SetAllPoints()
+    overlay:SetFrameLevel(self.body:GetFrameLevel() + 12)
+    overlay:SetScript("OnClick", function() self:SetSlotPickerOpen(false) end)
+    local popup = widgets:CreatePanel(nil, overlay, { 0.055, 0.055, 0.068, 1 })
+    popup:EnableMouse(true)
+    popup.slots = {}
+    popup.host = CreateFrame("Frame", nil, popup)
+    popup.host:SetPoint("TOPLEFT", popup, "TOPLEFT", 10, -42)
+    popup.host:SetPoint("BOTTOMRIGHT", popup, "BOTTOMRIGHT", -10, 10)
+    popup.allButton = widgets:CreateTextButton(popup, "All slots", 94, 26, function()
+        self:SetFilter("slots", {})
+    end)
+    popup.allButton:SetPoint("TOPLEFT", popup, "TOPLEFT", 10, -8)
+    local labels, added = self:GetSlotFilterLabels(), {}
+    for _, definition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+        local key = PAPER_DOLL.filters[definition.key] or definition.key
+        if not added[key] then
+            local button = createPaperDollButton(popup.host, definition, labels[key] or definition.label)
+            button.filterKey = key
+            button:SetScript("OnClick", function(owner)
+                if owner:IsVisible() then self:SetFilter("slots", { [owner.filterKey] = true }) end
+            end)
+            popup.slots[definition.key] = button
+            added[key] = true
+        end
+    end
+    overlay.popup = popup
+    overlay:Hide()
+    self.slotPickerOverlay = overlay
+end
+
+function UI:LayoutSlotPicker()
+    local overlay = self.slotPickerOverlay
+    if not overlay or not overlay:IsShown() then return end
+    local popup, button = overlay.popup, self.slotPickerButton
+    local width, height = overlay:GetWidth(), overlay:GetHeight()
+    if width < 180 or height < 128 then return end
+    local popupWidth = math.min(366, width)
+    local popupHeight = math.min(276, height)
+    local left = clamp((button:GetLeft() or 0) - (overlay:GetLeft() or 0), 0, width - popupWidth)
+    local top = clamp((overlay:GetTop() or 0) - (button:GetBottom() or 0) + 4, 0, height - popupHeight)
+    popup:ClearAllPoints()
+    popup:SetPoint("TOPLEFT", overlay, "TOPLEFT", left, -top)
+    popup:SetSize(popupWidth, popupHeight)
+    local slotHeight = math.min(28, math.floor((popupHeight - 52 - 6 * 4) / 7))
+    local sideWidth = math.min(126, math.floor((popupWidth - 24) / 2))
+    local weaponWidth = math.floor((popupWidth - 28) / 3)
+    layoutPaperDoll(popup.host, popup.slots, sideWidth, weaponWidth, slotHeight, 4, 0)
+end
+
+function UI:SetSlotPickerOpen(open)
+    if not open then
+        if self.slotPickerOverlay then self.slotPickerOverlay:Hide() end
+        if self.slotPickerButton then self.slotPickerButton:SetSelected(false) end
+        return
+    end
+    if not self.slotPickerButton or not self.slotPickerButton:IsVisible() then return end
+    if self.filterDrawerOpen then self:SetFilterDrawerOpen(false) end
+    BigBiSList.Widgets:CloseDropdownMenus()
+    if not self.slotPickerOverlay then self:CreateSlotPicker() end
+    local filters, focused = self:GetFilters(), self:GetFocusedBrowseSlot()
+    local popup = self.slotPickerOverlay.popup
+    popup.allButton:SetSelected(not tableHasAnyEnabled(filters.slots))
+    for _, button in pairs(popup.slots) do
+        button:SetSelected(button.filterKey == focused or (filters.slots and filters.slots[button.filterKey]))
+    end
+    self.slotPickerOverlay:Show()
+    self.slotPickerButton:SetSelected(true)
+    self:LayoutSlotPicker()
+end
+
+function UI:CreateSlotContext(parent)
+    local widgets = BigBiSList.Widgets
+    local frame = widgets:CreatePanel(nil, parent)
+    frame:SetHeight(34)
+    frame.label = widgets:CreateLabel(frame, "Equipped")
+    frame.label:SetPoint("LEFT", frame, "LEFT", 8, 0)
+    frame.compareButton = widgets:CreateTextButton(frame, "Compare slot", 100, 26, function(button)
+        if button:IsVisible() then self:OpenSlotComparison(frame.slot, "phase") end
+    end)
+    frame.compareButton:SetPoint("RIGHT", frame, "RIGHT", -4, 0)
+    frame.items = {}
+    for index = 1, 2 do
+        local item = CreateFrame("Frame", nil, frame)
+        item:SetHeight(28)
+        item:EnableMouse(true)
+        item.iconButton = widgets:CreateIconButton(item, 22)
+        item.iconButton:EnableMouse(false)
+        item.iconButton:SetPoint("LEFT")
+        item.name = widgets:CreateLabel(item, "", "GameFontHighlightSmall")
+        item.name:SetPoint("LEFT", item.iconButton, "RIGHT", 5, 0)
+        widgets:BindTooltip(item, function(owner, tooltip)
+            if owner.iconButton.itemLink then tooltip:SetHyperlink(owner.iconButton.itemLink)
+            elseif owner.data then tooltip:SetText(owner.data.name) end
+        end)
+        frame.items[index] = item
+    end
+    frame:Hide()
+    return frame
+end
+
+function UI:GetLevelingReferenceSlot()
+    local reference = self.levelingSlotReference
+    if not reference or self:GetViewKey() ~= "gearGuide" or not self:IsLevelingMode() then return nil end
+    local slot = reference.slotKey
+    if reference.character == BigBiSList:GetCharacterDB() and (PAPER_DOLL.filters[slot] or slot) == self:GetFocusedBrowseSlot() then
+        return slot
+    end
+    self.levelingSlotReference = nil
+end
+
+function UI:RefreshSlotContext()
+    local frame, slot = self.slotContextFrame, self:GetFocusedBrowseSlot()
+    local referenceSlot = self:GetLevelingReferenceSlot()
+    local selection = self:GetSelection()
+    local contexts = slot and self.currentOwned
+        and BigBiSList:GetEquipmentComparisonContexts(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, referenceSlot or slot)
+        or {}
+    frame.reference = referenceSlot and contexts[1] or nil
+    frame:SetShown(#contexts > 0)
+    if #contexts == 0 then return false end
+    frame.slot = slot
+    frame.label:SetText(frame.reference and frame.reference.slot or "Equipped")
+    local compare = not self:IsLevelingMode() and self.OpenSlotComparison ~= nil
+    frame.compareButton:SetShown(compare)
+    local width = self.contentRegion:GetWidth()
+    local labelWidth = math.max(68, math.ceil(frame.label:GetStringWidth()) + 17)
+    local itemWidth = math.max(28, math.floor((width - labelWidth - 5 - (compare and 109 or 0)) / #contexts))
+    for index, item in ipairs(frame.items) do
+        local data = contexts[index]
+        item.data = data
+        item:SetShown(data ~= nil)
+        if data then
+            item:SetWidth(itemWidth)
+            item:SetPoint("LEFT", frame, "LEFT", labelWidth + (index - 1) * itemWidth, 0)
+            item.iconButton:SetShown(data.item_id ~= nil)
+            if data.item_id then
+                self:SetItemButton(item.iconButton, data.item_id, item.name, data.name, nil, data, "gear")
+            else
+                self:ResetEntityButton(item.iconButton, item.name, data.name)
+                item.name:SetTextColor(0.76, 0.76, 0.80)
+            end
+            item.name:SetPoint("LEFT", item, "LEFT", data.item_id and 27 or 0, 0)
+            BigBiSList.Widgets:SetCellText(item.name, item.name.fullText or data.name, 1, 13, math.max(1, itemWidth - (data.item_id and 33 or 6)))
+        end
+    end
+    return true
+end
+
+function UI:FindGearSlotUpgrades(data)
+    if not data or data.disabledReason then return end
+    local target = self:IsLevelingMode() and "Gear Guide" or "Upgrades"
+    local slot = PAPER_DOLL.filters[data.slotKey] or data.slotKey
+    if target == "Upgrades" then
+        self.upgradesView = "list"
+    elseif BigBiSList.isForever then
+        self.levelingActivity = nil
+        self.levelingSlotReference = {slotKey = data.slotKey, character = BigBiSList:GetCharacterDB()}
+    end
+    self:GetFilters(target).slots = { [slot] = true }
+    self:SetTab(target, "equipment-upgrades")
+end
+
+local function gearLabelWidth(label, text)
+    label:SetWidth(0)
+    label:SetWordWrap(false)
+    label:SetText(text)
+    return math.ceil(label:GetStringWidth()) + 2
+end
+
+local function layoutGearSlotText(button)
+    local data = button.gearData
+    if not data then return end
+    local widgets = BigBiSList.Widgets
+    local occupied = data.item_id ~= nil
+    local width = math.max(1, button:GetWidth() - button.iconButton:GetWidth() - 15)
+    local twoLines = button:GetHeight() >= 27 and width >= 24
+    local nameHeight = math.min(14, button:GetHeight())
+    local nameY = twoLines and 6.5 or 0
+    local service, placement = BigBiSList.ForeverGearRating, data.stat_rank
+    local rankColor = RANK_COLORS[data.display_rank_kind]
+    local badge = button.guideBadge
+    local nameWidth = width
+    if badge then
+        badge:SetShown(occupied and data.guide_badge ~= nil)
+        if badge:IsShown() then
+            local text = data.guide_badge
+            local badgeWidth = gearLabelWidth(badge, text)
+            local nameReserve = math.min(72, math.floor(width * 0.45))
+            if not data.equipped_bis and not data.leveling and not data.historical_only and badgeWidth > width - nameReserve - 6 then
+                text = "Guide note"
+                badgeWidth = gearLabelWidth(badge, text)
+            end
+            badge:SetPoint("RIGHT", button, "RIGHT", -4, nameY)
+            widgets:SetCellText(badge, text, 1, 12, math.min(badgeWidth, width))
+            local color = widgets.Theme.bisGold
+            if not data.equipped_bis and rankColor then
+                badge:SetTextColor(rankColor[5], rankColor[6], rankColor[7])
+            else
+                badge:SetTextColor(unpack(color))
+            end
+            nameWidth = math.max(1, width - badgeWidth - 6)
+        end
+    end
+    local name = button.itemName
+    name:SetPoint("LEFT", button.iconButton, "RIGHT", 6, nameY)
+    widgets:SetCellText(name, name.fullText or data.slot, 1, nameHeight, nameWidth)
+    button.label:SetShown(twoLines and occupied)
+    button.rating:SetShown(twoLines)
+    button.stateIcon:SetShown(data.disabledReason ~= nil)
+    local tier = twoLines and placement and placement.tier
+    if not twoLines then return end
+
+    local rating = data.overlay
+    if occupied and badge then
+        rating = service:Label(placement)
+    elseif occupied and data.bestUse then
+        rating = data.display_rank_label or rating
+    end
+    if tier then
+        button.rating:SetTextColor(widgets:GetRankColor(tier.quality))
+    elseif not badge and occupied and rankColor and data.display_rank_kind ~= "missing" then
+        button.rating:SetTextColor(rankColor[5], rankColor[6], rankColor[7])
+    else
+        button.rating:SetTextColor(unpack(placement and placement.rank and placement.total > 1 and widgets.Theme.text or widgets.Theme.muted))
+    end
+    local metaY = -(nameHeight + 1) / 2
+    button.rating:ClearAllPoints()
+    if occupied then
+        local ratingWidth = gearLabelWidth(button.rating, rating)
+        local ratingLimit = math.floor(width * 0.65)
+        if badge then
+            local slotWidth = gearLabelWidth(button.label, data.slot)
+            local available = width - 6
+            if placement and placement.rank and placement.total > 1 and ratingWidth > available - slotWidth then
+                rating = service:Label(placement, "compact")
+                ratingWidth = gearLabelWidth(button.rating, rating)
+            end
+            ratingLimit = available - math.min(slotWidth, 24)
+        end
+        ratingWidth = math.max(1, math.min(ratingWidth, ratingLimit))
+        button.rating:SetJustifyH("RIGHT")
+        button.rating:SetPoint("RIGHT", button, "RIGHT", -4, metaY)
+        widgets:SetCellText(button.rating, rating, 1, 12, ratingWidth)
+        button.label:SetPoint("LEFT", button.iconButton, "RIGHT", 6, metaY)
+        widgets:SetCellText(button.label, data.slot, 1, 12, width - ratingWidth - 6)
+    else
+        button.rating:SetJustifyH("LEFT")
+        button.rating:SetPoint("LEFT", button.iconButton, "RIGHT", 6, metaY)
+        widgets:SetCellText(button.rating, rating, 1, 12, width)
+    end
+end
+
+local function layoutGearSummaryText(summary)
+    local name, rating = summary.itemName, summary.rating
+    name:SetHeight(0)
+    name:SetText(name.fullText or "")
+    name:SetHeight(math.max(14, name:GetStringHeight() or 0))
+    local height = 8 + summary.slot:GetHeight() + 3 + name:GetHeight() + 8 + summary.findButton:GetHeight() + 8
+    if rating:IsShown() then
+        rating:SetHeight(0)
+        rating:SetHeight(math.max(13, rating:GetStringHeight() or 0))
+        height = height + 3 + rating:GetHeight()
+    end
+    if height ~= summary:GetHeight() then
+        summary:SetHeight(height)
+        UI:RefreshGearPreview()
+    end
+end
+
+function UI:CreateGearWorkspace(parent)
+    local widgets = BigBiSList.Widgets
+    local gear = CreateFrame("Frame", nil, parent)
+    gear:SetPoint("TOPLEFT", parent, "TOPLEFT", 14, -12)
+    gear:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -14, 12)
+    gear.slots = {}
+    for _, definition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+        local button = createPaperDollButton(gear, definition, definition.label)
+        button.label:ClearAllPoints()
+        button.itemName = widgets:CreateWrappedLabel(button, "", "GameFontHighlight")
+        button.rating = widgets:CreateLabel(button, "", "GameFontHighlightSmall")
+        if BigBiSList.ForeverGearRating then
+            button.guideBadge = widgets:CreateLabel(button, "", "GameFontHighlightSmall")
+            button.guideBadge:SetJustifyH("RIGHT")
+            button.guideBadge:Hide()
+        end
+        local stateIcon = button.iconButton:CreateTexture(nil, "OVERLAY")
+        widgets:SetIcon(stateIcon, "warning")
+        stateIcon:SetVertexColor(1, 0.76, 0.35)
+        stateIcon:SetSize(14, 14)
+        stateIcon:SetPoint("BOTTOMRIGHT", button.iconButton)
+        stateIcon:Hide()
+        button.stateIcon = stateIcon
+        button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        button:SetScript("OnClick", function(owner, mouse)
+            local data = owner.gearData
+            if not data or not owner:IsVisible() then return end
+            if data.item_id and (mouse == "RightButton" or (IsShiftKeyDown and IsShiftKeyDown())
+                or (IsControlKeyDown and IsControlKeyDown())) then
+                self:HandleEntityGesture(data, "gear", mouse, owner)
+            elseif mouse == "LeftButton" then
+                self.gearSlotKey = data.slotKey
+                self:RefreshGearSelection()
+            end
+        end)
+        widgets:BindTooltip(button, function(owner, tooltip)
+            local data = owner.gearData
+            if not data then return end
+            local link = owner.iconButton.itemLink
+            if link then
+                tooltip:SetHyperlink(link)
+            else
+                tooltip:SetText(data.slot, 1, 0.82, 0.28)
+                if data.item_id then tooltip:AddLine(owner.itemName.fullText or data.name, 0.88, 0.88, 0.92, true) end
+            end
+            if data.stat_rank then
+                local service = BigBiSList.ForeverGearRating
+                for _, line in ipairs(service:DescriptionLines(data.stat_rank)) do
+                    tooltip:AddLine(line, 0.88, 0.88, 0.92, true)
+                end
+            end
+            if not data.stat_rank or data.bestUse then
+                tooltip:AddLine(data.guide_note or data.recommendation_summary, 0.88, 0.88, 0.92, true)
+            end
+        end)
+        gear.slots[definition.key] = button
+    end
+
+    local preview = CreateFrame("Frame", nil, gear)
+    preview.name = widgets:CreateLabel(preview, "", "GameFontNormal")
+    preview.name:SetPoint("TOP", preview)
+    preview.portrait = preview:CreateTexture(nil, "ARTWORK")
+    preview.portrait:SetSize(68, 68)
+    preview.portrait:SetPoint("CENTER", preview, "CENTER", 0, -5)
+    preview.portrait:Hide()
+    local ok, model = pcall(CreateFrame, "PlayerModel", nil, preview)
+    if ok and model then
+        model:SetPoint("TOPLEFT", preview, "TOPLEFT", 0, -20)
+        model:SetPoint("BOTTOMRIGHT", preview)
+        model:Hide()
+        if model.SetUnit then
+            model:EnableMouse(false)
+            preview.model = model
+        end
+    end
+    gear.preview = preview
+
+    local summary = widgets:CreatePanel(nil, gear, { 0.075, 0.075, 0.088, 0.95 }, { 0.22, 0.22, 0.25, 1 })
+    summary:SetHeight(92)
+    summary.itemButton = widgets:CreateIconButton(summary, 16)
+    summary.itemButton:EnableMouse(false)
+    summary.itemButton:SetPoint("TOPRIGHT", summary, "TOPRIGHT", -8, -4)
+    summary.itemButton.OnItemNameChanged = function()
+        layoutGearSummaryText(summary)
+    end
+    summary.slot = widgets:CreateLabel(summary, "")
+    summary.slot:SetTextColor(0.80, 0.75, 0.63)
+    summary.slot:SetPoint("TOPLEFT", summary, "TOPLEFT", 10, -8)
+    summary.itemName = widgets:CreateWrappedLabel(summary, "", "GameFontNormal")
+    summary.itemName:SetPoint("TOPLEFT", summary.slot, "BOTTOMLEFT", 0, -3)
+    summary.rating = widgets:CreateWrappedLabel(summary, "", "GameFontHighlightSmall")
+    summary.rating:SetPoint("TOPLEFT", summary.itemName, "BOTTOMLEFT", 0, -3)
+    if BigBiSList.ForeverGearRating then
+        local compare = CreateFrame("Button", nil, summary)
+        compare:SetPoint("TOPLEFT", summary.rating, "TOPLEFT")
+        compare:SetPoint("BOTTOMRIGHT", summary.rating, "BOTTOMRIGHT")
+        compare:RegisterForClicks("LeftButtonUp")
+        compare:SetScript("OnClick", function(button)
+            if button:IsVisible() and summary.gearData then self:OpenSlotComparison(summary.gearData, "gear", true) end
+        end)
+        widgets:BindTooltip(compare, function(_, tooltip)
+            tooltip:SetText("Compare slot by stat rank")
+            local data = summary.gearData
+            local placement = data and data.stat_rank
+            if placement then
+                for _, line in ipairs(BigBiSList.ForeverGearRating:DescriptionLines(placement)) do
+                    tooltip:AddLine(line, 0.88, 0.88, 0.92, true)
+                end
+            end
+            if data and data.bestUse then
+                tooltip:AddLine(data.guide_note or data.recommendation_summary, 0.88, 0.88, 0.92, true)
+            end
+        end)
+        compare:Hide()
+        summary.statCompare = compare
+    end
+    summary.findButton = widgets:CreateTextButton(summary, "Find upgrades", 110, 24, function(button)
+        if button:IsVisible() then self:FindGearSlotUpgrades(summary.gearData) end
+    end)
+    summary.findButton:SetPoint("BOTTOMLEFT", summary, "BOTTOMLEFT", 10, 8)
+    summary.detailsButton = widgets:CreateTextButton(summary, "Details", 68, 24, function(button)
+        local data = summary.gearData
+        if button:IsVisible() and data and data.item_id then self:ShowInspectorFor(data.item_id, data, "gear") end
+    end)
+    summary.detailsButton:SetPoint("LEFT", summary.findButton, "RIGHT", 6, 0)
+    summary:Hide()
+    gear.summary = summary
+    gear:Hide()
+    return gear
+end
+
+function UI:RefreshGearPreview()
+    local preview = self.gearFrame.preview
+    local useModel = preview.model and preview:GetHeight() >= 158 and preview:GetWidth() >= 150
+    local hasModel = false
+    if useModel then
+        preview.model:Show()
+        local ok, result = pcall(preview.model.SetUnit, preview.model, "player")
+        hasModel = ok and result ~= false
+    end
+    if preview.model then preview.model:SetShown(hasModel) end
+    local ok = false
+    if not hasModel and SetPortraitTexture and preview:GetHeight() >= 84 then
+        ok = pcall(SetPortraitTexture, preview.portrait, "player")
+    end
+    preview.portrait:SetShown(ok)
+    preview.name:SetText(UnitName and UnitName("player") or "")
+end
+
+function UI:LayoutGearWorkspace()
+    local gear = self.gearFrame
+    if not gear or not gear:IsVisible() then return end
+    local width, height = gear:GetWidth(), gear:GetHeight()
+    if width <= 0 or height <= 0 then return end
+    local density = self:GetDensityMetrics()
+    local signature = table.concat({ width, height, density }, ":")
+    if gear.layoutSignature == signature then return end
+    gear.layoutSignature = signature
+    local gap = height >= 350 and 5 or 3
+    local rows = #PAPER_DOLL.right + 1
+    local size = math.max(8, math.min(density == 40 and 32 or 42, math.floor((height - rows * gap) / rows)))
+    local top = math.max(0, math.floor((height - rows * size - rows * gap) / 2))
+    local centerWidth = math.min(clamp(math.floor(width * 0.30), 204, 326), math.floor(width / 2))
+    local sideWidth = math.max(1, math.floor((width - centerWidth - 24) / 2))
+    local weaponWidth = math.max(1, math.floor((width - 2 * gap) / 3))
+    layoutPaperDoll(gear, gear.slots, sideWidth, weaponWidth, size, gap, top)
+    for _, button in pairs(gear.slots) do layoutGearSlotText(button) end
+
+    local summary, preview = gear.summary, gear.preview
+    summary:SetWidth(centerWidth)
+    summary:SetPoint("BOTTOM", gear, "BOTTOM", 0, top + size + 10)
+    summary.itemName:SetWidth(math.max(1, centerWidth - 20))
+    summary.rating:SetWidth(math.max(1, centerWidth - 20))
+    local actionsWidth = math.max(2, centerWidth - 26)
+    local findWidth = math.min(110, math.floor(actionsWidth * 0.62))
+    summary.findButton:SetWidth(findWidth)
+    summary.detailsButton:SetWidth(math.min(68, actionsWidth - findWidth))
+    preview:SetWidth(math.min(292, centerWidth))
+    preview:SetPoint("TOP", gear, "TOP", 0, -top)
+    preview:SetPoint("BOTTOM", summary, "TOP", 0, 8)
+    self:RefreshGearPreview()
+    return true
+end
+
+function UI:RefreshGearSelection()
+    local gear = self.gearFrame
+    local summary = gear.summary
+    local selected = gear.slots[self.gearSlotKey]
+    local data = selected and selected.gearData
+    summary.gearData = data
+    summary:SetShown(data ~= nil)
+    if summary.statCompare then summary.statCompare:SetShown(data ~= nil and data.stat_rank ~= nil) end
+    for _, button in pairs(gear.slots) do button:SetSelected(button == selected) end
+    if data then
+        summary.slot:SetText(data.slot)
+        summary.itemButton:SetShown(data.item_id ~= nil)
+        if data.stat_rank then
+            local service = BigBiSList.ForeverGearRating
+            local label = service:Label(data.stat_rank) .. " ›\n" .. service:ContextLabel(data.stat_rank)
+            if data.bestUse then label = label .. "\n" .. data.recommendation_summary end
+            summary.rating:SetText(label)
+            summary.rating:SetTextColor(0.58, 0.81, 0.96)
+        else
+            summary.rating:SetText(data.recommendation_summary)
+            summary.rating:SetTextColor(1, 1, 1)
+        end
+        summary.rating:SetShown(data.item_id ~= nil)
+        if data.item_id then
+            self:SetItemButton(summary.itemButton, data.item_id, summary.itemName, data.name, data.item and data.item.quality, data, "gear")
+        else
+            self:ResetEntityButton(summary.itemButton, summary.itemName, data.recommendation_summary)
+            summary.itemName:SetTextColor(0.88, 0.88, 0.92)
+        end
+        layoutGearSummaryText(summary)
+        summary.findButton:SetEnabled(not data.disabledReason)
+        summary.detailsButton:SetShown(data.item_id ~= nil)
+    end
+    if self:IsInspectorVisible() and not self.slotComparison and self.selectedItemData ~= data then
+        if data and data.item_id then
+            self:ShowInspectorFor(data.item_id, data, "gear")
+        else
+            self:ClearSelectedRow()
+            self:RefreshDetails()
+        end
+    end
 end
 
 function UI:RenderGearTab()
@@ -5375,26 +6362,43 @@ function UI:RenderGearTab()
     local rows = self:GetCachedViewQuery("gear", function()
         return BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)
     end)
-    local columns = { {}, {} }
-    for _, row in ipairs(rows) do
-        local column = row.column == "right" and 2 or 1
-        columns[column][#columns[column]+1] = row
-    end
-    local model = self:NewListRenderModel()
-    local height = self:GetDensityMetrics() == 40 and 64 or 76
-    for index = 1, math.max(#columns[1], #columns[2]) do
-        local top = model.cursor
-        for column = 1, 2 do
-            local data = columns[column][index]
-            if data then
-                model.cursor = top
-                self:AddListRenderEntry(model, {kind="row", data=data, mode="gear", height=height, rowHeight=height, columnIndex=column})
-                model.rowCount = model.rowCount + 1
+    self:QueueStatLoads(rows.statsPending)
+    self:RunRenderTransaction(function()
+        self.renderModel = nil
+        self:ReleaseRenderFrames()
+        self.renderedContextKey = self:GetNavigationContextKey()
+        self.pendingNavigation = nil
+        self.hasRenderedContent = true
+        self:SetStickyHeaderMode(nil)
+        self.contentScroll:SetVerticalScroll(0)
+        self.contentChild:SetHeight(math.max(1, self.contentScroll:GetHeight()))
+        self.contentListLayer:Hide()
+        self.contentStaticLayer:Hide()
+        self.emptyLabel:Hide()
+        for _, button in ipairs(self.emptyActions or {}) do button:Hide() end
+        local gear = self.gearFrame
+        gear:SetShown(not self.inspectorExclusive)
+        self.contentScroll:Hide()
+        for _, data in ipairs(rows) do
+            local button = gear.slots[data.slotKey]
+            button.gearData = data
+            BigBiSList.Widgets:SetEquippedBiS(button, data.equipped_bis)
+            if data.item_id then
+                self:SetItemButton(button.iconButton, data.item_id, button.itemName, data.name, data.item and data.item.quality, data, "gear")
+            else
+                self:ResetEntityButton(button.iconButton, button.itemName, data.slot)
+                button.itemName:SetTextColor(0.75, 0.76, 0.81)
+                if data.overlayKind ~= "unknown" then button.iconButton.icon:SetTexture(button.slotTexture) end
             end
+            layoutGearSlotText(button)
         end
-        model.cursor = top + height
-    end
-    self:RenderListModel(model)
+        local geometryChanged = self:LayoutGearWorkspace()
+        self:RefreshGearSelection()
+        if gear:IsVisible() and self.gearPreviewOwnership ~= self.currentOwned then
+            self.gearPreviewOwnership = self.currentOwned
+            if not geometryChanged then self:RefreshGearPreview() end
+        end
+    end)
 end
 
 function UI:RenderEnhanceTab()
@@ -5497,7 +6501,7 @@ function UI:CreateSettingsSectionHeader(parent, text, yOffset)
     return header, 34
 end
 
-function UI:CreateVirtualNote(parent, yOffset, text, frame)
+function UI:CreateVirtualNote(parent, yOffset, text, frame, height)
     if not frame then
         frame = CreateFrame("Frame", nil, parent)
         local label = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -5513,11 +6517,52 @@ function UI:CreateVirtualNote(parent, yOffset, text, frame)
     frame:SetParent(parent)
     frame:Show()
     frame:ClearAllPoints()
-    frame:SetHeight(28)
+    height = height or 28
+    frame:SetHeight(height)
     frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     frame:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
     frame.label:SetText(text or "")
-    return frame, 28
+    return frame, height
+end
+
+function UI:CreateVirtualListAction(parent, yOffset, entry, button)
+    local widgets = BigBiSList.Widgets
+    if not button then
+        button = widgets:CreateTextButton(parent, "", 1, entry.height, function(owner)
+            if owner:IsVisible() and self:IsCurrentRenderFrame(owner) then owner.__bigBisBoundRenderEntry.activate() end
+        end)
+        button.label:ClearAllPoints()
+        button.label:SetPoint("LEFT", button, "LEFT", 10, 0)
+        button.label:SetJustifyH("LEFT")
+        button.detail = widgets:CreateLabel(button, "", "GameFontHighlightSmall")
+        button.detail:SetJustifyH("RIGHT")
+        button.detail:SetPoint("RIGHT", button, "RIGHT", -25, 0)
+        button.detail:SetTextColor(0.70, 0.77, 0.84)
+        local chevron = button:CreateTexture(nil, "ARTWORK")
+        chevron:SetSize(12, 12)
+        chevron:SetPoint("RIGHT", button, "RIGHT", -8, 0)
+        widgets:SetIcon(chevron, "chevronRight")
+        widgets:BindTooltip(button, function(owner, tooltip)
+            local bound = owner.__bigBisBoundRenderEntry
+            if bound then
+                tooltip:AddLine(bound.title, 1, 0.82, 0.28, true)
+                if bound.detail then tooltip:AddLine(bound.detail, 0.70, 0.77, 0.84, true) end
+            end
+        end)
+        button.__bigBisManaged = true
+        self:CountPerformance("widgetsCreated")
+    end
+    button:SetParent(parent)
+    button:ClearAllPoints()
+    button:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    local width = self:GetTableViewportWidth(parent, 560)
+    button:SetSize(width, entry.height)
+    button.detail:SetText(entry.detail or "")
+    local detailWidth = entry.detail and math.min(width * 0.48, math.ceil(button.detail:GetStringWidth()) + 4) or 0
+    widgets:SetCellText(button.detail, entry.detail, 1, 14, detailWidth)
+    widgets:SetCellText(button.label, entry.title, 1, 14, width - 45 - detailWidth)
+    button:Show()
+    return button
 end
 
 function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue, leftInset)
@@ -5707,7 +6752,7 @@ end
 
 function UI:CreateSettingsClassHeader(parent, yOffset, className)
     local selected, total = self:GetTooltipSpecSelectionCount(className)
-    local profile = BigBiSListDB.profile.tooltips
+    local profile = accountDB().profile.tooltips
     profile.collapsedClasses = profile.collapsedClasses or {}
     local collapsed = profile.collapsedClasses[className] ~= false
     local header, height = self:CreateSettingsActionHeader(parent, yOffset, className, tostring(selected) .. "/" .. tostring(total), function()
@@ -5725,7 +6770,7 @@ function UI:CreateSettingsClassHeader(parent, yOffset, className)
         toggle:SetPoint("BOTTOMRIGHT", header.countLabel, "BOTTOMLEFT", -8, 0)
         toggle:SetScript("OnClick", function(selfButton)
             local owner = selfButton.settingsHeader
-            local activeProfile = BigBiSListDB.profile.tooltips
+            local activeProfile = accountDB().profile.tooltips
             activeProfile.collapsedClasses = activeProfile.collapsedClasses or {}
             activeProfile.collapsedClasses[owner.className] = not owner.classCollapsed
             UI:Invalidate("presentation", "tooltip-specs-collapse")
@@ -5768,7 +6813,9 @@ function UI:RenderSettingsTab()
     self.settingsSection = self.settingsSection or "appearance"
     local nav = self:AcquireSettingsWidget("navigation", parent, function(host)
         local frame = CreateFrame("Frame", nil, host); frame.buttons = {}
-        for index, option in ipairs({{"appearance","Appearance"},{"tooltips","Tooltips"},{"hidden","Hidden Items"}}) do
+        local sections = {{"appearance","Appearance"},{"tooltips","Tooltips"},{"hidden","Hidden Items"}}
+        if BigBiSList.AcquisitionHighlights then sections[#sections + 1] = {"gearhighlights", "Gear Highlights"} end
+        for index, option in ipairs(sections) do
             local key = option[1]
             local button = BigBiSList.Widgets:CreateTextButton(frame, option[2], 128, 28, function()
                 self.settingsSection = key
@@ -5783,7 +6830,7 @@ function UI:RenderSettingsTab()
     nav:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, -4); nav:SetPoint("RIGHT", parent, "RIGHT", -8, 0); nav:SetHeight(32)
     for key, button in pairs(nav.buttons) do button:SetSelected(key == self.settingsSection) end
     local y = -48
-    local profile = BigBiSListDB.profile
+    local profile = accountDB().profile
     local function toggle(label, getter, setter, inset)
         local _, height = self:CreateSettingToggle(parent, y, label, getter, setter, inset)
         y = y - height - 4
@@ -5806,10 +6853,12 @@ function UI:RenderSettingsTab()
         BigBiSList:EnsureTooltipSpecFilters()
         local tooltipSettings = {
             {"Show Big BiS List info in item tooltips", "enabled"},
-            {"Compact tooltip rows by default", "compact"},
             {"Show selected spec first in tooltips", "selectedSpecFirst"},
-            {"ALT expands tooltip matches", "showAllOnAlt"},
         }
+        if not BigBiSList.isForever then
+            table.insert(tooltipSettings, 2, {"Compact tooltip rows by default", "compact"})
+            tooltipSettings[#tooltipSettings + 1] = {"ALT expands tooltip matches", "showAllOnAlt"}
+        end
         for _, option in ipairs(tooltipSettings) do
             local key = option[2]
             toggle(option[1], function() return profile.tooltips[key] end, function(value) profile.tooltips[key] = value end)
@@ -5825,6 +6874,15 @@ function UI:RenderSettingsTab()
                         function(value) self:SetTooltipSpecFilter(className, specName, value) end, 16)
                 end
             end
+        end
+    elseif self.settingsSection == "gearhighlights" and BigBiSList.AcquisitionHighlights then
+        local highlights = BigBiSList.AcquisitionHighlights
+        for _, setting in ipairs(highlights.settings) do
+            local key = setting[1]
+            toggle(setting[2], function() return profile.gearHighlights[key] end, function(value)
+                profile.gearHighlights[key] = value
+                highlights:ScheduleRefresh()
+            end)
         end
     else
         local hidden = {}
@@ -5974,11 +7032,13 @@ function UI:CreateDetailsText(parent, anchor, titleText, bodyText, bodyR, bodyG,
     return block
 end
 
-function UI:IsDetailsSectionExpanded(sectionKey)
-    return not self.expandedSellerSections or self.expandedSellerSections[sectionKey] ~= false
+function UI:IsDetailsSectionExpanded(sectionKey, defaultExpanded)
+    local saved = self.expandedSellerSections and self.expandedSellerSections[sectionKey]
+    if saved ~= nil then return saved end
+    return defaultExpanded ~= false
 end
 
-function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, bodyText, entryCount)
+function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, bodyText, entryCount, defaultExpanded)
     local block = self:AcquireDetailsWidget("collapsible", parent, function(widgetParent)
         local created = CreateFrame("Button", nil, widgetParent)
         created:EnableMouse(true)
@@ -6009,7 +7069,7 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
                 return
             end
             UI.expandedSellerSections = UI.expandedSellerSections or {}
-            UI.expandedSellerSections[selfBlock.sectionKey] = not UI:IsDetailsSectionExpanded(selfBlock.sectionKey)
+            UI.expandedSellerSections[selfBlock.sectionKey] = not UI:IsDetailsSectionExpanded(selfBlock.sectionKey, selfBlock.defaultExpanded)
             UI.detailsRenderSignature = nil
             UI:RefreshDetails(UI.selectedItemId, UI.selectedItemData, UI.selectedItemMode)
         end)
@@ -6023,8 +7083,8 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
     for _, label in ipairs(block.matrixLabels or {}) do label:Hide() end
     for _, mark in pairs(block.matrixMarks or {}) do mark:Hide() end
     for _, target in pairs(block.matrixTargets or {}) do target:Hide() end
-    local expanded = self:IsDetailsSectionExpanded(sectionKey)
-    block.sectionKey = sectionKey
+    local expanded = self:IsDetailsSectionExpanded(sectionKey, defaultExpanded)
+    block.sectionKey, block.defaultExpanded = sectionKey, defaultExpanded
     block.title:SetWidth(width - 18)
     block.title:SetText(titleText .. (count > 0 and (" (" .. tostring(count) .. ")") or ""))
     BigBiSList.Widgets:SetIcon(block.disclosure, expanded and "chevronDown" or "chevronRight")
@@ -6174,11 +7234,14 @@ function UI:GetDetailsEquipmentComparison(data)
     local selection = self:GetItemContext()
     local lines = {}
     if self.slotComparison and data.comparison then
-        appendText(lines, "Compared with " .. self:GetComparisonReferenceLabel(self.slotComparison.reference))
+        local prefix = BigBiSList.isForever and "Compare with " or "Compared with "
+        appendText(lines, prefix .. self:GetComparisonReferenceLabel(self.slotComparison.reference))
         appendText(lines, data.comparison.explanation)
         for _, pair in ipairs(data.comparison.evidence or {}) do
             local candidate, reference = pair.candidate or {}, pair.reference or {}
-            appendText(lines, (candidate.original_rating or "Unrated") .. " / " .. (reference.original_rating or "Unrated"))
+            local candidateRating = BigBiSList:GetGuideRatingDisplay(candidate.original_rating) or "Unrated"
+            local comparedRating = BigBiSList:GetGuideRatingDisplay(reference.original_rating) or "Unrated"
+            appendText(lines, candidateRating .. " / " .. comparedRating)
             appendText(lines, type(candidate.conditions) == "table" and table.concat(candidate.conditions, ", ") or candidate.conditions)
             appendText(lines, candidate.source_url)
         end
@@ -6192,7 +7255,7 @@ function UI:GetDetailsEquipmentComparison(data)
         elseif context.occupancy == "empty" then
             appendText(lines, position .. ": Empty")
         elseif context.item_id then
-            local comparison = BigBiSList:CompareRecommendationItems(data.item_id, context.item_id, selection.class, selection.spec, selection.phase, data.slot)
+            local comparison = BigBiSList:CompareRecommendationItems(data.item_id, context.item_id, selection.class, selection.spec, selection.phase, data.slot, context)
             appendText(lines, position .. ": " .. (context.name or ("Item " .. context.item_id)))
             appendText(lines, comparison.explanation)
         else
@@ -6201,7 +7264,7 @@ function UI:GetDetailsEquipmentComparison(data)
     end
     for _, alternative in ipairs(data.owned_alternatives or {}) do
         local item = BigBiSList.GetItemData and BigBiSList:GetItemData(alternative.item_id)
-        local name = (GetItemInfo and GetItemInfo(alternative.item_id)) or (item and item.name) or ("Item " .. alternative.item_id)
+        local name = (UI:GetItemInfo(alternative.item_id)) or (item and item.name) or ("Item " .. alternative.item_id)
         appendText(lines, "Already owned: " .. name .. " (" .. ownershipStateLabel(alternative.state) .. ")")
         appendText(lines, alternative.comparison and alternative.comparison.explanation)
     end
@@ -6222,17 +7285,19 @@ function UI:CreateDetailsHistory(parent, anchor, data, mode)
     end
     appendText(lines, "Not listed means no recommendation is recorded; it does not mean the item becomes obsolete.")
     local key = "item:" .. data.item_id .. ":history:" .. selection.class .. ":" .. selection.spec .. ":" .. tostring(data.slot or "")
-    return self:CreateDetailsCollapsibleText(parent, anchor, key, selection.spec .. " recommendations", table.concat(lines, "\n"))
+    return self:CreateDetailsCollapsibleText(parent, anchor, key, selection.spec .. " recommendations", table.concat(lines, "\n"), nil, false)
 end
 
 function UI:RefreshDetailsActions(data, mode)
     if not self.detailsActionStrip then return end
+    local statRank = mode == "gear" and data and data.stat_rank ~= nil
     local visible = not self.slotComparison and self.OpenSlotComparison and data and data.item_id and data.slot
-        and not data.spell_id and not self:IsLevelingMode() and mode ~= "leveling" and mode ~= "enhance"
+        and not data.spell_id and (statRank or (not self:IsLevelingMode() and mode ~= "leveling" and mode ~= "enhance"))
         and not data.enhancement_kind
     visible = visible and true or false
     local button = self.detailsCompareButton
     button.boundData, button.boundMode = visible and data or nil, visible and mode or nil
+    button.statRank = statRank
     self.detailsActionStrip:SetShown(visible)
     if self.detailsActionsVisible ~= visible then
         self.detailsActionsVisible = visible
@@ -6243,17 +7308,17 @@ function UI:RefreshDetailsActions(data, mode)
     end
 end
 
-function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
+function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data, defaultExpanded)
     local rankings = self:GetDetailsPhaseRankings(itemId, data)
     if #rankings == 0 then return nil end
     local sectionKey = "item:" .. tostring(itemId) .. ":phase-matrix"
-    local block = self:CreateDetailsCollapsibleText(parent, anchor, sectionKey, "Phase rankings", "", #rankings)
+    local block = self:CreateDetailsCollapsibleText(parent, anchor, sectionKey, "Phase rankings", "", #rankings, defaultExpanded)
     block.matrixLabels = block.matrixLabels or {}
     block.matrixMarks = block.matrixMarks or {}
     block.matrixTargets = block.matrixTargets or {}
     for _, label in ipairs(block.matrixLabels) do label:Hide() end
     for _, mark in pairs(block.matrixMarks) do mark:Hide() end
-    if not self:IsDetailsSectionExpanded(sectionKey) then return block end
+    if not self:IsDetailsSectionExpanded(sectionKey, defaultExpanded) then return block end
     block.body:Hide()
     local selection = self:GetItemContext()
     local livePhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey()
@@ -6328,7 +7393,11 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
             end
             local tooltipText = (ranking.spec or "Spec") .. " · " .. BigBiSList:GetPhaseDisplayName(phase)
                 .. "\n" .. (#useLines > 0 and table.concat(useLines, "\n\n") or (label or "Not ranked"))
-            cell(shortLabels[label] or label or "—", specWidth + (phaseIndex - 1) * cellWidth, 25 + rowIndex * 22, cellWidth, false, tooltipText)
+            local display = shortLabels[label] or label or "—"
+            if BigBiSList.isForever and label then
+                display = label == "Best in slot" and "BiS" or BigBiSList:GetGuideRatingDisplay(label)
+            end
+            cell(display, specWidth + (phaseIndex - 1) * cellWidth, 25 + rowIndex * 22, cellWidth, false, tooltipText)
         end
     end
     cell("Gold: selected phase  ·  Blue line: live phase", 0, matrixHeight + 5, width, false)
@@ -6491,14 +7560,16 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local contentHeight = 5
 
     local recommendationLines = {}
-    appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
+    if not detailData or not detailData.stat_rank or detailData.bestUse or detailData.guide_note then
+        appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
+    end
     if detailData and detailData.slot then
         local detailPhase = detailData.phase or (detailData.bestUse and detailData.bestUse.phase)
         local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetItemContext().phase)
         appendText(recommendationLines, selectedPhase .. " - " .. detailData.slot)
     end
 
-    local ownershipText
+    local ownershipState, ownershipText
     if detailData and (detailData.enhancement_kind == "gem" or detailData.enhancement_kind == "enchant") then
         local appliedSummary = self:GetEnhancementAppliedSummary(detailData)
         appendText(recommendationLines, "Applied: " .. appliedSummary.label)
@@ -6509,11 +7580,13 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             appendText(recommendationLines, appliedSummary.detail)
         end
     elseif detailItemId then
-        local ownershipState = self:GetOwnershipState(detailItemId, detailData and detailData.item_ids)
+        ownershipState = detailData and detailData.stat_identity and detailData.owned_state
+            or BigBiSList.isForever and detailData and detailData.variant_id and self:GetRowOwnershipState(detailData)
+            or self:GetOwnershipState(detailItemId, detailData and detailData.item_ids)
         ownershipText = ownershipStateLabel(ownershipState)
         if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
             ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
-        elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
+        elseif ownershipState == "missing" and not BigBiSList.isForever and self.currentOwned and not self.currentOwned.bankScanned then
             ownershipText = ownershipText .. " - open your bank once to include banked items"
         end
         appendText(recommendationLines, ownershipText)
@@ -6525,30 +7598,61 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         appendText(recommendationLines, ownershipText)
     end
     appendText(recommendationLines, upgradeComparisonText(detailData or plannerContext))
-    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
+    local scoringLabel = detailData and detailData.scoring_label
+    if scoringLabel then
+        appendText(recommendationLines, scoringLabel)
+        if detailData.scoring_basis == "active_build" then
+            appendText(recommendationLines, "Talent evidence from Blizzard client data via Wago Tools and EG Link (CC BY 4.0).")
+        end
+    end
+    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" and not (detailData and detailData.stat_rank) then
         for _, line in ipairs(self:GetDetailsEquipmentComparison(detailData)) do appendText(recommendationLines, line) end
     end
 
     local accessData = detailData or item or {}
     local requirementData = (accessData and accessData.requirements and #accessData.requirements > 0) and accessData or item
-    local accessEvaluation = self:GetAccessEvaluation(accessData)
-    appendText(recommendationLines, "Access: " .. self:GetAccessBadgeLabel(accessEvaluation.status, accessData))
+    local displayOption, accessEvaluation, sellerGroups = self:GetSelectedAcquisitionRoute(accessData)
+    local optionEvaluation = accessEvaluation.optionEvaluation
+    local option = optionEvaluation and optionEvaluation.option
     if (detailMode == "leveling" or (detailData and detailData.leveling)) and detailData then
         appendText(recommendationLines, detailData.level_value_text)
         appendText(recommendationLines, detailData.section)
+        if BigBiSList.ForeverScoring and not detailData.stat_rank then
+            local reference = self:GetLevelingReferenceSlot() and (self.slotContextFrame.reference or {})
+            appendText(recommendationLines, BigBiSList:GetLevelingEquipmentComparison(detailData, reference))
+        end
     end
-    anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
-    contentHeight = contentHeight + anchor.contentHeight
-    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
-        local history = self:CreateDetailsHistory(content, anchor, detailData, detailMode)
-        if history then anchor = history; contentHeight = contentHeight + history.contentHeight end
+    local function appendRecommendation()
+        local placement = detailData and detailData.stat_rank
+        if placement then
+            local service = BigBiSList.ForeverGearRating
+            local lines = service:DescriptionLines(placement)
+            lines[2] = "Default spec weights · " .. lines[2]
+            if placement.rank and placement.total > 1 then appendText(lines, string.format("%.1f pts", placement.score)) end
+            if detailData.stat_delta ~= nil then appendText(lines, string.format("Est. %+.1f pts vs equipped", detailData.stat_delta)) end
+            local comparison = self.slotComparison
+            if comparison and comparison.statRank then
+                appendText(lines, "Compare with " .. self:GetComparisonReferenceLabel(comparison.reference))
+                appendText(lines, BigBiSList:GetStatRankActiveComparison(detailData, comparison.reference))
+            end
+            local effects = placement.item and placement.item.effects
+            if effects and #effects > 0 then
+                appendText(lines, "Effects outside the stat score")
+                for _, effect in ipairs(effects) do appendText(lines, effect) end
+            end
+            anchor = self:CreateDetailsText(content, anchor, "Stat rank", table.concat(lines, "\n"), 0.82, 0.88, 0.94)
+            contentHeight = contentHeight + anchor.contentHeight
+        end
+        anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
+        contentHeight = contentHeight + anchor.contentHeight
     end
+    local owned = ownershipState == "equipped" or ownershipState == "bag" or ownershipState == "bank"
+    if owned then appendRecommendation() end
 
-    local optionEvaluation = accessEvaluation.optionEvaluation
-    local option = optionEvaluation and optionEvaluation.option
-    local sellerGroups = self:GetRowSellerDisplayGroups(accessData, option)
-    local displayOption = sellerGroups.selected or option
     local sourceContext = { phase = self.slotComparison and self.slotComparison.phase or self:GetEffectivePhaseKey(), filters = self:GetItemContextFilters() }
+    if BigBiSList.isForever and detailMode == "leveling" and self.currentFilterPayload then
+        sourceContext.filters = self.currentFilterPayload
+    end
     local sourceItems = self.CreateDetailsSourceItems and BigBiSList.GetAccessOptionSourceItems
         and BigBiSList:GetAccessOptionSourceItems(displayOption, sourceContext) or {}
     local routeFields = {}
@@ -6583,12 +7687,26 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     if prerequisitesText and prerequisitesText ~= "" then
         table.insert(routeFields, { label = "Requires", value = prerequisitesText })
     end
+    if accessEvaluation.status ~= "ready" and accessEvaluation.status ~= "ready_alternate" then
+        table.insert(routeFields, { label = "Access", value = self:GetAccessBadgeLabel(accessEvaluation.status, accessData) })
+    end
     anchor = self:CreateDetailsFields(content, anchor, "Selected route", routeFields)
     contentHeight = contentHeight + anchor.contentHeight
+    if self.CreateAcquisitionSteps then
+        local acquisitionHeight
+        anchor, acquisitionHeight = self:CreateAcquisitionSteps(content, anchor, displayOption, accessEvaluation.status)
+        contentHeight = contentHeight + acquisitionHeight
+    end
     if self.CreateDetailsSourceItems then
         local cards = self:CreateDetailsSourceItems(content, anchor, displayOption,
             tostring(entityType) .. ":" .. tostring(entityId) .. ":selected-source", sourceContext)
         if cards then anchor = cards; contentHeight = contentHeight + cards.contentHeight end
+    end
+
+    if not owned then appendRecommendation() end
+    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
+        local history = self:CreateDetailsHistory(content, anchor, detailData, detailMode)
+        if history then anchor = history; contentHeight = contentHeight + history.contentHeight end
     end
 
     local sellerSectionPrefix = tostring(entityType) .. ":" .. tostring(entityId) .. ":"
@@ -6598,10 +7716,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             for _, seller in ipairs(sellerGroups.alternatives) do
                 routes[#routes + 1] = { option = seller, text = self:FormatDetailsRoutes({ seller }, sourceContext) }
             end
-            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-sellers", "Other sellers", routes, sourceContext)
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-sellers", "Other sellers", routes, sourceContext, false)
         else
             anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-sellers", "Other sellers",
-                self:FormatDetailsRoutes(sellerGroups.alternatives), #sellerGroups.alternatives)
+                self:FormatDetailsRoutes(sellerGroups.alternatives), #sellerGroups.alternatives, false)
         end
         contentHeight = contentHeight + anchor.contentHeight
     end
@@ -6611,10 +7729,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             for _, seller in ipairs(sellerGroups.reported) do
                 routes[#routes + 1] = { option = seller, text = self:FormatDetailsRoutes({ seller }, sourceContext) }
             end
-            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "reported-sellers", "Additional reported sellers", routes, sourceContext)
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "reported-sellers", "Additional reported sellers", routes, sourceContext, false)
         else
             anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "reported-sellers", "Additional reported sellers",
-                self:FormatDetailsRoutes(sellerGroups.reported), #sellerGroups.reported)
+                self:FormatDetailsRoutes(sellerGroups.reported), #sellerGroups.reported, false)
         end
         contentHeight = contentHeight + anchor.contentHeight
     end
@@ -6637,9 +7755,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     if #alternativeLines > 0 then
         if self.CreateDetailsSourceRoutes then
-            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", alternativeEntries, sourceContext)
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", alternativeEntries, sourceContext, false)
         else
-            anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", table.concat(alternativeLines, "\n\n"), #alternativeLines)
+            anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", table.concat(alternativeLines, "\n\n"), #alternativeLines, false)
         end
         contentHeight = contentHeight + anchor.contentHeight
     end
@@ -6661,11 +7779,11 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
 
     end
     if #timelineLines > 0 then
-        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "expansion-value", "Expansion value", table.concat(timelineLines, "\n"))
+        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "expansion-value", "Expansion value", table.concat(timelineLines, "\n"), nil, false)
         contentHeight = contentHeight + anchor.contentHeight
     end
     if detailItemId and detailMode ~= "leveling" then
-        local matrix = self:CreateDetailsPhaseMatrix(content, anchor, detailItemId, detailData)
+        local matrix = self:CreateDetailsPhaseMatrix(content, anchor, detailItemId, detailData, false)
         if matrix then anchor = matrix; contentHeight = contentHeight + matrix.contentHeight end
     end
 
@@ -6674,11 +7792,14 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     appendText(noteLines, detailData and (detailData.notes or detailData.note))
     appendText(noteLines, item and (item.notes or item.note))
     appendText(noteLines, detailData and detailData.source_url)
+    if BigBiSList.GetSourceAttributionLines then
+        for _, credit in ipairs(BigBiSList:GetSourceAttributionLines(displayOption and displayOption.source)) do appendText(noteLines, credit) end
+    end
     if displayOption and displayOption.source_url ~= (detailData and detailData.source_url) then
         appendText(noteLines, displayOption.source_url)
     end
     if #noteLines > 0 then
-        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "provenance", "Notes & provenance", table.concat(noteLines, "\n"))
+        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "provenance", "Notes & provenance", table.concat(noteLines, "\n"), nil, false)
         contentHeight = contentHeight + anchor.contentHeight
     end
 
@@ -6712,6 +7833,8 @@ function UI:RefreshControls()
     self.tabBar:SetHeight(settings and 1 or 30)
     self.endgameModeButton:SetSelected(not leveling)
     self.levelingModeButton:SetSelected(leveling)
+    self.levelingModeButton:SetShown(BigBiSList.supportsLeveling)
+    self.endgameModeButton:SetShown(BigBiSList.supportsLeveling)
     self.phaseSelector:SetShown(not leveling)
     if self.targetTierLabel then self.targetTierLabel:SetShown(not leveling) end
     self.levelControlContainer:SetShown(leveling)
@@ -7027,7 +8150,7 @@ function UI:CreateHeader(frame)
     bar:EnableMouse(true)
     bar:RegisterForDrag("LeftButton")
     bar:SetScript("OnDragStart", function()
-        if not BigBiSListDB.profile.window.locked then frame:StartMoving() end
+        if not accountDB().profile.window.locked then frame:StartMoving() end
     end)
     bar:SetScript("OnDragStop", function() frame:StopMovingOrSizing(); self:SaveWindow() end)
     local title = widgets:CreateLabel(bar, BigBiSList.displayName, "GameFontNormal")
@@ -7157,7 +8280,8 @@ function UI:LayoutContextControls()
         control:SetPoint("TOPLEFT", bar, "TOPLEFT", x, -(CONTEXT_BAR_HEIGHT - control:GetHeight()) / 2)
         x = x + control:GetWidth() + 8
     end
-    local remainingWidth = self.endgameModeButton:GetWidth() + self.levelingModeButton:GetWidth() + 10 + self.phaseBar:GetWidth()
+    local modeWidth = BigBiSList.supportsLeveling and (self.endgameModeButton:GetWidth() + self.levelingModeButton:GetWidth()) or 0
+    local remainingWidth = modeWidth + 10 + self.phaseBar:GetWidth()
     local wrapped = x + 4 + remainingWidth > (bar:GetWidth() or MIN_WIDTH - 24)
     local headingHeight = leveling and 0 or 14
     if not wrapped and headingHeight > 0 then
@@ -7175,7 +8299,11 @@ function UI:LayoutContextControls()
     self.levelingModeButton:ClearAllPoints()
     self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 0, 0)
     self.phaseBar:ClearAllPoints()
-    self.phaseBar:SetPoint("TOPLEFT", self.levelingModeButton, "TOPRIGHT", 10, 0)
+    if not BigBiSList.supportsLeveling then
+        self.phaseBar:SetPoint("TOPLEFT", bar, "TOPLEFT", modeX, -rowTop - 3)
+    else
+        self.phaseBar:SetPoint("TOPLEFT", self.levelingModeButton, "TOPRIGHT", 10, 0)
+    end
     local height = wrapped and CONTEXT_BAR_HEIGHT * 2 + 2 or CONTEXT_BAR_HEIGHT
     bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or height + (leveling and 0 or 12) + headingHeight)
 end
@@ -7204,6 +8332,7 @@ function UI:CreateTabBar(frame)
 end
 
 function UI:SetFilterDrawerOpen(open)
+    if open then self:SetSlotPickerOpen(false) end
     self.filterDrawerOpen = open and true or false
     self.bodyLayoutSignature = nil
     if not self.filterDrawerOpen and BigBiSList.Widgets.CloseDropdownMenus then
@@ -7272,6 +8401,14 @@ function UI:CreateListToolbar(parent)
     self.resultCountText:SetPoint("RIGHT", self.inspectorToggleButton, "LEFT", -8, 0)
     self.resultCountText:SetWidth(72)
     self.listToolbar = toolbar
+    self.slotPickerButton = widgets:CreateTextButton(toolbar, "All slots", 112, 28, function()
+        self:SetSlotPickerOpen(not (self.slotPickerOverlay and self.slotPickerOverlay:IsShown()))
+    end)
+    self.slotPickerButton:Hide()
+    self.upgradesViewButton = widgets:CreateTextButton(toolbar, "Browse items", 116, 28, function()
+        self:ToggleUpgradesView()
+    end)
+    self.upgradesViewButton:Hide()
     self.earlierCheckbox = widgets:CreateCheckbox(toolbar, "Include earlier recommendations", 224, function(value)
         self:SetFilter("includeEarlier", value)
     end)
@@ -7286,7 +8423,10 @@ function UI:LayoutPrimaryControls()
     for _, control in ipairs(controls) do control:Hide() end
     if self.earlierCheckbox then self.earlierCheckbox:Hide() end
     for _, button in ipairs(self.enhancementSwitchButtons or {}) do button:Hide() end
-    local groupVisible = tab == "Upgrades" or tab == "By Slot" or tab == "Wishlist" or tab == "Gear Guide"
+    local switchUpgradesView = tab == "Upgrades" and self.hasNextUpgradeActions
+    local showingActions = switchUpgradesView and self.upgradesView ~= "list"
+    local sortVisible = not showingActions and not (self:IsLevelingActivityView() and not self.levelingActivity)
+    local groupVisible = (tab == "Upgrades" and not showingActions) or tab == "By Slot" or tab == "Wishlist" or tab == "Gear Guide"
     local primary = tab == "Upgrades" and self.upgradeModeDropdown or (tab == "Wishlist" and self.wishlistRelevanceDropdown)
     local rowHeight, rowGap, gap = TOOLBAR_HEIGHT, 2, 8
     local width = self.contentRegion:GetWidth() or 720
@@ -7295,7 +8435,22 @@ function UI:LayoutPrimaryControls()
         control:SetPoint("TOPLEFT", self.listToolbar, "TOPLEFT", x, -(row or 0) * (rowHeight + rowGap) - (rowHeight - control:GetHeight()) / 2)
     end
     local x = 4
-    for _, control in ipairs({ self.searchFrame, self.filterToggleButton, self.sortDropdown }) do
+    local browseSlots = tab == "By Slot" or tab == "Gear Guide"
+    self.slotPickerButton:SetShown(browseSlots)
+    if browseSlots then
+        local focused = self:GetFocusedBrowseSlot()
+        self.slotPickerButton.label:SetText(focused or self:GetSlotDropdownText())
+        place(self.slotPickerButton, x, 0)
+        x = x + self.slotPickerButton:GetWidth() + gap
+    end
+    self.upgradesViewButton:SetShown(switchUpgradesView)
+    if switchUpgradesView then
+        self.upgradesViewButton.label:SetText(self.upgradesView == "list" and "Available now" or "Browse items")
+        place(self.upgradesViewButton, x, 0)
+        x = x + self.upgradesViewButton:GetWidth() + gap
+    end
+    self.sortDropdown:SetShown(sortVisible)
+    for _, control in ipairs({ self.searchFrame, self.filterToggleButton, sortVisible and self.sortDropdown or nil }) do
         place(control, x, 0)
         x = x + control:GetWidth() + gap
     end
@@ -7311,7 +8466,7 @@ function UI:LayoutPrimaryControls()
         primary:Show(); primary:Refresh()
         optional[#optional + 1] = primary
     end
-    if self.earlierCheckbox and (tab == "Upgrades" or tab == "By Slot") then
+    if self.earlierCheckbox and ((tab == "Upgrades" and not showingActions) or tab == "By Slot") then
         self.earlierCheckbox:SetChecked(self:GetFilters().includeEarlier == true)
         self.earlierCheckbox:Show()
         optional[#optional + 1] = self.earlierCheckbox
@@ -7598,7 +8753,7 @@ function UI:CreateBody(frame)
     self.detailsActionStrip:SetPoint("TOPRIGHT", self.detailsHeader, "BOTTOMRIGHT", 0, 0)
     self.detailsActionStrip:SetHeight(36)
     self.detailsCompareButton = widgets:CreateTextButton(self.detailsActionStrip, "Compare slot", 112, 28, function(button)
-        if button.boundData then self:OpenSlotComparison(button.boundData, button.boundMode) end
+        if button.boundData then self:OpenSlotComparison(button.boundData, button.boundMode, button.statRank) end
     end)
     self.detailsCompareButton:SetPoint("TOPLEFT", self.detailsActionStrip, "TOPLEFT", 8, -4)
     self.detailsActionStrip:Hide()
@@ -7662,6 +8817,20 @@ function UI:CreateBody(frame)
     self.contentStaticLayer:SetPoint("TOPRIGHT", self.contentChild, "TOPRIGHT", 0, 0)
     self.contentStaticLayer:SetHeight(1)
     self.contentStaticLayer:Hide()
+    self.gearFrame = self:CreateGearWorkspace(contentPanel)
+    self.slotContextFrame = self:CreateSlotContext(contentRegion)
+    if BigBiSList.isForever then
+        local activityBar = CreateFrame("Frame", nil, contentRegion)
+        activityBar:SetHeight(28)
+        activityBar.back = widgets:CreateTextButton(activityBar, "All activities", 106, 28, function()
+            self:SetLevelingActivity(nil)
+        end)
+        activityBar.back:SetPoint("LEFT")
+        activityBar.title = widgets:CreateLabel(activityBar, "", "GameFontNormal")
+        activityBar.title:SetPoint("LEFT", activityBar.back, "RIGHT", 12, 0)
+        activityBar:Hide()
+        self.levelingActivityBar = activityBar
+    end
 
     self.emptyLabel = self.contentChild:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     self.emptyLabel:SetPoint("TOPLEFT", self.contentChild, "TOPLEFT", 8, -12)
@@ -7723,16 +8892,47 @@ function UI:ApplyBodyLayout()
         self.fixedActiveFilterBar:SetPoint("TOPRIGHT", self.listToolbar, "BOTTOMRIGHT", 0, -2)
     end
     local top = supportsFilters and (activeHeight > 0 and self.fixedActiveFilterBar or self.listToolbar) or self.contentRegion
+    if self:RefreshSlotContext() then
+        self.slotContextFrame:SetPoint("TOPLEFT", top, "BOTTOMLEFT", 0, -4)
+        self.slotContextFrame:SetPoint("TOPRIGHT", top, "BOTTOMRIGHT", 0, -4)
+        top = self.slotContextFrame
+    end
+    if self.levelingActivityBar then
+        local bar = self.levelingActivityBar
+        local activity = self:IsLevelingActivityView() and self.levelingActivity or nil
+        bar:SetShown(activity ~= nil)
+        if activity then
+            bar:SetPoint("TOPLEFT", top, "BOTTOMLEFT", 0, -4)
+            bar:SetPoint("TOPRIGHT", top, "BOTTOMRIGHT", 0, -4)
+            BigBiSList.Widgets:SetCellText(bar.title, activity, 1, 15, self.contentRegion:GetWidth() - bar.back:GetWidth() - 16)
+            top = bar
+        end
+    end
     if self.contentTopAnchor ~= top then
         self.contentTopAnchor = top
         self.contentPanel:ClearAllPoints()
         self.contentPanel:SetPoint("TOPLEFT", top, supportsFilters and "BOTTOMLEFT" or "TOPLEFT", 0, supportsFilters and -4 or 0)
         self.contentPanel:SetPoint("BOTTOMRIGHT", self.contentRegion, "BOTTOMRIGHT", 0, 0)
     end
+    local showGear = self:GetViewKey() == "myGear"
+    self.detailsBackButton.label:SetText(showGear and TAB_DISPLAY_LABELS.Equipped or "Back to list")
+    local gearWasShown = self.gearFrame:IsShown()
+    self.gearFrame:SetShown(showGear and not geometry.exclusive)
+    self.contentScroll:SetShown(not showGear)
+    if showGear then
+        self.contentChild:SetHeight(math.max(1, self.contentScroll:GetHeight()))
+        if not gearWasShown and self.gearFrame:IsShown() and not self.refreshInProgress then
+            self:Invalidate("presentation", "gear-show")
+            self:ScheduleRefresh(nil, "gear-show")
+        end
+        if self:LayoutGearWorkspace() then self:RefreshGearSelection() end
+    end
+    self:LayoutSlotPicker()
     self.inspectorToggleButton:SetSelected(showInspector)
 end
 
 function UI:GetBankStatusText()
+    if BigBiSList.isForever then return "Ownership uses equipped gear and bags" end
     local owned = self.currentOwned
     if not owned or not owned.bankScanned then return "Bank not checked · Open your bank to include stored gear" end
     return "Bank cache · " .. ((owned.bankUpdatedAt and owned.bankUpdatedAt ~= "") and owned.bankUpdatedAt or "Scanned")
@@ -7763,7 +8963,7 @@ function UI:CreateStatusBar(frame)
     resize:SetHighlightTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Highlight")
     resize:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
     resize:SetScript("OnMouseDown", function(_, buttonName)
-        if buttonName == "LeftButton" and not BigBiSListDB.profile.window.locked then
+        if buttonName == "LeftButton" and not accountDB().profile.window.locked then
             self:ApplyResizeBounds()
             frame:StartSizing("BOTTOMRIGHT")
         end
@@ -7805,6 +9005,7 @@ function UI:CreateMainFrame()
 
     frame:SetScript("OnHide", function()
         self:SaveWindow()
+        self:SetSlotPickerOpen(false)
         self:ReleaseRenderFrames()
         if BigBiSList.Widgets.CloseDropdownMenus then
             BigBiSList.Widgets:CloseDropdownMenus()
@@ -7835,6 +9036,8 @@ function UI:Open()
         self:RefreshControls()
         if dirty.layout then
             self:RefreshLayout("open")
+        elseif self:GetViewKey() == "myGear" then
+            self:RenderGearTab()
         else
             self:UpdateVirtualList(true)
         end
@@ -7890,9 +9093,38 @@ function BigBiSList:InitUIEvents()
     registerEventSafe("UPDATE_FACTION")
     registerEventSafe("SKILL_LINES_CHANGED")
     registerEventSafe("SPELLS_CHANGED")
-    frame:SetScript("OnEvent", function(_, event)
-        if event == "BANKFRAME_OPENED"
-            or event == "PLAYERBANKSLOTS_CHANGED"
+    if self.isForever then
+        registerEventSafe("QUEST_LOG_UPDATE")
+        registerEventSafe("BANKFRAME_CLOSED")
+        registerEventSafe("BANK_TABS_CHANGED")
+        registerEventSafe("PLAYER_INTERACTION_MANAGER_FRAME_SHOW")
+        registerEventSafe("PLAYER_INTERACTION_MANAGER_FRAME_HIDE")
+    end
+    frame:SetScript("OnEvent", function(_, event, interaction)
+        if event == "QUEST_LOG_UPDATE" then
+            self:RefreshUI("details", event)
+            return
+        end
+        if self.ForeverScoring and (event == "PLAYER_EQUIPMENT_CHANGED" or event == "SPELLS_CHANGED") then
+            self.ForeverScoring:Invalidate()
+            self:RefreshUI("query", event)
+        end
+        if self.isForever then
+            if event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" or event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+                local banker = Enum and Enum.PlayerInteractionType and Enum.PlayerInteractionType.Banker
+                if not banker or not self.IsReadableValue(interaction) or interaction ~= banker then return end
+                event = event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and "BANKFRAME_OPENED" or "BANKFRAME_CLOSED"
+            end
+            if event == "BANKFRAME_OPENED" then
+                self.UI.personalBankOpen = true
+            elseif event == "BANKFRAME_CLOSED" or event == "PLAYER_ENTERING_WORLD" then
+                self.UI.personalBankOpen = false
+            end
+            if self.UI.personalBankOpen and (event == "BANKFRAME_OPENED" or event == "PLAYERBANKSLOTS_CHANGED"
+                or event == "BAG_UPDATE_DELAYED" or event == "BANK_TABS_CHANGED") then
+                self.UI:ScanBankItems()
+            end
+        elseif event == "BANKFRAME_OPENED" or event == "PLAYERBANKSLOTS_CHANGED"
             or (event == "BAG_UPDATE_DELAYED" and BankFrame and BankFrame:IsShown()) then
             self.UI:ScanBankItems()
         end
@@ -7903,6 +9135,7 @@ function BigBiSList:InitUIEvents()
         else
             self:RefreshUI("ownership", event)
         end
+        if self.isForever and self.ScheduleItemTooltipRefresh then self:ScheduleItemTooltipRefresh() end
     end)
     self.uiEventFrame = frame
 end

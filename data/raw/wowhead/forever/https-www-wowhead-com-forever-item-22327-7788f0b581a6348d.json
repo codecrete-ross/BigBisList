@@ -1,0 +1,76 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=22327"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Amulet of the Redeemed Item Level 63 Binds when picked up Neck +9 Stamina +10 Intellect +8 Spirit Requires Level 58 Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects. Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T23:25:00.703542+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1149,
+      "collected_at": "2026-11-13T23:25:00.703542+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22327",
+      "source_content_digest": "19b8832d4df2f05b757df5d7e14dfd356692c28021972f23f53a7401b2c20f6d",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22327"
+    }
+  ],
+  "inventory_slot": "Neck",
+  "item_id": 22327,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 15,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 22327,
+    "item_level": 63,
+    "name": "Amulet of the Redeemed",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 15.0,
+      "intellect": 10.0,
+      "spell_damage": 5.0,
+      "spirit": 8.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22327"
+  },
+  "linked_entities": [],
+  "name": "Amulet of the Redeemed",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "19b8832d4df2f05b757df5d7e14dfd356692c28021972f23f53a7401b2c20f6d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=22327"
+}

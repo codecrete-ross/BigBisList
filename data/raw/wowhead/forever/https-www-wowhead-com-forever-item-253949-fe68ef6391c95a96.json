@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pristine Circlet Item Level 25 Binds when picked up Head Cloth 35 Armor +10 Stamina Durability 45 / 45 Requires Level 20 Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects. Sell Price: 9 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 253949,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 18,
+          "spell_damage": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects."
+    ],
+    "id": 253949,
+    "item_level": 25,
+    "name": "Pristine Circlet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 18.0,
+      "spell_damage": 6.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=253949"
+  },
+  "linked_entities": [],
+  "name": "Pristine Circlet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1bc639e057e702e5b4eb190da588376cd072819bcc23ba47568b1eb66cf7112f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/253949",
+  "url": "https://www.wowhead.com/forever/item=253949"
+}

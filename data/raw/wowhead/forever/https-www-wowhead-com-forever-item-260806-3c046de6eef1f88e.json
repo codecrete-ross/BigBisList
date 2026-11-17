@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Emergency Field Cloak Item Level 40 Binds when picked up Unique-Equipped Trinket Use: Gives invisibility for 10 sec. (1 Hour Cooldown) 3 Charges \"SAF-T means not getting caught.\" Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 260806,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Gives invisibility for 10 sec. (1 Hour Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 260806,
+    "item_level": 40,
+    "name": "Emergency Field Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Gives invisibility for 10 sec. (1 Hour Cooldown) 3 Charges \"SAF-T means not getting caught.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=260806"
+  },
+  "linked_entities": [
+    {
+      "id": 4079,
+      "name": "Gives invisibility for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=4079"
+    }
+  ],
+  "name": "Emergency Field Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c0dc8246383fe10eff8a47f36eca2a76c0cb4c9507790bf22eb45c39f5b4e981",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260806",
+  "url": "https://www.wowhead.com/forever/item=260806"
+}

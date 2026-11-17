@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Raven's Claws Item Level 24 Binds when equipped Hands Cloth 24 Armor +5 Stamina +4 Intellect Durability 20 / 20 Requires Level 19 Sell Price: 3 70 Dropped by: Ravenclaw Regent Drop Chance: 23.85%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 6628,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 24,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 6628,
+    "item_level": 24,
+    "name": "Raven's Claws",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 19,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 4.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6628"
+  },
+  "linked_entities": [],
+  "name": "Raven's Claws",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.85,
+      "entity_name": "Ravenclaw Regent",
+      "source_url": "https://www.wowhead.com/forever/item=6628",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6628",
+  "url": "https://www.wowhead.com/forever/item=6628"
+}

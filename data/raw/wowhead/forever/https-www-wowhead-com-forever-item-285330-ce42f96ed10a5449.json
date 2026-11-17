@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet of the Zhevra Item Level 23 Binds when picked up Finger +6 Agility +2 Spirit Requires Level 18 Blessing of Kalimdor (0/3) Mark of the Pack Leader Signet of the Zhevra Raptor Hide Cloak (2) Set : Increases movement speed by 5% in The Barrens and Stonetalon Mountains. Sell Price: 10 28 Dropped by: Swiftmane Drop Chance: 5.59%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 285330,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 285330,
+    "item_level": 23,
+    "name": "Signet of the Zhevra",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1318244,
+        "text": "Increases movement speed by 5% in The Barrens and Stonetalon Mountains."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "spirit": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=285330"
+  },
+  "linked_entities": [
+    {
+      "id": 285329,
+      "name": "Raptor Hide Cloak",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=285329"
+    },
+    {
+      "id": 285330,
+      "name": "Signet of the Zhevra",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=285330"
+    },
+    {
+      "id": 285331,
+      "name": "Mark of the Pack Leader",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=285331"
+    },
+    {
+      "id": 1318244,
+      "name": "Increases movement speed by 5% in The Barrens and Stonetalon Mountains.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318244"
+    }
+  ],
+  "name": "Signet of the Zhevra",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 5.59,
+      "entity_name": "Swiftmane",
+      "source_url": "https://www.wowhead.com/forever/item=285330",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4cc0248293d8407b87c250df00c153728349d6e4a875ab446ac40fa3502d903b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/285330",
+  "url": "https://www.wowhead.com/forever/item=285330"
+}

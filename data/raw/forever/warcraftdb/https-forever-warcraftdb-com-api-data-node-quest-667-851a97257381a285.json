@@ -1,0 +1,45 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/667"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:58.328790+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 4549,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/667",
+      "subject_id": 667,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 4550,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/667",
+      "subject_id": 667,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Death From Below",
+    "quest_id": 667,
+    "reward_item_roles": {
+      "4549": "choices",
+      "4550": "choices"
+    },
+    "side": "Both",
+    "zone": "Arathi Highlands"
+  },
+  "source_content_digest": "35900aa9768b1fd7e42180b1a84e1b6bf56162a5c5a441e986cf59cb7df134b6",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/667"
+}

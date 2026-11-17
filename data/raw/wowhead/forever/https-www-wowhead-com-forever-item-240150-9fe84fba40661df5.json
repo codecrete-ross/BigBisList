@@ -1,0 +1,164 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heretic Mantle Sanctified Item Level 98 Binds when picked up Shoulder Cloth 110 Armor +32 Stamina +8 Intellect +10 Spirit +100 Armor Durability 60 / 60 Classes: Warlock Requires Level 60 Equip: Increased Defense + 12. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 22 . Heretic Stitchings (0/8) Heretic Hood Heretic Mantle Heretic Waistguard Heretic Pants Heretic Boots Heretic Wristguards Heretic Handguards Heretic Garb (2) Set : Your Shadow Cleave now applies your Corruption Rank 7 to every target it hits but its duration is only 12 sec. (4) Set : You heal for 10% of all damage done by your Corruption. This healing is increased to 100% if the target is also afflicted with your Drain Life. (6) Set : Your Infernal Armor now also increases all magical damage you deal by 20% and lasts an additional 10 sec. Sell Price: 7 16 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 240150,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 110,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +12.",
+        "stats": {
+          "defense": 12
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 22.",
+        "stats": {
+          "spell_power": 22.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 22."
+    ],
+    "id": 240150,
+    "item_level": 98,
+    "name": "Heretic Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1227214,
+        "text": "Your Shadow Cleave now applies your Corruption Rank 7 to every target it hits but its duration is only 12 sec."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1227204,
+        "text": "You heal for 10% of all damage done by your Corruption. This healing is increased to 100% if the target is also afflicted with your Drain Life."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1227228,
+        "text": "Your Infernal Armor now also increases all magical damage you deal by 20% and lasts an additional 10 sec."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "defense": 12.0,
+      "intellect": 8.0,
+      "spell_power": 22.0,
+      "spirit": 10.0,
+      "stamina": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240150"
+  },
+  "linked_entities": [
+    {
+      "id": 240146,
+      "name": "Heretic Garb",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240146"
+    },
+    {
+      "id": 240147,
+      "name": "Heretic Handguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240147"
+    },
+    {
+      "id": 240148,
+      "name": "Heretic Hood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240148"
+    },
+    {
+      "id": 240149,
+      "name": "Heretic Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240149"
+    },
+    {
+      "id": 240150,
+      "name": "Heretic Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240150"
+    },
+    {
+      "id": 240151,
+      "name": "Heretic Waistguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240151"
+    },
+    {
+      "id": 240152,
+      "name": "Heretic Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240152"
+    },
+    {
+      "id": 240153,
+      "name": "Heretic Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240153"
+    },
+    {
+      "id": 1227204,
+      "name": "You heal for 10% of all damage done by your Corruption. This healing is increased to 100% if the target is also afflicted with your Drain Life.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227204"
+    },
+    {
+      "id": 1227214,
+      "name": "Your Shadow Cleave now applies your Corruption Rank 7 to every target it hits but its duration is only 12 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227214"
+    },
+    {
+      "id": 1227228,
+      "name": "Your Infernal Armor now also increases all magical damage you deal by 20% and lasts an additional 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1227228"
+    }
+  ],
+  "name": "Heretic Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "3856642ac80d87f3bddaf5040fcc4c42d5bff8d7eee3c6a1193de372020e6740",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240150",
+  "url": "https://www.wowhead.com/forever/item=240150"
+}

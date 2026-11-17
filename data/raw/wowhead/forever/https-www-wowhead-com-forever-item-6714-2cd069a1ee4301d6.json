@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Ez-Thro Dynamite Item Level 25 Requires Level 10 Use: The dynamite for Non-Engineers that nearly always gets to the target! Inflicts 51 to 69 Fire damage in a 5 yard radius. (1 Min Cooldown) \"So E-Z, even your cat could throw it.\" Max Stack: 20 Sell Price: 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6714,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: The dynamite for Non-Engineers that nearly always gets to the target! Inflicts 51 to 69 Fire damage in a 5 yard radius. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 6714,
+    "item_level": 25,
+    "name": "Ez-Thro Dynamite",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 10,
+    "source_summary": "",
+    "use_effects": [
+      "Use: The dynamite for Non-Engineers that nearly always gets to the target! Inflicts 51 to 69 Fire damage in a 5 yard radius. (1 Min Cooldown) \"So E-Z, even your cat could throw it.\" Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6714"
+  },
+  "linked_entities": [
+    {
+      "id": 8331,
+      "name": "The dynamite for Non-Engineers that nearly always gets to the target! Inflicts 51 to 69 Fire damage in a 5 yard radius.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8331"
+    }
+  ],
+  "name": "Ez-Thro Dynamite",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "d987bd0b5733ae6df53947d53023dbd530db435593e0c5b2b798fb961893a8cb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6714",
+  "url": "https://www.wowhead.com/forever/item=6714"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Blizzard Level 60 1400 Mana 30 yd range Channeled (8 sec cast) Requires Mage Requires level 60 Ice shards pelt the target area doing ( 148 * 8 * 1 ) Frost damage over 8 sec.",
+  "entity_id": 10187,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:33+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10187,
+      "name": "Blizzard",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10187"
+    }
+  ],
+  "name": "Blizzard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "e6af2a62fc8a462b4b829bcc3260ea4b97833f356d076de0970e9480735e3bdf",
+  "spell_id": 10187,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10187",
+  "url": "https://www.wowhead.com/forever/spell=10187"
+}

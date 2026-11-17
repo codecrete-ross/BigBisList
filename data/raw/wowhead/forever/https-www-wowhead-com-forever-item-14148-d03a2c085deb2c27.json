@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalline Cuffs Item Level 18 Binds when picked up Wrist Cloth 15 Armor +2 Stamina +3 Spirit Durability 20 / 20 Requires Level 13 Sell Price: 2 58 Dropped by: Taragaman the Hungerer Drop Chance: 30.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:45:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 14148,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 15,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 14148,
+    "item_level": 18,
+    "name": "Crystalline Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 13,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "spirit": 3.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14148"
+  },
+  "linked_entities": [],
+  "name": "Crystalline Cuffs",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.56,
+      "entity_name": "Taragaman the Hungerer",
+      "source_url": "https://www.wowhead.com/forever/item=14148",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14148",
+  "url": "https://www.wowhead.com/forever/item=14148"
+}

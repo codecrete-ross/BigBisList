@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Totem of Rage Item Level 57 Binds when picked up Relic Totem Requires Level 52 Equip: Increases the damage of your Shock spells by 2%. Sell Price: 1 27 69 Dropped by: Magmus Drop Chance: 7.95%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:07:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 22395,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases the damage of your Shock spells by 2%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases the damage of your Shock spells by 2%."
+    ],
+    "id": 22395,
+    "item_level": 57,
+    "name": "Totem of Rage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22395"
+  },
+  "linked_entities": [
+    {
+      "id": 27859,
+      "name": "Increases the damage of your Shock spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27859"
+    }
+  ],
+  "name": "Totem of Rage",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.95,
+      "entity_name": "Magmus",
+      "source_url": "https://www.wowhead.com/forever/item=22395",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "26af2fb053025a876ba0f9c5d186e9ee56d052834d16070e7ca9002e320fe59d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22395",
+  "url": "https://www.wowhead.com/forever/item=22395"
+}

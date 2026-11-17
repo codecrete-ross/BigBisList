@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stalwart Helm Item Level 61 Binds when equipped Head Plate 565 Armor +12 Strength Requires Level 56 Equip: Improves your chance to hit by 2.0%. Equip: Increases damage and healing done by magical spells and effects by up to 38 . Sell Price: 3 80 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:55:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 250599,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 565,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+        "stats": {
+          "hit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 38.",
+        "stats": {
+          "spell_power": 38.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 2.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 38."
+    ],
+    "id": 250599,
+    "item_level": 61,
+    "name": "Stalwart Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 56,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 2.0,
+      "spell_power": 38.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250599"
+  },
+  "linked_entities": [],
+  "name": "Stalwart Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250599",
+  "url": "https://www.wowhead.com/forever/item=250599"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Charred Razormane Wand Item Level 23 Binds when picked up Ranged Wand 16 - 31 Fire Damage Speed 1.50 (15.67 damage per second) Durability 45 / 45 Requires Level 18 Sell Price: 2 40 Dropped by: Razormane Seer Drop Chance: 24.80%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 5092,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.67,
+    "id": 5092,
+    "item_level": 23,
+    "name": "Charred Razormane Wand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 18,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 31,
+    "weapon_min_damage": 16,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5092"
+  },
+  "linked_entities": [],
+  "name": "Charred Razormane Wand",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.8,
+      "entity_name": "Razormane Seer",
+      "source_url": "https://www.wowhead.com/forever/item=5092",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5092",
+  "url": "https://www.wowhead.com/forever/item=5092"
+}

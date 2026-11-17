@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Murmuring Ring Item Level 60 Binds when picked up Unique-Equipped Finger +13 Intellect Requires Level 55 Equip: Reduces the hit chance of Silence effects against you by 7%. Sell Price: 1 98 96 Dropped by: Tsu'zee Drop Chance: 62.73%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18345,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Silence effects against you by 7%.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Silence effects against you by 7%."
+    ],
+    "id": 18345,
+    "item_level": 60,
+    "name": "Murmuring Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18345"
+  },
+  "linked_entities": [
+    {
+      "id": 19786,
+      "name": "Reduces the hit chance of Silence effects against you by 7%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19786"
+    }
+  ],
+  "name": "Murmuring Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 62.73,
+      "entity_name": "Tsu'zee",
+      "source_url": "https://www.wowhead.com/forever/item=18345",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "aada92918da8f18097ec5eed0a81580562c40dec6a66a9e243dc7bd7b184f997",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18345",
+  "url": "https://www.wowhead.com/forever/item=18345"
+}

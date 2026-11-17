@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heavy Dark Iron Ring Item Level 30 Binds when equipped Unique Finger +10 Stamina +53 Armor Equip: Increased Defense + 2. Sell Price: 5 33 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:10:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 288928,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +2.",
+        "stats": {
+          "defense": 2
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +2."
+    ],
+    "id": 288928,
+    "item_level": 30,
+    "name": "Heavy Dark Iron Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 2.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=288928"
+  },
+  "linked_entities": [],
+  "name": "Heavy Dark Iron Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "57bdb491900cdd25e36f591982bbdad8d3fc56ba99cd4b960e97687016f475a5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/288928",
+  "url": "https://www.wowhead.com/forever/item=288928"
+}

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sabatons of Heroism Item Level 60 Binds when picked up Feet Plate 470 Armor +12 Strength +26 Stamina Durability 75 / 75 Classes: Warrior Equip: Increased Defense + 3. Equip: Improves your chance to hit by 0.7%. Battlegear of Heroism (0/8) Item #226879 Item #226880 Item #226878 Item #226877 Item #226876 Item #226875 Item #226874 Item #226873 Sell Price: 3 44 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T04:30:41.9195924Z",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 226871,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 470,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +3.",
+        "stats": {
+          "defense": 3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.7%.",
+        "stats": {
+          "hit_percent": 0.7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.7%."
+    ],
+    "id": 226871,
+    "item_level": 60,
+    "name": "Sabatons of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "defense": 3.0,
+      "hit_percent": 0.7,
+      "stamina": 26.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226871"
+  },
+  "linked_entities": [],
+  "name": "Sabatons of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "7fa5c8fc6fa1fececa8eb9e35899922a1f5749532889c0bcbd32524aa7b96dde",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226871",
+  "url": "https://www.wowhead.com/forever/item=226871"
+}

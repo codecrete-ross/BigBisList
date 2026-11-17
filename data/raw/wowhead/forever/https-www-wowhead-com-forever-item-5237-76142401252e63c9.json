@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Mind-numbing Poison Item Level 24 Classes: Rogue Requires Level 24 Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy, increasing their casting time by 40% for 10 sec. 75 charges. (Proc chance: 20%) Max Stack: 20 Sell Price: 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 5237,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Coats a weapon with poison that lasts for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 5237,
+    "item_level": 24,
+    "name": "Mind-numbing Poison",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 24,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy, increasing their casting time by 40% for 10 sec. 75 charges. (Proc chance: 20%) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=5237"
+  },
+  "linked_entities": [
+    {
+      "id": 5761,
+      "name": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy, increasing their casting time by 40% for 10 sec. 75 charges. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5761"
+    }
+  ],
+  "name": "Mind-numbing Poison",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c15153d6fceaabfaec2ea1bcf28cd4b54c39885d0340f53b571fc3af20c29fd3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5237",
+  "url": "https://www.wowhead.com/forever/item=5237"
+}

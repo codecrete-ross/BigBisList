@@ -101,6 +101,9 @@ local function originTooltip(origin)
     end
     append(lines, origin.note or source.note or source.notes)
     append(lines, origin.source_url or source.source_url)
+    if BigBiSList.GetSourceAttributionLines then
+        for _, credit in ipairs(BigBiSList:GetSourceAttributionLines(source)) do append(lines, credit) end
+    end
     return table.concat(lines, "\n")
 end
 
@@ -318,7 +321,106 @@ function UI:CreateDetailsSourceItems(parent, anchor, option, stateKey, context)
     return block
 end
 
-function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries, context)
+local function questFlag(method, questId)
+    if type(method) ~= "function" then return nil end
+    local ok, value = pcall(method, questId)
+    if ok and BigBiSList.IsReadableValue(value) and type(value) == "boolean" then return value end
+end
+
+function UI:GetAcquisitionQuestState(questId)
+    local log = C_QuestLog or {}
+    local completed = questFlag(log.IsQuestFlaggedCompleted, questId)
+    if completed then return "Completed", nil end
+    local active = questFlag(log.IsOnQuest, questId)
+    if active then return "In progress", questFlag(log.IsComplete, questId) end
+    if completed == false and active == false then return "Not started", nil end
+    return "Unknown", nil
+end
+
+function UI:GetAcquisitionQuestProgress(source)
+    local progress, nextQuest = {}, nil
+    for _, step in ipairs(source.quest_steps or {}) do
+        local state, turnIn = self:GetAcquisitionQuestState(step.quest_id)
+        local quest = {step = step, state = state, turnIn = turnIn}
+        progress[#progress + 1] = quest
+        if not nextQuest and step.kind ~= "alternative" and state ~= "Completed" then
+            if state == "Not started" then quest.destination = step.start
+            elseif turnIn then quest.destination = step.finish end
+            nextQuest = quest
+        end
+    end
+    return nextQuest, progress
+end
+
+local function canSetWaypoint(destination)
+    if not destination or not C_Map or not C_Map.CanSetUserWaypointOnMap or not C_Map.SetUserWaypoint
+        or not UiMapPoint or not UiMapPoint.CreateFromCoordinates then return false end
+    if type(destination.map_id) ~= "number" or destination.map_id <= 0
+        or type(destination.x) ~= "number" or destination.x < 0 or destination.x > 1
+        or type(destination.y) ~= "number" or destination.y < 0 or destination.y > 1 then return false end
+    local ok, canSet = pcall(C_Map.CanSetUserWaypointOnMap, destination.map_id)
+    return ok and BigBiSList.IsReadableValue(canSet) and canSet == true
+end
+
+function UI:SetAcquisitionWaypoint(destination)
+    if (InCombatLockdown and InCombatLockdown()) or not canSetWaypoint(destination) then return false end
+    local ok, point = pcall(UiMapPoint.CreateFromCoordinates, destination.map_id, destination.x, destination.y)
+    if not ok or not point then return false end
+    local set, result = pcall(C_Map.SetUserWaypoint, point)
+    return set and BigBiSList.IsReadableValue(result) and result ~= false
+end
+
+function UI:CreateAcquisitionSteps(parent, anchor, option, accessStatus)
+    local source = option and option.source
+    if not BigBiSList.isForever or not source then return anchor, 0 end
+
+    local nextQuest, progress = self:GetAcquisitionQuestProgress(source)
+    local lines = {}
+    for _, quest in ipairs(progress) do
+        local step = quest.step
+        local prefix = step.kind == "alternative" and "Alternative: " or ""
+        lines[#lines + 1] = prefix .. step.name .. " · " .. quest.state
+        if step.start and step.start.name then lines[#lines + 1] = "Start: " .. step.start.name end
+        if step.finish and step.finish.name then lines[#lines + 1] = "Turn in: " .. step.finish.name end
+    end
+
+    local height = 0
+    local destination = #lines == 0 and source.destination or nil
+    if nextQuest then
+        destination = nextQuest.destination
+        local summary = nextQuest.step.name .. " · " .. nextQuest.state
+        if nextQuest.turnIn then
+            summary = summary .. "\nTurn in" .. (destination and destination.name and (": " .. destination.name) or "")
+        elseif destination and destination.name then
+            summary = summary .. "\nStart: " .. destination.name
+        end
+        anchor = self:CreateDetailsText(parent, anchor, "Next quest", summary, 0.86, 0.90, 0.96)
+        height = anchor.contentHeight
+    end
+
+    if accessStatus ~= "future" and accessStatus ~= "unavailable" and canSetWaypoint(destination) then
+        local block = self:AcquireDetailsWidget("source-waypoint", parent, function(widgetParent)
+            local created = CreateFrame("Frame", nil, widgetParent)
+            created:SetSize(124, 24)
+            created.button = widgets:CreateTextButton(created, "Set waypoint", 124, 24, function()
+                if created:IsVisible() then UI:SetAcquisitionWaypoint(created.destination) end
+            end)
+            created.button:SetPoint("TOPLEFT")
+            return created
+        end)
+        block.destination = destination
+        block:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -GAP)
+        block.contentHeight = 24 + GAP
+        anchor, height = block, height + block.contentHeight
+    end
+    if #lines > 0 then
+        anchor = self:CreateDetailsText(parent, anchor, "Quest steps", table.concat(lines, "\n"))
+        height = height + anchor.contentHeight
+    end
+    return anchor, height
+end
+
+function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries, context, defaultExpanded)
     if not entries or #entries == 0 then return nil end
     local block = self:AcquireDetailsWidget("source-routes", parent, function(widgetParent)
         local created = CreateFrame("Frame", nil, widgetParent)
@@ -331,7 +433,7 @@ function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries
             if buttonName ~= "LeftButton" then return end
             if not created.sectionKey or not created:IsVisible() then return end
             UI.expandedSellerSections = UI.expandedSellerSections or {}
-            UI.expandedSellerSections[created.sectionKey] = not UI:IsDetailsSectionExpanded(created.sectionKey)
+            UI.expandedSellerSections[created.sectionKey] = not UI:IsDetailsSectionExpanded(created.sectionKey, created.defaultExpanded)
             refreshDetails()
         end)
         created.header:SetScript("OnEnter", function(selfHeader) selfHeader.label:SetTextColor(1, 0.9, 0.48, 1) end)
@@ -348,7 +450,7 @@ function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries
         end)
         return created
     end)
-    block.sectionKey = sectionKey
+    block.sectionKey, block.defaultExpanded = sectionKey, defaultExpanded
     block:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -12)
     block:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
     local width = math.max(120, (parent:GetWidth() or 284) - 16)
@@ -356,7 +458,7 @@ function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries
     block.header:SetPoint("TOPLEFT", block, "TOPLEFT", 0, 0)
     block.header:SetWidth(width)
     setLabel(block.header.label, title .. " (" .. tostring(#entries) .. ")", width - 18, 1, 12)
-    local expanded = self:IsDetailsSectionExpanded(sectionKey)
+    local expanded = self:IsDetailsSectionExpanded(sectionKey, defaultExpanded)
     widgets:SetIcon(block.header.disclosure, expanded and "chevronDown" or "chevronRight")
     for _, routeText in ipairs(block.routeTexts) do routeText:Hide() end
     local y = 28
@@ -377,6 +479,8 @@ function UI:CreateDetailsSourceRoutes(parent, anchor, sectionKey, title, entries
             y = y + textHeight
             local sourceBlock = self:CreateDetailsSourceItems(block, routeText, entry.option, sectionKey .. ":" .. text(entry.key or (entry.option and (entry.option.source_identity or entry.option.key)) or index), context)
             if sourceBlock then y = y + sourceBlock.contentHeight end
+            local _, acquisitionHeight = self:CreateAcquisitionSteps(block, sourceBlock or routeText, entry.option)
+            y = y + acquisitionHeight
             y = y + 12
         end
     end

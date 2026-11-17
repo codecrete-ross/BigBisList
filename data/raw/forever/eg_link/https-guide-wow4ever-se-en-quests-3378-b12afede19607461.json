@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3378"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:34.111651+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 10745,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3378",
+      "subject_id": 3378,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 40,
+    "name": "Prayer to Elune",
+    "quest_id": 3378,
+    "quest_level": 50,
+    "reward_item_ids": [
+      10745
+    ],
+    "zone": "Searing Gorge"
+  },
+  "source_content_digest": "9ce07ae622752e92536bd3ea1de111c7f16408cfa49e4f27cafba824713f6220",
+  "url": "https://guide.wow4ever.se/en/quests/3378"
+}

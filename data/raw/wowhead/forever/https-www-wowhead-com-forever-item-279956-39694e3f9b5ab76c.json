@@ -1,0 +1,66 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Mana Well Item Level 4 Requires Alchemy (20) Use: Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279956,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Constructs a mana well that allows you and others sitting nearby to regenerate [(60 < 24 ? 10 : (60 < 34 ? 15 : (60 < 44 ? 20 : (60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom.",
+        "type": "use"
+      }
+    ],
+    "id": 279956,
+    "item_level": 4,
+    "name": "Mana Well",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Constructs a mana well that allows you and others sitting nearby to regenerate [(60 < 24 ? 10 : (60 < 34 ? 15 : (60 < 44 ? 20 : (60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279956"
+  },
+  "linked_entities": [
+    {
+      "id": 171,
+      "name": "Alchemy",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=171"
+    },
+    {
+      "id": 1307259,
+      "name": "Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307259"
+    }
+  ],
+  "name": "Mana Well",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Mana Well Item Level 4 Requires Alchemy (20) Use: Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+      "scope": "equip_or_use",
+      "skill": 20,
+      "source_url": "https://www.wowhead.com/forever/item=279956",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279956",
+  "url": "https://www.wowhead.com/forever/item=279956"
+}

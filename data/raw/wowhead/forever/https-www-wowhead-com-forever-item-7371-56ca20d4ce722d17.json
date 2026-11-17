@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Heavy Quiver Item Level 35 14 Slot Quiver Requires Level 30 Equip: Increases ranged attack speed by 12%. Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 7371,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases ranged attack speed by 12%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases ranged attack speed by 12%."
+    ],
+    "id": 7371,
+    "item_level": 35,
+    "name": "Heavy Quiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 30,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7371"
+  },
+  "linked_entities": [
+    {
+      "id": 29416,
+      "name": "Increases ranged attack speed by 12%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29416"
+    }
+  ],
+  "name": "Heavy Quiver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7371",
+  "url": "https://www.wowhead.com/forever/item=7371"
+}

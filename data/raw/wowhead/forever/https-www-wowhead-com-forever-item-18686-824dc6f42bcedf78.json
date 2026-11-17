@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bone Golem Shoulders Item Level 62 Binds when picked up Shoulder Mail 274 Armor +19 Agility +9 Stamina +12 Intellect Durability 70 / 70 Requires Level 57 Sell Price: 2 47 88 Dropped by: Rattlegore Drop Chance: 11.76%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18686,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 274,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18686,
+    "item_level": 62,
+    "name": "Bone Golem Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 19.0,
+      "intellect": 12.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18686"
+  },
+  "linked_entities": [],
+  "name": "Bone Golem Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.76,
+      "entity_name": "Rattlegore",
+      "source_url": "https://www.wowhead.com/forever/item=18686",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "af5a187efe73e44702af1cbeaf173619f38db5b3f53f45bbf31ad04dd746f2e4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18686",
+  "url": "https://www.wowhead.com/forever/item=18686"
+}

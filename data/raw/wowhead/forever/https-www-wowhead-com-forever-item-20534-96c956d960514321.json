@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Abyss Shard Item Level 52 Binds when picked up Unique Trinket +10 Shadow Resistance Classes: Warlock Equip: Increases damage and healing done by magical spells and effects by up to 12 . Use: Casts your Summon Voidwalker spell with no mana or Soul Shard requirements. (15 Min Cooldown) \"Dark rituals are trapped in dark gems.\" Sell Price: 1 27 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 20534,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Casts your Summon Voidwalker spell with no mana or Soul Shard requirements. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 20534,
+    "item_level": 52,
+    "name": "Abyss Shard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 10.0,
+      "spell_power": 12.0
+    },
+    "use_effects": [
+      "Use: Casts your Summon Voidwalker spell with no mana or Soul Shard requirements. (15 Min Cooldown) \"Dark rituals are trapped in dark gems.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20534"
+  },
+  "linked_entities": [
+    {
+      "id": 25112,
+      "name": "Casts your Summon Voidwalker spell with no mana or Soul Shard requirements.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25112"
+    }
+  ],
+  "name": "Abyss Shard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f0c622316f8d20bd3bd6d0b3e6dc5aaff5a7374e2f481c88dbaed37199a972d3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20534",
+  "url": "https://www.wowhead.com/forever/item=20534"
+}

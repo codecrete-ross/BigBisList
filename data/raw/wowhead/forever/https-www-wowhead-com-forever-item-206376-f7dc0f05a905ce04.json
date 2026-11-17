@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bulwark Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 Engrave your chest or robe with the Shield Mastery rune: Each time you Block, you regenerate mana equal to 8% of your maximum mana and you gain Armor equal to 30% of your shield's armor value, stacking up to 5 times. You also always gain 10% increased chance to Block and 15% increased Block value. In addition, each time you use a Shock ability, you gain 4 Spell Damage for each point of your defense skill beyond ( 60 * 5). Lasts 15 sec. \"Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206376,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206376,
+    "item_level": 5,
+    "name": "Bulwark Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206376"
+  },
+  "linked_entities": [
+    {
+      "id": 408524,
+      "name": "Each time you Block, you regenerate mana equal to 8% of your maximum mana and you gain Armor equal to 30% of your shield's armor value, stacking up to 5 times. You also always gain 10% increased chance to Block and 15% increased Block value. In addition, each time you use a Shock ability, you gain 4 Spell Damage for each point of your defense skill beyond ( 60 * 5). Lasts 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408524"
+    },
+    {
+      "id": 410098,
+      "name": "Engrave your chest or robe with the Shield Mastery rune: Each time you Block, you regenerate mana equal to 8% of your maximum mana and you gain Armor equal to 30% of your shield's armor value, stacking up to 5 times. You also always gain 10% increased chance to Block and 15% increased Block value. In addition, each time you use a Shock ability, you gain 4 Spell Damage for each point of your defense skill beyond ( 60 * 5). Lasts 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410098"
+    }
+  ],
+  "name": "Bulwark Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "e41298cba1c0ae4f21121abba30f5e5d21eb1f820cea21fb22f58da6392489af",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206376",
+  "url": "https://www.wowhead.com/forever/item=206376"
+}

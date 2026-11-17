@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/2976"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:06.410700+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 11859,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/2976",
+      "subject_id": 2976,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 37,
+    "name": "A Grim Discovery",
+    "quest_id": 2976,
+    "quest_level": 45,
+    "reward_item_ids": [
+      11859
+    ],
+    "zone": "Feralas"
+  },
+  "source_content_digest": "b4c104aa18d79cb1af4f5100e755133f559e2c76a933a634e1e221e6f78daf82",
+  "url": "https://guide.wow4ever.se/en/quests/2976"
+}

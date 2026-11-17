@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/98310"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:34:33.415261+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 281320,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98310",
+      "subject_id": 98310,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 24,
+    "name": "Gleaning Our Future",
+    "quest_id": 98310,
+    "quest_level": 32,
+    "reward_item_ids": [
+      281320
+    ],
+    "zone": "Wetlands"
+  },
+  "source_content_digest": "b3faf5d97d26da4b2e4a2fda2d5f0646f0a97348484ebd2e1dc21b45ceb70609",
+  "url": "https://guide.wow4ever.se/en/quests/98310"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Changuk Smasher Item Level 52 Binds when equipped One-Hand Mace 46 - 86 Damage Speed 1.90 (34.74 damage per second) +7 Stamina +7 Intellect +5 Spirit Durability 90 / 90 Requires Level 47 Sell Price: 2 67 47 Dropped by: Omgorn the Lost Drop Chance: 28.42%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 17055,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 34.74,
+    "id": 17055,
+    "item_level": 52,
+    "name": "Changuk Smasher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "spirit": 5.0,
+      "stamina": 7.0
+    },
+    "weapon_max_damage": 86,
+    "weapon_min_damage": 46,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17055"
+  },
+  "linked_entities": [],
+  "name": "Changuk Smasher",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 28.42,
+      "entity_name": "Omgorn the Lost",
+      "source_url": "https://www.wowhead.com/forever/item=17055",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17055",
+  "url": "https://www.wowhead.com/forever/item=17055"
+}

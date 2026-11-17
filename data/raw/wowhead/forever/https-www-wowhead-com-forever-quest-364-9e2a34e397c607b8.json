@@ -1,0 +1,106 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Mindless Ones Shadow Priest Sarvis wants you to kill 8 Mindless Zombies and 8 Wretched Zombies. Requirements: - Mindless Zombie x 8 - Wretched Zombie x 8",
+  "eligibility_conflict": {
+    "questiedb": {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1569
+        }
+      },
+      "id": 364,
+      "name": "The Mindless Ones",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1569
+        }
+      }
+    },
+    "wowhead": {
+      "classes": [],
+      "endpoints": {
+        "finish": {
+          "entity_id": 1569,
+          "name": "Shadow Priest Sarvis"
+        },
+        "start": {
+          "entity_id": 1569,
+          "name": "Shadow Priest Sarvis"
+        }
+      },
+      "min_level": 1,
+      "races": [
+        "Orc",
+        "Undead",
+        "Troll"
+      ],
+      "side": "Horde",
+      "zone": "Tirisfal Glades"
+    }
+  },
+  "entity_id": 364,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:28.930Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Mindless Ones",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 1569,
+        "name": "Shadow Priest Sarvis"
+      },
+      "start": {
+        "entity_id": 1569,
+        "name": "Shadow Priest Sarvis"
+      }
+    },
+    "min_level": 1,
+    "races": [
+      "Orc",
+      "Undead",
+      "Troll"
+    ],
+    "side": "Horde",
+    "zone": "Tirisfal Glades"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 3275,
+      "object_name": "Flax Gloves",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=364",
+      "subject_id": 364,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 11847,
+      "object_name": "Battered Cloak",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=364",
+      "subject_id": 364,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/364",
+  "url": "https://www.wowhead.com/forever/quest=364"
+}

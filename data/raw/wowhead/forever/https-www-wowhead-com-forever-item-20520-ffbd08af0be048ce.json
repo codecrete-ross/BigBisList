@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Dark Rune Item Level 55 Use: Restores 900 to 1500 mana at the cost of 600 to 1000 life. (2 Min Cooldown) Crafting Reagent Max Stack: 20 Sell Price: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:07:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 20520,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 900 to 1500 mana at the cost of 600 to 1000 life. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 20520,
+    "item_level": 55,
+    "name": "Dark Rune",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 900 to 1500 mana at the cost of 600 to 1000 life. (2 Min Cooldown) Crafting Reagent Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20520"
+  },
+  "linked_entities": [
+    {
+      "id": 27869,
+      "name": "Restores 900 to 1500 mana at the cost of 600 to 1000 life.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27869"
+    }
+  ],
+  "name": "Dark Rune",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20520",
+  "url": "https://www.wowhead.com/forever/item=20520"
+}

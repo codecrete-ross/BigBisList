@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodsplattered Bandana Item Level 55 Binds when picked up Head Leather 117 Armor +17 Stamina Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 1 22 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 279448,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 117,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 279448,
+    "item_level": 55,
+    "name": "Bloodsplattered Bandana",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279448"
+  },
+  "linked_entities": [],
+  "name": "Bloodsplattered Bandana",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "b87236fe3b2afeaadfb86e7bd4e51c4070f548e3635f620b8ec4452dd2bf9ce7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279448",
+  "url": "https://www.wowhead.com/forever/item=279448"
+}

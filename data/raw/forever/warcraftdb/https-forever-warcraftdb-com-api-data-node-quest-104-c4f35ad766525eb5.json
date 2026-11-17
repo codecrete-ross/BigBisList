@@ -1,0 +1,39 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/104"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:40.441066+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 1172,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/104",
+      "subject_id": 104,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": 15,
+    "name": "The Coastal Menace",
+    "quest_id": 104,
+    "reward_item_roles": {
+      "1172": "choices",
+      "1557": "choices",
+      "5240": "choices"
+    },
+    "side": "Both",
+    "zone": "Westfall"
+  },
+  "source_content_digest": "96ea96dacb23458bb53618702868a6090db095fc5875eff25f2f9ac343c6370f",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/104"
+}

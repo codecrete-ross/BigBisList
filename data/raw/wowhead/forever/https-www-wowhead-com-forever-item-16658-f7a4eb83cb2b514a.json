@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wildhunter Cloak Item Level 32 Binds when picked up Back 22 Armor +2 Stamina Equip: + 10 Attack Power. Equip: + 9 Attack Power against Beasts. Sell Price: 16 49",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 16658,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 22,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +9 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +10 Attack Power.",
+      "Equip: +9 Attack Power against Beasts."
+    ],
+    "id": 16658,
+    "item_level": 32,
+    "name": "Wildhunter Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16658"
+  },
+  "linked_entities": [],
+  "name": "Wildhunter Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16658",
+  "url": "https://www.wowhead.com/forever/item=16658"
+}

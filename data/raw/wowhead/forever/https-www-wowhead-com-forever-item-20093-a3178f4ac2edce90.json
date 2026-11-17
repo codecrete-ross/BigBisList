@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Chain Greaves Item Level 33 Binds when picked up Unique Feet Leather 74 Armor +8 Agility +8 Stamina Durability 50 / 50 Requires Level 28 Requires The League of Arathor - Revered Equip: Run speed increased slightly. Sell Price: 26 43",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 20093,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 74,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Run speed increased slightly.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Run speed increased slightly."
+    ],
+    "id": 20093,
+    "item_level": 33,
+    "name": "Highlander's Chain Greaves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 28,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20093"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 23990,
+      "name": "Run speed increased slightly.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23990"
+    }
+  ],
+  "name": "Highlander's Chain Greaves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Chain Greaves Item Level 33 Binds when picked up Unique Feet Leather 74 Armor +8 Agility +8 Stamina Durability 50 / 50 Requires Level 28 Requires The League of Arathor - Revered Equip: Run speed increased slightly. Sell Price: 26 43",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20093",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20093",
+  "url": "https://www.wowhead.com/forever/item=20093"
+}

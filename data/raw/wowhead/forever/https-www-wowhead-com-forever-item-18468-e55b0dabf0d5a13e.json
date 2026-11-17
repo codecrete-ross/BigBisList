@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Royal Seal of Eldre'Thalas Item Level 62 Binds when picked up Unique Trinket Restores + 4 mana per 5 sec. +15 Nature Resistance Classes: Mage Equip: Increases damage done by Arcane spells and effects by up to 21. \"Blessed by the Shen'dralar Ancients.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18468,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Arcane spells and effects by up to 21.",
+        "stats": {
+          "arcane_damage": 21
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Arcane spells and effects by up to 21."
+    ],
+    "id": 18468,
+    "item_level": 62,
+    "name": "Royal Seal of Eldre'Thalas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "arcane_damage": 21.0,
+      "mp5": 4.0,
+      "nature_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18468"
+  },
+  "linked_entities": [],
+  "name": "Royal Seal of Eldre'Thalas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4f113ddacee0c89d7ab535d8e5865cbefedf7c78bf7fdfaea5166b67849035a6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18468",
+  "url": "https://www.wowhead.com/forever/item=18468"
+}

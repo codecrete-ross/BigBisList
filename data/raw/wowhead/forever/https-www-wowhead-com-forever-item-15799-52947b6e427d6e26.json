@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heroic Commendation Medal Item Level 58 Binds when picked up Neck +12 Stamina +5 Spirit Sell Price: 71 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 15799,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 15799,
+    "item_level": 58,
+    "name": "Heroic Commendation Medal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "spirit": 5.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15799"
+  },
+  "linked_entities": [],
+  "name": "Heroic Commendation Medal",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15799",
+  "url": "https://www.wowhead.com/forever/item=15799"
+}

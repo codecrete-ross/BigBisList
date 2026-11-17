@@ -1,0 +1,151 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lightforge Gauntlets Item Level 59 Binds when equipped Hands Plate 386 Armor +14 Strength +9 Stamina +5 Intellect +14 Spirit Durability 45 / 45 Requires Level 54 Lightforge Armor (0/8) Lightforge Belt Lightforge Boots Lightforge Bracers Lightforge Breastplate Lightforge Gauntlets Lightforge Legplates Lightforge Spaulders Lightforge Helm (2) Set : +8 All Resistances. (3) Set : Increases damage and healing done by magical spells and effects by up to 18. (4) Set : When struck by a harmful spell, has a 7% chance of Silencing the caster for 3 sec. Can only occur once every 60 sec. (Proc chance: 7%, 1m cooldown) (5) Set : Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec. (6) Set : Restores 8 mana per 5 sec. Sell Price: 1 66 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 16724,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 386,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 16724,
+    "item_level": 59,
+    "name": "Lightforge Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302716,
+        "text": "When struck by a harmful spell, has a 7% chance of Silencing the caster for 3 sec. Can only occur once every 60 sec. (Proc chance: 7%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450625,
+        "text": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "spirit": 14.0,
+      "stamina": 9.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16724"
+  },
+  "linked_entities": [
+    {
+      "id": 16722,
+      "name": "Lightforge Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16722"
+    },
+    {
+      "id": 16723,
+      "name": "Lightforge Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16723"
+    },
+    {
+      "id": 16724,
+      "name": "Lightforge Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16724"
+    },
+    {
+      "id": 16725,
+      "name": "Lightforge Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16725"
+    },
+    {
+      "id": 16726,
+      "name": "Lightforge Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16726"
+    },
+    {
+      "id": 16727,
+      "name": "Lightforge Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16727"
+    },
+    {
+      "id": 16728,
+      "name": "Lightforge Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16728"
+    },
+    {
+      "id": 16729,
+      "name": "Lightforge Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16729"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450625,
+      "name": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450625"
+    },
+    {
+      "id": 1302716,
+      "name": "When struck by a harmful spell, has a 7% chance of Silencing the caster for 3 sec. Can only occur once every 60 sec. (Proc chance: 7%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302716"
+    }
+  ],
+  "name": "Lightforge Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16724",
+  "url": "https://www.wowhead.com/forever/item=16724"
+}

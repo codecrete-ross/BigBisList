@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227377"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:09:04.4256421Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 950,
+      "collected_at": "2026-11-13T06:09:04.4256421Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227377",
+      "source_content_digest": "4ff28172bc5aa588b9ac5fa576f97f67b7f74e546d27ba96b001d4d2f51633e0",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227377"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 227019,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227377",
+      "subject_id": 227377,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227377,
+    "contents_name_on_tooltip": "Spaulders of The Five Thunders",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 227019,
+    "title": "Impact's Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "4ff28172bc5aa588b9ac5fa576f97f67b7f74e546d27ba96b001d4d2f51633e0",
+  "url": "https://www.wowhead.com/forever/item=227377"
+}

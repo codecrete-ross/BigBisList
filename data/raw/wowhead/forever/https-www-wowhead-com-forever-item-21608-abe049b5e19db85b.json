@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Amulet of Vek'nilash Item Level 81 Binds when picked up Neck +9 Stamina +5 Intellect Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 10 27 77 Dropped by: Emperor Vek'nilash Drop Chance: 14.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 21608,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27."
+    ],
+    "id": 21608,
+    "item_level": 81,
+    "name": "Amulet of Vek'nilash",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 5.0,
+      "spell_power": 27.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21608"
+  },
+  "linked_entities": [],
+  "name": "Amulet of Vek'nilash",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.56,
+      "entity_name": "Emperor Vek'nilash",
+      "source_url": "https://www.wowhead.com/forever/item=21608",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21608",
+  "url": "https://www.wowhead.com/forever/item=21608"
+}

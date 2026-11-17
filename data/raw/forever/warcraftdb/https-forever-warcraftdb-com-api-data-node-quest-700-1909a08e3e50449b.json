@@ -1,0 +1,35 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/700"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:24.467717+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 4535,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/700",
+      "subject_id": 700,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 25,
+    "name": "A King's Tribute",
+    "quest_id": 700,
+    "reward_item_ids": [
+      4535
+    ],
+    "zone": "Ironforge"
+  },
+  "source_content_digest": "0639f64743acd85a9b2eea39bbd7a1fea9d4e9ab6e4e10beca5866a57051f3c3",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/700"
+}

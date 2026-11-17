@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Totem of Charged Flames Item Level 10 Binds when picked up Relic Totem Classes: Shaman Equip: Reduces the mana cost of Flame Shock and Lightning Bolt by 5 Mana. Sell Price: 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 263412,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the mana cost of Flame Shock and Lightning Bolt by 5 Mana.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the mana cost of Flame Shock and Lightning Bolt by 5 Mana."
+    ],
+    "id": 263412,
+    "item_level": 10,
+    "name": "Totem of Charged Flames",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=263412"
+  },
+  "linked_entities": [
+    {
+      "id": 1270478,
+      "name": "Reduces the mana cost of Flame Shock and Lightning Bolt by 5 Mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1270478"
+    }
+  ],
+  "name": "Totem of Charged Flames",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/263412",
+  "url": "https://www.wowhead.com/forever/item=263412"
+}

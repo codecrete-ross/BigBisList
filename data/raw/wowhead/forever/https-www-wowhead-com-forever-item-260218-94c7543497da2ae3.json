@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Malefactor's End Item Level 62 Binds when picked up Unique-Equipped Finger +6 Stamina +14 Intellect Restores + 4 mana per 5 sec. Sell Price: 2 19 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 260218,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 260218,
+    "item_level": 62,
+    "name": "Malefactor's End",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "mp5": 4.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=260218"
+  },
+  "linked_entities": [],
+  "name": "Malefactor's End",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "91742a945b668c83c65fb3f89e529b8ea342270fcafe56aa2b7fd0e7bc16a5a7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260218",
+  "url": "https://www.wowhead.com/forever/item=260218"
+}

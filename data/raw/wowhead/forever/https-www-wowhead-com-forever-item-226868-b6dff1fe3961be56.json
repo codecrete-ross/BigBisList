@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legguards of Heroism Item Level 66 Binds when picked up Legs Plate 601 Armor +16 Strength +24 Stamina +10 Spirit + 21 Block Value Durability 100 / 100 Classes: Warrior Equip: Increased Defense + 7. Battlegear of Heroism (0/8) Item #226879 Item #226880 Item #226878 Item #226877 Item #226876 Item #226875 Item #226874 Item #226873 Sell Price: 4 58 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T04:30:41.7172507Z",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 226868,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 601,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +7.",
+        "stats": {
+          "defense": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +7."
+    ],
+    "id": 226868,
+    "item_level": 66,
+    "name": "Legguards of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "defense": 7.0,
+      "spirit": 10.0,
+      "stamina": 24.0,
+      "strength": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226868"
+  },
+  "linked_entities": [],
+  "name": "Legguards of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "47475613737feea3bd606e2685ba853176b80125efb06a963300242b9b0de4f6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226868",
+  "url": "https://www.wowhead.com/forever/item=226868"
+}

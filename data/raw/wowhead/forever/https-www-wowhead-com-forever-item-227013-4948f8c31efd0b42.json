@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crown of The Five Thunders Item Level 60 Binds when picked up Head Mail 314 Armor +16 Stamina +17 Intellect +16 Spirit Durability 85 / 85 Classes: Shaman Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects. The Five Thunders (0/8) Item #227039 Item #227040 Item #227038 Item #227037 Item #227036 Item #227035 Item #227034 Item #227033 Sell Price: 2 85 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227013,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 314,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 33,
+          "spell_damage": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+    ],
+    "id": 227013,
+    "item_level": 60,
+    "name": "Crown of The Five Thunders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 33.0,
+      "intellect": 17.0,
+      "spell_damage": 11.0,
+      "spirit": 16.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227013"
+  },
+  "linked_entities": [],
+  "name": "Crown of The Five Thunders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "99bbb7c8259ac2e694fb0429b0c19a4381926cbfed4f8f40ca09b73495274442",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227013",
+  "url": "https://www.wowhead.com/forever/item=227013"
+}

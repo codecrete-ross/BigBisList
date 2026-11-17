@@ -1,0 +1,182 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feralheart Mantle Item Level 65 Binds when picked up Shoulder Leather 136 Armor +12 Stamina +13 Intellect +12 Spirit Durability 60 / 60 Classes: Druid Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects. Feralheart Raiment (0/8) Feralheart Boots Feralheart Chest Feralheart Gloves Feralheart Helm Feralheart Legs Feralheart Shoulders Feralheart Waist Feralheart Wrists (2) Set : +8 All Resistances. (3) Set : Restores 8 mana per 5 sec. (4) Set : Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage. (5) Set : When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown) (6) Set : +40 Attack Power. (6) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 2 43 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-17T21:34:07.779242+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 226785,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 136,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 22,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 226785,
+    "item_level": 65,
+    "name": "Feralheart Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 450608,
+        "text": "Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1302708,
+        "text": "When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "intellect": 13.0,
+      "spell_damage": 7.0,
+      "spirit": 12.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226785"
+  },
+  "linked_entities": [
+    {
+      "id": 226815,
+      "name": "Feralheart Wrists",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226815"
+    },
+    {
+      "id": 226816,
+      "name": "Feralheart Waist",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226816"
+    },
+    {
+      "id": 226817,
+      "name": "Feralheart Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226817"
+    },
+    {
+      "id": 226818,
+      "name": "Feralheart Legs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226818"
+    },
+    {
+      "id": 226819,
+      "name": "Feralheart Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226819"
+    },
+    {
+      "id": 226820,
+      "name": "Feralheart Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226820"
+    },
+    {
+      "id": 226821,
+      "name": "Feralheart Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226821"
+    },
+    {
+      "id": 226822,
+      "name": "Feralheart Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226822"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450608,
+      "name": "Chance on spellcast to restore 200 Mana, on melee attack to regenerate 20 Energy over 5 sec, and when struck by a melee attack to generate 10 Rage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450608"
+    },
+    {
+      "id": 1302708,
+      "name": "When struck in combat, has a 5% chance to increase your movement speed by 10% for 8 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302708"
+    }
+  ],
+  "name": "Feralheart Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "dd5ffd24993c94984a1a9690feff24cc2c4e30e89c5e224f1c095f03b2089c8a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226785",
+  "url": "https://www.wowhead.com/forever/item=226785"
+}

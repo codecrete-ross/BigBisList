@@ -1,0 +1,54 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Deprecated Silver Totem of Aquementas Item Level 1 Quest Item Unique Held In Off-hand Use: Dispels Blazerunner's Aura. (45 Sec Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 11170,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispels Blazerunner's Aura. (45 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 11170,
+    "item_level": 1,
+    "name": "Deprecated Silver Totem of Aquementas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Dispels Blazerunner's Aura. (45 Sec Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11170"
+  },
+  "linked_entities": [
+    {
+      "id": 14247,
+      "name": "Dispels Blazerunner's Aura.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14247"
+    }
+  ],
+  "name": "Deprecated Silver Totem of Aquementas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "1eebdf20e4497fda14bc264ec08c2220c2224922d3344c524e6fd6f20c9a28ad",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11170",
+  "url": "https://www.wowhead.com/forever/item=11170"
+}

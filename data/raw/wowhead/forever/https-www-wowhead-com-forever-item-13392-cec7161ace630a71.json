@@ -1,0 +1,141 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Postmaster's Seal Item Level 61 Binds when picked up Finger +6 Stamina +3 Intellect +12 Spirit Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 13 . The Postmaster (0/5) The Postmaster's Band The Postmaster's Tunic The Postmaster's Treads The Postmaster's Seal The Postmaster's Trousers (2) Set : Increases run speed by 8%. (3) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Falling below 25% health grants Return to Sender, reflecting the next spell cast on you within 6 sec. Can only occur once every 3 min. (3m cooldown) (5) Set : Improves your chance to hit by 1.0%. Sell Price: 2 8 91 Dropped by: Postmaster Malown Drop Chance: 22.99%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13392,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 13.",
+        "stats": {
+          "spell_power": 13.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 13."
+    ],
+    "id": 13392,
+    "item_level": 61,
+    "name": "The Postmaster's Seal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1302376,
+        "text": "Increases run speed by 8%."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302380,
+        "text": "Falling below 25% health grants Return to Sender, reflecting the next spell cast on you within 6 sec. Can only occur once every 3 min. (3m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 432639,
+        "text": "Improves your chance to hit by 1.0%."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 3.0,
+      "spell_power": 13.0,
+      "spirit": 12.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13392"
+  },
+  "linked_entities": [
+    {
+      "id": 13388,
+      "name": "The Postmaster's Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13388"
+    },
+    {
+      "id": 13389,
+      "name": "The Postmaster's Trousers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13389"
+    },
+    {
+      "id": 13390,
+      "name": "The Postmaster's Band",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13390"
+    },
+    {
+      "id": 13391,
+      "name": "The Postmaster's Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13391"
+    },
+    {
+      "id": 13392,
+      "name": "The Postmaster's Seal",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13392"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 432639,
+      "name": "Improves your chance to hit by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=432639"
+    },
+    {
+      "id": 1302376,
+      "name": "Increases run speed by 8%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302376"
+    },
+    {
+      "id": 1302380,
+      "name": "Falling below 25% health grants Return to Sender, reflecting the next spell cast on you within 6 sec. Can only occur once every 3 min. (3m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302380"
+    }
+  ],
+  "name": "The Postmaster's Seal",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.99,
+      "entity_name": "Postmaster Malown",
+      "source_url": "https://www.wowhead.com/forever/item=13392",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a28590af2392ca0081100322927d7ccaae0c9c2e23011a71eb925ab365d76126",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13392",
+  "url": "https://www.wowhead.com/forever/item=13392"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Frost Ward 85 Mana Instant 30 sec cooldown Requires Mage Requires level 22 Absorbs [162 + (Frost spell power * 0.1) * (1)] Frost damage [ Frost Warding : and grants a 0% chance to negate Frost damage ]. Lasts 30 sec.",
+  "entity_id": 6143,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:39+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6143,
+      "name": "Frost Ward",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6143"
+    }
+  ],
+  "name": "Frost Ward",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ffd11ba3cedcc775bd8a0c765e3dda836a84d4add17efcc02cb4241a32aa4b11",
+  "spell_id": 6143,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/6143",
+  "url": "https://www.wowhead.com/forever/spell=6143"
+}

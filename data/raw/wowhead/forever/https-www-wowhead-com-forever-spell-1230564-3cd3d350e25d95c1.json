@@ -1,0 +1,78 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mana Well 10 sec cast Reagents: Peacebloom , Empty Vial Craft a Mana Well. Mana Well Item Level 4 Requires Alchemy (20) Use: Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "entity_id": 1230564,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:51+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2447,
+      "name": "Peacebloom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2447"
+    },
+    {
+      "id": 3371,
+      "name": "Empty Vial",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3371"
+    },
+    {
+      "id": 279956,
+      "name": "Mana Well",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279956"
+    },
+    {
+      "id": 171,
+      "name": "Alchemy",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=171"
+    },
+    {
+      "id": 1230564,
+      "name": "Mana Well",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1230564"
+    },
+    {
+      "id": 1307259,
+      "name": "Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307259"
+    }
+  ],
+  "name": "Mana Well",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Alchemy",
+      "raw_text": "Mana Well 10 sec cast Reagents: Peacebloom , Empty Vial Craft a Mana Well. Mana Well Item Level 4 Requires Alchemy (20) Use: Constructs a mana well that allows you and others sitting nearby to regenerate [( 60 < 24 ? 10 : ( 60 < 34 ? 15 : ( 60 < 44 ? 20 : ( 60 < 54 ? 24 : 29))))] Mana every 5 sec, mutually exclusive with Blessing of Wisdom. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+      "scope": "cast_enchant",
+      "skill": 20,
+      "source_url": "https://www.wowhead.com/forever/spell=1230564",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279956,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1230564",
+      "subject_id": 1230564,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "c5997c1ccb1ba30e4d120cf5b860328e4f8cfb0d24bdfe467e81b88c189cfeba",
+  "spell_id": 1230564,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1230564",
+  "url": "https://www.wowhead.com/forever/spell=1230564"
+}

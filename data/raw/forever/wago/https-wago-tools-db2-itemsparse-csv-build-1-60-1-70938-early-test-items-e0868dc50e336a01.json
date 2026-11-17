@@ -1,0 +1,762 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "credit": "LibItemDB by Pimptasty",
+      "licence": "MIT",
+      "licenceUrl": "https://opensource.org/license/mit",
+      "source": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:39:29.5555154Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 8561018,
+      "collected_at": "2026-11-13T17:48:16.9269649Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-sparse",
+      "source_content_digest": "eef48b88d1af6ea23872155819dc59342204b2f34c0b613df0405ef06f7a5145",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 37988000,
+      "collected_at": "2026-11-13T17:36:04.0533711Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "libitemdb-package",
+      "source_content_digest": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+      "source_url": "https://mediafilez.forgecdn.net/files/9580/874/ItemDB-ItemDB-v1.9.0.zip"
+    },
+    {
+      "bytes": 110258,
+      "collected_at": "2026-11-13T17:41:58.9976689Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-standard-nyi",
+      "source_content_digest": "60e84dda13c65bf767656f7b3e3d8edd20f550b84cbc94dccd951b17f690da63",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/b63fa37182a576f612deb47f4da6b58aa53022db"
+    },
+    {
+      "bytes": 27574,
+      "collected_at": "2026-11-13T17:41:59.4774190Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-seasonal-nyi",
+      "source_content_digest": "06f7101781225363c1e4c4b68cb0451475e53b8614b5ff33db028b00e85d8990",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4b68f730e08d7b89506a689511babb7e82f0bfb7"
+    },
+    {
+      "bytes": 4043,
+      "collected_at": "2026-11-13T17:43:42.4574385Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-nyi",
+      "source_content_digest": "d2b8b86818666d83d7b8e21177551aa0821e29481f88254c14ae29f50ee0f951",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/5196829ef36f963eefe8f2307a50eb3f4b5b4489"
+    },
+    {
+      "bytes": 214529,
+      "collected_at": "2026-11-13T17:46:36.3860281Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-907",
+      "source_content_digest": "6603fa8832947575db5aef53c62f687a731675cf5fac18adb33621397c8ce1b8",
+      "source_url": "https://www.wowhead.com/classic/item=907/black-mail-shoulderpads-of-might-test"
+    },
+    {
+      "bytes": 165395,
+      "collected_at": "2026-11-13T17:46:37.0357629Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-908",
+      "source_content_digest": "b37f4e5b629d67f9fa4fcc3095b577eab07d8e242781142870b96f06075e244d",
+      "source_url": "https://www.wowhead.com/classic/item=908/plate-shoulderpad-test"
+    },
+    {
+      "bytes": 217816,
+      "collected_at": "2026-11-13T17:46:37.9524130Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-909",
+      "source_content_digest": "13c406eeb0d7ac02973242cf82fc59795b1eb790f9cd99184acc351b7d6f82d4",
+      "source_url": "https://www.wowhead.com/classic/item=909/silver-mail-shoulderpads-test"
+    },
+    {
+      "bytes": 165476,
+      "collected_at": "2026-11-13T17:46:38.5110394Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-996",
+      "source_content_digest": "a8c59155f3bbbe55a9f419e6c9b1302bbb9742035d27c2b0168de72c9ede4679",
+      "source_url": "https://www.wowhead.com/classic/item=996/ring-of-righteous-flame-test"
+    },
+    {
+      "bytes": 164612,
+      "collected_at": "2026-11-13T17:46:39.1657158Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-6673",
+      "source_content_digest": "8ff5f10e38850b516d2f61aea8be3a147269a8dcdd5988d0e1ff9e318a7a00d9",
+      "source_url": "https://www.wowhead.com/classic/item=6673/test-hp-ring"
+    },
+    {
+      "bytes": 164848,
+      "collected_at": "2026-11-13T17:46:39.7589738Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-16067",
+      "source_content_digest": "8c90125fbfc0d161367dbec68e5079d7f236adb37efb0bbe0e0227a22511dfea",
+      "source_url": "https://www.wowhead.com/classic/item=16067/test-fire-res-ring"
+    },
+    {
+      "bytes": 165486,
+      "collected_at": "2026-11-13T17:43:48.7285943Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-critical-ring",
+      "source_content_digest": "3a7c87a6855d70f08d53c1407387006a918ee9eeef2067ed9c2a0df437d53761",
+      "source_url": "https://www.wowhead.com/classic/item=18968/ring-of-critical-testing"
+    },
+    {
+      "bytes": 165219,
+      "collected_at": "2026-11-13T17:46:40.3997559Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-20445",
+      "source_content_digest": "6c4f695c7e468eca8a757d933ad19b6eb1ab45f39a36e649c0eb4c013e794a16",
+      "source_url": "https://www.wowhead.com/classic/item=20445/test-defense-ring-120"
+    },
+    {
+      "bytes": 165185,
+      "collected_at": "2026-11-13T17:46:41.0398108Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-page-20446",
+      "source_content_digest": "a1aac95e5ea7f17faaea2a28384721e05aafbf09125a5c80b2c4da7c4c2157e8",
+      "source_url": "https://www.wowhead.com/classic/item=20446/test-defense-ring-80"
+    },
+    {
+      "bytes": 164441,
+      "collected_at": "2026-11-13T17:42:06.4245564Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-page-test-relic",
+      "source_content_digest": "fcc41d09f200f50167c8ecd49505cd766e444ff1e914c1e628f969f7c0e56460",
+      "source_url": "https://www.wowhead.com/classic/item=22316/test-relic"
+    },
+    {
+      "bytes": 165645,
+      "collected_at": "2026-11-13T17:43:49.5781831Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-qa-ring",
+      "source_content_digest": "6cbfd0aebec1a9c3483de448883bab50ab9ebcc102c8f63731b46d2256ad3a5b",
+      "source_url": "https://www.wowhead.com/classic/item=24358/qatest-1000-spell-dmg-ring"
+    },
+    {
+      "bytes": 823,
+      "collected_at": "2026-11-13T17:41:58.9822755Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-907",
+      "source_content_digest": "f1c9bc9dfb61d75fcef550065fcab4ea930d0baaa200975c305a5d4000c6c535",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/907"
+    },
+    {
+      "bytes": 753,
+      "collected_at": "2026-11-13T17:41:59.2782516Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-908",
+      "source_content_digest": "b7206f985b817ade04f3dfc4f2a0ee39f12b967bd9a0b3b2a42e031c689bdfaf",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/908"
+    },
+    {
+      "bytes": 767,
+      "collected_at": "2026-11-13T17:41:59.5154095Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-909",
+      "source_content_digest": "d08690ef6e48b751228662f082f6feb8311d24db3bc06ad65c214afb988a7008",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/909"
+    },
+    {
+      "bytes": 1035,
+      "collected_at": "2026-11-13T17:41:59.7379319Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-996",
+      "source_content_digest": "cce4b329f0de1a98608a9b38ea9afd8338afeaeed230b5675eea96e836bf745c",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/996"
+    },
+    {
+      "bytes": 775,
+      "collected_at": "2026-11-13T17:41:59.9695654Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-6673",
+      "source_content_digest": "52f1b8037d575f133f2ea096b2e273dfcc012e6906ef04dc668d7009d6313f96",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/6673"
+    },
+    {
+      "bytes": 847,
+      "collected_at": "2026-11-13T17:42:00.2117757Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-16067",
+      "source_content_digest": "96df4282fe04586a88d8c89e6435a6aa0c95180ae223a6fb88e20ba0866dfcf2",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/16067"
+    },
+    {
+      "bytes": 1063,
+      "collected_at": "2026-11-13T17:42:00.4769055Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-18968",
+      "source_content_digest": "6bdf0150e45953cc5cb21f12b4b28c86ec24a16af16d5390d8a5a2c721085568",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/18968"
+    },
+    {
+      "bytes": 975,
+      "collected_at": "2026-11-13T17:42:00.7755151Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-20445",
+      "source_content_digest": "3ffc3671c1037cdda0a75efa526593b5705e5964126dc0a334b78b15466dd538",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/20445"
+    },
+    {
+      "bytes": 972,
+      "collected_at": "2026-11-13T17:42:01.0160565Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-20446",
+      "source_content_digest": "50d8621a4b5bb766a3e0fb99fa184a3527fa3de8c6eae14bd6904345fe7eb9d7",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/20446"
+    },
+    {
+      "bytes": 701,
+      "collected_at": "2026-11-13T17:42:01.2356477Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-22316",
+      "source_content_digest": "1dfe65892bbe40f76e40d99ea1c2435b94e633afb235acddde43b719aa5df51c",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/22316"
+    },
+    {
+      "bytes": 1078,
+      "collected_at": "2026-11-13T17:42:01.4756425Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-classic-24358",
+      "source_content_digest": "1d92db42fc4a7d75f1833c2606e5df483df54371a80be79fd602253798f26c16",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/24358"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The historical records explicitly identify these exact test items as unavailable to players. The released Forever client and the independent item walk confirm the same QA records. The checked Forever acquisition records identify no player grant for them.",
+    "libitemdb_license_notice": "MIT License\n\nCopyright (c) 2026 Pimptasty\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+    "released_scan_is_corroboration": true,
+    "test_items": [
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=907/black-mail-shoulderpads-of-might-test",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Black Mail Shoulderpads of might (Test) Item Level 1 Shoulder Mail 28 Armor +12 Agility Durability 30 / 30 Sell Price: 1",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/907",
+        "current_client_fields": {
+          "Bonding": "0",
+          "Display_lang": "Black Mail Shoulderpads of might (Test)",
+          "Flags_0": "0",
+          "Flags_1": "24576",
+          "Flags_2": "0",
+          "Flags_3": "32",
+          "InventoryType": "3",
+          "ItemLevel": "1",
+          "OverallQualityID": "1",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=907",
+        "item_id": 907,
+        "name": "Black Mail Shoulderpads of might (Test)",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_SHOULDER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=908/plate-shoulderpad-test",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Plate Shoulderpad (Test) Item Level 1 Shoulder Cloth 2 Armor Durability 20 / 20 Sell Price: 1",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/908",
+        "current_client_fields": {
+          "Bonding": "0",
+          "Display_lang": "Plate Shoulderpad (Test)",
+          "Flags_0": "0",
+          "Flags_1": "24576",
+          "Flags_2": "0",
+          "Flags_3": "32",
+          "InventoryType": "3",
+          "ItemLevel": "1",
+          "OverallQualityID": "1",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=908",
+        "item_id": 908,
+        "name": "Plate Shoulderpad (Test)",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_SHOULDER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=909/silver-mail-shoulderpads-test",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Silver Mail Shoulderpads (Test) Item Level 1 Shoulder Cloth 2 Armor Durability 20 / 20 Sell Price: 1",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/909",
+        "current_client_fields": {
+          "Bonding": "0",
+          "Display_lang": "Silver Mail Shoulderpads (Test)",
+          "Flags_0": "0",
+          "Flags_1": "24576",
+          "Flags_2": "0",
+          "Flags_3": "32",
+          "InventoryType": "3",
+          "ItemLevel": "1",
+          "OverallQualityID": "1",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=909",
+        "item_id": 909,
+        "name": "Silver Mail Shoulderpads (Test)",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_SHOULDER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=996/ring-of-righteous-flame-test",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Ring of Righteous Flame (TEST) Item Level 2 Finger Use: Hurls a fiery ball that causes 16 to 25 Fire damage and an additional 2 Fire damage over 4 sec. Sell Price: 10",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/996",
+        "current_client_fields": {
+          "Bonding": "0",
+          "Display_lang": "Ring of Righteous Flame (TEST)",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "2",
+          "OverallQualityID": "1",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=996",
+        "item_id": 996,
+        "name": "Ring of Righteous Flame (TEST)",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=6673/test-hp-ring",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Test HP Ring Item Level 1 Binds when equipped Finger +2,500 Health Sell Price: 10 52",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/6673",
+        "current_client_fields": {
+          "Bonding": "2",
+          "Display_lang": "Test HP Ring",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "1",
+          "OverallQualityID": "0",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=6673",
+        "item_id": 6673,
+        "name": "Test HP Ring",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          382,
+          380
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=16067/test-fire-res-ring",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Test Fire Res Ring Item Level 61 Binds when picked up Finger Equip: +8 Fire Resistance.",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/16067",
+        "current_client_fields": {
+          "Bonding": "1",
+          "Display_lang": "Test Fire Res Ring",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "61",
+          "OverallQualityID": "3",
+          "RequiredLevel": "0"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=16067",
+        "item_id": 16067,
+        "name": "Test Fire Res Ring",
+        "released_scan_hidden": true,
+        "released_scan_required_level": null,
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          370,
+          368
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=18968/ring-of-critical-testing",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Ring of Critical Testing Item Level 60 Binds when picked up Finger Equip: Improves your chance to get a critical strike with spells by 50%. Sell Price: 5 60 12",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/18968",
+        "current_client_fields": {
+          "Bonding": "1",
+          "Display_lang": "Ring of Critical Testing",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "60",
+          "OverallQualityID": "4",
+          "RequiredLevel": "0"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=18968",
+        "item_id": 18968,
+        "name": "Ring of Critical Testing",
+        "released_scan_hidden": false,
+        "released_scan_required_level": null,
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          380,
+          378
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=20445/test-defense-ring-120",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Test Defense Ring +120 Item Level 60 Binds when picked up Finger Equip: Increased Defense +120. Sell Price: 78 88",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/20445",
+        "current_client_fields": {
+          "Bonding": "1",
+          "Display_lang": "Test Defense Ring +120",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "60",
+          "OverallQualityID": "3",
+          "RequiredLevel": "0"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=20445",
+        "item_id": 20445,
+        "name": "Test Defense Ring +120",
+        "released_scan_hidden": true,
+        "released_scan_required_level": null,
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          381,
+          379
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=20446/test-defense-ring-80",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Test Defense Ring +80 Item Level 60 Binds when picked up Finger Equip: Increased Defense +80. Sell Price: 78 88",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/20446",
+        "current_client_fields": {
+          "Bonding": "1",
+          "Display_lang": "Test Defense Ring +80",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "60",
+          "OverallQualityID": "3",
+          "RequiredLevel": "0"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=20446",
+        "item_id": 20446,
+        "name": "Test Defense Ring +80",
+        "released_scan_hidden": true,
+        "released_scan_required_level": null,
+        "released_scan_slot": "INVTYPE_FINGER"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          null,
+          null
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=22316/test-relic",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "Test Relic Item Level 20 Relic Libram +3 Intellect +10 Fire Resistance +10 Shadow Resistance Requires Level 10",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/22316",
+        "current_client_fields": {
+          "Bonding": "0",
+          "Display_lang": "Test Relic",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "28",
+          "ItemLevel": "20",
+          "OverallQualityID": "3",
+          "RequiredLevel": "10"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=22316",
+        "item_id": 22316,
+        "name": "Test Relic",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "10,\r",
+        "released_scan_slot": "INVTYPE_RELIC"
+      },
+      {
+        "att_classic_and_seasonal_reference_lines": [
+          369,
+          367
+        ],
+        "classic_client_flags": {
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0"
+        },
+        "classic_page": "https://www.wowhead.com/classic/item=24358/qatest-1000-spell-dmg-ring",
+        "classic_player_access_label": "unavailable",
+        "classic_tooltip": "QATest +1000 Spell Dmg Ring Item Level 6 Binds when picked up Finger Equip: Increases damage and healing done by magical spells and effects by up to 1000. Sell Price: 9 14 53",
+        "classic_tooltip_source": "https://nether.wowhead.com/classic/tooltip/item/24358",
+        "current_client_fields": {
+          "Bonding": "1",
+          "Display_lang": "QATest +1000 Spell Dmg Ring",
+          "Flags_0": "0",
+          "Flags_1": "24580",
+          "Flags_2": "0",
+          "Flags_3": "0",
+          "InventoryType": "11",
+          "ItemLevel": "6",
+          "OverallQualityID": "4",
+          "RequiredLevel": "1"
+        },
+        "current_exact_player_acquisition": [],
+        "forever_tooltip_url": "https://www.wowhead.com/forever/item=24358",
+        "item_id": 24358,
+        "name": "QATest +1000 Spell Dmg Ring",
+        "released_scan_hidden": true,
+        "released_scan_required_level": "1,\r",
+        "released_scan_slot": "INVTYPE_FINGER"
+      }
+    ]
+  },
+  "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+  "unavailable_item_ids": [
+    907,
+    908,
+    909,
+    996,
+    6673,
+    16067,
+    18968,
+    20445,
+    20446,
+    22316,
+    24358
+  ],
+  "unavailable_scope": {
+    "level_max": 19,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938#/early-test-items"
+}

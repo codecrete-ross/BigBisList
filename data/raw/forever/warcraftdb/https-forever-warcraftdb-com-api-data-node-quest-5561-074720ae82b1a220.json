@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/5561"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:14.485822+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15698,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/5561",
+      "subject_id": 5561,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 30,
+    "name": "Kodo Roundup",
+    "quest_id": 5561,
+    "reward_item_roles": {
+      "15697": "choices",
+      "15698": "choices"
+    },
+    "side": "Both",
+    "zone": "Desolace"
+  },
+  "source_content_digest": "fe694eb1ac0dbd2b34d5914458092ea1010c3c4807e130e725d074210d7339ca",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/5561"
+}

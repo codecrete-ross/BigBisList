@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Shadowform Talent 40% of base mana Instant 1.5 sec cooldown Requires Priest Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
+  "entity_id": 15473,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:11+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 15473,
+      "name": "Shadowform",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15473"
+    }
+  ],
+  "name": "Shadowform",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "45553b6835373e5b77d1c96150c7ffb1211ecc67a910f0660ccc50578a8b6b93",
+  "spell_id": 15473,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/15473",
+  "url": "https://www.wowhead.com/forever/spell=15473"
+}

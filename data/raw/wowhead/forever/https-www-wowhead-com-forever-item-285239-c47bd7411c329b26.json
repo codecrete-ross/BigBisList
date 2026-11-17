@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "collected_from": "https://nether.wowhead.com/forever/tooltip/item/285239",
+  "description": "Explorer's Shortsword Item Level 8 Binds when picked up Main Hand Sword 8 - 15 Damage Speed 2.60 (4.42 damage per second) +1 Strength Durability 35 / 35 Requires Level 3 Sell Price: 25 Dropped by: Slydris Drop Chance: 18.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T10:48:35.5595404+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 285239,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 4.42,
+    "id": 285239,
+    "item_level": 8,
+    "name": "Explorer's Shortsword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "strength": 1.0
+    },
+    "weapon_max_damage": 15,
+    "weapon_min_damage": 8,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=285239"
+  },
+  "linked_entities": [],
+  "name": "Explorer's Shortsword",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.49,
+      "entity_name": "Slydris",
+      "source_url": "https://www.wowhead.com/forever/item=285239",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "8b9c6e0e40f4abf81d048966d3a9672348784eda02d843a7417465cc717ed43a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=285239"
+}

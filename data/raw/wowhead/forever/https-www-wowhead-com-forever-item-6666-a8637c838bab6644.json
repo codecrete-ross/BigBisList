@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dredge Boots Item Level 22 Binds when picked up Feet Mail 119 Armor +3 Agility +4 Stamina Durability 45 / 45 Sell Price: 8 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 6666,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 119,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6666,
+    "item_level": 22,
+    "name": "Dredge Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6666"
+  },
+  "linked_entities": [],
+  "name": "Dredge Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6666",
+  "url": "https://www.wowhead.com/forever/item=6666"
+}

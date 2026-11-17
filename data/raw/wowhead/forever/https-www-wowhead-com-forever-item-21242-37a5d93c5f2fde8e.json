@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blessed Qiraji War Axe Item Level 79 Binds when picked up One-Hand Axe 110 - 205 Damage Speed 2.60 (60.58 damage per second) +9 Stamina +10 Intellect Durability 105 / 105 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 14 Attack Power. \"The weapon is infused and reinforced with Elementium.\" Sell Price: 16 40 24",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 21242,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 60.58,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +14 Attack Power.",
+        "stats": {
+          "attack_power": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 21242,
+    "item_level": 79,
+    "name": "Blessed Qiraji War Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 14.0,
+      "crit_percent": 1.0,
+      "intellect": 10.0,
+      "stamina": 9.0
+    },
+    "weapon_max_damage": 205,
+    "weapon_min_damage": 110,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=21242"
+  },
+  "linked_entities": [],
+  "name": "Blessed Qiraji War Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21242",
+  "url": "https://www.wowhead.com/forever/item=21242"
+}

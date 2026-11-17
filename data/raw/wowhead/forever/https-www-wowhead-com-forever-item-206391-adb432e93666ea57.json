@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Syzygic Icon Item Level 5 Binds when picked up Unique Relic Totem Classes: Shaman Requires Level 3 Engrave your bracers with the Riptide rune: Heals a friendly target for 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%. \"Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 206391,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206391,
+    "item_level": 5,
+    "name": "Syzygic Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 3,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206391"
+  },
+  "linked_entities": [
+    {
+      "id": 408521,
+      "name": "Heals a friendly target for 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408521"
+    },
+    {
+      "id": 410105,
+      "name": "Engrave your bracers with the Riptide rune: Heals a friendly target for 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410105"
+    }
+  ],
+  "name": "Syzygic Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "4595b984a21d60a8cacb19bf25fd17e7411597386add0ffec2d5760d1578f871",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206391",
+  "url": "https://www.wowhead.com/forever/item=206391"
+}

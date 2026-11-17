@@ -1,0 +1,124 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Crackling Leather Helmet Item Level 55 Binds when picked up Head Leather 128 Armor +13 Stamina +13 Intellect +13 Spirit +20 Armor Durability 60 / 60 Classes: Druid Requires Level 50 Equip: Increases damage and healing done by magical spells and effects by up to 13 . Blood Guard's Crackling Leather (0/6) Blood Guard's Crackling Leather Helmet Blood Guard's Crackling Leather Spaulders First Sergeant's Crackling Leather Boots First Sergeant's Crackling Leather Gauntlets Stone Guard's Crackling Leather Leggings Stone Guard's Crackling Leather Tunic (3) Set : +15 Stamina. (6) Set : Increases damage and healing done by magical spells and effects by up to 18. Sell Price: 1 37 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 220873,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 128,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 13.",
+        "stats": {
+          "spell_power": 13.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 13."
+    ],
+    "id": 220873,
+    "item_level": 55,
+    "name": "Blood Guard's Crackling Leather Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 13.0,
+      "spirit": 13.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220873"
+  },
+  "linked_entities": [
+    {
+      "id": 220863,
+      "name": "First Sergeant's Crackling Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220863"
+    },
+    {
+      "id": 220865,
+      "name": "Stone Guard's Crackling Leather Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220865"
+    },
+    {
+      "id": 220867,
+      "name": "First Sergeant's Crackling Leather Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220867"
+    },
+    {
+      "id": 220869,
+      "name": "Stone Guard's Crackling Leather Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220869"
+    },
+    {
+      "id": 220871,
+      "name": "Blood Guard's Crackling Leather Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220871"
+    },
+    {
+      "id": 220873,
+      "name": "Blood Guard's Crackling Leather Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220873"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Blood Guard's Crackling Leather Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6c8e7f62c5424833f81e0a77983c3ad901e1b5a1a3edcda6cbfe35d6a7cede11",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220873",
+  "url": "https://www.wowhead.com/forever/item=220873"
+}

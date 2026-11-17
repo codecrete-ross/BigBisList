@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Cloudkeeper Legplates Item Level 62 Binds when equipped Legs Plate 617 Armor +20 Strength +20 Agility +20 Stamina Durability 120 / 120 Requires Level 57 Use: Increases Attack Power by 100 for 30 sec. (15 Min Cooldown) Sell Price: 2 99",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:46:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 14554,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 617,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Attack Power by 100 for 30 sec. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 14554,
+    "item_level": 62,
+    "name": "Cloudkeeper Legplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "stamina": 20.0,
+      "strength": 20.0
+    },
+    "use_effects": [
+      "Use: Increases Attack Power by 100 for 30 sec. (15 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14554"
+  },
+  "linked_entities": [
+    {
+      "id": 18787,
+      "name": "Increases Attack Power by 100 for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18787"
+    }
+  ],
+  "name": "Cloudkeeper Legplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14554",
+  "url": "https://www.wowhead.com/forever/item=14554"
+}

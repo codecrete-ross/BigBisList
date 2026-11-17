@@ -1,0 +1,121 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Elderwild Waistcord Item Level 1 Binds when picked up Requires Leatherworking (300) Use: Teaches you how to craft Elderwild Waistcord. Sell Price: 12 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Waist",
+      "item_id": 279252,
+      "item_stats": {
+        "armor_type": "Leather",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 279252,
+        "name": "Elderwild Waistcord",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "epic",
+        "slot": "Waist",
+        "source_summary": "",
+        "stats": {
+          "stamina": 21.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=279252"
+      },
+      "name": "Elderwild Waistcord",
+      "normalized_requirements": [],
+      "quality": "epic",
+      "url": "https://www.wowhead.com/forever/item=279252"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279301,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Elderwild Waistcord.",
+        "type": "use"
+      }
+    ],
+    "id": 279301,
+    "item_level": 1,
+    "name": "Pattern: Elderwild Waistcord",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Elderwild Waistcord."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279301"
+  },
+  "linked_entities": [
+    {
+      "id": 248824,
+      "name": "Fel Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248824"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 274030,
+      "name": "Malleable Essence of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=274030"
+    },
+    {
+      "id": 279252,
+      "name": "Elderwild Waistcord",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279252"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1306526,
+      "name": "Teaches you how to craft Elderwild Waistcord.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306526"
+    }
+  ],
+  "name": "Pattern: Elderwild Waistcord",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Elderwild Waistcord Item Level 1 Binds when picked up Requires Leatherworking (300) Use: Teaches you how to craft Elderwild Waistcord. Sell Price: 12 50",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=279301",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1306526
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279301",
+  "url": "https://www.wowhead.com/forever/item=279301"
+}

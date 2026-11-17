@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Minor Mana Potion Item Level 15 Requires Level 5 Use: Restores 140 to 180 mana. (2 Min Cooldown) Max Stack: 5 Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2455,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 140 to 180 mana. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 2455,
+    "item_level": 15,
+    "name": "Minor Mana Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 5,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 140 to 180 mana. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2455"
+  },
+  "linked_entities": [
+    {
+      "id": 437,
+      "name": "Restores 140 to 180 mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=437"
+    }
+  ],
+  "name": "Minor Mana Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "70969121f3b8386fa0ee52f951fe1189720c0826d806c29c6a20f9a4cde4966b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2455",
+  "url": "https://www.wowhead.com/forever/item=2455"
+}

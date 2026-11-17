@@ -1,0 +1,111 @@
+{
+  "attribution": [
+    {
+      "credit": "Forever Item Finder, by ArcForge",
+      "licence": "GPL-3.0",
+      "licenceUrl": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/LICENSE",
+      "source": "https://github.com/ArcSim/ForeverItemFinder/tree/25d072839e9ccaf6f731dc35a2086b07fc404f45"
+    }
+  ],
+  "confidence": "partial_shared_item_observation",
+  "fetched_at": "2026-11-13T21:08:30.561190+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 196,
+      "collected_at": "2026-11-13T21:08:30.561190+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-find-271811",
+      "source_content_digest": "2aae9be044bd542c718290ae852d1a7a6a04d0c9642b4d4b0edb69b21e7134d7",
+      "source_url": "https://forever-item-finder.pages.dev/api/finds?id=271811"
+    },
+    {
+      "bytes": 695,
+      "collected_at": "2026-11-13T21:07:55.621883+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-api-finds-doc",
+      "source_content_digest": "1e6595a5e0372aebe72bbbdcae0c471e8e1d063f8bb000420176b1ce23ffe243",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/site/functions/api/finds.js"
+    },
+    {
+      "bytes": 5583,
+      "collected_at": "2026-11-13T21:07:55.855348+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-store-doc",
+      "source_content_digest": "a2c98547dda4c4b5c81073f65afbe6e91fe1318913a9e7b75ae8451cd6683e32",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/site/lib/store.js"
+    },
+    {
+      "bytes": 20024,
+      "collected_at": "2026-11-13T21:15:26.825064+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-map-doc",
+      "source_content_digest": "cfc790ed31cd64b8404785b809f8b5b81a4b4bd208184325c4b6836d2c4de288",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/site/public/map.js"
+    },
+    {
+      "bytes": 20484,
+      "collected_at": "2026-11-13T21:14:46.806408+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-detect-doc",
+      "source_content_digest": "3333002a3656cb193f1771345b7dcf41de13be1b45fc8b8f8aec2631fef7628e",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/Detect.lua"
+    },
+    {
+      "bytes": 3722159,
+      "collected_at": "2026-11-13T21:07:55.725394+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-items",
+      "source_content_digest": "b57890e86083917c36fe6f3d70a4aaac295d0d52e408bf2e4c42aa6b4c7d12a3",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/Data/Items.lua"
+    },
+    {
+      "bytes": 3097,
+      "collected_at": "2026-11-13T21:14:00.726765+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-ui-map",
+      "source_content_digest": "1f4aac70eaac015b1d2d0ea0faf6e3d7fb2cf7afdf45e5bb6772d9b80a72346b",
+      "source_url": "https://wago.tools/db2/UiMap/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "forever_item_finder",
+  "reviewed_page_facts": {
+    "finding": "Three uploads share the exact shoulder item with a quest sighting in Shen'dralas. The provider's pinned index names quest 93574. This corroborates the approved quest route. It leaves the separate beta vendor association and current purchase eligibility open.",
+    "item_id": 271811,
+    "reported": {
+      "find": {
+        "added_at": 1794176751,
+        "cl": 4,
+        "found_at": 1794109345,
+        "id": 271811,
+        "il": 43,
+        "iv": 3,
+        "k": "n",
+        "q": 3,
+        "rq": 1,
+        "sc": 3
+      },
+      "sharers": 3,
+      "sources": [
+        {
+          "lv": null,
+          "m": 2652,
+          "npc": null,
+          "t": "q",
+          "x": 458,
+          "y": 325
+        }
+      ]
+    }
+  },
+  "source_content_digest": "2aae9be044bd542c718290ae852d1a7a6a04d0c9642b4d4b0edb69b21e7134d7",
+  "url": "https://forever-item-finder.pages.dev/api/finds?id=271811"
+}

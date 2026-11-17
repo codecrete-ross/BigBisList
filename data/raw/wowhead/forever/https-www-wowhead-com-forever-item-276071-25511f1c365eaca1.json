@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Black Helm Item Level 59 Binds when picked up Head Plate 501 Armor +13 Strength +25 Stamina Requires Level 54 Equip: Increased Defense + 8. Sell Price: 2 43 46",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:29.3289552Z",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 276071,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 501,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +8.",
+        "stats": {
+          "defense": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +8."
+    ],
+    "id": 276071,
+    "item_level": 59,
+    "name": "The Black Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "defense": 8.0,
+      "stamina": 25.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276071"
+  },
+  "linked_entities": [],
+  "name": "The Black Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "26461d4bdf4680f6d89427c9df7097beb9f6f6f84500e930997c583f03895c50",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276071?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=276071"
+}

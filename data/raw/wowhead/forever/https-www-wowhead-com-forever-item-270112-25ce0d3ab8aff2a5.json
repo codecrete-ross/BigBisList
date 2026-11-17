@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gryphon Rider's Crop Item Level 53 Binds when picked up Held In Off-hand +7 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 1 11 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 270112,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 270112,
+    "item_level": 53,
+    "name": "Gryphon Rider's Crop",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "spell_power": 12.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=270112"
+  },
+  "linked_entities": [],
+  "name": "Gryphon Rider's Crop",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "5f12a723bf8182427a18371fab470c71513dd105871805fc5e18989b674b6317",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270112",
+  "url": "https://www.wowhead.com/forever/item=270112"
+}

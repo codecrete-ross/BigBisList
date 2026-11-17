@@ -1,0 +1,500 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Wallace the Blind Weaponsmith Level 19 Humanoid (Normal)",
+  "entity_id": 3534,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:36.296Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 851,
+      "name": "Cutlass",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=851"
+    },
+    {
+      "id": 852,
+      "name": "Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=852"
+    },
+    {
+      "id": 853,
+      "name": "Hatchet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=853"
+    },
+    {
+      "id": 854,
+      "name": "Quarter Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=854"
+    },
+    {
+      "id": 929,
+      "name": "Healing Potion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=929"
+    },
+    {
+      "id": 1196,
+      "name": "Tabar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1196"
+    },
+    {
+      "id": 1197,
+      "name": "Giant Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1197"
+    },
+    {
+      "id": 1198,
+      "name": "Claymore",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1198"
+    },
+    {
+      "id": 2207,
+      "name": "Jambiya",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2207"
+    },
+    {
+      "id": 4777,
+      "name": "Ironwood Maul",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4777"
+    },
+    {
+      "id": 4778,
+      "name": "Heavy Spiked Mace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4778"
+    },
+    {
+      "id": 4817,
+      "name": "Blessed Claymore",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4817"
+    },
+    {
+      "id": 4818,
+      "name": "Executioner's Sword",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4818"
+    },
+    {
+      "id": 11304,
+      "name": "Fine Longbow",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11304"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 14 of 14",
+    "1 - 14 of 14"
+  ],
+  "location_name": "Silverpine Forest",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          43.8,
+          84.4
+        ],
+        [
+          46.4,
+          86.4
+        ],
+        [
+          46.6,
+          86.2
+        ]
+      ]
+    },
+    "zone": 130
+  },
+  "name": "Wallace the Blind",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 19",
+    "React: A\u00a0H",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 449"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 851,
+      "object_name": "Cutlass",
+      "object_type": "item",
+      "price_copper": 1922,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cutlass",
+        "15",
+        "10",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "19 22"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 852,
+      "object_name": "Mace",
+      "object_type": "item",
+      "price_copper": 1653,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Mace",
+        "14",
+        "9",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "16 53"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 853,
+      "object_name": "Hatchet",
+      "object_type": "item",
+      "price_copper": 2289,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Hatchet",
+        "16",
+        "11",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "22 89"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 854,
+      "object_name": "Quarter Staff",
+      "object_type": "item",
+      "price_copper": 2871,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Quarter Staff",
+        "16",
+        "11",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "28 71"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 929,
+      "object_name": "Healing Potion",
+      "object_type": "item",
+      "price_copper": 300,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(3)",
+        "Healing Potion",
+        "22",
+        "12",
+        "",
+        "",
+        "",
+        "Crafted, Drop, Quest, Vendor, Fished, Pickpocketed",
+        "Potion",
+        "3"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1196,
+      "object_name": "Tabar",
+      "object_type": "item",
+      "price_copper": 2104,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tabar",
+        "14",
+        "9",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "21 4"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1197,
+      "object_name": "Giant Mace",
+      "object_type": "item",
+      "price_copper": 2533,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Giant Mace",
+        "15",
+        "10",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "25 33"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1198,
+      "object_name": "Claymore",
+      "object_type": "item",
+      "price_copper": 2543,
+      "relation": "sells",
+      "required_level": 10,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Claymore",
+        "15",
+        "10",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "25 43"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2207,
+      "object_name": "Jambiya",
+      "object_type": "item",
+      "price_copper": 2271,
+      "relation": "sells",
+      "required_level": 11,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Jambiya",
+        "16",
+        "11",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "22 71"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4777,
+      "object_name": "Ironwood Maul",
+      "object_type": "item",
+      "price_copper": 7040,
+      "relation": "sells",
+      "required_level": 13,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Ironwood Maul",
+        "18",
+        "13",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "70 40"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4778,
+      "object_name": "Heavy Spiked Mace",
+      "object_type": "item",
+      "price_copper": 7350,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Heavy Spiked Mace",
+        "19",
+        "14",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "73 50"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4817,
+      "object_name": "Blessed Claymore",
+      "object_type": "item",
+      "price_copper": 11696,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Blessed Claymore",
+        "22",
+        "17",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "1 16 96"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4818,
+      "object_name": "Executioner's Sword",
+      "object_type": "item",
+      "price_copper": 14273,
+      "relation": "sells",
+      "required_level": 19,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Executioner's Sword",
+        "24",
+        "19",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "1 42 73"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 11304,
+      "object_name": "Fine Longbow",
+      "object_type": "item",
+      "price_copper": 4861,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3534",
+      "subject_id": 3534,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nStats changed",
+        "(2)",
+        "Fine Longbow",
+        "19",
+        "14",
+        "",
+        "",
+        "Ranged",
+        "Vendors",
+        "Bow",
+        "48 61"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3534",
+  "url": "https://www.wowhead.com/forever/npc=3534"
+}

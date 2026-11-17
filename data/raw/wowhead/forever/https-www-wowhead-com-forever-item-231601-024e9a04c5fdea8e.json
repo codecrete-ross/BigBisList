@@ -1,0 +1,138 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Silk Cowl Item Level 74 Binds when picked up Head Cloth 92 Armor +42 Stamina +17 Intellect +6 Spirit +70 Armor Durability 60 / 60 Classes: Mage Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 33 . Warlord's Regalia (0/6) Warlord's Silk Raiment Warlord's Silk Cowl Warlord's Silk Amice General's Silk Trousers Item #231598 General's Silk Boots (2) Set : +20 Stamina. (3) Set : Reduces the cooldown of your Blink spell by 2 sec. (6) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 2 5 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 231601,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 92,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 33.",
+        "stats": {
+          "spell_power": 33.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 33."
+    ],
+    "id": 231601,
+    "item_level": 74,
+    "name": "Warlord's Silk Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23025,
+        "text": "Reduces the cooldown of your Blink spell by 2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 17.0,
+      "spell_power": 33.0,
+      "spirit": 6.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231601"
+  },
+  "linked_entities": [
+    {
+      "id": 231594,
+      "name": "Warlord's Silk Amice",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231594"
+    },
+    {
+      "id": 231595,
+      "name": "General's Silk Trousers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231595"
+    },
+    {
+      "id": 231596,
+      "name": "Warlord's Silk Raiment",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231596"
+    },
+    {
+      "id": 231597,
+      "name": "General's Silk Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231597"
+    },
+    {
+      "id": 231601,
+      "name": "Warlord's Silk Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231601"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23025,
+      "name": "Reduces the cooldown of your Blink spell by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23025"
+    }
+  ],
+  "name": "Warlord's Silk Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "7a6741695c8f26cbd871f9c4ffa5b874da727f51a975b1bfe56715dacc590ecc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231601",
+  "url": "https://www.wowhead.com/forever/item=231601"
+}

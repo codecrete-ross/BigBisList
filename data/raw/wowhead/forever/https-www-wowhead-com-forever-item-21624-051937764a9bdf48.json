@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gauntlets of Kalimdor Item Level 78 Binds when picked up Hands Mail 309 Armor +14 Strength +15 Stamina +13 Intellect +10 Spirit Durability 50 / 50 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 20 . Sell Price: 4 86 45 Dropped by: Viscidus Drop Chance: 7.08%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 21624,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 309,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 21624,
+    "item_level": 78,
+    "name": "Gauntlets of Kalimdor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 13.0,
+      "spell_power": 20.0,
+      "spirit": 10.0,
+      "stamina": 15.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21624"
+  },
+  "linked_entities": [],
+  "name": "Gauntlets of Kalimdor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.08,
+      "entity_name": "Viscidus",
+      "source_url": "https://www.wowhead.com/forever/item=21624",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21624",
+  "url": "https://www.wowhead.com/forever/item=21624"
+}

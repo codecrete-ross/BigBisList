@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mender's Leather Boots 12.5 sec cast Reagents: Thick Leather (16), Cured Thick Hide (2), Pristine Hide (8), Heavy Silken Thread (2), Iridescent Pearl (6), Pristine Leather (4) Mender's Leather Boots Item Level 52 Binds when picked up Feet Leather 104 Armor +9 Stamina +11 Intellect Requires Level 47 Equip: Increases healing done by up to 28 and damage done by up to 9 for all magical spells and effects. Sell Price: 1 21 36",
+  "entity_id": 1255043,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:12+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 4304,
+      "name": "Thick Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4304"
+    },
+    {
+      "id": 5500,
+      "name": "Iridescent Pearl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5500"
+    },
+    {
+      "id": 8172,
+      "name": "Cured Thick Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8172"
+    },
+    {
+      "id": 8343,
+      "name": "Heavy Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8343"
+    },
+    {
+      "id": 249427,
+      "name": "Pristine Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249427"
+    },
+    {
+      "id": 249428,
+      "name": "Pristine Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249428"
+    },
+    {
+      "id": 252472,
+      "name": "Mender's Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252472"
+    },
+    {
+      "id": 1255043,
+      "name": "Mender's Leather Boots",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1255043"
+    }
+  ],
+  "name": "Mender's Leather Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 252472,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1255043",
+      "subject_id": 1255043,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1255043,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1255043",
+  "url": "https://www.wowhead.com/forever/spell=1255043"
+}

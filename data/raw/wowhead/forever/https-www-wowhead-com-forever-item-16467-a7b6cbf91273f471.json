@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Chain Legguards Item Level 71 Binds when picked up Unique Legs Mail 396 Armor +34 Agility +27 Stamina +12 Intellect +50 Armor Durability 105 / 105 Classes: Hunter Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 3 37 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 16467,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 396,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 16467,
+    "item_level": 71,
+    "name": "Marshal's Chain Legguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "crit_percent": 1.0,
+      "intellect": 12.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16467"
+  },
+  "linked_entities": [],
+  "name": "Marshal's Chain Legguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16467",
+  "url": "https://www.wowhead.com/forever/item=16467"
+}

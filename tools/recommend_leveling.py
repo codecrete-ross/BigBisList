@@ -161,7 +161,12 @@ def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
-def level_band_for_level(level: int) -> str:
+def level_band_for_level(level: int, rules: dict | None = None) -> str:
+    if rules is not None:
+        for band, minimum, maximum in rules["level_bands"]:
+            if minimum <= level <= maximum:
+                return band
+        raise ValueError(f"Level {level} is outside the selected leveling rules")
     level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
     for band, minimum, maximum in LEVEL_BANDS:
         if minimum <= level <= maximum:
@@ -243,11 +248,11 @@ def profile_role(scoring_profiles: dict[str, Any], class_name: str, spec_name: s
     return str(spec_roles.get(f"{class_name}/{spec_name}") or "physical_dps")
 
 
-def profile_weights(scoring_profiles: dict[str, Any], class_name: str, spec_name: str, level: int, context: str) -> tuple[str, dict[str, float]]:
+def profile_weights(scoring_profiles: dict[str, Any], class_name: str, spec_name: str, level: int, context: str, *, rules: dict | None = None) -> tuple[str, dict[str, float]]:
     role = profile_role(scoring_profiles, class_name, spec_name)
     role_defaults = scoring_profiles.get("role_defaults") if isinstance(scoring_profiles.get("role_defaults"), dict) else {}
     weights = {key: float(value) for key, value in (role_defaults.get(role) or {}).items() if isinstance(value, (int, float))}
-    level_band = level_band_for_level(level)
+    level_band = level_band_for_level(level, rules)
 
     for profile in scoring_profiles.get("profiles", []):
         if (
@@ -259,6 +264,13 @@ def profile_weights(scoring_profiles: dict[str, Any], class_name: str, spec_name
             for key, value in (profile.get("weights") or {}).items():
                 if isinstance(value, (int, float)):
                     weights[key] = float(value)
+
+    revisions = scoring_profiles.get("weight_revisions")
+    if rules is not None and isinstance(revisions, dict):
+        revision = revisions.get(f"{class_name}/{spec_name}", {})
+        revised_weights = revision.get("weights") if isinstance(revision, dict) else None
+        if isinstance(revised_weights, dict):
+            weights.update({key: float(value) for key, value in revised_weights.items() if type(value) in (int, float)})
 
     for key, value in SOURCE_BUCKET_MODIFIERS.get(context, {}).items():
         weights[key] = weights.get(key, 0.0) + value
@@ -556,16 +568,31 @@ def merged_stats(item: dict[str, Any]) -> dict[str, float]:
     return stats
 
 
-def effective_stats(item: dict[str, Any], class_name: str, spec_name: str, role: str, requested_slot: str) -> dict[str, float]:
+def separate_weapon_dps(item: dict, stats: dict) -> None:
+    subtype = item.get("weapon_subtype")
+    if "dps" in stats:
+        if subtype in {"Bow", "Crossbow", "Gun", "Thrown"}:
+            stats["ranged_dps"] = stats.pop("dps")
+        elif subtype == "Wand":
+            stats["wand_dps"] = stats.pop("dps")
+
+
+def effective_stats(item: dict[str, Any], class_name: str, spec_name: str, role: str, requested_slot: str, *, rules: dict | None = None, level: int | None = None) -> dict[str, float]:
     stats = merged_stats(item)
     expertise_rating = stats.get("expertise_rating")
-    if isinstance(expertise_rating, (int, float)):
-        stats["expertise"] = stats.get("expertise", 0.0) + (float(expertise_rating) / EXPERTISE_RATING_PER_EXPERTISE)
+    conversion = EXPERTISE_RATING_PER_EXPERTISE if rules is None else rules.get("expertise_rating_per_expertise")
+    if isinstance(expertise_rating, (int, float)) and conversion:
+        stats["expertise"] = stats.get("expertise", 0.0) + (float(expertise_rating) / conversion)
     ranged_attack_power = stats.get("ranged_attack_power")
-    if class_name == "Hunter" and normalized_slot(requested_slot) == "Ranged" and isinstance(ranged_attack_power, (int, float)):
+    if rules is None and class_name == "Hunter" and normalized_slot(requested_slot) == "Ranged" and isinstance(ranged_attack_power, (int, float)):
         stats["attack_power"] = stats.get("attack_power", 0.0) + float(ranged_attack_power)
-    if class_name == "Druid" and spec_name.lower().startswith("feral"):
-        stats.pop("dps", None)
+    if rules is not None:
+        separate_weapon_dps(item, stats)
+    policy = (rules or {}).get("spec_policies", {}).get(f"{class_name}/{spec_name}", {})
+    form_available = rules is None or (type(policy.get("form_level")) is int and level is not None and level >= policy["form_level"])
+    if class_name == "Druid" and spec_name.lower().startswith("feral") and form_available:
+        if rules is None or not rules.get("feral_uses_weapon_dps"):
+            stats.pop("dps", None)
         for effect in item.get("effect_stats", []) or []:
             if not isinstance(effect, dict) or effect.get("type") != "form_only":
                 continue
@@ -575,11 +602,13 @@ def effective_stats(item: dict[str, Any], class_name: str, spec_name: str, role:
     return stats
 
 
-def applies_match(applies: dict[str, Any], item: dict[str, Any], role: str) -> bool:
+def applies_match(applies: dict[str, Any], item: dict[str, Any], role: str, *, strict: bool = False) -> bool:
     weapon_subtypes = applies.get("weapon_subtypes")
     if isinstance(weapon_subtypes, list) and weapon_subtypes:
         item_subtype = item.get("weapon_subtype") or item.get("weapon_type")
-        return any(str(subtype).lower() in str(item_subtype or "").lower() for subtype in weapon_subtypes)
+        matched = any(str(subtype).lower() in str(item_subtype or "").lower() for subtype in weapon_subtypes)
+        if not strict or not matched:
+            return matched
     roles = applies.get("roles")
     if isinstance(roles, list) and roles and role not in roles:
         return False
@@ -596,18 +625,24 @@ def racial_score_bonus(
     role: str,
     weights: dict[str, float],
     racial_modifiers: dict[str, Any],
+    *, faction: str | None = None, class_name: str | None = None, level: int | None = None, rules: dict | None = None,
 ) -> tuple[float, list[str]]:
     score = 0.0
     tags: list[str] = []
     for racial in racial_modifiers.get("racial_modifiers", []):
         if racial.get("race") != race:
             continue
+        if rules is not None and (
+                racial.get("faction", "Both") not in {"Both", faction}
+                or (racial.get("classes") and class_name not in racial["classes"])
+                or (level is not None and not racial.get("level_min", 1) <= level <= racial.get("level_max", 59))):
+            continue
         if racial.get("type") != "numeric":
             if racial.get("type") == "contextual":
                 tags.extend(str(tag) for tag in racial.get("tags", []) if tag)
             continue
         applies = racial.get("applies") if isinstance(racial.get("applies"), dict) else {}
-        if not applies_match(applies, item, role):
+        if not applies_match(applies, item, role, strict=rules is not None):
             continue
         modifier = racial.get("modifier") if isinstance(racial.get("modifier"), dict) else {}
         stat = str(modifier.get("stat") or "")
@@ -622,6 +657,52 @@ def racial_score_bonus(
     return score, tags
 
 
+def rules_allow_equipment(item: dict, class_name: str, spec_name: str, level: int, slot: str, rules: dict) -> bool:
+    """Explicit client rules; never silently substitute the TBC rules."""
+    equipment = rules.get("class_equipment", {}).get(class_name)
+    policy = rules.get("spec_policies", {}).get(f"{class_name}/{spec_name}")
+    if equipment is None or policy is None:
+        return False
+    if not policy.get("slot_min_levels", {}).get(slot, 1) <= level <= policy.get("slot_max_levels", {}).get(slot, 59):
+        return False
+    item_slot = normalized_slot(item.get("slot"))
+    special_slots = {"Idol", "Totem", "Libram", "Relic", "Ammo", "Quiver"}
+    armor = set()
+    for tier in equipment.get("armor_tiers", []):
+        if level >= tier["level"]:
+            armor.update(tier["types"])
+    if item_slot not in special_slots and item.get("armor_type") and item["armor_type"] not in armor:
+        return False
+    weapon = item.get("weapon_subtype")
+    if weapon and weapon not in equipment.get("weapon_types", []):
+        return False
+    if item_slot == "Two Hand" and weapon and weapon not in equipment.get("two_hand_weapon_types", []):
+        return False
+    if weapon and policy.get("slot_weapon_types", {}).get(slot) and weapon not in policy["slot_weapon_types"][slot]:
+        return False
+    unlocks = [unlock for unlock in equipment.get("weapon_unlocks", [])
+               if unlock["weapon_subtype"] == weapon and item_slot in unlock["slots"]]
+    if unlocks and not any(level >= unlock["min_level"] and (not unlock.get("specs") or spec_name in unlock["specs"])
+                           for unlock in unlocks):
+        return False
+    if item_slot in special_slots and item_slot not in equipment.get("special_slots", []):
+        return False
+    dual_level = policy.get("dual_wield_level")
+    if (slot in {"Off Hand", "Dual Wield"} and weapon and item.get("requires_dual_wield", True)
+            and (dual_level is None or level < dual_level)):
+        return False
+    style = policy.get("weapon_style")
+    if style == "shield" and ((slot == "Off Hand" and item.get("armor_type") != "Shield") or slot == "Two Hand"):
+        return False
+    if style == "two_hand" and slot in {"Main Hand", "Off Hand", "Dual Wield"}:
+        return False
+    if style == "feral" and slot == "Off Hand" and weapon:
+        return False
+    if style == "dual_wield" and dual_level is not None and level >= dual_level and slot == "Two Hand":
+        return False
+    return True
+
+
 def candidate_score(
     item: dict[str, Any],
     class_name: str,
@@ -632,32 +713,36 @@ def candidate_score(
     context: str,
     scoring_profiles: dict[str, Any],
     racial_modifiers: dict[str, Any],
+    *, rules: dict | None = None, faction: str | None = None,
 ) -> dict[str, Any] | None:
-    level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
+    level = max(1, min(MAX_LEVELING_LEVEL if rules is None else rules["max_level"], int(level)))
     if not item_available_at(item, level):
         return None
     if not slot_matches(item.get("slot"), slot):
         return None
-    if not class_can_use_equipment_slot(item, class_name):
+    if rules is not None and not rules_allow_equipment(item, class_name, spec_name, level, slot, rules):
+        return None
+    if rules is None and not class_can_use_equipment_slot(item, class_name):
         return None
     if not restrictions_allow(item, class_name, race):
         return None
-    if not class_can_use_item(item, class_name):
+    if rules is None and not class_can_use_item(item, class_name):
         return None
-    if not class_can_use_armor(item, class_name, level):
+    if rules is None and not class_can_use_armor(item, class_name, level):
         return None
-    if not slot_is_legal_for_class(item, class_name, spec_name, level, slot):
+    if rules is None and not slot_is_legal_for_class(item, class_name, spec_name, level, slot):
         return None
-    if not leveling_source_allowed(item, level):
-        return None
-
-    role, weights = profile_weights(scoring_profiles, class_name, spec_name, level, context)
-    if not weapon_style_allowed(item, class_name, spec_name, role, level, slot, context):
+    if rules is None and not leveling_source_allowed(item, level):
         return None
 
-    stats = effective_stats(item, class_name, spec_name, role, slot)
+    role, weights = profile_weights(scoring_profiles, class_name, spec_name, level, context, rules=rules)
+    if rules is None and not weapon_style_allowed(item, class_name, spec_name, role, level, slot, context):
+        return None
+
+    stats = effective_stats(item, class_name, spec_name, role, slot, rules=rules, level=level)
     score = sum(stats.get(stat, 0.0) * weight for stat, weight in weights.items())
-    racial_bonus, racial_tags = racial_score_bonus(item, race, role, weights, racial_modifiers)
+    racial_bonus, racial_tags = racial_score_bonus(item, race, role, weights, racial_modifiers,
+        faction=faction, class_name=class_name, level=level, rules=rules)
     source_bonus, source_tags = context_source_bonus(item, context)
     score += racial_bonus + source_bonus
 
@@ -707,7 +792,13 @@ def materialized_items(item_stats: list[dict[str, Any]], item_variants: list[dic
     return items
 
 
-def select_recommendations(scored: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def select_recommendations(scored: list[dict[str, Any]], *, rules: dict | None = None) -> list[dict[str, Any]]:
+    if rules is not None:
+        scored = sorted(scored, key=lambda row: (-row["score"], -(row["item"].get("item_level") or 0), row["item"].get("name") or "", row["item"].get("id") or 0, row["item"].get("variant_id") or ""))
+        if not scored:
+            return []
+        best = scored[0]["score"]
+        return [row for index, row in enumerate(scored) if index < 3 or (best > 0 and row["score"] > 0 and row["score"] >= best * 0.95)]
     scored = sorted(scored, key=lambda row: (-row["score"], row["item"].get("name") or "", row["item"].get("id") or 0))
     if not scored:
         return []
@@ -758,12 +849,14 @@ def recommendation_rows_for_items(
     level: int,
     slot: str,
     context: str = "best_overall",
+    rules: dict | None = None,
+    faction: str | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
+    level = max(1, min(MAX_LEVELING_LEVEL if rules is None else rules["max_level"], int(level)))
     candidates = []
     audit_rows = []
     for item in items:
-        scored = candidate_score(item, class_name, spec_name, race, level, slot, context, scoring_profiles_doc, racial_modifiers_doc)
+        scored = candidate_score(item, class_name, spec_name, race, level, slot, context, scoring_profiles_doc, racial_modifiers_doc, rules=rules, faction=faction)
         if not scored:
             continue
         candidates.append(scored)
@@ -785,10 +878,10 @@ def recommendation_rows_for_items(
             }
         )
 
-    selected = select_recommendations(candidates)
+    selected = select_recommendations(candidates, rules=rules)
     top_score = selected[0]["score"] if selected else 0.0
-    level_band = level_band_for_level(level)
-    level_min, level_max = level_bounds_for_band(level_band)
+    level_band = level_band_for_level(level, rules)
+    level_min, level_max = level_bounds_for_band(level_band) if rules is None else next((lo, hi) for band, lo, hi in rules["level_bands"] if band == level_band)
     rows = []
     for rank, scored in enumerate(selected, start=1):
         item = scored["item"]
@@ -819,6 +912,8 @@ def recommendation_rows_for_items(
                 "source_url": item.get("wowhead_url") or item.get("source_url"),
             }
         )
+        if rules is not None and item.get("variant_id"):
+            rows[-1].update(variant_name=item.get("name"), random_suffix_id=item.get("random_suffix_id"))
     return rows, audit_rows
 
 

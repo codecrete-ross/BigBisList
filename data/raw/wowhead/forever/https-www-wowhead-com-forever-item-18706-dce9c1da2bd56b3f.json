@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arena Master Item Level 40 Binds when picked up Unique-Equipped: Arena Master (1) This Item Begins a Quest Trinket +7 Stamina Requires Level 35 Equip: Reduces your damage taken by 5% in the Battle Ring and The Maul. Sell Price: 44 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18706,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces your damage taken by 5% in the Battle Ring and The Maul.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces your damage taken by 5% in the Battle Ring and The Maul."
+    ],
+    "id": 18706,
+    "item_level": 40,
+    "name": "Arena Master",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 35,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18706"
+  },
+  "linked_entities": [
+    {
+      "id": 7810,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=7810"
+    },
+    {
+      "id": 1317285,
+      "name": "Reduces your damage taken by 5% in the Battle Ring and The Maul.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317285"
+    }
+  ],
+  "name": "Arena Master",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18706",
+  "url": "https://www.wowhead.com/forever/item=18706"
+}

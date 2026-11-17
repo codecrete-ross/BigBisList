@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ratty Old Belt Item Level 12 Binds when equipped Waist Leather 35 Armor +2 Strength Durability 20 / 20 Requires Level 7 Sell Price: 37 Dropped by: Narg the Taskmaster Drop Chance: 81.47%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 6147,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 6147,
+    "item_level": 12,
+    "name": "Ratty Old Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 7,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "strength": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6147"
+  },
+  "linked_entities": [],
+  "name": "Ratty Old Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 81.47,
+      "entity_name": "Narg the Taskmaster",
+      "source_url": "https://www.wowhead.com/forever/item=6147",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6147",
+  "url": "https://www.wowhead.com/forever/item=6147"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Feign Death 80 Mana Instant 30 sec cooldown Requires Hunter Requires level 30 Feign death which may trick enemies into ignoring you. Lasts 6 min. If not cancelled, after 6 min you will actually die.",
+  "entity_id": 5384,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:23+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5384,
+      "name": "Feign Death",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5384"
+    }
+  ],
+  "name": "Feign Death",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "23b41f5bb43bdf5c24380bcc3e4b475e846e509a8ec3b29bd8530fb7e797c205",
+  "spell_id": 5384,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5384",
+  "url": "https://www.wowhead.com/forever/spell=5384"
+}

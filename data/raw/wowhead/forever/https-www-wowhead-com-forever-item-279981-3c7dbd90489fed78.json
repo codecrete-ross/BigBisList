@@ -1,0 +1,56 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Basic Campfire Kit Item Level 4 Requires Cooking (1) Use: Builds a basic campfire that allows cooking and the placement of up to 3 additional camp features. Players sitting or crafting nearby for 1 min will gain benefits from other camp features. (5 Min Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279981,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Builds a basic campfire that allows cooking and the placement of up to 3 additional camp features. Players sitting or crafting nearby for 1 min will gain benefits from other camp features. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 279981,
+    "item_level": 4,
+    "name": "Basic Campfire Kit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Builds a basic campfire that allows cooking and the placement of up to 3 additional camp features. Players sitting or crafting nearby for 1 min will gain benefits from other camp features. (5 Min Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279981"
+  },
+  "linked_entities": [
+    {
+      "id": 185,
+      "name": "Cooking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=185"
+    },
+    {
+      "id": 1307227,
+      "name": "Builds a basic campfire that allows cooking and the placement of up to 3 additional camp features. Players sitting or crafting nearby for 1 min will gain benefits from other camp features.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307227"
+    }
+  ],
+  "name": "Basic Campfire Kit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279981",
+  "url": "https://www.wowhead.com/forever/item=279981"
+}

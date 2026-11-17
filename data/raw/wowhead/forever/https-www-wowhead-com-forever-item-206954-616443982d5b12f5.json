@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Ursine Rage Item Level 10 Binds when picked up Unique Relic Idol Classes: Druid Engrave your gloves with the Mangle rune: Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat. \"Learn a new ability after keeping your rage in Bear Form at 50 or higher for 60 seconds\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 206954,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 206954,
+    "item_level": 10,
+    "name": "Idol of Ursine Rage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=206954"
+  },
+  "linked_entities": [
+    {
+      "id": 407995,
+      "name": "Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=407995"
+    },
+    {
+      "id": 410025,
+      "name": "Engrave your gloves with the Mangle rune: Bite the target, dealing 100% normal damage plus 42 and generating a high amount of threat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410025"
+    }
+  ],
+  "name": "Idol of Ursine Rage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "44bd7e4535317e0b1d22a17e4cfc49e9e6369f0182782a55606cf969145ba42e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/206954",
+  "url": "https://www.wowhead.com/forever/item=206954"
+}

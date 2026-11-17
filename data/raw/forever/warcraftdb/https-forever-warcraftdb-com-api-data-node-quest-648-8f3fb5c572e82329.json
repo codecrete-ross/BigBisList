@@ -1,0 +1,40 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/648"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:06.370134+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 9644,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/648",
+      "subject_id": 648,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Rescue OOX-17/TN!",
+    "quest_id": 648,
+    "reward_item_roles": {
+      "270102": "choices",
+      "270103": "choices",
+      "9643": "choices",
+      "9644": "choices"
+    },
+    "side": "Both",
+    "zone": "Tanaris"
+  },
+  "source_content_digest": "37b156a0f752844c9cbd9397e376b6d501953d2a61d93c86b883c3f0c389f68e",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/648"
+}

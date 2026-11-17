@@ -1,0 +1,87 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/JIVESCORP/eg-link-output-wowf"
+    }
+  ],
+  "availability_dependencies": [],
+  "client_build": "1.60.1.70938",
+  "confidence": "eg_link_observation",
+  "fetched_at": "2026-11-15T03:48:59.278795+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "publication_kind": "quest_scan",
+  "records": [
+    {
+      "factions": {
+        "Alliance": 1,
+        "Horde": 1
+      },
+      "kind": "quest_disclosure",
+      "quest_id": 3447,
+      "sources": 2,
+      "state": "described",
+      "title": "Secret of the Circle"
+    },
+    {
+      "factions": {
+        "Alliance": 1
+      },
+      "kind": "quest_disclosure",
+      "noDataFactions": {
+        "Horde": 1
+      },
+      "quest_id": 9015,
+      "sources": 1,
+      "state": "described",
+      "title": "The Challenge"
+    },
+    {
+      "factions": {
+        "Alliance": 1
+      },
+      "kind": "quest_disclosure",
+      "quest_id": 82068,
+      "sources": 1,
+      "state": "described",
+      "title": "Fight the Nightmare Incursions"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84183,
+      "state": "no_response"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84184,
+      "state": "no_response"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84187,
+      "state": "no_response"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84190,
+      "state": "no_response"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84191,
+      "state": "no_response"
+    },
+    {
+      "kind": "quest_disclosure",
+      "quest_id": 84193,
+      "state": "no_response"
+    }
+  ],
+  "relationships": [],
+  "source_content_digest": "f50f1315e9aeb37c558cd4eeb87bb3103ccc3d216c1d1e68ec16a97f57f47859",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/ea970da071079b32e56f349e09648ff0e314b351/data/wowf/1.60.1.70938/quest_scan.json"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Frostmane Scepter Item Level 13 Binds when equipped Main Hand Mace 10 - 20 Damage Speed 2.20 (6.82 damage per second) +1 Stamina Durability 40 / 40 Requires Level 8 Sell Price: 3 6 Dropped by: Great Father Arctikus Drop Chance: 23.57%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 3223,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 6.82,
+    "id": 3223,
+    "item_level": 13,
+    "name": "Frostmane Scepter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 8,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 1.0
+    },
+    "weapon_max_damage": 20,
+    "weapon_min_damage": 10,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3223"
+  },
+  "linked_entities": [],
+  "name": "Frostmane Scepter",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.57,
+      "entity_name": "Great Father Arctikus",
+      "source_url": "https://www.wowhead.com/forever/item=3223",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3223",
+  "url": "https://www.wowhead.com/forever/item=3223"
+}

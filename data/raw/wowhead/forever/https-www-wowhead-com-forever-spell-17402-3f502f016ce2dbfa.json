@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Hurricane Level 60 1495 Mana 30 yd range Channeled (10 sec cast) Requires Druid Requires level 60 Creates a violent storm in the target area causing 134 Nature damage to enemies every 1 sec, and increasing the time between attacks by 20%. Lasts 10 sec. Druid must channel to maintain the spell.",
+  "entity_id": 17402,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:40+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 17402,
+      "name": "Hurricane",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17402"
+    }
+  ],
+  "name": "Hurricane",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "3a6e5a647971e30c362c1773fd690441bb019c3bd74c5fea180d6ac977e7a4ef",
+  "spell_id": 17402,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17402",
+  "url": "https://www.wowhead.com/forever/spell=17402"
+}

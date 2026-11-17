@@ -1,0 +1,51 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=212792"
+    }
+  ],
+  "binding": "quest",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Eye of the Tempest Item Level 1 Quest Item Unique Dropped by: Ravaging Tempest Drop Chance: 100.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T08:38:07.879967+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 212792,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 212792,
+    "item_level": 1,
+    "name": "Eye of the Tempest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=212792"
+  },
+  "linked_entities": [],
+  "name": "Eye of the Tempest",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 100.0,
+      "entity_name": "Ravaging Tempest",
+      "source_url": "https://www.wowhead.com/forever/item=212792",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c2ba7337ff6f9fdb91dfe46df9b19ef135f8bcdf767d2590224787d46213322f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=212792"
+}

@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Swarmtender's Footpads 3 sec cast Reagents: Bolt of Runecloth (5), Small Brilliant Shard , Essence of Water (3), Rune Thread (6) Swarmtender's Footpads Item Level 58 Binds when equipped Feet Cloth 57 Armor +10 Stamina +4 Nature Resistance Requires Level 53 Equip: Increases healing done by up to 43 and damage done by up to 14 for all magical spells and effects. Sell Price: 1 37 74",
+  "entity_id": 1297125,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:30+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14343,
+      "name": "Small Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14343"
+    },
+    {
+      "id": 275609,
+      "name": "Swarmtender's Footpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=275609"
+    },
+    {
+      "id": 1297125,
+      "name": "Swarmtender's Footpads",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297125"
+    }
+  ],
+  "name": "Swarmtender's Footpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 275609,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1297125",
+      "subject_id": 1297125,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1297125,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1297125",
+  "url": "https://www.wowhead.com/forever/spell=1297125"
+}

@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Swinetusk Shank Item Level 35 Binds when picked up Main Hand Dagger 16 - 30 Damage Speed 1.50 (15.33 damage per second) +6 Stamina +4 Spirit Durability 65 / 65 Requires Level 30 Equip: Increases damage and healing done by magical spells and effects by up to 40 . Sell Price: 86 81 Dropped by: Agathelos the Raging Drop Chance: 33.57%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 6691,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.33,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 40.",
+        "stats": {
+          "spell_power": 40.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 40."
+    ],
+    "id": 6691,
+    "item_level": 35,
+    "name": "Swinetusk Shank",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 30,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 40.0,
+      "spirit": 4.0,
+      "stamina": 6.0
+    },
+    "weapon_max_damage": 30,
+    "weapon_min_damage": 16,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6691"
+  },
+  "linked_entities": [],
+  "name": "Swinetusk Shank",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.57,
+      "entity_name": "Agathelos the Raging",
+      "source_url": "https://www.wowhead.com/forever/item=6691",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6691",
+  "url": "https://www.wowhead.com/forever/item=6691"
+}

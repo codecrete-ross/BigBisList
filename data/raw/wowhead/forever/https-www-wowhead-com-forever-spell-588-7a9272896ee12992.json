@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Inner Fire 30 Mana Instant Requires Priest Requires level 12 A burst of Holy energy fills the caster, increasing armor by 315. Each melee or ranged damage hit against the priest will remove one charge. Lasts 10 min or until 20 charges are used.",
+  "entity_id": 588,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:35+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 588,
+      "name": "Inner Fire",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=588"
+    }
+  ],
+  "name": "Inner Fire",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ac4f03016cb2af15ee57714f41af575f70d39860ef3a8f59ab37612d9d299ae2",
+  "spell_id": 588,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/588",
+  "url": "https://www.wowhead.com/forever/spell=588"
+}

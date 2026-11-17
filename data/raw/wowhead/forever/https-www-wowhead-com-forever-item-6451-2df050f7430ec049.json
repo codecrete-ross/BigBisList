@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Heavy Silk Bandage Item Level 1 Requires First Aid (125) Use: Heals 640 damage over 8 sec. Max Stack: 20 Sell Price: 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6451,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 640 damage over 8 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 6451,
+    "item_level": 1,
+    "name": "Heavy Silk Bandage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals 640 damage over 8 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6451"
+  },
+  "linked_entities": [
+    {
+      "id": 2942,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=2942"
+    },
+    {
+      "id": 7927,
+      "name": "Heals 640 damage over 8 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7927"
+    }
+  ],
+  "name": "Heavy Silk Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c559cc2326f12c4c8ddb5cab3d578ea7fe38366ec2910c20b98719810faf4c14",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6451",
+  "url": "https://www.wowhead.com/forever/item=6451"
+}

@@ -1,0 +1,389 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T14:53:10.2754105Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1167,
+      "collected_at": "2026-11-13T14:21:19.8457901Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-difficulty",
+      "source_content_digest": "ffc9b9a62579ae3330d062c2c0f412f14d3bd500fa522b358fdcd7ce40146b78",
+      "source_url": "https://wago.tools/db2/Difficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 54492,
+      "collected_at": "2026-11-13T14:53:10.2754105Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-dire-maul",
+      "source_content_digest": "2c9c536847ca4896b38351e644ef76bebaa20f535d848650856a3c0c77629e73",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/a6408530c1886a821cd70984b3523a2580776da4"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "level_gated",
+      "confidence": "legacy_loot_reference",
+      "entity_name": "Lord Hel'nurath",
+      "object_id": 18757,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/a6408530c1886a821cd70984b3523a2580776da4",
+      "subject_id": 14506,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "level_gated",
+      "confidence": "legacy_loot_reference",
+      "entity_name": "Isalien",
+      "object_id": 22345,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/a6408530c1886a821cd70984b3523a2580776da4",
+      "subject_id": 16097,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "level_gated",
+      "confidence": "legacy_loot_reference",
+      "entity_name": "Isalien",
+      "object_id": 22401,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/a6408530c1886a821cd70984b3523a2580776da4",
+      "subject_id": 16097,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "access_conditions": [
+      {
+        "FailureDescription_lang": "This dungeon is not yet available",
+        "ID": "1565",
+        "MapDifficultyID": "35",
+        "OrderIndex": "2",
+        "PlayerConditionID": "67462"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "2129",
+        "MapDifficultyID": "5013",
+        "OrderIndex": "0",
+        "PlayerConditionID": "67462"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "4223",
+        "MapDifficultyID": "35",
+        "OrderIndex": "0",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+        "ID": "4224",
+        "MapDifficultyID": "35",
+        "OrderIndex": "1",
+        "PlayerConditionID": "159274"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "4225",
+        "MapDifficultyID": "6337",
+        "OrderIndex": "0",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+        "ID": "4226",
+        "MapDifficultyID": "6337",
+        "OrderIndex": "1",
+        "PlayerConditionID": "159274"
+      },
+      {
+        "FailureDescription_lang": "This Dungeon is currently not available.",
+        "ID": "4307",
+        "MapDifficultyID": "6337",
+        "OrderIndex": "2",
+        "PlayerConditionID": "67462"
+      }
+    ],
+    "att_commit": "1c4d146b518a3c2cda6d2488a27be6e2638d5360",
+    "att_path": ".contrib/.db/forever/dungeons & raids/dire maul.lua",
+    "current_exact_item_creation_effects_found": [],
+    "current_live_exact_alternative_routes_found": [],
+    "finding": "The lower of the normal entry message and current tuning is still above the reviewed levels. The item leads describe a summoned boss in the group dungeon. Separate client modes supply no observed exact item grant at the reviewed levels.",
+    "level_condition_tuning": {
+      "AllowedMaxOffset": "0",
+      "AllowedMinOffset": "0",
+      "DMGPrimaryStatScalingCurveID": "0",
+      "DMGScalingCurveID": "0",
+      "ExpansionID": "0",
+      "Flags": "0",
+      "HPPrimaryStatScalingCurveID": "0",
+      "HPScalingCurveID": "0",
+      "ID": "7428",
+      "ILevel": "0",
+      "LfgMaxLevel": "0",
+      "LfgMinLevel": "0",
+      "MaxLevelScalingOffset": "0",
+      "MaxLevelSquish": "60",
+      "MinLevelScalingOffset": "0",
+      "MinLevelSquish": "50",
+      "PrimaryStatScalingModPlayerDataElementCharacterID": "0",
+      "PrimaryStatScalingModPlayerDataElementCharacterMultiplier": "0",
+      "XpMultQuest": "1"
+    },
+    "map_difficulties": [
+      {
+        "ContentTuningID": "5241",
+        "DifficultyID": "1",
+        "Flags": "0",
+        "ID": "35",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "429",
+        "MaxPlayers": "5",
+        "Message_lang": "You must be at least level 31 to enter.",
+        "ResetInterval": "0",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "184",
+        "Flags": "0",
+        "ID": "5013",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "429",
+        "MaxPlayers": "5",
+        "Message_lang": "",
+        "ResetInterval": "0",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "207",
+        "Flags": "0",
+        "ID": "5870",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "429",
+        "MaxPlayers": "1",
+        "Message_lang": "",
+        "ResetInterval": "0",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "201",
+        "Flags": "0",
+        "ID": "6337",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "38",
+        "MapID": "429",
+        "MaxPlayers": "5",
+        "Message_lang": "",
+        "ResetInterval": "1",
+        "WorldStateExpressionID": "0"
+      }
+    ],
+    "map_id": 429,
+    "map_name": "Dire Maul",
+    "normal_entry_message_level": 31,
+    "reported_items": [
+      {
+        "item_id": 18757,
+        "name": "Diabolic Mantle",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "line": 1149,
+            "name": "Lord Hel'nurath",
+            "npc_id": 14506,
+            "source_line": 1140,
+            "source_name": "Diabolic Mantle"
+          }
+        ]
+      },
+      {
+        "item_id": 22345,
+        "name": "Totem of Rebirth",
+        "scope": {
+          "level_max": 9,
+          "level_min": 1,
+          "slot": "Totem"
+        },
+        "sources": [
+          {
+            "line": 812,
+            "name": "Isalien",
+            "npc_id": 16097,
+            "source_line": 794,
+            "source_name": "Totem of Rebirth"
+          }
+        ]
+      },
+      {
+        "item_id": 22401,
+        "name": "Libram of Hope",
+        "scope": {
+          "level_max": 19,
+          "level_min": 1,
+          "slot": "Libram"
+        },
+        "sources": [
+          {
+            "line": 811,
+            "name": "Isalien",
+            "npc_id": 16097,
+            "source_line": 794,
+            "source_name": "Libram of Hope"
+          }
+        ]
+      }
+    ],
+    "reviewed_access_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/429"
+  },
+  "source_content_digest": "2c9c536847ca4896b38351e644ef76bebaa20f535d848650856a3c0c77629e73",
+  "unavailable_item_ids": [
+    18757,
+    22345,
+    22401
+  ],
+  "unavailable_scope": {
+    "level_max": 19,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/a6408530c1886a821cd70984b3523a2580776da4"
+}

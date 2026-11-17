@@ -1,0 +1,39 @@
+{
+  "attribution": [
+    {
+      "credit": "Prices from AHledger (ahledger.com)",
+      "licence": "AHledger data terms",
+      "licenceUrl": "https://ahledger.com/developers",
+      "source": "https://ahledger.com"
+    }
+  ],
+  "confidence": "observed_auction_listing",
+  "fetched_at": "2026-11-11T01:18:52+00:00",
+  "flavor": "forever",
+  "market": "forever/pvp/alliance/eu",
+  "observed_at": "2026-11-10T23:56:05+00:00",
+  "observed_faction": "Alliance",
+  "page_type": "observations",
+  "provider": "ahledger",
+  "records": [
+    {
+      "item_id": 287019,
+      "minimum_buyout_copper": 508800,
+      "quantity": 1
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": "observed_auction_listing",
+      "object_id": 287019,
+      "object_type": "item",
+      "observed_at": "2026-11-10T23:56:05+00:00",
+      "relation": "offered_for_trade",
+      "source_url": "https://api.ahledger.com/v1/prices/forever.pvp.alliance.eu/287019?range=7d",
+      "subject_id": "forever/pvp/alliance/eu",
+      "subject_type": "market"
+    }
+  ],
+  "source_content_digest": "6a710fefe95b5cbee8e3057324a8d9403a9c787bc1e2f68f2f37665692b1b0c3",
+  "url": "https://api.ahledger.com/v1/prices/forever.pvp.alliance.eu/287019?range=7d"
+}

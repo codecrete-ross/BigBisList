@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Melon Juice Item Level 25 Requires Level 15 Use: Restores 835 mana over 24 sec. Must remain seated while drinking. Max Stack: 20 Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 1205,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 835 mana over 24 sec. Must remain seated while drinking.",
+        "type": "use"
+      }
+    ],
+    "id": 1205,
+    "item_level": 25,
+    "name": "Melon Juice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 15,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 835 mana over 24 sec. Must remain seated while drinking. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1205"
+  },
+  "linked_entities": [
+    {
+      "id": 432,
+      "name": "Restores 835 mana over 24 sec. Must remain seated while drinking.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=432"
+    }
+  ],
+  "name": "Melon Juice",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "461f8676aa9cac8f647e48e9723a1de27d840dcd4df299a15e99f37466a233f7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1205",
+  "url": "https://www.wowhead.com/forever/item=1205"
+}

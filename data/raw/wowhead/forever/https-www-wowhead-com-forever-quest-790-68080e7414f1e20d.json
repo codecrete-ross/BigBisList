@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 790,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:55.151Z",
+  "flavor": "forever",
+  "name": "Sarkoth",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 3287,
+        "name": "Hana'zua"
+      },
+      "start": {
+        "entity_id": 3287,
+        "name": "Hana'zua"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Durotar"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=790"
+}

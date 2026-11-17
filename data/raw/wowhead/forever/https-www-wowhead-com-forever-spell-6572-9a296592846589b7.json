@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Revenge 5 Rage Melee Range Instant 5 sec cooldown Requires Warrior Requires level 14 Requires Melee Weapon Requires Defensive Stance Instantly counterattack an enemy for [20.3077 + (( 0.25 * 1 ) * Attack Power)] to [23.6923 + (( 0.25 * 1 ) * Attack Power)] damage and a high amount of threat. Revenge must follow a block, dodge or parry.",
+  "entity_id": 6572,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:50+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6572,
+      "name": "Revenge",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6572"
+    }
+  ],
+  "name": "Revenge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "5db4d79d4644f70ca72f82c9ced5f4c5983718c545c5f882398429c8c3325eae",
+  "spell_id": 6572,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/6572",
+  "url": "https://www.wowhead.com/forever/spell=6572"
+}

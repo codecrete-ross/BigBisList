@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Hunter's Mark 15 Mana 100 yd range Instant Requires Hunter Requires level 6 Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 26. In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible. The target also appears on the mini-map. Lasts for 2 min.",
+  "entity_id": 1130,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:10+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1130,
+      "name": "Hunter's Mark",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1130"
+    }
+  ],
+  "name": "Hunter's Mark",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "21fa65cfff72064a962bc98462f3bce8e9e2c63b91ddb0df4c2afdf3fe30bfa0",
+  "spell_id": 1130,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1130",
+  "url": "https://www.wowhead.com/forever/spell=1130"
+}

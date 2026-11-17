@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Savage Gladiator Helm Item Level 57 Binds when picked up Head Mail 275 Armor +8 Strength +12 Agility +26 Stamina Durability 70 / 70 Requires Level 52 The Gladiator (0/6) Savage Gladiator Helm Savage Gladiator Chain Savage Gladiator Leggings Savage Gladiator Greaves Savage Gladiator Grips Savage Gladiator Shoulders Sell Price: 1 92 38 Dropped by: Hedrum the Creeper Drop Chance: 10.77%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 11729,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 275,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 11729,
+    "item_level": 57,
+    "name": "Savage Gladiator Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "stamina": 26.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11729"
+  },
+  "linked_entities": [
+    {
+      "id": 11726,
+      "name": "Savage Gladiator Chain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11726"
+    },
+    {
+      "id": 11728,
+      "name": "Savage Gladiator Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11728"
+    },
+    {
+      "id": 11729,
+      "name": "Savage Gladiator Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11729"
+    },
+    {
+      "id": 11730,
+      "name": "Savage Gladiator Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11730"
+    },
+    {
+      "id": 11731,
+      "name": "Savage Gladiator Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11731"
+    },
+    {
+      "id": 277117,
+      "name": "Savage Gladiator Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=277117"
+    }
+  ],
+  "name": "Savage Gladiator Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.77,
+      "entity_name": "Hedrum the Creeper",
+      "source_url": "https://www.wowhead.com/forever/item=11729",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3cae8a86193b3cd255eb8a2b31253df4874e1c8d0f28aba0094da99661c2e539",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11729",
+  "url": "https://www.wowhead.com/forever/item=11729"
+}

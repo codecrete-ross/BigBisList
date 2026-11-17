@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Backwood Helm Item Level 63 Binds when picked up Head Mail 301 Armor +19 Agility +13 Stamina +10 Intellect +10 Spirit Durability 70 / 70 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 2 60 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18421,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 301,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 18421,
+    "item_level": 63,
+    "name": "Backwood Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 19.0,
+      "crit_percent": 1.0,
+      "intellect": 10.0,
+      "spirit": 10.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18421"
+  },
+  "linked_entities": [],
+  "name": "Backwood Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cfb8d9e4c104e1864f3d23ecbb0538b93189966859c7833dcde78b7f6d299969",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18421",
+  "url": "https://www.wowhead.com/forever/item=18421"
+}

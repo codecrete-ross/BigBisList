@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Plate Girdle Item Level 53 Binds when picked up Unique Waist Plate 313 Armor +10 Strength +8 Stamina Durability 45 / 45 Requires Level 48 Requires The Defilers - Honored Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 65 99",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20205,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 313,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 20205,
+    "item_level": 53,
+    "name": "Defiler's Plate Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 8.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20205"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    }
+  ],
+  "name": "Defiler's Plate Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Plate Girdle Item Level 53 Binds when picked up Unique Waist Plate 313 Armor +10 Strength +8 Stamina Durability 45 / 45 Requires Level 48 Requires The Defilers - Honored Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 65 99",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20205",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20205",
+  "url": "https://www.wowhead.com/forever/item=20205"
+}

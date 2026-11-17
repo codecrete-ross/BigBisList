@@ -1,0 +1,38 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Call of Fire Wait for Olariaan to begin the ritual at the Brazier of Offering and follow his instructions. You must deliver the Eternal Flame to Valanaar before the timer runs out. Requirements: - Complete the Ritual with Olariaan - Light the Brazier of Eternal Flame",
+  "entity_id": 97257,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T04:22:43+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Call of Fire",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "public_page_reviewed_at": "2026-11-06T04:23:29.841032+00:00",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 263412,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=97257",
+      "subject_id": 97257,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "instruction_summary": "Complete the ritual with Olariaan, then carry the Eternal Flame to Valanaar and light the brazier before the timer expires. The reward includes Totem of Charged Flames.",
+    "reward_item_id": 263412,
+    "series": [
+      97243,
+      97244,
+      97245,
+      97257
+    ]
+  },
+  "source_content_digest": "526db1ec97f306eec8123819916157c2702e54b4df05c3441b210f4c14fb7855",
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/97257",
+  "url": "https://www.wowhead.com/forever/quest=97257"
+}

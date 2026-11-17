@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Eye of Endless Influence Item Level 1 Quest Item Unique Use: Significantly reduces the target's power. (30 Sec Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:19.8260745Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 271879,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Significantly reduces the target's power. (30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 271879,
+    "item_level": 1,
+    "name": "Eye of Endless Influence",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Significantly reduces the target's power. (30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=271879"
+  },
+  "linked_entities": [
+    {
+      "id": 1289714,
+      "name": "Significantly reduces the target's power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1289714"
+    }
+  ],
+  "name": "Eye of Endless Influence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "980019c7548f379e873d09e75ffe5121c9eb4b45f4749ebc0bb2ea9b0eb8f88b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/271879",
+  "url": "https://www.wowhead.com/forever/item=271879"
+}

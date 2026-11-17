@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Resilient Mail Coif Item Level 25 Binds when picked up Unique Head Mail 163 Armor Durability 50 / 50 Requires Level 20 Equip: Reduces all damage taken and chance to be critically hit by 5% in Warsong Gulch.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 211856,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 163,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces all damage taken and chance to be critically hit by 5% in Warsong Gulch.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces all damage taken and chance to be critically hit by 5% in Warsong Gulch."
+    ],
+    "id": 211856,
+    "item_level": 25,
+    "name": "Resilient Mail Coif",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=211856"
+  },
+  "linked_entities": [
+    {
+      "id": 430432,
+      "name": "Reduces all damage taken and chance to be critically hit by 5% in Warsong Gulch.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=430432"
+    }
+  ],
+  "name": "Resilient Mail Coif",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ec003d3805a0079c508a889e43b0aa91ef15e7ddeab95006cd792b3c776925c0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/211856",
+  "url": "https://www.wowhead.com/forever/item=211856"
+}

@@ -1,0 +1,492 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Nizzik Venture Armor Salesman Level 24 Humanoid (Normal)",
+  "entity_id": 4085,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:32.691Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2148,
+      "name": "Polished Scale Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2148"
+    },
+    {
+      "id": 2149,
+      "name": "Polished Scale Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2149"
+    },
+    {
+      "id": 2150,
+      "name": "Polished Scale Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2150"
+    },
+    {
+      "id": 2151,
+      "name": "Polished Scale Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2151"
+    },
+    {
+      "id": 2152,
+      "name": "Polished Scale Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2152"
+    },
+    {
+      "id": 2153,
+      "name": "Polished Scale Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2153"
+    },
+    {
+      "id": 4827,
+      "name": "Wizard's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4827"
+    },
+    {
+      "id": 4828,
+      "name": "Nightwind Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4828"
+    },
+    {
+      "id": 4829,
+      "name": "Dreamer's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4829"
+    },
+    {
+      "id": 4830,
+      "name": "Saber Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4830"
+    },
+    {
+      "id": 4831,
+      "name": "Stalking Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4831"
+    },
+    {
+      "id": 4832,
+      "name": "Mystic Sarong",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4832"
+    },
+    {
+      "id": 4833,
+      "name": "Glorious Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4833"
+    },
+    {
+      "id": 4835,
+      "name": "Elite Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4835"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 14 of 14",
+    "1 - 14 of 14"
+  ],
+  "location_name": "Stonetalon Mountains",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          62.6,
+          40.2
+        ]
+      ]
+    },
+    "zone": 406
+  },
+  "name": "Nizzik",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 24",
+    "React: A\u00a0H",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 664"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2148,
+      "object_name": "Polished Scale Belt",
+      "object_type": "item",
+      "price_copper": 2907,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Belt",
+        "27",
+        "22",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Mail Armor",
+        "29 7"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2149,
+      "object_name": "Polished Scale Boots",
+      "object_type": "item",
+      "price_copper": 4397,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Boots",
+        "27",
+        "22",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Mail Armor",
+        "43 97"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2150,
+      "object_name": "Polished Scale Bracers",
+      "object_type": "item",
+      "price_copper": 2930,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Bracers",
+        "27",
+        "22",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Mail Armor",
+        "29 30"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2151,
+      "object_name": "Polished Scale Gloves",
+      "object_type": "item",
+      "price_copper": 2941,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Gloves",
+        "27",
+        "22",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Mail Armor",
+        "29 41"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2152,
+      "object_name": "Polished Scale Leggings",
+      "object_type": "item",
+      "price_copper": 5906,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Leggings",
+        "27",
+        "22",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Mail Armor",
+        "59 6"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2153,
+      "object_name": "Polished Scale Vest",
+      "object_type": "item",
+      "price_copper": 5927,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Polished Scale Vest",
+        "27",
+        "22",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Mail Armor",
+        "59 27"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4827,
+      "object_name": "Wizard's Belt",
+      "object_type": "item",
+      "price_copper": 3748,
+      "relation": "sells",
+      "required_level": 23,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Wizard's Belt",
+        "28",
+        "23",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "37 48"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4828,
+      "object_name": "Nightwind Belt",
+      "object_type": "item",
+      "price_copper": 3420,
+      "relation": "sells",
+      "required_level": 22,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Nightwind Belt",
+        "27",
+        "22",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "34 20"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4829,
+      "object_name": "Dreamer's Belt",
+      "object_type": "item",
+      "price_copper": 4153,
+      "relation": "sells",
+      "required_level": 24,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Dreamer's Belt",
+        "29",
+        "24",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "41 53"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4830,
+      "object_name": "Saber Leggings",
+      "object_type": "item",
+      "price_copper": 9474,
+      "relation": "sells",
+      "required_level": 23,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Saber Leggings",
+        "28",
+        "23",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "94 74"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4831,
+      "object_name": "Stalking Pants",
+      "object_type": "item",
+      "price_copper": 7858,
+      "relation": "sells",
+      "required_level": 21,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Stalking Pants",
+        "26",
+        "21",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "78 58"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4832,
+      "object_name": "Mystic Sarong",
+      "object_type": "item",
+      "price_copper": 10497,
+      "relation": "sells",
+      "required_level": 24,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Mystic Sarong",
+        "29",
+        "24",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "1 4 97"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4833,
+      "object_name": "Glorious Shoulders",
+      "object_type": "item",
+      "price_copper": 8658,
+      "relation": "sells",
+      "required_level": 23,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Glorious Shoulders",
+        "28",
+        "23",
+        "",
+        "",
+        "Shoulder",
+        "Vendors",
+        "Mail Armor",
+        "86 58"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4835,
+      "object_name": "Elite Shoulders",
+      "object_type": "item",
+      "price_copper": 10550,
+      "relation": "sells",
+      "required_level": 25,
+      "source_url": "https://www.wowhead.com/forever/npc=4085",
+      "subject_id": 4085,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Elite Shoulders",
+        "30",
+        "25",
+        "",
+        "",
+        "Shoulder",
+        "Vendors",
+        "Mail Armor",
+        "1 5 50"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/4085",
+  "url": "https://www.wowhead.com/forever/npc=4085"
+}

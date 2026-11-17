@@ -1,0 +1,120 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Mooncloth Shoulders Item Level 61 Requires Tailoring (275) Use: Teaches you how to sew Mooncloth Shoulders. Sell Price: 1",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Shoulder",
+      "item_id": 14139,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 14139,
+        "name": "Mooncloth Shoulders",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Shoulder",
+        "source_summary": "",
+        "stats": {
+          "stamina": 9.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=14139"
+      },
+      "name": "Mooncloth Shoulders",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=14139"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:57:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 14507,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew Mooncloth Shoulders.",
+        "type": "use"
+      }
+    ],
+    "id": 14507,
+    "item_level": 61,
+    "name": "Pattern: Mooncloth Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to sew Mooncloth Shoulders."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14507"
+  },
+  "linked_entities": [
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14139,
+      "name": "Mooncloth Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14139"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 18448,
+      "name": "Teaches you how to sew Mooncloth Shoulders.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18448"
+    }
+  ],
+  "name": "Pattern: Mooncloth Shoulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Mooncloth Shoulders Item Level 61 Requires Tailoring (275) Use: Teaches you how to sew Mooncloth Shoulders. Sell Price: 1",
+      "scope": "equip_or_use",
+      "skill": 275,
+      "source_url": "https://www.wowhead.com/forever/item=14507",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    18448
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14507",
+  "url": "https://www.wowhead.com/forever/item=14507"
+}

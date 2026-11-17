@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/6135"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T21:22:14.362636+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 16995,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6135",
+      "subject_id": 6135,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Duskwing, Oh How I Hate Thee...",
+    "quest_id": 6135,
+    "reward_item_roles": {
+      "16994": "choices",
+      "16995": "choices"
+    },
+    "side": "Both",
+    "zone": "Eastern Plaguelands"
+  },
+  "source_content_digest": "161117b98e43da91ae1c866bdafdfab94131281437e5698dd94e33a6b8ed7634",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/6135"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rockshard Pauldrons Item Level 46 Binds when picked up Shoulder Mail 209 Armor +3 Strength +13 Intellect +6 Spirit Durability 60 / 60 Requires Level 41 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 94 91 Dropped by: Ancient Stone Keeper Drop Chance: 46.91%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 9411,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 209,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 9411,
+    "item_level": 46,
+    "name": "Rockshard Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 41,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 12.0,
+      "spirit": 6.0,
+      "strength": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9411"
+  },
+  "linked_entities": [],
+  "name": "Rockshard Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 46.91,
+      "entity_name": "Ancient Stone Keeper",
+      "source_url": "https://www.wowhead.com/forever/item=9411",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9411",
+  "url": "https://www.wowhead.com/forever/item=9411"
+}
