@@ -3326,7 +3326,7 @@ function UI:CaptureNavigationState()
 end
 
 function UI:BeginNavigationChange(reason)
-    self:SetSlotPickerOpen(false)
+    if reason ~= "filter" then self:SetSlotPickerOpen(false) end
     if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then self:CloseSlotComparison() end
     if not self.pendingNavigation then self:CaptureNavigationState() end
     local restore = reason == "tab" or reason == "content-mode" or reason == "activity-overview"
@@ -5857,10 +5857,9 @@ end
 
 function UI:CreateSlotPicker()
     local widgets = BigBiSList.Widgets
-    local overlay = CreateFrame("Button", nil, self.body)
+    local overlay = CreateFrame("Frame", nil, self.body)
     overlay:SetAllPoints()
     overlay:SetFrameLevel(self.body:GetFrameLevel() + 12)
-    overlay:SetScript("OnClick", function() self:SetSlotPickerOpen(false) end)
     local popup = widgets:CreatePanel(nil, overlay, { 0.055, 0.055, 0.068, 1 })
     popup:EnableMouse(true)
     popup.slots = {}
@@ -5878,7 +5877,7 @@ function UI:CreateSlotPicker()
             local button = createPaperDollButton(popup.host, definition, labels[key] or definition.label)
             button.filterKey = key
             button:SetScript("OnClick", function(owner)
-                if owner:IsVisible() then self:SetFilter("slots", { [owner.filterKey] = true }) end
+                if owner:IsVisible() then self:ToggleSlot(owner.filterKey) end
             end)
             popup.slots[definition.key] = button
             added[key] = true
@@ -5908,6 +5907,17 @@ function UI:LayoutSlotPicker()
     layoutPaperDoll(popup.host, popup.slots, sideWidth, weaponWidth, slotHeight, 4, 0)
 end
 
+function UI:RefreshSlotPickerSelection()
+    local overlay = self.slotPickerOverlay
+    if not overlay or not overlay:IsShown() then return end
+    local filters = self:GetFilters()
+    local popup = overlay.popup
+    popup.allButton:SetSelected(not tableHasAnyEnabled(filters.slots))
+    for _, button in pairs(popup.slots) do
+        button:SetSelected(filters.slots and filters.slots[button.filterKey])
+    end
+end
+
 function UI:SetSlotPickerOpen(open)
     if not open then
         if self.slotPickerOverlay then self.slotPickerOverlay:Hide() end
@@ -5918,14 +5928,9 @@ function UI:SetSlotPickerOpen(open)
     if self.filterDrawerOpen then self:SetFilterDrawerOpen(false) end
     BigBiSList.Widgets:CloseDropdownMenus()
     if not self.slotPickerOverlay then self:CreateSlotPicker() end
-    local filters, focused = self:GetFilters(), self:GetFocusedBrowseSlot()
-    local popup = self.slotPickerOverlay.popup
-    popup.allButton:SetSelected(not tableHasAnyEnabled(filters.slots))
-    for _, button in pairs(popup.slots) do
-        button:SetSelected(button.filterKey == focused or (filters.slots and filters.slots[button.filterKey]))
-    end
     self.slotPickerOverlay:Show()
     self.slotPickerButton:SetSelected(true)
+    self:RefreshSlotPickerSelection()
     self:LayoutSlotPicker()
 end
 
@@ -8332,7 +8337,6 @@ function UI:CreateTabBar(frame)
 end
 
 function UI:SetFilterDrawerOpen(open)
-    if open then self:SetSlotPickerOpen(false) end
     self.filterDrawerOpen = open and true or false
     self.bodyLayoutSignature = nil
     if not self.filterDrawerOpen and BigBiSList.Widgets.CloseDropdownMenus then
@@ -8440,6 +8444,7 @@ function UI:LayoutPrimaryControls()
     if browseSlots then
         local focused = self:GetFocusedBrowseSlot()
         self.slotPickerButton.label:SetText(focused or self:GetSlotDropdownText())
+        self:RefreshSlotPickerSelection()
         place(self.slotPickerButton, x, 0)
         x = x + self.slotPickerButton:GetWidth() + gap
     end
