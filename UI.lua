@@ -6719,7 +6719,7 @@ function UI:RefreshControls()
     local character = BigBiSList:GetCharacterDB()
     local manualLevel = character.leveling and character.leveling.manualLevel
     if leveling then
-        self.levelControlLabel:SetText(manualLevel and "Preview" or "Level")
+        self.levelControlLabel:SetText("Level")
         if not self.levelInput:HasFocus() then self.levelInput:SetText(tostring(level)) end
         self.levelDownButton:SetEnabled(level > 1)
         self.levelUpButton:SetEnabled(level < MAX_LEVELING_LEVEL)

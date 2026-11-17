@@ -46,7 +46,7 @@ ui:Open(); H.settle()
 local function expectCurrentLevel()
     assert(char.leveling.manualLevel == false, "current level must resume tracking")
     assert(addon:GetSelectedLevelingLevel() == addon:GetDetectedPlayerLevel(), "current level is stale")
-    assert(ui.levelControlLabel:GetText() == "Level", "current level is still labeled Preview")
+    assert(ui.levelControlLabel:GetText() == "Level", "current level caption changed")
     assert(not ui.levelCurrentButton:IsShown(), "current level still exposes a reset action")
 end
 local function expectCurrentCharacter()
@@ -58,7 +58,7 @@ end
 local function expectPreview(selected)
     assert(char.leveling.manualLevel == true, "different level must remain a preview")
     assert(addon:GetSelectedLevelingLevel() == selected, "preview level was overwritten")
-    assert(ui.levelControlLabel:GetText() == "Preview", "preview caption is missing")
+    assert(ui.levelControlLabel:GetText() == "Level", "level caption must stay stable while previewing")
     assert(ui.levelCurrentButton:IsShown(), "preview needs Current Level")
     assert(ui.useCharacterButton:IsEnabled(), "preview needs the character reset")
 end
