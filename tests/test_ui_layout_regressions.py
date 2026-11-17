@@ -88,6 +88,23 @@ end
 assert(#H.errors == 0, table.concat(H.errors,"\n"))
 ''')
 
+    def test_filter_button_highlights_only_when_filters_are_active(self):
+        self.run_lua(r'''
+ui:SetTab("By Slot"); H.settle()
+local button = ui.filterToggleButton
+ui:ClearFilters(); H.settle()
+button:Click(); H.settle()
+assert(ui.filterDrawerOpen and not button.selected, "opening an empty drawer must not highlight Filters")
+ui:SetFilter("ownedState", "missing"); H.settle()
+assert(button.selected and button.label:GetText() == "Filters (1)", "applying a filter highlights Filters")
+button:Click(); H.settle()
+assert(not ui.filterDrawerOpen and button.selected, "closing the drawer keeps the applied filter highlighted")
+button:Click(); H.settle()
+ui.clearFiltersButton:Click(); H.settle()
+assert(ui.filterDrawerOpen and not button.selected and button.label:GetText() == "Filters",
+    "clearing filters removes the highlight while the drawer stays open")
+''')
+
     def test_filter_scrollbar_exists_only_for_actual_overflow(self):
         self.run_lua(r'''
 ui:SetTab("By Slot"); ui.frame:SetSize(1160,900); H.settle()

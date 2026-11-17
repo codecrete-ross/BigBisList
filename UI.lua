@@ -7872,7 +7872,7 @@ function UI:RefreshControls()
     if self.filterToggleButton then
         local count = self:GetActiveFilterCount()
         self.filterToggleButton.label:SetText(count > 0 and ("Filters (" .. count .. ")") or "Filters")
-        self.filterToggleButton:SetSelected(self.filterDrawerOpen)
+        self.filterToggleButton:SetSelected(count > 0)
     end
     if not self.transientStatusMessage and self.statusText then self.statusText:SetText(self:GetBankStatusText()) end
     if self.undoButton then self.undoButton:SetShown(self.undoAction ~= nil) end
