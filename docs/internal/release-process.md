@@ -5,6 +5,14 @@ preparing Big BiS List releases. Other governance documents should link here
 instead of copying an independent command list. The playbook stays internal;
 `.pkgmeta` excludes `docs` from packaged addon artifacts.
 
+## Client Scope
+
+Prepare releases for Forever by default. Anniversary work resumes only at the
+user's explicit direction. That direction is required for Anniversary data
+review, refreshes, validation, generation, coverage audits, schedule checks,
+and live client verification. Keep existing Anniversary compatibility checks
+available for work in that scope.
+
 ## Version Policy
 
 Use plain numeric Git tags such as `0.6.0`; do not prefix tags with `v`.
@@ -32,7 +40,8 @@ example, a bug fix plus a new filter is a minor release.
 1. Inspect the worktree with `git status --short --branch` and preserve unrelated
    dirty changes.
 2. Review `git log <last-tag>..HEAD` and `git diff --stat <last-tag>..HEAD`.
-3. Review official Blizzard TBC Anniversary content announcements against
+3. If the user includes Anniversary in the release scope, review official
+   Blizzard TBC Anniversary content announcements against
    `data/canonical/phases.json`. Record the authoritative URL and exact UTC
    timestamp for a changed schedule, update the epoch from that same instant,
    and cover the boundary immediately before and at launch. Record that the
@@ -68,6 +77,10 @@ explicitly changes the target client. The `## Version` field should stay
 
 ## Automated Release Gate
 
+The current `-FullData` implementation includes Anniversary data checks.
+Update its client selection before using it for a Forever-only release. The
+authoritative gate still runs on the final clean release commit.
+
 Use a dedicated Python 3.10-or-newer virtual environment installed from the
 repository's `pyproject.toml` (for example, create the environment and run its
 Python with `-m pip install .`). Do not rely on an unrelated global Python whose
@@ -101,7 +114,7 @@ gate. Do not tag from a partial run.
 
 ## Manual Release Evidence
 
-Run smoke tests on each supported client. For any
+Run smoke tests on each client in the release scope. For any
 runtime, UI, saved-state, or migration change, record the client build, tester,
 date, and outcome. Exercise the affected behavior and, when applicable:
 
@@ -112,8 +125,8 @@ date, and outcome. Exercise the affected behavior and, when applicable:
 
 For the first Forever release, record the
 [pilot checks](forever-pilot.md), including quest progress, waypoint behavior,
-and the client-specific package load lists. After automated ingestion, verify
-that CurseForge recognizes both client flavors.
+and the Forever package load list. After automated ingestion, verify that
+CurseForge recognizes the Forever package.
 
 Forever source review and live acceptance are separate gates. Reviewed profile
 documents may use `source_reviewed` before the user's gameplay session. Standard

@@ -6,9 +6,11 @@ from CurseForge packaging.
 
 ## Project Invariants
 
-- Forever is the priority for new development and data work. Anniversary is
-  deprioritized indefinitely. Resume Anniversary work only at the user's
-  explicit direction, and keep its existing compatibility checks.
+- Forever is the default for development, data review, and release preparation.
+  Anniversary is paused indefinitely. Resume it only at the user's explicit
+  direction. Anniversary source and schedule reviews, validation, generation,
+  and coverage audits require that direction. Keep its client support and
+  compatibility checks available for explicitly scoped work.
 - Keep `BigBiSList.toc` on the Anniversary interface line. Forever uses
   `BigBiSList_Camelot.toc` and must pass the Forever release gate.
 - The addon uses a root addon layout for CurseForge packaging. The `.toc` and
