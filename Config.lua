@@ -761,12 +761,16 @@ function BigBiSList:ApplyDetectedPlayerLevel()
     local char = BigBiSListCharDB
     char.leveling = char.leveling or {}
     local detectedLevel = self:GetDetectedPlayerLevel()
-    if not detectedLevel then
-        detectedLevel = clampLevel(char.leveling.selectedLevel) or MAX_LEVELING_LEVEL
-    end
-
     local selectedLevel = clampLevel(char.leveling.selectedLevel)
     local changed = false
+    if detectedLevel and selectedLevel == detectedLevel and char.leveling.manualLevel == true then
+        char.leveling.manualLevel = false
+        changed = true
+    end
+    if not detectedLevel then
+        detectedLevel = selectedLevel or MAX_LEVELING_LEVEL
+    end
+
     if char.leveling.manualLevel ~= true and selectedLevel ~= detectedLevel then
         char.leveling.selectedLevel = detectedLevel
         changed = true
@@ -795,6 +799,7 @@ function BigBiSList:SetSelectedLevelingLevel(level, manual)
     BigBiSListCharDB.leveling.selectedLevel = clampLevel(level) or MAX_LEVELING_LEVEL
     if manual then
         BigBiSListCharDB.leveling.manualLevel = true
+        self:ApplyDetectedPlayerLevel()
     end
 end
 
@@ -826,8 +831,17 @@ local function setContentModeOnChar(char, requestedMode)
     selection.tab = selection.lastTabs[targetMode] or MODE_DEFAULT_TABS[targetMode]
 end
 
+local function reconcileClassSpecAutoSelection(char, detected)
+    if BigBiSList.classSpecAutoSelectionActive == false and detected and detected.specDetected == true
+        and char.selection and char.selection.class == detected.class and char.selection.spec == detected.spec then
+        BigBiSList.classSpecAutoSelectionActive = true
+        return true
+    end
+    return false
+end
+
 local function applyDetectedPlayerSelection(char)
-    if not char or BigBiSList.classSpecAutoSelectionActive == false then
+    if not char then
         return false
     end
 
@@ -836,8 +850,13 @@ local function applyDetectedPlayerSelection(char)
         return false
     end
 
+    local changed = reconcileClassSpecAutoSelection(char, detected)
+    if BigBiSList.classSpecAutoSelectionActive == false then
+        return false
+    end
+
     char.selection = char.selection or {}
-    local changed = char.selection.class ~= detected.class
+    changed = changed or char.selection.class ~= detected.class
         or (detected.spec ~= nil and char.selection.spec ~= detected.spec)
 
     char.selection.class = detected.class
@@ -1032,6 +1051,9 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     end
 
     syncSelectionAliases(BigBiSListCharDB)
+    if (className or specName) and self.classSpecAutoSelectionActive == false then
+        reconcileClassSpecAutoSelection(BigBiSListCharDB, self:GetDetectedPlayerSelection())
+    end
 end
 
 function BigBiSList:GetCharacterDB()

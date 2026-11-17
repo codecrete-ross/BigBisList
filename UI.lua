@@ -6715,10 +6715,10 @@ function UI:RefreshControls()
     self.phaseSelector:SetShown(not leveling)
     if self.targetTierLabel then self.targetTierLabel:SetShown(not leveling) end
     self.levelControlContainer:SetShown(leveling)
+    local level = leveling and BigBiSList:GetSelectedLevelingLevel() or nil
     local character = BigBiSList:GetCharacterDB()
     local manualLevel = character.leveling and character.leveling.manualLevel
     if leveling then
-        local level = BigBiSList:GetSelectedLevelingLevel()
         self.levelControlLabel:SetText(manualLevel and "Preview" or "Level")
         if not self.levelInput:HasFocus() then self.levelInput:SetText(tostring(level)) end
         self.levelDownButton:SetEnabled(level > 1)
