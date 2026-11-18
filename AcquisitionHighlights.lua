@@ -23,7 +23,7 @@ local BAGANATOR_WIDGET_ID = "big_bis_list"
 local lootSlotsCleared = {}
 local hooked = {}
 local NEUTRAL = { 0.72, 0.77, 0.84 }
-local SILVER_COIN = "Interface\\MoneyFrame\\UI-SilverIcon"
+local GOLD_COIN = "Interface\\MoneyFrame\\UI-GoldIcon"
 
 local function checked(ok, ...)
     if ok then return ... end
@@ -603,7 +603,7 @@ local function display(mark, animate, immediate)
         edge:SetShown(mark.outline == true)
     end
 
-    local icon = mark.sellValue and SILVER_COIN or spec and spec.icon
+    local icon = mark.sellValue and GOLD_COIN or spec and spec.icon
     local visualKey = table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis),
         tostring(tier and tier.quality), tostring(mark.gain and mark.gain > 0), tostring(animate) }, "\031")
     local wasShown = overlay:IsShown()
@@ -669,13 +669,16 @@ local function refresh()
                 if mark then results[entry.row] = exactMark(mark, entry) end
             end
         end
-        for _, kind in ipairs({ "choice", "reward" }) do
+        local canSuggestSale = false
+        for _, kind in ipairs({ "reward", "choice" }) do
             local group = rewards[kind]
             table.sort(group, function(a, b) return a.order < b.order end)
             local best, ready = rankRewards(batch, group, activeSpec, results)
             if not best and ready and offSpec then best, ready = rankRewards(batch, group, offSpec, results) end
-            if kind == "choice" and #group > 1 and ready then
-                best = best or highestSellValue(batch, group)
+            if kind == "reward" then
+                canSuggestSale = ready and not best
+            elseif #group > 1 and ready then
+                if not best and canSuggestSale then best = highestSellValue(batch, group) end
                 if best then
                     best.bestChoice = not best.sellValue
                     best.outline = true

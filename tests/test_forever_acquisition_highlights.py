@@ -384,13 +384,30 @@ assert(mark(first, 901005).outline and mark(first, 901005).spec.name == "Holy")
 assert(not mark(second, 901006) and mark(fixed, 901004).spec.name == "Protection")
 
 offers.choice, counts = {901010, 901011}, {4, 1}
+QuestInfo_Display(); H.settle()
+assert(mark(fixed, 901004).spec.role == "active")
+assert(not mark(first, 901010) and not mark(second, 901011))
+assert(not showTip(first, link(901010)):find("Highest sell value", 1, true))
+
+offers.reward = {901005}
+QuestInfo_Display(); H.settle()
+assert(mark(fixed, 901005).spec.role == "dual")
+assert(not mark(first, 901010) and not mark(second, 901011))
+
+offers.reward = {901006}
 cold[901010] = true
 QuestInfo_Display(); H.settle()
 assert(not mark(first, 901010) and not mark(second, 901011) and coldCallbacks[901010])
 cold[901010] = nil
 coldCallbacks[901010](); H.settle()
 assert(mark(first, 901010).sellValue == 60 and not mark(second, 901011))
+local overlay = first:GetChildren()
+assert(overlay.corner.symbol:IsVisible() and overlay.corner.symbol:GetTexture() == "Interface\\MoneyFrame\\UI-GoldIcon")
 assert(showTip(first, link(901010)):find("Highest sell value", 1, true))
+
+offers.choice[2] = 901004
+QuestInfo_Display(); H.settle()
+assert(mark(second, 901004).bestChoice and not mark(first, 901010) and not overlay:IsShown())
 
 level = 60
 addon.GetRecommendationHistory = function(_, id, class, spec, phase)
