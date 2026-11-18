@@ -258,6 +258,7 @@ local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
     local wornSlot = getter == "GetInventoryItem" and type(args) == "table"
         and readable(args[1]) == "player" and readable(args[2]) or nil
     local snapshot = ui:GetOwnedSnapshot()
+    local scope = { live = true, lookahead = candidate.facts.level and candidate.facts.level > player.level or nil }
     local inventoryPending
     for _, spec in ipairs(player.specs) do
         local context = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot)
@@ -268,7 +269,7 @@ local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
             local marked = mark and mark.spec and mark.spec.name == spec.name
             local result = marked and mark.result
                 or rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
-                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], { live = true })
+                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], scope)
             block.rows[#block.rows + 1] = { spec = spec.name,
                 result = result, ownedBaseline = not worn }
             block.ownership = block.ownership or result.ownership
@@ -286,9 +287,11 @@ local function colorText(text, r, g, b)
         math.floor(b * 255 + 0.5), text)
 end
 
-local function tooltipRank(placement)
-    local label = BigBiSList.ForeverGearRating:Label(placement, "compact")
-    if placement.score_percent then return label .. " (" .. placement.score_percent .. "% of best)" end
+local function tooltipRank(result)
+    local rating, placement = BigBiSList.ForeverGearRating, result.placement
+    local label = rating:Label(placement, "compact")
+    if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
+    if result.preview and placement.score ~= nil then label = label .. " · " .. rating:ScopeLabel(placement) end
     return label
 end
 
@@ -347,7 +350,7 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
         tooltip:AddLine(spec, r, g, b, true)
         if result then
-            tooltip:AddLine(tooltipRank(result.placement), r, g, b, true)
+            tooltip:AddLine(tooltipRank(result), r, g, b, true)
             local extra = swapText(result, row.ownedBaseline)
             if extra then
                 if result.delta ~= nil then

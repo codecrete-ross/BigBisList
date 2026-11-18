@@ -946,20 +946,7 @@ function rating:GetGuideSwap(context, item, physical, slot, link)
     return wornSwap(context, groupFor(item), item, link, nil, { physical = physical, slot = slot })
 end
 
-local function insertionRank(context, item, result, placement)
-    if placement.score == nil then return placement end
-    local physical = result.definition.key
-    local slot, gear = result.slot, result.gear
-    local handType = slot == "Off Hand" and offHandType(item)
-    local cacheKey
-    if gear == context.equipmentFacts then
-        local currentSlot, currentType = currentComparisonSlot(context, physical, result.definition.slots)
-        if slot == currentSlot and handType == currentType then cacheKey = physical end
-    end
-    cacheKey = cacheKey or table.concat({
-        result.poolKey or "worn", physical, slot, handType or "",
-    }, "\031")
-    local pool = slotPool(context, physical, slot, handType, gear, cacheKey)
+local function projectedPlacement(item, placement, pool)
     local known = pool.byVariant[item.key]
     if known then return known end
     local rank = 1
@@ -980,6 +967,57 @@ local function insertionRank(context, item, result, placement)
         setRankTier(placement, best, tiers)
     end
     return placement
+end
+
+local function insertionRank(context, item, result, placement)
+    if placement.score == nil then return placement end
+    local physical = result.definition.key
+    local slot, gear = result.slot, result.gear
+    local handType = slot == "Off Hand" and offHandType(item)
+    local cacheKey
+    if gear == context.equipmentFacts then
+        local currentSlot, currentType = currentComparisonSlot(context, physical, result.definition.slots)
+        if slot == currentSlot and handType == currentType then cacheKey = physical end
+    end
+    cacheKey = cacheKey or table.concat({
+        result.poolKey or "worn", physical, slot, handType or "",
+    }, "\031")
+    return projectedPlacement(item, placement, slotPool(context, physical, slot, handType, gear, cacheKey))
+end
+
+local function lookaheadPlacement(context, item)
+    local cap = addon.maxLevelingLevel + 1
+    if item.level > cap then return { status = "out_of_scope", phase = "PR" } end
+    if item.excluded or item.has_random_stats or not permitted(item.classes, context.class)
+        or not permitted(item.races, context.race) then return { status = "incompatible" } end
+
+    local data = context.catalog.data
+    local profile = data.profiles[context.class .. "/" .. context.spec]
+    local group = groupFor(item)
+    -- Proficiency can unlock after the item's required level. Keep one preview
+    -- per live context so hovering many levels cannot grow the pool cache.
+    for level = item.level, cap do
+        local preview = context.tooltipLookahead
+        if not preview or preview.level ~= level then
+            local phase = level == cap and "PR" or "LEVELING"
+            preview = scoringContext(data, profile, context.class, context.spec, phase, level,
+                phase == context.phase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase), context.race)
+            preview.catalog, preview.ownedFacts = context.catalog, context.ownedFacts
+        end
+        for _, definition in ipairs(group.definitions) do
+            local slot = targetSlot(item, definition)
+            if slot and fitsEquipment(preview, item, slot) then
+                context.tooltipLookahead = preview
+                if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase } end
+                local placement = resultFor(preview, item)
+                if placement.score == nil then return placement end
+                local handType = slot == "Off Hand" and offHandType(item)
+                local pool = slotPool(preview, slot, slot, handType, {}, slot .. (handType or ""))
+                return projectedPlacement(item, placement, pool)
+            end
+        end
+    end
+    return { status = "incompatible" }
 end
 
 local EMPTY_CHOICE = { score = 0, order = math.huge }
@@ -1126,7 +1164,8 @@ end
 local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)
     local item = candidate.facts
     if item.level and item.level > context.level then
-        return { placement = { status = "level", requiredLevel = item.level } }
+        if scope.lookahead then return { placement = lookaheadPlacement(context, item), preview = true } end
+        return { placement = { status = "level" } }
     end
     if not inScope(context, item) then return { placement = { status = "out_of_scope", phase = context.phase } } end
     local group = groupFor(item)
@@ -1156,7 +1195,9 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
     local last = context.lastTooltip
     if last and last.candidate == candidate and last.useWorn == useWorn and last.wornSlot == wornSlot
         and last.extraCopy == extraCopy and last.revision == revision and last.live == scope.live
-        and last.physical == scope.physical and last.slot == scope.slot then return last.result end
+        and last.physical == scope.physical and last.slot == scope.slot and last.lookahead == scope.lookahead then
+        return last.result
+    end
     local result = assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)
     local owned = context.ownedFacts[candidate.key]
     result.ownership = owned and owned.state
@@ -1166,7 +1207,8 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
         result.bis = addon:IsConfirmedGearBiS(history, context.phase, id, candidate.key)
     end
     context.lastTooltip = { candidate = candidate, useWorn = useWorn, wornSlot = wornSlot, extraCopy = extraCopy,
-        result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot }
+        result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot,
+        lookahead = scope.lookahead }
     return result
 end
 
@@ -1195,16 +1237,18 @@ function rating:Label(entry, layout)
         return string.format("%s%s#%d / %d", label, separator, entry.rank, entry.total)
     end
     if entry.score ~= nil then return string.format("%.1f pts", entry.score) end
-    if entry.status == "level" then return "Requires level " .. entry.requiredLevel end
     if entry.status == "out_of_scope" then
         return entry.phase == "LEVELING" and "Outside Leveling rankings" or "Outside Pre-Raid rankings"
     end
     return STATUS_LABELS[entry.status] or STATUS_LABELS.unavailable
 end
 
+function rating:ScopeLabel(entry)
+    return entry.phase == "LEVELING" and ("Level " .. entry.level) or addon:GetPhaseDisplayName(entry.phase)
+end
+
 function rating:ContextLabel(entry)
-    local scope = entry.phase == "LEVELING" and ("Level " .. entry.level) or addon:GetPhaseDisplayName(entry.phase)
-    return entry.spec .. " · " .. scope
+    return entry.spec .. " · " .. self:ScopeLabel(entry)
 end
 
 function rating:DescriptionLines(entry)

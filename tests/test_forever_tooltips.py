@@ -80,6 +80,7 @@ local function oneSection(tooltip)
     assert(count == 1, text(tooltip))
 end
 local owner = CreateFrame("Button", nil, UIParent)
+local nativeRequirements = {}
 local function showNative(tooltip, link, getter, args)
     tooltip:SetOwner(owner, "ANCHOR_RIGHT")
     tooltip.rowColors = {}
@@ -87,6 +88,8 @@ local function showNative(tooltip, link, getter, args)
     tooltip.nativeInfo = {getterName = getter or "GetHyperlink", getterArgs = args or {link}}
     tooltip.hyperlink = nil
     tooltip.lines = {"Native name", "Native enchant", "Native source"}
+    local requirement = nativeRequirements[itemId(link)]
+    if requirement then tooltip.lines[#tooltip.lines + 1] = requirement end
     tooltip:Show()
     postItem(tooltip, tooltip.nativeData)
     postItem(tooltip, tooltip.nativeData)
@@ -205,7 +208,8 @@ events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
 includes(tip, "+7.0 pts|r vs Lower ring (Finger 2)")
 
 showNative(tip, "item:900005", "GetMerchantItem", {1})
-includes(tip, "Requires level 55")
+includes(tip, "Protection\nTop tier #1/7 (100% of best) · Level 55")
+excludes(tip, "Requires level")
 excludes(tip, "Est.")
 addon.GetRecommendationHistory = function(_, id, class, spec, phase, slot)
     assert(class == "Paladin" and phase == "PR" and slot == "Ring")
@@ -227,6 +231,65 @@ excludes(tip, "fill an empty slot")
 addon:GetAccountDB().profile.tooltips.enabled = false
 showNative(ItemRefTooltip, "item:900003")
 assert(#ItemRefTooltip.lines == 3)
+''')
+
+    def test_higher_level_tooltips_rank_at_first_eligible_level_without_offering_a_swap(self):
+        self.lua_run(r'''
+profile.leveling.weights = {{1, 49, weights}, {50, 59, {stamina = 1, intellect = 5}}}
+profile.pre_raid.weights = {stamina = 1, intellect = 10}
+rows["900005"][5].intellect = 10
+gear(900014, "Level 54 ring", "Ring", 200, nil, 54)
+gear(900015, "Level 56 ring", "Ring", 300, nil, 56)
+gear(900016, "Level 60 ring", "Ring", 150, nil, 60)
+rows["900016"][5].intellect = 15
+gear(900017, "Level 61 ring", "Ring", 1200, nil, 61)
+slots[#slots + 1] = "Head"
+local data = BigBiSListData.stat_rank
+data.item_fields[#data.item_fields + 1] = "armor_type"
+data.equipment.Paladin.armor_tiers = {{level = 1, types = {"Cloth"}}, {level = 40, types = {"Plate"}}}
+gear(900018, "Level 30 plate helm", "Head", 30, nil, 30)
+gear(900019, "Level 40 cloth helm", "Head", 40, nil, 40)
+rows["900018"][8], rows["900019"][8] = "Plate", "Cloth"
+
+H.equipped[11], H.equipped[12] = 900001, 900002
+nativeRequirements[900005] = "|cffff2020Requires Level 55|r"
+local tip = ItemRefTooltip
+showNative(tip, "item:900005")
+includes(tip, "Protection\nStrong #2/8 (75% of best) · Level 55")
+includes(tip, "Retribution\nStrong #2/8 (75% of best) · Level 55")
+assert(tip.lines[4] == nativeRequirements[900005])
+excludes(tip, "Requires level")
+excludes(tip, "Est.")
+oneSection(tip)
+
+local live = rating:GetContext("Paladin", "Protection", "LEVELING", 47, ui.currentOwned)
+local current = rating:GetPlacement(live, "Finger0", {"Ring"})
+assert(current.count == 6 and not current.byVariant["900005"])
+local candidate = rating:GetTooltipItem(900005, "item:900005")
+local result = rating:CompareTooltipItem(live, candidate, true, nil, nil, { live = true })
+assert(not result.delta and not result.placement.rank and not result.bis, "Acquisition assessment requires eligibility")
+showNative(tip, "item:900005")
+includes(tip, "Strong #2/8 (75% of best) · Level 55")
+
+showNative(GameTooltip, "item:900016", "GetMerchantItem", {1})
+includes(GameTooltip, "Top tier #1/10 (100% of best) · Pre-Raid")
+excludes(GameTooltip, "Est.")
+showNative(GameTooltip, "item:900017", "GetMerchantItem", {1})
+includes(GameTooltip, "Outside Pre-Raid rankings")
+excludes(GameTooltip, "Est.")
+
+level = 55
+addon:RefreshTooltipPlayerContext()
+showNative(GameTooltip, "item:900005", "GetMerchantItem", {1})
+includes(GameTooltip, "Strong #2/8 (75% of best)")
+includes(GameTooltip, "+146.0 pts|r vs Blood Ritual Ring (Finger 2)")
+excludes(GameTooltip, "· Level 55")
+
+level = 20
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900018")
+includes(tip, "Strong #2/2 (75% of best) · Level 40")
+excludes(tip, "Est.")
 ''')
 
     def test_bank_snapshot_copy_counts_and_legal_weapon_and_ring_swaps(self):
