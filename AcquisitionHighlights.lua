@@ -269,19 +269,55 @@ local function collectCrafting(items)
     end
 end
 
-local function watchStoragePanel(panel, kind)
-    watchFrame(panel, kind)
-    if not panel or storagePanels[panel] then return end
-    storagePanels[panel] = true
-    for _, method in ipairs({ "UpdateItems", "GenerateItemSlotsForSelectedTab", "RefreshAllItemsForSelectedTab" }) do
-        if type(panel[method]) == "function" then
-            hooksecurefunc(panel, method, function() clearKind(kind); highlights:ScheduleRefresh() end)
-        end
-    end
-end
-
 local function storageLink(bag, slot)
     return read(call(C_Container and C_Container.GetContainerItemLink or GetContainerItemLink, bag, slot), "string")
+end
+
+local function storagePosition(row, kind)
+    if kind == "bank" then
+        return read(call(row.GetBankTabID, row), "number"), read(call(row.GetContainerSlotID, row), "number")
+    end
+    return read(call(row.GetBagID, row), "number"), read(call(row.GetID, row), "number")
+end
+
+local function storageContextMatches(entry)
+    return entry.ownedSnapshot == ui.currentOwned and entry.player == addon:GetTooltipPlayerContext()
+        and entry.revision == (addon.ForeverScoring and addon.ForeverScoring.revision)
+end
+
+local function storageGUIDMatches(first, second)
+    return not first or not second or first == second
+end
+
+local function storageBindingMatches(entry, bag, slot)
+    if not bag or not slot or entry.sourceId ~= bag .. ":" .. slot or not storageContextMatches(entry) then return false end
+    if entry.kind == "bank" and not ui.personalBankOpen then return false end
+    return rating:SameStorageItemLink(entry.itemId, entry.link, storageLink(bag, slot))
+        and storageGUIDMatches(entry.guid, entry.guid and ui:GetStorageItemGUID(bag, slot))
+end
+
+local function watchStoragePanel(panel, kind)
+    if not panel or not panel.HookScript or storagePanels[panel] then return end
+    storagePanels[panel] = true
+    local function refreshBindings()
+        local bankType = Enum and Enum.BankType and Enum.BankType.Character
+        local validPanel = kind ~= "bank" or (bankType ~= nil and call(panel.GetActiveBankType, panel) == bankType)
+        for row, entry in pairs(offers) do
+            if entry.kind == kind and not entry.widget and shown(row) then
+                local bag, slot = storagePosition(row, kind)
+                if not validPanel or not storageBindingMatches(entry, bag, slot) then
+                    clearMark(row, true)
+                end
+            end
+        end
+        highlights:ScheduleRefresh()
+    end
+    panel:HookScript("OnShow", refreshBindings)
+    for _, method in ipairs({ "UpdateItems", "GenerateItemSlotsForSelectedTab", "RefreshAllItemsForSelectedTab" }) do
+        if type(panel[method]) == "function" then
+            hooksecurefunc(panel, method, refreshBindings)
+        end
+    end
 end
 
 local function collectStorage(items, settings)
@@ -293,21 +329,25 @@ local function collectStorage(items, settings)
         end
     end
     local lastBag = read(NUM_TOTAL_BAG_FRAMES, "number") or read(NUM_BAG_SLOTS, "number") or 4
-    local function add(row, bag, slot, expectedLink, widget)
+    local function add(row, bag, slot, expectedLink, widget, expectedGUID)
         if not shown(row) or not bag or not slot or slot < 1 then return end
         local kind = bankTabs[bag] and "bank" or (bag >= 0 and bag <= lastBag and "bags")
         if not kind or settings[kind] == false then return end
         if kind == "bank" and not ui.personalBankOpen then return end
         local link = storageLink(bag, slot)
-        if not link or (expectedLink and link ~= expectedLink) then return end
-        addItem(items, { kind = kind, row = row, sourceId = bag .. ":" .. slot, owned = true, widget = widget }, link)
+        if not link or (expectedLink and not rating:SameStorageItemLink(itemIdFromLink(link), link, expectedLink)) then return end
+        local guid = ui:GetStorageItemGUID(bag, slot)
+        if not storageGUIDMatches(guid, expectedGUID) then return end
+        addItem(items, { kind = kind, row = row, sourceId = bag .. ":" .. slot,
+            guid = guid or expectedGUID, owned = true, widget = widget }, link)
     end
     if type(ContainerFrameUtil_EnumerateContainerFrames) == "function" then
         for _, panel in ContainerFrameUtil_EnumerateContainerFrames() do
             watchStoragePanel(panel, "bags")
             if shown(panel) and panel.EnumerateValidItems then
                 for _, row in panel:EnumerateValidItems() do
-                    add(row, read(call(row.GetBagID, row), "number"), read(call(row.GetID, row), "number"))
+                    local bag, slot = storagePosition(row, "bags")
+                    add(row, bag, slot)
                 end
             end
         end
@@ -316,7 +356,8 @@ local function collectStorage(items, settings)
     watchStoragePanel(panel, "bank")
     if shown(panel) and bankType ~= nil and call(panel.GetActiveBankType, panel) == bankType and panel.EnumerateValidItems then
         for row in panel:EnumerateValidItems() do
-            add(row, read(call(row.GetBankTabID, row), "number"), read(call(row.GetContainerSlotID, row), "number"))
+            local bag, slot = storagePosition(row, "bank")
+            add(row, bag, slot)
         end
     end
     local api = Baganator and Baganator.API
@@ -327,7 +368,7 @@ local function collectStorage(items, settings)
             local location = read(entry.details.itemLocation, "table")
             if location and row.BGR == entry.details then
                 local bag, slot = read(location.bagID, "number"), read(location.slotIndex, "number")
-                add(row, bag, slot, read(entry.details.itemLink, "string"), entry.widget)
+                add(row, bag, slot, read(entry.details.itemLink, "string"), entry.widget, read(entry.details.guid, "string"))
             end
         end
     end
@@ -366,17 +407,16 @@ local function assess(batch, entry, evaluation)
     if entry.kind == "crafting" and rating:IsUnresolvedVariant(id, candidate.key) then return nil, false end
     if context.owned.variantUnknownItems and context.owned.variantUnknownItems[id] then return nil, false end
     local quest = entry.kind == "quest"
-    local worn = not quest and (spec.role == "active" or entry.owned) and entry.compareWorn
-    local key = table.concat({ spec.name, context.scenario or "", tostring(worn), tostring(entry.owned), entry.link }, "\031")
+    local worn = not quest and spec.role == "active" and entry.compareWorn
+    local key = table.concat({ spec.name, context.scenario or "", tostring(worn), entry.link }, "\031")
     local cached = not quest and batch.swaps[key]
     if cached then return cached.mark, cached.ready, cached.assessment end
 
-    local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned,
+    local result = rating:CompareTooltipItem(context, candidate, worn, nil, true,
         { live = true, lookahead = quest, quantity = quest and entry.quantity or nil })
     local ready = not unresolved(result) and not unresolved(result.placement)
     local gain = rating:RoundedGain(result.delta) or 0
-    local qualifies = not result.conditional and
-        (entry.owned and rating:IsMeaningfulOwnedUpgrade(result) or (not entry.owned and gain > 0))
+    local qualifies = not result.conditional and gain > 0
     local assessment = { spec = spec, scenario = context.scenario, result = result, gain = gain,
         ownedBaseline = not worn, guaranteed = evaluation.guaranteed }
     if quest then
@@ -394,12 +434,12 @@ local function assess(batch, entry, evaluation)
     local mark
     if ready and (qualifies or result.bis) then
         local extraGain = gain
-        if result.ownership and worn and not entry.owned then
+        if result.ownership and worn then
             local owned = rating:CompareTooltipItem(context, candidate, false, nil, true)
             ready = not unresolved(owned)
             extraGain = not owned.conditional and rating:RoundedGain(owned.delta) or 0
         end
-        if ready and (entry.owned or not result.ownership or extraGain > 0) then
+        if ready and (not result.ownership or extraGain > 0) then
             mark = assessment
         end
     end
@@ -427,6 +467,33 @@ local function rankOffers(batch, entry)
         primary.assessments = assessments
     end
     return primary, ready
+end
+
+local function rankStorage(batch, entry)
+    local candidate, exact = rewardItem(batch, entry)
+    if not candidate then return nil, exact end
+    local primary, ready, assessments, signature = nil, #batch.contexts > 0, {}, {}
+    for _, evaluation in ipairs(batch.contexts) do
+        local context, spec = evaluation.context, evaluation.spec
+        local comparison, resolved = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid, evaluation.primary)
+        ready = ready and resolved
+        if comparison then
+            local result = comparison.result
+            local assessment = { spec = spec, scenario = context.scenario, result = result, storage = comparison,
+                alternate = comparison.alternate }
+            assessments[#assessments + 1] = assessment
+            if resolved and comparison.qualifies then primary = primary or assessment end
+            signature[#signature + 1] = table.concat({ spec.name, context.scenario, tostring(result.delta),
+                tostring(result.conditional), tostring(result.placement.rank), tostring(result.placement.total),
+                tostring(comparison.qualifies), tostring(comparison.alternate), tostring(comparison.sidegrade),
+                tostring(comparison.unavailable) }, "\031")
+            for _, item in ipairs(comparison.stronger or {}) do
+                signature[#signature + 1] = item.name .. "\031" .. tostring(item.state)
+            end
+        end
+    end
+    entry.assessments, entry.assessmentKey = assessments, table.concat(signature, "\030")
+    return primary and exactMark(primary, entry), ready
 end
 
 local function rankRewards(batch, rewards, evaluation, rows, ready, allowBest)
@@ -500,6 +567,11 @@ local function newStorageBadge(row)
     badge.bis:SetJustifyV("MIDDLE")
     badge.bis:SetText("BiS")
     badge.bis:SetTextColor(unpack(widgets.Theme.bisGold))
+    badge.alternate = badge:CreateTexture(nil, "OVERLAY")
+    badge.alternate:SetSize(3, 3)
+    badge.alternate:SetPoint("BOTTOMRIGHT", badge, "BOTTOMRIGHT", -2, 2)
+    badge.alternate:SetColorTexture(0.94, 0.94, 0.98, 1)
+    badge.alternate:Hide()
     badge.border = {}
     for _, side in ipairs({ "TOP", "BOTTOM", "LEFT", "RIGHT" }) do
         local edge = badge:CreateTexture(nil, "OVERLAY")
@@ -529,6 +601,15 @@ local function displayStorage(mark, r, g, b, immediate)
     end
     local bis = result.bis == true
     local icon = mark.spec and mark.spec.icon
+    local alternate = mark.alternate == true
+    if bis then r, g, b = unpack(widgets.Theme.bisGold) end
+    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), tostring(alternate), r, g, b }, "\031")
+    if badge.visualKey == visualKey then
+        if not badge.managed then badge:Show() end
+        recordMark(mark, visualKey, immediate)
+        return
+    end
+    badge.visualKey = visualKey
     if icon then
         badge.icon:SetTexture(icon)
         badge.icon:SetVertexColor(1, 1, 1)
@@ -538,15 +619,15 @@ local function displayStorage(mark, r, g, b, immediate)
     end
     badge.icon:SetShown(not bis)
     badge.bis:SetShown(bis)
+    badge.alternate:SetShown(alternate)
     if bis then
-        r, g, b = unpack(widgets.Theme.bisGold)
         badge.background:SetColorTexture(r * 0.15, g * 0.15, b * 0.15, 0.95)
     else
         badge.background:SetColorTexture(0.05, 0.05, 0.06, 0.9)
     end
     for _, edge in ipairs(badge.border) do edge:SetColorTexture(r, g, b, 1) end
     if not badge.managed then badge:Show() end
-    recordMark(mark, table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis), r, g, b }, "\031"), immediate)
+    recordMark(mark, visualKey, immediate)
 end
 
 local function newOverlay(row)
@@ -676,13 +757,15 @@ local function refresh()
     collectStorage(items, settings)
     if #items > 0 then
         local player = addon:GetTooltipPlayerContext()
-        local batch = { contexts = {}, items = {}, swaps = {}, pending = {} }
+        local batch = { contexts = {}, items = {}, swaps = {}, pending = {}, player = player }
         if player and player.spec then
             local owned = ui:GetOwnedSnapshot()
+            batch.owned = owned
             for _, spec in ipairs(player.specs) do
                 if spec.role == "active" or spec.role == "dual" then
-                    for _, context in ipairs(rating:GetScenarioContexts(player.class, spec.name, player.phase, player.level, owned)) do
-                        batch.contexts[#batch.contexts + 1] = { spec = spec, context = context }
+                    local contexts = rating:GetScenarioContexts(player.class, spec.name, player.phase, player.level, owned)
+                    for index, context in ipairs(contexts) do
+                        batch.contexts[#batch.contexts + 1] = { spec = spec, context = context, primary = index > 1 and contexts[1] or nil }
                         for id in pairs(context.pending) do batch.pending[id] = true end
                     end
                 end
@@ -700,11 +783,20 @@ local function refresh()
             if entry.group then
                 local group = rewards[entry.group]
                 group[#group + 1] = entry
-            else
-                local mark, ready = rankOffers(batch, entry)
+            elseif entry.owned then
+                entry.player, entry.ownedSnapshot = batch.player, batch.owned
+                entry.revision = addon.ForeverScoring and addon.ForeverScoring.revision
+                local mark, ready = rankStorage(batch, entry)
+                local previous = offers[entry.row]
+                if not previous or previous.assessmentKey ~= entry.assessmentKey then highlights.tooltipDirty = true end
                 if entry.widget then
-                    baganatorCache[entry.sourceId] = ready and { kind = entry.kind, link = entry.link, mark = mark } or nil
+                    baganatorCache[entry.sourceId] = ready and { kind = entry.kind, link = entry.link, guid = entry.guid,
+                        mark = mark, assessments = entry.assessments, assessmentKey = entry.assessmentKey,
+                        player = entry.player, ownedSnapshot = entry.ownedSnapshot, revision = entry.revision } or nil
                 end
+                if mark then results[entry.row] = mark end
+            else
+                local mark = rankOffers(batch, entry)
                 if mark then entry.assessments, results[entry.row] = mark.assessments, mark end
             end
         end
@@ -768,8 +860,14 @@ local function refresh()
     else
         highlights.pendingItems = nil
     end
-    for row in pairs(offers) do
-        if not currentOffers[row] or (marks[row] and not results[row]) then clearMark(row, true) end
+    for row, entry in pairs(offers) do
+        if not currentOffers[row] and entry.kind == "bags" and not entry.widget and not shown(row)
+            and settings.bags ~= false and storageContextMatches(entry) then
+            -- The parent hides its badge. Keep the binding for a synchronous reopen.
+            currentOffers[row] = entry
+        elseif not currentOffers[row] or (marks[row] and not results[row]) then
+            clearMark(row, true)
+        end
     end
     offers = currentOffers
     for _, mark in pairs(results) do display(mark, settings.animate ~= false) end
@@ -805,7 +903,19 @@ function highlights:GetTooltipOffer(owner, itemId, link)
     while owner do
         local entry = offers[owner]
         if entry and shown(owner) and entry.itemId == itemId and link then
-            if entry.link == link or rating:NormalizeLink(itemId, link) == rating:NormalizeLink(itemId, entry.link) then
+            if entry.owned then
+                if rating:SameStorageItemLink(itemId, link, entry.link) then
+                    local bag, slot
+                    if entry.widget then
+                        local state = baganatorItems[owner]
+                        if state and state.details == owner.BGR then bag, slot = state.bag, state.slot end
+                    else
+                        bag, slot = storagePosition(owner, entry.kind)
+                    end
+                    if storageBindingMatches(entry, bag, slot) then return entry, marks[owner] end
+                    self:ScheduleRefresh()
+                end
+            elseif entry.link == link or rating:NormalizeLink(itemId, link) == rating:NormalizeLink(itemId, entry.link) then
                 return entry, marks[owner]
             end
         end
@@ -864,22 +974,31 @@ local function hookBaganator()
         local location = read(details.itemLocation, "table")
         local bag = location and read(location.bagID, "number")
         local slot = location and read(location.slotIndex, "number")
-        -- A redraw creates new metadata tables for the same physical item.
-        local changed = not previous or previous.link ~= link or previous.bag ~= bag or previous.slot ~= slot
-            or previous.active == false
-        baganatorItems[row] = { details = details, link = link, bag = bag, slot = slot, widget = widget, active = true }
         local live = bag and slot and storageLink(bag, slot)
-        if not link or live ~= link then
+        local itemId = itemIdFromLink(live)
+        local shownGUID = read(details.guid, "string")
+        local guid = itemId and ui:GetStorageItemGUID(bag, slot)
+        if not rating:SameStorageItemLink(itemId, live, link) or not storageGUIDMatches(guid, shownGUID) then
             clearMark(row, true, true)
+            baganatorItems[row] = nil
             return false
         end
+        guid = guid or shownGUID
+        -- A redraw creates new metadata tables for the same physical item.
+        local changed = not previous or previous.bag ~= bag or previous.slot ~= slot or previous.active == false
+            or not rating:SameStorageItemLink(itemId, previous.link, live) or not storageGUIDMatches(previous.guid, guid)
+        baganatorItems[row] = { details = details, link = live, bag = bag, slot = slot, guid = guid, widget = widget, active = true }
         local sourceId = bag .. ":" .. slot
         local cached = baganatorCache[sourceId]
         local settings = addon:GetAccountDB().profile.gearHighlights
-        if cached and cached.link == link and settings[cached.kind] ~= false
+        if cached and rating:SameStorageItemLink(itemId, cached.link, live) and settings[cached.kind] ~= false
+            and storageGUIDMatches(guid, cached.guid)
+            and storageContextMatches(cached)
             and (cached.kind ~= "bank" or ui.personalBankOpen) then
             local entries = {}
-            addItem(entries, {kind = cached.kind, row = row, sourceId = sourceId, owned = true, widget = widget}, link)
+            addItem(entries, {kind = cached.kind, row = row, sourceId = sourceId, guid = guid, owned = true, widget = widget,
+                assessments = cached.assessments, assessmentKey = cached.assessmentKey,
+                player = cached.player, ownedSnapshot = cached.ownedSnapshot, revision = cached.revision }, live)
             local entry = entries[1]
             if entry then
                 offers[row] = entry
@@ -899,7 +1018,7 @@ local function hookBaganator()
         widget.managed = true
         overlays[row] = widget
         row:HookScript("OnHide", function()
-            clearMark(row, true, true)
+            clearMark(row, false, true)
             baganatorItems[row] = nil
         end)
         return widget

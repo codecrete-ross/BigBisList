@@ -116,7 +116,7 @@ Forever server tooltip and the published OneForAll dungeon loot record.
 · [Big Bad Pauldrons tooltip](https://bindonforever.com/item/9476)
 · [Zul’Farrak loot record](https://guide.wow4ever.se/en/items/9476)
 
-Bag and bank arrows require a legal swap with both a positive total change
+Bag and bank badges require a legal swap with both a positive total change
 and a meaningful role stat gain. The minimum is two role stat points and
 five percent of the displaced role score. A role gain that rounds to 0.1
 points qualifies for a genuinely empty slot. Defensive stats contribute to
@@ -272,6 +272,11 @@ material swap.
 
 ### Gear presentation
 
+- Placement and swaps use the reviewed facts for a matching exact variant.
+  The client stat API supplies other exact rolls. Forever's importer and
+  live reader share the verified flat-passive rules for Defense, Attack
+  Power, and spell damage. The live reader fills missing stats from those
+  tooltip lines and keeps unresolved effects conditional.
 - Stat tiers use the client rarity palette from poor gray through common white,
   uncommon green, rare blue, epic purple, and legendary orange. Placements
   use the full eligible variant pool and exact score ties. Percent of best uses
@@ -296,15 +301,20 @@ material swap.
   Relevant unreadable inputs defer the gain. An owned variant requires a legal
   gain from adding another copy. The same assessment supplies the mark and its
   tooltip row.
-- Visible gear in bags and the open personal bank compares against worn gear
-  for the active spec, then the remembered inactive spec. These are existing
-  copies. Native containers and Baganator share the same assessment and mark.
+- Storage recommendations choose the best legal slot or paired-slot setup from
+  worn gear, bags, and the last readable personal bank scan. The spec icon
+  requires a meaningful improvement over the worn setup. On an exact tie,
+  equipped copies take priority, followed by bags and bank. Another reviewed
+  scenario can earn a dotted badge when it favors a meaningfully stronger
+  choice for that use. Native containers and Baganator share the same assessment.
   Storage marks are static badges in the upper-right corner. A talent icon has
   a rank-colored border, and an approved item uses a gold BiS label in the same
   footprint. Baganator owns the visibility and priority of its corner widget.
-  Redraws with unchanged links and physical locations reuse the assessment.
-  Baganator's corner widget requires a current item location and matching exact
-  link. Unverified cached character views retain their regular item tooltip.
+  Redraws with unchanged item facts and physical locations reuse the assessment.
+  Storage tooltips match the same physical copy and allow different hyperlink
+  formatting. Baganator requires a current item location and agrees with the
+  native link and readable GUID. Unverified cached character views retain
+  their regular item tooltip.
 
 ## Verification and rollout
 

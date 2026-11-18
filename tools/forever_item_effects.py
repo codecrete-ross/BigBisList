@@ -37,6 +37,30 @@ STRUCK_DAMAGE = re.compile(r"Equip: When struck in combat has a (\d+)% chance of
 POWER_AND_SPEED = re.compile(r"Chance on hit: Increases Attack Power by (\d+) and melee attack speed by (\d+)% for (\d+) sec\.", re.I)
 PROC_STAT = {"attack power": "attack_power", "spell power": "spell_power", "armor": "armor"}
 
+# Literal text around a single number keeps the same rules usable in Lua.
+FLAT_PASSIVE_STATS = (
+    ("equip: increased defense +", "", "defense"),
+    ("equip: +", " defense", "defense"),
+    ("equip: +", " attack power", "attack_power"),
+    ("equip: increases attack power by ", "", "attack_power"),
+    ("equip: increases your attack power by ", "", "attack_power"),
+    ("equip: +", " ranged attack power", "ranged_attack_power"),
+    ("equip: increases ranged attack power by ", "", "ranged_attack_power"),
+    ("equip: +", " block value", "block_value"),
+    ("equip: increases damage done by magical spells and effects by up to ", "", "spell_damage"),
+    ("equip: increases damage done by spells and effects by up to ", "", "spell_damage"),
+)
+
+
+def flat_passive_stat(text: str) -> tuple[str, int] | None:
+    text = text.strip().removesuffix(".").lower()
+    for prefix, suffix, stat in FLAT_PASSIVE_STATS:
+        if text.startswith(prefix) and text.endswith(suffix):
+            amount = text[len(prefix):len(text) - len(suffix)].strip()
+            if amount.isascii() and amount.isdecimal():
+                return stat, int(amount)
+    return None
+
 
 def cooldown(amount: str, unit: str) -> int:
     return int(amount) * (60 if unit.casefold() == "min" else 1)
@@ -60,20 +84,24 @@ def effect_lines(item: dict) -> dict[str, dict]:
     return lines
 
 
-def recover_permanent_chances(stats: dict, lines: dict) -> None:
+def permanent_stat(text: str) -> tuple[str, float] | None:
+    return flat_passive_stat(text) or permanent_chance(text)
+
+
+def recover_permanent_stats(stats: dict, lines: dict) -> None:
     for label in lines:
-        if parsed := permanent_chance(label):
+        if parsed := permanent_stat(label):
             stat, amount = parsed
             stats.setdefault(stat, amount)
 
 
 def unresolved_lines(item: dict) -> list[str]:
     return [label for label, row in effect_lines(item).items()
-            if not permanent_chance(label) and not (row.get("type") == "passive" and row.get("stats"))]
+            if not permanent_stat(label) and not (row.get("type") == "passive" and row.get("stats"))]
 
 
 def classify(label: str) -> str:
-    if permanent_chance(label):
+    if permanent_stat(label):
         return "permanent_stat"
     if TRAVEL.fullmatch(label):
         return "travel"

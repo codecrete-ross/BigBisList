@@ -11,6 +11,7 @@ local H = dofile("tests/lua_ui_harness.lua")
 local ui = H.load("forever")
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
 local highlights = addon.AcquisitionHighlights
+local publishedRanks = BigBiSListData.stat_rank
 local level = 47
 UnitClassBase = function() return "PALADIN" end
 UnitRace = function() return "Human", "Human" end
@@ -100,6 +101,20 @@ local function row(parent, index, name)
     button.slotIndex = index
     return button
 end
+local function bagView(contents)
+    GetContainerNumSlots = function(bag) return bag == 0 and #contents or 0 end
+    GetContainerItemLink = function(bag, slot) return bag == 0 and contents[slot] or nil end
+    GetContainerItemID = function(bag, slot) return idOf(GetContainerItemLink(bag, slot)) end
+    local panel, rows = CreateFrame("Frame", nil, UIParent), {}
+    for index in ipairs(contents) do
+        rows[index] = row(panel, index)
+        rows[index].GetBagID = function() return 0 end
+    end
+    panel.EnumerateValidItems = function() return ipairs(rows) end
+    panel.UpdateItems = function() end
+    ContainerFrameUtil_EnumerateContainerFrames = function() return ipairs({panel}) end
+    return panel, rows
+end
 local function scrollBox(rows)
     return {rows = rows, ForEachFrame = function(self, fn)
         for _, frame in ipairs(self.rows) do fn(frame) end
@@ -168,19 +183,43 @@ panel.GetActiveBankType = function() return bankKind end
 panel.EnumerateValidItems = function() return next, {[bankItem] = true} end
 panel.GenerateItemSlotsForSelectedTab, panel.RefreshAllItemsForSelectedTab = function() end, function() end
 ui.personalBankOpen = true
+assert(ui:ScanBankItems())
 highlights:Initialize(); H.settle()
-local offered = assert(mark(first, 901002))
-assert(offered.entry.owned and not offered.ownedBaseline and offered.result.delta == 4)
+assert(not mark(first, 901002))
+local offered = assert(mark(bankItem, 901004))
+assert(offered.entry.owned and not offered.ownedBaseline and offered.result.delta == 6)
 local badge
-for _, child in ipairs(first.children) do if child.border then badge = child end end
+for _, child in ipairs(bankItem.children) do if child.border then badge = child end end
 assert(badge and not badge.animation and not badge.glow and badge.icon:IsShown())
-H.expectBounded(badge, first, "bag badge")
+H.expectBounded(badge, bankItem, "bank badge")
 for _, edge in ipairs(badge.border) do H.expectBounded(edge, badge, "bag badge border") end
 assert(mark(second, 901005).spec.name == "Holy", "An owned off-spec upgrade compares with worn gear")
 assert(mark(bankItem, 901004).result.delta == 6)
 local tip = showTip(first, link(901002))
 assert(tip:find("+4.0 pts", 1, true) and tip:find("Finger", 1, true) == nil)
+assert(tip:find("Stronger option you own · Fixture gear 901004 · In bank (last visit)", 1, true))
 assert(not tip:find("vs the best gear you own", 1, true))
+ui.personalBankOpen = false
+event("BANKFRAME_CLOSED")
+assert(not mark(bankItem, 901004) and not mark(first, 901002))
+ui.personalBankOpen = true
+local getLink = C_Container.GetContainerItemLink
+C_Container.GetContainerItemLink = function(bag, slot)
+    if bag == 20 then error("Unreadable bank tab") end
+    return getLink(bag, slot)
+end
+assert(not ui:ScanBankItems() and addon:GetCharacterDB().bankCache.locations[1] == "20:1")
+highlights:ScheduleRefresh(); H.settle()
+assert(not mark(first, 901002) and not mark(bankItem, 901004))
+C_Container.GetContainerItemLink = getLink
+highlights:ScheduleRefresh(); H.settle()
+assert(mark(bankItem, 901004))
+contents[0][1], contents[20][1] = contents[20][1], contents[0][1]
+assert(ui:ScanBankItems())
+ui:Invalidate("ownership", "withdraw-winner"); event("BAG_UPDATE_DELAYED")
+assert(mark(first, 901004) and not mark(bankItem, 901002))
+contents[0][1], contents[20][1] = contents[20][1], contents[0][1]
+assert(ui:ScanBankItems())
 
 H.equipped[1] = 901002
 ui:Invalidate("ownership", "equip-from-bag"); event("BAG_UPDATE_DELAYED")
@@ -191,20 +230,251 @@ assert(not mark(first, 901002) and mark(first, contents[0][1]).result.delta == 4
 
 contents[0][1], cold[901020] = link(901020), true
 ui:Invalidate("ownership", "cold-bag-item"); bags:UpdateItems(); H.settle()
-assert(not mark(first, 901020) and coldCallbacks[901020])
+assert(not mark(first, 901020) and not mark(bankItem, 901004) and coldCallbacks[901020])
 cold[901020] = nil
 coldCallbacks[901020](); H.settle()
-assert(mark(first, 901020).result.delta == 5)
+assert(mark(first, 901020).result.delta == 5 and not mark(bankItem, 901004))
 
 addon:GetAccountDB().profile.gearHighlights.bags = false
 highlights:ScheduleRefresh(); H.settle()
-assert(not mark(first, 901020) and mark(bankItem, 901004))
+assert(not mark(first, 901020) and not mark(bankItem, 901004))
+contents[0][1] = link(901006)
+ui:Invalidate("ownership", "bank-visible-winner"); event("BAG_UPDATE_DELAYED")
+assert(mark(bankItem, 901004))
 bankKind = 2
 panel:GenerateItemSlotsForSelectedTab(); H.settle()
 assert(not mark(bankItem, 901004), "The personal-bank adapter excludes account bank rows")
 bankKind, ui.personalBankOpen = 1, false
 event("BANKFRAME_CLOSED")
 assert(not mark(bankItem, 901004))
+''')
+
+    def test_bags_choose_one_off_spec_belt_and_explain_close_alternatives(self):
+        self.run_lua(r'''
+slots[#slots + 1] = "Waist"
+BigBiSListData.stat_rank.profiles["Paladin/Retribution"] = profile({strength = 1})
+local active, group = "Retribution", 1
+addon.DetectPlayerSpec = function()
+    return active, {{displayName = "Retribution", icon = 10101}, {displayName = "Protection", icon = 20202}}
+end
+C_SpecializationInfo.GetActiveSpecGroup = function() return group end
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Protection"
+item(901031, "Waist", 6, 0)
+item(901032, "Waist", 14, 0)
+item(901033, "Waist", 11, 0)
+item(901034, "Waist", 13, 0)
+H.equipped[1], H.equipped[6] = nil, 901031
+local panel, rows = bagView({link(901032), link(901033), link(901034)})
+
+highlights:Initialize(); H.settle()
+local best = assert(mark(rows[1], 901032))
+assert(best.spec.name == "Protection" and best.result.delta == 8)
+assert(not mark(rows[2], 901033) and not mark(rows[3], 901034))
+local inferior = showTip(rows[2], link(901033))
+assert(inferior:find("+5.0 pts", 1, true) and inferior:find("Stronger option you own · Fixture gear 901032 · In bags", 1, true))
+local near = showTip(rows[3], link(901034))
+assert(near:find("Sidegrade to Fixture gear 901032 · In bags", 1, true))
+
+panel:Hide(); highlights:ScheduleRefresh(); H.settle(); panel:Show()
+assert(mark(rows[1], 901032).result == best.result, "An unchanged native bag reopens with the same recommendation")
+H.settle()
+active, group = "Protection", 2
+addon:RefreshTooltipPlayerContext(); highlights:InvalidateStorage(); H.settle()
+assert(mark(rows[1], 901032).spec.role == "active" and not mark(rows[2], 901033))
+
+level = 60
+addon.GetRecommendationHistory = function(_, id, class, spec, phase)
+    return {selected = {phase = phase, status = "rated", rank_group = id == 901033 and spec == "Protection" and "bis" or "option"}}
+end
+addon:RefreshTooltipPlayerContext(); highlights:InvalidateStorage(); H.settle()
+assert(mark(rows[1], 901032) and not mark(rows[2], 901033), "Guide approval alone does not earn an owned-set badge")
+''')
+
+    def test_level_49_revenant_chest_uses_verified_passives_and_storage_comparison(self):
+        self.run_lua(r'''
+BigBiSListData.stat_rank = publishedRanks
+level = 49
+addon.DetectPlayerSpec = function()
+    return "Retribution", {{displayName = "Retribution", icon = 10101}, {displayName = "Protection", icon = 20202}}
+end
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Protection"
+local champion = "|cnIQ2:|Hitem:10128::::::::49:1486::1:1:12753:1:28:5238:::::|h[Revenant Chestplate of the Champion]|h|r"
+local worn = "|cnIQ2:|Hitem:9966::::::::49:1486::1:1:12723:1:28:5255:::::|h[Embossed Plate Armor of the Gorilla]|h|r"
+local golem = "|cnIQ3:|Hitem:274428::::::::49:1486::1::1:28:5253:::::|h[Dark Golem Breastplate]|h|r"
+local mail = "|cnIQ3:|Hitem:9469::::::::49:1486::1::1:28:5255:::::|h[Gahz'rilla Scale Armor]|h|r"
+local defenseOnly = "|Hitem:901061|h[Defense chest]|h"
+local offense = "|Hitem:901062|h[Offense chest]|h"
+local bankUpgrade = "|Hitem:901063|h[Bank upgrade]|h"
+local defenseLine = "Equip: Increased Defense +5."
+local fixtures = {
+    [10128] = {link = champion, level = 49, armor = 515,
+        stats = {ITEM_MOD_STAMINA_SHORT = 17, ITEM_MOD_STRENGTH_SHORT = 9}, lines = {defenseLine}},
+    [9966] = {link = worn, level = 40, armor = 437,
+        stats = {ITEM_MOD_INTELLECT_SHORT = 13, ITEM_MOD_STRENGTH_SHORT = 13}},
+    [274428] = {link = golem, level = 39, armor = 471,
+        stats = {ITEM_MOD_STAMINA_SHORT = 10, ITEM_MOD_STRENGTH_SHORT = 5},
+        lines = {"Equip: Increases your chance to parry an attack by 1%."}},
+    [9469] = {link = mail, level = 43, armor = 290, subclass = 3,
+        stats = {ITEM_MOD_STAMINA_SHORT = 10, ITEM_MOD_SPIRIT_SHORT = 16},
+        lines = {"Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."}},
+    [901061] = {link = defenseOnly, level = 40, armor = 437,
+        stats = {ITEM_MOD_INTELLECT_SHORT = 13, ITEM_MOD_STRENGTH_SHORT = 13}, lines = {defenseLine}},
+    [901062] = {link = offense, level = 40, armor = 400, stats = {ITEM_MOD_SPELL_POWER_SHORT = 11},
+        lines = {"Equip: +20 Attack Power.", "Equip: Increases damage done by magical spells and effects by up to 11.",
+            "Equip: Increases attack power by 30 when fighting Undead."}},
+    [901063] = {link = bankUpgrade, level = 40, armor = 520, stats = {ITEM_MOD_STAMINA_SHORT = 30}},
+}
+GetItemInfo = function(value)
+    local item = fixtures[idOf(value)]
+    if item then return item.link:match("|h%[(.-)%]|h"), item.link, 2, 54, item.level end
+end
+GetItemInfoInstant = function(value)
+    local id = idOf(value)
+    local item = fixtures[id]
+    if item then return id, "Armor", "Armor", "INVTYPE_CHEST", 1, 4, item.subclass or 4 end
+end
+C_Item.GetItemInfo, C_Item.GetItemInfoInstant = GetItemInfo, GetItemInfoInstant
+C_Item.GetItemStats = function(value)
+    local item = fixtures[idOf(value)]
+    return item and item.stats
+end
+C_TooltipInfo = {GetHyperlink = function(value)
+    local item = fixtures[idOf(value)]
+    if not item then return end
+    local lines = {{leftText = item.armor .. " Armor"}}
+    for _, text in ipairs(item.lines or {}) do lines[#lines + 1] = {leftText = text} end
+    return {lines = lines}
+end}
+H.equipped[1], H.equipped[5] = nil, 9966
+GetInventoryItemLink = function(_, slot) if slot == 5 then return worn end end
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {mail}, {"20:1"}
+local contents = {champion, golem}
+local panel, rows = bagView(contents)
+highlights:Initialize(); H.settle()
+local function checkChampion()
+    local winner = assert(mark(rows[1], champion))
+    assert(winner.spec.name == "Protection" and not winner.result.conditional)
+    assert(math.abs(winner.result.delta - 36.14) < 0.001, "Include the five Defense exactly once")
+    assert(not mark(rows[2], golem), "Only the stronger Protection chest gets the spec icon")
+end
+checkChampion()
+assert(rating:GetExactBaseFacts(10128, champion).stats.defense == 5)
+local plain = champion:match("item:[%d:]+"):gsub(":49:1486:", ":50:1486:")
+local tip = showTip(rows[1], plain)
+assert(tip:find("+36.1 pts", 1, true) and tip:find("vs Embossed Plate Armor of the Gorilla", 1, true))
+assert(tip:find("Recommended for Outdoor", 1, true) and not tip:find("Conditional", 1, true))
+tip = showTip(rows[2], (golem:match("item:[%d:]+"):gsub("::1::1:", "::1:0:1:")))
+assert(tip:find("Stronger option you own · Revenant Chestplate of the Champion · In bags", 1, true))
+assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("12753", "12723")))
+assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128::", "item:10128:1900:")))
+assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128:::", "item:10128::4001:")))
+assert(not rating:SameStorageItemLink(10128, "item:10128::::::-44", "item:10128::::::-45"))
+
+local function refresh(id)
+    if id then rating:InvalidateItem(id) end
+    ui:Invalidate("ownership", "chest-replay"); panel:UpdateItems(); H.settle()
+end
+fixtures[10128].stats.ITEM_MOD_DEFENSE_SKILL_RATING_SHORT = 5
+refresh(10128); checkChampion()
+assert(rating:GetExactBaseFacts(10128, champion).stats.defense == 5)
+local normalized = rating:GetExactBaseFacts(901062, offense)
+assert(normalized.stats.attack_power == 20 and normalized.stats.spell_damage == 11 and not normalized.stats.spell_power)
+assert(#normalized.effects == 1 and normalized.effects[1]:find("when fighting Undead", 1, true))
+
+bank.links[1] = bankUpgrade
+refresh()
+assert(not mark(rows[1], champion))
+tip = showTip(rows[1], plain)
+assert(tip:find("Stronger option you own · Bank upgrade · In bank (last visit)", 1, true))
+bank.links[1] = mail
+fixtures[10128].lines[2] = "Use: Unleash a burst of Holy damage. (5 Min Cooldown)"
+refresh(10128)
+assert(not mark(rows[1], champion))
+assert(showTip(rows[1], plain):find("Conditional", 1, true))
+
+contents[1], contents[2] = defenseOnly, nil
+refresh()
+local winner = assert(mark(rows[1], defenseOnly))
+assert(winner.spec.name == "Protection" and math.abs(winner.result.delta - 6.25) < 0.001)
+local offer = assert(highlights:GetTooltipOffer(rows[1], 901061, defenseOnly))
+assert(offer.assessments[1].spec.name == "Retribution" and not offer.assessments[1].storage.qualifies)
+''')
+
+    def test_storage_winners_obey_pair_legality_and_copy_ties(self):
+        self.run_lua(r'''
+for _, slot in ipairs({"Ring", "Trinket", "Main Hand", "Off Hand", "Two Hand"}) do slots[#slots + 1] = slot end
+local data = BigBiSListData.stat_rank
+for _, field in ipairs({"max_equipped", "weapon_subtype", "armor_type"}) do
+    data.item_fields[#data.item_fields + 1] = field
+end
+data.equipment.Paladin.weapon_types = {"Sword"}
+data.equipment.Paladin.two_hand_weapon_types = {"Sword"}
+data.equipment.Paladin.armor_tiers = {{level = 1, types = {"Shield"}}}
+item(901041, "Ring", 3, 0)
+item(901042, "Ring", 4, 0)
+item(901043, "Ring", 10, 0)
+item(901044, "Ring", 15, 0)
+items["901044"][6] = 1
+item(901047, "Ring", 5, 0)
+item(901045, "Trinket", 10, 0)
+item(901046, "Trinket", 7, 0)
+item(901051, "Two Hand", 8, 0)
+item(901052, "One Hand", 12, 0)
+item(901053, "Off Hand", 10, 0)
+items["901051"][7], items["901052"][7], items["901053"][8] = "Sword", "Sword", "Shield"
+H.equipped[11], H.equipped[12], H.equipped[16] = 901041, 901042, 901051
+local links = {link(901043), link(901043), link(901043), link(901045), link(901046), link(901052), link(901053), link(901001)}
+local panel, rows = bagView(links)
+highlights:Initialize(); H.settle()
+assert(mark(rows[1], 901043) and mark(rows[2], 901043) and not mark(rows[3], 901043))
+assert(mark(rows[4], 901045) and mark(rows[5], 901046), "A legal pair may fill both trinket slots")
+assert(not mark(rows[8], 901001), "An equipped copy wins a tie")
+assert(mark(rows[6], 901052).result.delta == 14 and mark(rows[7], 901053).result.delta == 14)
+assert(showTip(rows[7], link(901053)):find("Recommended for Outdoor · With Fixture gear 901052", 1, true))
+
+links[1], links[2] = link(901044), link(901044)
+ui:Invalidate("ownership", "unique-ring"); panel:UpdateItems(); H.settle()
+assert(mark(rows[1], 901044) and not mark(rows[2], 901044) and mark(rows[3], 901043))
+links[2], links[3] = link(901047), link(901047)
+ui:Invalidate("ownership", "independent-cutoff"); panel:UpdateItems(); H.settle()
+assert(mark(rows[1], 901044) and not mark(rows[2], 901047) and not mark(rows[3], 901047))
+''')
+
+    def test_storage_scenario_marks_only_meaningfully_distinct_winners(self):
+        self.run_lua(r'''
+addon:GetCharacterDB().tooltipTalentSpecs[2] = nil
+local original = addon.ForeverScoring.GetPreset
+addon.ForeverScoring.GetPreset = function(self, class, spec, mode, atLevel, scenario)
+    if spec == "Protection" and mode == "leveling" and scenario == "dungeon" then
+        return {weights = {{40, 59, {intellect = 1}}}}
+    end
+    return original(self, class, spec, mode, atLevel, scenario)
+end
+item(901031, "Head", 14, 8)
+item(901032, "Head", 10, 14)
+item(901033, "Head", 10, 9)
+item(901034, "Head", 16, 16)
+local links = {link(901031), link(901032)}
+local panel, rows = bagView(links)
+highlights:Initialize(); H.settle()
+local main, alternate = assert(mark(rows[1], 901031)), assert(mark(rows[2], 901032))
+assert(not main.alternate and main.scenario == "outdoor" and alternate.alternate and alternate.scenario == "dungeon")
+local function badge(row)
+    for _, child in ipairs(row.children) do if child.alternate then return child end end
+end
+assert(not badge(rows[1]).alternate:IsShown() and badge(rows[2]).alternate:IsShown())
+H.expectBounded(badge(rows[2]).alternate, badge(rows[2]), "Alternate-use dot")
+assert(showTip(rows[2], link(901032)):find("Recommended for Dungeon", 1, true))
+
+links[2] = link(901033)
+ui:Invalidate("ownership", "close-context-winner"); panel:UpdateItems(); H.settle()
+assert(mark(rows[1], 901031) and not mark(rows[2], 901033))
+links[2] = link(901034)
+ui:Invalidate("ownership", "same-winner"); panel:UpdateItems(); H.settle()
+assert(not mark(rows[1], 901031) and mark(rows[2], 901034) and not badge(rows[2]).alternate:IsShown())
+local tip = showTip(rows[2], link(901034))
+assert(tip:find("Recommended for Outdoor", 1, true) and tip:find("Recommended for Dungeon", 1, true))
 ''')
 
     def test_baganator_corner_uses_live_slots_and_clears_stale_or_disabled_items(self):
@@ -282,16 +552,40 @@ for _, edge in ipairs(widget.border) do H.expectBounded(edge, widget, "Baganator
 assert(mark(button, 901002).result.delta == 4 and mark(button, 901002).entry.widget == widget)
 local initialRefreshes = refreshes
 local cached = mark(button, 901002).result
+local textureWrites, setTexture = 0, widget.icon.SetTexture
+widget.icon.SetTexture = function(self, texture)
+    textureWrites = textureWrites + 1
+    setTexture(self, texture)
+end
 for index = 1, 8 do
     assert(redraw(freshDetails()))
     H.settle()
     assert(not highlights.queued and mark(button, 901002).result == cached)
 end
+local formatted = freshDetails()
+formatted.itemLink = "|cnIQ3:|H" .. formatted.itemLink .. "|h[Fixture gear]|h|r"
+assert(redraw(formatted), "The live slot and the corner widget can use different link wrappers")
+assert(mark(button, formatted.itemLink).result == cached)
+assert(not highlights:GetTooltipOffer(button, 901002, "item:901002:1900"))
 assert(refreshes == initialRefreshes, "An unchanged Baganator row reuses its result")
 button:Hide(); H.settle(); button:Show()
 assert(redraw(freshDetails()), "A reopened bag gets the badge on its first draw")
 H.settle()
 assert(refreshes == initialRefreshes and mark(button, 901002).result == cached)
+assert(textureWrites == 0, "An unchanged reopen reuses the rendered badge")
+
+formatted.itemLink = "item:901002:1900"
+assert(not redraw(formatted) and not mark(button, 901002), "A stale modifier must not bind a widget to the wrong copy")
+formatted.itemLink = link(901002)
+assert(redraw(formatted) and mark(button, 901002).result == cached)
+local getGUID = ui.GetStorageItemGUID
+ui.GetStorageItemGUID = function() return "current-physical-copy" end
+formatted.guid = "previous-physical-copy"
+assert(not redraw(formatted) and not mark(button, 901002))
+formatted.guid = "current-physical-copy"
+assert(redraw(formatted) and mark(button, 901002).result == cached)
+ui.GetStorageItemGUID = getGUID
+formatted.guid = nil
 
 highlights.tooltipDirty = true
 highlights:ScheduleRefresh(); H.settle()
@@ -303,6 +597,8 @@ redraw(details); H.settle()
 assert(not mark(button, 901002) and not mark(button, 901006) and not widget:IsShown())
 details = {itemLink = link(901004), itemLocation = {bagID = 20, slotIndex = 1}}
 button.BGR, ui.personalBankOpen = details, true
+assert(ui:ScanBankItems())
+ui:Invalidate("ownership", "bank-scan")
 redraw(details); H.settle()
 assert(mark(button, 901004).result.delta == 6)
 details = {itemLink = link(901004)}
@@ -315,23 +611,23 @@ assert(refreshes == initialRefreshes and not highlights.queued, "Cached previews
 
 details = {itemLink = link(901002), itemLocation = {bagID = 0, slotIndex = 1}}
 contents[0][1], button.BGR = link(901002), details
+contents[20] = {}
+assert(ui:ScanBankItems())
 ui:Invalidate("ownership", "restore-baganator-item")
 redraw(details); H.settle()
 assert(mark(button, 901002))
-local compare = rating.CompareTooltipItem
-rating.CompareTooltipItem = function(self, ...)
-    local assessment = compare(self, ...)
-    assessment.bis = true
-    return assessment
+level = 60
+addon:RefreshTooltipPlayerContext()
+addon.GetRecommendationHistory = function(_, id, class, spec, phase)
+    return {selected = {phase = phase, status = "rated", rank_group = id == 901002 and spec == "Protection" and "bis" or "option"}}
 end
-highlights:ScheduleRefresh(); H.settle()
+highlights:InvalidateStorage(); H.settle()
 assert(widget.bis:IsShown() and not widget.icon:IsShown())
 local gold = addon.Widgets.Theme.bisGold
 for _, edge in ipairs(widget.border) do
     for component = 1, 3 do assert(edge.colorTexture[component] == gold[component]) end
 end
 H.expectBounded(widget.bis, widget, "BiS badge text")
-rating.CompareTooltipItem = compare
 active = false
 highlights:ScheduleRefresh(); H.settle()
 assert(not mark(button, 901002) and not widget:IsShown())

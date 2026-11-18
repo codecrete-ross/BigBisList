@@ -342,6 +342,28 @@ local function swapText(result, ownedBaseline, guaranteed)
     return #names > 0 and (estimate .. " vs " .. replacements) or estimate
 end
 
+local function storageText(comparison, scenario)
+    if comparison.unavailable == "loading" then return "Loading owned item stats" end
+    if comparison.unavailable then return "Owned gear comparison unavailable" end
+    if comparison.qualifies then
+        local text = "Recommended for " .. scenario
+        local result = comparison.result
+        for _, item in ipairs(result.incoming or {}) do
+            if item.slot ~= result.definition.label then text = text .. " · With " .. item.name end
+        end
+        return text
+    end
+    if comparison.winner then return "Best you own for " .. scenario end
+    if comparison.stronger and #comparison.stronger > 0 then
+        local names = {}
+        for _, item in ipairs(comparison.stronger) do
+            local location = OWNED_LABELS[item.state]
+            names[#names + 1] = item.name .. (location and (" · " .. location) or "")
+        end
+        return (comparison.sidegrade and "Sidegrade to " or "Stronger option you own · ") .. table.concat(names, " + ")
+    end
+end
+
 local function renderSpecBlocks(tooltip, statBlock, matches, selection)
     local blocks, bySpec = {}, {}
     for _, row in ipairs(statBlock and statBlock.rows or {}) do
@@ -386,6 +408,10 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
             end
             if result.conditional and not extra then
                 tooltip:AddLine("Conditional · effect or comparison data is incomplete", 0.86, 0.88, 0.91, true)
+            end
+            if comparison.storage then
+                local recommendation = storageText(comparison.storage, label)
+                if recommendation then tooltip:AddLine(recommendation, 0.86, 0.88, 0.91, true) end
             end
             if comparison.bestChoice then
                 tooltip:AddLine("Best choice for " .. row.spec .. (label and (" in " .. label) or ""), 0.86, 0.88, 0.91, true)
@@ -516,7 +542,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
     if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not addonTooltip(tooltip) then
-        local candidate = self.ForeverGearRating:GetTooltipItem(itemId, itemLink)
+        local exactLink = offer and offer.owned and offer.link or itemLink
+        local candidate = self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
         live = candidate and self:GetTooltipPlayerContext()
         if live then statBlock = tooltipStatBlock(self, candidate, live, info, offer) end
     end

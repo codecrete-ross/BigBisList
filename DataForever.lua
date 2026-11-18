@@ -2763553,6 +2763553,58 @@ BigBiSListData = {
             },
         },
         ["feral_uses_weapon_dps"] = true,
+        ["flat_passive_stats"] = {
+            {
+                "equip: increased defense +",
+                "",
+                "defense",
+            },
+            {
+                "equip: +",
+                " defense",
+                "defense",
+            },
+            {
+                "equip: +",
+                " attack power",
+                "attack_power",
+            },
+            {
+                "equip: increases attack power by ",
+                "",
+                "attack_power",
+            },
+            {
+                "equip: increases your attack power by ",
+                "",
+                "attack_power",
+            },
+            {
+                "equip: +",
+                " ranged attack power",
+                "ranged_attack_power",
+            },
+            {
+                "equip: increases ranged attack power by ",
+                "",
+                "ranged_attack_power",
+            },
+            {
+                "equip: +",
+                " block value",
+                "block_value",
+            },
+            {
+                "equip: increases damage done by magical spells and effects by up to ",
+                "",
+                "spell_damage",
+            },
+            {
+                "equip: increases damage done by spells and effects by up to ",
+                "",
+                "spell_damage",
+            },
+        },
         ["guide_effects"] = {
             ["13965"] = {
                 ["note"] = "On-use target crit bonus · doubled against Orcs and Ogres",

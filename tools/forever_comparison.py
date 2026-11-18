@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 
 from tools.forever import eligible, item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
-from tools.forever_item_effects import attach_rules, effect_lines, recover_permanent_chances, unresolved_lines
+from tools.forever_item_effects import FLAT_PASSIVE_STATS, attach_rules, effect_lines, recover_permanent_stats, unresolved_lines
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
 from tools.sources import summarize_sources
@@ -22,7 +22,7 @@ TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
 
 def normalized_item_stats(item: dict) -> dict:
     stats = merged_stats(item)
-    recover_permanent_chances(stats, effect_lines(item))
+    recover_permanent_stats(stats, effect_lines(item))
     stats.pop("socket", None)
     separate_weapon_dps(item, stats)
     if numeric(item.get("weapon_speed")) and item["weapon_speed"] > 0:
@@ -197,7 +197,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
     items = {}
     for item in data["items"]:
         facts = {**item, "stats": dict(item["stats"])}
-        recover_permanent_chances(facts["stats"], effect_lines(item))
+        recover_permanent_stats(facts["stats"], effect_lines(item))
         if "effects" in facts:
             facts["effects"] = unresolved_lines(item)
         items[str(item["id"])] = facts
@@ -242,6 +242,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
     return {
         "version": VERSION,
         "published_routes_only": True,
+        "flat_passive_stats": [list(rule) for rule in FLAT_PASSIVE_STATS],
         "profiles": profiles,
         "guide_effects": guide_effects,
         "equipment": rules["class_equipment"],

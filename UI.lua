@@ -827,6 +827,10 @@ local function ownedItemGUID(bag, slot)
     if hasGUID and BigBiSList.IsReadableValue(guid) and type(guid) == "string" and guid ~= "" then return guid end
 end
 
+function UI:GetStorageItemGUID(bag, slot)
+    return ownedItemGUID(bag, slot)
+end
+
 local function getInventorySlotInfo(slotDefinition)
     local lookup = C_PaperDollInfo and C_PaperDollInfo.GetInventorySlotInfo or GetInventorySlotInfo
     if lookup and slotDefinition.inventorySlotName then
@@ -1458,7 +1462,7 @@ function UI:ValidateSelection()
     BigBiSList:SetSelection(className, specName, phaseKey, tabName)
 end
 
-function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinition, guid)
+function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinition, guid, sourceId)
     itemId = tonumber(itemId) or (itemLink and tonumber(itemLink:match("item:(%d+)")))
     if not itemId then return end
     if BigBiSList.isForever then
@@ -1470,7 +1474,9 @@ function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinit
             if (OWNERSHIP_PRIORITY[state] or 0) > (OWNERSHIP_PRIORITY[owned.variants[variantId]] or 0) then
                 owned.variants[variantId] = state
             end
-        elseif not itemLink then owned.variantUnknownItems[itemId] = true end
+        elseif not itemLink or (BigBiSList.ForeverGearRating and BigBiSList.ForeverGearRating:IsUnresolvedVariant(itemId)) then
+            owned.variantUnknownItems[itemId] = true
+        end
         if itemLink and BigBiSList.ForeverGearRating then
             owned.gearStatLinks = owned.gearStatLinks or {}
             local existing = owned.gearStatLinks[itemLink]
@@ -1481,7 +1487,9 @@ function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinit
             end
         end
         if location == "bags" and owned.gearCopies then
-            owned.gearCopies[#owned.gearCopies + 1] = { item_id = itemId, item_link = itemLink, state = "bag", guid = guid }
+            owned.gearCopies[#owned.gearCopies + 1] = {
+                item_id = itemId, item_link = itemLink, state = "bag", guid = guid, sourceId = sourceId,
+            }
         end
     end
     local item = BigBiSList.GetItemData and BigBiSList:GetItemData(itemId)
@@ -1598,7 +1606,7 @@ function UI:BuildOwnedItems()
                 owned[itemId] = "bag"
             end
             local guid = owned.gearCopies and itemLink and ownedItemGUID(bag, slot)
-            self:AddOwnedInventoryItem(owned, itemId, itemLink, "bags", nil, guid)
+            self:AddOwnedInventoryItem(owned, itemId, itemLink, "bags", nil, guid, bag .. ":" .. slot)
             addEnhancedItem(itemLink, "bag", "Bags")
         end
     end
@@ -1630,7 +1638,8 @@ function UI:BuildOwnedItems()
             local itemId = type(link) == "string" and tonumber(link:match("item:(%d+)"))
             local guid = statBank.guids and statBank.guids[index]
             if itemId and not (guid and carried[guid]) then
-                owned.gearCopies[#owned.gearCopies + 1] = { item_id = itemId, item_link = link, state = "bank" }
+                owned.gearCopies[#owned.gearCopies + 1] = { item_id = itemId, item_link = link, state = "bank",
+                    guid = guid, sourceId = statBank.locations and statBank.locations[index] }
             end
         end
     end
@@ -2438,7 +2447,7 @@ function UI:ScanBankItems()
     end
 
     local cache = { items = {}, links = {} }
-    if strict then cache.guids = {} end
+    if strict then cache.guids, cache.locations = {}, {} end
     for _, bag in ipairs(tabs) do
         if strict and (not BigBiSList.IsReadableValue(bag) or type(bag) ~= "number") then return false end
         local numSlots, slotsReadable = getContainerNumSlotsSafe(bag)
@@ -2458,7 +2467,10 @@ function UI:ScanBankItems()
             end
             if itemLink then
                 table.insert(cache.links, itemLink)
-                if strict then cache.guids[#cache.links] = ownedItemGUID(bag, slot) end
+                if strict then
+                    cache.guids[#cache.links] = ownedItemGUID(bag, slot)
+                    cache.locations[#cache.links] = bag .. ":" .. slot
+                end
             end
         end
     end

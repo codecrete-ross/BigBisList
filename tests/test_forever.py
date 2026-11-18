@@ -164,10 +164,20 @@ class ForeverPipelineTests(unittest.TestCase):
     def test_forever_tooltip_preserves_unified_percent_stats(self):
         row = scrape_wowhead.parse_item_stats(
             forever.WOWHEAD_ROOT + "item=71/example", 71, "Fixture Ring", "",
-            ["+6 Stamina", "Equip: Improves your chance to hit by 1.0%.", "Equip: +20 Attack Power."],
+            [
+                "+6 Stamina",
+                "Equip: Improves your chance to hit by 1.0%.",
+                "Equip: +20 Attack Power.",
+                "Equip: Increased Defense +5.",
+                "Equip: Increases damage done by magical spells and effects by up to 11.",
+                "Equip: Increases attack power by 30 when fighting Undead.",
+            ],
             "Finger", "rare", "bind_on_pickup", False, [],
         )
-        self.assertEqual(row["stats"], {"stamina": 6, "hit_percent": 1, "attack_power": 20})
+        self.assertEqual(row["stats"], {
+            "stamina": 6, "hit_percent": 1, "attack_power": 20, "defense": 5, "spell_damage": 11,
+        })
+        self.assertEqual(row["effect_stats"][-1]["type"], "target_specific")
 
     def test_forever_tooltip_reads_separate_armor_and_effect_fields(self):
         url = forever.WOWHEAD_ROOT + "item=71"

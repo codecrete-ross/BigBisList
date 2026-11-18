@@ -2059,6 +2059,8 @@ def parse_item_stats(url: str, item_id: int | None, name: str, description: str,
     if url.startswith("https://www.wowhead.com/forever/"):
         # Rebuild Forever effect stats from the actual complete lines. The
         # legacy parser deliberately remains unchanged for Anniversary.
+        from tools.forever_item_effects import flat_passive_stat
+
         effect_lines = [line for line in tooltip_lines if line.startswith(("Equip:", "Use:", "Chance on hit:"))]
         regen_lines = [line for line in tooltip_lines if re.fullmatch(r"Restores \+?\d+ (?:health|mana) per 5 sec\.", line, re.I)]
         base_lines = [line for line in tooltip_lines if line not in effect_lines and line not in regen_lines]
@@ -2119,16 +2121,16 @@ def parse_item_stats(url: str, item_id: int | None, name: str, description: str,
                 kind = "passive"
             extras = {}
             if kind == "passive":
-                extras.update(stats_from_effect_text(text))
+                flat = flat_passive_stat(text) or flat_passive_stat(first_sentence)
+                if flat:
+                    stat, amount = flat
+                    extras[stat] = amount
+                else:
+                    extras = stats_from_effect_text(text)
                 chance = re.search(chance_pattern, text, re.I)
                 if chance:
                     stat_name = "crit" if "crit" in chance[1].lower() else chance[1].lower()
                     extras[stat_name + "_percent"] = float(chance[2])
-                for bonus in re.finditer(r"Equip: \+\s*(\d+) (Attack Power|Ranged Attack Power|Defense|Block Value)\b", text, re.I):
-                    extras[bonus[2].lower().replace(" ", "_")] = int(bonus[1])
-                defense = re.search(r"Increased Defense \+\s*(\d+)\b", text, re.I)
-                if defense:
-                    extras["defense"] = int(defense[1])
                 healing = re.search(r"Increases healing done by (?:magical spells and effects by )?up to\s*(\d+)\b", text, re.I)
                 if healing:
                     extras["healing_power"] = int(healing[1])
