@@ -603,7 +603,7 @@ def build_data(flavor: str) -> dict:
     leveling_recommendations = optional_rows("leveling_recommendations")
     availability_data = {}
     if flavor == "forever":
-        from tools.forever_comparison import compile_comparison_data, compile_reviewed_builds, reviewed_guide_items
+        from tools.forever_comparison import compile_comparison_data, reviewed_guide_items
         from tools.forever_scoring import reviewed_runtime_model
         from tools.project import FOREVER_CANONICAL_DIR
         availability_rows = (document("leveling_availability")["leveling_availability"]
@@ -624,9 +624,6 @@ def build_data(flavor: str) -> dict:
                                   for key, value in rules["spec_policies"].items()},
             },
         }
-        if (FOREVER_CANONICAL_DIR / "reviewed_builds.json").is_file():
-            availability_data["reviewed_builds"] = compile_reviewed_builds(
-                document("reviewed_builds")["builds"], comparisons, items, item_stats)
         character_scoring = reviewed_runtime_model()
         if character_scoring:
             availability_data["character_scoring"] = character_scoring

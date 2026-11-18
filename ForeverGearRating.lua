@@ -106,18 +106,19 @@ function rating:NormalizeLink(id, link)
     local modFields = { fields[1], fields[2], fields[3], fields[4], fields[5], fields[6] }
     for index = 2, math.min(6, #fields) do fields[index] = "0" end
     local suffix = tonumber(fields[7]) or 0
+    local suffixParameter = suffix < 0 and (tonumber(fields[8]) or 0) or 0
     local extended = {}
-    for index = 11, #fields do extended[#extended + 1] = fields[index] end
-    while extended[#extended] == "0" or extended[#extended] == "" do table.remove(extended) end
+    for index = 11, #fields do extended[#extended + 1] = tostring(tonumber(fields[index]) or 0) end
+    while extended[#extended] == "0" do table.remove(extended) end
     local key = tostring(id)
     if suffix ~= 0 then key = key .. ":" .. suffix end
-    if #extended > 0 or (suffix ~= 0 and (tonumber(fields[8]) or 0) ~= 0) then
-        key = key .. ":" .. (suffix ~= 0 and (fields[8] or "0") or "0") .. ":" .. table.concat(extended, ":")
+    if #extended > 0 or suffixParameter ~= 0 then
+        key = key .. ":" .. suffixParameter .. ":" .. table.concat(extended, ":")
     end
     return key, link:sub(1, first - 1) .. "item:" .. table.concat(fields, ":") .. link:sub(last + 1), modFields
 end
 
-local function storageLinkKey(self, id, link)
+local function exactLinkKey(self, id, link)
     local variant, _, fields = self:NormalizeLink(id, link)
     if not variant then return nil end
     local parts = {}
@@ -126,13 +127,13 @@ local function storageLinkKey(self, id, link)
     return table.concat(parts, ":")
 end
 
-function rating:SameStorageItemLink(id, first, second)
+function rating:SameExactItemLink(id, first, second)
     if not (id and readable(first) and type(first) == "string" and readable(second) and type(second) == "string") then
         return false
     end
     if first == second then return true end
-    local key = storageLinkKey(self, id, first)
-    return key ~= nil and key == storageLinkKey(self, id, second)
+    local key = exactLinkKey(self, id, first)
+    return key ~= nil and key == exactLinkKey(self, id, second)
 end
 
 function rating:GetCatalog(data)
@@ -242,6 +243,8 @@ local function readTooltip(link, stats, facts)
                 local text = line[field]
                 if readable(text) and type(text) == "string" and english then
                     text = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+                    local label = text:lower()
+                    if label == "random enchantment" or label == "<random enchantment>" then facts.has_random_stats = true end
                     local dps = tonumber(text:match("^%(([%d.]+) damage per second%)$"))
                     local speed = tonumber(text:match("^Speed%s+([%d.]+)$"))
                     local armor = tonumber(text:match("^(%d+) Armor$"))
@@ -313,6 +316,7 @@ function rating:ReadNative(id, key, link, base)
         if pending then return nil, "loading" end
         facts.unreadable_effects = true
     end
+    if facts.has_random_stats then return nil, "unavailable" end
     local weapon = facts.weapon_subtype
     if stats.dps and slot == "Ranged" then
         if weapon == "Wand" then stats.wand_dps, stats.dps = stats.dps, nil
@@ -355,6 +359,7 @@ local function resolveLink(self, context, entry)
     local id, link = entry.item_id, entry.item_link
     local key, statLink = self:NormalizeLink(id, link)
     local base = context.catalog.items[tostring(id)]
+    if base and base.has_random_stats and (not key or key == tostring(id)) then return nil, "unavailable" end
     local facts = key and context.catalog.items[key] or (not link and base)
     if facts and facts.has_random_stats then facts = nil end
     local unavailable
@@ -493,9 +498,10 @@ local function contextAtLevel(context, phase, level)
     local samePhase = phase == context.phase
     local phaseIndex = samePhase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase)
     local projected = scoringContext(data, profile, context.class, context.spec, phase, level, phaseIndex,
-        context.race, context.faction, rating:GetScenario(context.class, context.spec, phase, level, context.scenario))
+        context.race, context.faction, rating:GetScenario(context.class, context.spec, phase, level, samePhase and context.scenario or nil))
     projected.catalog, projected.ownedFacts = context.catalog, context.ownedFacts
     projected.owned, projected.equipmentFacts, projected.guide = context.owned, context.equipmentFacts, context.guide
+    projected.ownedCopies, projected.unresolvedCopies, projected.ownedLoadouts = context.ownedCopies, context.unresolvedCopies, {}
     -- Native source scope checks the content phase. Guide routes also depend on the level.
     if samePhase and not context.guide then projected.inScope = context.inScope end
     return projected
@@ -1038,8 +1044,8 @@ function rating:GetTooltipItem(itemId, link)
 end
 
 function rating:IsUnresolvedVariant(itemId, key)
-    local base = self.catalog and self.catalog.items[tostring(itemId)]
-    return base and base.has_random_stats and key == tostring(itemId)
+    local base = self:GetPublishedFacts(tostring(itemId))
+    return base and base.has_random_stats and (not key or key == tostring(itemId))
 end
 
 local function targetSlot(item, definition)
@@ -1260,18 +1266,13 @@ local function lookaheadPlacement(context, item)
             context.tooltipLookahead = preview
             if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase } end
             local placement = resultFor(preview, item, nil, slot)
-            if placement.score == nil then return placement end
+            if placement.score == nil then return placement, nil, preview end
             local handType = slot == "Off Hand" and offHandType(item)
             local pool = slotPool(preview, slot, slot, handType, {}, slot .. (handType or ""))
-            return rating:ProjectPlacement(item, placement, pool), pool.scope
+            return rating:ProjectPlacement(item, placement, pool), pool.scope, preview
         end
     end
     return { status = "incompatible" }
-end
-
-local function previewTooltipItem(context, item)
-    local placement, scope = lookaheadPlacement(context, item)
-    return { placement = placement, rankScope = scope, preview = true }
 end
 
 local function tierAtLevel(scope, item, level)
@@ -1539,7 +1540,8 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity)
     local instance = candidate
     if not extraCopy then
         for _, owned in ipairs(context.ownedCopies) do
-            if owned.facts.key == candidate.key and owned.item_link == candidate.item_link then
+            if owned.facts.key == candidate.key
+                and rating:SameExactItemLink(candidate.entry.item_id, owned.item_link, candidate.item_link) then
                 instance = owned
                 break
             end
@@ -1580,16 +1582,30 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity)
     return result
 end
 
+local function previewTooltipItem(context, candidate, extraCopy, quantity)
+    local item = candidate.facts
+    local placement, scope, preview = lookaheadPlacement(context, item)
+    local result = { placement = placement, rankScope = scope, preview = true }
+    if preview then
+        local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, quantity)
+        result.forecast = comparison or { status = "blocked" }
+        result.forecast.level, result.forecast.scenario = preview.level, preview.scenario
+    end
+    return result
+end
+
 local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)
     local item = candidate.facts
     if item.level and item.level > context.level then
-        if scope.lookahead then return previewTooltipItem(context, item) end
+        if scope.lookahead then return previewTooltipItem(context, candidate, extraCopy, scope.quantity) end
         return { placement = { status = "level" } }
     end
     if not inScope(context, item) then return { placement = { status = "out_of_scope", phase = context.phase } } end
     local group = groupFor(item)
     if not firstUsableSlot(context, group, item) then
-        if scope.lookahead and context.leveling and item.level then return previewTooltipItem(context, item) end
+        if scope.lookahead and context.leveling and item.level then
+            return previewTooltipItem(context, candidate, extraCopy, scope.quantity)
+        end
         return { placement = { status = "incompatible" } }
     end
     local result
@@ -1761,7 +1777,7 @@ end
 function rating:GetStorageComparison(context, candidate, sourceId, guid, primary)
     local instance = context.storageCopies[sourceId]
     if not instance or (guid and instance.entry.guid and instance.entry.guid ~= guid)
-        or not self:SameStorageItemLink(candidate.entry.item_id, instance.item_link, candidate.item_link) then
+        or not self:SameExactItemLink(candidate.entry.item_id, instance.item_link, candidate.item_link) then
         return nil, false
     end
     local group = groupFor(candidate.facts)
@@ -1852,8 +1868,8 @@ function rating:IsMeaningfulOwnedUpgrade(result)
     return result.roleDelta >= math.max(2, (result.roleDisplaced or 0) * 0.05)
 end
 
-function rating:GetSwapBasisLabel(result)
-    return result.basis == "active" and "Your build" or "Default spec weights"
+function rating:GetSwapBasisLabel(basis)
+    return basis == "active" and "Your setup" or "Default spec weights"
 end
 
 function rating:Label(entry, layout)

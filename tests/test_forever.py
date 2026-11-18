@@ -521,7 +521,7 @@ assert(not char.wishlist[123] and #addon:GetPhaseOrder() == 1 and addon:GetPhase
 assert(addon:SetContentMode("leveling"))
 assert(addon:GetContentMode() == "leveling")
 addon:SetContentMode("endgame")
-assert(#ui:GetActiveTabNames() == 5 and table.concat(ui:GetActiveTabNames(), "/"):find("Builds", 1, true))
+assert(table.concat(ui:GetActiveTabNames(), "/") == "Upgrades/By Slot/Equipped/Wishlist")
 assert(addon:GetCurrentPhaseKey() == "PR")
 local talentPoints = { {traitNodeGroupID = 11670, currencyInfos = {{spent = 16}}} }
 C_ClassTalents = {GetActiveConfigID = function() return 7 end}

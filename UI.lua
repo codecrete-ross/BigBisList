@@ -13,14 +13,10 @@ end
 
 local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel or 69
-local ENDGAME_TAB_NAMES = BigBiSList.isForever and { "Upgrades", "By Slot", "Equipped", "Builds", "Wishlist" }
+local ENDGAME_TAB_NAMES = BigBiSList.isForever and { "Upgrades", "By Slot", "Equipped", "Wishlist" }
     or { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }
 local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist" }
 local TAB_NAMES = { "Upgrades", "By Slot", "Gear Guide", "Equipped", "Enhance", "Wishlist", "Settings" }
-if BigBiSList.isForever then
-    table.insert(LEVELING_TAB_NAMES, 3, "Builds")
-    table.insert(TAB_NAMES, 5, "Builds")
-end
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
     ["BiS List"] = "By Slot",
@@ -1380,8 +1376,6 @@ function UI:GetViewKey(tabName)
         return "gearGuide"
     elseif tabName == "Equipped" then
         return "myGear"
-    elseif tabName == "Builds" then
-        return "builds"
     elseif tabName == "Enhance" then
         return "enhancements"
     elseif tabName == "Wishlist" then
@@ -4214,7 +4208,6 @@ function UI:GetRowOwnershipState(data)
     if not data then
         return nil
     end
-    if data.build_target then return data.owned_state end
     if BigBiSList.isForever and data.variant_id then
         local owned = self.currentOwned or {}
         return (owned.variants and owned.variants[data.variant_id])
@@ -6337,7 +6330,7 @@ local function layoutGearSlotText(button)
     if not twoLines then return end
 
     local rating = data.overlay
-    if occupied and badge and not data.build_target then
+    if occupied and badge then
         rating = service:Label(placement)
     elseif occupied and data.bestUse then
         rating = data.display_rank_label or rating
@@ -6398,12 +6391,11 @@ local function layoutGearSummaryText(summary)
     end
 end
 
-function UI:CreateGearWorkspace(parent, builds)
+function UI:CreateGearWorkspace(parent)
     local widgets = BigBiSList.Widgets
     local gear = CreateFrame("Frame", nil, parent)
     gear:SetPoint("TOPLEFT", parent, "TOPLEFT", 14, -12)
     gear:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -14, 12)
-    gear.isBuild = builds
     gear.slots = {}
     for _, definition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
         local button = createPaperDollButton(gear, definition, definition.label)
@@ -6426,13 +6418,7 @@ function UI:CreateGearWorkspace(parent, builds)
         button:SetScript("OnClick", function(owner, mouse)
             local data = owner.gearData
             if not data or not owner:IsVisible() then return end
-            if builds then
-                if data.item_id and mouse == "LeftButton" then
-                    self.buildSlotKey = data.slotKey
-                    for _, tile in pairs(gear.slots) do tile:SetSelected(tile == owner) end
-                end
-                if data.item_id then self:HandleEntityGesture(data, "build", mouse, owner) end
-            elseif data.item_id and (mouse == "RightButton" or (IsShiftKeyDown and IsShiftKeyDown())
+            if data.item_id and (mouse == "RightButton" or (IsShiftKeyDown and IsShiftKeyDown())
                 or (IsControlKeyDown and IsControlKeyDown())) then
                 self:HandleEntityGesture(data, "gear", mouse, owner)
             elseif mouse == "LeftButton" then
@@ -6456,19 +6442,11 @@ function UI:CreateGearWorkspace(parent, builds)
                     tooltip:AddLine(line, 0.88, 0.88, 0.92, true)
                 end
             end
-            if data.build_target then
-                tooltip:AddLine(data.overlay, 0.88, 0.88, 0.92, true)
-            elseif not data.stat_rank or data.bestUse then
+            if not data.stat_rank or data.bestUse then
                 tooltip:AddLine(data.guide_note or data.recommendation_summary, 0.88, 0.88, 0.92, true)
             end
         end)
         gear.slots[definition.key] = button
-    end
-
-    if builds then
-        self:CreateBuildSummary(gear)
-        gear:Hide()
-        return gear
     end
 
     local preview = CreateFrame("Frame", nil, gear)
@@ -6590,8 +6568,8 @@ function UI:RefreshGearPreview()
     end
 end
 
-function UI:LayoutGearWorkspace(workspace)
-    local gear = workspace or self.gearFrame
+function UI:LayoutGearWorkspace()
+    local gear = self.gearFrame
     if not gear or not gear:IsVisible() then return end
     local width, height = gear:GetWidth(), gear:GetHeight()
     if width <= 0 or height <= 0 then return end
@@ -6608,15 +6586,6 @@ function UI:LayoutGearWorkspace(workspace)
     local weaponWidth = math.max(1, math.floor((width - 2 * gap) / 3))
     layoutPaperDoll(gear, gear.slots, sideWidth, weaponWidth, size, gap, top)
     for _, button in pairs(gear.slots) do layoutGearSlotText(button) end
-    if gear.isBuild then
-        local summary = gear.summary
-        summary:SetWidth(centerWidth)
-        summary:SetPoint("TOP", gear, "TOP", 0, -top)
-        summary:SetPoint("BOTTOM", gear, "BOTTOM", 0, top + size + 10)
-        self:LayoutBuildSummary(gear)
-        return true
-    end
-
     local summary, preview = gear.summary, gear.preview
     summary:SetWidth(centerWidth)
     summary:SetPoint("BOTTOM", gear, "BOTTOM", 0, top + size + 10)
@@ -6679,123 +6648,14 @@ function UI:RefreshGearSelection()
     end
 end
 
-function UI:CreateBuildSummary(gear)
-    local widgets = BigBiSList.Widgets
-    local summary = CreateFrame("Frame", nil, gear)
-    gear.summary = summary
-    summary.selector = widgets:CreateDropdown(nil, summary, 140, function()
-        return gear.build and gear.build.name or ""
-    end, function()
-        local items = {}
-        for _, build in ipairs(gear.builds or {}) do
-            items[#items + 1] = { text = build.name, value = build.id, checked = build == gear.build }
-        end
-        return items
-    end, function(id)
-        self.buildPreview = { mode = self:GetSelection().mode, id = id }
-        self.buildSlotKey = nil
-        self:Invalidate("presentation", "build-selection")
-        self:ScheduleRefresh(nil, "build-selection")
-    end)
-    summary.selector:SetPoint("TOP", summary, "TOP", 0, 4)
-    summary.title = widgets:CreateLabel(summary, "", "GameFontNormal")
-    summary.title:SetPoint("TOP", summary.selector, "BOTTOM", 0, -2)
-    summary.notes = widgets:CreateWrappedLabel(summary, "", "GameFontHighlightSmall")
-    summary.notes:SetPoint("TOPLEFT", summary, "TOPLEFT", 8, -55)
-    local notesHover = CreateFrame("Frame", nil, summary)
-    notesHover:SetPoint("TOPLEFT", summary.notes, "TOPLEFT")
-    notesHover:SetPoint("BOTTOMRIGHT", summary.notes, "BOTTOMRIGHT")
-    notesHover:EnableMouse(true)
-    widgets:BindTooltip(notesHover, function(_, tooltip)
-        if not gear.build then return end
-        tooltip:SetText(gear.build.name)
-        for _, line in ipairs({ gear.build.goal, gear.build.talents, gear.build.requirements, gear.build.source_name }) do
-            tooltip:AddLine(line, 0.88, 0.88, 0.92, true)
-        end
-    end)
-    summary.track = widgets:CreateTextButton(summary, "Track build", 100, 24, function()
-        if not gear.build then return end
-        local char, mode = BigBiSList:GetCharacterDB(), self:GetSelection().mode
-        char.trackedBuilds = char.trackedBuilds or {}
-        char.trackedBuilds[mode] = char.trackedBuilds[mode] ~= gear.build.id and gear.build.id or nil
-        self:Invalidate("presentation", "build-track")
-        self:ScheduleRefresh(nil, "build-track")
-    end)
-    summary.track:SetPoint("BOTTOMLEFT", summary, "BOTTOMLEFT", 8, 0)
-    summary.progress = widgets:CreateLabel(summary, "", "GameFontHighlightSmall")
-    summary.progress:SetPoint("LEFT", summary.track, "RIGHT", 8, 0)
-    summary.source = CreateFrame("EditBox", nil, summary, "InputBoxTemplate")
-    summary.source:SetAutoFocus(false)
-    summary.source:SetHeight(20)
-    summary.source:SetPoint("BOTTOMLEFT", summary.track, "TOPLEFT", 5, 8)
-    summary.source:SetPoint("BOTTOMRIGHT", summary, "BOTTOMRIGHT", -8, 32)
-    summary.source:SetScript("OnEditFocusGained", function(box) box:HighlightText() end)
-    summary.source:SetScript("OnEscapePressed", function(box) box:ClearFocus() end)
-    summary.source:SetScript("OnTextChanged", function(box, userInput)
-        if userInput and gear.build then box:SetText(gear.build.source_url); box:HighlightText() end
-    end)
-    widgets:BindTooltip(summary.source, function(_, tooltip)
-        if gear.build then tooltip:SetText(gear.build.source_name); tooltip:AddLine("Select the link to copy it.") end
-    end)
-    gear.empty = widgets:CreateWrappedLabel(gear, "No reviewed builds for this spec and level or phase.", "GameFontHighlight")
-    gear.empty:SetPoint("CENTER")
-    gear.empty:SetWidth(250)
-end
-
-function UI:LayoutBuildSummary(gear)
-    if not gear.build then return end
-    local summary = gear.summary
-    local lines = math.max(1, math.floor((summary:GetHeight() - 112) / 13))
-    BigBiSList.Widgets:SetCellText(summary.notes, summary.notes.fullText or "", lines, 13, math.max(1, summary:GetWidth() - 16))
-end
-
-function UI:GetBuildWorkspaceRows(gear, selection, filters)
-    local level, phase = filters.level, self:GetEffectivePhaseKey()
-    gear.builds = BigBiSList:GetReviewedBuilds(selection.class, selection.spec, phase, level)
-    local char, preview = BigBiSList:GetCharacterDB(), self.buildPreview
-    local tracked = char.trackedBuilds and char.trackedBuilds[selection.mode]
-    local wanted = preview and preview.mode == selection.mode and preview.id or tracked
-    local build = gear.builds[1]
-    for _, candidate in ipairs(gear.builds) do
-        if candidate.id == wanted then build = candidate; break end
-    end
-    gear.build = build
-    if not build then return {} end
-    return BigBiSList:GetBuildGearRows(build, self.currentOwned, phase)
-end
-
-function UI:UpdateBuildSummary(gear, rows)
-    local build, summary = gear.build, gear.summary
-    summary:SetShown(build ~= nil)
-    gear.empty:SetShown(not build)
-    if not build then return end
-    local char, mode = BigBiSList:GetCharacterDB(), self:GetSelection().mode
-    local tracked = char.trackedBuilds and char.trackedBuilds[mode] == build.id
-    summary.track.label:SetText(tracked and "Untrack build" or "Track build")
-    summary.track:SetSelected(tracked)
-    summary.progress:SetText(string.format("%d/%d owned", rows.owned, rows.total))
-    summary.selector:Refresh()
-    summary.title:SetText((build.phase == LEVELING_PHASE_KEY and ("Level " .. build.level_min .. "–" .. build.level_max)
-        or BigBiSList:GetPhaseDisplayName(build.phase)) .. " · " .. (build.faction or build.spec))
-    summary.notes.fullText = table.concat({build.goal, build.talents, build.requirements, build.source_name}, "\n\n")
-    self:LayoutBuildSummary(gear)
-    summary.source:SetText(build.source_url)
-end
-
 function UI:RenderGearTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-    local inBuilds = self:GetViewKey() == "builds"
-    local gear = inBuilds and self.buildFrame or self.gearFrame
-    local rows
-    if inBuilds then
-        rows = self:GetBuildWorkspaceRows(gear, selection, filters)
-    else
-        rows = self:GetCachedViewQuery("gear", function()
-            return BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)
-        end)
-    end
+    local gear = self.gearFrame
+    local rows = self:GetCachedViewQuery("gear", function()
+        return BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)
+    end)
     self:QueueStatLoads(rows.statsPending)
     self:RunRenderTransaction(function()
         self.renderModel = nil
@@ -6813,14 +6673,9 @@ function UI:RenderGearTab()
         gear.score = rows.gearScore
         gear:SetShown(not self.inspectorExclusive)
         self.contentScroll:Hide()
-        if inBuilds then
-            self:UpdateBuildSummary(gear, rows)
-            for _, button in pairs(gear.slots) do button:SetShown(gear.build ~= nil) end
-        end
         for _, data in ipairs(rows) do
             local button = gear.slots[data.slotKey]
             button.gearData = data
-            if inBuilds then button:SetSelected(self.buildSlotKey == data.slotKey) end
             BigBiSList.Widgets:SetEquippedBiS(button, data.equipped_bis)
             if data.item_id then
                 self:SetItemButton(button.iconButton, data.item_id, button.itemName, data.name, data.item and data.item.quality, data, "gear")
@@ -6831,8 +6686,7 @@ function UI:RenderGearTab()
             end
             layoutGearSlotText(button)
         end
-        local geometryChanged = self:LayoutGearWorkspace(gear)
-        if inBuilds then return end
+        local geometryChanged = self:LayoutGearWorkspace()
         self:RefreshGearSelection()
         if gear:IsVisible() and self.gearPreviewOwnership ~= self.currentOwned then
             self.gearPreviewOwnership = self.currentOwned
@@ -8487,7 +8341,7 @@ function UI:Refresh(reason)
 
         if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
             self:RenderSlotComparison()
-        elseif tabName == "Equipped" or tabName == "Builds" then
+        elseif tabName == "Equipped" then
             self:RenderGearTab()
         elseif tabName == "Upgrades" then
             self:RenderPlannerTab()
@@ -9307,7 +9161,6 @@ function UI:CreateBody(frame)
     self.contentStaticLayer:SetHeight(1)
     self.contentStaticLayer:Hide()
     self.gearFrame = self:CreateGearWorkspace(contentPanel)
-    if BigBiSList.isForever then self.buildFrame = self:CreateGearWorkspace(contentPanel, true) end
     self.slotContextFrame = self:CreateSlotContext(contentRegion)
     if BigBiSList.isForever then
         local activityBar = CreateFrame("Frame", nil, contentRegion)
@@ -9404,21 +9257,18 @@ function UI:ApplyBodyLayout()
         self.contentPanel:SetPoint("TOPLEFT", top, supportsFilters and "BOTTOMLEFT" or "TOPLEFT", 0, supportsFilters and -4 or 0)
         self.contentPanel:SetPoint("BOTTOMRIGHT", self.contentRegion, "BOTTOMRIGHT", 0, 0)
     end
-    local viewKey = self:GetViewKey()
-    local showGear, showBuilds = viewKey == "myGear", viewKey == "builds"
-    self.detailsBackButton.label:SetText(showBuilds and "Builds" or (showGear and TAB_DISPLAY_LABELS.Equipped or "Back to list"))
-    local workspace = showBuilds and self.buildFrame or self.gearFrame
-    local gearWasShown = workspace:IsShown()
+    local showGear = self:GetViewKey() == "myGear"
+    self.detailsBackButton.label:SetText(showGear and TAB_DISPLAY_LABELS.Equipped or "Back to list")
+    local gearWasShown = self.gearFrame:IsShown()
     self.gearFrame:SetShown(showGear and not geometry.exclusive)
-    if self.buildFrame then self.buildFrame:SetShown(showBuilds and not geometry.exclusive) end
-    self.contentScroll:SetShown(not showGear and not showBuilds)
-    if showGear or showBuilds then
+    self.contentScroll:SetShown(not showGear)
+    if showGear then
         self.contentChild:SetHeight(math.max(1, self.contentScroll:GetHeight()))
-        if not gearWasShown and workspace:IsShown() and not self.refreshInProgress then
+        if not gearWasShown and self.gearFrame:IsShown() and not self.refreshInProgress then
             self:Invalidate("presentation", "gear-show")
             self:ScheduleRefresh(nil, "gear-show")
         end
-        if self:LayoutGearWorkspace(workspace) and showGear then self:RefreshGearSelection() end
+        if self:LayoutGearWorkspace() then self:RefreshGearSelection() end
     end
     self:LayoutSlotPicker()
     self.inspectorToggleButton:SetSelected(showInspector)
@@ -9529,7 +9379,7 @@ function UI:Open()
         self:RefreshControls()
         if dirty.layout then
             self:RefreshLayout("open")
-        elseif self:GetViewKey() == "myGear" or self:GetViewKey() == "builds" then
+        elseif self:GetViewKey() == "myGear" then
             self:RenderGearTab()
         else
             self:UpdateVirtualList(true)

@@ -455,13 +455,10 @@ end
 
 function BigBiSList:GetItemVariantIdFromLink(itemLink)
     if type(itemLink) ~= "string" or not self.IsReadableValue(itemLink) then return nil end
-    local itemString = itemLink:match("item:([^|%]]+)")
-    if not itemString then return nil end
-    local fields = {}
-    for field in (itemString .. ":"):gmatch("([^:]*):") do fields[#fields + 1] = field end
-    local itemId, suffix = tonumber(fields[1]), tonumber(fields[7])
-    if not itemId or not suffix or suffix == 0 then return nil end
-    return tostring(itemId) .. ":" .. tostring(suffix)
+    local itemId = tonumber(itemLink:match("item:(%d+)"))
+    local rating = self.ForeverGearRating
+    local key = rating and itemId and rating:NormalizeLink(itemId, itemLink)
+    if key and key ~= tostring(itemId) then return key end
 end
 
 function FILTER_FACETS.rowOwnedState(ownedItems, row)
@@ -4370,85 +4367,6 @@ function BigBiSList:GetEquipmentSlotDefinitions()
     return EQUIPMENT_SLOTS
 end
 
-function BigBiSList:GetReviewedBuilds(className, specName, phase, level)
-    local builds = {}
-    local faction, race = self:GetPlayerFactionName(), self:GetPlayerRaceName()
-    for _, build in ipairs((BigBiSListData or {}).reviewed_builds or {}) do
-        if build.class == className and build.spec == specName and build.phase == phase
-            and (not build.faction or build.faction == faction) and (not build.race or build.race == race)
-            and (phase ~= LEVELING_PHASE_KEY or (level and level >= build.level_min and level <= build.level_max)) then
-            builds[#builds + 1] = build
-        end
-    end
-    return builds
-end
-
-function BigBiSList:GetBuildGearRows(build, owned, phase)
-    local rows = { total = 0, owned = 0 }
-    local service = self.ForeverGearRating
-    local equipped = owned.equippedSlots or {}
-    local worn, used, reserve = {}, {}, {}
-    local copies = { bag = {}, bank = {} }
-    local function identity(entry)
-        return entry and service:NormalizeLink(entry.item_id, entry.item_link)
-    end
-    local function countCopy(entry)
-        local key, pool = identity(entry), copies[entry.state]
-        if key and pool then pool[key] = (pool[key] or 0) + 1 end
-    end
-    for _, entry in pairs(owned.gearCopies or owned.gearStatLinks or {}) do countCopy(entry) end
-    for _, definition in ipairs(EQUIPMENT_SLOTS) do
-        local key = definition.key
-        local expected = build.slots[key]
-        worn[key] = identity(equipped[key])
-        if worn[key] and worn[key] == expected then reserve[key] = key; used[key] = true end
-    end
-    local peers = { Finger0 = "Finger1", Finger1 = "Finger0", Trinket0 = "Trinket1", Trinket1 = "Trinket0" }
-    for _, definition in ipairs(EQUIPMENT_SLOTS) do
-        local key = definition.key
-        local expected = build.slots[key]
-        local row = { slotKey = key, slot = definition.label, build_target = true, overlay = "Left empty", name = definition.label }
-        if type(expected) == "string" then
-            local peer = peers[key]
-            local target = reserve[key]
-            if not target and peer and not used[peer] and worn[peer] == expected then
-                target, used[peer] = peer, true
-            end
-            local state = target and "equipped" or "missing"
-            if not target then
-                for _, location in ipairs({ "bag", "bank" }) do
-                    local pool = copies[location]
-                    if (pool[expected] or 0) > 0 then
-                        pool[expected] = pool[expected] - 1
-                        state = location
-                        break
-                    end
-                end
-            end
-            local facts = service:GetPublishedFacts(expected)
-            local id = facts and facts.id or tonumber(expected:match("^%d+"))
-            local item = self:GetItemData(id)
-            row.item_id, row.item, row.owned_state = id, item, state
-            row.name = (facts and facts.name) or (item and item.name) or tostring(id)
-            row.item_link = target and equipped[target].item_link
-            if not row.item_link and facts and facts.variant_id then
-                local suffix = facts.variant_id:match("^%d+:(%-?%d+)$")
-                if suffix then row.item_link = string.format("item:%d:0:0:0:0:0:%s:0", id, suffix) end
-            end
-            row.phase, row.class, row.spec, row.variant_id = phase, build.class, build.spec, facts and facts.variant_id
-            row.leveling = phase == LEVELING_PHASE_KEY
-            row.overlay = ({ equipped = "Equipped", bag = "In bags", bank = "In bank (last visit)", missing = "Missing" })[state]
-            row.ownership_state = state
-            row.owned = state ~= "missing"
-            row.requirements = item and item.requirements
-            rows.total = rows.total + 1
-            if row.owned then rows.owned = rows.owned + 1 end
-        end
-        rows[#rows + 1] = row
-    end
-    return rows
-end
-
 function BigBiSList:GetPhaseShortName(phaseKey)
     return PHASE_SHORT_DISPLAY[phaseKey] or self:GetPhaseDisplayName(phaseKey)
 end
@@ -5434,7 +5352,7 @@ function BigBiSList:CompareRecommendationItems(candidateId, referenceId, classNa
         if delta then
             result.relation = delta > 0.0001 and "higher" or (delta < -0.0001 and "lower" or "same_rating")
             result.phase, result.basis_key, result.score_delta = targetPhase, "active_build", delta
-            result.explanation = "Active build " .. string.format("%+.2f", delta)
+            result.explanation = "Your setup · " .. string.format("%+.2f", delta)
             if #effects > 0 then result.explanation = result.explanation .. " · " .. table.concat(effects, ", ") end
             return result
         end
@@ -6360,7 +6278,7 @@ function LEVELING_HELPERS.formatSwap(service, swap)
     if not swap or swap.delta == nil then return nil end
     local replaced = {}
     for _, item in ipairs(swap.replacements) do replaced[#replaced + 1] = item.name .. " (" .. item.slot .. ")" end
-    local label = service:GetSwapBasisLabel(swap)
+    local label = service:GetSwapBasisLabel(swap.basis)
     if swap.conditional then label = label .. " · Conditional" end
     return string.format("%s · %+.1f pts", label, swap.delta)
         .. (#replaced > 0 and (" vs " .. table.concat(replaced, " + ")) or (" · " .. swap.definition.label))
@@ -8210,7 +8128,7 @@ function BigBiSList:GetGroupedLevelingTooltipMatches(itemId, selectedClass, sele
     for _, group in ipairs(groupedMatches) do
         group.slot = buildTooltipGroupSlotLabel(group)
         group.phase_summary = FILTER_FACETS.buildTooltipGroupSummary(group, expanded)
-        if self.ForeverScoring then group.scoring_label = group.uses[1].scoring_label or "Reference build" end
+        if self.ForeverScoring then group.scoring_label = group.uses[1].scoring_label end
         group.slot_seen = nil
     end
 
@@ -8250,7 +8168,7 @@ function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec
             #group.slots == 1 and group.slots[1] or nil)
         group.future_summary = group.recommendation_history.future_summary
         group.phase_summary = FILTER_FACETS.buildTooltipGroupSummary(group, expanded)
-        if self.ForeverScoring then group.scoring_label = group.uses[1].scoring_label or "Reference build" end
+        if self.ForeverScoring then group.scoring_label = group.uses[1].scoring_label end
         group.slot_seen = nil
     end
 

@@ -292,7 +292,7 @@ end
 local function storageBindingMatches(entry, bag, slot)
     if not bag or not slot or entry.sourceId ~= bag .. ":" .. slot or not storageContextMatches(entry) then return false end
     if entry.kind == "bank" and not ui.personalBankOpen then return false end
-    return rating:SameStorageItemLink(entry.itemId, entry.link, storageLink(bag, slot))
+    return rating:SameExactItemLink(entry.itemId, entry.link, storageLink(bag, slot))
         and storageGUIDMatches(entry.guid, entry.guid and ui:GetStorageItemGUID(bag, slot))
 end
 
@@ -335,7 +335,7 @@ local function collectStorage(items, settings)
         if not kind or settings[kind] == false then return end
         if kind == "bank" and not ui.personalBankOpen then return end
         local link = storageLink(bag, slot)
-        if not link or (expectedLink and not rating:SameStorageItemLink(itemIdFromLink(link), link, expectedLink)) then return end
+        if not link or (expectedLink and not rating:SameExactItemLink(itemIdFromLink(link), link, expectedLink)) then return end
         local guid = ui:GetStorageItemGUID(bag, slot)
         if not storageGUIDMatches(guid, expectedGUID) then return end
         addItem(items, { kind = kind, row = row, sourceId = bag .. ":" .. slot,
@@ -904,7 +904,7 @@ function highlights:GetTooltipOffer(owner, itemId, link)
         local entry = offers[owner]
         if entry and shown(owner) and entry.itemId == itemId and link then
             if entry.owned then
-                if rating:SameStorageItemLink(itemId, link, entry.link) then
+                if rating:SameExactItemLink(itemId, link, entry.link) then
                     local bag, slot
                     if entry.widget then
                         local state = baganatorItems[owner]
@@ -978,7 +978,7 @@ local function hookBaganator()
         local itemId = itemIdFromLink(live)
         local shownGUID = read(details.guid, "string")
         local guid = itemId and ui:GetStorageItemGUID(bag, slot)
-        if not rating:SameStorageItemLink(itemId, live, link) or not storageGUIDMatches(guid, shownGUID) then
+        if not rating:SameExactItemLink(itemId, live, link) or not storageGUIDMatches(guid, shownGUID) then
             clearMark(row, true, true)
             baganatorItems[row] = nil
             return false
@@ -986,12 +986,12 @@ local function hookBaganator()
         guid = guid or shownGUID
         -- A redraw creates new metadata tables for the same physical item.
         local changed = not previous or previous.bag ~= bag or previous.slot ~= slot or previous.active == false
-            or not rating:SameStorageItemLink(itemId, previous.link, live) or not storageGUIDMatches(previous.guid, guid)
+            or not rating:SameExactItemLink(itemId, previous.link, live) or not storageGUIDMatches(previous.guid, guid)
         baganatorItems[row] = { details = details, link = live, bag = bag, slot = slot, guid = guid, widget = widget, active = true }
         local sourceId = bag .. ":" .. slot
         local cached = baganatorCache[sourceId]
         local settings = addon:GetAccountDB().profile.gearHighlights
-        if cached and rating:SameStorageItemLink(itemId, cached.link, live) and settings[cached.kind] ~= false
+        if cached and rating:SameExactItemLink(itemId, cached.link, live) and settings[cached.kind] ~= false
             and storageGUIDMatches(guid, cached.guid)
             and storageContextMatches(cached)
             and (cached.kind ~= "bank" or ui.personalBankOpen) then

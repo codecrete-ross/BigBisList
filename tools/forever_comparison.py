@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 
-from tools.forever import eligible, item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
+from tools.forever import item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
 from tools.forever_item_effects import FLAT_PASSIVE_STATS, attach_rules, effect_lines, recover_permanent_stats, unresolved_lines
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
@@ -33,14 +33,6 @@ def normalized_item_stats(item: dict) -> dict:
     return stats
 
 
-BUILD_SLOTS = {slot: {slot} for slot in ("Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet")}
-BUILD_SLOTS.update({
-    "Finger0": {"Ring"}, "Finger1": {"Ring"}, "Trinket0": {"Trinket"}, "Trinket1": {"Trinket"},
-    "MainHand": {"Main Hand", "One Hand", "Two Hand"}, "OffHand": {"Off Hand", "One Hand"},
-    "Ranged": {"Ranged", "Libram", "Idol", "Totem", "Relic"},
-})
-
-
 def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
     items, stats = [], []
     for row in reviewed:
@@ -57,51 +49,6 @@ def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
         items.append(item)
         stats.append({key: value for key, value in row.items() if key != "review"})
     return items, stats
-
-
-def compile_reviewed_builds(builds: list[dict], catalog: dict, items: list[dict], stats: list[dict]) -> list[dict]:
-    profiles = {(profile["class"], profile["spec"]): profile for profile in scoring_profiles()["profiles"]}
-    sources = {item["id"]: item["sources"] for item in items if item.get("sources")}
-    library = {str(item["id"]): item for item in stats}
-    seen = set()
-    for build in builds:
-        name = build["id"]
-        start, end = build["level_min"], build["level_max"]
-        leveling = build["phase"] == "LEVELING"
-        profile = profiles.get((build["class"], build["spec"]))
-        if (not name or name in seen or not profile or build["faction"] not in {"Alliance", "Horde"}
-                or (not (1 <= start <= end < 60) if leveling else (start != 60 or end != 60 or build["phase"] != "PR"))
-                or not build["source_url"].startswith("https://") or set(build["slots"]) != set(BUILD_SLOTS)):
-            raise ValueError(f"Invalid Forever build {name}")
-        seen.add(name)
-        limits = {}
-        for position, key in build["slots"].items():
-            if key == 0:
-                continue
-            fields = catalog["items"].get(key)
-            if not fields:
-                raise ValueError(f"Unknown variant {key} in Forever build {name}")
-            facts = dict(zip(catalog["item_fields"], fields))
-            slot, identifier = facts["slot"], facts["id"]
-            original = library.get(str(identifier), {})
-            equip_slot = ("Off Hand" if position == "OffHand" else "Main Hand") if slot == "One Hand" else slot
-            if (not original or slot not in BUILD_SLOTS[position] or equip_slot not in profile["slots"] or facts["has_random_stats"]
-                    or (facts["level"] is not None and facts["level"] > start)
-                    or not eligible(original, profile, equip_slot, require_source=False)
-                    or not any(source.get("side") in {None, "Both", build["faction"]} and valid_source(source)
-                               for source in sources.get(identifier, []))):
-                raise ValueError(f"Ineligible {position} {key} in Forever build {name}")
-            if slot == "Two Hand" and build["slots"]["OffHand"] != 0:
-                raise ValueError(f"Two-handed build {name} equips an off-hand")
-            group = facts["unique_group"]
-            limit = facts["max_equipped"] or (1 if group else None)
-            if limit is not None:
-                identity = group.casefold() if group else identifier
-                copies, cap = limits.get(identity, (0, limit))
-                limits[identity] = (copies + 1, min(cap, limit))
-        if any(copies > cap for copies, cap in limits.values()):
-            raise ValueError(f"Unique-equip limit exceeded in Forever build {name}")
-    return builds
 
 
 def comparison_facts(item: dict, description: str = "") -> dict | None:

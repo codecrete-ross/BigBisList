@@ -470,7 +470,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("function UI:RenderGearTab()", ui)
         self.require_tokens(self.ui_function("RenderGearTab"), ['gear.slots[data.slotKey]', 'self.contentScroll:Hide()'])
         self.require_tokens(ui, [
-            'function UI:CreateGearWorkspace(parent, builds)',
+            'function UI:CreateGearWorkspace(parent)',
             'function UI:RefreshGearSelection()',
             'self:GetRowSlotDisplay(data)',
             'self:CreateDetailsPhaseMatrix(',
@@ -1132,7 +1132,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_current_gear_uses_the_fixed_paper_doll_workspace(self):
         ui = self.read_lua("UI.lua")
         self.require_tokens(self.ui_function("RenderGearTab"), [
-            'self.renderModel = nil', 'self:ReleaseRenderFrames()', 'self:LayoutGearWorkspace(gear)',
+            'self.renderModel = nil', 'self:ReleaseRenderFrames()', 'self:LayoutGearWorkspace()',
         ])
         self.require_tokens(self.ui_function("ApplyBodyLayout"), ['self.gearFrame:SetShown(', 'self.contentScroll:SetShown('])
         self.assertNotIn("CreateGearCard", ui)

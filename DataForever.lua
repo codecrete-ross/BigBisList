@@ -145052,6 +145052,10 @@ BigBiSListData = {
                 ["weapon_speed_proc"] = nil,
             },
         },
+        ["set_names"] = {
+            ["188"] = "Lightforge Armor",
+            ["189"] = "Battlegear of Valor",
+        },
         ["traits"] = {
             ["129385"] = {
                 ["definition_id"] = 134186,
@@ -2762933,42 +2762937,6 @@ BigBiSListData = {
         {
             ["key"] = "PR",
             ["name"] = "Pre-Raid",
-        },
-    },
-    ["reviewed_builds"] = {
-        {
-            ["class"] = "Paladin",
-            ["faction"] = "Alliance",
-            ["goal"] = "Three Lightforge pieces grant 18 Spell Power. Pair them with a two-handed sword, melee crit, and gear that supports Holy damage.",
-            ["id"] = "ret-lightforge-starter",
-            ["level_max"] = 60,
-            ["level_min"] = 60,
-            ["name"] = "Lightforge starter",
-            ["phase"] = "PR",
-            ["requirements"] = "Level 60. Train two-handed swords. The Alliance libram comes from your Paladin crafting route.",
-            ["slots"] = {
-                ["Back"] = "22269",
-                ["Chest"] = "12603",
-                ["Feet"] = "16711",
-                ["Finger0"] = "13098",
-                ["Finger1"] = "7686",
-                ["Hands"] = "16712",
-                ["Head"] = "16727",
-                ["Legs"] = "16728",
-                ["MainHand"] = "18520",
-                ["Neck"] = "7731",
-                ["OffHand"] = 0,
-                ["Ranged"] = "249442",
-                ["Shoulder"] = "16729",
-                ["Trinket0"] = "12930",
-                ["Trinket1"] = "273840",
-                ["Waist"] = "6460",
-                ["Wrist"] = "18754",
-            },
-            ["source_name"] = "Big BiS List · Blizzard Paladin notes",
-            ["source_url"] = "https://worldofwarcraft.blizzard.com/en-us/news/24302099",
-            ["spec"] = "Retribution",
-            ["talents"] = "Take Seal of Command for Vengeance. Champion of the Light adds spell damage from Intellect.",
         },
     },
     ["schemas"] = {

@@ -503,6 +503,40 @@ assert(score({{stats = {spirit = 10}}}, {spirit = 1}, {}, {}, fixture[7], 1) == 
 assert(score({{stats = {spirit = 10}}}, {spirit = 1}, {}, {}, fixture[7], 2) == 10)
 ''')
 
+    def test_swap_explains_verified_set_thresholds_and_talent_contributions(self):
+        names = self.runtime["set_names"]
+        self.assertEqual(names[188], "Lightforge Armor")
+        self.lua_run("local setNames = " + lua_value(names) + r'''
+BigBiSList = {}
+dofile("ForeverScoring.lua")
+local scoring = BigBiSList.ForeverScoring
+local model = {set_names = setNames, items = {leveling = {}, pre_raid = {}}}
+local weights = {intellect = 0.5, spell_power = 1}
+local ordinary = {id = 3, slot = "Legs", stats = {intellect = 6}}
+local lightforge = {id = 4, slot = "Legs", stats = {intellect = 10}, set_id = 188}
+local alternate = {id = 5, slot = "Legs", stats = {intellect = 10}}
+local function setup(legs)
+    return {model = model, mode = "leveling", level = 49, weights = weights, ranks = {[10] = 5},
+        gear = {[1] = {id = 1, stats = {}, set_id = 188}, [3] = {id = 2, stats = {}, set_id = 188}, [7] = legs},
+        scenario = {sets = {{set_id = 188, pieces = 3, stats = {spell_power = 18}}}, effect_expectations = {}},
+        profile = {operations = {{entry = 10, kind = "convert", from_stat = "intellect", stats = {"spell_power"},
+            factors = {0.12, 0.24, 0.36, 0.48, 0.60}, name = "Champion of the Light"}}}}
+end
+
+local first = setup(ordinary)
+local gained = scoring:EvaluateSwap(first, lightforge, nil, 7, "Legs", weights)
+assert(math.abs(gained.delta - 22.4) < 1e-8)
+assert(gained.effects[1] == "Champion of the Light (+2.40)")
+assert(gained.effects[2] == "3-piece Lightforge Armor bonus gained")
+local noChange = scoring:EvaluateSwap(first, alternate, nil, 7, "Legs", weights)
+assert(math.abs(noChange.delta - 4.4) < 1e-8 and #noChange.effects == 1)
+
+local lost = scoring:EvaluateSwap(setup(lightforge), ordinary, nil, 7, "Legs", weights)
+assert(math.abs(lost.delta + 22.4) < 1e-8)
+assert(lost.effects[1] == "Champion of the Light (-2.40)")
+assert(lost.effects[2] == "3-piece Lightforge Armor bonus lost")
+''')
+
     def test_ring_ranks_use_one_baseline_and_choose_a_legal_swap(self):
         self.lua_run(r'''
 BigBiSList = {}

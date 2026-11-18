@@ -228,7 +228,7 @@ function UI:GetComparisonSpecLabel(spec)
 end
 
 local function swapSortLabel(state)
-    return state.swapBasis == "active" and "Your build" or "Default spec weights"
+    return addon.ForeverGearRating:GetSwapBasisLabel(state.swapBasis)
 end
 
 local function comparableDelta(state, row)
@@ -634,7 +634,7 @@ function UI:BindComparisonRow(row, entry, pinned)
         local swap = data.stat_swap
         local delta = swap and (state.sort ~= "comparison" or swap.basis == state.swapBasis) and swap.delta
         local change = delta and string.format("%s %+.1f pts", swap.conditional and "Conditional" or "Est.", delta) or "—"
-        if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap) end
+        if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap.basis) end
         if pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
         if not pinned or data.context.slotKey == state.reference.slotKey then
             setCell(row.evidenceText, change, columns.evidence.x, columns.evidence.width, entry.height, lines)
@@ -646,7 +646,7 @@ function UI:BindComparisonRow(row, entry, pinned)
         end
         local hover = placement and service:DescriptionLines(placement) or {}
         if swap and swap.delta then
-            local basis = service:GetSwapBasisLabel(swap)
+            local basis = service:GetSwapBasisLabel(swap.basis)
             if swap.conditional then basis = basis .. " · Conditional" end
             hover[#hover + 1] = string.format("%s · %+.1f pts", basis, swap.delta)
         end

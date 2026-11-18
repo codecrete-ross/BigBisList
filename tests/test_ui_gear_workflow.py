@@ -195,18 +195,27 @@ assert(ui:OpenSlotComparison(shoulder, "gear", true)); H.settle()
 local comparison = ui.slotComparison
 local first, second, fallback, conditional = unpack(comparison.rows, 1, 4)
 for _, row in ipairs(comparison.rows) do row.stat_swap = nil end
-first.stat_swap = {basis = "active", delta = 2}
+first.stat_swap = {basis = "active", delta = 2, definition = {label = "Shoulder"}, replacements = {{name = "Worn item", slot = "Shoulder"}},
+    effects = {"Champion of the Light (+0.42)", "3-piece Lightforge Armor bonus gained"}}
 second.stat_swap = {basis = "active", delta = 1}
 fallback.stat_swap = {basis = "reference", delta = 120}
 conditional.stat_swap = {basis = "active", delta = 90, conditional = true}
 comparison.swapBasis = "active"
 ui:SetComparisonSort("comparison"); H.settle()
-assert(ui:GetComparisonSortLabel() == "Your build")
+assert(ui:GetComparisonSortLabel() == "Your setup")
 local candidates = {}
 for _, item in ipairs(comparison.entries) do
     if item.kind == "row" and not item.data.context then candidates[#candidates + 1] = item.data end
 end
 assert(candidates[1] == first and candidates[2] == second)
+ui:ShowComparisonDetails(first); H.settle()
+local statRank
+for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
+    if block:IsVisible() and block.title:GetText() == "Stat rank" then statRank = block.body:GetText() end
+end
+assert(statRank and statRank:find("Your setup · +2.0 pts vs Worn item (Shoulder)", 1, true))
+assert(statRank:find("Champion of the Light (+0.42)", 1, true))
+assert(statRank:find("3-piece Lightforge Armor bonus gained", 1, true))
 ''')
 
     def test_paper_doll_fits_and_tracks_physical_slots_and_item_links(self):
@@ -807,56 +816,45 @@ ui:ClearFilters(); H.settle()
 assert(not ui.levelingSlotReference and not ui.slotContextFrame:IsShown())
 ''')
 
-    def test_build_tracks_exact_copies_and_keeps_the_paper_doll_on_return(self):
+    def test_retired_build_tab_migrates_in_both_modes(self):
         self.run_lua(r'''
-UnitClass = function() return "Paladin", "PALADIN" end
-UnitClassBase = function() return "PALADIN" end
-UnitLevel = function() return 60 end
-UnitRace = function() return "Human", "Human", 1 end
-H.equipped[11], H.equipped[12] = 7686, 13098
 local addon = BigBiSList
-local bank = addon:GetCharacterDB().bankCache
-bank.scanned, bank.links = true, { "item:273840" }
-C_Container = {
-    GetContainerNumSlots = function(bag) return bag == 0 and 1 or 0 end,
-    GetContainerItemID = function(bag, slot) if bag == 0 and slot == 1 then return 12930 end end,
-    GetContainerItemLink = function(bag, slot) if bag == 0 and slot == 1 then return "item:12930" end end,
-}
-ui:Open(); H.settle()
-ui:SetContentMode("endgame")
-ui:SetClass("Paladin")
-ui:SetSpec("Retribution")
-ui:SetTab("Builds"); H.settle()
-local gear = ui.buildFrame
-assert(gear:IsVisible() and not ui.contentScroll:IsVisible() and not gear.empty:IsShown())
-assert(gear.slots.Finger0.gearData.overlay == "Equipped" and gear.slots.Finger1.gearData.overlay == "Equipped")
-assert(gear.slots.Trinket0.gearData.overlay == "In bags" and gear.slots.Trinket1.gearData.overlay == "In bank (last visit)")
-assert(gear.summary.progress:GetText() == "4/16 owned" and gear.slots.OffHand.gearData.overlay == "Left empty")
-gear.summary.track:Click(); H.settle()
-assert(addon:GetCharacterDB().trackedBuilds.endgame == gear.build.id)
-assert(gear.summary.track.label:GetText() == "Untrack build")
-for _, resolution in ipairs({ {1020, 560}, {1160, 660}, {900, 500} }) do
-    UIParent:SetSize(resolution[1], resolution[2])
-    ui.frame:SetSize(resolution[1], resolution[2])
-    for _, density in ipairs({ "comfortable", "compact" }) do
-        addon:GetAccountDB().profile.window.density = density
-        ui:RefreshLayout("build-test")
-        H.settle()
-        for _, button in pairs(gear.slots) do
-            assert(button:IsVisible() and button:IsEnabled())
-            H.expectBounded(button, gear, "build slot")
-        end
-        assert(not ui.contentScroll:IsVisible())
-        H.expectBounded(gear.summary.notes, gear.summary, "build notes")
-    end
+function UnitLevel() return 49 end
+
+for _, mode in ipairs({"leveling", "endgame"}) do
+    local wishlist, bank = {[18520] = true}, {scanned = true, links = {"item:12930"}}
+    BigBiSListCharDB.forever = {
+        defaultsVersion = 19,
+        foreverLevelingMigrated = true,
+        selection = { mode = mode, tab = "Builds", class = "Paladin", spec = "Retribution", phase = "PR",
+            lastTabs = { leveling = "Builds", endgame = "Builds" } },
+        leveling = { selectedLevel = 48, manualLevel = true },
+        wishlist = wishlist,
+        bankCache = bank,
+        trackedBuilds = { endgame = "old-outfit" },
+        viewState = { builds = {}, gearGuide = { filters = { search = "rings" } } },
+    }
+    local char = addon:GetCharacterDB()
+    local selection = addon:GetSelection()
+    local expected = mode == "leveling" and "Gear Guide" or "Upgrades"
+    assert(selection.mode == mode and selection.tab == expected and char.selectedTab == expected)
+    assert(selection.lastTabs.endgame == "Upgrades" and selection.lastTabs.leveling == "Gear Guide")
+    assert(selection.class == "Paladin" and selection.spec == "Retribution" and selection.phase == "PR")
+    assert(addon:GetSelectedLevelingLevel() == 48 and char.leveling.manualLevel)
+    assert(char.wishlist == wishlist and char.wishlist[18520])
+    assert(char.bankCache == bank and char.bankCache.links[1] == "item:12930")
+    assert(char.viewState.gearGuide.filters.search == "rings")
+    assert(not char.trackedBuilds and not char.viewState.builds)
+    local expectedTabs = mode == "leveling" and "Gear Guide/Equipped/Wishlist" or "Upgrades/By Slot/Equipped/Wishlist"
+    assert(table.concat(ui:GetActiveTabNames(), "/") == expectedTabs)
 end
-gear.slots.MainHand:Click(); H.settle()
-assert(ui.selectedItemId == 18520 and ui:GetSelection().tab == "Builds")
-if ui.inspectorExclusive then ui.detailsBackButton:Click(); H.settle() end
-assert(gear:IsVisible() and gear.slots.MainHand.selected)
-ui:SetContentMode("leveling"); ui:SetTab("Builds"); H.settle()
-assert(gear.empty:IsVisible() and not gear.summary:IsVisible())
-assert(addon:GetCharacterDB().trackedBuilds.endgame and not addon:GetCharacterDB().trackedBuilds.leveling)
+
+ui:Open(); H.settle()
+assert(ui.contentScroll:IsVisible() and ui:GetViewKey() == "upgrades")
+ui:SetTab("Equipped"); H.settle()
+assert(ui.gearFrame:IsVisible() and not ui.contentScroll:IsVisible())
+ui:SetContentMode("leveling"); H.settle()
+assert(ui:GetViewKey() == "gearGuide" and ui.contentScroll:IsVisible())
 ''')
 
     def test_late_stats_refresh_the_current_equipped_item_after_swapping(self):

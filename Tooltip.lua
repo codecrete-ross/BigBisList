@@ -303,15 +303,15 @@ local function colorText(text, r, g, b)
         math.floor(b * 255 + 0.5), text)
 end
 
-local function tooltipRank(result, range)
+local function tooltipRank(result)
     local rating, placement = BigBiSList.ForeverGearRating, result.placement
-    local label = range and string.format("%s %s · #%d/%d", placement.tier.label,
-        rating:TierRangeLabel(range), placement.rank, placement.total) or rating:Label(placement, "compact")
-    if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
-    if not range and placement.score ~= nil and (result.preview or placement.phase == "PR") then
-        label = label .. " · " .. rating:ScopeLabel(placement)
+    local label = rating:Label(placement, "compact")
+    if placement.score ~= nil then
+        if placement.phase == "LEVELING" then label = label .. " at Lv " .. placement.level
+        elseif placement.phase then label = label .. " · " .. rating:ScopeLabel(placement) end
     end
-    return label
+    if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
+    return placement.projected and ("Projected · " .. label) or label
 end
 
 local function deltaText(delta)
@@ -319,6 +319,14 @@ local function deltaText(delta)
     if points == 0 then return "0.0 pts" end
     if delta > 0 then return colorText(string.format("+%.1f pts", points), 0.3, 0.94, 0.58) end
     return colorText(string.format("-%.1f pts", points), 1, 0.51, 0.51)
+end
+
+local function replacementNames(result)
+    local names = {}
+    for _, item in ipairs(result.replacements) do
+        names[#names + 1] = item.name .. " (" .. item.slot .. (item.state == "bank" and ", bank" or "") .. ")"
+    end
+    return table.concat(names, " + ")
 end
 
 local function swapText(result, ownedBaseline, guaranteed)
@@ -333,13 +341,24 @@ local function swapText(result, ownedBaseline, guaranteed)
     end
     local baseline = estimate .. " vs the best gear you own" .. bank
     if guaranteed then baseline = baseline .. " with guaranteed rewards" end
-    local names = {}
-    for _, item in ipairs(result.replacements) do
-        names[#names + 1] = item.name .. " (" .. item.slot .. (item.state == "bank" and ", bank" or "") .. ")"
+    local replacements = replacementNames(result)
+    if ownedBaseline then return replacements ~= "" and (baseline .. ", replacing " .. replacements) or baseline end
+    return replacements ~= "" and (estimate .. " vs " .. replacements) or estimate
+end
+
+local function forecastText(forecast)
+    local level = "At Lv " .. forecast.level .. " · "
+    if forecast.delta == nil then
+        return level .. (forecast.status == "loading" and "Loading owned item stats" or "Owned gear comparison unavailable")
     end
-    local replacements = table.concat(names, " + ")
-    if ownedBaseline then return #names > 0 and (baseline .. ", replacing " .. replacements) or baseline end
-    return #names > 0 and (estimate .. " vs " .. replacements) or estimate
+    local rating = BigBiSList.ForeverGearRating
+    local points = rating:RoundedGain(forecast.delta)
+    local comparison = points == 0 and "Same score as best owned" or ("Est. " .. deltaText(forecast.delta) .. " vs best owned")
+    local replacements = replacementNames(forecast)
+    if replacements ~= "" then comparison = comparison .. ", replacing " .. replacements end
+    if forecast.bank then comparison = comparison .. " · Includes cached bank gear" end
+    return level .. comparison .. " · " .. rating:GetSwapBasisLabel(forecast.basis)
+        .. (forecast.conditional and " · Conditional" or "")
 end
 
 local function storageText(comparison, scenario)
@@ -396,12 +415,16 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
             local result = comparison.result
             local label = BigBiSList.ForeverGearRating:ScenarioLabel(comparison.scenario)
             local range = index == 1 and row.tierRange or nil
-            local rank = tooltipRank(result, range)
+            local rank = tooltipRank(result)
             tooltip:AddLine(#comparisons > 1 and label and (label .. " · " .. rank) or rank, r, g, b, true)
-            local extra = swapText(result, comparison.ownedBaseline, comparison.guaranteed)
+            if range and range.lastLevel > range.firstLevel then
+                tooltip:AddLine("Tier range · " .. BigBiSList.ForeverGearRating:TierRangeLabel(range), r, g, b, true)
+            end
+            local extra = result.forecast and forecastText(result.forecast)
+                or swapText(result, comparison.ownedBaseline, comparison.guaranteed)
             if extra then
                 if result.delta ~= nil then
-                    extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result) .. " · " .. extra
+                    extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result.basis) .. " · " .. extra
                     if result.conditional then extra = extra .. " · Conditional" end
                 end
                 tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)

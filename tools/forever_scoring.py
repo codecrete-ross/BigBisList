@@ -365,6 +365,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                          f"({rules_build} to {model['client_build']}, scope digest {scope_digest})")
     sets = snapshot.get("flat_sets", [])
     item_sets = {item_id: row["set_id"] for row in sets for item_id in row["item_ids"]}
+    set_names = {row["set_id"]: row["name"] for row in sets if row.get("name")}
     if len(item_sets) != sum(len(row["item_ids"]) for row in sets):
         raise ValueError("Reviewed item sets have overlapping membership")
     items = {mode: {identity(item): {**pack_item(item),
@@ -497,7 +498,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                           "weapon_speed_proc": speed_proc, **({"dungeon": dungeon} if dungeon else {})}
     return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]), "profiles": profiles,
             "traits": traits, "items": items, "enchants": enchants, "triggers": snapshot["ability_triggers"],
-            **({"item_sets": item_sets} if item_sets else {})}, bindings
+            **({"item_sets": item_sets} if item_sets else {}), **({"set_names": set_names} if set_names else {})}, bindings
 
 
 def read_model(snapshots: dict | None = None) -> tuple[dict, dict] | None:

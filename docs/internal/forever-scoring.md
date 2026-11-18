@@ -105,15 +105,10 @@ across browsing filters. Compare Slot retains the exact equipped reference
 and shows the live swap estimate when that comparison has a reviewed model.
 My Gear uses the same reference weights for its outfit score and respects
 weapon configurations and unique-equip limits when finding the benchmark.
-Builds shows authored outfits and tracks exact copies independently of rank.
 
-The Zockify Retribution Pre-Raid review identified several pieces outside the
-verified item and route catalog. The first tracked build uses a separately
-authored Lightforge dungeon setup with a reviewed three-piece bonus and
-acquisition routes for every target. Big Bad Pauldrons uses the observed
-Forever server tooltip and the published OneForAll dungeon loot record.
-[Zockify Retribution](https://www.zockify.com/forever/paladin/retribution/)
-· [Big Bad Pauldrons tooltip](https://bindonforever.com/item/9476)
+Big Bad Pauldrons uses the observed Forever server tooltip and the published
+OneForAll dungeon loot record.
+[Big Bad Pauldrons tooltip](https://bindonforever.com/item/9476)
 · [Zul’Farrak loot record](https://guide.wow4ever.se/en/items/9476)
 
 Bag and bank badges require a legal swap with both a positive total change
@@ -266,9 +261,10 @@ rankings for previews, unreadable inputs, and unsupported builds.
 Filter the full reviewed candidate pool for faction, race, class, acquisition,
 and legal equipment before ranking. Apply the existing selection and
 tie-breaking policies after scoring. Use the same scoring result in gear
-recommendations, comparisons, tooltips, and planner upgrade indicators. Identify
-the active or reference build used and show the verified effects behind a
-material swap.
+recommendations, comparisons, tooltips, and planner upgrade indicators. Label
+live swap scores **Your setup** and reference estimates **Default spec weights**.
+Details identifies contributing talents and reviewed set bonuses the swap gains
+or loses.
 
 ### Gear presentation
 

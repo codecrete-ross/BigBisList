@@ -369,7 +369,7 @@ assert(tip:find("Stronger option you own · Revenant Chestplate of the Champion 
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("12753", "12723")))
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128::", "item:10128:1900:")))
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128:::", "item:10128::4001:")))
-assert(not rating:SameStorageItemLink(10128, "item:10128::::::-44", "item:10128::::::-45"))
+assert(not rating:SameExactItemLink(10128, "item:10128::::::-44", "item:10128::::::-45"))
 
 local function refresh(id)
     if id then rating:InvalidateItem(id) end

@@ -140,7 +140,6 @@ end
 local function tabIsValidForMode(tabName, mode)
     local normalizedMode = normalizeContentMode(mode)
     local normalizedTab = normalizeTabName(tabName)
-    if normalizedTab == "Builds" then return BigBiSList.isForever end
     return MODE_TABS[normalizedMode][normalizedTab] == true
 end
 
@@ -1325,10 +1324,15 @@ function BigBiSList:EnsureDatabase()
     migrateLegacyDefaults(characterDB, charPreviousVersion)
     normalizeContentModeState(characterDB)
     migrateViewState(characterDB, charPreviousVersion)
-    if self.isForever and (not charPreviousVersion or charPreviousVersion < 19) then
-        local guide, bis = characterDB.viewState.gearGuide, characterDB.viewState.bisList
-        if guide.sort == "priority" then guide.sort, guide.sortDirection = "stat_rank", "asc" end
-        if bis.sort == "rank" then bis.sort, bis.sortDirection = "stat_rank", "asc" end
+    if self.isForever then
+        -- Retire the saved state owned by the Builds tab.
+        characterDB.trackedBuilds = nil
+        characterDB.viewState.builds = nil
+        if not charPreviousVersion or charPreviousVersion < 19 then
+            local guide, bis = characterDB.viewState.gearGuide, characterDB.viewState.bisList
+            if guide.sort == "priority" then guide.sort, guide.sortDirection = "stat_rank", "asc" end
+            if bis.sort == "rank" then bis.sort, bis.sortDirection = "stat_rank", "asc" end
+        end
     end
     migrateTooltipSpecFilterDefaults(accountDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(characterDB, charPreviousVersion)

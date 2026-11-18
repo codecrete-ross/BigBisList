@@ -973,7 +973,6 @@ assert(not addon:AccessOptionMatchesCharacter(option,filters))
                 if collection == "item_stats":
                     item["stats"]["strength"] = item["stats"]["stamina"]
         overlay = {"items":{"items":[]}, "item_stats":{"item_stats":[]}, "bis_lists":{"lists":[]},
-                   "reviewed_builds":{"builds":[]},
                    "leveling_items":{"items":list(result["items"].values())},
                    "leveling_item_stats":{"item_stats":list(result["item_stats"].values())},
                    "leveling_gear":result["leveling_gear"], "leveling_recommendations":result["leveling_recommendations"]}

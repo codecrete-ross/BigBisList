@@ -108,7 +108,7 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
             explanations[operation.entry] = (explanations[operation.entry] or 0) + value() - before
         end
     end
-    return value(), explanations
+    return value(), explanations, sets
 end
 
 local function expectedActivations(rule, observation, loadout, position)
@@ -197,8 +197,8 @@ end
 function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
     local applied = setCoverage(loadout, scenario)
     if not scenario.effect_expectations then
-        local points, explanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
-        return points, explanations, applied
+        local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
+        return points, explanations, applied, sets
     end
     local flat, timed, timedKeys = {}, {}, {}
     local useRules = {}
@@ -234,7 +234,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
             end
         end
     end
-    local total, explanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat)
+    local total, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat)
     local states
     if #timedKeys == 1 and allScoped then
         states = { { active = timedKeys, fraction = timed[timedKeys[1]].uptime } }
@@ -258,7 +258,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
             applied[effect.position][effect.rule.label] = true
         end
     end
-    return total, explanations, applied
+    return total, explanations, applied, sets
 end
 
 function Scoring:ReferenceItem(facts, stats)
@@ -524,13 +524,22 @@ local function replace(state, gear, target, item, slot)
     return withSwap(gear, target, item, slot)
 end
 
-local function swapEffects(state, effects, baselineEffects)
+local function swapEffects(state, effects, baselineEffects, sets, baselineSets)
     local explanation, seen = {}, {}
     for _, effect in ipairs(state.profile.operations) do
         local difference = (effects[effect.entry] or 0) - (baselineEffects[effect.entry] or 0)
         if not seen[effect.entry] and math.abs(difference) >= 0.0001 then
             explanation[#explanation + 1] = effect.name .. " (" .. string.format("%+.2f", difference) .. ")"
             seen[effect.entry] = true
+        end
+    end
+    local names = state.model and state.model.set_names
+    for _, bonus in ipairs(names and state.scenario.sets or {}) do
+        local name = byId(names, bonus.set_id)
+        local before = (baselineSets[bonus.set_id] or 0) >= bonus.pieces
+        local after = (sets[bonus.set_id] or 0) >= bonus.pieces
+        if name and before ~= after then
+            explanation[#explanation + 1] = string.format("%d-piece %s bonus %s", bonus.pieces, name, after and "gained" or "lost")
         end
     end
     return explanation
@@ -588,13 +597,13 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights)
     local proposal = replace(state, state.gear, target, incoming, slot)
     if not proposal then return nil end
     if state.baseline == nil then
-        state.baseline, state.baselineEffects, state.baselineItemEffects = score(state, state.gear)
+        state.baseline, state.baselineEffects, state.baselineItemEffects, state.baselineSets = score(state, state.gear)
         state.roleBaseline = score(state, state.gear, roleWeights)
         for _, worn in pairs(state.gear) do
             if worn.uncertain then state.uncertain = true; break end
         end
     end
-    local total, effects, applied = score(state, proposal)
+    local total, effects, applied, sets = score(state, proposal)
     local conditional = false
     for position = 1, 18 do
         local before, after = state.gear[position], proposal[position]
@@ -610,7 +619,7 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights)
         delta = total - state.baseline,
         roleDelta = score(state, proposal, roleWeights) - state.roleBaseline,
         roleDisplaced = math.max(0, state.roleBaseline - score(state, without, roleWeights)),
-        effects = swapEffects(state, effects, state.baselineEffects),
+        effects = swapEffects(state, effects, state.baselineEffects, sets, state.baselineSets),
         conditional = conditional or state.uncertain or incoming.uncertain or dependsOnUnmodeledCombat(state, incoming, target, slot),
     }
 end
@@ -708,15 +717,7 @@ function Scoring:Compare(state, slot, candidateId, referenceId, options)
     if not other then return nil end
     local replacement = replace(state, state.gear, target, candidate.item, slot)
     if not replacement then return nil, nil, "illegal_swap" end
-    local baseline, baselineEffects = score(state, other)
-    local overall, effects = score(state, replacement)
-    return overall - baseline, swapEffects(state, effects, baselineEffects)
-end
-
-function Scoring:EffectLabel(state, row)
-    local names = {}
-    for _, effect in ipairs(state.profile.operations) do
-        if row.effects[effect.entry] then names[#names + 1] = effect.name end
-    end
-    return #names > 0 and ("Active build: " .. table.concat(names, ", ")) or "Active build"
+    local baseline, baselineEffects, _, baselineSets = score(state, other)
+    local overall, effects, _, sets = score(state, replacement)
+    return overall - baseline, swapEffects(state, effects, baselineEffects, sets, baselineSets)
 end
