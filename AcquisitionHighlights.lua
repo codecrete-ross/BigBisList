@@ -368,17 +368,18 @@ local function assess(batch, entry, spec)
     local cached = batch.swaps[key]
     if cached then return cached.mark, cached.ready end
 
-    local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned)
+    local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned, { live = true })
     local ready = not unresolved(result) and not unresolved(result.placement)
     local gain = rating:RoundedGain(result.delta) or 0
-    local qualifies = entry.owned and rating:IsMeaningfulOwnedUpgrade(result) or (not entry.owned and gain > 0)
+    local qualifies = not result.conditional and
+        (entry.owned and rating:IsMeaningfulOwnedUpgrade(result) or (not entry.owned and gain > 0))
     local mark
     if ready and (qualifies or result.bis) then
         local extraGain = gain
         if result.ownership and worn and not entry.owned then
             local owned = rating:CompareTooltipItem(context, candidate, false, nil, true)
             ready = not unresolved(owned)
-            extraGain = rating:RoundedGain(owned.delta) or 0
+            extraGain = not owned.conditional and rating:RoundedGain(owned.delta) or 0
         end
         if ready and (entry.owned or not result.ownership or extraGain > 0) then
             mark = { spec = spec, result = result, gain = gain, ownedBaseline = not worn }
@@ -404,7 +405,8 @@ local function rankRewards(batch, rewards, spec, results)
             local mark = exactMark(assessed, entry)
             results[entry.row] = mark
             local bis, bestBiS = mark.result.bis == true, best and best.result.bis == true
-            if not best or (bis and not bestBiS) or (bis == bestBiS and (mark.result.delta or 0) > (best.result.delta or 0)) then
+            if not best or (bis and not bestBiS) or (bis == bestBiS and not mark.result.conditional
+                and (best.result.conditional or (mark.result.basis == best.result.basis and mark.gain > best.gain))) then
                 best = mark
             end
         end

@@ -269,7 +269,7 @@ def profile_weights(scoring_profiles: dict[str, Any], class_name: str, spec_name
     if rules is not None and isinstance(revisions, dict):
         revision = revisions.get(f"{class_name}/{spec_name}", {})
         revised_weights = revision.get("weights") if isinstance(revision, dict) else None
-        if isinstance(revised_weights, dict):
+        if isinstance(revised_weights, dict) and (not revision.get("level_bands") or level_band in revision["level_bands"]):
             weights.update({key: float(value) for key, value in revised_weights.items() if type(value) in (int, float)})
 
     for key, value in SOURCE_BUCKET_MODIFIERS.get(context, {}).items():

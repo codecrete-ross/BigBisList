@@ -727,6 +727,8 @@ class AvailabilityRefresh:
         return {**result, "audit_reused": False}
 
     def run(self) -> dict:
+        from tools.forever_scoring import refresh_review_scope
+
         self.collect_bulk()
         changed_bulk = self.evidence_changes(self.original, bulk_only=True)
         self.collect_exact(changed_bulk, items=True)
@@ -747,6 +749,10 @@ class AvailabilityRefresh:
                                "missing_fact": "Current equipment slot or non-equipment classification",
                                "next_evidence_trigger": f"Exact Forever tooltip or typed catalog record for {url}"})
         changes = self.evidence_changes(self.original)
+        ranking_review = refresh_review_scope(
+            {identifier for kind, identifier in changes if kind == "item"},
+            self.bulk_results.get("unreviewed_builds", {}).get("build_numbers", []),
+        )
         new_changes = self.evidence_changes({**self.original, **self.previous_staged}) if self.previous_staged else changes
         relevant = self.open.keys() | self.discoveries() | open_ids
         linked = self.exact_targets({})
@@ -770,7 +776,7 @@ class AvailabilityRefresh:
                 "changed_this_run": [{"type": row["entity_type"], "id": row["entity_id"]} for row in records
                                      if (row["entity_type"], row["entity_id"]) in new_changes],
                 "unresolved": unresolved, "exact_lookups": self.exact_results, "conflicts": diagnostic["conflicts"],
-                "review_issues": diagnostic["review_issues"], "audit_errors": diagnostic["errors"],
+                "review_issues": diagnostic["review_issues"], "audit_errors": diagnostic["errors"], "ranking_review": ranking_review,
                 "staged_snapshots": staged_snapshots, "proposed_manifest_sources": proposed}
 
 
@@ -807,6 +813,7 @@ def print_summary(report: dict) -> None:
         "new_item_ids": len(report["new_item_ids"]), "candidate_ids_before": report["candidate_ids_before"],
         "candidate_ids_after": report["candidate_ids_after"], "availability_ranges": len(report["availability_ranges_after"]),
         "audit_reused": report["audit_reused"], "conflicts": len(report["conflicts"]),
+        "scoring_contexts_to_recheck": len(report["ranking_review"]["existing_contexts_to_recheck"]),
         "changed_examples": examples,
         "report": (REFRESH_DIR / "report.json").relative_to(ROOT).as_posix(),
     }, indent=2))

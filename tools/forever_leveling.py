@@ -178,10 +178,13 @@ def validate_rules(rules: dict, profiles: dict) -> list[str]:
         if not all(numeric(value) for value in weights.values()):
             errors.append("Leveling weights must be finite numbers")
     revisions = profiles.get("weight_revisions", {})
+    band_names = {name for name, _, _ in rules.get("level_bands", [])}
     if not isinstance(revisions, dict) or any(
             key not in expected or not isinstance(revision, dict) or not isinstance(revision.get("version"), str)
             or not revision["version"].strip() or not isinstance(revision.get("weights"), dict)
             or not revision["weights"] or not all(numeric(value) for value in revision["weights"].values())
+            or ("level_bands" in revision and (not isinstance(revision["level_bands"], list)
+                or not revision["level_bands"] or not all(band in band_names for band in revision["level_bands"])))
             for key, revision in revisions.items()):
         errors.append("Invalid Forever specialization weight revision")
     return sorted(set(errors))
@@ -432,8 +435,11 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
     revisions = profiles.get("weight_revisions", {})
     revision_digests = {key: digest(revision) for key, revision in revisions.items()} if isinstance(revisions, dict) else {}
 
-    def candidate_signature(eligible, spec_key):
+    def candidate_signature(eligible, spec_key, level):
         revision = revision_digests.get(spec_key)
+        if revision and (bands := revisions[spec_key].get("level_bands")):
+            if not any(low <= level <= high and band in bands for band, low, high in rules["level_bands"]):
+                revision = None
         return digest({"candidates": [{"fact":candidate_facts[(item["id"],item.get("variant_id"))],
             "routes":[source_digests[id(source)] for source in item["sources"]]}
             for item in sorted(eligible,key=lambda item:(item["id"],item.get("variant_id") or ""))],
@@ -504,7 +510,7 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
                     pair_main_id = None
                     if paired:
                         pair_eligible = [result for item in pair_candidates if (result := eligible_item(item, profile, persona, level, "Main Hand", rules))]
-                        pair_signature = candidate_signature(pair_eligible, spec_key)
+                        pair_signature = candidate_signature(pair_eligible, spec_key, level)
                         pair_selected, _ = recommendation_rows_for_items(pair_eligible, racials, profiles, class_name=class_name,
                             spec_name=spec_name, race=persona["name"], level=level, slot="Main Hand", rules=rules, faction=persona["faction"])
                         if pair_selected:
@@ -520,7 +526,7 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
                             eligible=[item for item in eligible if item["id"]!=pair_main_id]
                     selected, _ = recommendation_rows_for_items(eligible, racials, profiles, class_name=class_name,
                         spec_name=spec_name, race=persona["name"], level=level, slot=slot, rules=rules, faction=persona["faction"])
-                    signature = candidate_signature(eligible, spec_key)
+                    signature = candidate_signature(eligible, spec_key, level)
                     if paired:
                         signature = digest({"off_hand":signature,"main_hand":pair_signature})
                     found = None

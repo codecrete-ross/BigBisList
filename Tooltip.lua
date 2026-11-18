@@ -268,7 +268,7 @@ local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
             local marked = mark and mark.spec and mark.spec.name == spec.name
             local result = marked and mark.result
                 or rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
-                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter])
+                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], { live = true })
             block.rows[#block.rows + 1] = { spec = spec.name,
                 result = result, ownedBaseline = not worn }
             block.ownership = block.ownership or result.ownership
@@ -349,7 +349,13 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         if result then
             tooltip:AddLine(tooltipRank(result.placement), r, g, b, true)
             local extra = swapText(result, row.ownedBaseline)
-            if extra then tooltip:AddLine(extra, 0.86, 0.88, 0.91, true) end
+            if extra then
+                if result.delta ~= nil then
+                    extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result) .. " · " .. extra
+                    if result.conditional then extra = extra .. " · Conditional" end
+                end
+                tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)
+            end
             placementColor = placementColor or result.placement.placement_color
         end
         for _, match in ipairs(row.matches) do

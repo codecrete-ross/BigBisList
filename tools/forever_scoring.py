@@ -3,30 +3,39 @@ from __future__ import annotations
 
 from collections import defaultdict
 import re
+from pathlib import Path
 
 from tools.forever import SOURCE_CHILDREN, digest, eligible, has_review, numeric, roster, scoring_profiles, valid_source
+from tools.forever_comparison import normalized_item_stats, reference_profiles
 from tools.forever_leveling import eligibility_allows, eligible_item
 from tools.forever_mechanics import snapshot_path
 from tools.forever_sources import check_evidence_refs, evidence_index, evidence_ref, source_provider
 from tools.project import FOREVER_CANONICAL_DIR, dataset_json, load_json
-from tools.recommend_leveling import materialized_items, merged_stats, profile_weights, separate_weapon_dps, slot_matches
+from tools.recommend_leveling import materialized_items, slot_matches
 
 
 VERSION = "forever-character-scoring-1"
 MODES = ("leveling", "pre_raid")
 
 
-def swap_score(loadout: list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
-               *, race_id: int | None = None) -> tuple[float, dict]:
+def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
+               *, race_id: int | None = None, level: int = 60) -> tuple[float, dict]:
     """Score gear-derived stats under a fixed encounter. Rank zero preserves base weights."""
     stats, sets, procs = defaultdict(float), defaultdict(int), []
-    shield = any(item.get("shield") for item in loadout)
-    for item in loadout:
+    gear = loadout if isinstance(loadout, dict) else {}
+    items = gear.values() if isinstance(loadout, dict) else loadout
+    shield = any(item.get("shield") for item in items)
+    two_hand = gear.get(16, {}).get("slot") == "Two Hand"
+    offhand_dps = gear.get(17, {}).get("stats", {}).get("dps", 0)
+    offhand_factor = scenario.get("offhand_dps_factor", 1)
+    for item in items:
         for key, value in item["stats"].items():
             stats[key] += value
         if item.get("set_id"):
             sets[item["set_id"]] += 1
         procs.extend(item.get("procs", []))
+    stats["dps"] -= offhand_dps * (1 - offhand_factor)
+    stats["weapon_speed"] = gear.get(16, {}).get("stats", {}).get("weapon_speed", 0)
     for bonus in scenario.get("sets", []):
         if sets[bonus["set_id"]] >= bonus["pieces"]:
             for key, value in bonus["stats"].items():
@@ -49,8 +58,10 @@ def swap_score(loadout: list[dict], weights: dict, operations: list[dict], ranks
 
     explanations = {}
     for operation in operations:
-        rank = ranks[operation["entry"]]
-        if rank == 0 or (operation.get("condition") == "shield" and not shield):
+        rank = ranks.get(operation["entry"], 0)
+        condition = operation.get("condition")
+        if (rank == 0 or level < operation.get("min_level", 1) or level > operation.get("max_level", 60)
+                or condition == "shield" and not shield or condition == "two_hand" and not two_hand):
             continue
         factor = operation["factors"][rank - 1]
         basis = value()
@@ -59,6 +70,8 @@ def swap_score(loadout: list[dict], weights: dict, operations: list[dict], ranks
                 stats[stat] += stats[operation["from_stat"]] * factor
             elif operation["kind"] == "efficiency":
                 stats[stat] /= 1 + factor
+            elif operation["kind"] == "offhand_damage":
+                stats[stat] += offhand_dps * offhand_factor * factor
             else:
                 stats[stat] *= 1 + factor
         explanations[operation["entry"]] = explanations.get(operation["entry"], 0) + value() - basis
@@ -112,11 +125,9 @@ def pre_raid_route_allows(source: dict, persona: dict, class_name: str) -> bool:
 
 
 def pack_item(item: dict) -> dict:
-    stats = merged_stats(item)
-    separate_weapon_dps(item, stats)
     return {"id": item["id"], "name": item["name"], "item_level": item.get("item_level") or 0,
             "slot": item["slot"], "required_level": item.get("required_level") or 1,
-            "stats": stats, "shield": item.get("armor_type") == "Shield",
+            "stats": normalized_item_stats(item), "shield": item.get("armor_type") == "Shield",
             **{key: item[key] for key in ("variant_id", "random_suffix_id", "max_equipped", "unique_group",
                                          "weapon_subtype", "armor_type", "requires_dual_wield")
                 if key in item}}
@@ -156,6 +167,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     rules = document("leveling_rules")
     pre_raid = scoring_profiles()
     leveling = document("leveling_scoring_profiles")
+    references = reference_profiles(rules, leveling=leveling, model=model)
     variants = document("item_variants")["item_variants"]
     source_items = {
         "leveling": materialized_items(document("leveling_item_stats")["item_stats"], variants),
@@ -163,12 +175,14 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     }
     rules_build = rules["review"]["client_build"]
     compatibility = snapshot.get("equipment_compatibility", {})
+    scope_digest = equipment_scope_digest(rules, source_items) if rules_build != model["client_build"] else None
     if rules_build != model["client_build"] and (
         compatibility.get("from_build") != rules_build
         or compatibility.get("to_build") != model["client_build"]
-        or compatibility.get("scope_digest") != equipment_scope_digest(rules, source_items)
+        or compatibility.get("scope_digest") != scope_digest
     ):
-        raise ValueError("Forever scoring needs a current equipment comparison for both reviewed builds")
+        raise ValueError(f"Forever scoring needs a current equipment comparison for both reviewed builds "
+                         f"({rules_build} to {model['client_build']}, scope digest {scope_digest})")
     sets = snapshot.get("flat_sets", [])
     item_sets = {item_id: row["set_id"] for row in sets for item_id in row["item_ids"]}
     if len(item_sets) != sum(len(row["item_ids"]) for row in sets):
@@ -182,20 +196,33 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     for name, settings in sorted(model["profiles"].items()):
         profile = all_profiles[name]
         class_name, spec = profile["class"], profile["spec"]
-        if not settings["operations"] or not settings.get("unresolved"):
-            raise ValueError(f"Scoring pilot profile must describe its reviewed and unresolved effects: {name}")
+        shared = model.get("class_mechanics", {}).get(class_name, {})
+        rules_for_spec = [*shared.get("operations", []), *settings["operations"]]
+        if not rules_for_spec or not settings.get("unresolved"):
+            raise ValueError(f"Scoring profile must describe its reviewed and unresolved effects: {name}")
         operations = []
-        for rule in settings["operations"]:
+        for rule in rules_for_spec:
             trait = snapshot["traits"][str(rule["entry"])]
             effect = next(row for row in trait["effects"] if row["effect_index"] == rule["effect"])
             factors = [point["value"] / 100 for point in effect["ranks"]]
-            if (rule["kind"] not in {"scale", "convert", "efficiency"} or not rule["stats"]
+            if (rule["kind"] not in {"scale", "convert", "efficiency", "offhand_damage"} or not rule["stats"]
                     or (rule["kind"] == "convert" and (not rule.get("from_stat") or rule["from_stat"] in rule["stats"]))
+                    or (rule["kind"] == "offhand_damage" and rule["stats"] != ["dps"])
+                    or rule.get("condition") not in {None, "shield", "two_hand"}
+                    or not 1 <= rule.get("min_level", 1) <= rule.get("max_level", 60) <= 60
                     or not all(numeric(value) and value > -1 for value in factors)):
                 raise ValueError(f"Invalid rank operation for {name}")
             operations.append({**rule, "factors": factors, "name": trait["name"]})
         ability = settings.get("ability")
-        entry_ids = sorted({rule["entry"] for rule in operations} | ({ability["entry"]} if ability else set()))
+        speed_proc = settings.get("weapon_speed_proc")
+        proc_rule = snapshot["ability_triggers"][str(speed_proc["spell"])] if speed_proc else None
+        uncertainty = [*shared.get("uncertainty", []), *settings.get("uncertainty", [])]
+        if any(not rule.get("reason") or not rule.get("stats") or not set(rule.get("entries", [])) <= {
+                int(key) for key in snapshot["traits"]} for rule in uncertainty):
+            raise ValueError(f"Invalid uncertainty rule for {name}")
+        entry_ids = sorted({rule["entry"] for rule in operations} | ({ability["entry"]} if ability else set())
+                           | ({speed_proc["entry"]} if speed_proc else set())
+                           | {entry for rule in uncertainty for entry in rule.get("entries", [])})
         selected_traits = {identifier: snapshot["traits"][str(identifier)] for identifier in entry_ids}
         for identifier, trait in selected_traits.items():
             traits[identifier] = {key: trait[key] for key in ("node_id", "definition_id", "spell_id", "tree_id", "max_rank", "name")}
@@ -216,14 +243,12 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
             if mode == "leveling":
                 policy = rules["spec_policies"][name]
                 slots = rules["common_slots"] + policy["slots"]
-                for _, start, end in rules["level_bands"]:
-                    _, band_weights = profile_weights(leveling, class_name, spec, start, "best_overall", rules=rules)
+                for start, end, band_weights in references[name][mode]["weights"]:
                     weights.append([start, end, {**band_weights, **weight_overrides}])
                 policies = {"dual_wield_level": policy.get("dual_wield_level"), "weapon_style": policy.get("weapon_style")}
             else:
                 slots = profile["slots"]
-                raid_weights = pre_raid["role_weights"][profile["role"]]
-                weights.append([60, 60, {**raid_weights, **profile.get("weights", {}), **weight_overrides}])
+                weights.append([60, 60, {**references[name][mode]["weights"], **weight_overrides}])
                 policies = {"dual_wield_level": 1 if profile.get("dual_wield") else None,
                             "weapon_style": "shield" if profile.get("require_shield") else "any"}
             pools = {}
@@ -249,6 +274,13 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
             scenario = {**model["scenarios"][mode], "weights": weights, "pools": pools,
                         "personas": allowed_personas, **{k: v for k, v in policies.items() if v is not None},
                         **{key: scenario_settings[key] for key in ("caps", "conversions", "evidence") if key in scenario_settings}}
+            offhand_factor = settings.get("offhand_dps_factor", shared.get("offhand_dps_factor"))
+            if offhand_factor is not None:
+                if not numeric(offhand_factor) or not 0 < offhand_factor <= 1:
+                    raise ValueError(f"Invalid off-hand weapon contribution for {name}/{mode}")
+                scenario["offhand_dps_factor"] = offhand_factor
+            if settings.get("form_attack_period"):
+                scenario["form_attack_period"] = settings["form_attack_period"]
             if sets:
                 scenario["sets"] = [{key: row[key] for key in ("set_id", "pieces", "stats")} for row in sets]
             if racials := [row for row in snapshot.get("racial_scaling", []) if row["race_id"] in allowed_personas]:
@@ -261,10 +293,12 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 "profile_version": (leveling if mode == "leveling" else pre_raid)["version"], "rules_version": rules["version"],
                 "operations": operations, "ability": ability and snapshot["ability_triggers"][str(ability["spell"])],
                 "traits": selected_traits, "scenario": scenario, "candidate_facts": pool_items,
+                "unresolved": settings["unresolved"], "uncertainty": uncertainty, "weapon_speed_proc": proc_rule,
                 "routes": routes, "enchants": enchants,
                 **({"equipment_compatibility": compatibility} if compatibility else {})})
         profiles[name] = {"entries": entry_ids, "operations": operations, "scenarios": scenarios,
-                          "unresolved": settings["unresolved"], "ability": ability}
+                          "unresolved": settings["unresolved"], "uncertainty": uncertainty, "ability": ability,
+                          "weapon_speed_proc": speed_proc}
     return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]), "profiles": profiles,
             "traits": traits, "items": items, "enchants": enchants, "triggers": snapshot["ability_triggers"],
             **({"item_sets": item_sets} if item_sets else {})}, bindings
@@ -288,7 +322,8 @@ def review_issues(model: dict, snapshot: dict, bindings: dict) -> list[str]:
     for key, current in bindings.items():
         try:
             approval = model["approvals"][key]
-            if not has_review(approval) or approval["input_digest"] != current:
+            if (not has_review(approval) or approval.get("client_build") != model["client_build"]
+                    or approval["input_digest"] != current):
                 raise ValueError("scoring inputs changed or review is missing")
             check_evidence_refs(approval, records)
         except (KeyError, TypeError, ValueError) as exc:
@@ -307,15 +342,67 @@ def reviewed_runtime_model(snapshots: dict | None = None, documents: dict | None
     issues = review_issues(model, snapshot, bindings)
     if issues:
         raise ValueError("Stale or missing Forever scoring approvals: " + "; ".join(issues))
+    access_ids, access_windows = {}, []
+    for profile in runtime["profiles"].values():
+        for scenario in profile["scenarios"].values():
+            for slot, pool in scenario["pools"].items():
+                packed = []
+                for key, access in pool:
+                    signature = tuple((race, tuple(map(tuple, windows))) for race, windows in sorted(access.items()))
+                    if signature not in access_ids:
+                        access_windows.append(access)
+                        access_ids[signature] = len(access_windows)
+                    packed.append([key, access_ids[signature]])
+                scenario["pools"][slot] = packed
+    runtime["access_windows"] = access_windows
     return runtime
 
 
-def scoring_audit() -> dict:
+def refresh_review_scope(changed_items: set[int], newer_builds: list[int]) -> dict:
+    result = {"changed_item_ids": sorted(changed_items), "newer_client_builds": sorted(newer_builds),
+              "existing_contexts_to_recheck": {}}
+    if not changed_items and not newer_builds:
+        return result
     try:
         model, snapshot = read_model()
-        runtime, bindings = compile_model(model, snapshot)
+        runtime, _ = compile_model(model, snapshot)
+        for name, profile in sorted(runtime["profiles"].items()):
+            for mode, scenario in sorted(profile["scenarios"].items()):
+                items = runtime["items"][mode]
+                affected = {items[key]["id"] for pool in scenario["pools"].values() for key, _ in pool
+                            if items[key]["id"] in changed_items}
+                if affected or newer_builds:
+                    result["existing_contexts_to_recheck"][f"{name}/{mode}"] = sorted(affected)
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        result["scoring_input_error"] = str(exc)
+    return result
+
+
+def scoring_audit(*, strict: bool = False, lua: str | None = None, input_dir: Path | None = None) -> dict:
+    try:
+        snapshots, documents = None, None
+        if input_dir is not None:
+            from tools.forever import derive, read_snapshots
+            from tools.forever_leveling import documents as leveling_documents
+
+            snapshots = read_snapshots(input_dir)
+            documents = {**derive(snapshots, include_leveling=False), **leveling_documents(snapshots)}
+        model, snapshot = read_model(snapshots)
+        runtime, bindings = compile_model(model, snapshot, documents)
         issues = review_issues(model, snapshot, bindings)
-        return {"ok": not issues, "issues": issues, "client_build": model["client_build"],
+        required = {f"{class_name}/{spec}/{mode}" for class_name, spec in roster() for mode in MODES}
+        missing = sorted(required - bindings.keys())
+        validation = {}
+        if strict:
+            from tools.forever_scoring_checks import reference_issues, validation_issues
+
+            issues.extend(reference_issues())
+            fixture_issues, verified = validation_issues(model, runtime, bindings, lua)
+            issues.extend(fixture_issues)
+            validation = {"required_contexts": len(required), "validated_contexts": verified,
+                          "missing_contexts": missing}
+        return {"ok": not issues and (not strict or not missing), "issues": issues,
+                "client_build": model["client_build"], **validation,
                 "mechanics": evidence_ref(snapshot["url"], {snapshot["url"]: snapshot}),
                 "scoring_profiles": sorted(runtime["profiles"]),
                 "reference_profiles": [key for key in sorted("/".join(row) for row in roster()) if key not in runtime["profiles"]],

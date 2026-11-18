@@ -1,19 +1,18 @@
 # Character-aware gear scoring for WoW Forever
 
-The local prerelease pilots Protection and Retribution Paladin, Enhancement
-and Restoration Shaman, and Protection Warrior while full leveling coverage is deferred. Use
-the [leveling guide](forever-leveling.md#audits-and-deployment) for the strict
-audits. Extend personalized mechanics to the other 23 profiles after reviewing
-the pilot and its gameplay results.
+The Forever scoring audit covers 28 specializations in two settings. Leveling
+uses the selected level's reference weights for outdoor enemies at that level.
+Pre-Raid uses level-60 weights for first-tier boss combat. Each approval covers
+the fixed gear comparison documented for that setting. Encounter-dependent
+effects outside those calculations have separate review requirements.
 
-## Local pilot on build 1.60.1.70959
+## Client 1.60.1.70959
 
 The November 17 build review compared the exact client tables and verified
 hotfix caches for 70938 and 70959. All 1,014 published item IDs had matching
 equipment facts. The published item effect links and the quest records present
-in the caches matched. The only base training table change was the Rogue
-Poisons skill tier. All eight existing scoring contexts kept the same modeled
-inputs. The mechanics snapshot binds that comparison to the reviewed
+in the caches matched. The base training table change was the Rogue Poisons
+skill tier. The mechanics snapshot binds that comparison to the reviewed
 equipment rules and published gear. Changing those inputs calls for a new
 comparison.
 [Build-pinned client tables](https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959) ·
@@ -98,13 +97,14 @@ five percent of the displaced role score. A role gain that rounds to 0.1
 points qualifies for a genuinely empty slot. Defensive stats contribute to
 this threshold for tanks. Gold BiS uses the item’s explicit guide approval.
 
-The leveling scorer applies character and route eligibility before ranking by
-the weighted sum of verified flat stats. It keeps the first three choices and
-positive-score alternatives within 5% of the top score. Item level, name, and
-ID break ties after score. Best Overall identifies that list. Pre-raid uses a
-separate profile and publishes the reviewed slot order. The five active-build
-profiles evaluate legal swaps against the same loadout baseline for each slot.
-Ranged and wand DPS are separate from melee DPS.
+The live Leveling Guide applies character and route eligibility before ranking
+by the weighted sum of verified flat stats. It shows the full qualifying band
+at 85% or greater and admits candidates from 70% in **More options**. The
+reviewed recommendation records still carry source decisions and effect context.
+Pre-Raid publishes reviewed targets with their phase history and compatible
+stat placements. Personal comparisons evaluate legal swaps against the same
+loadout baseline. Ranged and wand DPS are separate from melee DPS. Weapon
+speed bonuses in those comparisons use the physical main hand.
 
 The Protection Paladin leveling reference retains the tank survivability
 weights and credits Intellect at 0.55, mana per five seconds at 1.6, shield
@@ -116,6 +116,15 @@ balance. Talent ranks and associated mana refunds still need their own model.
 Specialization weight revisions reopen the rankings for that specialization.
 [Blizzard Paladin deep dive](https://worldofwarcraft.blizzard.com/en-us/news/24302099/world-of-warcraft-forever-class-deep-dives-paladin)
 [Forever leveling stat guidance](https://www.icy-veins.com/wow-forever/protection-paladin-leveling/#stats)
+
+Feral tank previously inherited the Cat DPS weights after level 9. The Bear
+revision uses the tank mitigation and threat coefficients with the reviewed
+Feral tank Agility and weapon DPS weights. It values no shield block or parry.
+The replay retained the same item and route scope. It updated 409 approvals,
+with a change in item choice or order in 211. The level 1–9 casting weights
+and other specializations retain their existing approvals. The prior decisions
+and both decision digests are in the
+[November 17 review batch](../../data/canonical/forever/leveling_ranking_history/029-2026-11-17.json).
 
 The level-42 Protection reference ranked Guise of Battle (58.31), Icemetal
 Barbute (57.98), and Serpentbane Crown (49.04) among 16 reviewed Human head
@@ -272,14 +281,121 @@ material swap.
 
 ## Verification and rollout
 
-- Verify all 28 profiles in both contexts. Cover rank zero, partial ranks,
-  stacked conversions, cap crossings, forms, weapon restrictions, proc triggers,
-  set thresholds, suffixes, and rank reversals. Test a candidate moving into the
-  displayed shortlist after personalization.
+- The Gear Guide chooses all eligible, role-relevant items at or above 70% of
+  the best qualifying score. Under 85% goes under **More options**, along with
+  applicable reviewed effects whose numeric ranking falls below that band.
+  Ownership and acquisition filters narrow that set. The player's talents and
+  gear determine the separate swap estimate and **Within reach** actions.
+- The native and in-addon comparisons share item facts and one worn-swap
+  evaluator. Placement uses base gear. Swap estimates apply verified permanent
+  modifiers from exact links. Unknown modifiers, unscored effects, and
+  weapon-speed or hit changes outside the reviewed model can make an estimate
+  conditional. Acquisition uses default weights for best-owned comparisons.
+- The scoring audit checks four Leveling bands and Pre-Raid for each of the
+  28 specs. At least one exact swap in every context must change with an active
+  talent. Each fixture records the reason, character, physical slots, exact
+  variants, talent ranks, and independently calculated expectations in
+  [the scoring model](../../data/canonical/forever/scoring_model.json).
+  The reference matrix at levels 9, 19, 39, 59, and 60 checks eligibility,
+  role contribution, score bands, and stable Guide membership.
 - Test loadout switches, level previews, unavailable API values, and changed
   mechanics evidence. Compare Python and Lua results. Check startup, first-open,
   and tooltip performance.
-- Recheck both strict Forever coverage audits, reproducible generation, and
-  Anniversary compatibility. Require recorded user-run live acceptance and the
-  authoritative clean-commit `-FullData` gate before public release. Follow the
-  [release playbook](release-process.md).
+- `python tools/scrape_wowhead.py scoring-audit --flavor forever --strict`
+  checks approved inputs and executes the independent swap fixtures in Python
+  and Lua 5.1. Both calculations must match expected points within 0.01,
+  legality, and order. Local Forever deployment and the full release check
+  require all 56 contexts. Follow the [release playbook](release-process.md)
+  for data coverage, reproducible generation, and recorded gameplay acceptance.
+
+### Scope of the talent models
+
+The fixed presets apply verified gear-dependent talent curves in the class's
+stat channels. The points remain editorial units. Damage effects that apply
+only to specified spells use the preset documented on the profile. Crit
+multipliers change the selected school's weighted Crit contribution. The
+direct-healing presets estimate the affected healing and mana budget. Healing
+mix, actual overheal, and time inside the five-second rule need encounter
+observations before they enter a score.
+
+| Class | Verified effects used in the comparison | Inputs requiring separate observations |
+|---|---|---|
+| Druid | Heart of the Wild scales Intellect, Bear Stamina, and Cat Strength separately. Cat applies after level 19. Naturalist, Moonfury, Living Spirit, Natural Instinct, and Gift of Nature affect the relevant damage, recovery, or healing. | Swing cadence uses the 1.0-second cat and 2.5-second bear benchmark. Periodic effects, shifting frequency, and rage feedback need encounter evidence. |
+| Hunter | Lightning Reflexes scales Agility. Survivalist scales gear-derived health through Stamina. Careful Aim contributes once in the selected Attack Power channel. Ranged Weapon Specialization adjusts the ranged contribution. | Family-specific pet stats, focus and damage share, and Survival's melee and ranged mix. |
+| Mage | Arcane Mind scales Intellect, with a separate Arcane critical-bonus curve. Arcane Instability, Ice Shards, Frost Channeling, and Wand Specialization use the appropriate school or damage channel. | Fire Power depends on the caster's active Fire effects. Freeze, mana refunds, mixed schools, and proc effects depend on the target and casts. |
+| Paladin | Divine Intellect and Divine Strength apply when invested. Holy uses the Healing Light direct-heal preset. Protection applies Toughness and shield Block Value. Retribution uses Champion of the Light and two-handed damage scaling. | Oath uptime, Illumination refunds, block mana returns, different Judgement attack tables, and seal uptime. |
+| Priest | Mental Strength, Wand Specialization, Spiritual Guidance, Spiritual Healing, and Darkness apply to the relevant healing, recovery, and damage contributions. Spiritual Guidance models separate 25% healing and 8% damage at rank five. | Meditation time, Divine Aegis and absorption share, Spirit Tap uptime, and target-specific Shadow damage. |
+| Rogue | Dual Wield Specialization uses the off-hand weapon damage component and verified 25% and 50% rank bonuses. Item stats remain fully valued for either hand. | Poison cadence, attack-specific hit, weapon-specific Hack and Slash, and the defense and bleed mechanics in Serrated Blades. |
+| Shaman | Elemental applies Concussion and Convection to its Lightning and Earth Shock preset. Enhancement uses the current Intellect conversions. Restoration uses its direct healing and mana-cost curves. | Mixed melee and spell hit, Maelstrom Weapon stacks and casts, Windfury, and time spent casting or recovering mana. |
+| Warlock | Demonic Embrace scales gear Stamina. Shadow Mastery and Agonizing Flames apply in their supported spell contributions. | Fel Vitality scales mana independently of Intellect's spell crit. Life Tap needs a health and mana budget. Pet and Fire or Shadow buffs need pet, cast, and uptime evidence. |
+| Warrior | Weapon specialization scopes damage to the equipped two-hander or the off-hand damage component. Bastion and Defiance require a shield for the modeled contributions. | Separate off-hand hit, Flurry, Deep Wounds, rage, and weapon-type effects require encounter evidence. |
+
+The Rogue and Warrior off-hand benchmark uses half the item weapon DPS as
+the autoattack contribution. The fixture score adds the verified talent
+multiplier to that component. Weapon abilities and energy or rage return
+may differ from the autoattack estimate and stay conditional. The initial
+leveling bands also include rank-zero swap fixtures.
+
+The unified Hit stat can affect melee specials, dual-wield swings, ranged
+attacks, spells, and Rogue poisons against different caps. Only the reviewed
+Protection Warrior melee benchmark currently has a priced cap. Judgement of
+Command activates melee on-hit effects. Other Judgements use ranged attacks.
+Rank-five Maelstrom Weapon has a nominal chance of `10 × main-hand speed / 60`
+on a qualifying attack. Blizzard's 3.6 and 2.0 benchmarks yield 60% and about
+33%. The scorer uses changes to that chance to detect uncertainty and keeps
+effective stack and cast uptime outside the numeric estimate.
+[Blizzard Hunter and Druid](https://worldofwarcraft.blizzard.com/en-us/news/24301515/) ·
+[Blizzard Mage and Shaman](https://worldofwarcraft.blizzard.com/en-us/news/24302097) ·
+[Blizzard Priest and Warrior](https://worldofwarcraft.blizzard.com/en-us/news/24301514/) ·
+[Blizzard Rogue and Warlock](https://worldofwarcraft.blizzard.com/en-us/news/24310968) ·
+[November 16 Forever hotfixes](https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-16-2026)
+
+## Ranking checks for a data refresh
+
+1. Save a reference ranking report from the last generated Forever payload.
+   Use the same reviewed content phase for both reports. Each report uses the
+   addon query and includes all 28 specs at each band end and Pre-Raid, plus
+   the level-48 Human Retribution case. It records the score, placement,
+   guide section, selected source, and input digests.
+
+   ```powershell
+   New-Item -ItemType Directory -Path build -Force | Out-Null
+   python tools/scrape_wowhead.py scoring-audit --flavor forever --rankings --content-phase PR > build/forever-ranks-before.json
+   ```
+
+2. Replay the cached availability refresh or collect new evidence from the
+   registered sources. Inspect `ranking_review` in
+   `build/forever-refresh/report.json` for changed item IDs, their known
+   scoring contexts, and newer client builds. On a build or hotfix change,
+   collect the pinned mechanics again and review any changed trait IDs,
+   coefficients, attack rules, and equipment compatibility evidence.
+3. Review the updated item and route decisions, then derive the new scoring
+   bindings before importing. Pass the full snapshot directory to
+   `scoring-audit --input-dir` to compute the draft bindings without writing
+   canonical files. A changed cross-build equipment proof reports the
+   proposed scope digest. Verify the equipment inputs against both builds
+   before updating that proof. Recalculate changed talent fixtures from the
+   source curves and item facts, explain rank reversals, and record the
+   reviewer and reasoning. A weight revision can name the affected Leveling
+   bands so an update preserves earlier, unaffected approvals. Change the
+   model version when the arithmetic or assumptions change across all profiles.
+   Follow the
+   [Forever availability intake](forever-leveling.md#public-collection)
+   to register accepted evidence and regenerate the payload.
+
+   ```powershell
+   python tools/scrape_wowhead.py scoring-audit --flavor forever --input-dir data/raw/wowhead/forever
+   ```
+4. Capture the same ranking report again. Check changes to eligibility,
+   shortlist membership, sources, and order against the evidence.
+
+   ```powershell
+   python tools/generate_lua.py --flavor forever --check
+   python tools/scrape_wowhead.py scoring-audit --flavor forever --rankings --content-phase PR > build/forever-ranks-after.json
+   git diff --no-index -- build/forever-ranks-before.json build/forever-ranks-after.json
+   python tools/scrape_wowhead.py scoring-audit --flavor forever --strict
+   ```
+
+   The last command runs both engines against the approved fixtures before
+   the local prerelease can be installed. Keep the source revisions, report
+   diff, and validation evidence with the refresh review.

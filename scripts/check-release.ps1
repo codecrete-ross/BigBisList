@@ -426,6 +426,7 @@ try {
         Invoke-CheckedCommand -Label "Random suffix audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "suffix-audit", "--flavor", "anniversary")
         Invoke-CheckedCommand -Label "Leveling recommendation audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "recommendation-audit", "--flavor", "anniversary")
         Invoke-CheckedCommand -Label "Forever leveling coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "leveling", "--summary", "--strict")
+        Invoke-CheckedCommand -Label "Forever scoring verification" -Executable $python -Arguments @("tools/scrape_wowhead.py", "scoring-audit", "--flavor", "forever", "--strict", "--lua", $luaRuntime)
         Invoke-CheckedCommand -Label "Forever recorded live acceptance" -Executable $python -Arguments @("tools/scrape_wowhead.py", "live-acceptance-audit", "--flavor", "forever")
 
         $dataFamilies = @(

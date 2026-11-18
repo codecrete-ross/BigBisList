@@ -55,9 +55,34 @@ $targetRoot = Join-Path $addonsRoot $AddonName
 Assert-SafeAddonTarget -TargetPath $targetRoot -AddonName $AddonName
 
 if ($Flavor -eq "forever") {
-    $pythonPath = Join-Path $repoRoot "build\release-venv\Scripts\python.exe"
-    if (-not (Test-Path -LiteralPath $pythonPath -PathType Leaf)) {
-        $pythonPath = (Get-Command python -ErrorAction Stop).Source
+    $pythonPath = $null
+    $pythonCandidates = @((Join-Path $repoRoot "build\release-venv\Scripts\python.exe"))
+    $pythonCandidates += @(Get-Command python -All -CommandType Application -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source)
+    foreach ($candidate in $pythonCandidates) {
+        if (-not (Test-Path -LiteralPath $candidate -PathType Leaf)) {
+            continue
+        }
+        try {
+            & $candidate -B -c "import sys; raise SystemExit(sys.version_info < (3, 10))" 2>$null
+            if ($LASTEXITCODE -eq 0) {
+                $pythonPath = $candidate
+                break
+            }
+        } catch {
+            continue
+        }
+    }
+    if (-not $pythonPath) {
+        throw "No Python 3.10+ environment was found for the Forever data checks."
+    }
+    $scoringArgs = @("scoring-audit", "--flavor", "forever", "--strict")
+    if ($LuaPath) {
+        $scoringArgs += @("--lua", $LuaPath)
+    }
+    $scoringOutput = & $pythonPath (Join-Path $repoRoot "tools\scrape_wowhead.py") @scoringArgs
+    if ($LASTEXITCODE -ne 0) {
+        $scoringOutput | Write-Host
+        throw "Forever scoring needs all 56 verified talent-aware contexts before deployment."
     }
     $levelingOutput = & $pythonPath (Join-Path $repoRoot "tools\scrape_wowhead.py") coverage --flavor forever --family leveling --summary --strict
     $levelingExit = $LASTEXITCODE

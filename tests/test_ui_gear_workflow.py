@@ -26,6 +26,114 @@ assert(#H.errors == 0, table.concat(H.errors, "\n"))
         )
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
+    def test_gear_guide_reveals_alternates_and_progress_without_changing_rank(self):
+        self.run_lua(r'''
+local addon = BigBiSList
+function UnitLevel() return 48 end
+function UnitRace() return "Human", "Human", 1 end
+function UnitFactionGroup() return "Alliance" end
+function UnitClass() return "Paladin", "PALADIN" end
+function UnitClassBase() return "PALADIN" end
+function GetContainerNumSlots(bag) return bag == 0 and 1 or 0 end
+function GetContainerItemID() return 9476 end
+function GetContainerItemLink() return "item:9476" end
+addon.DetectPlayerSpec = function() return "Retribution" end
+local questReady = true
+C_QuestLog = {
+    IsQuestFlaggedCompleted = function() return false end,
+    IsOnQuest = function(id) return id == 93574 end,
+    IsComplete = function(id) return id == 93574 and questReady end,
+}
+ui:Open(); H.settle()
+ui:SetClass("Paladin"); H.settle()
+ui:SetSpec("Retribution"); H.settle()
+ui:SetContentMode("leveling"); H.settle()
+ui:SetTab("Gear Guide"); H.settle()
+addon:InitUIEvents()
+local function entry(match)
+    for _, item in ipairs(ui.renderModel.entries) do if match(item) then return item end end
+end
+local function heading(title)
+    return entry(function(item) return item.kind == "section" and item.title == title end)
+end
+local function itemRow(id)
+    return entry(function(item) return item.kind == "row" and item.data.item_id == id end)
+end
+local function click(target)
+    ui.contentScroll:SetVerticalScroll(target.top)
+    for _, owner in ipairs(ui.activeRenderFrames) do
+        if owner.__bigBisBoundRenderEntry == target then owner:Click(); H.settle(); return end
+    end
+    error("The selected list section was not realized")
+end
+assert(heading("Equip from bags").count == 1 and not heading("Equip from bags").collapsed)
+assert(heading("Ready to turn in").collapsed and heading("Ready to turn in").count >= 1)
+questReady = false
+local events = addon.uiEventFrame
+events:GetScript("OnEvent")(events, "QUEST_LOG_UPDATE"); H.settle()
+assert(not heading("Ready to turn in") and heading("Reward quest in progress").collapsed)
+ui:ToggleSlot("Shoulder"); H.settle()
+local more = heading("More options")
+assert(more.collapsed and more.count == 4 and ui.renderModel.rowCount == 7)
+assert(itemRow(9476) and not itemRow(10774))
+click(more)
+assert(not heading("More options").collapsed and itemRow(10774) and ui.renderModel.rowCount == 7)
+local selected = itemRow(10774)
+ui:ShowInspectorFor(selected.data.item_id, selected.data, "leveling"); H.settle()
+for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
+    if size[1] == 900 then UIParent:SetSize(900, 500) end
+    ui.frame:SetSize(size[1], size[2]); H.settle()
+    for _, density in ipairs({"compact", "comfortable"}) do
+        addon:GetAccountDB().profile.window.density = density
+        ui:Invalidate("presentation", "density"); ui:Refresh(); H.settle()
+        if ui.inspectorExclusive then ui.detailsBackButton:Click(); H.settle() end
+        assert(not heading("More options").collapsed)
+        H.expectRowsBounded(ui, "Guide alternatives")
+    end
+end
+ui:GetFilters().search = "Fleshhide Shoulders"
+ui:Invalidate("query", "test search"); ui:Refresh(); H.settle()
+assert(itemRow(10774) and ui.renderModel.rowCount == 1)
+local view = ui:GetViewState()
+local sort, direction, grouping = view.sort, view.sortDirection, view.groupBy
+ui.filterToggleButton:Click(); H.settle()
+ui.clearFiltersButton:Click(); H.settle()
+assert(view.sort == sort and view.sortDirection == direction and view.groupBy == grouping)
+assert(not ui.filterToggleButton.selected and not ui.filterDrawerOpen)
+''')
+
+    def test_compare_slot_sorts_one_basis_and_puts_conditional_swaps_last(self):
+        self.run_lua(r'''
+local addon = BigBiSList
+function UnitLevel() return 48 end
+function UnitRace() return "Human", "Human", 1 end
+function UnitFactionGroup() return "Alliance" end
+ui:Open(); H.settle()
+ui:SetClass("Paladin"); H.settle()
+ui:SetSpec("Retribution"); H.settle()
+ui:SetContentMode("leveling"); H.settle()
+ui:SetTab("Equipped"); H.settle()
+-- Open the real comparison workspace. Use four distinguishable deltas so
+-- a mixed-basis or unconditional sort produces the wrong first result.
+local shoulder = ui.gearFrame.slots.Shoulder.gearData
+assert(ui:OpenSlotComparison(shoulder, "gear", true)); H.settle()
+local comparison = ui.slotComparison
+local first, second, fallback, conditional = unpack(comparison.rows, 1, 4)
+for _, row in ipairs(comparison.rows) do row.stat_swap = nil end
+first.stat_swap = {basis = "active", delta = 2}
+second.stat_swap = {basis = "active", delta = 1}
+fallback.stat_swap = {basis = "reference", delta = 120}
+conditional.stat_swap = {basis = "active", delta = 90, conditional = true}
+comparison.swapBasis = "active"
+ui:SetComparisonSort("comparison"); H.settle()
+assert(ui:GetComparisonSortLabel() == "Your build")
+local candidates = {}
+for _, item in ipairs(comparison.entries) do
+    if item.kind == "row" and not item.data.context then candidates[#candidates + 1] = item.data end
+end
+assert(candidates[1] == first and candidates[2] == second)
+''')
+
     def test_paper_doll_fits_and_tracks_physical_slots_and_item_links(self):
         self.run_lua(r'''
 H.equipped[11], H.equipped[12], H.equipped[13], H.equipped[14] = 990001, 990001, 990003, 990003
@@ -517,7 +625,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         for _, row in ipairs(state.rows) do
             if row.item_link == bagLink then shown = row; break end
         end
-        assert(shown and shown.stat_delta and shown.acquisition_display.location_label == "Source unverified")
+        assert(shown and shown.stat_swap and shown.stat_swap.delta and shown.acquisition_display.location_label == "Source unverified")
         local placement = shown.stat_rank
         ui:SetComparisonOwnership("owned"); H.settle()
         ui:SetComparisonSort("item"); H.settle()

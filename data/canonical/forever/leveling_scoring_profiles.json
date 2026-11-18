@@ -5219,6 +5219,43 @@
   "status": "reviewed",
   "version": "forever-leveling-reviewed-2",
   "weight_revisions": {
+    "Druid/Feral tank": {
+      "level_bands": [
+        "10-19",
+        "20-39",
+        "40-59"
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "evidence_refs": [
+          {
+            "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+            "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+          },
+          {
+            "content_digest": "2c4296247b5403c523da8cd48d7e86bd371aec2c8828d317885c8594163958ec",
+            "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
+          },
+          {
+            "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+            "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+          }
+        ],
+        "reason": "From level 10, Bear Form uses the tank reference for armor, Stamina, dodge, and threat. Use the reviewed Pre-Raid Feral tank Agility and weapon-DPS coefficients. Bears cannot block or parry. Keep the existing mana and recovery weights and level 1-9 casting profile. These are editorial points for relative leveling swaps.",
+        "reviewed_at": "2026-11-17",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/tank-leveling-tips"
+      },
+      "version": "forever-bear-leveling-1",
+      "weights": {
+        "agility": 1.1,
+        "attack_power": 0.3,
+        "block_value": 0,
+        "dps": 1.5,
+        "parry_percent": 0,
+        "strength": 0.8
+      }
+    },
     "Paladin/Protection": {
       "review": {
         "client_build": "1.60.1.70938",

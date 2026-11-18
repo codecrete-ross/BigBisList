@@ -4635,6 +4635,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     row.subText:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -2)
     row.subText:SetWidth(nameWidth)
     local slot = (mode == "phase" and (self:GetViewState().groupBy or "slot") == "slot") and "" or self:GetRowSlotDisplay(data)
+    if mode == "leveling" and data.guide_note then slot = slot .. " · " .. data.guide_note end
     -- The secondary slot line has a reserved budget; item names never overlap it.
     local nameLines = slot ~= "" and 1 or maxLines
     local identityHeight = nameLines * 14 + (slot ~= "" and 14 or 0)
@@ -4677,6 +4678,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
                     for _, line in ipairs(BigBiSList.ForeverGearRating:DescriptionLines(row.boundData.stat_rank)) do
                         tooltip:AddLine(line, 0.88, 0.88, 0.92, true)
                     end
+                    if row.boundData.guide_note then tooltip:AddLine(row.boundData.guide_note, 0.88, 0.88, 0.92, true) end
                 elseif frame.cellKey == "owned" then
                     tooltip:AddLine(frame.label.fullText or "", 0.88,0.88,0.90,true)
                     tooltip:AddLine(UI:GetBankStatusText(), 0.66,0.68,0.72,true)
@@ -4697,8 +4699,9 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         local placement = data.stat_rank
         local tier = placement and placement.tier
         local text = placement and BigBiSList.ForeverGearRating:Label(placement, "compact")
-        bindCell("stat_rank", text or self:GetRowRecommendationText(data, mode),
-            tier and { widgets:GetRankColor(tier.quality) })
+        text = text or self:GetRowRecommendationText(data, mode)
+        bindCell("stat_rank", data.guide_bis and ("BiS · " .. text) or text,
+            data.guide_bis and {1, 0.82, 0.35} or tier and { widgets:GetRankColor(tier.quality) })
     end
     bindCell("expansion", self:GetWishlistExpansionText(data))
     bindCell("source", source, {0.70,0.77,0.84})
@@ -5060,15 +5063,39 @@ function UI:AddGuideEquippedRows(model, slot)
     end
 end
 
+function UI:AddGearGuideRows(model, rows, scope)
+    local parent = model.activeSection
+    local filters = self.currentFilterPayload or self:GetFilters()
+    local alternates = {}
+    for _, row in ipairs(rows) do
+        if row.guide_alternate then alternates[#alternates + 1] = row end
+    end
+    if #alternates == 0 or #alternates == #rows or (filters.search or "") ~= "" or (parent and parent.collapsed) then
+        for _, row in ipairs(rows) do self:AddListRow(model, row, "leveling") end
+        return
+    end
+    for _, row in ipairs(rows) do
+        if not row.guide_alternate then self:AddListRow(model, row, "leveling") end
+    end
+    if parent then parent.count = parent.count + #alternates end
+    self:AddListSection(model, "More options", "leveling", true, "more:" .. scope)
+    for _, row in ipairs(alternates) do self:AddListRow(model, row, "leveling") end
+    model.activeSection = parent
+end
+
 function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle, notes)
     local model = self:NewListRenderModel()
+    local guide = BigBiSList.isForever and mode == "leveling"
+    if guide then self:AddWithinReach(model, rows, "guide") end
     for _, text in ipairs(notes or {}) do
         local width = math.max(200, ((self.contentChild and self.contentChild:GetWidth()) or 640) - 24)
         local height = 12 + 14 * math.ceil(#text / math.max(1, math.floor(width / 7)))
         self:AddListRenderEntry(model, { kind = "note", text = text, height = math.max(28, height) })
     end
     if groupBy == "none" then
-        for _, row in ipairs(self:SortDisplayRows(rows, mode)) do self:AddListRow(model, row, mode) end
+        local sorted = self:SortDisplayRows(rows, mode)
+        if guide then self:AddGearGuideRows(model, sorted, "all")
+        else for _, row in ipairs(sorted) do self:AddListRow(model, row, mode) end end
     else
         local groups, order = {}, {}
         for _, row in ipairs(rows) do
@@ -5096,7 +5123,9 @@ function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle, notes)
                 and (mode == "leveling" or mode == "phase") then
                 self:AddGuideEquippedRows(model, groups[title][1].slot)
             end
-            for _, row in ipairs(self:SortDisplayRows(groups[title], mode)) do self:AddListRow(model, row, mode) end
+            local sorted = self:SortDisplayRows(groups[title], mode)
+            if guide then self:AddGearGuideRows(model, sorted, "slot:" .. title)
+            else for _, row in ipairs(sorted) do self:AddListRow(model, row, mode) end end
             self:AddListGap(model)
         end
     end
@@ -5554,7 +5583,108 @@ local function hasVerifiedLevelingRoute(row)
     local display = row.acquisition_display
     local option = display and display.option
     return option and option.source_type and option.source_type ~= "unknown"
-        and display.status == "ready" and display.source_match ~= nil
+        and not option.is_inferred_trade_option and display.status == "ready" and display.source_match ~= nil
+end
+
+function UI:GetWithinReach(rows)
+    local selection, addon = self:GetSelection(), BigBiSList
+    local rating = addon.ForeverGearRating
+    local level = addon:GetSelectedLevelingLevel()
+    local character = addon:GetCharacterDB()
+    if not rating or not self.currentOwned or not self.GetAcquisitionQuestProgress
+        or (character.leveling and character.leveling.manualLevel)
+        or addon:DetectPlayerClass() ~= selection.class or addon:DetectPlayerSpec(selection.class) ~= selection.spec
+        or addon:GetDetectedPlayerLevel() ~= level then return nil end
+    local context = rating:GetContext(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
+    if not context then return nil end
+    local bags, groups, seen = {}, { {}, {}, {} }, {}
+    local physical = self:GetLevelingReferenceSlot()
+    for _, copy in ipairs(context.ownedCopies) do
+        if copy.state == "bag" then
+            local key = copy.facts.key
+            bags[key] = bags[key] or {}
+            bags[key][#bags[key] + 1] = copy
+        end
+    end
+    for _, row in ipairs(rows) do
+        local facts = row.stat_rank and row.stat_rank.item
+        if facts and not seen[facts.key] then
+            local ownership = self:GetRowOwnershipState(row)
+            local best
+            for _, copy in ipairs(bags[facts.key] or {}) do
+                local candidate = rating:GetTooltipItem(facts.id, copy.item_link)
+                local swap = candidate and rating:CompareTooltipItem(context, candidate, true, nil, false,
+                    { physical = physical, slot = row.slot })
+                if swap and rating:IsMeaningfulOwnedUpgrade(swap) and (not best or swap.delta > best.swap.delta) then
+                    best = { row = row, swap = swap, link = copy.item_link }
+                end
+            end
+            if best then
+                seen[facts.key] = true
+                groups[1][#groups[1] + 1] = best
+            elseif ownership == "missing" and hasVerifiedLevelingRoute(row) then
+                local display = row.acquisition_display
+                local route, access = self:GetSelectedAcquisitionRoute(row)
+                local source = route == display.option and route.source
+                local questId = source and (source.quest_id or (source.entity_type == "quest" and source.entity_id))
+                if questId and (access.status == "ready" or access.status == "ready_alternate" or access.status == "check_prereq") then
+                    local nextQuest, progress = self:GetAcquisitionQuestProgress(source)
+                    if #progress == 0 then
+                        local state, turnIn = self:GetAcquisitionQuestState(questId)
+                        nextQuest = { step = { quest_id = questId, name = source.entity_name }, state = state, turnIn = turnIn }
+                    end
+                    local candidate = { facts = facts, key = facts.key, entry = { item_id = facts.id } }
+                    local swap = rating:CompareTooltipItem(context, candidate, true, nil, true, { physical = physical, slot = row.slot })
+                    if nextQuest and nextQuest.step.quest_id == questId and nextQuest.state == "In progress"
+                        and rating:IsMeaningfulOwnedUpgrade(swap) then
+                        local group = groups[nextQuest.turnIn == true and 2 or 3]
+                        group[#group + 1] = { row = row, quest = nextQuest, swap = swap }
+                        seen[facts.key] = true
+                    end
+                end
+            end
+        end
+    end
+    return groups
+end
+
+function UI:AddWithinReach(model, rows, scope)
+    local groups = self:GetWithinReach(rows)
+    if not groups then return end
+    local titles = { "Equip from bags", "Ready to turn in", "Reward quest in progress" }
+    local added
+    for index, items in ipairs(groups) do
+        if #items > 0 then
+            if not added then self:AddListRenderEntry(model, { kind = "note", text = "Within reach", height = 24 }) end
+            local section = self:AddListSection(model, titles[index], nil, added == true, "reach:" .. scope .. ":" .. index)
+            section.count = #items
+            added = true
+            if not section.collapsed then
+                table.sort(items, function(a, b)
+                    if a.swap.delta ~= b.swap.delta then return a.swap.delta > b.swap.delta end
+                    if a.row.name ~= b.row.name then return a.row.name < b.row.name end
+                    return a.row.stat_identity < b.row.stat_identity
+                end)
+                for _, item in ipairs(items) do
+                    local row, swap, quest = item.row, item.swap, item.quest
+                    local detail = quest and quest.step.name or swap.definition.label
+                    self:AddListRenderEntry(model, { kind = "action", title = row.name, height = 30,
+                        detail = (detail or row.slot) .. string.format(" · Est. %+.1f pts", swap.delta),
+                        activate = function()
+                            local data = row
+                            if item.link then
+                                data = {}
+                                for key, value in pairs(row) do data[key] = value end
+                                data.item_link = item.link
+                            end
+                            self:ShowInspectorFor(data.item_id, data, "leveling")
+                        end })
+                end
+            end
+        end
+    end
+    model.activeSection = nil
+    if added then self:AddListGap(model, 8) end
 end
 
 function UI:GetLevelingActivities(groups, selection, level, filters)
@@ -5665,6 +5795,9 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
 
     local model = self:NewListRenderModel()
     if not activity then
+        local rows = {}
+        for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows + 1] = row end end
+        self:AddWithinReach(model, rows, "activities")
         for _, destination in ipairs(activities.ordered) do
             local name, count = destination.name, destination.itemCount
             local detail = count > 0 and (count .. (count == 1 and " item" or " items")
@@ -5681,6 +5814,7 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
     end
 
     local rows = self:SortDisplayRows(activity.rows, "leveling")
+    self:AddWithinReach(model, rows, "activity:" .. activity.name)
     local actions = self:GetLevelingQuestActions(rows, selection, level)
     if #actions > 0 then
         self:AddListRenderEntry(model, {kind = "note", text = "Next quest steps", height = 22})
@@ -5693,7 +5827,7 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
         end
         self:AddListGap(model, 6)
     end
-    for _, row in ipairs(rows) do self:AddListRow(model, row, "leveling") end
+    self:AddGearGuideRows(model, rows, "activity:" .. activity.name)
     if #activity.upcoming > 0 then
         if #rows == 0 then model.resultText = #activity.upcoming .. " upcoming" end
         self:AddListGap(model)
@@ -5715,12 +5849,6 @@ function UI:RenderLevelingTab()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local level = BigBiSList:GetSelectedLevelingLevel()
-    local reference = self:GetLevelingReferenceSlot()
-    if reference then
-        local reviewedFilters = { _reviewed_only = true }
-        for key, value in pairs(filters) do reviewedFilters[key] = value end
-        filters = reviewedFilters
-    end
     local groups = self:GetCachedViewQuery("leveling:" .. level, function() return BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters) end)
     local notes = {}
     if BigBiSList.isForever then
@@ -7506,7 +7634,7 @@ function UI:GetDetailsEquipmentComparison(data)
         elseif context.occupancy == "empty" then
             appendText(lines, position .. ": Empty")
         elseif context.item_id then
-            local comparison = BigBiSList:CompareRecommendationItems(data.item_id, context.item_id, selection.class, selection.spec, selection.phase, data.slot, context)
+            local comparison = BigBiSList:CompareRecommendationItems(data.item_id, context.item_id, selection.class, selection.spec, selection.phase, data.slot, context, data)
             appendText(lines, position .. ": " .. (context.name or ("Item " .. context.item_id)))
             appendText(lines, comparison.explanation)
         else
@@ -7867,6 +7995,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local option = optionEvaluation and optionEvaluation.option
     if (detailMode == "leveling" or (detailData and detailData.leveling)) and detailData then
         appendText(recommendationLines, detailData.level_value_text)
+        appendText(recommendationLines, detailData.guide_note)
         appendText(recommendationLines, detailData.section)
         if BigBiSList.ForeverScoring and not detailData.stat_rank then
             local reference = self:GetLevelingReferenceSlot() and (self.slotContextFrame.reference or {})
@@ -7883,9 +8012,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             local comparison = self.slotComparison
             if comparison and comparison.statRank then
                 appendText(lines, "Compare with " .. self:GetComparisonReferenceLabel(comparison.reference))
-                local live = BigBiSList:GetStatRankActiveComparison(detailData, comparison.reference)
-                appendText(lines, live or (detailData.stat_delta ~= nil
-                    and string.format("Default spec weights · %+.1f pts", detailData.stat_delta) or nil))
+                appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, comparison.reference.slotKey))
             elseif detailMode == "leveling" or detailMode == "phase" then
                 appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, self:GetLevelingReferenceSlot()))
             end

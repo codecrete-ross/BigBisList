@@ -134,7 +134,9 @@ local deployment requires both strict data families (`leveling` and `bis_lists`)
 The explicit local Forever prerelease command
 `scripts/deploy.ps1 -Flavor forever -Prerelease -NoClean` permits uncovered
 leveling combinations. It checks leveling for validation errors, requires strict
-pre-raid coverage, and verifies generated and installed files. Public publishing
+pre-raid coverage, and verifies generated and installed files. Both Forever
+deployment paths also require all 56 talent-aware contexts to pass the
+[scoring audit](forever-scoring.md#verification-and-rollout). Public publishing
 requires both strict audits and
 `data/canonical/forever/live_acceptance.json` to pass
 `python tools/scrape_wowhead.py live-acceptance-audit --flavor forever`;

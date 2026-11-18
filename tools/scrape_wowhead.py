@@ -7383,8 +7383,17 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
 
     if args.command == "scoring-audit":
         from tools.forever_scoring import scoring_audit
+        from tools.forever_scoring_checks import ranking_snapshot
 
-        result = scoring_audit()
+        if args.input_dir and args.rankings:
+            parser.error("--rankings reads the generated workspace payload. Run a separate --input-dir audit for draft inputs.")
+        result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir)
+        if args.rankings:
+            try:
+                result["rankings"] = ranking_snapshot(args.lua, args.content_phase)
+            except (OSError, ValueError) as exc:
+                result["ok"] = False
+                result["issues"].append(str(exc))
         print(json.dumps(result, indent=2, sort_keys=True))
         return int(not result["ok"])
 
@@ -7601,8 +7610,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Stage build-pinned Forever mechanics snapshots.")
     mechanics_parser.add_argument("--online", action="store_true", help="Enable bounded requests for public sources.")
     mechanics_parser.add_argument("--write", action="store_true", help="Register the snapshot as evidence without approving it.")
-    subparsers.add_parser("scoring-audit", parents=[flavor_parser],
+    scoring_parser = subparsers.add_parser("scoring-audit", parents=[flavor_parser],
         help="Report character scoring coverage and stale approvals.")
+    scoring_parser.add_argument("--strict", action="store_true", help="Require all 56 contexts and execute independent swap fixtures.")
+    scoring_parser.add_argument("--rankings", action="store_true", help="Include reproducible runtime ranking results for all spec bands.")
+    scoring_parser.add_argument("--input-dir", type=Path, help="Derive scoring bindings from a complete reviewed snapshot directory without importing it.")
+    scoring_parser.add_argument("--content-phase", default="PR", help="Content phase to use for the ranking report.")
+    scoring_parser.add_argument("--lua", help="Lua 5.1 executable for scoring checks.")
 
     gaps_parser = subparsers.add_parser("gaps", parents=[flavor_parser], help="Report Forever candidate and review gaps without importing them.")
     gaps_parser.add_argument("--family", choices=["bis_lists", "leveling"], default="bis_lists")

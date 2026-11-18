@@ -8,6 +8,20 @@
       "class": "Paladin",
       "name": "Judgement of Command",
       "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026"
+    },
+    "408498": {
+      "attack": "melee",
+      "class": "Shaman",
+      "name": "Maelstrom Weapon",
+      "ppm": [
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ],
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026",
+      "speed_slot": 16
     }
   },
   "attribution": [
@@ -5359,6 +5373,100 @@
       "tooltip_template": "Allows $m1% of your Mana regeneration to continue while casting.",
       "tree_id": 1082
     },
+    "129401": {
+      "definition_id": 134202,
+      "effects": [
+        {
+          "curve_id": 85306,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113722,
+              "row_id": 251361,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251362,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251363,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251364,
+              "value": -20.0
+            },
+            {
+              "row_id": 251365,
+              "value": -20.0
+            }
+          ],
+          "row_id": 23728
+        },
+        {
+          "curve_id": 128299,
+          "effect_index": 1,
+          "push_id": 113722,
+          "ranks": [
+            {
+              "push_id": 113722,
+              "row_id": 372521,
+              "value": 6.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372522,
+              "value": 7.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372523,
+              "value": 8.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372524,
+              "value": 9.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372525,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25235
+        }
+      ],
+      "max_rank": 5,
+      "name": "Maelstrom Weapon",
+      "node_id": 104741,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1072664
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1137418,
+          "push_id": 113722
+        }
+      ],
+      "spell_id": 408498,
+      "tooltip_template": "When you deal damage with a melee attack, you have a ${($mws*$s2/60)*100}% chance (based on weapon speed) to reduce the cast time and Mana cost of your next Lightning Bolt spell by $m1%. Stacks up to $s3 times. Lasts $408505d.",
+      "tree_id": 1082
+    },
     "129404": {
       "definition_id": 134205,
       "effects": [
@@ -5509,6 +5617,689 @@
       "tooltip_template": "Increases your Intellect by $m1%.",
       "tree_id": 1082
     },
+    "129432": {
+      "definition_id": 134233,
+      "effects": [
+        {
+          "curve_id": 85215,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251080,
+              "value": 1.0
+            },
+            {
+              "row_id": 251081,
+              "value": 2.0
+            },
+            {
+              "row_id": 251082,
+              "value": 3.0
+            },
+            {
+              "row_id": 251083,
+              "value": 4.0
+            },
+            {
+              "row_id": 251084,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23689
+        }
+      ],
+      "max_rank": 5,
+      "name": "Concussion",
+      "node_id": 104772,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692593
+        }
+      ],
+      "spell_id": 16035,
+      "tooltip_template": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by $m1%.",
+      "tree_id": 1082
+    },
+    "129433": {
+      "definition_id": 134234,
+      "effects": [
+        {
+          "curve_id": 85214,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251075,
+              "value": -2.0
+            },
+            {
+              "row_id": 251076,
+              "value": -4.0
+            },
+            {
+              "row_id": 251077,
+              "value": -6.0
+            },
+            {
+              "row_id": 251078,
+              "value": -8.0
+            },
+            {
+              "row_id": 251079,
+              "value": -10.0
+            }
+          ],
+          "row_id": 23688
+        }
+      ],
+      "max_rank": 5,
+      "name": "Convection",
+      "node_id": 104773,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 14,
+          "EffectMiscValue_1": 0,
+          "ID": 692508
+        }
+      ],
+      "spell_id": 16039,
+      "tooltip_template": "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by $m1%.",
+      "tree_id": 1082
+    },
+    "129571": {
+      "definition_id": 134372,
+      "effects": [
+        {
+          "curve_id": 85407,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251696,
+              "value": 5.0
+            },
+            {
+              "row_id": 251697,
+              "value": 10.0
+            },
+            {
+              "row_id": 251698,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23795
+        }
+      ],
+      "max_rank": 3,
+      "name": "Living Spirit",
+      "node_id": 104911,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 16,
+          "ID": 1338676
+        }
+      ],
+      "spell_id": 1309631,
+      "tooltip_template": "Increases your Spirit by $m1%.",
+      "tree_id": 1089
+    },
+    "129576": {
+      "definition_id": 134377,
+      "effects": [
+        {
+          "curve_id": 85390,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251643,
+              "value": 2.0
+            },
+            {
+              "row_id": 251644,
+              "value": 4.0
+            },
+            {
+              "row_id": 251645,
+              "value": 6.0
+            },
+            {
+              "row_id": 251646,
+              "value": 8.0
+            },
+            {
+              "row_id": 251647,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23790
+        }
+      ],
+      "max_rank": 5,
+      "name": "Gift of Nature",
+      "node_id": 104916,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695243
+        }
+      ],
+      "spell_id": 17104,
+      "tooltip_template": "Increases the effect of all your healing spells by $s1%.",
+      "tree_id": 1089
+    },
+    "129582": {
+      "definition_id": 134383,
+      "effects": [
+        {
+          "curve_id": 85363,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251571,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251572,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251573,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251574,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251575,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23786
+        }
+      ],
+      "max_rank": 5,
+      "name": "Naturalist",
+      "node_id": 104922,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 127,
+          "EffectMiscValue_1": 0,
+          "ID": 1230205
+        }
+      ],
+      "spell_id": 17069,
+      "tooltip_template": "Reduces the cast time of your Healing Touch and Wild Growth spells by $/1000;S1 sec and increases all damage you deal by $m2%.",
+      "tree_id": 1089
+    },
+    "129596": {
+      "definition_id": 134397,
+      "effects": [
+        {
+          "curve_id": 85335,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251469,
+              "value": 2.0
+            },
+            {
+              "row_id": 251470,
+              "value": 4.0
+            },
+            {
+              "row_id": 251471,
+              "value": 6.0
+            },
+            {
+              "row_id": 251472,
+              "value": 8.0
+            },
+            {
+              "row_id": 251473,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23758
+        }
+      ],
+      "max_rank": 5,
+      "name": "Moonfury",
+      "node_id": 104936,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 72,
+          "EffectMiscValue_1": 0,
+          "ID": 694153
+        }
+      ],
+      "spell_id": 16896,
+      "tooltip_template": "Increases the damage done by your Arcane and Nature spells by $m1%.",
+      "tree_id": 1089
+    },
+    "129610": {
+      "definition_id": 134411,
+      "effects": [
+        {
+          "curve_id": 125352,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 365004,
+              "value": 12.0
+            },
+            {
+              "row_id": 365005,
+              "value": 25.0
+            }
+          ],
+          "row_id": 25187
+        }
+      ],
+      "max_rank": 2,
+      "name": "Natural Instinct",
+      "node_id": 104950,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 175,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1361117
+        }
+      ],
+      "spell_id": 1223242,
+      "tooltip_template": "Increases the critical strike damage bonus of your melee abilities by $m1% and increases your spell healing by $s2% of your Intellect.",
+      "tree_id": 1089
+    },
+    "129618": {
+      "definition_id": 134419,
+      "definition_push_id": 113283,
+      "effects": [
+        {
+          "curve_id": 85361,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251561,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251562,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251563,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251564,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251565,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23783
+        },
+        {
+          "curve_id": 85360,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251556,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251557,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251558,
+              "value": 12.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251559,
+              "value": 16.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251560,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23784
+        },
+        {
+          "curve_id": 127962,
+          "effect_index": 2,
+          "push_id": 113283,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 371502,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371503,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371504,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371505,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371506,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25217
+        }
+      ],
+      "max_rank": 5,
+      "name": "Heart of the Wild",
+      "node_id": 104958,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 694815
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1345817
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1345818
+        }
+      ],
+      "spell_id": 17003,
+      "tooltip_template": "Increases your Intellect by $s1%.  In addition, while in Bear Form or Dire Bear Form your Stamina is increased by $s2% and while in Cat Form your Strength is increased by $s3%.",
+      "tree_id": 1089
+    },
+    "129646": {
+      "definition_id": 134447,
+      "effects": [
+        {
+          "curve_id": 82778,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 239960,
+              "value": 3.0
+            },
+            {
+              "row_id": 239961,
+              "value": 6.0
+            },
+            {
+              "row_id": 239962,
+              "value": 9.0
+            },
+            {
+              "row_id": 239963,
+              "value": 12.0
+            },
+            {
+              "row_id": 239964,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23259
+        }
+      ],
+      "max_rank": 5,
+      "name": "Lightning Reflexes",
+      "node_id": 104982,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 2,
+          "ID": 696059
+        }
+      ],
+      "spell_id": 19168,
+      "tooltip_template": "Increases your Agility by $s1%.",
+      "tree_id": 1091
+    },
+    "129656": {
+      "definition_id": 134457,
+      "effects": [
+        {
+          "curve_id": 82789,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 239991,
+              "value": 2.0
+            },
+            {
+              "row_id": 239992,
+              "value": 4.0
+            },
+            {
+              "row_id": 251925,
+              "value": 6.0
+            },
+            {
+              "row_id": 251926,
+              "value": 8.0
+            },
+            {
+              "row_id": 251927,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23270
+        }
+      ],
+      "max_rank": 5,
+      "name": "Survivalist",
+      "node_id": 104992,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 133,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695602
+        }
+      ],
+      "spell_id": 19255,
+      "tooltip_template": "Increases your total Health by $s1%.",
+      "tree_id": 1091
+    },
+    "129662": {
+      "definition_id": 134463,
+      "effects": [
+        {
+          "curve_id": 82800,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240042,
+              "value": 1.0
+            },
+            {
+              "row_id": 240043,
+              "value": 2.0
+            },
+            {
+              "row_id": 240044,
+              "value": 3.0
+            },
+            {
+              "row_id": 240045,
+              "value": 4.0
+            },
+            {
+              "row_id": 240046,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23294
+        }
+      ],
+      "max_rank": 5,
+      "name": "Ranged Weapon Specialization",
+      "node_id": 104998,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 127,
+          "EffectMiscValue_1": 0,
+          "ID": 696995
+        }
+      ],
+      "spell_id": 19507,
+      "tooltip_template": "Increases the damage you deal with ranged weapons by $s1%.",
+      "tree_id": 1091
+    },
+    "129672": {
+      "definition_id": 134473,
+      "effects": [
+        {
+          "curve_id": 82810,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240078,
+              "value": 20.0
+            },
+            {
+              "row_id": 240079,
+              "value": 40.0
+            },
+            {
+              "row_id": 240080,
+              "value": 60.0
+            },
+            {
+              "row_id": 316609,
+              "value": 80.0
+            },
+            {
+              "row_id": 316610,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23303
+        },
+        {
+          "curve_id": 104810,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 316604,
+              "value": 20.0
+            },
+            {
+              "row_id": 316605,
+              "value": 40.0
+            },
+            {
+              "row_id": 316606,
+              "value": 60.0
+            },
+            {
+              "row_id": 316607,
+              "value": 80.0
+            },
+            {
+              "row_id": 316608,
+              "value": 100.0
+            }
+          ],
+          "row_id": 24517
+        }
+      ],
+      "max_rank": 5,
+      "name": "Careful Aim",
+      "node_id": 105008,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 580,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1212378
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 598,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1323702
+        }
+      ],
+      "spell_id": 1223984,
+      "tooltip_template": "Increases your Attack Power by $s1% of your Intellect.",
+      "tree_id": 1091
+    },
     "130018": {
       "definition_id": 134819,
       "effects": [
@@ -5559,7 +6350,8 @@
           "EffectIndex": 0,
           "EffectMiscValue_0": 16,
           "EffectMiscValue_1": 0,
-          "ID": 1340799
+          "ID": 1340799,
+          "push_id": 113139
         },
         {
           "Effect": 6,
@@ -5567,7 +6359,8 @@
           "EffectIndex": 1,
           "EffectMiscValue_0": 9,
           "EffectMiscValue_1": 0,
-          "ID": 1367623
+          "ID": 1367623,
+          "push_id": 113139
         }
       ],
       "spell_id": 1310904,
@@ -5620,6 +6413,46 @@
       ],
       "spell_id": 20257,
       "tooltip_template": "Increases your total Intellect by $s1%.",
+      "tree_id": 1100
+    },
+    "130027": {
+      "definition_id": 134828,
+      "effects": [
+        {
+          "curve_id": 82974,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240644,
+              "value": 4.0
+            },
+            {
+              "row_id": 240645,
+              "value": 8.0
+            },
+            {
+              "row_id": 240646,
+              "value": 12.0
+            }
+          ],
+          "row_id": 23329
+        }
+      ],
+      "max_rank": 3,
+      "name": "Healing Light",
+      "node_id": 105333,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 698059
+        }
+      ],
+      "spell_id": 20237,
+      "tooltip_template": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by $s1%.",
       "tree_id": 1100
     },
     "130354": {
@@ -5795,6 +6628,1280 @@
       "spell_id": 20375,
       "tooltip_template": "Gives the Paladin a chance to deal additional Holy damage equal to $20424s1% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts $d.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing $/2;20467s1 Holy damage, $20467s1 if the target is stunned or incapacitated.",
       "tree_id": 1100
+    },
+    "130426": {
+      "definition_id": 135227,
+      "effects": [
+        {
+          "curve_id": 82980,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240670,
+              "value": 2.0
+            },
+            {
+              "row_id": 240671,
+              "value": 4.0
+            },
+            {
+              "row_id": 316807,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23352
+        }
+      ],
+      "max_rank": 3,
+      "name": "Two-Handed Weapon Specialization",
+      "node_id": 105697,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 697263,
+          "push_id": 113542
+        }
+      ],
+      "spell_id": 20111,
+      "tooltip_template": "Increases the Physical and Holy damage you deal by $s1%, and reduces all threat you generate by $m2% while a two-handed melee weapon is equipped.",
+      "tree_id": 1100
+    },
+    "130443": {
+      "definition_id": 135244,
+      "effects": [
+        {
+          "curve_id": 83045,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240968,
+              "value": 4.0
+            },
+            {
+              "row_id": 240969,
+              "value": 8.0
+            },
+            {
+              "row_id": 336397,
+              "value": 12.0
+            },
+            {
+              "row_id": 336398,
+              "value": 16.0
+            },
+            {
+              "row_id": 336399,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23369
+        }
+      ],
+      "max_rank": 5,
+      "name": "Vile Poisons",
+      "node_id": 105714,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 693770
+        }
+      ],
+      "spell_id": 16513,
+      "tooltip_template": "Increases the damage dealt by your poisons by $m1% and gives your poisons an additional $m3% chance to resist dispel effects.",
+      "tree_id": 1111
+    },
+    "130456": {
+      "definition_id": 135257,
+      "effects": [
+        {
+          "curve_id": 83026,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240897,
+              "value": 1.0
+            },
+            {
+              "row_id": 240898,
+              "value": 2.0
+            },
+            {
+              "row_id": 240899,
+              "value": 3.0
+            },
+            {
+              "row_id": 240900,
+              "value": 4.0
+            },
+            {
+              "row_id": 240901,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23382
+        },
+        {
+          "curve_id": 106210,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 320222,
+              "value": 3.0
+            },
+            {
+              "row_id": 320223,
+              "value": 6.0
+            },
+            {
+              "row_id": 320224,
+              "value": 9.0
+            },
+            {
+              "row_id": 320225,
+              "value": 12.0
+            },
+            {
+              "row_id": 320226,
+              "value": 15.0
+            }
+          ],
+          "row_id": 24529
+        },
+        {
+          "curve_id": 106209,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 320217,
+              "value": 1.0
+            },
+            {
+              "row_id": 320218,
+              "value": 2.0
+            },
+            {
+              "row_id": 320219,
+              "value": 3.0
+            },
+            {
+              "row_id": 320220,
+              "value": 4.0
+            },
+            {
+              "row_id": 320221,
+              "value": 5.0
+            }
+          ],
+          "row_id": 24528
+        }
+      ],
+      "max_rank": 5,
+      "name": "Hack and Slash",
+      "node_id": 105727,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 690974
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1309137
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1309138
+        }
+      ],
+      "spell_id": 13960,
+      "tooltip_template": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    |CFFFFFFFFAxe/Sword:|R Your successful\r\n    melee attacks have a $s3% chance\r\n    to trigger an extra attack on the \r\n    target.\r\n\r\n    |CFFFFFFFFDagger/Fist:|R Increases your\r\n    critical strike chance by $s1%.\r\n\r\n    |CFFFFFFFFMace:|R Your attacks ignore $s2% of\r\n    your target's armor.",
+      "tree_id": 1111
+    },
+    "130466": {
+      "definition_id": 135267,
+      "effects": [
+        {
+          "curve_id": 83034,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240926,
+              "value": 1.0
+            },
+            {
+              "row_id": 240927,
+              "value": 2.0
+            },
+            {
+              "row_id": 240928,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23390
+        },
+        {
+          "curve_id": 87810,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 260068,
+              "value": 1.0
+            },
+            {
+              "row_id": 260069,
+              "value": 2.0
+            },
+            {
+              "row_id": 260070,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23841
+        }
+      ],
+      "max_rank": 3,
+      "name": "Precision",
+      "node_id": 105737,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 691433
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1240836
+        }
+      ],
+      "spell_id": 13705,
+      "tooltip_template": "Improves your chance to hit by $s1%.",
+      "tree_id": 1111
+    },
+    "130481": {
+      "definition_id": 135282,
+      "effects": [
+        {
+          "curve_id": 83011,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240859,
+              "value": 3.0
+            },
+            {
+              "row_id": 240860,
+              "value": 6.0
+            },
+            {
+              "row_id": 240861,
+              "value": 9.0
+            }
+          ],
+          "row_id": 23404
+        },
+        {
+          "curve_id": 83010,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 240856,
+              "value": 10.0
+            },
+            {
+              "row_id": 240857,
+              "value": 20.0
+            },
+            {
+              "row_id": 240858,
+              "value": 30.0
+            }
+          ],
+          "row_id": 23405
+        }
+      ],
+      "max_rank": 3,
+      "name": "Serrated Blades",
+      "node_id": 105752,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 280,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 690915
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 22,
+          "EffectMiscValue_1": 0,
+          "ID": 690916
+        }
+      ],
+      "spell_id": 14171,
+      "tooltip_template": "Causes your attacks to ignore $m1% of your target's Armor and increases the damage dealt by your Rupture ability by $m2%.",
+      "tree_id": 1111
+    },
+    "130501": {
+      "definition_id": 135302,
+      "effects": [
+        {
+          "curve_id": 110791,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 332410,
+              "value": -5.0
+            },
+            {
+              "row_id": 332411,
+              "value": -10.0
+            },
+            {
+              "row_id": 332412,
+              "value": -15.0
+            }
+          ],
+          "row_id": 24626
+        }
+      ],
+      "max_rank": 3,
+      "name": "Frost Channeling",
+      "node_id": 105772,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 14,
+          "EffectMiscValue_1": 0,
+          "ID": 689304
+        }
+      ],
+      "spell_id": 11160,
+      "tooltip_template": "Reduces the mana cost of your Frost spells by $s1% and reduces the threat caused by your Frost spells by $s2%.",
+      "tree_id": 1112
+    },
+    "130506": {
+      "definition_id": 135307,
+      "effects": [
+        {
+          "curve_id": 83077,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241093,
+              "value": 20.0
+            },
+            {
+              "row_id": 241094,
+              "value": 40.0
+            },
+            {
+              "row_id": 241095,
+              "value": 60.0
+            },
+            {
+              "row_id": 241096,
+              "value": 80.0
+            },
+            {
+              "row_id": 241097,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23433
+        }
+      ],
+      "max_rank": 5,
+      "name": "Ice Shards",
+      "node_id": 105777,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 15,
+          "EffectMiscValue_1": 0,
+          "ID": 688526
+        }
+      ],
+      "spell_id": 11207,
+      "tooltip_template": "Increases the critical strike damage bonus of your Frost spells by $s1%.",
+      "tree_id": 1112
+    },
+    "130511": {
+      "definition_id": 135312,
+      "effects": [
+        {
+          "curve_id": 83082,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241110,
+              "value": 1.0
+            },
+            {
+              "row_id": 241111,
+              "value": 2.0
+            },
+            {
+              "row_id": 241112,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23438
+        }
+      ],
+      "max_rank": 3,
+      "name": "Fire Power",
+      "node_id": 105782,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 689557
+        }
+      ],
+      "spell_id": 11124,
+      "tooltip_template": "Increases the damage done by your Fire spells by $s1% per your Fire effects on the target, up to a maximum increase of ${$s1*4}%. Effects which mix multiple schools of magic do not qualify.",
+      "tree_id": 1112
+    },
+    "130528": {
+      "definition_id": 135329,
+      "effects": [
+        {
+          "curve_id": 83098,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241161,
+              "value": 1.0
+            },
+            {
+              "row_id": 241162,
+              "value": 2.0
+            },
+            {
+              "row_id": 241163,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23453
+        }
+      ],
+      "max_rank": 3,
+      "name": "Arcane Instability",
+      "node_id": 105799,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692455
+        }
+      ],
+      "spell_id": 15058,
+      "tooltip_template": "Increases the damage done by your spells by $m1% and your critical strike chance by $m2%.",
+      "tree_id": 1112
+    },
+    "130529": {
+      "definition_id": 135330,
+      "effects": [
+        {
+          "curve_id": 83100,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241169,
+              "value": 2.0
+            },
+            {
+              "row_id": 241170,
+              "value": 4.0
+            },
+            {
+              "row_id": 241171,
+              "value": 6.0
+            },
+            {
+              "row_id": 241172,
+              "value": 8.0
+            },
+            {
+              "row_id": 241173,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23455
+        },
+        {
+          "curve_id": 83099,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 241164,
+              "value": 20.0
+            },
+            {
+              "row_id": 241165,
+              "value": 40.0
+            },
+            {
+              "row_id": 241166,
+              "value": 60.0
+            },
+            {
+              "row_id": 241167,
+              "value": 80.0
+            },
+            {
+              "row_id": 241168,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23456
+        }
+      ],
+      "max_rank": 5,
+      "name": "Arcane Mind",
+      "node_id": 105800,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 688793
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 15,
+          "EffectMiscValue_1": 0,
+          "ID": 1230612
+        }
+      ],
+      "spell_id": 11232,
+      "tooltip_template": "Increases your Intellect by $m1% and increases the critical strike damage bonus of your Arcane spells by $m2%.",
+      "tree_id": 1112
+    },
+    "130544": {
+      "definition_id": 135345,
+      "effects": [
+        {
+          "curve_id": 83116,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241215,
+              "value": 13.0
+            },
+            {
+              "row_id": 241216,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23472
+        }
+      ],
+      "max_rank": 2,
+      "name": "Wand Specialization",
+      "node_id": 105815,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 0,
+          "ID": 683316
+        }
+      ],
+      "spell_id": 6057,
+      "tooltip_template": "Increases your damage with Wands by $s1%.",
+      "tree_id": 1112
+    },
+    "130547": {
+      "definition_id": 135348,
+      "effects": [
+        {
+          "curve_id": 83145,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241323,
+              "value": 2.0
+            },
+            {
+              "row_id": 241324,
+              "value": 4.0
+            },
+            {
+              "row_id": 241325,
+              "value": 6.0
+            },
+            {
+              "row_id": 241326,
+              "value": 8.0
+            },
+            {
+              "row_id": 241327,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23490
+        }
+      ],
+      "max_rank": 5,
+      "name": "Darkness",
+      "node_id": 105818,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 32,
+          "EffectMiscValue_1": 0,
+          "ID": 693083
+        }
+      ],
+      "spell_id": 15259,
+      "tooltip_template": "Increases your Shadow damage done by $s1%.",
+      "tree_id": 1114
+    },
+    "130566": {
+      "definition_id": 135367,
+      "effects": [
+        {
+          "curve_id": 83132,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241281,
+              "value": 2.0
+            },
+            {
+              "row_id": 241282,
+              "value": 4.0
+            },
+            {
+              "row_id": 241283,
+              "value": 6.0
+            },
+            {
+              "row_id": 241284,
+              "value": 8.0
+            },
+            {
+              "row_id": 241285,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23477
+        }
+      ],
+      "max_rank": 5,
+      "name": "Mental Strength",
+      "node_id": 105837,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 695981
+        }
+      ],
+      "spell_id": 18551,
+      "tooltip_template": "Increases your total Intellect by $m1%.",
+      "tree_id": 1114
+    },
+    "130579": {
+      "definition_id": 135380,
+      "effects": [
+        {
+          "curve_id": 83144,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241318,
+              "value": 13.0
+            },
+            {
+              "row_id": 241319,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23489
+        }
+      ],
+      "max_rank": 2,
+      "name": "Wand Specialization",
+      "node_id": 105850,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 0,
+          "ID": 690370
+        }
+      ],
+      "spell_id": 14524,
+      "tooltip_template": "Increases your damage with Wands by $s1%.",
+      "tree_id": 1114
+    },
+    "130581": {
+      "definition_id": 135382,
+      "effects": [
+        {
+          "curve_id": 83159,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241369,
+              "value": 3.0
+            },
+            {
+              "row_id": 241370,
+              "value": 7.0
+            },
+            {
+              "row_id": 241371,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23504
+        }
+      ],
+      "max_rank": 3,
+      "name": "Spiritual Healing",
+      "node_id": 105852,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692104
+        }
+      ],
+      "spell_id": 14898,
+      "tooltip_template": "Increases the amount healed by your spells by $s1%.",
+      "tree_id": 1114
+    },
+    "130582": {
+      "definition_id": 135383,
+      "effects": [
+        {
+          "curve_id": 83160,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241372,
+              "value": 1.0
+            },
+            {
+              "row_id": 241373,
+              "value": 3.0
+            },
+            {
+              "row_id": 241374,
+              "value": 5.0
+            },
+            {
+              "row_id": 241375,
+              "value": 6.0
+            },
+            {
+              "row_id": 241376,
+              "value": 8.0
+            }
+          ],
+          "row_id": 23505
+        },
+        {
+          "curve_id": 87617,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 259291,
+              "value": 5.0
+            },
+            {
+              "row_id": 259292,
+              "value": 10.0
+            },
+            {
+              "row_id": 259293,
+              "value": 15.0
+            },
+            {
+              "row_id": 259294,
+              "value": 20.0
+            },
+            {
+              "row_id": 259295,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23831
+        }
+      ],
+      "max_rank": 5,
+      "name": "Spiritual Guidance",
+      "node_id": 105853,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 174,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 4,
+          "ID": 692131
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 175,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 4,
+          "EffectMiscValue_1": 0,
+          "ID": 692132
+        }
+      ],
+      "spell_id": 14901,
+      "tooltip_template": "Increases your spell healing by up to $s2% of your total Spirit and your spell damage by up to $s1% of your total Spirit.",
+      "tree_id": 1114
+    },
+    "130609": {
+      "definition_id": 135410,
+      "effects": [
+        {
+          "curve_id": 83180,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 241444,
+              "value": 3.0
+            },
+            {
+              "row_id": 241445,
+              "value": 7.0
+            },
+            {
+              "row_id": 241446,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23524
+        }
+      ],
+      "max_rank": 3,
+      "name": "Agonizing Flames",
+      "node_id": 105879,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1230560
+        }
+      ],
+      "spell_id": 17927,
+      "tooltip_template": "Increases the critical strike chance of your Searing Pain spell by $m1% and the damage done by all your Destruction spells by $m2%.",
+      "tree_id": 1116
+    },
+    "130633": {
+      "definition_id": 135434,
+      "effects": [
+        {
+          "curve_id": 103061,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 311280,
+              "value": 5.0
+            },
+            {
+              "row_id": 311281,
+              "value": 10.0
+            },
+            {
+              "row_id": 311282,
+              "value": 15.0
+            }
+          ],
+          "row_id": 24503
+        }
+      ],
+      "max_rank": 3,
+      "name": "Fel Vitality",
+      "node_id": 105903,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 178,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1314665
+        }
+      ],
+      "spell_id": 18731,
+      "tooltip_template": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by $s1%, and increases your maximum Mana by $s2%.",
+      "tree_id": 1116
+    },
+    "130637": {
+      "definition_id": 135438,
+      "effects": [
+        {
+          "curve_id": 83212,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241558,
+              "value": 3.0
+            },
+            {
+              "row_id": 241559,
+              "value": 6.0
+            },
+            {
+              "row_id": 311313,
+              "value": 9.0
+            },
+            {
+              "row_id": 311314,
+              "value": 12.0
+            },
+            {
+              "row_id": 311315,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23554
+        }
+      ],
+      "max_rank": 5,
+      "name": "Demonic Embrace",
+      "node_id": 105907,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 4,
+          "ID": 696832
+        }
+      ],
+      "spell_id": 18697,
+      "tooltip_template": "Increases your total Stamina by $s1%.",
+      "tree_id": 1116
+    },
+    "130640": {
+      "definition_id": 135441,
+      "effects": [
+        {
+          "curve_id": 83215,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241566,
+              "value": 2.0
+            },
+            {
+              "row_id": 241567,
+              "value": 4.0
+            },
+            {
+              "row_id": 369248,
+              "value": 6.0
+            },
+            {
+              "row_id": 369249,
+              "value": 8.0
+            },
+            {
+              "row_id": 369250,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23559
+        }
+      ],
+      "max_rank": 5,
+      "name": "Shadow Mastery",
+      "node_id": 105910,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 694067
+        }
+      ],
+      "spell_id": 18271,
+      "tooltip_template": "Increases the damage dealt or life drained by your Shadow spells by $s1%.",
+      "tree_id": 1116
+    },
+    "130651": {
+      "definition_id": 135452,
+      "effects": [
+        {
+          "curve_id": 83225,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241595,
+              "value": 10.0
+            },
+            {
+              "row_id": 241596,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23569
+        }
+      ],
+      "max_rank": 2,
+      "name": "Improved Life Tap",
+      "node_id": 105921,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695916
+        }
+      ],
+      "spell_id": 18182,
+      "tooltip_template": "Increases the amount of Mana awarded by your Life Tap spell by $s1%.",
+      "tree_id": 1116
+    },
+    "130663": {
+      "definition_id": 135464,
+      "effects": [
+        {
+          "curve_id": 83296,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241888,
+              "value": 5.0
+            },
+            {
+              "row_id": 241889,
+              "value": 10.0
+            },
+            {
+              "row_id": 241890,
+              "value": 15.0
+            },
+            {
+              "row_id": 241891,
+              "value": 20.0
+            },
+            {
+              "row_id": 241892,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23582
+        }
+      ],
+      "max_rank": 5,
+      "name": "Dual Wield Specialization",
+      "node_id": 105933,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 122,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 699937
+        }
+      ],
+      "spell_id": 23584,
+      "tooltip_template": "Increases the damage done by your off-hand weapon by $m1% and the Rage generated by your off-hand attacks by $m2%.",
+      "tree_id": 1117
+    },
+    "130678": {
+      "definition_id": 135479,
+      "effects": [
+        {
+          "curve_id": 83308,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113539,
+              "row_id": 241939,
+              "value": 2.0
+            },
+            {
+              "push_id": 113539,
+              "row_id": 241940,
+              "value": 4.0
+            },
+            {
+              "push_id": 113539,
+              "row_id": 241941,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23594
+        }
+      ],
+      "max_rank": 3,
+      "name": "Two-Handed Weapon Specialization",
+      "node_id": 105948,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 1,
+          "EffectMiscValue_1": 0,
+          "ID": 689637
+        }
+      ],
+      "spell_id": 12163,
+      "tooltip_template": "Increases the damage you deal with two-handed melee weapons by $s1%.",
+      "tree_id": 1117
+    },
+    "130683": {
+      "definition_id": 135484,
+      "effects": [
+        {
+          "curve_id": 125259,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 364790,
+              "value": 4.0
+            },
+            {
+              "row_id": 364791,
+              "value": 7.0
+            },
+            {
+              "row_id": 364792,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25180
+        }
+      ],
+      "max_rank": 3,
+      "name": "Furious Precision",
+      "node_id": 105953,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1360676
+        }
+      ],
+      "spell_id": 1323963,
+      "tooltip_template": "Increases your chance to hit with off-hand attacks by $m1%.",
+      "tree_id": 1117
+    },
+    "130692": {
+      "definition_id": 135493,
+      "effects": [
+        {
+          "curve_id": 83276,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241816,
+              "value": 2.0
+            },
+            {
+              "row_id": 241817,
+              "value": 4.0
+            },
+            {
+              "row_id": 241818,
+              "value": 6.0
+            },
+            {
+              "row_id": 241819,
+              "value": 8.0
+            },
+            {
+              "row_id": 241820,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23607
+        }
+      ],
+      "max_rank": 5,
+      "name": "Bastion",
+      "node_id": 105962,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 1,
+          "EffectMiscValue_1": 0,
+          "ID": 692437
+        }
+      ],
+      "spell_id": 16538,
+      "tooltip_template": "Increases all damage you deal by $s1% while a shield is equipped.",
+      "tree_id": 1117
     },
     "130705": {
       "definition_id": 135506,
@@ -6122,7 +8229,8 @@
           "EffectIndex": 1,
           "EffectMiscValue_0": 10,
           "EffectMiscValue_1": 0,
-          "ID": 1367233
+          "ID": 1367233,
+          "push_id": 113139
         }
       ],
       "spell_id": 1311084,
@@ -6184,6 +8292,47 @@
       "spell_id": 20262,
       "tooltip_template": "Increases your Strength by $s1%.",
       "tree_id": 1100
+    },
+    "141297": {
+      "definition_id": 145965,
+      "definition_push_id": 113483,
+      "effects": [
+        {
+          "curve_id": 128136,
+          "effect_index": 0,
+          "push_id": 113483,
+          "ranks": [
+            {
+              "push_id": 113483,
+              "row_id": 372078,
+              "value": 25.0
+            },
+            {
+              "push_id": 113483,
+              "row_id": 372079,
+              "value": 50.0
+            }
+          ],
+          "row_id": 25227
+        }
+      ],
+      "entry_push_id": 113483,
+      "max_rank": 2,
+      "name": "Dual Wield Specialization",
+      "node_id": 113635,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 122,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692223
+        }
+      ],
+      "spell_id": 13715,
+      "tooltip_template": "Increases the damage done by your off-hand weapon by $s1%.",
+      "tree_id": 1111
     }
   },
   "url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin"

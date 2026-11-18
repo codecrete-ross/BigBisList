@@ -967,7 +967,13 @@ assert(not addon:AccessOptionMatchesCharacter(option,filters))
                     "class","spec","slot","faction","race_id","level_min","level_max","candidate_digest")},
                     "profile_version":docs[1]["version"],"rules_version":docs[0]["version"],"choices":row["candidate_choices"]})
             result = leveling.generate(snapshots)
+        for collection in ("items", "item_stats"):
+            for item in result[collection].values():
+                item["quality"] = "uncommon"
+                if collection == "item_stats":
+                    item["stats"]["strength"] = item["stats"]["stamina"]
         overlay = {"items":{"items":[]}, "item_stats":{"item_stats":[]}, "bis_lists":{"lists":[]},
+                   "reviewed_builds":{"builds":[]},
                    "leveling_items":{"items":list(result["items"].values())},
                    "leveling_item_stats":{"item_stats":list(result["item_stats"].values())},
                    "leveling_gear":result["leveling_gear"], "leveling_recommendations":result["leveling_recommendations"]}
@@ -1028,8 +1034,8 @@ addon:SetSelection("Warrior","Arms","LEVELING","Gear Guide")
 addon.UI:Open()
 H.settle()
 local rows=addon:GetLevelingRows("Warrior","Arms",14,{})
-assert(#rows==1 and #rows[1].items==2,"generated eligibility keys must resolve for the Human player")
-for _,row in ipairs(rows[1].items) do assert(row.item_id==71 or row.item_id==72) end
+assert(#rows==1 and #rows[1].items==1 and rows[1].items[1].item_id==72,
+    "generated eligibility keys and the stat floor must resolve for the Human player")
 assert(addon:GetItemBestLevelingUseForSpec(72,"Warrior","Arms",14))
 assert(#addon:GetLevelingTooltipMatches(72,"Warrior","Arms",14,true)>0)
 side="Horde"

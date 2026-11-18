@@ -4,7 +4,7 @@ import unittest
 
 from tests.test_addon_runtime_lua import find_lua51
 from tools.forever_comparison import comparison_document, comparison_facts, compile_comparison_data
-from tools.forever_scoring import compile_model, pack_item, read_model, review_issues, scoring_audit, swap_score
+from tools.forever_scoring import compile_model, pack_item, read_model, refresh_review_scope, review_issues, scoring_audit, swap_score
 from tools.generate_lua import lua_value
 from tools.project import ADDON_DIR, dataset_json
 
@@ -26,6 +26,8 @@ class ForeverScoringTests(unittest.TestCase):
     def test_current_rank_facts_and_reviewed_contexts(self):
         self.assertEqual(self.snapshot["client_build"], "1.60.1.70959")
         self.assertEqual(self.snapshot["ability_triggers"]["20425"]["activates"], ["melee_on_hit"])
+        self.assertEqual(self.snapshot["ability_triggers"]["408498"]["ppm"], [6, 7, 8, 9, 10])
+        self.assertEqual(self.snapshot["ability_triggers"]["408498"]["speed_slot"], 16)
         self.assertEqual(self.snapshot["enchants"]["1891"]["stats"]["intellect"], 4)
         self.assertEqual([row["value"] for row in self.snapshot["traits"]["137880"]["effects"][0]["ranks"]],
                          [12, 24, 36, 48, 60])
@@ -38,15 +40,64 @@ class ForeverScoringTests(unittest.TestCase):
         audit = scoring_audit()
         self.assertTrue(audit["ok"], audit["issues"])
         self.assertIn("Paladin/Protection", audit["scoring_profiles"])
-        self.assertEqual(len(audit["scoring_profiles"]), 5)
-        self.assertEqual(len(audit["scoring_profiles"]) + len(audit["reference_profiles"]), 28)
-        self.assertEqual(len(self.bindings), 10)
+        self.assertEqual(len(audit["scoring_profiles"]), 28)
+        self.assertEqual(audit["reference_profiles"], [])
+        self.assertEqual(len(self.bindings), 56)
+        release = scoring_audit(strict=True, lua=self.lua)
+        self.assertEqual(release["required_contexts"], 56)
+        self.assertEqual(release["missing_contexts"], [])
+        if self.lua:
+            self.assertTrue(release["ok"], release["issues"])
+            self.assertEqual(release["issues"], [])
+            self.assertEqual(len(release["validated_contexts"]), 56)
 
     def test_new_client_approval_requires_the_compared_equipment_rules(self):
         rules = dataset_json("forever", "leveling_rules")
         rules["class_equipment"]["Paladin"]["armor_tiers"][0]["types"].append("Plate")
         with self.assertRaisesRegex(ValueError, "current equipment comparison"):
             compile_model(self.model, self.snapshot, {"leveling_rules": rules})
+
+    def test_pinned_form_and_physical_weapon_contributions(self):
+        two_hand = self.runtime["profiles"]["Warrior/Arms"]["operations"]
+        offhand = self.runtime["profiles"]["Rogue/Combat"]["operations"]
+        feral = self.runtime["profiles"]["Druid/Feral dps"]["operations"]
+        melee = {"dps": 1, "weapon_speed": 2}
+        pair = {16: {"stats": {"dps": 24, "weapon_speed": 2.6}, "slot": "Main Hand"},
+                17: {"stats": {"dps": 18, "weapon_speed": 1.8}},
+                18: {"stats": {"ranged_dps": 41, "weapon_speed": 3.0}}}
+        two = {16: {"stats": {"dps": 32, "weapon_speed": 3.6}, "slot": "Two Hand"}, 18: pair[18]}
+        feral_gear = {1: {"stats": {"strength": 10, "stamina": 10}}}
+        cases = [
+            (pair, melee, offhand, {141297: 1}, {"offhand_dps_factor": 0.5}, 60, 40.45),
+            (pair, melee, two_hand, {130678: 3}, {"offhand_dps_factor": 0.5}, 60, 38.2),
+            (two, melee, two_hand, {130678: 3}, {"offhand_dps_factor": 0.5}, 60, 41.12),
+            (feral_gear, {"strength": 1, "stamina": 1}, feral, {129618: 5}, {}, 19, 22),
+            (feral_gear, {"strength": 1, "stamina": 1}, feral, {129618: 5}, {}, 20, 21),
+        ]
+        for gear, weights, operations, ranks, scenario, level, expected in cases:
+            ranks = {**dict.fromkeys((row["entry"] for row in operations), 0), **ranks}
+            self.assertAlmostEqual(swap_score(gear, weights, operations, ranks, scenario, level=level)[0], expected)
+        self.lua_run("BigBiSList = {}\ndofile('ForeverScoring.lua')\nlocal cases = " + lua_value([list(case) for case in cases]) + r'''
+local scoring = BigBiSList.ForeverScoring
+for _, case in ipairs(cases) do
+    local gear = {}
+    for index, item in pairs(case[1]) do gear[tonumber(index)] = item end
+    local points = scoring.ScoreLoadout(gear, case[2], case[3], case[4], case[5], nil, case[6])
+    assert(math.abs(points - case[7]) < 0.0001)
+end
+local trigger = {ppm = {6, 7, 8, 9, 10}, speed_slot = 16}
+local slow, fast = {stats = {weapon_speed = 3.6}}, {stats = {weapon_speed = 2}}
+assert(math.abs(scoring.WeaponProcChance(trigger, 5, slow) - 0.60) < 0.0001)
+assert(math.abs(scoring.WeaponProcChance(trigger, 5, fast) - 1 / 3) < 0.0001)
+assert(math.abs(scoring.WeaponProcChance(trigger, 1, slow) - 0.36) < 0.0001)
+assert(scoring.WeaponProcChance(trigger, 0, slow) == nil)
+''')
+
+    def test_refresh_reports_the_reviewed_contexts_using_changed_items(self):
+        report = refresh_review_scope({9411, 99999999}, [])
+        self.assertEqual(report["changed_item_ids"], [9411, 99999999])
+        self.assertIn(9411, report["existing_contexts_to_recheck"]["Paladin/Retribution/leveling"])
+        self.assertNotIn(99999999, report["existing_contexts_to_recheck"]["Paladin/Retribution/leveling"])
 
     def test_reference_catalog_requires_consistent_equipment_facts(self):
         tooltip = {"id": 100, "name": "Charm", "slot": "Trinket", "required_level": 20,
@@ -62,10 +113,11 @@ class ForeverScoringTests(unittest.TestCase):
         self.assertIsNone(comparison_facts({**tooltip, "stats": {"stamina": "8"}}))
         self.assertIsNone(comparison_facts({**tooltip, "slot": "Main Hand"}))
         self.assertIsNone(comparison_facts({**tooltip, "stats": {"stamina": True}}))
-        compiled = compile_comparison_data([])
+        compiled = compile_comparison_data(dataset_json("forever", "leveling_item_stats")["item_stats"])
         self.assertEqual(len(compiled["profiles"]), 28)
         self.assertGreater(len(compiled["items"]), 3500)
         self.assertTrue(compiled["items"]["11122"][compiled["item_fields"].index("utility")])
+        self.assertIn("744", compiled["guide_effects"])
 
     def test_stat_ranks_share_ties_and_respect_the_other_slot(self):
         self.lua_run(r'''
@@ -518,18 +570,22 @@ function UnitFactionGroup() return "Alliance" end
 function UnitClass() return "Paladin", "PALADIN" end
 function GetInventoryItemID() return nil end
 function GetInventoryItemLink() return nil end
+local initialNodes, initialDefinitions = {}, {}
+for entry, trait in pairs(BigBiSListData.character_scoring.traits) do
+    initialNodes[trait.node_id] = tonumber(entry)
+    initialDefinitions[trait.definition_id] = trait.spell_id
+end
 C_ClassTalents = {GetActiveConfigID = function() return 1 end}
 C_Traits = {
     GetConfigInfo = function() return {treeIDs = {1100}} end,
     GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = "Retribution"}} end,
     GetGroupCurrencyInfo = function() return {{traitNodeGroupID = 1, currencyInfos = {{spent = 31}}}} end,
     GetNodeInfo = function(_, node)
-        local trait = node == 110882 and 137880 or 130425
-        return {entryIDs = {trait}, activeEntry = {entryID = trait, rank = node == 110882 and rank or 1}}
+        local entry = assert(initialNodes[node])
+        local selected = entry == 137880 and rank or (entry == 130425 and 1 or 0)
+        return {entryIDs = {entry}, activeEntry = selected > 0 and {entryID = entry, rank = selected} or nil}
     end,
-    GetDefinitionInfo = function(id)
-        return {spellID = id == 142634 and 1311084 or 20375}
-    end,
+    GetDefinitionInfo = function(id) return {spellID = initialDefinitions[id]} end,
 }
 local addon = BigBiSList
 local gear = addon:GetLevelingRows("Paladin", "Retribution", 44, {})
@@ -558,7 +614,8 @@ local plannerRows = addon:GetPlannerRows("Paladin", "Retribution", "PR", {})
 assert(#plannerRows > 0 and not plannerRows[1].bestUse.scoring_basis)
 level = 14
 local early = addon:GetLevelingRows("Warrior", "Arms", 14, {race = "Human", faction = "Alliance"})
-assert(#early >= 13)
+assert(#early > 0)
+for _, group in ipairs(early) do assert(group.slot ~= "Shoulder") end
 assert(addon:GetLevelingSlotStatus("Warrior", "Arms", 14, "Shoulder",
     {race = "Human", faction = "Alliance"}).state == "unreviewed")
 
@@ -596,7 +653,7 @@ assert(firstHeadPick() == 10763) -- Icemetal Barbute
 function UnitClass() return "Shaman", "SHAMAN" end
 function UnitRace() return "Orc", "Orc", 2 end
 function UnitFactionGroup() return "Horde" end
-ranks = {[129416] = 5, [129415] = 3, [129404] = 0}
+ranks = {[129416] = 5, [129415] = 3, [129404] = 0, [129401] = 0}
 setTalentTree(1082, "Enhancement")
 local function thirdWristPick()
     local context = assert(addon.ForeverScoring:GetContext("Shaman", "Enhancement", "leveling", 42))
@@ -606,4 +663,140 @@ assert(thirdWristPick() == 2868) -- Patterned Bronze Bracers
 ranks[129404] = 2
 addon.ForeverScoring:Invalidate()
 assert(thirdWristPick() == 4796) -- Owl Bracers
+
+function UnitClass() return "Druid", "DRUID" end
+function UnitRace() return "Night Elf", "NightElf", 4 end
+function UnitFactionGroup() return "Alliance" end
+ranks = {[129571] = 0, [129582] = 0, [129610] = 0, [129618] = 3}
+setTalentTree(1089, "Feral Combat")
+addon:SetSelection("Druid", "Feral tank")
+assert(addon:DetectPlayerSpec("Druid") == "Feral tank")
+assert(addon.ForeverScoring:GetContext("Druid", "Feral tank", "leveling", 42))
+addon:SetSelection("Druid", "Feral dps")
+assert(addon:DetectPlayerSpec("Druid") == "Feral dps")
+assert(addon.ForeverScoring:GetContext("Druid", "Feral dps", "leveling", 42))
+''')
+
+    def test_guide_keeps_all_qualified_variants_and_filters_after_selection(self):
+        self.lua_run(r'''
+dofile("DataForever.lua")
+dofile("Config.lua")
+dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
+dofile("DataIndex.lua")
+function UnitLevel() return 48 end
+function UnitRace() return "Human", "Human", 1 end
+function UnitFactionGroup() return "Alliance" end
+local addon = BigBiSList
+local function guide(terms)
+    return addon:GetLevelingRows("Paladin", "Retribution", 48, terms or {})
+end
+local groups, count, effect = {}, 0, {}
+for _, group in ipairs(guide()) do
+    local names, featured = {}, 0
+    for _, row in ipairs(group.items) do
+        assert(row.quality ~= "poor" and row.acquisition_display.status == "ready")
+        assert(not row.matched_access_option.is_inferred_trade_option)
+        assert(row.stat_rank.score and row.stat_rank.score > 0 or row.guide_note)
+        assert(not names[row.stat_identity], "duplicate exact variant")
+        names[row.stat_identity] = row
+        if not row.guide_alternate then featured = featured + 1 end
+        if row.guide_note then effect[row.item_id] = row end
+        count = count + 1
+    end
+    groups[group.slot] = { items = group.items, featured = featured, names = names }
+end
+assert(count < 50 and groups.Head.featured == 4 and #groups.Shoulder.items == 7)
+assert(groups.Shoulder.names["9476"] and groups.Shoulder.names["9411"])
+assert(not (groups.Trinket and groups.Trinket.names["274152"]), "situational swine utility is outside the ordinary guide")
+assert(effect[744] and effect[249442], "reviewed effects remain discoverable")
+local alternate
+for _, row in ipairs(groups.Shoulder.items) do
+    if row.guide_alternate then alternate = row; break end
+end
+assert(alternate)
+local matching = guide({search = alternate.name, slots = {Shoulder = true}})
+assert(#matching == 1 and matching[1].items[1].stat_identity == alternate.stat_identity)
+assert(matching[1].items[1].guide_alternate, "search must preserve the unfiltered threshold")
+assert(#guide({search = "Canvas Shoulderpads"}) == 0)
+for _, group in ipairs(addon:GetPhaseRows("Paladin", "Retribution", "PR", {})) do
+    for _, row in ipairs(group.items) do assert(row.history or row.recommendation_history) end
+end
+''')
+
+    def test_live_swap_counts_passive_tooltip_stats_and_exact_modifiers(self):
+        self.lua_run(r'''
+dofile("DataForever.lua")
+dofile("Config.lua")
+dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
+dofile("DataIndex.lua")
+local addon, model = BigBiSList, BigBiSListData.character_scoring
+local rating, scoring = addon.ForeverGearRating, addon.ForeverScoring
+local wornId, candidateId = 990001, 990002
+local wornLink = "item:990001:1891:0:0:0:0:0:0:48:1:0:0:1:9999"
+local candidateLink = "item:990002:0:0:0:0:0:0"
+function GetBuildInfo() return "1.60.1", model.build end
+function UnitLevel() return 48 end
+function UnitRace() return "Human", "Human", 1 end
+function UnitFactionGroup() return "Alliance" end
+function GetInventoryItemID(_, slot) if slot == 12 then return wornId end end
+function GetInventoryItemLink(_, slot) if slot == 12 then return wornLink end end
+addon.DetectPlayerClass = function() return "Paladin" end
+addon.DetectPlayerSpec = function() return "Retribution" end
+local rank = 5
+local nodes, definitions = {}, {}
+for entry, trait in pairs(model.traits) do
+    nodes[trait.node_id] = tonumber(entry)
+    definitions[trait.definition_id] = trait.spell_id
+end
+C_ClassTalents = { GetActiveConfigID = function() return 1 end }
+C_Traits = {
+    GetConfigInfo = function() return {treeIDs = {1100}} end,
+    GetNodeInfo = function(_, node)
+        local entry = assert(nodes[node])
+        return { entryIDs = {entry}, activeEntry = entry == 137880 and {entryID = entry, rank = rank} or nil }
+    end,
+    GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
+}
+C_Item = {
+    GetItemInfo = function(link) return link:find("990001") and "Purified Ring fixture" or "Ironspine fixture", nil, 3, 44, 0 end,
+    GetItemInfoInstant = function() return nil, nil, nil, "INVTYPE_FINGER", nil, 4, 0 end,
+    GetItemStats = function(link)
+        return link:find("990001") and {ITEM_MOD_INTELLECT_SHORT = 12}
+            or {ITEM_MOD_STRENGTH_SHORT = 18, ITEM_MOD_AGILITY_SHORT = 6}
+    end,
+}
+C_TooltipInfo = { GetHyperlink = function(link)
+    if link:find("990001") then return {lines = {{leftText = "Equip: Increases spell power by 5."}}} end
+    return {lines = {{leftText = "Ironspine fixture"}}}
+end }
+local owned = {equippedSlots = {Finger1 = {item_id = wornId, item_link = wornLink}}}
+local context = rating:GetContext("Paladin", "Retribution", "LEVELING", 48, owned)
+local candidate = rating:GetTooltipItem(candidateId, candidateLink)
+local base = context.equipmentFacts.Finger1.facts
+assert(base.stats.spell_power == 5 and base.stats.intellect == 12 and base.key == "990001:0:0:0:1:9999")
+local swap = rating:CompareTooltipItem(context, candidate, true, nil, true, { physical = "Finger1" })
+-- The enchant gives four to all primary stats. Human Spirit applies to its
+-- Spirit component, and Champion adds 9.6 damage from the enchanted Intellect.
+assert(swap.basis == "active" and not swap.conditional)
+local expected = (18-4)*1.6 + (6-4)*1.2 - 4*0.2 - 4.4*0.15 - 16*0.5 - (5 + 9.6)*0.65
+assert(math.abs(swap.delta - expected) < 1e-7, swap.delta)
+rank = 0
+scoring:Invalidate()
+local untalented = rating:CompareTooltipItem(context, candidate, true, nil, true, { physical = "Finger1" })
+assert(math.abs(untalented.delta - swap.delta - 9.6*0.65) < 1e-7)
+local unknown = rating:GetTooltipItem(candidateId, "item:990002:918273:0:0:0:0:0")
+local uncertain = rating:CompareTooltipItem(context, unknown, true, nil, true, { physical = "Finger1" })
+assert(uncertain.delta > 0 and uncertain.conditional and not rating:IsMeaningfulOwnedUpgrade(uncertain))
+model.gems, model.socket_bonuses = {[9000] = {agility = 3}}, {["990002:9000:0:0:0"] = {agility = 1}}
+local exact, incomplete = scoring:GetExactStats(candidateId, candidate.facts.stats, "item:990002:0:9000:0:0:0:0")
+assert(not incomplete and exact.agility == 10 and candidate.facts.stats.agility == 6)
+function UnitLevel() return 60 end
+scoring:Invalidate()
+local endgame = rating:GetContext("Paladin", "Retribution", "PR", 60, owned)
+local live = rating:CompareTooltipItem(endgame, candidate, true, nil, true, { physical = "Finger1" })
+local details = addon:CompareRecommendationItems(candidateId, wornId, "Paladin", "Retribution", "PR", "Ring",
+    {ownedSnapshot = owned, slotKey = "Finger1", item_link = wornLink}, {item_link = candidateLink})
+assert(details.basis_key == "active_build" and details.score_delta == live.delta)
 ''')

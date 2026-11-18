@@ -282,18 +282,37 @@ def normalize_mechanics(model: dict, exports: dict[str, bytes], receipts: dict, 
             "name": client["SpellName"][spell]["Name_lang"],
             "tooltip_template": client["Spell"][spell]["Description_lang"],
             "effects": sorted(rows, key=lambda row: row["effect_index"]),
-            "spell_effects": [
-                {key: int(row[key]) for key in ("ID", "EffectIndex", "Effect", "EffectAura", "EffectMiscValue_0",
-                                               "EffectMiscValue_1")}
-                for row in client["SpellEffect"].values()
-                if int(row["SpellID"]) == spell and int(row["EffectIndex"]) in request["effects"]
-            ],
+            "spell_effects": [],
             **({"entry_push_id": entry_push} if entry_push else {}),
             **({"definition_push_id": definition_push} if definition_push else {}),
         }
+        for row_id, row in client["SpellEffect"].items():
+            if int(row["SpellID"]) != spell or int(row["EffectIndex"]) not in request["effects"]:
+                continue
+            observed, push = read_row("SpellEffect", row_id)
+            if int(observed["SpellID"]) != spell or int(observed["EffectIndex"]) != int(row["EffectIndex"]):
+                raise ValueError(f"Talent {identifier} hotfix changed an effect's spell or index")
+            traits[entry_id]["spell_effects"].append({
+                **{key: int(observed.get(key, row[key])) for key in (
+                    "ID", "EffectIndex", "Effect", "EffectAura", "EffectMiscValue_0", "EffectMiscValue_1")},
+                **({"push_id": push} if push else {}),
+            })
 
-    if not HOTFIX_TEXT.search(exports["hotfix_note"].decode("utf-8", errors="replace")):
+    hotfix_text = exports["hotfix_note"].decode("utf-8", errors="replace")
+    if not HOTFIX_TEXT.search(hotfix_text):
         raise ValueError("Blizzard's Judgement of Command hotfix is missing from the source")
+    triggers = {"20425": {"name": "Judgement of Command", "class": "Paladin", "attack": "melee",
+                          "activates": ["melee_on_hit"], "source_url": HOTFIX_NOTE}}
+    if "129401" in traits:
+        if not re.search(r"3\.6 speed weapon.{0,140}60% chance.{0,140}2\.0 speed weapon", hotfix_text, re.I | re.S):
+            raise ValueError("Blizzard's main-hand Maelstrom Weapon benchmark is missing from the source")
+        maelstrom = traits["129401"]
+        ppm = [rank["value"] for effect in maelstrom["effects"] if effect["effect_index"] == 1
+               for rank in effect["ranks"]]
+        if ppm != [6, 7, 8, 9, 10]:
+            raise ValueError("Maelstrom Weapon rank curves changed from the reviewed hotfix")
+        triggers["408498"] = {"name": maelstrom["name"], "class": "Shaman", "attack": "melee",
+                              "speed_slot": 16, "ppm": ppm, "source_url": HOTFIX_NOTE}
     return {"url": hotfix_url, "provider": source_provider(hotfix_url), "flavor": "forever", "page_type": "mechanics",
             "client_build": build, "fetched_at": max(row["collected_at"] for row in receipts.values()),
             "confidence": "build_pinned_client_and_observed_hotfix",
@@ -309,8 +328,7 @@ def normalize_mechanics(model: dict, exports: dict[str, bytes], receipts: dict, 
             **({"flat_sets": normalized_set_bonuses(model["flat_sets"], client, read_row)} if model.get("flat_sets") else {}),
             **({"racial_scaling": normalized_racial_scaling(model["racial_spells"], client, read_row)}
                if model.get("racial_spells") else {}),
-            "ability_triggers": {"20425": {"name": "Judgement of Command", "class": "Paladin",
-                                         "attack": "melee", "activates": ["melee_on_hit"], "source_url": HOTFIX_NOTE}}}
+            "ability_triggers": triggers}
 
 
 def snapshot_path(url: str) -> Path:

@@ -18,6 +18,18 @@ ITEM_FIELDS = (
 )
 TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
 
+def normalized_item_stats(item: dict) -> dict:
+    stats = merged_stats(item)
+    stats.pop("socket", None)
+    separate_weapon_dps(item, stats)
+    if numeric(item.get("weapon_speed")) and item["weapon_speed"] > 0:
+        stats["weapon_speed"] = item["weapon_speed"]
+    low, high = item.get("weapon_min_damage"), item.get("weapon_max_damage")
+    if numeric(low) and numeric(high) and 0 <= low <= high:
+        stats["weapon_min_damage"], stats["weapon_max_damage"] = low, high
+    return stats
+
+
 BUILD_SLOTS = {slot: {slot} for slot in ("Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet")}
 BUILD_SLOTS.update({
     "Finger0": {"Ring"}, "Finger1": {"Ring"}, "Trinket0": {"Trinket"}, "Trinket1": {"Trinket"},
@@ -107,11 +119,7 @@ def comparison_facts(item: dict, description: str = "") -> dict | None:
     if any(item.get(field) is not None and not numeric(item[field]) for field in ("armor", "dps", "weapon_speed")):
         return None
 
-    stats = merged_stats(item)
-    stats.pop("socket", None)
-    if numeric(item.get("weapon_speed")):
-        stats["weapon_speed"] = item["weapon_speed"]
-    separate_weapon_dps(item, stats)
+    stats = normalized_item_stats(item)
     if not all(map(numeric, stats.values())):
         return None
     modeled_effects, effects = set(), []
@@ -213,11 +221,40 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
             items.pop(key, None)
 
     rules = dataset_json("forever", "leveling_rules")
-    leveling = dataset_json("forever", "leveling_scoring_profiles")
+    profiles = reference_profiles(rules)
+    guide_effects, seen_reviews = {}, set()
+    known_roles = {profile["role"] for profile in profiles.values()}
+    for review in dataset_json("forever", "leveling_guide_effects")["effects"]:
+        key = review["variant"]
+        roles, specs = review.get("roles", []), review.get("specs", [])
+        if (key in seen_reviews or not (roles or specs) or set(roles) - known_roles or set(specs) - profiles.keys()
+                or not review["note"].strip()):
+            raise ValueError(f"Invalid Forever Gear Guide effect review for {key}")
+        seen_reviews.add(key)
+        if key not in items:
+            continue
+        if review["effect"] not in items[key].get("effects", []):
+            raise ValueError(f"Forever Gear Guide effect changed for {key}")
+        guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
+    return {
+        "version": VERSION,
+        "profiles": profiles,
+        "guide_effects": guide_effects,
+        "equipment": rules["class_equipment"],
+        "common_slots": rules["common_slots"],
+        "feral_uses_weapon_dps": rules["feral_uses_weapon_dps"],
+        "item_fields": list(ITEM_FIELDS),
+        "items": {key: [item.get(field) for field in ITEM_FIELDS] for key, item in items.items()},
+    }
+
+
+def reference_profiles(rules: dict, *, leveling: dict | None = None, model: dict | None = None) -> dict:
+    leveling = leveling or dataset_json("forever", "leveling_scoring_profiles")
     raid = scoring_profiles()
     # Match the reviewed passive Intellect and spell coefficients in the Ret
     # pilot. Conditional talent operations stay in the loadout scorer.
-    ret_weights = dataset_json("forever", "scoring_model")["profiles"]["Paladin/Retribution"]["weights"]
+    model = model or dataset_json("forever", "scoring_model")
+    ret_weights = model["profiles"]["Paladin/Retribution"]["weights"]
     profiles = {}
     for profile in raid["profiles"]:
         class_name, spec = profile["class"], profile["spec"]
@@ -228,6 +265,9 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
                          **weight_overrides}]
             for _, low, high in rules["level_bands"]
         ]
+        raid_weights = {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **weight_overrides}
+        if key == "Druid/Feral tank":
+            raid_weights["parry_percent"] = 0
         profiles[key] = {
             "role": profile["role"],
             "leveling": {**rules["spec_policies"][key], "weights": weights},
@@ -236,15 +276,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
                     "slots", "armor_types", "weapon_types", "two_hand_weapon_types",
                     "dual_wield", "require_shield", "slot_weapon_types",
                 ) if field in profile},
-                "weights": {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **weight_overrides},
+                "weights": raid_weights,
             },
         }
-    return {
-        "version": VERSION,
-        "profiles": profiles,
-        "equipment": rules["class_equipment"],
-        "common_slots": rules["common_slots"],
-        "feral_uses_weapon_dps": rules["feral_uses_weapon_dps"],
-        "item_fields": list(ITEM_FIELDS),
-        "items": {key: [item.get(field) for field in ITEM_FIELDS] for key, item in items.items()},
-    }
+    return profiles

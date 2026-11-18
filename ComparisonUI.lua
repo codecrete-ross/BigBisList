@@ -227,10 +227,19 @@ function UI:GetComparisonSpecLabel(spec)
     return SPEC_LABELS[spec] or spec or "Specialization"
 end
 
+local function swapSortLabel(state)
+    return state.swapBasis == "active" and "Your build" or "Default spec weights"
+end
+
+local function comparableDelta(state, row)
+    local swap = row.stat_swap
+    if swap and swap.basis == state.swapBasis and not swap.conditional then return swap.delta end
+end
+
 function UI:GetComparisonSortLabel()
     local state = self.slotComparison or {}
     local phase = state.sort and string.match(state.sort, "^phase:(.+)$")
-    if state.statRank and state.sort == "comparison" then return "Stat change" end
+    if state.statRank and state.sort == "comparison" then return swapSortLabel(state) end
     return phase and (addon:GetPhaseDisplayName(phase) .. " rating") or SORT_LABELS[state.sort] or SORT_LABELS.recommendation
 end
 
@@ -291,6 +300,7 @@ function UI:RefreshComparisonPool(force)
     end
     if state.poolSignature then state.originNeedsRefresh = true end
     state.rows, state.contexts, state.poolSignature = rows, rows.contexts or {}, signature
+    state.swapBasis = rows.swapBasis
     if state.statRank then state.reference = rows.reference or state.reference
     elseif type(state.reference) == "table" and state.reference.slotKey or state.reference == nil then state.reference = rows.reference
     else state.reference = rows.reference and (rows.reference.slotKey and rows.reference or rows.reference.item_id) end
@@ -432,7 +442,7 @@ function UI:RebuildComparisonEntries()
             if state.sort == "stat_rank" or (state.statRank and state.sort == "comparison") then
                 if state.sort == "stat_rank" then av,bv = a.stat_rank.rank, b.stat_rank.rank
                 else
-                    local aDelta, bDelta = a.active_stat_delta or a.stat_delta, b.active_stat_delta or b.stat_delta
+                    local aDelta, bDelta = comparableDelta(state, a), comparableDelta(state, b)
                     av, bv = aDelta and -aDelta, bDelta and -bDelta
                 end
                 if (av ~= nil) ~= (bv ~= nil) then return av ~= nil end
@@ -620,10 +630,10 @@ function UI:BindComparisonRow(row, entry, pinned)
         else
             row.rankText:SetTextColor(unpack(placement and placement.rank and placement.total > 1 and widgets.Theme.text or widgets.Theme.muted))
         end
-        local delta = data.active_stat_delta or data.stat_delta
-        local basis = data.active_stat_delta ~= nil and "Your build" or "Default spec weights"
-        local change = delta ~= nil and string.format("Est. %+.1f pts", delta) or "—"
-        if delta ~= nil and lines > 1 then change = change .. "\n" .. basis end
+        local swap = data.stat_swap
+        local delta = swap and (state.sort ~= "comparison" or swap.basis == state.swapBasis) and swap.delta
+        local change = delta and string.format("%s %+.1f pts", swap.conditional and "Conditional" or "Est.", delta) or "—"
+        if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap) end
         if pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
         if not pinned or data.context.slotKey == state.reference.slotKey then
             setCell(row.evidenceText, change, columns.evidence.x, columns.evidence.width, entry.height, lines)
@@ -634,7 +644,11 @@ function UI:BindComparisonRow(row, entry, pinned)
             row.referenceButton:SetSelected(false); row.referenceButton:SetWidth(columns.evidence.width); row.referenceButton:Show()
         end
         local hover = placement and service:DescriptionLines(placement) or {}
-        if delta ~= nil then hover[#hover + 1] = string.format("%s · %+.1f pts", basis, delta) end
+        if swap and swap.delta then
+            local basis = service:GetSwapBasisLabel(swap)
+            if swap.conditional then basis = basis .. " · Conditional" end
+            hover[#hover + 1] = string.format("%s · %+.1f pts", basis, swap.delta)
+        end
         if data.guide_note then hover[#hover + 1] = data.guide_note end
         widgets:BindTooltip(row, #hover > 0 and table.concat(hover, "\n") or nil)
     elseif pinned then
@@ -759,7 +773,7 @@ function UI:CreateSlotComparisonFrame()
         function()
             local items, state = {}, self.slotComparison or {}
             for _, key in ipairs({ state.statRank and "stat_rank" or "recommendation", "item", "comparison", "source", "owned" }) do
-                local text = state.statRank and key == "comparison" and "Stat change" or SORT_LABELS[key]
+                local text = state.statRank and key == "comparison" and swapSortLabel(state) or SORT_LABELS[key]
                 items[#items + 1] = { value = key, text = text, checked = state.sort == key }
             end
             if not state.statRank then

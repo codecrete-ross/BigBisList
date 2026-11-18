@@ -431,6 +431,8 @@ each normalized file and its repository destination. Review the evidence and
 its affected approvals, register the accepted sources, and copy the accepted
 snapshots to those destinations before the regular import and generation.
 The collection command writes its checkpoint and evidence to the build folder.
+Use the [ranking refresh checks](forever-scoring.md#ranking-checks-for-a-data-refresh)
+to record before and after results and review the reported scoring contexts.
 
 Counted Icy Veins and Eternadex listings can certify the public catalog
 partition alongside the reviewed client export and AHledger catalog. Reconcile

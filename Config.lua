@@ -741,12 +741,33 @@ local function strongestForeverTalentGroup()
     return strongest, display
 end
 
+local function isForeverFeralGroup(className, name)
+    if className ~= "Druid" then return false end
+    local normalized = normalizedSpecName(name)
+    return normalized == "feral" or normalized == "feral combat"
+end
+
+local function foreverFeralSpec()
+    local ok, role = pcall(UnitGroupRolesAssigned, "player")
+    if ok and BigBiSList.IsReadableValue(role) then
+        if role == "TANK" then return "Feral tank" end
+        if role == "DAMAGER" then return "Feral dps" end
+    end
+    local character = activeCharacterDB()
+    local selection = character and character.selection
+    if selection and selection.class == "Druid" and (selection.spec == "Feral dps" or selection.spec == "Feral tank") then
+        return selection.spec
+    end
+    return "Feral dps"
+end
+
 function BigBiSList:DetectPlayerSpec(className)
     if not className then return nil end
     if self.isForever then
         if not C_ClassTalents or not C_Traits then return nil end
         local ok, groupName, display = pcall(strongestForeverTalentGroup)
         if ok and self.IsReadableValue(groupName) then
+            if isForeverFeralGroup(className, groupName) then return foreverFeralSpec(), display end
             return specNameForClass(className, groupName), display
         end
         return nil
@@ -865,7 +886,13 @@ function BigBiSList:GetTooltipPlayerContext()
         for _, groupInfo in ipairs(display) do
             local icon = groupInfo.icon
             local name = self.IsReadableValue(groupInfo.displayName) and specNameForClass(class, groupInfo.displayName)
-            if name and self.IsReadableValue(icon) and type(icon) == "number" and icon > 0 then icons[name] = icon end
+            if self.IsReadableValue(icon) and type(icon) == "number" and icon > 0 then
+                if name then
+                    icons[name] = icon
+                elseif self.IsReadableValue(groupInfo.displayName) and isForeverFeralGroup(class, groupInfo.displayName) then
+                    icons["Feral dps"], icons["Feral tank"] = icon, icon
+                end
+            end
         end
     end
     local specs, seen = {}, {}
@@ -1171,6 +1198,8 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     self:EnsureDatabase()
 
     local selection = activeCharacterDB().selection
+    local refreshFeral = self.isForever and specName and specName ~= selection.spec
+        and (className or selection.class) == "Druid" and self:DetectPlayerClass() == "Druid"
     if className then
         selection.class = className
         activeCharacterDB().selectedClass = className
@@ -1195,6 +1224,10 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     end
 
     syncSelectionAliases(activeCharacterDB())
+    if refreshFeral then
+        self:RefreshTooltipPlayerContext()
+        if self.ScheduleItemTooltipRefresh then self:ScheduleItemTooltipRefresh() end
+    end
     if (className or specName) and self.classSpecAutoSelectionActive == false then
         reconcileClassSpecAutoSelection(activeCharacterDB(), self:GetDetectedPlayerSelection())
     end
