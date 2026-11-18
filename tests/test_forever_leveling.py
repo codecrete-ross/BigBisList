@@ -888,6 +888,8 @@ local function compact(schema,record)
     return result
 end
 local source=compact("source",{type="quest",side="Both",quest_id=7,entity_name="Shared quest",eligibility={min_level=1}})
+-- The synthetic variants exercise recommendation rows without a stat-ranking catalog.
+BigBiSListData.stat_rank=nil
 BigBiSListData.items={compact("item",{id=71,name="Ring",inventory_slot="Ring",acquisition_phase="PR",sources={source},primary_source=source})}
 BigBiSListData.item_eligibility={["71"]={min_level=1}}
 BigBiSListData.leveling_recommendations={}
@@ -896,7 +898,7 @@ for rank,suffix in ipairs({1,-2}) do
         faction="Alliance",level_min=1,level_max=59,slot="Ring",item_id=71,rank=rank,variant_id="71:"..suffix,
         random_suffix_id=suffix,variant_name=rank==1 and "Ring of the Bear" or "Ring of the Owl"})
 end
-for _,file in ipairs({"Config.lua","DataIndex.lua","Widgets.lua","UI.lua","DetailsSources.lua","ComparisonUI.lua","Tooltip.lua"}) do
+for _,file in ipairs({"Config.lua","ForeverGearRating.lua","DataIndex.lua","Widgets.lua","UI.lua","DetailsSources.lua","ComparisonUI.lua","Tooltip.lua"}) do
     assert(loadfile(file))("BigBiSList")
 end
 local addon,ui=BigBiSList,BigBiSList.UI
@@ -908,8 +910,8 @@ local rows=addon:GetLevelingRows("Warrior","Arms",14,{})
 assert(#rows==1 and #rows[1].items==2 and rows[1].items[1].name=="Ring of the Bear")
 ui.currentOwned={inventoryItems={}}
 ui:AddOwnedInventoryItem(ui.currentOwned,71,bear,"bags")
-assert(ui:GetRowOwnershipState(rows[1].items[1])=="bag")
-assert(ui:GetRowOwnershipState(rows[1].items[2])=="missing")
+assert(ui:GetRowOwnershipState(rows[1].items[1])=="bag", "the owned Bear suffix did not match")
+assert(ui:GetRowOwnershipState(rows[1].items[2])=="missing", "the unowned Owl suffix matched")
 local owned=addon:GetLevelingRows("Warrior","Arms",14,{ownedItems=ui.currentOwned,ownedState="owned"})
 assert(#owned==1 and #owned[1].items==1 and owned[1].items[1].variant_id=="71:1")
 assert(not addon:GetItemBestLevelingUseForSpec(71,"Warrior","Arms",14))
