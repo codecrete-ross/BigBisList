@@ -41,6 +41,12 @@ local STATUS_LABELS = {
     incompatible = "No rank for this spec", blocked = "No legal swap",
 }
 local OWNED_ORDER = { equipped = 3, bag = 2, bank = 1 }
+local DEFENSIVE_STATS = {
+    stamina = true, armor = true, defense = true, block_value = true, block_percent = true,
+    dodge = true, dodge_percent = true, parry = true, parry_percent = true, hp5 = true,
+    arcane_resistance = true, fire_resistance = true, frost_resistance = true,
+    nature_resistance = true, shadow_resistance = true,
+}
 local RANK_TIERS = {
     { minimum = 97, quality = 5, label = "Top tier" },
     { minimum = 85, quality = 4, label = "Near best" },
@@ -127,6 +133,11 @@ function rating:GetCatalog(data)
     return catalog
 end
 
+function rating:GetPublishedFacts(key)
+    local data = model()
+    return data and self:GetCatalog(data).items[key]
+end
+
 local function addEffect(effects, line)
     if not contains(effects, line) then effects[#effects + 1] = line end
 end
@@ -142,6 +153,7 @@ local function readTooltip(link, stats, facts)
     if not readable(tooltip) or type(tooltip) ~= "table" or not readable(tooltip.lines) or type(tooltip.lines) ~= "table" then return end
     local locale = GetLocale and GetLocale()
     local english = locale == nil or locale == "enUS" or locale == "enGB"
+    local spellPower, seenSpellPower = 0, {}
     for _, line in ipairs(tooltip.lines or {}) do
         if readable(line) and type(line) == "table" then
             for _, field in ipairs({ "leftText", "rightText" }) do
@@ -165,12 +177,22 @@ local function readTooltip(link, stats, facts)
                                 block = "block_percent", ["get a critical strike"] = "crit_percent" })[label]
                             amount = tonumber(number)
                         end
-                        if stat and finite(amount) then stats[stat] = (stats[stat] or 0) + amount
+                        local passive = tonumber(text:match("^Equip: Increases damage and healing done by magical spells and effects by up to (%d+)%s*%.?$")
+                            or text:match("^Equip: Increases spell power by (%d+)%s*%.?$"))
+                        if passive then
+                            if not seenSpellPower[text] then
+                                spellPower = spellPower + passive
+                                seenSpellPower[text] = true
+                            end
+                        elseif stat and finite(amount) then stats[stat] = (stats[stat] or 0) + amount
                         else addEffect(facts.effects, text) end
                     end
                 end
             end
         end
+    end
+    if spellPower > 0 and stats.spell_power == nil and stats.spell_damage == nil then
+        stats.spell_power = spellPower
     end
 end
 
@@ -305,14 +327,29 @@ local function resolveInventory(self, catalog, owned)
     return inventory
 end
 
+local function scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction)
+    local leveling = phase == "LEVELING"
+    local policy = leveling and profile.leveling or profile.pre_raid
+    local weights = policy.weights
+    if leveling then
+        for _, band in ipairs(policy.weights) do
+            if level >= band[1] and level <= band[2] then weights = band[3]; break end
+        end
+    end
+    return {
+        class = className, spec = spec, phase = phase, level = level, race = race, faction = faction,
+        leveling = leveling, policy = policy, weights = weights, equipment = data.equipment[className], role = profile.role,
+        commonSlots = data.common_slots, feralPolicy = profile.leveling, feralDps = data.feral_uses_weapon_dps,
+        phaseIndex = phaseIndex, inScope = {}, pools = {},
+    }
+end
+
 function rating:GetContext(className, spec, phase, level, owned)
     local data = model()
     if not data or not owned then return nil end
     local profile = data.profiles[className .. "/" .. spec]
     if not profile then return nil end
-    local leveling = phase == "LEVELING"
-    local policy = leveling and profile.leveling or profile.pre_raid
-    level = leveling and level or 60
+    level = phase == "LEVELING" and level or 60
     local livePhase = addon:GetAvailabilityPhaseIndex(phase)
     if self.snapshot ~= owned or self.contextData ~= data then
         self.snapshot, self.contextData, self.contexts = owned, data, {}
@@ -322,22 +359,34 @@ function rating:GetContext(className, spec, phase, level, owned)
     local race = addon:GetPlayerRaceName()
     local key = table.concat({className, spec, phase, level, livePhase, race or ""}, "\031")
     if self.contexts[key] then return self.contexts[key] end
-    local weights = policy.weights
-    if leveling then
-        for _, band in ipairs(policy.weights) do if level >= band[1] and level <= band[2] then weights = band[3]; break end end
-    end
     if not self.inventory then self.inventory = resolveInventory(self, self:GetCatalog(data), owned) end
     local inventory = self.inventory
-    local context = {
-        class = className, spec = spec, phase = phase, level = level, race = race, leveling = leveling,
-        policy = policy, weights = weights, equipment = data.equipment[className], catalog = inventory.catalog,
-        commonSlots = data.common_slots, feralPolicy = profile.leveling, feralDps = data.feral_uses_weapon_dps,
-        owned = owned, pending = inventory.pending, pools = {}, equipmentFacts = inventory.equipment,
-        ownedFacts = inventory.byVariant, ownedCopies = inventory.copies, unresolvedCopies = inventory.unresolvedCopies,
-        phaseIndex = livePhase, inScope = {},
-        ownedLoadouts = {},
-    }
+    local context = scoringContext(data, profile, className, spec, phase, level, livePhase, race)
+    context.owned, context.catalog, context.pending = owned, inventory.catalog, inventory.pending
+    context.equipmentFacts, context.ownedFacts = inventory.equipment, inventory.byVariant
+    context.ownedCopies, context.unresolvedCopies, context.ownedLoadouts = inventory.copies, inventory.unresolvedCopies, {}
     self.contexts[key] = context
+    return context
+end
+
+function rating:GetGuideContext(className, spec, phase, level, race, faction)
+    local data = model()
+    local profile = data and data.profiles[className .. "/" .. spec]
+    if not profile then return nil end
+    level = phase == "LEVELING" and level or 60
+    local phaseIndex = addon:GetAvailabilityPhaseIndex(phase)
+    local key = table.concat({className, spec, phase, level, phaseIndex, race or "", faction or ""}, "\031")
+    if self.guideData ~= data then
+        self.guideData, self.guideContexts = data, {}
+    end
+    for _, context in ipairs(self.guideContexts) do
+        if context.key == key then return context end
+    end
+    local context = scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction)
+    context.key, context.catalog, context.guide = key, self:GetCatalog(data), true
+    context.ownedFacts = {}
+    self.guideContexts[#self.guideContexts + 1] = context
+    if #self.guideContexts > 8 then table.remove(self.guideContexts, 1) end
     return context
 end
 
@@ -423,14 +472,17 @@ local function legalSwap(context, item, physical, slot, gear)
         and swapCapacity(item, physical, slot, gear) > 0
 end
 
-local function score(context, item)
+local function score(context, item, roleOnly)
     if not item or not next(item.stats) then return nil end
     local weights, feral = context.weights, context.feralPolicy
     local ignoreDps = not context.feralDps and feral.weapon_style == "feral"
         and feral.form_level and context.level >= feral.form_level
+    local ignoreDefense = roleOnly and not (context.role == "tank" or context.spec == "Protection" or context.spec == "Feral tank")
     local total = 0
     for stat, value in pairs(item.stats) do
-        if not (ignoreDps and stat == "dps") then total = total + value * (weights[stat] or 0) end
+        if not (ignoreDps and stat == "dps") and not (ignoreDefense and DEFENSIVE_STATS[stat]) then
+            total = total + value * (weights[stat] or 0)
+        end
     end
     return math.floor(total * 10000 + 0.5) / 10000
 end
@@ -501,7 +553,11 @@ end
 local function inScope(context, item)
     local scoped = context.inScope[item.id]
     if scoped == nil then
-        scoped = not addon.ComparisonItemInScope or addon:ComparisonItemInScope(item.id, context.phase, context.phaseIndex)
+        if context.guide then
+            scoped = addon:IsStatRankGuideItemAvailable(item.id, context)
+        else
+            scoped = not addon.ComparisonItemInScope or addon:ComparisonItemInScope(item.id, context.phase, context.phaseIndex)
+        end
         context.inScope[item.id] = scoped
     end
     return scoped
@@ -563,6 +619,88 @@ function rating:GetPlacement(context, physical, slots)
     if not context then return nil end
     local slot, handType = currentComparisonSlot(context, physical, slots)
     return slotPool(context, physical, slot, handType, context.equipmentFacts, physical)
+end
+
+function rating:GetGuidePlacement(context, slot)
+    return slotPool(context, slot, slot, nil, {}, slot)
+end
+
+local function benchmarkChoices(context, definition, slots, handType)
+    local choices = {}
+    for _, slot in ipairs(slots) do
+        local pool = slotPool(context, definition.key, slot, handType, {}, "outfit:" .. definition.key .. ":" .. slot)
+        for _, entry in ipairs(pool.rows) do
+            if entry.score and entry.score > 0 then choices[#choices + 1] = entry end
+        end
+    end
+    table.sort(choices, function(a, b) return a.score > b.score end)
+    return choices
+end
+
+local function bestKnownOutfit(context, positions)
+    local remaining, outfit, best = {}, {}, 0
+    remaining[#positions + 1] = 0
+    for index = #positions, 1, -1 do
+        remaining[index] = remaining[index + 1] + positions[index].choices[1].score
+    end
+    local function search(index, total)
+        if total + remaining[index] <= best then return end
+        local position = positions[index]
+        if not position then best = total; return end
+        for _, choice in ipairs(position.choices) do
+            if total + choice.score + remaining[index + 1] <= best then break end
+            local item = choice.item
+            if legalSwap(context, item, position.key, position.slot, outfit) then
+                outfit[position.key] = { facts = item, entry = { item_id = item.id } }
+                search(index + 1, total + choice.score)
+                outfit[position.key] = nil
+            end
+        end
+        search(index + 1, total)
+    end
+    search(1, 0)
+    return best
+end
+
+function rating:GetGearScore(context, definitions)
+    if context.gearScore then return context.gearScore end
+    local gear = context.equipmentFacts
+    local unreadableSlots = context.owned.unreadableEquipmentSlots or {}
+    local twoHand = hasTwoHander(context, gear) or (not gear.MainHand and not gear.OffHand
+        and (context.policy.weapon_style == "two_hand"
+            or (not contains(context.policy.slots, "Main Hand") and contains(context.policy.slots, "Two Hand"))))
+    local positions, current, partial = {}, 0, 0
+    for _, definition in ipairs(definitions) do
+        local key = definition.key
+        if not (twoHand and key == "OffHand") then
+            local worn = gear[key]
+            local item = worn and worn.facts
+            local slots = definition.slots
+            if key == "MainHand" then slots = { twoHand and "Two Hand" or "Main Hand" } end
+            if key == "Ranged" and item and contains(slots, item.slot) then slots = { item.slot } end
+            local handType = key == "OffHand" and item and offHandType(item)
+            local choices = benchmarkChoices(context, definition, slots, handType)
+            local points = item and score(context, item)
+            local unavailable = unreadableSlots[key] or (worn and not (points or (item and (item.utility or next(item.effects or {})))))
+            if item and not unavailable then
+                local wearSlot = item.slot
+                if wearSlot == "One Hand" then wearSlot = key == "OffHand" and "Off Hand" or "Main Hand" end
+                unavailable = not contains(slots, wearSlot) or not usable(context, item, wearSlot) or not inScope(context, item)
+            end
+            if unavailable then
+                partial = partial + 1
+            elseif #choices > 0 then
+                positions[#positions + 1] = { key = key, slot = slots[1], choices = choices }
+                current = current + (points or 0)
+            end
+        end
+    end
+    local best = bestKnownOutfit(context, positions)
+    local percent = best > 0 and scorePercent(math.min(current, best), best) or nil
+    local result = { score = current, best = best, percent = percent, tier = percent and scoreGapTier(percent),
+        covered = #positions, partial = partial }
+    context.gearScore = result
+    return result
 end
 
 function rating:GetTooltipItem(itemId, link)
@@ -647,17 +785,19 @@ local function wornReplacement(context, result, key, label)
     end
     result.replacements[#result.replacements + 1] = referenceItem(equipped, label)
     if result.delta ~= nil then result.delta = result.delta - points end
+    result.roleDisplaced = result.roleDisplaced + (score(context, equipped.facts, true) or 0)
 end
 
-local function wornSwap(context, group, item, points, wornSlot)
+local function wornSwap(context, group, item, points, wornSlot, physical)
     local gear = context.equipmentFacts
     local unreadableSlots = context.owned.unreadableEquipmentSlots or {}
     local best
     for _, definition in ipairs(group.definitions) do
         local slot = targetSlot(item, definition)
         local key = definition.key
-        if slot and usable(context, item, slot) and legalSwap(context, item, key, slot, gear) then
-            local result = { definition = definition, slot = slot, gear = gear, delta = points, replacements = {} }
+        if (not physical or physical == key) and slot and usable(context, item, slot) and legalSwap(context, item, key, slot, gear) then
+            local result = { definition = definition, slot = slot, gear = gear, delta = points, replacements = {},
+                roleDisplaced = 0 }
             local worn = gear[key]
             if definition.inventorySlotId == wornSlot and worn and worn.facts and worn.facts.key == item.key then
                 result.delta, result.status = nil, "equipped"
@@ -676,10 +816,16 @@ local function wornSwap(context, group, item, points, wornSlot)
                 if unreadableSlots[otherKey] then result.delta, result.status = nil, result.status or "unavailable" end
             end
             if result.delta ~= nil and not result.replacements[1] then result.status = "empty" end
+            if result.delta ~= nil then result.roleDelta = score(context, item, true) - result.roleDisplaced end
             if not best or (result.delta ~= nil and (best.delta == nil or result.delta > best.delta)) then best = result end
         end
     end
     return best
+end
+
+function rating:GetGuideSwap(context, item, physical)
+    if not context or not item then return nil end
+    return wornSwap(context, groupFor(item), item, score(context, item), nil, physical)
 end
 
 local function insertionRank(context, item, result, placement)
@@ -894,6 +1040,12 @@ function rating:RoundedGain(delta)
     if not finite(delta) then return nil end
     local points = math.floor(math.abs(delta) * 10 + 0.5) / 10
     return delta < 0 and -points or points
+end
+
+function rating:IsMeaningfulOwnedUpgrade(result)
+    if not result.delta or result.delta <= 0 or not result.roleDelta then return false end
+    if result.status == "empty" then return self:RoundedGain(result.roleDelta) >= 0.1 end
+    return result.roleDelta >= math.max(2, (result.roleDisplaced or 0) * 0.05)
 end
 
 function rating:Label(entry, layout)

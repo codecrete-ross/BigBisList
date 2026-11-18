@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": 9476,
+      "name": "Big Bad Pauldrons",
+      "slot": "Shoulder",
+      "armor_type": "Plate",
+      "armor": 396,
+      "required_level": 45,
+      "item_level": 50,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "stats": {
+        "hp5": 12,
+        "stamina": 12,
+        "strength": 12
+      },
+      "wowhead_url": "https://www.wowhead.com/forever/item=9476",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "tooltip_url": "https://bindonforever.com/item/9476",
+        "route_url": "https://guide.wow4ever.se/en/items/9476"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "content_type": "dungeon",
+          "entity_type": "npc",
+          "entity_id": 7267,
+          "entity_name": "Chief Ukorz Sandscalp",
+          "zone": "Zul'Farrak",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Both",
+          "eligibility": {
+            "min_level": 45,
+            "basis": "Conservative availability within the dungeon level range, at the item's equip requirement."
+          },
+          "source_url": "https://guide.wow4ever.se/en/items/9476",
+          "confidence": "reviewed"
+        }
+      ]
+    }
+  ]
+}

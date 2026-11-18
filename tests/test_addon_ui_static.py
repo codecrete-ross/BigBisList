@@ -73,7 +73,7 @@ class AddonUIStaticTests(unittest.TestCase):
         config = self.read_lua("Config.lua")
         for token in [
             "BigBiSList.maxLevelingLevel = (datasetMeta.level_cap or 70) - 1",
-            "local DEFAULTS_VERSION = 18",
+            "local DEFAULTS_VERSION = 19",
             "local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel",
             "window = {",
             "width = 1160",
@@ -470,7 +470,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("function UI:RenderGearTab()", ui)
         self.require_tokens(self.ui_function("RenderGearTab"), ['gear.slots[data.slotKey]', 'self.contentScroll:Hide()'])
         self.require_tokens(ui, [
-            'function UI:CreateGearWorkspace(parent)',
+            'function UI:CreateGearWorkspace(parent, builds)',
             'function UI:RefreshGearSelection()',
             'self:GetRowSlotDisplay(data)',
             'self:CreateDetailsPhaseMatrix(',
@@ -1132,7 +1132,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_current_gear_uses_the_fixed_paper_doll_workspace(self):
         ui = self.read_lua("UI.lua")
         self.require_tokens(self.ui_function("RenderGearTab"), [
-            'self.renderModel = nil', 'self:ReleaseRenderFrames()', 'self:LayoutGearWorkspace()',
+            'self.renderModel = nil', 'self:ReleaseRenderFrames()', 'self:LayoutGearWorkspace(gear)',
         ])
         self.require_tokens(self.ui_function("ApplyBodyLayout"), ['self.gearFrame:SetShown(', 'self.contentScroll:SetShown('])
         self.assertNotIn("CreateGearCard", ui)

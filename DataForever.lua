@@ -184532,6 +184532,11 @@ BigBiSListData = {
             ["min_level"] = 31,
             ["races"] = {},
         },
+        ["9476"] = {
+            ["classes"] = {},
+            ["min_level"] = 45,
+            ["races"] = {},
+        },
         ["9742"] = {
             ["classes"] = {},
             ["min_level"] = 7,
@@ -303243,6 +303248,117 @@ BigBiSListData = {
                     {
                         ["basis"] = "conservative reviewed availability threshold; earliest entry is not asserted",
                         ["min_level"] = 29,
+                    },
+                },
+            },
+        },
+        {
+            9476,
+            "Big Bad Pauldrons",
+            "rare",
+            "bind_on_pickup",
+            false,
+            "Shoulder",
+            "Drop: Chief Ukorz Sandscalp (Zul'Farrak)",
+            "https://www.wowhead.com/forever/item=9476",
+            "PR",
+            {
+                "drop",
+                7267,
+                "Chief Ukorz Sandscalp",
+                "https://guide.wow4ever.se/en/items/9476",
+                "Zul'Farrak",
+                nil,
+                nil,
+                "dungeon",
+                "reviewed",
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                "Normal",
+                nil,
+                "Both",
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                "PR",
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                {
+                    ["basis"] = "Conservative availability within the dungeon level range, at the item's equip requirement.",
+                    ["min_level"] = 45,
+                },
+            },
+            {
+                {
+                    "drop",
+                    7267,
+                    "Chief Ukorz Sandscalp",
+                    "https://guide.wow4ever.se/en/items/9476",
+                    "Zul'Farrak",
+                    nil,
+                    nil,
+                    "dungeon",
+                    "reviewed",
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    "Normal",
+                    nil,
+                    "Both",
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    "PR",
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    nil,
+                    {
+                        ["basis"] = "Conservative availability within the dungeon level range, at the item's equip requirement.",
+                        ["min_level"] = 45,
                     },
                 },
             },
@@ -2797277,7 +2797393,7 @@ BigBiSListData = {
         ["enchant_count"] = 0,
         ["flavor"] = "forever",
         ["gem_count"] = 0,
-        ["item_count"] = 1014,
+        ["item_count"] = 1015,
         ["item_fallback_count"] = 0,
         ["level_cap"] = 60,
         ["leveling_gear_count"] = 40,
@@ -2797293,6 +2797409,42 @@ BigBiSListData = {
         {
             ["key"] = "PR",
             ["name"] = "Pre-Raid",
+        },
+    },
+    ["reviewed_builds"] = {
+        {
+            ["class"] = "Paladin",
+            ["faction"] = "Alliance",
+            ["goal"] = "Three Lightforge pieces grant 18 Spell Power. Pair them with a two-handed sword, melee crit, and gear that supports Holy damage.",
+            ["id"] = "ret-lightforge-starter",
+            ["level_max"] = 60,
+            ["level_min"] = 60,
+            ["name"] = "Lightforge starter",
+            ["phase"] = "PR",
+            ["requirements"] = "Level 60. Train two-handed swords. The Alliance libram comes from your Paladin crafting route.",
+            ["slots"] = {
+                ["Back"] = "22269",
+                ["Chest"] = "12603",
+                ["Feet"] = "16711",
+                ["Finger0"] = "13098",
+                ["Finger1"] = "7686",
+                ["Hands"] = "16712",
+                ["Head"] = "16727",
+                ["Legs"] = "16728",
+                ["MainHand"] = "18520",
+                ["Neck"] = "7731",
+                ["OffHand"] = 0,
+                ["Ranged"] = "249442",
+                ["Shoulder"] = "16729",
+                ["Trinket0"] = "12930",
+                ["Trinket1"] = "273840",
+                ["Waist"] = "6460",
+                ["Wrist"] = "18754",
+            },
+            ["source_name"] = "Big BiS List · Blizzard Paladin notes",
+            ["source_url"] = "https://worldofwarcraft.blizzard.com/en-us/news/24302099",
+            ["spec"] = "Retribution",
+            ["talents"] = "Take Seal of Command for Vengeance. Champion of the Light adds spell damage from Intellect.",
         },
     },
     ["schemas"] = {
@@ -2886970,6 +2887122,30 @@ BigBiSListData = {
                 nil,
                 nil,
             },
+            ["9476"] = {
+                9476,
+                "Big Bad Pauldrons",
+                "Shoulder",
+                45,
+                {
+                    ["armor"] = 396.0,
+                    ["hp5"] = 12.0,
+                    ["stamina"] = 12.0,
+                    ["strength"] = 12.0,
+                },
+                "Plate",
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+                nil,
+            },
             ["9479"] = {
                 9479,
                 "Embrace of the Lycan",
@@ -2888752,6 +2888928,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Druid/Feral dps"] = {
                 ["leveling"] = {
@@ -2888884,6 +2889061,7 @@ BigBiSListData = {
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Druid/Feral tank"] = {
                 ["leveling"] = {
@@ -2889026,6 +2889204,7 @@ BigBiSListData = {
                         ["stamina"] = 2,
                     },
                 },
+                ["role"] = "tank",
             },
             ["Druid/Restoration"] = {
                 ["leveling"] = {
@@ -2889142,6 +2889321,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "healer",
             },
             ["Hunter/Beast mastery"] = {
                 ["leveling"] = {
@@ -2889274,6 +2889454,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "ranged",
             },
             ["Hunter/Marksmanship"] = {
                 ["leveling"] = {
@@ -2889406,6 +2889587,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "ranged",
             },
             ["Hunter/Survival"] = {
                 ["leveling"] = {
@@ -2889547,6 +2889729,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "ranged",
             },
             ["Mage/Arcane"] = {
                 ["leveling"] = {
@@ -2889669,6 +2889852,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Mage/Fire"] = {
                 ["leveling"] = {
@@ -2889791,6 +2889975,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Mage/Frost"] = {
                 ["leveling"] = {
@@ -2889913,6 +2890098,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Paladin/Holy"] = {
                 ["leveling"] = {
@@ -2890029,6 +2890215,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "healer",
             },
             ["Paladin/Protection"] = {
                 ["leveling"] = {
@@ -2890184,6 +2890371,7 @@ BigBiSListData = {
                         ["stamina"] = 2,
                     },
                 },
+                ["role"] = "tank",
             },
             ["Paladin/Retribution"] = {
                 ["leveling"] = {
@@ -2890206,6 +2890394,9 @@ BigBiSListData = {
                                 ["expertise"] = 1.0,
                                 ["haste_percent"] = 6.0,
                                 ["hit_percent"] = 10.0,
+                                ["intellect"] = 0.5,
+                                ["spell_damage"] = 0.65,
+                                ["spell_power"] = 0.65,
                                 ["spirit"] = 0.15,
                                 ["stamina"] = 0.2,
                                 ["strength"] = 1.6,
@@ -2890222,6 +2890413,9 @@ BigBiSListData = {
                                 ["expertise"] = 1.0,
                                 ["haste_percent"] = 6.0,
                                 ["hit_percent"] = 10.0,
+                                ["intellect"] = 0.5,
+                                ["spell_damage"] = 0.65,
+                                ["spell_power"] = 0.65,
                                 ["spirit"] = 0.15,
                                 ["stamina"] = 0.2,
                                 ["strength"] = 1.6,
@@ -2890238,6 +2890432,9 @@ BigBiSListData = {
                                 ["expertise"] = 1.0,
                                 ["haste_percent"] = 6.0,
                                 ["hit_percent"] = 10.0,
+                                ["intellect"] = 0.5,
+                                ["spell_damage"] = 0.65,
+                                ["spell_power"] = 0.65,
                                 ["spirit"] = 0.15,
                                 ["stamina"] = 0.2,
                                 ["strength"] = 1.6,
@@ -2890254,6 +2890451,9 @@ BigBiSListData = {
                                 ["expertise"] = 1.0,
                                 ["haste_percent"] = 6.0,
                                 ["hit_percent"] = 10.0,
+                                ["intellect"] = 0.5,
+                                ["spell_damage"] = 0.65,
+                                ["spell_power"] = 0.65,
                                 ["spirit"] = 0.15,
                                 ["stamina"] = 0.2,
                                 ["strength"] = 1.6,
@@ -2890304,11 +2890504,14 @@ BigBiSListData = {
                         ["expertise"] = 1,
                         ["haste_percent"] = 6,
                         ["hit_percent"] = 10,
+                        ["intellect"] = 0.5,
+                        ["spell_damage"] = 0.65,
                         ["spell_power"] = 0.65,
                         ["stamina"] = 0.2,
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Priest/Discipline"] = {
                 ["leveling"] = {
@@ -2890421,6 +2890624,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "healer",
             },
             ["Priest/Holy"] = {
                 ["leveling"] = {
@@ -2890533,6 +2890737,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "healer",
             },
             ["Priest/Shadow"] = {
                 ["leveling"] = {
@@ -2890655,6 +2890860,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Rogue/Assassination"] = {
                 ["leveling"] = {
@@ -2890798,6 +2891004,7 @@ BigBiSListData = {
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Rogue/Combat"] = {
                 ["leveling"] = {
@@ -2890925,6 +2891132,7 @@ BigBiSListData = {
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Rogue/Subtlety"] = {
                 ["leveling"] = {
@@ -2891053,6 +2891261,7 @@ BigBiSListData = {
                         ["weapon_speed"] = 1,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Shaman/Elemental"] = {
                 ["leveling"] = {
@@ -2891192,6 +2891401,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Shaman/Enhancement"] = {
                 ["leveling"] = {
@@ -2891338,6 +2891548,7 @@ BigBiSListData = {
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Shaman/Restoration"] = {
                 ["leveling"] = {
@@ -2891455,6 +2891666,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "healer",
             },
             ["Warlock/Affliction"] = {
                 ["leveling"] = {
@@ -2891581,6 +2891793,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Warlock/Demonology"] = {
                 ["leveling"] = {
@@ -2891707,6 +2891920,7 @@ BigBiSListData = {
                         ["stamina"] = 0.4,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Warlock/Destruction"] = {
                 ["leveling"] = {
@@ -2891833,6 +2892047,7 @@ BigBiSListData = {
                         ["stamina"] = 0.2,
                     },
                 },
+                ["role"] = "caster",
             },
             ["Warrior/Arms"] = {
                 ["leveling"] = {
@@ -2891966,6 +2892181,7 @@ BigBiSListData = {
                         ["weapon_speed"] = 2,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Warrior/Fury"] = {
                 ["leveling"] = {
@@ -2892108,6 +2892324,7 @@ BigBiSListData = {
                         ["strength"] = 1.6,
                     },
                 },
+                ["role"] = "melee",
             },
             ["Warrior/Protection"] = {
                 ["leveling"] = {
@@ -2892251,6 +2892468,7 @@ BigBiSListData = {
                         ["stamina"] = 2,
                     },
                 },
+                ["role"] = "tank",
             },
         },
         ["version"] = "forever-stat-ranks-1",
@@ -2905939,5 +2906157,6 @@ BigBiSListData = {
         "Wetlands",
         "Winterspring",
         "Zephras Isle",
+        "Zul'Farrak",
     },
 }

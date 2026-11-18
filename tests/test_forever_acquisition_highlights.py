@@ -288,6 +288,10 @@ for index = 1, 8 do
     assert(not highlights.queued and mark(button, 901002).result == cached)
 end
 assert(refreshes == initialRefreshes, "An unchanged Baganator row reuses its result")
+button:Hide(); H.settle(); button:Show()
+assert(redraw(freshDetails()), "A reopened bag gets the badge on its first draw")
+H.settle()
+assert(refreshes == initialRefreshes and mark(button, 901002).result == cached)
 
 highlights.tooltipDirty = true
 highlights:ScheduleRefresh(); H.settle()

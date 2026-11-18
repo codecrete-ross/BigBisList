@@ -70,6 +70,8 @@ CANONICAL_FILES = {
 
 FOREVER_ONLY_CANONICAL_FILES = {
     "comparison_item_stats": "comparison_item_stats.json",
+    "guide_item_reviews": "guide_item_reviews.json",
+    "reviewed_builds": "reviewed_builds.json",
     "leveling_rules": "leveling_rules.json",
     "leveling_scoring_profiles": "leveling_scoring_profiles.json",
     "leveling_reviews": "leveling_reviews.json",

@@ -75,6 +75,29 @@ before compiling the active candidate pools.
 
 ## Reference weight verification
 
+Forever's gear guide ranks compatible items with reviewed routes against the
+default weights for its selected spec and level or phase. The pool is shared
+across browsing filters. Compare Slot retains the exact equipped reference
+and shows the live swap estimate when that comparison has a reviewed model.
+My Gear uses the same reference weights for its outfit score and respects
+weapon configurations and unique-equip limits when finding the benchmark.
+Builds shows authored outfits and tracks exact copies independently of rank.
+
+The Zockify Retribution Pre-Raid review identified several pieces outside the
+verified item and route catalog. The first tracked build uses a separately
+authored Lightforge dungeon setup with a reviewed three-piece bonus and
+acquisition routes for every target. Big Bad Pauldrons uses the observed
+Forever server tooltip and the published OneForAll dungeon loot record.
+[Zockify Retribution](https://www.zockify.com/forever/paladin/retribution/)
+· [Big Bad Pauldrons tooltip](https://bindonforever.com/item/9476)
+· [Zul’Farrak loot record](https://guide.wow4ever.se/en/items/9476)
+
+Bag and bank arrows require a legal swap with both a positive total change
+and a meaningful role stat gain. The minimum is two role stat points and
+five percent of the displaced role score. A role gain that rounds to 0.1
+points qualifies for a genuinely empty slot. Defensive stats contribute to
+this threshold for tanks. Gold BiS uses the item’s explicit guide approval.
+
 The leveling scorer applies character and route eligibility before ranking by
 the weighted sum of verified flat stats. It keeps the first three choices and
 positive-score alternatives within 5% of the top score. Item level, name, and

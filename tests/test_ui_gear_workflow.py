@@ -458,8 +458,11 @@ local function verifyGear()
         if placement and placement.rank and placement.total > 1 then
             assert(not tile.rating.isTruncated, key .. " rank clipped: " .. tile.rating.fullText)
             local service = addon.ForeverGearRating
-            assert(tile.rating:GetText() == service:Label(placement) or tile.rating:GetText() == service:Label(placement, "compact"),
-                key .. " has the wrong rank: " .. tile.rating:GetText())
+            local label, compact = service:Label(placement), service:Label(placement, "compact")
+            local text = tile.rating:GetText()
+            local percent = placement.score_percent and (" · " .. placement.score_percent .. "%")
+            assert(text == label or text == compact or (percent and (text == label .. percent or text == compact .. percent)),
+                key .. " has the wrong rank: " .. text)
             if placement.tier then
                 local color = {addon.Widgets:GetRankColor(placement.tier.quality)}
                 for component = 1, 3 do assert(tile.rating.textColor[component] == color[component]) end
@@ -577,7 +580,10 @@ assert(ui:GetSelection().tab == "Gear Guide" and ui:GetFilters().slots.Rings and
 assert(ui:IsLevelingActivityView() and not ui.levelingActivity and ui.contentScroll:GetVerticalScroll() == 0)
 assert(ui.slotContextFrame.items[1].data.slotKey == "Finger1" and not ui.slotContextFrame.items[2]:IsShown())
 assert(ui.slotContextFrame.label:GetText() == "Finger 2" and ui.slotContextFrame.items[1].iconButton.itemLink == "item:990001:0:12")
-assert(not ui.slotContextFrame.compareButton:IsShown())
+assert(ui.slotContextFrame.compareButton:IsShown())
+ui.slotContextFrame.compareButton:Click(); H.settle()
+assert(ui.slotComparison and ui.slotComparison.statRank and ui.slotComparison.reference.slotKey == "Finger1")
+ui:CloseSlotComparison(); H.settle()
 H.equipped[12] = 990002
 BigBiSList:InitUIEvents()
 BigBiSList.uiEventFrame:GetScript("OnEvent")(BigBiSList.uiEventFrame, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
@@ -616,6 +622,58 @@ assert(ui:GetFilters().slots.Trinkets and ui.slotContextFrame.items[1].data.slot
 assert(ui.slotContextFrame.items[1].iconButton.itemLink == "item:990003:0:14")
 ui:ClearFilters(); H.settle()
 assert(not ui.levelingSlotReference and not ui.slotContextFrame:IsShown())
+''')
+
+    def test_build_tracks_exact_copies_and_keeps_the_paper_doll_on_return(self):
+        self.run_lua(r'''
+UnitClass = function() return "Paladin", "PALADIN" end
+UnitClassBase = function() return "PALADIN" end
+UnitLevel = function() return 60 end
+UnitRace = function() return "Human", "Human", 1 end
+H.equipped[11], H.equipped[12] = 7686, 13098
+local addon = BigBiSList
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links = true, { "item:273840" }
+C_Container = {
+    GetContainerNumSlots = function(bag) return bag == 0 and 1 or 0 end,
+    GetContainerItemID = function(bag, slot) if bag == 0 and slot == 1 then return 12930 end end,
+    GetContainerItemLink = function(bag, slot) if bag == 0 and slot == 1 then return "item:12930" end end,
+}
+ui:Open(); H.settle()
+ui:SetContentMode("endgame")
+ui:SetClass("Paladin")
+ui:SetSpec("Retribution")
+ui:SetTab("Builds"); H.settle()
+local gear = ui.buildFrame
+assert(gear:IsVisible() and not ui.contentScroll:IsVisible() and not gear.empty:IsShown())
+assert(gear.slots.Finger0.gearData.overlay == "Equipped" and gear.slots.Finger1.gearData.overlay == "Equipped")
+assert(gear.slots.Trinket0.gearData.overlay == "In bags" and gear.slots.Trinket1.gearData.overlay == "In bank (last visit)")
+assert(gear.summary.progress:GetText() == "4/16 owned" and gear.slots.OffHand.gearData.overlay == "Left empty")
+gear.summary.track:Click(); H.settle()
+assert(addon:GetCharacterDB().trackedBuilds.endgame == gear.build.id)
+assert(gear.summary.track.label:GetText() == "Untrack build")
+for _, resolution in ipairs({ {1020, 560}, {1160, 660}, {900, 500} }) do
+    UIParent:SetSize(resolution[1], resolution[2])
+    ui.frame:SetSize(resolution[1], resolution[2])
+    for _, density in ipairs({ "comfortable", "compact" }) do
+        addon:GetAccountDB().profile.window.density = density
+        ui:RefreshLayout("build-test")
+        H.settle()
+        for _, button in pairs(gear.slots) do
+            assert(button:IsVisible() and button:IsEnabled())
+            H.expectBounded(button, gear, "build slot")
+        end
+        assert(not ui.contentScroll:IsVisible())
+        H.expectBounded(gear.summary.notes, gear.summary, "build notes")
+    end
+end
+gear.slots.MainHand:Click(); H.settle()
+assert(ui.selectedItemId == 18520 and ui:GetSelection().tab == "Builds")
+if ui.inspectorExclusive then ui.detailsBackButton:Click(); H.settle() end
+assert(gear:IsVisible() and gear.slots.MainHand.selected)
+ui:SetContentMode("leveling"); ui:SetTab("Builds"); H.settle()
+assert(gear.empty:IsVisible() and not gear.summary:IsVisible())
+assert(addon:GetCharacterDB().trackedBuilds.endgame and not addon:GetCharacterDB().trackedBuilds.leveling)
 ''')
 
     def test_late_stats_refresh_the_current_equipped_item_after_swapping(self):

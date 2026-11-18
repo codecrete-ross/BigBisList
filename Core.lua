@@ -199,6 +199,7 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
         end
         retryDetectedPlayerSelection()
         if addonInitialized and BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
+        if addonInitialized and BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:InvalidateStorage() end
         return
     end
 

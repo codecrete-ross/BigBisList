@@ -100,9 +100,14 @@ assert(button.selected and button.label:GetText() == "Filters (1)", "applying a 
 button:Click(); H.settle()
 assert(not ui.filterDrawerOpen and button.selected, "closing the drawer keeps the applied filter highlighted")
 button:Click(); H.settle()
-ui.clearFiltersButton:Click(); H.settle()
-assert(ui.filterDrawerOpen and not button.selected and button.label:GetText() == "Filters",
-    "clearing filters removes the highlight while the drawer stays open")
+local state = ui:GetViewState()
+state.sort, state.sortDirection, state.groupBy = "source", "desc", "activity"
+ui.clearFiltersButton:Click()
+assert(not ui.filterDrawerOpen and not button.selected,
+    "clearing filters closes the drawer and immediately removes the highlight")
+H.settle()
+assert(not ui.filterDrawer:IsShown() and button.label:GetText() == "Filters")
+assert(state.sort == "source" and state.sortDirection == "desc" and state.groupBy == "activity")
 ''')
 
     def test_filter_scrollbar_exists_only_for_actual_overflow(self):

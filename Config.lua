@@ -43,7 +43,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 18
+local DEFAULTS_VERSION = 19
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel
@@ -140,6 +140,7 @@ end
 local function tabIsValidForMode(tabName, mode)
     local normalizedMode = normalizeContentMode(mode)
     local normalizedTab = normalizeTabName(tabName)
+    if normalizedTab == "Builds" then return BigBiSList.isForever end
     return MODE_TABS[normalizedMode][normalizedTab] == true
 end
 
@@ -1272,6 +1273,11 @@ function BigBiSList:EnsureDatabase()
     migrateLegacyDefaults(characterDB, charPreviousVersion)
     normalizeContentModeState(characterDB)
     migrateViewState(characterDB, charPreviousVersion)
+    if self.isForever and (not charPreviousVersion or charPreviousVersion < 19) then
+        local guide, bis = characterDB.viewState.gearGuide, characterDB.viewState.bisList
+        if guide.sort == "priority" then guide.sort, guide.sortDirection = "stat_rank", "asc" end
+        if bis.sort == "rank" then bis.sort, bis.sortDirection = "stat_rank", "asc" end
+    end
     migrateTooltipSpecFilterDefaults(accountDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(characterDB, charPreviousVersion)
     migrateFacetedFilters(characterDB, charPreviousVersion)

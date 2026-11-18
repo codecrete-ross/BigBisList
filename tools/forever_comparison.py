@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 
-from tools.forever import item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest
+from tools.forever import eligible, item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
 
@@ -17,6 +17,76 @@ ITEM_FIELDS = (
     "variant_id", "has_random_stats", "requires_dual_wield", "excluded",
 )
 TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
+
+BUILD_SLOTS = {slot: {slot} for slot in ("Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet")}
+BUILD_SLOTS.update({
+    "Finger0": {"Ring"}, "Finger1": {"Ring"}, "Trinket0": {"Trinket"}, "Trinket1": {"Trinket"},
+    "MainHand": {"Main Hand", "One Hand", "Two Hand"}, "OffHand": {"Off Hand", "One Hand"},
+    "Ranged": {"Ranged", "Libram", "Idol", "Totem", "Relic"},
+})
+
+
+def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
+    items, stats = [], []
+    for row in reviewed:
+        review, sources = row.get("review", {}), row.get("sources", [])
+        if (not comparison_facts(row) or not re.fullmatch(r"1\.60\.\d+\.\d+", review.get("client_build", ""))
+                or not review.get("tooltip_url", "").startswith("https://")
+                or not review.get("route_url", "").startswith("https://")
+                or not sources or not all(map(valid_source, sources))):
+            raise ValueError(f"Invalid Forever guide item review for {row.get('id')}")
+        item = {key: row[key] for key in ("id", "name", "quality", "binding", "boe", "wowhead_url")}
+        source = sources[0]
+        item.update(inventory_slot=row["slot"], acquisition_phase="PR", primary_source=source,
+                    sources=sources, source_summary=f"Drop: {source['entity_name']} ({source['zone']})")
+        items.append(item)
+        stats.append({key: value for key, value in row.items() if key != "review"})
+    return items, stats
+
+
+def compile_reviewed_builds(builds: list[dict], catalog: dict, items: list[dict], stats: list[dict]) -> list[dict]:
+    profiles = {(profile["class"], profile["spec"]): profile for profile in scoring_profiles()["profiles"]}
+    sources = {item["id"]: item["sources"] for item in items if item.get("sources")}
+    library = {str(item["id"]): item for item in stats}
+    seen = set()
+    for build in builds:
+        name = build["id"]
+        start, end = build["level_min"], build["level_max"]
+        leveling = build["phase"] == "LEVELING"
+        profile = profiles.get((build["class"], build["spec"]))
+        if (not name or name in seen or not profile or build["faction"] not in {"Alliance", "Horde"}
+                or (not (1 <= start <= end < 60) if leveling else (start != 60 or end != 60 or build["phase"] != "PR"))
+                or not build["source_url"].startswith("https://") or set(build["slots"]) != set(BUILD_SLOTS)):
+            raise ValueError(f"Invalid Forever build {name}")
+        seen.add(name)
+        limits = {}
+        for position, key in build["slots"].items():
+            if key == 0:
+                continue
+            fields = catalog["items"].get(key)
+            if not fields:
+                raise ValueError(f"Unknown variant {key} in Forever build {name}")
+            facts = dict(zip(catalog["item_fields"], fields))
+            slot, identifier = facts["slot"], facts["id"]
+            original = library.get(str(identifier), {})
+            equip_slot = ("Off Hand" if position == "OffHand" else "Main Hand") if slot == "One Hand" else slot
+            if (not original or slot not in BUILD_SLOTS[position] or equip_slot not in profile["slots"] or facts["has_random_stats"]
+                    or (facts["level"] is not None and facts["level"] > start)
+                    or not eligible(original, profile, equip_slot, require_source=False)
+                    or not any(source.get("side") in {None, "Both", build["faction"]} and valid_source(source)
+                               for source in sources.get(identifier, []))):
+                raise ValueError(f"Ineligible {position} {key} in Forever build {name}")
+            if slot == "Two Hand" and build["slots"]["OffHand"] != 0:
+                raise ValueError(f"Two-handed build {name} equips an off-hand")
+            group = facts["unique_group"]
+            limit = facts["max_equipped"] or (1 if group else None)
+            if limit is not None:
+                identity = group.casefold() if group else identifier
+                copies, cap = limits.get(identity, (0, limit))
+                limits[identity] = (copies + 1, min(cap, limit))
+        if any(copies > cap for copies, cap in limits.values()):
+            raise ValueError(f"Unique-equip limit exceeded in Forever build {name}")
+    return builds
 
 
 def comparison_facts(item: dict, description: str = "") -> dict | None:
@@ -145,22 +215,28 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
     rules = dataset_json("forever", "leveling_rules")
     leveling = dataset_json("forever", "leveling_scoring_profiles")
     raid = scoring_profiles()
+    # Match the reviewed passive Intellect and spell coefficients in the Ret
+    # pilot. Conditional talent operations stay in the loadout scorer.
+    ret_weights = dataset_json("forever", "scoring_model")["profiles"]["Paladin/Retribution"]["weights"]
     profiles = {}
     for profile in raid["profiles"]:
         class_name, spec = profile["class"], profile["spec"]
         key = f"{class_name}/{spec}"
+        weight_overrides = ret_weights if key == "Paladin/Retribution" else {}
         weights = [
-            [low, high, profile_weights(leveling, class_name, spec, low, "best_overall", rules=rules)[1]]
+            [low, high, {**profile_weights(leveling, class_name, spec, low, "best_overall", rules=rules)[1],
+                         **weight_overrides}]
             for _, low, high in rules["level_bands"]
         ]
         profiles[key] = {
+            "role": profile["role"],
             "leveling": {**rules["spec_policies"][key], "weights": weights},
             "pre_raid": {
                 **{field: profile[field] for field in (
                     "slots", "armor_types", "weapon_types", "two_hand_weapon_types",
                     "dual_wield", "require_shield", "slot_weapon_types",
                 ) if field in profile},
-                "weights": {**raid["role_weights"][profile["role"]], **profile.get("weights", {})},
+                "weights": {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **weight_overrides},
             },
         }
     return {

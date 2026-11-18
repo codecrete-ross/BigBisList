@@ -431,7 +431,10 @@ function UI:RebuildComparisonEntries()
             local av, bv
             if state.sort == "stat_rank" or (state.statRank and state.sort == "comparison") then
                 if state.sort == "stat_rank" then av,bv = a.stat_rank.rank, b.stat_rank.rank
-                else av,bv = a.stat_delta and -a.stat_delta, b.stat_delta and -b.stat_delta end
+                else
+                    local aDelta, bDelta = a.active_stat_delta or a.stat_delta, b.active_stat_delta or b.stat_delta
+                    av, bv = aDelta and -aDelta, bDelta and -bDelta
+                end
                 if (av ~= nil) ~= (bv ~= nil) then return av ~= nil end
             elseif state.sort == "item" then av,bv = string.lower(itemName(a)), string.lower(itemName(b))
             elseif state.sort == "owned" then av,bv = OWNED_ORDER[a.owned_state] or 4, OWNED_ORDER[b.owned_state] or 4
@@ -617,7 +620,10 @@ function UI:BindComparisonRow(row, entry, pinned)
         else
             row.rankText:SetTextColor(unpack(placement and placement.rank and placement.total > 1 and widgets.Theme.text or widgets.Theme.muted))
         end
-        local change = data.stat_delta ~= nil and string.format("Est. %+.1f pts", data.stat_delta) or "—"
+        local delta = data.active_stat_delta or data.stat_delta
+        local basis = data.active_stat_delta ~= nil and "Your build" or "Default spec weights"
+        local change = delta ~= nil and string.format("Est. %+.1f pts", delta) or "—"
+        if delta ~= nil and lines > 1 then change = change .. "\n" .. basis end
         if pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
         if not pinned or data.context.slotKey == state.reference.slotKey then
             setCell(row.evidenceText, change, columns.evidence.x, columns.evidence.width, entry.height, lines)
@@ -628,6 +634,7 @@ function UI:BindComparisonRow(row, entry, pinned)
             row.referenceButton:SetSelected(false); row.referenceButton:SetWidth(columns.evidence.width); row.referenceButton:Show()
         end
         local hover = placement and service:DescriptionLines(placement) or {}
+        if delta ~= nil then hover[#hover + 1] = string.format("%s · %+.1f pts", basis, delta) end
         if data.guide_note then hover[#hover + 1] = data.guide_note end
         widgets:BindTooltip(row, #hover > 0 and table.concat(hover, "\n") or nil)
     elseif pinned then

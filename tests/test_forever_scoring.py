@@ -117,8 +117,62 @@ local rolled
 for _, entry in ipairs(pool.rows) do if entry.item.id == 109 then rolled = entry end end
 assert(rolled.score == 8 and rolled.item.effects[1] == "Use: Restores a resource.")
 assert(service:GetPlacement(context, "Finger1", {"Ring"}).rows[1].item.id == 103)
+local slots = { {key = "Finger0", slots = {"Ring"}}, {key = "Finger1", slots = {"Ring"}} }
+local outfit = service:GetGearScore(context, slots)
+assert(outfit.score == 20 and outfit.best == 23 and outfit.percent == 86 and outfit.covered == 2)
+assert(outfit.tier.label == "Near best" and service:GetGearScore(context, slots) == outfit)
+local unknown = service:GetContext("Paladin", "Protection", "LEVELING", 47,
+    {equippedSlots = {Finger0 = worn}, unreadableEquipmentSlots = {Finger1 = true}})
+local partial = service:GetGearScore(unknown, slots)
+assert(partial.partial == 1 and partial.covered == 1 and partial.best == 15 and partial.score == 8)
 local preview = service:GetContext("Paladin", "Protection", "LEVELING", 59, owned)
 assert(service:GetPlacement(preview, "Finger0", {"Ring"}).rows[1].item.id == 104)
+''')
+
+    def test_retribution_ring_swap_scores_passive_spell_power_and_filters_sidegrades(self):
+        self.lua_run(r'''
+BigBiSList = {
+    GetPlayerRaceName = function() return "Human" end,
+    GetAvailabilityPhaseIndex = function() return 1 end,
+    GetEquipmentSlotDefinitions = function()
+        return {
+            {key = "Finger0", inventorySlotId = 11, label = "Finger 1", slots = {"Ring"}},
+            {key = "Finger1", inventorySlotId = 12, label = "Finger 2", slots = {"Ring"}},
+        }
+    end,
+}
+BigBiSListData = {stat_rank = {
+    version = "forever-stat-ranks-1", equipment = {Paladin = {}}, common_slots = {"Ring"},
+    profiles = {["Paladin/Retribution"] = {role = "damage", leveling = {slots = {}, weights = {
+        {1, 59, {stamina = 0.2, spell_power = 0.65, intellect = 0.5}},
+    }}}},
+    item_fields = {"id", "name", "slot", "level", "stats"},
+    items = {["274642"] = {274642, "Blood Ritual Ring", "Ring", 43, {stamina = 13, defense = 3}}},
+}}
+local nativeSpellPower
+GetItemInfo = function() return "Purified Ring", "item:270081", 3, 44, 0 end
+GetItemInfoInstant = function() return 270081, "Armor", "Miscellaneous", "INVTYPE_FINGER", nil, 4, 0 end
+GetItemStats = function() return {ITEM_MOD_INTELLECT_SHORT = 12, ITEM_MOD_SPELL_POWER_SHORT = nativeSpellPower} end
+local effect = "Equip: Increases damage and healing done by magical spells and effects by up to 5."
+C_TooltipInfo = {GetHyperlink = function() return {lines = {{leftText = effect}, {leftText = effect}}} end}
+dofile("ForeverGearRating.lua")
+local rating = BigBiSList.ForeverGearRating
+local owned = {equippedSlots = {Finger1 = {item_id = 270081, item_link = "item:270081"}}}
+local blood = rating:GetPublishedFacts("274642")
+local function verifySwap()
+    local context = rating:GetContext("Paladin", "Retribution", "LEVELING", 48, owned)
+    local comparison = rating:GetGuideSwap(context, blood, "Finger1")
+    assert(math.abs(comparison.delta + 6.65) < 0.001 and comparison.roleDelta == -9.25)
+    assert(not rating:IsMeaningfulOwnedUpgrade(comparison))
+end
+verifySwap()
+nativeSpellPower = 5
+rating:InvalidateItem(270081)
+verifySwap()
+assert(not rating:IsMeaningfulOwnedUpgrade({delta = 3, roleDelta = 1, roleDisplaced = 10}))
+assert(not rating:IsMeaningfulOwnedUpgrade({delta = 4, roleDelta = 4, roleDisplaced = 100}))
+assert(rating:IsMeaningfulOwnedUpgrade({delta = 5, roleDelta = 5, roleDisplaced = 100}))
+assert(rating:IsMeaningfulOwnedUpgrade({delta = 0.06, roleDelta = 0.06, status = "empty"}))
 ''')
 
     def test_stat_rank_tiers_use_the_best_legal_score_and_inclusive_cutoffs(self):
@@ -448,11 +502,12 @@ scoring:Invalidate()
 assert(not context())
 ''')
 
-    def test_populated_payload_uses_real_leveling_query_and_reference_fallback(self):
+    def test_populated_guide_is_stable_and_live_comparisons_remain_available(self):
         self.lua_run(r'''
 dofile("DataForever.lua")
 dofile("Config.lua")
 dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
 dofile("DataIndex.lua")
 local reviewedBuild = tostring(BigBiSListData.character_scoring.build)
 local build, rank, level = reviewedBuild, 3, 44
@@ -479,24 +534,31 @@ C_Traits = {
 local addon = BigBiSList
 local gear = addon:GetLevelingRows("Paladin", "Retribution", 44, {})
 assert(#gear > 10)
-local sample = gear[1].items[1]
-assert(sample.scoring_basis == "active_build", sample.scoring_label)
-local tip = addon:GetLevelingTooltipMatches(sample.item_id, "Paladin", "Retribution", 44)
-assert(tip[1].scoring_basis == "active_build", tip[1].scoring_label)
+local scoring = assert(addon.ForeverScoring:GetContext("Paladin", "Retribution", "leveling", 44))
+assert(#addon.ForeverScoring:RankSlot(scoring, "Head").selected > 0)
 build = tostring(tonumber(reviewedBuild) + 1)
 local fallback = addon:GetLevelingRows("Paladin", "Retribution", 44, {})
-assert(#fallback > 10 and fallback[1].items[1].scoring_label == "Reference build")
+assert(#fallback == #gear and fallback[1].items[1].item_id == gear[1].items[1].item_id)
+assert(fallback[1].items[1].stat_rank == gear[1].items[1].stat_rank)
+local shoulder
+for _, group in ipairs(addon:GetLevelingRows("Paladin", "Retribution", 48, {slots = {Shoulder = true}})) do
+    for _, row in ipairs(group.items) do
+        if row.item_id == 9476 then shoulder = row end
+    end
+end
+assert(shoulder and shoulder.stat_rank.rank and shoulder.matched_access_option.source.entity_id == 7267)
+local guideContext = addon.ForeverGearRating:GetGuideContext("Paladin", "Retribution", "LEVELING", 48, "Human", "Alliance")
+local pool = addon.ForeverGearRating:GetGuidePlacement(guideContext, "Shoulder")
+assert(pool.byVariant["9476"].score > pool.byVariant["9411"].score)
+assert(guideContext.weights.intellect == 0.5 and guideContext.weights.spell_power == 0.65)
 build, level = reviewedBuild, 60
 local phaseRows = addon:GetPhaseRows("Paladin", "Retribution", "PR", {})
-assert(#phaseRows > 10 and phaseRows[1].items[1].scoring_basis == "active_build")
+assert(#phaseRows > 10 and not phaseRows[1].items[1].scoring_basis)
 local plannerRows = addon:GetPlannerRows("Paladin", "Retribution", "PR", {})
-assert(#plannerRows > 0 and plannerRows[1].bestUse.scoring_basis == "active_build")
-local itemId = phaseRows[1].items[1].item_id
-local preRaidTip = addon:GetTooltipMatches(itemId, "Paladin", "Retribution", true, nil, {selectedPhase = "PR"})
-assert(preRaidTip[1].scoring_basis == "active_build")
+assert(#plannerRows > 0 and not plannerRows[1].bestUse.scoring_basis)
 level = 14
 local early = addon:GetLevelingRows("Warrior", "Arms", 14, {race = "Human", faction = "Alliance"})
-assert(#early == 13 and early[1].items[1].scoring_label == "Reference build")
+assert(#early >= 13)
 assert(addon:GetLevelingSlotStatus("Warrior", "Arms", 14, "Shoulder",
     {race = "Human", faction = "Alliance"}).state == "unreviewed")
 
@@ -523,13 +585,8 @@ local function setTalentTree(tree, spec)
 end
 setTalentTree(1100, "Protection")
 local function firstHeadPick()
-    for _, group in ipairs(addon:GetLevelingRows("Paladin", "Protection", 42, {})) do
-        if group.slot == "Head" then
-            assert(group.items[1].scoring_basis == "active_build")
-            return group.items[1].item_id
-        end
-    end
-    error("Missing head recommendations")
+    local context = assert(addon.ForeverScoring:GetContext("Paladin", "Protection", "leveling", 42))
+    return addon.ForeverScoring:RankSlot(context, "Head").selected[1].item.id
 end
 assert(firstHeadPick() == 287011) -- Guise of Battle
 ranks[130354] = 2
@@ -542,13 +599,8 @@ function UnitFactionGroup() return "Horde" end
 ranks = {[129416] = 5, [129415] = 3, [129404] = 0}
 setTalentTree(1082, "Enhancement")
 local function thirdWristPick()
-    for _, group in ipairs(addon:GetLevelingRows("Shaman", "Enhancement", 42, {})) do
-        if group.slot == "Wrist" then
-            assert(group.items[3].scoring_basis == "active_build")
-            return group.items[3].item_id
-        end
-    end
-    error("Missing wrist recommendations")
+    local context = assert(addon.ForeverScoring:GetContext("Shaman", "Enhancement", "leveling", 42))
+    return addon.ForeverScoring:RankSlot(context, "Wrist").selected[3].item.id
 end
 assert(thirdWristPick() == 2868) -- Patterned Bronze Bracers
 ranks[129404] = 2

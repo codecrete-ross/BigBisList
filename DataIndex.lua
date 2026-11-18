@@ -3050,74 +3050,6 @@ function LEVELING_HELPERS.scoringContext(className, specName, mode, level, filte
     return scoring:GetContext(className, specName, mode, level, filters)
 end
 
-function LEVELING_HELPERS.scoredRow(index, state, className, specName, slot, result)
-    local item = result.item
-    local use
-    if state.mode == "leveling" then
-        use = buildLevelingRecommendationRow(index, {
-            class = className, spec = specName, slot = slot, item_id = item.id, rank = result.rank,
-            level_min = state.level, level_max = state.level, faction = state.faction, race = state.raceName, race_id = state.race,
-            score = result.score, variant_id = item.variant_id, random_suffix_id = item.random_suffix_id, variant_name = item.name,
-            context = "best_overall",
-        })
-    else
-        use = buildUse(index, className, specName, "PR", {slot = slot}, {
-            item_id = item.id, rank = result.rank, rank_group = result.rank == 1 and "bis" or "ranked",
-            rank_label = result.rank == 1 and "BiS" or "Alt",
-        })
-        use.score, use.variant_id, use.name = result.score, item.variant_id, item.name
-    end
-    if use then
-        use.scoring_label = BigBiSList.ForeverScoring:EffectLabel(state, result)
-        use.scoring_basis = "active_build"
-    end
-    return use
-end
-
-function LEVELING_HELPERS.phaseUses(index, refs, className, specName, phaseKey, filters)
-    local state = phaseKey == "PR" and LEVELING_HELPERS.scoringContext(className, specName, "pre_raid", 60, filters)
-    local uses, replaced = {}, {}
-    if state then
-        for _, slot in ipairs(sortedKeys(state.scenario.pools)) do
-            local ranks = BigBiSList.ForeverScoring:RankSlot(state, slot)
-            for _, result in ipairs(ranks.selected) do
-                local row = LEVELING_HELPERS.scoredRow(index, state, className, specName, slot, result)
-                if row then uses[#uses + 1] = row; replaced[slot] = true end
-            end
-        end
-    end
-    for _, ref in ipairs(refs or {}) do
-        local row = buildUse(index, ref)
-        if not replaced[row.slot] then
-            if BigBiSList.ForeverScoring then row.scoring_label = "Reference build" end
-            uses[#uses + 1] = row
-        end
-    end
-    return uses
-end
-
-function LEVELING_HELPERS.scoredTooltipUses(addon, state, className, specName, itemId, itemLink)
-    local uses, replaced = {}, {}
-    if not state then return uses, replaced end
-    local index = addon:GetDataIndex()
-    local variant = addon:GetItemVariantIdFromLink(itemLink)
-    local item = state.items[variant or tostring(itemId)]
-    if not item then return uses, replaced end
-    for _, slot in ipairs(sortedKeys(state.scenario.pools)) do
-        if item.slot == slot or (item.slot == "One Hand" and (slot == "Main Hand" or slot == "Off Hand")) then
-            local ranked = addon.ForeverScoring:RankSlot(state, slot).selected
-            replaced[slot] = #ranked > 0
-            for _, scored in ipairs(ranked) do
-                if scored.item.id == itemId and (not scored.item.variant_id or scored.item.variant_id == variant) then
-                    local row = LEVELING_HELPERS.scoredRow(index, state, className, specName, slot, scored)
-                    if row then uses[#uses + 1] = row end
-                end
-            end
-        end
-    end
-    return uses, replaced
-end
-
 function LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
     if not row then
         return false
@@ -4432,6 +4364,85 @@ function BigBiSList:GetEquipmentSlotDefinitions()
     return EQUIPMENT_SLOTS
 end
 
+function BigBiSList:GetReviewedBuilds(className, specName, phase, level)
+    local builds = {}
+    local faction, race = self:GetPlayerFactionName(), self:GetPlayerRaceName()
+    for _, build in ipairs((BigBiSListData or {}).reviewed_builds or {}) do
+        if build.class == className and build.spec == specName and build.phase == phase
+            and (not build.faction or build.faction == faction) and (not build.race or build.race == race)
+            and (phase ~= LEVELING_PHASE_KEY or (level and level >= build.level_min and level <= build.level_max)) then
+            builds[#builds + 1] = build
+        end
+    end
+    return builds
+end
+
+function BigBiSList:GetBuildGearRows(build, owned, phase)
+    local rows = { total = 0, owned = 0 }
+    local service = self.ForeverGearRating
+    local equipped = owned.equippedSlots or {}
+    local worn, used, reserve = {}, {}, {}
+    local copies = { bag = {}, bank = {} }
+    local function identity(entry)
+        return entry and service:NormalizeLink(entry.item_id, entry.item_link)
+    end
+    local function countCopy(entry)
+        local key, pool = identity(entry), copies[entry.state]
+        if key and pool then pool[key] = (pool[key] or 0) + 1 end
+    end
+    for _, entry in pairs(owned.gearCopies or owned.gearStatLinks or {}) do countCopy(entry) end
+    for _, definition in ipairs(EQUIPMENT_SLOTS) do
+        local key = definition.key
+        local expected = build.slots[key]
+        worn[key] = identity(equipped[key])
+        if worn[key] and worn[key] == expected then reserve[key] = key; used[key] = true end
+    end
+    local peers = { Finger0 = "Finger1", Finger1 = "Finger0", Trinket0 = "Trinket1", Trinket1 = "Trinket0" }
+    for _, definition in ipairs(EQUIPMENT_SLOTS) do
+        local key = definition.key
+        local expected = build.slots[key]
+        local row = { slotKey = key, slot = definition.label, build_target = true, overlay = "Left empty", name = definition.label }
+        if type(expected) == "string" then
+            local peer = peers[key]
+            local target = reserve[key]
+            if not target and peer and not used[peer] and worn[peer] == expected then
+                target, used[peer] = peer, true
+            end
+            local state = target and "equipped" or "missing"
+            if not target then
+                for _, location in ipairs({ "bag", "bank" }) do
+                    local pool = copies[location]
+                    if (pool[expected] or 0) > 0 then
+                        pool[expected] = pool[expected] - 1
+                        state = location
+                        break
+                    end
+                end
+            end
+            local facts = service:GetPublishedFacts(expected)
+            local id = facts and facts.id or tonumber(expected:match("^%d+"))
+            local item = self:GetItemData(id)
+            row.item_id, row.item, row.owned_state = id, item, state
+            row.name = (facts and facts.name) or (item and item.name) or tostring(id)
+            row.item_link = target and equipped[target].item_link
+            if not row.item_link and facts and facts.variant_id then
+                local suffix = facts.variant_id:match("^%d+:(%-?%d+)$")
+                if suffix then row.item_link = string.format("item:%d:0:0:0:0:0:%s:0", id, suffix) end
+            end
+            row.phase, row.class, row.spec, row.variant_id = phase, build.class, build.spec, facts and facts.variant_id
+            row.leveling = phase == LEVELING_PHASE_KEY
+            row.overlay = ({ equipped = "Equipped", bag = "In bags", bank = "In bank (last visit)", missing = "Missing" })[state]
+            row.ownership_state = state
+            row.owned = state ~= "missing"
+            row.requirements = item and item.requirements
+            rows.total = rows.total + 1
+            if row.owned then rows.owned = rows.owned + 1 end
+        end
+        rows[#rows + 1] = row
+    end
+    return rows
+end
+
 function BigBiSList:GetPhaseShortName(phaseKey)
     return PHASE_SHORT_DISPLAY[phaseKey] or self:GetPhaseDisplayName(phaseKey)
 end
@@ -4879,6 +4890,26 @@ function BigBiSList:ComparisonItemInScope(itemId, phase, selectedIndex)
         end
     end
     return not known
+end
+
+function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
+    local item = self:GetItemData(itemId)
+    if not item then return false end
+    if not context.guideEligibility then
+        context.guideEligibility = FILTER_FACETS.progressionFilters({
+            class = context.class, race = context.race, faction = context.faction,
+            level = context.level, _leveling = context.leveling,
+        }, context.phase, context.class)
+    end
+    local filters = context.guideEligibility
+    local eligibilityById = BigBiSListData.item_eligibility or {}
+    if not FILTER_FACETS.eligibilityMatchesCharacter(FILTER_FACETS.tableValueById(eligibilityById, itemId), filters) then return false end
+    for _, option in ipairs(self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
+        if option.source_type ~= "unknown" and not option.is_inferred_trade_option
+            and FILTER_FACETS.optionIsCompleteRoute(option)
+            and #FILTER_FACETS.accessOptionFilterMatches(option, filters, context.phaseIndex) > 0 then return true end
+    end
+    return false
 end
 
 function BigBiSList:GetAccessOptionDetailFields(option)
@@ -5789,18 +5820,13 @@ function BigBiSList:GetItemLevelingRecommendationUses(itemId, race)
 end
 
 function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferredPhaseKey, allowedSlots)
-    local state = preferredPhaseKey == "PR" and LEVELING_HELPERS.scoringContext(className, specName, "pre_raid", 60)
-    local active, replaced = LEVELING_HELPERS.scoredTooltipUses(self, state, className, specName, itemId)
-    for _, row in ipairs(active) do
-        if not allowedSlots or slotListContains(allowedSlots, row.slot) then return row end
-    end
     local uses = self:GetItemUses(itemId, preferredPhaseKey)
     local bestUse
 
     for _, use in ipairs(uses) do
         if use.class == className
             and use.spec == specName
-            and not replaced[use.slot] and FILTER_FACETS.useMatchesProgressionContext(use, preferredPhaseKey)
+            and FILTER_FACETS.useMatchesProgressionContext(use, preferredPhaseKey)
             and (not self.isForever or RECOMMENDATION.useFitsContext(self, use, preferredPhaseKey))
             and (not allowedSlots or slotListContains(allowedSlots, use.slot))
             and isBetterGearUse(use, bestUse, preferredPhaseKey) then
@@ -5815,16 +5841,11 @@ function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, l
     local selectedLevel = clampLevelingLevel(level)
     race = race or self:GetPlayerRaceName()
     local bestUse
-    local state = LEVELING_HELPERS.scoringContext(className, specName, "leveling", selectedLevel, {race = race})
-    local active, replaced = LEVELING_HELPERS.scoredTooltipUses(self, state, className, specName, itemId, itemLink)
-    for _, row in ipairs(active) do
-        if not allowedSlots or slotListContains(allowedSlots, row.slot) then return row end
-    end
 
     for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
         if row.class == className
             and row.spec == specName
-            and not replaced[row.slot] and raceMatches(row.race, race)
+            and raceMatches(row.race, race)
             and (not self.isForever or not row.variant_id or row.variant_id == self:GetItemVariantIdFromLink(itemLink))
             and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
             and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
@@ -6141,7 +6162,8 @@ function BigBiSList:GetSlotComparisonRows(className, specName, targetPhase, slot
         rows[#rows + 1], seen[itemId] = row, row
     end
     local comparisonRefs = index.useRefsByClassSpec[className] and index.useRefsByClassSpec[className][specName]
-    for _, use in ipairs(LEVELING_HELPERS.phaseUses(index, comparisonRefs, className, specName, targetPhase)) do
+    for _, ref in ipairs(comparisonRefs or {}) do
+        local use = buildUse(index, ref)
         local matches = slotListContains(RECOMMENDATION.slots(slotName), use.slot)
         if matches and RECOMMENDATION.useFitsContext(self, use, targetPhase) and includeByFilter(use, FILTER_FACETS.progressionFilters({}, targetPhase), selectedIndex) then
             add(use.item_id, use)
@@ -6300,6 +6322,8 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
             data.source_summary = "Source unverified"
         end
         data.acquisition_display, data.matched_access_option = display, display.option
+        local _, activeDelta = self:GetStatRankActiveComparison(data, rows.reference)
+        data.active_stat_delta = activeDelta
         rows[#rows + 1] = data
     end
     return rows
@@ -6310,6 +6334,7 @@ function BigBiSList:GetStatRankActiveComparison(row, reference)
         or not reference.stat_identity or row.stat_identity == reference.stat_identity then return nil end
     -- The reviewed active scorer recognizes base IDs and reviewed suffix IDs.
     if not reference.stat_identity:match("^%d+$") and not reference.stat_identity:match("^%d+:%-?%d+$") then return nil end
+    if row.phase ~= LEVELING_PHASE_KEY and row.phase ~= "PR" then return nil end
     local mode = row.phase == LEVELING_PHASE_KEY and "leveling" or "pre_raid"
     local state = LEVELING_HELPERS.scoringContext(row.class, row.spec, mode, row.stat_rank.level)
     if not state then return nil end
@@ -6317,9 +6342,32 @@ function BigBiSList:GetStatRankActiveComparison(row, reference)
         candidateVariant = row.stat_identity, inventorySlotId = reference.inventorySlotId, item_link = reference.item_link,
     })
     if delta == nil then return nil end
-    local label = "Active build  " .. string.format("%+.2f pts", delta)
+    local label = "Your build · " .. string.format("%+.2f pts", delta)
     if #effects > 0 then label = label .. "\n" .. table.concat(effects, ", ") end
-    return label
+    return label, delta
+end
+
+function BigBiSList:GetGuideStatComparison(row, owned, physical)
+    local service, placement = self.ForeverGearRating, row.stat_rank
+    if not service or not placement or not owned then return nil end
+    local context = service:GetContext(row.class, row.spec, row.phase, placement.level, owned)
+    local slot = row.slot
+    local targetSlot = physical or (slot == "Main Hand" and "MainHand") or (slot == "Off Hand" and "OffHand")
+    local swap = service:GetGuideSwap(context, placement.item, targetSlot)
+    if not swap or swap.delta == nil then return nil end
+    local target = context.equipmentFacts[swap.definition.key]
+    if target and target.facts and target.facts.key == row.stat_identity then return nil end
+    if target and target.facts then
+        local live = self:GetStatRankActiveComparison(row, {
+            item_id = target.facts.id, item_link = target.item_link, stat_identity = target.facts.key,
+            inventorySlotId = swap.definition.inventorySlotId,
+        })
+        if live then return live .. "\nCompared with " .. target.facts.name .. " (" .. swap.definition.label .. ")" end
+    end
+    local replaced = {}
+    for _, item in ipairs(swap.replacements) do replaced[#replaced + 1] = item.name .. " (" .. item.slot .. ")" end
+    return string.format("Default spec weights · %+.1f pts", swap.delta)
+        .. (#replaced > 0 and (" vs " .. table.concat(replaced, " + ")) or (" · " .. swap.definition.label))
 end
 
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level)
@@ -6330,6 +6378,7 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
     local service = self.ForeverGearRating
     local scoring = service and service:GetContext(className, specName, phaseKey, selectedLevel, ownedItems)
     rows.statsPending = scoring and scoring.pending
+    rows.gearScore = scoring and service:GetGearScore(scoring, EQUIPMENT_SLOTS)
 
     for _, slot in ipairs(EQUIPMENT_SLOTS) do
         local equipped = equippedSlots[slot.key]
@@ -6456,6 +6505,59 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
     return rows
 end
 
+function LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, level, filters)
+    local rating = addon.ForeverGearRating
+    if not rating then return nil end
+    return rating:GetGuideContext(className, specName, phase, level,
+        filters.race or addon:GetPlayerRaceName(), addon:GetPlayerFactionName() or filters.faction)
+end
+
+function LEVELING_HELPERS.addStatGuideRows(addon, index, grouped, context, filters)
+    if not context then return end
+    local rating = addon.ForeverGearRating
+    for _, slot in ipairs(SLOT_ORDER) do
+        if rowMatchesSelectedSlots(slot, filters.slots) then
+            local pool = rating:GetGuidePlacement(context, slot)
+            local group, seen = grouped[slot], {}
+            for _, row in ipairs(group and group.items or {}) do
+                local key = row.variant_id or tostring(row.item_id)
+                seen[key] = true
+                row.stat_rank, row.stat_identity = pool.byVariant[key], key
+            end
+            if not filters._reviewed_only then
+                for _, entry in ipairs(pool.rows) do
+                    local facts = entry.item
+                    if not seen[facts.key] then
+                        local row = buildLevelingRecommendationRow(index, {
+                            class = context.class, spec = context.spec, item_id = facts.id, slot = slot,
+                            level_min = context.level, level_max = context.level,
+                            variant_id = facts.variant_id, variant_name = facts.name,
+                        })
+                        if row then
+                            row.phase, row.phaseIndex, row.leveling = context.phase, phaseIndex(context.phase), context.leveling
+                            row.stat_rank, row.stat_identity = entry, facts.key
+                            row.computed_recommendation, row.context, row.section = nil, nil, nil
+                            row.level_label, row.level_value_text, row.display_rank_label, row.tooltip_level_label = nil, nil, nil, nil
+                            row.category_label, row.leveling_category_key, row.recommendation_summary = nil, nil, nil
+                            row.rank_label, row.rank_group = nil, "option"
+                            if includeByFilter(row, filters, context.phaseIndex) then
+                                local access = addon:GetRowAcquisitionDisplay(row, filters, context.phase)
+                                if access.status == "ready" and access.source_match and access.option.source_type ~= "unknown"
+                                    and not access.option.is_inferred_trade_option then
+                                    row.acquisition_display, row.matched_access_option = access, access.option
+                                    group = group or { slot = slot, items = {} }
+                                    grouped[slot] = group
+                                    group.items[#group.items + 1] = row
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     filters = FILTER_FACETS.progressionFilters(filters, phaseKey, className) or {}
     local index = self:GetDataIndex(phaseKey)
@@ -6466,8 +6568,10 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     local seenBySlot = {}
     local selectedItems = {}
     local selectedIndex = self:GetAvailabilityPhaseIndex(phaseKey)
+    local statGuide = self.isForever and LEVELING_HELPERS.statGuideContext(self, className, specName, phaseKey, 60, filters)
 
-    for _, use in ipairs(LEVELING_HELPERS.phaseUses(index, useRefs, className, specName, phaseKey, filters)) do
+    for _, ref in ipairs(useRefs or {}) do
+        local use = buildUse(index, ref)
         local slotName = use.slot
         grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
         seenBySlot[slotName] = seenBySlot[slotName] or {}
@@ -6512,6 +6616,8 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
             end
         end
     end
+
+    LEVELING_HELPERS.addStatGuideRows(self, index, grouped, statGuide, filters)
 
     local function sortPhaseRows(a, b)
         if (a.earlier_recommendation == true) ~= (b.earlier_recommendation == true) then return not a.earlier_recommendation end
@@ -6632,28 +6738,11 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
     local grouped = {}
     local seenBySlot = {}
     local raceOverrideGroups = {}
-    local activeSlots = {}
-    local state = LEVELING_HELPERS.scoringContext(className, specName, "leveling", selectedLevel, filters)
-    if state then
-        for _, slot in ipairs(sortedKeys(state.scenario.pools)) do
-            for _, result in ipairs(self.ForeverScoring:RankSlot(state, slot).selected) do
-                local row = LEVELING_HELPERS.scoredRow(index, state, className, specName, slot, result)
-                if row then
-                    activeSlots[slot] = true
-                    if includeByFilter(row, filters, availabilityIndex) then
-                        row.acquisition_display = self:GetRowAcquisitionDisplay(row, filters, LEVELING_PHASE_KEY)
-                        row.matched_access_option = row.acquisition_display.option
-                        LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)
-                    end
-                end
-            end
-        end
-    end
 
     if selectedRace and selectedRace ~= "" then
         for _, recommendationRef in ipairs(recommendationRefs) do
             local row = buildLevelingRecommendationRow(index, recommendationRef)
-            if row and not activeSlots[row.slot]
+            if row
                 and row.race == selectedRace
                 and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
                 and includeByFilter(row, filters, availabilityIndex) then
@@ -6667,13 +6756,12 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
 
     for _, recommendationRef in ipairs(recommendationRefs) do
         local row = buildLevelingRecommendationRow(index, recommendationRef)
-        local includeRecommendation = row and not activeSlots[row.slot]
+        local includeRecommendation = row
             and raceMatches(row.race, selectedRace)
             and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
             and includeByFilter(row, filters, availabilityIndex)
 
         if includeRecommendation then
-            if self.ForeverScoring then row.scoring_label = "Reference build" end
             local groupKey = levelingRecommendationGroupKey(row)
             if row.race == "*" and groupKey and raceOverrideGroups[groupKey] then
                 includeRecommendation = false
@@ -6689,15 +6777,16 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
 
     for _, levelingRef in ipairs(levelingRefs) do
         local row = buildLevelingGearRow(index, levelingRef)
-        if row and not activeSlots[row.slot] and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
+        if row and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
             and includeByFilter(row, filters, availabilityIndex) then
-            if self.ForeverScoring then row.scoring_label = "Reference build" end
             row.acquisition_display = self:GetRowAcquisitionDisplay(row, filters, LEVELING_PHASE_KEY)
             row.matched_access_option = row.acquisition_display.option
             LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)
         end
     end
 
+    local statGuide = self.isForever and LEVELING_HELPERS.statGuideContext(self, className, specName, LEVELING_PHASE_KEY, selectedLevel, filters)
+    LEVELING_HELPERS.addStatGuideRows(self, index, grouped, statGuide, filters)
     local rows = {}
     for _, slotName in ipairs(SLOT_ORDER) do
         if grouped[slotName] and #grouped[slotName].items > 0 then
@@ -6730,7 +6819,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         and index.useRefsByClassSpec[className][specName]
         or {}
 
-    for _, use in ipairs(LEVELING_HELPERS.phaseUses(index, useRefs, className, specName, selectedPhaseKey, filters)) do
+    for _, ref in ipairs(useRefs) do
+        local use = buildUse(index, ref)
         if RECOMMENDATION.useFitsContext(self, use, selectedPhaseKey) then
             local itemId = use.item_id
             local groupKey = tostring(itemId) .. ":" .. use.slot
@@ -7794,14 +7884,8 @@ function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpe
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
     local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil
     selectedSpecFirst = selectedSpecFirst ~= false
-    local state = FILTER_FACETS.tooltipSpecEnabled(specFilters, selectedClass, selectedSpec)
-        and LEVELING_HELPERS.scoringContext(selectedClass, selectedSpec, "leveling", selectedLevel)
-    local personalized, replaced = LEVELING_HELPERS.scoredTooltipUses(self, state, selectedClass, selectedSpec, itemId, itemLink)
-    for _, use in ipairs(personalized) do matches[#matches + 1] = use end
-
     for _, use in ipairs(self:GetItemLevelingUses(itemId)) do
         if LEVELING_HELPERS.isAvailableAt(use, selectedLevel) and FILTER_FACETS.tooltipSpecEnabled(specFilters, use.class, use.spec)
-            and not (use.class == selectedClass and use.spec == selectedSpec and replaced[use.slot])
             and (not self.isForever or not use.variant_id or use.variant_id == self:GetItemVariantIdFromLink(itemLink)) then
             local key = tooltipUseDedupeKey(itemId, use)
             if not seenMatches[key] then
@@ -7857,15 +7941,8 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
     local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil
     selectedSpecFirst = selectedSpecFirst ~= false
-    local state = selectedPhase == "PR" and FILTER_FACETS.tooltipSpecEnabled(specFilters, selectedClass, selectedSpec)
-        and LEVELING_HELPERS.scoringContext(selectedClass, selectedSpec, "pre_raid", 60)
-    local link = type(priorityContext) == "table" and priorityContext.itemLink or nil
-    local personalized, replaced = LEVELING_HELPERS.scoredTooltipUses(self, state, selectedClass, selectedSpec, itemId, link)
-    for _, use in ipairs(personalized) do matches[#matches + 1] = use end
-
     for _, use in ipairs(uses) do
         if FILTER_FACETS.tooltipSpecEnabled(specFilters, use.class, use.spec)
-            and not (use.class == selectedClass and use.spec == selectedSpec and replaced[use.slot])
             and FILTER_FACETS.useMatchesProgressionContext(use, selectedPhase)
             and (use.phase ~= "PR" or includeByFilter(use, FILTER_FACETS.progressionFilters({}, "PR", use.class),
                 phaseIndex(use.content_phase or self:GetProgressionContext(selectedPhase or "PR").content_phase))) then

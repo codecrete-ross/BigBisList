@@ -18,6 +18,7 @@ local watchedScrollBoxes = setmetatable({}, { __mode = "k" })
 local rollCards = setmetatable({}, { __mode = "k" })
 local storagePanels = setmetatable({}, { __mode = "k" })
 local baganatorItems = setmetatable({}, { __mode = "k" })
+local baganatorCache = {}
 local BAGANATOR_WIDGET_ID = "big_bis_list"
 local lootSlotsCleared = {}
 local hooked = {}
@@ -54,9 +55,9 @@ local function getInfoLink(data)
     return link, read(data.id, "number")
 end
 
-local function clearMark(row, forget)
+local function clearMark(row, forget, quiet)
     local overlay = overlays[row]
-    if overlay and overlay.managed and marks[row] then highlights.baganatorDirty = true end
+    if overlay and overlay.managed and marks[row] and not quiet then highlights.baganatorDirty = true end
     if offers[row] or marks[row] then highlights.tooltipDirty = true end
     offers[row] = nil
     marks[row] = nil
@@ -279,6 +280,10 @@ local function watchStoragePanel(panel, kind)
     end
 end
 
+local function storageLink(bag, slot)
+    return read(call(C_Container and C_Container.GetContainerItemLink or GetContainerItemLink, bag, slot), "string")
+end
+
 local function collectStorage(items, settings)
     local bankTabs = {}
     local bankType = Enum and Enum.BankType and Enum.BankType.Character
@@ -288,13 +293,12 @@ local function collectStorage(items, settings)
         end
     end
     local lastBag = read(NUM_TOTAL_BAG_FRAMES, "number") or read(NUM_BAG_SLOTS, "number") or 4
-    local getLink = C_Container and C_Container.GetContainerItemLink or GetContainerItemLink
     local function add(row, bag, slot, expectedLink, widget)
         if not shown(row) or not bag or not slot or slot < 1 then return end
         local kind = bankTabs[bag] and "bank" or (bag >= 0 and bag <= lastBag and "bags")
         if not kind or settings[kind] == false then return end
         if kind == "bank" and not ui.personalBankOpen then return end
-        local link = read(call(getLink, bag, slot), "string")
+        local link = storageLink(bag, slot)
         if not link or (expectedLink and link ~= expectedLink) then return end
         addItem(items, { kind = kind, row = row, sourceId = bag .. ":" .. slot, owned = true, widget = widget }, link)
     end
@@ -367,8 +371,9 @@ local function assess(batch, entry, spec)
     local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned)
     local ready = not unresolved(result) and not unresolved(result.placement)
     local gain = rating:RoundedGain(result.delta) or 0
+    local qualifies = entry.owned and rating:IsMeaningfulOwnedUpgrade(result) or (not entry.owned and gain > 0)
     local mark
-    if ready and (gain > 0 or result.bis) then
+    if ready and (qualifies or result.bis) then
         local extraGain = gain
         if result.ownership and worn and not entry.owned then
             local owned = rating:CompareTooltipItem(context, candidate, false, nil, true)
@@ -423,11 +428,11 @@ local function highestSellValue(batch, entries)
     return best
 end
 
-local function recordMark(mark, visualKey)
+local function recordMark(mark, visualKey, immediate)
     local entry, result = mark.entry, mark.result
     local row = entry.row
     local previous = marks[row]
-    if entry.widget and (not previous or previous.visualKey ~= visualKey) then highlights.baganatorDirty = true end
+    if entry.widget and not immediate and (not previous or previous.visualKey ~= visualKey) then highlights.baganatorDirty = true end
     local placement = result and result.placement or {}
     local textKey = table.concat({ visualKey, tostring(mark.sellValue), tostring(mark.bestChoice),
         tostring(result and result.delta), tostring(result and result.bank), tostring(placement.rank), tostring(placement.total),
@@ -470,7 +475,7 @@ local function newStorageBadge(row)
     return badge
 end
 
-local function displayStorage(mark, r, g, b)
+local function displayStorage(mark, r, g, b, immediate)
     local entry, result = mark.entry, mark.result
     local badge = overlays[entry.row]
     if not badge then
@@ -498,7 +503,7 @@ local function displayStorage(mark, r, g, b)
     end
     for _, edge in ipairs(badge.border) do edge:SetColorTexture(r, g, b, 1) end
     if not badge.managed then badge:Show() end
-    recordMark(mark, table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis), r, g, b }, "\031"))
+    recordMark(mark, table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis), r, g, b }, "\031"), immediate)
 end
 
 local function newOverlay(row)
@@ -568,14 +573,14 @@ local function newOverlay(row)
     return overlay
 end
 
-local function display(mark, animate)
+local function display(mark, animate, immediate)
     local entry, result = mark.entry, mark.result
     local row, spec = entry.row, mark.spec
     local tier = result and result.placement and result.placement.tier
     local bis = result and result.bis == true
     local r, g, b = unpack(NEUTRAL)
     if tier then r, g, b = widgets:GetRankColor(tier.quality) end
-    if entry.owned then displayStorage(mark, r, g, b); return end
+    if entry.owned then displayStorage(mark, r, g, b, immediate); return end
     local overlay = overlays[row]
     if not overlay then overlay = newOverlay(row); overlays[row] = overlay end
     overlay:SetFrameLevel((row:GetFrameLevel() or 0) + 3)
@@ -655,7 +660,10 @@ local function refresh()
                 group[#group + 1] = entry
             else
                 local mark, ready = assess(batch, entry, activeSpec)
-                if not mark and ready and offSpec then mark = assess(batch, entry, offSpec) end
+                if not mark and ready and offSpec then mark, ready = assess(batch, entry, offSpec) end
+                if entry.widget then
+                    baganatorCache[entry.sourceId] = ready and { kind = entry.kind, link = entry.link, mark = mark } or nil
+                end
                 if mark then results[entry.row] = exactMark(mark, entry) end
             end
         end
@@ -705,6 +713,11 @@ function highlights:ScheduleRefresh()
         self.queued = nil
         refresh()
     end)
+end
+
+function highlights:InvalidateStorage()
+    baganatorCache = {}
+    self:ScheduleRefresh()
 end
 
 function highlights:GetTooltipOffer(owner, itemId, link)
@@ -774,8 +787,28 @@ local function hookBaganator()
         local changed = not previous or previous.link ~= link or previous.bag ~= bag or previous.slot ~= slot
             or previous.active == false
         baganatorItems[row] = { details = details, link = link, bag = bag, slot = slot, widget = widget, active = true }
-        if changed then
-            clearMark(row, true)
+        local live = bag and slot and storageLink(bag, slot)
+        if not link or live ~= link then
+            clearMark(row, true, true)
+            return false
+        end
+        local sourceId = bag .. ":" .. slot
+        local cached = baganatorCache[sourceId]
+        local settings = addon:GetAccountDB().profile.gearHighlights
+        if cached and cached.link == link and settings[cached.kind] ~= false
+            and (cached.kind ~= "bank" or ui.personalBankOpen) then
+            local entries = {}
+            addItem(entries, {kind = cached.kind, row = row, sourceId = sourceId, owned = true, widget = widget}, link)
+            local entry = entries[1]
+            if entry then
+                offers[row] = entry
+                if cached.mark then display(exactMark(cached.mark, entry), false, true)
+                else clearMark(row, true, true); offers[row] = entry end
+                return cached.mark ~= nil
+            end
+        end
+        if changed or marks[row] then
+            clearMark(row, true, true)
             highlights:ScheduleRefresh()
         end
         return marks[row] ~= nil
@@ -785,7 +818,7 @@ local function hookBaganator()
         widget.managed = true
         overlays[row] = widget
         row:HookScript("OnHide", function()
-            clearMark(row, true)
+            clearMark(row, true, true)
             baganatorItems[row] = nil
         end)
         return widget
@@ -847,8 +880,11 @@ function highlights:Initialize()
         elseif event == "LOOT_OPENED" or event == "LOOT_CLOSED" then
             lootSlotsCleared = {}
             clearKind("loot", true)
-        elseif event == "GET_ITEM_INFO_RECEIVED" and not (self.pendingItems and self.pendingItems[read(id, "number")]) then
-            return
+        elseif event == "GET_ITEM_INFO_RECEIVED" then
+            if not (self.pendingItems and self.pendingItems[read(id, "number")]) then return end
+            self:InvalidateStorage()
+        elseif event == "BAG_UPDATE_DELAYED" or event == "BANK_TABS_CHANGED" then
+            self:InvalidateStorage()
         end
         self:ScheduleRefresh()
     end)
