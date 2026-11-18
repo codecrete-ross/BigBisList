@@ -587,6 +587,91 @@ unresolved combinations across the early slot ranges.
 [Pinned quest export](https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json) ·
 [Verified cache index](https://www.raidbots.com/api/dbcache/verified)
 
+The November 18 build comparison found 11 disclosures for items already in
+the review inventory. It found no new catalog IDs or equipment facts that
+resolved any missing tooltip review. The pinned build `1.60.1.70959` quest
+export confirms a level-58 minimum for Anthion's Parting Words quests 84179
+and 84187 (the four Feralheart reward containers 227359, 227360, 227361 and
+227365), 84184 and 84191 (Darkmantle Spaulders 226826), and 84181
+(Alliance Sorcerer's Mantle 226936). The reviewed `1.60.1.70938` archive
+lacks those five variants. The shoulder reviews still need the exact vendor
+exchange requirements and a current record for the Horde Sorcerer's Mantle
+quest 84189. The `70938` export confirms that Fight the Nightmare Incursions
+(82068) grants Emerald Wardens reputation from level 47. The 12 candidates
+linked to that faction still need exact merchant stock, required standing,
+and the earliest route to earn that standing.
+[Build 70959 quest export](https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/quests.enUS.json) ·
+[Build 70938 quest export](https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70938/quests.enUS.json)
+
+AHledger also recorded Mark of Hakkar in Sunken Temple. Quest 3447 awards
+Hakkari Urn from level 46 in the reviewed-build export. The dungeon sightings
+leave the exact container unidentified, and the Steel Lockbox and Sturdy
+Junkbox leads still need Forever contents and access evidence before applying
+a minimum across routes.
+[Sunken Temple loot observations](https://ahledger.com/wow-forever/dungeons/109-sunken-temple)
+
+### Additional sources checked on November 18
+
+The existing live `70959` client cache and all ten verified Raidbots caches
+for that build contained zero of the 213 pending tooltips. The separate
+`ItemSearchName` table and the pinned WoWSims item export also returned
+zero matches for those IDs. F1 Forever 10.1.2 lists six of their requirements
+through QuestieDB. All 64 exact candidate relationships in F1's latest build
+were already present in the November 13 release and cite QuestieDB.
+[Verified cache index](https://www.raidbots.com/api/dbcache/verified) ·
+[ItemSearchName](https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70959) ·
+[WoWSims export](https://github.com/wowsims/gamedata/blob/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt) ·
+[F1 Forever release](https://www.curseforge.com/wow/addons/f1-forever/files/9681182)
+
+Joining all published EG Link quest rewards and vendor stock to equipment in
+the early slot ranges found no earlier route that could cover a gap. Keep
+checking for positive routes as well as exclusions. For the dungeon-set
+shoulders, seek purchase eligibility for the exact Deliana and Mokvar stock.
+For the rings, seek observed container contents and access requirements.
+Everloot's client layer identifies creation spells for ten pending items.
+Use those exact spells to find trainer or pattern access and confirm whether
+the finished gear can be traded.
+[EG Link exports](https://github.com/JIVESCORP/eg-link-output-wowf/blob/main/DATASETS.md) ·
+[Everloot recipe observations](https://everloot.app/tools/professions/leatherworking?page=12)
+
+The completion recheck matched ten exact patterns to their creation spells,
+reagents, and any station requirement recorded in both builds. Nine patterns
+have verified profession requirements. Apply those requirements to the
+crafter and check the finished item's binding separately. A crafting
+exclusion still needs evidence for pattern and station access and any
+competing acquisition route. Twelve additional reviewed-build Raidbots
+archives and 49 player-contributed comparison-build archives supplied zero
+of the pending tooltips.
+[Recipe dependency snapshot](../../data/raw/forever/wago/ols-db2-spelleffect-csv-build-1-60-1-70938-leveling-shoulder-recipe-dependencies-32ce71d9ff566ba3.json)
+
+All 15 Legacy of Warcraft partitions checked reconciled to their advertised
+counts. They held 1,516 distinct IDs, including 225 outside the candidate
+inventory whose listed slots fall outside the open ranges. None matched a
+missing tooltip. Oracle News Network lists early-slot item requirements from
+both Forever and Classic. Its Forever-only filters omitted all nine sampled
+missing items that appeared in the mixed results. Use the Forever-only
+filters before investigating a match. Bind on Forever identifies records from
+its own server cache and player observations. Its 21,243 published item URLs
+contained none of the pending tooltip IDs.
+[Legacy of Warcraft catalog](https://legacyofwarcraft.com/db/forever/items/index.html) ·
+[Oracle News Network item catalog](https://www.oraclenewsnetwork.com/items) ·
+[Bind on Forever item sitemap](https://bindonforever.com/sitemap-items-0.xml)
+
+The client tables for builds 70938 and 70959 carry the same 336-hour Midsummer
+calendar entry. Quest 9323 still needs a production event and verified low-level
+objectives and turn-in. EG Link records Pix Xizzix selling Damaged Undermine
+Supply Crate (272151) for five Tarnished Undermine Reals on 70938. Seeking an
+exact Bloodvine observation from that crate is the next part of the Sylvan
+Shoulders route review.
+[Reviewed-build holiday table](https://wago.tools/db2/Holidays/csv?build=1.60.1.70938) ·
+[Observed vendor export](https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70938/vendors.json)
+
+All eight targeted Everloot queries completed with zero observed item
+relationships for the dungeon-set merchants, Gorn One Eye, Mark of Hakkar,
+Restored Cloth Shoulders, or Scavenger's Ring. Recheck these exact IDs when
+the observed feed changes.
+[Everloot observed relationships](https://everloot.app/docs/api/edges)
+
 Use Windows curl with certificate validation for AHledger. Both counted
 catalogs and the sampled quest export responded through that transport.
 Collect Everloot item facts, quest observations, and vendor observations
