@@ -73,8 +73,8 @@ corrections. It includes the following recommendations and item records.
 ### WoW Forever
 
 The Forever dataset includes reviewed Pre-Raid coverage for all 28 profiles
-and leveling recommendations from 1 to 59. Some early-level slots still have
-unreviewed availability. See the [leveling review](docs/internal/forever-leveling.md)
+and leveling recommendations from 1 to 59. Some slots below level 20 still
+have unreviewed availability. See the [leveling review](docs/internal/forever-leveling.md)
 and [scoring guide](docs/internal/forever-scoring.md) for the remaining work.
 
 ## Known Limitations
@@ -91,7 +91,7 @@ The authoritative release checklist is
 single release gate from the repository root before tagging or releasing:
 
 ```powershell
-.\scripts\check-release.ps1 -Version 0.15.0 -FullData
+.\scripts\check-release.ps1 -Version 0.15.0 -Flavor forever -FullData
 ```
 
 `CHANGELOG.md` preserves the complete history of player-observable addon

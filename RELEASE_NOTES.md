@@ -19,8 +19,9 @@ Addon behavior changes in the 0.15.x releases, newest first. Each section descri
 
 ### WoW Forever
 
-- Added a separate Forever client build with isolated saves, race- and faction-aware gearing across levels 1–59, and level-60 Pre-Raid recommendations for 28 profiles.
+- Added a separate Forever client build with isolated saves and race- and faction-aware Leveling and level-60 Pre-Raid recommendations for 28 profiles.
 - Leveling groups obtainable gear by activity and shows next quest steps. Acquisition details show quest progress, eligibility, and separate routes, with waypoint actions for verified Forever destinations.
-- Recommendations and comparisons can use active talent ranks and equipped gear for Protection and Retribution Paladins, Enhancement and Restoration Shamans, and Protection Warriors. Previews and other profiles use reviewed reference rankings.
-- Added stat-rank comparisons for equipped and owned gear, including the two ring and trinket positions. Forever item tooltips show gear tiers, upgrade comparisons, and relevant guide notes for your active and remembered alternate specs.
-- Supported loot and quest reward views highlight gear for your current and alternate specs. The Forever minimap button works with Leatrix Plus button collection.
+- Gear Guide ranks eligible gear for the chosen spec and level. Swap estimates can use active talent ranks and equipped gear where those inputs have been reviewed. Level previews use reviewed reference weights.
+- Added stat-rank comparisons for equipped and owned gear, including both ring and trinket positions. Item tooltips show gear tiers, swap estimates, and guide notes for the active and remembered alternate specs.
+- Loot and quest reward badges compare gear for the active and remembered specs. Bag badges highlight upgrades among owned gear. When a quest offers no gear upgrade, a coin can mark the highest-value vendor reward.
+- The Forever minimap button works with Leatrix Plus button collection.
