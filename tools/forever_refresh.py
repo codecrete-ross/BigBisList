@@ -9,6 +9,7 @@ import io
 import json
 from pathlib import Path
 import re
+from time import monotonic
 from urllib.parse import urlsplit
 from xml.etree import ElementTree
 
@@ -31,6 +32,11 @@ EVERLOOT_CORPUS_PARTITIONS = tuple(
     f"https://everloot.app/api/corpus/public?kinds={kind}&limit=500" for kind in ("item_fact", "quest", "vendor")
 )
 SITEMAP = sources.WOWHEAD_ROOT + "sitemap/item?page=1"
+ZEPHRAS_ADDITIONS = "https://zephras.com/feeds/additions.xml"
+CLIENT_LAYER = "https://everloot.app/api/edges/client-layer"
+BUILD_PATTERN = re.compile(r"1\.60\.\d+\.\d+")
+AUDIT_INPUTS = ("leveling_rules", "leveling_scoring_profiles", "racial_modifiers", "item_variants",
+                "leveling_reviews", "overrides", "scoring_profiles", "scrape_manifest")
 DIRECT_KINDS = {"item", "quest", "npc", "spell", "object"}
 EQUIPMENT_FACTS = (*availability.CANDIDATE_OBSERVATION_FIELDS, "item_level", "binding")
 RECEIPT_FIELDS = {"fetched_at", "collected_at", "source_content_digest", "input_sources", "page_digests",
@@ -144,16 +150,18 @@ def exact_facts(snapshot: dict) -> dict:
 
 class AvailabilityRefresh:
     def __init__(self, http: RefreshHTTP, registered: set[str], baseline: dict, candidate_audit: dict, summary: dict, ledger: dict,
-                 *, review_issues=()):
+                 *, review_issues=(), comparison_build: str | None = None):
         self.http = http
         self.registered = {sources.canonical_url(url) for url in registered}
         self.original = baseline
+        self.reviewed_build = candidate_audit["client_build"]
+        self.build = comparison_build or self.reviewed_build
+        self.comparing = self.build != self.reviewed_build
         self.staged = self._load_staged()
         self.previous_staged = dict(self.staged)
         self.audit = candidate_audit
         self.summary = summary
         self.review_issues = list(review_issues)
-        self.build = candidate_audit["client_build"]
         self.open = {row["item_id"]: row for row in candidate_audit["candidate_reviews"] if pending(row)}
         self.known = {row["item_id"] for row in candidate_audit["candidate_reviews"]}
         self.ledger = {sources.canonical_url(row["url"]): row for row in ledger["entries"]}
@@ -163,6 +171,7 @@ class AvailabilityRefresh:
         self.client_type_receipts = ()
         self.bulk_results = {}
         self.exact_results = {}
+        self.disclosed = set()
 
     @property
     def snapshots(self) -> dict:
@@ -396,27 +405,80 @@ class AvailabilityRefresh:
             raise ValueError("Invalid EG Link commit SHA")
         root = f"{eg_link.ROOT}/{commit}/data"
         contents, index_receipt = self.read(f"{root}/index.json", immutable=True)
-        available = json.loads(contents)["products"]["wowf"][self.build]
+        available = json.loads(contents)["products"]["wowf"].get(self.build)
+        if not available:
+            return "build_not_published"
+        listing = f"https://api.github.com/repos/{eg_link.PROJECT}/contents/data/wowf/{self.build}?ref={commit}"
+        try:
+            published, _ = self.read(listing, immutable=True)
+            files = json.loads(published)
+            blobs = {entry["name"]: entry["sha"] for entry in files
+                     if isinstance(entry, dict) and entry.get("type") == "file"
+                     and re.fullmatch(r"[0-9a-f]{40}", entry.get("sha", ""))}
+        except (Unavailable, TypeError, ValueError, KeyError):
+            blobs = {}
         ids = eg_link.acquisition_ids(self.open)
+        exports = self.http.state.setdefault("eg_link_exports", {})
         changed = False
         for name in eg_link.DATASETS:
             if name not in available:
                 continue
-            url = f"{root}/wowf/{self.build}/{name}.json"
+            checksum = blobs.get(f"{name}.json")
+            key = f"{self.build}:{name}"
+            prior = exports.get(key, {})
+            url = prior["url"] if checksum and prior.get("blob") == checksum else f"{root}/wowf/{self.build}/{name}.json"
 
             def collect_export():
                 nonlocal changed
+                targets = forever.digest({kind: sorted(values) for kind, values in ids.items()})
+                if checksum and prior.get("blob") == checksum and prior.get("targets") == targets:
+                    ids["quest"].update(prior["quest_ids"])
+                    return prior["status"]
                 raw, receipt = self.read(url, immutable=True)
                 snapshot = eg_link.normalize(url, name, json.loads(raw), self.build, ids,
                     collected_at=receipt["collected_at"], digest=receipt["source_content_digest"])
-                if not snapshot["records"]:
-                    return "no_exact_matches"
-                added = self.stage(snapshot, [head_receipt, index_receipt, receipt])
-                changed |= added
-                return "changed" if added else "unchanged"
+                staged = bool(snapshot["records"]) and self.stage(snapshot, [head_receipt, index_receipt, receipt])
+                changed |= staged
+                status = "unchanged" if snapshot["records"] else "no_exact_matches"
+                if checksum:
+                    exports[key] = {"url": url, "blob": checksum, "targets": targets, "quest_ids": sorted(ids["quest"]),
+                                    "status": status}
+                    if self.http.online:
+                        self.http.checkpoint()
+                return "changed" if staged else status
 
             self.collect("eg_link:" + name, collect_export, source_url=url)
         return "changed" if changed else "unchanged"
+
+    def refresh_disclosures(self) -> str:
+        raw, receipt = self.read(ZEPHRAS_ADDITIONS)
+        if b"<!DOCTYPE" in raw.upper():
+            raise ValueError("Expected the public Zephras Atom feed")
+        feed = ElementTree.fromstring(raw)
+        if feed.tag != "{http://www.w3.org/2005/Atom}feed":
+            raise ValueError("Expected the public Zephras Atom feed")
+        previous = self.http.state.get("zephras_additions")
+        revision = receipt["source_content_digest"]
+        if previous == revision:
+            return "unchanged"
+        # Only links on the provider's own additions pages can supply triggers.
+        daily = []
+        for link in feed.findall("./{*}entry/{*}link"):
+            url = link.get("href", "")
+            if re.fullmatch(r"https://zephras\.com/latest/\d{4}-\d{2}-\d{2}/", url):
+                daily.append(url)
+        bodies = [raw, *(self.read(url)[0] for url in sorted(set(daily))[-2:])]
+        self.disclosed.update(
+            int(match) for body in bodies
+            for match in re.findall(rb"(?<![\w/])(?:https://zephras\.com)?/forever/enUS/item/([1-9]\d*)/", body)
+        )
+        # Persist the trigger, so a run that reaches its budget can still use it.
+        epochs = self.http.state.setdefault("disclosure_triggers", {})
+        epochs.update({str(identifier): revision for identifier in self.disclosed})
+        self.http.state["zephras_additions"] = revision
+        if self.http.online:
+            self.http.checkpoint()
+        return "changed"
 
     def refresh_zephras(self) -> str:
         identifiers = {identifier for identifier, row in self.open.items() if row["status"] == "missing_tooltip"}
@@ -434,14 +496,32 @@ class AvailabilityRefresh:
                      if snapshot.get("catalog_kind") == "client_metadata" and snapshot.get("client_build") == self.build
                      for row in snapshot["records"]}
         market_ids = {row["item_id"] for url in AH_CATALOGS for row in self.snapshots.get(url, {}).get("records", [])}
+        inventory_revision = forever.digest([sorted(client_ids), sorted(market_ids),
+            sorted((key, sorted(values)) for key, values in self.client_types.items())])
+        checks = self.http.state.setdefault("catalog_checks", {})
         catalog = CountedCatalog(lambda url: self.read(url, cycle=batch), self.build, client_ids, market_ids,
                                  self.client_types, self.client_type_receipts)
         covered = set()
         for number in sorted(types & (set(ICY_ARMOR) | {13, 22}), key=lambda n: (n in {13, 22}, n)):
+            key = str(number)
+            checkpoint = checks.get(key, {})
+            if (checkpoint.get("build") == self.build and checkpoint.get("inventory") == inventory_revision
+                    and timestamp(checkpoint.get("checked_at")) + timedelta(days=7) > self.http.now()
+                    and any(row.get("client_build") == self.build and row.get("catalog_coverage", {}).get("complete")
+                            and number in row["catalog_coverage"].get("inventory_types", [])
+                            for row in self.snapshots.values())):
+                covered.add(number)
+                self.bulk_results[f"inventory:{number}"] = {"status": "cached_complete"}
+                continue
+
             def stage_witness(normalize):
                 snapshot = normalize(number)
                 changed = self.stage(snapshot, snapshot["input_sources"])
                 covered.add(number)
+                if self.http.online:
+                    checks[key] = {"build": self.build, "inventory": inventory_revision,
+                                   "checked_at": self.http.now().isoformat()}
+                    self.http.checkpoint()
                 return "changed" if changed else "unchanged"
 
             self.collect(f"icyveins:{number}", lambda: stage_witness(catalog.icy), source_url=ICY)
@@ -456,11 +536,15 @@ class AvailabilityRefresh:
         client = f"https://wago.tools/db2/ItemSparse/csv?build={self.build}"
         self.collect("wago", self.refresh_client, source_url=client)
         self.collect("raidbots", self.refresh_raidbots, source_url=hotfix.RAIDBOTS_INDEX)
+        self.collect("eg_link", self.refresh_eg_link, source_url=eg_link.HEAD_URL)
+        self.collect("zephras", self.refresh_zephras, source_url=sources.ZEPHRAS_UNREVEALED)
+        self.collect("zephras_additions", self.refresh_disclosures, source_url=ZEPHRAS_ADDITIONS)
+        if CLIENT_LAYER in self.registered:
+            self.collect("everloot_client_layer", lambda: self.refresh_everloot(CLIENT_LAYER), source_url=CLIENT_LAYER)
+        self.collect_observed_routes()
         for url in (*AH_CATALOGS, AH_QUESTS):
             if url in self.registered:
                 self.collect(url, lambda: self.refresh_ahledger(url), source_url=url)
-        self.collect("eg_link", self.refresh_eg_link, source_url=eg_link.HEAD_URL)
-        self.collect("zephras", self.refresh_zephras, source_url=sources.ZEPHRAS_UNREVEALED)
         corpus, edges = EVERLOOT_FEEDS
         # Use the compact observed edges for loot. The raw loot corpus exceeds
         # the anonymous hourly allowance in a single pagination run.
@@ -481,6 +565,24 @@ class AvailabilityRefresh:
                 for quality in range(8):
                     partition = f"{url}/quality:{quality}"
                     self.collect(partition, lambda: self.refresh_listing(partition), source_url=partition)
+
+    def collect_observed_routes(self) -> None:
+        """Use a small shared queue of exact sources before downloading observation corpora."""
+        if EVERLOOT_FEEDS[1] not in self.registered:
+            return
+        impact = defaultdict(int)
+        for item_id, row in self.open.items():
+            if row["status"] != "pending_availability_review":
+                continue
+            keys = {key for lead in row.get("route_leads", []) for key in acquisition_keys(lead)
+                    if key[0] in {"quest", "npc", "object"}}
+            for key in keys or {("item", item_id)}:
+                impact[key] += row.get("affected", {}).get("combinations", 0)
+        base = "https://everloot.app/api/edges?from_kind=item&evidence=observed&limit=500"
+        for kind, identifier in sorted(impact, key=lambda key: (-impact[key], key))[:8]:
+            query = f"from_id={identifier}" if kind == "item" else f"to_kind={kind}&to_id={identifier}"
+            url = f"{base}&{query}"
+            self.collect(f"everloot:{kind}:{identifier}", lambda: self.refresh_everloot(url), source_url=url)
 
     def evidence_changes(self, before: dict, *, bulk_only: bool = False) -> dict:
         result = defaultdict(list)
@@ -550,11 +652,23 @@ class AvailabilityRefresh:
                 target["changed"].extend(change for change in revised if change["added"])
                 if (kind, identifier) in discovered_links:
                     target["changed"].append({"linked_from_item": item_id, "entity": [kind, identifier]})
+                if kind == "item":
+                    fields = {"required_level", "item_stats", "item_kind", "binding", "required_skill",
+                              "required_spell", "disclosure_state"}
+                    equipment = [fact for change in changes.get((kind, identifier), []) for fact in change["added"]
+                                 if fields.intersection(fact) or fact.get("kind") == "item_fact"]
+                    trigger = self.http.state.get("disclosure_triggers", {}).get(str(identifier))
+                    if equipment or trigger:
+                        token = forever.digest([sorted(forever.digest(fact) for fact in equipment), trigger])
+                        target["disclosure_trigger"] = token
+                        target["changed"].append({"disclosure_trigger": token})
         return targets
 
     def next_attempt(self, url: str, revision: str, target: dict) -> tuple[bool, str | None]:
         attempt = self.http.state["exact"].get(url)
         now = self.http.now()
+        if self.held_for_disclosure(url, target):
+            return False, None
         if attempt:
             if attempt.get("provider_cooldown") and timestamp(attempt.get("retry_at")) > now:
                 return False, attempt["retry_at"]
@@ -577,6 +691,29 @@ class AvailabilityRefresh:
             date = timestamp(entry.get("last_attempt_at")) + timedelta(days=7)
             return date <= now, date.isoformat()
         return False, None
+
+    def held_for_disclosure(self, url: str, target: dict) -> bool:
+        key = sources.entity_key(url)
+        if not key or key[0] != "item":
+            return False
+        item_id = key[1]
+        row = self.open.get(item_id, {})
+        if row.get("status") != "missing_tooltip":
+            return False
+        # A change to a related quest is useful for the route queue but does
+        # not by itself disclose a held equipment tooltip.
+        attempt = self.http.state["exact"].get(url, {})
+        if target.get("disclosure_trigger") and (attempt.get("disclosure_trigger") != target["disclosure_trigger"]
+                                                 or attempt.get("provider_cooldown")):
+            return False
+        registry = self.staged.get(sources.ZEPHRAS_UNREVEALED) or self.original.get(sources.ZEPHRAS_UNREVEALED)
+        if registry and registry.get("client_build") == self.build:
+            state = next((row["state"] for row in registry["records"] if row.get("item_id") == item_id), None)
+            if state is not None:
+                return state == "unrevealed"
+        return any(observation.get("provider") == "zephras" and observation.get("state") == "unrevealed"
+                   and observation.get("client_build") == self.build
+                   for observation in row.get("disclosure_observations", []))
 
     def refresh_exact(self, url: str, cycle: str) -> bool:
         from tools.scrape_wowhead import item_tooltip_html, normalize_html, parse_item_tooltip_endpoint
@@ -645,6 +782,12 @@ class AvailabilityRefresh:
             if (sources.entity_key(url)[0] == "item") != items:
                 continue
             target = targets[url]
+            if self.held_for_disclosure(url, target):
+                self.exact_results[url] = {
+                    "status": "awaiting_disclosure", "retry_at": None,
+                    "reason": "A relevant public disclosure, equipment revision, or client build is needed",
+                }
+                continue
             revision = forever.digest([self.build, sorted({forever.digest(change) for change in target["changed"]})])
             due, retry_at = self.next_attempt(url, revision, target)
             old = self.http.state["exact"].get(url)
@@ -670,26 +813,34 @@ class AvailabilityRefresh:
             if self.http.online and (self.http.request_count > before or status == "collected"):
                 self.http.state["exact"][url] = {**self.exact_results[url], "revision": revision,
                                                  "attempted_at": self.http.now().isoformat(), "build": self.build,
+                                                 "disclosure_trigger": target.get("disclosure_trigger"),
                                                  "provider_cooldown": provider_cooldown}
                 self.http.checkpoint()
 
-    def audit_overlay(self) -> dict:
+    def audit_overlay(self, changes: dict | None = None) -> dict:
         def compact(rows):
-            fields = ("item_id", "name", "status", "missing_fact", "next_evidence_trigger", "affected", "disclosure_observations")
+            fields = ("item_id", "name", "status", "missing_fact", "next_evidence_trigger", "affected",
+                      "disclosure_observations", "route_leads", "pending_facts", "tooltip_urls")
             return [{key: row[key] for key in fields if key in row} for row in rows if pending(row)]
 
-        if not self.staged:
+        # Comparison evidence is never passed into the reviewed build's approval
+        # checks. Unrelated, unregistered observations cannot support a decision.
+        relevant = self.known | self.registered_items | self.discoveries()
+        routes = set().union(*(acquisition_keys(lead) for row in self.open.values()
+                               for lead in row.get("route_leads", [])))
+        if self.comparing or not self.staged or (changes is not None
+                and not any(key in routes or (key[0] == "item" and key[1] in relevant) for key in changes)
+                and all(url not in self.registered and row.get("page_type") == "observations"
+                        for url, row in self.staged.items())):
             return {"summary": self.summary, "unresolved": compact(self.open.values()),
                     "review_issues": {"leveling": self.review_issues, "pre_raid": []},
                     "errors": [], "conflicts": {}, "inventory_ids": sorted(self.known), "audit_reused": True}
 
-        inputs = ("leveling_rules", "leveling_scoring_profiles", "racial_modifiers", "item_variants", "leveling_reviews",
-                  "overrides", "scoring_profiles", "scrape_manifest")
         fingerprint = forever.digest({
             "tools": [sha256((ROOT / "tools" / path).read_bytes()).hexdigest() for path in (
                 "forever_refresh.py", "forever_availability.py", "forever.py", "forever_leveling.py", "forever_sources.py",
                 "forever_review_carry.py", "recommend_leveling.py")],
-            "inputs": [sha256((FOREVER_CANONICAL_DIR / f"{name}.json").read_bytes()).hexdigest() for name in inputs],
+            "inputs": [sha256((FOREVER_CANONICAL_DIR / f"{name}.json").read_bytes()).hexdigest() for name in AUDIT_INPUTS],
             "evidence": {url: sources.content_digest(snapshot) for url, snapshot in self.snapshots.items()},
         })
         audit_cache = self.http.directory / "diagnostic.json"
@@ -726,14 +877,60 @@ class AvailabilityRefresh:
         write_json(audit_cache, {"fingerprint": fingerprint, "result": result})
         return {**result, "audit_reused": False}
 
+    def compare_builds(self) -> dict:
+        def facts(build):
+            equipment, dependencies, disclosure, catalogs = defaultdict(dict), defaultdict(set), {}, []
+            rows = (row for row in self.snapshots.values() if row.get("client_build") == build)
+            for snapshot in sorted(rows, key=lambda row: (row.get("catalog_kind") == "client_hotfix",
+                                                          timestamp(row.get("cache_created_at") or row.get("fetched_at")),
+                                                          row["url"])):
+                kind = snapshot.get("catalog_kind")
+                if kind == "client_metadata":
+                    catalogs.append(snapshot["url"])
+                if kind in {"client_metadata", "client_hotfix"}:
+                    for row in snapshot["records"]:
+                        equipment[row["item_id"]].update({k: row[k] for k in EQUIPMENT_FACTS
+                                                         if k in row and row[k] is not None})
+                if kind == "client_hotfix" or snapshot.get("provider") == "eg_link":
+                    for key, values in exact_facts(snapshot).items():
+                        if key[0] != "item":
+                            dependencies[key].update(values)
+                for row in snapshot.get("records", []):
+                    if row.get("kind") == "item_disclosure":
+                        disclosure[(snapshot["provider"], row["item_id"])] = row["state"]
+            return equipment, dependencies, disclosure, catalogs
+
+        old, old_routes, old_disclosures, old_catalogs = facts(self.reviewed_build)
+        new, new_routes, new_disclosures, new_catalogs = facts(self.build)
+        deltas = []
+        for identifier in sorted(new.keys() & old.keys()):
+            changed = {key: [old[identifier][key], new[identifier][key]] for key in sorted(old[identifier].keys() & new[identifier].keys())
+                       if old[identifier][key] != new[identifier][key]}
+            if changed:
+                deltas.append({"item_id": identifier, "fields": changed})
+        return {"from_build": self.reviewed_build, "to_build": self.build, "old_catalogs": old_catalogs,
+                "new_catalogs": new_catalogs, "new_item_ids": sorted(new.keys() - old.keys()),
+                "changed_equipment": deltas,
+                "new_disclosures": sorted([provider, identifier] for (provider, identifier), state in new_disclosures.items()
+                                          if state in {"valid", "not_on_unrevealed_list"}
+                                          and state != old_disclosures.get((provider, identifier))),
+                "changed_dependencies": sorted([kind, i] for kind, i in new_routes
+                                               if new_routes[(kind, i)] != old_routes.get((kind, i))),
+                "status": "staged" if new_catalogs else "missing_target_catalog"}
+
     def run(self) -> dict:
         from tools.forever_scoring import refresh_review_scope
 
-        self.collect_bulk()
+        started = monotonic()
+        with self.http.bulk_budget(reserve_exact=bool(self.open)):
+            self.collect_bulk()
         changed_bulk = self.evidence_changes(self.original, bulk_only=True)
+        bulk_done = monotonic()
         self.collect_exact(changed_bulk, items=True)
         self.collect_exact(changed_bulk, items=False)
-        diagnostic = self.audit_overlay()
+        changes = self.evidence_changes(self.original)
+        exact_done = monotonic()
+        diagnostic = self.audit_overlay(changes)
         unresolved = [{**row, "next_retry_at": self.exact_results.get(f"{sources.WOWHEAD_ROOT}item={row['item_id']}", {}).get("retry_at")}
                       for row in diagnostic["unresolved"]]
         open_ids = {row["item_id"] for row in unresolved}
@@ -748,7 +945,6 @@ class AvailabilityRefresh:
             unresolved.append({"item_id": identifier, "status": "pending_discovery_classification",
                                "missing_fact": "Current equipment slot or non-equipment classification",
                                "next_evidence_trigger": f"Exact Forever tooltip or typed catalog record for {url}"})
-        changes = self.evidence_changes(self.original)
         ranking_review = refresh_review_scope(
             {identifier for kind, identifier in changes if kind == "item"},
             self.bulk_results.get("unreviewed_builds", {}).get("build_numbers", []),
@@ -777,37 +973,124 @@ class AvailabilityRefresh:
                                      if (row["entity_type"], row["entity_id"]) in new_changes],
                 "unresolved": unresolved, "exact_lookups": self.exact_results, "conflicts": diagnostic["conflicts"],
                 "review_issues": diagnostic["review_issues"], "audit_errors": diagnostic["errors"], "ranking_review": ranking_review,
-                "staged_snapshots": staged_snapshots, "proposed_manifest_sources": proposed}
+                "staged_snapshots": staged_snapshots, "proposed_manifest_sources": proposed,
+                "stage_seconds": {"bulk": round(bulk_done - started, 2), "exact": round(exact_done - bulk_done, 2),
+                                  "diagnostic": round(monotonic() - exact_done, 2)},
+                "review_groups": review_groups(unresolved),
+                **({"build_comparison": self.compare_builds()} if self.comparing else {})}
 
 
-def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR) -> dict:
+def review_groups(rows: list[dict]) -> list[dict]:
+    groups = {}
+    for row in rows:
+        keys = set().union(*(acquisition_keys(lead) for lead in row.get("route_leads", [])))
+        key = (row.get("missing_fact", row["status"]), row.get("next_evidence_trigger"))
+        if row["status"] == "pending_availability_review" and keys:
+            key = tuple(sorted(keys))
+        fact = row.get("missing_fact", row["status"])
+        trigger = row.get("next_evidence_trigger")
+        group = groups.setdefault(key, {"missing_fact": fact, "retry_trigger": trigger, "item_ids": [],
+                                        "largest_affected_count": 0, "scopes": [], "sources": []})
+        group["item_ids"].append(row["item_id"])
+        affected = row.get("affected", {})
+        group["largest_affected_count"] = max(group["largest_affected_count"], affected.get("combinations", 0))
+        scope = {key: affected[key] for key in ("slots", "factions", "levels") if key in affected}
+        if scope and scope not in group["scopes"]:
+            group["scopes"].append(scope)
+        evidence = (*row.get("disclosure_observations", []), *row.get("route_leads", []))
+        urls = {member["source_url"] for member in evidence if member.get("source_url")}
+        urls.update(url for member in row.get("pending_facts", []) for url in member.get("source_urls", []))
+        urls.update(row.get("tooltip_urls", []))
+        group["sources"] = sorted(set(group["sources"]) | urls)
+    return sorted(groups.values(), key=lambda row: (-row["largest_affected_count"], row["item_ids"]))
+
+
+def file_stamp(paths) -> list:
+    result = []
+    for path in sorted(set(paths)):
+        stamp = path.stat()
+        result.append((str(path), stamp.st_size, stamp.st_mtime_ns))
+    return result
+
+
+def compact_intake(directory: Path) -> dict:
+    """Keep repeat intake from parsing the full audits and historical retries."""
+    names = ("leveling_candidate_audit", "leveling_rules", "leveling_audit", "retry_ledger")
+    key = forever.digest(file_stamp(FOREVER_CANONICAL_DIR / f"{name}.json" for name in names))
+    path = directory / "intake.json"
+    if path.is_file():
+        previous = load_json(path)
+        if previous.get("key") == key:
+            return previous
+    candidate = dataset_json("forever", "leveling_candidate_audit")
+    target = dataset_json("forever", "leveling_rules")["review"]["client_build"]
+    if candidate["client_build"] != target:
+        raise ValueError("Refresh needs the candidate audit for the reviewed Forever build")
+    audit = dataset_json("forever", "leveling_audit")
+    ledger = load_json(FOREVER_CANONICAL_DIR / "retry_ledger.json")
+    result = {"key": key, "build": target, "summary": audit["summary"], "review_issues": audit["review_issues"],
+              "candidate_audit": {"client_build": target, "candidate_reviews": [
+                  row if pending(row) else {"item_id": row["item_id"], "status": row["status"]}
+                  for row in candidate["candidate_reviews"]]},
+              "ledger": {"entries": [{k: row[k] for k in ("url", "status", "last_attempt_at") if k in row} | {
+                  "history": row.get("history", [])[-1:]} for row in ledger["entries"]]}}
+    write_json(path, result)
+    return result
+
+
+def replay_fingerprint(directory: Path, comparison_build: str | None) -> str:
+    paths = list(FOREVER_CANONICAL_DIR.glob("*.json")) + list(FOREVER_RAW_DIR.rglob("*.json"))
+    paths += list(sources.PROVIDER_RAW_DIR.rglob("*.json"))
+    for cache in (FOREVER_RAW_DIR, sources.PROVIDER_RAW_DIR):
+        paths += list(cache.rglob("*.html"))
+    paths += list((directory / "snapshots").rglob("*.json"))
+    paths += [path for path in (directory / "state.json",) if path.is_file()]
+    # Include parser and audit changes. This receipt is a local replay shortcut;
+    # production validation still verifies the full evidence content.
+    paths += list((ROOT / "tools").glob("*.py"))
+    return forever.digest([comparison_build, file_stamp(paths)])
+
+
+def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR, comparison_build: str | None = None) -> dict:
     from tools.scrape_wowhead import USER_AGENT
 
+    if comparison_build:
+        if not BUILD_PATTERN.fullmatch(comparison_build):
+            raise ValueError("Expected a Forever comparison build such as 1.60.1.70959")
+        directory = directory / "compare" / comparison_build
     with workspace_lock(directory):
-        audit = dataset_json("forever", "leveling_candidate_audit")
-        rules_build = dataset_json("forever", "leveling_rules")["review"]["client_build"]
-        if audit["client_build"] != rules_build:
-            raise ValueError("Refresh needs the candidate audit for the reviewed Forever build")
-        leveling_audit = dataset_json("forever", "leveling_audit")
-        summary, review_issues = leveling_audit["summary"], leveling_audit["review_issues"]
-        del leveling_audit
-        ledger = load_json(FOREVER_CANONICAL_DIR / "retry_ledger.json")
+        report_path = directory / "report.json"
+        receipt_path = directory / "replay.json"
+        key = replay_fingerprint(directory, comparison_build)
+        if not online and receipt_path.is_file() and report_path.is_file() and load_json(receipt_path).get("key") == key:
+            report = {**load_json(report_path), "mode": "cached", "http_attempts": 0, "http_results": [],
+                      "new_snapshot_count": 0, "changed_this_run": [], "audit_reused": True,
+                      "stage_seconds": {"bulk": 0, "exact": 0, "diagnostic": 0}}
+            write_json(report_path, report)
+            return report
+        intake = compact_intake(directory)
+        rules_build = intake["build"]
         registered = forever.registered_urls()
         snapshots = forever.read_snapshots(FOREVER_RAW_DIR)
         http = RefreshHTTP(directory, online=online, user_agent=USER_AGENT)
-        if http.state.get("reviewed_build") != rules_build:
-            http.state.update(reviewed_build=rules_build, snapshots={}, collections={})
+        target_build = comparison_build or rules_build
+        if http.state.get("reviewed_build") != target_build:
+            http.state.update(reviewed_build=target_build, snapshots={}, collections={})
             http.checkpoint()
-        refresh = AvailabilityRefresh(http, registered, snapshots, audit, summary, ledger, review_issues=review_issues)
+        refresh = AvailabilityRefresh(http, registered, snapshots, intake["candidate_audit"], intake["summary"],
+                                      intake["ledger"], review_issues=intake["review_issues"],
+                                      comparison_build=comparison_build)
         report = refresh.run()
-        write_json(directory / "report.json", report)
+        write_json(report_path, report)
         if online:
             write_json(directory / "online-report.json", report)
+        write_json(receipt_path, {"key": replay_fingerprint(directory, comparison_build)})
         return report
 
 
-def print_summary(report: dict) -> None:
+def print_summary(report: dict, directory: Path = REFRESH_DIR) -> None:
     examples = report["changed_this_run"][:5]
+    comparison = report.get("build_comparison")
     print(json.dumps({
         "mode": report["mode"], "http_attempts": report["http_attempts"], "new_snapshots": report["new_snapshot_count"],
         "new_item_ids": len(report["new_item_ids"]), "candidate_ids_before": report["candidate_ids_before"],
@@ -815,5 +1098,10 @@ def print_summary(report: dict) -> None:
         "audit_reused": report["audit_reused"], "conflicts": len(report["conflicts"]),
         "scoring_contexts_to_recheck": len(report["ranking_review"]["existing_contexts_to_recheck"]),
         "changed_examples": examples,
-        "report": (REFRESH_DIR / "report.json").relative_to(ROOT).as_posix(),
+        "stage_seconds": report.get("stage_seconds", {}),
+        "review_groups": [{**row, "item_ids": row["item_ids"][:5], "scopes": row["scopes"][:2], "sources": row["sources"][:2]}
+                          for row in report.get("review_groups", [])[:5]],
+        **({"comparison": {key: len(value) if isinstance(value, list) else value
+                           for key, value in comparison.items()}} if comparison else {}),
+        "report": str(directory / "report.json"),
     }, indent=2))

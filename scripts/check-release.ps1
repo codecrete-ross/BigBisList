@@ -18,8 +18,13 @@ Optional Python executable path or command name. The interpreter must be
 Python 3.10 or newer and have the dependencies declared in pyproject.toml.
 
 .PARAMETER FullData
-Runs every committed-snapshot and generated-recommendation audit. This switch
+Runs every committed-snapshot and generated-recommendation audit for the client. This switch
 is required by the release process before tagging.
+.PARAMETER Flavor
+The selected client. Anniversary data checks require an explicit selection.
+.PARAMETER BaselineTag
+A live-tested Forever tag for a data-only patch. Ordinary release candidates
+require recorded live acceptance for their own artifacts.
 #>
 [CmdletBinding()]
 param(
@@ -29,7 +34,13 @@ param(
 
     [string]$PythonPath,
 
-    [switch]$FullData
+    [switch]$FullData,
+
+    [ValidateSet("forever", "anniversary")]
+    [string]$Flavor = "forever",
+
+    [ValidatePattern('^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$')]
+    [string]$BaselineTag
 )
 
 Set-StrictMode -Version Latest
@@ -335,11 +346,12 @@ function Assert-ReadmeDataCounts {
 function Invoke-CanonicalValidation {
     param(
         [Parameter(Mandatory = $true)][string]$PythonExecutable,
-        [Parameter(Mandatory = $true)][string]$RepositoryRoot
+        [Parameter(Mandatory = $true)][string]$RepositoryRoot,
+        [Parameter(Mandatory = $true)][string]$DataFlavor
     )
 
     Write-Host "`n== Canonical data validation =="
-    $jsonText = & $PythonExecutable "tools/validate_data.py" "--flavor" "anniversary" "--json" | Out-String
+    $jsonText = & $PythonExecutable "tools/validate_data.py" "--flavor" $DataFlavor "--json" | Out-String
     $exitCode = $LASTEXITCODE
     Write-Host $jsonText.TrimEnd()
     if ($exitCode -ne 0) {
@@ -351,7 +363,12 @@ function Invoke-CanonicalValidation {
     } catch {
         throw "Canonical validation did not return valid JSON: $($_.Exception.Message)"
     }
-    Assert-ReadmeDataCounts -ValidationPayload $payload -ReadmePath (Join-Path $RepositoryRoot "README.md")
+    if (-not $payload.ok) {
+        throw "Canonical validation did not report success."
+    }
+    if ($DataFlavor -eq "anniversary") {
+        Assert-ReadmeDataCounts -ValidationPayload $payload -ReadmePath (Join-Path $RepositoryRoot "README.md")
+    }
 }
 
 function Invoke-LuaCompile {
@@ -410,24 +427,45 @@ try {
     Assert-VersionMetadata -ReleaseVersion $Version -RepositoryRoot $repoRoot
     Invoke-CheckedCommand -Label "Changelog history and generated release notes" -Executable $python -Arguments @("tools/generate_release_notes.py", "--version", $Version, "--check")
 
-    Invoke-CheckedCommand -Label "Unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests")
-    Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot -TocName "BigBiSList.toc"
-    Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot -TocName "BigBiSList_Camelot.toc"
-    Invoke-CanonicalValidation -PythonExecutable $python -RepositoryRoot $repoRoot
-    foreach ($flavor in @("anniversary", "forever")) {
-        Invoke-CheckedCommand -Label "$flavor generated Lua consistency" -Executable $python -Arguments @("tools/generate_lua.py", "--flavor", $flavor, "--check")
-        Invoke-CheckedCommand -Label "$flavor canonical scrape audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "audit", "--flavor", $flavor)
-        Invoke-CheckedCommand -Label "$flavor strict manifest coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", $flavor, "--summary", "--strict")
+    if ($BaselineTag -and ($Flavor -ne "forever" -or -not $FullData)) {
+        throw "-BaselineTag requires -Flavor forever and -FullData."
     }
+    if ($Flavor -eq "forever") {
+        $originalTestFlavor = $env:BBL_TEST_FLAVOR
+        try {
+            $env:BBL_TEST_FLAVOR = "forever"
+            Invoke-CheckedCommand -Label "Forever unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests", "-p", "test_forever*.py")
+        } finally {
+            $env:BBL_TEST_FLAVOR = $originalTestFlavor
+        }
+        Invoke-CheckedCommand -Label "Shared release tests" -Executable $python -Arguments @("-m", "unittest", "tests.test_release_notes", "tests.test_project_io")
+        Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot -TocName "BigBiSList_Camelot.toc"
+    } else {
+        Invoke-CheckedCommand -Label "Unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests")
+        Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot -TocName "BigBiSList.toc"
+    }
+    Invoke-CanonicalValidation -PythonExecutable $python -RepositoryRoot $repoRoot -DataFlavor $Flavor
+    Invoke-CheckedCommand -Label "$Flavor generated Lua consistency" -Executable $python -Arguments @("tools/generate_lua.py", "--flavor", $Flavor, "--check")
+    Invoke-CheckedCommand -Label "$Flavor canonical scrape audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "audit", "--flavor", $Flavor)
+    $coverageArgs = @("tools/scrape_wowhead.py", "coverage", "--flavor", $Flavor, "--summary", "--strict")
+    if ($Flavor -eq "forever") {
+        $coverageArgs += @("--family", "bis_lists")
+    }
+    Invoke-CheckedCommand -Label "$Flavor strict manifest coverage" -Executable $python -Arguments $coverageArgs
 
-    if ($FullData) {
+    if ($FullData -and $Flavor -eq "forever") {
+        Invoke-CheckedCommand -Label "Forever leveling coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "leveling", "--summary", "--strict")
+        Invoke-CheckedCommand -Label "Forever scoring verification" -Executable $python -Arguments @("tools/scrape_wowhead.py", "scoring-audit", "--flavor", "forever", "--strict", "--lua", $luaRuntime)
+        $acceptanceArgs = @("tools/scrape_wowhead.py", "live-acceptance-audit", "--flavor", "forever")
+        if ($BaselineTag) {
+            $acceptanceArgs += @("--baseline-tag", $BaselineTag)
+        }
+        Invoke-CheckedCommand -Label "Forever gameplay acceptance" -Executable $python -Arguments $acceptanceArgs
+    } elseif ($FullData) {
         Invoke-CheckedCommand -Label "Progression and refresh evidence audit" -Executable $python -Arguments @("tools/progression_audit.py", "--check")
         Invoke-CheckedCommand -Label "Item corpus audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "item-corpus-audit", "--flavor", "anniversary")
         Invoke-CheckedCommand -Label "Random suffix audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "suffix-audit", "--flavor", "anniversary")
         Invoke-CheckedCommand -Label "Leveling recommendation audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "recommendation-audit", "--flavor", "anniversary")
-        Invoke-CheckedCommand -Label "Forever leveling coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "leveling", "--summary", "--strict")
-        Invoke-CheckedCommand -Label "Forever scoring verification" -Executable $python -Arguments @("tools/scrape_wowhead.py", "scoring-audit", "--flavor", "forever", "--strict", "--lua", $luaRuntime)
-        Invoke-CheckedCommand -Label "Forever recorded live acceptance" -Executable $python -Arguments @("tools/scrape_wowhead.py", "live-acceptance-audit", "--flavor", "forever")
 
         $dataFamilies = @(
             @{ Name = "bis_lists"; InputDirectory = "data/raw/wowhead/full_bis" },

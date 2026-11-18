@@ -122346,6 +122346,10 @@
       {
         "evidence_refs": [
           {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          },
+          {
             "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
             "evidence_id": "wago:04ecd226e088a4826819bbd5"
           },
@@ -122355,8 +122359,8 @@
           }
         ],
         "item_id": 238265,
-        "missing_fact": "The current creation spell 1224608 requires Crusader's Loom. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
-        "next_evidence_trigger": "A current exact tooltip for 238265 or current proof of the outdoor crafting station gate and the matching pattern source.",
+        "missing_fact": "Client recipe item 238299 teaches spell 1224608, which creates this exact item. The spell requires Crusader's Loom. The pattern requires profession skill 280. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified. The current creation spell 1224608 requires Crusader's Loom. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+        "next_evidence_trigger": "A verified equip requirement for item 238265, or the current source for recipe item 238299 and a verified restriction on obtaining the finished item.",
         "review_history": [
           {
             "evidence_refs": [
@@ -122372,16 +122376,42 @@
             "source_urls": [
               "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations"
             ]
+          },
+          {
+            "evidence_refs": [
+              {
+                "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
+                "evidence_id": "wago:04ecd226e088a4826819bbd5"
+              },
+              {
+                "content_digest": "f9a1a0082b5d67a0639dd90c12716ba329203cf5a4a9ea883cf595215eebba4f",
+                "evidence_id": "wago:572a3a962833d31b1cc58b01"
+              }
+            ],
+            "item_id": 238265,
+            "missing_fact": "The current creation spell 1224608 requires Crusader's Loom. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+            "next_evidence_trigger": "A current exact tooltip for 238265 or current proof of the outdoor crafting station gate and the matching pattern source.",
+            "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+            "source_urls": [
+              "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
+              "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
+            ]
           }
         ],
-        "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
         "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=238299",
           "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
           "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
         ]
       },
       {
         "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          },
           {
             "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
             "evidence_id": "wago:04ecd226e088a4826819bbd5"
@@ -122392,8 +122422,8 @@
           }
         ],
         "item_id": 238273,
-        "missing_fact": "The current creation spell 1224616 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
-        "next_evidence_trigger": "A current exact tooltip for 238273 or current proof of the outdoor crafting station gate and the matching pattern source.",
+        "missing_fact": "Client recipe item 238307 teaches spell 1224616, which creates this exact item. The spell requires Crusader's Tanning Rack. The pattern requires profession skill 280. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified. The current creation spell 1224616 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+        "next_evidence_trigger": "A verified equip requirement for item 238273, or the current source for recipe item 238307 and a verified restriction on obtaining the finished item.",
         "review_history": [
           {
             "evidence_refs": [
@@ -122409,16 +122439,42 @@
             "source_urls": [
               "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations"
             ]
+          },
+          {
+            "evidence_refs": [
+              {
+                "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
+                "evidence_id": "wago:04ecd226e088a4826819bbd5"
+              },
+              {
+                "content_digest": "f9a1a0082b5d67a0639dd90c12716ba329203cf5a4a9ea883cf595215eebba4f",
+                "evidence_id": "wago:572a3a962833d31b1cc58b01"
+              }
+            ],
+            "item_id": 238273,
+            "missing_fact": "The current creation spell 1224616 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+            "next_evidence_trigger": "A current exact tooltip for 238273 or current proof of the outdoor crafting station gate and the matching pattern source.",
+            "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+            "source_urls": [
+              "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
+              "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
+            ]
           }
         ],
-        "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
         "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=238307",
           "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
           "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
         ]
       },
       {
         "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          },
           {
             "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
             "evidence_id": "wago:04ecd226e088a4826819bbd5"
@@ -122429,8 +122485,8 @@
           }
         ],
         "item_id": 238281,
-        "missing_fact": "The current creation spell 1224624 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
-        "next_evidence_trigger": "A current exact tooltip for 238281 or current proof of the outdoor crafting station gate and the matching pattern source.",
+        "missing_fact": "Client recipe item 238315 teaches spell 1224624, which creates this exact item. The spell requires Crusader's Tanning Rack. The pattern requires profession skill 280. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified. The current creation spell 1224624 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+        "next_evidence_trigger": "A verified equip requirement for item 238281, or the current source for recipe item 238315 and a verified restriction on obtaining the finished item.",
         "review_history": [
           {
             "evidence_refs": [
@@ -122446,10 +122502,32 @@
             "source_urls": [
               "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations"
             ]
+          },
+          {
+            "evidence_refs": [
+              {
+                "content_digest": "bab6e5338641cc7a49f50883872bddb15ec8c3c9c77841ee3dd47325f5fe08f9",
+                "evidence_id": "wago:04ecd226e088a4826819bbd5"
+              },
+              {
+                "content_digest": "f9a1a0082b5d67a0639dd90c12716ba329203cf5a4a9ea883cf595215eebba4f",
+                "evidence_id": "wago:572a3a962833d31b1cc58b01"
+              }
+            ],
+            "item_id": 238281,
+            "missing_fact": "The current creation spell 1224624 requires Crusader's Tanning Rack. The exact current gear minimum, the station's live access gate, and an obtainable recipe remain unverified. The documented outdoor teleport was observed in beta.",
+            "next_evidence_trigger": "A current exact tooltip for 238281 or current proof of the outdoor crafting station gate and the matching pattern source.",
+            "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+            "source_urls": [
+              "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
+              "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
+            ]
           }
         ],
-        "reviewed_at": "2026-11-14T00:48:52.071595+00:00",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
         "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=238315",
           "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations",
           "https://wago.tools/db2/AreaTable/csv?build=1.60.1.70938#/areas/16335,16371"
         ]
@@ -123951,6 +124029,118 @@
         "reviewed_at": "2026-11-16",
         "source_urls": [
           "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/relic-dependencies/263435,263436"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 210773,
+        "missing_fact": "Client recipe item 210779 teaches spell 427061, which creates this exact item. The spell requires a forge. The pattern requires profession skill 150. The pattern binds on pickup. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 210773, or the current source for recipe item 210779 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=210779"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 217250,
+        "missing_fact": "Client recipe item 217251 teaches spell 439093, which creates this exact item. The pattern requires profession skill 190. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 217250, or the current source for recipe item 217251 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=217251"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 217283,
+        "missing_fact": "Client recipe item 217284 teaches spell 439130, which creates this exact item. The spell requires a forge. The pattern requires profession skill 175. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 217283, or the current source for recipe item 217284 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=217284"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 227853,
+        "missing_fact": "Client recipe item 227904 teaches spell 461659, which creates this exact item. The pattern requires profession skill 300. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 227853, or the current source for recipe item 227904 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=227904"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 227866,
+        "missing_fact": "Client recipe item 227907 teaches spell 461663, which creates this exact item. The pattern requires profession skill 300. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 227866, or the current source for recipe item 227907 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=227907"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 227873,
+        "missing_fact": "Client recipe item 227899 teaches spell 461645, which creates this exact item. The pattern requires profession skill 295. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 227873, or the current source for recipe item 227899 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=227899"
+        ]
+      },
+      {
+        "evidence_refs": [
+          {
+            "content_digest": "d8b50ece67a94df4773e25b655dc14c1ed8bf3a765304a29c0275fde6737379d",
+            "evidence_id": "wago:32ce71d9ff566ba3b4a6483e"
+          }
+        ],
+        "item_id": 234312,
+        "missing_fact": "Client recipe item 234314 teaches spell 1213740, which creates this exact item. A current equip requirement, pattern acquisition, and the finished item's binding remain unverified.",
+        "next_evidence_trigger": "A verified equip requirement for item 234312, or the current source for recipe item 234314 and a verified restriction on obtaining the finished item.",
+        "reviewed_at": "2026-11-18T22:21:53.055642+00:00",
+        "source_urls": [
+          "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+          "https://www.wowhead.com/forever/item=234314"
         ]
       }
     ],

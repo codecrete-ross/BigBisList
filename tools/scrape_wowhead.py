@@ -7367,9 +7367,14 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
     from tools import forever
 
     if args.command == "refresh-availability":
-        from tools.forever_refresh import print_summary, refresh_availability
+        from tools.forever_refresh import REFRESH_DIR, print_summary, refresh_availability
 
-        print_summary(refresh_availability(online=args.online))
+        directory = args.state_dir or REFRESH_DIR
+        try:
+            report = refresh_availability(online=args.online, directory=directory, comparison_build=args.compare_build)
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+        print_summary(report, directory / "compare" / args.compare_build if args.compare_build else directory)
         return 0
 
     if args.command == "collect-mechanics":
@@ -7526,7 +7531,12 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
         return int(args.strict and not report["ok"])
 
     if args.command == "live-acceptance-audit":
-        report = forever.live_acceptance()
+        if args.baseline_tag:
+            from tools.forever_release import baseline_acceptance
+
+            report = baseline_acceptance(args.baseline_tag)
+        else:
+            report = forever.live_acceptance()
         print(json.dumps(report, indent=2, sort_keys=True))
         return int(not report["ok"])
 
@@ -7620,6 +7630,8 @@ def build_parser() -> argparse.ArgumentParser:
     refresh_parser = subparsers.add_parser("refresh-availability", parents=[flavor_parser],
         help="Stage a bounded refresh of Forever's leveling availability evidence.")
     refresh_parser.add_argument("--online", action="store_true", help="Enable bounded public HTTP collection.")
+    refresh_parser.add_argument("--compare-build", help="Stage exact evidence for this other Forever client build.")
+    refresh_parser.add_argument("--state-dir", type=Path, help="Use this directory for resumable refresh artifacts.")
 
     mechanics_parser = subparsers.add_parser("collect-mechanics", parents=[flavor_parser],
         help="Stage build-pinned Forever mechanics snapshots.")
@@ -7640,7 +7652,9 @@ def build_parser() -> argparse.ArgumentParser:
     gaps_parser.add_argument("--json", action="store_true", help="Print the structured JSON report (also the default).")
     gaps_parser.add_argument("--summary", action="store_true", help="Omit individual coverage rows.")
 
-    subparsers.add_parser("live-acceptance-audit", parents=[flavor_parser], help="Check recorded gameplay acceptance against the current Forever addon files.")
+    live_parser = subparsers.add_parser("live-acceptance-audit", parents=[flavor_parser],
+        help="Check gameplay acceptance for the current Forever release candidate.")
+    live_parser.add_argument("--baseline-tag", help="Verify a data-only patch against this live-tested release tag.")
 
     captures_parser = subparsers.add_parser("import-captures", parents=[flavor_parser], help="Preview explicitly selected Forever SavedVariables or JSON observations without executing Lua.")
     captures_parser.add_argument("--file", type=Path, required=True)

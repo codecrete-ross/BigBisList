@@ -40,6 +40,68 @@ class RefreshTests(unittest.TestCase):
             "client_build": "1.60.1.70790", "candidate_reviews": [],
         }, {"availability_review_ranges": [], "availability_review_combinations": 0}, ledger or {"entries": []})
 
+    def test_unrevealed_item_consumes_one_disclosure_trigger(self):
+        url = refresh.sources.WOWHEAD_ROOT + "item=71"
+        audit = {"client_build": "1.60.1.70790", "candidate_reviews": [{
+            "item_id": 71, "status": "missing_tooltip", "disclosure_observations": [
+                {"provider": "zephras", "state": "unrevealed", "client_build": "1.60.1.70790"}]}]}
+        runner = self.runner(self.http(None), audit=audit)
+        with patch.object(runner, "refresh_exact") as collect:
+            runner.collect_exact({}, items=True)
+            self.assertEqual(runner.exact_results[url]["status"], "awaiting_disclosure")
+            collect.assert_not_called()
+            runner.http.state["disclosure_triggers"] = {"71": "new-publication"}
+            runner.collect_exact({}, items=True)
+            collect.assert_called_once()
+            runner.collect_exact({}, items=True)
+            self.assertEqual(runner.exact_results[url]["status"], "awaiting_disclosure")
+            collect.assert_called_once()
+
+    def test_bulk_limit_preserves_requests_and_time_for_exact_lookups(self):
+        http = self.http(None)
+        with http.bulk_budget(reserve_exact=True):
+            http.request_count = 60
+            with self.assertRaisesRegex(Unavailable, "budget"):
+                http._check_budget("wago.tools")
+            http.request_count = 0
+            self.elapsed = 240
+            with self.assertRaisesRegex(Unavailable, "budget"):
+                http._check_budget("wago.tools")
+        http.request_count = 60
+        http._check_budget("wago.tools")
+
+    def test_identical_offline_run_uses_replay_without_loading_original_snapshots(self):
+        report = {"mode": "cached", "http_attempts": 0, "new_snapshot_count": 1, "audit_reused": False}
+        intake = {"build": "1.60.1.70790", "summary": {}, "review_issues": [], "ledger": {"entries": []},
+                  "candidate_audit": {"client_build": "1.60.1.70790", "candidate_reviews": []}}
+        with (patch.object(refresh, "replay_fingerprint", return_value="same-build-and-evidence"),
+              patch.object(refresh, "compact_intake", return_value=intake),
+              patch.object(refresh.forever, "registered_urls", return_value=set()),
+              patch.object(refresh.forever, "read_snapshots", return_value={}) as read,
+              patch.object(refresh.AvailabilityRefresh, "run", return_value=report) as run):
+            refresh.refresh_availability(online=False, directory=self.directory)
+            again = refresh.refresh_availability(online=False, directory=self.directory)
+        self.assertEqual(again["http_attempts"], 0)
+        self.assertEqual(again["new_snapshot_count"], 0)
+        self.assertTrue(again["audit_reused"])
+        run.assert_called_once()
+        read.assert_called_once()
+
+    def test_comparison_separates_equipment_changes_from_undisclosed_fields(self):
+        older, newer = "1.60.1.70938", "1.60.1.70959"
+        first, second = (f"https://wago.tools/forever/catalog/{build}" for build in (older, newer))
+        old = {"url": first, "client_build": older, "catalog_kind": "client_metadata", "records": [
+            {"item_id": 71, "required_level": 8, "class_mask": 4}, {"item_id": 72, "slot": "Ring"}]}
+        new = {"url": second, "client_build": newer, "catalog_kind": "client_metadata", "records": [
+            {"item_id": 71, "required_level": 9}, {"item_id": 72, "slot": "Ring", "required_level": 11},
+            {"item_id": 73, "slot": "Ring"}]}
+        runner = refresh.AvailabilityRefresh(self.http(None, online=False), set(), {first: old, second: new},
+            {"client_build": older, "candidate_reviews": []}, {}, {"entries": []}, comparison_build=newer)
+        compared = runner.compare_builds()
+        self.assertEqual(compared["new_item_ids"], [73])
+        self.assertEqual(compared["changed_equipment"], [{"item_id": 71, "fields": {"required_level": [8, 9]}}])
+        self.assertEqual(compared["status"], "staged")
+
     def test_conditional_fetch_and_offline_replay_reuse_the_saved_body(self):
         url = refresh.AH_CATALOGS[0]
         seen = []

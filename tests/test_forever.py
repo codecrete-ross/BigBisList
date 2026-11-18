@@ -1,6 +1,7 @@
 from contextlib import redirect_stderr, redirect_stdout
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 from tempfile import TemporaryDirectory
@@ -336,7 +337,10 @@ for _, faction in ipairs({"Alliance", "Horde"}) do
 end
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
 '''
-        for payload, mode in (("DataForever.lua", "published"), ("DataForever.lua", "fixture"), ("Data.lua", "fixture")):
+        variants = [("DataForever.lua", "published"), ("DataForever.lua", "fixture")]
+        if os.environ.get("BBL_TEST_FLAVOR") != "forever":
+            variants.append(("Data.lua", "fixture"))
+        for payload, mode in variants:
             with self.subTest(payload=payload, mode=mode):
                 result = subprocess.run([lua, "-", payload, mode], cwd=ADDON_DIR, input=script, text=True,
                                         capture_output=True, timeout=30)
@@ -479,7 +483,10 @@ assert(BigBiSList.UI.frame:IsShown(), "slash command should open the addon")
 assert(table.concat(lines, "\n"):find("Smoke test passed", 1, true), "smoke command should finish")
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
 '''
-        for toc, flavor in (("BigBiSList.toc", "anniversary"), ("BigBiSList_Camelot.toc", "forever")):
+        manifests = [("BigBiSList_Camelot.toc", "forever")]
+        if os.environ.get("BBL_TEST_FLAVOR") != "forever":
+            manifests.append(("BigBiSList.toc", "anniversary"))
+        for toc, flavor in manifests:
             for collector in ("none", "before", "after"):
                 with self.subTest(flavor=flavor, collector=collector):
                     result = subprocess.run(

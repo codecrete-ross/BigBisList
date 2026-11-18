@@ -1,0 +1,462 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard client data, exported by Wago Tools",
+      "source": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "collected_from": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-18T22:21:53.055642+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "collected_at": "2026-11-18T22:21:47.739574+00:00",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-18T22:21:52.396060+00:00",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-18T22:21:53.055642+00:00",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-18T22:21:49.857313+00:00",
+      "source_content_digest": "be6e987755f7097348eb072073ae3175b3d56016f43f90615a081d33d6affff6",
+      "source_url": "https://wago.tools/db2/SpellReagents/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-18T22:21:49.933513+00:00",
+      "source_content_digest": "6696abd03ef90ad250a12ac23778616c292c46f6a0082130fbe187c96ead0aa0",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-18T22:21:52.210712+00:00",
+      "source_content_digest": "754499637c667ccfd94cff82e5a2031dd3bf62420eb208f468a6994434165779",
+      "source_url": "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938"
+    },
+    {
+      "collected_at": "2026-11-13T20:23:09.523134+00:00",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "relationships": [
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 210773,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 427061,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 217250,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 439093,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 217283,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 439130,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 227853,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 461659,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 227866,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 461663,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 227873,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 461645,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 234312,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 1213740,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 238265,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 1224608,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 238273,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 1224616,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "client_metadata_only",
+      "object_id": 238281,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies",
+      "subject_id": 1224624,
+      "subject_type": "spell"
+    }
+  ],
+  "reviewed_page_facts": {
+    "recipe_dependencies": [
+      {
+        "crafted_item_id": 210773,
+        "reagents": [
+          {
+            "count": 20,
+            "item_id": 2841
+          },
+          {
+            "count": 2,
+            "item_id": 1206
+          },
+          {
+            "count": 2,
+            "item_id": 1705
+          },
+          {
+            "count": 2,
+            "item_id": 5500
+          },
+          {
+            "count": 4,
+            "item_id": 2842
+          }
+        ],
+        "recipe_item_effect_id": 223288,
+        "recipe_item_facts": {
+          "binding_code": 1,
+          "name": "Plans: Mantle of the Second War",
+          "required_level": 0,
+          "required_skill_rank": 150,
+          "skill_line_id": 164
+        },
+        "recipe_item_id": 210779,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 427061,
+        "required_spell_focus_id": 1,
+        "skill_line_id": 164
+      },
+      {
+        "crafted_item_id": 217250,
+        "reagents": [
+          {
+            "count": 5,
+            "item_id": 4305
+          },
+          {
+            "count": 2,
+            "item_id": 6371
+          },
+          {
+            "count": 2,
+            "item_id": 2604
+          },
+          {
+            "count": 2,
+            "item_id": 4291
+          }
+        ],
+        "recipe_item_effect_id": 223317,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Crimson Silk Shoulders",
+          "required_level": 0,
+          "required_skill_rank": 190,
+          "skill_line_id": 197
+        },
+        "recipe_item_id": 217251,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 439093,
+        "skill_line_id": 197
+      },
+      {
+        "crafted_item_id": 217283,
+        "reagents": [
+          {
+            "count": 6,
+            "item_id": 3859
+          },
+          {
+            "count": 2,
+            "item_id": 3577
+          },
+          {
+            "count": 1,
+            "item_id": 3486
+          }
+        ],
+        "recipe_item_effect_id": 223330,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Plans: Golden Scale Shoulders",
+          "required_level": 0,
+          "required_skill_rank": 175,
+          "skill_line_id": 164
+        },
+        "recipe_item_id": 217284,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 439130,
+        "required_spell_focus_id": 1,
+        "skill_line_id": 164
+      },
+      {
+        "crafted_item_id": 227853,
+        "reagents": [
+          {
+            "count": 44,
+            "item_id": 8170
+          },
+          {
+            "count": 45,
+            "item_id": 15416
+          },
+          {
+            "count": 2,
+            "item_id": 12810
+          },
+          {
+            "count": 1,
+            "item_id": 15407
+          },
+          {
+            "count": 1,
+            "item_id": 14341
+          }
+        ],
+        "recipe_item_effect_id": 223358,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Hardened Black Dragonscale Shoulders",
+          "required_level": 0,
+          "required_skill_rank": 300,
+          "skill_line_id": 165
+        },
+        "recipe_item_id": 227904,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 461659,
+        "skill_line_id": 165
+      },
+      {
+        "crafted_item_id": 227866,
+        "reagents": [
+          {
+            "count": 10,
+            "item_id": 8170
+          },
+          {
+            "count": 1,
+            "item_id": 7078
+          },
+          {
+            "count": 1,
+            "item_id": 7076
+          },
+          {
+            "count": 2,
+            "item_id": 14341
+          }
+        ],
+        "recipe_item_effect_id": 223360,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Masterwork Volcanic Shoulders",
+          "required_level": 0,
+          "required_skill_rank": 300,
+          "skill_line_id": 165
+        },
+        "recipe_item_id": 227907,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 461663,
+        "skill_line_id": 165
+      },
+      {
+        "crafted_item_id": 227873,
+        "reagents": [
+          {
+            "count": 28,
+            "item_id": 8170
+          },
+          {
+            "count": 30,
+            "item_id": 15415
+          },
+          {
+            "count": 2,
+            "item_id": 12810
+          },
+          {
+            "count": 1,
+            "item_id": 15407
+          },
+          {
+            "count": 1,
+            "item_id": 14341
+          }
+        ],
+        "recipe_item_effect_id": 223351,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Honed Blue Dragonscale Shoulders",
+          "required_level": 0,
+          "required_skill_rank": 295,
+          "skill_line_id": 165
+        },
+        "recipe_item_id": 227899,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 461645,
+        "skill_line_id": 165
+      },
+      {
+        "crafted_item_id": 234312,
+        "reagents": [
+          {
+            "count": 4,
+            "item_id": 14048
+          },
+          {
+            "count": 4,
+            "item_id": 12803
+          },
+          {
+            "count": 4,
+            "item_id": 14227
+          },
+          {
+            "count": 3,
+            "item_id": 19726
+          }
+        ],
+        "recipe_item_effect_id": 223462,
+        "recipe_item_id": 234314,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 1213740,
+        "skill_line_id": 197
+      },
+      {
+        "crafted_item_id": 238265,
+        "reagents": [
+          {
+            "count": 1,
+            "item_id": 12811
+          },
+          {
+            "count": 10,
+            "item_id": 14048
+          }
+        ],
+        "recipe_item_effect_id": 207295,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Scarlet Augur's Mantle",
+          "required_level": 1,
+          "required_skill_rank": 280,
+          "skill_line_id": 197
+        },
+        "recipe_item_id": 238299,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 1224608,
+        "required_spell_focus_id": 2230,
+        "skill_line_id": 197
+      },
+      {
+        "crafted_item_id": 238273,
+        "reagents": [
+          {
+            "count": 1,
+            "item_id": 12811
+          },
+          {
+            "count": 10,
+            "item_id": 8170
+          }
+        ],
+        "recipe_item_effect_id": 207303,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Scarlet Infiltrator's Shoulderpads",
+          "required_level": 1,
+          "required_skill_rank": 280,
+          "skill_line_id": 165
+        },
+        "recipe_item_id": 238307,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 1224616,
+        "required_spell_focus_id": 2231,
+        "skill_line_id": 165
+      },
+      {
+        "crafted_item_id": 238281,
+        "reagents": [
+          {
+            "count": 1,
+            "item_id": 12811
+          },
+          {
+            "count": 10,
+            "item_id": 15408
+          }
+        ],
+        "recipe_item_effect_id": 207311,
+        "recipe_item_facts": {
+          "binding_code": 0,
+          "name": "Pattern: Scarlet Huntsman's Pauldrons",
+          "required_level": 1,
+          "required_skill_rank": 280,
+          "skill_line_id": 165
+        },
+        "recipe_item_id": 238315,
+        "recipe_item_trigger_type": 6,
+        "recipe_spell_id": 1224624,
+        "required_spell_focus_id": 2231,
+        "skill_line_id": 165
+      }
+    ]
+  },
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/leveling-shoulder-recipe-dependencies"
+}
