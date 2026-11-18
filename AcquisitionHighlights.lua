@@ -124,11 +124,11 @@ local function collectQuest(items)
         if shown(row) and read(row.objectType, "string") == "item" and (kind == "choice" or kind == "reward") then
             local index = read(call(row.GetID, row), "number")
             if index and index > 0 then
-                local _, _, quantity, _, usable, id = questRewardInfo(questLog, kind, index)
+                local _, _, quantity, _, _, id = questRewardInfo(questLog, kind, index)
                 local source = tostring(read(row.questID, "number") or read(questId, "number") or "") .. ":" .. kind .. ":" .. index
                 local selected = kind == "choice" and (call(QuestInfoItem_IsSelected, row) == true)
                 addItem(items, { kind = "quest", row = row, icon = row.Icon, sourceId = source,
-                    group = kind, order = index, selected = selected, wearable = read(usable, "boolean"),
+                    group = kind, order = index, selected = selected,
                     quantity = read(quantity, "number") }, call(getLink, kind, index), id)
             end
         end
@@ -340,13 +340,12 @@ local function unresolved(result)
     return result.status == "loading" or result.status == "unavailable"
 end
 
-local function assess(batch, entry, spec)
+local function rewardItem(batch, entry)
     local id = entry.itemId
     if not entry.link then
         if id and not (rating.loadedItems and rating.loadedItems[id]) then batch.pending[id] = true end
         return nil, false
     end
-    if entry.wearable == false then return nil, true end
     local item = batch.items[entry.link]
     if not item then
         local candidate, status = rating:GetTooltipItem(id, entry.link)
@@ -357,22 +356,41 @@ local function assess(batch, entry, spec)
     if status == "loading" or (candidate and candidate.status == "loading") then batch.pending[id] = true end
     if not candidate then return nil, status == nil end
     if not candidate.facts then return nil, false end
+    return candidate, true
+end
+
+local function assess(batch, entry, evaluation)
+    local candidate, exact = rewardItem(batch, entry)
+    if not candidate or not evaluation then return nil, exact and evaluation ~= nil end
+    local id, spec, context = entry.itemId, evaluation.spec, evaluation.context
     if entry.kind == "crafting" and rating:IsUnresolvedVariant(id, candidate.key) then return nil, false end
-    if not spec then return nil, false end
-
-    local context = batch.contexts[spec.name]
-    if not context then return nil, false end
     if context.owned.variantUnknownItems and context.owned.variantUnknownItems[id] then return nil, false end
-    local worn = (spec.role == "active" or entry.owned) and entry.compareWorn
-    local key = table.concat({ spec.name, tostring(worn), tostring(entry.owned), entry.link }, "\031")
-    local cached = batch.swaps[key]
-    if cached then return cached.mark, cached.ready end
+    local quest = entry.kind == "quest"
+    local worn = not quest and (spec.role == "active" or entry.owned) and entry.compareWorn
+    local key = table.concat({ spec.name, context.scenario or "", tostring(worn), tostring(entry.owned), entry.link }, "\031")
+    local cached = not quest and batch.swaps[key]
+    if cached then return cached.mark, cached.ready, cached.assessment end
 
-    local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned, { live = true })
+    local result = rating:CompareTooltipItem(context, candidate, worn, nil, not entry.owned,
+        { live = true, lookahead = quest, quantity = quest and entry.quantity or nil })
     local ready = not unresolved(result) and not unresolved(result.placement)
     local gain = rating:RoundedGain(result.delta) or 0
     local qualifies = not result.conditional and
         (entry.owned and rating:IsMeaningfulOwnedUpgrade(result) or (not entry.owned and gain > 0))
+    local assessment = { spec = spec, scenario = context.scenario, result = result, gain = gain,
+        ownedBaseline = not worn, guaranteed = evaluation.guaranteed }
+    if quest then
+        local slot = result.slot or result.placement.item and result.placement.item.slot
+        if context.leveling and slot and addon.IsConfirmedGearBiS then
+            local history = addon:GetRecommendationHistory(id, context.class, spec.name, "PR", slot)
+            if addon:IsConfirmedGearBiS(history, "PR", id, candidate.key) then
+                assessment.futureBiS = true
+            end
+        end
+        local noteworthy = result.conditional or result.preview or result.bis
+            or assessment.futureBiS or result.placement.status == "effect" or result.placement.status == "utility"
+        return ready and (qualifies or noteworthy) and assessment or nil, ready, assessment
+    end
     local mark
     if ready and (qualifies or result.bis) then
         local extraGain = gain
@@ -382,11 +400,11 @@ local function assess(batch, entry, spec)
             extraGain = not owned.conditional and rating:RoundedGain(owned.delta) or 0
         end
         if ready and (entry.owned or not result.ownership or extraGain > 0) then
-            mark = { spec = spec, result = result, gain = gain, ownedBaseline = not worn }
+            mark = assessment
         end
     end
-    batch.swaps[key] = { mark = mark, ready = ready }
-    return mark, ready
+    batch.swaps[key] = { mark = mark, ready = ready, assessment = assessment }
+    return mark, ready, assessment
 end
 
 local function exactMark(mark, entry)
@@ -396,22 +414,44 @@ local function exactMark(mark, entry)
     return copy
 end
 
-local function rankRewards(batch, rewards, spec, results)
-    local best, ready = nil, true
-    for _, entry in ipairs(rewards) do
-        local assessed, resolved = assess(batch, entry, spec)
+local function rankOffers(batch, entry)
+    local primary, ready, assessments = nil, #batch.contexts > 0, {}
+    for _, evaluation in ipairs(batch.contexts) do
+        local mark, resolved, assessment = assess(batch, entry, evaluation)
         ready = ready and resolved
-        if assessed then
-            local mark = exactMark(assessed, entry)
-            results[entry.row] = mark
-            local bis, bestBiS = mark.result.bis == true, best and best.result.bis == true
-            if not best or (bis and not bestBiS) or (bis == bestBiS and not mark.result.conditional
-                and (best.result.conditional or (mark.result.basis == best.result.basis and mark.gain > best.gain))) then
-                best = mark
+        primary = primary or mark
+        if assessment then assessments[#assessments + 1] = assessment end
+    end
+    if primary then
+        primary = exactMark(primary, entry)
+        primary.assessments = assessments
+    end
+    return primary, ready
+end
+
+local function rankRewards(batch, rewards, evaluation, rows, ready, allowBest)
+    local bestGain, best = 0, {}
+    for _, entry in ipairs(rewards) do
+        local mark, resolved, assessment = assess(batch, entry, evaluation)
+        if assessment then
+            rows[entry.row][#rows[entry.row] + 1] = assessment
+            if not ready then assessment.result = setmetatable({ conditional = true }, { __index = assessment.result }) end
+        end
+        if mark then
+            mark.show = true
+            local result = mark.result
+            if result.conditional or result.preview or result.placement.status == "effect"
+                or result.placement.status == "utility" then resolved = false end
+            if not result.conditional and mark.gain > 0 then
+                if mark.gain > bestGain then bestGain, best = mark.gain, {} end
+                if mark.gain == bestGain then best[#best + 1] = mark end
             end
         end
+        if not resolved then evaluation.unresolved = true end
     end
-    return best, ready
+    if allowBest and ready and not evaluation.unresolved then
+        for _, mark in ipairs(best) do mark.bestChoice = #best == 1; mark.tiedChoice = #best > 1 end
+    end
 end
 
 local function highestSellValue(batch, entries)
@@ -439,6 +479,7 @@ local function recordMark(mark, visualKey, immediate)
     local textKey = table.concat({ visualKey, tostring(mark.sellValue), tostring(mark.bestChoice),
         tostring(result and result.delta), tostring(result and result.bank), tostring(placement.rank), tostring(placement.total),
         tostring(placement.score_percent), tostring(placement.placement_color), mark.spec and mark.spec.name or "" }, "\031")
+    textKey = textKey .. (entry.assessmentKey or "")
     if not previous or previous.textKey ~= textKey then highlights.tooltipDirty = true end
     mark.visualKey, mark.textKey = visualKey, textKey
     marks[row] = mark
@@ -579,7 +620,7 @@ local function display(mark, animate, immediate)
     local entry, result = mark.entry, mark.result
     local row, spec = entry.row, mark.spec
     local tier = result and result.placement and result.placement.tier
-    local bis = result and result.bis == true
+    local bis = result and result.bis == true and (entry.kind ~= "quest" or mark.bestChoice)
     local r, g, b = unpack(NEUTRAL)
     if tier then r, g, b = widgets:GetRankColor(tier.quality) end
     if entry.owned then displayStorage(mark, r, g, b, immediate); return end
@@ -635,16 +676,15 @@ local function refresh()
     collectStorage(items, settings)
     if #items > 0 then
         local player = addon:GetTooltipPlayerContext()
-        local activeSpec, offSpec
         local batch = { contexts = {}, items = {}, swaps = {}, pending = {} }
         if player and player.spec then
             local owned = ui:GetOwnedSnapshot()
             for _, spec in ipairs(player.specs) do
                 if spec.role == "active" or spec.role == "dual" then
-                    local context = rating:GetContext(player.class, spec.name, player.phase, player.level, owned)
-                    batch.contexts[spec.name] = context
-                    for id in pairs(context and context.pending or {}) do batch.pending[id] = true end
-                    if spec.role == "active" then activeSpec = spec else offSpec = spec end
+                    for _, context in ipairs(rating:GetScenarioContexts(player.class, spec.name, player.phase, player.level, owned)) do
+                        batch.contexts[#batch.contexts + 1] = { spec = spec, context = context }
+                        for id in pairs(context.pending) do batch.pending[id] = true end
+                    end
                 end
             end
         end
@@ -661,30 +701,66 @@ local function refresh()
                 local group = rewards[entry.group]
                 group[#group + 1] = entry
             else
-                local mark, ready = assess(batch, entry, activeSpec)
-                if not mark and ready and offSpec then mark, ready = assess(batch, entry, offSpec) end
+                local mark, ready = rankOffers(batch, entry)
                 if entry.widget then
                     baganatorCache[entry.sourceId] = ready and { kind = entry.kind, link = entry.link, mark = mark } or nil
                 end
-                if mark then results[entry.row] = exactMark(mark, entry) end
+                if mark then entry.assessments, results[entry.row] = mark.assessments, mark end
             end
         end
-        local canSuggestSale = false
+        local guaranteed, fixedReady, selected = {}, true, false
+        for _, entry in ipairs(rewards.reward) do
+            local candidate, ready = rewardItem(batch, entry)
+            if candidate and entry.quantity and entry.quantity >= 1 then
+                guaranteed[#guaranteed + 1] = { candidate = candidate, quantity = entry.quantity }
+            elseif candidate or not ready then
+                fixedReady = false
+            end
+        end
+        local rows, canSuggestSale = {}, fixedReady and #batch.contexts > 0
         for _, kind in ipairs({ "reward", "choice" }) do
-            local group = rewards[kind]
-            table.sort(group, function(a, b) return a.order < b.order end)
-            local best, ready = rankRewards(batch, group, activeSpec, results)
-            if not best and ready and offSpec then best, ready = rankRewards(batch, group, offSpec, results) end
-            if kind == "reward" then
-                canSuggestSale = ready and not best
-            elseif #group > 1 and ready then
-                if not best and canSuggestSale then best = highestSellValue(batch, group) end
-                if best then
-                    best.bestChoice = not best.sellValue
-                    best.outline = true
-                    for _, entry in ipairs(group) do if entry.selected then best.outline = false; break end end
-                    results[best.entry.row] = best
+            table.sort(rewards[kind], function(a, b) return a.order < b.order end)
+            for _, entry in ipairs(rewards[kind]) do
+                rows[entry.row] = {}
+                selected = selected or entry.selected
+            end
+        end
+        if next(rows) then
+            for _, evaluation in ipairs(batch.contexts) do
+                rankRewards(batch, rewards.reward, evaluation, rows, true, false)
+                local build = rating:WithCharacterBuild(evaluation.context, true)
+                local choice = { spec = evaluation.spec, context = rating:WithGuaranteedRewards(build, guaranteed),
+                    guaranteed = #guaranteed > 0 }
+                rankRewards(batch, rewards.choice, choice, rows, fixedReady, #rewards.choice > 1)
+                canSuggestSale = canSuggestSale and not evaluation.unresolved and not choice.unresolved
+            end
+            for _, kind in ipairs({ "reward", "choice" }) do
+                for _, entry in ipairs(rewards[kind]) do
+                    entry.assessments = rows[entry.row]
+                    local primary, bestChoice
+                    local signature = {}
+                    for _, assessment in ipairs(entry.assessments) do
+                        if assessment.show then primary = primary or assessment end
+                        bestChoice = bestChoice or assessment.bestChoice
+                        signature[#signature + 1] = table.concat({assessment.spec.name, assessment.scenario or "",
+                            assessment.gain, tostring(assessment.result.conditional), tostring(assessment.bestChoice),
+                            tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
+                            tostring(assessment.result.placement.status)}, "\031")
+                    end
+                    entry.assessmentKey = table.concat(signature, "\030")
+                    local previous = offers[entry.row]
+                    if not previous or previous.assessmentKey ~= entry.assessmentKey then highlights.tooltipDirty = true end
+                    if primary then
+                        local mark = exactMark(primary, entry)
+                        mark.assessments, mark.bestChoice = entry.assessments, bestChoice
+                        mark.outline = kind == "choice" and #rewards.choice > 1 and not selected and bestChoice
+                        results[entry.row], canSuggestSale = mark, false
+                    end
                 end
+            end
+            if canSuggestSale and #rewards.choice > 1 then
+                local sale = highestSellValue(batch, rewards.choice)
+                if sale then sale.outline = not selected; results[sale.entry.row] = sale end
             end
         end
         ui:QueueStatLoads(batch.pending)

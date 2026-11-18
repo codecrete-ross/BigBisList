@@ -185,6 +185,22 @@
       }
     },
     {
+      "effects": [
+        "Use: Deals 75 Fire damage every 1 sec for 5 sec to all enemies in front of you. Deals 2 times as much damage to Plants. Gets you quite drunk too! (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "96c836b616e3beabe0bcf1e67aa90a1514696afe04572d5899e88e0d8836d196",
+        "url": "https://www.wowhead.com/forever/item=744"
+      },
+      "id": 744,
+      "max_equipped": 1,
+      "name": "Thunderbrew's Boot Flask",
+      "slot": "Trinket",
+      "stats": {
+        "spirit": 8.0
+      }
+    },
+    {
       "evidence": {
         "digest": "2640af5625ec7e35975ce2ee7c12f7387f042b999ae65bfad6f40dad59585e7e",
         "url": "https://www.wowhead.com/forever/item=766"
@@ -2059,6 +2075,21 @@
       }
     },
     {
+      "effects": [
+        "Use: Reduces the range enemies detect you by 10 yds for 15 sec. (15 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "9a6f7452bf624a48e0b7e4adf47ea004d0c1cd5d66ddda109f7ec73f2d74817c",
+        "url": "https://www.wowhead.com/forever/item=1490"
+      },
+      "id": 1490,
+      "name": "Guardian Talisman",
+      "slot": "Trinket",
+      "stats": {
+        "stamina": 9.0
+      }
+    },
+    {
       "evidence": {
         "digest": "372ff5e3e91c99c95f4a96cc0969c11925e4670cf3c29db54470066ec4c0e290",
         "url": "https://www.wowhead.com/forever/item=1491"
@@ -3590,6 +3621,26 @@
       }
     },
     {
+      "effects": [
+        "Chance on hit: Blasts a target for 85 Arcane damage.",
+        "Chance on hit: Blasts a target for 85 Arcane damage. \"Morgan Ladimore's sword.\""
+      ],
+      "evidence": {
+        "digest": "490885fd2ad8f07cf29882e360edbe942df63c9e043dbc1859d4a0c814d44401",
+        "url": "https://www.wowhead.com/forever/item=2000"
+      },
+      "id": 2000,
+      "name": "Archeus",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 23.94,
+        "weapon_max_damage": 95,
+        "weapon_min_damage": 63,
+        "weapon_speed": 3.3
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
       "evidence": {
         "digest": "533c22f80d1e3c152a7332c3689e26fa468eabdfe968cbd3406b2b762660ff86",
         "url": "https://www.wowhead.com/forever/item=2011"
@@ -3741,6 +3792,29 @@
         "intellect": 3.0,
         "stamina": 8.0
       }
+    },
+    {
+      "effects": [
+        "Equip: Movement speed increased by 2% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines."
+      ],
+      "evidence": {
+        "digest": "aaf53d5d830047b52019c7759e5b298738cfe8bf856feaa8366c372879006b32",
+        "url": "https://www.wowhead.com/forever/item=2042"
+      },
+      "id": 2042,
+      "name": "Staff of Westfall",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 15.17,
+        "healing_power": 48.0,
+        "intellect": 5.0,
+        "spell_damage": 16.0,
+        "spirit": 6.0,
+        "weapon_max_damage": 55,
+        "weapon_min_damage": 36,
+        "weapon_speed": 3.0
+      },
+      "weapon_subtype": "Staff"
     },
     {
       "evidence": {
@@ -4550,6 +4624,25 @@
         "attack_power": 20.0,
         "stamina": 4.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 35 Nature damage."
+      ],
+      "evidence": {
+        "digest": "615da1ec7aca503ae8bb46367a5b71bc36e3f70827e6f4570dcdd62366fc8121",
+        "url": "https://www.wowhead.com/forever/item=2263"
+      },
+      "id": 2263,
+      "name": "Phytoblade",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 12.86,
+        "weapon_max_damage": 47,
+        "weapon_min_damage": 25,
+        "weapon_speed": 2.8
+      },
+      "weapon_subtype": "Sword"
     },
     {
       "armor_type": "Leather",
@@ -7013,6 +7106,25 @@
       }
     },
     {
+      "effects": [
+        "Equip: Reduces chance to be Dodged or Parried by 0.6%."
+      ],
+      "evidence": {
+        "digest": "cb5abe011445fb62d9c981ea2081b5804cf6303c01711485ddcce456b586bedc",
+        "url": "https://www.wowhead.com/forever/item=2907"
+      },
+      "id": 2907,
+      "name": "Dwarven Tree Chopper",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 13.03,
+        "weapon_max_damage": 52,
+        "weapon_min_damage": 34,
+        "weapon_speed": 3.3
+      },
+      "weapon_subtype": "Axe"
+    },
+    {
       "armor_type": "Cloth",
       "evidence": {
         "digest": "9a2b99a37774645d636b4693e34a82f8de9c0d4c34a44b85a29c0082c56e68c2",
@@ -8759,6 +8871,24 @@
       "weapon_subtype": "Mace"
     },
     {
+      "armor_type": "Leather",
+      "effects": [
+        "Equip: +15 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "35498269257403ed465514ad2e2320b6602308c9cffb5e7ce8d992b77c7865e3",
+        "url": "https://www.wowhead.com/forever/item=3566"
+      },
+      "id": 3566,
+      "name": "Raptorbane Armor",
+      "slot": "Chest",
+      "stats": {
+        "armor": 92.0,
+        "attack_power": 16.0,
+        "stamina": 3.0
+      }
+    },
+    {
       "armor_type": "Cloth",
       "evidence": {
         "digest": "80ef13b26c4a1a1240ce42d3020f6ac9855491dce34ac98ac98c9a892c4ac65d",
@@ -9081,6 +9211,25 @@
         "intellect": 8.0,
         "spell_power": 4.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Sends a shadowy bolt at the enemy causing 35 Shadow damage."
+      ],
+      "evidence": {
+        "digest": "3ba962ecad8e394797ae9a5d1ca3ce92202ed06bcc182bff8f7db0b84474483f",
+        "url": "https://www.wowhead.com/forever/item=3822"
+      },
+      "id": 3822,
+      "name": "Runic Darkblade",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 21.67,
+        "weapon_max_damage": 86,
+        "weapon_min_damage": 57,
+        "weapon_speed": 3.3
+      },
+      "weapon_subtype": "Sword"
     },
     {
       "armor_type": "Mail",
@@ -9666,7 +9815,6 @@
     },
     {
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Use: Finds the nearest treasure chest, if one is nearby. Only outdoors. (3 Min Cooldown)"
       ],
       "evidence": {
@@ -9677,7 +9825,9 @@
       "max_equipped": 1,
       "name": "Smotts' Compass",
       "slot": "Trinket",
-      "stats": {}
+      "stats": {
+        "dodge_percent": 1.0
+      }
     },
     {
       "armor_type": "Leather",
@@ -10188,6 +10338,26 @@
         "armor": 144.0,
         "strength": 7.0
       }
+    },
+    {
+      "effects": [
+        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
+        "Equip: Increased Two-Handed Maces +1."
+      ],
+      "evidence": {
+        "digest": "d06b77f3f27b79fe970d3fdd964dcf1d26011407dc370598ac4cab0c66ade92b",
+        "url": "https://www.wowhead.com/forever/item=4548"
+      },
+      "id": 4548,
+      "name": "Servomechanic Sledgehammer",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 30.23,
+        "weapon_max_damage": 80,
+        "weapon_min_damage": 53,
+        "weapon_speed": 2.2
+      },
+      "weapon_subtype": "Mace"
     },
     {
       "evidence": {
@@ -11832,6 +12002,39 @@
       }
     },
     {
+      "armor_type": "Shield",
+      "effects": [
+        "Equip: Increases your chance to Block attacks with a shield by 1.0%."
+      ],
+      "evidence": {
+        "digest": "fa29b4894234f10768f0ff00b40e06ad62a3d03351d38540bfbc1d4fb464f438",
+        "url": "https://www.wowhead.com/forever/item=4975"
+      },
+      "id": 4975,
+      "name": "Vigilant Buckler",
+      "slot": "Off Hand",
+      "stats": {
+        "armor": 728.0,
+        "block_value": 16.0,
+        "stamina": 7.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Increase your run speed by 60% for 10 sec, but deals 100 to 500 damage and drains 100 to 500 mana every 2 seconds. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "84f0a5e58800fb548326e522257e6a59ca9d8b8ac9f103097bb91f122a55ad5a",
+        "url": "https://www.wowhead.com/forever/item=4984"
+      },
+      "id": 4984,
+      "name": "Skull of Impending Doom",
+      "slot": "Off Hand",
+      "stats": {
+        "intellect": 7.0
+      }
+    },
+    {
       "evidence": {
         "digest": "cc3727b05f58c9ae348e187a5b9a8d9156a961d958e2fcbf67f1204e15806dc6",
         "url": "https://www.wowhead.com/forever/item=4998"
@@ -12575,6 +12778,21 @@
       }
     },
     {
+      "effects": [
+        "Use: Heal your target for 135 to 165. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "1e4e27677f9ec254f80986adb5048463822cdb86a573d0b9ab829a40ac9eeea3",
+        "url": "https://www.wowhead.com/forever/item=5323"
+      },
+      "id": 5323,
+      "name": "Everglow Lantern",
+      "slot": "Off Hand",
+      "stats": {
+        "spirit": 3.0
+      }
+    },
+    {
       "evidence": {
         "digest": "512db4d641d844c4b7efedf6d3e92e114a498f525b7f3fa1a1ac27799a2733a0",
         "url": "https://www.wowhead.com/forever/item=5347"
@@ -12590,6 +12808,24 @@
         "weapon_speed": 1.5
       },
       "weapon_subtype": "Wand"
+    },
+    {
+      "effects": [
+        "Use: Transform into a Moonstalker and become invisible for 5 min.",
+        "Use: Transform into a Moonstalker and become invisible for 5 min. 1 Charge"
+      ],
+      "evidence": {
+        "digest": "3dfff44b9dc8d0bdfce2e41ed5ba5c7d27f36d4969e51fcf3955bb3643913113",
+        "url": "https://www.wowhead.com/forever/item=5387"
+      },
+      "id": 5387,
+      "max_equipped": 1,
+      "name": "Enchanted Moonstalker Cloak",
+      "slot": "Back",
+      "stats": {
+        "armor": 17.0,
+        "stamina": 3.0
+      }
     },
     {
       "armor_type": "Leather",
@@ -12763,6 +12999,28 @@
       }
     },
     {
+      "effects": [
+        "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (5 Min Cooldown)",
+        "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (5 Min Cooldown) 3 Charges"
+      ],
+      "evidence": {
+        "digest": "be7e4ff4229314784df8bca62ab3c87164bb239f54e69276b57a3affa72b1c57",
+        "url": "https://www.wowhead.com/forever/item=5613"
+      },
+      "id": 5613,
+      "name": "Staff of the Purifier",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 11.22,
+        "spell_power": 16.0,
+        "spirit": 8.0,
+        "weapon_max_damage": 50,
+        "weapon_min_damage": 33,
+        "weapon_speed": 3.7
+      },
+      "weapon_subtype": "Staff"
+    },
+    {
       "armor_type": "Cloth",
       "evidence": {
         "digest": "f807b24146d47b2da21b60cf9cc4c53945a47234c9075007144db52458c54af0",
@@ -12906,6 +13164,25 @@
         "stamina": 6.0,
         "strength": 5.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 75 Frost damage."
+      ],
+      "evidence": {
+        "digest": "fc84daf5ed33412fe573d24fcf4197a53ec4c2e6cbde40926f768edd4186e67a",
+        "url": "https://www.wowhead.com/forever/item=5815"
+      },
+      "id": 5815,
+      "name": "Glacial Stone",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 20.97,
+        "weapon_max_damage": 91,
+        "weapon_min_damage": 60,
+        "weapon_speed": 3.6
+      },
+      "weapon_subtype": "Mace"
     },
     {
       "armor_type": "Mail",
@@ -15069,6 +15346,21 @@
       }
     },
     {
+      "effects": [
+        "Equip: Reduces the hit chance of Fear effects against you by 2%."
+      ],
+      "evidence": {
+        "digest": "618ff07299d9b8688df0fe83b917457f91e4fb1594be02108a07fc13368d27d9",
+        "url": "https://www.wowhead.com/forever/item=6723"
+      },
+      "id": 6723,
+      "name": "Medal of Courage",
+      "slot": "Neck",
+      "stats": {
+        "stamina": 9.0
+      }
+    },
+    {
       "armor_type": "Mail",
       "evidence": {
         "digest": "4d28e9ff02a5311c1a9d2a84fb9b96144d7cb506e46789621a9d438c449702f2",
@@ -15098,6 +15390,25 @@
         "stamina": 3.0,
         "strength": 3.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Wounds the target causing them to bleed for 85 damage over 30 sec."
+      ],
+      "evidence": {
+        "digest": "d0b4855a02047de24c960c1852764c7bba60f5645b244a3d6d8bad39717bb5ce",
+        "url": "https://www.wowhead.com/forever/item=6738"
+      },
+      "id": 6738,
+      "name": "Bleeding Crescent",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 18.13,
+        "weapon_max_damage": 57,
+        "weapon_min_damage": 30,
+        "weapon_speed": 2.4
+      },
+      "weapon_subtype": "Axe"
     },
     {
       "armor_type": "Mail",
@@ -15159,6 +15470,25 @@
         "armor": 28.0,
         "intellect": 2.0,
         "spirit": 9.0
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Use: Restores 48 health every 3 sec for 30 sec. (10 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "90b5de867c65b8fda0d1f16558379338a81feabd64eda3327b04e8322404d442",
+        "url": "https://www.wowhead.com/forever/item=6898"
+      },
+      "id": 6898,
+      "name": "Orb of Soran'ruk",
+      "slot": "Off Hand",
+      "stats": {
+        "fire_damage": 9.0,
+        "shadow_damage": 9.0
       }
     },
     {
@@ -15355,6 +15685,52 @@
       }
     },
     {
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Chance on hit: Ignite the target in the flames of the Great Forge, dealing 39 to 59 Holyfire damage. Deals 3 times as much damage to Fire Elementals and Earth Elementals."
+      ],
+      "evidence": {
+        "digest": "f76f3b4f6fb4010163ea54836d997671aeddff6f5333c2dc84fe00587cfb2665",
+        "url": "https://www.wowhead.com/forever/item=6953"
+      },
+      "id": 6953,
+      "name": "Verigan's Fist",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 25.63,
+        "intellect": 6.0,
+        "spirit": 10.0,
+        "stamina": 5.0,
+        "weapon_max_damage": 99,
+        "weapon_min_damage": 65,
+        "weapon_speed": 3.2
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Use: Increase Rage by 30. (1 Hour Cooldown)"
+      ],
+      "evidence": {
+        "digest": "091c744e877d7b4ff11d921b8b80b64b741059cfd07881082b93024158a80aea",
+        "url": "https://www.wowhead.com/forever/item=6972"
+      },
+      "id": 6972,
+      "name": "Fire Hardened Hauberk",
+      "slot": "Chest",
+      "stats": {
+        "armor": 218.0,
+        "stamina": 14.0,
+        "strength": 5.0
+      }
+    },
+    {
       "armor_type": "Cloth",
       "evidence": {
         "digest": "be60c679801616ab29a049ee4cc44204aebc65a8ffa8c5907226a8a7e8173e0d",
@@ -15466,6 +15842,27 @@
       }
     },
     {
+      "armor_type": "Mail",
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Use: Increase Rage by 30. (1 Hour Cooldown)"
+      ],
+      "evidence": {
+        "digest": "1cd324db6204d4ec7b95c1e45bbdf9ae4460ef49165c3c63f7497952c9128344",
+        "url": "https://www.wowhead.com/forever/item=7133"
+      },
+      "id": 7133,
+      "name": "Brutal Hauberk",
+      "slot": "Chest",
+      "stats": {
+        "armor": 218.0,
+        "stamina": 14.0,
+        "strength": 5.0
+      }
+    },
+    {
       "effects": [
         "Use: Jumper Cables will sometimes be able to shock a dead player back to life. Cannot be used when in combat. (30 Min Cooldown)"
       ],
@@ -15478,6 +15875,22 @@
       "name": "Goblin Jumper Cables",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Use: These dangerous looking boots significantly increase your run speed for 20 sec. They are prone to explode however, so use with caution. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "0d4784623f04690fec39cffab157c4957255159233fa6df13daeb89bcee5d46f",
+        "url": "https://www.wowhead.com/forever/item=7189"
+      },
+      "id": 7189,
+      "name": "Goblin Rocket Boots",
+      "slot": "Feet",
+      "stats": {
+        "armor": 41.0
+      }
     },
     {
       "evidence": {
@@ -15553,6 +15966,21 @@
       "name": "Morbent's Bane",
       "slot": "Off Hand",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Use: Decrease the armor of target by 50 for 1 min. (1 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "0e2981f95e4b4894cc1e386985f0ef12bcbf74741fcebbed98c88fad6943e8bf",
+        "url": "https://www.wowhead.com/forever/item=7344"
+      },
+      "id": 7344,
+      "name": "Torch of Holy Flame",
+      "slot": "Off Hand",
+      "stats": {
+        "spirit": 5.0
+      }
     },
     {
       "armor_type": "Leather",
@@ -15883,6 +16311,61 @@
       "name": "Gnomish Universal Remote",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Use: Restores 80 to 240 mana. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "4cf5aea2fc10a44a835bd946cff2b1097fe0781fa9b398a7a03861be0ea5f7dc",
+        "url": "https://www.wowhead.com/forever/item=7507"
+      },
+      "id": 7507,
+      "name": "Arcane Orb",
+      "slot": "Off Hand",
+      "stats": {
+        "spirit": 1.0
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Use: Restores 80 to 240 mana. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "527a59338880b31b7c4af455ed59ef1f786607c1777cbb687d6ccc1142c4993e",
+        "url": "https://www.wowhead.com/forever/item=7508"
+      },
+      "id": 7508,
+      "name": "Ley Orb",
+      "slot": "Off Hand",
+      "stats": {
+        "spirit": 1.0
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Use: Restores 400 to 1200 mana. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "689617a6b4239fb4c65502ddda08133cecb2c75f410373c3ed960f8c25c6474b",
+        "url": "https://www.wowhead.com/forever/item=7515"
+      },
+      "id": 7515,
+      "name": "Celestial Orb",
+      "slot": "Off Hand",
+      "stats": {
+        "intellect": 3.0,
+        "spell_power": 13.0
+      }
     },
     {
       "armor_type": "Cloth",
@@ -16645,6 +17128,24 @@
       "weapon_subtype": "Mace"
     },
     {
+      "armor_type": "Shield",
+      "effects": [
+        "Equip: When struck in combat has a 5% chance of inflicting 105 to 175 Shadow damage to the attacker. (Proc chance: 5%)"
+      ],
+      "evidence": {
+        "digest": "151dd20e1f3f56bddd4fda17072b5b3dcbbd787fd203daa4c817f50bbf4d89e6",
+        "url": "https://www.wowhead.com/forever/item=7747"
+      },
+      "id": 7747,
+      "name": "Vile Protector",
+      "slot": "Off Hand",
+      "stats": {
+        "armor": 1078.0,
+        "block_value": 20.0,
+        "strength": 6.0
+      }
+    },
+    {
       "evidence": {
         "digest": "df9185fc82bd61c0d02a88f983cac8236221fe0ae2b72073cda97063c8559864",
         "url": "https://www.wowhead.com/forever/item=7752"
@@ -16912,9 +17413,6 @@
     },
     {
       "armor_type": "Plate",
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "1dfeb84c86192cb341b0a1c673a2900184bf916fa0d2bfe642b5e21bd6f9c00d",
         "url": "https://www.wowhead.com/forever/item=7926"
@@ -16925,6 +17423,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 375.0,
+        "dodge_percent": 1.0,
         "strength": 12.0
       }
     },
@@ -17022,6 +17521,27 @@
         "weapon_speed": 2.6
       },
       "weapon_subtype": "Mace"
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Equip: Increases your effective stealth level by 1.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f536f5c16981a27336fb6c3d17a1ed1b990b8a5fbd583687031de9e7206584ae",
+        "url": "https://www.wowhead.com/forever/item=7953"
+      },
+      "id": 7953,
+      "name": "Mask of Thero-shan",
+      "slot": "Head",
+      "stats": {
+        "agility": 14.0,
+        "armor": 93.0
+      }
     },
     {
       "armor_type": "Plate",
@@ -19413,6 +19933,63 @@
       }
     },
     {
+      "effects": [
+        "Chance on hit: Disarm target's weapon for 5 sec."
+      ],
+      "evidence": {
+        "digest": "b09f82b61e6ff0682dc6cd01de767859bbb5a5339b0db3b9d7c8394e5be214e5",
+        "url": "https://www.wowhead.com/forever/item=9608"
+      },
+      "id": 9608,
+      "name": "Shoni's Disarming Tool",
+      "slot": "Off Hand",
+      "stats": {
+        "dps": 16.58,
+        "spirit": 4.0,
+        "weapon_max_damage": 41,
+        "weapon_min_damage": 22,
+        "weapon_speed": 1.9
+      },
+      "weapon_subtype": "Axe"
+    },
+    {
+      "armor_type": "Shield",
+      "effects": [
+        "Equip: Increases your chance to Block attacks with a shield by 2.0%."
+      ],
+      "evidence": {
+        "digest": "302b0b09749ec260d60088e2ebe1b3fbdcbb718ec37a60eda3f4f3e96efff76b",
+        "url": "https://www.wowhead.com/forever/item=9643"
+      },
+      "id": 9643,
+      "name": "Optomatic Deflector",
+      "slot": "Off Hand",
+      "stats": {
+        "armor": 1578.0,
+        "block_value": 25.0,
+        "strength": 5.0
+      }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 77 to 105 Nature damage."
+      ],
+      "evidence": {
+        "digest": "a3958fc78524034ded6811ad658adf7efc48a17c450b46c46c860068068ae0f5",
+        "url": "https://www.wowhead.com/forever/item=9651"
+      },
+      "id": 9651,
+      "name": "Gryphon Rider's Stormhammer",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 31.48,
+        "weapon_max_damage": 111,
+        "weapon_min_damage": 59,
+        "weapon_speed": 2.7
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
       "evidence": {
         "digest": "58318517897118c02fc64a0f84f36ccbb5ade6252a771d651a51bd5cd4c3cf26",
         "url": "https://www.wowhead.com/forever/item=9718"
@@ -21591,6 +22168,73 @@
     },
     {
       "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increases your effective stealth detection level by 3."
+      ],
+      "evidence": {
+        "digest": "7939af6839e30aec0469b7010bb7ae9326ea7961345f9d1067ad55da495e52e0",
+        "url": "https://www.wowhead.com/forever/item=10501"
+      },
+      "id": 10501,
+      "name": "Catseye Ultra Goggles",
+      "slot": "Head",
+      "stats": {
+        "armor": 47.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Equip: Water breathing lasts 100% longer than normal."
+      ],
+      "evidence": {
+        "digest": "3088a5dd8a31d54a74e92251c356a24123881315cbb4b23dd4c341f9802a04af",
+        "url": "https://www.wowhead.com/forever/item=10506"
+      },
+      "id": 10506,
+      "name": "Deepdive Helmet",
+      "slot": "Head",
+      "stats": {
+        "armor": 49.0,
+        "stamina": 4.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: Increased Mining +5."
+      ],
+      "evidence": {
+        "digest": "569bc74664b119716c6ae354091483dd9dabdab7f132f9b67c07a88b4d0a93a5",
+        "url": "https://www.wowhead.com/forever/item=10542"
+      },
+      "id": 10542,
+      "name": "Goblin Mining Helmet",
+      "slot": "Head",
+      "stats": {
+        "armor": 190.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Use: Absorbs 300 to 500 Fire damage. Lasts 1 min. (1 Hour Cooldown)"
+      ],
+      "evidence": {
+        "digest": "bb5652c9df3b2f2caf8496a1dc3284644d95cb8191c99de12780656b7a22a464",
+        "url": "https://www.wowhead.com/forever/item=10543"
+      },
+      "id": 10543,
+      "name": "Goblin Construction Helmet",
+      "slot": "Head",
+      "stats": {
+        "armor": 44.0,
+        "fire_resistance": 15.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
       "evidence": {
         "digest": "93361eafa608265ab116adb602f4f7eb5d0f09beb218a333a1b5c9c2644f4719",
         "url": "https://www.wowhead.com/forever/item=10553"
@@ -21775,6 +22419,23 @@
       "stats": {}
     },
     {
+      "armor_type": "Cloth",
+      "effects": [
+        "Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (20 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "7372b3d1c868c4f110cf8dea432870d2ff383a3b00a9315a7bd0bb043248f0f5",
+        "url": "https://www.wowhead.com/forever/item=10588"
+      },
+      "id": 10588,
+      "name": "Goblin Rocket Helmet",
+      "slot": "Head",
+      "stats": {
+        "armor": 50.0,
+        "stamina": 15.0
+      }
+    },
+    {
       "effects": [
         "Equip: Increases your effective stealth level by 2.",
         "Use: Stealth to sneak around, but reduce your movement speed by 50%. Can only be used when out of combat. (30 Min Cooldown)"
@@ -21866,6 +22527,89 @@
     },
     {
       "effects": [
+        "Equip: +21 Attack Power against Demons."
+      ],
+      "evidence": {
+        "digest": "999c8ba5e193e93456bd435ab8c49bea7a74300cbe127c5b0cc0fbfd3a327fc4",
+        "url": "https://www.wowhead.com/forever/item=10659"
+      },
+      "id": 10659,
+      "max_equipped": 1,
+      "name": "Shard of the Splithooves",
+      "slot": "Trinket",
+      "stats": {
+        "hp5": 6.0,
+        "mp5": 6.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: +15 Attack Power against Demons.",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate.",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. \"Etched across the blade: Rakh'likh\""
+      ],
+      "evidence": {
+        "digest": "9b723ec2ecc7c994a5cbf418e7b190215545e132f6c29b2c5a291e02acb5d6da",
+        "url": "https://www.wowhead.com/forever/item=10696"
+      },
+      "id": 10696,
+      "name": "Enchanted Azsharite Felbane Sword",
+      "slot": "Main Hand",
+      "stats": {
+        "attack_power": 18.0,
+        "dps": 35.75,
+        "weapon_max_damage": 93,
+        "weapon_min_damage": 50,
+        "weapon_speed": 2.0
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Equip: +15 Attack Power against Demons.",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate.",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. \"Engraved upon the blade: Rakh'likh\""
+      ],
+      "evidence": {
+        "digest": "98c09d6dce91eb3995b991adec19c83ce6554d3ca78f3cc665ffd92f56e6b257",
+        "url": "https://www.wowhead.com/forever/item=10697"
+      },
+      "id": 10697,
+      "name": "Enchanted Azsharite Felbane Dagger",
+      "slot": "One Hand",
+      "stats": {
+        "attack_power": 18.0,
+        "dps": 35.67,
+        "weapon_max_damage": 70,
+        "weapon_min_damage": 37,
+        "weapon_speed": 1.5
+      },
+      "weapon_subtype": "Dagger"
+    },
+    {
+      "effects": [
+        "Equip: +39 Attack Power against Demons.",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. (3 Min Cooldown)",
+        "Use: Weakens the servants of Razelikh the Defiler. Must be within close proximity of the target to activate. (3 Min Cooldown) \"Carved into the shaft: Rakh'likh\""
+      ],
+      "evidence": {
+        "digest": "d9645a8e2dffe349e799b161dc5381990b036040f23e6bfb88dc5283de20d1d8",
+        "url": "https://www.wowhead.com/forever/item=10698"
+      },
+      "id": 10698,
+      "name": "Enchanted Azsharite Felbane Staff",
+      "slot": "Two Hand",
+      "stats": {
+        "attack_power": 40.0,
+        "dps": 46.61,
+        "weapon_max_damage": 157,
+        "weapon_min_damage": 104,
+        "weapon_speed": 2.8
+      },
+      "weapon_subtype": "Staff"
+    },
+    {
+      "effects": [
         "Use: Shrinks the target reducing their attack power by 250. Thats what it usually does anyway..... (5 Min Cooldown)"
       ],
       "evidence": {
@@ -21905,6 +22649,23 @@
       "name": "Gnomish Battle Chicken",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Use: Engage in mental combat with a humanoid target to try and control their mind. If all works well, you will control the mind of the target for 20 sec ..... (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "df766668c00dd43b7aa48ed52bde926a7ac6ea3ad3774cbda77d38f98def8594",
+        "url": "https://www.wowhead.com/forever/item=10726"
+      },
+      "id": 10726,
+      "name": "Gnomish Mind Control Cap",
+      "slot": "Head",
+      "stats": {
+        "armor": 50.0,
+        "spirit": 14.0
+      }
     },
     {
       "effects": [
@@ -22242,6 +23003,23 @@
         "intellect": 27.0,
         "spell_damage": 4.0,
         "spirit": 10.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increased Herbalism +2."
+      ],
+      "evidence": {
+        "digest": "6aac6c479af9bc81732c8664f7eaad69794eddd950b486782e568282d1fee99a",
+        "url": "https://www.wowhead.com/forever/item=10919"
+      },
+      "id": 10919,
+      "name": "Apothecary Gloves",
+      "slot": "Hands",
+      "stats": {
+        "armor": 21.0,
+        "spell_power": 4.0
       }
     },
     {
@@ -22822,6 +23600,42 @@
       }
     },
     {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: When struck in combat has a 1% chance of inflicting 75 to 125 Shadow damage to the attacker. (Proc chance: 1%)"
+      ],
+      "evidence": {
+        "digest": "9a6033212c8a691e8f5e8edfca6b4659a0d8167b3911a1415c52763ad3762ce6",
+        "url": "https://www.wowhead.com/forever/item=11861"
+      },
+      "id": 11861,
+      "name": "Girdle of Reprisal",
+      "slot": "Waist",
+      "stats": {
+        "armor": 143.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 74 to 123 Nature damage."
+      ],
+      "evidence": {
+        "digest": "b9d4eaaa3b62f399f0ca49e6f6e3b76006d72b9f9d3d28fd0b1cd46f238dc33c",
+        "url": "https://www.wowhead.com/forever/item=11902"
+      },
+      "id": 11902,
+      "name": "Linken's Sword of Mastery",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 36.94,
+        "weapon_max_damage": 87,
+        "weapon_min_damage": 46,
+        "weapon_speed": 1.8
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
       "effects": [
         "Use: Flings a magical boomerang towards target enemy dealing 113 to 187 Physical damage and has a chance to Stun for 2 sec or Disarm for 10 sec. (3 Min Cooldown)"
       ],
@@ -22834,6 +23648,46 @@
       "name": "Linken's Boomerang",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Equip: +15 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "82234a7dc385190f5388bd7d39354b854be9f05b25225e5aacfe9a4f1e8ac558",
+        "url": "https://www.wowhead.com/forever/item=11906"
+      },
+      "id": 11906,
+      "name": "Beastsmasher",
+      "slot": "Main Hand",
+      "stats": {
+        "attack_power": 16.0,
+        "dps": 32.86,
+        "weapon_max_damage": 90,
+        "weapon_min_damage": 48,
+        "weapon_speed": 2.1
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
+      "effects": [
+        "Equip: +36 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "1c96fbced3bdeedd59638a8e67eee456651f6f0a0183bc50b82a0740be08acc6",
+        "url": "https://www.wowhead.com/forever/item=11907"
+      },
+      "id": 11907,
+      "name": "Beastslayer",
+      "slot": "Two Hand",
+      "stats": {
+        "attack_power": 36.0,
+        "dps": 42.58,
+        "weapon_max_damage": 169,
+        "weapon_min_damage": 112,
+        "weapon_speed": 3.3
+      },
+      "weapon_subtype": "Axe"
     },
     {
       "evidence": {
@@ -23020,6 +23874,24 @@
         "spirit": 5.0,
         "stamina": 5.0,
         "strength": 8.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Equip: +18 Attack Power against Dragonkin."
+      ],
+      "evidence": {
+        "digest": "cb83ab51c8572ff6e1cae0c00d3de717035c5fdd2f53545802be64b250b37fe8",
+        "url": "https://www.wowhead.com/forever/item=12082"
+      },
+      "id": 12082,
+      "name": "Wyrmhide Spaulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 113.0,
+        "attack_power": 12.0,
+        "hit_percent": 1.5
       }
     },
     {
@@ -23351,6 +24223,22 @@
         "weapon_speed": 2.7
       },
       "weapon_subtype": "Axe"
+    },
+    {
+      "effects": [
+        "Equip: Your spells pierce 2 Magical Resistance."
+      ],
+      "evidence": {
+        "digest": "f1137ec75c4a60267bdd5d3145a144870f2744f331bbbde746fbf9132a6e59c5",
+        "url": "https://www.wowhead.com/forever/item=12545"
+      },
+      "id": 12545,
+      "name": "Eye of Orgrimmar",
+      "slot": "Ring",
+      "stats": {
+        "intellect": 7.0,
+        "spell_power": 18.0
+      }
     },
     {
       "armor_type": "Cloth",
@@ -23723,7 +24611,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Parry an attack by 1.0%.",
         "Equip: Immune to Disarm."
       ],
       "evidence": {
@@ -23737,6 +24624,7 @@
       "stats": {
         "armor": 441.0,
         "crit_percent": 1.0,
+        "parry_percent": 1.0,
         "stamina": 18.0
       }
     },
@@ -26159,6 +27047,23 @@
       }
     },
     {
+      "effects": [
+        "Use: Restores 554 to 678 health. Can only be used at 15% health. (6 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "4a77b4cae0b6fa7b8c0b217797ad05801ec472dbf205151a916abe9a6195cc62",
+        "url": "https://www.wowhead.com/forever/item=13315"
+      },
+      "id": 13315,
+      "name": "Testament of Hope",
+      "slot": "Off Hand",
+      "stats": {
+        "healing_power": 17.0,
+        "spell_damage": 6.0,
+        "spirit": 5.0
+      }
+    },
+    {
       "evidence": {
         "digest": "e7f8ea0877a17f9cf00f3af5c48fa7d6ceb9211254daec972c118d69aeac301e",
         "url": "https://www.wowhead.com/forever/item=13345"
@@ -26901,7 +27806,6 @@
     },
     {
       "effects": [
-        "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%.",
         "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)"
       ],
       "evidence": {
@@ -26912,11 +27816,12 @@
       "max_equipped": 1,
       "name": "Blackhand's Breadth",
       "slot": "Trinket",
-      "stats": {}
+      "stats": {
+        "physical_crit_percent": 1.0
+      }
     },
     {
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
       ],
       "evidence": {
@@ -26927,11 +27832,12 @@
       "max_equipped": 1,
       "name": "Mark of Tyranny",
       "slot": "Trinket",
-      "stats": {}
+      "stats": {
+        "dodge_percent": 1.0
+      }
     },
     {
       "effects": [
-        "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%.",
         "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)"
       ],
       "evidence": {
@@ -26942,7 +27848,9 @@
       "max_equipped": 1,
       "name": "Eye of the Beast",
       "slot": "Trinket",
-      "stats": {}
+      "stats": {
+        "spell_crit_percent": 1.0
+      }
     },
     {
       "effects": [
@@ -28560,9 +29468,6 @@
     },
     {
       "armor_type": "Plate",
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.5%."
-      ],
       "evidence": {
         "digest": "c8e77ba94b0578c7b588a8be05162fbe07686688bb91ad0e2ae2daa524a1ef7a",
         "url": "https://www.wowhead.com/forever/item=14549"
@@ -28573,6 +29478,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 360.0,
+        "dodge_percent": 1.5,
         "stamina": 11.0,
         "strength": 6.0
       }
@@ -29978,7 +30884,6 @@
     {
       "armor_type": "Leather",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -29991,13 +30896,13 @@
       "slot": "Chest",
       "stats": {
         "armor": 163.0,
-        "crit_percent": 2.0
+        "crit_percent": 2.0,
+        "dodge_percent": 1.0
       }
     },
     {
       "armor_type": "Leather",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -30010,13 +30915,13 @@
       "slot": "Legs",
       "stats": {
         "armor": 138.0,
-        "crit_percent": 2.0
+        "crit_percent": 2.0,
+        "dodge_percent": 1.0
       }
     },
     {
       "armor_type": "Leather",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -30030,6 +30935,7 @@
       "stats": {
         "armor": 126.0,
         "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "stamina": 12.0
       }
     },
@@ -30211,6 +31117,44 @@
         "armor": 82.0,
         "intellect": 14.0,
         "spell_power": 9.0
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Use: Restores 40 health every 3 sec for 30 sec. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "285915bd57dda558bde5daf4af68607fbbd737be2b06081c1b13802dc5f3ac81",
+        "url": "https://www.wowhead.com/forever/item=15107"
+      },
+      "id": 15107,
+      "name": "Orb of Noh'Orahil",
+      "slot": "Off Hand",
+      "stats": {
+        "fire_damage": 14.0,
+        "intellect": 5.0
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Use: Restores 40 health every 3 sec for 30 sec. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "730be1935158c4ab979ce44cb6af42f0fe35697da0c69c7253f79aaa0d7426bd",
+        "url": "https://www.wowhead.com/forever/item=15108"
+      },
+      "id": 15108,
+      "name": "Orb of Dar'Orahil",
+      "slot": "Off Hand",
+      "stats": {
+        "intellect": 5.0,
+        "shadow_damage": 14.0
       }
     },
     {
@@ -30791,6 +31735,25 @@
       "stats": {
         "armor": 104.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 211 to 293 Nature damage."
+      ],
+      "evidence": {
+        "digest": "8925d6d4b960749751e03c975814134db87d05d41c1504f4f89a85a9b5919b25",
+        "url": "https://www.wowhead.com/forever/item=15418"
+      },
+      "id": 15418,
+      "name": "Shimmering Platinum Warhammer",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 53.87,
+        "weapon_max_damage": 201,
+        "weapon_min_damage": 133,
+        "weapon_speed": 3.1
+      },
+      "weapon_subtype": "Mace"
     },
     {
       "armor_type": "Leather",
@@ -31597,6 +32560,46 @@
       }
     },
     {
+      "effects": [
+        "Equip: +15 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "a07d1706e9a905df18c3ca28d9364cfc8d80aadc1160199b3bfe734091edf502",
+        "url": "https://www.wowhead.com/forever/item=15782"
+      },
+      "id": 15782,
+      "name": "Beaststalker Blade",
+      "slot": "One Hand",
+      "stats": {
+        "attack_power": 18.0,
+        "dps": 35.91,
+        "weapon_max_damage": 103,
+        "weapon_min_damage": 55,
+        "weapon_speed": 2.2
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Equip: +15 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "89c1b10c6895dec1e109d35ba13868e9eb327b6d53176ab91631ffd5ff842a8b",
+        "url": "https://www.wowhead.com/forever/item=15783"
+      },
+      "id": 15783,
+      "name": "Beasthunter Dagger",
+      "slot": "One Hand",
+      "stats": {
+        "attack_power": 18.0,
+        "dps": 35.59,
+        "weapon_max_damage": 79,
+        "weapon_min_damage": 42,
+        "weapon_speed": 1.7
+      },
+      "weapon_subtype": "Dagger"
+    },
+    {
       "armor_type": "Cloth",
       "evidence": {
         "digest": "2df772c7fb0c84069dff543a274a799290183fc21e2a7bae5adafda88e8b4bcf",
@@ -31698,6 +32701,63 @@
         "weapon_speed": 3.8
       },
       "weapon_subtype": "Polearm"
+    },
+    {
+      "effects": [
+        "Chance on hit: Wounds the target causing them to bleed for 80 damage over 30 sec."
+      ],
+      "evidence": {
+        "digest": "1ae5dde50066a49636b2a8db9aaefe7b01af936c2b8e55a84fdbb29446ca2957",
+        "url": "https://www.wowhead.com/forever/item=15814"
+      },
+      "id": 15814,
+      "name": "Hameya's Slayer",
+      "slot": "One Hand",
+      "stats": {
+        "dps": 35.75,
+        "weapon_max_damage": 93,
+        "weapon_min_damage": 50,
+        "weapon_speed": 2.0
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Chance on hit: Inflicts 21 Nature damage every 2 sec for 10 sec."
+      ],
+      "evidence": {
+        "digest": "0f3fac837e700f28b15733cb33b5bc6ce38072c764d2b67a0164a27bc61b3252",
+        "url": "https://www.wowhead.com/forever/item=15853"
+      },
+      "id": 15853,
+      "name": "Windreaper",
+      "slot": "One Hand",
+      "stats": {
+        "dps": 39.35,
+        "weapon_max_damage": 118,
+        "weapon_min_damage": 63,
+        "weapon_speed": 2.3
+      },
+      "weapon_subtype": "Axe"
+    },
+    {
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Use: Restores 50 mana every 3 sec for 15 sec. (30 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "cc9ff9eff24b90c33d31edcb4d87aec4d334388114933cb175aca0b24b57e022",
+        "url": "https://www.wowhead.com/forever/item=15866"
+      },
+      "id": 15866,
+      "name": "Veildust Medicine Bag",
+      "slot": "Off Hand",
+      "stats": {
+        "intellect": 1.0,
+        "spirit": 1.0
+      }
     },
     {
       "effects": [
@@ -32271,9 +33331,6 @@
       "classes": [
         "Rogue"
       ],
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "2c8c7d176bdf0e649d6f66765be20f3d10b3b13eb439969f608a4acfe29fa0d2",
         "url": "https://www.wowhead.com/forever/item=16418"
@@ -32286,6 +33343,7 @@
       "stats": {
         "armor": 143.0,
         "attack_power": 12.0,
+        "dodge_percent": 1.0,
         "hit_percent": 1.0,
         "stamina": 26.0
       }
@@ -32337,9 +33395,6 @@
       "classes": [
         "Druid"
       ],
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "dfb4254f6d99918805d8aac7653878053df011f69b9ff33f4e9b3349fd47a372",
         "url": "https://www.wowhead.com/forever/item=16422"
@@ -32353,6 +33408,7 @@
         "agility": 12.0,
         "armor": 154.0,
         "attack_power": 18.0,
+        "dodge_percent": 1.0,
         "intellect": 9.0,
         "spirit": 12.0,
         "stamina": 12.0,
@@ -33443,9 +34499,6 @@
       "classes": [
         "Druid"
       ],
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "10fb3ea181e88b8f6bc10213d343453151ba1a5e1cb0f3e86e51cb09ad676cb2",
         "url": "https://www.wowhead.com/forever/item=16502"
@@ -33459,6 +34512,7 @@
         "agility": 12.0,
         "armor": 154.0,
         "attack_power": 18.0,
+        "dodge_percent": 1.0,
         "intellect": 9.0,
         "spirit": 12.0,
         "stamina": 12.0,
@@ -33520,7 +34574,6 @@
         "Rogue"
       ],
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -33535,6 +34588,7 @@
       "stats": {
         "armor": 143.0,
         "attack_power": 12.0,
+        "dodge_percent": 1.0,
         "hit_percent": 1.0,
         "stamina": 26.0
       }
@@ -34514,6 +35568,23 @@
         "spell_power": 16.0,
         "stamina": 18.0,
         "strength": 17.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: +9 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "67c25fef8af99f9e07f970b786a3ae0b426f2d1549e7b68a4c6508ce4779361c",
+        "url": "https://www.wowhead.com/forever/item=16658"
+      },
+      "id": 16658,
+      "name": "Wildhunter Cloak",
+      "slot": "Back",
+      "stats": {
+        "armor": 22.0,
+        "attack_power": 10.0,
+        "stamina": 2.0
       }
     },
     {
@@ -36043,6 +37114,21 @@
       }
     },
     {
+      "effects": [
+        "Use: Restores 100 health every 1 sec for 10 sec. (20 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "539a47c4eea0d2c4a5f95abbad1503d80acb7b7ee4ecd19c79aeab652450773c",
+        "url": "https://www.wowhead.com/forever/item=16768"
+      },
+      "id": 16768,
+      "name": "Furbolg Medicine Pouch",
+      "slot": "Off Hand",
+      "stats": {
+        "stamina": 10.0
+      }
+    },
+    {
       "evidence": {
         "digest": "10297e38ffc24922fbfa9a604a1617e2da555fc9b2b6cc27e50edfb724575b38",
         "url": "https://www.wowhead.com/forever/item=16769"
@@ -36077,9 +37163,6 @@
     },
     {
       "armor_type": "Leather",
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "07410b4412cdf600f1c2a17cae254d5d6a7d25d17fcb4565de2557803eefd645",
         "url": "https://www.wowhead.com/forever/item=16983"
@@ -36090,6 +37173,7 @@
       "slot": "Head",
       "stats": {
         "armor": 150.0,
+        "dodge_percent": 1.0,
         "fire_resistance": 29.0,
         "stamina": 16.0
       }
@@ -36110,6 +37194,25 @@
         "fire_resistance": 24.0,
         "stamina": 10.0
       }
+    },
+    {
+      "effects": [
+        "Chance on hit: Poisons target for 8 Nature damage every 2 sec for 20 sec."
+      ],
+      "evidence": {
+        "digest": "2bb0fa65f7fccee4defd2d96acf000d6ef484b9e730cd243c936448b810372bd",
+        "url": "https://www.wowhead.com/forever/item=17002"
+      },
+      "id": 17002,
+      "name": "Ichor Spitter",
+      "slot": "One Hand",
+      "stats": {
+        "dps": 36.46,
+        "weapon_max_damage": 114,
+        "weapon_min_damage": 61,
+        "weapon_speed": 2.4
+      },
+      "weapon_subtype": "Axe"
     },
     {
       "armor_type": "Mail",
@@ -37012,6 +38115,58 @@
       }
     },
     {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "f2d4711f4e46e4c8e28f168719b7d0b08f23ab0784113d1bfbb7ae90453f8edc",
+        "url": "https://www.wowhead.com/forever/item=17690"
+      },
+      "id": 17690,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 1",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 5.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "18c4f1a39682512bdc20ea0a20184f9f1606a0d73f128c8743fee1a28697ae1b",
+        "url": "https://www.wowhead.com/forever/item=17691"
+      },
+      "id": 17691,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 1",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 5.0
+      }
+    },
+    {
+      "effects": [
+        "Chance on hit: Grants an extra attack on your next swing."
+      ],
+      "evidence": {
+        "digest": "5ba2998485a55e82e7f6f839ae7e9cd1a4c807cdf461f07ebb28ab543c9438f2",
+        "url": "https://www.wowhead.com/forever/item=17705"
+      },
+      "id": 17705,
+      "max_equipped": 1,
+      "name": "Thrash Blade",
+      "slot": "One Hand",
+      "stats": {
+        "dps": 35.19,
+        "weapon_max_damage": 124,
+        "weapon_min_damage": 66,
+        "weapon_speed": 2.7
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
       "evidence": {
         "digest": "da9f94f01008d81c64ead9c368f214c814de4ffb1bdc71168621f87b60d83ad8",
         "url": "https://www.wowhead.com/forever/item=17713"
@@ -37172,6 +38327,25 @@
     },
     {
       "effects": [
+        "Chance on hit: Strike your target with Keeper's Sting for 23 to 33 Nature damage."
+      ],
+      "evidence": {
+        "digest": "1a916bd910a92a8190be33520d6aa8d07e1549a9a699a030362da98c47ffc0c2",
+        "url": "https://www.wowhead.com/forever/item=17753"
+      },
+      "id": 17753,
+      "name": "Verdant Keeper's Aim",
+      "slot": "Ranged",
+      "stats": {
+        "ranged_dps": 27.32,
+        "weapon_max_damage": 100,
+        "weapon_min_damage": 53,
+        "weapon_speed": 2.8
+      },
+      "weapon_subtype": "Bow"
+    },
+    {
+      "effects": [
         "Equip: Reduces the hit chance of Stun and Fear effects against you by 1%.",
         "Use: Absorbs 546 to 1014 Physical damage. Lasts 10 sec. (5 Min Cooldown)"
       ],
@@ -37215,6 +38389,186 @@
       "name": "Mark of the Chosen",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "e4557a920d65a4fc7840744ee9bfca7bf8f54cf379c0f50c173f5e54fe9a2a9f",
+        "url": "https://www.wowhead.com/forever/item=17900"
+      },
+      "id": 17900,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 2",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 5.0,
+        "hp5": 9.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "adb1e8ddb99c6f15f54836d8c16d5ec9b5516e722d928ac061b8f5f4d3117da9",
+        "url": "https://www.wowhead.com/forever/item=17901"
+      },
+      "id": 17901,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 3",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 5.0,
+        "hp5": 9.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "42e23fb11e32ff4c7cc68e832404786f7281e6d5541dc1f367beb5326e1042b6",
+        "url": "https://www.wowhead.com/forever/item=17902"
+      },
+      "id": 17902,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 4",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 8.0,
+        "hp5": 18.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "8f9bf7f5338ff04c6044e9a2198520bb2590795e2dfed484e45617223622a7dc",
+        "url": "https://www.wowhead.com/forever/item=17903"
+      },
+      "id": 17903,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 5",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 10.0,
+        "hp5": 25.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Dun Baldar.",
+        "Use: Returns you to the sanctuary of Dun Baldar. \"The Eye of Command\""
+      ],
+      "evidence": {
+        "digest": "54f9ec7ff8f5fb8b923be41ee52e5e51a5e8ab404b302701802dbad9bb5429bd",
+        "url": "https://www.wowhead.com/forever/item=17904"
+      },
+      "id": 17904,
+      "max_equipped": 1,
+      "name": "Stormpike Insignia Rank 6",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 2.0,
+        "frost_resistance": 10.0,
+        "hp5": 30.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "aa9d7c321c0572cd2a48b747d8714ff04ca89b56373179d6f6f70ab0bc931008",
+        "url": "https://www.wowhead.com/forever/item=17905"
+      },
+      "id": 17905,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 2",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 5.0,
+        "hp5": 9.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "e12106c022192c256c4c7a30b9e92fa7bb5f00f2f24e439c9d32883ee7fc6c80",
+        "url": "https://www.wowhead.com/forever/item=17906"
+      },
+      "id": 17906,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 3",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 5.0,
+        "hp5": 9.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "09831aff6dbdf113d3b2f487557f3d8afcbdc281c91a1078b9dac0305857653f",
+        "url": "https://www.wowhead.com/forever/item=17907"
+      },
+      "id": 17907,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 4",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 8.0,
+        "hp5": 18.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep. (2 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "b025a24d3b218cc81a944accfbf7dfde724184e494b9ae23696df649e8cd402a",
+        "url": "https://www.wowhead.com/forever/item=17908"
+      },
+      "id": 17908,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 5",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 1.0,
+        "frost_resistance": 10.0,
+        "hp5": 25.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Returns you to the sanctuary of Frostwolf Keep.",
+        "Use: Returns you to the sanctuary of Frostwolf Keep. \"The Eye of Command\""
+      ],
+      "evidence": {
+        "digest": "a937b367b3181601dece36ca7d4e5adaa59fcce12e2d500438f8251501b842d5",
+        "url": "https://www.wowhead.com/forever/item=17909"
+      },
+      "id": 17909,
+      "max_equipped": 1,
+      "name": "Frostwolf Insignia Rank 6",
+      "slot": "Trinket",
+      "stats": {
+        "dodge_percent": 2.0,
+        "frost_resistance": 10.0,
+        "hp5": 30.0
+      }
     },
     {
       "evidence": {
@@ -37341,7 +38695,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 2.0%.",
         "Equip: Increases your effective stealth detection level by 1."
       ],
       "evidence": {
@@ -37354,6 +38707,7 @@
       "slot": "Head",
       "stats": {
         "armor": 493.0,
+        "dodge_percent": 2.0,
         "stamina": 17.0
       }
     },
@@ -37404,9 +38758,6 @@
     },
     {
       "armor_type": "Mail",
-      "effects": [
-        "Equip: Increases your chance to Parry an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "34192fe42c32293da3a4c898e1772f818427ba2e1a3454eccb635aa42ed88e9c",
         "url": "https://www.wowhead.com/forever/item=18319"
@@ -37419,6 +38770,7 @@
       "stats": {
         "armor": 279.0,
         "hp5": 12.0,
+        "parry_percent": 1.0,
         "stamina": 14.0
       }
     },
@@ -37679,6 +39031,23 @@
         "intellect": 10.0,
         "spell_power": 7.0,
         "spirit": 7.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "5bc39c35bea15ad6475bca92253e9ce8481f805a8dad53c51fc74790fe5f5110",
+        "url": "https://www.wowhead.com/forever/item=18406"
+      },
+      "id": 18406,
+      "max_equipped": 1,
+      "name": "Onyxia Blood Talisman",
+      "slot": "Trinket",
+      "stats": {
+        "fire_resistance": 20.0,
+        "hp5": 9.0
       }
     },
     {
@@ -38182,6 +39551,148 @@
       }
     },
     {
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Equip: +45 Attack Power against Humanoids."
+      ],
+      "evidence": {
+        "digest": "8682304d1ff166f8895bf3952e421338ac5f7ac562e7e9fbe80107ddfaa7b6c9",
+        "url": "https://www.wowhead.com/forever/item=18465"
+      },
+      "id": 18465,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "hit_percent": 1.0,
+        "nature_resistance": 15.0
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Equip: Increases spell damage and healing by up to 18. Grants an additional 18 spell damage against Demons."
+      ],
+      "evidence": {
+        "digest": "300d47a33c80b565f676ac9a7a2d44ecb078b48f66e91049a6b045939110878a",
+        "url": "https://www.wowhead.com/forever/item=18467"
+      },
+      "id": 18467,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "nature_resistance": 15.0
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Equip: Increases Spirit by 16 in Cavernous or Underground areas."
+      ],
+      "evidence": {
+        "digest": "8809d9daa59ef530816f0d0e9ab867da41f54cb233988d7433c30e63b18bc4b6",
+        "url": "https://www.wowhead.com/forever/item=18469"
+      },
+      "id": 18469,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "healing_power": 22.0,
+        "nature_resistance": 15.0,
+        "spell_damage": 7.0
+      }
+    },
+    {
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Equip: Increases Spirit by 16 in Forest and Grassland areas."
+      ],
+      "evidence": {
+        "digest": "fc01d1620d8945b8140a24ae8618b3a2e05232db58cd3f500bb46fe148bc4d73",
+        "url": "https://www.wowhead.com/forever/item=18470"
+      },
+      "id": 18470,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "healing_power": 22.0,
+        "nature_resistance": 15.0,
+        "spell_damage": 7.0
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Equip: Increases spell damage and healing by up to 18. Grants an additional 18 spell damage against Demons."
+      ],
+      "evidence": {
+        "digest": "d897493000d67b9394c733a997c5bd86404e287fde7969be65dae75273cc76de",
+        "url": "https://www.wowhead.com/forever/item=18471"
+      },
+      "id": 18471,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "nature_resistance": 15.0
+      }
+    },
+    {
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Equip: Restores 9 Mana per 5 sec in Haunted areas. \"Blessed by the Shen'dralar Ancients.\""
+      ],
+      "evidence": {
+        "digest": "449c68cf9827aaca4372819fa4b20b6fd060aeabac4bc2382d024d7a21e9cb57",
+        "url": "https://www.wowhead.com/forever/item=18472"
+      },
+      "id": 18472,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "healing_power": 22.0,
+        "mp5": 9.0,
+        "nature_resistance": 15.0,
+        "spell_damage": 7.0
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Equip: +45 Attack Power against Demons."
+      ],
+      "evidence": {
+        "digest": "71626b058534bdfaa2fd3ef6c2a029715de88c0eb237cdd9a84b6be5e58cf3d4",
+        "url": "https://www.wowhead.com/forever/item=18473"
+      },
+      "id": 18473,
+      "max_equipped": 1,
+      "name": "Royal Seal of Eldre'Thalas",
+      "slot": "Trinket",
+      "stats": {
+        "agility": 10.0,
+        "nature_resistance": 15.0
+      }
+    },
+    {
       "armor_type": "Mail",
       "evidence": {
         "digest": "ff09ae7e853eefb1802ca4819c92c576c052994c57cc28cc7db321f774fae3b8",
@@ -38310,9 +39821,6 @@
       }
     },
     {
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "10f2b1f928437933e36e2c87413a65a86045dd4c926e92d2ae63f09501576f34",
         "url": "https://www.wowhead.com/forever/item=18511"
@@ -38324,6 +39832,7 @@
       "stats": {
         "agility": 17.0,
         "armor": 48.0,
+        "dodge_percent": 1.0,
         "stamina": 8.0
       }
     },
@@ -39830,6 +41339,22 @@
     },
     {
       "effects": [
+        "Equip: While equipped, the wearer suffers less damage from falls."
+      ],
+      "evidence": {
+        "digest": "41ca943cb4537d6e423cee1b6e1b214f435df3d0f7fafffce43e406f7750ed40",
+        "url": "https://www.wowhead.com/forever/item=18951"
+      },
+      "id": 18951,
+      "max_equipped": 1,
+      "name": "Evonice's Landin' Pilla",
+      "slot": "Trinket",
+      "stats": {
+        "spirit": 10.0
+      }
+    },
+    {
+      "effects": [
         "Equip: Increases the critical effect chance of your Holy spells by 50%."
       ],
       "evidence": {
@@ -39868,7 +41393,6 @@
     },
     {
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Equip: Reduces your damage taken by 6% in the Battle Ring and The Maul.",
         "Use: Absorbs 810 to 1350 damage. Lasts 20 sec. (9 Min Cooldown)"
       ],
@@ -39881,7 +41405,9 @@
       "max_equipped": 1,
       "name": "Arena Grand Master",
       "slot": "Trinket",
-      "stats": {},
+      "stats": {
+        "dodge_percent": 1.0
+      },
       "unique_group": "Arena Master"
     },
     {
@@ -42127,6 +43653,30 @@
       "weapon_subtype": "Staff"
     },
     {
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Equip: Increases your chance to Block attacks with a shield by 2.0%.",
+        "Equip: Reduces the cost of your Hamstring ability by 2 rage points.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "61e968e2ca997b81dc95cc482c751a6664e866c979ef11d9ce3b65ac052e04c4",
+        "url": "https://www.wowhead.com/forever/item=19577"
+      },
+      "id": 19577,
+      "max_equipped": 1,
+      "name": "Rage of Mugamba",
+      "slot": "Neck",
+      "stats": {
+        "agility": 8.0,
+        "defense": 6.0,
+        "stamina": 13.0,
+        "strength": 8.0
+      }
+    },
+    {
       "armor_type": "Plate",
       "evidence": {
         "digest": "00c446e67d1d11128bd6307c4709ae734fed60d595c39a2d77f9732e2d658146",
@@ -42252,6 +43802,29 @@
       }
     },
     {
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Equip: Increases the duration of Hammer of Justice by 1 sec.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "88c452d99c5d75d0bd1d8c8d6367daa5f5037d6938d4ab93f2010aeec18a48fd",
+        "url": "https://www.wowhead.com/forever/item=19588"
+      },
+      "id": 19588,
+      "max_equipped": 1,
+      "name": "Hero's Brand",
+      "slot": "Neck",
+      "stats": {
+        "intellect": 6.0,
+        "spirit": 9.0,
+        "stamina": 10.0,
+        "strength": 10.0
+      }
+    },
+    {
       "armor_type": "Leather",
       "evidence": {
         "digest": "ced400f7f82ea782f121d3fc6c790ed98adf595940911e9465276cd12b8dfd53",
@@ -42283,6 +43856,29 @@
         "armor": 64.0,
         "stamina": 6.0,
         "strength": 8.0
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Equip: Increases the amount of damage absorbed by Power Word: Shield by 35.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "bdbf95addc153690145b9872932344d6b69d9d21088131d371743925fae782a6",
+        "url": "https://www.wowhead.com/forever/item=19594"
+      },
+      "id": 19594,
+      "max_equipped": 1,
+      "name": "The All-Seeing Eye of Zuldazar",
+      "slot": "Neck",
+      "stats": {
+        "healing_power": 18.0,
+        "intellect": 8.0,
+        "spirit": 13.0,
+        "stamina": 8.0
       }
     },
     {
@@ -42340,6 +43936,141 @@
       }
     },
     {
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Equip: Reduces the cooldown of Counterspell by 2 sec.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "651fa3262c6f9b62cd468c269417a697fe099779cd70064fe011d1774646e19a",
+        "url": "https://www.wowhead.com/forever/item=19601"
+      },
+      "id": 19601,
+      "max_equipped": 1,
+      "name": "Jewel of Kajaro",
+      "slot": "Neck",
+      "stats": {
+        "intellect": 13.0,
+        "spell_power": 9.0,
+        "spirit": 8.0,
+        "stamina": 8.0
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Equip: Increases the radius of Rain of Fire and Hellfire by 1 yard.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "e7efcce7cf50aea741704299f61e0bd6bf540d04afe9b06d5af537fcca0dfcd9",
+        "url": "https://www.wowhead.com/forever/item=19605"
+      },
+      "id": 19605,
+      "max_equipped": 1,
+      "name": "Kezan's Unstoppable Taint",
+      "slot": "Neck",
+      "stats": {
+        "intellect": 8.0,
+        "spell_power": 14.0,
+        "stamina": 13.0
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Equip: Decreases the mana cost of your Healing Stream and Mana Spring totems by 20.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "6b9269a92c490bed543031b9c77317842f85d3fcfab85c1eb220d3ea50bb48d2",
+        "url": "https://www.wowhead.com/forever/item=19609"
+      },
+      "id": 19609,
+      "max_equipped": 1,
+      "name": "Unmarred Vision of Voodress",
+      "slot": "Neck",
+      "stats": {
+        "intellect": 10.0,
+        "spirit": 9.0,
+        "stamina": 10.0,
+        "strength": 6.0
+      }
+    },
+    {
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Equip: Increases the critical hit chance of Wrath and Starfire by 2%.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "97a20f730430f15eff0ae0c8671a053acbc4f7d2607c3ce72e8df6d7f0cd1bfc",
+        "url": "https://www.wowhead.com/forever/item=19613"
+      },
+      "id": 19613,
+      "max_equipped": 1,
+      "name": "Pristine Enchanted South Seas Kelp",
+      "slot": "Neck",
+      "stats": {
+        "intellect": 10.0,
+        "spirit": 9.0,
+        "stamina": 10.0,
+        "strength": 6.0
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Equip: Decreases the cooldown of Kick by 1 sec.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "fdf61bfe2b00e32de357e9daeccb2a51627c8f07eefa77f6fe775034cd691ca4",
+        "url": "https://www.wowhead.com/forever/item=19617"
+      },
+      "id": 19617,
+      "max_equipped": 1,
+      "name": "Zandalarian Shadow Mastery Talisman",
+      "slot": "Neck",
+      "stats": {
+        "agility": 15.0,
+        "stamina": 9.0,
+        "strength": 6.0
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Equip: Decreases the cooldown of Feign Death by 2 sec.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4dde7706f8cdd578476dc7389f72893f3dc5ece8dca12524b13ae9678c3b147d",
+        "url": "https://www.wowhead.com/forever/item=19621"
+      },
+      "id": 19621,
+      "max_equipped": 1,
+      "name": "Maelstrom's Wrath",
+      "slot": "Neck",
+      "stats": {
+        "agility": 15.0,
+        "intellect": 6.0,
+        "stamina": 9.0
+      }
+    },
+    {
       "armor_type": "Plate",
       "effects": [
         "Set bonuses"
@@ -42372,6 +44103,578 @@
       "slot": "Trinket",
       "stats": {},
       "unique_group": "Trinket of the Dawn"
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0132861d2a85854de01dc8a5f7d281a5e416e56268780b097989f7ea11b4f251",
+        "url": "https://www.wowhead.com/forever/item=19822"
+      },
+      "id": 19822,
+      "name": "Zandalar Vindicator's Breastplate",
+      "slot": "Chest",
+      "stats": {
+        "agility": 15.0,
+        "armor": 738.0,
+        "defense": 4.0,
+        "stamina": 24.0,
+        "strength": 23.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b4bb81949d8792d2f3a1266cb8cec8104e4c917b5eb70d515b78ce35b95dcf64",
+        "url": "https://www.wowhead.com/forever/item=19823"
+      },
+      "id": 19823,
+      "name": "Zandalar Vindicator's Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 391.0,
+        "crit_percent": 1.0,
+        "stamina": 10.0,
+        "strength": 25.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Warrior"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "615e729813cc641cad218fe201c4532e27490505b886140ffe7d8b2a5b185c9b",
+        "url": "https://www.wowhead.com/forever/item=19824"
+      },
+      "id": 19824,
+      "name": "Zandalar Vindicator's Armguards",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 13.0,
+        "armor": 304.0,
+        "stamina": 13.0,
+        "strength": 13.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "ef6d7b2e1111a6f386a52da2af988f4b20fa754d9f522d599dbc0b3121382473",
+        "url": "https://www.wowhead.com/forever/item=19825"
+      },
+      "id": 19825,
+      "name": "Zandalar Freethinker's Breastplate",
+      "slot": "Chest",
+      "stats": {
+        "armor": 738.0,
+        "crit_percent": 1.0,
+        "intellect": 16.0,
+        "spirit": 7.0,
+        "stamina": 26.0,
+        "strength": 19.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "9e0d3c8ae8c87df993d08361776582a6d29498d025fc1399f1a2a3f84c88df64",
+        "url": "https://www.wowhead.com/forever/item=19826"
+      },
+      "id": 19826,
+      "name": "Zandalar Freethinker's Belt",
+      "slot": "Waist",
+      "stats": {
+        "agility": 10.0,
+        "armor": 391.0,
+        "healing_power": 26.0,
+        "intellect": 12.0,
+        "stamina": 16.0,
+        "strength": 16.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "64799900730353d5ede5856a01dcb624f43d0a59cc6432e3615cb4a6e5865ad3",
+        "url": "https://www.wowhead.com/forever/item=19827"
+      },
+      "id": 19827,
+      "name": "Zandalar Freethinker's Armguards",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 6.0,
+        "armor": 304.0,
+        "healing_power": 11.0,
+        "intellect": 10.0,
+        "stamina": 12.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "5a324622980a4b838a3e02316d4fa53a33fee5809b54d348d4aefa59422f797f",
+        "url": "https://www.wowhead.com/forever/item=19828"
+      },
+      "id": 19828,
+      "name": "Zandalar Augur's Hauberk",
+      "slot": "Chest",
+      "stats": {
+        "armor": 416.0,
+        "crit_percent": 1.0,
+        "intellect": 15.0,
+        "spell_power": 34.0,
+        "stamina": 19.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f92761b82f4df197572a0d5b97b1f8c723f303e702de7755fb9659f1677fe261",
+        "url": "https://www.wowhead.com/forever/item=19829"
+      },
+      "id": 19829,
+      "name": "Zandalar Augur's Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 221.0,
+        "intellect": 21.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b453198a7eddd5bb6864ab67d5dd0d4ed4cae15eebf8f215831f2cb141f237ed",
+        "url": "https://www.wowhead.com/forever/item=19830"
+      },
+      "id": 19830,
+      "name": "Zandalar Augur's Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 172.0,
+        "intellect": 11.0,
+        "mp5": 4.0,
+        "spell_power": 13.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4de33450a4d3c5c1291f795b9cd1848e02e27d653dfcf9a630a7383fc09f1c71",
+        "url": "https://www.wowhead.com/forever/item=19831"
+      },
+      "id": 19831,
+      "name": "Zandalar Predator's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 22.0,
+        "armor": 326.0,
+        "intellect": 11.0,
+        "mp5": 4.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "cc380e5c99cfdb0c1a524c31d03f4b0f4fa4bce683078000c47bba33f5dc27ff",
+        "url": "https://www.wowhead.com/forever/item=19832"
+      },
+      "id": 19832,
+      "name": "Zandalar Predator's Belt",
+      "slot": "Waist",
+      "stats": {
+        "agility": 20.0,
+        "armor": 221.0,
+        "hit_percent": 1.0,
+        "intellect": 12.0,
+        "spirit": 9.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "6e0b93d4ff57e987e38fbd66aec3c1cec62b4689c73a90dcea2bb46bb32584cf",
+        "url": "https://www.wowhead.com/forever/item=19833"
+      },
+      "id": 19833,
+      "name": "Zandalar Predator's Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 172.0,
+        "intellect": 10.0,
+        "mp5": 4.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "9962e392fd12eb362f735274c6f3d0423b4c3266514186e7ede1801dc3ad7d4d",
+        "url": "https://www.wowhead.com/forever/item=19834"
+      },
+      "id": 19834,
+      "name": "Zandalar Madcap's Tunic",
+      "slot": "Chest",
+      "stats": {
+        "armor": 197.0,
+        "attack_power": 44.0,
+        "crit_percent": 2.0,
+        "stamina": 19.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "958387a7d39ff851c20ce3dcee56fae50658ef8edd9898ece8f2be52563f4296",
+        "url": "https://www.wowhead.com/forever/item=19835"
+      },
+      "id": 19835,
+      "name": "Zandalar Madcap's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 20.0,
+        "armor": 140.0,
+        "hit_percent": 1.0,
+        "stamina": 12.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "70614fba09b1332548933bb0e7f007b0122b7bcd120e8d5d36a257da2f1dab8f",
+        "url": "https://www.wowhead.com/forever/item=19836"
+      },
+      "id": 19836,
+      "name": "Zandalar Madcap's Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 14.0,
+        "armor": 82.0,
+        "stamina": 14.0,
+        "strength": 9.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "ad4d21ed05f7c14ffe22822bfbfb0720d4df16b6c60f18485d45f93012a3b712",
+        "url": "https://www.wowhead.com/forever/item=19838"
+      },
+      "id": 19838,
+      "name": "Zandalar Haruspex's Tunic",
+      "slot": "Chest",
+      "stats": {
+        "armor": 197.0,
+        "healing_power": 33.0,
+        "intellect": 24.0,
+        "spirit": 23.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "e498a3a980d6449671865261a2f5dbe06feab0d892ac719986b7892b0765b22e",
+        "url": "https://www.wowhead.com/forever/item=19839"
+      },
+      "id": 19839,
+      "name": "Zandalar Haruspex's Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 105.0,
+        "healing_power": 15.0,
+        "intellect": 21.0,
+        "spirit": 12.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8168c47c6095801b3f3501a2804b92a55c56a564015d3f08723d5a2dd1f97b65",
+        "url": "https://www.wowhead.com/forever/item=19840"
+      },
+      "id": 19840,
+      "name": "Zandalar Haruspex's Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 82.0,
+        "healing_power": 24.0,
+        "intellect": 11.0,
+        "spirit": 11.0,
+        "stamina": 9.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "112d4a2868ce28eccc1a5fac0106e8c6d0dd6b0b37ccf736a6b70523650a435e",
+        "url": "https://www.wowhead.com/forever/item=19841"
+      },
+      "id": 19841,
+      "name": "Zandalar Confessor's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 78.0,
+        "healing_power": 22.0,
+        "intellect": 24.0,
+        "spirit": 15.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f4699ad8d1f846f3113c04b6d9db760f4482ff2ca9579b64ffe4fbc58ab05851",
+        "url": "https://www.wowhead.com/forever/item=19842"
+      },
+      "id": 19842,
+      "name": "Zandalar Confessor's Bindings",
+      "slot": "Waist",
+      "stats": {
+        "armor": 53.0,
+        "healing_power": 26.0,
+        "intellect": 20.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "2cc378ac27607dc509e384ecec742a289cd2f7dcfa466c4f07a0ca9e4aa5c191",
+        "url": "https://www.wowhead.com/forever/item=19843"
+      },
+      "id": 19843,
+      "name": "Zandalar Confessor's Wraps",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 41.0,
+        "healing_power": 24.0,
+        "intellect": 11.0,
+        "spirit": 12.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "11472891849972b4cb6d69107b832b2ecc4efa9282a622a80f982272328f9fba",
+        "url": "https://www.wowhead.com/forever/item=19845"
+      },
+      "id": 19845,
+      "name": "Zandalar Illusionist's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 71.0,
+        "intellect": 21.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 13.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b437910706d3dfd86c40771c4a45f8f58bab03480df7982ff05caabddf32559e",
+        "url": "https://www.wowhead.com/forever/item=19846"
+      },
+      "id": 19846,
+      "name": "Zandalar Illusionist's Wraps",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 41.0,
+        "intellect": 11.0,
+        "spell_power": 14.0,
+        "spirit": 9.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b500e0fed422965c30a9e5d140c3b11a554112737093633d500412b7956778e9",
+        "url": "https://www.wowhead.com/forever/item=19848"
+      },
+      "id": 19848,
+      "name": "Zandalar Demoniac's Wraps",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 41.0,
+        "intellect": 8.0,
+        "spell_power": 16.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8dbc2e35fead1049bbf2e51f2f82007d0f5c96426ba7b812112f020b8dd226f0",
+        "url": "https://www.wowhead.com/forever/item=19849"
+      },
+      "id": 19849,
+      "name": "Zandalar Demoniac's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 71.0,
+        "intellect": 19.0,
+        "spell_power": 12.0,
+        "stamina": 23.0
+      }
     },
     {
       "effects": [
@@ -42416,6 +44719,40 @@
       "stats": {}
     },
     {
+      "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increased Fishing +5."
+      ],
+      "evidence": {
+        "digest": "bef2a673bfcc5d545f79596c20cb8a180e2a6d512455a36ad420011f4f4ad17e",
+        "url": "https://www.wowhead.com/forever/item=19969"
+      },
+      "id": 19969,
+      "name": "Nat Pagle's Extreme Anglin' Boots",
+      "slot": "Feet",
+      "stats": {
+        "armor": 36.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increased Fishing +5."
+      ],
+      "evidence": {
+        "digest": "d6a52cc6b45b418c965d63233814033a6e49bf9b851e404ffb8e6da3e86b16af",
+        "url": "https://www.wowhead.com/forever/item=19972"
+      },
+      "id": 19972,
+      "name": "Lucky Fishing Hat",
+      "slot": "Head",
+      "stats": {
+        "armor": 43.0,
+        "stamina": 15.0
+      }
+    },
+    {
       "effects": [
         "Use: Transform into a frenzy fish which grants water breathing and increases your swim speed by 25%.",
         "Use: Transform into a frenzy fish which grants water breathing and increases your swim speed by 25%. Can only be used while swimming. Some combat actions may break this effect. (5 Sec Cooldown)"
@@ -42429,6 +44766,172 @@
       "name": "Hook of the Master Angler",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Equip: Reduces the hit chance of Fear effects against you by 4%.",
+        "Equip: Reduces the hit chance of Fear effects against you by 4%. \"Arrrrrgh!\""
+      ],
+      "evidence": {
+        "digest": "a4fe0bed6aa21c82ef89507b804c447da107848ad743f2932d974def0a69bb8d",
+        "url": "https://www.wowhead.com/forever/item=19986"
+      },
+      "id": 19986,
+      "name": "Pirate's Eye Patch",
+      "slot": "Head",
+      "stats": {
+        "agility": 12.0,
+        "armor": 122.0,
+        "stamina": 20.0
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Use: Heal your target for 583 to 713. Usable while Silenced. (5 Min Cooldown)",
+        "Use: Heal your target for 583 to 713. Usable while Silenced. (5 Min Cooldown) \"A friend in need is a friend without beads.\""
+      ],
+      "evidence": {
+        "digest": "7815048a9da12b5742cfd739332444eb1a1f9a12bc47141852291f89d98a6df1",
+        "url": "https://www.wowhead.com/forever/item=19990"
+      },
+      "id": 19990,
+      "max_equipped": 1,
+      "name": "Blessed Prayer Beads",
+      "slot": "Trinket",
+      "stats": {
+        "healing_power": 11.0,
+        "shadow_resistance": 7.0,
+        "spell_damage": 4.0
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Use: Your next melee or ranged attack within 10 sec will Root the target for 2.5 sec. The duration of this effect is doubled if the target was moving. Only works against Beasts. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "440d60999863963be333f85369ef344722aaba490edc5a8e1cd0968a604bf035",
+        "url": "https://www.wowhead.com/forever/item=19991"
+      },
+      "id": 19991,
+      "max_equipped": 1,
+      "name": "Devilsaur Eye",
+      "slot": "Trinket",
+      "stats": {
+        "attack_power": 16.0
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Use: Reduces the Mana cost of your next Revive Pet cast within 30 sec by 100%. (10 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "a652b5a6f0fd5d798d684ec945ee459cedd7f46c58324f6416566726250672a7",
+        "url": "https://www.wowhead.com/forever/item=19992"
+      },
+      "id": 19992,
+      "max_equipped": 1,
+      "name": "Devilsaur Tooth",
+      "slot": "Trinket",
+      "stats": {
+        "agility": 7.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "2894be201d58e4e727a1668f0c4843597cd2629165d9a85fc6373cf3813d66a4",
+        "url": "https://www.wowhead.com/forever/item=20033"
+      },
+      "id": 20033,
+      "name": "Zandalar Demoniac's Robe",
+      "slot": "Chest",
+      "stats": {
+        "armor": 100.0,
+        "hit_percent": 1.0,
+        "spell_power": 27.0,
+        "stamina": 35.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "2aa2b8a11fa5df0fe4e88d798750851390a10d4e6ca76096f67f6cdcc13291dd",
+        "url": "https://www.wowhead.com/forever/item=20034"
+      },
+      "id": 20034,
+      "name": "Zandalar Illusionist's Robe",
+      "slot": "Chest",
+      "stats": {
+        "armor": 100.0,
+        "hit_percent": 1.0,
+        "intellect": 24.0,
+        "spell_power": 27.0,
+        "stamina": 23.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: Your Frostbolt spells have a 6% chance to restore 50 mana when cast.",
+        "Equip: Your Frostbolt spells have a 6% chance to restore 50 mana when cast. \"Diabolical runes adorn the blade.\""
+      ],
+      "evidence": {
+        "digest": "0ba0f0c243bfd7be7879d60fc3b2e22192046e78dacaeee583aaf2d4d05837af",
+        "url": "https://www.wowhead.com/forever/item=20035"
+      },
+      "id": 20035,
+      "name": "Glacial Spike",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 23.08,
+        "intellect": 4.0,
+        "spell_power": 60.0,
+        "weapon_max_damage": 39,
+        "weapon_min_damage": 21,
+        "weapon_speed": 1.3
+      },
+      "weapon_subtype": "Dagger"
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Use: Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed. (5 Min Cooldown)",
+        "Use: Refreshes the cooldown of Fire Ward and causes Fire damage absorbed by it to increase the damage of your next Fire Blast cast within 1 min by 50% of the damage absorbed. (5 Min Cooldown) \"Unpredictability leads to both victory and death.\""
+      ],
+      "evidence": {
+        "digest": "58df9d9dba96596c582fec807b8b88693c1e50b5a4d3c0761cdd2b75907d18da",
+        "url": "https://www.wowhead.com/forever/item=20036"
+      },
+      "id": 20036,
+      "max_equipped": 1,
+      "name": "Fire Ruby",
+      "slot": "Trinket",
+      "stats": {
+        "fire_damage": 14.0
+      }
     },
     {
       "armor_type": "Plate",
@@ -45344,6 +47847,45 @@
       }
     },
     {
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Use: Summons a Mana Spring Totem for 24 sec, restoring 33 Mana every 2 sec to party members within 30 yards. (10 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "0ff7a0e038fabb3492a7481aee1cea48006bc1d99f39ae1e9bf035b632a0c7ac",
+        "url": "https://www.wowhead.com/forever/item=20503"
+      },
+      "id": 20503,
+      "max_equipped": 1,
+      "name": "Enamored Water Spirit",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 15.0,
+        "mp5": 4.0
+      }
+    },
+    {
+      "classes": [
+        "Paladin"
+      ],
+      "effects": [
+        "Use: Restores 319 to 361 Mana. This effect is doubled in Wasteland and Haunted areas. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "1cbed652dc0fb1a8410fdc898fdebf913cbc9ed666f1dfe92ca1af8592e9a926",
+        "url": "https://www.wowhead.com/forever/item=20512"
+      },
+      "id": 20512,
+      "max_equipped": 1,
+      "name": "Sanctified Orb",
+      "slot": "Trinket",
+      "stats": {
+        "spell_power": 15.0
+      }
+    },
+    {
       "effects": [
         "Use: Restores 400 mana over 10 sec. (3 Min Cooldown)"
       ],
@@ -45355,6 +47897,27 @@
       "name": "Earthen Sigil",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Use: Casts your Summon Voidwalker spell with no mana or Soul Shard requirements. (15 Min Cooldown)",
+        "Use: Casts your Summon Voidwalker spell with no mana or Soul Shard requirements. (15 Min Cooldown) \"Dark rituals are trapped in dark gems.\""
+      ],
+      "evidence": {
+        "digest": "6a24f89901fb82cb21fdf20d105f03edb0b4ec8149a0d2b0e318a9f1dff40376",
+        "url": "https://www.wowhead.com/forever/item=20534"
+      },
+      "id": 20534,
+      "max_equipped": 1,
+      "name": "Abyss Shard",
+      "slot": "Trinket",
+      "stats": {
+        "shadow_resistance": 10.0,
+        "spell_power": 12.0
+      }
     },
     {
       "armor_type": "Plate",
@@ -45593,6 +48156,23 @@
         "weapon_speed": 3.5
       },
       "weapon_subtype": "Mace"
+    },
+    {
+      "effects": [
+        "Equip: +4 Weapon Damage."
+      ],
+      "evidence": {
+        "digest": "7b3fa6f572b03c1988019a82bb65af31b26cdd6b325a23b456547f1cac88ae65",
+        "url": "https://www.wowhead.com/forever/item=21189"
+      },
+      "id": 21189,
+      "max_equipped": 1,
+      "name": "Might of Cenarius",
+      "slot": "Ring",
+      "stats": {
+        "hit_percent": 1.0,
+        "stamina": 8.0
+      }
     },
     {
       "effects": [
@@ -48384,9 +50964,6 @@
     },
     {
       "armor_type": "Plate",
-      "effects": [
-        "Equip: Increases your chance to Parry an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "9096563143643d933857de5c87df163d6e8881d01e4e9944931fe6e2a08233d3",
         "url": "https://www.wowhead.com/forever/item=21598"
@@ -48399,6 +50976,7 @@
         "agility": 13.0,
         "armor": 512.0,
         "defense": 8.0,
+        "parry_percent": 1.0,
         "stamina": 22.0,
         "strength": 13.0
       }
@@ -48850,9 +51428,6 @@
     },
     {
       "armor_type": "Leather",
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "c152817303089b87305f74b66fba0d9d703c54245b4887f426e958b73d6a8bda",
         "url": "https://www.wowhead.com/forever/item=21693"
@@ -48864,6 +51439,7 @@
       "stats": {
         "agility": 19.0,
         "armor": 180.0,
+        "dodge_percent": 1.0,
         "stamina": 36.0,
         "strength": 17.0
       }
@@ -48887,9 +51463,6 @@
       }
     },
     {
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "1d3a47e94224c733e4624c493ac0673ba4ea68297405182ead9afb4233b5a093",
         "url": "https://www.wowhead.com/forever/item=21695"
@@ -48901,6 +51474,7 @@
       "slot": "Ring",
       "stats": {
         "defense": 6.0,
+        "dodge_percent": 1.0,
         "stamina": 17.0,
         "strength": 11.0
       }
@@ -49013,6 +51587,1472 @@
       "name": "Shard of the Fallen Star",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "afac44d778178163341354ae95304da2af2ab4a61af61d98dfa85ef5c9b26143",
+        "url": "https://www.wowhead.com/forever/item=21994"
+      },
+      "id": 21994,
+      "name": "Belt of Heroism",
+      "slot": "Waist",
+      "stats": {
+        "agility": 9.0,
+        "armor": 380.0,
+        "defense": 7.0,
+        "stamina": 12.0,
+        "strength": 15.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "376a37be05c517a8658cbce9e8735e58e42e5e8981f8c5d299a06a35371f47a9",
+        "url": "https://www.wowhead.com/forever/item=21995"
+      },
+      "id": 21995,
+      "name": "Boots of Heroism",
+      "slot": "Feet",
+      "stats": {
+        "armor": 470.0,
+        "hit_percent": 1.0,
+        "stamina": 20.0,
+        "strength": 20.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b0d3b59dd2d2b4a6f9590c1ae3ea293a19718dfdf220646067b12fb69e6da29e",
+        "url": "https://www.wowhead.com/forever/item=21996"
+      },
+      "id": 21996,
+      "name": "Bracers of Heroism",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 5.0,
+        "armor": 296.0,
+        "defense": 3.0,
+        "stamina": 14.0,
+        "strength": 9.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "61776d1d10cfbf89a87bf9a370b977fa24cc77adcb9251d3f7634f4d48a4e260",
+        "url": "https://www.wowhead.com/forever/item=21997"
+      },
+      "id": 21997,
+      "name": "Breastplate of Heroism",
+      "slot": "Chest",
+      "stats": {
+        "agility": 13.0,
+        "armor": 684.0,
+        "hit_percent": 1.0,
+        "stamina": 26.0,
+        "strength": 21.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "c121023d151b297a41b2acd30d7e904e72342ca45f87565d7368602429ee55aa",
+        "url": "https://www.wowhead.com/forever/item=21998"
+      },
+      "id": 21998,
+      "name": "Gauntlets of Heroism",
+      "slot": "Hands",
+      "stats": {
+        "armor": 393.0,
+        "crit_percent": 1.0,
+        "stamina": 12.0,
+        "strength": 18.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "1418ff5bf1a82bafe1f9cbe1bb160eeb4f79e74f2d8e6ff8720587e3a8837862",
+        "url": "https://www.wowhead.com/forever/item=21999"
+      },
+      "id": 21999,
+      "name": "Helm of Heroism",
+      "slot": "Head",
+      "stats": {
+        "armor": 556.0,
+        "crit_percent": 1.0,
+        "stamina": 32.0,
+        "strength": 18.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b3eaa5ca37ce16d15293cc9afc25a0a31ca9bac8f8ddf49d293ad566869d10f7",
+        "url": "https://www.wowhead.com/forever/item=22000"
+      },
+      "id": 22000,
+      "name": "Legplates of Heroism",
+      "slot": "Legs",
+      "stats": {
+        "agility": 11.0,
+        "armor": 601.0,
+        "defense": 5.0,
+        "stamina": 16.0,
+        "strength": 25.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "fd7a5ec370d6be538c48a9d6cfd68e237aad07d2e1a8e68b566241ef74d693d6",
+        "url": "https://www.wowhead.com/forever/item=22001"
+      },
+      "id": 22001,
+      "name": "Spaulders of Heroism",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 12.0,
+        "armor": 507.0,
+        "stamina": 18.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8fc2a42a3941f344089299c53fb2c873a979ad488861c6d873fff3b96377ff39",
+        "url": "https://www.wowhead.com/forever/item=22002"
+      },
+      "id": 22002,
+      "name": "Darkmantle Belt",
+      "slot": "Waist",
+      "stats": {
+        "agility": 17.0,
+        "armor": 102.0,
+        "stamina": 13.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Equip: Increases your effective stealth level by 2.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "ec46ccddda741b018dc25746bd47a68c3d9567f9a4414295ed0d3cd5912f9b80",
+        "url": "https://www.wowhead.com/forever/item=22003"
+      },
+      "id": 22003,
+      "name": "Darkmantle Boots",
+      "slot": "Feet",
+      "stats": {
+        "agility": 24.0,
+        "armor": 127.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b5048a9db49dcbc3013d636d406f9e20f0fb28e3f05ba22d87065c3225520d83",
+        "url": "https://www.wowhead.com/forever/item=22004"
+      },
+      "id": 22004,
+      "name": "Darkmantle Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 15.0,
+        "armor": 79.0,
+        "stamina": 7.0,
+        "strength": 7.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8077338ee2129c4ce0da570d0b3f22fcd5d46e9a4d189ff2ac23196bf706cd25",
+        "url": "https://www.wowhead.com/forever/item=22005"
+      },
+      "id": 22005,
+      "name": "Darkmantle Cap",
+      "slot": "Head",
+      "stats": {
+        "agility": 26.0,
+        "armor": 150.0,
+        "crit_percent": 1.0,
+        "stamina": 18.0,
+        "strength": 13.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "2bf7112bd25aeb48d4cdb825d481f13d79ffe7c353427173c26236b3d1699f8b",
+        "url": "https://www.wowhead.com/forever/item=22006"
+      },
+      "id": 22006,
+      "name": "Darkmantle Gloves",
+      "slot": "Hands",
+      "stats": {
+        "agility": 22.0,
+        "armor": 108.0,
+        "stamina": 9.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "25cfbf25d739cc672022c53de909f4e740efff39991765fea4f46c41d394fd88",
+        "url": "https://www.wowhead.com/forever/item=22007"
+      },
+      "id": 22007,
+      "name": "Darkmantle Pants",
+      "slot": "Legs",
+      "stats": {
+        "agility": 25.0,
+        "armor": 160.0,
+        "stamina": 15.0,
+        "strength": 15.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "396ae8586652bfdd0b52060be4efdee9b60c9369482434fcd3bf9a59254a7eef",
+        "url": "https://www.wowhead.com/forever/item=22008"
+      },
+      "id": 22008,
+      "name": "Darkmantle Spaulders",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 24.0,
+        "armor": 136.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f08bfdd679bdc9cd527e4ca1cfd30d2277dc0b2fd877e79e90fb539214e4d320",
+        "url": "https://www.wowhead.com/forever/item=22009"
+      },
+      "id": 22009,
+      "name": "Darkmantle Tunic",
+      "slot": "Chest",
+      "stats": {
+        "agility": 31.0,
+        "armor": 185.0,
+        "hit_percent": 2.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "37ff4b200134ea34d82997b3bfbf0cd4df31fbe8f40a4bdaeca984bacfcce2d7",
+        "url": "https://www.wowhead.com/forever/item=22010"
+      },
+      "id": 22010,
+      "name": "Beastmaster's Belt",
+      "slot": "Waist",
+      "stats": {
+        "agility": 16.0,
+        "armor": 214.0,
+        "intellect": 10.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "7f76ecad1ac5fd9f15f898ce904eec53e80946fa1bb2b518ca394872e1063dea",
+        "url": "https://www.wowhead.com/forever/item=22011"
+      },
+      "id": 22011,
+      "name": "Beastmaster's Bindings",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 16.0,
+        "armor": 167.0,
+        "intellect": 5.0,
+        "stamina": 7.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: Increases your pet's maximum health by 3%.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "07857fc74ae5b77fa64f812216c3d901b830123d8307a1e140a48e3def4a68f9",
+        "url": "https://www.wowhead.com/forever/item=22013"
+      },
+      "id": 22013,
+      "name": "Beastmaster's Cap",
+      "slot": "Head",
+      "stats": {
+        "agility": 22.0,
+        "armor": 314.0,
+        "hit_percent": 1.0,
+        "intellect": 12.0,
+        "stamina": 21.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: Increases your pet's critical strike chance by 2%.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "64e448cf07e26f4b4f6d927dbf506d476d938b30acdd50f45e6a7e1552fdc288",
+        "url": "https://www.wowhead.com/forever/item=22015"
+      },
+      "id": 22015,
+      "name": "Beastmaster's Gloves",
+      "slot": "Hands",
+      "stats": {
+        "agility": 14.0,
+        "armor": 223.0,
+        "intellect": 10.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "19acc57c54acc60950e61b312b2d68618706e2dcb1b2c6b37adbdf4f040a5273",
+        "url": "https://www.wowhead.com/forever/item=22016"
+      },
+      "id": 22016,
+      "name": "Beastmaster's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 12.0,
+        "armor": 286.0,
+        "intellect": 10.0,
+        "stamina": 18.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8884304b5af93790fc449a0dc16d615ecd08749e234314cb163d0c1d9cd84eaf",
+        "url": "https://www.wowhead.com/forever/item=22017"
+      },
+      "id": 22017,
+      "name": "Beastmaster's Pants",
+      "slot": "Legs",
+      "stats": {
+        "agility": 28.0,
+        "armor": 339.0,
+        "intellect": 9.0,
+        "stamina": 14.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: Increases your pet's armor by 10%.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "274e87cf207d9213929b65562f5bf69c837a15f28f20337d69d7c9ce7b3d0938",
+        "url": "https://www.wowhead.com/forever/item=22060"
+      },
+      "id": 22060,
+      "name": "Beastmaster's Tunic",
+      "slot": "Chest",
+      "stats": {
+        "agility": 25.0,
+        "armor": 387.0,
+        "crit_percent": 1.0,
+        "intellect": 13.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: Increases damage dealt by your pet by 3%.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "57e244ccdecd2ab8c52100e2eec75af7a5debc4782bd3bb0d4fb4552da6f9341",
+        "url": "https://www.wowhead.com/forever/item=22061"
+      },
+      "id": 22061,
+      "name": "Beastmaster's Boots",
+      "slot": "Feet",
+      "stats": {
+        "agility": 24.0,
+        "armor": 266.0,
+        "stamina": 9.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "e68abf8ec1866524602dd740a515ac0b1292a464546d1b011f7fd46668e5c5e5",
+        "url": "https://www.wowhead.com/forever/item=22062"
+      },
+      "id": 22062,
+      "name": "Sorcerer's Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 52.0,
+        "intellect": 14.0,
+        "spell_power": 14.0,
+        "spirit": 7.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "dde86625d2f3768e93d715f5e8c8ff8e558ebc47c5f34ac629ca9b28619c7a27",
+        "url": "https://www.wowhead.com/forever/item=22063"
+      },
+      "id": 22063,
+      "name": "Sorcerer's Bindings",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 40.0,
+        "intellect": 12.0,
+        "spell_power": 8.0,
+        "spirit": 5.0,
+        "stamina": 8.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4709bb585e09f90f637cfc475574b5c207cb427436f60e01e3f42adb827ec2b2",
+        "url": "https://www.wowhead.com/forever/item=22064"
+      },
+      "id": 22064,
+      "name": "Sorcerer's Boots",
+      "slot": "Feet",
+      "stats": {
+        "armor": 64.0,
+        "intellect": 16.0,
+        "spell_power": 21.0,
+        "spirit": 10.0,
+        "stamina": 14.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "d13b9afe291abba003a2bf06fd572cb34024098fb3da378e4c84edd53749f1c0",
+        "url": "https://www.wowhead.com/forever/item=22065"
+      },
+      "id": 22065,
+      "name": "Sorcerer's Crown",
+      "slot": "Head",
+      "stats": {
+        "armor": 75.0,
+        "crit_percent": 1.0,
+        "intellect": 25.0,
+        "spell_power": 11.0,
+        "spirit": 14.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "720536be9e2bb34397c685fb83f7d1525ef2fffbf3483aa8f0721b2d8e638f34",
+        "url": "https://www.wowhead.com/forever/item=22066"
+      },
+      "id": 22066,
+      "name": "Sorcerer's Gloves",
+      "slot": "Hands",
+      "stats": {
+        "armor": 54.0,
+        "hit_percent": 1.0,
+        "intellect": 14.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "6f3731fe52ecbde60ecba84142656d51bdb773a27cbebde99fd6e0ebd224a5c0",
+        "url": "https://www.wowhead.com/forever/item=22067"
+      },
+      "id": 22067,
+      "name": "Sorcerer's Leggings",
+      "slot": "Legs",
+      "stats": {
+        "armor": 81.0,
+        "intellect": 22.0,
+        "spell_power": 16.0,
+        "spirit": 10.0,
+        "stamina": 17.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "3d440fcbf431b84e709a108dd14b3f3ddaea20cc165dc3bbaae127d2d729f5c8",
+        "url": "https://www.wowhead.com/forever/item=22068"
+      },
+      "id": 22068,
+      "name": "Sorcerer's Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 17.0,
+        "spell_power": 9.0,
+        "spirit": 7.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0ce91a77b347b8d5290c5b466d50d297fc49308c88145a3d54835004e3cf951c",
+        "url": "https://www.wowhead.com/forever/item=22069"
+      },
+      "id": 22069,
+      "name": "Sorcerer's Robes",
+      "slot": "Chest",
+      "stats": {
+        "armor": 93.0,
+        "intellect": 25.0,
+        "spell_power": 16.0,
+        "spirit": 9.0,
+        "stamina": 14.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "a394fb5a437717ce7bf139c092dfc6b1a8ecd4e550d8fbadf1235296fdc13ba9",
+        "url": "https://www.wowhead.com/forever/item=22070"
+      },
+      "id": 22070,
+      "name": "Deathmist Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 52.0,
+        "intellect": 16.0,
+        "spell_power": 12.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "962aaf54d7ee2405337b96cd2d5cc69ea1b757173df30566ecf3e1cd0f48b066",
+        "url": "https://www.wowhead.com/forever/item=22071"
+      },
+      "id": 22071,
+      "name": "Deathmist Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 40.0,
+        "intellect": 12.0,
+        "spell_power": 8.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "d3b408bbdcca1880bba9276880b757b22cef5899fd091b7d9053d5475335c1fe",
+        "url": "https://www.wowhead.com/forever/item=22072"
+      },
+      "id": 22072,
+      "name": "Deathmist Leggings",
+      "slot": "Legs",
+      "stats": {
+        "armor": 81.0,
+        "intellect": 21.0,
+        "spell_power": 16.0,
+        "stamina": 22.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8850efddda616e55397cd9f0be10ca4e3051dbc3e8e8a6a5f1832133d154b3b0",
+        "url": "https://www.wowhead.com/forever/item=22073"
+      },
+      "id": 22073,
+      "name": "Deathmist Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 16.0,
+        "spell_power": 12.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "5d940c5f5c13e45c68276a900b1a3609fe9c604a5cf05bba4ecfbbfe72b23d90",
+        "url": "https://www.wowhead.com/forever/item=22074"
+      },
+      "id": 22074,
+      "name": "Deathmist Mask",
+      "slot": "Head",
+      "stats": {
+        "armor": 75.0,
+        "hit_percent": 1.0,
+        "intellect": 24.0,
+        "spell_power": 16.0,
+        "stamina": 24.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f2ddc7881957c6a9459c937bcf943b4b2305d6dc64b3fbcf36c4e01e0701de33",
+        "url": "https://www.wowhead.com/forever/item=22075"
+      },
+      "id": 22075,
+      "name": "Deathmist Robe",
+      "slot": "Chest",
+      "stats": {
+        "armor": 93.0,
+        "crit_percent": 1.0,
+        "intellect": 22.0,
+        "spell_power": 12.0,
+        "stamina": 27.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "53bb97896a8cf0217067fa756948cfef241478724c36b87751a2905086cd8a00",
+        "url": "https://www.wowhead.com/forever/item=22076"
+      },
+      "id": 22076,
+      "name": "Deathmist Sandals",
+      "slot": "Feet",
+      "stats": {
+        "armor": 64.0,
+        "intellect": 14.0,
+        "spell_power": 12.0,
+        "stamina": 24.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b74207048d52702c806700a5b8d12658cd5d49cae085cd8dbbae03c6ee8440b1",
+        "url": "https://www.wowhead.com/forever/item=22077"
+      },
+      "id": 22077,
+      "name": "Deathmist Wraps",
+      "slot": "Hands",
+      "stats": {
+        "armor": 54.0,
+        "hit_percent": 1.0,
+        "intellect": 13.0,
+        "spell_power": 13.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4dfc8df0da4783f951723b07fd0bcafb2146ff87b14e0c8a11647f8648891506",
+        "url": "https://www.wowhead.com/forever/item=22078"
+      },
+      "id": 22078,
+      "name": "Virtuous Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 52.0,
+        "intellect": 13.0,
+        "spell_power": 12.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "48698da9222ad3f9a9803af6a0273195fbf417ca7a9f4f048730b301a192d4b4",
+        "url": "https://www.wowhead.com/forever/item=22079"
+      },
+      "id": 22079,
+      "name": "Virtuous Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 40.0,
+        "intellect": 8.0,
+        "mp5": 2.0,
+        "spell_power": 9.0,
+        "spirit": 8.0,
+        "stamina": 8.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "425efe4a52eb831fc0519a14adbe57366e9a22dc3323aad09dd739696b41f870",
+        "url": "https://www.wowhead.com/forever/item=22080"
+      },
+      "id": 22080,
+      "name": "Virtuous Crown",
+      "slot": "Head",
+      "stats": {
+        "armor": 75.0,
+        "crit_percent": 1.0,
+        "intellect": 17.0,
+        "mp5": 6.0,
+        "spell_power": 11.0,
+        "spirit": 16.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f8baa89e126d21dc696d7213c8cf029d1ad97948372f50b66c8ed9bf1cf9a24f",
+        "url": "https://www.wowhead.com/forever/item=22081"
+      },
+      "id": 22081,
+      "name": "Virtuous Gloves",
+      "slot": "Hands",
+      "stats": {
+        "armor": 54.0,
+        "intellect": 15.0,
+        "spell_power": 11.0,
+        "spirit": 12.0,
+        "stamina": 14.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "517bf181354656684c2bdebd3b0dbf0a5aea9bd699cf048b0e38be68bf841f8d",
+        "url": "https://www.wowhead.com/forever/item=22082"
+      },
+      "id": 22082,
+      "name": "Virtuous Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 13.0,
+        "spell_power": 12.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "579be81f7c4bbab8eda19235732752cbffda45fb4a7aa5f03168bbef01d4b605",
+        "url": "https://www.wowhead.com/forever/item=22083"
+      },
+      "id": 22083,
+      "name": "Virtuous Robe",
+      "slot": "Chest",
+      "stats": {
+        "armor": 93.0,
+        "intellect": 22.0,
+        "mp5": 6.0,
+        "spell_power": 14.0,
+        "spirit": 12.0,
+        "stamina": 21.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "e01e7a03c6bc6f7b8538da1a9799208fef0d8d3492bf963aa79c2abd008282a5",
+        "url": "https://www.wowhead.com/forever/item=22084"
+      },
+      "id": 22084,
+      "name": "Virtuous Sandals",
+      "slot": "Feet",
+      "stats": {
+        "armor": 64.0,
+        "intellect": 13.0,
+        "mp5": 7.0,
+        "spell_power": 12.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "1c7b9341655ee77e05d0404dfdc607e13a7c3e68fc484701d9e7bbb8abe6bca0",
+        "url": "https://www.wowhead.com/forever/item=22085"
+      },
+      "id": 22085,
+      "name": "Virtuous Skirt",
+      "slot": "Legs",
+      "stats": {
+        "armor": 81.0,
+        "intellect": 14.0,
+        "mp5": 6.0,
+        "spell_power": 16.0,
+        "spirit": 12.0,
+        "stamina": 13.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "3bd04e103f3e8d134cdfb8da8d24127faefd843f5717bab240c9fe9602e397e7",
+        "url": "https://www.wowhead.com/forever/item=22086"
+      },
+      "id": 22086,
+      "name": "Soulforge Belt",
+      "slot": "Waist",
+      "stats": {
+        "armor": 380.0,
+        "intellect": 11.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "61f92fd36bd4f8e28fec3b340188e00a8a5ae68d4427f067598a5beb56ac19d5",
+        "url": "https://www.wowhead.com/forever/item=22087"
+      },
+      "id": 22087,
+      "name": "Soulforge Boots",
+      "slot": "Feet",
+      "stats": {
+        "armor": 470.0,
+        "intellect": 12.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 13.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "207bfa9d082d0fe0115b9e92d00f54fa96b9d4a8c959021a874e024a3bdd68a7",
+        "url": "https://www.wowhead.com/forever/item=22088"
+      },
+      "id": 22088,
+      "name": "Soulforge Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 296.0,
+        "intellect": 9.0,
+        "spell_power": 8.0,
+        "stamina": 10.0,
+        "strength": 9.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4d592ac3b36ef7bf7a86ab72275b56a3bb15b0e0be1c93a6ed7fa52250763c15",
+        "url": "https://www.wowhead.com/forever/item=22089"
+      },
+      "id": 22089,
+      "name": "Soulforge Breastplate",
+      "slot": "Chest",
+      "stats": {
+        "armor": 684.0,
+        "crit_percent": 1.0,
+        "intellect": 17.0,
+        "spell_power": 14.0,
+        "spirit": 12.0,
+        "stamina": 17.0,
+        "strength": 16.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "736f48337e45477bcd373abb944dfe4bf14ddd1ac0fabb7e21038803e283b8d5",
+        "url": "https://www.wowhead.com/forever/item=22090"
+      },
+      "id": 22090,
+      "name": "Soulforge Gauntlets",
+      "slot": "Hands",
+      "stats": {
+        "armor": 393.0,
+        "crit_percent": 1.0,
+        "intellect": 10.0,
+        "spell_power": 11.0,
+        "stamina": 10.0,
+        "strength": 9.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "accacc916cdd4713e10e19f6d695f2428583945396ae11c2cda28668ca01a5be",
+        "url": "https://www.wowhead.com/forever/item=22091"
+      },
+      "id": 22091,
+      "name": "Soulforge Helm",
+      "slot": "Head",
+      "stats": {
+        "armor": 556.0,
+        "crit_percent": 1.0,
+        "intellect": 17.0,
+        "spell_power": 14.0,
+        "spirit": 12.0,
+        "stamina": 17.0,
+        "strength": 16.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "a0431e37edb7268e05bfc48a3790b8f9d8657fe22a734f3327d5d795637659d0",
+        "url": "https://www.wowhead.com/forever/item=22092"
+      },
+      "id": 22092,
+      "name": "Soulforge Legplates",
+      "slot": "Legs",
+      "stats": {
+        "armor": 601.0,
+        "intellect": 17.0,
+        "spell_power": 11.0,
+        "spirit": 10.0,
+        "stamina": 17.0,
+        "strength": 16.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "e89e2f74e48297123a1478934a422dfac7710cc9332a9f4528adc4b1fb442285",
+        "url": "https://www.wowhead.com/forever/item=22093"
+      },
+      "id": 22093,
+      "name": "Soulforge Spaulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 507.0,
+        "intellect": 11.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "63897d5c8973b4b2073eea1cd1e2d5d4d42a8b3272fddee074c3ff1f4f03890f",
+        "url": "https://www.wowhead.com/forever/item=22095"
+      },
+      "id": 22095,
+      "name": "Bindings of The Five Thunders",
+      "slot": "Wrist",
+      "stats": {
+        "armor": 167.0,
+        "intellect": 9.0,
+        "spell_power": 8.0,
+        "spirit": 9.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "58ededb8e0f70518857c9f30adbbc0bfe0c3078640fd05522dd6d16ced3a8395",
+        "url": "https://www.wowhead.com/forever/item=22096"
+      },
+      "id": 22096,
+      "name": "Boots of The Five Thunders",
+      "slot": "Feet",
+      "stats": {
+        "armor": 266.0,
+        "intellect": 12.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 13.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "5cc4b851cd3d31e05328339abf4e93d82bb570ae679c0608e100b85334fd2c86",
+        "url": "https://www.wowhead.com/forever/item=22097"
+      },
+      "id": 22097,
+      "name": "Coif of The Five Thunders",
+      "slot": "Head",
+      "stats": {
+        "armor": 314.0,
+        "crit_percent": 1.0,
+        "intellect": 21.0,
+        "spell_power": 14.0,
+        "spirit": 12.0,
+        "stamina": 22.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "52e1794c2da3ee4db3afda9c7aa24ba35ed7bc21653a3dc7e62dbb617ac5c0a5",
+        "url": "https://www.wowhead.com/forever/item=22098"
+      },
+      "id": 22098,
+      "name": "Cord of The Five Thunders",
+      "slot": "Waist",
+      "stats": {
+        "armor": 214.0,
+        "intellect": 11.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f8eb22cadfe4d132850461033b4ce85f3b6b9c1624b65e244bdaa4fe6b832f47",
+        "url": "https://www.wowhead.com/forever/item=22099"
+      },
+      "id": 22099,
+      "name": "Gauntlets of The Five Thunders",
+      "slot": "Hands",
+      "stats": {
+        "armor": 223.0,
+        "intellect": 14.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "stamina": 12.0,
+        "strength": 9.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "069254aa4d9066ff58a4533a3c84df3ffb2d12ac4aeda193f47dcb72c3892833",
+        "url": "https://www.wowhead.com/forever/item=22100"
+      },
+      "id": 22100,
+      "name": "Kilt of The Five Thunders",
+      "slot": "Legs",
+      "stats": {
+        "armor": 339.0,
+        "intellect": 17.0,
+        "spell_power": 11.0,
+        "spirit": 16.0,
+        "stamina": 17.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "6b107098ca00b6c1056d78d36c91101f0faa35b0518dfae31a649f565b04aef1",
+        "url": "https://www.wowhead.com/forever/item=22101"
+      },
+      "id": 22101,
+      "name": "Pauldrons of The Five Thunders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 286.0,
+        "intellect": 11.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "96fa8c5e5432d466490d3905c0565b7eaf0fce114762157624d8abac682d8498",
+        "url": "https://www.wowhead.com/forever/item=22102"
+      },
+      "id": 22102,
+      "name": "Vest of The Five Thunders",
+      "slot": "Chest",
+      "stats": {
+        "armor": 387.0,
+        "crit_percent": 1.0,
+        "intellect": 17.0,
+        "spell_power": 14.0,
+        "spirit": 16.0,
+        "stamina": 17.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4030c6a02a5c17458eac3c9d65c3e4f5fbac8e9ba32761a55e46048b58e055e7",
+        "url": "https://www.wowhead.com/forever/item=22106"
+      },
+      "id": 22106,
+      "name": "Feralheart Belt",
+      "slot": "Waist",
+      "stats": {
+        "agility": 7.0,
+        "armor": 102.0,
+        "intellect": 12.0,
+        "spell_power": 7.0,
+        "spirit": 8.0,
+        "stamina": 9.0,
+        "strength": 6.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "4fb953385f4619515f2eec93c086648d9f2bbf944212ff7c9a0d811b953eb28b",
+        "url": "https://www.wowhead.com/forever/item=22107"
+      },
+      "id": 22107,
+      "name": "Feralheart Boots",
+      "slot": "Feet",
+      "stats": {
+        "agility": 7.0,
+        "armor": 127.0,
+        "intellect": 12.0,
+        "mp5": 2.0,
+        "spell_power": 11.0,
+        "spirit": 10.0,
+        "stamina": 13.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "188a8874b7bfffe28dbf3e76654c8f589e63cab824a157a3fdea1ccbc8f55c45",
+        "url": "https://www.wowhead.com/forever/item=22108"
+      },
+      "id": 22108,
+      "name": "Feralheart Bracers",
+      "slot": "Wrist",
+      "stats": {
+        "agility": 6.0,
+        "armor": 79.0,
+        "intellect": 12.0,
+        "spell_power": 5.0,
+        "spirit": 5.0,
+        "stamina": 6.0,
+        "strength": 6.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "38688e9045ad48d2a037d39ed4c29a9361d14b3c96d2df60a817ce14d56bee63",
+        "url": "https://www.wowhead.com/forever/item=22109"
+      },
+      "id": 22109,
+      "name": "Feralheart Cowl",
+      "slot": "Head",
+      "stats": {
+        "agility": 9.0,
+        "armor": 150.0,
+        "intellect": 17.0,
+        "spell_power": 16.0,
+        "spirit": 16.0,
+        "stamina": 17.0,
+        "strength": 14.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "dd3aeb683d9638d798b884703976c7ed3e29a75cd137c5a84f77e0e45de82fa1",
+        "url": "https://www.wowhead.com/forever/item=22110"
+      },
+      "id": 22110,
+      "name": "Feralheart Gloves",
+      "slot": "Hands",
+      "stats": {
+        "agility": 9.0,
+        "armor": 108.0,
+        "intellect": 12.0,
+        "spell_power": 11.0,
+        "spirit": 10.0,
+        "stamina": 10.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0112ce11922d763723708ed93c829eba9102b58cbd9786a1bc25063697287515",
+        "url": "https://www.wowhead.com/forever/item=22111"
+      },
+      "id": 22111,
+      "name": "Feralheart Kilt",
+      "slot": "Legs",
+      "stats": {
+        "agility": 12.0,
+        "armor": 160.0,
+        "intellect": 14.0,
+        "spell_power": 9.0,
+        "spirit": 14.0,
+        "stamina": 14.0,
+        "strength": 14.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0e5857146b62c0bb754929a9ae3d88d7d7930434eb9e9df90d0822357dead5af",
+        "url": "https://www.wowhead.com/forever/item=22112"
+      },
+      "id": 22112,
+      "name": "Feralheart Spaulders",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 5.0,
+        "armor": 136.0,
+        "intellect": 16.0,
+        "mp5": 2.0,
+        "spell_power": 6.0,
+        "spirit": 8.0,
+        "stamina": 9.0,
+        "strength": 8.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "75358c5f19b1436d9d941288f16cc03a183b6cd7799021fa93eaab5d118cd6a4",
+        "url": "https://www.wowhead.com/forever/item=22113"
+      },
+      "id": 22113,
+      "name": "Feralheart Vest",
+      "slot": "Chest",
+      "stats": {
+        "agility": 9.0,
+        "armor": 185.0,
+        "intellect": 17.0,
+        "mp5": 4.0,
+        "spell_power": 12.0,
+        "spirit": 14.0,
+        "stamina": 17.0,
+        "strength": 16.0
+      }
     },
     {
       "effects": [
@@ -49680,7 +53720,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -49694,6 +53733,7 @@
       "stats": {
         "armor": 1027.0,
         "defense": 13.0,
+        "dodge_percent": 1.0,
         "hit_percent": 2.0,
         "stamina": 43.0,
         "strength": 21.0
@@ -49702,7 +53742,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -49716,6 +53755,7 @@
       "stats": {
         "armor": 861.0,
         "defense": 13.0,
+        "dodge_percent": 1.0,
         "stamina": 37.0,
         "strength": 23.0
       }
@@ -49723,7 +53763,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -49737,6 +53776,7 @@
       "stats": {
         "armor": 800.0,
         "defense": 14.0,
+        "dodge_percent": 1.0,
         "stamina": 45.0,
         "strength": 21.0
       }
@@ -49765,7 +53805,6 @@
     {
       "armor_type": "Plate",
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%.",
         "Set bonuses"
       ],
       "evidence": {
@@ -49779,6 +53818,7 @@
       "stats": {
         "armor": 662.0,
         "defense": 9.0,
+        "dodge_percent": 1.0,
         "stamina": 34.0,
         "strength": 15.0
       }
@@ -52886,9 +56926,6 @@
       }
     },
     {
-      "effects": [
-        "Equip: Increases your chance to Dodge an attack by 1.0%."
-      ],
       "evidence": {
         "digest": "381225e4ead9c425dd03aaa66506e4e3ef0dd6709a080394878a158f88f86d52",
         "url": "https://www.wowhead.com/forever/item=23028"
@@ -52899,6 +56936,7 @@
       "name": "Hailstone Band",
       "slot": "Ring",
       "stats": {
+        "dodge_percent": 1.0,
         "frost_resistance": 20.0,
         "stamina": 18.0
       }
@@ -53118,6 +57156,83 @@
         "intellect": 7.0,
         "spell_power": 15.0,
         "stamina": 9.0
+      }
+    },
+    {
+      "armor_type": "Plate",
+      "effects": [
+        "Equip: +30 Attack Power against Undead.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0d1c5891a0c86884a6e0988fe6865a42ee766c5bf9ff1f85e9bfb3ca9c8ccd51",
+        "url": "https://www.wowhead.com/forever/item=23078"
+      },
+      "id": 23078,
+      "name": "Gauntlets of Undead Slaying",
+      "slot": "Hands",
+      "stats": {
+        "armor": 410.0,
+        "attack_power": 30.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "effects": [
+        "Equip: +30 Attack Power against Undead.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "7936432b11f81e265f596119bec144eccc591c303a5e71a5ce1266c08cad111a",
+        "url": "https://www.wowhead.com/forever/item=23081"
+      },
+      "id": 23081,
+      "name": "Handwraps of Undead Slaying",
+      "slot": "Hands",
+      "stats": {
+        "armor": 110.0,
+        "attack_power": 30.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: +30 Attack Power against Undead.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "63c6b2f687c2d52f711242fe71cdcd3f5de24815cd043354442d7a458901627e",
+        "url": "https://www.wowhead.com/forever/item=23082"
+      },
+      "id": 23082,
+      "name": "Handguards of Undead Slaying",
+      "slot": "Hands",
+      "stats": {
+        "armor": 231.0,
+        "attack_power": 30.0,
+        "stamina": 15.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increases damage done to Undead by magical spells and effects by up to 18.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b30449214bd0b67fd121c19949d4e4e84f75f1ee70828472270012103d5eebc1",
+        "url": "https://www.wowhead.com/forever/item=23084"
+      },
+      "id": 23084,
+      "name": "Gloves of Undead Cleansing",
+      "slot": "Hands",
+      "stats": {
+        "armor": 56.0,
+        "intellect": 10.0,
+        "spell_power": 18.0,
+        "stamina": 10.0
       }
     },
     {
@@ -56296,6 +60411,400 @@
       "name": "Desert Sonar",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b8aa02ec30696cd5de85c8eb5f8dcbcc1b9984818808c3bb70623ef405d53ffb",
+        "url": "https://www.wowhead.com/forever/item=226778"
+      },
+      "id": 226778,
+      "name": "Feralheart Spaulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 136.0,
+        "hit_percent": 1.0,
+        "intellect": 12.0,
+        "spell_power": 19.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "744acaaca5253efd7289b2dcad9377132a080b30b97e5fef9e6bad5b3dc6d3ee",
+        "url": "https://www.wowhead.com/forever/item=226785"
+      },
+      "id": 226785,
+      "name": "Feralheart Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 136.0,
+        "healing_power": 22.0,
+        "intellect": 13.0,
+        "spell_damage": 7.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b162414ee50664b3b801a7009c121f0202cdd6fae1abd89b31eb24869726f3df",
+        "url": "https://www.wowhead.com/forever/item=226790"
+      },
+      "id": 226790,
+      "name": "Feralheart Epaulets",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 10.0,
+        "armor": 136.0,
+        "crit_percent": 0.5,
+        "intellect": 11.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "0b37e450c92227f2a87fdfc12bcc7b58f2cd6bc2b2592edce4af0529badd9c79",
+        "url": "https://www.wowhead.com/forever/item=226798"
+      },
+      "id": 226798,
+      "name": "Feralheart Pauldrons",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 8.0,
+        "armor": 186.0,
+        "defense": 5.0,
+        "stamina": 18.0,
+        "strength": 12.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Druid"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f4378ad833ea2d8716dc7ec3500c8dbc58f443d7d42aa5efd62643c47e650e2c",
+        "url": "https://www.wowhead.com/forever/item=226817"
+      },
+      "id": 226817,
+      "name": "Feralheart Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 5.0,
+        "armor": 136.0,
+        "intellect": 16.0,
+        "mp5": 2.0,
+        "spell_power": 6.0,
+        "spirit": 8.0,
+        "stamina": 9.0,
+        "strength": 8.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Equip: Increases your effective stealth level by 2."
+      ],
+      "evidence": {
+        "digest": "0d32a6d82a69cc61663675ee114b19217ae8e1b9e99434d84412b6ff9538a1bc",
+        "url": "https://www.wowhead.com/forever/item=226829"
+      },
+      "id": 226829,
+      "name": "Darkmantle Cap",
+      "slot": "Head",
+      "stats": {
+        "agility": 25.0,
+        "armor": 150.0,
+        "crit_percent": 1.0,
+        "spirit": 10.0,
+        "stamina": 21.0
+      }
+    },
+    {
+      "armor_type": "Leather",
+      "classes": [
+        "Rogue"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "c7c432be739abb576cf322850573437fd8c8be41ee5c10dce57632391cfb5597",
+        "url": "https://www.wowhead.com/forever/item=226847"
+      },
+      "id": 226847,
+      "name": "Darkmantle Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 24.0,
+        "armor": 136.0,
+        "stamina": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Equip: Increases your pet's maximum health by 3%."
+      ],
+      "evidence": {
+        "digest": "45133e9c43526ef60b7e9170964f18e350dd63ec243353642a58ce4c15460a8e",
+        "url": "https://www.wowhead.com/forever/item=226887"
+      },
+      "id": 226887,
+      "name": "Beastmaster's Cap",
+      "slot": "Head",
+      "stats": {
+        "agility": 23.0,
+        "armor": 314.0,
+        "hit_percent": 1.0,
+        "intellect": 14.0,
+        "stamina": 23.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Hunter"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "981acf3fcb45d42876662aba3ef269fb6a63e166e6b4463c40db3703885f8847",
+        "url": "https://www.wowhead.com/forever/item=226899"
+      },
+      "id": 226899,
+      "name": "Beastmaster's Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "agility": 12.0,
+        "armor": 286.0,
+        "intellect": 10.0,
+        "stamina": 18.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Equip: Your spells pierce 2 Magical Resistance.",
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "eb39fd3f05c4e18ba23e6cfe98adf559f9164b66371bd60f434ab83afe158a07",
+        "url": "https://www.wowhead.com/forever/item=226912"
+      },
+      "id": 226912,
+      "name": "Deathmist Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 16.0,
+        "spell_power": 12.0,
+        "stamina": 13.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Warlock"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "b46b1b2bdeb5a23400b192707140c29f48c24492bdc3fcffb6862e3f4bffa8c0",
+        "url": "https://www.wowhead.com/forever/item=226923"
+      },
+      "id": 226923,
+      "name": "Deathmist Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 16.0,
+        "spell_power": 12.0,
+        "stamina": 16.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Mage"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "8b54e6e0040a1cf873705dc4a250b77e7942e135e6da0aa0dfcba574c23cb5b9",
+        "url": "https://www.wowhead.com/forever/item=226939"
+      },
+      "id": 226939,
+      "name": "Sorcerer's Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 17.0,
+        "spell_power": 9.0,
+        "spirit": 7.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "d79dd6d9ceac4a72ede19f107eebda2f050c9077cee0787f4ad6f04763fb29b3",
+        "url": "https://www.wowhead.com/forever/item=226951"
+      },
+      "id": 226951,
+      "name": "Virtuous Mantle",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "healing_power": 22.0,
+        "intellect": 13.0,
+        "spell_damage": 7.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "f76c2eb0e20241d6505be3a8077f2c2764eb3537c667b8c0bf49dbd579db8618",
+        "url": "https://www.wowhead.com/forever/item=226955"
+      },
+      "id": 226955,
+      "name": "Virtuous Epaulets",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "hit_percent": 1.0,
+        "intellect": 12.0,
+        "spell_power": 19.0,
+        "stamina": 11.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "5fa90f9b7ff35e92438e6666f6c9c3d773f1bc596980245ae6d96976d98e3745",
+        "url": "https://www.wowhead.com/forever/item=226963"
+      },
+      "id": 226963,
+      "name": "Virtuous Shoulders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 69.0,
+        "intellect": 13.0,
+        "spell_power": 12.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+      ],
+      "evidence": {
+        "digest": "53b97187e4faf7bdb6b708bb56391a56f15d0a891c8f2e97d18f40bcbb2257f5",
+        "url": "https://www.wowhead.com/forever/item=227019"
+      },
+      "id": 227019,
+      "name": "Spaulders of The Five Thunders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 286.0,
+        "intellect": 11.0,
+        "spell_power": 8.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "classes": [
+        "Shaman"
+      ],
+      "effects": [
+        "Set bonuses"
+      ],
+      "evidence": {
+        "digest": "224f9b044659cf189de3ec0c65e21dd9efef8a913ab3c6ae529a570850fae08f",
+        "url": "https://www.wowhead.com/forever/item=227035"
+      },
+      "id": 227035,
+      "name": "Shoulders of The Five Thunders",
+      "slot": "Shoulder",
+      "stats": {
+        "armor": 286.0,
+        "intellect": 11.0,
+        "spell_power": 12.0,
+        "spirit": 10.0,
+        "stamina": 11.0,
+        "strength": 10.0
+      }
     },
     {
       "armor_type": "Leather",
@@ -60892,6 +65401,48 @@
       }
     },
     {
+      "effects": [
+        "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+      ],
+      "evidence": {
+        "digest": "12edcee15714a4b1596895cc06ef84713994a7c0847d679f46d199061e065561",
+        "url": "https://www.wowhead.com/forever/item=251533"
+      },
+      "id": 251533,
+      "name": "Forsaken Greataxe",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 20.5,
+        "stamina": 4.0,
+        "strength": 8.0,
+        "weapon_max_damage": 74,
+        "weapon_min_damage": 49,
+        "weapon_speed": 3.0
+      },
+      "weapon_subtype": "Axe"
+    },
+    {
+      "effects": [
+        "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+      ],
+      "evidence": {
+        "digest": "efc6514483359f495d8d9fba2303047bc47d071588d22e7929535889dda7725a",
+        "url": "https://www.wowhead.com/forever/item=251534"
+      },
+      "id": 251534,
+      "name": "Gnarled Necromancer's Staff",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 15.18,
+        "spell_power": 26.0,
+        "spirit": 10.0,
+        "weapon_max_damage": 51,
+        "weapon_min_damage": 34,
+        "weapon_speed": 2.8
+      },
+      "weapon_subtype": "Staff"
+    },
+    {
       "armor_type": "Leather",
       "evidence": {
         "digest": "2b3a067aee3b76cf87b4330437ce32bddf33eb99b4903c39c5b453068e70ffec",
@@ -61259,6 +65810,24 @@
       }
     },
     {
+      "armor_type": "Cloth",
+      "effects": [
+        "Use: Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min. (10 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "7c1af60f3a0a4de5d7f0cfd6b82c1214d6b1a4c418406b904a17d6442c0de0c3",
+        "url": "https://www.wowhead.com/forever/item=259846"
+      },
+      "id": 259846,
+      "name": "Wide-Brimmed Fishing Hat",
+      "slot": "Head",
+      "stats": {
+        "armor": 51.0,
+        "spirit": 13.0,
+        "stamina": 13.0
+      }
+    },
+    {
       "effects": [
         "Equip: Chance on hit to deal 69 to 81 Arcane damage. Deals 2 times as much damage to Naga and Satyrs."
       ],
@@ -61271,6 +65840,22 @@
       "name": "Highborne Research Tablet",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Equip: Increases running and swimming speed by 5%."
+      ],
+      "evidence": {
+        "digest": "be7ffc6e15fe429e8939d3380dcb0799259e0698fd49e6bf7e62484b759fcb6b",
+        "url": "https://www.wowhead.com/forever/item=260308"
+      },
+      "id": 260308,
+      "name": "Hyjal Postal Clasp",
+      "slot": "Trinket",
+      "stats": {
+        "frost_resistance": 10.0,
+        "nature_resistance": 10.0
+      }
     },
     {
       "effects": [
@@ -61301,6 +65886,22 @@
       "name": "Emergency Field Cloak",
       "slot": "Trinket",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)",
+        "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown) 3 Charges \"SAF-T in case you need to jump.\""
+      ],
+      "evidence": {
+        "digest": "20036cde37203becc055db81bfb2f68a3a541fb537fd93121d629ad55cae4639",
+        "url": "https://www.wowhead.com/forever/item=260810"
+      },
+      "id": 260810,
+      "name": "SAF-T Disposable Parachute",
+      "slot": "Back",
+      "stats": {
+        "armor": 31.0
+      }
     },
     {
       "armor_type": "Leather",
@@ -61379,6 +65980,27 @@
       "name": "Firestorm Totem",
       "slot": "Totem",
       "stats": {}
+    },
+    {
+      "effects": [
+        "Equip: Increased Skinning +3."
+      ],
+      "evidence": {
+        "digest": "f1e09b326fe7d2de6fa9eacfb216cfa053853717a47541b40f9089827b79eaa7",
+        "url": "https://www.wowhead.com/forever/item=269716"
+      },
+      "id": 269716,
+      "name": "Keen Skinning Knife",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 6.0,
+        "intellect": 2.0,
+        "spell_power": 10.0,
+        "weapon_max_damage": 12,
+        "weapon_min_damage": 6,
+        "weapon_speed": 1.5
+      },
+      "weapon_subtype": "Dagger"
     },
     {
       "effects": [
@@ -62792,6 +67414,21 @@
     },
     {
       "effects": [
+        "Equip: Increases your chance to Block attacks with a shield by 1.0%."
+      ],
+      "evidence": {
+        "digest": "8ac5dccf016532858176905b76dcf14905028396cc2070fd1a9e298230263ddd",
+        "url": "https://www.wowhead.com/forever/item=274078"
+      },
+      "id": 274078,
+      "name": "Boar Signet",
+      "slot": "Ring",
+      "stats": {
+        "stamina": 5.0
+      }
+    },
+    {
+      "effects": [
         "Use: Raise the severed head of Roogug, Horrifying and Silencing all Swine within 15 yds for 5 sec. (5 Min Cooldown)"
       ],
       "evidence": {
@@ -62854,6 +67491,22 @@
       "stats": {
         "healing_power": 18.0,
         "spell_damage": 6.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "d09f8b67ab74ba5ed9eeed1fc52668f608707182b70d438d4cdba520643387b2",
+        "url": "https://www.wowhead.com/forever/item=274386"
+      },
+      "id": 274386,
+      "max_equipped": 1,
+      "name": "Toy Soldier",
+      "slot": "Trinket",
+      "stats": {
+        "hp5": 16.0
       }
     },
     {
@@ -63190,6 +67843,44 @@
     },
     {
       "armor_type": "Cloth",
+      "effects": [
+        "Equip: Increased Mining +4."
+      ],
+      "evidence": {
+        "digest": "7bc1c51663a336a70b7fb7dd6764d42d61ee573a30fd0aaebac0007ccb8ec332",
+        "url": "https://www.wowhead.com/forever/item=275028"
+      },
+      "id": 275028,
+      "name": "Twilight Mine Light",
+      "slot": "Head",
+      "stats": {
+        "armor": 48.0,
+        "spell_power": 13.0,
+        "stamina": 12.0
+      }
+    },
+    {
+      "effects": [
+        "Use: Stuns target Undead for 6 sec. (5 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "04ddac757eb0303c6f44032bd2e0168e0f46c1fdaa78e7ca7d471492e3f26a30",
+        "url": "https://www.wowhead.com/forever/item=275347"
+      },
+      "id": 275347,
+      "max_equipped": 1,
+      "name": "Lichbane",
+      "slot": "Trinket",
+      "stats": {
+        "arcane_resistance": 4.0,
+        "fire_resistance": 4.0,
+        "frost_resistance": 4.0,
+        "nature_resistance": 4.0,
+        "shadow_resistance": 4.0
+      }
+    },
+    {
+      "armor_type": "Cloth",
       "evidence": {
         "digest": "b01a2bab54851dad41789ca89eaa378211d9f0aa5c2ad88c7167f16f443fea45",
         "url": "https://www.wowhead.com/forever/item=275609"
@@ -63221,6 +67912,60 @@
         "nature_resistance": 8.0,
         "spell_power": 22.0,
         "spirit": 8.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: Chance on harmful spell cast to reduce target's attack power by 60 for 30 sec."
+      ],
+      "evidence": {
+        "digest": "98862435a5561ddce8cc4879d6bef90a2ad82d55147f72c280aef835db3ea423",
+        "url": "https://www.wowhead.com/forever/item=275630"
+      },
+      "id": 275630,
+      "name": "Depleted Eye of Influence",
+      "slot": "Off Hand",
+      "stats": {
+        "spell_power": 12.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: Your healing spells have a 5% chance to remove 1 Poison effect from the target. (Proc chance: 5%, 100ms cooldown)"
+      ],
+      "evidence": {
+        "digest": "cd6c7513953cb4b3849e100875e4b650d71751db752bbc549c551a9bd9df70cc",
+        "url": "https://www.wowhead.com/forever/item=275647"
+      },
+      "id": 275647,
+      "name": "Cleansed Ritual Kris",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 23.44,
+        "healing_power": 97.0,
+        "spell_damage": 32.0,
+        "spirit": 4.0,
+        "weapon_max_damage": 49,
+        "weapon_min_damage": 26,
+        "weapon_speed": 1.6
+      },
+      "weapon_subtype": "Dagger"
+    },
+    {
+      "effects": [
+        "Equip: Reduces the hit chance of Charm effects against you by 6%.",
+        "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown)",
+        "Use: Increases your effective stealth detection level by 3 for 10 sec, then reduces your effective stealth detection level by 6 for 20 sec. (3 Min Cooldown) \"Shaken, not stirred\""
+      ],
+      "evidence": {
+        "digest": "33864e2d55846dbb463ca69fbe3bd1a41f349c658c0d6d3ddefb58995e808d71",
+        "url": "https://www.wowhead.com/forever/item=275671"
+      },
+      "id": 275671,
+      "name": "Field Agent Beverage",
+      "slot": "Off Hand",
+      "stats": {
+        "spirit": 4.0
       }
     },
     {
@@ -63399,8 +68144,23 @@
     },
     {
       "effects": [
-        "Equip: Increases your chance to Dodge an attack by 0.5%."
+        "Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown)"
       ],
+      "evidence": {
+        "digest": "22f32a74de7b28c41694038e1e76aa4bca4c9af6d4170e75f54faac27f59da8f",
+        "url": "https://www.wowhead.com/forever/item=276337"
+      },
+      "id": 276337,
+      "max_equipped": 1,
+      "name": "Thaelemaches' Talisman",
+      "slot": "Trinket",
+      "stats": {
+        "attack_power": 18.0,
+        "fire_resistance": 6.0,
+        "shadow_resistance": 6.0
+      }
+    },
+    {
       "evidence": {
         "digest": "69b24c1fc074645c93e096b51efff4c71c7e9ff9d46f55bc01a0ab686a7e6a6a",
         "url": "https://www.wowhead.com/forever/item=276396"
@@ -63412,6 +68172,7 @@
       "slot": "Ring",
       "stats": {
         "defense": 3.0,
+        "dodge_percent": 0.5,
         "stamina": 12.0,
         "strength": 9.0
       }
@@ -63744,6 +68505,167 @@
       "stats": {}
     },
     {
+      "effects": [
+        "Equip: Increases damage done to Elementals by magical spells and effects by up to 5."
+      ],
+      "evidence": {
+        "digest": "9085d9b0a9ba022754aca55961a03d0d6323e7e3bb381d4faae9f85648885f0b",
+        "url": "https://www.wowhead.com/forever/item=279835"
+      },
+      "id": 279835,
+      "name": "Vine Pruner's Cloak",
+      "slot": "Back",
+      "stats": {
+        "armor": 24.0,
+        "spell_power": 5.0,
+        "stamina": 6.0
+      }
+    },
+    {
+      "armor_type": "Mail",
+      "effects": [
+        "Equip: +9 Attack Power against Elementals."
+      ],
+      "evidence": {
+        "digest": "b232ae22e7f6c6c86d108b573cd5f0cd39051020269ed6776cfc4b2c4f6d4138",
+        "url": "https://www.wowhead.com/forever/item=279836"
+      },
+      "id": 279836,
+      "name": "Thorn Protecting Girdle",
+      "slot": "Waist",
+      "stats": {
+        "armor": 122.0,
+        "attack_power": 12.0,
+        "stamina": 8.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. \"A small prize in exchange for tremendous knowledge.\""
+      ],
+      "evidence": {
+        "digest": "866091adc46bab67a2278271e14c365b68f573dc0145baaeb96c8c95d884a9c2",
+        "url": "https://www.wowhead.com/forever/item=279845"
+      },
+      "id": 279845,
+      "name": "Solid Gold Band",
+      "slot": "Ring",
+      "stats": {
+        "healing_power": 11.0,
+        "spell_damage": 4.0,
+        "spirit": 5.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: +6 Attack Power against Undead."
+      ],
+      "evidence": {
+        "digest": "4ae02ccd5d582d96f9e0433caac8fabe1fc614e3378cab279f69a78c00b2434c",
+        "url": "https://www.wowhead.com/forever/item=279864"
+      },
+      "id": 279864,
+      "name": "Monstrous Cleaver",
+      "slot": "Two Hand",
+      "stats": {
+        "attack_power": 4.0,
+        "dps": 15.15,
+        "stamina": 6.0,
+        "weapon_max_damage": 60,
+        "weapon_min_damage": 40,
+        "weapon_speed": 3.3
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Chance on hit: Poisons target for 2 Nature damage every 1 sec for 10 sec."
+      ],
+      "evidence": {
+        "digest": "b82dc75f56dc8534e832e0673f34e44bf7c1a87db21c121f129358de5871792f",
+        "url": "https://www.wowhead.com/forever/item=279876"
+      },
+      "id": 279876,
+      "max_equipped": 1,
+      "name": "Plaguefang",
+      "slot": "One Hand",
+      "stats": {
+        "dps": 12.38,
+        "weapon_max_damage": 34,
+        "weapon_min_damage": 18,
+        "weapon_speed": 2.1
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Equip: Increases damage done to Undead by magical spells and effects by up to 12."
+      ],
+      "evidence": {
+        "digest": "c4cbf6ef81e108dfe03f584078a55db18af1786ae15fcccc8416a8b32522e251",
+        "url": "https://www.wowhead.com/forever/item=279880"
+      },
+      "id": 279880,
+      "name": "Ancient Voodoo Pouch",
+      "slot": "Off Hand",
+      "stats": {
+        "intellect": 9.0,
+        "spell_damage": 5.0
+      }
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts a target for 42 Fire damage."
+      ],
+      "evidence": {
+        "digest": "a1eab8e2d62c5cd1ab2e9471ac681d65fff928af873660938b14d268d2a8e3e5",
+        "url": "https://www.wowhead.com/forever/item=279895"
+      },
+      "id": 279895,
+      "name": "Ironforge Greathammer",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 15.97,
+        "weapon_max_damage": 60,
+        "weapon_min_damage": 39,
+        "weapon_speed": 3.1
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
+      "effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 3. \"Details the history of dwarves long since forgotten.\""
+      ],
+      "evidence": {
+        "digest": "55f33c7252534f8bcdcf3e78eee50637535a77b2845682725cb19b582202b13b",
+        "url": "https://www.wowhead.com/forever/item=279898"
+      },
+      "id": 279898,
+      "name": "Dwarven Tome",
+      "slot": "Off Hand",
+      "stats": {
+        "spell_power": 3.0,
+        "spirit": 1.0
+      }
+    },
+    {
+      "effects": [
+        "Equip: +4 Attack Power against Humanoids."
+      ],
+      "evidence": {
+        "digest": "cc117df8cb45c6a37cf9de6b16bffb9dfb95b3d99aae1bc009b00ce93b16e092",
+        "url": "https://www.wowhead.com/forever/item=279899"
+      },
+      "id": 279899,
+      "name": "Catacomb Cloak",
+      "slot": "Back",
+      "stats": {
+        "armor": 15.0,
+        "attack_power": 3.0,
+        "stamina": 2.0
+      }
+    },
+    {
       "evidence": {
         "digest": "a2a84e41a367fc9e28d609b52c9ec6ac0e804adbf8e7d9be33d0dd0ba9d43daf",
         "url": "https://www.wowhead.com/forever/item=280015"
@@ -64016,6 +68938,70 @@
         "weapon_speed": 2.8
       },
       "weapon_subtype": "Gun"
+    },
+    {
+      "effects": [
+        "Equip: Increases the damage dealt by your Stormstrike ability by 10%."
+      ],
+      "evidence": {
+        "digest": "03eb01eaafe40a21559be18a4207471a78af6c042b88d124cb0e5a220cbd11f7",
+        "url": "https://www.wowhead.com/forever/item=280604"
+      },
+      "id": 280604,
+      "name": "Rage of the Storm",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 35.56,
+        "stamina": 15.0,
+        "strength": 16.0,
+        "weapon_max_damage": 154,
+        "weapon_min_damage": 102,
+        "weapon_speed": 3.6
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
+      "effects": [
+        "Equip: Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by 2%."
+      ],
+      "evidence": {
+        "digest": "03b0d273510760c0b6605a19df9c587c66c69af624be43484b1ee8c07fc074e2",
+        "url": "https://www.wowhead.com/forever/item=280605"
+      },
+      "id": 280605,
+      "name": "Tidebringer's Claw",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 18.13,
+        "healing_power": 86.0,
+        "spell_damage": 28.0,
+        "stamina": 5.0,
+        "weapon_max_damage": 57,
+        "weapon_min_damage": 30,
+        "weapon_speed": 2.4
+      },
+      "weapon_subtype": "Fist Weapon"
+    },
+    {
+      "effects": [
+        "Equip: Increases the critical strike chance of your Lightning Bolt spell by 1%."
+      ],
+      "evidence": {
+        "digest": "17db788e6bf3fb94e2fad219c013af3b34ce2a1b9158845304037d8087e61681",
+        "url": "https://www.wowhead.com/forever/item=280607"
+      },
+      "id": 280607,
+      "name": "Lightning's Grasp",
+      "slot": "Main Hand",
+      "stats": {
+        "dps": 18.18,
+        "intellect": 6.0,
+        "spell_power": 46.0,
+        "weapon_max_damage": 52,
+        "weapon_min_damage": 28,
+        "weapon_speed": 2.2
+      },
+      "weapon_subtype": "Fist Weapon"
     },
     {
       "effects": [
@@ -65399,6 +70385,151 @@
         "weapon_max_damage": 213,
         "weapon_min_damage": 142,
         "weapon_speed": 3.4
+      },
+      "weapon_subtype": "Staff"
+    },
+    {
+      "effects": [
+        "Equip: +3 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "adb3af201aad4eaaa92473f274456ff8413c59f336784d9cd203c76d569aed45",
+        "url": "https://www.wowhead.com/forever/item=287060"
+      },
+      "id": 287060,
+      "name": "Rezlak's Spare Knife",
+      "slot": "Ranged",
+      "stats": {
+        "ranged_dps": 5.28,
+        "weapon_max_damage": 13,
+        "weapon_min_damage": 6,
+        "weapon_speed": 1.8
+      },
+      "weapon_subtype": "Thrown"
+    },
+    {
+      "effects": [
+        "Equip: +4 Attack Power against Beasts."
+      ],
+      "evidence": {
+        "digest": "053e09adc93c8a8fadd8b206494b6c29ae39896e178051b7326edfdcaa63fc88",
+        "url": "https://www.wowhead.com/forever/item=287064"
+      },
+      "id": 287064,
+      "name": "Beastculler's Knife",
+      "slot": "Ranged",
+      "stats": {
+        "agility": 1.0,
+        "ranged_dps": 10.31,
+        "weapon_max_damage": 17,
+        "weapon_min_damage": 16,
+        "weapon_speed": 1.6
+      },
+      "weapon_subtype": "Thrown"
+    },
+    {
+      "effects": [
+        "Chance on hit: Blasts your enemy with lightning, dealing 300 Nature damage and then jumping to additional nearby enemies. Each jump reduces that victim's Nature resistance by 25. Affects 5 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by 20% for 12 sec."
+      ],
+      "evidence": {
+        "digest": "43f1ab742e6ac2af96d748db659b3352901f974262fe3c889ce241fac2e896ad",
+        "url": "https://www.wowhead.com/forever/item=289294"
+      },
+      "id": 289294,
+      "max_equipped": 1,
+      "name": "Thunderfury, Blessed Blade of the Windseeker",
+      "slot": "One Hand",
+      "stats": {
+        "agility": 3.0,
+        "dps": 33.95,
+        "fire_resistance": 5.0,
+        "nature_resistance": 5.0,
+        "stamina": 5.0,
+        "weapon_max_damage": 84,
+        "weapon_min_damage": 45,
+        "weapon_speed": 1.9
+      },
+      "weapon_subtype": "Sword"
+    },
+    {
+      "effects": [
+        "Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec.",
+        "Equip: Deals 7 Fire damage to anyone who strikes you with a melee attack."
+      ],
+      "evidence": {
+        "digest": "798865805b86ef7b6bba91e4c328137d9d56f1a430717c0f4210dade854e8522",
+        "url": "https://www.wowhead.com/forever/item=289295"
+      },
+      "id": 289295,
+      "max_equipped": 1,
+      "name": "Sulfuras, Hand of Ragnaros",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 44.19,
+        "fire_resistance": 19.0,
+        "stamina": 8.0,
+        "strength": 8.0,
+        "weapon_max_damage": 205,
+        "weapon_min_damage": 122,
+        "weapon_speed": 3.7
+      },
+      "weapon_subtype": "Mace"
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Use: Calls forth Anathema. (1 Min Cooldown)",
+        "Equip: Increases the critical effect chance of your Holy spells by 2%."
+      ],
+      "evidence": {
+        "digest": "d17802b8b4cd99400cbcda930abe4477479dc7a5e037b3a6a2eb72fef9ccec24",
+        "url": "https://www.wowhead.com/forever/item=289296"
+      },
+      "id": 289296,
+      "max_equipped": 1,
+      "name": "Benediction",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 30.0,
+        "healing_power": 112.0,
+        "intellect": 18.0,
+        "shadow_resistance": 12.0,
+        "spell_damage": 37.0,
+        "spirit": 7.0,
+        "stamina": 6.0,
+        "weapon_max_damage": 108,
+        "weapon_min_damage": 72,
+        "weapon_speed": 3.0
+      },
+      "weapon_subtype": "Staff"
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "effects": [
+        "Use: Calls forth Benediction. (1 Min Cooldown)"
+      ],
+      "evidence": {
+        "digest": "c37102c0d7d04258249bf385ced03b2cac721f07a3bd4e4d09b84bc875933d8c",
+        "url": "https://www.wowhead.com/forever/item=289297"
+      },
+      "id": 289297,
+      "max_equipped": 1,
+      "name": "Anathema",
+      "slot": "Two Hand",
+      "stats": {
+        "dps": 40.5,
+        "intellect": 18.0,
+        "mp5": 4.0,
+        "shadow_damage": 40.0,
+        "shadow_resistance": 12.0,
+        "stamina": 13.0,
+        "weapon_max_damage": 146,
+        "weapon_min_damage": 97,
+        "weapon_speed": 3.0
       },
       "weapon_subtype": "Staff"
     }

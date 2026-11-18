@@ -4,6 +4,7 @@ import unittest
 
 from tests.test_addon_runtime_lua import find_lua51
 from tools.forever_comparison import comparison_document, comparison_facts, compile_comparison_data
+from tools.forever_item_effects import effect_rule
 from tools.forever_scoring import compile_model, pack_item, read_model, refresh_review_scope, review_issues, scoring_audit, swap_score
 from tools.generate_lua import lua_value
 from tools.project import ADDON_DIR, dataset_json
@@ -163,11 +164,12 @@ local owned = {equippedSlots = {Finger0 = worn, Finger1 = unique}, gearStatLinks
 local context = service:GetContext("Paladin", "Protection", "LEVELING", 47, owned)
 local pool = service:GetPlacement(context, "Finger0", {"Ring"})
 assert(service:GetPlacement(context, "Finger0", {"Ring"}) == pool)
-assert(pool.reference.rank == 1 and pool.reference.total == 4)
-assert(pool.rows[1].rank == 1 and pool.rows[2].rank == 1 and pool.rows[3].rank == 1 and pool.rows[4].rank == 4)
+assert(pool.reference.rank == 1 and pool.reference.total == 3)
+assert(pool.rows[1].rank == 1 and pool.rows[2].rank == 1 and pool.rows[3].rank == 3)
 local rolled
-for _, entry in ipairs(pool.rows) do if entry.item.id == 109 then rolled = entry end end
+for _, entry in ipairs(service:GetComparisonCandidates(pool)) do if entry.item.id == 109 then rolled = entry end end
 assert(rolled.score == 8 and rolled.item.effects[1] == "Use: Restores a resource.")
+assert(rolled.projected and rolled.rank == 1 and rolled.total == 4 and pool.reference.total == 3)
 assert(service:GetPlacement(context, "Finger1", {"Ring"}).rows[1].item.id == 103)
 local slots = { {key = "Finger0", slots = {"Ring"}}, {key = "Finger1", slots = {"Ring"}} }
 local outfit = service:GetGearScore(context, slots)
@@ -271,7 +273,7 @@ assert(rating:Label(head.rows[1]) == "Top tier · #1 / 13")
 assert(rating:Label(head.rows[1], "compact") == "Top tier #1/13")
 assert(rating:Label(head.rows[1], "stacked") == "Top tier\n#1 / 13")
 local summary = rating:DescriptionLines(head.rows[7])
-assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47")
+assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47 · Outdoor")
 assert(summary[3] == "70% of the best known stat score")
 local only = rating:GetPlacement(context, "Neck", {"Neck"}).rows[1]
 assert(not only.tier and not only.score_percent and rating:Label(only) == "5.0 pts")
@@ -377,6 +379,84 @@ for _, case in ipairs(fixtures) do
     assert(math.abs(value - case[6]) < 1e-8, value)
 end
 ''')
+
+    def test_exact_item_effects_use_attacks_and_weight_capped_active_states(self):
+        attack = effect_rule("Chance on hit: Grants an extra attack on your next swing.")
+        hit = effect_rule("Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)")
+        equipment = {
+            16: {"id": 17705, "slot": "One Hand", "stats": {"dps": 35.19, "weapon_min_damage": 66, "weapon_max_damage": 124},
+                 "effect_rules": [attack]},
+            13: {"id": 13968, "stats": {"spell_hit_percent": 9}, "effect_rules": [hit]},
+            14: {"id": 80000, "stats": {}, "effect_rules": [hit]},
+        }
+        attack_key, hit_key = attack["key"], hit["key"]
+        weights = {"dps": 3, "spell_hit_percent": 10}
+        scenario = {"caps": {"spell_hit_percent": 10}, "effect_expectations": {
+            "17705": {attack_key: {"per_minute": 2, "damage_factor": 0.5}},
+            "13968": {hit_key: {"uptime": 0.20}},
+            "80000": {hit_key: {"uptime": 0.20}},
+        }}
+        eye, other = f"13:13968:{hit_key}", f"14:80000:{hit_key}"
+        signature = f"{eye}|{other}"
+        joint = {**scenario, "effect_state_observations": {
+            signature: [{"active": [eye, other], "fraction": 0.1},
+                        {"active": [eye], "fraction": 0.1}, {"active": [other], "fraction": 0.1}],
+        }}
+        no_pair = {slot: item for slot, item in equipment.items() if slot != 14}
+        changed_identity = {**no_pair, 16: {**equipment[16], "variant_id": "17705:123"}}
+        cases = [(equipment, {}, 195.57), (equipment, scenario, 200.32), (no_pair, scenario, 202.32),
+                 (equipment, joint, 203.32), (changed_identity, scenario, 197.57)]
+        for loadout, assumptions, expected in cases:
+            self.assertAlmostEqual(swap_score(loadout, weights, [], {}, assumptions)[0], expected)
+        self.lua_run('''
+BigBiSList = {}
+dofile("ForeverScoring.lua")
+local score = BigBiSList.ForeverScoring.ScoreLoadout
+''' + f"local cases = {lua_value([[loadout, settings, expected] for loadout, settings, expected in cases])}\n"
+            + f"local weights = {lua_value(weights)}\n" + '''
+for _, case in ipairs(cases) do
+    local gear = {}
+    for position, item in pairs(case[1]) do gear[tonumber(position)] = item end
+    local total = score(gear, weights, {}, {}, case[2])
+    assert(math.abs(total - case[3]) < 1e-8, tostring(total))
+end
+''')
+
+    def test_reviewed_swords_and_effect_trinkets_in_runtime_guide(self):
+        self.lua_run(r'''
+local H = dofile("tests/lua_ui_harness.lua")
+H.load("forever")
+local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+local function pool(class, spec, level, faction, race, slot)
+    local phase = level < 60 and "LEVELING" or "PR"
+    return rating:GetGuidePlacement(rating:GetGuideContext(class, spec, phase, level, race, faction), slot).byVariant
+end
+assert(not pool("Paladin", "Protection", 44, "Alliance", "Human", "Main Hand")["17705"])
+local weapons = pool("Paladin", "Protection", 49, "Alliance", "Human", "Main Hand")
+assert(weapons["6829"] and weapons["17705"] and weapons["17705"].conditional)
+assert(weapons["17705"].item.effect_rules[1].kind == "extra_attack")
+assert(not pool("Warrior", "Protection", 49, "Horde", "Orc", "Main Hand")["6829"])
+local tank = pool("Paladin", "Protection", 60, "Alliance", "Human", "Trinket")
+assert(tank["13966"].item.stats.dodge_percent == 1 and tank["13966"].score > 0)
+local caster = pool("Mage", "Fire", 60, "Alliance", "Human", "Trinket")
+assert(caster["13968"].item.stats.spell_crit_percent == 1 and caster["13968"].score > 0)
+assert(#H.errors == 0, table.concat(H.errors, "\n"))
+''')
+
+    def test_dungeon_preset_has_separate_level_range_and_approval(self):
+        model = copy.deepcopy(self.model)
+        key = "Paladin/Protection"
+        model["profiles"][key]["dungeon"] = {"leveling": {
+            "version": "fixture", "basis": "Test fixture for a reviewed level range",
+            "min_level": 45, "max_level": 50, "weights": {"stamina": 1.8},
+            "evidence": [self.snapshot["url"]],
+        }}
+        compiled, bindings = compile_model(model, self.snapshot)
+        preset = compiled["profiles"][key]["dungeon"]["leveling"]
+        self.assertEqual((preset["min_level"], preset["max_level"]), (45, 50))
+        self.assertEqual(bindings[f"{key}/leveling"], self.bindings[f"{key}/leveling"])
+        self.assertEqual(len(review_issues(model, self.snapshot, bindings)), 1)
+        self.assertIn(f"{key}/dungeon/leveling", review_issues(model, self.snapshot, bindings)[0])
 
     def test_ranged_damage_is_separate_from_scalable_melee_damage(self):
         bow = pack_item({"id": 1, "name": "Bow", "slot": "Ranged", "weapon_subtype": "Bow", "dps": 30})

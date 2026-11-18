@@ -245,7 +245,7 @@ local EXTRA_COPY_GETTERS = {
 }
 local OWNED_LABELS = { equipped = "Equipped", bag = "In bags", bank = "In bank (last visit)" }
 
-local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
+local function tooltipStatBlock(addon, candidate, player, info, offer)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
     if not candidate.facts then
@@ -267,13 +267,28 @@ local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
             inventoryPending = context.pending
             local isActive = spec.role == "active"
             local worn = (isActive or (offer and offer.owned)) and (not offer or offer.compareWorn)
-            local marked = mark and mark.spec and mark.spec.name == spec.name
-            local result = marked and mark.result
-                or rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
-                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], scope)
-            block.rows[#block.rows + 1] = { spec = spec.name,
-                result = result, ownedBaseline = not worn }
-            block.ownership = block.ownership or result.ownership
+            local comparisons = {}
+            for _, assessment in ipairs(offer and offer.assessments or {}) do
+                if assessment.spec.name == spec.name then comparisons[#comparisons + 1] = assessment end
+            end
+            if #comparisons == 0 and (not offer or offer.kind ~= "quest" or not offer.assessments or #offer.assessments == 0) then
+                local function addComparison(gearing)
+                    local result = rating:CompareTooltipItem(gearing, candidate, worn, worn and wornSlot or nil,
+                        (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], scope)
+                    comparisons[#comparisons + 1] = { scenario = gearing.scenario, result = result, ownedBaseline = not worn }
+                end
+                addComparison(context)
+                for _, scenario in ipairs(rating:GetScenarios(player.class, spec.name, player.phase, player.level)) do
+                    if scenario ~= context.scenario then
+                        local gearing = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot, scenario)
+                        if gearing then addComparison(gearing) end
+                    end
+                end
+            end
+            if comparisons[1] then
+                block.rows[#block.rows + 1] = { spec = spec.name, result = comparisons[1].result, comparisons = comparisons }
+                block.ownership = block.ownership or comparisons[1].result.ownership
+            end
         end
     end
     for id in pairs(inventoryPending or {}) do block.pending[id] = true end
@@ -306,7 +321,7 @@ local function deltaText(delta)
     return colorText(string.format("-%.1f pts", points), 1, 0.51, 0.51)
 end
 
-local function swapText(result, ownedBaseline)
+local function swapText(result, ownedBaseline, guaranteed)
     local bank = result.bank and " (includes bank gear)" or ""
     if result.status == "equipped" then return "Equipped · " .. result.definition.label end
     if result.status == "loading" then return "Loading stats" end
@@ -317,13 +332,14 @@ local function swapText(result, ownedBaseline)
         return estimate .. " to fill an empty slot" .. bank
     end
     local baseline = estimate .. " vs the best gear you own" .. bank
+    if guaranteed then baseline = baseline .. " with guaranteed rewards" end
     local names = {}
     for _, item in ipairs(result.replacements) do
         names[#names + 1] = item.name .. " (" .. item.slot .. (item.state == "bank" and ", bank" or "") .. ")"
     end
     local replacements = table.concat(names, " + ")
-    if ownedBaseline then return baseline .. ", replacing " .. replacements end
-    return estimate .. " vs " .. replacements
+    if ownedBaseline then return #names > 0 and (baseline .. ", replacing " .. replacements) or baseline end
+    return #names > 0 and (estimate .. " vs " .. replacements) or estimate
 end
 
 local function renderSpecBlocks(tooltip, statBlock, matches, selection)
@@ -353,15 +369,35 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         if tier then r, g, b = BigBiSList.Widgets:GetRankColor(tier.quality) end
         if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
         tooltip:AddLine(spec, r, g, b, true)
-        if result then
-            tooltip:AddLine(tooltipRank(result, row.tierRange), r, g, b, true)
-            local extra = swapText(result, row.ownedBaseline)
+        local comparisons = row.comparisons or (result and { row }) or {}
+        for index, comparison in ipairs(comparisons) do
+            local result = comparison.result
+            local label = BigBiSList.ForeverGearRating:ScenarioLabel(comparison.scenario)
+            local range = index == 1 and row.tierRange or nil
+            local rank = tooltipRank(result, range)
+            tooltip:AddLine(#comparisons > 1 and label and (label .. " · " .. rank) or rank, r, g, b, true)
+            local extra = swapText(result, comparison.ownedBaseline, comparison.guaranteed)
             if extra then
                 if result.delta ~= nil then
                     extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result) .. " · " .. extra
                     if result.conditional then extra = extra .. " · Conditional" end
                 end
                 tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)
+            end
+            if result.conditional and not extra then
+                tooltip:AddLine("Conditional · effect or comparison data is incomplete", 0.86, 0.88, 0.91, true)
+            end
+            if comparison.bestChoice then
+                tooltip:AddLine("Best choice for " .. row.spec .. (label and (" in " .. label) or ""), 0.86, 0.88, 0.91, true)
+            elseif comparison.tiedChoice then
+                tooltip:AddLine("Tied for best choice" .. (label and (" in " .. label) or ""), 0.86, 0.88, 0.91, true)
+            end
+            if comparison.futureBiS then tooltip:AddLine("Pre-Raid Guide BiS", 0.86, 0.88, 0.91, true) end
+            if result.effectNote then tooltip:AddLine(result.effectNote, 0.76, 0.8, 0.86, true) end
+            if result.effectBreakEven then
+                local estimate = string.format("%.1f full extra swings per minute to close the gap at tooltip weapon damage",
+                    result.effectBreakEven)
+                tooltip:AddLine(estimate, 0.76, 0.8, 0.86, true)
             end
             placementColor = placementColor or result.placement.placement_color
         end
@@ -482,7 +518,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not addonTooltip(tooltip) then
         local candidate = self.ForeverGearRating:GetTooltipItem(itemId, itemLink)
         live = candidate and self:GetTooltipPlayerContext()
-        if live then statBlock = tooltipStatBlock(self, candidate, live, info, mark, offer) end
+        if live then statBlock = tooltipStatBlock(self, candidate, live, info, offer) end
     end
     local comparisonContext = comparisonTooltipContext(tooltip)
     local selection = comparisonContext or live or self:GetCharacterDB().selection or {}
@@ -526,8 +562,6 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if mark and mark.sellValue then
         local money = readable(call(GetMoneyString, mark.sellValue))
         tooltip:AddLine(money and ("Highest sell value · " .. money) or "Highest sell value", 0.86, 0.88, 0.91, true)
-    elseif mark and mark.bestChoice then
-        tooltip:AddLine("Best choice for " .. mark.spec.name, 0.86, 0.88, 0.91, true)
     end
     if statBlock then
         if not live.spec and #statBlock.rows > 1 then tooltip:AddLine("Spec previews", 0.72, 0.77, 0.84) end

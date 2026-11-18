@@ -161,9 +161,10 @@ local candidate
 for _, item in ipairs(comparison.rows) do
     if item.item_id == 16729 then candidate = item; break end
 end
-assert(candidate and candidate.stat_rank.rank == 2 and candidate.stat_rank.score_percent == 94)
+assert(candidate and candidate.stat_rank.projected and candidate.stat_rank.rank == 1 and candidate.stat_rank.score_percent == 100)
 ui:ShowComparisonDetails(candidate)
-expectRank("Near best")
+expectRank("Top tier")
+expectRank("Projected placement among known gear")
 assert(not statRankText():find("Tier range", 1, true))
 assert(ui:BackToSlotComparison()); H.settle()
 assert(not ui.details:IsVisible())
@@ -1082,6 +1083,28 @@ ui:SetLevelingLevel(59); H.settle()
 assert(queried[59] and not queried[60] and entries("action")[1].detail == "1 item · 1 unowned with known sources")
 ui:SetFilter("search", "no matching item"); H.settle()
 assert(ui.emptyLabel:IsVisible() and not ui.levelingActivityBar:IsShown())
+''')
+
+    def test_reviewed_quest_chain_reaches_reward_and_remembers_completion(self):
+        self.run_lua(r'''
+local source = { type = "quest", quest_id = 1053, entity_name = "In the Name of the Light",
+    quest_steps = {
+        { quest_id = 261, name = "Down the Scarlet Path", kind = "prerequisite" },
+        { quest_id = 1052, name = "Down the Scarlet Path", kind = "prerequisite" },
+    },
+}
+local completed = {[261] = true, [1052] = true}
+C_QuestLog = {
+    IsQuestFlaggedCompleted = function(id) return completed[id] == true end,
+    IsOnQuest = function(id) return id == 1053 and not completed[id] end,
+    IsComplete = function(id) return id == 1053 end,
+}
+local nextQuest, progress = ui:GetAcquisitionQuestProgress(source)
+assert(#progress == 3 and nextQuest.step.quest_id == 1053 and nextQuest.turnIn)
+completed[1053] = true
+assert(not ui:GetAcquisitionQuestProgress(source))
+BigBiSList.AccessOptionMatchesCharacter = function() return true end
+assert(ui:EvaluateAccessOption({source = source}, {}).status == "quest_completed")
 ''')
 
     def test_leveling_run_keeps_quest_progress_slot_and_scroll_through_details(self):

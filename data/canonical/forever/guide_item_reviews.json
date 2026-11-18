@@ -41,6 +41,585 @@
           "confidence": "reviewed"
         }
       ]
+    },
+    {
+      "id": 6829,
+      "name": "Sword of Serenity",
+      "slot": "One Hand",
+      "required_level": 0,
+      "item_level": 44,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=6829",
+      "review": {
+        "tooltip_url": "https://bindonforever.com/item/6829",
+        "route_url": "https://www.wowhead.com/forever/quest=1053",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17",
+        "prerequisite_source": "https://bindonforever.com/quest/1053"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 1053,
+          "entity_id": 1053,
+          "entity_name": "In the Name of the Light",
+          "zone": "Scarlet Monastery",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Alliance",
+          "eligibility": {
+            "min_level": 34,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=1053",
+          "reason": "Complete Down the Scarlet Path, then defeat Loksey, Herod, Mograine, and Whitemane. Turn in to Raleigh the Devout in Southshore.",
+          "location_note": "Complete Down the Scarlet Path, then defeat Loksey, Herod, Mograine, and Whitemane. Turn in to Raleigh the Devout in Southshore.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 261,
+              "name": "Down the Scarlet Path",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=261",
+              "reason": "Complete Brother Anton\u2019s Desolace objectives.",
+              "note": "Complete Brother Anton\u2019s Desolace objectives.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            },
+            {
+              "quest_id": 1052,
+              "name": "Down the Scarlet Path",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=1052",
+              "reason": "Speak with Raleigh the Devout in Southshore.",
+              "note": "Speak with Raleigh the Devout in Southshore.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        }
+      ],
+      "weapon_subtype": "Sword",
+      "weapon_type": "One Hand",
+      "dps": 30.0,
+      "weapon_speed": 2.2,
+      "weapon_min_damage": 46,
+      "weapon_max_damage": 86,
+      "stats": {
+        "stamina": 9,
+        "spirit": 4
+      }
+    },
+    {
+      "id": 17705,
+      "name": "Thrash Blade",
+      "slot": "One Hand",
+      "required_level": 0,
+      "item_level": 53,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=17705",
+      "review": {
+        "tooltip_url": "https://www.wowhead.com/forever/item=17705",
+        "route_url": "https://www.wowhead.com/forever/quest=7065",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 7065,
+          "entity_id": 7065,
+          "entity_name": "Corruption of Earth and Seed",
+          "zone": "Maraudon",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Alliance",
+          "eligibility": {
+            "min_level": 45,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=7065",
+          "reason": "Defeat Princess Theradras and return to Keeper Marandis at Nijel\u2019s Point.",
+          "location_note": "Defeat Princess Theradras and return to Keeper Marandis at Nijel\u2019s Point.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17"
+        },
+        {
+          "type": "quest",
+          "quest_id": 7064,
+          "entity_id": 7064,
+          "entity_name": "Corruption of Earth and Seed",
+          "zone": "Maraudon",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Horde",
+          "eligibility": {
+            "min_level": 45,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=7064",
+          "reason": "Defeat Princess Theradras and return to Selendra near Shadowprey Village.",
+          "location_note": "Defeat Princess Theradras and return to Selendra near Shadowprey Village.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17"
+        }
+      ],
+      "effect_stats": [
+        {
+          "raw_text": "Chance on hit: Grants an extra attack on your next swing.",
+          "type": "proc"
+        }
+      ],
+      "equip_effects": [
+        "Chance on hit: Grants an extra attack on your next swing."
+      ],
+      "weapon_subtype": "Sword",
+      "weapon_type": "One Hand",
+      "dps": 35.19,
+      "weapon_speed": 2.7,
+      "weapon_min_damage": 66,
+      "weapon_max_damage": 124,
+      "max_equipped": 1
+    },
+    {
+      "id": 13965,
+      "name": "Blackhand's Breadth",
+      "slot": "Trinket",
+      "required_level": 0,
+      "item_level": 63,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=13965",
+      "review": {
+        "tooltip_url": "https://www.wowhead.com/forever/item=13965",
+        "route_url": "https://www.wowhead.com/forever/quest=5102",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 5102,
+          "entity_id": 5102,
+          "entity_name": "General Drakkisath's Demise",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Alliance",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=5102",
+          "reason": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "location_note": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 5089,
+              "name": "General Drakkisath's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=5089",
+              "reason": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "note": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "type": "quest",
+          "quest_id": 4974,
+          "entity_id": 4974,
+          "entity_name": "For The Horde!",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Horde",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=4974",
+          "reason": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "location_note": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 4903,
+              "name": "Warlord's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4903",
+              "reason": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "note": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            },
+            {
+              "quest_id": 4941,
+              "name": "Eitrigg's Wisdom",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4941",
+              "reason": "Complete the follow-up in Orgrimmar.",
+              "note": "Complete the follow-up in Orgrimmar.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        }
+      ],
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%.",
+          "type": "proc"
+        },
+        {
+          "raw_text": "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)",
+          "type": "target_specific"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%."
+      ],
+      "use_effects": [
+        "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)"
+      ],
+      "max_equipped": 1
+    },
+    {
+      "id": 13966,
+      "name": "Mark of Tyranny",
+      "slot": "Trinket",
+      "required_level": 0,
+      "item_level": 63,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=13966",
+      "review": {
+        "tooltip_url": "https://www.wowhead.com/forever/item=13966",
+        "route_url": "https://www.wowhead.com/forever/quest=5102",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 5102,
+          "entity_id": 5102,
+          "entity_name": "General Drakkisath's Demise",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Alliance",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=5102",
+          "reason": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "location_note": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 5089,
+              "name": "General Drakkisath's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=5089",
+              "reason": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "note": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "type": "quest",
+          "quest_id": 4974,
+          "entity_id": 4974,
+          "entity_name": "For The Horde!",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Horde",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=4974",
+          "reason": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "location_note": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 4903,
+              "name": "Warlord's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4903",
+              "reason": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "note": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            },
+            {
+              "quest_id": 4941,
+              "name": "Eitrigg's Wisdom",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4941",
+              "reason": "Complete the follow-up in Orgrimmar.",
+              "note": "Complete the follow-up in Orgrimmar.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        }
+      ],
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases your chance to Dodge an attack by 1.0%.",
+          "type": "proc"
+        },
+        {
+          "raw_text": "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)",
+          "type": "use"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases your chance to Dodge an attack by 1.0%."
+      ],
+      "use_effects": [
+        "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
+      ],
+      "max_equipped": 1
+    },
+    {
+      "id": 13968,
+      "name": "Eye of the Beast",
+      "slot": "Trinket",
+      "required_level": 0,
+      "item_level": 63,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=13968",
+      "review": {
+        "tooltip_url": "https://www.wowhead.com/forever/item=13968",
+        "route_url": "https://www.wowhead.com/forever/quest=5102",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 5102,
+          "entity_id": 5102,
+          "entity_name": "General Drakkisath's Demise",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Alliance",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=5102",
+          "reason": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "location_note": "Finish the command quest and defeat General Drakkisath. Turn in to Marshal Maxwell.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 5089,
+              "name": "General Drakkisath's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=5089",
+              "reason": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "note": "Obtain the command from Overlord Wyrmthalak and deliver it to Marshal Maxwell.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "type": "quest",
+          "quest_id": 4974,
+          "entity_id": 4974,
+          "entity_name": "For The Horde!",
+          "zone": "Blackrock Spire",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Horde",
+          "eligibility": {
+            "min_level": 55,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=4974",
+          "reason": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "location_note": "Finish the prerequisite chain and defeat Warchief Rend Blackhand. Turn in to Thrall.",
+          "reward_type": "choice",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17",
+          "quest_steps": [
+            {
+              "quest_id": 4903,
+              "name": "Warlord's Command",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4903",
+              "reason": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "note": "Complete the Lower Blackrock Spire objectives for Warlord Goretooth.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            },
+            {
+              "quest_id": 4941,
+              "name": "Eitrigg's Wisdom",
+              "kind": "prerequisite",
+              "source_url": "https://www.wowhead.com/forever/quest=4941",
+              "reason": "Complete the follow-up in Orgrimmar.",
+              "note": "Complete the follow-up in Orgrimmar.",
+              "client_build": "1.60.1.70959",
+              "reviewer": "Codex (offline source review)",
+              "reviewed_at": "2026-11-17"
+            }
+          ]
+        }
+      ],
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%.",
+          "type": "proc"
+        },
+        {
+          "raw_text": "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)",
+          "type": "use"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to get a Critical Strike with Spells by 1.0%."
+      ],
+      "use_effects": [
+        "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)"
+      ],
+      "max_equipped": 1
+    },
+    {
+      "id": 17774,
+      "name": "Mark of the Chosen",
+      "slot": "Trinket",
+      "required_level": 0,
+      "item_level": 48,
+      "quality": "uncommon",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "wowhead_url": "https://www.wowhead.com/forever/item=17774",
+      "review": {
+        "tooltip_url": "https://www.wowhead.com/forever/item=17774",
+        "route_url": "https://www.wowhead.com/forever/quest=7067",
+        "client_data_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959",
+        "client_build": "1.60.1.70959",
+        "reviewer": "Codex (offline source review)",
+        "reviewed_at": "2026-11-17"
+      },
+      "sources": [
+        {
+          "type": "quest",
+          "quest_id": 7067,
+          "entity_id": 7067,
+          "entity_name": "The Pariah's Instructions",
+          "zone": "Maraudon",
+          "content_type": "dungeon",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "side": "Both",
+          "eligibility": {
+            "min_level": 39,
+            "basis": "Verified quest acceptance and group route."
+          },
+          "confidence": "reviewed",
+          "source_url": "https://www.wowhead.com/forever/quest=7067",
+          "reason": "Recover the five Khan gems and the amulet, then return to the Centaur Pariah in Desolace.",
+          "location_note": "Recover the five Khan gems and the amulet, then return to the Centaur Pariah in Desolace.",
+          "reward_type": "guaranteed",
+          "client_build": "1.60.1.70959",
+          "reviewer": "Codex (offline source review)",
+          "reviewed_at": "2026-11-17"
+        }
+      ],
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)",
+          "type": "conditional"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)"
+      ],
+      "max_equipped": 1
     }
   ]
 }

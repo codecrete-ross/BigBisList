@@ -7382,12 +7382,25 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
         return 0
 
     if args.command == "scoring-audit":
-        from tools.forever_scoring import scoring_audit
+        from tools.forever_scoring import read_model, scoring_audit
         from tools.forever_scoring_checks import ranking_snapshot
 
         if args.input_dir and args.rankings:
             parser.error("--rankings reads the generated workspace payload. Run a separate --input-dir audit for draft inputs.")
         result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir)
+        if args.effects:
+            from tools.forever_item_effects import glossary
+            from tools.recommend_leveling import materialized_items
+
+            inventory = {row["id"]: row for row in dataset_json("forever", "comparison_item_stats")["items"]}
+            for family in ("guide_item_reviews", "leveling_item_stats", "item_stats"):
+                for row in dataset_json("forever", family)["items" if family == "guide_item_reviews" else "item_stats"]:
+                    inventory[row["id"]] = row
+            snapshots = forever.read_snapshots(args.input_dir or FOREVER_RAW_DIR)
+            source = read_model(snapshots)
+            variants = dataset_json("forever", "item_variants")["item_variants"]
+            result["effects"] = glossary(snapshots, materialized_items(list(inventory.values()), variants),
+                                         mechanics=source[1] if source else None)
         if args.rankings:
             try:
                 result["rankings"] = ranking_snapshot(args.lua, args.content_phase)
@@ -7614,6 +7627,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="Report character scoring coverage and stale approvals.")
     scoring_parser.add_argument("--strict", action="store_true", help="Require all 56 contexts and execute independent swap fixtures.")
     scoring_parser.add_argument("--rankings", action="store_true", help="Include reproducible runtime ranking results for all spec bands.")
+    scoring_parser.add_argument("--effects", action="store_true", help="Include effect counts and a bounded queue of unresolved mechanics.")
     scoring_parser.add_argument("--input-dir", type=Path, help="Derive scoring bindings from a complete reviewed snapshot directory without importing it.")
     scoring_parser.add_argument("--content-phase", default="PR", help="Content phase to use for the ranking report.")
     scoring_parser.add_argument("--lua", help="Lua 5.1 executable for scoring checks.")

@@ -1142,6 +1142,25 @@ function BigBiSList:GetContentMode()
     return activeCharacterDB().selection.mode
 end
 
+function BigBiSList:GetGearScenario(className, specName, phase)
+    if not self.isForever or not className or not specName then return nil end
+    self:EnsureDatabase()
+    local settings = activeCharacterDB().foreverScenarios
+    local profile = type(settings) == "table" and settings[className .. "/" .. specName]
+    return type(profile) == "table" and profile[phase == LEVELING_PHASE_KEY and "leveling" or "pre_raid"] or nil
+end
+
+function BigBiSList:SetGearScenario(className, specName, phase, scenario)
+    if not self.isForever or not className or not specName then return end
+    self:EnsureDatabase()
+    local character = activeCharacterDB()
+    if type(character.foreverScenarios) ~= "table" then character.foreverScenarios = {} end
+    local key = className .. "/" .. specName
+    local settings = character.foreverScenarios
+    if type(settings[key]) ~= "table" then settings[key] = {} end
+    settings[key][phase == LEVELING_PHASE_KEY and "leveling" or "pre_raid"] = scenario
+end
+
 function BigBiSList:SetContentMode(mode)
     self:EnsureDatabase()
 

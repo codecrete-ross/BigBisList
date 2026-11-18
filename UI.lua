@@ -138,6 +138,7 @@ local EQUIP_LOCATION_SLOT_LABELS = {
 
 local ACCESS_LABELS = {
     ready = "Available now",
+    quest_completed = "Quest completed",
     ready_alternate = "Available through another source",
     future = "Future phase",
     needs_rep = "Reputation required",
@@ -149,6 +150,7 @@ local ACCESS_LABELS = {
 
 local ACCESS_BADGE_LABELS = {
     ready = "Available",
+    quest_completed = "Completed",
     ready_alternate = "Available",
     future = "Future",
     needs_rep = "Reputation",
@@ -160,6 +162,7 @@ local ACCESS_BADGE_LABELS = {
 
 local ACCESS_DETAIL_LABELS = {
     ready = "Available now",
+    quest_completed = "Quest reward unavailable",
     ready_alternate = "Available through another source",
     future = "Future phase",
     needs_rep = "Reputation required",
@@ -1973,6 +1976,12 @@ function UI:EvaluateAccessOption(option, accessState)
             faction = accessState.playerSide, race = accessState.playerRace, class = selection.class,
             level = leveling and (selection.level or BigBiSList:GetSelectedLevelingLevel()) or nil, _leveling = leveling,
         }) then return {status = "unavailable", option = option} end
+        local source = option and option.source
+        local quest = source and (source.quest_id or (source.entity_type == "quest" and source.entity_id))
+        if quest and source.type == "quest" and source.repeatable ~= true and self.GetAcquisitionQuestState
+            and self:GetAcquisitionQuestState(quest) == "Completed" then
+            return {status = "quest_completed", option = option}
+        end
     end
     local evaluation = self:EvaluateRequirementList(option and option.requirements, accessState)
     evaluation.option = option
@@ -2071,8 +2080,11 @@ function UI:GetAccessEvaluation(data)
             selectedEvaluation = firstReadyEvaluation
             status = (firstReadyEvaluation.option and firstReadyEvaluation.option.is_primary) and "ready" or "ready_alternate"
         end
+        if status == "quest_completed" and firstReadyEvaluation then
+            selectedEvaluation, status, contextMatched = firstReadyEvaluation, "ready_alternate", false
+        end
 
-        local future = preferredEvaluation
+        local future = preferredEvaluation and selectedEvaluation == preferredEvaluation
             and data.acquisition_display
             and data.acquisition_display.future == true
         if future then
@@ -3521,6 +3533,28 @@ function UI:SetLevelingLevel(level)
     end
     self:Invalidate("query", "level")
     self:ScheduleRefresh(nil, "level")
+end
+
+function UI:GetGearScenarioSelection()
+    local selection = self:GetSelection()
+    local phase = self:IsLevelingMode() and "LEVELING" or selection.phase
+    local level = phase == "LEVELING" and BigBiSList:GetSelectedLevelingLevel() or 60
+    return selection.class, selection.spec, phase, level
+end
+
+function UI:SetGearScenario(scenario)
+    local addon = BigBiSList
+    local class, spec, phase, level = self:GetGearScenarioSelection()
+    local rating = addon.ForeverGearRating
+    if scenario == rating:GetScenario(class, spec, phase, level)
+        or scenario ~= rating:GetScenario(class, spec, phase, level, scenario) then return end
+    self:BeginNavigationChange("scenario")
+    addon:SetGearScenario(class, spec, phase, scenario)
+    if addon.ForeverScoring then addon.ForeverScoring:Invalidate() end
+    if addon.AcquisitionHighlights then addon.AcquisitionHighlights:InvalidateStorage() end
+    if addon.ScheduleItemTooltipRefresh then addon:ScheduleItemTooltipRefresh() end
+    self:Invalidate("query", "scenario")
+    self:ScheduleRefresh(nil, "scenario")
 end
 
 function UI:SetTab(tabName, reason)
@@ -5479,7 +5513,8 @@ end
 function UI:GetDisplaySortValue(row, sortKey, mode)
     if sortKey == "priority" then
         local defaultSort = row.default_sort or {}
-        return row.priority or (defaultSort.relevance and (1000000 - (defaultSort.relevance * 100000 + (defaultSort.rank or 0)))) or 0
+        local base = row.priority or (defaultSort.relevance and (1000000 - (defaultSort.relevance * 100000 + (defaultSort.rank or 0)))) or 0
+        return base + (mode == "planner" and (row.scenario_priority or 0) * 1000000 or 0)
     elseif sortKey == "rank" then
         local history = self:GetRowRecommendationHistory(row)
         local cell = history and (history.selected.matched and history.selected or history.latest_earlier)
@@ -5595,7 +5630,8 @@ function UI:GetWithinReach(rows)
         or (character.leveling and character.leveling.manualLevel)
         or addon:DetectPlayerClass() ~= selection.class or addon:DetectPlayerSpec(selection.class) ~= selection.spec
         or addon:GetDetectedPlayerLevel() ~= level then return nil end
-    local context = rating:GetContext(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
+    local contexts = rating:GetScenarioContexts(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
+    local context = contexts[1]
     if not context then return nil end
     local bags, groups, seen = {}, { {}, {}, {} }, {}
     local physical = self:GetLevelingReferenceSlot()
@@ -5613,10 +5649,13 @@ function UI:GetWithinReach(rows)
             local best
             for _, copy in ipairs(bags[facts.key] or {}) do
                 local candidate = rating:GetTooltipItem(facts.id, copy.item_link)
-                local swap = candidate and rating:CompareTooltipItem(context, candidate, true, nil, false,
-                    { physical = physical, slot = row.slot })
-                if swap and rating:IsMeaningfulOwnedUpgrade(swap) and (not best or swap.delta > best.swap.delta) then
-                    best = { row = row, swap = swap, link = copy.item_link }
+                local upgrades = candidate and rating:GetScenarioUpgrades(contexts, candidate, true,
+                    { physical = physical, slot = row.slot, skipPlacement = true })
+                if upgrades and upgrades[1] then
+                    local swap = upgrades[1].swap
+                    if not best or #upgrades > #best.upgrades or (#upgrades == #best.upgrades and swap.delta > best.swap.delta) then
+                        best = { row = row, swap = swap, link = copy.item_link, upgrades = upgrades }
+                    end
                 end
             end
             if best then
@@ -5634,11 +5673,12 @@ function UI:GetWithinReach(rows)
                         nextQuest = { step = { quest_id = questId, name = source.entity_name }, state = state, turnIn = turnIn }
                     end
                     local candidate = { facts = facts, key = facts.key, entry = { item_id = facts.id } }
-                    local swap = rating:CompareTooltipItem(context, candidate, true, nil, true, { physical = physical, slot = row.slot })
+                    local upgrades = rating:GetScenarioUpgrades(contexts, candidate, false, { skipPlacement = true })
                     if nextQuest and nextQuest.step.quest_id == questId and nextQuest.state == "In progress"
-                        and rating:IsMeaningfulOwnedUpgrade(swap) then
+                        and upgrades[1] then
                         local group = groups[nextQuest.turnIn == true and 2 or 3]
-                        group[#group + 1] = { row = row, quest = nextQuest, swap = swap }
+                        group[#group + 1] = { row = row, quest = nextQuest, swap = upgrades[1].swap, upgrades = upgrades,
+                            choiceReward = source.reward_type == "choice" }
                         seen[facts.key] = true
                     end
                 end
@@ -5661,6 +5701,10 @@ function UI:AddWithinReach(model, rows, scope)
             added = true
             if not section.collapsed then
                 table.sort(items, function(a, b)
+                    local rating = BigBiSList.ForeverGearRating
+                    local selected = rating:GetScenario(self:GetGearScenarioSelection())
+                    local aSelected, bSelected = a.upgrades[1].scenario == selected, b.upgrades[1].scenario == selected
+                    if aSelected ~= bSelected then return aSelected end
                     if a.swap.delta ~= b.swap.delta then return a.swap.delta > b.swap.delta end
                     if a.row.name ~= b.row.name then return a.row.name < b.row.name end
                     return a.row.stat_identity < b.row.stat_identity
@@ -5668,8 +5712,10 @@ function UI:AddWithinReach(model, rows, scope)
                 for _, item in ipairs(items) do
                     local row, swap, quest = item.row, item.swap, item.quest
                     local detail = quest and quest.step.name or swap.definition.label
+                    local scenarios = BigBiSList.ForeverGearRating:UpgradeScenarioSummary(item.upgrades)
+                    if item.choiceReward then detail = (detail or row.slot) .. " · Choice reward" end
                     self:AddListRenderEntry(model, { kind = "action", title = row.name, height = 30,
-                        detail = (detail or row.slot) .. string.format(" · Est. %+.1f pts", swap.delta),
+                        detail = (detail or row.slot) .. " · " .. scenarios .. string.format(" · Est. %+.1f pts", swap.delta),
                         activate = function()
                             local data = row
                             if item.link then
@@ -5888,7 +5934,8 @@ function UI:GetNextUpgradeActions(rows)
     local actions, shown = {}, {}
     for _, row in ipairs(rows) do
         if row.higher_rated and self:GetRowOwnershipState(row) == "bag" and not shown[row.item_id] then
-            actions[#actions + 1] = { data = row, reason = UPGRADE_MODE_LABELS.higher_rated, source = OWNERSHIP_LABELS.bag }
+            actions[#actions + 1] = { data = row, reason = row.scenario_summary or UPGRADE_MODE_LABELS.higher_rated,
+                source = OWNERSHIP_LABELS.bag }
             shown[row.item_id] = true
             if #actions == 3 then return actions end
         end
@@ -5905,7 +5952,8 @@ function UI:GetNextUpgradeActions(rows)
                 if location ~= "" and not lower(source):find(lower(location), 1, true) then
                     source = source ~= "" and (source .. " · " .. location) or location
                 end
-                actions[#actions + 1] = { data = row, reason = (row.reasons or {})[1] or row.rank_label, source = source }
+                actions[#actions + 1] = { data = row,
+                    reason = row.scenario_summary or (row.reasons or {})[1] or row.rank_label, source = source }
                 shown[row.item_id] = true
                 if #actions == 3 then break end
             end
@@ -5964,6 +6012,7 @@ function UI:RenderPlannerTab()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local rows = self:GetCachedViewQuery("planner", function() return BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters) end)
+    if rows.statsPending then self:QueueStatLoads(rows.statsPending) end
     local actions = self:GetNextUpgradeActions(rows)
     local hasActions = #actions > 0
     if self.hasNextUpgradeActions ~= hasActions then
@@ -8216,6 +8265,11 @@ function UI:RefreshControls()
     for _, control in ipairs({ self.classDropdown, self.specDropdown, self.phaseSelector, self.sortDropdown, self.groupDropdown }) do
         if control and control.Refresh then control:Refresh() end
     end
+    if self.scenarioDropdown then
+        local rating = BigBiSList.ForeverGearRating
+        self.scenarioDropdown:SetShown(#rating:GetScenarios(self:GetGearScenarioSelection()) > 1)
+        self.scenarioDropdown:Refresh()
+    end
     if self.searchBox and self.searchBox:GetText() ~= (filters.search or "") then self.searchBox:SetText(filters.search or "") end
     if self.searchPlaceholder then
         self.searchPlaceholder:SetText(selection.tab == "Enhance" and "Search enhancements" or "Search items or sources")
@@ -8588,6 +8642,23 @@ function UI:CreateContextBar(frame)
     self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 0, 0)
     self.useCharacterButton = widgets:CreateTextButton(bar, "Current Spec", 108, 28, function() self:UseMyCharacter() end)
     widgets:BindTooltip(self.useCharacterButton, "Return to your character's current class, specialization, and level.")
+    local rating = BigBiSList.isForever and BigBiSList.ForeverGearRating
+    if rating then
+        self.scenarioDropdown = widgets:CreateDropdown("BigBiSListScenarioDropdown", bar, 102,
+            function() return rating:ScenarioLabel(rating:GetScenario(self:GetGearScenarioSelection())) end,
+            function()
+                local class, spec, phase, level = self:GetGearScenarioSelection()
+                local selected = rating:GetScenario(class, spec, phase, level)
+                local options = {}
+                for _, scenario in ipairs(rating:GetScenarios(class, spec, phase, level)) do
+                    options[#options + 1] = { value = scenario, text = rating:ScenarioLabel(scenario), checked = scenario == selected }
+                end
+                return options
+            end,
+            function(value) self:SetGearScenario(value) end)
+        widgets:BindTooltip(self.scenarioDropdown, "Choose the content used to rank gear.")
+        self.scenarioDropdown:Hide()
+    end
     self.contextBar = bar
 end
 
@@ -8675,6 +8746,7 @@ function UI:LayoutContextControls()
     local phaseWidth = self.phaseSelector:Layout()
     self.phaseBar:SetSize(leveling and 280 or phaseWidth, leveling and 28 or 40)
     local controls = { self.classDropdown, self.specDropdown, self.useCharacterButton }
+    if self.scenarioDropdown and self.scenarioDropdown:IsShown() then controls[#controls + 1] = self.scenarioDropdown end
     local x = 0
     for _, control in ipairs(controls) do
         control:ClearAllPoints()
@@ -9511,6 +9583,7 @@ function BigBiSList:InitUIEvents()
     end
     frame:SetScript("OnEvent", function(_, event, interaction)
         if event == "QUEST_LOG_UPDATE" then
+            self.UI.currentAccessEvaluationCache = nil
             self:RefreshUI("details", event)
             return
         end

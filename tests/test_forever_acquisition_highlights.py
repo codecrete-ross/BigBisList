@@ -369,8 +369,8 @@ QuestInfoItem_IsSelected = function(reward) return reward.selected end
 highlights:Initialize()
 H.settle()
 assert(not ui.frame)
-assert(mark(first, 901003).result.delta == 3 and not mark(first, 901003).ownedBaseline)
-assert(mark(second, 901004).outline and mark(second, 901004).result.delta == 6)
+assert(not mark(first, 901003))
+assert(mark(second, 901004).outline and mark(second, 901004).result.delta == 2)
 assert(mark(fixed, 901005).spec.role == "dual" and mark(fixed, 901005).ownedBaseline)
 assert(showTip(second, link(901004)):find("Best choice for Protection", 1, true))
 QuestInfoItem_OnClick(first); H.settle()
@@ -421,7 +421,8 @@ counts, offers.choice = {1, 1}, {901006, 901004}
 local getLink = GetQuestLogItemLink
 local bonus = "item:901006:0:0:0:0:0:0:0:60:0:0:0:1:700"
 QuestInfo_Display(); H.settle()
-assert(mark(first, 901006).result.bis and mark(first, 901006).bestChoice)
+assert(mark(first, 901006).result.bis and not mark(first, 901006).bestChoice)
+assert(mark(second, 901004).bestChoice)
 assert(mark(first, 901006).gain < 0 and mark(second, 901004).gain > 0)
 GetQuestLogItemLink = function(kind, index)
     if kind == "choice" and index == 1 then return bonus end
@@ -432,6 +433,62 @@ assert(not mark(first, 901006) and not mark(first, bonus).result.bis)
 assert(showTip(first, bonus):find("Protection", 1, true))
 rewards:Hide(); H.settle()
 assert(not mark(first, bonus))
+''')
+
+    def test_quest_choices_use_guaranteed_gear_and_keep_each_context_visible(self):
+        self.run_lua(r'''
+local rewards = CreateFrame("Frame", nil, UIParent)
+local first, second, fixed = row(rewards, 1), row(rewards, 2), row(rewards, 1)
+first.type, second.type, fixed.type = "choice", "choice", "reward"
+for _, reward in ipairs({first, second, fixed}) do reward.objectType = "item"; reward.questID = 42 end
+rewards.RewardButtons = {first, second, fixed}
+QuestInfoFrame = {rewardsFrame = rewards}
+local choices, guaranteed = {901004, 901005}, 901003
+local original = addon.ForeverScoring.GetPreset
+addon.ForeverScoring.GetPreset = function(self, class, spec, mode, atLevel, scenario)
+    if spec == "Protection" and mode == "leveling" and scenario == "dungeon" then
+        return { weights = {{40, 59, {intellect = 1}}} }
+    end
+    return original(self, class, spec, mode, atLevel, scenario)
+end
+local function rewardId(kind, index)
+    if kind == "choice" then return choices[index] end
+    return guaranteed
+end
+GetQuestItemLink = function(kind, index) return link(rewardId(kind, index)) end
+GetQuestItemInfo = function(kind, index) return "Item", 0, 1, 2, true, rewardId(kind, index) end
+QuestInfo_Display = function() end
+highlights:Initialize(); H.settle()
+assert(mark(first, 901004).scenario == "outdoor" and mark(first, 901004).result.delta == 2)
+assert(mark(second, 901005).scenario == "dungeon" and mark(second, 901005).result.delta == 20)
+local tip = showTip(second, link(901005))
+assert(tip:find("Best choice for Protection in Dungeon", 1, true))
+assert(tip:find("Best choice for Holy in Outdoor", 1, true))
+
+guaranteed = 901004
+QuestInfo_Display(); H.settle()
+assert(not mark(first, 901004) and mark(second, 901005).bestChoice)
+assert(showTip(first, link(901004)):find("with guaranteed rewards", 1, true))
+
+choices, guaranteed = {901004, 901004}, 901003
+QuestInfo_Display(); H.settle()
+assert(mark(first, 901004) and not mark(first, 901004).bestChoice)
+assert(mark(second, 901004) and not mark(second, 901004).bestChoice)
+assert(showTip(first, link(901004)):find("Tied for best choice in Outdoor", 1, true))
+
+choices = {901004, nil}
+QuestInfo_Display(); H.settle()
+assert(mark(first, 901004) and not mark(first, 901004).bestChoice)
+assert(not showTip(first, link(901004)):find("Best choice", 1, true))
+
+choices = {901004, 901005}
+addon:SetGearScenario("Paladin", "Protection", "LEVELING", "dungeon")
+assert(rating:GetScenario("Paladin", "Protection", "LEVELING", level) == "dungeon")
+assert(rating:GetScenario("Paladin", "Protection", "PR", 60) == "pre_raid")
+assert(rating:GetScenario("Paladin", "Holy", "LEVELING", level) == "outdoor")
+QuestInfo_Display(); H.settle()
+local offer = highlights:GetTooltipOffer(second, 901005, link(901005))
+assert(offer.assessments[1].scenario == "dungeon" and offer.assessments[1].bestChoice)
 ''')
 
     def test_direct_loot_and_active_rolls_recycle_exact_bindings(self):

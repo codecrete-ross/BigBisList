@@ -113,7 +113,7 @@ SOURCE_SCHEMA = [
     "attribution",
 ]
 
-FOREVER_SOURCE_SCHEMA = SOURCE_SCHEMA + ["eligibility", "recipe_name"]
+FOREVER_SOURCE_SCHEMA = SOURCE_SCHEMA + ["eligibility", "recipe_name", "reward_type", "repeatable"]
 
 REQUIREMENT_SCHEMA = [
     "type",
@@ -332,7 +332,7 @@ def compact_value(schema_name: str, key: str, value):
 
 def compact_record(record: dict, schema_name: str) -> list:
     schema = LEVELING_AVAILABILITY_SCHEMA if schema_name == "leveling_availability" else SCHEMAS[schema_name]
-    if schema_name == "source" and "eligibility" in record:
+    if schema_name == "source" and any(field in record for field in ("eligibility", "reward_type", "repeatable")):
         schema = FOREVER_SOURCE_SCHEMA
     elif schema_name == "leveling_recommendation" and "faction" in record:
         schema = schema + ["faction", "race_id", "variant_name", "random_suffix_id"]

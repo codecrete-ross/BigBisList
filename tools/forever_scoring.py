@@ -7,6 +7,7 @@ from pathlib import Path
 
 from tools.forever import SOURCE_CHILDREN, digest, eligible, has_review, numeric, roster, scoring_profiles, valid_source
 from tools.forever_comparison import normalized_item_stats, reference_profiles
+from tools.forever_item_effects import VERSION as ITEM_EFFECT_VERSION, attach_rules
 from tools.forever_leveling import eligibility_allows, eligible_item
 from tools.forever_mechanics import snapshot_path
 from tools.forever_sources import check_evidence_refs, evidence_index, evidence_ref, source_provider
@@ -16,11 +17,77 @@ from tools.recommend_leveling import materialized_items, slot_matches
 
 VERSION = "forever-character-scoring-1"
 MODES = ("leveling", "pre_raid")
+SCENARIO_FIELDS = {"weights", "caps", "conversions", "evidence", "terrain", "target_family",
+                   "effect_expectations", "effect_state_observations"}
+EFFECT_METRICS = {"per_minute", "uses", "seconds", "events_per_minute", "uptime", "useful_fraction",
+                  "target_fraction", "mana_per_minute", "damage_factor", "weapon_slot", "cooldown_model",
+                  "applicable", "evidence", "use_signature"}
 
 
-def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
-               *, race_id: int | None = None, level: int = 60) -> tuple[float, dict]:
-    """Score gear-derived stats under a fixed encounter. Rank zero preserves base weights."""
+def scenario_effect_inputs(settings: dict, items: dict, name: str) -> dict:
+    expectations = settings.get("effect_expectations", {})
+    exact_rules = set()
+    for key, item_expectations in expectations.items():
+        item = items.get(key)
+        rules = {rule["key"]: rule for rule in attach_rules(item or {}).get("effect_rules", [])}
+        for rule_id, observed in item_expectations.items():
+            rule = rules.get(rule_id)
+            if not rule or set(observed) - EFFECT_METRICS or not observed.get("evidence"):
+                raise ValueError(f"Missing exact item effect or observation provenance for {name}/{key}/{rule_id}")
+            if ("applicable" in observed and type(observed["applicable"]) is not bool
+                    or observed.get("cooldown_model") not in {None, "poisson"}
+                    or observed.get("weapon_slot", 16) not in {16, 17}
+                    or ("uses" in observed and (not numeric(observed.get("seconds")) or observed["seconds"] <= 0))
+                    or ("use_signature" in observed and not isinstance(observed["use_signature"], str))):
+                raise ValueError(f"Invalid item effect observation for {name}/{key}/{rule_id}")
+            for metric, value in observed.items():
+                if metric not in {"cooldown_model", "applicable", "evidence", "use_signature"}:
+                    if not numeric(value) or value < 0 or (metric in {"uptime", "useful_fraction", "target_fraction"} and value > 1):
+                        raise ValueError(f"Invalid {metric} for {name}/{key}/{rule_id}")
+            if rule["kind"] == "timed_stats":
+                exact_rules.add((key, rule_id))
+
+    states = settings.get("effect_state_observations", {})
+    for signature, combinations in states.items():
+        effects = signature.split("|")
+        if effects != sorted(set(effects)) or len(effects) < 2 or not settings.get("evidence"):
+            raise ValueError(f"Invalid joint item effect scope for {name}")
+        if not all(re.fullmatch(r"(?:[1-9]|1[0-8]):[^|]+:[a-f0-9]{16}", key)
+                   and tuple(key.partition(":")[2].rsplit(":", 1)) in exact_rules for key in effects):
+            raise ValueError(f"Unknown timed effect in joint state for {name}")
+        active_states = set()
+        total = 0.0
+        for state in combinations:
+            active = tuple(sorted(state["active"]))
+            fraction = state["fraction"]
+            if not active or len(active) != len(set(active)) or not set(active) <= set(effects) or active in active_states:
+                raise ValueError(f"Invalid or duplicate active effect state for {name}")
+            if not numeric(fraction) or not 0 <= fraction <= 1:
+                raise ValueError(f"Invalid effect state probability for {name}")
+            active_states.add(active)
+            total += fraction
+        if not active_states or total > 1 + 1e-9:
+            raise ValueError(f"Joint effect states exceed available combat time for {name}")
+    fields = {key: settings[key] for key in SCENARIO_FIELDS - {"weights"} if key in settings}
+    if expectations:
+        fields["item_effect_version"] = ITEM_EFFECT_VERSION
+    return fields
+
+
+def validate_scenario(settings: dict, name: str) -> None:
+    if set(settings) - SCENARIO_FIELDS:
+        raise ValueError(f"Unknown scenario override for {name}")
+    if not all(numeric(value) for value in settings.get("weights", {}).values()):
+        raise ValueError(f"Invalid stat weight for {name}")
+    if not all(numeric(value) and value >= 0 for value in settings.get("caps", {}).values()):
+        raise ValueError(f"Invalid stat cap for {name}")
+    if any(not entry.get("from_stat") or not entry.get("stat") or not numeric(entry.get("factor"))
+           or entry.get("condition") not in {None, "shield"} for entry in settings.get("conversions", [])):
+        raise ValueError(f"Invalid stat conversion for {name}")
+
+
+def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict,
+                 scenario: dict, race_id: int | None, level: int, bonus_stats: dict) -> tuple[float, dict]:
     stats, sets, procs = defaultdict(float), defaultdict(int), []
     gear = loadout if isinstance(loadout, dict) else {}
     items = gear.values() if isinstance(loadout, dict) else loadout
@@ -36,6 +103,8 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
         procs.extend(item.get("procs", []))
     stats["dps"] -= offhand_dps * (1 - offhand_factor)
     stats["weapon_speed"] = gear.get(16, {}).get("stats", {}).get("weapon_speed", 0)
+    for key, value in bonus_stats.items():
+        stats[key] += value
     for bonus in scenario.get("sets", []):
         if sets[bonus["set_id"]] >= bonus["pieces"]:
             for key, value in bonus["stats"].items():
@@ -51,6 +120,11 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
     for conversion in scenario.get("conversions", []):
         if conversion.get("condition") != "shield" or shield:
             stats[conversion["stat"]] += stats[conversion["from_stat"]] * conversion["factor"]
+    specific_crit = {"spell": "spell_crit_percent", "physical": "physical_crit_percent"}.get(scenario.get("crit_domain"))
+    if specific_crit and specific_crit not in weights:
+        stats["crit_percent"] += stats[specific_crit]
+    if scenario.get("crit_domain") == "spell" and "spell_hit_percent" not in weights:
+        stats["hit_percent"] += stats["spell_hit_percent"]
 
     def value() -> float:
         return sum(min(stats[key], scenario.get("caps", {}).get(key, float("inf"))) * weight
@@ -76,6 +150,112 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
                 stats[stat] *= 1 + factor
         explanations[operation["entry"]] = explanations.get(operation["entry"], 0) + value() - basis
     return value(), explanations
+
+
+def effective_activations(rule: dict, observation: dict, loadout: dict, position: int) -> float | None:
+    if "uses" in observation and observation.get("seconds", 0) > 0:
+        return 60 * observation["uses"] / observation["seconds"]
+    if "per_minute" in observation:
+        return observation["per_minute"]
+    if "events_per_minute" not in observation:
+        return None
+    chance = rule.get("chance")
+    speed = loadout[position]["stats"].get("weapon_speed")
+    if "ppm" in rule and speed:
+        chance = min(1, rule["ppm"] * speed / 60)
+    if chance is None:
+        return None
+    rate = observation["events_per_minute"] * chance
+    cooldown = rule.get("cooldown", 0)
+    if cooldown:
+        if observation.get("cooldown_model") != "poisson":
+            return None
+        rate /= 1 + rate * cooldown / 60
+    return rate
+
+
+def expected_item_effect(rule: dict, observation: dict, loadout: dict, position: int, scenario: dict) -> tuple[dict, float | None]:
+    if observation.get("applicable") is False:
+        return {}, None
+    kind = rule["kind"]
+    if kind == "mana_cost" and "mana_per_minute" in observation:
+        return {"mp5": observation["mana_per_minute"] * rule["fraction"] / 12}, None
+    rate = effective_activations(rule, observation, loadout, position)
+    if kind == "timed_stats":
+        if rule.get("requires_target_fraction") and "target_fraction" not in observation:
+            return {}, None
+        uptime = observation.get("uptime")
+        if uptime is None and rate is not None and rule.get("cooldown", 0) >= rule["duration"]:
+            uptime = min(1, rate * rule["duration"] / 60)
+        if uptime is None:
+            return {}, None
+        multiplier = (rule.get("terrain_multiplier", {}).get(scenario.get("terrain"), 1)
+                      * rule.get("target_multiplier", {}).get(scenario.get("target_family"), 1))
+        return {key: amount * multiplier for key, amount in rule["stats"].items()}, uptime * observation.get("target_fraction", 1)
+    if rate is None:
+        return {}, None
+    if kind == "instant" and "useful_fraction" in observation:
+        terrain = rule.get("terrain_multiplier", {}).get(scenario.get("terrain"), 1)
+        scale = rate * terrain * observation["useful_fraction"] / 60
+        return {key: amount * scale for key, amount in rule["amounts"].items()}, None
+    if kind == "extra_attack" and "damage_factor" in observation:
+        stats = loadout.get(observation.get("weapon_slot", position), {}).get("stats", {})
+        if "weapon_min_damage" in stats and "weapon_max_damage" in stats:
+            average = (stats["weapon_min_damage"] + stats["weapon_max_damage"]) / 2
+            return {"dps": average * rate * rule["count"] * observation["damage_factor"] / 60}, None
+    if kind == "damage" and "damage_factor" in observation:
+        return {"proc_dps": rule["amount"] * rate * observation["damage_factor"] / 60}, None
+    return {}, None
+
+
+def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
+               *, race_id: int | None = None, level: int = 60) -> tuple[float, dict]:
+    """Score a legal loadout over the encounter's reviewed effects and active states."""
+    flat, timed = defaultdict(float), []
+    expectations = scenario.get("effect_expectations", {})
+    use_rules = []
+    if expectations and isinstance(loadout, dict):
+        use_rules = sorted(f"{position}:{identity(item)}:{rule['key']}" for position, item in loadout.items()
+                           for rule in item.get("effect_rules", []) if rule["trigger"] == "use")
+        use_signature = "|".join(use_rules)
+        for position, item in sorted(loadout.items()):
+            for rule in item.get("effect_rules", []):
+                observation = expectations.get(identity(item), {}).get(rule["key"])
+                if observation is None:
+                    continue
+                stats, uptime = expected_item_effect(rule, observation, loadout, position, scenario)
+                solo = rule["trigger"] != "use" or len(use_rules) < 2 or observation.get("use_signature") == use_signature
+                if uptime is not None:
+                    timed.append((f"{position}:{identity(item)}:{rule['key']}", stats, uptime, solo, rule["trigger"]))
+                elif solo:
+                    for key, value in stats.items():
+                        flat[key] += value
+
+    total, explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, flat)
+    states = []
+    if len(timed) == 1:
+        key, _, uptime, solo, _ = timed[0]
+        if solo:
+            states = [{"active": [key], "fraction": uptime}]
+    elif timed:
+        scoped = sum(trigger == "use" for _, _, _, _, trigger in timed) == len(use_rules)
+        if scoped or all(solo for _, _, _, solo, _ in timed):
+            signature = "|".join(sorted(key for key, *_ in timed))
+            states = scenario.get("effect_state_observations", {}).get(signature, [])
+    if states:
+        timed_stats = {key: stats for key, stats, *_ in timed}
+        baseline, baseline_explanations = total, dict(explanations)
+        for state in states:
+            stats = defaultdict(float, flat)
+            for name in state["active"]:
+                for key, value in timed_stats[name].items():
+                    stats[key] += value
+            active, active_explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, stats)
+            fraction = state["fraction"]
+            total += (active - baseline) * fraction
+            for key, value in active_explanations.items():
+                explanations[key] = explanations.get(key, 0) + (value - baseline_explanations.get(key, 0)) * fraction
+    return total, explanations
 
 
 def source_levels(source: dict) -> set[int]:
@@ -190,6 +370,8 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     items = {mode: {identity(item): {**pack_item(item),
                                     **({"set_id": item_sets[item["id"]]} if item["id"] in item_sets else {})}
                     for item in source_items[mode]} for mode in MODES}
+    effect_items = {identity(item): item for pool in source_items.values() for item in pool}
+    effect_items.update({identity(item): item for item in document("guide_item_reviews")["items"]})
     all_profiles = {f"{row['class']}/{row['spec']}": row for row in pre_raid["profiles"]}
     traits, profiles, bindings = {}, {}, {}
     enchants = {int(key): value["stats"] for key, value in snapshot["enchants"].items()}
@@ -226,18 +408,13 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
         selected_traits = {identifier: snapshot["traits"][str(identifier)] for identifier in entry_ids}
         for identifier, trait in selected_traits.items():
             traits[identifier] = {key: trait[key] for key in ("node_id", "definition_id", "spell_id", "tree_id", "max_rank", "name")}
-        scenarios = {}
+        scenarios, dungeon = {}, {}
+        crit_domain = {"caster": "spell", "healer": "spell", "melee": "physical", "ranged": "physical"}.get(profile["role"])
         personas = [row for row in rules["races"] if class_name in row["classes"]]
         allowed_personas = {row["id"]: [row["name"], row["faction"]] for row in personas}
         for mode in MODES:
             scenario_settings = settings.get("scenario_overrides", {}).get(mode, {})
-            if scenario_settings.keys() - {"weights", "caps", "conversions", "evidence"}:
-                raise ValueError(f"Unknown scenario override for {name}/{mode}")
-            if not all(numeric(value) and value >= 0 for value in scenario_settings.get("caps", {}).values()):
-                raise ValueError(f"Invalid stat cap for {name}/{mode}")
-            if any(not entry.get("from_stat") or not entry.get("stat") or not numeric(entry.get("factor"))
-                   or entry.get("condition") not in {None, "shield"} for entry in scenario_settings.get("conversions", [])):
-                raise ValueError(f"Invalid stat conversion for {name}/{mode}")
+            validate_scenario(scenario_settings, f"{name}/{mode}")
             weight_overrides = {**settings.get("weights", {}), **scenario_settings.get("weights", {})}
             weights = []
             if mode == "leveling":
@@ -273,7 +450,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                     pools[slot] = pool
             scenario = {**model["scenarios"][mode], "weights": weights, "pools": pools,
                         "personas": allowed_personas, **{k: v for k, v in policies.items() if v is not None},
-                        **{key: scenario_settings[key] for key in ("caps", "conversions", "evidence") if key in scenario_settings}}
+                        **scenario_effect_inputs(scenario_settings, effect_items, f"{name}/{mode}")}
             offhand_factor = settings.get("offhand_dps_factor", shared.get("offhand_dps_factor"))
             if offhand_factor is not None:
                 if not numeric(offhand_factor) or not 0 < offhand_factor <= 1:
@@ -296,9 +473,28 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 "unresolved": settings["unresolved"], "uncertainty": uncertainty, "weapon_speed_proc": proc_rule,
                 "routes": routes, "enchants": enchants,
                 **({"equipment_compatibility": compatibility} if compatibility else {})})
+            if crit_domain:
+                scenario["crit_domain"] = crit_domain
+            if sets:
+                scenario["set_effect_spells"] = {row["spell_id"]: True for row in sets}
+            if preset := settings.get("dungeon", {}).get(mode):
+                low, high = preset.get("min_level"), preset.get("max_level")
+                floor, ceiling = (1, 59) if mode == "leveling" else (60, 60)
+                dungeon_settings = {key: value for key, value in preset.items()
+                                    if key not in {"min_level", "max_level", "version", "basis"}}
+                scope = f"{name}/dungeon/{mode}"
+                if (type(low) is not int or type(high) is not int or not floor <= low <= high <= ceiling
+                        or not preset.get("version") or not preset.get("basis") or not preset.get("evidence")):
+                    raise ValueError(f"Missing reviewed level range or evidence for {scope}")
+                validate_scenario(dungeon_settings, scope)
+                dungeon[mode] = {"min_level": low, "max_level": high, "version": preset["version"], "basis": preset["basis"],
+                    "weights": [[start, end, {**band, **dungeon_settings.get("weights", {})}]
+                                for start, end, band in weights if start <= high and end >= low],
+                    **scenario_effect_inputs(dungeon_settings, effect_items, scope)}
+                bindings[scope] = digest({"base": bindings[f"{name}/{mode}"], "preset": dungeon[mode]})
         profiles[name] = {"entries": entry_ids, "operations": operations, "scenarios": scenarios,
                           "unresolved": settings["unresolved"], "uncertainty": uncertainty, "ability": ability,
-                          "weapon_speed_proc": speed_proc}
+                          "weapon_speed_proc": speed_proc, **({"dungeon": dungeon} if dungeon else {})}
     return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]), "profiles": profiles,
             "traits": traits, "items": items, "enchants": enchants, "triggers": snapshot["ability_triggers"],
             **({"item_sets": item_sets} if item_sets else {})}, bindings

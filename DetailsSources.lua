@@ -339,7 +339,10 @@ end
 
 function UI:GetAcquisitionQuestProgress(source)
     local progress, nextQuest = {}, nil
-    for _, step in ipairs(source.quest_steps or {}) do
+    local rewardId = source.type == "quest" and (source.quest_id or source.entity_id)
+    local hasRewardStep = false
+    local function addStep(step)
+        if step.quest_id == rewardId and step.kind ~= "alternative" then hasRewardStep = true end
         local state, turnIn = self:GetAcquisitionQuestState(step.quest_id)
         local quest = {step = step, state = state, turnIn = turnIn}
         progress[#progress + 1] = quest
@@ -348,6 +351,10 @@ function UI:GetAcquisitionQuestProgress(source)
             elseif turnIn then quest.destination = step.finish end
             nextQuest = quest
         end
+    end
+    for _, step in ipairs(source.quest_steps or {}) do addStep(step) end
+    if BigBiSList.isForever and #progress > 0 and rewardId and not hasRewardStep then
+        addStep({ quest_id = rewardId, name = source.entity_name, kind = "reward" })
     end
     return nextQuest, progress
 end

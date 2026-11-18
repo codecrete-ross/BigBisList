@@ -4,8 +4,10 @@ from __future__ import annotations
 import re
 
 from tools.forever import eligible, item_conflicts, item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
+from tools.forever_item_effects import attach_rules, effect_lines, recover_permanent_chances, unresolved_lines
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
+from tools.sources import summarize_sources
 
 
 VERSION = "forever-stat-ranks-1"
@@ -14,12 +16,13 @@ RANKED_SLOTS = (SLOT_NAMES | {"One Hand"}) - {"Dual Wield", "Ammo", "Quiver"}
 ITEM_FIELDS = (
     "id", "name", "slot", "level", "stats", "armor_type", "weapon_subtype",
     "classes", "races", "max_equipped", "unique_group", "effects", "utility",
-    "variant_id", "has_random_stats", "requires_dual_wield", "excluded",
+    "variant_id", "has_random_stats", "requires_dual_wield", "excluded", "effect_rules", "set_bonuses",
 )
 TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
 
 def normalized_item_stats(item: dict) -> dict:
     stats = merged_stats(item)
+    recover_permanent_chances(stats, effect_lines(item))
     stats.pop("socket", None)
     separate_weapon_dps(item, stats)
     if numeric(item.get("weapon_speed")) and item["weapon_speed"] > 0:
@@ -50,7 +53,7 @@ def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
         item = {key: row[key] for key in ("id", "name", "quality", "binding", "boe", "wowhead_url")}
         source = sources[0]
         item.update(inventory_slot=row["slot"], acquisition_phase="PR", primary_source=source,
-                    sources=sources, source_summary=f"Drop: {source['entity_name']} ({source['zone']})")
+                    sources=sources, source_summary=summarize_sources(sources))
         items.append(item)
         stats.append({key: value for key, value in row.items() if key != "review"})
     return items, stats
@@ -122,18 +125,7 @@ def comparison_facts(item: dict, description: str = "") -> dict | None:
     stats = normalized_item_stats(item)
     if not all(map(numeric, stats.values())):
         return None
-    modeled_effects, effects = set(), []
-    for effect in item.get("effect_stats", []):
-        label = effect.get("raw_text")
-        if label and effect.get("type") == "passive" and effect.get("stats"):
-            modeled_effects.add(label)
-        elif label:
-            effects.append(label)
-    effects.extend(label for label in item.get("equip_effects", []) + item.get("use_effects", [])
-                   if isinstance(label, str) and label not in modeled_effects)
-    if item.get("set_bonuses"):
-        effects.append("Set bonuses")
-    effects = list(dict.fromkeys(effects))
+    effects = unresolved_lines(item)
     if not stats and not effects:
         return None
     utility = not stats and bool(effects) and all(
@@ -186,9 +178,9 @@ def comparison_document(snapshots: dict[str, dict]) -> dict:
             facts = comparison_facts(item, observed.get("description") or "")
             if facts is None:
                 continue
-            # A missing level can identify an effect on an owned link. Numeric
-            # catalog candidates need a known equip level.
-            if facts.get("level") is None and facts["stats"]:
+            # Effect-bearing items can still give context to an owned link.
+            # The runtime checks the equip level before including a candidate.
+            if facts.get("level") is None and facts["stats"] and not facts.get("effects"):
                 continue
             url = observed["evidence_url"]
             if url not in digests:
@@ -202,7 +194,13 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
     data = dataset_json("forever", "comparison_item_stats")
     if data["version"] != VERSION:
         raise ValueError("Unexpected Forever comparison catalog version")
-    items = {str(item["id"]): item for item in data["items"]}
+    items = {}
+    for item in data["items"]:
+        facts = {**item, "stats": dict(item["stats"])}
+        recover_permanent_chances(facts["stats"], effect_lines(item))
+        if "effects" in facts:
+            facts["effects"] = unresolved_lines(item)
+        items[str(item["id"])] = facts
     variants = dataset_json("forever", "item_variants")["item_variants"]
     for item in materialized_items(item_stats, variants):
         facts = comparison_facts(item)
@@ -216,6 +214,9 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
                     facts[field] = inherited[field]
             if item.get("variant_id"):
                 facts.pop("has_random_stats", None)
+            if item.get("set_bonuses"):
+                facts["set_bonuses"] = [{"pieces": bonus["pieces"], "spell_id": bonus.get("spell_id")}
+                                        for bonus in item["set_bonuses"]]
             items[key] = facts
         else:
             items.pop(key, None)
@@ -236,8 +237,11 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         if review["effect"] not in items[key].get("effects", []):
             raise ValueError(f"Forever Gear Guide effect changed for {key}")
         guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
+    for key, item in items.items():
+        items[key] = item | attach_rules(item)
     return {
         "version": VERSION,
+        "published_routes_only": True,
         "profiles": profiles,
         "guide_effects": guide_effects,
         "equipment": rules["class_equipment"],

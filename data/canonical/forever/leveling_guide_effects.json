@@ -1,6 +1,36 @@
 {
   "effects": [
     {
+      "variant": "17705",
+      "effect": "Chance on hit: Grants an extra attack on your next swing.",
+      "roles": ["tank", "melee"],
+      "note": "Extra attack on hit · contribution can vary with your attacks and build"
+    },
+    {
+      "variant": "13965",
+      "effect": "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)",
+      "roles": ["tank", "melee", "ranged"],
+      "note": "On-use target crit bonus · doubled against Orcs and Ogres"
+    },
+    {
+      "variant": "13966",
+      "effect": "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)",
+      "roles": ["tank"],
+      "note": "On-use maximum health · doubled in Strongholds and Cities"
+    },
+    {
+      "variant": "13968",
+      "effect": "Use: Increases your Spell Hit chance by 7% for 20 sec. (5 Min Cooldown)",
+      "roles": ["tank", "caster"],
+      "note": "On-use spell hit · depends on spells cast and hit cap"
+    },
+    {
+      "variant": "17774",
+      "effect": "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)",
+      "roles": ["tank", "melee", "caster", "healer", "ranged"],
+      "note": "Primary stats when struck · value depends on how often you take hits"
+    },
+    {
       "variant": "744",
       "effect": "Use: Deals 75 Fire damage every 1 sec for 5 sec to all enemies in front of you. Deals 2 times as much damage to Plants. Gets you quite drunk too! (5 Min Cooldown)",
       "roles": ["caster", "melee", "ranged"],

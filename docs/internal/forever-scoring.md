@@ -52,19 +52,44 @@ three-piece Lightforge Armor and Battlegear of Valor bonuses. The latter add
 inside the five-second rule. Random suffix scoring still needs an obtainable
 Forever variant with a confirmed ID and stats.
 
-Proc, set, and cap values still need encounter evidence. The first proc
-fixture captures Judgement of Command as a melee on-hit trigger. Numeric proc
-scoring needs a reviewed encounter estimate for trigger rates. Flat permanent
-enchant stats use the same build's client records. Unreadable gear, unreviewed
-enchant effects, unsupported builds, and manual level previews use the existing
-reference rankings.
+The item effect inventory groups evidence by exact item or suffix, linked spell
+where present, and effect text. Permanent dodge and school-specific chance
+lines contribute through their appropriate stat channels. The audit includes
+exact set spell IDs and reports the flat enchant effects verified for the
+client build. The exception queue groups repeat descriptions so one review
+can cover the mechanic across multiple items.
+
+A numeric proc or on-use value needs a reviewed estimate for a specific
+build, character profile, activity, and level range. Extra attacks use the
+effective gain in weapon swings and the contribution per swing. Temporary
+stats are valued in the active loadout before applying uptime, including any
+shared caps. Multiple temporary stats need observations of the joint states
+to receive a combined value. Concurrent on-use estimates need evidence for
+the equipped combination and its cooldown interaction. The scorer keeps
+unresolved effects conditional and the Guide can still surface reviewed
+qualitative effects.
+
+Outdoor and Pre-Raid retain the existing reference profiles. An optional
+Dungeon preset has its own level range, evidence, and approval digest. The
+selector appears where that preset has passed review. Preferences are saved
+by character and specialization, separately for leveling and level 60.
+Unreadable gear or talents use reference scores with the available evidence.
+
+The usable Alliance level-49 reference includes both Sword of Serenity and
+Thrash Blade. The measured scores for a Human Protection Paladin are 108.44
+and 105.57. Thrash's additional swing is confirmed. A realized rate for the
+Protection Paladin in the relevant content remains open. The new Guide route
+checks use quest acceptance levels and prerequisites. At a choice, the
+guaranteed rewards are included in the baseline and winning choices are
+evaluated independently for each available scenario and specialization.
+[Client-derived Thrash effect](https://wow-forever.gg/db/spells/21919-thrash/)
 [November 13 Blizzard hotfixes](https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-13-2026/2403040/10)
 
 For a bounded, cache-first mechanics refresh and the current review status:
 
 ```powershell
 python tools/scrape_wowhead.py collect-mechanics --flavor forever
-python tools/scrape_wowhead.py scoring-audit --flavor forever
+python tools/scrape_wowhead.py scoring-audit --flavor forever --effects
 ```
 
 Add `--online` for the public sources and `--write` to register the staged
@@ -97,14 +122,16 @@ five percent of the displaced role score. A role gain that rounds to 0.1
 points qualifies for a genuinely empty slot. Defensive stats contribute to
 this threshold for tanks. Gold BiS uses the item’s explicit guide approval.
 
-The live Leveling Guide applies character and route eligibility before ranking
-by the weighted sum of verified flat stats. It shows the full qualifying band
-at 85% or greater and admits candidates from 70% in **More options**. The
-reviewed recommendation records still carry source decisions and effect context.
-Pre-Raid publishes reviewed targets with their phase history and compatible
-stat placements. Personal comparisons evaluate legal swaps against the same
-loadout baseline. Ranged and wand DPS are separate from melee DPS. Weapon
-speed bonuses in those comparisons use the physical main hand.
+The Leveling Guide applies character and route eligibility before ranking
+with the reference scoring model. It shows the full qualifying band at 85%
+or greater and admits candidates from 70% in **More options**. Reviewed
+qualitative effects can also qualify for the list. Pre-Raid gives the
+reference placement alongside authored recommendations and their phase
+history. Owned exact items outside the verified reference pool can show a
+projected placement. Inserting an owned projection leaves the published
+placements and denominators stable. Personal comparisons evaluate legal
+swaps with the rest of the outfit retained. Ranged and wand DPS are separate
+from melee DPS. Weapon speed bonuses use the physical main hand.
 
 The Protection Paladin leveling reference retains the tank survivability
 weights and credits Intellect at 0.55, mana per five seconds at 1.6, shield

@@ -28,7 +28,7 @@ local function copy(values)
 end
 
 local function byId(values, identifier)
-    return values and (values[identifier] or values[tostring(identifier)])
+    return values and (values[identifier] or values[tostring(identifier)] or values[tonumber(identifier)])
 end
 
 local function addStats(total, stats, multiplier)
@@ -37,7 +37,7 @@ local function addStats(total, stats, multiplier)
     end
 end
 
-function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
+local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats)
     local stats, sets, explanations = {}, {}, {}
     local shield = false
     local mainHand, offHand = loadout[16], loadout[17]
@@ -57,6 +57,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
     end
     stats.dps = (stats.dps or 0) - offhandDps * (1 - offhandFactor)
     stats.weapon_speed = mainHand and mainHand.stats.weapon_speed or 0
+    addStats(stats, bonusStats)
     for _, bonus in ipairs(scenario.sets or {}) do
         if (sets[bonus.set_id] or 0) >= bonus.pieces then addStats(stats, bonus.stats) end
     end
@@ -69,6 +70,14 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         if conversion.condition ~= "shield" or shield then
             stats[conversion.stat] = (stats[conversion.stat] or 0) + (stats[conversion.from_stat] or 0) * conversion.factor
         end
+    end
+    local specificCrit = scenario.crit_domain == "spell" and "spell_crit_percent"
+        or scenario.crit_domain == "physical" and "physical_crit_percent"
+    if specificCrit and not weights[specificCrit] then
+        stats.crit_percent = (stats.crit_percent or 0) + (stats[specificCrit] or 0)
+    end
+    if scenario.crit_domain == "spell" and not weights.spell_hit_percent then
+        stats.hit_percent = (stats.hit_percent or 0) + (stats.spell_hit_percent or 0)
     end
     local function value()
         local total = 0
@@ -100,6 +109,173 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         end
     end
     return value(), explanations
+end
+
+local function expectedActivations(rule, observation, loadout, position)
+    local rate = observation.per_minute
+    if observation.uses and observation.seconds and observation.seconds > 0 then
+        rate = 60 * observation.uses / observation.seconds
+    elseif not rate and observation.events_per_minute then
+        local chance = rule.chance
+        local weapon = loadout[position]
+        local speed = weapon and weapon.stats.weapon_speed
+        if rule.ppm and speed then chance = math.min(1, rule.ppm * speed / 60) end
+        if chance then
+            rate = observation.events_per_minute * chance
+            if (rule.cooldown or 0) > 0 then
+                if observation.cooldown_model ~= "poisson" then return nil end
+                rate = rate / (1 + rate * rule.cooldown / 60)
+            end
+        end
+    end
+    return rate
+end
+
+local function itemEffect(rule, observation, loadout, position, scenario)
+    if not observation then return nil end
+    if observation.applicable == false then return {} end
+    if rule.kind == "timed_stats" then
+        if rule.requires_target_fraction and observation.target_fraction == nil then return nil end
+        local uptime = observation.uptime
+        if uptime == nil and (rule.cooldown or 0) >= rule.duration then
+            local rate = expectedActivations(rule, observation, loadout, position)
+            uptime = rate and math.min(1, rate * rule.duration / 60)
+        end
+        if uptime ~= nil then
+            local multiplier = ((rule.terrain_multiplier or {})[scenario.terrain] or 1)
+                * ((rule.target_multiplier or {})[scenario.target_family] or 1)
+            local stats = {}
+            addStats(stats, rule.stats, multiplier)
+            return stats, uptime * (observation.target_fraction or 1)
+        end
+    elseif rule.kind == "mana_cost" then
+        if observation.mana_per_minute then return { mp5 = observation.mana_per_minute * rule.fraction / 12 } end
+    else
+        local rate = expectedActivations(rule, observation, loadout, position)
+        if rate == nil then return nil end
+        if rule.kind == "instant" then
+            if observation.useful_fraction == nil then return nil end
+            local scale = (rule.terrain_multiplier or {})[scenario.terrain] or 1
+            local stats = {}
+            addStats(stats, rule.amounts, rate * scale * observation.useful_fraction / 60)
+            return stats
+        elseif rule.kind == "extra_attack" then
+            local weapon = loadout[observation.weapon_slot or position]
+            local stats = weapon and weapon.stats
+            if not stats or not stats.weapon_min_damage or not stats.weapon_max_damage
+                or observation.damage_factor == nil then return nil end
+            local average = (stats.weapon_min_damage + stats.weapon_max_damage) / 2
+            return { dps = average * rate * rule.count * observation.damage_factor / 60 }
+        elseif rule.kind == "damage" and observation.damage_factor ~= nil then
+            return { proc_dps = rule.amount * rate * observation.damage_factor / 60 }
+        end
+    end
+end
+
+local function setCoverage(loadout, scenario)
+    local applied = {}
+    if not scenario.set_effect_spells then return applied end
+    local equipped = {}
+    for _, item in pairs(loadout) do
+        if item.set_id then equipped[item.set_id] = (equipped[item.set_id] or 0) + 1 end
+    end
+    for position, item in pairs(loadout) do
+        if item.set_id and item.set_bonuses then
+            local covered = true
+            for _, bonus in ipairs(item.set_bonuses) do
+                if bonus.pieces <= equipped[item.set_id] and not byId(scenario.set_effect_spells, bonus.spell_id) then
+                    covered = false
+                    break
+                end
+            end
+            if covered then applied[position] = { ["Set bonuses"] = true } end
+        end
+    end
+    return applied
+end
+
+function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
+    local applied = setCoverage(loadout, scenario)
+    if not scenario.effect_expectations then
+        local points, explanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
+        return points, explanations, applied
+    end
+    local flat, timed, timedKeys = {}, {}, {}
+    local useRules = {}
+    for position, item in pairs(loadout) do
+        for _, rule in ipairs(item.effect_rules or {}) do
+            if rule.trigger == "use" then
+                useRules[#useRules + 1] = position .. ":" .. (item.key or item.variant_id or item.id) .. ":" .. rule.key
+            end
+        end
+    end
+    table.sort(useRules)
+    local useSignature, timedUses, allScoped = table.concat(useRules, "|"), 0, true
+    for position = 1, 18 do
+        local item = loadout[position]
+        local expectations = item and byId(scenario.effect_expectations, item.key or item.variant_id or item.id)
+        for _, rule in ipairs(item and item.effect_rules or {}) do
+            local observation = expectations and expectations[rule.key]
+            local stats, uptime = itemEffect(rule, observation, loadout, position, scenario)
+            if stats then
+                local use = rule.trigger == "use"
+                local scoped = not use or #useRules < 2 or observation.use_signature == useSignature
+                if uptime then
+                    local key = position .. ":" .. (item.key or item.variant_id or item.id) .. ":" .. rule.key
+                    timedKeys[#timedKeys + 1] = key
+                    timed[key] = { rule = rule, stats = stats, uptime = uptime, position = position }
+                    if use then timedUses = timedUses + 1 end
+                    allScoped = allScoped and scoped
+                elseif scoped then
+                    addStats(flat, stats)
+                    applied[position] = applied[position] or {}
+                    applied[position][rule.label] = true
+                end
+            end
+        end
+    end
+    local total, explanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat)
+    local states
+    if #timedKeys == 1 and allScoped then
+        states = { { active = timedKeys, fraction = timed[timedKeys[1]].uptime } }
+    elseif #timedKeys > 1 and (allScoped or timedUses == #useRules) then
+        table.sort(timedKeys)
+        states = (scenario.effect_state_observations or {})[table.concat(timedKeys, "|")]
+    end
+    if states then
+        local baseline, baselineExplanations = total, copy(explanations)
+        for _, state in ipairs(states) do
+            local stats = copy(flat)
+            for _, key in ipairs(state.active) do addStats(stats, timed[key].stats) end
+            local active, activeExplanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, stats)
+            total = total + (active - baseline) * state.fraction
+            for id, value in pairs(activeExplanations) do
+                explanations[id] = (explanations[id] or 0) + (value - (baselineExplanations[id] or 0)) * state.fraction
+            end
+        end
+        for _, effect in pairs(timed) do
+            applied[effect.position] = applied[effect.position] or {}
+            applied[effect.position][effect.rule.label] = true
+        end
+    end
+    return total, explanations, applied
+end
+
+function Scoring:ReferenceItem(facts, stats)
+    local model = BigBiSListData and BigBiSListData.character_scoring
+    return { id = facts.id, key = facts.key or facts.variant_id, stats = stats, slot = facts.slot,
+        shield = facts.armor_type == "Shield", effect_rules = facts.effect_rules, effects = facts.effects,
+        unreadable_effects = facts.unreadable_effects, utility = facts.utility,
+        set_id = model and byId(model.item_sets, facts.id), set_bonuses = facts.set_bonuses }
+end
+
+function Scoring:HasUnresolvedEffects(item, applied)
+    if not item or item.utility then return false end
+    if item.unreadable_effects then return true end
+    for _, label in ipairs(item.effects or {}) do
+        if not (applied and applied[label]) then return true end
+    end
+    return false
 end
 
 local function itemIdentity(itemId, link)
@@ -251,6 +427,29 @@ local function acquireContext(model, profile, scenario, mode, level, raceId)
         items = model.items[mode], profile = profile, slots = {}, model = model }
 end
 
+function Scoring:GetPreset(className, specName, mode, level, scenarioKey)
+    local model = BigBiSListData and BigBiSListData.character_scoring
+    local profile = model and model.version == VERSION and model.profiles[className .. "/" .. specName]
+    if not profile then return end
+    local base = profile.scenarios[mode]
+    if scenarioKey == "dungeon" then
+        local dungeon = profile.dungeon and profile.dungeon[mode]
+        if base and dungeon and level and level >= dungeon.min_level and level <= dungeon.max_level then
+            profile.dungeonContexts = profile.dungeonContexts or {}
+            if not profile.dungeonContexts[mode] then
+                local merged = copy(base)
+                for _, field in ipairs({ "caps", "conversions", "effect_expectations", "effect_state_observations",
+                    "terrain", "target_family" }) do merged[field] = nil end
+                for key, value in pairs(dungeon) do merged[key] = value end
+                profile.dungeonContexts[mode] = merged
+            end
+            return profile.dungeonContexts[mode], profile
+        end
+        return
+    end
+    return base, profile
+end
+
 function Scoring:Invalidate()
     self.live = nil
     self.revision = (self.revision or 0) + 1
@@ -264,9 +463,9 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         if character and character.leveling and character.leveling.manualLevel then return nil end
     end
     local key = className .. "/" .. specName
-    local profile = model.profiles[key]
+    local scenarioKey = filters and filters.scenario
+    local scenario, profile = self:GetPreset(className, specName, mode, level, scenarioKey)
     if not profile or not GetBuildInfo or not UnitRace or not UnitLevel then return nil end
-    local scenario = profile.scenarios[mode]
     if not scenario then return nil end
     local ok, result, status = pcall(function()
         local _, build = GetBuildInfo()
@@ -277,15 +476,16 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         local actor = byId(scenario.personas, race)
         if not actor or actor[2] ~= BigBiSList:GetPlayerFactionName()
             or (filters and ((filters.race and filters.race ~= actor[1]) or (filters.faction and filters.faction ~= actor[2]))) then return nil end
-        local stateKey = key .. ":" .. mode .. ":" .. level .. ":" .. race
+        local stateKey = table.concat({key, mode, level, race, scenarioKey or "default"}, ":")
         if BigBiSList:DetectPlayerSpec(className) ~= specName then
             return nil
         end
-        if self.live and self.live.key == stateKey then return self.live.context end
+        self.live = self.live or {}
+        if self.live[stateKey] then return self.live[stateKey] end
         local context, missing = acquireContext(model, profile, scenario, mode, level, race)
         if context then
             context.raceName, context.faction, context.mode = actor[1], actor[2], mode
-            self.live = {key = stateKey, context = context}
+            self.live[stateKey] = context
         end
         return context, missing
     end)
@@ -378,26 +578,40 @@ local function dependsOnUnmodeledCombat(state, incoming, target, slot)
 end
 
 -- The rating service has already checked equipment and physical copy legality.
+function Scoring:HasUnmodeledSwap(state, facts, target, slot)
+    return dependsOnUnmodeledCombat(state, facts, target, slot)
+end
+
 function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights)
     local incoming = swapItem(state.model, state.mode, facts.id, link, facts)
     if not incoming or not contains(SLOTS[slot], target) then return nil end
     local proposal = replace(state, state.gear, target, incoming, slot)
     if not proposal then return nil end
     if state.baseline == nil then
-        state.baseline, state.baselineEffects = score(state, state.gear)
+        state.baseline, state.baselineEffects, state.baselineItemEffects = score(state, state.gear)
         state.roleBaseline = score(state, state.gear, roleWeights)
         for _, worn in pairs(state.gear) do
             if worn.uncertain then state.uncertain = true; break end
         end
     end
-    local total, effects = score(state, proposal)
+    local total, effects, applied = score(state, proposal)
+    local conditional = false
+    for position = 1, 18 do
+        local before, after = state.gear[position], proposal[position]
+        local old = state.baselineItemEffects and state.baselineItemEffects[position]
+        local new = applied and applied[position]
+        if (before ~= after or position == 16 or position == 17)
+            and (self:HasUnresolvedEffects(before, old) or self:HasUnresolvedEffects(after, new)) then
+            conditional = true
+        end
+    end
     local without = withSwap(state.gear, target, nil, slot)
     return {
         delta = total - state.baseline,
         roleDelta = score(state, proposal, roleWeights) - state.roleBaseline,
         roleDisplaced = math.max(0, state.roleBaseline - score(state, without, roleWeights)),
         effects = swapEffects(state, effects, state.baselineEffects),
-        conditional = state.uncertain or incoming.uncertain or dependsOnUnmodeledCombat(state, incoming, target, slot),
+        conditional = conditional or state.uncertain or incoming.uncertain or dependsOnUnmodeledCombat(state, incoming, target, slot),
     }
 end
 
