@@ -7846,6 +7846,23 @@ function UI:RefreshDetailsLayout()
     return self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
 end
 
+function UI:RequestDetailsTierRange(data, mode)
+    if not data.stat_rank_scope or (mode ~= "leveling" and mode ~= "comparison") then return nil end
+    local detailsVersion = (self.domainVersions or {}).details
+    local comparison = self.slotComparison
+    return BigBiSList.ForeverGearRating:RequestTierRange(data.stat_rank, data.stat_rank_scope, {
+        owner = self.details,
+        isCurrent = function()
+            return self.selectedItemData == data and self.selectedItemMode == mode and self.slotComparison == comparison
+                and (self.domainVersions or {}).details == detailsVersion
+                and self:IsInspectorVisible() and self.details:IsVisible()
+        end,
+        onReady = function()
+            self:RefreshDetails(self.selectedItemId, data, mode)
+        end,
+    })
+end
+
 function UI:RefreshDetails(itemId, detailData, detailMode)
     if not self:IsInspectorVisible() or not self.detailsContent then
         return
@@ -7863,6 +7880,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     content:SetWidth(detailsWidth)
     local versions = self.domainVersions or {}
+    local tierRange = detailData and self:RequestDetailsTierRange(detailData, detailMode)
     local signature = table.concat({
         tostring(itemId or "none"),
         tostring(detailMode or ""),
@@ -7870,6 +7888,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         tostring(self:GetItemContext().class), tostring(self:GetItemContext().spec), tostring(self:GetItemContext().phase),
         tostring(versions.details or 0),
         tostring(math.floor((detailsWidth or 0) + 0.5)),
+        tierRange and tostring(tierRange.lastLevel) or "",
     }, ":")
     if self.detailsRenderSignature == signature then
         self:ApplyDetailsScrollGeometry(self.detailsContentHeight, detailsHeight)
@@ -8008,6 +8027,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             local service = BigBiSList.ForeverGearRating
             local lines = service:DescriptionLines(placement)
             lines[2] = "Default spec weights · " .. lines[2]
+            if tierRange then appendText(lines, "Tier range · " .. service:TierRangeLabel(tierRange)) end
             if placement.rank and placement.total > 1 then appendText(lines, string.format("%.1f pts", placement.score)) end
             local comparison = self.slotComparison
             if comparison and comparison.statRank then

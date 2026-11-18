@@ -149,7 +149,7 @@ excludes(tip, "vs Blood Ritual Ring")
 detected = "Protection"
 onEvent(core, "PLAYER_TALENT_UPDATE"); H.settle()
 excludes(tip, "Spec previews")
-local protection = "Strong #3/6 (64% of best)"
+local protection = "Strong Lv 47–54 · #3/6 (64% of best)"
 includes(tip, "Protection\n" .. protection)
 local rgb = tip.rowColors.Protection
 assert(rgb[1] == 0 and rgb[2] == 112/255 and rgb[3] == 221/255)
@@ -220,7 +220,7 @@ onEvent(core, "PLAYER_LEVEL_UP"); H.settle()
 includes(tip, "|cffffd152BiS|r  Protection")
 local _, badges = text(tip):gsub("BiS|r", "")
 assert(badges == 1)
-includes(tip, "Protection\nTop tier")
+includes(tip, "Protection\nTop tier #1/7 (100% of best) · Pre-Raid")
 local topTier = tip.rowColors["|cffffd152BiS|r  Protection"]
 assert(topTier[1] == 1 and topTier[2] == 128/255 and topTier[3] == 0)
 oneSection(tip)
@@ -270,9 +270,17 @@ local result = rating:CompareTooltipItem(live, candidate, true, nil, nil, { live
 assert(not result.delta and not result.placement.rank and not result.bis, "Acquisition assessment requires eligibility")
 showNative(tip, "item:900005")
 includes(tip, "Strong #2/8 (75% of best) · Level 55")
+H.settle()
+includes(tip, "Protection\nStrong Lv 55 · #2/8 (75% of best)")
+includes(tip, "Retribution\nStrong Lv 55 · #2/8 (75% of best)")
+excludes(tip, "Lv 55–")
+excludes(tip, "Est.")
+assert(tip.lines[4] == nativeRequirements[900005])
+oneSection(tip)
 
 showNative(GameTooltip, "item:900016", "GetMerchantItem", {1})
 includes(GameTooltip, "Top tier #1/10 (100% of best) · Pre-Raid")
+excludes(GameTooltip, "Lv 60")
 excludes(GameTooltip, "Est.")
 showNative(GameTooltip, "item:900017", "GetMerchantItem", {1})
 includes(GameTooltip, "Outside Pre-Raid rankings")
@@ -290,6 +298,87 @@ addon:RefreshTooltipPlayerContext()
 showNative(tip, "item:900018")
 includes(tip, "Strong #2/2 (75% of best) · Level 40")
 excludes(tip, "Est.")
+level = 35
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900018")
+H.settle()
+includes(tip, "Strong Lv 40–59 · #2/2 (75% of best)")
+excludes(tip, "Est.")
+
+level = 59
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900005")
+includes(tip, "Lv 59 · #3/9")
+excludes(tip, "Lv 59–60")
+''')
+
+    def test_tier_ranges_stop_at_first_change_and_reuse_completed_hovers(self):
+        self.lua_run(r'''
+profile.leveling.weights = {{1, 57, weights}, {58, 59, {stamina = 1, intellect = 1}}}
+profile.leveling.slot_max_levels = {["Main Hand"] = 54}
+rows["900007"][3], rows["900010"][3] = "Main Hand", "Main Hand"
+rows["900005"][5] = {stamina = 92, intellect = 20}
+gear(900014, "Level 54 ring", "Ring", 100, nil, 54)
+gear(900015, "Level 56 ring", "Ring", 94, nil, 56)
+gear(900016, "Level 57 ring", "Ring", 120, nil, 57)
+for offset = 1, 8 do gear(900020 + offset, "Common comparison ring", "Ring", offset) end
+H.equipped[11], H.equipped[12] = 900001, 900002
+
+local tip = GameTooltip
+showNative(tip, "item:900005")
+includes(tip, "Near best #2/16 (92% of best) · Level 55")
+local first = rating.tierRangeQueue[1]
+H.tick()
+assert(first.lastLevel == 56 and rating.tierRangeQueue[1].lastLevel == 55 and not tip.rebuilds,
+    "Only one projected level is evaluated per frame")
+
+showNative(tip, "item:900012")
+H.settle()
+assert(not tip.rebuilds and not rating.tierRangeQueue[1], "Replacing the hovered item abandons its pending range")
+
+showNative(tip, "item:900005")
+excludes(tip, "Lv 55–56")
+H.tick()
+detected = "Retribution"
+addon:RefreshTooltipPlayerContext()
+H.settle()
+assert(not tip.rebuilds and not rating.tierRangeQueue[1], "A spec change abandons the old work")
+
+showNative(tip, "item:900005")
+H.tick()
+level = 54
+addon:RefreshTooltipPlayerContext()
+H.settle()
+assert(not tip.rebuilds and not rating.tierRangeQueue[1], "A level change abandons the old work")
+
+showNative(tip, "item:900005")
+H.settle()
+includes(tip, "Retribution\nNear best Lv 55–56 · #2/16 (92% of best)")
+assert(tip.rebuilds == 1 and tip.lines[3] == "Native source")
+oneSection(tip)
+showNative(tip, "item:900012")
+showNative(tip, "item:900005")
+includes(tip, "Near best Lv 55–56 · #2/16 (92% of best)")
+H.settle()
+assert(tip.rebuilds == 1, "Repeat hovers reuse the completed tier ranges")
+
+level = 56
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900005")
+H.settle()
+includes(tip, "Near best Lv 56 · #3/17 (92% of best)")
+
+level = 58
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900005")
+H.settle()
+includes(tip, "Near best Lv 58–59 · #2/18 (93% of best)")
+
+level = 53
+addon:RefreshTooltipPlayerContext()
+showNative(tip, "item:900007")
+H.settle()
+includes(tip, "Top tier Lv 53–54 · #1/2 (100% of best)")
 ''')
 
     def test_bank_snapshot_copy_counts_and_legal_weapon_and_ring_swaps(self):
@@ -434,6 +523,9 @@ Item = {CreateFromItemID = function(_, item)
 end}
 H.equipped[11], H.equipped[12] = 900001, 900002
 local tip = GameTooltip
+showNative(tip, "item:900003")
+H.settle()
+local rebuilds = tip.rebuilds
 showNative(tip, linkA)
 includes(tip, "Loading stats")
 assert(callbacks[id] and not reads[700])
@@ -441,7 +533,7 @@ showNative(tip, "item:900003")
 local original = text(tip)
 ready = true
 callbacks[id](); H.settle()
-assert(text(tip) == original and not tip.rebuilds)
+assert(text(tip) == original and tip.rebuilds == rebuilds)
 local context = rating:GetContext("Paladin", "Protection", "LEVELING", 47, ui.currentOwned)
 local pool = rating:GetPlacement(context, "Finger1", {"Ring"})
 local originalCount = #pool.rows
@@ -458,7 +550,7 @@ oneSection(tip)
 tip:Hide()
 addon:ScheduleItemTooltipRefresh()
 H.settle()
-assert(not tip.rebuilds)
+assert(tip.rebuilds == rebuilds)
 
 -- Loading while the same item stays under the cursor also uses the native source.
 ready = false
@@ -469,6 +561,6 @@ includes(tip, "Loading stats")
 ready = true
 callbacks[id](); H.settle()
 includes(tip, "+6.0 pts|r vs Blood Ritual Ring")
-assert(tip.rebuilds == 1 and tip.lines[3] == "Native source")
+assert(tip.rebuilds == rebuilds + 2 and tip.lines[3] == "Native source")
 oneSection(tip)
 ''')

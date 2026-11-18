@@ -258,7 +258,8 @@ local function tooltipStatBlock(addon, candidate, player, info, mark, offer)
     local wornSlot = getter == "GetInventoryItem" and type(args) == "table"
         and readable(args[1]) == "player" and readable(args[2]) or nil
     local snapshot = ui:GetOwnedSnapshot()
-    local scope = { live = true, lookahead = candidate.facts.level and candidate.facts.level > player.level or nil }
+    block.snapshot = snapshot
+    local scope = { live = true, lookahead = true }
     local inventoryPending
     for _, spec in ipairs(player.specs) do
         local context = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot)
@@ -287,11 +288,14 @@ local function colorText(text, r, g, b)
         math.floor(b * 255 + 0.5), text)
 end
 
-local function tooltipRank(result)
+local function tooltipRank(result, range)
     local rating, placement = BigBiSList.ForeverGearRating, result.placement
-    local label = rating:Label(placement, "compact")
+    local label = range and string.format("%s %s · #%d/%d", placement.tier.label,
+        rating:TierRangeLabel(range), placement.rank, placement.total) or rating:Label(placement, "compact")
     if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
-    if result.preview and placement.score ~= nil then label = label .. " · " .. rating:ScopeLabel(placement) end
+    if not range and placement.score ~= nil and (result.preview or placement.phase == "PR") then
+        label = label .. " · " .. rating:ScopeLabel(placement)
+    end
     return label
 end
 
@@ -350,7 +354,7 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
         tooltip:AddLine(spec, r, g, b, true)
         if result then
-            tooltip:AddLine(tooltipRank(result), r, g, b, true)
+            tooltip:AddLine(tooltipRank(result, row.tierRange), r, g, b, true)
             local extra = swapText(result, row.ownedBaseline)
             if extra then
                 if result.delta ~= nil then
@@ -400,6 +404,28 @@ local function rebuildTooltip(tooltip, state)
         if tooltip.Show then tooltip:Show() end
     end
     tooltip.__bigBisListRefreshing = nil
+end
+
+local function requestTooltipTierRanges(addon, tooltip, state, block, player)
+    local pending = 0
+    local watcher = {
+        owner = tooltip,
+        isCurrent = function()
+            return tooltip.__bigBisListState == state and (not tooltip.IsShown or tooltip:IsShown())
+                and readable(call(tooltip.GetOwner, tooltip)) == state.owner
+                and addon:GetTooltipPlayerContext() == player and addon.UI.currentOwned == block.snapshot
+        end,
+        onReady = function()
+            pending = pending - 1
+            if pending == 0 then rebuildTooltip(tooltip, state) end
+        end,
+    }
+    for _, row in ipairs(block.rows) do
+        local result = row.result
+        local range, queued = addon.ForeverGearRating:RequestTierRange(result.placement, result.rankScope, watcher)
+        row.tierRange = range
+        if queued then pending = pending + 1 end
+    end
 end
 
 local function refreshTooltipForModifier(tooltip)
@@ -488,6 +514,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local maxRows = showExpanded and #matches or (settings.compact and 4 or 8)
     tooltip.__bigBisListState = { itemId = itemId, link = itemLink, owner = owner, acquisition = offer ~= nil,
         expanded = not not showExpanded, stats = statBlock ~= nil, pending = statBlock and statBlock.pending or {} }
+    if statBlock then requestTooltipTierRanges(self, tooltip, tooltip.__bigBisListState, statBlock, live) end
 
     tooltip:AddLine(" ")
     local ownership = statBlock and OWNED_LABELS[statBlock.ownership]

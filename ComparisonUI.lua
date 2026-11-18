@@ -310,6 +310,7 @@ function UI:RefreshComparisonPool(force)
             owned_state = "equipped", occupancy = context.occupancy, reference_context = context, equipped_bis = context.equipped_bis }
         if state.statRank then
             pinned.stat_rank, pinned.stat_identity = context.stat_rank, context.stat_identity
+            pinned.stat_rank_scope = context.stat_rank_scope
             pinned.slot, pinned.leveling = rows.slot, state.phase == "LEVELING"
             pinned.stat_guide_badge, pinned.guide_note = context.stat_guide_badge, context.guide_note
             pinned.recommendation_summary = pinned.guide_note

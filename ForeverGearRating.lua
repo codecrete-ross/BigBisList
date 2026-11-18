@@ -394,6 +394,20 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
     }
 end
 
+local function contextAtLevel(context, phase, level)
+    local data = context.catalog.data
+    local profile = data.profiles[context.class .. "/" .. context.spec]
+    local samePhase = phase == context.phase
+    local phaseIndex = samePhase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase)
+    local projected = scoringContext(data, profile, context.class, context.spec, phase, level, phaseIndex,
+        context.race, context.faction)
+    projected.catalog, projected.ownedFacts = context.catalog, context.ownedFacts
+    projected.owned, projected.equipmentFacts, projected.guide = context.owned, context.equipmentFacts, context.guide
+    -- Native source scope checks the content phase. Guide routes also depend on the level.
+    if samePhase and not context.guide then projected.inScope = context.inScope end
+    return projected
+end
+
 function rating:GetContext(className, spec, phase, level, owned)
     local data = model()
     if not data or not owned then return nil end
@@ -692,7 +706,8 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
     end
     local placement = reference and candidates[reference.key]
         or (equipped and resultFor(context, reference, equipped.status))
-    local pool = {rows = rows, reference = placement, slot = slot, byVariant = candidates, count = count, bestScore = bestScore}
+    local pool = { rows = rows, reference = placement, slot = slot, byVariant = candidates, count = count, bestScore = bestScore,
+        scope = { context = context, key = cacheKey, physical = physical, slot = slot, handType = handType, gear = gear } }
     context.pools[cacheKey] = pool
     return pool
 end
@@ -969,6 +984,13 @@ local function projectedPlacement(item, placement, pool)
     return placement
 end
 
+local function firstUsableSlot(context, group, item)
+    for _, definition in ipairs(group.definitions) do
+        local slot = targetSlot(item, definition)
+        if slot and usable(context, item, slot) then return slot end
+    end
+end
+
 local function insertionRank(context, item, result, placement)
     if placement.score == nil then return placement end
     local physical = result.definition.key
@@ -982,7 +1004,8 @@ local function insertionRank(context, item, result, placement)
     cacheKey = cacheKey or table.concat({
         result.poolKey or "worn", physical, slot, handType or "",
     }, "\031")
-    return projectedPlacement(item, placement, slotPool(context, physical, slot, handType, gear, cacheKey))
+    local pool = slotPool(context, physical, slot, handType, gear, cacheKey)
+    return projectedPlacement(item, placement, pool), pool.scope
 end
 
 local function lookaheadPlacement(context, item)
@@ -991,33 +1014,128 @@ local function lookaheadPlacement(context, item)
     if item.excluded or item.has_random_stats or not permitted(item.classes, context.class)
         or not permitted(item.races, context.race) then return { status = "incompatible" } end
 
-    local data = context.catalog.data
-    local profile = data.profiles[context.class .. "/" .. context.spec]
     local group = groupFor(item)
-    -- Proficiency can unlock after the item's required level. Keep one preview
-    -- per live context so hovering many levels cannot grow the pool cache.
-    for level = item.level, cap do
+    -- Proficiency can unlock after the item's required level.
+    for level = math.max(item.level, context.level + 1), cap do
         local preview = context.tooltipLookahead
         if not preview or preview.level ~= level then
-            local phase = level == cap and "PR" or "LEVELING"
-            preview = scoringContext(data, profile, context.class, context.spec, phase, level,
-                phase == context.phase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase), context.race)
-            preview.catalog, preview.ownedFacts = context.catalog, context.ownedFacts
+            preview = contextAtLevel(context, level == cap and "PR" or "LEVELING", level)
+            preview.tierRangeBase = context
         end
-        for _, definition in ipairs(group.definitions) do
-            local slot = targetSlot(item, definition)
-            if slot and fitsEquipment(preview, item, slot) then
-                context.tooltipLookahead = preview
-                if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase } end
-                local placement = resultFor(preview, item)
-                if placement.score == nil then return placement end
-                local handType = slot == "Off Hand" and offHandType(item)
-                local pool = slotPool(preview, slot, slot, handType, {}, slot .. (handType or ""))
-                return projectedPlacement(item, placement, pool)
-            end
+        local slot = firstUsableSlot(preview, group, item)
+        if slot then
+            context.tooltipLookahead = preview
+            if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase } end
+            local placement = resultFor(preview, item)
+            if placement.score == nil then return placement end
+            local handType = slot == "Off Hand" and offHandType(item)
+            local pool = slotPool(preview, slot, slot, handType, {}, slot .. (handType or ""))
+            return projectedPlacement(item, placement, pool), pool.scope
         end
     end
     return { status = "incompatible" }
+end
+
+local function previewTooltipItem(context, item)
+    local placement, scope = lookaheadPlacement(context, item)
+    return { placement = placement, rankScope = scope, preview = true }
+end
+
+local function tierAtLevel(scope, item, level)
+    local context = contextAtLevel(scope.context, "LEVELING", level)
+    -- Keep the anchor's physical slot and the other pieces in its comparison setup.
+    local slot, physical, gear = scope.slot, scope.physical, scope.gear
+    if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
+        or not inScope(context, item) then return nil end
+    local pool = slotPool(context, physical, slot, scope.handType, gear, scope.key)
+    local placement = pool.byVariant[item.key]
+    if not placement and not context.guide then
+        placement = resultFor(context, item)
+        if placement.score ~= nil then placement = projectedPlacement(item, placement, pool) end
+    end
+    return placement and placement.tier and placement.tier.quality
+end
+
+local function currentTierScope(context)
+    return context.catalog.data == model() and context.phaseIndex == addon:GetAvailabilityPhaseIndex(context.phase)
+end
+
+local function nextTierRequest(queue)
+    while queue[1] do
+        local job = table.remove(queue, 1)
+        if currentTierScope(job.scope.context) then
+            for owner, watcher in pairs(job.watchers) do
+                if not watcher.isCurrent() then job.watchers[owner] = nil end
+            end
+            if next(job.watchers) then return job end
+        end
+        job.cache.pending[job.key] = nil
+    end
+end
+
+local function scheduleTierRanges(self)
+    local queue = self.tierRangeQueue
+    if self.tierRangeScheduled or not queue[1] then return end
+    self.tierRangeScheduled = true
+    C_Timer.After(0, function()
+        self.tierRangeScheduled = nil
+        local job = nextTierRequest(queue)
+        if not job then return end
+        local nextLevel = job.lastLevel + 1
+        local sameTier = tierAtLevel(job.scope, job.item, nextLevel) == job.quality
+        if sameTier then job.lastLevel = nextLevel end
+        if not sameTier or nextLevel == addon.maxLevelingLevel then
+            local cache = job.cache
+            cache.pending[job.key] = nil
+            if #cache.order == 64 then cache.results[table.remove(cache.order, 1)] = nil end
+            cache.order[#cache.order + 1] = job.key
+            local range = { firstLevel = job.firstLevel, lastLevel = job.lastLevel }
+            cache.results[job.key] = range
+            for _, watcher in pairs(job.watchers) do
+                if watcher.isCurrent() then watcher.onReady() end
+            end
+        else
+            queue[#queue + 1] = job
+        end
+        scheduleTierRanges(self)
+    end)
+end
+
+function rating:RequestTierRange(placement, scope, watcher)
+    if not scope or not placement or not placement.tier or placement.phase ~= "LEVELING"
+        or not currentTierScope(scope.context) then return nil end
+    local level = placement.level
+    if level > addon.maxLevelingLevel then return nil end
+    if level == addon.maxLevelingLevel then return { firstLevel = level, lastLevel = level } end
+
+    local context = scope.context
+    local base = context.tierRangeBase or context
+    local cache = base.tierRanges
+    if not cache then
+        cache = { pending = {}, results = {}, order = {} }
+        base.tierRanges = cache
+    end
+    local key = table.concat({ context.tierRangeBase and "preview" or "rank", level, scope.key,
+        placement.item.key, placement.tier.quality }, "\031")
+    if cache.results[key] then return cache.results[key] end
+    if not (watcher and C_Timer and C_Timer.After) then return nil end
+
+    local job = cache.pending[key]
+    if not job then
+        job = { cache = cache, key = key, scope = scope, item = placement.item, quality = placement.tier.quality,
+            firstLevel = level, lastLevel = level, watchers = {} }
+        cache.pending[key] = job
+        self.tierRangeQueue = self.tierRangeQueue or {}
+        table.insert(self.tierRangeQueue, job)
+    end
+    job.watchers[watcher.owner] = watcher
+    scheduleTierRanges(self)
+    return nil, true
+end
+
+function rating:TierRangeLabel(range)
+    local first, last = range.firstLevel, range.lastLevel
+    return "Lv " .. first .. (last > first and ("–" .. last) or "")
 end
 
 local EMPTY_CHOICE = { score = 0, order = math.huge }
@@ -1164,17 +1282,15 @@ end
 local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)
     local item = candidate.facts
     if item.level and item.level > context.level then
-        if scope.lookahead then return { placement = lookaheadPlacement(context, item), preview = true } end
+        if scope.lookahead then return previewTooltipItem(context, item) end
         return { placement = { status = "level" } }
     end
     if not inScope(context, item) then return { placement = { status = "out_of_scope", phase = context.phase } } end
     local group = groupFor(item)
-    local firstSlot
-    for _, definition in ipairs(group.definitions) do
-        local slot = targetSlot(item, definition)
-        if slot and usable(context, item, slot) then firstSlot = firstSlot or slot end
+    if not firstUsableSlot(context, group, item) then
+        if scope.lookahead and context.leveling and item.level then return previewTooltipItem(context, item) end
+        return { placement = { status = "incompatible" } }
     end
-    if not firstSlot then return { placement = { status = "incompatible" } } end
     local placement = resultFor(context, item)
 
     local result
@@ -1184,7 +1300,7 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
         result = ownedSwap(context, group, candidate, extraCopy)
     end
     if not result then return { placement = { status = "blocked" } } end
-    result.placement = insertionRank(context, item, result, placement)
+    result.placement, result.rankScope = insertionRank(context, item, result, placement)
     return result
 end
 
@@ -1195,7 +1311,8 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
     local last = context.lastTooltip
     if last and last.candidate == candidate and last.useWorn == useWorn and last.wornSlot == wornSlot
         and last.extraCopy == extraCopy and last.revision == revision and last.live == scope.live
-        and last.physical == scope.physical and last.slot == scope.slot and last.lookahead == scope.lookahead then
+        and last.physical == scope.physical and last.slot == scope.slot
+        and (last.lookahead == scope.lookahead or last.result.slot) then
         return last.result
     end
     local result = assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)

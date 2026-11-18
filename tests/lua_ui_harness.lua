@@ -251,24 +251,29 @@ function methods:SetItemByID(id) self:SetHyperlink("item:" .. tostring(id)) end
 function methods:SetSpellByID(id) self:SetHyperlink("spell:" .. tostring(id)) end
 function methods:GetItem() return "Fixture", self.hyperlink end
 function methods:NumLines() return #(self.lines or {}) end
-function H.settle()
-    for pass = 1, 30 do
-        local activity = false
-        for _, node in ipairs(H.frames) do
-            local width, height = node:GetWidth(), node:GetHeight()
-            if node.lastWidth ~= width or node.lastHeight ~= height then
-                node.lastWidth, node.lastHeight = width, height
-                if node.scripts.OnSizeChanged then node.scripts.OnSizeChanged(node, width, height); activity = true end
-            end
+function H.tick()
+    local activity = false
+    for _, node in ipairs(H.frames) do
+        local width, height = node:GetWidth(), node:GetHeight()
+        if node.lastWidth ~= width or node.lastHeight ~= height then
+            node.lastWidth, node.lastHeight = width, height
+            if node.scripts.OnSizeChanged then node.scripts.OnSizeChanged(node, width, height); activity = true end
         end
-        local pending = H.timers
-        H.timers = {}
-        for _, timer in ipairs(pending) do
-            if timer.at <= H.now then timer.callback(); activity = true else table.insert(H.timers, timer) end
-        end
-        if not activity then return end
     end
-    error("UI geometry or refresh timers did not settle after 30 passes")
+    local pending = H.timers
+    H.timers = {}
+    for _, timer in ipairs(pending) do
+        if timer.at <= H.now then timer.callback(); activity = true else table.insert(H.timers, timer) end
+    end
+    return activity
+end
+
+function H.settle()
+    -- Each visible tooltip can project up to 58 levels per spec.
+    for pass = 1, 600 do
+        if not H.tick() then return end
+    end
+    error("UI geometry or refresh timers did not settle after 600 passes")
 end
 function H.load(flavor)
     local forever = flavor == "forever"

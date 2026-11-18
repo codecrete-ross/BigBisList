@@ -102,6 +102,80 @@ assert(view.sort == sort and view.sortDirection == direction and view.groupBy ==
 assert(not ui.filterToggleButton.selected and not ui.filterDrawerOpen)
 ''')
 
+    def test_details_project_the_guide_route_and_compare_slot_pools(self):
+        self.run_lua(r'''
+function UnitLevel() return 55 end
+function UnitRace() return "Human", "Human", 1 end
+function UnitFactionGroup() return "Alliance" end
+
+local function guideRow(id)
+    for _, entry in ipairs(ui.renderModel.entries) do
+        if entry.kind == "row" and entry.data.item_id == id then return entry.data end
+    end
+end
+local function statRankText()
+    for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
+        if block:IsVisible() and block.title:GetText() == "Stat rank" then return block.body:GetText() end
+    end
+    return ""
+end
+local function expectRank(fragment)
+    local contents = statRankText()
+    assert(contents:find(fragment, 1, true), "Missing " .. fragment .. " in:\n" .. contents)
+end
+
+ui:Open(); H.settle()
+ui.frame:SetSize(1160, 660); H.settle()
+ui:SetClass("Paladin"); H.settle()
+ui:SetSpec("Retribution"); H.settle()
+ui:SetContentMode("leveling"); H.settle()
+ui:SetLevelingLevel(55); H.settle()
+ui:SetTab("Gear Guide"); H.settle()
+ui:ToggleSlot("Shoulder"); H.settle()
+ui:SetInspectorVisible(true); H.settle()
+assert(ui.details:IsVisible() and not ui.inspectorExclusive)
+
+assert(not guideRow(16729), "Lightforge Spaulders' route is unavailable at 55")
+local pauldrons = assert(guideRow(9476))
+ui:ShowInspectorFor(pauldrons.item_id, pauldrons, "leveling")
+expectRank("Top tier")
+assert(not statRankText():find("Tier range", 1, true))
+ui:SetInspectorVisible(false); H.settle()
+assert(not ui.details:IsVisible())
+ui:SetInspectorVisible(true); H.settle()
+expectRank("Tier range · Lv 55–57")
+
+ui:SetLevelingLevel(58); H.settle()
+local spaulders = assert(guideRow(16729))
+ui:ShowInspectorFor(spaulders.item_id, spaulders, "leveling"); H.settle()
+expectRank("Top tier")
+expectRank("Tier range · Lv 58–59")
+
+ui:SetLevelingLevel(55); H.settle()
+ui:SetTab("Equipped"); H.settle()
+UIParent:SetSize(900, 500)
+ui.frame:SetSize(900, 500); H.settle()
+assert(ui:OpenSlotComparison(ui.gearFrame.slots.Shoulder.gearData, "gear", true)); H.settle()
+local comparison = ui.slotComparison
+local candidate
+for _, item in ipairs(comparison.rows) do
+    if item.item_id == 16729 then candidate = item; break end
+end
+assert(candidate and candidate.stat_rank.rank == 2 and candidate.stat_rank.score_percent == 94)
+ui:ShowComparisonDetails(candidate)
+expectRank("Near best")
+assert(not statRankText():find("Tier range", 1, true))
+assert(ui:BackToSlotComparison()); H.settle()
+assert(not ui.details:IsVisible())
+ui:ShowComparisonDetails(candidate)
+assert(not statRankText():find("Tier range", 1, true), "Closing Details abandons the pending calculation")
+H.settle()
+assert(ui.details:IsVisible() and ui.inspectorExclusive)
+expectRank("Tier range · Lv 55–59")
+assert(ui:BackToSlotComparison()); H.settle()
+assert(ui.slotComparison == comparison and not comparison.detailsOpen)
+''')
+
     def test_compare_slot_sorts_one_basis_and_puts_conditional_swaps_last(self):
         self.run_lua(r'''
 local addon = BigBiSList

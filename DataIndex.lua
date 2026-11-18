@@ -6278,8 +6278,9 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
     local rows = { contexts = contexts, statsPending = scoring.pending, slot = pool.slot, swapBasis = "reference" }
     local leveling = phase == LEVELING_PHASE_KEY
     for _, context in ipairs(contexts) do
-        local entry = service:GetPlacement(scoring, context.slotKey, context.dataSlots).reference
-        context.stat_rank = entry
+        local ranked = service:GetPlacement(scoring, context.slotKey, context.dataSlots)
+        local entry = ranked.reference
+        context.stat_rank, context.stat_rank_scope = entry, ranked.scope
         context.stat_identity = entry and entry.item and entry.item.key
         local linkName = context.item_link and context.item_link:match("|h%[(.-)%]|h")
         local exact = entry and entry.item
@@ -6332,6 +6333,7 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
         local data = {
             item_id = facts.id, item_link = link, name = link and link:match("|h%[(.-)%]|h") or facts.name, item = item,
             variant_id = facts.variant_id, stat_identity = facts.key, stat_rank = entry, stat_guide_badge = badge,
+            stat_rank_scope = pool.scope,
             slot = pool.slot, class = className, spec = specName, phase = phase, leveling = leveling,
             level_min = scoring.level, bestUse = use, scoring_basis = activeUse and activeUse.scoring_basis,
             scoring_label = activeUse and activeUse.scoring_label, level_label = use and use.level_label,
@@ -6563,6 +6565,7 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context)
                             row.category_label, row.leveling_category_key, row.recommendation_summary = nil, nil, nil
                         end
                         row.stat_rank, row.stat_identity = entry, item.key
+                        row.stat_rank_scope = pool.scope
                         row.guide_note = effect
                         candidates[#candidates + 1] = { row = row, score = score, tier = tier }
                         if tier == "uncommon" then hasUncommon = true end
