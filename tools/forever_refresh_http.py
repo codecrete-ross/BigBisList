@@ -21,6 +21,8 @@ from tools.project import load_json, write_text
 
 MAX_REQUESTS = 80
 COLLECTION_SECONDS = 300
+EXACT_REQUEST_RESERVE = 20
+EXACT_SECONDS_RESERVE = 60
 EVERLOOT_HOURLY_LIMIT = 30
 MAX_BODY_BYTES = 64 * 1024 * 1024
 REDIRECTS = {301, 302, 303, 307, 308}
@@ -112,6 +114,7 @@ class RefreshHTTP:
         self.monotonic = monotonic or time.monotonic
         self.sleep = sleep or time.sleep
         self.deadline = self.monotonic() + COLLECTION_SECONDS
+        self.request_limit = MAX_REQUESTS
         self.started_at = self.now().isoformat()
         self.attempts_before = len(self.state["attempts"])
         self.request_count = 0
@@ -120,6 +123,17 @@ class RefreshHTTP:
 
     def checkpoint(self) -> None:
         write_json(self.path, self.state)
+
+    @contextmanager
+    def bulk_budget(self, *, reserve_exact: bool):
+        deadline, limit = self.deadline, self.request_limit
+        if reserve_exact:
+            self.deadline -= EXACT_SECONDS_RESERVE
+            self.request_limit -= EXACT_REQUEST_RESERVE
+        try:
+            yield
+        finally:
+            self.deadline, self.request_limit = deadline, limit
 
     def _cached(self, receipt: dict) -> bytes:
         content = (self.directory / "responses" / receipt["source_content_digest"]).read_bytes()
@@ -143,7 +157,7 @@ class RefreshHTTP:
 
     def _check_budget(self, host: str) -> None:
         current = self.now()
-        if self.request_count >= MAX_REQUESTS or self.monotonic() >= self.deadline:
+        if self.request_count >= min(self.request_limit, MAX_REQUESTS) or self.monotonic() >= self.deadline:
             raise Unavailable("Live collection budget reached")
         blocked_until = self.state["cooldown"].get(host)
         if timestamp(blocked_until) > current:

@@ -1,0 +1,174 @@
+name: Forever weekly data
+
+on:
+  schedule:
+    - cron: "25 9 * * 3"
+      timezone: America/Los_Angeles
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Collect and verify without opening a PR or publishing
+        type: boolean
+        default: true
+      compare_build:
+        description: Optional Forever comparison build for staged evidence
+        type: string
+      release_commit:
+        description: Exact merged data PR commit to validate or resume publishing
+        type: string
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: forever-weekly-data
+  cancel-in-progress: false
+
+jobs:
+  data:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'pull_request' ||
+        (github.event.pull_request.merged &&
+         startsWith(github.event.pull_request.head.ref, 'codex/forever-data-') &&
+         github.event.pull_request.head.repo.full_name == github.repository &&
+         github.event.pull_request.user.login == vars.FOREVER_RELEASE_BOT_LOGIN &&
+         vars.FOREVER_DATA_AUTO_RELEASE == 'true'))
+    runs-on: windows-latest
+    timeout-minutes: 90
+    env:
+      WEEKLY_BASELINE: ${{ vars.FOREVER_LIVE_BASELINE_TAG }}
+      WEEKLY_BOT_LOGIN: ${{ vars.FOREVER_RELEASE_BOT_LOGIN }}
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Set the isolated staging directory
+        run: '"WEEKLY_STATE=$env:RUNNER_TEMP/forever-weekly" >> $env:GITHUB_ENV'
+
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - uses: step-security/msvc-dev-cmd@v1
+      - uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: "5.1.5"
+      - name: Install release dependencies
+        run: python -m pip install .
+
+      - name: Restore the last refresh state
+        if: github.event_name != 'pull_request' && inputs.release_commit == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $runs = gh api "repos/$env:GITHUB_REPOSITORY/actions/workflows/forever-weekly-data.yml/runs?branch=main&status=completed&per_page=12" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($run in $runs.workflow_runs) {
+              if ($run.event -notin @("schedule", "workflow_dispatch") -or $run.conclusion -ne "success") { continue }
+              $artifacts = gh api "repos/$env:GITHUB_REPOSITORY/actions/runs/$($run.id)/artifacts?name=forever-refresh-state" | ConvertFrom-Json
+              if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+              if ($artifacts.artifacts | Where-Object { -not $_.expired }) {
+                  gh run download $run.id --name forever-refresh-state --dir "$env:WEEKLY_STATE/cache"
+                  exit $LASTEXITCODE
+              }
+          }
+
+      - name: Stage and verify the candidate
+        id: prepare
+        if: github.event_name != 'pull_request' && inputs.release_commit == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMPARE_BUILD: ${{ inputs.compare_build }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $localDate = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTimeOffset]::UtcNow, "Pacific Standard Time").ToString("yyyy-MM-dd")
+          $arguments = @("prepare", "--state-dir", $env:WEEKLY_STATE, "--date", $localDate, "--online")
+          if ($env:WEEKLY_BASELINE) { $arguments += @("--baseline-tag", $env:WEEKLY_BASELINE) }
+          if ($env:COMPARE_BUILD) { $arguments += @("--compare-build", $env:COMPARE_BUILD) }
+          python -m tools.forever_weekly @arguments
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $report = Get-Content -Raw -LiteralPath "$env:WEEKLY_STATE/weekly.json" | ConvertFrom-Json
+          "status=$($report.status)" >> $env:GITHUB_OUTPUT
+
+      - name: Verify the clean merge commit
+        id: merge
+        if: github.event_name == 'pull_request' || inputs.release_commit != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MERGE_COMMIT: ${{ inputs.release_commit || github.event.pull_request.merge_commit_sha }}
+          MERGE_PR: ${{ github.event.pull_request.number }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          if (!$env:WEEKLY_BASELINE -or !$env:WEEKLY_BOT_LOGIN) {
+              throw "Configure the live baseline tag and release App login before verifying a merge."
+          }
+          $arguments = @("verify-merge", "--state-dir", $env:WEEKLY_STATE, "--baseline-tag", $env:WEEKLY_BASELINE,
+                         "--commit", $env:MERGE_COMMIT, "--bot-login", $env:WEEKLY_BOT_LOGIN)
+          if ($env:MERGE_PR) { $arguments += @("--pr-number", $env:MERGE_PR) }
+          python -m tools.forever_weekly @arguments
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $receipt = Get-Content -Raw -LiteralPath "$env:WEEKLY_STATE/publish.json" | ConvertFrom-Json
+          "status=$($receipt.status)" >> $env:GITHUB_OUTPUT
+
+      - name: Authorize the verified write
+        id: app
+        if: >-
+          vars.FOREVER_DATA_AUTO_RELEASE == 'true' &&
+          (github.event_name != 'workflow_dispatch' || !inputs.dry_run) &&
+          (steps.prepare.outputs.status == 'ready' || steps.merge.outputs.status == 'verified')
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.FOREVER_RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.FOREVER_RELEASE_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Open the isolated PR and enable auto-merge
+        if: steps.app.outcome == 'success' && steps.prepare.outputs.status == 'ready'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          $localDate = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTimeOffset]::UtcNow, "Pacific Standard Time").ToString("yyyy-MM-dd")
+          python -m tools.forever_weekly submit --state-dir $env:WEEKLY_STATE --baseline-tag $env:WEEKLY_BASELINE --date $localDate --bot-login $env:WEEKLY_BOT_LOGIN
+          exit $LASTEXITCODE
+
+      - name: Publish the verified patch tag
+        if: steps.app.outcome == 'success' && steps.merge.outputs.status == 'verified'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          python -m tools.forever_weekly publish --state-dir $env:WEEKLY_STATE --baseline-tag $env:WEEKLY_BASELINE
+          exit $LASTEXITCODE
+
+      - name: Save request checkpoints
+        if: always() && github.event_name != 'pull_request' && inputs.release_commit == ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: forever-refresh-state
+          path: ${{ env.WEEKLY_STATE }}/cache/
+          if-no-files-found: ignore
+          retention-days: 30
+          compression-level: 1
+
+      - name: Save verification receipts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: forever-weekly-report
+          path: |
+            ${{ env.WEEKLY_STATE }}/weekly.json
+            ${{ env.WEEKLY_STATE }}/publish.json
+            ${{ env.WEEKLY_STATE }}/released.json
+            ${{ env.WEEKLY_STATE }}/*.log
+          if-no-files-found: ignore
+          retention-days: 30

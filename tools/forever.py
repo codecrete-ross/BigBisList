@@ -488,30 +488,56 @@ def import_snapshots(input_dir: Path, *, dry_run: bool, family: str | None = Non
 def live_acceptance() -> dict:
     path = FOREVER_CANONICAL_DIR / "live_acceptance.json"
     document = load_json(path) if path.is_file() else {}
+    errors = live_acceptance_errors(document, release_artifact_digest())
+    return {"ok": not errors, "status": document.get("status", "pending"), "errors": errors}
+
+
+def live_acceptance_errors(document: dict, artifact_digest: str) -> list[str]:
     errors = []
     if document.get("status") != "accepted":
         errors.append("Forever live gameplay acceptance is pending")
     if not has_review(document):
         errors.append("Live acceptance needs reviewer, date, target build and evidence source")
-    if document.get("artifact_digest") != release_artifact_digest():
+    if document.get("artifact_digest") != artifact_digest:
         errors.append("Live acceptance does not cover the current Forever addon files")
     if any(document.get("checks", {}).get(key) is not True for key in LIVE_ACCEPTANCE_CHECKS):
         errors.append("Required live gameplay checks have not all been recorded")
     performance = document.get("performance", {})
     if any(not numeric(performance.get(key)) or performance[key] < 0 for key in ("startup_ms", "first_open_ms")):
         errors.append("Startup and first-open timings have not been recorded")
-    return {"ok":not errors,"status":document.get("status", "pending"),"errors":errors}
+    return errors
+
+
+FOREVER_MANIFEST = "BigBiSList_Camelot.toc"
+
+
+def release_manifest_files(text: str) -> list[str]:
+    entries = {line.strip().replace("\\", "/") for line in text.splitlines()
+               if line.strip() and not line.strip().startswith("#")}
+    if any(any(part in {"", ".", ".."} for part in name.split("/")) or ":" in name for name in entries):
+        raise ValueError("Forever manifest contains an invalid release artifact")
+    return sorted(entries | {FOREVER_MANIFEST})
+
+
+def artifact_digest(read_file) -> str:
+    paths = release_manifest_files(read_file(FOREVER_MANIFEST).decode("utf-8"))
+    checksums = {}
+    for name in paths:
+        raw = read_file(name)
+        if name.endswith((".lua", ".toc")):
+            raw = raw.replace(b"\r\n", b"\n")
+        checksums[name] = hashlib.sha256(raw).hexdigest()
+    return digest(checksums)
 
 
 def release_artifact_digest() -> str:
-    toc = ROOT / "BigBiSList_Camelot.toc"
-    entries = [line.strip() for line in toc.read_text(encoding="utf-8").splitlines()
-               if line.strip() and not line.strip().startswith("#")]
-    paths = [toc, *((ROOT / entry).resolve() for entry in entries)]
-    if any(not path.is_relative_to(ROOT) or not path.is_file() for path in paths):
-        raise ValueError("Forever manifest contains an invalid release artifact")
-    return digest({str(path.relative_to(ROOT)).replace("\\", "/"):hashlib.sha256(path.read_bytes()).hexdigest()
-                   for path in sorted(set(paths))})
+    def read_file(name):
+        path = (ROOT / name).resolve()
+        if not path.is_relative_to(ROOT) or not path.is_file():
+            raise ValueError("Forever manifest contains an invalid release artifact")
+        return path.read_bytes()
+
+    return artifact_digest(read_file)
 
 
 def coverage() -> dict:

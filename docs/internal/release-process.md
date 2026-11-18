@@ -77,9 +77,9 @@ explicitly changes the target client. The `## Version` field should stay
 
 ## Automated Release Gate
 
-The current `-FullData` implementation includes Anniversary data checks.
-Update its client selection before using it for a Forever-only release. The
-authoritative gate still runs on the final clean release commit.
+Forever is the default release gate scope. Select `-Flavor anniversary` explicitly for an
+authorized Anniversary release. The authoritative gate runs on the final
+clean release commit.
 
 Use a dedicated Python 3.10-or-newer virtual environment installed from the
 repository's `pyproject.toml` (for example, create the environment and run its
@@ -88,7 +88,7 @@ installed packages merely happen to satisfy some tests. From the clean release
 commit, run:
 
 ```powershell
-pwsh -File scripts/check-release.ps1 -Version <next-version> -PythonPath <venv-python> -FullData
+pwsh -File scripts/check-release.ps1 -Version <next-version> -Flavor forever -PythonPath <venv-python> -FullData
 ```
 
 Pass `-PythonPath <path>` when the release interpreter is not available as
@@ -148,9 +148,10 @@ URL, reason, and `artifact_digest`. Obtain the digest from
 Forever manifest and its listed runtime files. All keys in
 `tools.forever.LIVE_ACCEPTANCE_CHECKS` must be true, and `performance` must
 include measured `startup_ms` and `first_open_ms`. A later runtime or data
-change invalidates that acceptance. Leave this document pending until the
-user supplies the actual gameplay results; offline tests do not establish
-live acceptance.
+change invalidates that artifact-specific acceptance. Leave this document
+pending until the user supplies the actual gameplay results. The weekly
+data-only path uses the baseline described below and records its own
+scripted verification receipt.
 
 Record the automated gate result, content-schedule review, and in-game result in
 the release PR or handoff. A skipped applicable check must include its reason,
@@ -193,6 +194,43 @@ check of the automatically published CurseForge file should show the current
 minor line's sections and no older minor line; report ingestion as unverified
 if the new file is not yet available. This check does not introduce a manual
 publishing or correction step.
+
+## Weekly Forever data releases
+
+The **Forever weekly data** workflow runs Wednesdays at 9:25 a.m. Pacific
+on `main`. Use its manual dry run to collect and verify from the current
+remote `main` without opening a PR or publishing. `compare_build` stages a
+different client's evidence separately. Request checkpoints and verified
+snapshots are restored from a prior run and retained for 30 days.
+
+The job creates a disposable worktree from `origin/main`. It applies only
+complete evidence that passes the existing review rules, then imports and
+generates the Forever payload there. Conflicts and stale or missing approvals
+stay in the report. Each applicable patch goes through a data-only PR with the
+existing required GitHub checks. After merge the job checks the entire diff
+since the previous published tag and reruns `-FullData` on the exact clean
+commit before publishing. A tag that already points at that commit can resume
+the GitHub release. The `release_commit` dispatch input accepts the merged
+PR's full SHA for recovery.
+
+Merge the workflow separately from data PRs. The first Forever release uses
+artifact-specific gameplay acceptance and both strict audits. After publishing
+that release, configure the following repository settings:
+
+- `FOREVER_LIVE_BASELINE_TAG` names the published tag with genuine live
+  acceptance for the current client build.
+- `FOREVER_RELEASE_APP_CLIENT_ID` and `FOREVER_RELEASE_BOT_LOGIN` identify
+  the GitHub App and its bot. Install the App only in this repository with
+  Contents and Pull requests write permissions. Store its private key in
+  `FOREVER_RELEASE_APP_PRIVATE_KEY`.
+- Enable GitHub auto-merge and require the release check on data PRs. Set
+  `FOREVER_DATA_AUTO_RELEASE` to `true` after a successful workflow dry run.
+
+The same live-tested baseline covers data-only patches for the same client
+build, manifest, runtime, assets, eligibility rules, and scoring configuration.
+Records of live tests stay with the baseline tag. The `-BaselineTag` gate
+verifies each changed data artifact and records scripted acceptance separately.
+Record a fresh live baseline when the client build, runtime, or rules change.
 
 ## Convention References
 

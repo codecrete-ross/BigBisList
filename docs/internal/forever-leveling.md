@@ -417,13 +417,21 @@ Run the availability refresh against the current audit and saved evidence.
 ```powershell
 python tools/scrape_wowhead.py refresh-availability --flavor forever
 python tools/scrape_wowhead.py refresh-availability --flavor forever --online
+python tools/scrape_wowhead.py refresh-availability --flavor forever --online --compare-build 1.60.1.70959
 ```
 
 The first command replays caches. The second checks public sources within
 80 HTTP attempts and a five-minute collection window. Rerun the same command
-to use its checkpoint and provider cooldowns. Unchanged failed item lookups
-become eligible again after seven days. A relevant source or reviewed build
-change can make a lookup eligible sooner.
+to use its checkpoint and provider cooldowns. Bulk collection leaves 20
+attempts and one minute for exact lookups while unresolved candidates remain.
+The disclosure registry holds known unrevealed items until a relevant change
+arrives. Other failed lookups become eligible again after seven days.
+
+`--compare-build` stages evidence for the named build in its own report directory.
+Equipment comparisons use fields found on both builds and retain source
+receipts. Set `--state-dir` to choose a resumable cache outside the current checkout.
+The [weekly release workflow](release-process.md#weekly-forever-data-releases)
+imports reviewed-build batches in a disposable worktree.
 
 Read `build/forever-refresh/report.json` for changed facts, unresolved items,
 stale reviews, and any proposed manifest entries. `staged_snapshots` identifies
