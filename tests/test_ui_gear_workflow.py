@@ -26,7 +26,7 @@ assert(#H.errors == 0, table.concat(H.errors, "\n"))
         )
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
-    def test_gear_guide_reveals_alternates_and_progress_without_changing_rank(self):
+    def test_gear_guide_shows_the_journey_and_current_quest_progress(self):
         self.run_lua(r'''
 local addon = BigBiSList
 function UnitLevel() return 48 end
@@ -59,13 +59,6 @@ end
 local function itemRow(id)
     return entry(function(item) return item.kind == "row" and item.data.item_id == id end)
 end
-local function click(target)
-    ui.contentScroll:SetVerticalScroll(target.top)
-    for _, owner in ipairs(ui.activeRenderFrames) do
-        if owner.__bigBisBoundRenderEntry == target then owner:Click(); H.settle(); return end
-    end
-    error("The selected list section was not realized")
-end
 assert(heading("Equip from bags").count == 1 and not heading("Equip from bags").collapsed)
 assert(heading("Ready to turn in").collapsed and heading("Ready to turn in").count >= 1)
 questReady = false
@@ -73,11 +66,19 @@ local events = addon.uiEventFrame
 events:GetScript("OnEvent")(events, "QUEST_LOG_UPDATE"); H.settle()
 assert(not heading("Ready to turn in") and heading("Reward quest in progress").collapsed)
 ui:ToggleSlot("Shoulder"); H.settle()
-local more = heading("More options")
-assert(more.collapsed and more.count == 4 and ui.renderModel.rowCount == 7)
-assert(itemRow(9476) and not itemRow(10774))
-click(more)
-assert(not heading("More options").collapsed and itemRow(10774) and ui.renderModel.rowCount == 7)
+assert(not heading("More options") and ui.renderModel.rowCount > 7)
+assert(itemRow(9476) and itemRow(10774))
+local lastOrder, lastLevel = 0
+for _, row in ipairs(ui.renderModel.entries) do
+    if row.kind == "row" then
+        local order, level = row.data.guide_order, row.data.guide_route_level
+        assert(order >= lastOrder)
+        if order == lastOrder and order > 1 then
+            assert(order == 2 and lastLevel <= level or order == 3 and lastLevel >= level)
+        end
+        lastOrder, lastLevel = order, level
+    end
+end
 local selected = itemRow(10774)
 ui:ShowInspectorFor(selected.data.item_id, selected.data, "leveling"); H.settle()
 for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
@@ -87,8 +88,8 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         addon:GetAccountDB().profile.window.density = density
         ui:Invalidate("presentation", "density"); ui:Refresh(); H.settle()
         if ui.inspectorExclusive then ui.detailsBackButton:Click(); H.settle() end
-        assert(not heading("More options").collapsed)
-        H.expectRowsBounded(ui, "Guide alternatives")
+        assert(itemRow(10774))
+        H.expectRowsBounded(ui, "Leveling Guide")
     end
 end
 ui:GetFilters().search = "Fleshhide Shoulders"
@@ -135,21 +136,25 @@ ui:ToggleSlot("Shoulder"); H.settle()
 ui:SetInspectorVisible(true); H.settle()
 assert(ui.details:IsVisible() and not ui.inspectorExclusive)
 
-assert(not guideRow(16729), "Lightforge Spaulders' route is unavailable at 55")
+local upcoming = assert(guideRow(16729))
+assert(upcoming.guide_order == 2 and upcoming.guide_route_level == 58 and upcoming.stat_rank.level == 58)
+ui:SetFilter("search", "Lightforge Spaulders"); H.settle()
+assert(ui.renderModel.rowCount == 1 and guideRow(16729).stat_rank == upcoming.stat_rank)
+ui:SetFilter("search", ""); H.settle()
 local pauldrons = assert(guideRow(9476))
 ui:ShowInspectorFor(pauldrons.item_id, pauldrons, "leveling")
-expectRank("Top tier")
-assert(not statRankText():find("Tier range", 1, true))
+expectRank("Best known at Level 55")
+expectRank("Among the best at Levels")
 ui:SetInspectorVisible(false); H.settle()
 assert(not ui.details:IsVisible())
 ui:SetInspectorVisible(true); H.settle()
-expectRank("Tier range · Lv 55–57")
+expectRank("Stronger at Level 58 · Lightforge Spaulders")
 
 ui:SetLevelingLevel(58); H.settle()
 local spaulders = assert(guideRow(16729))
 ui:ShowInspectorFor(spaulders.item_id, spaulders, "leveling"); H.settle()
-expectRank("Top tier")
-expectRank("Tier range · Lv 58–59")
+expectRank("Best known at Level 58")
+expectRank("Among the best at Levels 58–59")
 
 ui:SetLevelingLevel(55); H.settle()
 ui:SetTab("Equipped"); H.settle()
@@ -163,16 +168,13 @@ for _, item in ipairs(comparison.rows) do
 end
 assert(candidate and candidate.stat_rank.projected and candidate.stat_rank.rank == 1 and candidate.stat_rank.score_percent == 100)
 ui:ShowComparisonDetails(candidate)
-expectRank("Top tier")
-expectRank("Projected placement among known gear")
-assert(not statRankText():find("Tier range", 1, true))
+expectRank("Best known at Level 58")
 assert(ui:BackToSlotComparison()); H.settle()
 assert(not ui.details:IsVisible())
 ui:ShowComparisonDetails(candidate)
-assert(not statRankText():find("Tier range", 1, true), "Closing Details abandons the pending calculation")
 H.settle()
 assert(ui.details:IsVisible() and ui.inspectorExclusive)
-expectRank("Tier range · Lv 55–59")
+expectRank("Among the best at Levels 58–59")
 assert(ui:BackToSlotComparison()); H.settle()
 assert(ui.slotComparison == comparison and not comparison.detailsOpen)
 ''')
@@ -614,7 +616,8 @@ local slots = ui.gearFrame.slots
 for _, key in ipairs({"Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet",
         "Finger0", "Finger1", "MainHand", "OffHand"}) do
     local tile = slots[key]
-    assert(tile.gearData.stat_rank.rank and tile.rating:GetText():match("#%d+%s*/%s*%d+"), key .. " " .. tile.rating:GetText())
+    local text = tile.rating:GetText()
+    assert(tile.gearData.stat_rank.rank and (text:find("Level %d+") or text:find("Lv %d+")), key .. " " .. text)
 end
 assert(bonusReads[601] and bonusReads[602] and bonusReads[603] and bonusReads[bagBonus])
 assert(slots.Neck.gearData.bestUse and slots.Neck.guideBadge:GetText() == "Recommended" and slots.Neck.guideBadge:IsVisible())
@@ -648,15 +651,12 @@ local function verifyGear()
         H.expectBounded(tile.rating, tile, key .. " rank")
         local placement = tile.gearData.stat_rank
         if placement and placement.rank and placement.total > 1 then
+            local view = ui:GetLevelingGearView(tile.gearData, "gear")
+            assert(tile.rating.fullText == view.strength or tile.rating.fullText == view.compact,
+                key .. " has the wrong rank: " .. tile.rating.fullText)
             assert(not tile.rating.isTruncated, key .. " rank clipped: " .. tile.rating.fullText)
-            local service = addon.ForeverGearRating
-            local label, compact = service:Label(placement, nil, true), service:Label(placement, "compact", true)
-            local text = tile.rating:GetText()
-            local percent = placement.score_percent and (" · " .. placement.score_percent .. "%")
-            assert(text == label or text == compact or (percent and (text == label .. percent or text == compact .. percent)),
-                key .. " has the wrong rank: " .. text)
-            if placement.tier then
-                local color = {addon.Widgets:GetRankColor(placement.tier.quality)}
+            if view.grade and view.grade > 0 then
+                local color = {addon.Widgets:GetRankColor(view.grade)}
                 for component = 1, 3 do assert(tile.rating.textColor[component] == color[component]) end
             end
             assert(not tile.rating.rankStripe)
@@ -673,9 +673,10 @@ local function verifyComparison()
     local columns, state = ui.comparisonColumns, ui.slotComparison
     assert(columns.source.x + columns.source.width < columns.owned.x)
     for _, row in ipairs(ui.comparisonPinnedRows) do
-        local placement = row.comparisonData.stat_rank
-        assert(row.rankText:GetText() == addon.ForeverGearRating:Label(placement, columns.rank.stacked and "stacked" or nil, true))
-        assert(not row.rankText.isTruncated and row.rankText:GetRight() < columns.evidence.x + row:GetLeft())
+        local view = ui:GetLevelingGearView(row.comparisonData, "comparison")
+        assert(row.rankText.fullText:find(view.strength, 1, true) or (view.compact and row.rankText.fullText:find(view.compact, 1, true)))
+        assert(not row.rankText.isTruncated)
+        assert(row.rankText:GetRight() < columns.evidence.x + row:GetLeft())
         assert(not row.rankText.rankStripe)
         H.expectBounded(row.rankText, row, "pinned rank")
     end
@@ -697,7 +698,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
             ui.detailsBackButton:Click(); H.settle()
         end
         verifyGear()
-        assert(ui.gearFrame.summary.rating:GetText():find("Protection · Level 47", 1, true))
+        assert(ui.gearFrame.summary.rating:GetText():find("Level 47", 1, true))
         ui:SetInspectorVisible(false); H.settle()
         ui.gearFrame.summary.statCompare:Click(); H.settle()
         local state, shown = ui.slotComparison
@@ -723,7 +724,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
             local text = block.body:GetText()
             if block:IsVisible() and text:find("of the best known stat score", 1, true)
-                and text:find(addon.ForeverGearRating:Label(placement), 1, true)
+                and text:find("Rank #", 1, true)
                 and text:find("Default spec weights", 1, true)
                 and text:find("Compare with Blood Ritual Ring (Finger 2)", 1, true) then explained = true end
         end
@@ -1074,19 +1075,19 @@ end
 local actions = entries("action")
 assert(#actions == 3 and actions[1].title == "Trial Halls" and actions[1].detail == "3 items · 1 unowned with known sources")
 assert(actions[2].title == "Unknown" and actions[2].detail == "1 item · 0 unowned with known sources")
-assert(actions[3].title == "The Deadmines" and actions[3].detail == "Recommended at level 57")
+assert(actions[3].title == "The Deadmines" and actions[3].detail == "Recommended at Level 57")
 assert(queried[56] and queried[57] and queried[58] and queried[59] and not queried[60])
 
 local builds = ui:GetPerformanceStats().queryBuilds
 clickTitle("The Deadmines")
 local preview = entries("section")[1]
 assert(preview.title == "Next levels" and preview.sectionKey == "list:Coming up")
-assert(preview.collapsed and preview.count == 2 and #entries("note") == 0)
+assert(preview.collapsed and preview.count == 2 and #entries("note") == 1)
 clickTitle("Next levels")
 assert(ui:GetViewState().collapsedGroups["list:Coming up"] == false)
 local notes = entries("note")
-assert(#notes == 2 and notes[1].text == "Level 57 · Trial Miner's Ring · Ring")
-assert(notes[2].text == "Level 58 · Trial Foreman's Ring · Ring")
+assert(#notes == 3 and notes[2].text == "Level 57 · Trial Miner's Ring · Ring")
+assert(notes[3].text == "Level 58 · Trial Foreman's Ring · Ring")
 ui.levelingActivityBar.back:Click(); H.settle()
 clickTitle("Trial Halls")
 assert(ui:GetPerformanceStats().queryBuilds == builds and #entries("row") == 4)
@@ -1097,7 +1098,7 @@ ui:SetFilter("ownedState", "missing"); H.settle()
 assert(ui.levelingActivity == "Trial Halls" and #entries("row") == 3 and entries("section")[1].count == 1)
 ui:SetFilter("zones", {["Other Cellar"] = true}); H.settle()
 actions = entries("action")
-assert(not ui.levelingActivity and #actions == 1 and actions[1].detail == "Recommended at level 59")
+assert(not ui.levelingActivity and #actions == 1 and actions[1].detail == "Recommended at Level 59")
 queried = {}
 ui:SetLevelingLevel(59); H.settle()
 assert(queried[59] and not queried[60] and entries("action")[1].detail == "1 item · 1 unowned with known sources")

@@ -245,7 +245,59 @@ local EXTRA_COPY_GETTERS = {
 }
 local OWNED_LABELS = { equipped = "Equipped", bag = "In bags", bank = "In bank (last visit)" }
 
-local function tooltipStatBlock(addon, candidate, player, info, offer)
+function BigBiSList:TooltipHasLevelRequirement(tooltip, level, tooltipData)
+    if not level then return false end
+    local text = call(string.format, ITEM_MIN_LEVEL or "Requires Level %d", level) or ("Requires Level " .. level)
+    local function matches(value)
+        value = readable(value)
+        return type(value) == "string" and value:find(text, 1, true) ~= nil
+    end
+    local data = readable(tooltipData) or readable(call(tooltip.GetPrimaryTooltipData, tooltip))
+    for _, line in ipairs(type(data) == "table" and readable(data.lines) or {}) do
+        if type(readable(line)) == "table" and matches(line.leftText) then return true end
+    end
+    if tooltip.GetRegions then
+        for _, region in ipairs({ call(tooltip.GetRegions, tooltip) }) do
+            if matches(call(region.GetText, region)) then return true end
+        end
+    end
+    return false
+end
+
+local function tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment)
+    local rating = addon.ForeverGearRating
+    local result, item = assessment.result, candidate.facts
+    local placement = result.placement
+    local leveling = (context.leveling and placement.phase ~= "PR") or placement.phase == LEVELING_PHASE_KEY
+    local slot = placement.slot or item.slot
+    local summary, record
+    if slot and item.level <= addon.maxLevelingLevel and rating:GetPublishedFacts(item.key) then
+        local guide = rating:GetGuideContext(context.class, context.spec, LEVELING_PHASE_KEY,
+            math.min(context.level, addon.maxLevelingLevel), context.race, context.faction)
+        summary = rating:GetLevelingSummary(guide)
+        record = rating:GetLevelingRecord(summary, slot, item.key)
+    end
+    if not leveling and not (record and record.strength[1]) then return nil, summary, slot end
+    local viewed = placement.level or context.level
+    local sourceLevel, sourceType
+    local first = record and record.ranked[1]
+    local routeLevel = first and first.firstLevel or placement.level
+    if routeLevel and context.leveling and routeLevel > context.level then
+        local access = addon:GetRowAcquisitionDisplay({ item_id = item.id }, { class = context.class, race = context.race,
+            faction = context.faction, level = routeLevel, _leveling = true }, LEVELING_PHASE_KEY, false, true)
+        sourceLevel, sourceType = addon:GetLevelingSourceGate(access)
+    end
+    if leveling and not placement.phase then
+        placement = rating:LevelingPlacementAt(record, viewed)
+            or {phase = LEVELING_PHASE_KEY, level = viewed, status = placement.status}
+    end
+    local view = rating:LevelingPresentation({ item = item, placement = placement, record = record,
+        swap = result, playerLevel = context.level, sourceLevel = sourceLevel, sourceType = sourceType,
+        ownedBaseline = assessment.ownedBaseline, nativeRequirement = addon:TooltipHasLevelRequirement(tooltip, item.level, tooltipData) })
+    return view, summary, slot
+end
+
+local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
     if not candidate.facts or not candidate.facts.level then
@@ -279,7 +331,9 @@ local function tooltipStatBlock(addon, candidate, player, info, offer)
                 assessment = { result = result, ownedBaseline = not worn }
             end
             if assessment then
-                block.rows[#block.rows + 1] = { spec = spec.name, result = assessment.result, assessment = assessment }
+                local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment)
+                block.rows[#block.rows + 1] = { spec = spec.name, result = assessment.result, assessment = assessment,
+                    view = view, summary = summary, summarySlot = slot }
                 block.ownership = block.ownership or assessment.result.ownership
             end
         end
@@ -408,25 +462,42 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         local result = row.result
         local r, g, b = 0.93, 0.93, 0.96
         local tier = result and result.placement.tier
-        if tier then r, g, b = BigBiSList.Widgets:GetRankColor(tier.quality) end
+        if row.view and row.view.grade and row.view.grade > 0 then
+            r, g, b = BigBiSList.Widgets:GetRankColor(row.view.grade)
+        elseif tier and (not row.view or result.placement.phase == "PR") then
+            r, g, b = BigBiSList.Widgets:GetRankColor(tier.quality)
+        end
         if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
         tooltip:AddLine(spec, r, g, b, true)
         if result then
             local comparison = row.assessment or row
-            local rank = tooltipRank(result)
-            if result.placement.conditional and not result.placement.conditional_tie then rank = rank .. " · Conditional" end
-            tooltip:AddLine(rank, r, g, b, true)
-            local extra = result.forecast and forecastText(result.forecast)
-                or swapText(result, comparison.ownedBaseline, comparison.guaranteed)
-            if extra then
-                if result.delta ~= nil then
-                    extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result.basis) .. " · " .. extra
-                    if result.conditional then extra = extra .. " · Conditional" end
+            if row.view then
+                local view = row.view
+                for _, line in ipairs(BigBiSList.ForeverGearRating:LevelingPresentationLines(view)) do
+                    if line == view.strength then tooltip:AddLine(line, r, g, b, true)
+                    else tooltip:AddLine(line, 0.86, 0.88, 0.91, true) end
                 end
-                tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)
-            end
-            if result.conditional and not extra then
-                tooltip:AddLine("Conditional · effect or comparison data is incomplete", 0.86, 0.88, 0.91, true)
+                if result.placement.phase == "PR" then tooltip:AddLine(tooltipRank(result), 0.86, 0.88, 0.91, true) end
+                if comparison.guaranteed then tooltip:AddLine("Compared with guaranteed rewards", 0.76, 0.8, 0.86, true) end
+                if result.bank or (result.forecast and result.forecast.bank) then
+                    tooltip:AddLine("Includes cached bank gear", 0.76, 0.8, 0.86, true)
+                end
+            else
+                local rank = tooltipRank(result)
+                if result.placement.conditional and not result.placement.conditional_tie then rank = rank .. " · Conditional" end
+                tooltip:AddLine(rank, r, g, b, true)
+                local extra = result.forecast and forecastText(result.forecast)
+                    or swapText(result, comparison.ownedBaseline, comparison.guaranteed)
+                if extra then
+                    if result.delta ~= nil then
+                        extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result.basis) .. " · " .. extra
+                        if result.conditional then extra = extra .. " · Conditional" end
+                    end
+                    tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)
+                elseif result.conditional then
+                    tooltip:AddLine("Conditional · effect or comparison data is incomplete", 0.86, 0.88, 0.91, true)
+                end
+                placementColor = placementColor or result.placement.placement_color
             end
             if comparison.storage then
                 local recommendation = storageText(comparison.storage)
@@ -444,7 +515,6 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
                     result.effectBreakEven)
                 tooltip:AddLine(estimate, 0.76, 0.8, 0.86, true)
             end
-            placementColor = placementColor or result.placement.placement_color
         end
         for _, match in ipairs(row.matches) do
             local _, summary = lineForTooltipMatch(match)
@@ -515,7 +585,7 @@ function BigBiSList:ScheduleItemTooltipRefresh(itemId)
     if C_Timer and C_Timer.After then C_Timer.After(0, refresh) else refresh() end
 end
 
-local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings)
+local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData)
     local offer, mark
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
@@ -523,7 +593,7 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
         local exactLink = offer and offer.owned and offer.link or itemLink
         local candidate = self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
         live = candidate and self:GetTooltipPlayerContext()
-        if live then statBlock = tooltipStatBlock(self, candidate, live, info, offer) end
+        if live then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData) end
     end
     local comparisonContext = comparisonTooltipContext(tooltip)
     local selection = comparisonContext or live or self:GetCharacterDB().selection or {}
@@ -604,7 +674,22 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     if not showExpanded and settings.showAllOnAlt and (statBlock or rawDiffersFromGrouped or hasHiddenRows) then
         tooltip:AddLine(statBlock and "Hold Alt for more details" or "Hold Alt for all rankings", 0.62, 0.66, 0.72)
     end
-    if statBlock then self.UI:QueueStatLoads(statBlock.pending) end
+    if statBlock then
+        self.UI:QueueStatLoads(statBlock.pending)
+        local state = tooltip.__bigBisListState
+        for _, row in ipairs(statBlock.rows) do
+            if row.summary then
+                self.ForeverGearRating:RequestLevelingSummary(row.summary, { row.summarySlot }, {
+                    owner = tooltip,
+                    isCurrent = function()
+                        return tooltip.__bigBisListState == state and (not tooltip.IsShown or tooltip:IsShown())
+                            and self:GetTooltipPlayerContext() == live
+                    end,
+                    onReady = function() rebuildTooltip(tooltip, state) end,
+                })
+            end
+        end
+    end
 end
 
 function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
@@ -648,7 +733,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         end)
         return
     end
-    local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings)
+    local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData)
     if prepared then showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared) end
 end
 

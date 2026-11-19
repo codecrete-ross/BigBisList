@@ -496,11 +496,14 @@ local function rankStorage(batch, entry, checkpoint)
             local result = comparison.result
             local assessment = { spec = spec, result = result, storage = comparison }
             assessments[#assessments + 1] = assessment
-            if resolved and comparison.qualifies then primary = primary or assessment end
+            local _, futureLevel = rating:GetLevelingCue(result)
+            if resolved and (comparison.qualifies or futureLevel) then
+                if not primary or (not primary.storage.qualifies and comparison.qualifies) then primary = assessment end
+            end
             signature[#signature + 1] = table.concat({ spec.name, tostring(result.delta),
                 tostring(result.conditional), tostring(result.placement.rank), tostring(result.placement.total),
                 tostring(comparison.qualifies), tostring(comparison.sidegrade),
-                tostring(comparison.unavailable) }, "\031")
+                tostring(comparison.unavailable), tostring(futureLevel) }, "\031")
             for _, item in ipairs(comparison.stronger or {}) do
                 signature[#signature + 1] = item.name .. "\031" .. tostring(item.state)
             end
@@ -599,7 +602,7 @@ local function newStorageBadge(row)
     return badge
 end
 
-local function displayStorage(mark, r, g, b, immediate)
+local function displayStorage(mark, r, g, b, immediate, futureLevel)
     local entry, result = mark.entry, mark.result
     local badge = overlays[entry.row]
     if not badge then
@@ -611,7 +614,7 @@ local function displayStorage(mark, r, g, b, immediate)
     local bis = result.bis == true
     local icon = mark.spec and mark.spec.icon
     if bis then r, g, b = unpack(widgets.Theme.bisGold) end
-    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), r, g, b }, "\031")
+    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), r, g, b, futureLevel or "" }, "\031")
     if badge.visualKey == visualKey then
         if not badge.managed then badge:Show() end
         recordMark(mark, visualKey, immediate)
@@ -625,8 +628,11 @@ local function displayStorage(mark, r, g, b, immediate)
         widgets:SetIcon(badge.icon, "sortAscending")
         badge.icon:SetVertexColor(r, g, b)
     end
-    badge.icon:SetShown(not bis)
-    badge.bis:SetShown(bis)
+    badge:SetSize(futureLevel and 32 or 20, 16)
+    badge.icon:SetShown(not bis and not futureLevel)
+    badge.bis:SetText(futureLevel and ("Lv " .. futureLevel) or "BiS")
+    if futureLevel then badge.bis:SetTextColor(r, g, b) else badge.bis:SetTextColor(unpack(widgets.Theme.bisGold)) end
+    badge.bis:SetShown(bis or futureLevel ~= nil)
     if bis then
         badge.background:SetColorTexture(r * 0.15, g * 0.15, b * 0.15, 0.95)
     else
@@ -657,6 +663,8 @@ local function newOverlay(row)
     corner.arrow = corner:CreateTexture(nil, "OVERLAY")
     corner.arrow:SetAllPoints(corner.symbol)
     widgets:SetIcon(corner.arrow, "sortAscending")
+    corner.level = corner:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    corner.level:SetPoint("CENTER")
     overlay.corner = corner
 
     overlay.glow = overlay:CreateTexture(nil, "ARTWORK")
@@ -708,10 +716,14 @@ local function display(mark, animate, immediate)
     local entry, result = mark.entry, mark.result
     local row, spec = entry.row, mark.spec
     local tier = result and result.placement and result.placement.tier
+    local grade, futureLevel = rating:GetLevelingCue(result)
     local bis = result and result.bis == true and (entry.kind ~= "quest" or mark.bestChoice)
     local r, g, b = unpack(NEUTRAL)
-    if tier then r, g, b = widgets:GetRankColor(tier.quality) end
-    if entry.owned then displayStorage(mark, r, g, b, immediate); return end
+    if not futureLevel then
+        if grade and grade > 0 then r, g, b = widgets:GetRankColor(grade)
+        elseif tier and grade == nil then r, g, b = widgets:GetRankColor(tier.quality) end
+    end
+    if entry.owned then displayStorage(mark, r, g, b, immediate, futureLevel); return end
     local overlay = overlays[row]
     if not overlay then overlay = newOverlay(row); overlays[row] = overlay end
     overlay:SetFrameLevel((row:GetFrameLevel() or 0) + 3)
@@ -725,26 +737,31 @@ local function display(mark, animate, immediate)
     corner.accent:SetColorTexture(r, g, b, 1)
     corner.arrow:SetVertexColor(r, g, b)
     overlay.glow:SetVertexColor(r, g, b, 0.55)
-    overlay.glow:SetShown(not mark.sellValue)
+    overlay.glow:SetShown(not mark.sellValue and not futureLevel)
     overlay.bis:SetShown(bis)
     for _, edge in ipairs(overlay.edges) do
         edge:SetColorTexture(r, g, b, 0.95)
         edge:SetShown(mark.outline == true)
     end
 
-    local icon = mark.sellValue and GOLD_COIN or spec and spec.icon
+    local icon = not futureLevel and (mark.sellValue and GOLD_COIN or spec and spec.icon) or nil
+    local showsUpgrade = not futureLevel and result and not result.preview and not result.conditional and (mark.gain or 0) > 0
     local visualKey = table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis),
-        tostring(tier and tier.quality), tostring(mark.gain and mark.gain > 0), tostring(animate) }, "\031")
+        tostring(grade or (tier and tier.quality)), tostring(showsUpgrade), tostring(animate), futureLevel or "" }, "\031")
     local wasShown = overlay:IsShown()
     overlay:Show()
     if overlay.visualKey ~= visualKey or not wasShown then
         local fresh = overlay.visualKey ~= visualKey
         overlay.visualKey = visualKey
         if overlay.animation and overlay.animation:IsPlaying() then overlay.animation:Stop() end
+        corner:SetSize(futureLevel and 32 or 15, 15)
+        corner.level:SetText(futureLevel and ("Lv " .. futureLevel) or "")
+        corner.level:SetTextColor(r, g, b)
+        corner.level:SetShown(futureLevel ~= nil)
         corner.symbol:SetTexture(icon)
         corner.symbol:SetShown(icon ~= nil)
-        corner.arrow:SetShown(not icon and (mark.gain or 0) > 0)
-        if fresh and icon and (mark.gain or 0) > 0 and animate and overlay.animation then
+        corner.arrow:SetShown(not icon and showsUpgrade == true)
+        if fresh and icon and showsUpgrade and animate and overlay.animation then
             corner.arrow:Show()
             corner.symbol:Hide()
             overlay.animation:Play()
@@ -940,10 +957,11 @@ local function refresh()
                     for _, assessment in ipairs(entry.assessments) do
                         if assessment.show then primary = primary or assessment end
                         bestChoice = bestChoice or assessment.bestChoice
+                        local _, futureLevel = rating:GetLevelingCue(assessment.result)
                         signature[#signature + 1] = table.concat({assessment.spec.name,
                             assessment.gain, tostring(assessment.result.conditional), tostring(assessment.bestChoice),
                             tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
-                            tostring(assessment.result.placement.status)}, "\031")
+                            tostring(assessment.result.placement.status), tostring(futureLevel)}, "\031")
                     end
                     entry.assessmentKey = table.concat(signature, "\030")
                     local previous = offers[entry.row]

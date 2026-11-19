@@ -860,9 +860,9 @@ function rating:GetReferenceCandidate(context, item, slot)
     if usable(context, item, slot) then return resultFor(context, item, nil, slot) end
 end
 
-local function slotPool(context, physical, slot, handType, gear, cacheKey)
+local function slotPool(context, physical, slot, handType, gear, cacheKey, checkpoint)
     if context.pools[cacheKey] then return context.pools[cacheKey] end
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    checkpoint = checkpoint or (addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint())
     local equipped = gear[physical]
     local reference = equipped and equipped.facts
     local candidates, rows = {}, {}
@@ -971,8 +971,235 @@ function rating:GetComparisonCandidates(pool)
     return rows
 end
 
-function rating:GetGuidePlacement(context, slot)
-    return slotPool(context, slot, slot, nil, {}, slot)
+function rating:GetGuidePlacement(context, slot, checkpoint)
+    return slotPool(context, slot, slot, nil, {}, slot, checkpoint)
+end
+
+local function levelingGrade(entry)
+    if not entry or not entry.rank or not entry.score or entry.score <= 0 then return nil end
+    if entry.total == 1 then return 0 end
+    local percent = entry.score_percent
+    if not percent then return nil end
+    if percent >= 97 then return 5 end
+    if percent >= 85 then return 4 end
+    if percent >= 70 then return 3 end
+    return 0
+end
+
+local function extendLevelRange(ranges, level, grade, estimated)
+    local last = ranges[#ranges]
+    if not last or last.lastLevel ~= level - 1 or last.grade ~= grade or last.estimated ~= estimated then
+        last = { firstLevel = level, grade = grade, estimated = estimated }
+        ranges[#ranges + 1] = last
+    end
+    last.lastLevel = level
+    return last
+end
+
+local function summarizeGuideSlot(context, slot, summary, checkpoint)
+    local pool = rating:GetGuidePlacement(context, slot, checkpoint)
+    local choices = addon:GetStatRankGuideChoices(context, pool, checkpoint)
+    local level = context.level
+    local leader = pool.rows[1]
+    if leader and leader.rank == 1 then summary.leaders[level] = leader end
+    for _, entry in ipairs(pool.rows) do
+        checkpoint()
+        local key = entry.item.key
+        local choice = choices[key]
+        local record = summary.items[key]
+        if not record then
+            record = { ranked = {}, strength = {}, recommended = {}, leading = {}, item = entry.item, slot = slot }
+            summary.items[key] = record
+        end
+        if entry.rank or choice then
+            local ranked = extendLevelRange(record.ranked, level)
+            ranked.firstEntry = ranked.firstEntry or entry
+            ranked.lastEntry = entry
+        end
+        local grade = levelingGrade(entry)
+        if grade and grade >= 3 then extendLevelRange(record.strength, level, grade, entry.conditional) end
+        if entry.rank == 1 then extendLevelRange(record.leading, level) end
+        if choice then
+            record.note = choice.effect or record.note
+            extendLevelRange(record.recommended, level)
+        end
+    end
+end
+
+local function requestedSlots(summary)
+    local slots = {}
+    for owner, request in pairs(summary.watchers) do
+        if not request.watcher.isCurrent() then
+            summary.watchers[owner] = nil
+        else
+            for _, slot in ipairs(request.slots) do
+                if not summary.slots[slot] then slots[slot] = true end
+            end
+        end
+    end
+    return slots
+end
+
+local function scheduleLevelingSummaries(self)
+    local queue = self.levelingSummaryQueue
+    if not queue or not queue[1] or self.levelingSummaryScheduled then return end
+    self.levelingSummaryScheduled = true
+    C_Timer.After(0, function()
+        self.levelingSummaryScheduled = nil
+        local summary = queue[1]
+        if queue ~= self.levelingSummaryQueue or not summary then
+            scheduleLevelingSummaries(self)
+            return
+        end
+        if summary.context.catalog.data ~= model()
+            or summary.context.phaseIndex ~= addon:GetAvailabilityPhaseIndex("LEVELING") then
+            summary.watchers = {}
+        end
+        local slots = requestedSlots(summary)
+        if not next(slots) then
+            summary.queued, summary.worker = nil, nil
+            table.remove(queue, 1)
+            scheduleLevelingSummaries(self)
+            return
+        end
+        if not summary.worker then
+            local results = {}
+            for slot in pairs(slots) do results[slot] = { items = {}, leaders = {} } end
+            summary.worker = coroutine.create(function()
+                local function checkpoint()
+                    summary.steps = summary.steps + 1
+                    if summary.steps >= 2048 or (summary.deadline and debugprofilestop() >= summary.deadline) then
+                        coroutine.yield()
+                    end
+                end
+                for level = 1, addon.maxLevelingLevel do
+                    local context = level == summary.context.level and summary.context
+                        or contextAtLevel(summary.context, "LEVELING", level)
+                    for slot, result in pairs(results) do
+                        summarizeGuideSlot(context, slot, result, checkpoint)
+                    end
+                end
+                return results
+            end)
+        end
+
+        summary.steps = 0
+        summary.deadline = debugprofilestop and debugprofilestop() + 4
+        local ok, results = coroutine.resume(summary.worker)
+        if not ok or coroutine.status(summary.worker) == "dead" then
+            summary.worker = nil
+            if ok then
+                for slot, result in pairs(results) do summary.slots[slot] = result end
+                summary.revision = summary.revision + 1
+                local ready = {}
+                for owner, request in pairs(summary.watchers) do
+                    local complete = true
+                    for _, slot in ipairs(request.slots) do
+                        if not summary.slots[slot] then complete = false; break end
+                    end
+                    if complete then
+                        summary.watchers[owner] = nil
+                        ready[#ready + 1] = request.watcher
+                    end
+                end
+                for _, watcher in ipairs(ready) do
+                    if watcher.isCurrent() then watcher.onReady() end
+                end
+            else
+                summary.queued = nil
+                table.remove(queue, 1)
+                scheduleLevelingSummaries(self)
+                error(results)
+            end
+        end
+        scheduleLevelingSummaries(self)
+    end)
+end
+
+function rating:GetLevelingSummary(context)
+    if not context or not context.leveling then return nil end
+    local data, phase = context.catalog.data, context.phaseIndex
+    if self.levelingSummaryData ~= data or self.levelingSummaryPhase ~= phase then
+        self.levelingSummaryData, self.levelingSummaryPhase = data, phase
+        self.levelingSummaries, self.levelingSummaryQueue = {}, {}
+    end
+    local summaries = self.levelingSummaries
+    for _, summary in ipairs(summaries) do
+        local other = summary.context
+        if other.class == context.class and other.spec == context.spec
+            and other.race == context.race and other.faction == context.faction then return summary end
+    end
+    if #summaries >= 4 then
+        for index, summary in ipairs(summaries) do
+            if not summary.queued then table.remove(summaries, index); break end
+        end
+    end
+    local summary = { context = context, slots = {}, watchers = {}, revision = 0 }
+    summaries[#summaries + 1] = summary
+    return summary
+end
+
+function rating:LevelingGuideSlots(context, order)
+    local slots = {}
+    for _, slot in ipairs(order) do
+        if contains(context.commonSlots, slot) or contains(context.policy.slots, slot) then slots[#slots + 1] = slot end
+    end
+    return slots
+end
+
+function rating:RequestLevelingSummary(summary, slots, watcher)
+    if not summary or not watcher or not (C_Timer and C_Timer.After) then return end
+    for _, slot in ipairs(slots) do
+        if not summary.slots[slot] then
+            summary.watchers[watcher.owner] = { slots = slots, watcher = watcher }
+            if not summary.queued then
+                summary.queued = true
+                local queue = self.levelingSummaryQueue
+                queue[#queue + 1] = summary
+            end
+            scheduleLevelingSummaries(self)
+            return
+        end
+    end
+end
+
+-- Select a current range, the next one, or the latest past one, in that order.
+function rating:LevelingRangeAt(ranges, level)
+    for _, range in ipairs(ranges or {}) do
+        if range.lastLevel >= level then return range end
+    end
+    return ranges and ranges[#ranges]
+end
+
+function rating:LevelingPlacementAt(record, level, current)
+    if current and (current.rank or not record) then return current end
+    local range = record and self:LevelingRangeAt(record.ranked, level)
+    if not range then return current end
+    if level > range.lastLevel then return range.lastEntry end
+    if level < range.firstLevel or not current then return range.firstEntry end
+    return current
+end
+
+function rating:GetLevelingRecord(summary, slot, key)
+    local data = summary and summary.slots[slot]
+    return data and data.items[key]
+end
+
+function rating:GetLevelingSuccessor(summary, placement)
+    if not placement or placement.rank ~= 1 or placement.phase ~= "LEVELING" then return nil end
+    local data = summary and summary.slots[placement.slot]
+    local record = data and data.items[placement.item.key]
+    local leading = record and self:LevelingRangeAt(record.leading, placement.level)
+    if not leading or placement.level < leading.firstLevel or placement.level > leading.lastLevel then return nil end
+    for level = leading.lastLevel + 1, addon.maxLevelingLevel do
+        local eligible = self:LevelingRangeAt(record.ranked, level)
+        local nextLead = self:LevelingRangeAt(record.leading, level)
+        local leader = data.leaders[level]
+        if eligible and level >= eligible.firstLevel and level <= eligible.lastLevel and leader
+            and (not nextLead or level < nextLead.firstLevel or level > nextLead.lastLevel) then
+            return { level = level, name = leader.item.name, conditional = leader.conditional or placement.conditional }
+        end
+    end
 end
 
 local function benchmarkChoices(context, definition, slots, handType)
@@ -1319,111 +1546,6 @@ local function lookaheadPlacement(context, item)
     return { status = "incompatible" }
 end
 
-local function placementAtLevel(scope, item, level)
-    local context = contextAtLevel(scope.context, "LEVELING", level)
-    -- Keep the anchor's physical slot and the other pieces in its comparison setup.
-    local slot, physical, gear = scope.slot, scope.physical, scope.gear
-    if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
-        or not inScope(context, item) then return nil end
-    local pool = slotPool(context, physical, slot, scope.handType, gear, scope.key)
-    local placement = pool.byVariant[item.key]
-    if not placement and not context.guide then
-        placement = resultFor(context, item, nil, slot)
-        if placement.score ~= nil then placement = rating:ProjectPlacement(item, placement, pool) end
-    end
-    return placement, pool.rows[1]
-end
-
-local function currentTierScope(context)
-    return context.catalog.data == model() and context.phaseIndex == addon:GetAvailabilityPhaseIndex(context.phase)
-end
-
-local function nextTierRequest(queue)
-    while queue[1] do
-        local job = table.remove(queue, 1)
-        if currentTierScope(job.scope.context) then
-            for owner, watcher in pairs(job.watchers) do
-                if not watcher.isCurrent() then job.watchers[owner] = nil end
-            end
-            if next(job.watchers) then return job end
-        end
-        job.cache.pending[job.key] = nil
-    end
-end
-
-local function scheduleTierRanges(self)
-    local queue = self.tierRangeQueue
-    if self.tierRangeScheduled or not queue[1] then return end
-    self.tierRangeScheduled = true
-    C_Timer.After(0, function()
-        self.tierRangeScheduled = nil
-        local job = nextTierRequest(queue)
-        if not job then return end
-        local nextLevel = job.nextLevel
-        job.nextLevel = nextLevel + 1
-        local placement, leader = placementAtLevel(job.scope, job.item, nextLevel)
-        if job.sameTier then
-            job.sameTier = placement and placement.tier and placement.tier.quality == job.quality
-            if job.sameTier then job.lastLevel = nextLevel end
-        end
-        if job.seekLeader and placement and placement.rank and placement.rank > 1 then
-            job.stronger = { level = nextLevel, name = leader.item.name, conditional = leader.conditional or placement.conditional }
-            job.seekLeader = nil
-        end
-        if not placement or (not job.sameTier and not job.seekLeader) or nextLevel == addon.maxLevelingLevel then
-            local cache = job.cache
-            cache.pending[job.key] = nil
-            if #cache.order == 64 then cache.results[table.remove(cache.order, 1)] = nil end
-            cache.order[#cache.order + 1] = job.key
-            local range = { firstLevel = job.firstLevel, lastLevel = job.lastLevel, stronger = job.stronger }
-            cache.results[job.key] = range
-            for _, watcher in pairs(job.watchers) do
-                if watcher.isCurrent() then watcher.onReady() end
-            end
-        else
-            queue[#queue + 1] = job
-        end
-        scheduleTierRanges(self)
-    end)
-end
-
-function rating:RequestTierRange(placement, scope, watcher)
-    if not scope or not placement or not (placement.tier or placement.rank == 1) or placement.phase ~= "LEVELING"
-        or not currentTierScope(scope.context) then return nil end
-    local level = placement.level
-    if level > addon.maxLevelingLevel then return nil end
-    if level == addon.maxLevelingLevel then return { firstLevel = level, lastLevel = level } end
-
-    local context = scope.context
-    local cache = context.tierRanges
-    if not cache then
-        cache = { pending = {}, results = {}, order = {} }
-        context.tierRanges = cache
-    end
-    local quality = placement.tier and placement.tier.quality
-    local key = table.concat({ level, scope.key, placement.item.key, quality or "" }, "\031")
-    if cache.results[key] then return cache.results[key] end
-    if not (watcher and C_Timer and C_Timer.After) then return nil end
-
-    local job = cache.pending[key]
-    if not job then
-        job = { cache = cache, key = key, scope = scope, item = placement.item, quality = quality,
-            firstLevel = level, lastLevel = level, nextLevel = level + 1, sameTier = quality ~= nil,
-            seekLeader = placement.rank == 1 and not placement.projected, watchers = {} }
-        cache.pending[key] = job
-        self.tierRangeQueue = self.tierRangeQueue or {}
-        table.insert(self.tierRangeQueue, job)
-    end
-    job.watchers[watcher.owner] = watcher
-    scheduleTierRanges(self)
-    return nil, true
-end
-
-function rating:TierRangeLabel(range)
-    local first, last = range.firstLevel, range.lastLevel
-    return "Lv " .. first .. (last > first and ("–" .. last) or "")
-end
-
 local EMPTY_CHOICE = { score = 0, order = math.huge }
 local EMPTY_CHOICES = { EMPTY_CHOICE }
 
@@ -1592,10 +1714,18 @@ local function ownedProposal(context, group, state, instance, quantity)
     return best, chosen, chosenIndex
 end
 
-local function ownedSwap(context, group, candidate, extraCopy, quantity)
+local function choicesWithout(choices, instance)
+    local others = {}
+    for _, choice in ipairs(choices) do
+        if choice.instance ~= instance then others[#others + 1] = choice end
+    end
+    return others
+end
+
+local function ownedSwap(context, group, candidate, extraCopy, quantity, storageInstance)
     local state = ownedLoadout(context, group)
-    local instance = candidate
-    if not extraCopy then
+    local instance = storageInstance or candidate
+    if not extraCopy and not storageInstance then
         for _, owned in ipairs(context.ownedCopies) do
             if owned.facts.key == candidate.key
                 and rating:SameExactItemLink(candidate.entry.item_id, owned.item_link, candidate.item_link) then
@@ -1606,18 +1736,25 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity)
     end
     local best, chosen, chosenIndex = ownedProposal(context, group, state, instance, extraCopy and quantity)
     if not best then return nil end
+    local baseline = state.baseline
+    if storageInstance and (baseline[1].instance == storageInstance or baseline[2].instance == storageInstance) then
+        -- The copy in the bag is the proposed upgrade. Compare it with the best
+        -- legal setup the character could wear without that physical copy.
+        baseline = bestLoadout(choicesWithout(state.options[1], storageInstance),
+            choicesWithout(state.options[2], storageInstance), state.value)
+    end
 
     local other = best[3 - chosenIndex].instance
     local gear = copy(state.outside)
     local result = { definition = group.definitions[chosenIndex], slot = chosen.slot, gear = gear, replacements = {},
-        delta = chosen.hasPoints and best.score - state.baseline.score, basis = context.activeBuild and "active" or "reference",
-        conditional = best.conditional or state.baseline.conditional }
+        delta = chosen.hasPoints and best.score - baseline.score, basis = context.activeBuild and "active" or "reference",
+        conditional = best.conditional or baseline.conditional }
     for index, definition in ipairs(group.definitions) do
         local proposed = best[index].instance
         gear[definition.key] = proposed
-        local previous = state.baseline[index].instance
+        local previous = baseline[index].instance
         if not state.value then
-            result.conditional = result.conditional or state.baseline[index].conditional or best[index].conditional
+            result.conditional = result.conditional or baseline[index].conditional or best[index].conditional
         end
         if (previous and previous.state == "bank") or (other and other.state == "bank") then result.bank = true end
         if previous and previous ~= best[1].instance and previous ~= best[2].instance then
@@ -1643,7 +1780,7 @@ local function previewTooltipItem(context, candidate, extraCopy, options)
     local placement, scope, preview = lookaheadPlacement(context.forecastBaseline or context, item)
     local result = { placement = placement, rankScope = scope, preview = true }
     if preview then
-        local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity)
+        local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity, options.storageInstance)
         result.forecast = comparison or { status = "blocked" }
         result.forecast.level, result.forecast.phase = preview.level, preview.phase
     end
@@ -1714,7 +1851,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
         and last.extraCopy == extraCopy and last.revision == revision and last.live == scope.live
         and last.physical == scope.physical and last.slot == scope.slot
         and last.skipPlacement == scope.skipPlacement
-        and last.quantity == scope.quantity
+        and last.quantity == scope.quantity and last.storageInstance == scope.storageInstance
         and (last.lookahead == scope.lookahead or last.result.slot) then
         return last.result
     end
@@ -1724,7 +1861,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
     result.bis = approvedBiS(context, candidate, result.slot)
     context.lastTooltip = { candidate = candidate, useWorn = useWorn, wornSlot = wornSlot, extraCopy = extraCopy,
         result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot,
-        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity }
+        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity, storageInstance = scope.storageInstance }
     return result
 end
 
@@ -1836,7 +1973,8 @@ function rating:GetStorageComparison(context, candidate, sourceId, guid)
     state.comparisons = state.comparisons or {}
     local comparison = state.comparisons[instance]
     if not comparison then
-        local result = self:CompareTooltipItem(context, candidate, true, nil, false, { live = true, lookahead = true })
+        local result = self:CompareTooltipItem(context, candidate, true, nil, false,
+            { live = true, lookahead = true, storageInstance = instance })
         if result.preview or not inScope(context, candidate.facts) then
             comparison = { result = result }
         elseif state.unresolved or missing then
@@ -1933,13 +2071,193 @@ function rating:ContextLabel(entry)
 end
 
 function rating:DescriptionLines(entry)
-    local lines = { self:Label(entry), self:ContextLabel(entry) }
+    local exact = self:Label(entry)
+    if entry.phase == "LEVELING" and entry.rank then
+        exact = (entry.tied and "Tied " or "") .. "Rank #" .. entry.rank .. " of " .. entry.total
+    end
+    local lines = { exact, self:ContextLabel(entry) }
     if entry.score_percent ~= nil then
         lines[3] = string.format("%d%% of the best known stat score", entry.score_percent)
     end
-    if entry.placement_color then lines[#lines + 1] = "Color uses placement in this slot" end
+    if entry.placement_color and entry.phase ~= "LEVELING" then lines[#lines + 1] = "Color uses placement in this slot" end
     if entry.setup_rank then lines[#lines + 1] = "Rank in this equipped setup" end
     if entry.projected then lines[#lines + 1] = "Projected placement among known gear" end
     if entry.conditional or entry.conditional_tie then lines[#lines + 1] = "Some item effects have an unverified value" end
+    return lines
+end
+
+function rating:GetLiveLevelingSwap(item, link, owned, physical, player, equipped)
+    if not player or not player.spec or not item then return nil end
+    if equipped then return { status = "equipped" } end
+    local context = self:GetContext(player.class, player.spec, player.phase, player.level, owned)
+    if not context then return nil end
+    local revision = addon.ForeverScoring and addon.ForeverScoring.revision
+    if context.liveLevelingRevision ~= revision then
+        context.liveLevelingRevision, context.liveLevelingSwaps = revision, {}
+    end
+    context.liveLevelingSwaps = context.liveLevelingSwaps or {}
+    local key = table.concat({ item.key, link or "", physical or "" }, "\031")
+    local result = context.liveLevelingSwaps[key]
+    if not result then
+        -- Published exact facts give list rows the same legal swap checks as an item link.
+        result = self:CompareTooltipItem(context,
+            { facts = item, key = item.key, item_link = link, entry = { item_id = item.id } },
+            true, nil, true, { live = true, lookahead = true, skipPlacement = true, physical = physical })
+        context.liveLevelingSwaps[key] = result
+    end
+    return result
+end
+
+local LEVELING_GRADES = { [5] = "Among the best", [4] = "Strong", [3] = "Good option" }
+local COMPACT_GRADES = { [5] = "Top", [4] = "Strong", [3] = "Good", [0] = "Weaker" }
+local SOURCE_GATES = { quest = "Quest available", dungeon = "Dungeon available", vendor = "Vendor available",
+    crafting = "Craftable", drop = "Can drop" }
+
+local function atLevels(first, last)
+    if last and last > first then return " at Levels " .. first .. "–" .. last end
+    return " at Level " .. first
+end
+
+function rating:GetLevelingCue(result)
+    if not result then return nil end
+    local placement, forecast = result.placement, result.forecast
+    local grade
+    if placement and placement.phase == "LEVELING" then grade = levelingGrade(placement) end
+    if forecast and not result.conditional and not forecast.conditional and forecast.level <= addon.maxLevelingLevel
+        and (self:RoundedGain(forecast.delta) or 0) > 0 then
+        return grade, forecast.level
+    end
+    return grade
+end
+
+function rating:LevelingRangeText(range)
+    local grade = LEVELING_GRADES[range.grade]
+    return (range.estimated and "Estimated · " or "") .. grade .. atLevels(range.firstLevel, range.lastLevel)
+end
+
+local function levelingRankText(placement)
+    if not placement then return nil end
+    local grade = levelingGrade(placement)
+    local level = placement.level
+    if not grade then
+        if placement.status == "out_of_scope" then return "Outside Leveling rankings" end
+        return STATUS_LABELS[placement.status] or "Gear comparison unavailable"
+    end
+    local label
+    if placement.total == 1 then
+        label = "Only ranked option"
+    elseif placement.rank == 1 then
+        label = placement.tied and "Tied for best" or "Best known"
+    else
+        label = LEVELING_GRADES[grade] or "Better options"
+    end
+    if placement.conditional or placement.conditional_tie or placement.projected then label = "Estimated · " .. label end
+    return label .. atLevels(level), grade
+end
+
+local function levelingSwapText(self, swap, level, owned)
+    if not swap then return nil end
+    if swap.status == "equipped" then return "Equipped" end
+    if swap.status == "best_owned" then
+        return (swap.conditional and "Estimated best you own for this slot" or "Best you own for this slot")
+            .. (level and atLevels(level) or "")
+    end
+    local gain = self:RoundedGain(swap.delta)
+    if gain == nil then
+        if swap.status == "loading" then return "Loading gear comparison" end
+        if swap.status == "unavailable" or swap.status == "blocked" then
+            return "Gear comparison unavailable" .. (level and atLevels(level) or "")
+        end
+        return nil
+    end
+    local estimate = (level or swap.conditional) and "Estimated " or nil
+    local names = {}
+    for _, replacement in ipairs(swap.replacements or {}) do names[#names + 1] = replacement.name end
+    local compared = #names > 0 and table.concat(names, " + ") or (owned and "your best gear" or "your equipped gear")
+    local text
+    if swap.status == "empty" and #names == 0 and gain > 0 then
+        text = estimate and "Estimated upgrade for an empty slot" or "Fills an empty slot"
+    elseif gain > 0 then
+        text = (estimate and "Estimated upgrade over " or "Upgrade over ") .. compared
+    elseif gain < 0 then
+        text = (estimate and "Estimated downgrade from " or "Downgrade from ") .. compared
+    else
+        text = (estimate and "Estimated sidegrade to " or "Sidegrade to ") .. compared
+    end
+    return text .. (level and atLevels(level) or "")
+end
+
+function rating:LevelingPresentation(input)
+    local item, placement, swap, playerLevel = input.item, input.placement, input.swap, input.playerLevel
+    local record = input.record
+    local view = {}
+    if placement and placement.phase == "LEVELING" then
+        view.rank, view.grade = levelingRankText(placement)
+    end
+    local evaluated = placement and placement.phase == "LEVELING" and placement.level or input.viewedLevel or playerLevel
+    local range = evaluated and record and self:LevelingRangeAt(record.strength, evaluated)
+    if range then
+        view.range = self:LevelingRangeText(range)
+        view.compactRange = "Lv " .. range.firstLevel
+            .. (range.lastLevel > range.firstLevel and ("–" .. range.lastLevel) or "")
+            .. " " .. (range.estimated and "Est. " or "") .. COMPACT_GRADES[range.grade]
+        if view.range == view.rank then view.range = nil end
+    end
+    local minimum = item and item.level
+    local forecast = swap and swap.forecast
+    if minimum and playerLevel and minimum > playerLevel and not input.nativeRequirement then
+        view.requirement = "Requires Level " .. minimum
+    end
+    if forecast and minimum and forecast.level > math.max(playerLevel or 0, minimum) then
+        local proficiency = "Can equip at Level " .. forecast.level
+        view.requirement = view.requirement and (view.requirement .. " · " .. proficiency) or proficiency
+    end
+    if input.sourceLevel and input.sourceLevel > (minimum or 0)
+        and (input.sourceLevel > (playerLevel or 0) or input.sourceLevel > (input.viewedLevel or playerLevel or 0)) then
+        view.acquisition = (SOURCE_GATES[input.sourceType] or "Source available") .. atLevels(input.sourceLevel)
+    end
+    if forecast then
+        view.forecast = levelingSwapText(self, forecast, forecast.level, true)
+        local _, future = self:GetLevelingCue(swap)
+        view.futureLevel = future
+    else
+        local action = levelingSwapText(self, swap, nil, input.ownedBaseline)
+        if action and swap.delta ~= nil and playerLevel and input.viewedLevel and input.viewedLevel ~= playerLevel then
+            action = action .. atLevels(playerLevel)
+        end
+        view.action = action
+    end
+    view.today = view.requirement or view.action
+    if not view.today and playerLevel and not forecast and item and item.level and item.level <= playerLevel then
+        local status = placement and placement.status
+        view.today = status == "incompatible" and "No comparison for this spec" or "Gear comparison unavailable"
+        if status == "out_of_scope" then view.today = nil end
+    end
+    view.strength = view.rank or view.range
+    if view.grade then
+        local label = COMPACT_GRADES[view.grade]
+        if placement.total == 1 then label = "Only option"
+        elseif placement.rank == 1 then label = placement.tied and "Tied best" or "Best" end
+        if placement.conditional or placement.conditional_tie or placement.projected then label = "Est. " .. label end
+        view.compact = "Lv " .. placement.level .. " " .. label
+    end
+    if range and view.rank and placement and placement.rank ~= 1 and range.grade == view.grade
+        and range.firstLevel <= evaluated and range.lastLevel >= evaluated and not input.explicitPreview then
+        view.strength = self:LevelingRangeText(range)
+        view.compact = view.compactRange
+    end
+    return view
+end
+
+function rating:LevelingPresentationLines(view)
+    local lines = {}
+    local function add(text)
+        if text then lines[#lines + 1] = text end
+    end
+    add(view.today)
+    if view.strength ~= view.today then add(view.strength) end
+    if view.range ~= view.strength then add(view.range) end
+    add(view.acquisition)
+    add(view.forecast)
     return lines
 end

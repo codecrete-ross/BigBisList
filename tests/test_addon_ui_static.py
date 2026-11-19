@@ -773,7 +773,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "addon:GetWishlistRows(",
             'elseif tabName == "Enhance" or tabName == "Enhancements" then',
             "addon:GetEnhancementRows(className, specName, phaseKey, filters)",
-            "addon:GetLevelingRows(className, specName, filters and filters.level, filters)",
+            "addon:GetLevelingRows(className, specName, level, filters)",
+            "addon:GetLevelingJourneyRows(className, specName, level, filters or {}, summary, groups)",
             "addon:GetPlannerRows(className, specName, phaseKey, filters)",
             "addon:GetPhaseRows(className, specName, phaseKey, filters)",
         ]:

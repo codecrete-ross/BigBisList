@@ -624,8 +624,21 @@ function UI:BindComparisonRow(row, entry, pinned)
     if state.statRank then
         local service = addon.ForeverGearRating
         local rankColumn = columns.rank
-        local text = placement and service:Label(placement, rankColumn.stacked and "stacked" or nil, true) or "—"
-        setCell(row.rankText, text, rankColumn.x, rankColumn.width, entry.height, rankColumn.stacked and 2 or 1)
+        local view, _, _, rated = self:GetLevelingGearView(data, "comparison")
+        local text
+        if view then
+            text = view.strength or "Gear comparison unavailable"
+            if view.range and view.range ~= text then text = text .. "\n" .. view.range end
+            if view.grade and view.grade > 0 then tier = {quality = view.grade} else tier = nil end
+        else
+            text = placement and service:Label(placement, rankColumn.stacked and "stacked" or nil, true) or "—"
+        end
+        setCell(row.rankText, text, rankColumn.x, rankColumn.width, entry.height, (rankColumn.stacked or view) and 2 or 1)
+        if view and view.compact and row.rankText.isTruncated then
+            local short = view.compact
+            if view.compactRange and view.compactRange ~= short then short = short .. "\n" .. view.compactRange end
+            setCell(row.rankText, short, rankColumn.x, rankColumn.width, entry.height, 2)
+        end
         if tier then
             row.rankText:SetTextColor(widgets:GetRankColor(tier.quality))
         else
@@ -635,7 +648,8 @@ function UI:BindComparisonRow(row, entry, pinned)
         local delta = swap and (state.sort ~= "comparison" or swap.basis == state.swapBasis) and swap.delta
         local change = delta and string.format("%s %+.1f pts", swap.conditional and "Conditional" or "Est.", delta) or "—"
         if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap.basis) end
-        if pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
+        if view then change = view.today or view.forecast or "Gear comparison unavailable"
+        elseif pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
         if not pinned or data.context.slotKey == state.reference.slotKey then
             setCell(row.evidenceText, change, columns.evidence.x, columns.evidence.width, entry.height, lines)
         else
@@ -644,7 +658,11 @@ function UI:BindComparisonRow(row, entry, pinned)
             row.referenceButton.label:SetText(COMPARE_ACTION)
             row.referenceButton:SetSelected(false); row.referenceButton:SetWidth(columns.evidence.width); row.referenceButton:Show()
         end
-        local hover = placement and service:DescriptionLines(placement) or {}
+        local hover = view and service:LevelingPresentationLines(view) or {}
+        local displayRank = rated or placement
+        if displayRank then
+            for _, line in ipairs(service:DescriptionLines(displayRank)) do hover[#hover + 1] = line end
+        end
         if swap and swap.delta then
             local basis = service:GetSwapBasisLabel(swap.basis)
             if swap.conditional then basis = basis .. " · Conditional" end
@@ -837,7 +855,10 @@ function UI:LayoutSlotComparison()
     self.comparisonColumns = self:GetComparisonColumns(width)
     local columns, header = self.comparisonColumns, self.comparisonHeader
     local headings = { { text = "Item", column = columns.item, key = "item" } }
-    if state.statRank then headings[#headings + 1] = { text = "Setup rank", column = columns.rank, key = "stat_rank" } end
+    if state.statRank then
+        headings[#headings + 1] = { text = state.phase == "LEVELING" and "Gear for this level" or "Setup rank",
+            column = columns.rank, key = "stat_rank" }
+    end
     headings[#headings + 1] = { text = state.statRank and "Est. stat change" or SORT_LABELS.comparison, column = columns.evidence, key = "comparison" }
     local live = addon:GetCurrentPhaseKey()
     for _, column in ipairs(columns.phases) do headings[#headings + 1] = { text = (PHASE_LABELS[column.phase] or column.phase) .. (column.phase == live and "\nLive" or ""), column = column, phase = column.phase, key = "phase:" .. column.phase } end

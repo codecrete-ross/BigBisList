@@ -275,7 +275,7 @@ assert(rating:Label(head.rows[1]) == "Top tier · Tied #1 / 13")
 assert(rating:Label(head.rows[1], "compact") == "Top tier Tied #1/13")
 assert(rating:Label(head.rows[1], "stacked") == "Top tier\nTied #1 / 13")
 local summary = rating:DescriptionLines(head.rows[7])
-assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47")
+assert(summary[1] == "Rank #7 of 13" and summary[2] == "Protection · Level 47")
 assert(summary[3] == "70% of the best known stat score")
 local only = rating:GetPlacement(context, "Neck", {"Neck"}).rows[1]
 assert(not only.tier and not only.score_percent and rating:Label(only) == "5.0 pts")
@@ -336,7 +336,8 @@ local projected = rating:CompareTooltipItem(context, {key = "new necklace", item
 assert(projected.placement.rank == 5 and projected.placement.total == 6 and projected.placement.tier.quality == 1)
 assert(projected.placement.score_percent == 92 and projected.placement.placement_color)
 assert(pool("Neck") == neck and neck.count == 5 and not neck.byVariant["new necklace"])
-assert(rating:DescriptionLines(projected.placement)[4] == "Color uses placement in this slot")
+local publicGrade = rating:LevelingPresentation({placement = projected.placement})
+assert(publicGrade.grade == 4 and publicGrade.rank == "Estimated · Strong at Level 47")
 ''')
 
     def test_changed_mechanics_reopen_approvals(self):
