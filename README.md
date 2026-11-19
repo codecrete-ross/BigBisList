@@ -35,6 +35,10 @@ test.
 - WoW Forever Leveling and level-60 Pre-Raid gear for 28 profiles, with race,
   faction, and route eligibility. Supported specs can use active talent ranks
   when comparing gear.
+- Forever ranks by spec, activity, and character level. Details shows which
+  stats drive a swap and when a stronger option appears. Item tooltips identify
+  tied and projected ranks, compare future gear at its first usable level, and
+  show which quest choices serve each activity.
 - Leveling mode with guide-backed gear pickups, computed item recommendations,
   and level controls.
 - Class, spec, phase, slot, source, zone, reputation, rank, ownership, BoE, and
@@ -82,6 +86,8 @@ and [scoring guide](docs/internal/forever-scoring.md) for the remaining work.
 - Leveling guidance covers gear pickups and their recorded acquisition steps.
 - Planner priority estimates upgrade value from the reviewed recommendations.
 - Bank ownership only includes banked items after the character opens the bank.
+- Forever effects with an unverified score are marked conditional. Exact rolls
+  awaiting catalog review can show a projected rank from their readable stats.
 - No profile import/export is included in `0.15.0`.
 
 ## Release Checks

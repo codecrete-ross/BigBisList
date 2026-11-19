@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.15.0 - 2026-11-17
+## 0.15.0 - 2026-11-18
 
 - Added earlier-tier recommendations for catch-up gearing, enabled by default in Upgrades and optional in BiS List, while keeping the selected tier as the gearing goal.
 - Restored directly clickable tier choices with a Target tier label and a separate Live marker.
@@ -19,9 +19,10 @@
 
 - Added a separate Forever client build with isolated saves and race- and faction-aware Leveling and level-60 Pre-Raid recommendations for 28 profiles.
 - Leveling groups obtainable gear by activity and shows next quest steps. Acquisition details show quest progress, eligibility, and separate routes, with waypoint actions for verified Forever destinations.
-- Gear Guide ranks eligible gear for the chosen spec and level. Swap estimates can use active talent ranks and equipped gear where those inputs have been reviewed. Level previews use reviewed reference weights.
-- Added stat-rank comparisons for equipped and owned gear, including both ring and trinket positions. Item tooltips show gear tiers, swap estimates, and guide notes for the active and remembered alternate specs.
-- Loot and quest reward badges compare gear for the active and remembered specs. Bag badges highlight upgrades among owned gear. When a quest offers no gear upgrade, a coin can mark the highest-value vendor reward.
+- Gear Guide and item tooltips use the same reference ranks for each spec, activity, and level. Verified faction routes determine which items enter the pool. Common and Poor gear can earn a rank.
+- Item tooltips mark ties, projected exact rolls, and unresolved effects. Above-level items show estimates against the best gear you already own at the first usable level, including items in your cached bank.
+- Compare Slot labels ranks for the equipped setup. Details shows tier ranges, the first level a stronger option appears, and the largest stat gains and losses. Current swap estimates can use active talents where supported.
+- Quest reward tooltips show which choices serve each spec and activity. Acquisition badges highlight upgrades in loot, quest rewards, auctions, bags, and bank. A quest with no gear upgrade can mark its highest-value vendor reward.
 - The Forever minimap button works with Leatrix Plus button collection.
 
 ## 0.14.0 - 2026-09-05

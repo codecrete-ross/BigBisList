@@ -2803762,7 +2803762,19 @@ BigBiSListData = {
                 nil,
                 nil,
                 nil,
-                nil,
+                {
+                    {
+                        ["chance"] = 0.03,
+                        ["duration"] = 20,
+                        ["key"] = "1b1ec0d0a4eb0ebf",
+                        ["kind"] = "timed_stats",
+                        ["label"] = "Equip: When struck in combat has a 3% chance to encase the caster in bone, increasing armor by 150 for 20 sec. (Proc chance: 3%)",
+                        ["stats"] = {
+                            ["armor"] = 150,
+                        },
+                        ["trigger"] = "struck",
+                    },
+                },
                 nil,
             },
             ["1980"] = {
@@ -2864661,7 +2864673,17 @@ BigBiSListData = {
                 nil,
                 nil,
                 nil,
-                nil,
+                {
+                    {
+                        ["amount"] = 14.0,
+                        ["chance"] = 1,
+                        ["key"] = "0daf26061ce3bb34",
+                        ["kind"] = "damage",
+                        ["label"] = "Equip: Deals 13 to 15 Holy damage every time you block.",
+                        ["school"] = "holy",
+                        ["trigger"] = "block",
+                    },
+                },
                 nil,
             },
             ["7727"] = {

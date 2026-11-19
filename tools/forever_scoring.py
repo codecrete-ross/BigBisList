@@ -86,8 +86,15 @@ def validate_scenario(settings: dict, name: str) -> None:
         raise ValueError(f"Invalid stat conversion for {name}")
 
 
+def operation_applies(operation: dict, rank: int, level: int, shield: bool, two_hand: bool) -> bool:
+    condition = operation.get("condition")
+    return (rank > 0 and operation.get("min_level", 1) <= level <= operation.get("max_level", 60)
+            and (not condition or condition == "shield" and shield or condition == "two_hand" and two_hand))
+
+
 def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict,
-                 scenario: dict, race_id: int | None, level: int, bonus_stats: dict) -> tuple[float, dict]:
+                 scenario: dict, race_id: int | None, level: int, bonus_stats: dict,
+                 breakdown: dict | None = None) -> tuple[float, dict]:
     stats, sets, procs = defaultdict(float), defaultdict(int), []
     gear = loadout if isinstance(loadout, dict) else {}
     items = gear.values() if isinstance(loadout, dict) else loadout
@@ -126,16 +133,21 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
     if scenario.get("crit_domain") == "spell" and "spell_hit_percent" not in weights:
         stats["hit_percent"] += stats["spell_hit_percent"]
 
-    def value() -> float:
-        return sum(min(stats[key], scenario.get("caps", {}).get(key, float("inf"))) * weight
-                   for key, weight in weights.items())
+    caps = scenario.get("caps", {})
+
+    def value(points: dict | None = None) -> float:
+        total = 0.0
+        for stat, weight in weights.items():
+            contribution = min(stats[stat], caps.get(stat, float("inf"))) * weight
+            total += contribution
+            if points is not None:
+                points[stat] = contribution
+        return total
 
     explanations = {}
     for operation in operations:
         rank = ranks.get(operation["entry"], 0)
-        condition = operation.get("condition")
-        if (rank == 0 or level < operation.get("min_level", 1) or level > operation.get("max_level", 60)
-                or condition == "shield" and not shield or condition == "two_hand" and not two_hand):
+        if not operation_applies(operation, rank, level, shield, two_hand):
             continue
         factor = operation["factors"][rank - 1]
         basis = value()
@@ -149,7 +161,7 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
             else:
                 stats[stat] *= 1 + factor
         explanations[operation["entry"]] = explanations.get(operation["entry"], 0) + value() - basis
-    return value(), explanations
+    return value(breakdown), explanations
 
 
 def effective_activations(rule: dict, observation: dict, loadout: dict, position: int) -> float | None:
@@ -209,7 +221,7 @@ def expected_item_effect(rule: dict, observation: dict, loadout: dict, position:
 
 
 def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
-               *, race_id: int | None = None, level: int = 60) -> tuple[float, dict]:
+               *, race_id: int | None = None, level: int = 60, breakdown: dict | None = None) -> tuple[float, dict]:
     """Score a legal loadout over the encounter's reviewed effects and active states."""
     flat, timed = defaultdict(float), []
     expectations = scenario.get("effect_expectations", {})
@@ -231,7 +243,7 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
                     for key, value in stats.items():
                         flat[key] += value
 
-    total, explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, flat)
+    total, explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, flat, breakdown)
     states = []
     if len(timed) == 1:
         key, _, uptime, solo, _ = timed[0]
@@ -245,16 +257,22 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
     if states:
         timed_stats = {key: stats for key, stats, *_ in timed}
         baseline, baseline_explanations = total, dict(explanations)
+        baseline_breakdown = dict(breakdown) if breakdown is not None else None
         for state in states:
             stats = defaultdict(float, flat)
             for name in state["active"]:
                 for key, value in timed_stats[name].items():
                     stats[key] += value
-            active, active_explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, stats)
+            active_breakdown = {} if breakdown is not None else None
+            active, active_explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, stats,
+                                                       active_breakdown)
             fraction = state["fraction"]
             total += (active - baseline) * fraction
             for key, value in active_explanations.items():
                 explanations[key] = explanations.get(key, 0) + (value - baseline_explanations.get(key, 0)) * fraction
+            if breakdown is not None:
+                for stat, points in active_breakdown.items():
+                    breakdown[stat] += (points - baseline_breakdown[stat]) * fraction
     return total, explanations
 
 
@@ -575,7 +593,8 @@ def refresh_review_scope(changed_items: set[int], newer_builds: list[int]) -> di
     return result
 
 
-def scoring_audit(*, strict: bool = False, lua: str | None = None, input_dir: Path | None = None) -> dict:
+def scoring_audit(*, strict: bool = False, lua: str | None = None, input_dir: Path | None = None,
+                  include_breakdowns: bool = False) -> dict:
     try:
         snapshots, documents = None, None
         if input_dir is not None:
@@ -594,10 +613,12 @@ def scoring_audit(*, strict: bool = False, lua: str | None = None, input_dir: Pa
             from tools.forever_scoring_checks import reference_issues, validation_issues
 
             issues.extend(reference_issues())
-            fixture_issues, verified = validation_issues(model, runtime, bindings, lua)
+            fixture_issues, verified, breakdowns = validation_issues(model, runtime, bindings, lua)
             issues.extend(fixture_issues)
             validation = {"required_contexts": len(required), "validated_contexts": verified,
                           "missing_contexts": missing}
+            if include_breakdowns:
+                validation["swap_breakdowns"] = breakdowns
         return {"ok": not issues and (not strict or not missing), "issues": issues,
                 "client_build": model["client_build"], **validation,
                 "mechanics": evidence_ref(snapshot["url"], {snapshot["url"]: snapshot}),

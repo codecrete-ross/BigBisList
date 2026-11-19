@@ -74,6 +74,13 @@ inventory and candidate exclusions support an empty slot and the scope still
 needs sign-off. `unreviewed_availability` means an inventory or candidate fact
 remains open.
 
+Review occupied slots too. The November 18 ranking sweep found that Aegis of
+Stormwind (1203) and Wall of the Dead (1979) had scoring facts and lacked
+indexed Guide routes. Wall of Water (274652) still needs indexed stats and
+its Zul’Farrak route. Use the exact item IDs to review acquisition and equip
+requirements. A faction's observed trade route applies to that faction.
+See the [ranking coverage commands](forever-scoring.md#verification-and-rollout).
+
 The November 12, 2026 retry recovered three of 670 Forever tooltips.
 Runed Ring requires level 45, Innervating Band requires 54, and Band of the
 Damned requires 56. Those requirements exclude the three rings from the

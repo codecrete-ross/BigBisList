@@ -3748,9 +3748,10 @@ function UI:RestoreAllHiddenItems()
     self:ScheduleRefresh(nil, "restore-items")
 end
 
-local function equippedLinkName(data, mode)
-    local link = mode == "gear" and data and data.item_link
-    return link and link:match("|h%[(.-)%]|h")
+local function exactItemName(data, mode)
+    if not data or (not data.variant_id and mode ~= "gear") then return nil end
+    local name = data.item_link and data.item_link:match("|h%[(.-)%]|h")
+    return name or (data.variant_id and data.name)
 end
 
 local function applyItemPresentation(button, itemId, bindToken, presentation)
@@ -3767,7 +3768,7 @@ local function applyItemPresentation(button, itemId, bindToken, presentation)
     end
     if presentation.name and button.boundNameText then
         local label = button.boundNameText
-        local name = equippedLinkName(button.detailData, button.detailMode) or presentation.name
+        local name = exactItemName(button.detailData, button.detailMode) or presentation.name
         BigBiSList.Widgets:SetCellText(label, name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
     end
     if presentation.link and not (button.detailData and button.detailData.item_link) then
@@ -3837,7 +3838,7 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     button.detailData = detailData
     button.detailMode = detailMode
     button.boundNameText = nameText
-    button.boundFallbackName = equippedLinkName(detailData, detailMode) or fallbackName or ("Item " .. tostring(itemId))
+    button.boundFallbackName = exactItemName(detailData, detailMode) or fallbackName or ("Item " .. tostring(itemId))
     button.icon:SetDesaturated(false)
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
@@ -6331,7 +6332,7 @@ local function layoutGearSlotText(button)
 
     local rating = data.overlay
     if occupied and badge then
-        rating = service:Label(placement)
+        rating = service:Label(placement, nil, true)
     elseif occupied and data.bestUse then
         rating = data.display_rank_label or rating
     end
@@ -6351,7 +6352,7 @@ local function layoutGearSlotText(button)
             local slotWidth = gearLabelWidth(button.label, data.slot)
             local available = width - 6
             if placement and placement.rank and placement.total > 1 and ratingWidth > available - slotWidth then
-                rating = service:Label(placement, "compact")
+                rating = service:Label(placement, "compact", true)
                 ratingWidth = gearLabelWidth(button.rating, rating)
             end
             ratingLimit = available - math.min(slotWidth, 24)
@@ -6617,7 +6618,7 @@ function UI:RefreshGearSelection()
         if data.stat_rank then
             local service = BigBiSList.ForeverGearRating
             local placement = data.stat_rank
-            local label = service:Label(placement) .. " ›"
+            local label = service:Label(placement, nil, true) .. " ›"
             if placement.score_percent then label = label .. " · " .. placement.score_percent .. "% of best" end
             label = label .. "\n" .. service:ContextLabel(placement)
             if data.bestUse then label = label .. "\n" .. data.recommendation_summary end
@@ -7796,6 +7797,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     content:SetWidth(detailsWidth)
     local versions = self.domainVersions or {}
     local tierRange = detailData and self:RequestDetailsTierRange(detailData, detailMode)
+    local stronger = tierRange and tierRange.stronger
     local signature = table.concat({
         tostring(itemId or "none"),
         tostring(detailMode or ""),
@@ -7804,6 +7806,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         tostring(versions.details or 0),
         tostring(math.floor((detailsWidth or 0) + 0.5)),
         tierRange and tostring(tierRange.lastLevel) or "",
+        stronger and tostring(stronger.level) or "",
     }, ":")
     if self.detailsRenderSignature == signature then
         self:ApplyDetailsScrollGeometry(self.detailsContentHeight, detailsHeight)
@@ -7942,7 +7945,11 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             local service = BigBiSList.ForeverGearRating
             local lines = service:DescriptionLines(placement)
             lines[2] = "Default spec weights · " .. lines[2]
-            if tierRange then appendText(lines, "Tier range · " .. service:TierRangeLabel(tierRange)) end
+            if tierRange and placement.tier then appendText(lines, "Tier range · " .. service:TierRangeLabel(tierRange)) end
+            if stronger then
+                local label = stronger.conditional and "Higher estimated score" or "Higher score"
+                appendText(lines, label .. " at Lv " .. stronger.level .. " · " .. stronger.name)
+            end
             if placement.rank and placement.total > 1 then appendText(lines, string.format("%.1f pts", placement.score)) end
             local comparison = self.slotComparison
             if comparison and comparison.statRank then
@@ -7953,7 +7960,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             end
             local effects = placement.item and placement.item.effects
             if effects and #effects > 0 then
-                appendText(lines, "Effects outside the stat score")
+                appendText(lines, "Item effects")
                 for _, effect in ipairs(effects) do appendText(lines, effect) end
             end
             anchor = self:CreateDetailsText(content, anchor, "Stat rank", table.concat(lines, "\n"), 0.82, 0.88, 0.94)

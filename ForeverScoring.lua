@@ -37,7 +37,13 @@ local function addStats(total, stats, multiplier)
     end
 end
 
-local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats)
+local function operationApplies(operation, rank, level, shield, twoHand)
+    return rank > 0 and level >= (operation.min_level or 1) and level <= (operation.max_level or 60)
+        and (not operation.condition or (operation.condition == "shield" and shield)
+            or (operation.condition == "two_hand" and twoHand))
+end
+
+local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats, breakdown)
     local stats, sets, explanations = {}, {}, {}
     local shield = false
     local mainHand, offHand = loadout[16], loadout[17]
@@ -79,18 +85,18 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     if scenario.crit_domain == "spell" and not weights.spell_hit_percent then
         stats.hit_percent = (stats.hit_percent or 0) + (stats.spell_hit_percent or 0)
     end
-    local function value()
+    local function value(points)
         local total = 0
         for stat, weight in pairs(weights) do
-            total = total + math.min(stats[stat] or 0, (scenario.caps or {})[stat] or math.huge) * weight
+            local contribution = math.min(stats[stat] or 0, (scenario.caps or {})[stat] or math.huge) * weight
+            total = total + contribution
+            if points then points[stat] = contribution end
         end
         return total
     end
     for _, operation in ipairs(operations) do
         local rank = byId(ranks, operation.entry) or 0
-        local applies = not operation.condition or (operation.condition == "shield" and shield)
-            or (operation.condition == "two_hand" and twoHand)
-        if rank > 0 and applies and level >= (operation.min_level or 1) and level <= (operation.max_level or 60) then
+        if operationApplies(operation, rank, level, shield, twoHand) then
             local factor = operation.factors[rank]
             local before = value()
             for _, stat in ipairs(operation.stats) do
@@ -108,7 +114,39 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
             explanations[operation.entry] = (explanations[operation.entry] or 0) + value() - before
         end
     end
-    return value(), explanations, sets
+    return value(breakdown), explanations, sets
+end
+
+-- Follow the same conversions in reverse to identify which effect outputs can
+-- affect the final score. A cap can legitimately reduce a modeled gain to zero.
+local function scoredChannels(loadout, weights, operations, ranks, scenario, level)
+    local channels, shield = {}, false
+    for stat, weight in pairs(weights) do if weight ~= 0 then channels[stat] = true end end
+    for _, item in pairs(loadout) do shield = shield or item.shield end
+    local twoHand = loadout[16] and loadout[16].slot == "Two Hand"
+    for index = #operations, 1, -1 do
+        local rule = operations[index]
+        if rule.kind == "convert" and operationApplies(rule, byId(ranks, rule.entry) or 0, level or 60, shield, twoHand) then
+            for _, stat in ipairs(rule.stats) do
+                if channels[stat] then channels[rule.from_stat] = true; break end
+            end
+        end
+    end
+    local crit = scenario.crit_domain == "spell" and "spell_crit_percent"
+        or scenario.crit_domain == "physical" and "physical_crit_percent"
+    if crit and not weights[crit] then channels[crit] = channels.crit_percent end
+    if scenario.crit_domain == "spell" and not weights.spell_hit_percent then channels.spell_hit_percent = channels.hit_percent end
+    local conversions = scenario.conversions or {}
+    for index = #conversions, 1, -1 do
+        local rule = conversions[index]
+        if channels[rule.stat] and (rule.condition ~= "shield" or shield) then channels[rule.from_stat] = true end
+    end
+    return channels
+end
+
+local function hasScoredChannel(stats, channels)
+    for stat in pairs(stats) do if channels[stat] then return true end end
+    return false
 end
 
 local function expectedActivations(rule, observation, loadout, position)
@@ -194,13 +232,15 @@ local function setCoverage(loadout, scenario)
     return applied
 end
 
-function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
+function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level, includeBreakdown)
     local applied = setCoverage(loadout, scenario)
+    local breakdown = includeBreakdown and {} or nil
     if not scenario.effect_expectations then
-        local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level)
-        return points, explanations, applied, sets
+        local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, nil, breakdown)
+        return points, explanations, applied, sets, breakdown
     end
     local flat, timed, timedKeys = {}, {}, {}
+    local channels = scoredChannels(loadout, weights, operations, ranks, scenario, level)
     local useRules = {}
     for position, item in pairs(loadout) do
         for _, rule in ipairs(item.effect_rules or {}) do
@@ -217,24 +257,30 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         for _, rule in ipairs(item and item.effect_rules or {}) do
             local observation = expectations and expectations[rule.key]
             local stats, uptime = itemEffect(rule, observation, loadout, position, scenario)
-            if stats then
+            if observation and observation.applicable == false then
+                applied[position] = applied[position] or {}
+                applied[position][rule.label] = true
+            elseif stats then
+                local modeled = hasScoredChannel(stats, channels)
                 local use = rule.trigger == "use"
                 local scoped = not use or #useRules < 2 or observation.use_signature == useSignature
                 if uptime then
                     local key = position .. ":" .. (item.key or item.variant_id or item.id) .. ":" .. rule.key
                     timedKeys[#timedKeys + 1] = key
-                    timed[key] = { rule = rule, stats = stats, uptime = uptime, position = position }
+                    timed[key] = { rule = rule, stats = stats, uptime = uptime, position = position, modeled = modeled }
                     if use then timedUses = timedUses + 1 end
                     allScoped = allScoped and scoped
                 elseif scoped then
                     addStats(flat, stats)
-                    applied[position] = applied[position] or {}
-                    applied[position][rule.label] = true
+                    if modeled then
+                        applied[position] = applied[position] or {}
+                        applied[position][rule.label] = true
+                    end
                 end
             end
         end
     end
-    local total, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat)
+    local total, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat, breakdown)
     local states
     if #timedKeys == 1 and allScoped then
         states = { { active = timedKeys, fraction = timed[timedKeys[1]].uptime } }
@@ -244,21 +290,38 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
     end
     if states then
         local baseline, baselineExplanations = total, copy(explanations)
+        local baselineBreakdown = breakdown and copy(breakdown)
         for _, state in ipairs(states) do
             local stats = copy(flat)
             for _, key in ipairs(state.active) do addStats(stats, timed[key].stats) end
-            local active, activeExplanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, stats)
+            local activeBreakdown = breakdown and {}
+            local active, activeExplanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, stats,
+                activeBreakdown)
             total = total + (active - baseline) * state.fraction
             for id, value in pairs(activeExplanations) do
                 explanations[id] = (explanations[id] or 0) + (value - (baselineExplanations[id] or 0)) * state.fraction
             end
+            if breakdown then
+                for stat, points in pairs(activeBreakdown) do
+                    breakdown[stat] = breakdown[stat] + (points - baselineBreakdown[stat]) * state.fraction
+                end
+            end
         end
         for _, effect in pairs(timed) do
-            applied[effect.position] = applied[effect.position] or {}
-            applied[effect.position][effect.rule.label] = true
+            if effect.modeled then
+                applied[effect.position] = applied[effect.position] or {}
+                applied[effect.position][effect.rule.label] = true
+            end
         end
     end
-    return total, explanations, applied, sets
+    return total, explanations, applied, sets, breakdown
+end
+
+function Scoring:StatDifferences(before, after)
+    if not before or not after then return nil end
+    local changes = {}
+    for stat, points in pairs(after) do changes[stat] = points - (before[stat] or 0) end
+    return changes
 end
 
 function Scoring:ReferenceItem(facts, stats)
@@ -492,9 +555,9 @@ function Scoring:GetContext(className, specName, mode, level, filters)
     if ok then return result, status end
 end
 
-local function score(state, gear, weights)
+local function score(state, gear, weights, includeBreakdown)
     return Scoring.ScoreLoadout(gear, weights or state.weights, state.profile.operations, state.ranks,
-        state.scenario, state.race, state.level)
+        state.scenario, state.race, state.level, includeBreakdown)
 end
 
 local function withSwap(gear, target, item, slot)
@@ -591,19 +654,20 @@ function Scoring:HasUnmodeledSwap(state, facts, target, slot)
     return dependsOnUnmodeledCombat(state, facts, target, slot)
 end
 
-function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights)
+function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights, includeBreakdown)
     local incoming = swapItem(state.model, state.mode, facts.id, link, facts)
     if not incoming or not contains(SLOTS[slot], target) then return nil end
     local proposal = replace(state, state.gear, target, incoming, slot)
     if not proposal then return nil end
-    if state.baseline == nil then
-        state.baseline, state.baselineEffects, state.baselineItemEffects, state.baselineSets = score(state, state.gear)
+    if state.baseline == nil or (includeBreakdown and not state.baselineBreakdown) then
+        state.baseline, state.baselineEffects, state.baselineItemEffects, state.baselineSets, state.baselineBreakdown =
+            score(state, state.gear, nil, includeBreakdown)
         state.roleBaseline = score(state, state.gear, roleWeights)
         for _, worn in pairs(state.gear) do
             if worn.uncertain then state.uncertain = true; break end
         end
     end
-    local total, effects, applied, sets = score(state, proposal)
+    local total, effects, applied, sets, breakdown = score(state, proposal, nil, includeBreakdown)
     local conditional = false
     for position = 1, 18 do
         local before, after = state.gear[position], proposal[position]
@@ -620,6 +684,7 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights)
         roleDelta = score(state, proposal, roleWeights) - state.roleBaseline,
         roleDisplaced = math.max(0, state.roleBaseline - score(state, without, roleWeights)),
         effects = swapEffects(state, effects, state.baselineEffects, sets, state.baselineSets),
+        contributions = self:StatDifferences(state.baselineBreakdown, breakdown),
         conditional = conditional or state.uncertain or incoming.uncertain or dependsOnUnmodeledCombat(state, incoming, target, slot),
     }
 end

@@ -107,6 +107,11 @@ function rating:NormalizeLink(id, link)
     for index = 2, math.min(6, #fields) do fields[index] = "0" end
     local suffix = tonumber(fields[7]) or 0
     local suffixParameter = suffix < 0 and (tonumber(fields[8]) or 0) or 0
+    local bonusCount = tonumber(fields[13]) or 0
+    if bonusCount < 0 or (bonusCount > 0 and #fields < 13 + bonusCount) then return nil end
+    for index = 14, 13 + bonusCount do
+        if (tonumber(fields[index]) or 0) <= 0 then return nil end
+    end
     local extended = {}
     for index = 11, #fields do extended[#extended + 1] = tostring(tonumber(fields[index]) or 0) end
     while extended[#extended] == "0" do table.remove(extended) end
@@ -115,7 +120,8 @@ function rating:NormalizeLink(id, link)
     if #extended > 0 or suffixParameter ~= 0 then
         key = key .. ":" .. suffixParameter .. ":" .. table.concat(extended, ":")
     end
-    return key, link:sub(1, first - 1) .. "item:" .. table.concat(fields, ":") .. link:sub(last + 1), modFields
+    return key, link:sub(1, first - 1) .. "item:" .. table.concat(fields, ":") .. link:sub(last + 1), modFields,
+        suffix ~= 0 or bonusCount > 0
 end
 
 local function exactLinkKey(self, id, link)
@@ -142,6 +148,7 @@ function rating:GetCatalog(data)
     for key, row in pairs(data.items) do
         local item = { key = key }
         for index, field in ipairs(data.item_fields) do item[field] = row[index] end
+        item.variant_link = data.variant_links and data.variant_links[key]
         catalog.items[key] = item
         local slot = item.slot
         catalog.slots[slot] = catalog.slots[slot] or {}
@@ -248,6 +255,7 @@ local function readTooltip(link, stats, facts)
                     local dps = tonumber(text:match("^%(([%d.]+) damage per second%)$"))
                     local speed = tonumber(text:match("^Speed%s+([%d.]+)$"))
                     local armor = tonumber(text:match("^(%d+) Armor$"))
+                    local block = tonumber(text:match("^(%d+) Block$") or text:match("^(%d+) Block Value$"))
                     local weaponLow, weaponHigh = text:match("^(%d+)%s*%-%s*(%d+) Damage$")
                     local weaponFlat = tonumber(text:match("^(%d+) Damage$"))
                     if weaponLow or weaponFlat then
@@ -257,6 +265,7 @@ local function readTooltip(link, stats, facts)
                     if dps and stats.dps == nil then stats.dps = dps end
                     if speed then stats.weapon_speed = speed end
                     if armor and stats.armor == nil then stats.armor = armor end
+                    if block and facts.armor_type == "Shield" and stats.block_value == nil then stats.block_value = block end
                     local classes, races = text:match("^Classes:%s*(.+)$"), text:match("^Races:%s*(.+)$")
                     if classes then facts.classes = restrictionNames(classes) end
                     if races then facts.races = restrictionNames(races) end
@@ -357,16 +366,24 @@ end
 local function resolveLink(self, context, entry)
     if not entry or not entry.item_id then return nil end
     local id, link = entry.item_id, entry.item_link
-    local key, statLink = self:NormalizeLink(id, link)
+    local key, statLink, _, exactRoll = self:NormalizeLink(id, link)
     local base = context.catalog.items[tostring(id)]
-    if base and base.has_random_stats and (not key or key == tostring(id)) then return nil, "unavailable" end
+    if base and base.has_random_stats and not exactRoll then return nil, "unavailable" end
     local facts = key and context.catalog.items[key] or (not link and base)
     if facts and facts.has_random_stats then facts = nil end
     local unavailable
-    if not facts and statLink then facts, unavailable = self:ReadNative(id, key, statLink, base) end
+    if statLink and (not facts or not facts.level) then
+        local native
+        native, unavailable = self:ReadNative(id, key, statLink, base)
+        if facts and native then
+            facts = copy(facts)
+            facts.level = native.level
+        elseif not facts then
+            facts = native
+        end
+    end
     if unavailable == "loading" then context.pending[id] = true end
-    if not facts then return nil, unavailable end
-    return facts
+    return facts, unavailable
 end
 
 function rating:GetExactBaseFacts(id, link)
@@ -400,8 +417,9 @@ local function resolveInventory(self, catalog, owned)
             end
             inventory.copies[#inventory.copies + 1] = instance
             if entry.sourceId then inventory.bySource[entry.sourceId] = instance end
-        elseif state ~= "equipped" then
-            local unresolved = unresolvedCopy(catalog, entry, status)
+        end
+        if state ~= "equipped" and (not facts or not instance.item_link or not facts.level) then
+            local unresolved = facts and { item = facts, status = status } or unresolvedCopy(catalog, entry, status)
             if unresolved then inventory.unresolvedCopies[#inventory.unresolvedCopies + 1] = unresolved end
         end
         return instance
@@ -492,13 +510,14 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
     }
 end
 
-local function contextAtLevel(context, phase, level)
+local function contextAtLevel(context, phase, level, scenario)
     local data = context.catalog.data
     local profile = data.profiles[context.class .. "/" .. context.spec]
     local samePhase = phase == context.phase
     local phaseIndex = samePhase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase)
     local projected = scoringContext(data, profile, context.class, context.spec, phase, level, phaseIndex,
-        context.race, context.faction, rating:GetScenario(context.class, context.spec, phase, level, samePhase and context.scenario or nil))
+        context.race, context.faction, rating:GetScenario(context.class, context.spec, phase, level,
+            scenario or (samePhase and context.scenario or nil)))
     projected.catalog, projected.ownedFacts = context.catalog, context.ownedFacts
     projected.owned, projected.equipmentFacts, projected.guide = context.owned, context.equipmentFacts, context.guide
     projected.ownedCopies, projected.unresolvedCopies, projected.ownedLoadouts = context.ownedCopies, context.unresolvedCopies, {}
@@ -696,7 +715,7 @@ local function hasUnscoredEffect(item)
     return item and not item.utility and (item.unreadable_effects or next(item.effects or {}) ~= nil)
 end
 
-function rating:ReferenceLoadout(context, gear, roleOnly)
+function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
     local scorer = addon.ForeverScoring
     if not (scorer and scorer.ReferenceItem) then return nil end
     local loadout, uncertain = {}, {}
@@ -714,12 +733,12 @@ function rating:ReferenceLoadout(context, gear, roleOnly)
     local active = context.activeBuild
     local operations = active and active.profile.operations or {}
     local ranks = active and active.ranks or {}
-    local total, _, applied = scorer.ScoreLoadout(loadout, self:ReferenceWeights(context, roleOnly), operations,
-        ranks, context.referenceScenario, context.raceId, context.level)
+    local total, _, applied, _, breakdown = scorer.ScoreLoadout(loadout, self:ReferenceWeights(context, roleOnly), operations,
+        ranks, context.referenceScenario, context.raceId, context.level, includeBreakdown)
     for position, item in pairs(loadout) do
         uncertain[position] = uncertain[position] or scorer:HasUnresolvedEffects(item, applied and applied[position])
     end
-    return total, uncertain, loadout
+    return total, uncertain, loadout, breakdown
 end
 
 function rating:WithCharacterBuild(context, live)
@@ -739,8 +758,8 @@ function rating:WithCharacterBuild(context, live)
     return derived
 end
 
-function rating:HasGuideRoleStats(context, item)
-    return (score(context, item, true, true) or 0) > 0
+function rating:HasGuideRoleStats(context, item, slot)
+    return (score(context, item, true, true, nil, slot) or 0) > 0
 end
 
 function rating:GetReviewedGuideEffect(context, item)
@@ -757,7 +776,7 @@ local function resultFor(context, item, status, slot)
         status = item and (item.utility and "utility" or (next(item.effects or {}) and "effect")) or "unavailable"
     end
     return { item = item, score = points, status = status, spec = context.spec, level = context.level, phase = context.phase,
-        scenario = context.scenario, conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
+        scenario = context.scenario, slot = slot, conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
 end
 
 local function scorePercent(score, bestScore)
@@ -818,7 +837,7 @@ end
 local function inScope(context, item)
     local scoped = context.inScope[item.id]
     if scoped == nil then
-        if context.guide then
+        if context.guide and context.catalog.data.published_routes_only and addon.IsStatRankGuideItemAvailable then
             scoped = addon:IsStatRankGuideItemAvailable(item.id, context)
         else
             scoped = not addon.ComparisonItemInScope or addon:ComparisonItemInScope(item.id, context.phase, context.phaseIndex)
@@ -831,6 +850,10 @@ end
 local function usable(context, item, slot)
     return not item.excluded and not item.has_random_stats and item.level and item.level <= context.level
         and fitsEquipment(context, item, slot)
+end
+
+function rating:GetReferenceCandidate(context, item, slot)
+    if usable(context, item, slot) then return resultFor(context, item, nil, slot) end
 end
 
 local function slotPool(context, physical, slot, handType, gear, cacheKey)
@@ -853,6 +876,7 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
             if not available then return end
         end
         local entry = resultFor(context, item, nil, slot)
+        entry.setup_rank = not context.guide or nil
         entry.ownership = ownership
         candidates[item.key] = entry
     end
@@ -870,11 +894,14 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
         return a.item.key < b.item.key
     end)
     local count, previous, rank = 0, nil, nil
+    local ties, conditionalTies = {}, {}
     for _, entry in ipairs(rows) do
         if entry.score ~= nil then
             count = count + 1
             if entry.score ~= previous then previous, rank = entry.score, count end
             entry.rank = rank
+            ties[rank] = (ties[rank] or 0) + 1
+            if entry.conditional then conditionalTies[rank] = true end
         end
     end
     local bestScore = rows[1] and rows[1].score
@@ -882,6 +909,8 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
     for _, entry in ipairs(rows) do
         if entry.rank then
             entry.total = count
+            entry.tied = ties[entry.rank] > 1 or nil
+            entry.conditional_tie = entry.tied and conditionalTies[entry.rank] or nil
             if count > 1 and bestScore > 0 then setRankTier(entry, bestScore, tiers) end
         end
     end
@@ -1034,7 +1063,7 @@ function rating:GetTooltipItem(itemId, link)
     local entry = { item_id = itemId, item_link = link }
     local facts, status = resolveLink(self, { catalog = catalog, pending = {} }, entry)
     local candidate = { facts = facts, status = status, entry = entry, item_link = link, key = key }
-    if status == "loading" or (facts and not facts.unreadable_effects
+    if status == "loading" or (facts and facts.level and not facts.unreadable_effects
         and (not facts.native or next(facts.stats) or #facts.effects > 0)) then
         self.tooltipItem = candidate
     else
@@ -1122,10 +1151,10 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
         end
     end
     local best, bestLive, incompleteLive
-    if not context.wornReference then
-        local baseline, conditional = rating:ReferenceLoadout(context, gear)
+    if not context.wornReference or (scope.breakdown and not context.wornReference.breakdown) then
+        local baseline, conditional, _, breakdown = rating:ReferenceLoadout(context, gear, nil, scope.breakdown)
         context.wornReference = { total = baseline, conditional = conditional,
-            role = baseline and rating:ReferenceLoadout(context, gear, true) }
+            role = baseline and rating:ReferenceLoadout(context, gear, true), breakdown = breakdown }
     end
     for _, definition in ipairs(group.definitions) do
         local slot = targetSlot(item, definition)
@@ -1159,9 +1188,10 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                 local reference = context.wornReference
                 local baseline, before = reference.total, reference.conditional
                 if baseline then
-                    local total, after = rating:ReferenceLoadout(context, proposal)
+                    local total, after, _, breakdown = rating:ReferenceLoadout(context, proposal, nil, scope.breakdown)
                     local roleBaseline = reference.role
                     result.delta = total - baseline
+                    if scope.breakdown then result.contributions = scorer:StatDifferences(reference.breakdown, breakdown) end
                     result.roleDelta = rating:ReferenceLoadout(context, proposal, true) - roleBaseline
                     result.roleDisplaced = math.max(0, roleBaseline - rating:ReferenceLoadout(context, without, true))
                     local position = definition.inventorySlotId
@@ -1174,11 +1204,13 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
             if not best or (result.delta ~= nil and (best.delta == nil or result.delta > best.delta)) then best = result end
             if live then
                 local evaluation = not result.status or result.status == "empty"
-                evaluation = evaluation and scorer:EvaluateSwap(live, item, link, definition.inventorySlotId, slot, live.comparisonRoleWeights)
+                evaluation = evaluation and scorer:EvaluateSwap(live, item, link, definition.inventorySlotId, slot,
+                    live.comparisonRoleWeights, scope.breakdown)
                 if evaluation then
                     local active = copy(result)
                     active.basis = "active"
                     active.delta, active.effects = evaluation.delta, evaluation.effects
+                    active.contributions = evaluation.contributions
                     active.roleDelta, active.roleDisplaced = evaluation.roleDelta, evaluation.roleDisplaced
                     active.conditional = evaluation.conditional
                     if not bestLive or active.delta > bestLive.delta then bestLive = active end
@@ -1193,21 +1225,28 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
     return best
 end
 
-function rating:GetGuideSwap(context, item, physical, slot, link)
+function rating:GetGuideSwap(context, item, physical, slot, link, includeBreakdown)
     if not context or not item then return nil end
-    return wornSwap(context, groupFor(item), item, link, nil, { physical = physical, slot = slot })
+    return wornSwap(context, groupFor(item), item, link, nil, { physical = physical, slot = slot, breakdown = includeBreakdown })
 end
 
 function rating:ProjectPlacement(item, placement, pool)
     local known = pool.byVariant[item.key]
     if known then return known end
-    local rank = 1
+    local rank, tied, uncertain = 1, false, placement.conditional
     for _, peer in ipairs(pool.rows) do
-        if peer.score == nil or peer.score <= placement.score then break end
-        rank = rank + 1
+        if peer.score == nil or peer.score < placement.score then break end
+        if peer.score > placement.score then
+            rank = rank + 1
+        else
+            tied, uncertain = true, uncertain or peer.conditional
+        end
     end
     placement.rank, placement.total = rank, pool.count + 1
+    placement.tied = tied or nil
+    placement.conditional_tie = tied and uncertain or nil
     placement.projected = true
+    placement.setup_rank = not pool.scope.context.guide or nil
     local best = math.max(pool.bestScore or -math.huge, placement.score)
     if placement.total > 1 and best > 0 then
         local tiers
@@ -1229,25 +1268,18 @@ local function firstUsableSlot(context, group, item)
     end
 end
 
-local function insertionRank(context, item, result)
-    local physical = result.definition.key
-    local slot, gear = result.slot, result.gear
+local function referencePlacement(context, item, slot)
+    local reference = rating:GetGuideContext(context.class, context.spec, context.phase, context.level,
+        context.race, context.faction, context.scenario)
+    local pool = rating:GetGuidePlacement(reference, slot)
+    local known = pool.byVariant[item.key]
+    if known then return known, pool.scope end
     local placement = resultFor(context, item, nil, slot)
     if placement.score == nil then return placement end
-    local handType = slot == "Off Hand" and offHandType(item)
-    local cacheKey
-    if gear == context.equipmentFacts then
-        local currentSlot, currentType = currentComparisonSlot(context, physical, result.definition.slots)
-        if slot == currentSlot and handType == currentType then cacheKey = physical end
-    end
-    cacheKey = cacheKey or table.concat({
-        result.poolKey or "worn", physical, slot, handType or "",
-    }, "\031")
-    local pool = slotPool(context, physical, slot, handType, gear, cacheKey)
     return rating:ProjectPlacement(item, placement, pool), pool.scope
 end
 
-local function lookaheadPlacement(context, item)
+local function lookaheadPlacement(context, item, requestedScenario)
     local cap = addon.maxLevelingLevel + 1
     if item.level > cap then return { status = "out_of_scope", phase = "PR" } end
     if item.excluded or item.has_random_stats or not permitted(item.classes, context.class)
@@ -1256,30 +1288,29 @@ local function lookaheadPlacement(context, item)
     local group = groupFor(item)
     -- Proficiency can unlock after the item's required level.
     for level = math.max(item.level, context.level + 1), cap do
+        local phase = level == cap and "PR" or "LEVELING"
+        local scenario = rating:GetScenario(context.class, context.spec, phase, level,
+            requestedScenario or (phase == context.phase and context.scenario or nil))
         local preview = context.tooltipLookahead
-        if not preview or preview.level ~= level then
-            preview = contextAtLevel(context, level == cap and "PR" or "LEVELING", level)
-            preview.tierRangeBase = context
+        if not preview or preview.level ~= level or preview.scenario ~= scenario then
+            preview = contextAtLevel(context, phase, level, scenario)
         end
         local slot = firstUsableSlot(preview, group, item)
         if slot then
             context.tooltipLookahead = preview
-            if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase } end
-            local placement = resultFor(preview, item, nil, slot)
-            if placement.score == nil then return placement, nil, preview end
-            local handType = slot == "Off Hand" and offHandType(item)
-            local pool = slotPool(preview, slot, slot, handType, {}, slot .. (handType or ""))
-            return rating:ProjectPlacement(item, placement, pool), pool.scope, preview
+            if not inScope(preview, item) then return { status = "out_of_scope", phase = preview.phase }, nil, preview end
+            local placement, scope = referencePlacement(preview, item, slot)
+            return placement, scope, preview
         end
     end
     return { status = "incompatible" }
 end
 
-local function tierAtLevel(scope, item, level)
+local function placementAtLevel(scope, item, level)
     local context = contextAtLevel(scope.context, "LEVELING", level)
     -- Keep the anchor's physical slot and the other pieces in its comparison setup.
     local slot, physical, gear = scope.slot, scope.physical, scope.gear
-    if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
+    if context.scenario ~= scope.context.scenario or not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
         or not inScope(context, item) then return nil end
     local pool = slotPool(context, physical, slot, scope.handType, gear, scope.key)
     local placement = pool.byVariant[item.key]
@@ -1287,7 +1318,7 @@ local function tierAtLevel(scope, item, level)
         placement = resultFor(context, item, nil, slot)
         if placement.score ~= nil then placement = rating:ProjectPlacement(item, placement, pool) end
     end
-    return placement and placement.tier and placement.tier.quality
+    return placement, pool.rows[1]
 end
 
 local function currentTierScope(context)
@@ -1315,15 +1346,23 @@ local function scheduleTierRanges(self)
         self.tierRangeScheduled = nil
         local job = nextTierRequest(queue)
         if not job then return end
-        local nextLevel = job.lastLevel + 1
-        local sameTier = tierAtLevel(job.scope, job.item, nextLevel) == job.quality
-        if sameTier then job.lastLevel = nextLevel end
-        if not sameTier or nextLevel == addon.maxLevelingLevel then
+        local nextLevel = job.nextLevel
+        job.nextLevel = nextLevel + 1
+        local placement, leader = placementAtLevel(job.scope, job.item, nextLevel)
+        if job.sameTier then
+            job.sameTier = placement and placement.tier and placement.tier.quality == job.quality
+            if job.sameTier then job.lastLevel = nextLevel end
+        end
+        if job.seekLeader and placement and placement.rank and placement.rank > 1 then
+            job.stronger = { level = nextLevel, name = leader.item.name, conditional = leader.conditional or placement.conditional }
+            job.seekLeader = nil
+        end
+        if not placement or (not job.sameTier and not job.seekLeader) or nextLevel == addon.maxLevelingLevel then
             local cache = job.cache
             cache.pending[job.key] = nil
             if #cache.order == 64 then cache.results[table.remove(cache.order, 1)] = nil end
             cache.order[#cache.order + 1] = job.key
-            local range = { firstLevel = job.firstLevel, lastLevel = job.lastLevel }
+            local range = { firstLevel = job.firstLevel, lastLevel = job.lastLevel, stronger = job.stronger }
             cache.results[job.key] = range
             for _, watcher in pairs(job.watchers) do
                 if watcher.isCurrent() then watcher.onReady() end
@@ -1336,28 +1375,28 @@ local function scheduleTierRanges(self)
 end
 
 function rating:RequestTierRange(placement, scope, watcher)
-    if not scope or not placement or not placement.tier or placement.phase ~= "LEVELING"
+    if not scope or not placement or not (placement.tier or placement.rank == 1) or placement.phase ~= "LEVELING"
         or not currentTierScope(scope.context) then return nil end
     local level = placement.level
     if level > addon.maxLevelingLevel then return nil end
     if level == addon.maxLevelingLevel then return { firstLevel = level, lastLevel = level } end
 
     local context = scope.context
-    local base = context.tierRangeBase or context
-    local cache = base.tierRanges
+    local cache = context.tierRanges
     if not cache then
         cache = { pending = {}, results = {}, order = {} }
-        base.tierRanges = cache
+        context.tierRanges = cache
     end
-    local key = table.concat({ context.tierRangeBase and "preview" or "rank", level, scope.key,
-        placement.item.key, placement.tier.quality }, "\031")
+    local quality = placement.tier and placement.tier.quality
+    local key = table.concat({ level, scope.key, placement.item.key, quality or "" }, "\031")
     if cache.results[key] then return cache.results[key] end
     if not (watcher and C_Timer and C_Timer.After) then return nil end
 
     local job = cache.pending[key]
     if not job then
-        job = { cache = cache, key = key, scope = scope, item = placement.item, quality = placement.tier.quality,
-            firstLevel = level, lastLevel = level, watchers = {} }
+        job = { cache = cache, key = key, scope = scope, item = placement.item, quality = quality,
+            firstLevel = level, lastLevel = level, nextLevel = level + 1, sameTier = quality ~= nil,
+            seekLeader = placement.rank == 1 and not placement.projected, watchers = {} }
         cache.pending[key] = job
         self.tierRangeQueue = self.tierRangeQueue or {}
         table.insert(self.tierRangeQueue, job)
@@ -1457,15 +1496,15 @@ local function ownedLoadout(context, group, storage)
         for _, copy in ipairs(context.unresolvedCopies) do
             local item = copy.item
             local slot = item and targetSlot(item, definition)
-            if not item or (slot and (not item.level or (not item.excluded and item.level <= context.level
-                and fitsEquipment(context, item, slot)))) then
+            if not item or (slot and not item.excluded and (not item.level or item.level <= context.level)
+                and fitsEquipment(context, item, slot)) then
                 markUnresolved(copy.status)
             end
         end
         local worn = context.equipmentFacts[definition.key]
         if context.owned.unreadableEquipmentSlots and context.owned.unreadableEquipmentSlots[definition.key] then
             markUnresolved()
-        elseif worn and (not worn.item_link or not worn.facts) then
+        elseif worn and (not worn.item_link or not worn.facts or not worn.facts.level) then
             markUnresolved(worn.status)
         end
         choices[#choices + 1] = EMPTY_CHOICE
@@ -1552,8 +1591,7 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity)
 
     local other = best[3 - chosenIndex].instance
     local gear = copy(state.outside)
-    local result = { definition = group.definitions[chosenIndex], slot = chosen.slot, gear = gear,
-        poolKey = "owned:" .. (other and other.facts.key or ""), replacements = {},
+    local result = { definition = group.definitions[chosenIndex], slot = chosen.slot, gear = gear, replacements = {},
         delta = chosen.hasPoints and best.score - state.baseline.score, basis = context.activeBuild and "active" or "reference",
         conditional = best.conditional or state.baseline.conditional }
     for index, definition in ipairs(group.definitions) do
@@ -1582,29 +1620,31 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity)
     return result
 end
 
-local function previewTooltipItem(context, candidate, extraCopy, quantity)
+local function previewTooltipItem(context, candidate, extraCopy, options)
     local item = candidate.facts
-    local placement, scope, preview = lookaheadPlacement(context, item)
+    local placement, scope, preview = lookaheadPlacement(context.forecastBaseline or context, item, options.futureScenario)
     local result = { placement = placement, rankScope = scope, preview = true }
     if preview then
-        local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, quantity)
+        local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity)
         result.forecast = comparison or { status = "blocked" }
-        result.forecast.level, result.forecast.scenario = preview.level, preview.scenario
+        result.forecast.level, result.forecast.phase, result.forecast.scenario = preview.level, preview.phase, preview.scenario
     end
     return result
 end
 
 local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCopy, scope)
     local item = candidate.facts
-    if item.level and item.level > context.level then
-        if scope.lookahead then return previewTooltipItem(context, candidate, extraCopy, scope.quantity) end
+    if not item.level then return { placement = { status = candidate.status or "unavailable" } } end
+    if item.level > context.level then
+        if scope.lookahead then return previewTooltipItem(context, candidate, extraCopy, scope) end
         return { placement = { status = "level" } }
     end
     if not inScope(context, item) then return { placement = { status = "out_of_scope", phase = context.phase } } end
     local group = groupFor(item)
-    if not firstUsableSlot(context, group, item) then
-        if scope.lookahead and context.leveling and item.level then
-            return previewTooltipItem(context, candidate, extraCopy, scope.quantity)
+    local slot = firstUsableSlot(context, group, item)
+    if not slot then
+        if scope.lookahead and context.leveling then
+            return previewTooltipItem(context, candidate, extraCopy, scope)
         end
         return { placement = { status = "incompatible" } }
     end
@@ -1616,11 +1656,15 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
         result = ownedSwap(build, group, candidate, extraCopy, scope.quantity)
         if result and missing then result.conditional = true end
     end
-    if not result then return { placement = { status = "blocked" } } end
+    if not result then
+        if scope.skipPlacement then return { placement = { status = "blocked" } } end
+        local placement, rankScope = referencePlacement(context, item, slot)
+        return { placement = placement, rankScope = rankScope, status = "blocked" }
+    end
     if scope.skipPlacement then
         result.placement = resultFor(context, item, nil, result.slot)
     else
-        result.placement, result.rankScope = insertionRank(context, item, result)
+        result.placement, result.rankScope = referencePlacement(context, item, result.slot)
     end
     result.effectNote = rating:GetReviewedGuideEffect(context, item)
         or (result.conditional and hasUnscoredEffect(item) and "Some item effects have an unverified value")
@@ -1652,7 +1696,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
         and last.extraCopy == extraCopy and last.revision == revision and last.live == scope.live
         and last.physical == scope.physical and last.slot == scope.slot
         and last.skipPlacement == scope.skipPlacement
-        and last.quantity == scope.quantity
+        and last.quantity == scope.quantity and last.futureScenario == scope.futureScenario
         and (last.lookahead == scope.lookahead or last.result.slot) then
         return last.result
     end
@@ -1662,7 +1706,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
     result.bis = approvedBiS(context, candidate, result.slot)
     context.lastTooltip = { candidate = candidate, useWorn = useWorn, wornSlot = wornSlot, extraCopy = extraCopy,
         result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot,
-        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity }
+        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity, futureScenario = scope.futureScenario }
     return result
 end
 
@@ -1751,8 +1795,7 @@ local function storageComparison(context, group, state, instance, candidate, res
     if action and action.swap.delta then
         local swap, index = copy(action.swap), action.index
         swap.definition, swap.slot = group.definitions[index], state.baseline[index].slot
-        swap.poolKey = "storage:" .. tostring(state)
-        swap.placement, swap.rankScope = insertionRank(rankContext, candidate.facts, swap)
+        swap.placement, swap.rankScope = referencePlacement(rankContext, candidate.facts, swap.slot)
         swap.ownership = instance.state
         swap.bis = approvedBiS(context, candidate, swap.slot)
         swap.effectNote = result.effectNote
@@ -1827,6 +1870,7 @@ end
 function rating:WithGuaranteedRewards(context, rewards)
     if #rewards == 0 then return context end
     local combined = copy(context)
+    combined.forecastBaseline = context
     combined.ownedCopies, combined.ownedLoadouts, combined.lastTooltip = {}, {}, nil
     combined.equipmentFacts, combined.pools = copy(context.equipmentFacts), {}
     for _, instance in ipairs(context.ownedCopies) do
@@ -1872,15 +1916,18 @@ function rating:GetSwapBasisLabel(basis)
     return basis == "active" and "Your setup" or "Default spec weights"
 end
 
-function rating:Label(entry, layout)
+function rating:Label(entry, layout, showProjection)
     if not entry then return "Stats unavailable" end
+    local projected = showProjection and entry.projected
     if entry.rank and entry.total > 1 then
-        local label = entry.tier and entry.tier.label or "Rank"
-        if layout == "compact" then return string.format("%s #%d/%d", label, entry.rank, entry.total) end
+        local label = projected and "Projected" or (entry.tier and entry.tier.label or "Rank")
+        local prefix = entry.conditional_tie and "Estimated tie " or (entry.tied and "Tied " or "")
+        local position = prefix .. "#" .. entry.rank
+        if layout == "compact" then return string.format("%s %s/%d", label, position, entry.total) end
         local separator = layout == "stacked" and "\n" or " · "
-        return string.format("%s%s#%d / %d", label, separator, entry.rank, entry.total)
+        return string.format("%s%s%s / %d", label, separator, position, entry.total)
     end
-    if entry.score ~= nil then return string.format("%.1f pts", entry.score) end
+    if entry.score ~= nil then return string.format("%s%.1f pts", projected and "Projected · " or "", entry.score) end
     if entry.status == "out_of_scope" then
         return entry.phase == "LEVELING" and "Outside Leveling rankings" or "Outside Pre-Raid rankings"
     end
@@ -1892,7 +1939,7 @@ function rating:ScopeLabel(entry)
 end
 
 function rating:ContextLabel(entry)
-    local scenario = self:ScenarioLabel(entry.scenario)
+    local scenario = entry.scenario ~= "pre_raid" and self:ScenarioLabel(entry.scenario)
     return entry.spec .. " · " .. self:ScopeLabel(entry) .. (scenario and (" · " .. scenario) or "")
 end
 
@@ -1902,7 +1949,8 @@ function rating:DescriptionLines(entry)
         lines[3] = string.format("%d%% of the best known stat score", entry.score_percent)
     end
     if entry.placement_color then lines[#lines + 1] = "Color uses placement in this slot" end
+    if entry.setup_rank then lines[#lines + 1] = "Rank in this equipped setup" end
     if entry.projected then lines[#lines + 1] = "Projected placement among known gear" end
-    if entry.conditional then lines[#lines + 1] = "Some item effects have an unverified value" end
+    if entry.conditional or entry.conditional_tie then lines[#lines + 1] = "Some item effects have an unverified value" end
     return lines
 end

@@ -765,6 +765,30 @@ def candidate_score(
     }
 
 
+def roll_identity(variant: dict[str, Any]) -> tuple[str, str]:
+    """Match ForeverGearRating.NormalizeLink, retaining the raw bonus payload for native links."""
+    identifier = variant["item_id"]
+    suffix = variant.get("random_suffix_id", 0)
+    parameter = variant.get("suffix_parameter", 0)
+    extended = variant.get("bonus_fields", [])
+    if (type(identifier) is not int or identifier <= 0 or type(suffix) is not int
+            or type(parameter) is not int or (parameter != 0 and suffix >= 0)
+            or not isinstance(extended, list) or any(type(value) is not int for value in extended)):
+        raise ValueError("Invalid exact item roll payload")
+    count = extended[2] if len(extended) >= 3 else 0
+    if (count < 0 or (count > 0 and (len(extended) < 3 + count or min(extended[3:3 + count]) <= 0))
+            or not (suffix or count)):
+        raise ValueError("Missing or incomplete exact item roll payload")
+    key = str(identifier) + (f":{suffix}" if suffix else "")
+    end = len(extended)
+    while end and extended[end - 1] == 0:
+        end -= 1
+    if end or parameter:
+        key += f":{parameter}:" + ":".join(map(str, extended[:end]))
+    link = ":".join(map(str, (identifier, 0, 0, 0, 0, 0, suffix, parameter, 0, 0, *extended)))
+    return key, "item:" + link
+
+
 def materialized_items(item_stats: list[dict[str, Any]], item_variants: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_id = {item["id"]: item for item in item_stats if isinstance(item.get("id"), int)}
     items = [deepcopy(item) for item in item_stats]
@@ -774,19 +798,32 @@ def materialized_items(item_stats: list[dict[str, Any]], item_variants: list[dic
         if not base:
             continue
         materialized = deepcopy(base)
-        suffix_id = variant.get("random_suffix_id")
-        materialized["variant_id"] = f"{item_id}:{suffix_id}"
-        materialized["random_suffix_id"] = suffix_id
+        materialized["variant_id"], materialized["variant_link"] = roll_identity(variant)
+        if variant.get("random_suffix_id"):
+            materialized["random_suffix_id"] = variant["random_suffix_id"]
         materialized["suffix_name"] = variant.get("suffix_name")
         if variant.get("suffix_name"):
             materialized["name"] = f"{base.get('name', 'Item')} {variant['suffix_name']}"
+        for field in ("required_level", "item_level"):
+            if field in variant:
+                materialized[field] = variant[field]
         stats = deepcopy(base.get("stats") if isinstance(base.get("stats"), dict) else {})
-        for key, value in (variant.get("stat_delta") or {}).items():
+        delta, exact = variant.get("stat_delta") or {}, variant.get("stats") or {}
+        physical_fields = [field for field in ("armor", "dps", "weapon_speed", "weapon_min_damage", "weapon_max_damage")
+                           if field in delta or field in exact]
+        # Normalization prefers the base's top-level tooltip fields over nested stats.
+        for field in physical_fields:
+            if isinstance(base.get(field), (int, float)):
+                stats[field] = base[field]
+        for key, value in delta.items():
             if isinstance(value, (int, float)):
                 stats[key] = float(stats.get(key, 0)) + float(value)
-        for key, value in (variant.get("stats") or {}).items():
+        for key, value in exact.items():
             if isinstance(value, (int, float)):
                 stats[key] = float(value)
+        for field in physical_fields:
+            if field in stats:
+                materialized[field] = stats[field]
         materialized["stats"] = stats
         items.append(materialized)
     return items
@@ -913,7 +950,9 @@ def recommendation_rows_for_items(
             }
         )
         if rules is not None and item.get("variant_id"):
-            rows[-1].update(variant_name=item.get("name"), random_suffix_id=item.get("random_suffix_id"))
+            rows[-1]["variant_name"] = item.get("name")
+            if item.get("random_suffix_id"):
+                rows[-1]["random_suffix_id"] = item["random_suffix_id"]
     return rows, audit_rows
 
 

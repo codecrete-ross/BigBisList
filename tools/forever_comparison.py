@@ -88,7 +88,7 @@ def comparison_facts(item: dict, description: str = "") -> dict | None:
         facts["utility"] = True
     if item.get("recommendation_excluded"):
         facts["excluded"] = True
-    for key in ("armor_type", "weapon_subtype", "max_equipped", "unique_group", "variant_id", "requires_dual_wield"):
+    for key in ("armor_type", "weapon_subtype", "max_equipped", "unique_group", "variant_id", "requires_dual_wield", "variant_link"):
         if item.get(key) is not None:
             facts[key] = item[key]
     for key in ("classes", "races"):
@@ -186,6 +186,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
     for key, item in items.items():
         items[key] = item | attach_rules(item)
+    variant_links = {key: item["variant_link"] for key, item in items.items() if item.get("variant_link")}
     return {
         "version": VERSION,
         "published_routes_only": True,
@@ -196,6 +197,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         "common_slots": rules["common_slots"],
         "feral_uses_weapon_dps": rules["feral_uses_weapon_dps"],
         "item_fields": list(ITEM_FIELDS),
+        **({"variant_links": variant_links} if variant_links else {}),
         "items": {key: [item.get(field) for field in ITEM_FIELDS] for key, item in items.items()},
     }
 

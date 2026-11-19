@@ -34,6 +34,8 @@ USE_STAT = re.compile(r"Use: Increases (?:your )?(attack power|spell power|armor
 USE_RESTORE = re.compile(r"Use: Restores (\d+)(?: to (\d+))? (health|mana)\. \((\d+) (Min|Sec) Cooldown\)", re.I)
 WEAPON_DAMAGE = re.compile(r"Chance on hit: (?:Blasts a target for|Sends a shadowy bolt at the enemy causing) (\d+) (Fire|Shadow) damage\.", re.I)
 STRUCK_DAMAGE = re.compile(r"Equip: When struck in combat has a (\d+)% chance of inflicting (\d+) to (\d+) (Shadow|Nature) damage to the attacker\. \(Proc chance: \1%\)", re.I)
+BLOCK_DAMAGE = re.compile(r"Equip: Deals (\d+) to (\d+) (\w+) damage every time you block\.", re.I)
+STRUCK_ARMOR = re.compile(r"Equip: When struck in combat has a (\d+)% chance to encase the caster in bone, increasing armor by (\d+) for (\d+) sec\. \(Proc chance: \1%\)", re.I)
 POWER_AND_SPEED = re.compile(r"Chance on hit: Increases Attack Power by (\d+) and melee attack speed by (\d+)% for (\d+) sec\.", re.I)
 PROC_STAT = {"attack power": "attack_power", "spell power": "spell_power", "armor": "armor"}
 
@@ -111,7 +113,7 @@ def classify(label: str) -> str:
         return "set_bonus"
     if label.startswith("Use:"):
         return "on_use"
-    if re.search(r"\b(?:chance on|when struck|chance to|have a chance)\b", label, re.I):
+    if re.search(r"\b(?:chance on|when struck|chance to|have a chance|every time you block)\b", label, re.I):
         return "triggered"
     return "conditional"
 
@@ -156,6 +158,12 @@ def effect_rule(label: str) -> dict | None:
     if match := STRUCK_DAMAGE.fullmatch(label):
         return {**identity, "kind": "damage", "trigger": "struck", "chance": int(match[1]) / 100,
                 "amount": (int(match[2]) + int(match[3])) / 2, "school": match[4].casefold()}
+    if match := BLOCK_DAMAGE.fullmatch(label):
+        return {**identity, "kind": "damage", "trigger": "block", "chance": 1,
+                "amount": (int(match[1]) + int(match[2])) / 2, "school": match[3].casefold()}
+    if match := STRUCK_ARMOR.fullmatch(label):
+        return {**identity, "kind": "timed_stats", "trigger": "struck", "chance": int(match[1]) / 100,
+                "duration": int(match[3]), "stats": {"armor": int(match[2])}}
     if match := POWER_AND_SPEED.fullmatch(label):
         return {**identity, "kind": "timed_stats", "trigger": "weapon_hit", "duration": int(match[3]),
                 "stats": {"attack_power": int(match[1]), "melee_haste_percent": int(match[2])}}

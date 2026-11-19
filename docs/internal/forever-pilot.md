@@ -116,14 +116,18 @@ hints for 190. The metadata file stays outside the addon import. [Launch `Item` 
 
 ## Verify the live client
 
-After both strict data families pass, stage the Forever manifest with
-`scripts/deploy.ps1 -Flavor forever -NoClean`.
+Stage the Forever manifest through the [release workflow](release-process.md).
+The local prerelease can be used for gameplay checks during availability review.
 Record the in-game build and check fresh login, reload, class and spec
 selection, equipment and bags, tooltips, wishlist, and the smoke commands.
+Compare a level-49 item with a level-50 Auction House option with highlights
+enabled and disabled. Exercise a tie, a cached bank replacement, the Pre-Raid
+transition, and a quest with different winners for two activities. Verify that
+exact roll names and projected placements agree between Details and tooltips.
 Exercise faction-specific and item-started chains, a relocated vendor, a
 dungeon entrance, an unknown location, and an existing native waypoint.
 Verify quest state and waypoint actions independently, including combat.
-Record cold startup, first-open time, and memory alongside the Anniversary run.
+Record cold startup, first-open time, and memory for the Forever artifact.
 
 The initial snapshots were gathered before launch. The follow-up below records
 the current collection and the limited approvals made from public evidence.

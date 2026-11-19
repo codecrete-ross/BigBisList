@@ -1,6 +1,7 @@
 import copy
 import subprocess
 import unittest
+from unittest.mock import patch
 
 from tests.test_addon_runtime_lua import find_lua51
 from tools.forever_comparison import comparison_document, comparison_facts, compile_comparison_data
@@ -8,6 +9,7 @@ from tools.forever_item_effects import effect_rule
 from tools.forever_scoring import compile_model, pack_item, read_model, refresh_review_scope, review_issues, scoring_audit, swap_score
 from tools.generate_lua import lua_value
 from tools.project import ADDON_DIR, dataset_json
+from tools.recommend_leveling import materialized_items, roll_identity
 
 
 class ForeverScoringTests(unittest.TestCase):
@@ -269,9 +271,9 @@ for _, entry in ipairs(head.rows) do
     assert(entry.score_percent == case[2] and entry.tier.label == case[3] and entry.tier.quality == case[4])
     assert(entry.total == #cases and entry.rank == (entry.item.id <= 2 and 1 or entry.item.id))
 end
-assert(rating:Label(head.rows[1]) == "Top tier · #1 / 13")
-assert(rating:Label(head.rows[1], "compact") == "Top tier #1/13")
-assert(rating:Label(head.rows[1], "stacked") == "Top tier\n#1 / 13")
+assert(rating:Label(head.rows[1]) == "Top tier · Tied #1 / 13")
+assert(rating:Label(head.rows[1], "compact") == "Top tier Tied #1/13")
+assert(rating:Label(head.rows[1], "stacked") == "Top tier\nTied #1 / 13")
 local summary = rating:DescriptionLines(head.rows[7])
 assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47 · Outdoor")
 assert(summary[3] == "70% of the best known stat score")
@@ -442,6 +444,170 @@ local caster = pool("Mage", "Fire", 60, "Alliance", "Human", "Trinket")
 assert(caster["13968"].item.stats.spell_crit_percent == 1 and caster["13968"].score > 0)
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
 ''')
+
+    def test_damage_proc_needs_a_scored_channel_and_breakdown_includes_the_modeled_points(self):
+        label = "Equip: Deals 13 to 15 Holy damage every time you block."
+        rule = effect_rule(label)
+        self.assertEqual((rule["trigger"], rule["chance"], rule["amount"], rule["school"]), ("block", 1, 14, "holy"))
+        shield = {"id": 7726, "shield": True, "stats": {"armor": 1548}, "effect_rules": [rule], "effects": [label]}
+        scenario = {"effect_expectations": {"7726": {rule["key"]: {"events_per_minute": 12, "damage_factor": 1}}}}
+        cases = [({"armor": 0.08}, scenario, 123.84, True),
+                 ({"armor": 0.08, "proc_dps": 2}, scenario, 129.44, False),
+                 ({"armor": 0.08}, {"effect_expectations": {"7726": {rule["key"]: {"applicable": False}}}}, 123.84, False)]
+        for weights, assumptions, expected, _ in cases:
+            points = {}
+            total, _ = swap_score({17: shield}, weights, [], {}, assumptions, breakdown=points)
+            self.assertAlmostEqual(total, expected)
+            self.assertAlmostEqual(sum(points.values()), expected)
+        self.lua_run(f'local shield, cases = {lua_value(shield)}, {lua_value([list(case) for case in cases])}\n' + r'''
+BigBiSList = {}
+dofile("ForeverScoring.lua")
+local scoring = BigBiSList.ForeverScoring
+for _, case in ipairs(cases) do
+    local total, _, applied, _, points = scoring.ScoreLoadout({[17] = shield}, case[1], {}, {}, case[2], nil, 49, true)
+    assert(math.abs(total - case[3]) < 0.0001)
+    assert(math.abs(points.armor + (points.proc_dps or 0) - total) < 0.0001)
+    assert(scoring:HasUnresolvedEffects(shield, applied[17]) == case[4])
+end
+''')
+
+    def test_guide_includes_poor_starter_gear_and_compares_against_an_unindexed_equipped_shield(self):
+        self.lua_run(r'''
+local H = dofile("tests/lua_ui_harness.lua")
+H.load("forever")
+local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+function UnitRace() return "Human", "Human" end
+function UnitFactionGroup() return "Alliance" end
+local filters = { race = "Human", faction = "Alliance" }
+local rows = addon:GetLevelingRows("Paladin", "Protection", 1, filters)
+local vest
+for _, group in ipairs(rows) do
+    for _, row in ipairs(group.items) do if row.item_id == 2656 then vest = row end end
+end
+assert(vest and vest.quality == "poor" and vest.stat_rank.rank == 2)
+local link = "|cffffffff|Hitem:274652|h[Wall of Water]|h|r"
+local getInfo, instant = GetItemInfo, GetItemInfoInstant
+function GetItemInfo(value)
+    if value == link then return "Wall of Water", link, 3, 48, 43 end
+    return getInfo(value)
+end
+function GetItemInfoInstant(value)
+    if value == link then return 274652, "Armor", "Shield", "INVTYPE_SHIELD", nil, 4, 6 end
+    return instant(value)
+end
+C_Item = {GetItemStats = function() return {RESISTANCE0_NAME = 1676, ITEM_MOD_SPELL_POWER_SHORT = 14,
+    ITEM_MOD_MANA_REGENERATION_SHORT = 3} end}
+C_TooltipInfo = {GetHyperlink = function() return {lines = {{leftText = "27 Block"}}} end}
+local owned = { equippedSlots = {OffHand = {item_id = 274652, item_link = link}} }
+local baseline = addon:GetEquipmentComparisonContexts("Paladin", "Protection", "LEVELING", owned, "OffHand")[1]
+assert(baseline.name == "Wall of Water" and baseline.occupancy == "occupied")
+for _, level in ipairs({39, 43, 49, 60}) do
+    local phase = level == 60 and "PR" or "LEVELING"
+    local guide = rating:GetGuideContext("Paladin", "Protection", phase, level, "Human", "Alliance")
+    local pool = rating:GetGuidePlacement(guide, "Off Hand")
+    local scarlet = assert(pool.byVariant["7726"])
+    assert(scarlet.conditional)
+    local stormwind = rating:GetPublishedFacts("1203")
+    local match = rating:GetReferenceCandidate(guide, stormwind, "Off Hand")
+    if level < 49 then assert(not match)
+    else assert(match and match.score > scarlet.score) end
+    if level >= 43 then
+        local live = rating:GetContext("Paladin", "Protection", phase, level, owned)
+        local worn = rating:GetPlacement(live, "OffHand", {"Off Hand"}).reference
+        assert(worn.item.name == "Wall of Water" and worn.item.stats.block_value == 27)
+        local swap = rating:GetGuideSwap(live, scarlet.item, "OffHand", "Off Hand", nil, true)
+        assert(swap.conditional and swap.replacements[1].name == "Wall of Water" and swap.delta < 0)
+        local summed = 0
+        for _, points in pairs(swap.contributions) do summed = summed + points end
+        assert(math.abs(summed - swap.delta) < 0.0001)
+    end
+end
+''')
+
+    def test_pre_raid_uses_the_verified_market_faction_for_guide_ranks(self):
+        self.lua_run(r'''
+local H = dofile("tests/lua_ui_harness.lua")
+H.load("forever")
+local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+local function signet(race, faction)
+    local guide = rating:GetGuideContext("Druid", "Feral tank", "PR", 60, race, faction)
+    return rating:GetGuidePlacement(guide, "Ring").byVariant["2246"]
+end
+assert(signet("Night Elf", "Alliance"), "The reviewed Alliance market should qualify")
+assert(not signet("Tauren", "Horde"), "Binding alone should not publish a Horde trade route")
+''')
+
+    def test_modern_rolls_use_exact_keys_and_keep_prophet_damage_and_healing_separate(self):
+        base = {"id": 9288, "name": "Field Plate Girdle", "slot": "Waist", "armor_type": "Plate",
+                "required_level": 40, "stats": {"armor": 169}, "variant_only": True}
+        rolls = [{"item_id": 9288, "bonus_fields": [0, 0, 1, 12749], "suffix_name": "of the Prophet",
+                  "stat_delta": {"intellect": 9, "spirit": 5, "healing_power": 8, "spell_damage": 3}},
+                 {"item_id": 9288, "bonus_fields": [0, 0, 1, 12727], "suffix_name": "of the Tiger",
+                  "stat_delta": {"strength": 8, "agility": 8}}]
+        def document(flavor, family):
+            return {"item_variants": rolls} if family == "item_variants" else dataset_json(flavor, family)
+
+        with patch("tools.forever_comparison.dataset_json", side_effect=document):
+            data = compile_comparison_data([base])
+        data["items"] = {key: row for key, row in data["items"].items() if key.split(":")[0] == "9288"}
+        (prophet, prophet_link), (tiger, tiger_link) = map(roll_identity, rolls)
+        self.assertEqual(prophet, "9288:0:0:0:1:12749")
+        self.lua_run(f'BigBiSListData = {{stat_rank = {lua_value(data)}}}\n'
+                     + f'local prophet, prophetLink, tiger, tigerLink = {lua_value(prophet)}, {lua_value(prophet_link)}, '
+                     + f'{lua_value(tiger)}, {lua_value(tiger_link)}\n' + r'''
+BigBiSList = { GetAvailabilityPhaseIndex = function() return 1 end,
+    IsStatRankGuideItemAvailable = function() return true end }
+dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
+local rating = BigBiSList.ForeverGearRating
+assert(rating:NormalizeLink(9288, prophetLink) == prophet)
+assert(rating:NormalizeLink(9288, tigerLink) == tiger)
+assert(rating:NormalizeLink(9288, "item:9288:90:7:0:0:0:0:91:49:0:0:0:1:12749:0") == prophet)
+assert(rating:NormalizeLink(9288, "item:9288:0:0:0:0:0:0:0:0:0:0:0:2:12749") == nil)
+assert(rating:GetTooltipItem(9288, "item:9288::::::::::::").status == "unavailable")
+local function pool(spec)
+    local context = rating:GetGuideContext("Paladin", spec, "LEVELING", 49, "Human", "Alliance")
+    return rating:GetGuidePlacement(context, "Waist")
+end
+local protection = pool("Protection")
+assert(protection.count == 2 and protection.rows[1].item.key == tiger)
+assert(math.abs(protection.byVariant[prophet].score - 22.27) < 0.001)
+assert(protection.byVariant[prophet].item.stats.healing_power == 8 and protection.byVariant[prophet].item.stats.spell_damage == 3)
+assert(protection.byVariant[prophet].item.variant_link == prophetLink)
+assert(pool("Holy").rows[1].item.key == prophet)
+
+local scaled = prophetLink .. ":1:42:17"
+C_Item = {
+    GetItemInfo = function(link) return "Field Plate Girdle of the Prophet", link, 2, 41, 40 end,
+    GetItemInfoInstant = function() return 9288, "Armor", "Plate", "INVTYPE_WAIST", nil, 4, 4 end,
+    GetItemStats = function() return {ITEM_MOD_INTELLECT_SHORT = 9, ITEM_MOD_SPIRIT_SHORT = 5,
+        ITEM_MOD_SPELL_POWER_SHORT = 3, RESISTANCE0_NAME = 169} end,
+}
+C_TooltipInfo = {GetHyperlink = function() return {lines = {
+    {leftText = "Equip: Increases healing done by up to 8 and damage done by up to 3 for all magical spells and effects."},
+}} end}
+local observed = rating:GetTooltipItem(9288, scaled).facts
+assert(observed.key ~= prophet and observed.native)
+assert(observed.stats.healing_power == 8 and observed.stats.spell_damage == 3 and not observed.stats.spell_power)
+local placement = rating:GetReferenceCandidate(protection.scope.context, observed, "Waist")
+local projected = rating:ProjectPlacement(observed, placement, protection)
+assert(projected.projected and projected.tied and projected.score == protection.byVariant[prophet].score)
+assert(protection.count == 2 and protection.byVariant[prophet].rank == 2 and not protection.byVariant[prophet].tied)
+assert(protection.byVariant[tiger].rank == 1)
+''')
+
+    def test_verified_rolls_preserve_scaled_physical_stats_and_equip_level(self):
+        base = {"id": 71, "name": "Fixture Sword", "slot": "One Hand", "weapon_subtype": "Sword",
+                "required_level": 49, "item_level": 54, "dps": 30, "armor": 50,
+                "weapon_min_damage": 45, "weapon_max_damage": 75, "weapon_speed": 2}
+        roll = {"item_id": 71, "bonus_fields": [0, 0, 1, 11, 1, 2, 5], "suffix_name": "of the Fixture",
+                "required_level": 50, "item_level": 55, "stat_delta": {"armor": 7, "weapon_min_damage": 6},
+                "stats": {"dps": 38, "weapon_max_damage": 101}}
+        item = materialized_items([base], [roll])[-1]
+        facts = comparison_facts(item)
+        self.assertEqual((item["item_level"], facts["level"]), (55, 50))
+        self.assertEqual(facts["stats"], {"armor": 57, "dps": 38, "weapon_speed": 2,
+                                          "weapon_min_damage": 51, "weapon_max_damage": 101})
 
     def test_dungeon_preset_has_separate_level_range_and_approval(self):
         model = copy.deepcopy(self.model)

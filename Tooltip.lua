@@ -248,8 +248,8 @@ local OWNED_LABELS = { equipped = "Equipped", bag = "In bags", bank = "In bank (
 local function tooltipStatBlock(addon, candidate, player, info, offer)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
-    if not candidate.facts then
-        block.rows[1] = { spec = player.spec or "Gear", result = { placement = { status = candidate.status } } }
+    if not candidate.facts or not candidate.facts.level then
+        block.rows[1] = { spec = player.spec or "Gear", result = { placement = { status = candidate.status or "unavailable" } } }
         if candidate.status == "loading" then block.pending[candidate.entry.item_id] = true end
         return block
     end
@@ -258,8 +258,6 @@ local function tooltipStatBlock(addon, candidate, player, info, offer)
     local wornSlot = getter == "GetInventoryItem" and type(args) == "table"
         and readable(args[1]) == "player" and readable(args[2]) or nil
     local snapshot = ui:GetOwnedSnapshot()
-    block.snapshot = snapshot
-    local scope = { live = true, lookahead = true }
     local inventoryPending
     for _, spec in ipairs(player.specs) do
         local context = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot)
@@ -268,21 +266,35 @@ local function tooltipStatBlock(addon, candidate, player, info, offer)
             local isActive = spec.role == "active"
             local worn = (isActive or (offer and offer.owned)) and (not offer or offer.compareWorn)
             local comparisons = {}
+            local function addComparison(gearing, futureScenario)
+                local result = rating:CompareTooltipItem(gearing, candidate, worn, worn and wornSlot or nil,
+                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter],
+                    { live = true, lookahead = true, futureScenario = futureScenario, quantity = offer and offer.quantity })
+                comparisons[#comparisons + 1] = { scenario = gearing.scenario, result = result, ownedBaseline = not worn }
+            end
             for _, assessment in ipairs(offer and offer.assessments or {}) do
                 if assessment.spec.name == spec.name then comparisons[#comparisons + 1] = assessment end
             end
             if #comparisons == 0 and (not offer or offer.kind ~= "quest" or not offer.assessments or #offer.assessments == 0) then
-                local function addComparison(gearing)
-                    local result = rating:CompareTooltipItem(gearing, candidate, worn, worn and wornSlot or nil,
-                        (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter], scope)
-                    comparisons[#comparisons + 1] = { scenario = gearing.scenario, result = result, ownedBaseline = not worn }
-                end
                 addComparison(context)
                 for _, scenario in ipairs(rating:GetScenarios(player.class, spec.name, player.phase, player.level)) do
                     if scenario ~= context.scenario then
                         local gearing = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot, scenario)
                         if gearing then addComparison(gearing) end
                     end
+                end
+            end
+            local forecast = comparisons[1] and comparisons[1].result.forecast
+            if forecast then
+                local seen, distinct = {}, {}
+                for _, comparison in ipairs(comparisons) do
+                    local preview = comparison.result.forecast
+                    local scenario = preview and preview.scenario or comparison.scenario
+                    if not seen[scenario] then distinct[#distinct + 1], seen[scenario] = comparison, true end
+                end
+                comparisons = distinct
+                for _, scenario in ipairs(rating:GetScenarios(player.class, spec.name, forecast.phase, forecast.level)) do
+                    if not seen[scenario] then addComparison(context, scenario) end
                 end
             end
             if comparisons[1] then
@@ -303,12 +315,13 @@ local function colorText(text, r, g, b)
         math.floor(b * 255 + 0.5), text)
 end
 
-local function tooltipRank(result)
+local function tooltipRank(result, scenario)
     local rating, placement = BigBiSList.ForeverGearRating, result.placement
     local label = rating:Label(placement, "compact")
     if placement.score ~= nil then
-        if placement.phase == "LEVELING" then label = label .. " at Lv " .. placement.level
-        elseif placement.phase then label = label .. " · " .. rating:ScopeLabel(placement) end
+        local activity = rating:ScenarioLabel(placement.scenario or scenario)
+        label = label .. " at Lv " .. placement.level
+        if activity then label = activity .. " · " .. label end
     end
     if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
     return placement.projected and ("Projected · " .. label) or label
@@ -333,6 +346,7 @@ local function swapText(result, ownedBaseline, guaranteed)
     local bank = result.bank and " (includes bank gear)" or ""
     if result.status == "equipped" then return "Equipped · " .. result.definition.label end
     if result.status == "loading" then return "Loading stats" end
+    if result.status == "blocked" then return "No legal swap" end
     if result.status == "best_owned" then return "Best you own for this slot" .. bank end
     if result.delta == nil then return nil end
     local estimate = "Est. " .. deltaText(result.delta)
@@ -352,8 +366,15 @@ local function forecastText(forecast)
         return level .. (forecast.status == "loading" and "Loading owned item stats" or "Owned gear comparison unavailable")
     end
     local rating = BigBiSList.ForeverGearRating
-    local points = rating:RoundedGain(forecast.delta)
-    local comparison = points == 0 and "Same score as best owned" or ("Est. " .. deltaText(forecast.delta) .. " vs best owned")
+    local estimate = "Est. " .. deltaText(forecast.delta)
+    if forecast.delta ~= 0 and rating:RoundedGain(forecast.delta) == 0 then
+        estimate = forecast.delta > 0 and "Est. gain below 0.1 pts" or "Est. loss below 0.1 pts"
+    end
+    local comparison
+    if forecast.status == "best_owned" then comparison = "Best you own for this slot"
+    elseif forecast.status == "empty" and #forecast.replacements == 0 then comparison = estimate .. " to fill an empty slot"
+    elseif forecast.delta == 0 then comparison = forecast.conditional and "Same modeled score as best owned" or "Same score as best owned"
+    else comparison = estimate .. " vs best owned" end
     local replacements = replacementNames(forecast)
     if replacements ~= "" then comparison = comparison .. ", replacing " .. replacements end
     if forecast.bank then comparison = comparison .. " · Includes cached bank gear" end
@@ -411,15 +432,14 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
         tooltip:AddLine(spec, r, g, b, true)
         local comparisons = row.comparisons or (result and { row }) or {}
-        for index, comparison in ipairs(comparisons) do
+        for _, comparison in ipairs(comparisons) do
             local result = comparison.result
-            local label = BigBiSList.ForeverGearRating:ScenarioLabel(comparison.scenario)
-            local range = index == 1 and row.tierRange or nil
-            local rank = tooltipRank(result)
-            tooltip:AddLine(#comparisons > 1 and label and (label .. " · " .. rank) or rank, r, g, b, true)
-            if range and range.lastLevel > range.firstLevel then
-                tooltip:AddLine("Tier range · " .. BigBiSList.ForeverGearRating:TierRangeLabel(range), r, g, b, true)
-            end
+            local scenario = result.forecast and result.forecast.scenario or comparison.scenario
+            local label = BigBiSList.ForeverGearRating:ScenarioLabel(scenario)
+            local rank = tooltipRank(result, scenario)
+            if not result.placement.level and #comparisons > 1 and label then rank = label .. " · " .. rank end
+            if result.placement.conditional and not result.placement.conditional_tie then rank = rank .. " · Conditional" end
+            tooltip:AddLine(rank, r, g, b, true)
             local extra = result.forecast and forecastText(result.forecast)
                 or swapText(result, comparison.ownedBaseline, comparison.guaranteed)
             if extra then
@@ -489,28 +509,6 @@ local function rebuildTooltip(tooltip, state)
         if tooltip.Show then tooltip:Show() end
     end
     tooltip.__bigBisListRefreshing = nil
-end
-
-local function requestTooltipTierRanges(addon, tooltip, state, block, player)
-    local pending = 0
-    local watcher = {
-        owner = tooltip,
-        isCurrent = function()
-            return tooltip.__bigBisListState == state and (not tooltip.IsShown or tooltip:IsShown())
-                and readable(call(tooltip.GetOwner, tooltip)) == state.owner
-                and addon:GetTooltipPlayerContext() == player and addon.UI.currentOwned == block.snapshot
-        end,
-        onReady = function()
-            pending = pending - 1
-            if pending == 0 then rebuildTooltip(tooltip, state) end
-        end,
-    }
-    for _, row in ipairs(block.rows) do
-        local result = row.result
-        local range, queued = addon.ForeverGearRating:RequestTierRange(result.placement, result.rankScope, watcher)
-        row.tierRange = range
-        if queued then pending = pending + 1 end
-    end
 end
 
 local function refreshTooltipForModifier(tooltip)
@@ -600,7 +598,6 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local maxRows = showExpanded and #matches or (settings.compact and 4 or 8)
     tooltip.__bigBisListState = { itemId = itemId, link = itemLink, owner = owner, acquisition = offer ~= nil,
         expanded = not not showExpanded, stats = statBlock ~= nil, pending = statBlock and statBlock.pending or {} }
-    if statBlock then requestTooltipTierRanges(self, tooltip, tooltip.__bigBisListState, statBlock, live) end
 
     tooltip:AddLine(" ")
     local ownership = statBlock and OWNED_LABELS[statBlock.ownership]

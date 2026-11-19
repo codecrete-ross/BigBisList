@@ -107,7 +107,9 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
                       and (item["slot"] == kind or item["slot"] == "One Hand" and kind in {"Main Hand", "Off Hand"})]
         if not equippable or item["required_level"] > level:
             raise ValueError(f"{item['name']} cannot be equipped in fixture slot {index}")
-    before, before_effects = swap_score(gear, weights, profile["operations"], ranks, scenario, race_id=race, level=level)
+    baseline = {}
+    before, before_effects = swap_score(gear, weights, profile["operations"], ranks, scenario,
+                                        race_id=race, level=level, breakdown=baseline)
     permitted = {key for key, personas in scenario["pools"][slot]
                  if any(low <= level <= high for low, high in personas.get(race, []))}
     if len({row["variant"] for row in fixture["offers"]}) != len(fixture["offers"]):
@@ -120,12 +122,18 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
         item = items[variant]
         proposal = legal_loadout(gear, target, slot, item, scenario, level)
         delta = None
+        contributions = None
         if proposal is None:
             if expected is not None:
                 raise ValueError(f"{variant} is an illegal swap")
         else:
-            result, effects = swap_score(proposal, weights, profile["operations"], ranks, scenario, race_id=race, level=level)
+            after = {}
+            result, effects = swap_score(proposal, weights, profile["operations"], ranks, scenario,
+                                         race_id=race, level=level, breakdown=after)
+            contributions = {stat: points - baseline[stat] for stat, points in after.items()}
             delta = result - before
+            if abs(sum(contributions.values()) - delta) > 0.0001:
+                raise ValueError(f"{variant}: stat contributions do not sum to the swap")
             if not numeric(expected) or abs(delta - expected) > TOLERANCE:
                 raise ValueError(f"{variant}: expected {expected}, calculated {delta:.4f}")
             if previous:
@@ -135,7 +143,8 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
                     raise ValueError(f"{variant}: candidate rank order differs from the fixture")
             previous = (expected, delta)
             affected |= any(abs(effects.get(entry, 0) - before_effects.get(entry, 0)) >= 0.0001 for entry in ranks)
-        offers.append({"item": item, "expected": expected, "python_delta": delta, "target": target, "slot": slot})
+        offers.append({"item": item, "expected": expected, "python_delta": delta, "target": target, "slot": slot,
+                       "contributions": contributions})
     if sum(offer.get("expected") is not None for offer in offers) < 2:
         raise ValueError("two legal candidates are required to check the order")
     return {"mode": mode, "level": level, "race": race, "gear": gear, "weights": weights, "ranks": ranks,
@@ -178,10 +187,50 @@ def ranking_snapshot(lua: str | None, phase: str) -> dict:
             context.append({"slot": slot, "variant": variant, "band": band,
                             "score": float(score) if score else None, "rank": int(rank) if rank else None,
                             "source": route, "source_id": entity, "activity": location})
-    inputs = ("DataForever.lua", "Config.lua", "DataIndex.lua", "ForeverGearRating.lua", "tools/forever_rank_report.lua")
+    inputs = ("DataForever.lua", "Config.lua", "DataIndex.lua", "ForeverGearRating.lua", "ForeverScoring.lua",
+              "tools/forever_rank_report.lua")
     input_digests = {name: sha256((ROOT / name).read_text(encoding="utf-8").encode("utf-8")).hexdigest()
                      for name in inputs}
     return {"content_phase": phase, "input_digests": input_digests, "contexts": contexts}
+
+
+def ranking_coverage(lua: str | None, phase: str, levels: list[int] | None = None) -> dict:
+    from collections import Counter
+
+    executable = find_lua51(lua)
+    if not executable:
+        raise ValueError("Lua 5.1 is required for the Forever ranking coverage audit")
+    if levels is not None and not all(1 <= level <= 60 for level in levels):
+        raise ValueError("Forever ranking coverage levels range from 1 to 60")
+    selected = sorted(set(levels)) if levels else list(range(1, 61))
+    command = [executable, "tools/forever_rank_report.lua", phase, "coverage", ",".join(map(str, selected))]
+    try:
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, encoding="utf-8", timeout=1800)
+    except subprocess.TimeoutExpired as exc:
+        raise ValueError("Forever ranking coverage timed out") from exc
+    if result.returncode:
+        raise ValueError(result.stderr.strip() or "Forever ranking coverage failed")
+    known, findings, totals = set(), [], None
+    for line in result.stdout.splitlines():
+        fields = line.split("\t")
+        if fields[0] == "coverage":
+            totals = dict(zip(("contexts", "slot_pools", "empty_pools"), map(int, fields[1:])))
+        elif fields[0] == "catalog":
+            known.add(int(fields[1]))
+        elif fields[0] == "finding":
+            _, variant, reason, peer, count, scope, level, score, peer_score = fields
+            findings.append({"variant": variant, "reason": reason, "contexts": int(count), "example": {
+                "scope": scope, "level": int(level), "score": float(score), "peer": peer or None,
+                "peer_score": float(peer_score) if peer_score else None}})
+    if totals is None:
+        raise ValueError("Missing Forever ranking coverage totals")
+    inventory = dataset_json("forever", "leveling_candidate_audit")["candidate_reviews"]
+    missing_stats = [{"item_id": row["item_id"], "name": row.get("name"), "slots": row.get("slots", []),
+                      "review_status": row["status"]} for row in inventory if row["item_id"] not in known
+                     and not row["status"].startswith("reviewed_")]
+    return {"content_phase": phase, "levels": selected, **totals, "scoring_catalog_items": len(known),
+            "finding_counts": dict(Counter(row["reason"] for row in findings)), "findings": findings,
+            "inventory_without_scoring_facts": missing_stats}
 
 
 def check_lua(lua: str | None, cases: list[tuple]) -> str | None:
@@ -210,7 +259,7 @@ for _, case in ipairs(cases) do
     state.gear = gear
     local previous, previousExpected
     for _, option in ipairs(case.offers) do
-        local result = score:EvaluateSwap(state, option.item, nil, option.target, option.slot, state.weights)
+        local result = score:EvaluateSwap(state, option.item, nil, option.target, option.slot, state.weights, true)
         local expected = option.expected
         local label = case.label .. " / " .. option.item.name
         if expected == nil then
@@ -220,6 +269,10 @@ for _, case in ipairs(cases) do
                 label .. " expected " .. expected .. ", calculated " .. tostring(result and result.delta))
             assert(math.abs(result.delta - option.python_delta) <= 0.01,
                 label .. " differs from the Python swap by more than 0.01")
+            for stat, points in pairs(option.contributions) do
+                assert(math.abs((result.contributions[stat] or 0) - points) <= 0.01,
+                    label .. " has a different contribution for " .. stat)
+            end
             if previous then
                 local correct = previousExpected == expected and math.abs(previous - result.delta) < 0.0001
                     or previousExpected > expected and previous > result.delta
@@ -238,7 +291,7 @@ end
         return result.stderr.strip() or "Lua 5.1 scoring parity failed"
 
 
-def validation_issues(model: dict, runtime: dict, bindings: dict, lua: str | None) -> tuple[list[str], list[str]]:
+def validation_issues(model: dict, runtime: dict, bindings: dict, lua: str | None) -> tuple[list[str], list[str], list[dict]]:
     cases, issues, checked = [], [], []
     for name, profile in runtime["profiles"].items():
         for mode, scenario in profile["scenarios"].items():
@@ -266,4 +319,11 @@ def validation_issues(model: dict, runtime: dict, bindings: dict, lua: str | Non
     if error:
         issues.append(error)
         checked.clear()
-    return issues, sorted(checked)
+    breakdowns = [{"fixture": label, "level": state["level"], "race_id": state["race"],
+                   "equipped": {position: item.get("variant_id", str(item["id"])) for position, item in state["gear"].items()},
+                   "swaps": [{"variant": offer["item"].get("variant_id", str(offer["item"]["id"])), "slot": offer["slot"],
+                              "delta": offer["python_delta"], "points": {stat: points for stat, points in offer["contributions"].items()
+                                                                          if abs(points) > 0.000001}}
+                             for offer in offers if offer["contributions"] is not None]}
+                  for label, state, offers in cases]
+    return issues, sorted(checked), breakdowns

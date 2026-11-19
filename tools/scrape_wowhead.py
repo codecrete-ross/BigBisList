@@ -6191,7 +6191,7 @@ def command_item_corpus_audit(args: argparse.Namespace) -> int:
 
 
 def command_suffix_audit(args: argparse.Namespace) -> int:
-    audit = build_suffix_audit(args.input_dir)
+    audit = build_suffix_audit(args.input_dir or RAW_WOWHEAD_DIR / "full_item_corpus")
     print(json.dumps(audit, indent=2, sort_keys=True))
     return 0 if audit["ok"] else 1
 
@@ -7390,11 +7390,13 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
 
     if args.command == "scoring-audit":
         from tools.forever_scoring import read_model, scoring_audit
-        from tools.forever_scoring_checks import ranking_snapshot
+        from tools.forever_scoring_checks import ranking_coverage, ranking_snapshot
 
-        if args.input_dir and args.rankings:
+        if args.input_dir and (args.rankings or args.ranking_coverage):
             parser.error("--rankings reads the generated workspace payload. Run a separate --input-dir audit for draft inputs.")
-        result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir)
+        if args.breakdowns and not args.strict:
+            parser.error("--breakdowns requires --strict to run the reviewed swaps")
+        result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir, include_breakdowns=args.breakdowns)
         if args.effects:
             from tools.forever_item_effects import glossary
             from tools.recommend_leveling import materialized_items
@@ -7414,8 +7416,25 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
             except (OSError, ValueError) as exc:
                 result["ok"] = False
                 result["issues"].append(str(exc))
+        if args.ranking_coverage:
+            try:
+                result["ranking_coverage"] = ranking_coverage(args.lua, args.content_phase, args.coverage_levels)
+            except (OSError, ValueError) as exc:
+                result["ok"] = False
+                result["issues"].append(str(exc))
         print(json.dumps(result, indent=2, sort_keys=True))
         return int(not result["ok"])
+
+    if args.command == "suffix-audit":
+        from tools.forever_variants import suffix_audit
+
+        if bool(args.client_tables) != bool(args.client_build):
+            parser.error("--client-tables and --client-build must be provided together")
+        try:
+            print(json.dumps(suffix_audit(args.client_tables, args.client_build), indent=2, sort_keys=True))
+        except (OSError, KeyError, ValueError) as exc:
+            parser.error(str(exc))
+        return 0
 
     if args.command == "discover-sources":
         from tools.forever_sources import discover_sources
@@ -7641,6 +7660,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="Report character scoring coverage and stale approvals.")
     scoring_parser.add_argument("--strict", action="store_true", help="Require all 56 contexts and execute independent swap fixtures.")
     scoring_parser.add_argument("--rankings", action="store_true", help="Include reproducible runtime ranking results for all spec bands.")
+    scoring_parser.add_argument("--ranking-coverage", action="store_true", help="Compare inventory, eligible ranks and Guide rows in every Forever context.")
+    scoring_parser.add_argument("--coverage-levels", nargs="+", type=int, help="Limit ranking coverage to these levels. The default covers levels 1 through 60.")
+    scoring_parser.add_argument("--breakdowns", action="store_true", help="Include per-stat points from the independently verified swaps.")
     scoring_parser.add_argument("--effects", action="store_true", help="Include effect counts and a bounded queue of unresolved mechanics.")
     scoring_parser.add_argument("--input-dir", type=Path, help="Derive scoring bindings from a complete reviewed snapshot directory without importing it.")
     scoring_parser.add_argument("--content-phase", default="PR", help="Content phase to use for the ranking report.")
@@ -7703,7 +7725,9 @@ def build_parser() -> argparse.ArgumentParser:
     item_corpus_audit_parser.set_defaults(func=command_item_corpus_audit)
 
     suffix_audit_parser = subparsers.add_parser("suffix-audit", parents=[flavor_parser], help="Audit random suffix item variants.")
-    suffix_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
+    suffix_audit_parser.add_argument("--input-dir", type=Path)
+    suffix_audit_parser.add_argument("--client-tables", type=Path, help="Read captured Forever bonus tree CSVs.")
+    suffix_audit_parser.add_argument("--client-build", help="Build for the captured Forever bonus tables.")
     suffix_audit_parser.set_defaults(func=command_suffix_audit)
 
     recommendation_audit_parser = subparsers.add_parser("recommendation-audit", parents=[flavor_parser], help="Audit generated leveling recommendations against guide rows and source evidence.")

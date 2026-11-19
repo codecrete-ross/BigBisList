@@ -13,7 +13,7 @@ local SPEC_LABELS = { ["Feral dps"] = "Cat DPS", ["Feral tank"] = "Bear Tank" }
 local COMPARE_ACTION = addon.isForever and "Compare to this" or "Use as reference"
 local COMPARED_ITEM = addon.isForever and "Comparing to this" or "Reference"
 local SORT_LABELS = { recommendation = "Recommendations", item = "Item", source = "Source", owned = "Owned",
-    comparison = addon.isForever and "Guide comparison" or "Compared with reference", stat_rank = "Stat rank" }
+    comparison = addon.isForever and "Guide comparison" or "Compared with reference", stat_rank = "Setup rank" }
 local OWNED_ORDER = { equipped = 1, bag = 2, bags = 2, bank = 3 }
 
 local function supportedCandidateGrade(comparison)
@@ -624,7 +624,7 @@ function UI:BindComparisonRow(row, entry, pinned)
     if state.statRank then
         local service = addon.ForeverGearRating
         local rankColumn = columns.rank
-        local text = placement and service:Label(placement, rankColumn.stacked and "stacked" or nil) or "—"
+        local text = placement and service:Label(placement, rankColumn.stacked and "stacked" or nil, true) or "—"
         setCell(row.rankText, text, rankColumn.x, rankColumn.width, entry.height, rankColumn.stacked and 2 or 1)
         if tier then
             row.rankText:SetTextColor(widgets:GetRankColor(tier.quality))
@@ -837,7 +837,7 @@ function UI:LayoutSlotComparison()
     self.comparisonColumns = self:GetComparisonColumns(width)
     local columns, header = self.comparisonColumns, self.comparisonHeader
     local headings = { { text = "Item", column = columns.item, key = "item" } }
-    if state.statRank then headings[#headings + 1] = { text = "Stat rank", column = columns.rank, key = "stat_rank" } end
+    if state.statRank then headings[#headings + 1] = { text = "Setup rank", column = columns.rank, key = "stat_rank" } end
     headings[#headings + 1] = { text = state.statRank and "Est. stat change" or SORT_LABELS.comparison, column = columns.evidence, key = "comparison" }
     local live = addon:GetCurrentPhaseKey()
     for _, column in ipairs(columns.phases) do headings[#headings + 1] = { text = (PHASE_LABELS[column.phase] or column.phase) .. (column.phase == live and "\nLive" or ""), column = column, phase = column.phase, key = "phase:" .. column.phase } end

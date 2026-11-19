@@ -10,7 +10,7 @@ from tools.forever import (FACTIONS, SOURCE_CHILDREN, check_evidence_refs, diges
                            valid_route_eligibility)
 from tools.forever_sources import evidence_ref, route_leads
 from tools.recommend_leveling import (compact_adjacent_recommendation_ranges, materialized_items,
-                                      recommendation_rows_for_items, rules_allow_equipment, slot_matches)
+                                      recommendation_rows_for_items, roll_identity, rules_allow_equipment, slot_matches)
 from tools.sources import summarize_sources
 from tools import forever_availability as availability
 
@@ -358,16 +358,23 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
         try:
             if not isinstance(variant, dict):
                 raise ValueError("Invalid Forever suffix variant")
-            identity = (variant.get("item_id"), variant.get("random_suffix_id"))
-            if (type(identity[0]) is not int or type(identity[1]) is not int or identity[1] == 0
-                    or identity in seen_variants or identity[0] not in stats
+            identity, _ = roll_identity(variant)
+            if (identity in seen_variants or variant["item_id"] not in stats
                     or any(not isinstance(variant.get(field, {}), dict) for field in ("stat_delta", "stats"))
                     or not all(numeric(value) for field in ("stat_delta", "stats") for value in variant.get(field, {}).values())
+                    or not (variant.get("stat_delta") or variant.get("stats"))
+                    or ("required_level" in variant and (type(variant["required_level"]) is not int
+                                                        or not 0 <= variant["required_level"] <= 60))
+                    or ("item_level" in variant and (type(variant["item_level"]) is not int or variant["item_level"] < 1))
                     or not isinstance(variant.get("suffix_name"), str) or not variant["suffix_name"].strip()
                     or not has_review(variant)):
                 raise ValueError("Forever suffix variants need an explicit review")
+            support = check_evidence_refs(variant, records)
+            if (variant.get("bonus_fields") or variant.get("suffix_parameter") or "required_level" in variant
+                    or "item_level" in variant) and not any(
+                    row["observed_build"] == variant["client_build"] for row in support):
+                raise ValueError("An exact Forever bonus or scaling payload needs evidence from its reviewed client build")
             seen_variants.add(identity)
-            check_evidence_refs(variant, records)
             reviewed_variants.append(variant)
         except (KeyError, TypeError, ValueError) as exc:
             if not diagnostic:
@@ -375,6 +382,7 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
             issues.append({"reason": str(exc), "kind": "variant"})
     candidates = materialized_items(list(stats.values()), reviewed_variants)
     candidates = [item for item in candidates if not item.get("variant_only") or item.get("variant_id")]
+    roll_reviews = {roll_identity(variant)[0]: digest(variant) for variant in reviewed_variants}
     candidate_facts = {(item["id"], item.get("variant_id")): digest({key:value for key,value in item.items()
                        if key not in {"sources", "primary_source", "source_summary"}}) for item in candidates}
     source_digests = {id(source):digest(source) for item in candidates for source in item.get("sources", [])}
@@ -431,7 +439,8 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
     # Preserve the original inputs of existing approvals. Each weight revision
     # binds only the ranking scopes that use it.
     base_profiles = {key: value for key, value in profiles.items() if key != "weight_revisions"}
-    input_signature = {"profile": digest(base_profiles), "rules": digest(rules), "racials": digest(racials), "variants": digest(variants)}
+    input_signature = {"profile": digest(base_profiles), "rules": digest(rules), "racials": digest(racials),
+                       "variants": digest({**variants, "item_variants": []})}
     revisions = profiles.get("weight_revisions", {})
     revision_digests = {key: digest(revision) for key, revision in revisions.items()} if isinstance(revisions, dict) else {}
 
@@ -441,7 +450,8 @@ def generate(snapshots: dict, *, diagnostic: bool = False, review_document: dict
             if not any(low <= level <= high and band in bands for band, low, high in rules["level_bands"]):
                 revision = None
         return digest({"candidates": [{"fact":candidate_facts[(item["id"],item.get("variant_id"))],
-            "routes":[source_digests[id(source)] for source in item["sources"]]}
+            "routes":[source_digests[id(source)] for source in item["sources"]],
+            **({"roll_review": roll_reviews[item["variant_id"]]} if item.get("variant_id") in roll_reviews else {})}
             for item in sorted(eligible,key=lambda item:(item["id"],item.get("variant_id") or ""))],
             **input_signature, **({"weight_revision": revision} if revision else {})})
     contexts = profiles.get("runtime_contexts", ["best_overall"])

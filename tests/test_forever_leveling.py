@@ -327,6 +327,13 @@ class ForeverLevelingTests(unittest.TestCase):
         docs[3]["item_variants"] = [{**docs[1]["review"], "item_id":71, "random_suffix_id":suffix,
                                      "suffix_name":f"of Fixture {suffix}",
                                      "stat_delta":{"stamina":bonus}} for suffix,bonus in ((1,100),(-2,99))]
+        url = forever.WOWHEAD_ROOT + "item=71#exact-roll"
+        snapshots[url] = {"url": url, "flavor": "forever", "page_type": "observations",
+                          "client_build": docs[1]["review"]["client_build"]}
+        modern = {**docs[1]["review"], "item_id": 71, "bonus_fields": [0, 0, 1, 12749],
+                  "evidence_refs": [sources.evidence_ref(url, snapshots)],
+                  "suffix_name": "of the Prophet", "stat_delta": {"stamina": 99.5}}
+        docs[3]["item_variants"].append(modern)
         docs[4]["items"][0]["variant_only"] = True
         result = self.run_fixture(snapshots,docs)
         self.approve(result,docs)
@@ -338,6 +345,10 @@ class ForeverLevelingTests(unittest.TestCase):
         published=self.run_fixture(snapshots,docs)["leveling_recommendations"]["leveling_recommendations"]
         self.assertTrue(any(row.get("variant_id")=="71:1" and row["rank"]==1 for row in published))
         self.assertTrue(any(row.get("random_suffix_id")==-2 and row.get("variant_name") for row in published))
+        self.assertTrue(any(row.get("variant_id") == "71:0:0:0:1:12749" and row["rank"] == 2 for row in published))
+        docs[3]["item_variants"].append({**modern, "bonus_fields": [0, 0, 1, 12749, 0]})
+        with self.assertRaisesRegex(ValueError, "explicit review"):
+            self.run_fixture(snapshots, docs)
 
     def test_unknown_data_cannot_be_approved_as_no_eligible_gear(self):
         snapshots, docs = fixture()

@@ -127,6 +127,8 @@ projected placement. Inserting an owned projection leaves the published
 placements and denominators stable. Personal comparisons evaluate legal
 swaps with the rest of the outfit retained. Ranged and wand DPS are separate
 from melee DPS. Weapon speed bonuses use the physical main hand.
+Trade eligibility in the verified pool follows the recorded source and its
+faction. A Bind-on-Equip flag lets the interface describe tradeability.
 
 The Protection Paladin leveling reference retains the tank survivability
 weights and credits Intellect at 0.55, mana per five seconds at 1.6, shield
@@ -138,6 +140,23 @@ balance. Talent ranks and associated mana refunds still need their own model.
 Specialization weight revisions reopen the rankings for that specialization.
 [Blizzard Paladin deep dive](https://worldofwarcraft.blizzard.com/en-us/news/24302099/world-of-warcraft-forever-class-deep-dives-paladin)
 [Forever leveling stat guidance](https://www.icy-veins.com/wow-forever/protection-paladin-leveling/#stats)
+
+The level-49 Crested Heater Shield comparison isolates 170 Armor and one
+Block Value against five Spell Damage and ten Spirit on Battered Viking
+Shield. The current Outdoor weights put those shields 7.9 points apart. In
+an illustrative setup with 2,000 Armor outside the shield, extrapolating the
+curve measured in beta combat logs to a level-49 attacker gives about 1.23
+percentage points more physical mitigation from Crested. The Block Value
+gain prevents one additional point on a successful block. The reference
+weights need a measured balance of incoming damage, threat, and recovery
+for further calibration.
+[Forever beta combat-log measurements](https://github.com/magey/forever-warrior/issues/24)
+
+At level 43, Assassination's Outdoor scores for Rondel and Thornspike are
+144.36 and 123.54. Their listed weapon DPS is 24.06 and 20.59. The comparison
+stays conditional while Thornspike's effect is unresolved. At level 49,
+Protection Warrior's Outdoor scores for Platemail Leggings and Mighty Chain
+Pants are 31.92 and 26.40. The higher score comes entirely from 399 Armor.
 
 Feral tank previously inherited the Cat DPS weights after level 9. The Bear
 revision uses the tank mitigation and threat coefficients with the reviewed
@@ -273,6 +292,12 @@ or loses.
   live reader share the verified flat-passive rules for Defense, Attack
   Power, and spell damage. The live reader fills missing stats from those
   tooltip lines and keeps unresolved effects conditional.
+- Guide and item tooltip reference ranks use the same eligible pool for a
+  given spec, slot, level, and scenario. Compare Slot identifies its equipped
+  setup. Details shows tier persistence, the first level a known contender
+  scores higher, and the largest weighted changes in the selected swap.
+  Above-level tooltips compare both sides at the first usable level with
+  owned items, including future-eligible bags and cached bank gear.
 - Stat tiers use the client rarity palette from poor gray through common white,
   uncommon green, rare blue, epic purple, and legendary orange. Placements
   use the full eligible variant pool and exact score ties. Percent of best uses
@@ -317,8 +342,9 @@ or loses.
 - The Gear Guide chooses all eligible, role-relevant items at or above 70% of
   the best qualifying score. Under 85% goes under **More options**, along with
   applicable reviewed effects whose numeric ranking falls below that band.
-  Ownership and acquisition filters narrow that set. The player's talents and
-  gear determine the separate swap estimate and **Within reach** actions.
+  Every rarity is eligible. Ownership and acquisition filters narrow that
+  set. The player's talents and gear determine the swap estimate and
+  **Within reach** actions.
 - The native and in-addon comparisons share item facts and one worn-swap
   evaluator. Placement uses base gear. Swap estimates apply verified permanent
   modifiers from exact links. Unknown modifiers, unscored effects, and
@@ -334,6 +360,21 @@ or loses.
 - Test loadout switches, level previews, unavailable API values, and changed
   mechanics evidence. Compare Python and Lua results. Check startup, first-open,
   and tooltip performance.
+- `scoring-audit --flavor forever --ranking-coverage` checks the full
+  level and persona matrix. It reports promising equipment excluded from the
+  verified pool or the displayed Guide, unresolved effects, and places where
+  lower-rarity gear outscores a higher-rarity choice. The contender check uses
+  the Guide's 70% cutoff and includes every positive role score in empty pools.
+  Use `--coverage-levels` for a narrower run. `--strict --breakdowns` adds the
+  per-stat points from reviewed swap fixtures and checks them against Lua.
+- `suffix-audit --flavor forever --client-tables <directory> --client-build <build>`
+  compares exact-roll reviews with captured bonus trees. Tree membership is an
+  evidence lead. Roll approvals bind the actual stats and link payload to the
+  reviewed build. The canonical `bonus_fields` list preserves link fields 11
+  onward, including the bonus count, IDs, and subsequent modifiers. A negative
+  `random_suffix_id` can carry a `suffix_parameter` when it changes stats.
+  Specify `required_level` or `item_level` on a reviewed roll when scaling
+  changes those values.
 - `python tools/scrape_wowhead.py scoring-audit --flavor forever --strict`
   checks approved inputs and executes the independent swap fixtures in Python
   and Lua 5.1. Both calculations must match expected points within 0.01,

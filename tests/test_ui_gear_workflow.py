@@ -489,7 +489,7 @@ assert(earlier:find("With a shield", 1, true))
 assert(slots.Chest.guideBadge:GetText() == "Optional" and not goldVisible(slots.Chest))
 assert(slots.Chest.rating:GetText() == "Stats unavailable")
 assert(shoulder.gearData.history.selected.status == "conditional" and not goldVisible(shoulder))
-assert(shoulder.rating:GetText():find("Top tier", 1, true))
+assert(shoulder.gearData.stat_rank.projected and shoulder.rating:GetText():find("Projected", 1, true))
 assert(shoulder.rating.textColor[2] == 128/255)
 shoulder:Click(); H.settle()
 assert(shoulder.selected and not goldVisible(shoulder))
@@ -650,7 +650,7 @@ local function verifyGear()
         if placement and placement.rank and placement.total > 1 then
             assert(not tile.rating.isTruncated, key .. " rank clipped: " .. tile.rating.fullText)
             local service = addon.ForeverGearRating
-            local label, compact = service:Label(placement), service:Label(placement, "compact")
+            local label, compact = service:Label(placement, nil, true), service:Label(placement, "compact", true)
             local text = tile.rating:GetText()
             local percent = placement.score_percent and (" · " .. placement.score_percent .. "%")
             assert(text == label or text == compact or (percent and (text == label .. percent or text == compact .. percent)),
@@ -674,7 +674,7 @@ local function verifyComparison()
     assert(columns.source.x + columns.source.width < columns.owned.x)
     for _, row in ipairs(ui.comparisonPinnedRows) do
         local placement = row.comparisonData.stat_rank
-        assert(row.rankText:GetText() == addon.ForeverGearRating:Label(placement, columns.rank.stacked and "stacked" or nil))
+        assert(row.rankText:GetText() == addon.ForeverGearRating:Label(placement, columns.rank.stacked and "stacked" or nil, true))
         assert(not row.rankText.isTruncated and row.rankText:GetRight() < columns.evidence.x + row:GetLeft())
         assert(not row.rankText.rankStripe)
         H.expectBounded(row.rankText, row, "pinned rank")
