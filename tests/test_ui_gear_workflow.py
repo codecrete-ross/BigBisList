@@ -74,7 +74,7 @@ for _, row in ipairs(ui.renderModel.entries) do
         local order, level = row.data.guide_order, row.data.guide_route_level
         assert(order >= lastOrder)
         if order == lastOrder and order > 1 then
-            assert(order == 2 and lastLevel <= level or order == 3 and lastLevel >= level)
+            assert(order == 2 and lastLevel <= level or order == 3 and lastLevel >= level or order == 4)
         end
         lastOrder, lastLevel = order, level
     end
@@ -139,42 +139,50 @@ assert(ui.details:IsVisible() and not ui.inspectorExclusive)
 local upcoming = assert(guideRow(16729))
 assert(upcoming.guide_order == 2 and upcoming.guide_route_level == 58 and upcoming.stat_rank.level == 58)
 ui:SetFilter("search", "Lightforge Spaulders"); H.settle()
-assert(ui.renderModel.rowCount == 1 and guideRow(16729).stat_rank == upcoming.stat_rank)
+local filtered = assert(guideRow(16729)).stat_rank
+assert(filtered.rank == upcoming.stat_rank.rank and filtered.total == upcoming.stat_rank.total and filtered.level == 58)
 ui:SetFilter("search", ""); H.settle()
 local pauldrons = assert(guideRow(9476))
 ui:ShowInspectorFor(pauldrons.item_id, pauldrons, "leveling")
-expectRank("Best known at Level 55")
-expectRank("Among the best at Levels")
+expectRank("at Level 55")
+expectRank("Rank #" .. pauldrons.stat_rank.rank .. " of " .. pauldrons.stat_rank.total)
 ui:SetInspectorVisible(false); H.settle()
 assert(not ui.details:IsVisible())
 ui:SetInspectorVisible(true); H.settle()
-expectRank("Stronger at Level 58 · Lightforge Spaulders")
+expectRank("Rank #" .. pauldrons.stat_rank.rank .. " of " .. pauldrons.stat_rank.total)
 
 ui:SetLevelingLevel(58); H.settle()
 local spaulders = assert(guideRow(16729))
 ui:ShowInspectorFor(spaulders.item_id, spaulders, "leveling"); H.settle()
-expectRank("Best known at Level 58")
-expectRank("Among the best at Levels 58–59")
+expectRank("at Level 58")
+expectRank("Rank #" .. spaulders.stat_rank.rank .. " of " .. spaulders.stat_rank.total)
 
 ui:SetLevelingLevel(55); H.settle()
 ui:SetTab("Equipped"); H.settle()
 UIParent:SetSize(900, 500)
 ui.frame:SetSize(900, 500); H.settle()
-assert(ui:OpenSlotComparison(ui.gearFrame.slots.Shoulder.gearData, "gear", true)); H.settle()
+assert(ui:OpenSlotComparison(ui.gearFrame.slots.Shoulder.gearData, "gear", true))
+local first = assert(ui.slotComparison.poolJob)
+assert(ui.slotComparison.entries[1].title:find("Comparing gear", 1, true))
+ui:CloseSlotComparison()
+assert(ui:OpenSlotComparison(ui.gearFrame.slots.Shoulder.gearData, "gear", true))
+assert(ui.slotComparison.poolJob ~= first)
+H.settle()
+assert(not first.rows and not ui.slotComparison.poolJob)
 local comparison = ui.slotComparison
 local candidate
 for _, item in ipairs(comparison.rows) do
     if item.item_id == 16729 then candidate = item; break end
 end
-assert(candidate and candidate.stat_rank.projected and candidate.stat_rank.rank == 1 and candidate.stat_rank.score_percent == 100)
+assert(candidate and not candidate.stat_rank.projected and candidate.stat_rank.level == 58 and candidate.stat_rank.rank == spaulders.stat_rank.rank)
 ui:ShowComparisonDetails(candidate)
-expectRank("Best known at Level 58")
+expectRank("at Level 58")
 assert(ui:BackToSlotComparison()); H.settle()
 assert(not ui.details:IsVisible())
 ui:ShowComparisonDetails(candidate)
 H.settle()
 assert(ui.details:IsVisible() and ui.inspectorExclusive)
-expectRank("Among the best at Levels 58–59")
+expectRank("Rank #" .. spaulders.stat_rank.rank .. " of " .. spaulders.stat_rank.total)
 assert(ui:BackToSlotComparison()); H.settle()
 assert(ui.slotComparison == comparison and not comparison.detailsOpen)
 ''')
@@ -500,7 +508,7 @@ assert(earlier:find("With a shield", 1, true))
 assert(slots.Chest.guideBadge:GetText() == "Optional" and not goldVisible(slots.Chest))
 assert(slots.Chest.rating:GetText() == "Stats unavailable")
 assert(shoulder.gearData.history.selected.status == "conditional" and not goldVisible(shoulder))
-assert(shoulder.gearData.stat_rank.projected and shoulder.rating:GetText():find("Projected", 1, true))
+assert(not shoulder.gearData.stat_rank.projected and shoulder.gearData.stat_rank.rank == 1)
 assert(shoulder.rating.textColor[2] == 128/255)
 shoulder:Click(); H.settle()
 assert(shoulder.selected and not goldVisible(shoulder))
@@ -626,7 +634,7 @@ for _, key in ipairs({"Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Wa
         "Finger0", "Finger1", "MainHand", "OffHand"}) do
     local tile = slots[key]
     local text = tile.rating:GetText()
-    assert(tile.gearData.stat_rank.rank and (text:find("Level %d+") or text:find("Lv %d+")), key .. " " .. text)
+    assert(tile.gearData.stat_rank.rank and (text:find("Levels? %d+") or text:find("Lv %d+")), key .. " " .. text)
 end
 assert(bonusReads[601] and bonusReads[602] and bonusReads[603] and bonusReads[bagBonus])
 assert(slots.Neck.gearData.bestUse and slots.Neck.guideBadge:GetText() == "Recommended" and slots.Neck.guideBadge:IsVisible())
@@ -719,7 +727,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         for _, row in ipairs(state.rows) do
             if row.item_link == bagLink then shown = row; break end
         end
-        assert(shown and shown.stat_swap and shown.stat_swap.delta and shown.acquisition_display.location_label == "Source unverified")
+        assert(shown and shown.stat_swap and shown.stat_swap.delta and shown.acquisition_display.location_label == "Source unknown")
         local placement = shown.stat_rank
         ui:SetComparisonOwnership("owned"); H.settle()
         ui:SetComparisonSort("item"); H.settle()

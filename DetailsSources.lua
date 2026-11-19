@@ -356,12 +356,20 @@ function UI:GetAcquisitionQuestProgress(source)
     if BigBiSList.isForever and rewardId and not hasRewardStep then
         addStep({ quest_id = rewardId, name = source.entity_name or source.name or ("Quest " .. rewardId), kind = "reward" })
     end
+    local required = source.eligibility and source.eligibility.prerequisite_quest
+    if required and nextQuest and nextQuest.step.quest_id == rewardId and nextQuest.state == "Not started" then
+        local state, turnIn = self:GetAcquisitionQuestState(required.quest_id)
+        if state ~= "Completed" then
+            nextQuest = {step = required, state = state == "In progress" and state or "Prerequisite", turnIn = turnIn}
+        end
+    end
     return nextQuest, progress
 end
 
 function UI:GetQuestStepText(quest)
     if not quest then return nil end
     if quest.turnIn then return "Turn in " .. quest.step.name end
+    if quest.state == "Prerequisite" then return "Requires " .. quest.step.name end
     if quest.state == "Not started" then return "Pick up " .. quest.step.name end
     return quest.step.name .. " · " .. quest.state
 end

@@ -18,7 +18,7 @@ ICON_KEYS = (
     "search", "clear", "starOutline", "starFilled", "sortAscending", "sortDescending",
     "chevronLeft", "chevronRight", "chevronDown", "chevronUp", "settings", "filter",
     "details", "check", "bag", "bank", "equipped", "clock", "warning", "info",
-    "plus", "minus", "restore", "hide", "menu",
+    "plus", "minus", "restore", "hide", "menu", "upgradeArrow",
 )
 ATLAS_SIZE = 256
 CELL_SIZE = 32
@@ -68,6 +68,9 @@ def draw_icon(key: str) -> Image.Image:
         polygon([(8, 21), (16, 11), (24, 21)], True)
     elif key == "sortDescending":
         polygon([(8, 11), (16, 21), (24, 11)], True)
+    elif key == "upgradeArrow":
+        draw.polygon(points([(4, 16), (16, 4), (28, 16), (20, 16), (20, 27), (12, 27), (12, 16)]),
+                     fill=(130, 255, 169, 255))
     elif key == "chevronLeft":
         line([(20, 7), (11, 16), (20, 25)], 2.3)
     elif key == "chevronRight":

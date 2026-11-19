@@ -44,8 +44,19 @@ table.sort(specs)
 if arg[2] == "coverage" then
     local rating = addon.ForeverGearRating
     local catalog = rating:GetCatalog(data.stat_rank)
-    local slots, levels = {}, {}
-    for slot in pairs(catalog.slots) do
+    local independent = {}
+    for line in io.lines() do
+        local slot, key = line:match("^([^\t]+)\t(.+)$")
+        if slot then
+            assert(catalog.items[key], "Equipment inventory entry missing from the Guide catalog: " .. key)
+            independent[slot] = independent[slot] or {}
+            table.insert(independent[slot], key)
+        end
+    end
+    local slots, levels, inventorySlots = {}, {}, {}
+    for slot in pairs(independent) do inventorySlots[slot] = true end
+    for slot in pairs(catalog.slots) do inventorySlots[slot] = true end
+    for slot in pairs(inventorySlots) do
         if slot ~= "One Hand" then slots[#slots + 1] = slot end
     end
     table.sort(slots)
@@ -113,22 +124,26 @@ if arg[2] == "coverage" then
             end
             poolScopes = poolScopes + 1
             if not best then emptyPools = emptyPools + 1 end
-            local threshold = best and best.score * 0.70 or 0
+            local shownLeader
+            for _, entry in ipairs(pool.rows) do
+                if visible[entry.item.key] and entry.score then shownLeader = entry; break end
+            end
             local function check(item)
                 local entry = pool.byVariant[item.key] or rating:GetReferenceCandidate(context, item, slot)
-                if not (entry and entry.score and entry.score > 0 and entry.score + 1e-8 >= threshold
-                    and not visible[item.key] and rating:HasGuideRoleStats(context, item, slot)) then return end
-                if not pool.byVariant[item.key] then
-                    local available, reason = addon:IsStatRankGuideItemAvailable(item.id, context)
-                    note(scope, level, available and "rank_filter" or reason, item, entry.score, best)
-                else
-                    note(scope, level, "display_filter", item, entry.score, best)
+                if not entry or not entry.score or visible[item.key] then return end
+                local available, reason = addon:IsStatRankGuideItemAvailable(item.id, context)
+                if not available and reason ~= "missing_item_record" and reason ~= "unverified_route" then return end
+                local why = (not shownLeader or entry.score > shownLeader.score) and "omitted_leader" or "display_filter"
+                note(scope, level, why, item, entry.score, shownLeader)
+            end
+            local function checkInventory(kind)
+                for _, key in ipairs(independent[kind] or {}) do
+                    local item = catalog.items[key]
+                    if item then check(item) end
                 end
             end
-            for _, item in ipairs(catalog.slots[slot] or {}) do check(item) end
-            if slot == "Main Hand" or slot == "Off Hand" then
-                for _, item in ipairs(catalog.slots["One Hand"] or {}) do check(item) end
-            end
+            checkInventory(slot)
+            if slot == "Main Hand" or slot == "Off Hand" then checkInventory("One Hand") end
         end
     end
 
@@ -155,7 +170,7 @@ if arg[2] == "coverage" then
     print("coverage", contexts, poolScopes, emptyPools)
     for _, key in ipairs(keys) do print("finding", key, findings[key].count, unpack(findings[key].example)) end
     local ids = {}
-    for _, item in pairs(catalog.items) do ids[item.id] = true end
+    for _, item in pairs(catalog.items) do if item.stats and not item.has_random_stats then ids[item.id] = true end end
     local sorted = {}
     for id in pairs(ids) do sorted[#sorted + 1] = id end
     table.sort(sorted)

@@ -76,7 +76,7 @@ BigBiSListCharDB = {
     wishlist = { ["10"] = true }, ignoredItems = { ["20"] = true },
 }
 BigBiSList:EnsureDatabase()
-equal(BigBiSListCharDB.defaultsVersion, 18, "new schema")
+equal(BigBiSListCharDB.defaultsVersion, 19, "new schema")
 local upgrades, bis = UI:GetFilters("Upgrades"), UI:GetFilters("By Slot")
 equal(upgrades.upgradeMode, "candidates", "effective upgrade mode")
 equal(upgrades.longevity, "long", "effective usefulness")

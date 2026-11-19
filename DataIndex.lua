@@ -3493,11 +3493,12 @@ function FILTER_FACETS.optionMatchesFaction(option, faction)
     return not hasSide
 end
 
-function FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters)
-    if type(eligibility) ~= "table" then return not (BigBiSList.isForever and filters._leveling) end
+function FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters, allowUnknownMinimum)
+    if type(eligibility) ~= "table" then return allowUnknownMinimum or not (BigBiSList.isForever and filters._leveling) end
     local level = filters._leveling and filters.level
         or (BigBiSList.isForever and ((BigBiSList.maxLevelingLevel or 59) + 1))
-    if level and (not tonumber(eligibility.min_level) or eligibility.min_level > level) then return false end
+    local minimum = tonumber(eligibility.min_level)
+    if level and (minimum and minimum > level or not minimum and not allowUnknownMinimum) then return false end
     if level and eligibility.max_level and eligibility.max_level < level then return false end
     local function matches(values, selected)
         if not values or #values == 0 then return true end
@@ -3845,7 +3846,7 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
         if not raceMatches(row.race, filters.race) then return false end
         local eligibilityById = BigBiSListData.item_eligibility or {}
         local eligibility = eligibilityById[row.item_id] or eligibilityById[tostring(row.item_id)]
-        if not FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters) then return false end
+        if not FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters, row.stat_rank ~= nil) then return false end
     end
 
     if selectedPhaseIndex then
@@ -3857,7 +3858,7 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
         if not available then return false end
     end
 
-    if filters._pre_raid then
+    if filters._pre_raid and not row.guide_source_unknown then
         local eligible = false
         for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
             if optionMatchesSourceContext(option, filters, selectedPhaseIndex) then eligible = true; break end
@@ -4124,8 +4125,14 @@ function FILTER_FACETS.accessOptionLocationLabel(option)
 end
 
 function BigBiSList:GetRowAcquisitionDisplay(row, filters, phaseKey, includeFutureMatches, verifiedOnly)
+    if row and row.guide_source_unknown then
+        return { status = "unknown", source_label = "Source unknown", source_summary = "Source unknown" }
+    end
     local hasContextFilter = FILTER_FACETS.hasActiveOptionContextFilter(filters)
     local option = self:GetMatchingRowAccessOption(row, filters, phaseKey, false, verifiedOnly)
+    if not option and includeFutureMatches and verifiedOnly then
+        option = self:GetMatchingRowAccessOption(row, filters, phaseKey, true, true)
+    end
     local selectedPhaseIndex = phaseKey and self:GetAvailabilityPhaseIndex(phaseKey) or nil
     if not option and not verifiedOnly and not hasActiveSourceContextFilter(filters) then
         local scopedFilters = FILTER_FACETS.progressionFilters(filters, phaseKey, row and row.class)
@@ -4839,7 +4846,6 @@ end
 
 function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
     local item = self:GetItemData(itemId)
-    if not item then return false, "missing_item_record" end
     if not context.guideEligibility then
         context.guideEligibility = FILTER_FACETS.progressionFilters({
             class = context.class, race = context.race, faction = context.faction,
@@ -4848,16 +4854,22 @@ function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
     end
     local filters = context.guideEligibility
     local eligibilityById = BigBiSListData.item_eligibility or {}
-    if not FILTER_FACETS.eligibilityMatchesCharacter(FILTER_FACETS.tableValueById(eligibilityById, itemId), filters) then
+    local eligibility = FILTER_FACETS.tableValueById(eligibilityById, itemId)
+    if not FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters, true) then
         return false, "character_restriction"
     end
-    local verified
+    if not item then return false, "missing_item_record" end
+    local verified, nextPhase
     for _, option in ipairs(self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
         if FILTER_FACETS.optionIsVerifiedGuideRoute(option) then
             verified = true
             if #FILTER_FACETS.accessOptionFilterMatches(option, filters, context.phaseIndex) > 0 then return true end
+            local later = FILTER_FACETS.nextAvailableOptionPhase(option, context.phaseIndex)
+            if later and later > context.phaseIndex and (not nextPhase or later < nextPhase)
+                and #FILTER_FACETS.accessOptionFilterMatches(option, filters, later) > 0 then nextPhase = later end
         end
     end
+    if nextPhase then return false, "future_phase", PHASE_ORDER[nextPhase] end
     return false, verified and "route_out_of_scope" or "unverified_route"
 end
 
@@ -5551,12 +5563,30 @@ end
 
 function BigBiSList:GetWishlistKey(itemId, row)
     if self.isForever and row and not row.wishlist_any then
-        return tostring(row.variant_id or self:GetItemVariantIdFromLink(row.item_link) or itemId)
+        return tostring(self:GetItemVariantIdFromLink(row.item_link) or row.variant_id or itemId)
     end
     return tostring(itemId)
 end
 
+function BigBiSList:NormalizeWishlistVariants(wishlist)
+    if not self.isForever or not wishlist or self.normalizedWishlist == wishlist then return end
+    local changes = {}
+    for key, saved in pairs(wishlist) do
+        if type(saved) == "table" and saved.variant_id and saved.item_link then
+            local exact = self:GetItemVariantIdFromLink(saved.item_link)
+            if exact and key ~= exact then changes[key] = exact end
+        end
+    end
+    for old, exact in pairs(changes) do
+        local saved = wishlist[old]
+        saved.variant_id = exact
+        wishlist[exact], wishlist[old] = wishlist[exact] or saved, nil
+    end
+    self.normalizedWishlist = wishlist
+end
+
 function FILTER_FACETS.wishlistEntries(wishlistItems)
+    BigBiSList:NormalizeWishlistVariants(wishlistItems)
     local entries, seen = {}, {}
     for key, value in pairs(wishlistItems or {}) do
         local saved = type(value) == "table" and value.item_id and value
@@ -6231,6 +6261,7 @@ end
 
 -- Keep the route that places each item in a dungeon, so opening Details uses that same source.
 function BigBiSList:GetLevelingActivityRows(row, filters, level)
+    if row.guide_source_unknown or row.future_phase then return {} end
     local result = {row}
     local seen = {[self:GetActivityGroup(row)] = true}
     local scoped = {}
@@ -6271,10 +6302,13 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
     local pool = service:GetPlacement(scoring, physical, definition.slots)
     local rows = { contexts = contexts, statsPending = scoring.pending, slot = pool.slot, swapBasis = "reference" }
     local leveling = phase == LEVELING_PHASE_KEY
+    local guide = service:GetGuideContext(className, specName, phase, scoring.level, scoring.race, scoring.faction)
+    local referencePool = service:GetGuidePlacement(guide, pool.slot)
     for _, context in ipairs(contexts) do
         local ranked = service:GetPlacement(scoring, context.slotKey, context.dataSlots)
         local entry = ranked.reference
-        context.stat_rank, context.stat_rank_scope = entry, ranked.scope
+        context.stat_rank = entry and entry.item and referencePool.byVariant[entry.item.key] or entry
+        context.stat_rank_scope = referencePool.scope
         context.stat_identity = entry and entry.item and entry.item.key
         local linkName = context.item_link and context.item_link:match("|h%[(.-)%]|h")
         local exact = entry and entry.item
@@ -6300,7 +6334,9 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
         class = className, level = scoring.level, _leveling = leveling, race = scoring.race,
         faction = self:GetPlayerFactionName(),
     }
+    local checkpoint = service:GetWorkCheckpoint()
     for _, entry in ipairs(service:GetComparisonCandidates(pool)) do
+        if checkpoint then checkpoint() end
         local facts = entry.item
         local item, ownership = self:GetItemData(facts.id), entry.ownership
         local link = ownership and ownership.item_link or facts.variant_link
@@ -6326,8 +6362,8 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
         if use and use.scoring_basis == "active_build" then activeUse = use end
         local data = {
             item_id = facts.id, item_link = link, name = link and link:match("|h%[(.-)%]|h") or facts.name, item = item,
-            variant_id = facts.variant_id, stat_identity = facts.key, stat_rank = entry, stat_guide_badge = badge,
-            stat_rank_scope = pool.scope,
+            variant_id = facts.variant_id, stat_identity = facts.key, stat_rank = referencePool.byVariant[facts.key] or entry,
+            stat_guide_badge = badge, stat_rank_scope = referencePool.scope, guide_source_unknown = entry.source_unknown,
             slot = pool.slot, class = className, spec = specName, phase = phase, leveling = leveling,
             level_min = scoring.level, bestUse = use, scoring_basis = activeUse and activeUse.scoring_basis,
             scoring_label = activeUse and activeUse.scoring_label, level_label = use and use.level_label,
@@ -6337,8 +6373,8 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
         }
         local display = item and self:GetRowAcquisitionDisplay(use or data, filters, phase)
         if not display or not display.option or display.option.source_type == "unknown" or display.status == "unknown" then
-            display = { source_label = "Source unverified", location_label = "Source unverified" }
-            data.source_summary = "Source unverified"
+            display = { source_label = "Source unknown", location_label = "Source unknown" }
+            data.source_summary = "Source unknown"
         end
         data.acquisition_display, data.matched_access_option = display, display.option
         if not data.is_reference then
@@ -6562,26 +6598,14 @@ function BigBiSList:GetStatRankGuideChoices(context, pool, checkpoint)
     local slot = pool.slot
     local cached = context.guideChoices[slot]
     if cached then return cached end
-    local rating, choices, best = self.ForeverGearRating, {}, 0
+    local rating, choices = self.ForeverGearRating, {}
     for _, entry in ipairs(pool.rows) do
         if checkpoint then checkpoint() end
-        local item = entry.item
-        local effect = rating:GetReviewedGuideEffect(context, item)
-        local score = entry.score and entry.score > 0 and rating:HasGuideRoleStats(context, item, slot) and entry.score
-        local available = context.inScope[item.id]
-        if (score or effect) and (context.catalog.data.published_routes_only and available
-            or self:IsStatRankGuideItemAvailable(item.id, context)) then
-            choices[item.key] = { score = score, effect = effect }
-            if score and score > best then best = score end
-        end
-    end
-    for key, choice in pairs(choices) do
-        if checkpoint then checkpoint() end
-        if not choice.effect and choice.score * 100 < best * 70 - 1e-8 then
-            choices[key] = nil
-        else
-            choice.alternate = not choice.score or choice.score * 100 < best * 85 - 1e-8
-        end
+        local effect = rating:GetReviewedGuideEffect(context, entry.item)
+        local percent = entry.score_percent or (entry.rank == 1 and 100) or 0
+        choices[entry.item.key] = { score = entry.score, effect = effect,
+            recommended = effect or (entry.score and entry.score > 0 and percent >= 70),
+            alternate = percent < 85 }
     end
     context.guideChoices[slot] = choices
     return choices
@@ -6589,11 +6613,20 @@ end
 
 function LEVELING_HELPERS.guideCandidate(index, entry, context, preferred, choice)
     local item = entry.item
-    local row = preferred or buildLevelingRecommendationRow(index, {
-        class = context.class, spec = context.spec, item_id = item.id, slot = entry.slot,
-        level_min = entry.level, level_max = entry.level,
-        variant_id = item.variant_id, variant_name = item.name,
-    })
+    local row = preferred
+    if not row and entry.source_unknown then
+        local indexed = getIndexedItem(index, item.id)
+        local meta = indexed and getItemMetaFromIndex(index, item.id, indexed) or {}
+        row = { class = context.class, spec = context.spec, phase = context.phase, slot = entry.slot,
+            name = item.name, item_id = item.id, variant_id = item.variant_id, leveling = context.leveling,
+            quality = item.quality or meta.quality, boe = meta.boe, rank_group = "option", guide_source_unknown = true,
+            level_min = entry.level, level_max = entry.level, source_summary = "Source unknown",
+            source_filter_label = "Source unknown", source_type = "unknown" }
+    elseif not row then
+        row = buildLevelingRecommendationRow(index, { class = context.class, spec = context.spec,
+            item_id = item.id, slot = entry.slot, level_min = entry.level, level_max = entry.level,
+            variant_id = item.variant_id, variant_name = item.name })
+    end
     if not row then return nil end
     if not preferred then
         row.computed_recommendation, row.section = nil, nil
@@ -6601,15 +6634,18 @@ function LEVELING_HELPERS.guideCandidate(index, entry, context, preferred, choic
         row.category_label, row.leveling_category_key, row.recommendation_summary = nil, nil, nil
     end
     row.stat_rank, row.stat_identity = entry, item.key
+    row.future_phase = entry.future_phase
     row.item_link = row.item_link or item.variant_link
+    row.guide_source_unknown = entry.source_unknown
     row.guide_note = choice.effect
     row.guide_alternate = choice.alternate
     return row
 end
 
-function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context)
+function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context, slots)
     local rating, groups = addon.ForeverGearRating, {}
-    for _, slot in ipairs(SLOT_ORDER) do
+    local checkpoint = rating:GetWorkCheckpoint()
+    for _, slot in ipairs(slots or SLOT_ORDER) do
         local pool = rating:GetGuidePlacement(context, slot)
         local preferred, rows = {}, {}
         local choices = addon:GetStatRankGuideChoices(context, pool)
@@ -6617,6 +6653,7 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context)
             preferred[row.variant_id or tostring(row.item_id)] = row
         end
         for _, entry in ipairs(pool.rows) do
+            if checkpoint then checkpoint() end
             local key = entry.item.key
             local choice = choices[key]
             local row = choice and LEVELING_HELPERS.guideCandidate(index, entry, context, preferred[key], choice)
@@ -6625,6 +6662,10 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context)
                 rows[#rows + 1] = row
             end
         end
+        for _, entry in ipairs(pool.upcoming) do
+            local row = LEVELING_HELPERS.guideCandidate(index, entry, context, nil, {})
+            if row then rows[#rows + 1] = row end
+        end
         if #rows > 0 then groups[#groups + 1] = { slot = slot, items = rows } end
     end
     return groups
@@ -6632,13 +6673,22 @@ end
 
 function LEVELING_HELPERS.filterGuideCandidates(addon, context, filters)
     local groups = {}
-    for _, group in ipairs(context.guideCandidates) do
+    local checkpoint = addon.ForeverGearRating:GetWorkCheckpoint()
+    for _, slot in ipairs(SLOT_ORDER) do
         local rows = {}
-        if rowMatchesSelectedSlots(group.slot, filters.slots) then
-            for _, candidate in ipairs(group.items) do
-                if includeByFilter(candidate, filters, context.phaseIndex) then
-                    local access = addon:GetRowAcquisitionDisplay(candidate, filters, context.phase, false, true)
-                    if access.status == "ready" and access.source_match then
+        if rowMatchesSelectedSlots(slot, filters.slots) then
+            local group = context.guideCandidates[slot]
+            if group == nil then
+                group = LEVELING_HELPERS.buildGuideCandidates(addon, context.guideIndex, context.preferredRows, context, {slot})[1] or false
+                context.guideCandidates[slot] = group
+            end
+            for _, candidate in ipairs(group and group.items or {}) do
+                if checkpoint then checkpoint() end
+                if not (candidate.guide_source_unknown and (filters._verifiedOnly or hasActiveSourceContextFilter(filters)))
+                    and includeByFilter(candidate, filters, candidate.future_phase and phaseIndex(candidate.future_phase) or context.phaseIndex) then
+                    local access = addon:GetRowAcquisitionDisplay(candidate, filters, context.phase, candidate.future_phase ~= nil, true)
+                    if (candidate.guide_source_unknown and not hasActiveSourceContextFilter(filters))
+                        or ((access.status == "ready" or candidate.future_phase and access.future) and access.source_match) then
                         local row = {}
                         for key, value in pairs(candidate) do row[key] = value end
                         row.acquisition_display, row.matched_access_option = access, access.option
@@ -6647,7 +6697,7 @@ function LEVELING_HELPERS.filterGuideCandidates(addon, context, filters)
                 end
             end
         end
-        if #rows > 0 then groups[#groups + 1] = { slot = group.slot, items = rows } end
+        if #rows > 0 then groups[#groups + 1] = { slot = slot, items = rows } end
     end
     table.sort(groups, function(a, b) return slotIndex(a.slot) < slotIndex(b.slot) end)
     return groups
@@ -6658,7 +6708,11 @@ function BigBiSList:GetLevelingGuideSummary(className, specName, level, filters,
     if not context then return nil end
     local rating = self.ForeverGearRating
     local summary = rating:GetLevelingSummary(context)
-    rating:RequestLevelingSummary(summary, rating:LevelingGuideSlots(context, SLOT_ORDER), watcher)
+    local slots = {}
+    for _, slot in ipairs(rating:LevelingGuideSlots(context, SLOT_ORDER)) do
+        if rowMatchesSelectedSlots(slot, filters and filters.slots) then slots[#slots + 1] = slot end
+    end
+    rating:RequestLevelingSummary(summary, slots, watcher)
     return summary
 end
 
@@ -6668,11 +6722,12 @@ function LEVELING_HELPERS.journeyAccess(addon, row, ranges, context, filters)
     for key, value in pairs(filters) do scoped[key] = value end
     scoped.class, scoped.race, scoped.faction, scoped._leveling = context.class, context.race, context.faction, true
     scoped.level = ranges[1].firstLevel
+    if row.guide_source_unknown and hasActiveSourceContextFilter(scoped) then return nil end
     if not includeByFilter(row, scoped, context.phaseIndex) then return nil end
     local function atLevel(level, order)
         scoped.level = level
         local access = addon:GetRowAcquisitionDisplay(row, scoped, context.phase, false, true)
-        if access.status == "ready" and access.source_match then return access, level, order end
+        if row.guide_source_unknown or (access.status == "ready" and access.source_match) then return access, level, order end
     end
     for _, range in ipairs(ranges) do
         for level = math.max(range.firstLevel, context.level), range.lastLevel do
@@ -6694,6 +6749,7 @@ function BigBiSList:GetLevelingJourneyRows(className, specName, level, filters, 
     local index, rating = self:GetDataIndex(), self.ForeverGearRating
     local context = LEVELING_HELPERS.statGuideContext(self, className, specName, LEVELING_PHASE_KEY, level, filters)
     local groups, bySlot = {}, {}
+    local checkpoint = rating:GetWorkCheckpoint()
     for _, group in ipairs(currentGroups) do
         if not group.slot then return currentGroups end
         bySlot[group.slot] = group.items
@@ -6708,20 +6764,41 @@ function BigBiSList:GetLevelingJourneyRows(className, specName, level, filters, 
                 if row.stat_identity then current[row.stat_identity] = row end
             end
             local pool = rating:GetGuidePlacement(context, slot)
+            for key, later in pairs(slotSummary.upcoming or {}) do
+                if not slotSummary.items[key] then
+                    local row = current[key] or LEVELING_HELPERS.guideCandidate(index, later, context, nil, {})
+                    local scoped = {}
+                    for field, value in pairs(filters) do scoped[field] = value end
+                    scoped.level = math.max(level, later.level)
+                    if row and includeByFilter(row, scoped, phaseIndex(later.future_phase)) then
+                        local access = self:GetRowAcquisitionDisplay(row, scoped, context.phase, true, true)
+                        if access.future and access.source_match then
+                            row.guide_order, row.guide_route_level = 2, scoped.level
+                            row.acquisition_display, row.matched_access_option = access, access.option
+                            rows[#rows + 1] = row
+                        end
+                    end
+                end
+            end
             for key, record in pairs(slotSummary.items) do
+                if checkpoint then checkpoint() end
                 local row, access, routeLevel, order
-                if current[key] then
+                local ranges = record.recommended[1] and record.recommended or record.ranked
+                local useful = rating:LevelingRangeAt(ranges, level)
+                if current[key] and useful and level >= useful.firstLevel and level <= useful.lastLevel then
                     row = {}
                     for field, value in pairs(current[key]) do row[field] = value end
                     access, routeLevel, order = row.acquisition_display, level, 1
-                elseif record.recommended[1] then
+                elseif ranges[1] then
                     local placement = rating:LevelingPlacementAt(record, level, pool.byVariant[key])
                     row = LEVELING_HELPERS.guideCandidate(index, placement, context, nil, { effect = record.note })
-                    if row then access, routeLevel, order = LEVELING_HELPERS.journeyAccess(self, row, record.recommended, context, filters) end
+                    if row then access, routeLevel, order = LEVELING_HELPERS.journeyAccess(self, row, ranges, context, filters) end
                 end
                 if access then
                     row.acquisition_display, row.matched_access_option = access, access.option
-                    row.guide_order, row.guide_route_level = order, routeLevel
+                    row.guide_order, row.guide_route_level = (not record.recommended[1] and order == 1) and 4 or order, routeLevel
+                    row.guide_available_now = current[key] ~= nil
+                    if current[key] then row.acquisition_display, row.matched_access_option = current[key].acquisition_display, current[key].matched_access_option end
                     row.guide_levels = record.recommended
                     rows[#rows + 1] = row
                 end
@@ -6780,7 +6857,8 @@ function LEVELING_HELPERS.addPhaseGuideAlternatives(addon, index, grouped, conte
                 candidate.rank_group = "option"
                 if includeByFilter(candidate, filters, context.phaseIndex) then
                     local display = addon:GetRowAcquisitionDisplay(candidate, filters, context.phase, false, true)
-                    if display.status == "ready" and display.source_match then
+                    if (candidate.guide_source_unknown and not hasActiveSourceContextFilter(filters))
+                        or (display.status == "ready" and display.source_match) then
                         local history = addon:GetRecommendationHistory(candidate.item_id, context.class, context.spec, context.phase, group.slot)
                         candidate.history, candidate.recommendation_history = history, history
                         candidate.acquisition_display, candidate.matched_access_option = display, display.option
@@ -6854,7 +6932,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     end
 
     LEVELING_HELPERS.attachPhasePlacements(self, grouped, statGuide)
-    if statGuide and phaseKey == "PR" and statGuide.catalog.data.published_routes_only then
+    if statGuide and phaseKey == "PR" then
         LEVELING_HELPERS.addPhaseGuideAlternatives(self, index, grouped, statGuide, filters)
     end
 
@@ -7053,8 +7131,7 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
     end
 
     if guide then
-        guide.guideCandidates = LEVELING_HELPERS.buildGuideCandidates(self, index, grouped, guide)
-        guide.guideIndex = index
+        guide.guideCandidates, guide.preferredRows, guide.guideIndex = {}, grouped, index
         return LEVELING_HELPERS.filterGuideCandidates(self, guide, displayFilters)
     end
     local rows = {}
@@ -7085,7 +7162,7 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, classN
     local levelOK, level = pcall(UnitLevel, "player")
     if not levelOK or not addon.IsReadableValue(level) or level ~= 60 then return end
     local guide = LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, 60, filters)
-    if not guide or not guide.catalog.data.published_routes_only then return end
+    if not guide then return end
     local context = rating:GetContext(className, specName, phase, 60, owned)
     if not context then return end
     rows.statsPending = context.pending
@@ -7095,11 +7172,11 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, classN
         for _, placement in ipairs(rating:GetGuidePlacement(guide, slot).rows) do
             local item = placement.item
             local key = slot .. ":" .. item.key
-            local row = seen[key] or buildLevelingRecommendationRow(index, {
+            local held = context.ownedFacts[item.key]
+            local row = seen[key] or ((held or not placement.source_unknown) and buildLevelingRecommendationRow(index, {
                 class = className, spec = specName, item_id = item.id, slot = slot,
                 level_min = 60, level_max = 60, variant_id = item.variant_id, variant_name = item.name,
-            })
-            local held = context.ownedFacts[item.key]
+            }))
             if row and (not held or held.state ~= "equipped") then
                 if not seen[key] then
                     row.phase, row.leveling, row.computed_recommendation = phase, nil, nil

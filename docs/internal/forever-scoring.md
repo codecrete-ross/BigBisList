@@ -95,7 +95,7 @@ before compiling the active candidate pools.
 
 ## Reference weight verification
 
-Forever's gear guide ranks compatible items with reviewed routes against the
+Forever's Gear Guide ranks equip-compatible items with known stats against the
 default weights for its selected spec and level or phase. The pool is shared
 across browsing filters. Compare Slot retains the exact equipped reference
 and shows the live swap estimate when that comparison has a reviewed model.
@@ -107,24 +107,27 @@ OneForAll dungeon loot record.
 [Big Bad Pauldrons tooltip](https://bindonforever.com/item/9476)
 · [Zul’Farrak loot record](https://guide.wow4ever.se/en/items/9476)
 
-Bag and bank badges require a legal swap with both a positive total change
-and a meaningful role stat gain. The minimum is two role stat points and
-five percent of the displaced role score. A role gain that rounds to 0.1
-points qualifies for a genuinely empty slot. Defensive stats contribute to
-this threshold for tanks. Gold BiS uses the item’s explicit guide approval.
+Gear advice shows every reliable positive swap. The size of an upgrade depends
+on both its net gain and its gain for the role. The full Guide includes lower
+scores and exact random properties. The 70%, 85%, and 97% thresholds describe
+strength at the viewed level. Known equip restrictions and verified route gates
+determine when an item enters the pool. Missing acquisition evidence is shown
+as **Source unknown**. Activities use verified routes. Unresolved stats or
+effects in the slot qualify its leading score. Personal comparisons retain the
+rest of the actual loadout and enforce weapon and unique-equip restrictions.
 
-The Leveling Guide applies character and route eligibility before ranking
-with the reference scoring model. It shows the full qualifying band at 85%
-or greater and admits candidates from 70% in **More options**. Reviewed
-qualitative effects can also qualify for the list. Pre-Raid gives the
-reference placement alongside authored recommendations and their phase
-history. Owned exact items outside the verified reference pool can show a
-projected placement. Inserting an owned projection leaves the published
-placements and denominators stable. Personal comparisons evaluate legal
-swaps with the rest of the outfit retained. Ranged and wand DPS are separate
-from melee DPS. Weapon speed bonuses use the physical main hand.
-Trade eligibility in the verified pool follows the recorded source and its
-faction. A Bind-on-Equip flag lets the interface describe tradeability.
+The independent inventory and random-property budgets are pinned in
+`data/canonical/forever/guide_equipment.json`. To reproduce it from the listed
+client tables, run `python -m tools.forever_guide_catalog DIRECTORY --build 1.60.1.70959`.
+The exporter records each input digest. Source context can accompany a suffix
+on an observed link. Unknown modifiers retain their own identities.
+
+Dungeon Set 2 equipment has no equip-level requirement on several original
+item IDs. The 64 class and faction exchanges award 72 pieces. The Guide uses
+the verified level-58 quest gate and the character's class and faction for
+these items. The source reviews retain the reward and eligibility evidence
+separately from the equipment stats. The planner also checks the immediate
+prerequisite before suggesting pickup.
 
 The Protection Paladin leveling reference retains the tank survivability
 weights and credits Intellect at 0.55, mana per five seconds at 1.6, shield
@@ -148,6 +151,20 @@ gain prevents one additional point on a successful block. The reference
 weights need a measured balance of incoming damage, threat, and recovery
 for further calibration.
 [Forever beta combat-log measurements](https://github.com/magey/forever-warrior/issues/24)
+
+A November 18 review of build 1.60.1 combat logs found 55 dungeon boss
+encounters with a Holy Shield caster who took at least three landed melee
+attacks. Across 2,309 seconds of encounter time, the logs recorded 471 blocks,
+84,235 white melee damage and 212,671 Holy damage. The sample includes
+Zul'Farrak, Uldaman and Maraudon. It supports including physical attacks,
+block events and Holy damage in a Protection evaluation. The marginal threat
+from Strength, Attack Power and weapon DPS and the mana saved between pulls
+still need controlled gear changes. The sample contained no identified
+level-60 Pre-Raid boss comparison with controlled gear changes. Keep the 1.1
+leveling baseline. The level-60 profile still gives Strength, Attack Power
+and weapon DPS zero direct weight. Aegis of the Scarlet Commander reports
+its unscored Holy damage on block until a supported encounter model supplies
+its damage rate.
 
 At level 43, Assassination's leveling scores for Rondel and Thornspike are
 144.36 and 123.54. Their listed weapon DPS is 24.06 and 20.59. The comparison
@@ -301,7 +318,7 @@ or loses.
 - Stat tiers use the client rarity palette from poor gray through common white,
   uncommon green, rare blue, epic purple, and legendary orange. Placements
   use the full eligible variant pool and exact score ties. Percent of best uses
-  the underlying score. A projected native item enters only its own comparison.
+  the underlying score. Readable exact native items join the same slot pool.
   The tier colors the spec heading and rank in its tooltip block and the rank
   text in the gear views. Item names use their actual item quality. Forever
   tooltip blocks always show their comparisons and matching guide notes.
@@ -338,12 +355,11 @@ or loses.
 
 ## Verification and rollout
 
-- The Gear Guide chooses all eligible, role-relevant items at or above 70% of
-  the best qualifying score. Under 85% goes under **More options**, along with
-  applicable reviewed effects whose numeric ranking falls below that band.
-  Every rarity is eligible. Ownership and acquisition filters narrow that
-  set. The player's talents and gear determine the swap estimate and
-  **Within reach** actions.
+- The Gear Guide includes all compatible catalog items. The 70%, 85% and 97%
+  thresholds describe strength and its useful leveling ranges. Every rarity is
+  eligible. Verified utility retains its reviewed description. Searches and
+  ownership filters preserve the full slot denominator. The player's talents
+  and gear determine the swap estimate and **Within Reach** actions.
 - The native and in-addon comparisons share item facts and one worn-swap
   evaluator. Placement uses base gear. Swap estimates apply verified permanent
   modifiers from exact links. Unknown modifiers, unscored effects, and
@@ -362,8 +378,8 @@ or loses.
 - `scoring-audit --flavor forever --ranking-coverage` checks the full
   level and persona matrix. It reports promising equipment excluded from the
   verified pool or the displayed Guide, unresolved effects, and places where
-  lower-rarity gear outscores a higher-rarity choice. The contender check uses
-  the Guide's 70% cutoff and includes every positive role score in empty pools.
+  lower-rarity gear outscores a higher-rarity choice. The contender check enumerates the independent equipment inventory and its
+  exact rolls in occupied and empty slots, and reports omitted leaders.
   Use `--coverage-levels` for a narrower run. `--strict --breakdowns` adds the
   per-stat points from reviewed swap fixtures and checks them against Lua.
 - `suffix-audit --flavor forever --client-tables <directory> --client-build <build>`

@@ -603,7 +603,7 @@ def build_data(flavor: str) -> dict:
     leveling_recommendations = optional_rows("leveling_recommendations")
     availability_data = {}
     if flavor == "forever":
-        from tools.forever_comparison import compile_comparison_data, reviewed_guide_items
+        from tools.forever_comparison import compile_comparison_data, reviewed_guide_items, reviewed_source_items
         from tools.forever_scoring import reviewed_runtime_model
         from tools.project import FOREVER_CANONICAL_DIR
         availability_rows = (document("leveling_availability")["leveling_availability"]
@@ -614,6 +614,9 @@ def build_data(flavor: str) -> dict:
             existing = {item["id"] for item in items}
             items = sorted([*items, *(item for item in extra_items if item["id"] not in existing)], key=lambda item: item["id"])
             item_stats = sorted([*item_stats, *(item for item in extra_stats if item["id"] not in existing)], key=lambda item: item["id"])
+        if (FOREVER_CANONICAL_DIR / "guide_source_reviews.json").is_file():
+            source_items = reviewed_source_items(document("guide_source_reviews"), document("guide_equipment"))
+            items = merge_forever_leveling_rows(items, source_items)
         comparisons = compile_comparison_data(item_stats)
         availability_data = {
             "stat_rank": comparisons,

@@ -26,7 +26,7 @@ local ICON_KEYS = {
     "search", "clear", "starOutline", "starFilled", "sortAscending", "sortDescending",
     "chevronLeft", "chevronRight", "chevronDown", "chevronUp", "settings", "filter",
     "details", "check", "bag", "bank", "equipped", "clock", "warning", "info",
-    "plus", "minus", "restore", "hide", "menu",
+    "plus", "minus", "restore", "hide", "menu", "upgradeArrow",
 }
 local ICON_INDEX = {}
 for index, key in ipairs(ICON_KEYS) do ICON_INDEX[key] = index - 1 end
@@ -50,20 +50,24 @@ function Widgets:GearAdviceColor(tone)
     return 0.83, 0.85, 0.88
 end
 
-function Widgets:GearAdviceText(view)
-    if view.tone ~= "future" or not view.today then return view.today end
-    local index = ICON_INDEX.clock
+function Widgets:GearIconText(key, text)
+    local index = ICON_INDEX[key]
+    if not index or not text then return text end
     local x, y = index % 8 * 32, math.floor(index / 8) * 32
     return string.format("|TInterface\\AddOns\\BigBiSList\\assets\\ui-icons.tga:13:13:0:0:256:256:%d:%d:%d:%d|t %s",
-        x, x + 32, y, y + 32, view.today)
+        x, x + 32, y, y + 32, text)
+end
+
+function Widgets:GearAdviceText(view)
+    local icon = view.tone == "gain" and "upgradeArrow" or view.tone == "future" and "clock"
+    return self:GearIconText(icon, view.today)
 end
 
 function Widgets:AddGearAdviceLines(tooltip, service, view)
     for _, line in ipairs(service:LevelingPresentationLines(view)) do
         local r, g, b = 0.83, 0.85, 0.88
-        if line == view.today then
+        if line == self:GearAdviceText(view) then
             r, g, b = self:GearAdviceColor(view.tone)
-            line = self:GearAdviceText(view)
         elseif line == view.strength then
             if view.grade and view.grade > 0 then r, g, b = self:GetRankColor(view.grade)
             else r, g, b = 0.93, 0.93, 0.96 end

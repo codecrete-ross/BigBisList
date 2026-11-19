@@ -89,6 +89,12 @@ local function copy(values)
     return result
 end
 
+local function sameValues(left, right)
+    for key, value in pairs(left or {}) do if not right or right[key] ~= value then return false end end
+    for key in pairs(right or {}) do if not left or left[key] == nil then return false end end
+    return true
+end
+
 local function model()
     local data = BigBiSListData and BigBiSListData.stat_rank
     return data and data.version == VERSION and data or nil
@@ -119,6 +125,21 @@ function rating:NormalizeLink(id, link)
     if suffix ~= 0 then key = key .. ":" .. suffix end
     if #extended > 0 or suffixParameter ~= 0 then
         key = key .. ":" .. suffixParameter .. ":" .. table.concat(extended, ":")
+    end
+    -- Drop provenance only for a published suffix. Extra bonuses, upgrades and
+    -- unknown modifiers retain their full identity.
+    if suffix == 0 and bonusCount == 1 and (tonumber(fields[11]) or 0) == 0 then
+        local modifiers = tonumber(fields[15]) or 0
+        if modifiers == 0 or (modifiers == 1 and tonumber(fields[16]) == 28) then
+            local lastField = modifiers == 0 and 15 or 17
+            local plain = true
+            for index = lastField + 1, #fields do
+                if (tonumber(fields[index]) or 0) ~= 0 then plain = false; break end
+            end
+            local simple = tostring(id) .. ":0:0:0:1:" .. fields[14]
+            local published = plain and simple ~= key and self:GetPublishedFacts(simple)
+            if published and published.stats and not published.stats_unavailable then key = simple end
+        end
     end
     return key, link:sub(1, first - 1) .. "item:" .. table.concat(fields, ":") .. link:sub(last + 1), modFields,
         suffix ~= 0 or bonusCount > 0
@@ -173,6 +194,7 @@ function rating:GetGearSnapshotKey(owned)
 end
 
 function rating:GetWorkCheckpoint()
+    if self.guideWorker and coroutine.running() == self.guideWorker then return self.guideCheckpoint end
     if self.opportunityWorker and coroutine.running() == self.opportunityWorker then return self.opportunityCheckpoint end
     return addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
 end
@@ -180,17 +202,45 @@ end
 function rating:GetCatalog(data)
     if self.catalog and self.catalog.data == data then return self.catalog end
     local checkpoint = rating:GetWorkCheckpoint()
-    local catalog = { data = data, items = {}, slots = {} }
+    local _, build = call(GetBuildInfo)
+    local catalog = { data = data, slots = {}, families = {}, observed = {},
+        rollBuildMatches = not data.roll_build or not tonumber(build) or tonumber(build) == data.roll_build }
     for key, row in pairs(data.items) do
         if checkpoint then checkpoint() end
-        local item = { key = key }
-        for index, field in ipairs(data.item_fields) do item[field] = row[index] end
-        item.variant_link = data.variant_links and data.variant_links[key]
-        catalog.items[key] = item
-        local slot = item.slot
+        local slot = row[3]
         catalog.slots[slot] = catalog.slots[slot] or {}
-        table.insert(catalog.slots[slot], item)
+        table.insert(catalog.slots[slot], key)
     end
+    catalog.items = setmetatable({}, { __index = function(items, key)
+        local row = data.items[key]
+        local item = { key = key }
+        if row then
+            for index, field in ipairs(data.item_fields) do item[field] = row[index] end
+            item.variant_link = data.variant_links and data.variant_links[key]
+        else
+            local id, suffix = key:match("^(%d+):0:0:0:1:(%d+)$")
+            local base = id and items[id]
+            local group = base and base.roll_group and data.roll_groups[base.roll_group]
+            if not group or not contains(group, tonumber(suffix)) then return end
+            local template = data.roll_templates[suffix]
+            local physical = base.stats and (base.stats.dps or base.stats.ranged_dps or base.stats.wand_dps
+                or (base.armor_type == "Shield" and base.stats.block_value))
+            local stats = catalog.rollBuildMatches and base.roll_budget and template[2] and (base.roll_complete or physical) and copy(base.stats)
+            if stats then
+                stats.armor = stats.armor or base.roll_armor
+                for stat, basis in pairs(template[2]) do
+                    stats[stat] = (stats[stat] or 0) + math.floor(base.roll_budget * basis / 10000 + 0.5)
+                end
+            end
+            item = copy(base)
+            item.key, item.variant_id, item.has_random_stats = key, key, nil
+            item.stats, item.stats_unavailable = stats, not stats or nil
+            item.name = base.name .. " " .. template[1]
+            item.variant_link = "item:" .. id .. "::::::::::::1:" .. suffix
+        end
+        rawset(items, key, item)
+        return item
+    end })
     if checkpoint then checkpoint() end
     if self.catalog and self.catalog.data == data then return self.catalog end
     self.catalog = catalog
@@ -199,9 +249,32 @@ function rating:GetCatalog(data)
     return catalog
 end
 
+local function visitSlot(catalog, slot, eligibleFamily, visit, checkpoint)
+    for _, key in ipairs(catalog.slots[slot] or {}) do
+        if checkpoint then checkpoint() end
+        local base = catalog.items[key]
+        if not base.roll_group then
+            visit(base)
+        elseif eligibleFamily(base) then
+            local family = catalog.families[key]
+            if not family then
+                family = {}
+                for _, suffix in ipairs(catalog.data.roll_groups[base.roll_group]) do
+                    local exact = key .. ":0:0:0:1:" .. suffix
+                    -- Explicitly reviewed rolls also have their own inventory row.
+                    if not catalog.data.items[exact] then family[#family + 1] = catalog.items[exact] end
+                end
+                catalog.families[key] = family
+            end
+            for _, variant in ipairs(family) do visit(variant) end
+        end
+    end
+end
+
 function rating:GetPublishedFacts(key)
     local data = model()
-    return data and self:GetCatalog(data).items[key]
+    local catalog = data and self:GetCatalog(data)
+    return catalog and (catalog.observed[key] or catalog.items[key])
 end
 
 local function addEffect(effects, line)
@@ -397,6 +470,14 @@ function rating:InvalidateItem(id)
     self.loadedItems = self.loadedItems or {}
     self.loadedItems[id] = true
     if self.native then self.native[id] = nil end
+    if self.catalog then
+        for key, facts in pairs(self.catalog.observed) do
+            if facts.id == id then
+                self.catalog.observed[key] = nil
+                self.guideData, self.levelingSummaryData = nil, nil
+            end
+        end
+    end
     self.contexts, self.inventory = nil, nil
     if self.tooltipItem and self.tooltipItem.entry.item_id == id then self.tooltipItem = nil end
     if addon.ForeverScoring then addon.ForeverScoring:Invalidate() end
@@ -411,10 +492,44 @@ local function resolveLink(self, context, entry)
     local facts = key and context.catalog.items[key] or (not link and base)
     if facts and facts.has_random_stats then facts = nil end
     local unavailable
-    if statLink and (not facts or not facts.level) then
+    local checkRoll = facts and facts.roll_group and facts.variant_id
+    if statLink and (checkRoll or not facts or facts.stats_unavailable or not facts.level) then
         local native
         native, unavailable = self:ReadNative(id, key, statLink, base)
-        if facts and native then
+        if native and (checkRoll or not facts or facts.stats_unavailable) and next(native.stats or {}) then
+            -- Keep the readable exact item in the same slot pool on the next
+            -- refresh. A later unreadable link never erases observed facts.
+            local seen = context.catalog.observed[key]
+            local old = seen and seen.nativeFacts
+            if not old or (old ~= native and (old.level ~= native.level or old.name ~= native.name
+                or old.unreadable_effects ~= native.unreadable_effects or old.max_equipped ~= native.max_equipped
+                or old.unique_group ~= native.unique_group or not sameValues(old.stats, native.stats)
+                or not sameValues(old.effects, native.effects) or not sameValues(old.classes, native.classes)
+                or not sameValues(old.races, native.races))) then
+                local observed = copy(facts)
+                for field, value in pairs(native) do observed[field] = value end
+                observed.stats = copy(facts and facts.stats)
+                for stat, value in pairs(native.stats) do observed.stats[stat] = value end
+                observed.nativeFacts, observed.stats_unavailable = native, nil
+                observed.variant_id = (facts and facts.variant_id) or (key ~= tostring(id) and key or nil)
+                observed.variant_link = (facts and facts.variant_link) or link
+                context.catalog.observed[key] = observed
+                self.guideData, self.levelingSummaryData = nil, nil
+                self.contexts, self.inventory = nil, nil
+                if not self.observedRefresh and addon.UI and addon.UI.frame and addon.UI.frame:IsShown()
+                    and C_Timer and C_Timer.After then
+                    self.observedRefresh = true
+                    C_Timer.After(0, function()
+                        self.observedRefresh = nil
+                        addon:RefreshUI("query", "item stats available")
+                        if addon.ScheduleItemTooltipRefresh then addon:ScheduleItemTooltipRefresh() end
+                    end)
+                end
+            end
+            facts = context.catalog.observed[key]
+        elseif facts and facts.stats_unavailable then
+            facts = nil
+        elseif facts and native then
             facts = copy(facts)
             facts.level = native.level
         elseif not facts then
@@ -422,7 +537,7 @@ local function resolveLink(self, context, entry)
         end
     end
     if unavailable == "loading" then context.pending[id] = true end
-    return facts, unavailable
+    return facts or (key and context.catalog.observed[key]), unavailable
 end
 
 function rating:GetExactBaseFacts(id, link)
@@ -590,7 +705,8 @@ end
 
 local function fitsEquipment(context, item, slot)
     if item.slot ~= slot and not (item.slot == "One Hand" and (slot == "Main Hand" or slot == "Off Hand")) then return false end
-    if not permitted(item.classes, context.class) or not permitted(item.races, context.race) then return false end
+    if not permitted(item.classes, context.class) or not permitted(item.races, context.race)
+        or not permitted(item.race_ids, context.raceId) then return false end
     local policy, weapon, armor = context.policy, item.weapon_subtype, item.armor_type
     if not permitted(policy.slot_weapon_types and policy.slot_weapon_types[slot], weapon) and weapon then return false end
     if not context.leveling then
@@ -692,7 +808,7 @@ end
 
 local function score(context, item, roleOnly, guide, stats, slot)
     stats = stats or (item and item.stats)
-    if not stats then return nil end
+    if not stats or item.stats_unavailable then return nil end
     local weights = rating:ReferenceWeights(context, roleOnly, guide)
     local scorer = addon.ForeverScoring
     slot = slot or item.slot
@@ -783,7 +899,34 @@ function rating:GetReviewedGuideEffect(context, item)
 end
 
 local function resultFor(context, item, status, slot)
-    local points, conditional = score(context, item, nil, nil, nil, slot)
+    -- Reference loadouts have no talent ranks. Identical weight bands can
+    -- share the item score; equip levels and routes still vary at each level.
+    local cache = context.referenceScores
+    if not cache and context.catalog then
+        local catalog = context.catalog
+        catalog.scoreBands = catalog.scoreBands or {}
+        local key = table.concat({context.class, context.spec, context.phase, context.race or "", tostring(context.weights)}, "/")
+        cache = catalog.scoreBands[key]
+        if not cache then
+            catalog.scoreBandOrder = catalog.scoreBandOrder or {}
+            if #catalog.scoreBandOrder >= 12 then catalog.scoreBands[table.remove(catalog.scoreBandOrder, 1)] = nil end
+            cache = {}
+            catalog.scoreBands[key] = cache
+            table.insert(catalog.scoreBandOrder, key)
+        end
+        context.referenceScores = cache
+    end
+    local points, conditional
+    if item then
+        local byItem = cache and cache[slot]
+        if cache and not byItem then byItem = {}; cache[slot] = byItem end
+        local known = byItem and byItem[item]
+        if known then points, conditional = known[1], known[2]
+        else
+            points, conditional = score(context, item, nil, nil, nil, slot)
+            if byItem then byItem[item] = { points, conditional } end
+        end
+    end
     if points == nil and not status then
         status = item and (item.utility and "utility" or (next(item.effects or {}) and "effect")) or "unavailable"
     end
@@ -846,11 +989,28 @@ local function currentComparisonSlot(context, physical, slots)
     return slot, handType
 end
 
+local function guideAccess(context, id)
+    if not addon.IsStatRankGuideItemAvailable then return "unverified_route" end
+    context.guideAccess = context.guideAccess or {}
+    local access = context.guideAccess[id]
+    if access == nil then
+        local available, reason, phase = addon:IsStatRankGuideItemAvailable(id, context)
+        access = available and "verified" or reason or "unverified_route"
+        context.guideAccess[id] = access
+        if phase then
+            context.futurePhases = context.futurePhases or {}
+            context.futurePhases[id] = phase
+        end
+    end
+    return access
+end
+
 local function inScope(context, item)
     local scoped = context.inScope[item.id]
     if scoped == nil then
-        if context.guide and context.catalog.data.published_routes_only and addon.IsStatRankGuideItemAvailable then
-            scoped = addon:IsStatRankGuideItemAvailable(item.id, context)
+        if context.guide then
+            local access = guideAccess(context, item.id)
+            scoped = access == "verified" or access == "unverified_route" or access == "missing_item_record"
         else
             scoped = not addon.ComparisonItemInScope or addon:ComparisonItemInScope(item.id, context.phase, context.phaseIndex)
         end
@@ -870,36 +1030,63 @@ end
 
 local function slotPool(context, physical, slot, handType, gear, cacheKey, checkpoint)
     if context.pools[cacheKey] then return context.pools[cacheKey] end
-    checkpoint = checkpoint or (addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint())
+    checkpoint = checkpoint or rating:GetWorkCheckpoint()
     local equipped = gear[physical]
     local reference = equipped and equipped.facts
-    local candidates, rows = {}, {}
-    local verified = context.catalog.data.published_routes_only and addon.IsStatRankGuideItemAvailable
-    context.verifiedPeers = context.verifiedPeers or {}
+    local candidates, rows, upcoming = {}, {}, {}
+    local unresolved, eligible = false, {}
     local function add(item, ownership)
         if checkpoint then checkpoint() end
+        item = context.catalog.observed[item.key] or item
         if handType and offHandType(item) ~= handType then return end
-        if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
-            or not inScope(context, item) then return end
-        if verified and not context.guide then
-            local available = context.verifiedPeers[item.id]
-            if available == nil then
-                available = addon:IsStatRankGuideItemAvailable(item.id, context)
-                context.verifiedPeers[item.id] = available
-            end
-            if not available then return end
+        local family = item.roll_group and item.id or item
+        local fits = eligible[family]
+        if fits == nil then
+            fits = usable(context, item, slot) and legalSwap(context, item, physical, slot, gear)
+            eligible[family] = fits or false
         end
+        if not fits then
+            if item.has_random_stats and not item.roll_group and item.level and item.level <= context.level
+                and fitsEquipment(context, item, slot) and inScope(context, item) and not item.excluded then
+                unresolved = true
+                candidates[item.key] = { item = item, status = "unavailable", spec = context.spec, level = context.level,
+                    phase = context.phase, slot = slot, source_unknown = guideAccess(context, item.id) ~= "verified" }
+            end
+            return
+        end
+        local access = guideAccess(context, item.id)
+        if access == "future_phase" then
+            if context.guide then
+                upcoming[#upcoming + 1] = { item = item, level = context.level, spec = context.spec, slot = slot,
+                    phase = context.phase, status = access, future_phase = context.futurePhases[item.id] }
+            end
+            return
+        end
+        if access == "character_restriction" or access == "route_out_of_scope" or not inScope(context, item) then return end
         local entry = resultFor(context, item, nil, slot)
+        entry.source_unknown = access ~= "verified" or nil
         entry.setup_rank = not context.guide or nil
         entry.ownership = ownership
+        if not item.utility and (not entry.score or entry.conditional) then unresolved = true end
         candidates[item.key] = entry
     end
-    for _, item in ipairs(context.catalog.slots[slot] or {}) do add(item) end
+    local function eligibleFamily(base)
+        if base.excluded or not base.level or base.level > context.level or not fitsEquipment(context, base, slot)
+            or (handType and offHandType(base) ~= handType) or not legalSwap(context, base, physical, slot, gear) then return false end
+        local access = guideAccess(context, base.id)
+        if access == "route_out_of_scope" or access == "character_restriction" then return false end
+        eligible[base.id] = true
+        return true
+    end
+    visitSlot(context.catalog, slot, eligibleFamily, add, checkpoint)
     if slot == "Main Hand" or slot == "Off Hand" then
-        for _, item in ipairs(context.catalog.slots["One Hand"] or {}) do add(item) end
+        visitSlot(context.catalog, "One Hand", eligibleFamily, add, checkpoint)
+    end
+    for key, item in pairs(context.catalog.observed) do
+        if not candidates[key] then add(item) end
     end
     for key, ownership in pairs(context.ownedFacts) do
-        if candidates[key] then candidates[key].ownership = ownership end
+        if candidates[key] then candidates[key].ownership = ownership else add(ownership.facts, ownership) end
     end
     for _, entry in pairs(candidates) do
         if checkpoint then checkpoint() end
@@ -928,13 +1115,14 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey, check
     for _, entry in ipairs(rows) do
         if checkpoint then checkpoint() end
         if entry.rank then
+            entry.provisional = entry.rank == 1 and (unresolved or entry.source_unknown) or nil
             entry.total = count
             entry.tied = ties[entry.rank] > 1 or nil
             entry.conditional_tie = entry.tied and conditionalTies[entry.rank] or nil
             if count > 1 and bestScore > 0 then setRankTier(entry, bestScore, tiers) end
         end
     end
-    local pool = { rows = rows, slot = slot, byVariant = candidates, count = count, bestScore = bestScore,
+    local pool = { rows = rows, upcoming = upcoming, slot = slot, byVariant = candidates, count = count, bestScore = bestScore,
         scope = { context = context, key = cacheKey, physical = physical, slot = slot, handType = handType, gear = gear } }
     if equipped then
         local placement = resultFor(context, reference, equipped.status, slot)
@@ -953,29 +1141,26 @@ function rating:GetPlacement(context, physical, slots)
 end
 
 function rating:GetComparisonCandidates(pool)
-    local context, scope = pool.scope.context, pool.scope
-    local rows, projected = {}, {}
+    if pool.comparisonRows then return pool.comparisonRows end
+    local context = pool.scope.context
+    local guide = context.leveling and self:GetGuideContext(context.class, context.spec, context.phase, context.level,
+        context.race, context.faction)
+    local summary = guide and self:GetLevelingSummary(guide)
+    local ranges = summary and summary.slots[pool.slot]
+    if not ranges then return pool.rows end
+    local checkpoint = self:GetWorkCheckpoint()
+    local rows = {}
     for _, entry in ipairs(pool.rows) do rows[#rows + 1] = entry end
-    local function add(item, ownership)
-        if not pool.byVariant[item.key] and not projected[item.key]
-            and (not scope.handType or offHandType(item) == scope.handType)
-            and usable(context, item, scope.slot) and legalSwap(context, item, scope.physical, scope.slot, scope.gear)
-            and inScope(context, item) then
-            local placement = pool.reference and pool.reference.item == item and pool.reference
-                or resultFor(context, item, nil, scope.slot)
-            placement.ownership = ownership
-            if placement.score ~= nil then self:ProjectPlacement(item, placement, pool) end
-            rows[#rows + 1] = placement
-            projected[item.key] = true
+    for key, record in pairs(ranges.items) do
+        if checkpoint then checkpoint() end
+        local item = record.item
+        if not pool.byVariant[key] and usable(context, item, pool.slot)
+            and legalSwap(context, item, pool.scope.physical, pool.slot, pool.scope.gear) then
+            local other = self:LevelingPlacementAt(record, context.level)
+            if other and other.level ~= context.level then rows[#rows + 1] = other end
         end
     end
-    for _, ownership in pairs(context.ownedFacts) do add(ownership.facts, ownership) end
-    if context.catalog.data.published_routes_only then
-        for _, item in ipairs(context.catalog.slots[scope.slot] or {}) do add(item) end
-        if scope.slot == "Main Hand" or scope.slot == "Off Hand" then
-            for _, item in ipairs(context.catalog.slots["One Hand"] or {}) do add(item) end
-        end
-    end
+    pool.comparisonRows = rows
     return rows
 end
 
@@ -984,10 +1169,10 @@ function rating:GetGuidePlacement(context, slot, checkpoint)
 end
 
 local function levelingGrade(entry)
-    if not entry or not entry.rank or not entry.score or entry.score <= 0 then return nil end
+    if not entry or not entry.rank or entry.score == nil then return nil end
     if entry.total == 1 then return 0 end
     local percent = entry.score_percent
-    if not percent then return nil end
+    if not percent then return 0 end
     if percent >= 97 then return 5 end
     if percent >= 85 then return 4 end
     if percent >= 70 then return 3 end
@@ -1009,6 +1194,10 @@ local function summarizeGuideSlot(context, slot, summary, checkpoint)
     local choices = addon:GetStatRankGuideChoices(context, pool, checkpoint)
     local level = context.level
     local leader = pool.rows[1]
+    for _, entry in ipairs(pool.upcoming) do
+        summary.upcoming = summary.upcoming or {}
+        if not summary.upcoming[entry.item.key] then summary.upcoming[entry.item.key] = entry end
+    end
     if leader and leader.rank == 1 then summary.leaders[level] = leader end
     for _, entry in ipairs(pool.rows) do
         checkpoint()
@@ -1027,7 +1216,7 @@ local function summarizeGuideSlot(context, slot, summary, checkpoint)
         local grade = levelingGrade(entry)
         if grade and grade >= 3 then extendLevelRange(record.strength, level, grade, entry.conditional) end
         if entry.rank == 1 then extendLevelRange(record.leading, level) end
-        if choice then
+        if choice and choice.recommended then
             record.note = choice.effect or record.note
             extendLevelRange(record.recommended, level)
         end
@@ -1076,7 +1265,7 @@ local function scheduleLevelingSummaries(self)
             summary.worker = coroutine.create(function()
                 local function checkpoint()
                     summary.steps = summary.steps + 1
-                    if summary.steps >= 2048 or (summary.deadline and debugprofilestop() >= summary.deadline) then
+                    if summary.steps >= 65536 or (summary.deadline and summary.steps % 16 == 0 and debugprofilestop() >= summary.deadline) then
                         coroutine.yield()
                     end
                 end
@@ -1354,7 +1543,8 @@ end
 
 local function referenceItem(instance, slotLabel)
     local linkName = instance.item_link and instance.item_link:match("|h%[(.-)%]|h")
-    return { name = linkName or instance.facts.name, slot = slotLabel, state = instance.state, key = instance.facts.key }
+    return { name = linkName or instance.facts.name, slot = slotLabel, state = instance.state, key = instance.facts.key,
+        facts = instance.facts }
 end
 
 local function wornReplacement(context, result, key, label)
@@ -1473,9 +1663,32 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
     return best
 end
 
+local function explainBlockEffect(context, result, item)
+    if not result or not result.conditional or result.unscoredHolyBlock ~= nil then return end
+    local function unscored(piece)
+        for _, rule in ipairs(piece and piece.effect_rules or {}) do
+            if rule.trigger == "block" and rule.school == "holy" then
+                local scorer, scenario = addon.ForeverScoring, context.referenceScenario
+                if not scorer or not scenario.effect_expectations then return true end
+                local shield = scorer:ReferenceItem(piece, piece.stats or {})
+                local build = context.activeBuild
+                local _, _, applied = scorer.ScoreLoadout({[17] = shield}, rating:ReferenceWeights(context),
+                    build and build.profile.operations or {}, build and build.ranks or {}, scenario, context.raceId, context.level)
+                if not (applied[17] and applied[17][rule.label]) then return true end
+            end
+        end
+    end
+    result.unscoredHolyBlock = unscored(item) or false
+    for _, old in ipairs(result.replacements or {}) do
+        if unscored(old.facts) then result.unscoredHolyBlock = true; break end
+    end
+end
+
 function rating:GetGuideSwap(context, item, physical, slot, link, includeBreakdown)
     if not context or not item then return nil end
-    return wornSwap(context, groupFor(item), item, link, nil, { physical = physical, slot = slot, breakdown = includeBreakdown })
+    local result = wornSwap(context, groupFor(item), item, link, nil, { physical = physical, slot = slot, breakdown = includeBreakdown })
+    explainBlockEffect(context, result, item)
+    return result
 end
 
 function rating:ProjectPlacement(item, placement, pool)
@@ -1522,6 +1735,34 @@ local function referencePlacement(context, item, slot)
     local pool = rating:GetGuidePlacement(reference, slot)
     local known = pool.byVariant[item.key]
     if known then return known, pool.scope end
+    local access = guideAccess(reference, item.id)
+    if access == "future_phase" then
+        return { item = item, slot = slot, phase = context.phase, level = context.level, status = access,
+            future_phase = reference.futurePhases[item.id] }
+    end
+    if access == "route_out_of_scope" or access == "character_restriction" then
+        if reference.leveling then
+            local records = rating:GetLevelingSummary(reference)
+            local entry = rating:LevelingPlacementAt(rating:GetLevelingRecord(records, slot, item.key), context.level)
+            if entry then return entry end
+            local function at(level)
+                local other = contextAtLevel(reference, "LEVELING", level)
+                if usable(other, item, slot) and inScope(other, item) then
+                    local peers = rating:GetGuidePlacement(other, slot)
+                    return peers.byVariant[item.key], peers.scope
+                end
+            end
+            for level = math.max(context.level + 1, item.level), addon.maxLevelingLevel or 59 do
+                local entry, scope = at(level)
+                if entry then return entry, scope end
+            end
+            for level = context.level - 1, math.max(1, item.level), -1 do
+                local entry, scope = at(level)
+                if entry then return entry, scope end
+            end
+        end
+        return { item = item, slot = slot, phase = context.phase, level = context.level, status = "out_of_scope" }
+    end
     local placement = resultFor(context, item, nil, slot)
     if placement.score == nil then return placement end
     return rating:ProjectPlacement(item, placement, pool), pool.scope
@@ -1824,6 +2065,7 @@ local function previewTooltipItem(context, candidate, extraCopy, options)
         local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity, options.storageInstance)
         result.forecast = comparison or { status = "blocked" }
         result.forecast.level, result.forecast.phase = preview.level, preview.phase
+        explainBlockEffect(preview, result.forecast, item)
     end
     return result
 end
@@ -1862,6 +2104,7 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
     else
         result.placement, result.rankScope = referencePlacement(context, item, result.slot)
     end
+    explainBlockEffect(context, result, item)
     result.effectNote = rating:GetReviewedGuideEffect(context, item)
         or (result.conditional and hasUnscoredEffect(item) and "Some item effects have an unverified value")
     if result.conditional and result.basis == "reference" and result.delta and result.delta < 0
@@ -2003,6 +2246,7 @@ local function storageComparison(context, group, state, instance, candidate, res
             end
         end
     end
+    explainBlockEffect(context, result, candidate.facts)
     comparison.improves = rating:ReliableGain(result) ~= nil
     return comparison
 end
@@ -2119,6 +2363,7 @@ end
 
 function rating:Label(entry, layout, showProjection)
     if not entry then return "Stats unavailable" end
+    if entry.future_phase then return "Available with " .. addon:GetPhaseDisplayName(entry.future_phase) end
     local projected = showProjection and entry.projected
     if entry.rank and entry.total > 1 then
         local label = projected and "Projected" or (entry.tier and entry.tier.label or "Rank")
@@ -2162,7 +2407,13 @@ end
 function rating:GetRowItem(row)
     if not row then return nil end
     local item = row.stat_rank and row.stat_rank.item
-    if item and not item.has_random_stats then return item end
+    if item and item.stats_unavailable and not item.has_random_stats then
+        local exact = row.item_link or item.variant_link or ("item:" .. item.id)
+        local loaded = self:GetTooltipItem(item.id, exact)
+        if loaded and loaded.facts then return loaded.facts end
+        if loaded and loaded.status == "loading" then return nil, "loading" end
+    end
+    if item and (not item.has_random_stats or row.stat_rank.status == "unavailable") then return item end
     if not row.item_id then return nil end
     local key = row.variant_id or self:NormalizeLink(row.item_id, row.item_link) or tostring(row.item_id)
     local facts = self:GetPublishedFacts(key)
@@ -2238,6 +2489,7 @@ end
 
 function rating:GetLiveLevelingSwap(item, link, owned, physical, player, equipped)
     if not player or not player.spec or not item then return nil end
+    if item.stats_unavailable or item.has_random_stats then return { status = "unavailable" } end
     local context = self:GetContext(player.class, player.spec, player.phase, player.level, owned)
     if not context then return nil end
     local revision = addon.ForeverScoring and addon.ForeverScoring.revision
@@ -2265,6 +2517,7 @@ function rating:GetLiveLevelingSwap(item, link, owned, physical, player, equippe
         result.storage = storage
         if not storage then result.rival = self:GetOwnedRival(context, candidate, result) end
     end
+    explainBlockEffect(context, result, item)
     context.liveLevelingSwaps[key] = result
     return result
 end
@@ -2300,6 +2553,7 @@ local function levelingRankText(placement)
     local grade = levelingGrade(placement)
     local level = placement.level
     if not grade then
+        if placement.future_phase then return "Available with " .. addon:GetPhaseDisplayName(placement.future_phase) end
         if placement.status == "out_of_scope" then return "Outside Leveling rankings" end
         return STATUS_LABELS[placement.status] or "Gear comparison unavailable"
     end
@@ -2307,7 +2561,11 @@ local function levelingRankText(placement)
     if placement.total == 1 then
         label = "Only ranked option"
     elseif placement.rank == 1 then
-        label = placement.tied and "Tied for best" or "Best known"
+        if placement.provisional or placement.projected then
+            label = placement.tied and "Tied for highest known score" or "Highest known score"
+        else
+            label = placement.tied and "Tied for best" or "Best in Slot"
+        end
     else
         label = LEVELING_GRADES[grade] or "Better options"
     end
@@ -2342,6 +2600,7 @@ local function gearVerdict(self, input, view)
     if unresolved or result.status == "loading" or result.status == "unavailable" or result.status == "blocked" then
         local status = unresolved or result.status
         view.today = (status == "loading" and "Waiting for item stats" or status == "blocked" and "No legal swap"
+            or (input.item and (input.item.stats_unavailable or input.item.has_random_stats)) and "Stats unavailable"
             or "Gear comparison unavailable") .. suffix
         view.tone = "unknown"
         return
@@ -2353,7 +2612,7 @@ local function gearVerdict(self, input, view)
             local location = "your bags"
             for _, piece in ipairs(alternative.incoming) do if piece.state == "bank" then location = "your bank" end end
             view.tone, view.gain = "gain", alternative.delta
-            view.today = "↑ Upgrade in " .. location .. " · " .. itemNames(alternative.incoming)
+            view.today = "Upgrade in " .. location .. " · " .. itemNames(alternative.incoming)
             view.evidence = self:EstimateSwapPoints(alternative.delta) .. " over " .. itemNames(alternative.replacements)
         end
         return
@@ -2367,6 +2626,7 @@ local function gearVerdict(self, input, view)
     if conditional then
         view.today = delta > 0 and "Possible upgrade" or "Depends on your setup"
         local item = input.item
+        if result.unscoredHolyBlock then view.today = view.today .. " · Holy damage on block unscored" end
         for _, effect in ipairs(item and item.effects or {}) do
             if type(effect) == "string" and effect:lower():find("chance on hit", 1, true) then
                 view.today = view.today .. " · Chance-on-hit effect unscored"
@@ -2390,11 +2650,11 @@ local function gearVerdict(self, input, view)
         if result.status == "empty" then label = "Fills your empty " .. slot .. " slot" end
         if bestBag then label = "Equip now · " .. label end
         if input.chooseReward then label = "Choose this reward · " .. label end
-        view.today = "↑ " .. label
+        view.today = label
         if swap.rival then
             local kind = result.slot == "Ring" and "ring" or result.slot == "Trinket" and "trinket" or "option"
             view.today, view.tone = "You own a stronger " .. kind .. " · " .. swap.rival.name, nil
-            view.evidence = "↑ " .. view.evidence
+            view.evidenceGain = true
         end
         local partners = {}
         for _, piece in ipairs(result.incoming or {}) do
@@ -2427,7 +2687,7 @@ end
 function rating:LevelingPresentation(input)
     local item, placement, swap, playerLevel = input.item, input.placement, input.swap, input.playerLevel
     local record = input.record
-    local view = {}
+    local view = { sourceUnknown = placement and placement.source_unknown }
     if placement and placement.phase == "LEVELING" then
         view.rank, view.grade = levelingRankText(placement)
     end
@@ -2460,7 +2720,7 @@ function rating:LevelingPresentation(input)
     view.today = view.today or view.requirement
     if not view.today and playerLevel and not forecast and item and item.level and item.level <= playerLevel then
         local status = placement and placement.status
-        view.today = status == "incompatible" and "No comparison for this spec" or "Gear comparison unavailable"
+        view.today = item.stats_unavailable and "Stats unavailable" or status == "incompatible" and "No comparison for this spec" or "Gear comparison unavailable"
         if status == "out_of_scope" then view.today = nil end
     end
     if placement and placement.phase == "PR" then
@@ -2472,12 +2732,16 @@ function rating:LevelingPresentation(input)
     if view.grade then
         local label = COMPACT_GRADES[view.grade]
         if placement.total == 1 then label = "Only option"
-        elseif placement.rank == 1 then label = placement.tied and "Tied best" or "Best" end
+        elseif placement.rank == 1 then
+            label = (placement.provisional or placement.projected) and (placement.tied and "Tied highest" or "Highest known")
+                or (placement.tied and "Tied best" or "Best in Slot")
+        end
         if placement.conditional or placement.conditional_tie or placement.projected then label = "Est. " .. label end
         view.compact = "Lv " .. placement.level .. " " .. label
     end
     if range and view.rank and placement and placement.rank ~= 1 and range.grade == view.grade
-        and range.firstLevel <= evaluated and range.lastLevel >= evaluated and not input.explicitPreview then
+        and range.firstLevel <= evaluated and range.lastLevel >= evaluated and not input.explicitPreview
+        and (not input.viewedLevel or input.viewedLevel == evaluated) then
         view.strength = self:LevelingRangeText(range)
         view.compact = view.compactRange
     end
@@ -2489,11 +2753,13 @@ function rating:LevelingPresentationLines(view)
     local function add(text)
         if text then lines[#lines + 1] = text end
     end
-    add(view.today)
-    add(view.evidence)
+    local widgets = addon.Widgets
+    add(widgets and widgets:GearAdviceText(view) or view.today)
+    add(widgets and widgets:GearIconText(view.evidenceGain and "upgradeArrow", view.evidence) or view.evidence)
     if view.requirement ~= view.today then add(view.requirement) end
     if view.strength ~= view.today then add(view.strength) end
     if view.range ~= view.strength then add(view.range) end
     add(view.acquisition)
+    if view.sourceUnknown then add("Source unknown") end
     return lines
 end

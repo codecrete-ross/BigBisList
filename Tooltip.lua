@@ -620,6 +620,12 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     if statBlock then
         self.UI:QueueStatLoads(statBlock.pending)
         local state = tooltip.__bigBisListState
+        local function rangesReady()
+            for _, row in ipairs(statBlock.rows) do
+                if row.summary and not row.summary.slots[row.summarySlot] then return end
+            end
+            rebuildTooltip(tooltip, state)
+        end
         for _, row in ipairs(statBlock.rows) do
             if row.summary then
                 self.ForeverGearRating:RequestLevelingSummary(row.summary, { row.summarySlot }, {
@@ -628,7 +634,7 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
                         return tooltip.__bigBisListState == state and (not tooltip.IsShown or tooltip:IsShown())
                             and self:GetTooltipPlayerContext() == live
                     end,
-                    onReady = function() rebuildTooltip(tooltip, state) end,
+                    onReady = rangesReady,
                 })
             end
         end

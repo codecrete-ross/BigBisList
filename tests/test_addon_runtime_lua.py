@@ -921,6 +921,8 @@ end
 
 CreateFrame = function(_, _, parent) return frame(parent) end
 BigBiSList.Widgets = {
+    GearAdviceColor = function() return 0.83, 0.85, 0.88 end,
+    GetRankColor = function() return 1, 1, 1 end,
     CreateItemRow = function(_, parent, height)
         local row = frame(parent, 0, height)
         row.highlight = frame(row)
@@ -1682,6 +1684,7 @@ dofile("UI.lua")
 local UI = BigBiSList.UI
 local loaded = {}
 BigBiSList.Widgets = {
+    GetRankColor = function() return 1, 1, 1 end,
     BindTooltip = function(_, owner, render) owner.tooltipRenderer = render end,
     SetCellText = function(_, label, text, maxLines, lineHeight, width)
         label.fullText = text
@@ -1768,7 +1771,7 @@ firstButton.scripts.OnClick(firstButton, "RightButton")
 equal(inspectorCalls, 0, "empty pooled icon cannot open the previous inspector")
 ''')
 
-    def test_v18_defaults_expose_mode_view_and_inspector_state(self):
+    def test_current_defaults_expose_mode_view_and_inspector_state(self):
         self.run_lua(r'''
 BigBiSList = {}
 dofile("Config.lua")
@@ -1776,8 +1779,8 @@ BigBiSListDB = nil
 BigBiSListCharDB = nil
 BigBiSList:EnsureDatabase()
 
-equal(BigBiSListDB.profile.defaultsVersion, 18, "profile defaults version")
-equal(BigBiSListCharDB.defaultsVersion, 18, "character defaults version")
+equal(BigBiSListDB.profile.defaultsVersion, 19, "profile defaults version")
+equal(BigBiSListCharDB.defaultsVersion, 19, "character defaults version")
 equal(BigBiSList:GetContentMode(), "endgame", "default content mode")
 equal(BigBiSList:GetSelection().phase, "PR", "stored endgame phase")
 equal(BigBiSList:GetEffectivePhaseKey(), "PR", "effective endgame phase")

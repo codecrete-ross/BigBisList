@@ -436,17 +436,14 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
         for mode in MODES:
             scenario_settings = settings.get("scenario_overrides", {}).get(mode, {})
             validate_scenario(scenario_settings, f"{name}/{mode}")
-            weight_overrides = {**settings.get("weights", {}), **scenario_settings.get("weights", {})}
-            weights = []
             if mode == "leveling":
                 policy = rules["spec_policies"][name]
                 slots = rules["common_slots"] + policy["slots"]
-                for start, end, band_weights in references[name][mode]["weights"]:
-                    weights.append([start, end, {**band_weights, **weight_overrides}])
+                weights = references[name][mode]["weights"]
                 policies = {"dual_wield_level": policy.get("dual_wield_level"), "weapon_style": policy.get("weapon_style")}
             else:
                 slots = profile["slots"]
-                weights.append([60, 60, {**references[name][mode]["weights"], **weight_overrides}])
+                weights = [[60, 60, references[name][mode]["weights"]]]
                 policies = {"dual_wield_level": 1 if profile.get("dual_wield") else None,
                             "weapon_style": "shield" if profile.get("require_shield") else "any"}
             pools = {}

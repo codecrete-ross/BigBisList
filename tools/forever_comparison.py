@@ -17,6 +17,7 @@ ITEM_FIELDS = (
     "id", "name", "slot", "level", "stats", "armor_type", "weapon_subtype",
     "classes", "races", "max_equipped", "unique_group", "effects", "utility",
     "variant_id", "has_random_stats", "requires_dual_wield", "excluded", "effect_rules", "set_bonuses",
+    "quality", "stats_unavailable", "roll_group", "roll_budget", "roll_armor", "roll_complete", "race_ids",
 )
 TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
 
@@ -49,6 +50,24 @@ def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
         items.append(item)
         stats.append({key: value for key, value in row.items() if key != "review"})
     return items, stats
+
+
+def reviewed_source_items(review: dict, inventory: dict) -> list[dict]:
+    equipment = {row[0]: dict(zip(inventory["fields"], row)) for row in inventory["items"]}
+    by_item = {}
+    for route in review["routes"]:
+        source = {**route["source"], "attribution": review["attribution"]}
+        if not valid_source(source) or not route["corroboration_url"].startswith("https://"):
+            raise ValueError(f"Invalid Forever acquisition review: {route}")
+        for identifier in route["item_ids"]:
+            if identifier not in equipment or source in by_item.get(identifier, []):
+                raise ValueError(f"Invalid Forever route for item {identifier}")
+            by_item.setdefault(identifier, []).append(source)
+    return [{"id": identifier, "name": equipment[identifier]["name"], "quality": equipment[identifier]["quality"],
+             "inventory_slot": equipment[identifier]["slot"], "binding": review["binding"], "boe": False,
+             "wowhead_url": f"https://www.wowhead.com/forever/item={identifier}", "acquisition_phase": "PR",
+             "primary_source": sources[0], "sources": sources, "source_summary": summarize_sources(sources)}
+            for identifier, sources in sorted(by_item.items())]
 
 
 def comparison_facts(item: dict, description: str = "") -> dict | None:
@@ -186,10 +205,30 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
     for key, item in items.items():
         items[key] = item | attach_rules(item)
+    catalog = dataset_json("forever", "guide_equipment")
+    for row in catalog["items"]:
+        base = dict(zip(catalog["fields"], row))
+        key = str(base["id"])
+        item = items.setdefault(key, {"stats_unavailable": True})
+        for field in ("id", "name", "slot", "level", "armor_type", "weapon_subtype", "classes", "race_ids", "quality"):
+            if base.get(field) is not None:
+                item.setdefault(field, base[field])
+        if base.get("group"):
+            item["has_random_stats"] = True
+            item.update(roll_group=base["group"], roll_budget=base.get("budget"),
+                        roll_armor=base.get("armor"), roll_complete=base.get("roll_complete"))
     variant_links = {key: item["variant_link"] for key, item in items.items() if item.get("variant_link")}
+    packed = {}
+    for key, item in items.items():
+        row = [item.get(field) for field in ITEM_FIELDS]
+        while row[-1] is None:
+            row.pop()
+        packed[key] = row
     return {
         "version": VERSION,
-        "published_routes_only": True,
+        "roll_build": int(catalog["client_build"].split(".")[-1]),
+        "roll_templates": catalog["templates"],
+        "roll_groups": catalog["groups"],
         "flat_passive_stats": [list(rule) for rule in FLAT_PASSIVE_STATS],
         "profiles": profiles,
         "guide_effects": guide_effects,
@@ -198,28 +237,28 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         "feral_uses_weapon_dps": rules["feral_uses_weapon_dps"],
         "item_fields": list(ITEM_FIELDS),
         **({"variant_links": variant_links} if variant_links else {}),
-        "items": {key: [item.get(field) for field in ITEM_FIELDS] for key, item in items.items()},
+        "items": packed,
     }
 
 
 def reference_profiles(rules: dict, *, leveling: dict | None = None, model: dict | None = None) -> dict:
     leveling = leveling or dataset_json("forever", "leveling_scoring_profiles")
     raid = scoring_profiles()
-    # Match the reviewed passive Intellect and spell coefficients in the Ret
-    # pilot. Conditional talent operations stay in the loadout scorer.
     model = model or dataset_json("forever", "scoring_model")
-    ret_weights = model["profiles"]["Paladin/Retribution"]["weights"]
     profiles = {}
     for profile in raid["profiles"]:
         class_name, spec = profile["class"], profile["spec"]
         key = f"{class_name}/{spec}"
-        weight_overrides = ret_weights if key == "Paladin/Retribution" else {}
+        settings = model["profiles"][key]
+        common = settings.get("weights", {})
+        scenarios = settings.get("scenario_overrides", {})
         weights = [
             [low, high, {**profile_weights(leveling, class_name, spec, low, "best_overall", rules=rules)[1],
-                         **weight_overrides}]
+                         **common, **scenarios.get("leveling", {}).get("weights", {})}]
             for _, low, high in rules["level_bands"]
         ]
-        raid_weights = {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **weight_overrides}
+        raid_weights = {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **common,
+                        **scenarios.get("pre_raid", {}).get("weights", {})}
         if key == "Druid/Feral tank":
             raid_weights["parry_percent"] = 0
         profiles[key] = {

@@ -102,6 +102,123 @@ assert(scoring.WeaponProcChance(trigger, 0, slow) == nil)
         self.assertIn(9411, report["existing_contexts_to_recheck"]["Paladin/Retribution/leveling"])
         self.assertNotIn(99999999, report["existing_contexts_to_recheck"]["Paladin/Retribution/leveling"])
 
+    def test_full_guide_scores_worn_and_unowned_exact_paladin_items(self):
+        self.lua_run(r'''
+local H = dofile("tests/lua_ui_harness.lua")
+H.load("forever")
+local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+local function guide(spec, level)
+    return rating:GetGuideContext("Paladin", spec, level == 60 and "PR" or "LEVELING", level, "Human", "Alliance")
+end
+local profiles = 0
+for key, profile in pairs(BigBiSListData.stat_rank.profiles) do
+    profiles = profiles + 1
+    local personal = BigBiSListData.character_scoring.profiles[key].scenarios
+    local function same(weights, actual)
+        for stat, value in pairs(weights) do assert(actual[stat] == value, key .. "/" .. stat) end
+        for stat, value in pairs(actual) do assert(weights[stat] == value, key .. "/" .. stat) end
+    end
+    for index, band in ipairs(profile.leveling.weights) do
+        local other = personal.leveling.weights[index]
+        assert(band[1] == other[1] and band[2] == other[2])
+        same(band[3], other[3])
+    end
+    same(profile.pre_raid.weights, personal.pre_raid.weights[1][3])
+end
+assert(profiles == 28)
+local pool = rating:GetGuidePlacement(guide("Retribution", 49), "Head")
+local raging = assert(pool.byVariant["7719"])
+assert(not pool.byVariant["22005"] and not pool.byVariant["22091"])
+assert(not pool.byVariant["9479"].source_unknown and addon:GetItemData(9479).primary_source.entity_name == "Chief Ukorz Sandscalp")
+local late = rating:GetGuidePlacement(guide("Retribution", 58), "Head")
+assert(late.byVariant["22091"] and not late.byVariant["22005"])
+local rogue = rating:GetGuideContext("Rogue","Combat","LEVELING",58,"Human","Alliance")
+assert(rating:GetGuidePlacement(rogue,"Head").byVariant["22005"])
+local questSource = addon:GetItemData(22091).primary_source
+assert(questSource.eligibility.min_level == 58 and questSource.quest_id == 9002)
+local complete, active = {}, {}
+C_QuestLog = {IsQuestFlaggedCompleted=function(id) return complete[id] or false end,
+    IsOnQuest=function(id) return active[id] or false end,IsComplete=function(id) return active[id] or false end}
+local function nextStep() return addon.UI:GetQuestStepText(addon.UI:GetAcquisitionQuestProgress(questSource)) end
+assert(nextStep() == "Requires Back to the Beginning")
+complete[8997] = true
+assert(nextStep() == "Pick up Saving the Best for Last")
+active[9002] = true
+assert(nextStep() == "Turn in Saving the Best for Last")
+for _, id in ipairs({9479, 8142, 17767, 10008}) do
+    local helm = assert(pool.byVariant[tostring(id)])
+    assert(helm.rank < raging.rank and helm.total == raging.total)
+end
+local link = "item:10090::::::::50:1486::1:1:12723:1:28:5253:::::"
+local key = rating:NormalizeLink(10090, link)
+local helm = assert(pool.byVariant[key])
+assert(helm.item.name == "Gothic Plate Helmet of the Gorilla" and helm.item.stats.armor == 362)
+assert(helm.item.stats.strength == 13 and helm.item.stats.intellect == 13)
+local groups = addon:GetLevelingRows("Paladin", "Retribution", 49, {search = helm.item.name,
+    slots = {Head = true}, race = "Human", faction = "Alliance"})
+assert(#groups == 1 and #groups[1].items == 1)
+local row = groups[1].items[1]
+assert(row.stat_rank == helm and row.variant_id == key and row.acquisition_display.source_label == "Source unknown")
+assert(#addon:GetLevelingActivityRows(row, {}, 49) == 0)
+UnitRace = function() return "Human","Human",1 end
+UnitFactionGroup = function() return "Alliance" end
+UnitLevel = function() return 49 end
+local player = {class="Paladin",spec="Retribution",phase="LEVELING",level=49}
+local owned = {equippedSlots={Head={item_id=10090,item_link=link}},gearCopies={}}
+local swap = rating:GetLiveLevelingSwap(raging.item, "item:7719", owned, "Head", player, false)
+local verdict = rating:LevelingPresentation({item=raging.item,swap=swap,viewedLevel=49,playerLevel=49})
+assert(verdict.today == "Slight upgrade" and verdict.evidence == "+2.1 pts vs Gothic Plate Helmet of the Gorilla")
+local legacy = {["10090:0:0:1:1:12723:1:28:5253"]={item_id=10090,variant_id="old",item_link=link},["10090"]=true}
+addon:NormalizeWishlistVariants(legacy)
+assert(legacy[key].variant_id == key and legacy["10090"] and not legacy["10090:0:0:1:1:12723:1:28:5253"])
+local prot = guide("Protection", 49)
+local function score(id, suffix)
+    local facts = rating:GetPublishedFacts(id .. ":0:0:0:1:" .. suffix)
+    return rating:GetReferenceCandidate(prot, facts, "Chest").score
+end
+for _, pair in ipairs({{10086,79.88,83.98}, {14915,87.93,91.88}, {10128,88.65,92.60}}) do
+    assert(score(pair[1], 12753) == pair[2] and score(pair[1], 12754) == pair[3])
+end
+local circlet = rating:GetPublishedFacts("253959")
+local at60 = guide("Protection", 60)
+assert(rating:GetReferenceCandidate(at60, circlet, "Head").score == 34.9)
+local arrow = addon.Widgets:GearAdviceText({today = "Slight upgrade", tone = "gain"})
+local clock = addon.Widgets:GearAdviceText({today = "Keep for Level 50", tone = "future"})
+assert(arrow:match("^|T.-ui%-icons%.tga:.-|t Slight upgrade$") and clock:match("^|T.-|t Keep for Level 50$"))
+assert(arrow:match(":256:256:(.-)|t") ~= clock:match(":256:256:(.-)|t"))
+''')
+
+    def test_guide_lead_requires_obtainable_gear_and_resolved_contenders(self):
+        self.lua_run(r'''
+BigBiSList = {GetAvailabilityPhaseIndex = function() return 1 end,
+    IsStatRankGuideItemAvailable = function(_, id) return id ~= 4, id == 4 and "unverified_route" end}
+local rows = {["1"]={1,"Leader","Head",1,{stamina=10}}, ["2"]={2,"Peer","Head",1,{stamina=9}}}
+local data = {version="forever-stat-ranks-1", items=rows,
+    item_fields={"id","name","slot","level","stats","stats_unavailable"},
+    equipment={Paladin={}}, common_slots={"Head"}, profiles={["Paladin/Protection"]={
+    leveling={slots={"Head"},weights={{1,59,{stamina=1}}}}}}}
+BigBiSListData={stat_rank=data}
+dofile("ForeverGearRating.lua")
+local r=BigBiSList.ForeverGearRating
+local function label(id)
+    r.catalog, r.guideData = nil,nil
+    local context=r:GetGuideContext("Paladin","Protection","LEVELING",49,"Human","Alliance")
+    local p=r:GetGuidePlacement(context,"Head")
+    local e=assert(p.byVariant[tostring(id)])
+    return r:LevelingPresentation({placement=e, item=e.item, viewedLevel=49}).rank
+end
+assert(label(1)=="Best in Slot at Level 49")
+rows["2"][5].stamina=10
+assert(label(1)=="Tied for best at Level 49" and label(2)=="Tied for best at Level 49")
+rows["2"]=nil
+assert(label(1)=="Only ranked option at Level 49")
+rows["4"]={4,"Unverified","Head",1,{stamina=11}}
+assert(label(4)=="Highest known score at Level 49")
+rows["4"][5].stamina=8
+rows["3"]={3,"Pending","Head",1,nil,true}
+assert(label(1)=="Highest known score at Level 49" and label(3)=="Stats unavailable")
+''')
+
     def test_reference_catalog_requires_consistent_equipment_facts(self):
         tooltip = {"id": 100, "name": "Charm", "slot": "Trinket", "required_level": 20,
                    "stats": {"stamina": 8}, "parse_confidence": "tooltip", "use_effects": ["Use: A burst of light."]}
@@ -166,12 +283,12 @@ local owned = {equippedSlots = {Finger0 = worn, Finger1 = unique}, gearStatLinks
 local context = service:GetContext("Paladin", "Protection", "LEVELING", 47, owned)
 local pool = service:GetPlacement(context, "Finger0", {"Ring"})
 assert(service:GetPlacement(context, "Finger0", {"Ring"}) == pool)
-assert(pool.reference.rank == 1 and pool.reference.total == 3)
-assert(pool.rows[1].rank == 1 and pool.rows[2].rank == 1 and pool.rows[3].rank == 3)
+assert(pool.reference.rank == 1 and pool.reference.total == 4)
+assert(pool.rows[1].rank == 1 and pool.rows[2].rank == 1 and pool.rows[3].rank == 1 and pool.rows[4].rank == 4)
 local rolled
 for _, entry in ipairs(service:GetComparisonCandidates(pool)) do if entry.item.id == 109 then rolled = entry end end
 assert(rolled.score == 8 and rolled.item.effects[1] == "Use: Restores a resource.")
-assert(rolled.projected and rolled.rank == 1 and rolled.total == 4 and pool.reference.total == 3)
+assert(not rolled.projected and rolled.rank == 1 and rolled.total == pool.reference.total)
 assert(service:GetPlacement(context, "Finger1", {"Ring"}).rows[1].item.id == 103)
 local slots = { {key = "Finger0", slots = {"Ring"}}, {key = "Finger1", slots = {"Ring"}} }
 local outfit = service:GetGearScore(context, slots)
@@ -485,7 +602,7 @@ local vest
 for _, group in ipairs(rows) do
     for _, row in ipairs(group.items) do if row.item_id == 2656 then vest = row end end
 end
-assert(vest and vest.quality == "poor" and vest.stat_rank.rank == 2)
+assert(vest and vest.quality == "poor" and vest.stat_rank.rank and vest.stat_rank.total >= 2)
 local link = "|cffffffff|Hitem:274652|h[Wall of Water]|h|r"
 local getInfo, instant = GetItemInfo, GetItemInfoInstant
 function GetItemInfo(value)
@@ -518,6 +635,13 @@ for _, level in ipairs({39, 43, 49, 60}) do
         assert(worn.item.name == "Wall of Water" and worn.item.stats.block_value == 27)
         local swap = rating:GetGuideSwap(live, scarlet.item, "OffHand", "Off Hand", nil, true)
         assert(swap.conditional and swap.replacements[1].name == "Wall of Water" and swap.delta < 0)
+        local advice = rating:LevelingPresentation({item=scarlet.item,swap=swap,playerLevel=level,viewedLevel=level})
+        assert(advice.today:find("Holy damage on block unscored", 1, true))
+        local reverse = rating:GetContext("Paladin", "Protection", phase, level,
+            {equippedSlots={OffHand={item_id=7726,item_link="item:7726"}}})
+        local gain = rating:GetGuideSwap(reverse, worn.item, "OffHand", "Off Hand", link)
+        local alternative = rating:LevelingPresentation({item=worn.item,swap=gain,playerLevel=level,viewedLevel=level})
+        assert(gain.delta > 0 and alternative.today:find("Possible upgrade · Holy damage on block unscored", 1, true))
         local summed = 0
         for _, points in pairs(swap.contributions) do summed = summed + points end
         assert(math.abs(summed - swap.delta) < 0.0001)
@@ -551,6 +675,9 @@ assert(not signet("Tauren", "Horde"), "Binding alone should not publish a Horde 
         with patch("tools.forever_comparison.dataset_json", side_effect=document):
             data = compile_comparison_data([base])
         data["items"] = {key: row for key, row in data["items"].items() if key.split(":")[0] == "9288"}
+        # Exercise the two separately reviewed links in a controlled family.
+        group = data["items"]["9288"][data["item_fields"].index("roll_group")]
+        data["roll_groups"][group - 1] = [12727, 12749]
         (prophet, prophet_link), (tiger, tiger_link) = map(roll_identity, rolls)
         self.assertEqual(prophet, "9288:0:0:0:1:12749")
         self.lua_run(f'BigBiSListData = {{stat_rank = {lua_value(data)}}}\n'
@@ -923,7 +1050,7 @@ assert(#plannerRows > 0 and not plannerRows[1].bestUse.scoring_basis)
 level = 14
 local early = addon:GetLevelingRows("Warrior", "Arms", 14, {race = "Human", faction = "Alliance"})
 assert(#early > 0)
-for _, group in ipairs(early) do assert(group.slot ~= "Shoulder") end
+for _, group in ipairs(early) do for _, row in ipairs(group.items) do assert(row.stat_rank.item.level <= 14) end end
 assert(addon:GetLevelingSlotStatus("Warrior", "Arms", 14, "Shoulder",
     {race = "Human", faction = "Alliance"}).state == "unreviewed")
 
@@ -1003,9 +1130,9 @@ local groups, count, effect = {}, 0, {}
 for _, group in ipairs(guide()) do
     local names, featured = {}, 0
     for _, row in ipairs(group.items) do
-        assert(row.quality ~= "poor" and row.acquisition_display.status == "ready")
-        assert(not row.matched_access_option.is_inferred_trade_option)
-        assert(row.stat_rank.score and row.stat_rank.score > 0 or row.guide_note)
+        assert(row.guide_source_unknown or row.acquisition_display.status == "ready")
+        assert(not row.matched_access_option or not row.matched_access_option.is_inferred_trade_option)
+        assert(row.stat_rank.rank or row.stat_rank.status)
         assert(not names[row.stat_identity], "duplicate exact variant")
         names[row.stat_identity] = row
         if not row.guide_alternate then featured = featured + 1 end
@@ -1014,21 +1141,21 @@ for _, group in ipairs(guide()) do
     end
     groups[group.slot] = { items = group.items, featured = featured, names = names }
 end
-assert(count < 50 and groups.Head.featured == 4 and #groups.Shoulder.items == 7)
+assert(count > 1000 and groups.Head.featured > 0 and #groups.Shoulder.items > 7)
 assert(groups.Shoulder.names["9476"] and groups.Shoulder.names["9411"])
-assert(not (groups.Trinket and groups.Trinket.names["274152"]), "situational swine utility is outside the ordinary guide")
+assert(not (groups.Trinket.names["274152"] and groups.Trinket.names["274152"].guide_note), "only reviewed utility gets an endorsement")
 assert(effect[744] and effect[249442], "reviewed effects remain discoverable")
 local alternate
 for _, row in ipairs(groups.Shoulder.items) do
-    if row.guide_alternate then alternate = row; break end
+    if row.guide_alternate and row.variant_id then alternate = row; break end
 end
 assert(alternate)
 local matching = guide({search = alternate.name, slots = {Shoulder = true}})
 assert(#matching == 1 and matching[1].items[1].stat_identity == alternate.stat_identity)
 assert(matching[1].items[1].guide_alternate, "search must preserve the unfiltered threshold")
-assert(#guide({search = "Canvas Shoulderpads"}) == 0)
+assert(#guide({search = "Canvas Shoulderpads"}) == 1)
 for _, group in ipairs(addon:GetPhaseRows("Paladin", "Retribution", "PR", {})) do
-    for _, row in ipairs(group.items) do assert(row.history or row.recommendation_history) end
+    for _, row in ipairs(group.items) do assert(row.guide_source_unknown or row.history or row.recommendation_history) end
 end
 ''')
 

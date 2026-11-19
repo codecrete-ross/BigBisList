@@ -204,8 +204,16 @@ def ranking_coverage(lua: str | None, phase: str, levels: list[int] | None = Non
         raise ValueError("Forever ranking coverage levels range from 1 to 60")
     selected = sorted(set(levels)) if levels else list(range(1, 61))
     command = [executable, "tools/forever_rank_report.lua", phase, "coverage", ",".join(map(str, selected))]
+    catalog = dataset_json("forever", "guide_equipment")
+    inventory = [dict(zip(catalog["fields"], row)) for row in catalog["items"]]
+    independent = []
+    for item in inventory:
+        family = item.get("group")
+        keys = (f"{item['id']}:0:0:0:1:{bonus}" for bonus in catalog["groups"][family - 1]) if family else [str(item["id"])]
+        independent.extend(f"{item['slot']}\t{key}" for key in keys)
     try:
-        result = subprocess.run(command, cwd=ROOT, capture_output=True, encoding="utf-8", timeout=1800)
+        result = subprocess.run(command, cwd=ROOT, input="\n".join(independent), capture_output=True,
+                                encoding="utf-8", timeout=max(1800, 600 * len(selected)))
     except subprocess.TimeoutExpired as exc:
         raise ValueError("Forever ranking coverage timed out") from exc
     if result.returncode:
@@ -224,10 +232,8 @@ def ranking_coverage(lua: str | None, phase: str, levels: list[int] | None = Non
                 "peer_score": float(peer_score) if peer_score else None}})
     if totals is None:
         raise ValueError("Missing Forever ranking coverage totals")
-    inventory = dataset_json("forever", "leveling_candidate_audit")["candidate_reviews"]
-    missing_stats = [{"item_id": row["item_id"], "name": row.get("name"), "slots": row.get("slots", []),
-                      "review_status": row["status"]} for row in inventory if row["item_id"] not in known
-                     and not row["status"].startswith("reviewed_")]
+    missing_stats = [{"item_id": item["id"], "name": item["name"], "slots": [item["slot"]]}
+                     for item in inventory if item["id"] not in known]
     return {"content_phase": phase, "levels": selected, **totals, "scoring_catalog_items": len(known),
             "finding_counts": dict(Counter(row["reason"] for row in findings)), "findings": findings,
             "inventory_without_scoring_facts": missing_stats}

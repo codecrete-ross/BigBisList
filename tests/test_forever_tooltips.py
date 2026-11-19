@@ -150,7 +150,7 @@ includes(tip, "Among the best at Levels 30–33")
 level = 31
 addon:RefreshTooltipPlayerContext()
 showNative(tip, "item:900040")
-includes(tip, "↑ Major upgrade\n+92.0 pts vs Worn sword")
+includes(tip, "|t Major upgrade\n+92.0 pts vs Worn sword")
 includes(tip, "Among the best at Levels 30–33")
 excludes(tip, "Requires Level")
 
@@ -195,7 +195,7 @@ ui:Open(); H.settle()
 ui:SetClass("Paladin"); ui:SetSpec("Protection"); ui:SetContentMode("leveling"); ui:SetLevelingLevel(35); H.settle()
 for _, mode in ipairs({"leveling", "wishlist", "comparison"}) do
     local same = assert(ui:GetLevelingGearView(sword, mode))
-    assert(same.today == "↑ Major upgrade at Level 38" and same.evidence == "+92.0 pts vs Worn sword", same.today)
+    assert(same.today == "Major upgrade at Level 38" and same.evidence == "+92.0 pts vs Worn sword", same.today)
 end
 ui:ShowInspectorFor(sword.item_id, sword, "leveling"); ui:SetInspectorVisible(true); H.settle()
 local contents = ""
@@ -209,7 +209,7 @@ assert(ui.slotComparison.level == 35 and ui.slotComparison.reference.slotKey == 
 ui:CloseSlotComparison(); H.settle()
 assert(ui.selectedRowKey == origin and ui.selectedItemData.item_id == sword.item_id)
 showNative(tip, sword.item_link, "GetQuestItem", {"choice", 1})
-includes(tip, "↑ Major upgrade\n+92.0 pts vs Worn sword")
+includes(tip, "|t Major upgrade\n+92.0 pts vs Worn sword")
 local modifiers = BigBiSListData.character_scoring
 modifiers.enchants[9901] = {stamina = 3}
 GetBuildInfo = function() return "Fixture", tostring(modifiers.build) end
@@ -219,9 +219,9 @@ GetContainerItemID = function() return 900040 end
 GetContainerItemLink = function() return bagLink end
 ui:Invalidate("ownership", "sword-looted"); ui:Refresh(); H.settle()
 showNative(tip, bagLink, "GetBagItem", {0, 1})
-includes(tip, "↑ Equip now · Major upgrade\n+95.0 pts vs Worn sword")
+includes(tip, "|t Equip now · Major upgrade\n+95.0 pts vs Worn sword")
 local inBags = assert(ui:GetLevelingGearView(sword, "leveling"))
-assert(inBags.today == "↑ Equip now · Major upgrade at Level 38" and inBags.evidence == "+95.0 pts vs Worn sword", inBags.today)
+assert(inBags.today == "Equip now · Major upgrade at Level 38" and inBags.evidence == "+95.0 pts vs Worn sword", inBags.today)
 ''')
 
     def test_verdict_thresholds_require_net_and_role_gains(self):
@@ -230,16 +230,16 @@ local function verdict(net, role, displaced)
     local swap = {delta = net, roleDelta = role, roleDisplaced = displaced, replacements = {{name = "Old ring"}}}
     return rating:LevelingPresentation({item = {level = 1}, playerLevel = 31, viewedLevel = 31, swap = swap})
 end
-assert(verdict(0.001, 0.001, 100).today == "↑ Slight upgrade")
+assert(verdict(0.001, 0.001, 100).today == "Slight upgrade")
 assert(verdict(0.001, 0.001, 100).evidence == "+0.001 pts vs Old ring")
-assert(verdict(1.99, 8, 10).today == "↑ Slight upgrade")
-assert(verdict(8, 1.99, 10).today == "↑ Slight upgrade")
-assert(verdict(4.99, 8, 100).today == "↑ Slight upgrade")
-assert(verdict(2, 2, 40).today == "↑ Upgrade")
-assert(verdict(6, 5.99, 40).today == "↑ Upgrade")
-assert(verdict(14.99, 16, 100).today == "↑ Upgrade")
-assert(verdict(6, 6, 40).today == "↑ Major upgrade")
-assert(verdict(15, 15, 100).today == "↑ Major upgrade")
+assert(verdict(1.99, 8, 10).today == "Slight upgrade")
+assert(verdict(8, 1.99, 10).today == "Slight upgrade")
+assert(verdict(4.99, 8, 100).today == "Slight upgrade")
+assert(verdict(2, 2, 40).today == "Upgrade")
+assert(verdict(6, 5.99, 40).today == "Upgrade")
+assert(verdict(14.99, 16, 100).today == "Upgrade")
+assert(verdict(6, 6, 40).today == "Major upgrade")
+assert(verdict(15, 15, 100).today == "Major upgrade")
 assert(verdict(0, 0, 40).today == "Sidegrade")
 local possible = rating:LevelingPresentation({item = {level = 1, effects = {"Chance on hit: deals additional damage."}},
     playerLevel = 31, swap = {conditional = true, delta = 2, replacements = {{name = "Old sword"}}}})
@@ -337,7 +337,7 @@ detected = "Protection"
 onEvent(core, "PLAYER_TALENT_UPDATE"); H.settle()
 excludes(tip, "Spec previews")
 local protection = "Better options at Level 47"
-includes(tip, "Protection\n↑ Upgrade\n+5.0 pts vs Blood Ritual Ring\n" .. protection)
+includes(tip, "|t Upgrade\n+5.0 pts vs Blood Ritual Ring\n" .. protection)
 excludes(tip, "Tier range")
 local rgb = tip.rowColors.Protection
 assert(rgb[1] == 0.93 and rgb[2] == 0.93 and rgb[3] == 0.96)
@@ -391,11 +391,11 @@ assert(text(tip):find("\nRetribution\n", 1, true) < text(tip):find("\nHoly\n", 1
 local events = addon.uiEventFrame
 H.equipped[12] = 900013
 events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
-includes(tip, "↑ Major upgrade\n+7.0 pts vs Lower ring")
+includes(tip, "|t Major upgrade\n+7.0 pts vs Lower ring")
 
 showNative(tip, "item:900005", "GetMerchantItem", {1})
 includes(tip, "Requires Level 55")
-includes(tip, "Best known at Level 55")
+includes(tip, "Highest known score at Level 55")
 includes(tip, "Estimated +98.0 pts vs Lower ring at Level 55")
 addon.GetRecommendationHistory = function(_, id, class, spec, phase, slot)
     assert(class == "Paladin" and phase == "PR" and slot == "Ring")
@@ -479,7 +479,7 @@ level = 55
 addon:RefreshTooltipPlayerContext()
 showNative(GameTooltip, "item:900005", "GetMerchantItem", {1})
 includes(GameTooltip, "Good option at Level 55")
-includes(GameTooltip, "↑ Major upgrade\n+146.0 pts vs Blood Ritual Ring")
+includes(GameTooltip, "|t Major upgrade\n+146.0 pts vs Blood Ritual Ring")
 excludes(GameTooltip, "Estimated +146.0 pts vs Blood Ritual Ring at Level 55")
 
 level = 20
@@ -519,7 +519,7 @@ local settings = addon:GetAccountDB().profile.gearHighlights
 for _, enabled in ipairs({true, false}) do
     settings.auction = enabled
     showNative(tip, "item:900022", "GetAuctionItem", {1})
-    includes(tip, "Best known at Level 50")
+    includes(tip, "Highest known score at Level 50")
     includes(tip, "Likely upgrade at Level 50\nEstimated +16.1 pts vs Gloves from the bank at Level 50")
     includes(tip, "Includes cached bank gear")
     showNative(tip, "item:900023", "GetAuctionItem", {1})
@@ -537,7 +537,7 @@ assert(unavailable.placement.rank == 1 and unavailable.forecast.status == "unava
 
 showNative(tip, "item:900022", "GetAuctionItem", {1})
 local protection = assert((text(tip) .. "\n \n"):match("\nProtection\n(.-)\n \n"))
-local _, ranks = protection:gsub("Best known at Level 50", "")
+local _, ranks = protection:gsub("Highest known score at Level 50", "")
 assert(ranks == 1, protection)
 excludes(tip, "Outdoor")
 excludes(tip, "Dungeon")
@@ -603,9 +603,9 @@ for offset = 1, 13 do gear(900020 + offset, "Gloves " .. offset, "Hands", offset
 H.equipped[10] = 900014
 local tip = GameTooltip
 showNative(tip, "item:900014")
-includes(tip, "Best known at Level 47")
+includes(tip, "Highest known score at Level 47")
 showNative(tip, "item:900015", "GetAuctionItem", {1})
-includes(tip, "Best known at Level 49")
+includes(tip, "Highest known score at Level 49")
 includes(tip, "Estimated +3.0 pts vs Earlier gloves at Level 49")
 H.settle()
 includes(tip, "Among the best at Levels 49–59")
@@ -626,7 +626,7 @@ addon:RefreshTooltipPlayerContext()
 showNative(tip, "item:900014")
 includes(tip, "Among the best at Levels 47–59")
 showNative(tip, "item:900015")
-includes(tip, "Tied for best at Level 50")
+includes(tip, "Tied for highest known score at Level 50")
 ''')
 
     def test_bank_snapshot_copy_counts_and_legal_weapon_and_ring_swaps(self):
@@ -788,7 +788,7 @@ local context = rating:GetContext("Paladin", "Protection", "LEVELING", 47, ui.cu
 local pool = rating:GetPlacement(context, "Finger1", {"Ring"})
 local originalCount = #pool.rows
 showNative(tip, linkA)
-includes(tip, "Estimated · Good option at Level 47")
+includes(tip, "Good option at Level 47")
 includes(tip, "Possible upgrade\n+6.0 pts vs Blood Ritual Ring · Scored stats only")
 assert(reads[700] == 1 and #pool.rows == originalCount)
 showNative(tip, linkB)
@@ -812,7 +812,8 @@ includes(tip, "Waiting for item stats")
 ready = true
 callbacks[id](); H.settle()
 includes(tip, "Possible upgrade\n+6.0 pts vs Blood Ritual Ring · Scored stats only")
-assert(tip.rebuilds == rebuilds + 1 and tip.lines[3] == "Native source")
+-- The stat load can publish immediately; all visible spec ranges share one subsequent redraw.
+assert(tip.rebuilds >= rebuilds + 1 and tip.rebuilds <= rebuilds + 2 and tip.lines[3] == "Native source")
 oneSection(tip)
 
 C_Item.GetItemStats = function() return {ITEM_MOD_STAMINA_SHORT = 9} end

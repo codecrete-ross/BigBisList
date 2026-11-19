@@ -303,14 +303,35 @@ end
 function UI:RefreshComparisonPool(force)
     local state = self.slotComparison
     if not state then return end
+    local physical = state.statRank and state.reference.slotKey
     local signature = table.concat({ state.class, state.spec, state.phase, state.slot,
         tostring(addon:GetDataIndex(state.phase)), tostring(BigBiSListData), tostring(self.currentOwned),
         tostring(addon.ForeverScoring and addon.ForeverScoring.revision),
-        tostring(state.statRank and self.domainVersions and self.domainVersions.query), tostring(state.level) }, "\031")
+        tostring(state.statRank and self.domainVersions and self.domainVersions.query), tostring(state.level), tostring(physical) }, "\031")
     if not force and state.poolSignature == signature then return end
     local rows
     if state.statRank then
-        rows = addon:GetStatRankComparisonRows(state.class, state.spec, state.phase, state.level, self.currentOwned, state.reference.slotKey)
+        local function build()
+            return addon:GetStatRankComparisonRows(state.class, state.spec, state.phase, state.level, self.currentOwned, physical)
+        end
+        if BigBiSListData.stat_rank and BigBiSListData.stat_rank.roll_groups and C_Timer and C_Timer.After then
+            local job = state.poolJob
+            if not job or job.signature ~= signature then
+                if state.poolSignature then state.originNeedsRefresh = true end
+                job = { signature = signature }
+                state.poolJob, state.poolSignature = job, nil
+                state.rows, state.pinned, state.contexts = {}, {}, {}
+                self:RebuildComparisonEntries()
+                self:BuildGearRowsInSlices(job, build, function()
+                    return self.slotComparison == state and state.poolJob == job
+                end, function() self:RenderSlotComparison() end)
+                return
+            end
+            if not job.rows then return end
+            rows, state.poolJob = job.rows, nil
+        else
+            rows = build()
+        end
         self:QueueStatLoads(rows.statsPending)
     else
         rows = addon:GetSlotComparisonRows(state.class, state.spec, state.phase, state.slot, self.currentOwned, state.reference)
@@ -493,7 +514,8 @@ function UI:RebuildComparisonEntries()
         entries[1] = { kind = "empty", title = state.ownership == "owned" and "No owned gear is recorded for this slot. Choose All candidates to browse recommendations."
             or "No recorded recommendations or owned gear for this specialization and slot.", top = 0, height = 56 }
         if state.statRank then
-            entries[1].title = state.ownership == "owned" and "No comparable gear on hand." or "No comparable stats for this slot."
+            entries[1].title = state.poolJob and "Comparing gear for this slot…"
+                or state.ownership == "owned" and "No comparable gear on hand." or "No comparable stats for this slot."
         end
         y = 56
     end
@@ -668,7 +690,7 @@ function UI:BindComparisonRow(row, entry, pinned)
         local referenceLabel = self:GetComparisonReferenceLabel(state.reference)
         local evidence
         if view then
-            change, evidence = widgets:GearAdviceText(view) or "Gear comparison unavailable", view.evidence
+            change, evidence = widgets:GearAdviceText(view) or "Gear comparison unavailable", widgets:GearIconText(view.evidenceGain and "upgradeArrow", view.evidence)
         end
         if state.sort == "comparison" and not pinned then
             change = delta and ("Lv " .. state.level .. " · " .. service:EstimateSwapPoints(delta)) or "Comparison unavailable"
