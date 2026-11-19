@@ -353,10 +353,32 @@ function UI:GetAcquisitionQuestProgress(source)
         end
     end
     for _, step in ipairs(source.quest_steps or {}) do addStep(step) end
-    if BigBiSList.isForever and #progress > 0 and rewardId and not hasRewardStep then
-        addStep({ quest_id = rewardId, name = source.entity_name, kind = "reward" })
+    if BigBiSList.isForever and rewardId and not hasRewardStep then
+        addStep({ quest_id = rewardId, name = source.entity_name or source.name or ("Quest " .. rewardId), kind = "reward" })
     end
     return nextQuest, progress
+end
+
+function UI:GetQuestStepText(quest)
+    if not quest then return nil end
+    if quest.turnIn then return "Turn in " .. quest.step.name end
+    if quest.state == "Not started" then return "Pick up " .. quest.step.name end
+    return quest.step.name .. " · " .. quest.state
+end
+
+function UI:GetSourceNextStep(data)
+    local display = data and data.acquisition_display
+    local option = display and display.option
+    if not option or not display.source_match or display.status ~= "ready" then return end
+    local access = self:GetAccessEvaluation(data)
+    if access.blockingRequirement and access.blockingRequirement.type == "reputation" then
+        return self:GetAccessBlockingReason(access)
+    end
+    if option.source and option.source.type == "quest" and (access.status == "ready"
+        or access.status == "ready_alternate" or access.status == "check_prereq") then
+        local quest = self:GetAcquisitionQuestProgress(option.source)
+        if quest and quest.state ~= "Unknown" then return self:GetQuestStepText(quest) end
+    end
 end
 
 local function canSetWaypoint(destination)
@@ -395,12 +417,9 @@ function UI:CreateAcquisitionSteps(parent, anchor, option, accessStatus)
     local destination = #lines == 0 and source.destination or nil
     if nextQuest then
         destination = nextQuest.destination
-        local summary = nextQuest.step.name .. " · " .. nextQuest.state
-        if nextQuest.turnIn then
-            summary = summary .. "\nTurn in" .. (destination and destination.name and (": " .. destination.name) or "")
-        elseif destination and destination.name then
-            summary = summary .. "\nStart: " .. destination.name
-        end
+        local canStart = accessStatus == "ready" or accessStatus == "ready_alternate" or nextQuest.turnIn
+        local summary = canStart and self:GetQuestStepText(nextQuest) or (nextQuest.step.name .. " · " .. nextQuest.state)
+        if destination and destination.name then summary = summary .. "\n" .. destination.name end
         anchor = self:CreateDetailsText(parent, anchor, "Next quest", summary, 0.86, 0.90, 0.96)
         height = anchor.contentHeight
     end

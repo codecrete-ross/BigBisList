@@ -37,7 +37,7 @@ local STATS = {
     RESISTANCE5_NAME = "shadow_resistance", RESISTANCE6_NAME = "arcane_resistance",
 }
 local STATUS_LABELS = {
-    loading = "Loading stats", unavailable = "Stats unavailable", utility = "Utility", effect = "Effect only",
+    loading = "Waiting for item stats", unavailable = "Stats unavailable", utility = "Utility", effect = "Effect only",
     incompatible = "No rank for this spec", blocked = "No legal swap",
 }
 local OWNED_ORDER = { equipped = 3, bag = 2, bank = 1 }
@@ -172,9 +172,14 @@ function rating:GetGearSnapshotKey(owned)
     return owned.gearSnapshotKey
 end
 
+function rating:GetWorkCheckpoint()
+    if self.opportunityWorker and coroutine.running() == self.opportunityWorker then return self.opportunityCheckpoint end
+    return addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+end
+
 function rating:GetCatalog(data)
     if self.catalog and self.catalog.data == data then return self.catalog end
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = rating:GetWorkCheckpoint()
     local catalog = { data = data, items = {}, slots = {} }
     for key, row in pairs(data.items) do
         if checkpoint then checkpoint() end
@@ -440,7 +445,7 @@ local function unresolvedCopy(catalog, entry, status)
 end
 
 local function resolveInventory(self, catalog, owned)
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = rating:GetWorkCheckpoint()
     local inventory = { catalog = catalog, pending = {}, equipment = {}, byVariant = {}, bySource = {}, copies = {}, unresolvedCopies = {} }
     local function read(entry, state)
         if checkpoint then checkpoint() end
@@ -456,7 +461,10 @@ local function resolveInventory(self, catalog, owned)
         end
         if state ~= "equipped" and (not facts or not instance.item_link or not facts.level) then
             local unresolved = facts and { item = facts, status = status } or unresolvedCopy(catalog, entry, status)
-            if unresolved then inventory.unresolvedCopies[#inventory.unresolvedCopies + 1] = unresolved end
+            if unresolved then
+                unresolved.state = state
+                inventory.unresolvedCopies[#inventory.unresolvedCopies + 1] = unresolved
+            end
         end
         return instance
     end
@@ -1346,7 +1354,7 @@ end
 
 local function referenceItem(instance, slotLabel)
     local linkName = instance.item_link and instance.item_link:match("|h%[(.-)%]|h")
-    return { name = linkName or instance.facts.name, slot = slotLabel, state = instance.state }
+    return { name = linkName or instance.facts.name, slot = slotLabel, state = instance.state, key = instance.facts.key }
 end
 
 local function wornReplacement(context, result, key, label)
@@ -1526,7 +1534,7 @@ local function lookaheadPlacement(context, item)
         or not permitted(item.races, context.race) then return { status = "incompatible" } end
 
     local group = groupFor(item)
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = rating:GetWorkCheckpoint()
     -- Proficiency can unlock after the item's required level.
     for level = math.max(item.level, context.level + 1), cap do
         if checkpoint then checkpoint() end
@@ -1573,7 +1581,7 @@ local function canImprove(score, best, prefer)
 end
 
 local function bestLoadout(firstChoices, secondChoices, value, prefer)
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = rating:GetWorkCheckpoint()
     local best
     for _, first in ipairs(firstChoices) do
         if not value and not canImprove(first.score + secondChoices[1].score, best, prefer) then break end
@@ -1600,11 +1608,12 @@ end
 local STORAGE_PREFERENCE = { equipped = 9, bag = 3, bank = 1 }
 
 local function ownedLoadout(context, group, storage)
-    local key = storage and ("storage:" .. group.key) or group.key
+    local bagOnly = storage == "bags"
+    local key = bagOnly and ("bags:" .. group.key) or storage and ("storage:" .. group.key) or group.key
     local revision = storage and addon.ForeverScoring and addon.ForeverScoring.revision
     local cached = context.ownedLoadouts[key]
     if cached and cached.revision == revision then return cached end
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = rating:GetWorkCheckpoint()
     local outside = copy(context.equipmentFacts)
     local options = {}
     local unresolved = context.owned.bagsIncomplete and "unavailable" or nil
@@ -1616,7 +1625,7 @@ local function ownedLoadout(context, group, storage)
         local choices = {}
         for order, instance in ipairs(context.ownedCopies) do
             if checkpoint then checkpoint() end
-            local option = ownedOption(context, outside, definition, instance)
+            local option = (not bagOnly or instance.state ~= "bank") and ownedOption(context, outside, definition, instance)
             if option and (not storage or inScope(context, instance.facts)) then
                 if storage then
                     option.preference = instance == context.equipmentFacts[definition.key] and 27 or STORAGE_PREFERENCE[instance.state]
@@ -1636,8 +1645,8 @@ local function ownedLoadout(context, group, storage)
             if checkpoint then checkpoint() end
             local item = copy.item
             local slot = item and targetSlot(item, definition)
-            if not item or (slot and not item.excluded and (not item.level or item.level <= context.level)
-                and fitsEquipment(context, item, slot)) then
+            if (not bagOnly or copy.state ~= "bank") and (not item or (slot and not item.excluded
+                and (not item.level or item.level <= context.level) and fitsEquipment(context, item, slot))) then
                 markUnresolved(copy.status)
             end
         end
@@ -1722,6 +1731,35 @@ local function choicesWithout(choices, instance)
     return others
 end
 
+local function groupHas(choices, instance)
+    return choices[1].instance == instance or choices[2].instance == instance
+end
+
+local function groupGear(group, state, choices)
+    local gear = copy(state.outside)
+    for index, definition in ipairs(group.definitions) do gear[definition.key] = choices[index].instance end
+    return gear
+end
+
+local function roleScore(context, gear)
+    local total = rating:ReferenceLoadout(context, gear, true)
+    if total then return total end
+    total = 0
+    for _, instance in pairs(gear) do
+        if instance.facts then
+            local stats = swapStats(instance.facts, instance.item_link)
+            total = total + (score(context, instance.facts, true, nil, stats) or 0)
+        end
+    end
+    return total
+end
+
+local function setRoleChange(context, result, previous, retained)
+    local before = roleScore(context, previous)
+    result.roleDelta = roleScore(context, result.gear) - before
+    result.roleDisplaced = math.max(0, before - roleScore(context, retained))
+end
+
 local function ownedSwap(context, group, candidate, extraCopy, quantity, storageInstance)
     local state = ownedLoadout(context, group)
     local instance = storageInstance or candidate
@@ -1744,6 +1782,8 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity, storage
             choicesWithout(state.options[2], storageInstance), state.value)
     end
 
+    local previousGear = groupGear(group, state, baseline)
+    local retained = copy(previousGear)
     local other = best[3 - chosenIndex].instance
     local gear = copy(state.outside)
     local result = { definition = group.definitions[chosenIndex], slot = chosen.slot, gear = gear, replacements = {},
@@ -1757,12 +1797,13 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity, storage
             result.conditional = result.conditional or baseline[index].conditional or best[index].conditional
         end
         if (previous and previous.state == "bank") or (other and other.state == "bank") then result.bank = true end
-        if previous and previous ~= best[1].instance and previous ~= best[2].instance then
+        if previous and not groupHas(best, previous) then
+            retained[definition.key] = nil
             result.replacements[#result.replacements + 1] = referenceItem(previous, definition.label)
         end
         if previous == instance and result.delta == 0 then result.status = "best_owned" end
     end
-    result.roleDelta, result.roleDisplaced = result.delta, 0
+    if result.delta and result.delta > 0 and not state.unresolved then setRoleChange(context, result, previousGear, retained) end
     if context.activeBuild and addon.ForeverScoring:HasUnmodeledSwap(context.activeBuild, candidate.facts,
         result.definition.inventorySlotId, result.slot) then result.conditional = true end
     if state.unresolved then
@@ -1777,9 +1818,9 @@ end
 
 local function previewTooltipItem(context, candidate, extraCopy, options)
     local item = candidate.facts
-    local placement, scope, preview = lookaheadPlacement(context.forecastBaseline or context, item)
+    local placement, scope, preview = lookaheadPlacement(context, item)
     local result = { placement = placement, rankScope = scope, preview = true }
-    if preview then
+    if preview and placement.status ~= "out_of_scope" then
         local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity, options.storageInstance)
         result.forecast = comparison or { status = "blocked" }
         result.forecast.level, result.forecast.phase = preview.level, preview.phase
@@ -1838,7 +1879,7 @@ end
 local function approvedBiS(context, candidate, slot)
     if not slot or context.phase == "LEVELING" or not addon.IsConfirmedGearBiS then return false end
     local id = candidate.entry.item_id
-    local history = addon:GetRecommendationHistory(id, context.class, context.spec, context.phase, slot)
+    local history = addon:GetRecommendationHistory(id, context.class, context.spec, context.phase, slot, candidate.key)
     return addon:IsConfirmedGearBiS(history, context.phase, id, candidate.key)
 end
 
@@ -1863,16 +1904,6 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
         result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot,
         lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity, storageInstance = scope.storageInstance }
     return result
-end
-
-local function groupHas(choices, instance)
-    return choices[1].instance == instance or choices[2].instance == instance
-end
-
-local function groupGear(group, state, choices)
-    local gear = copy(state.outside)
-    for index, definition in ipairs(group.definitions) do gear[definition.key] = choices[index].instance end
-    return gear
 end
 
 local function storageSwap(context, group, state, before, after)
@@ -1901,9 +1932,7 @@ local function storageSwap(context, group, state, before, after)
             end
         end
     end
-    local oldRole = rating:ReferenceLoadout(context, previous, true)
-    result.roleDelta = rating:ReferenceLoadout(context, proposed, true) - oldRole
-    result.roleDisplaced = math.max(0, oldRole - rating:ReferenceLoadout(context, retained, true))
+    setRoleChange(context, result, previous, retained)
     if #result.replacements == 0 then result.status = "empty" end
     return result
 end
@@ -1946,7 +1975,7 @@ local function storageComparison(context, group, state, instance, candidate, res
     end
     local comparison = { result = result, winner = groupHas(state.baseline, instance) }
     if comparison.winner then
-        comparison.qualifies = action ~= nil and rating:IsMeaningfulOwnedUpgrade(action.swap)
+        comparison.qualifies = action ~= nil and rating:ReliableGain(action.swap) ~= nil
     else
         local proposal = ownedProposal(context, group, state, instance)
         if proposal then
@@ -1957,6 +1986,24 @@ local function storageComparison(context, group, state, instance, candidate, res
             end
         end
     end
+    if instance.state == "bag" then
+        local bagState = state
+        for _, choice in ipairs(state.baseline) do
+            if choice.instance and choice.instance.state == "bank" then bagState = ownedLoadout(context, group, "bags"); break end
+        end
+        local available = not bagState.unresolved and getStorageActions(context, group, bagState)[instance]
+        if available and rating:ReliableGain(available.swap) then
+            comparison.equipNow = true
+            if bagState ~= state then
+                local swap = copy(available.swap)
+                swap.definition, swap.slot = group.definitions[available.index], bagState.baseline[available.index].slot
+                swap.placement, swap.rankScope = referencePlacement(rankContext, candidate.facts, swap.slot)
+                swap.ownership, swap.bis, swap.effectNote = "bag", result.bis, result.effectNote
+                comparison.result, result = swap, swap
+            end
+        end
+    end
+    comparison.improves = rating:ReliableGain(result) ~= nil
     return comparison
 end
 
@@ -1966,6 +2013,10 @@ function rating:GetStorageComparison(context, candidate, sourceId, guid)
         or not self:SameExactItemLink(candidate.entry.item_id, instance.item_link, candidate.item_link) then
         return nil, false
     end
+    return self:GetHeldComparison(context, candidate, instance)
+end
+
+function rating:GetHeldComparison(context, candidate, instance)
     local group = groupFor(candidate.facts)
     if #group.definitions == 0 then return nil, true end
     local build, missing = self:WithCharacterBuild(context, true)
@@ -1989,8 +2040,7 @@ end
 
 function rating:GetQualifyingUpgrade(context, candidate, owned, scope)
     local swap = self:CompareTooltipItem(context, candidate, owned, nil, not owned, scope)
-    if not swap.conditional and (owned and self:IsMeaningfulOwnedUpgrade(swap)
-        or not owned and (self:RoundedGain(swap.delta) or 0) > 0) then
+    if self:ReliableGain(swap) then
         return swap
     end
 end
@@ -1998,7 +2048,7 @@ end
 function rating:WithGuaranteedRewards(context, rewards)
     if #rewards == 0 then return context end
     local combined = copy(context)
-    combined.forecastBaseline = context
+    combined.tooltipLookahead, combined.opportunities, combined.storedGroups = nil, nil, nil
     combined.ownedCopies, combined.ownedLoadouts, combined.lastTooltip = {}, {}, nil
     combined.equipmentFacts, combined.pools = copy(context.equipmentFacts), {}
     for _, instance in ipairs(context.ownedCopies) do
@@ -2034,10 +2084,33 @@ function rating:RoundedGain(delta)
     return delta < 0 and -points or points
 end
 
+function rating:ReliableGain(swap)
+    if swap and not swap.conditional and finite(swap.delta) and swap.delta > 0 then return swap.delta end
+end
+
+function rating:EstimateSwapPoints(delta)
+    local points = self:RoundedGain(delta)
+    if points == nil then return nil end
+    if delta == 0 then return "0.0 pts" end
+    if math.abs(delta) >= 0.1 then return string.format("%+.1f pts", points) end
+    if math.abs(delta) < 0.001 then return delta > 0 and "+<0.001 pts" or "-<0.001 pts" end
+    local precise = string.format("%+.3f", delta):gsub("0+$", "")
+    return precise .. " pts"
+end
+
+function rating:UpgradeSize(swap)
+    if not self:ReliableGain(swap) then return nil end
+    if not swap.roleDelta or not swap.roleDisplaced then return "Slight upgrade" end
+    local gain = math.min(swap.delta, swap.roleDelta)
+    if gain >= math.max(6, swap.roleDisplaced * 0.15) then return "Major upgrade" end
+    if gain >= math.max(2, swap.roleDisplaced * 0.05) then return "Upgrade" end
+    return "Slight upgrade"
+end
+
 function rating:IsMeaningfulOwnedUpgrade(result)
-    if result.conditional or not result.delta or result.delta <= 0 or not result.roleDelta then return false end
+    if not self:ReliableGain(result) or not result.roleDelta then return false end
     if result.status == "empty" then return self:RoundedGain(result.roleDelta) >= 0.1 end
-    return result.roleDelta >= math.max(2, (result.roleDisplaced or 0) * 0.05)
+    return math.min(result.delta, result.roleDelta) >= math.max(2, (result.roleDisplaced or 0) * 0.05)
 end
 
 function rating:GetSwapBasisLabel(basis)
@@ -2086,9 +2159,85 @@ function rating:DescriptionLines(entry)
     return lines
 end
 
+function rating:GetRowItem(row)
+    if not row then return nil end
+    local item = row.stat_rank and row.stat_rank.item
+    if item and not item.has_random_stats then return item end
+    if not row.item_id then return nil end
+    local key = row.variant_id or self:NormalizeLink(row.item_id, row.item_link) or tostring(row.item_id)
+    local facts = self:GetPublishedFacts(key)
+    if facts and not facts.has_random_stats then return facts end
+    if row.item_link and not self:IsUnresolvedVariant(row.item_id, key) then
+        local candidate, status = self:GetTooltipItem(row.item_id, row.item_link)
+        return candidate and candidate.facts, candidate and candidate.status or status
+    end
+end
+
+-- Activity totals compare an additional copy with the best legal gear already owned.
+function rating:GetOwnedOpportunity(context, item, link, live)
+    if not context or not item or not item.level or item.level > context.level then return nil end
+    local group = groupFor(item)
+    if not inScope(context, item) or not firstUsableSlot(context, group, item) then return nil end
+    local build, missing = self:WithCharacterBuild(context, live)
+    if missing then return nil, "unavailable" end
+    local revision = addon.ForeverScoring and addon.ForeverScoring.revision
+    if build.opportunityRevision ~= revision then build.opportunities, build.opportunityRevision = nil, revision end
+    build.opportunities = build.opportunities or {}
+    local key = item.key .. "\031" .. (link or "")
+    local result = build.opportunities[key]
+    if not result then
+        result = ownedSwap(build, group, {facts = item, key = item.key, entry = {item_id = item.id}, item_link = link}, true)
+            or {status = "blocked"}
+        build.opportunities[key] = result
+    end
+    return result, result.status
+end
+
+function rating:GetOwnedRival(context, candidate, worn)
+    if not self:ReliableGain(worn) then return end
+    local group = groupFor(candidate.facts)
+    if not context.storedGroups then
+        local groups = {}
+        for _, instance in ipairs(context.ownedCopies) do
+            if instance.state == "bag" or instance.state == "bank" then groups[groupFor(instance.facts)] = true end
+        end
+        context.storedGroups = groups
+    end
+    if context.storedGroups[group] then
+        local best = self:GetOwnedOpportunity(context, candidate.facts, candidate.item_link, true)
+        if best and best.delta and best.delta < 0 and not best.conditional then
+            for _, other in ipairs(best.replacements) do
+                if other.state == "bag" or other.state == "bank" then return other end
+            end
+        end
+    end
+end
+
+function rating:GetEquippedAlternative(context, item, physical)
+    local build, missing = self:WithCharacterBuild(context, true)
+    local group = groupFor(item)
+    if missing or #group.definitions == 0 then return end
+    local function alternative(state)
+        if state.unresolved then return end
+        local actions = getStorageActions(build, group, state)
+        for _, choice in ipairs(state.baseline) do
+            local action = actions[choice.instance]
+            if action and self:ReliableGain(action.swap) then
+                for _, replaced in ipairs(action.swap.replacements) do
+                    if replaced.key == item.key then
+                        for _, definition in ipairs(group.definitions) do
+                            if (not physical or definition.key == physical) and definition.label == replaced.slot then return action.swap end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return alternative(ownedLoadout(build, group, "bags")) or alternative(ownedLoadout(build, group, true))
+end
+
 function rating:GetLiveLevelingSwap(item, link, owned, physical, player, equipped)
     if not player or not player.spec or not item then return nil end
-    if equipped then return { status = "equipped" } end
     local context = self:GetContext(player.class, player.spec, player.phase, player.level, owned)
     if not context then return nil end
     local revision = addon.ForeverScoring and addon.ForeverScoring.revision
@@ -2096,15 +2245,27 @@ function rating:GetLiveLevelingSwap(item, link, owned, physical, player, equippe
         context.liveLevelingRevision, context.liveLevelingSwaps = revision, {}
     end
     context.liveLevelingSwaps = context.liveLevelingSwaps or {}
-    local key = table.concat({ item.key, link or "", physical or "" }, "\031")
+    local key = table.concat({ item.key, link or "", physical or "", tostring(equipped == true) }, "\031")
     local result = context.liveLevelingSwaps[key]
-    if not result then
-        -- Published exact facts give list rows the same legal swap checks as an item link.
-        result = self:CompareTooltipItem(context,
-            { facts = item, key = item.key, item_link = link, entry = { item_id = item.id } },
-            true, nil, true, { live = true, lookahead = true, skipPlacement = true, physical = physical })
-        context.liveLevelingSwaps[key] = result
+    if result then return result end
+    local held = context.ownedFacts[item.key]
+    if equipped then
+        result = {status = "equipped", alternative = self:GetEquippedAlternative(context, item, physical)}
+    else
+        local candidate = {facts = item, key = item.key, item_link = link or (held and held.item_link), entry = {item_id = item.id}}
+        local storage
+        if held and (held.state == "bag" or held.state == "bank") then
+            -- A Guide link names the base variant. Score the modifications on the copy the player would equip.
+            local stored = self:GetTooltipItem(item.id, held.item_link)
+            if stored and stored.facts then storage = self:GetHeldComparison(context, stored, held) end
+            if physical and storage and storage.result.definition and storage.result.definition.key ~= physical then storage = nil end
+        end
+        result = copy(storage and storage.result or self:CompareTooltipItem(context, candidate, true, nil, true,
+            {live = true, lookahead = true, skipPlacement = true, physical = physical}))
+        result.storage = storage
+        if not storage then result.rival = self:GetOwnedRival(context, candidate, result) end
     end
+    context.liveLevelingSwaps[key] = result
     return result
 end
 
@@ -2123,8 +2284,7 @@ function rating:GetLevelingCue(result)
     local placement, forecast = result.placement, result.forecast
     local grade
     if placement and placement.phase == "LEVELING" then grade = levelingGrade(placement) end
-    if forecast and not result.conditional and not forecast.conditional and forecast.level <= addon.maxLevelingLevel
-        and (self:RoundedGain(forecast.delta) or 0) > 0 then
+    if forecast and not result.conditional and forecast.level <= addon.maxLevelingLevel + 1 and self:ReliableGain(forecast) then
         return grade, forecast.level
     end
     return grade
@@ -2155,36 +2315,113 @@ local function levelingRankText(placement)
     return label .. atLevels(level), grade
 end
 
-local function levelingSwapText(self, swap, level, owned)
-    if not swap then return nil end
-    if swap.status == "equipped" then return "Equipped" end
-    if swap.status == "best_owned" then
-        return (swap.conditional and "Estimated best you own for this slot" or "Best you own for this slot")
-            .. (level and atLevels(level) or "")
-    end
-    local gain = self:RoundedGain(swap.delta)
-    if gain == nil then
-        if swap.status == "loading" then return "Loading gear comparison" end
-        if swap.status == "unavailable" or swap.status == "blocked" then
-            return "Gear comparison unavailable" .. (level and atLevels(level) or "")
-        end
-        return nil
-    end
-    local estimate = (level or swap.conditional) and "Estimated " or nil
+local function itemNames(items)
     local names = {}
-    for _, replacement in ipairs(swap.replacements or {}) do names[#names + 1] = replacement.name end
-    local compared = #names > 0 and table.concat(names, " + ") or (owned and "your best gear" or "your equipped gear")
-    local text
-    if swap.status == "empty" and #names == 0 and gain > 0 then
-        text = estimate and "Estimated upgrade for an empty slot" or "Fills an empty slot"
-    elseif gain > 0 then
-        text = (estimate and "Estimated upgrade over " or "Upgrade over ") .. compared
-    elseif gain < 0 then
-        text = (estimate and "Estimated downgrade from " or "Downgrade from ") .. compared
-    else
-        text = (estimate and "Estimated sidegrade to " or "Sidegrade to ") .. compared
+    for _, item in ipairs(items or {}) do names[#names + 1] = item.name end
+    return table.concat(names, " + ")
+end
+
+local function gearVerdict(self, input, view)
+    local swap = input.swap or {}
+    local forecast = swap.forecast
+    local result = forecast or swap
+    local storage = input.storage or swap.storage
+    local ownership = input.ownership or swap.ownership
+    local ownedBaseline = input.ownedBaseline or forecast
+    local names = itemNames(result.replacements)
+    local slot = (result.slot or (result.definition and result.definition.label) or "gear"):lower()
+    local delta = result.delta
+    local suffix = forecast and atLevels(result.level) or ""
+    local previewing = input.playerLevel and input.viewedLevel and input.playerLevel ~= input.viewedLevel
+    local unresolved = storage and storage.unavailable
+    local conditional = result.conditional or swap.conditional
+    local bestBag = storage and storage.equipNow and ownership == "bag" and input.activeSpec ~= false
+    for _, partner in ipairs(result.incoming or {}) do
+        if partner.state == "bank" then bestBag = false end
     end
-    return text .. (level and atLevels(level) or "")
+    if unresolved or result.status == "loading" or result.status == "unavailable" or result.status == "blocked" then
+        local status = unresolved or result.status
+        view.today = (status == "loading" and "Waiting for item stats" or status == "blocked" and "No legal swap"
+            or "Gear comparison unavailable") .. suffix
+        view.tone = "unknown"
+        return
+    end
+    if result.status == "equipped" then
+        view.today = result.definition and ("Equipped · " .. result.definition.label) or "Equipped"
+        local alternative = result.alternative
+        if alternative and alternative.incoming and alternative.incoming[1] then
+            local location = "your bags"
+            for _, piece in ipairs(alternative.incoming) do if piece.state == "bank" then location = "your bank" end end
+            view.tone, view.gain = "gain", alternative.delta
+            view.today = "↑ Upgrade in " .. location .. " · " .. itemNames(alternative.incoming)
+            view.evidence = self:EstimateSwapPoints(alternative.delta) .. " over " .. itemNames(alternative.replacements)
+        end
+        return
+    end
+    if delta == nil then return end
+    local gain = self:ReliableGain(result)
+    local points = self:EstimateSwapPoints(delta)
+    local baseline = names ~= "" and names or (result.status == "empty" and ("an empty " .. slot .. " slot")
+        or ownedBaseline and "your best owned gear" or "your equipped gear")
+    view.evidence = (forecast and "Estimated " or "") .. points .. " vs " .. baseline .. suffix
+    if conditional then
+        view.today = delta > 0 and "Possible upgrade" or "Depends on your setup"
+        local item = input.item
+        for _, effect in ipairs(item and item.effects or {}) do
+            if type(effect) == "string" and effect:lower():find("chance on hit", 1, true) then
+                view.today = view.today .. " · Chance-on-hit effect unscored"
+                break
+            end
+        end
+        view.today = view.today .. suffix
+        view.evidence = view.evidence .. " · Scored stats only"
+        view.tone = "uncertain"
+    elseif forecast then
+        view.tone = "future"
+        if gain then
+            view.futureLevel = result.level
+            view.today = (ownership == "bag" or ownership == "bank") and ("Keep for Level " .. result.level)
+                or ("Likely upgrade" .. suffix)
+        elseif result.status == "best_owned" then view.today = "Best you own for this slot" .. suffix
+        else view.today = (delta < 0 and "Likely downgrade" or "Likely sidegrade") .. suffix end
+    elseif gain then
+        view.tone, view.gain = "gain", gain
+        local label = self:UpgradeSize(result)
+        if result.status == "empty" then label = "Fills your empty " .. slot .. " slot" end
+        if bestBag then label = "Equip now · " .. label end
+        if input.chooseReward then label = "Choose this reward · " .. label end
+        view.today = "↑ " .. label
+        if swap.rival then
+            local kind = result.slot == "Ring" and "ring" or result.slot == "Trinket" and "trinket" or "option"
+            view.today, view.tone = "You own a stronger " .. kind .. " · " .. swap.rival.name, nil
+            view.evidence = "↑ " .. view.evidence
+        end
+        local partners = {}
+        for _, piece in ipairs(result.incoming or {}) do
+            if piece.slot ~= result.definition.label then partners[#partners + 1] = piece.name end
+        end
+        if #partners > 0 then view.evidence = view.evidence .. " · With " .. table.concat(partners, " + ") end
+    elseif result.status == "best_owned" then
+        view.today = "Best you own for this slot"
+    elseif delta < 0 then
+        view.today, view.tone = "Downgrade", "loss"
+        for _, other in ipairs(result.replacements or {}) do
+            if ownedBaseline and (other.state == "bag" or other.state == "bank") then
+                local kind = result.slot == "Ring" and "ring" or result.slot == "Trinket" and "trinket" or "option"
+                view.today = "You own a stronger " .. kind .. " · " .. other.name
+                break
+            end
+        end
+    else
+        view.today = "Sidegrade"
+    end
+    if input.activeSpec == false and input.spec then view.today = view.today .. " for " .. input.spec end
+    if previewing and not forecast then view.today = view.today .. atLevels(input.playerLevel) end
+    if forecast then
+        view.forecast, view.forecastPoints, view.forecastLevel = view.today, points, result.level
+    else
+        view.todayPoints, view.todayLevel = points, input.playerLevel
+    end
 end
 
 function rating:LevelingPresentation(input)
@@ -2216,22 +2453,20 @@ function rating:LevelingPresentation(input)
         and (input.sourceLevel > (playerLevel or 0) or input.sourceLevel > (input.viewedLevel or playerLevel or 0)) then
         view.acquisition = (SOURCE_GATES[input.sourceType] or "Source available") .. atLevels(input.sourceLevel)
     end
-    if forecast then
-        view.forecast = levelingSwapText(self, forecast, forecast.level, true)
-        local _, future = self:GetLevelingCue(swap)
-        view.futureLevel = future
-    else
-        local action = levelingSwapText(self, swap, nil, input.ownedBaseline)
-        if action and swap.delta ~= nil and playerLevel and input.viewedLevel and input.viewedLevel ~= playerLevel then
-            action = action .. atLevels(playerLevel)
-        end
-        view.action = action
-    end
-    view.today = view.requirement or view.action
+    gearVerdict(self, input, view)
+    if input.personalSpec and view.today then view.today = view.today .. " · " .. input.personalSpec end
+    view.swap = swap
+    view.action = view.today
+    view.today = view.today or view.requirement
     if not view.today and playerLevel and not forecast and item and item.level and item.level <= playerLevel then
         local status = placement and placement.status
         view.today = status == "incompatible" and "No comparison for this spec" or "Gear comparison unavailable"
         if status == "out_of_scope" then view.today = nil end
+    end
+    if placement and placement.phase == "PR" then
+        view.rank = self:Label(placement, nil, true)
+        if placement.rank or placement.score then view.rank = view.rank .. " · Pre-Raid" end
+        view.compact = self:Label(placement, "compact", true)
     end
     view.strength = view.rank or view.range
     if view.grade then
@@ -2255,9 +2490,10 @@ function rating:LevelingPresentationLines(view)
         if text then lines[#lines + 1] = text end
     end
     add(view.today)
+    add(view.evidence)
+    if view.requirement ~= view.today then add(view.requirement) end
     if view.strength ~= view.today then add(view.strength) end
     if view.range ~= view.strength then add(view.range) end
     add(view.acquisition)
-    add(view.forecast)
     return lines
 end

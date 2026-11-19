@@ -204,12 +204,21 @@ fallback.stat_swap = {basis = "reference", delta = 120}
 conditional.stat_swap = {basis = "active", delta = 90, conditional = true}
 comparison.swapBasis = "active"
 ui:SetComparisonSort("comparison"); H.settle()
-assert(ui:GetComparisonSortLabel() == "Your setup")
+assert(ui:GetComparisonSortLabel() == "Best upgrade · Your setup")
 local candidates = {}
 for _, item in ipairs(comparison.entries) do
     if item.kind == "row" and not item.data.context then candidates[#candidates + 1] = item.data end
 end
 assert(candidates[1] == first and candidates[2] == second)
+local firstVisible = false
+for _, row in ipairs(ui.comparisonActiveRows) do
+    if row:IsVisible() and row.comparisonData == first then
+        local change = row.evidenceText:GetText()
+        assert(change:find("+2.0 pts", 1, true) and change:find(ui:GetComparisonReferenceLabel(comparison.reference), 1, true) and change:find("Lv " .. comparison.level, 1, true), change)
+        firstVisible = true
+    end
+end
+assert(firstVisible)
 ui:ShowComparisonDetails(first); H.settle()
 local statRank
 for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
@@ -839,6 +848,36 @@ local action = assert(ui:GetNextUpgradeActions({helm})[1])
 assert(action.data == helm and action.source:find("Wrinkle Goodsteel", 1, true))
 ''')
 
+    def test_wishlist_keeps_exact_stars_and_legacy_any_version_through_undo(self):
+        self.run_lua(r'''
+local addon, id = BigBiSList, 10128
+local char = addon:GetCharacterDB()
+char.wishlist = {[id] = true, ["16731"] = {addedAt = 1}}
+local function variant(name, suffix)
+    local itemLink = "|Hitem:10128::::::" .. suffix .. ":12753|h[Revenant Chestplate of the " .. name .. "]|h"
+    return {item_id = id, name = "Revenant Chestplate", slot = "Chest", item_link = itemLink,
+        variant_id = addon:GetItemVariantIdFromLink(itemLink)}
+end
+local bear, champion = variant("Bear", -68), variant("Champion", -45)
+local any = {item_id = id, wishlist_any = true}
+assert(bear.variant_id and champion.variant_id and bear.variant_id ~= champion.variant_id)
+assert(ui:IsWishlisted(any) and not ui:IsWishlisted(bear) and not ui:IsWishlisted(champion))
+ui:ToggleWishlist(bear); ui:ToggleWishlist(champion)
+local filters = {ownedItems = {[id] = "bag", variants = {[bear.variant_id] = "bag"}}}
+local rows = addon:GetWishlistRows(char.wishlist, "Paladin", "Protection", "PR", filters)
+local byKey = {}
+for _, record in ipairs(rows) do byKey[record.variant_id or tostring(record.item_id)] = record end
+assert(byKey[tostring(id)].wishlist_any and byKey["16731"].wishlist_any)
+assert(byKey[bear.variant_id].name:find("of the Bear", 1, true) and byKey[bear.variant_id].ownership_state == "bag")
+assert(byKey[champion.variant_id].name:find("of the Champion", 1, true) and byKey[champion.variant_id].ownership_state ~= "bag")
+ui:ToggleWishlist(byKey[bear.variant_id])
+assert(not ui:IsWishlisted(bear) and ui:IsWishlisted(champion) and ui:IsWishlisted(any))
+assert(ui:UndoLastAction() and ui:IsWishlisted(bear))
+ui:ToggleWishlist(any)
+assert(not ui:IsWishlisted(any) and ui:IsWishlisted(bear) and ui:IsWishlisted(champion))
+assert(ui:UndoLastAction() and char.wishlist[id] == true)
+''')
+
     def test_retired_build_tab_migrates_in_both_modes(self):
         self.run_lua(r'''
 local addon = BigBiSList
@@ -924,7 +963,7 @@ end}
 ui:Open(); H.settle(); ui:SetContentMode("leveling"); H.settle(); ui:SetTab("Equipped"); H.settle()
 local tile = ui.gearFrame.slots.Head
 assert(tile.gearData.stat_rank.status == "loading" and callbacks[first])
-assert(tile.rating:GetText() == "Loading stats" and not tile.rating.rankStripe)
+assert(tile.rating:GetText() == "Waiting for item stats" and not tile.rating.rankStripe)
 tile:Click(); H.settle()
 H.equipped[1] = second
 ui:Invalidate("ownership"); ui:Refresh(); H.settle()
@@ -948,18 +987,23 @@ assert(statsCalls[second] == reads, "resizing should reuse the resolved item")
         self.run_lua(r'''
 local function candidate(id, status, route, higher)
     return {item_id = id, name = "Item " .. id, slot = "Head", priority = 100, hasCurrent = true,
+        class = "Paladin", spec = "Protection", planner_swap = {delta = 5, roleDelta = 5, roleDisplaced = 10},
         upgrade_candidate = true, higher_rated = higher, reasons = {"Alternative this phase"},
         access = {status = status, optionEvaluation = route and {option = route, status = status}, options = {}}}
 end
 local live = {label = "Keeper", zone = "Live Dungeon", source_type = "drop"}
 local future = {label = "Future boss", zone = "Future Dungeon", source_type = "drop"}
 local bag = candidate(990051, "unknown", nil, true)
+bag.planner_swap.storage = {qualifies = true, winner = true, equipNow = true}
+BigBiSList.DetectPlayerSpec = function() return "Protection" end
 local available = candidate(990052, "ready", live)
 local upcoming = candidate(990053, "ready", future)
 local unknown = candidate(990054, "unknown", live)
 local higher = candidate(990055, "ready_alternate", live)
 available.recommendation_tier, upcoming.recommendation_tier = "chase_first", "strong_targets"
-local rows = {upcoming, available, available, unknown, higher, bag}
+local guideOnly = candidate(990056, "ready", live, true)
+guideOnly.planner_swap = nil
+local rows = {upcoming, guideOnly, available, available, unknown, higher, bag}
 GetContainerNumSlots = function(bagId) return bagId == 0 and 1 or 0 end
 GetContainerItemID = function() return bag.item_id end
 BigBiSList.GetPlannerRows = function() return rows end
@@ -968,7 +1012,7 @@ ui.GetAccessEvaluation = function(_, row) return row.access or {status = "unknow
 ui:Open(); H.settle(); ui:SetTab("Upgrades"); H.settle()
 local active = ui.activeRenderFrames
 assert(#active == 3 and active[1].boundData == bag and active[2].boundData == available and active[3].boundData == higher)
-assert(active[1].sourceText:GetText() == "Bags" and active[2].sourceText:GetText():find("Live Dungeon", 1, true))
+assert(active[1].sourceText:GetText() == "In your bags" and active[2].sourceText:GetText():find("Live Dungeon", 1, true))
 assert(not ui.sortDropdown:IsVisible() and not ui.groupDropdown:IsVisible())
 active[2].iconButton:Click(); H.settle()
 local fields, recommendation = ui.detailsWidgetPools.fields[1], ui.detailsWidgetPools.text[1]
@@ -1073,9 +1117,10 @@ local function clickTitle(title)
     error("Missing activity " .. title)
 end
 local actions = entries("action")
-assert(#actions == 3 and actions[1].title == "Trial Halls" and actions[1].detail == "3 items · 1 unowned with known sources")
-assert(actions[2].title == "Unknown" and actions[2].detail == "1 item · 0 unowned with known sources")
-assert(actions[3].title == "The Deadmines" and actions[3].detail == "Recommended at Level 57")
+assert(#actions == 4 and actions[1].title == "Trial Halls" and actions[1].detail:find("3 guide items", 1, true))
+assert(actions[2].title == "Alternate Halls" and actions[2].detail:find("2 guide items", 1, true))
+assert(actions[3].title == "Unknown" and actions[3].detail:find("1 guide item", 1, true))
+assert(actions[4].title == "The Deadmines" and actions[4].detail == "Recommended at Level 57")
 assert(queried[56] and queried[57] and queried[58] and queried[59] and not queried[60])
 
 local builds = ui:GetPerformanceStats().queryBuilds
@@ -1101,7 +1146,7 @@ actions = entries("action")
 assert(not ui.levelingActivity and #actions == 1 and actions[1].detail == "Recommended at Level 59")
 queried = {}
 ui:SetLevelingLevel(59); H.settle()
-assert(queried[59] and not queried[60] and entries("action")[1].detail == "1 item · 1 unowned with known sources")
+assert(queried[59] and not queried[60] and entries("action")[1].detail:find("1 guide item", 1, true))
 ui:SetFilter("search", "no matching item"); H.settle()
 assert(ui.emptyLabel:IsVisible() and not ui.levelingActivityBar:IsShown())
 ''')

@@ -130,7 +130,7 @@ local function collectQuest(items)
                 local source = tostring(read(row.questID, "number") or read(questId, "number") or "") .. ":" .. kind .. ":" .. index
                 local selected = kind == "choice" and (call(QuestInfoItem_IsSelected, row) == true)
                 addItem(items, { kind = "quest", row = row, icon = row.Icon, sourceId = source,
-                    group = kind, order = index, selected = selected,
+                    group = kind, order = index, selected = selected, turnIn = not questLog and (shown(QuestFrameRewardPanel) or info.displayContext == "questComplete"),
                     quantity = read(quantity, "number") }, call(getLink, kind, index), id)
             end
         end
@@ -428,15 +428,16 @@ local function assess(batch, entry, evaluation)
 
     local result = rating:CompareTooltipItem(context, candidate, worn, nil, true,
         { live = true, lookahead = quest, quantity = quest and entry.quantity or nil })
+    if worn then result.rival = rating:GetOwnedRival(context, candidate, result) end
     local ready = not unresolved(result) and not unresolved(result.placement)
-    local gain = rating:RoundedGain(result.delta) or 0
-    local qualifies = not result.conditional and gain > 0
+    local gain = result.delta or 0
+    local qualifies = rating:ReliableGain(result) ~= nil
     local assessment = { spec = spec, result = result, gain = gain,
         ownedBaseline = not worn, guaranteed = evaluation.guaranteed }
     if quest then
         local slot = result.slot or result.placement.item and result.placement.item.slot
         if context.leveling and slot and addon.IsConfirmedGearBiS then
-            local history = addon:GetRecommendationHistory(id, context.class, spec.name, "PR", slot)
+            local history = addon:GetRecommendationHistory(id, context.class, spec.name, "PR", slot, candidate.key)
             if addon:IsConfirmedGearBiS(history, "PR", id, candidate.key) then
                 assessment.futureBiS = true
             end
@@ -452,7 +453,7 @@ local function assess(batch, entry, evaluation)
         if result.ownership and worn then
             local owned = rating:CompareTooltipItem(context, candidate, false, nil, true)
             ready = not unresolved(owned)
-            extraGain = not owned.conditional and rating:RoundedGain(owned.delta) or 0
+            extraGain = rating:ReliableGain(owned) or 0
         end
         if ready and (not result.ownership or extraGain > 0) then
             mark = assessment
@@ -498,8 +499,8 @@ local function rankStorage(batch, entry, checkpoint)
             local assessment = { spec = spec, result = result, storage = comparison }
             assessments[#assessments + 1] = assessment
             local _, futureLevel = rating:GetLevelingCue(result)
-            if resolved and (comparison.qualifies or futureLevel) then
-                if not primary or (not primary.storage.qualifies and comparison.qualifies) then primary = assessment end
+            if resolved and (comparison.improves or futureLevel) then
+                if not primary or (not primary.storage.improves and comparison.improves) then primary = assessment end
             end
             signature[#signature + 1] = table.concat({ spec.name, tostring(result.delta),
                 tostring(result.conditional), tostring(result.placement.rank), tostring(result.placement.total),
@@ -527,7 +528,7 @@ local function rankRewards(batch, rewards, evaluation, rows, ready, allowBest)
             local result = mark.result
             if result.conditional or result.preview or result.placement.status == "effect"
                 or result.placement.status == "utility" then resolved = false end
-            if not result.conditional and mark.gain > 0 then
+            if rating:ReliableGain(result) then
                 if mark.gain > bestGain then bestGain, best = mark.gain, {} end
                 if mark.gain == bestGain then best[#best + 1] = mark end
             end
@@ -579,6 +580,9 @@ local function newStorageBadge(row)
     badge.icon = badge:CreateTexture(nil, "ARTWORK")
     badge.icon:SetSize(14, 14)
     badge.icon:SetPoint("CENTER")
+    badge.cue = badge:CreateTexture(nil, "OVERLAY")
+    badge.cue:SetSize(11, 11)
+    badge.cue:SetPoint("LEFT", badge, "LEFT", 1, 0)
     badge.bis = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     badge.bis:SetAllPoints()
     badge.bis:SetJustifyH("CENTER")
@@ -629,7 +633,16 @@ local function displayStorage(mark, r, g, b, immediate, futureLevel)
         widgets:SetIcon(badge.icon, "sortAscending")
         badge.icon:SetVertexColor(r, g, b)
     end
-    badge:SetSize(futureLevel and 32 or 20, 16)
+    local cue = futureLevel or rating:ReliableGain(result)
+    badge:SetSize(futureLevel and 44 or cue and 32 or 20, 16)
+    badge.cue:SetShown(cue ~= nil)
+    widgets:SetIcon(badge.cue, futureLevel and "clock" or "sortAscending")
+    badge.cue:SetVertexColor(widgets:GearAdviceColor(futureLevel and "future" or "gain"))
+    badge.bis:ClearAllPoints()
+    badge.bis:SetPoint("LEFT", cue and badge.cue or badge, cue and "RIGHT" or "LEFT", 0, 0)
+    badge.bis:SetPoint("RIGHT")
+    badge.icon:ClearAllPoints()
+    badge.icon:SetPoint("RIGHT", badge, "RIGHT", -1, 0)
     badge.icon:SetShown(not bis and not futureLevel)
     badge.bis:SetText(futureLevel and ("Lv " .. futureLevel) or "BiS")
     if futureLevel then badge.bis:SetTextColor(r, g, b) else badge.bis:SetTextColor(unpack(widgets.Theme.bisGold)) end
@@ -664,6 +677,9 @@ local function newOverlay(row)
     corner.arrow = corner:CreateTexture(nil, "OVERLAY")
     corner.arrow:SetAllPoints(corner.symbol)
     widgets:SetIcon(corner.arrow, "sortAscending")
+    corner.cue = corner:CreateTexture(nil, "OVERLAY")
+    corner.cue:SetSize(11, 11)
+    corner.cue:SetPoint("RIGHT", corner, "LEFT", 1, 0)
     corner.level = corner:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     corner.level:SetPoint("CENTER")
     overlay.corner = corner
@@ -736,7 +752,7 @@ local function display(mark, animate, immediate)
         corner:SetPoint("TOPLEFT", entry.icon or row, "TOPLEFT", 1, -1)
     end
     corner.accent:SetColorTexture(r, g, b, 1)
-    corner.arrow:SetVertexColor(r, g, b)
+    corner.arrow:SetVertexColor(widgets:GearAdviceColor("gain"))
     overlay.glow:SetVertexColor(r, g, b, 0.55)
     overlay.glow:SetShown(not mark.sellValue and not futureLevel)
     overlay.bis:SetShown(bis)
@@ -746,7 +762,7 @@ local function display(mark, animate, immediate)
     end
 
     local icon = not futureLevel and (mark.sellValue and GOLD_COIN or spec and spec.icon) or nil
-    local showsUpgrade = not futureLevel and result and not result.preview and not result.conditional and (mark.gain or 0) > 0
+    local showsUpgrade = not futureLevel and rating:ReliableGain(result) ~= nil
     local visualKey = table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis),
         tostring(grade or (tier and tier.quality)), tostring(showsUpgrade), tostring(animate), futureLevel or "" }, "\031")
     local wasShown = overlay:IsShown()
@@ -759,6 +775,9 @@ local function display(mark, animate, immediate)
         corner.level:SetText(futureLevel and ("Lv " .. futureLevel) or "")
         corner.level:SetTextColor(r, g, b)
         corner.level:SetShown(futureLevel ~= nil)
+        widgets:SetIcon(corner.cue, futureLevel and "clock" or "sortAscending")
+        corner.cue:SetVertexColor(widgets:GearAdviceColor(futureLevel and "future" or "gain"))
+        corner.cue:SetShown(futureLevel ~= nil or (showsUpgrade and icon ~= nil))
         corner.symbol:SetTexture(icon)
         corner.symbol:SetShown(icon ~= nil)
         corner.arrow:SetShown(not icon and showsUpgrade == true)
@@ -961,7 +980,7 @@ local function refresh()
                         local _, futureLevel = rating:GetLevelingCue(assessment.result)
                         signature[#signature + 1] = table.concat({assessment.spec.name,
                             assessment.gain, tostring(assessment.result.conditional), tostring(assessment.bestChoice),
-                            tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
+                            tostring(assessment.tiedChoice), tostring(assessment.futureBiS), tostring(entry.turnIn),
                             tostring(assessment.result.placement.status), tostring(futureLevel)}, "\031")
                     end
                     entry.assessmentKey = table.concat(signature, "\030")

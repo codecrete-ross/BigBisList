@@ -5223,13 +5223,13 @@ function RECOMMENDATION.useFitsContext(addon, use, targetPhase)
             use.content_phase and phaseIndex(use.content_phase) or addon:GetAvailabilityPhaseIndex(targetPhase)))
 end
 
-function BigBiSList:GetRecommendationHistory(itemId, className, specName, targetPhase, slot)
+function BigBiSList:GetRecommendationHistory(itemId, className, specName, targetPhase, slot, variantId)
     itemId = tonumber(itemId)
     targetPhase = targetPhase or self:GetCurrentPhaseKey()
     local index = self:GetDataIndex(targetPhase)
     index.recommendationHistoryCache = index.recommendationHistoryCache or {}
     index.recommendationHistoryOrder = index.recommendationHistoryOrder or {}
-    local key = table.concat({ tostring(itemId), tostring(className), tostring(specName), targetPhase, tostring(slot or "") }, "\031")
+    local key = table.concat({ tostring(itemId), tostring(className), tostring(specName), targetPhase, tostring(slot or ""), tostring(variantId or "") }, "\031")
     if index.recommendationHistoryCache[key] then return index.recommendationHistoryCache[key] end
     local history = { item_id = itemId, class = className, spec = specName, slot = slot, target_phase = targetPhase, phase_cells = {}, phases = {} }
     local coverage = RECOMMENDATION.coverage(index, className, specName)
@@ -5244,7 +5244,8 @@ function BigBiSList:GetRecommendationHistory(itemId, className, specName, target
         history.phase_cells[#history.phase_cells + 1] = cell
     end
     for _, use in ipairs(self:GetItemUses(itemId, targetPhase)) do
-        if use.class == className and use.spec == specName and (not slot or slotListContains(RECOMMENDATION.slots(slot), use.slot))
+        if use.class == className and use.spec == specName and (not variantId or (use.variant_id or tostring(itemId)) == variantId)
+            and (not slot or slotListContains(RECOMMENDATION.slots(slot), use.slot))
             and RECOMMENDATION.useFitsContext(self, use, targetPhase) then
             for _, fact in ipairs(RECOMMENDATION.facts(use)) do
                 local cell = history.phases[fact.phase]
@@ -5421,14 +5422,14 @@ function BigBiSList:CompareRecommendationItems(candidateId, referenceId, classNa
     return result
 end
 
-function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec, selectedPhaseKey)
+function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec, selectedPhaseKey, variantId)
     itemId = tonumber(itemId)
     if not itemId then
         return nil
     end
 
     local index = self:GetDataIndex(selectedPhaseKey)
-    local cacheKey = table.concat({ tostring(itemId), tostring(className or ""), tostring(selectedSpec or ""), tostring(selectedPhaseKey or "") }, "|")
+    local cacheKey = table.concat({ tostring(itemId), tostring(className or ""), tostring(selectedSpec or ""), tostring(selectedPhaseKey or ""), tostring(variantId or "") }, "|")
     if index.wishlistSummaryCache[cacheKey] then
         return index.wishlistSummaryCache[cacheKey]
     end
@@ -5438,7 +5439,8 @@ function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec,
     local slots = {}
     local bestClassUse
     for _, use in ipairs(self:GetItemUses(itemId, selectedPhaseKey)) do
-        if use.class == className and FILTER_FACETS.useMatchesProgressionContext(use, selectedPhaseKey) then
+        if use.class == className and (not variantId or (use.variant_id or tostring(itemId)) == variantId)
+            and FILTER_FACETS.useMatchesProgressionContext(use, selectedPhaseKey) then
             local specPhases = ensurePath(usesBySpecPhase, use.spec)
             if FILTER_FACETS.wishlistUseIsBetter(use, specPhases[use.phase]) then
                 specPhases[use.phase] = use
@@ -5475,7 +5477,7 @@ function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec,
         end
 
         local ranking = FILTER_FACETS.buildWishlistSpecRanking(specName, selectedSpec, usesBySpecPhase[specName], classOrderIndex)
-        local history = self:GetRecommendationHistory(itemId, className, specName, selectedPhaseKey)
+        local history = self:GetRecommendationHistory(itemId, className, specName, selectedPhaseKey, nil, variantId)
         ranking.history, ranking.future_summary = history, history.future_summary
         ranking.phases, ranking.phase_cells = history.phases, history.phase_cells
         ranking.display_order_index = displayIndex
@@ -5547,23 +5549,31 @@ function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec,
     return summary
 end
 
-function FILTER_FACETS.normalizeWishlistItemIds(wishlistItems)
-    local itemIds = {}
-    local seen = {}
+function BigBiSList:GetWishlistKey(itemId, row)
+    if self.isForever and row and not row.wishlist_any then
+        return tostring(row.variant_id or self:GetItemVariantIdFromLink(row.item_link) or itemId)
+    end
+    return tostring(itemId)
+end
+
+function FILTER_FACETS.wishlistEntries(wishlistItems)
+    local entries, seen = {}, {}
     for key, value in pairs(wishlistItems or {}) do
-        local itemId
-        if (type(value) == "number" or type(value) == "string") and tonumber(value) then
-            itemId = tonumber(value)
-        elseif value then
-            itemId = tonumber(key)
-        end
-        if itemId and not seen[itemId] then
-            seen[itemId] = true
-            table.insert(itemIds, itemId)
+        local saved = type(value) == "table" and value.item_id and value
+        local id = saved and tonumber(saved.item_id) or tonumber(value) or (value and tonumber(key))
+        if id then
+            local identity = saved and saved.variant_id or tostring(id)
+            if not seen[identity] then
+                entries[#entries + 1] = saved or {item_id = id}
+                seen[identity] = true
+            end
         end
     end
-    table.sort(itemIds)
-    return itemIds
+    table.sort(entries, function(a, b)
+        if a.item_id ~= b.item_id then return a.item_id < b.item_id end
+        return (a.variant_id or "") < (b.variant_id or "")
+    end)
+    return entries
 end
 
 function FILTER_FACETS.wishlistRowMatchesRelevance(row, filters)
@@ -5637,18 +5647,28 @@ function BigBiSList:GetWishlistRows(wishlistItems, className, selectedSpec, sele
     local index = self:GetDataIndex(selectedPhase)
     local context = self:GetProgressionContext(selectedPhase)
     local livePhase = self:GetCurrentPhaseKey()
+    local browseFilters = filters
+    if self.isForever then
+        browseFilters = {}
+        for key, value in pairs(filters) do browseFilters[key] = value end
+        -- A star stays visible before its equip level and before a route is known.
+        browseFilters._leveling, browseFilters._pre_raid = nil, nil
+    end
     local rows = {}
 
-    for _, itemId in ipairs(FILTER_FACETS.normalizeWishlistItemIds(wishlistItems)) do
+    for _, saved in ipairs(FILTER_FACETS.wishlistEntries(wishlistItems)) do
+        local itemId = saved.item_id
         local item = getIndexedItem(index, itemId)
         local meta = getItemMetaFromIndex(index, itemId, item) or {}
-        local summary = self:GetWishlistExpansionSummary(itemId, className, selectedSpec, selectedPhase)
+        local summary = self:GetWishlistExpansionSummary(itemId, className, selectedSpec, selectedPhase, saved.variant_id)
         local bestUse = summary and summary.best_use or nil
-        local ownedState = FILTER_FACETS.tableValueById(filters.ownedItems, itemId)
+        local ownedState = FILTER_FACETS.rowOwnedState(filters.ownedItems, saved)
+        local facts = self.ForeverGearRating and self.ForeverGearRating:GetPublishedFacts(saved.variant_id or tostring(itemId))
         local row = {
-            item_id = itemId,
+            item_id = itemId, variant_id = saved.variant_id, wishlist_any = self.isForever and not saved.variant_id,
+            item_link = saved.item_link or (facts and facts.variant_link),
             item = item,
-            name = meta.name or getItemName(itemId, item),
+            name = saved.name or (facts and facts.name) or meta.name or getItemName(itemId, item),
             class = className,
             spec = selectedSpec,
             phase = selectedPhase,
@@ -5657,8 +5677,8 @@ function BigBiSList:GetWishlistRows(wishlistItems, className, selectedSpec, sele
             selected_phase = selectedPhase,
             live_phase = livePhase,
             slots = summary and summary.slots or {},
-            slot = summary and summary.slots[1] or nil,
-            slot_label = summary and summary.slot_label or "—",
+            slot = saved.slot or (facts and facts.slot) or (summary and summary.slots[1]),
+            slot_label = saved.slot or (facts and facts.slot) or (summary and summary.slot_label) or "—",
             spec_rankings = summary and summary.spec_rankings or {},
             relevant_spec_rankings = summary and summary.relevant_spec_rankings or {},
             selected_spec_ranking = summary and summary.selected_spec_ranking or nil,
@@ -5714,7 +5734,7 @@ function BigBiSList:GetWishlistRows(wishlistItems, className, selectedSpec, sele
         }
 
         local filterPhaseIndex = hasActiveSourceContextFilter(filters) and context.content_phase_index or nil
-        if includeByFilter(row, filters, filterPhaseIndex) and FILTER_FACETS.wishlistRowMatchesRelevance(row, filters) then
+        if includeByFilter(row, browseFilters, filterPhaseIndex) and FILTER_FACETS.wishlistRowMatchesRelevance(row, filters) then
             row.acquisition_display = self:GetRowAcquisitionDisplay(row, filters, context.content_phase, true)
             row.matched_access_option = row.acquisition_display.option
             row.source_available = row.acquisition_display.available
@@ -6209,6 +6229,35 @@ function BigBiSList:GetActivityGroup(row)
     return display.source_label or option.source_filter_label or "Other activities"
 end
 
+-- Keep the route that places each item in a dungeon, so opening Details uses that same source.
+function BigBiSList:GetLevelingActivityRows(row, filters, level)
+    local result = {row}
+    local seen = {[self:GetActivityGroup(row)] = true}
+    local scoped = {}
+    for key, value in pairs(filters or {}) do scoped[key] = value end
+    scoped._leveling, scoped.level = true, row.guide_route_level or level
+    local phase = self:GetAvailabilityPhaseIndex(LEVELING_PHASE_KEY)
+    FILTER_FACETS.addMatchingOptionsFromRow(row, scoped, phase, function(option, match)
+        if not FILTER_FACETS.optionIsVerifiedGuideRoute(option) then return end
+        local primary = row.acquisition_display
+        if primary and primary.option == option and primary.source_match == match then return end
+        local display = {option = option, source_match = match, activity_zone = match.activity_zone,
+            activity_zones = match.activity_zones, source_label = option.source_filter_label or SOURCE_TYPE_LABELS[option.source_type]}
+        local activity = self:GetActivityGroup({acquisition_display = display})
+        if seen[activity] then return end
+        seen[activity] = true
+        local alternate = {}
+        for field, value in pairs(row) do alternate[field] = value end
+        alternate.access_options, alternate.matched_access_option = {option}, option
+        local access = self:GetRowAcquisitionDisplay(alternate, scoped, LEVELING_PHASE_KEY, false, true)
+        access.source_match, access.matched_dependency = match, match.dependency
+        access.activity_zone, access.activity_zones = match.activity_zone, match.activity_zones
+        alternate.acquisition_display = access
+        result[#result + 1] = alternate
+    end)
+    return result
+end
+
 function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level, owned, physical)
     local service = self.ForeverGearRating
     local scoring = service and service:GetContext(className, specName, phase, clampLevelingLevel(level), owned)
@@ -6330,7 +6379,7 @@ function LEVELING_HELPERS.formatSwap(service, swap, points)
     local label = service:GetSwapBasisLabel(swap.basis)
     if swap.conditional then label = label .. " · Conditional" end
     local contributions = LEVELING_HELPERS.swapContributionText(points or swap.contributions)
-    return string.format("%s · %+.1f pts", label, swap.delta)
+    return label .. " · " .. service:EstimateSwapPoints(swap.delta)
         .. (#replaced > 0 and (" vs " .. table.concat(replaced, " + ")) or (" · " .. swap.definition.label))
         .. (contributions and ("\n" .. contributions) or "")
         .. (swap.effects and #swap.effects > 0 and ("\n" .. table.concat(swap.effects, ", ")) or "")
@@ -7059,9 +7108,14 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, classN
                 end
                 local access = addon:GetRowAcquisitionDisplay(row, filters, phase, false, true)
                 if (held or access.option) and includeByFilter(row, filters, guide.phaseIndex) then
-                    local candidate = { facts = item, key = item.key, entry = { item_id = item.id },
-                        item_link = held and held.item_link }
-                    if rating:GetQualifyingUpgrade(context, candidate, held ~= nil, { skipPlacement = true }) then
+                    local swap
+                    if held then
+                        swap = rating:GetLiveLevelingSwap(item, held.item_link, owned, nil, context, false)
+                    else
+                        swap = rating:GetOwnedOpportunity(context, item, item.variant_link, true)
+                    end
+                    if rating:ReliableGain(swap) then
+                        row.planner_swap, row.owned_state = swap, held and held.state or "missing"
                         row.reference_upgrade = true
                         row.stat_rank, row.stat_identity = placement, item.key
                         row.upgrade_candidate, row.higher_rated, row.hasCurrent = true, true, true

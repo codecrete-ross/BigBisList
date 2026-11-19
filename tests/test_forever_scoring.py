@@ -286,7 +286,7 @@ for _, entry in ipairs(rating:GetPlacement(context, "Trinket0", {"Trinket"}).row
     assert(not entry.tier and not entry.score_percent)
     assert(rating:Label(entry) == (entry.item.id == 24 and "Utility" or "Effect only"))
 end
-assert(rating:Label({status = "loading"}) == "Loading stats")
+assert(rating:Label({status = "loading"}) == "Waiting for item stats")
 assert(rating:Label(nil) == "Stats unavailable")
 ''')
 

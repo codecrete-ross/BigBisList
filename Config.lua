@@ -264,6 +264,7 @@ BigBiSList.defaults = {
                 groupBy = "slot",
             },
             gearGuide = {
+                activitySort = "most_loot",
                 sort = "priority",
                 sortDirection = "asc",
                 groupBy = "slot",

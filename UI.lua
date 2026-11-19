@@ -984,7 +984,7 @@ local function upgradeComparisonText(data)
     if data and data.comparison and data.comparison.explanation then
         return data.comparison.explanation
     end
-    if not data or not data.upgrade_state or data.upgrade_state == "not_upgrade" then
+    if BigBiSList.isForever or not data or not data.upgrade_state or data.upgrade_state == "not_upgrade" then
         return nil
     end
 
@@ -2377,6 +2377,9 @@ function UI:GetAccessBlockingReason(evaluation)
     if evaluation.status == "ready" then
         return "Available now. Drops, vendors, auctions, groups, and services are not guaranteed."
     elseif evaluation.blockingRequirement then
+        if BigBiSList.isForever and evaluation.blockingRequirement.type == "reputation" then
+            return "Requires " .. requirementSummary(evaluation.blockingRequirement)
+        end
         return accessDetailLabel(evaluation.status) .. " - " .. requirementSummary(evaluation.blockingRequirement)
     elseif evaluation.checkRequirement then
         return "Check requirements - " .. requirementSummary(evaluation.checkRequirement)
@@ -3184,6 +3187,7 @@ function UI:GetSlotDropdownText()
 end
 
 local SORT_LABELS = {
+    most_loot = "Most loot", best_upgrade = "Best upgrade", most_upgrades = "Most upgrades",
     stat_rank = "Stat rank",
     priority = "Pursuit priority",
     rank = "Guide rating",
@@ -3199,24 +3203,28 @@ local SORT_LABELS = {
 
 function UI:GetSortOptions()
     local viewKey = self:GetViewKey()
+    if self:IsLevelingActivityView() and not self.levelingActivity then return { "most_loot", "best_upgrade", "most_upgrades" } end
     if viewKey == "upgrades" then
+        if BigBiSList.isForever then return { "priority", "best_upgrade", "slot", "item", "source", "location", "owned" } end
         return { "priority", "slot", "item", "source", "location", "owned" }
     elseif viewKey == "bisList" then
-        if BigBiSList.isForever then return { "stat_rank", "item", "source", "location", "owned" } end
+        if BigBiSList.isForever then return { "stat_rank", "best_upgrade", "item", "source", "location", "owned" } end
         return { "rank", "item", "source", "location", "owned" }
     elseif viewKey == "gearGuide" then
-        if BigBiSList.isForever then return { "stat_rank", "slot", "item", "source", "location", "owned" } end
+        if BigBiSList.isForever then return { "stat_rank", "best_upgrade", "slot", "item", "source", "location", "owned" } end
         return { "priority", "slot", "item", "source", "location", "owned" }
     elseif viewKey == "enhancements" then
         return { "recommendation", "item", "slot", "source", "owned" }
     elseif viewKey == "wishlist" then
+        if BigBiSList.isForever then return { "priority", "best_upgrade", "item", "slot", "source", "location", "owned" } end
         return { "priority", "item", "slot", "source", "location", "owned" }
     end
     return { "slot", "item" }
 end
 
 function UI:GetSortDropdownItems()
-    local selected = self:GetViewState().sort or self:GetSortOptions()[1]
+    local overview = self:IsLevelingActivityView() and not self.levelingActivity
+    local selected = overview and (self:GetViewState().activitySort or "most_loot") or self:GetViewState().sort or self:GetSortOptions()[1]
     local items = {}
     for _, value in ipairs(self:GetSortOptions()) do
         table.insert(items, {
@@ -3226,12 +3234,14 @@ function UI:GetSortDropdownItems()
         })
     end
     local state = self:GetViewState()
+    if overview then return items end
     table.insert(items, { text = state.sortDirection == "asc" and "Ascending" or "Descending", value = "__direction", notCheckable = true })
     return items
 end
 
 function UI:GetSortDropdownText()
     local state = self:GetViewState()
+    if self:IsLevelingActivityView() and not self.levelingActivity then return SORT_LABELS[state.activitySort] or "Most loot" end
     local sortKey = state.sort or self:GetSortOptions()[1]
     return SORT_LABELS[sortKey] or sortKey
 end
@@ -3245,6 +3255,10 @@ end
 
 function UI:SelectSort(sortKey)
     local state = self:GetViewState()
+    if self:IsLevelingActivityView() and not self.levelingActivity then
+        state.activitySort = sortKey
+        self:Invalidate("presentation", "activity-sort"); self:ScheduleRefresh(nil, "activity-sort"); return
+    end
     if sortKey == "__direction" then
         state.sortDirection = state.sortDirection == "asc" and "desc" or "asc"
         self:Invalidate("presentation", "sort"); self:ScheduleRefresh(nil, "sort"); return
@@ -3684,14 +3698,14 @@ function UI:ClearFilters()
     self:ScheduleRefresh(nil, "clear-filters")
 end
 
-function UI:SetItemCollectionState(collectionName, itemId, value, message, reason)
+function UI:SetItemCollectionState(collectionName, itemId, value, message, reason, key, displayName)
     if not itemId then return end
     local char = BigBiSList:GetCharacterDB()
-    local key = tostring(itemId)
+    key = key or tostring(itemId)
     local previous = char[collectionName][key]
     if previous == value then return end
     local item = BigBiSList.GetItemData and BigBiSList:GetItemData(itemId)
-    local name = item and item.name or ("Item " .. key)
+    local name = displayName or (item and item.name) or ("Item " .. key)
     char[collectionName][key] = value
     self:SetStatusMessage(message .. name, {
         label = "Undo: " .. message .. name,
@@ -3717,12 +3731,40 @@ function UI:UndoLastAction()
     return true
 end
 
-function UI:AddWishlist(itemId)
-    self:SetItemCollectionState("wishlist", itemId, true, "Saved to Wishlist: ", "wishlist-add")
+local function wishlistStorageKey(itemId, row)
+    local key = BigBiSList.GetWishlistKey and BigBiSList:GetWishlistKey(itemId, row) or tostring(itemId)
+    local saved = BigBiSList:GetCharacterDB().wishlist
+    if key ~= tostring(itemId) or saved[key] then return key end
+    if saved[itemId] == true then return itemId end
+    for legacyKey, value in pairs(saved) do
+        if tonumber(value) == tonumber(itemId) then return legacyKey end
+    end
+    return key
 end
 
-function UI:RemoveWishlist(itemId)
-    self:SetItemCollectionState("wishlist", itemId, nil, "Removed from Wishlist: ", "wishlist-remove")
+function UI:IsWishlisted(row)
+    return row and row.item_id and not not BigBiSList:GetCharacterDB().wishlist[wishlistStorageKey(row.item_id, row)]
+end
+
+function UI:AddWishlist(itemId, row)
+    local key = wishlistStorageKey(itemId, row)
+    if BigBiSList:GetCharacterDB().wishlist[key] then return end
+    local value = true
+    if key ~= tostring(itemId) then
+        local _, baseLink = BigBiSList.ForeverGearRating:NormalizeLink(itemId, row.item_link)
+        local name = row.item_link and row.item_link:match("|h%[(.-)%]|h") or row.name
+        value = {item_id = itemId, variant_id = key, name = name, item_link = baseLink, slot = row.slot}
+    end
+    self:SetItemCollectionState("wishlist", itemId, value, "Saved to Wishlist: ", "wishlist-add", key, row and row.name)
+end
+
+function UI:RemoveWishlist(itemId, row)
+    self:SetItemCollectionState("wishlist", itemId, nil, "Removed from Wishlist: ", "wishlist-remove",
+        wishlistStorageKey(itemId, row), row and row.name)
+end
+
+function UI:ToggleWishlist(row)
+    if self:IsWishlisted(row) then self:RemoveWishlist(row.item_id, row) else self:AddWishlist(row.item_id, row) end
 end
 
 function UI:IgnoreItem(itemId)
@@ -3798,6 +3840,7 @@ local function ensureEntityButtonScripts(button)
             UI:AddLevelingGearTooltip(GameTooltip, selfButton.detailData, selfButton.detailMode, true)
         else
             GameTooltip:SetText(selfButton.boundFallbackName or ("Item " .. tostring(selfButton.itemId)))
+            UI:AddLevelingGearTooltip(GameTooltip, selfButton.detailData, selfButton.detailMode)
         end
         GameTooltip:Show()
     end)
@@ -4336,7 +4379,7 @@ end
 function UI:GetRowRecommendationHistory(data)
     if not data or not data.item_id or data.leveling or self:IsLevelingMode() or not BigBiSList.GetRecommendationHistory then return nil end
     local selection = self:GetItemContext()
-    return BigBiSList:GetRecommendationHistory(data.item_id, selection.class, selection.spec, selection.phase, data.slot)
+    return BigBiSList:GetRecommendationHistory(data.item_id, selection.class, selection.spec, selection.phase, data.slot, data.variant_id)
 end
 
 function UI:GetHistoryRecommendationText(data)
@@ -4588,13 +4631,14 @@ function UI:ShowItemActionMenu(data, mode, owner)
             local target = BigBiSList.isForever and data.reference_context or itemId
             add(BigBiSList.isForever and "Compare to this" or "Use as reference", function() self:SetComparisonReference(target) end)
         end
-        if not self.slotComparison and self.OpenSlotComparison and data.slot and mode ~= "leveling" and mode ~= "enhance" then
+        if not self.slotComparison and self.OpenSlotComparison and data.slot and mode ~= "enhance"
+            and (mode ~= "leveling" or BigBiSList.ForeverGearRating) then
             add("Compare slot", function() self:OpenSlotComparison(data, mode) end)
         end
         local char = BigBiSList:GetCharacterDB()
-        local saved = char.wishlist[tostring(itemId)]
+        local saved = self:IsWishlisted(data)
         add(saved and "Remove from Wishlist" or "Add to Wishlist", function()
-            if saved then self:RemoveWishlist(itemId) else self:AddWishlist(itemId) end
+            self:ToggleWishlist(data)
         end)
         local hidden = char.ignoredItems[tostring(itemId)]
         add(hidden and "Restore item" or "Hide item", function()
@@ -4633,16 +4677,30 @@ end
 
 function UI:GetLevelingGearView(data, mode, nativeRequirement)
     local service = BigBiSList.ForeverGearRating
-    local placement = service and data and data.stat_rank
-    if not placement or placement.phase ~= LEVELING_PHASE_KEY then return nil end
+    local item, pending
+    if service then item, pending = service:GetRowItem(data) end
+    if not item then
+        if pending == "loading" then
+            self:QueueStatLoads({[data.item_id] = true})
+            return {today = "Waiting for item stats", tone = "unknown"}
+        end
+        return nil
+    end
+    local placement = data.stat_rank
     local context = self:GetItemContext()
-    local level = context.level or BigBiSList:GetSelectedLevelingLevel()
+    local leveling = placement and placement.phase == LEVELING_PHASE_KEY or (not placement and self:IsLevelingMode())
+    local level = leveling and (context.level or BigBiSList:GetSelectedLevelingLevel()) or 60
     local filters = mode == "comparison" and self:GetItemContextFilters() or self.currentFilterPayload or self:GetItemContextFilters()
-    local summary = self:RequestLevelingGuideSummary(context.class, context.spec, level, filters)
-    local item = placement.item
-    if not item then return nil end
-    local record = service:GetLevelingRecord(summary, placement.slot, item.key)
-    if placement.setup_rank or placement.level ~= level or placement.spec ~= context.spec then
+    local slot = placement and placement.slot or data.slot or item.slot
+    if slot == "One Hand" then slot = "Main Hand" end
+    local summary = leveling and self:RequestLevelingGuideSummary(context.class, context.spec, level, filters)
+    local record = service:GetLevelingRecord(summary, slot, item.key)
+    if not placement then
+        local guide = service:GetGuideContext(context.class, context.spec, leveling and LEVELING_PHASE_KEY or "PR", level,
+            filters.race or BigBiSList:GetPlayerRaceName(), filters.faction or BigBiSList:GetPlayerFactionName())
+        local reference = guide and service:GetGuidePlacement(guide, slot).byVariant[item.key]
+        placement = service:LevelingPlacementAt(record, level, reference)
+    elseif leveling and (placement.setup_rank or placement.level ~= level or placement.spec ~= context.spec) then
         local guide = service:GetGuideContext(context.class, context.spec, LEVELING_PHASE_KEY, level,
             filters.race or BigBiSList:GetPlayerRaceName(), filters.faction or BigBiSList:GetPlayerFactionName())
         local reference = guide and service:GetGuidePlacement(guide, placement.slot).byVariant[item.key]
@@ -4652,27 +4710,26 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement)
             or { phase = LEVELING_PHASE_KEY, level = level, status = "unavailable" }
     end
     local player = BigBiSList:GetTooltipPlayerContext()
-    local equipped = mode == "gear" or data.is_reference
-        or (mode == "leveling" and self:GetRowOwnershipState(data) == "equipped")
+    local ownership = self:GetRowOwnershipState(data)
+    local equipped = mode == "gear" or data.is_reference or data.context and data.context.occupancy == "equipped" or ownership == "equipped"
     local reference = self.slotComparison and self.slotComparison.reference
-    local physical = mode == "comparison" and reference and reference.slotKey or nil
+    local physical = mode == "comparison" and reference and reference.slotKey or data.slotKey
     local swap = service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, physical, player, equipped)
     local sourceLevel, sourceType = BigBiSList:GetLevelingSourceGate(data.acquisition_display)
     local playerLevel = player and player.level or BigBiSList:GetDetectedPlayerLevel()
     local view = service:LevelingPresentation({ item = item, placement = placement, record = record, swap = swap,
-        playerLevel = playerLevel, viewedLevel = level, explicitPreview = playerLevel and playerLevel ~= level,
+        ownership = ownership, playerLevel = playerLevel, viewedLevel = level, personalSpec = player and player.spec ~= context.spec and player.spec,
+        explicitPreview = playerLevel and playerLevel ~= level,
         sourceLevel = sourceLevel, sourceType = sourceType, nativeRequirement = nativeRequirement })
     return view, summary, record, placement
 end
 
 function UI:AddLevelingGearTooltip(tooltip, data, mode, nativeRequirement)
-    local rank = data and data.stat_rank
-    local native = nativeRequirement and rank and rank.item and BigBiSList:TooltipHasLevelRequirement(tooltip, rank.item.level)
+    local item = BigBiSList.ForeverGearRating and BigBiSList.ForeverGearRating:GetRowItem(data)
+    local native = nativeRequirement and item and BigBiSList:TooltipHasLevelRequirement(tooltip, item.level)
     local view = self:GetLevelingGearView(data, mode, native)
     if not view then return end
-    for _, line in ipairs(BigBiSList.ForeverGearRating:LevelingPresentationLines(view)) do
-        tooltip:AddLine(line, 0.86, 0.88, 0.91, true)
-    end
+    BigBiSList.Widgets:AddGearAdviceLines(tooltip, BigBiSList.ForeverGearRating, view)
 end
 
 function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
@@ -4693,12 +4750,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         row.actionButton = widgets:CreateUtilityButton(row, "starOutline", 28, function(button)
             local bound = button.boundRow
             if bound and bound.boundData.item_id then
-                local id = bound.boundData.item_id
-                if BigBiSList:GetCharacterDB().wishlist[tostring(id)] then UI:RemoveWishlist(id) else UI:AddWishlist(id) end
+                UI:ToggleWishlist(bound.boundData)
             end
         end, function(button, tooltip)
             local bound = button.boundRow
-            local saved = bound and bound.boundData.item_id and BigBiSList:GetCharacterDB().wishlist[tostring(bound.boundData.item_id)]
+            local saved = bound and UI:IsWishlisted(bound.boundData)
             tooltip:AddLine(saved and "Remove from Wishlist" or "Add to Wishlist")
         end)
         row.actionButton.boundRow = row
@@ -4735,10 +4791,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     row.subText:ClearAllPoints()
     row.subText:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -2)
     row.subText:SetWidth(nameWidth)
-    local gearView = mode == "leveling" and self:GetLevelingGearView(data, mode)
+    local gearView = self:GetLevelingGearView(data, mode)
     local slot = (mode == "phase" and (self:GetViewState().groupBy or "slot") == "slot") and "" or self:GetRowSlotDisplay(data)
     if mode == "leveling" and data.guide_note then slot = slot .. " · " .. data.guide_note end
-    if gearView and gearView.today then slot = gearView.today end
+    if gearView and gearView.today then slot = widgets:GearAdviceText(gearView) end
+    if data.wishlist_any then slot = slot ~= "" and (slot .. " · Any version") or "Any version" end
     -- The secondary slot line has a reserved budget; item names never overlap it.
     local nameLines = slot ~= "" and 1 or maxLines
     local identityHeight = nameLines * 14 + (slot ~= "" and 14 or 0)
@@ -4752,6 +4809,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         self:SetItemButton(icon, data.item_id, name, data.name, data.quality or (data.item and data.item.quality), data, mode)
     end
     widgets:SetCellText(name, name.fullText or data.name or "", nameLines, 14, nameWidth)
+    row.subText:SetTextColor(widgets:GearAdviceColor(gearView and gearView.tone))
     widgets:SetCellText(row.subText, slot, 1, 12, nameWidth)
     row.subText:SetShown(slot ~= "")
     local source, location = self:GetRowAcquisitionDisplay(data)
@@ -4803,12 +4861,14 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         local placement = data.stat_rank
         local tier = placement and placement.tier
         if gearView then
-            local strength = gearView.strength or "Gear comparison unavailable"
+            local strength = gearView.strength or self:GetRowRecommendationText(data, mode) or "Gear comparison unavailable"
+            if data.guide_bis then strength = "BiS · " .. strength end
             if gearView.range and gearView.range ~= strength then strength = strength .. "\n" .. gearView.range end
-            local color = gearView.grade and gearView.grade > 0 and { widgets:GetRankColor(gearView.grade) }
+            local color = data.guide_bis and widgets.Theme.bisGold or gearView.grade and gearView.grade > 0
+                and { widgets:GetRankColor(gearView.grade) } or tier and { widgets:GetRankColor(tier.quality) }
             bindCell("stat_rank", strength, color, 2)
             if row.cells.stat_rank.isTruncated and gearView.compact then
-                local compact = gearView.compact
+                local compact = data.guide_bis and ("BiS · " .. gearView.compact) or gearView.compact
                 if gearView.compactRange and gearView.compactRange ~= compact then compact = compact .. "\n" .. gearView.compactRange end
                 bindCell("stat_rank", compact, color, 2)
             end
@@ -4822,8 +4882,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     bindCell("expansion", self:GetWishlistExpansionText(data))
     bindCell("source", source, {0.70,0.77,0.84})
     bindCell("location", location, {0.65,0.67,0.72})
+    local nextStep = layout.acquisition and BigBiSList.isForever and self.GetSourceNextStep and self:GetSourceNextStep(data)
     if gearView and gearView.acquisition then
         bindCell("acquisition", source .. "\n" .. gearView.acquisition, {0.70,0.77,0.84}, 2)
+    elseif nextStep then
+        bindCell("acquisition", nextStep .. (location ~= "" and ("\n" .. location) or ""), {0.70,0.77,0.84}, 2)
     else
         bindCell("acquisition", source .. (location ~= "" and ((maxLines == 1 and " · " or "\n") .. location) or ""), {0.70,0.77,0.84})
     end
@@ -4841,7 +4904,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     end
     if data.item_id and layout.action then
         row.actionButton:ClearAllPoints(); row.actionButton:SetPoint("LEFT", row, "LEFT", layout.action.x, 0)
-        local saved = BigBiSList:GetCharacterDB().wishlist[tostring(data.item_id)] == true
+        local saved = self:IsWishlisted(data)
         row.boundWishlistSaved = saved
         row.actionButton:SetIcon(saved and "starFilled" or "starOutline")
         row.actionButton:SetSelected(saved); row.actionButton:Show()
@@ -5210,6 +5273,10 @@ end
 function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle, notes)
     local model = self:NewListRenderModel()
     local guide = BigBiSList.isForever and mode == "leveling"
+    self.itemOpportunities = nil
+    if self:GetViewState().sort == "best_upgrade" then
+        self.itemOpportunities = self:RequestGearOpportunities(rows, self:GetSelection(), self:IsLevelingMode() and BigBiSList:GetSelectedLevelingLevel() or 60, mode)
+    end
     if guide then
         self:AddListRenderEntry(model, { kind = "note", text = defaultTitle, height = 22 })
         self:AddWithinReach(model, rows, "guide")
@@ -5672,6 +5739,17 @@ function UI:SortDisplayRows(rows, mode)
         return sortedRows
     end
     table.sort(sortedRows, function(a, b)
+        if sortKey == "best_upgrade" then
+            local gains = self.itemOpportunities and self.itemOpportunities.gains
+            local av = gains and gains[a.variant_id or tostring(a.item_id)]
+            local bv = gains and gains[b.variant_id or tostring(b.item_id)]
+            if av ~= bv then
+                if not av or not bv then return av ~= nil end
+                if direction == "asc" then return av < bv end
+                return av > bv
+            end
+            return originalOrder[a] < originalOrder[b]
+        end
         if sortKey == "stat_rank" then
             local aOrder, bOrder = a.guide_order or 1, b.guide_order or 1
             if aOrder ~= bOrder then return aOrder < bOrder end
@@ -5724,11 +5802,9 @@ function UI:GetWithinReach(rows)
     local selection, addon = self:GetSelection(), BigBiSList
     local rating = addon.ForeverGearRating
     local level = addon:GetSelectedLevelingLevel()
-    local character = addon:GetCharacterDB()
+    local player = rating and addon:GetTooltipPlayerContext()
     if not rating or not self.currentOwned or not self.GetAcquisitionQuestProgress
-        or (character.leveling and character.leveling.manualLevel)
-        or addon:DetectPlayerClass() ~= selection.class or addon:DetectPlayerSpec(selection.class) ~= selection.spec
-        or addon:GetDetectedPlayerLevel() ~= level then return nil end
+        or not player or player.class ~= selection.class or player.spec ~= selection.spec or player.level ~= level then return nil end
     local context = rating:GetContext(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
     if not context then return nil end
     local bags, groups, seen = {}, { {}, {}, {} }, {}
@@ -5747,9 +5823,9 @@ function UI:GetWithinReach(rows)
             local best
             for _, copy in ipairs(bags[facts.key] or {}) do
                 local candidate = rating:GetTooltipItem(facts.id, copy.item_link)
-                local swap = candidate and rating:GetQualifyingUpgrade(context, candidate, true,
-                    { physical = physical, slot = row.slot, skipPlacement = true })
-                if swap and (not best or swap.delta > best.swap.delta) then
+                local advised = candidate and rating:GetHeldComparison(context, candidate, copy)
+                local swap = advised and advised.equipNow and advised.result
+                if swap and (not physical or physical == swap.definition.key) and (not best or swap.delta > best.swap.delta) then
                     best = { row = row, swap = swap, link = copy.item_link }
                 end
             end
@@ -5768,7 +5844,7 @@ function UI:GetWithinReach(rows)
                         nextQuest = { step = { quest_id = questId, name = source.entity_name }, state = state, turnIn = turnIn }
                     end
                     local candidate = { facts = facts, key = facts.key, entry = { item_id = facts.id } }
-                    local swap = rating:GetQualifyingUpgrade(context, candidate, false, { skipPlacement = true })
+                    local swap = rating:GetQualifyingUpgrade(context, candidate, false, {live = true, skipPlacement = true})
                     if nextQuest and nextQuest.step.quest_id == questId and nextQuest.state == "In progress"
                         and swap then
                         local group = groups[nextQuest.turnIn == true and 2 or 3]
@@ -5802,10 +5878,10 @@ function UI:AddWithinReach(model, rows, scope)
                 end)
                 for _, item in ipairs(items) do
                     local row, swap, quest = item.row, item.swap, item.quest
-                    local detail = quest and quest.step.name or swap.definition.label
+                    local detail = quest and self:GetQuestStepText(quest) or swap.definition.label
                     if item.choiceReward then detail = (detail or row.slot) .. " · Choice reward" end
                     self:AddListRenderEntry(model, { kind = "action", title = row.name, height = 30,
-                        detail = (detail or row.slot) .. string.format(" · Est. %+.1f pts", swap.delta),
+                        detail = (detail or row.slot) .. " · " .. BigBiSList.ForeverGearRating:EstimateSwapPoints(swap.delta),
                         activate = function()
                             local data = row
                             if item.link then
@@ -5823,6 +5899,93 @@ function UI:AddWithinReach(model, rows, scope)
     if added then self:AddListGap(model, 8) end
 end
 
+-- Publish the full set together so the overview never sorts on half a dungeon.
+function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
+    local service = BigBiSList.ForeverGearRating
+    local player = service and BigBiSList:GetTooltipPlayerContext()
+    if not player or player.class ~= selection.class or not player.spec or not self.currentOwned then return nil end
+    local evaluated = math.max(player.level, level)
+    local owned = self.currentOwned
+    local key = table.concat({"opportunities", scope, selection.class, selection.spec, player.spec, level, player.level,
+        tostring(BigBiSList.ForeverScoring and BigBiSList.ForeverScoring.revision)}, ":")
+    local batch = self:GetCachedViewQuery(key, function() return {level = evaluated, playerLevel = player.level, spec = player.spec} end)
+    if batch.gains or batch.running then return batch end
+    local cache = self.currentViewQueryCache
+    if not batch.worker then
+        batch.worker = coroutine.create(function()
+            local context = service:GetContext(player.class, player.spec, evaluated == 60 and "PR" or "LEVELING", evaluated, owned)
+            local gains, unknown, seen = {}, {}, {}
+            for _, row in ipairs(rows) do
+                batch.checkpoint()
+                local id = row.variant_id or tostring(row.item_id)
+                if not seen[id] then
+                    seen[id] = true
+                    local item = service:GetRowItem(row)
+                    local result, status
+                    if not activities and evaluated == player.level then
+                        result = row.spec == player.spec and row.planner_swap or service:GetLiveLevelingSwap(item, row.item_link, owned, row.slotKey, player,
+                            self:GetRowOwnershipState(row) == "equipped")
+                        status = result and result.status
+                    else
+                        result, status = service:GetOwnedOpportunity(context, item, row.item_link, evaluated == player.level)
+                    end
+                    local gain = service:ReliableGain(result)
+                    if gain then gains[id] = gain
+                    elseif not context or not item or status == "loading" or status == "unavailable" or (result and result.conditional) then
+                        unknown[id] = true
+                    end
+                end
+            end
+            local totals = {}
+            for _, destination in ipairs(activities or {}) do
+                local counted, total = {}, {upgrades = 0, bestGain = 0}
+                for _, row in ipairs(destination.rows) do
+                    batch.checkpoint()
+                    local id = row.variant_id or tostring(row.item_id)
+                    if not counted[id] and (not row.guide_order or row.guide_order == 1) and hasVerifiedLevelingRoute(row) then
+                        counted[id] = true
+                        total.unknown = total.unknown or unknown[id]
+                        local gain = gains[id]
+                        if gain then
+                            total.upgrades = total.upgrades + 1
+                            if gain > total.bestGain or (gain == total.bestGain and row.name < total.bestName) then
+                                total.bestGain, total.bestName = gain, row.name
+                            end
+                        end
+                    end
+                end
+                totals[destination] = total
+            end
+            batch.gains, batch.totals = gains, totals
+        end)
+    end
+    batch.checkpoint = function()
+        batch.steps = batch.steps + 1
+        if batch.steps >= 96 or (batch.deadline and debugprofilestop() >= batch.deadline) then coroutine.yield() end
+    end
+    batch.running = true
+    local function step()
+        if self.currentViewQueryCache ~= cache or self.currentOwned ~= owned or not self.frame or not self.frame:IsShown() then
+            batch.running = nil
+            return
+        end
+        batch.steps, batch.deadline = 0, debugprofilestop and debugprofilestop() + 3
+        service.opportunityWorker, service.opportunityCheckpoint = batch.worker, batch.checkpoint
+        local ok, err = coroutine.resume(batch.worker)
+        service.opportunityWorker, service.opportunityCheckpoint = nil, nil
+        if not ok then batch.running = nil; error(err) end
+        if coroutine.status(batch.worker) == "dead" then
+            batch.worker, batch.running, batch.checkpoint = nil, nil, nil
+            self:Invalidate("presentation", "activity-upgrades")
+            self:ScheduleRefresh(nil, "activity-upgrades")
+        else
+            C_Timer.After(0, step)
+        end
+    end
+    C_Timer.After(0, step)
+    return batch
+end
+
 function UI:GetLevelingActivities(groups, selection, level, filters, journeyReady)
     return self:GetCachedViewQuery("leveling-activities:" .. level, function()
         local ordered, byName, counted, seen = {}, {}, {}, {}
@@ -5832,7 +5995,7 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
             name = aliases[name] or name
             local activity = byName[name]
             if not activity then
-                activity = {name = name, rows = {}, upcoming = {}, itemCount = 0, missingCount = 0}
+                activity = {name = name, rows = {}, upcoming = {}, itemCount = 0}
                 byName[name] = activity
                 ordered[#ordered + 1] = activity
                 counted[activity] = {}
@@ -5840,27 +6003,23 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
             return activity
         end
 
+        local function addCurrent(row)
+            local activity = activityFor(row)
+            local identity = row.variant_id or tostring(row.item_id)
+            activity.rows[#activity.rows + 1] = row
+            if row.guide_order == 2 then
+                activity.nextLevel = math.min(activity.nextLevel or math.huge, row.guide_route_level)
+            elseif row.guide_order == 3 then
+                activity.lastLevel = math.max(activity.lastLevel or 0, row.guide_route_level)
+            elseif not counted[activity][identity] then
+                activity.itemCount = activity.itemCount + 1
+                counted[activity][identity] = true
+            end
+            seen[identity] = true
+        end
         for _, group in ipairs(groups) do
-            for _, row in ipairs(group.items) do
-                local activity = activityFor(row)
-                local identity = row.variant_id or row.item_id
-                local counts = counted[activity]
-                activity.rows[#activity.rows + 1] = row
-                if row.guide_order == 2 then
-                    activity.nextLevel = math.min(activity.nextLevel or math.huge, row.guide_route_level)
-                elseif row.guide_order == 3 then
-                    activity.lastLevel = math.max(activity.lastLevel or 0, row.guide_route_level)
-                end
-                if (not row.guide_order or row.guide_order == 1) and not counts[identity] then
-                    activity.itemCount = activity.itemCount + 1
-                    counts[identity] = "counted"
-                end
-                if counts[identity] == "counted" and hasVerifiedLevelingRoute(row) and self:GetRowOwnershipState(row) == "missing"
-                    and (not row.guide_order or row.guide_order == 1) then
-                    activity.missingCount = activity.missingCount + 1
-                    counts[identity] = "missing"
-                end
-                seen[identity] = true
+            for _, item in ipairs(group.items) do
+                for _, row in ipairs(BigBiSList:GetLevelingActivityRows(item, filters, level)) do addCurrent(row) end
             end
         end
 
@@ -5868,10 +6027,12 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
             local nextGroups = BigBiSList:GetLevelingRows(selection.class, selection.spec, nextLevel, filters)
             for _, group in ipairs(nextGroups) do
                 for _, row in ipairs(group.items) do
-                    local identity = row.variant_id or row.item_id
+                    local identity = row.variant_id or tostring(row.item_id)
                     if not seen[identity] then
-                        local upcoming = activityFor(row).upcoming
-                        upcoming[#upcoming + 1] = {row = row, level = nextLevel}
+                        for _, routed in ipairs(BigBiSList:GetLevelingActivityRows(row, filters, nextLevel)) do
+                            local upcoming = activityFor(routed).upcoming
+                            upcoming[#upcoming + 1] = {row = routed, level = nextLevel}
+                        end
                         seen[identity] = true
                     end
                 end
@@ -5881,7 +6042,7 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
         table.sort(ordered, function(a, b)
             local currentA, currentB = a.itemCount > 0, b.itemCount > 0
             if currentA ~= currentB then return currentA end
-            if a.missingCount ~= b.missingCount then return a.missingCount > b.missingCount end
+            if a.itemCount ~= b.itemCount then return a.itemCount > b.itemCount end
             return lower(a.name) < lower(b.name)
         end)
         return {ordered = ordered, byName = byName}
@@ -5890,20 +6051,20 @@ end
 
 function UI:GetLevelingQuestActions(rows, selection, level)
     local actions = {}
-    if not self.GetAcquisitionQuestProgress or BigBiSList:DetectPlayerClass() ~= selection.class
-        or BigBiSList:GetDetectedPlayerLevel() ~= level then return actions end
+    local player = BigBiSList:GetTooltipPlayerContext()
+    if not self.GetAcquisitionQuestProgress or not player or player.class ~= selection.class or player.level ~= level then return actions end
 
     local seen = {}
     for index, row in ipairs(rows) do
         local display = row.acquisition_display
         local source = (not row.guide_order or row.guide_order == 1) and display and display.option and display.option.source
-        if source and source.quest_steps and #source.quest_steps > 0
+        if source and (source.quest_id or source.entity_type == "quest" or source.quest_steps and #source.quest_steps > 0)
             and hasVerifiedLevelingRoute(row) and self:GetRowOwnershipState(row) == "missing" then
             local route, access = self:GetSelectedAcquisitionRoute(row)
             if route == display.option
                 and (access.status == "ready" or access.status == "ready_alternate" or access.status == "check_prereq") then
                 local quest = self:GetAcquisitionQuestProgress(source)
-                if quest and quest.destination and not seen[quest.step.quest_id] then
+                if quest and (quest.turnIn or quest.state == "Not started") and not seen[quest.step.quest_id] then
                     actions[#actions + 1] = {quest = quest, row = row, order = index}
                     seen[quest.step.quest_id] = true
                 end
@@ -5941,12 +6102,44 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
         local rows = {}
         for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows + 1] = row end end
         self:AddWithinReach(model, rows, "activities")
-        for _, destination in ipairs(activities.ordered) do
+        local batch = self:RequestGearOpportunities(rows, selection, level, "activities", activities.ordered)
+        local order = self:GetViewState().activitySort or "most_loot"
+        local ordered = {}
+        for index, destination in ipairs(activities.ordered) do ordered[index] = destination end
+        table.sort(ordered, function(a, b)
+            if batch and batch.totals and order ~= "most_loot" then
+                local left, right = batch.totals[a], batch.totals[b]
+                if order == "best_upgrade" and left.bestGain ~= right.bestGain then return left.bestGain > right.bestGain end
+                if left.upgrades ~= right.upgrades then return left.upgrades > right.upgrades end
+                if left.bestGain ~= right.bestGain then return left.bestGain > right.bestGain end
+            end
+            if a.itemCount ~= b.itemCount then return a.itemCount > b.itemCount end
+            local al, bl = a.nextLevel or math.huge, b.nextLevel or math.huge
+            if a.itemCount == 0 and al ~= bl then return al < bl end
+            if a.itemCount == 0 and a.lastLevel ~= b.lastLevel then return (a.lastLevel or 0) > (b.lastLevel or 0) end
+            return lower(a.name) < lower(b.name)
+        end)
+        local playerLevel = batch and batch.playerLevel
+        if batch and playerLevel and (level ~= playerLevel or batch.spec ~= selection.spec) then
+            local label = level > playerLevel and ("Estimated at Level " .. level) or ("Upgrades for you at Level " .. playerLevel)
+            if batch.spec ~= selection.spec then label = label .. " · " .. batch.spec end
+            self:AddListRenderEntry(model, {kind = "note", height = 22, text = label})
+        end
+        for _, destination in ipairs(ordered) do
             local name, count = destination.name, destination.itemCount
             local nextLevel = destination.nextLevel or (destination.upcoming[1] and destination.upcoming[1].level)
             local detail
             if count > 0 then
-                detail = count .. (count == 1 and " item" or " items") .. " · " .. destination.missingCount .. " unowned with known sources"
+                detail = count .. (count == 1 and " guide item" or " guide items")
+                if batch and batch.totals then
+                    local total = batch.totals[destination]
+                    local n = total.upgrades
+                    detail = detail .. " · " .. n .. (total.unknown and " known" or "") .. (n == 1 and " upgrade option" or " upgrade options")
+                    if order == "best_upgrade" and total.bestName then
+                        detail = detail .. " · " .. total.bestName .. " (" .. BigBiSList.ForeverGearRating:EstimateSwapPoints(total.bestGain) .. ")"
+                    end
+                elseif batch then detail = detail .. " · Checking gear…"
+                else detail = detail .. " · Personal comparison unavailable" end
             elseif nextLevel then
                 detail = "Recommended at Level " .. nextLevel
             elseif destination.lastLevel then
@@ -5962,6 +6155,7 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
         return
     end
 
+    if self:GetViewState().sort == "best_upgrade" then self.itemOpportunities = self:RequestGearOpportunities(activity.rows, selection, level, "activity:" .. activity.name) end
     local rows = self:SortDisplayRows(activity.rows, "leveling")
     self:AddWithinReach(model, rows, "activity:" .. activity.name)
     local actions = self:GetLevelingQuestActions(rows, selection, level)
@@ -5969,8 +6163,8 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
         self:AddListRenderEntry(model, {kind = "note", text = "Next quest steps", height = 22})
         for index = 1, math.min(3, #actions) do
             local quest, row = actions[index].quest, actions[index].row
-            self:AddListRenderEntry(model, {kind = "action", title = (quest.turnIn and "Turn in " or "Pick up ") .. quest.step.name,
-                detail = quest.destination.name, height = 30,
+            self:AddListRenderEntry(model, {kind = "action", title = self:GetQuestStepText(quest),
+                detail = quest.destination and quest.destination.name or row.name, height = 30,
                 activate = function() self:ShowInspectorFor(row.item_id, row, "leveling") end})
             self:AddListGap(model, 4)
         end
@@ -6050,6 +6244,45 @@ function UI:RenderPhaseTab()
 end
 
 function UI:GetNextUpgradeActions(rows)
+    if BigBiSList.isForever then
+        local service = BigBiSList.ForeverGearRating
+        local actions, seen = {}, {}
+        local live = BigBiSList:GetAvailabilityPhaseIndex(BigBiSList:GetCurrentPhaseKey())
+        for _, row in ipairs(rows) do
+            local swap = row.planner_swap
+            local gain = service and service:ReliableGain(swap)
+            local key = row.variant_id or tostring(row.item_id)
+            if gain and row.hasCurrent and not seen[key] then
+                local state = row.owned_state or self:GetRowOwnershipState(row)
+                local priority, source, reason
+                if state == "bag" and swap.storage and swap.storage.equipNow and row.spec and BigBiSList:DetectPlayerSpec(row.class) == row.spec then
+                    priority, source, reason = 1, "In your bags", "Equip now"
+                elseif state == "missing" then
+                    local route, access = self:GetSelectedAcquisitionRoute(row)
+                    if route and route.source_type ~= "unknown" and not isReportedOnlyAccessOption(route)
+                        and (access.status == "ready" or access.status == "ready_alternate") and optionIsPhaseAvailable(route, live) then
+                        local quest = route.source and route.source.type == "quest" and self:GetAcquisitionQuestProgress(route.source)
+                        priority = quest and quest.turnIn and 2 or 3
+                        reason = quest and self:GetQuestStepText(quest) or service:UpgradeSize(swap)
+                        source = self:GetAccessOptionDisplayText(route) or accessSourceBadgeLabel(route)
+                        local zone = trim(route.location_area or route.zone)
+                        if zone ~= "" and not lower(source):find(lower(zone), 1, true) then source = (source or "") .. " · " .. zone end
+                    end
+                end
+                if priority then
+                    seen[key] = true
+                    actions[#actions + 1] = {data = row, reason = "↑ " .. reason .. " · " .. service:EstimateSwapPoints(gain),
+                        source = source, priority = priority, gain = gain, key = key}
+                end
+            end
+        end
+        table.sort(actions, function(a, b)
+            if a.priority ~= b.priority then return a.priority < b.priority end
+            if a.gain ~= b.gain then return a.gain > b.gain end
+            return a.key < b.key
+        end)
+        return {actions[1], actions[2], actions[3]}
+    end
     local actions, shown = {}, {}
     for _, row in ipairs(rows) do
         if row.higher_rated and self:GetRowOwnershipState(row) == "bag" and not shown[row.item_id] then
@@ -6447,9 +6680,8 @@ local function layoutGearSlotText(button)
     local rating = data.overlay
     local view = occupied and UI:GetLevelingGearView(data, "gear")
     if view then
-        rating = view.strength
-        if not rating then rating = "Gear comparison unavailable" end
-        if view.grade and view.grade > 0 then tier = {quality = view.grade} else tier = nil end
+        rating = view.swap and view.swap.alternative and view.today or view.strength or view.today or "Gear comparison unavailable"
+        if view.grade then tier = view.grade > 0 and {quality = view.grade} or nil end
     elseif occupied and badge then
         rating = service:Label(placement, nil, true)
     elseif occupied and data.bestUse then
@@ -6637,6 +6869,7 @@ function UI:CreateGearWorkspace(parent)
         widgets:BindTooltip(compare, function(_, tooltip)
             tooltip:SetText("Compare slot by stat rank")
             local data = summary.gearData
+            self:AddLevelingGearTooltip(tooltip, data, "gear")
             local placement = data and data.stat_rank
             if placement then
                 for _, line in ipairs(BigBiSList.ForeverGearRating:DescriptionLines(placement)) do
@@ -6754,7 +6987,7 @@ function UI:RefreshGearSelection()
                 if data.bestUse then label = label .. "\n" .. data.recommendation_summary end
             end
             summary.rating:SetText(label)
-            summary.rating:SetTextColor(0.58, 0.81, 0.96)
+            summary.rating:SetTextColor(BigBiSList.Widgets:GearAdviceColor(view and view.tone))
         else
             summary.rating:SetText(data.recommendation_summary)
             summary.rating:SetTextColor(1, 1, 1)
@@ -7345,7 +7578,7 @@ function UI:FindPlannerContext(itemId, detailData)
     local fallback
     for _, entry in ipairs((self.renderModel and self.renderModel.entries) or {}) do
         local row = entry.kind == "row" and entry.data or nil
-        if row and row.item_id == itemId then
+        if row and row.item_id == itemId and (not detailData or detailData.variant_id == row.variant_id) then
             if not fallback then
                 fallback = row
             end
@@ -7358,6 +7591,7 @@ function UI:FindPlannerContext(itemId, detailData)
         return fallback
     end
 
+    if detailData and detailData.variant_id then return detailData end
     if self:IsLevelingMode() and BigBiSList.GetItemBestLevelingUseForSpec then
         local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
         return BigBiSList:GetItemBestLevelingUseForSpec(itemId, selection.class, selection.spec, level)
@@ -7559,12 +7793,7 @@ function UI:RefreshDetailsHeader(entityId, entityType, itemId, data, mode, title
         menu:SetPoint("RIGHT", created, "RIGHT", -30, 0)
         local star = widgets:CreateUtilityButton(created, "starOutline", 28, function(button)
             if not button.itemId then return end
-            local character = BigBiSList:GetCharacterDB()
-            if character.wishlist[tostring(button.itemId)] then
-                UI:RemoveWishlist(button.itemId)
-            else
-                UI:AddWishlist(button.itemId)
-            end
+            UI:ToggleWishlist(button.data)
         end, "Add to wishlist")
         star:SetPoint("RIGHT", menu, "LEFT", -2, 0)
         created.iconButton, created.name, created.meta = iconButton, name, meta
@@ -7597,7 +7826,7 @@ function UI:RefreshDetailsHeader(entityId, entityType, itemId, data, mode, title
         if itemId then button:Show() else button:Hide() end
     end
     if itemId then
-        local wishlisted = not not BigBiSList:GetCharacterDB().wishlist[tostring(itemId)]
+        local wishlisted = self:IsWishlisted(header.star.data)
         widgets:SetIcon(header.star.icon, wishlisted and "starFilled" or "starOutline")
         if header.star.SetSelected then header.star:SetSelected(wishlisted) end
         widgets:BindTooltip(header.star, wishlisted and "Remove from wishlist" or "Add to wishlist")
@@ -7651,7 +7880,7 @@ end
 function UI:GetDetailsPhaseRankings(itemId, data)
     local selection = self:GetItemContext()
     local summary = BigBiSList.GetWishlistExpansionSummary
-        and BigBiSList:GetWishlistExpansionSummary(itemId, selection.class, selection.spec, selection.phase)
+        and BigBiSList:GetWishlistExpansionSummary(itemId, selection.class, selection.spec, selection.phase, data and data.variant_id)
     return (summary and summary.relevant_spec_rankings) or (data and (data.relevant_spec_rankings or data.spec_rankings)) or {}
 end
 
@@ -7716,7 +7945,8 @@ end
 
 function UI:RefreshDetailsActions(data, mode)
     if not self.detailsActionStrip then return end
-    local statRank = mode == "gear" and data and data.stat_rank ~= nil
+    local statRank = BigBiSList.ForeverGearRating and data and (mode == "gear" and data.stat_rank ~= nil
+        or (mode == "wishlist" or mode == "leveling") and BigBiSList.ForeverGearRating:GetRowItem(data) ~= nil)
     local visible = not self.slotComparison and self.OpenSlotComparison and data and data.item_id and data.slot
         and not data.spell_id and (statRank or (not self:IsLevelingMode() and mode ~= "leveling" and mode ~= "enhance"))
         and not data.enhancement_kind
@@ -7801,7 +8031,7 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data, defaultExpand
     end
     for rowIndex, ranking in ipairs(rankings) do
         cell(ranking.spec or ranking.spec_name or "Spec", 0, 25 + rowIndex * 22, specWidth, ranking.spec == selection.spec, ranking.spec or ranking.spec_name)
-        local history = BigBiSList.GetRecommendationHistory and BigBiSList:GetRecommendationHistory(itemId, selection.class, ranking.spec, selection.phase, data and data.slot)
+        local history = BigBiSList.GetRecommendationHistory and BigBiSList:GetRecommendationHistory(itemId, selection.class, ranking.spec, selection.phase, data and data.slot, data and data.variant_id)
         for phaseIndex, phase in ipairs(phases) do
             local phaseCell = (ranking.phases or ranking.phase_rankings or {})[phase]
             local label = type(phaseCell) == "table" and (phaseCell.short_label or phaseCell.label) or phaseCell
@@ -7990,6 +8220,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local contentHeight = 5
 
     local recommendationLines = {}
+    if detailData and detailData.wishlist_any then appendText(recommendationLines, "Saved · Any version") end
+    if gearView and not rated then
+        for _, line in ipairs(BigBiSList.ForeverGearRating:LevelingPresentationLines(gearView)) do appendText(recommendationLines, line) end
+    end
     if not detailData or not detailData.stat_rank or detailData.bestUse or detailData.guide_note then
         appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
     end
@@ -8027,7 +8261,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         end
         appendText(recommendationLines, ownershipText)
     end
-    appendText(recommendationLines, upgradeComparisonText(detailData or plannerContext))
+    if not gearView then appendText(recommendationLines, upgradeComparisonText(detailData or plannerContext)) end
     local scoringLabel = detailData and detailData.scoring_label
     if scoringLabel then
         appendText(recommendationLines, scoringLabel)
@@ -8875,7 +9109,7 @@ function UI:LayoutPrimaryControls()
     for _, button in ipairs(self.enhancementSwitchButtons or {}) do button:Hide() end
     local switchUpgradesView = tab == "Upgrades" and self.hasNextUpgradeActions
     local showingActions = switchUpgradesView and self.upgradesView ~= "list"
-    local sortVisible = not showingActions and not (self:IsLevelingActivityView() and not self.levelingActivity)
+    local sortVisible = not showingActions
     local groupVisible = (tab == "Upgrades" and not showingActions) or tab == "By Slot" or tab == "Wishlist" or tab == "Gear Guide"
     local primary = tab == "Upgrades" and self.upgradeModeDropdown or (tab == "Wishlist" and self.wishlistRelevanceDropdown)
     local rowHeight, rowGap, gap = TOOLBAR_HEIGHT, 2, 8

@@ -42,6 +42,36 @@ function Widgets:SetIcon(texture, key)
     return known
 end
 
+function Widgets:GearAdviceColor(tone)
+    if tone == "gain" then return 0.40, 0.96, 0.59 end
+    if tone == "future" then return 0.62, 0.81, 1 end
+    if tone == "uncertain" then return 1, 0.80, 0.38 end
+    if tone == "loss" then return 0.92, 0.66, 0.63 end
+    return 0.83, 0.85, 0.88
+end
+
+function Widgets:GearAdviceText(view)
+    if view.tone ~= "future" or not view.today then return view.today end
+    local index = ICON_INDEX.clock
+    local x, y = index % 8 * 32, math.floor(index / 8) * 32
+    return string.format("|TInterface\\AddOns\\BigBiSList\\assets\\ui-icons.tga:13:13:0:0:256:256:%d:%d:%d:%d|t %s",
+        x, x + 32, y, y + 32, view.today)
+end
+
+function Widgets:AddGearAdviceLines(tooltip, service, view)
+    for _, line in ipairs(service:LevelingPresentationLines(view)) do
+        local r, g, b = 0.83, 0.85, 0.88
+        if line == view.today then
+            r, g, b = self:GearAdviceColor(view.tone)
+            line = self:GearAdviceText(view)
+        elseif line == view.strength then
+            if view.grade and view.grade > 0 then r, g, b = self:GetRankColor(view.grade)
+            else r, g, b = 0.93, 0.93, 0.96 end
+        end
+        tooltip:AddLine(line, r, g, b, true)
+    end
+end
+
 local function appendScript(frame, event, callback)
     if frame.HookScript then
         frame:HookScript(event, callback)

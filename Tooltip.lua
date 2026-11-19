@@ -264,7 +264,7 @@ function BigBiSList:TooltipHasLevelRequirement(tooltip, level, tooltipData)
     return false
 end
 
-local function tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment)
+local function tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment, spec, offer)
     local rating = addon.ForeverGearRating
     local result, item = assessment.result, candidate.facts
     local placement = result.placement
@@ -277,7 +277,6 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
         summary = rating:GetLevelingSummary(guide)
         record = rating:GetLevelingRecord(summary, slot, item.key)
     end
-    if not leveling and not (record and record.strength[1]) then return nil, summary, slot end
     local viewed = placement.level or context.level
     local sourceLevel, sourceType
     local first = record and record.ranked[1]
@@ -293,7 +292,9 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
     end
     local view = rating:LevelingPresentation({ item = item, placement = placement, record = record,
         swap = result, playerLevel = context.level, sourceLevel = sourceLevel, sourceType = sourceType,
-        ownedBaseline = assessment.ownedBaseline, nativeRequirement = addon:TooltipHasLevelRequirement(tooltip, item.level, tooltipData) })
+        ownedBaseline = assessment.ownedBaseline, storage = assessment.storage, ownership = offer and (offer.owned and result.ownership or "offered"),
+        activeSpec = spec.role == "active", spec = spec.name, chooseReward = assessment.bestChoice and spec.role == "active"
+            and offer and offer.turnIn, nativeRequirement = addon:TooltipHasLevelRequirement(tooltip, item.level, tooltipData) })
     return view, summary, slot
 end
 
@@ -323,15 +324,28 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                     break
                 end
             end
+            if not assessment and getter == "GetBagItem" and type(args) == "table" then
+                local bag, index = readable(args[1]), readable(args[2])
+                if type(bag) == "number" and type(index) == "number" then
+                    local stored = rating:GetStorageComparison(context, candidate, bag .. ":" .. index)
+                    if stored then assessment = {result = stored.result, storage = stored} end
+                end
+            end
             if not assessment and (#offerAssessments == 0 or offer.kind ~= "quest") then
                 local worn = (spec.role == "active" or (offer and offer.owned)) and (not offer or offer.compareWorn)
+                if not offer and EXTRA_COPY_GETTERS[getter] and getter ~= "GetLootItem" then worn = false end
                 local result = rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
                     (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter],
                     { live = true, lookahead = true, quantity = offer and offer.quantity })
+                if worn and not (offer and offer.owned) then result.rival = rating:GetOwnedRival(context, candidate, result) end
                 assessment = { result = result, ownedBaseline = not worn }
             end
             if assessment then
-                local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment)
+                if assessment.result.status == "equipped" and spec.role == "active" and wornSlot then
+                    local definition = assessment.result.definition
+                    assessment.result.alternative = rating:GetEquippedAlternative(context, candidate.facts, definition and definition.key)
+                end
+                local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment, spec, offer)
                 block.rows[#block.rows + 1] = { spec = spec.name, result = assessment.result, assessment = assessment,
                     view = view, summary = summary, summarySlot = slot }
                 block.ownership = block.ownership or assessment.result.ownership
@@ -361,72 +375,7 @@ local function tooltipRank(result)
     return placement.projected and ("Projected · " .. label) or label
 end
 
-local function deltaText(delta)
-    local points = math.abs(BigBiSList.ForeverGearRating:RoundedGain(delta) or 0)
-    if points == 0 then return "0.0 pts" end
-    if delta > 0 then return colorText(string.format("+%.1f pts", points), 0.3, 0.94, 0.58) end
-    return colorText(string.format("-%.1f pts", points), 1, 0.51, 0.51)
-end
-
-local function replacementNames(result)
-    local names = {}
-    for _, item in ipairs(result.replacements) do
-        names[#names + 1] = item.name .. " (" .. item.slot .. (item.state == "bank" and ", bank" or "") .. ")"
-    end
-    return table.concat(names, " + ")
-end
-
-local function swapText(result, ownedBaseline, guaranteed)
-    local bank = result.bank and " (includes bank gear)" or ""
-    if result.status == "equipped" then return "Equipped · " .. result.definition.label end
-    if result.status == "loading" then return "Loading stats" end
-    if result.status == "blocked" then return "No legal swap" end
-    if result.status == "best_owned" then return "Best you own for this slot" .. bank end
-    if result.delta == nil then return nil end
-    local estimate = "Est. " .. deltaText(result.delta)
-    if result.status == "empty" then
-        return estimate .. " to fill an empty slot" .. bank
-    end
-    local baseline = estimate .. " vs the best gear you own" .. bank
-    if guaranteed then baseline = baseline .. " with guaranteed rewards" end
-    local replacements = replacementNames(result)
-    if ownedBaseline then return replacements ~= "" and (baseline .. ", replacing " .. replacements) or baseline end
-    return replacements ~= "" and (estimate .. " vs " .. replacements) or estimate
-end
-
-local function forecastText(forecast)
-    local level = "At Lv " .. forecast.level .. " · "
-    if forecast.delta == nil then
-        return level .. (forecast.status == "loading" and "Loading owned item stats" or "Owned gear comparison unavailable")
-    end
-    local rating = BigBiSList.ForeverGearRating
-    local estimate = "Est. " .. deltaText(forecast.delta)
-    if forecast.delta ~= 0 and rating:RoundedGain(forecast.delta) == 0 then
-        estimate = forecast.delta > 0 and "Est. gain below 0.1 pts" or "Est. loss below 0.1 pts"
-    end
-    local comparison
-    if forecast.status == "best_owned" then comparison = "Best you own for this slot"
-    elseif forecast.status == "empty" and #forecast.replacements == 0 then comparison = estimate .. " to fill an empty slot"
-    elseif forecast.delta == 0 then comparison = forecast.conditional and "Same modeled score as best owned" or "Same score as best owned"
-    else comparison = estimate .. " vs best owned" end
-    local replacements = replacementNames(forecast)
-    if replacements ~= "" then comparison = comparison .. ", replacing " .. replacements end
-    if forecast.bank then comparison = comparison .. " · Includes cached bank gear" end
-    return level .. comparison .. " · " .. rating:GetSwapBasisLabel(forecast.basis)
-        .. (forecast.conditional and " · Conditional" or "")
-end
-
 local function storageText(comparison)
-    if comparison.unavailable == "loading" then return "Loading owned item stats" end
-    if comparison.unavailable then return "Owned gear comparison unavailable" end
-    if comparison.qualifies then
-        local text = "Recommended upgrade"
-        local result = comparison.result
-        for _, item in ipairs(result.incoming or {}) do
-            if item.slot ~= result.definition.label then text = text .. " · With " .. item.name end
-        end
-        return text
-    end
     if comparison.winner then return "Best you own for this slot" end
     if comparison.stronger and #comparison.stronger > 0 then
         local names = {}
@@ -467,17 +416,21 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         elseif tier and (not row.view or result.placement.phase == "PR") then
             r, g, b = BigBiSList.Widgets:GetRankColor(tier.quality)
         end
-        if result and result.bis then spec = colorText("BiS", unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec end
+        if result and result.bis then
+            local title = result.placement.phase == "PR" and "Pre-Raid BiS" or "BiS"
+            spec = colorText(title, unpack(BigBiSList.Widgets.Theme.bisGold)) .. "  " .. spec
+        end
         tooltip:AddLine(spec, r, g, b, true)
         if result then
             local comparison = row.assessment or row
             if row.view then
                 local view = row.view
-                for _, line in ipairs(BigBiSList.ForeverGearRating:LevelingPresentationLines(view)) do
-                    if line == view.strength then tooltip:AddLine(line, r, g, b, true)
-                    else tooltip:AddLine(line, 0.86, 0.88, 0.91, true) end
+                if result.placement.phase == "PR" then
+                    view.rank = tooltipRank(result)
+                    view.strength = view.rank
                 end
-                if result.placement.phase == "PR" then tooltip:AddLine(tooltipRank(result), 0.86, 0.88, 0.91, true) end
+                BigBiSList.Widgets:AddGearAdviceLines(tooltip, BigBiSList.ForeverGearRating, view)
+                if result.placement.phase == "PR" then placementColor = result.placement.placement_color or placementColor end
                 if comparison.guaranteed then tooltip:AddLine("Compared with guaranteed rewards", 0.76, 0.8, 0.86, true) end
                 if result.bank or (result.forecast and result.forecast.bank) then
                     tooltip:AddLine("Includes cached bank gear", 0.76, 0.8, 0.86, true)
@@ -486,24 +439,14 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
                 local rank = tooltipRank(result)
                 if result.placement.conditional and not result.placement.conditional_tie then rank = rank .. " · Conditional" end
                 tooltip:AddLine(rank, r, g, b, true)
-                local extra = result.forecast and forecastText(result.forecast)
-                    or swapText(result, comparison.ownedBaseline, comparison.guaranteed)
-                if extra then
-                    if result.delta ~= nil then
-                        extra = BigBiSList.ForeverGearRating:GetSwapBasisLabel(result.basis) .. " · " .. extra
-                        if result.conditional then extra = extra .. " · Conditional" end
-                    end
-                    tooltip:AddLine(extra, 0.86, 0.88, 0.91, true)
-                elseif result.conditional then
-                    tooltip:AddLine("Conditional · effect or comparison data is incomplete", 0.86, 0.88, 0.91, true)
-                end
+                if result.conditional then tooltip:AddLine("Some item effects have an unverified value", 0.86, 0.88, 0.91, true) end
                 placementColor = placementColor or result.placement.placement_color
             end
-            if comparison.storage then
+            if comparison.storage and not comparison.storage.qualifies and not comparison.storage.unavailable and not comparison.result.preview then
                 local recommendation = storageText(comparison.storage)
                 if recommendation then tooltip:AddLine(recommendation, 0.86, 0.88, 0.91, true) end
             end
-            if comparison.bestChoice then
+            if comparison.bestChoice and not (row.view and row.view.action and row.view.action:find("Choose this reward", 1, true)) then
                 tooltip:AddLine("Best choice for " .. row.spec, 0.86, 0.88, 0.91, true)
             elseif comparison.tiedChoice then
                 tooltip:AddLine("Tied for best choice", 0.86, 0.88, 0.91, true)

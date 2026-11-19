@@ -112,7 +112,24 @@ function UI:GetComparisonReferenceLabel(reference)
 end
 
 function UI:OpenSlotComparison(data, mode, statRank)
-    statRank = statRank and addon.ForeverGearRating and type(data) == "table" and data.slotKey ~= nil
+    local physical = type(data) == "table" and data.slotKey
+    if addon.ForeverGearRating and not physical and type(data) == "table" and (statRank or self:IsLevelingMode() or mode == "wishlist") then
+        local item = addon.ForeverGearRating:GetRowItem(data)
+        if item then
+            local view = self:GetLevelingGearView(data, mode)
+            physical = view and view.swap and view.swap.definition and view.swap.definition.key
+            if not physical then
+                for _, definition in ipairs(addon:GetEquipmentSlotDefinitions()) do
+                    for _, slot in ipairs(definition.slots) do
+                        if slot == (data.slot or item.slot) or (slot == "Main Hand" and item.slot == "One Hand") then physical = definition.key; break end
+                    end
+                    if physical then break end
+                end
+            end
+            statRank = physical ~= nil
+        end
+    end
+    statRank = statRank and addon.ForeverGearRating and physical ~= nil
     if (self:IsLevelingMode() and not statRank) or not data then return false end
     local slot = comparisonSlot(data)
     if not slot then return false end
@@ -122,7 +139,7 @@ function UI:OpenSlotComparison(data, mode, statRank)
     local origin = { scroll = self.contentScroll:GetVerticalScroll(), detailsScroll = self.detailsScroll:GetVerticalScroll(),
         inspectorVisible = self:IsInspectorVisible(), mode = mode }
     for _, key in ipairs(SELECTION_FIELDS) do origin[key] = self[key] end
-    local reference = (mode == "gear" or statRank) and type(data) == "table" and data.slotKey and { slotKey = data.slotKey } or nil
+    local reference = (mode == "gear" or statRank) and physical and {slotKey = physical} or nil
     self.slotComparison = { slot = slot, class = selection.class, spec = selection.spec,
         phase = statRank and self:GetEffectivePhaseKey() or selection.phase, reference = reference, statRank = statRank,
         level = statRank and (self:IsLevelingMode() and addon:GetSelectedLevelingLevel() or 60) or nil,
@@ -228,7 +245,7 @@ function UI:GetComparisonSpecLabel(spec)
 end
 
 local function swapSortLabel(state)
-    return addon.ForeverGearRating:GetSwapBasisLabel(state.swapBasis)
+    return "Best upgrade · " .. addon.ForeverGearRating:GetSwapBasisLabel(state.swapBasis)
 end
 
 local function comparableDelta(state, row)
@@ -549,7 +566,7 @@ function UI:CreateComparisonRow(parent)
     row.star = widgets:CreateUtilityButton(row, "starOutline", 28, function(button)
         local data = button:GetParent().comparisonData
         if not data or not data.item_id then return end
-        if addon:GetCharacterDB().wishlist[tostring(data.item_id)] then UI:RemoveWishlist(data.item_id) else UI:AddWishlist(data.item_id) end
+        UI:ToggleWishlist(data)
     end, "Save item to Wishlist")
     row:SetScript("OnMouseUp", function(selfRow, buttonName)
         if not selfRow.comparisonData or not UI.slotComparison or selfRow.comparisonGeneration ~= UI.slotComparison.generation then return end
@@ -648,10 +665,21 @@ function UI:BindComparisonRow(row, entry, pinned)
         local delta = swap and (state.sort ~= "comparison" or swap.basis == state.swapBasis) and swap.delta
         local change = delta and string.format("%s %+.1f pts", swap.conditional and "Conditional" or "Est.", delta) or "—"
         if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap.basis) end
-        if view then change = view.today or view.forecast or "Gear comparison unavailable"
-        elseif pinned and data.context.slotKey == state.reference.slotKey then change = COMPARED_ITEM end
+        local referenceLabel = self:GetComparisonReferenceLabel(state.reference)
+        local evidence
+        if view then
+            change, evidence = widgets:GearAdviceText(view) or "Gear comparison unavailable", view.evidence
+        end
+        if state.sort == "comparison" and not pinned then
+            change = delta and ("Lv " .. state.level .. " · " .. service:EstimateSwapPoints(delta)) or "Comparison unavailable"
+            evidence = (swap and swap.conditional and "Conditional · " or "") .. referenceLabel
+        elseif pinned and data.context.slotKey == state.reference.slotKey then
+            change, evidence = COMPARED_ITEM, nil
+        end
         if not pinned or data.context.slotKey == state.reference.slotKey then
-            setCell(row.evidenceText, change, columns.evidence.x, columns.evidence.width, entry.height, lines)
+            setCell(row.evidenceText, evidence and (change .. "\n" .. evidence) or change,
+                columns.evidence.x, columns.evidence.width, entry.height, 2)
+            row.evidenceText:SetTextColor(widgets:GearAdviceColor(view and view.tone))
         else
             row.referenceButton:ClearAllPoints(); row.referenceButton:SetPoint("LEFT", row, "LEFT", columns.evidence.x, 0)
             row.referenceButton.reference = data.reference_context
@@ -666,7 +694,7 @@ function UI:BindComparisonRow(row, entry, pinned)
         if swap and swap.delta then
             local basis = service:GetSwapBasisLabel(swap.basis)
             if swap.conditional then basis = basis .. " · Conditional" end
-            hover[#hover + 1] = string.format("%s · %+.1f pts", basis, swap.delta)
+            hover[#hover + 1] = basis .. " at Level " .. state.level .. " · " .. service:EstimateSwapPoints(swap.delta) .. " vs " .. referenceLabel
         end
         if data.guide_note then hover[#hover + 1] = data.guide_note end
         widgets:BindTooltip(row, #hover > 0 and table.concat(hover, "\n") or nil)
@@ -681,8 +709,15 @@ function UI:BindComparisonRow(row, entry, pinned)
         local comparisonText = RELATION_LABELS[comparison.relation] or RELATION_LABELS.unranked
         if data.is_reference then comparisonText = addon.isForever and COMPARED_ITEM or "Reference item" end
         if comparison.historical and comparison.phase then comparisonText = comparisonText .. "\n" .. addon:GetPhaseDisplayName(comparison.phase) .. " guide" end
+        local hover = evidenceTooltip(data)
+        if addon.ForeverGearRating and comparison.score_delta ~= nil then
+            local reference = self:GetComparisonReferenceLabel(state.reference)
+            local points = addon.ForeverGearRating:EstimateSwapPoints(comparison.score_delta)
+            comparisonText = "Lv 60 · " .. points .. "\n" .. reference
+            hover = comparisonText .. "\n" .. (comparison.explanation or hover or "")
+        end
         setCell(row.evidenceText, comparisonText, columns.evidence.x, columns.evidence.width, entry.height, lines)
-        widgets:BindTooltip(row, evidenceTooltip(data))
+        widgets:BindTooltip(row, hover)
     end
     local live = addon:GetCurrentPhaseKey()
     for index, column in ipairs(columns.phases) do
@@ -734,7 +769,8 @@ function UI:BindComparisonRow(row, entry, pinned)
     setCell(row.ownedText, owned == "equipped" and "Equipped" or owned == "bank" and "Bank" or owned == "bag" and "Bags" or "Not owned", columns.owned.x, columns.owned.width, entry.height, lines)
     if data.item_id then
         row.star:ClearAllPoints(); row.star:SetPoint("LEFT", row, "LEFT", columns.action.x, 0)
-        local saved = addon:GetCharacterDB().wishlist[tostring(data.item_id)]
+        local saved = self:IsWishlisted(data)
+        widgets:BindTooltip(row.star, saved and "Remove from Wishlist" or "Save to Wishlist")
         widgets:SetIcon(row.star.icon, saved and "starFilled" or "starOutline"); row.star:SetSelected(saved == true); row.star:Show()
     end
 end
@@ -904,7 +940,7 @@ function UI:LayoutSlotComparison()
             .. addon:GetPhaseDisplayName(state.phase) .. " · " .. ownership
     end
     widgets:SetCellText(self.comparisonScope, scope, 1, 12, width)
-    self.comparisonBackButton.label:SetText(state.statRank and "Back to My Gear" or "Back to results")
+    self.comparisonBackButton.label:SetText(state.origin.mode == "gear" and "Back to My Gear" or "Back to results")
     self.comparisonScope:Show()
     self.comparisonReference:Refresh()
     self.comparisonPrev:SetShown(columns.pages > 1); self.comparisonNext:SetShown(columns.pages > 1)
