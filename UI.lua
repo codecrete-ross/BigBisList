@@ -1515,6 +1515,7 @@ end
 
 function UI:BuildOwnedItems()
     self:CountPerformance("ownershipBuilds")
+    local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
     local char = BigBiSList:GetCharacterDB()
     local bankCache = not BigBiSList.isForever and char.bankCache
     local statBank = BigBiSList.isForever and char.bankCache.scanned and char.bankCache
@@ -1554,6 +1555,7 @@ function UI:BuildOwnedItems()
     end
 
     for _, slotDefinition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+        if checkpoint then checkpoint() end
         local slotId = getInventorySlotInfo(slotDefinition)
         local readable, itemId
         if GetInventoryItemID and slotId then
@@ -1590,6 +1592,7 @@ function UI:BuildOwnedItems()
         if BigBiSList.isForever and not bagReadable then owned.bagsIncomplete = true end
 
         for slot = 1, numSlots do
+            if checkpoint then checkpoint() end
             local itemId, slotReadable = getContainerItemIDSafe(bag, slot)
             local itemLink = getContainerItemLinkSafe(bag, slot)
             if BigBiSList.isForever and not itemId and itemLink then
@@ -1629,6 +1632,7 @@ function UI:BuildOwnedItems()
         for _, entry in pairs(owned.equippedSlots) do if entry.guid then carried[entry.guid] = true end end
         for _, entry in ipairs(owned.gearCopies) do if entry.guid then carried[entry.guid] = true end end
         for index, link in ipairs(statBank.links or {}) do
+            if checkpoint then checkpoint() end
             local itemId = type(link) == "string" and tonumber(link:match("item:(%d+)"))
             local guid = statBank.guids and statBank.guids[index]
             if itemId and not (guid and carried[guid]) then
@@ -1645,7 +1649,12 @@ function UI:GetOwnedSnapshot()
     local character = BigBiSList:GetCharacterDB()
     if self.ownedCharacter and self.ownedCharacter ~= character then self.currentOwned = nil end
     self.ownedCharacter = character
-    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
+    if not self.currentOwned then
+        local owned = self:BuildOwnedItems()
+        local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
+        if checkpoint then checkpoint() end
+        self.currentOwned = self.currentOwned or owned
+    end
     return self.currentOwned
 end
 
@@ -2441,12 +2450,14 @@ function UI:ScanBankItems()
     end
 
     local cache = { items = {}, links = {} }
+    local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
     if strict then cache.guids, cache.locations = {}, {} end
     for _, bag in ipairs(tabs) do
         if strict and (not BigBiSList.IsReadableValue(bag) or type(bag) ~= "number") then return false end
         local numSlots, slotsReadable = getContainerNumSlotsSafe(bag)
         if strict and not slotsReadable then return false end
         for slot = 1, numSlots do
+            if checkpoint then checkpoint() end
             local itemId, idReadable = getContainerItemIDSafe(bag, slot)
             local itemLink, linkReadable = getContainerItemLinkSafe(bag, slot)
             if strict then
@@ -2471,6 +2482,7 @@ function UI:ScanBankItems()
 
     cache.scanned = true
     cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
+    if checkpoint then checkpoint() end
     char.bankCache = cache
     return true
 end
@@ -2541,7 +2553,7 @@ function UI:Invalidate(domains, reason)
     if expanded.ownership then
         self.currentOwned = nil
         self.currentEnhancementAppliedCache = nil
-        if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:InvalidateStorage() end
+        if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:OwnershipChanged() end
     end
     if expanded.access then
         self.currentAccess = nil
@@ -9473,7 +9485,11 @@ function BigBiSList:InitUIEvents()
             end
             if self.UI.personalBankOpen and (event == "BANKFRAME_OPENED" or event == "PLAYERBANKSLOTS_CHANGED"
                 or event == "BAG_UPDATE_DELAYED" or event == "BANK_TABS_CHANGED") then
-                self.UI:ScanBankItems()
+                if self.AcquisitionHighlights and self.AcquisitionHighlights.eventFrame then
+                    self.UI.pendingPersonalBankScan = true
+                else
+                    self.UI:ScanBankItems()
+                end
             end
         elseif event == "BANKFRAME_OPENED" or event == "PLAYERBANKSLOTS_CHANGED"
             or (event == "BAG_UPDATE_DELAYED" and BankFrame and BankFrame:IsShown()) then

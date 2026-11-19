@@ -156,6 +156,87 @@ class AcquisitionHighlightTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
+    def test_storage_refresh_slices_cold_work_and_reuses_results_after_non_gear_changes(self):
+        self.run_lua(r'''
+local contents = {link(901002), link(901006), link(901005)}
+local panel, rows = bagView(contents)
+local comparisons, elapsed = 0, 0
+debugprofilestop = function()
+    elapsed = elapsed + 0.002
+    return elapsed
+end
+local compare = rating.GetStorageComparison
+function rating:GetStorageComparison(...)
+    comparisons, elapsed = comparisons + 1, elapsed + 2.1
+    return compare(self, ...)
+end
+addon:InitUIEvents()
+panel:Hide()
+highlights:Initialize(); H.settle()
+assert(comparisons == 0 and not addon.dataIndex, "hidden bags do no cold indexing or scoring")
+
+panel:Show()
+assert(not showTip(rows[1], contents[1]):find("Big BiS List", 1, true), "a cold hover returns the native tooltip")
+assert(H.tick() and highlights.queued and not addon.dataIndex, "the cold index yields before publishing")
+local syncIndex = addon:GetDataIndex()
+local scoringFrames = 0
+while highlights.queued do
+    local before = comparisons
+    assert(H.tick())
+    if comparisons > before then
+        scoringFrames = scoringFrames + 1
+        assert(comparisons - before <= 2, "comparisons must yield within the frame budget")
+    end
+end
+H.settle()
+assert(scoringFrames > 1 and addon:GetDataIndex() == syncIndex and mark(rows[1], 901002))
+assert(table.concat(GameTooltip.lines, "\n"):find("Big BiS List", 1, true), "the same hovered item gets its addon lines")
+GameTooltip:Hide()
+
+local original, priorComparisons = mark(rows[1], 901002).result, comparisons
+panel:Hide(); panel:Show(); H.settle()
+assert(comparisons == priorComparisons and mark(rows[1], 901002).result == original)
+contents[2] = link(901006)
+contents[4] = link(901099)
+local junk = row(panel, 4)
+junk.GetBagID = function() return 0 end
+rows[4] = junk
+panel:UpdateItems()
+local inventory = addon.uiEventFrame
+inventory:GetScript("OnEvent")(inventory, "BAG_UPDATE_DELAYED")
+event("BAG_UPDATE_DELAYED")
+assert(ui:GetOwnedSnapshot()[901099] == "bag", "the full ownership snapshot records non-gear additions")
+assert(comparisons == priorComparisons and mark(rows[1], 901002).result == original)
+assert(not mark(rows[2], 901006) and not mark(junk, 901099), "negative results and non-gear stay unmarked")
+''')
+
+    def test_storage_refresh_discards_a_cold_hover_and_stale_gear_when_a_slot_changes(self):
+        self.run_lua(r'''
+local contents = {link(901002), link(901006)}
+local panel, rows = bagView(contents)
+local elapsed = 0
+debugprofilestop = function()
+    elapsed = elapsed + 0.004
+    return elapsed
+end
+addon:InitUIEvents()
+panel:Hide()
+highlights:Initialize(); H.settle()
+panel:Show()
+assert(not showTip(rows[1], contents[1]):find("Big BiS List", 1, true))
+assert(H.tick() and highlights.queued)
+
+contents[1], contents[2] = link(901004), link(901002)
+panel:UpdateItems()
+local inventory = addon.uiEventFrame
+inventory:GetScript("OnEvent")(inventory, "BAG_UPDATE_DELAYED")
+event("BAG_UPDATE_DELAYED")
+assert(not table.concat(GameTooltip.lines, "\n"):find("Big BiS List", 1, true), "a tooltip for the old slot item stays unannotated")
+assert(not mark(rows[1], 901002) and not mark(rows[2], 901002), "the older snapshot may not publish a winner")
+assert(mark(rows[1], 901004).result.delta == 6)
+assert(showTip(rows[1], contents[1]):find("+6.0 pts", 1, true))
+''')
+
     def test_bags_and_personal_bank_mark_owned_upgrades_and_refresh_reused_slots(self):
         self.run_lua(r'''
 local contents = {[0] = {link(901002), link(901005)}, [20] = {link(901004)}}

@@ -4509,24 +4509,22 @@ FILTER_FACETS.SHARED_PROGRESSION_INDEX_FIELDS = {
 }
 
 function BigBiSList:GetDataIndex(selectedPhaseKey)
+    local checkpoint = self.AcquisitionHighlights and self.AcquisitionHighlights:GetCheckpoint()
     local livePhase = self:GetCurrentPhaseKey()
     local scheduleId = (BigBiSListData or {}).active_schedule
     local contentPhase = selectedPhaseKey and self:GetProgressionContext(selectedPhaseKey).content_phase or livePhase
     if phaseIndex(contentPhase) == 999 then contentPhase = livePhase end
-    if not self.dataIndex or self.dataIndex.livePhase ~= livePhase or self.dataIndex.scheduleId ~= scheduleId
-        or self.dataIndex.dataSource ~= BigBiSListData then
-        self.progressionIndexes = {}
-        self.progressionIndexOrder = {}
-        self.progressionBase = nil
-    end
-    if self.progressionIndexes and self.progressionIndexes[contentPhase] then
+    local previousIndex = self.dataIndex
+    local indexIsCurrent = previousIndex and previousIndex.livePhase == livePhase and previousIndex.scheduleId == scheduleId
+        and previousIndex.dataSource == BigBiSListData
+    if indexIsCurrent and self.progressionIndexes and self.progressionIndexes[contentPhase] then
         self.dataIndex = self.progressionIndexes[contentPhase]
         return self.dataIndex
     end
 
     local data = BigBiSListData or {}
     local compact = data.format == 2
-    local sharedBase = compact and self.progressionBase or nil
+    local sharedBase = indexIsCurrent and compact and self.progressionBase or nil
     local classSpecIndex = self:GetClassSpecIndex()
     local index = {
         dataSource = data,
@@ -4590,6 +4588,7 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
     if compact then
         if not sharedBase then
             for _, itemRecord in ipairs(data.items or {}) do
+                if checkpoint then checkpoint() end
                 local itemId = compactField(index, "item", itemRecord, "id")
                 if itemId then
                     index.itemRecordsById[itemId] = itemRecord
@@ -4597,6 +4596,7 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
             end
 
             for _, itemFallbackRecord in ipairs(data.item_fallbacks or {}) do
+                if checkpoint then checkpoint() end
                 local itemId = compactField(index, "item_fallback", itemFallbackRecord, "id")
                 if itemId then
                     index.itemFallbackRecordsById[itemId] = itemFallbackRecord
@@ -4624,10 +4624,12 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
 
         local tooltipAliasesByItemId = {}
         for _, aliasRecord in ipairs(data.tooltip_aliases or {}) do
+            if checkpoint then checkpoint() end
             tooltipAliasesByItemId[aliasRecord[1]] = aliasRecord[2]
         end
 
         for _, useRef in ipairs(data.uses or {}) do
+            if checkpoint then checkpoint() end
             local itemId = compactField(index, "use", useRef, "item_id")
             local className = compactField(index, "use", useRef, "class")
             local specName = compactField(index, "use", useRef, "spec")
@@ -4648,6 +4650,7 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
 
         if not sharedBase then
             for _, levelingGearRef in ipairs(data.leveling_gear or {}) do
+                if checkpoint then checkpoint() end
                 local itemId = compactField(index, "leveling_gear", levelingGearRef, "item_id")
                 local className = compactField(index, "leveling_gear", levelingGearRef, "class")
                 local specName = compactField(index, "leveling_gear", levelingGearRef, "spec")
@@ -4656,6 +4659,7 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
             end
 
             for _, recommendationRef in ipairs(data.leveling_recommendations or {}) do
+                if checkpoint then checkpoint() end
                 local itemId = compactField(index, "leveling_recommendation", recommendationRef, "item_id")
                 local className = compactField(index, "leveling_recommendation", recommendationRef, "class")
                 local specName = compactField(index, "leveling_recommendation", recommendationRef, "spec")
@@ -4664,16 +4668,19 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
             end
 
             for _, sourceData in ipairs(data.gem_sources or {}) do
+                if checkpoint then checkpoint() end
                 index.enhancement.gemSourcesById[compactField(index, "source_record", sourceData, "id")] = sourceData
             end
 
             for _, sourceData in ipairs(data.enchant_sources or {}) do
+                if checkpoint then checkpoint() end
                 local key = enhancementSourceKey(compactField(index, "source_record", sourceData, "type") or "item", compactField(index, "source_record", sourceData, "id"))
                 index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
                 table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
             end
 
             for _, effectData in ipairs(data.enchant_effects or {}) do
+                if checkpoint then checkpoint() end
                 local key = enhancementSourceKey(compactField(index, "enchant_effect", effectData, "type") or "item", compactField(index, "enchant_effect", effectData, "id"))
                 index.enhancement.enchantEffectsByKey[key] = effectData
             end
@@ -4779,6 +4786,17 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
         })
     end
 
+    if checkpoint then
+        checkpoint()
+        if self.dataIndex ~= previousIndex or BigBiSListData ~= data or self:GetCurrentPhaseKey() ~= livePhase then
+            return self:GetDataIndex(selectedPhaseKey)
+        end
+    end
+    if not indexIsCurrent then
+        self.progressionIndexes = {}
+        self.progressionIndexOrder = {}
+        self.progressionBase = nil
+    end
     self.dataIndex = index
     if compact and not sharedBase then
         self.progressionBase = {}

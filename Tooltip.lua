@@ -539,26 +539,7 @@ function BigBiSList:ScheduleItemTooltipRefresh(itemId)
     if C_Timer and C_Timer.After then C_Timer.After(0, refresh) else refresh() end
 end
 
-function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
-    if not shouldAnnotateTooltip(tooltip) or tooltip.__bigBisListState then
-        return
-    end
-
-    local database = self:EnsureDatabase() or (not self.isForever and BigBiSListDB)
-    local settings = database and database.profile and database.profile.tooltips
-    if not settings or settings.enabled == false then
-        return
-    end
-
-    local itemId = itemIdFromTooltip(tooltip, tooltipData)
-    if not itemId then
-        return
-    end
-
-    local info = primaryInfo(tooltip)
-    if info and readable(info.append) then return end
-    local itemLink = itemLinkFromTooltip(tooltip, tooltipData, itemId, info)
-    local owner = readable(call(tooltip.GetOwner, tooltip))
+local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings)
     local offer, mark
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
@@ -596,6 +577,16 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     end
     local matches = groupedMatches
     local maxRows = showExpanded and #matches or (settings.compact and 4 or 8)
+    return {
+        offer = offer, statBlock = statBlock, mark = mark, live = live, selection = selection,
+        matches = matches, rawCount = #rawMatches, maxRows = maxRows, expanded = not not showExpanded,
+    }
+end
+
+local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared)
+    local offer, statBlock, mark = prepared.offer, prepared.statBlock, prepared.mark
+    local live, selection, matches = prepared.live, prepared.selection, prepared.matches
+    local showExpanded, maxRows = prepared.expanded, prepared.maxRows
     tooltip.__bigBisListState = { itemId = itemId, link = itemLink, owner = owner, acquisition = offer ~= nil,
         expanded = not not showExpanded, stats = statBlock ~= nil, pending = statBlock and statBlock.pending or {} }
 
@@ -632,12 +623,57 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         end
     end
 
-    local rawDiffersFromGrouped = #rawMatches ~= #groupedMatches
+    local rawDiffersFromGrouped = prepared.rawCount ~= #matches
     local hasHiddenRows = #matches > maxRows
     if not showExpanded and settings.showAllOnAlt and (statBlock or rawDiffersFromGrouped or hasHiddenRows) then
         tooltip:AddLine(statBlock and "Hold Alt for more details" or "Hold Alt for all rankings", 0.62, 0.66, 0.72)
     end
     if statBlock then self.UI:QueueStatLoads(statBlock.pending) end
+end
+
+function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
+    if not shouldAnnotateTooltip(tooltip) or tooltip.__bigBisListState then return end
+    local database = self:EnsureDatabase() or (not self.isForever and BigBiSListDB)
+    local settings = database and database.profile and database.profile.tooltips
+    if not settings or settings.enabled == false then return end
+    local itemId = itemIdFromTooltip(tooltip, tooltipData)
+    if not itemId then return end
+    local info = primaryInfo(tooltip)
+    if info and readable(info.append) then return end
+    local itemLink = itemLinkFromTooltip(tooltip, tooltipData, itemId, info)
+    local owner = readable(call(tooltip.GetOwner, tooltip))
+    local highlights = self.AcquisitionHighlights
+    if highlights and itemLink and highlights:ShouldDeferStorageTooltip(owner, info and readable(info.getterName)) then
+        local state = { itemId = itemId, link = itemLink, owner = owner }
+        tooltip.__bigBisListState = state
+        local function isCurrent()
+            local currentInfo = primaryInfo(tooltip)
+            return tooltip.__bigBisListState == state and shouldAnnotateTooltip(tooltip) and tooltip:IsShown()
+                and readable(call(tooltip.GetOwner, tooltip)) == owner and itemIdFromTooltip(tooltip) == itemId
+                and itemLinkFromTooltip(tooltip, nil, itemId, currentInfo) == itemLink
+                and highlights:IsStorageTooltipCurrent(owner, itemId, itemLink,
+                    currentInfo and readable(currentInfo.getterName), currentInfo and readable(currentInfo.getterArgs))
+        end
+        highlights:QueueStorageTooltip(tooltip, function()
+            if not isCurrent() then
+                if tooltip.__bigBisListState == state then tooltip.__bigBisListState = nil end
+                return
+            end
+            local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, primaryInfo(tooltip), settings)
+            local checkpoint = highlights:GetCheckpoint()
+            if checkpoint then checkpoint() end
+            if isCurrent() then
+                tooltip.__bigBisListState = nil
+                if prepared and settings.enabled ~= false then
+                    showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared)
+                    if tooltip.Show then tooltip:Show() end
+                end
+            end
+        end)
+        return
+    end
+    local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings)
+    if prepared then showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared) end
 end
 
 local function hookTooltip(tooltip)

@@ -142,10 +142,42 @@ function rating:SameExactItemLink(id, first, second)
     return key ~= nil and key == exactLinkKey(self, id, second)
 end
 
+function rating:IsPotentialGear(id, link)
+    local data = model()
+    if data and data.items[tostring(id)] then return true end
+    local instant = C_Item and C_Item.GetItemInfoInstant or GetItemInfoInstant
+    local _, _, _, location = call(instant, link or id)
+    return not readable(location) or type(location) ~= "string" or SLOT_BY_LOCATION[location] ~= nil
+end
+
+function rating:GetGearSnapshotKey(owned)
+    if owned.gearSnapshotKey then return owned.gearSnapshotKey end
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local equipment = {}
+    local function fingerprint(entry, location)
+        local id, link = entry.item_id, entry.item_link
+        return table.concat({ location or "", id, exactLinkKey(self, id, link) or link or "", entry.guid or "" }, "\031")
+    end
+    for slot, entry in pairs(owned.equippedSlots or {}) do equipment[#equipment + 1] = fingerprint(entry, slot) end
+    for slot in pairs(owned.unreadableEquipmentSlots or {}) do equipment[#equipment + 1] = slot .. "\031?" end
+    table.sort(equipment)
+    local parts = { tostring(owned.equippedTwoHand), tostring(owned.bagsIncomplete), table.concat(equipment, "\030") }
+    for _, entry in ipairs(owned.gearCopies or {}) do
+        if checkpoint then checkpoint() end
+        if not entry.item_link or self:IsPotentialGear(entry.item_id, entry.item_link) then
+            parts[#parts + 1] = fingerprint(entry, entry.state .. ":" .. (entry.sourceId or ""))
+        end
+    end
+    owned.gearSnapshotKey = table.concat(parts, "\030")
+    return owned.gearSnapshotKey
+end
+
 function rating:GetCatalog(data)
     if self.catalog and self.catalog.data == data then return self.catalog end
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     local catalog = { data = data, items = {}, slots = {} }
     for key, row in pairs(data.items) do
+        if checkpoint then checkpoint() end
         local item = { key = key }
         for index, field in ipairs(data.item_fields) do item[field] = row[index] end
         item.variant_link = data.variant_links and data.variant_links[key]
@@ -154,6 +186,8 @@ function rating:GetCatalog(data)
         catalog.slots[slot] = catalog.slots[slot] or {}
         table.insert(catalog.slots[slot], item)
     end
+    if checkpoint then checkpoint() end
+    if self.catalog and self.catalog.data == data then return self.catalog end
     self.catalog = catalog
     self.native = {}
     self.tooltipItem = nil
@@ -406,8 +440,10 @@ local function unresolvedCopy(catalog, entry, status)
 end
 
 local function resolveInventory(self, catalog, owned)
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     local inventory = { catalog = catalog, pending = {}, equipment = {}, byVariant = {}, bySource = {}, copies = {}, unresolvedCopies = {} }
     local function read(entry, state)
+        if checkpoint then checkpoint() end
         local facts, status = resolveLink(self, inventory, entry)
         local instance = { facts = facts, status = status, entry = entry, item_link = entry.item_link, state = state }
         if facts and instance.item_link then
@@ -432,7 +468,10 @@ local function resolveInventory(self, catalog, owned)
         if not inventory.equipment[key] then inventory.equipment[key] = read(entry, "equipped") end
     end
     if owned.gearCopies then
-        for _, entry in ipairs(owned.gearCopies) do read(entry, entry.state) end
+        for _, entry in ipairs(owned.gearCopies) do
+            if checkpoint then checkpoint() end
+            if not entry.item_link or self:IsPotentialGear(entry.item_id, entry.item_link) then read(entry, entry.state) end
+        end
     else
         for _, entry in pairs(owned.gearStatLinks or {}) do
             if entry.state ~= "equipped" then read(entry, entry.state) end
@@ -533,18 +572,20 @@ function rating:GetContext(className, spec, phase, level, owned, requested)
     if not profile then return nil end
     level = phase == "LEVELING" and level or 60
     local livePhase = addon:GetAvailabilityPhaseIndex(phase)
-    if self.snapshot ~= owned or self.contextData ~= data then
-        self.snapshot, self.contextData, self.contexts = owned, data, {}
-        self.inventory = nil
-    end
-    self.contexts = self.contexts or {}
     local race = addon:GetPlayerRaceName()
     local faction = addon.GetPlayerFactionName and addon:GetPlayerFactionName()
     local scenario = self:GetScenario(className, spec, phase, level, requested)
     local key = table.concat({className, spec, phase, level, livePhase, race or "", faction or "", scenario}, "\031")
-    if self.contexts[key] then return self.contexts[key] end
-    if not self.inventory then self.inventory = resolveInventory(self, self:GetCatalog(data), owned) end
-    local inventory = self.inventory
+    local matches = self.snapshot == owned and self.contextData == data
+    local cached = matches and self.contexts and self.contexts[key]
+    if cached then return cached end
+    local inventory = matches and self.inventory or resolveInventory(self, self:GetCatalog(data), owned)
+    if self.snapshot ~= owned or self.contextData ~= data or not self.inventory then
+        self.snapshot, self.contextData, self.inventory, self.contexts = owned, data, inventory, {}
+    else
+        inventory = self.inventory
+        if self.contexts[key] then return self.contexts[key] end
+    end
     local context = scoringContext(data, profile, className, spec, phase, level, livePhase, race, faction, scenario)
     context.owned, context.catalog, context.pending = owned, inventory.catalog, inventory.pending
     context.equipmentFacts, context.ownedFacts = inventory.equipment, inventory.byVariant
@@ -562,14 +603,21 @@ function rating:GetGuideContext(className, spec, phase, level, race, faction, re
     local phaseIndex = addon:GetAvailabilityPhaseIndex(phase)
     local scenario = self:GetScenario(className, spec, phase, level, requested)
     local key = table.concat({className, spec, phase, level, phaseIndex, race or "", faction or "", scenario}, "\031")
+    if self.guideData == data then
+        for _, context in ipairs(self.guideContexts) do
+            if context.key == key then return context end
+        end
+    end
+    local catalog = self:GetCatalog(data)
     if self.guideData ~= data then
         self.guideData, self.guideContexts = data, {}
-    end
-    for _, context in ipairs(self.guideContexts) do
-        if context.key == key then return context end
+    else
+        for _, context in ipairs(self.guideContexts) do
+            if context.key == key then return context end
+        end
     end
     local context = scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction, scenario)
-    context.key, context.catalog, context.guide = key, self:GetCatalog(data), true
+    context.key, context.catalog, context.guide = key, catalog, true
     context.ownedFacts = {}
     self.guideContexts[#self.guideContexts + 1] = context
     if #self.guideContexts > 8 then table.remove(self.guideContexts, 1) end
@@ -858,12 +906,14 @@ end
 
 local function slotPool(context, physical, slot, handType, gear, cacheKey)
     if context.pools[cacheKey] then return context.pools[cacheKey] end
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     local equipped = gear[physical]
     local reference = equipped and equipped.facts
     local candidates, rows = {}, {}
     local verified = context.catalog.data.published_routes_only and addon.IsStatRankGuideItemAvailable
     context.verifiedPeers = context.verifiedPeers or {}
     local function add(item, ownership)
+        if checkpoint then checkpoint() end
         if handType and offHandType(item) ~= handType then return end
         if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
             or not inScope(context, item) then return end
@@ -887,7 +937,11 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
     for key, ownership in pairs(context.ownedFacts) do
         if candidates[key] then candidates[key].ownership = ownership end
     end
-    for _, entry in pairs(candidates) do rows[#rows + 1] = entry end
+    for _, entry in pairs(candidates) do
+        if checkpoint then checkpoint() end
+        rows[#rows + 1] = entry
+    end
+    if checkpoint then checkpoint() end
     table.sort(rows, function(a, b)
         if a.score ~= b.score then return (a.score or -math.huge) > (b.score or -math.huge) end
         if a.item.name ~= b.item.name then return a.item.name < b.item.name end
@@ -896,6 +950,7 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
     local count, previous, rank = 0, nil, nil
     local ties, conditionalTies = {}, {}
     for _, entry in ipairs(rows) do
+        if checkpoint then checkpoint() end
         if entry.score ~= nil then
             count = count + 1
             if entry.score ~= previous then previous, rank = entry.score, count end
@@ -907,6 +962,7 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
     local bestScore = rows[1] and rows[1].score
     local tiers = placementTiers(rows, count, bestScore)
     for _, entry in ipairs(rows) do
+        if checkpoint then checkpoint() end
         if entry.rank then
             entry.total = count
             entry.tied = ties[entry.rank] > 1 or nil
@@ -921,8 +977,9 @@ local function slotPool(context, physical, slot, handType, gear, cacheKey)
         if placement.score ~= nil and reference then placement = rating:ProjectPlacement(reference, placement, pool) end
         pool.reference = placement
     end
-    context.pools[cacheKey] = pool
-    return pool
+    if checkpoint then checkpoint() end
+    context.pools[cacheKey] = context.pools[cacheKey] or pool
+    return context.pools[cacheKey]
 end
 
 function rating:GetPlacement(context, physical, slots)
@@ -1286,8 +1343,10 @@ local function lookaheadPlacement(context, item, requestedScenario)
         or not permitted(item.races, context.race) then return { status = "incompatible" } end
 
     local group = groupFor(item)
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     -- Proficiency can unlock after the item's required level.
     for level = math.max(item.level, context.level + 1), cap do
+        if checkpoint then checkpoint() end
         local phase = level == cap and "PR" or "LEVELING"
         local scenario = rating:GetScenario(context.class, context.spec, phase, level,
             requestedScenario or (phase == context.phase and context.scenario or nil))
@@ -1438,10 +1497,12 @@ local function canImprove(score, best, prefer)
 end
 
 local function bestLoadout(firstChoices, secondChoices, value, prefer)
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     local best
     for _, first in ipairs(firstChoices) do
         if not value and not canImprove(first.score + secondChoices[1].score, best, prefer) then break end
         for _, second in ipairs(secondChoices) do
+            if checkpoint then checkpoint() end
             local total = first.score + second.score
             if not value and not canImprove(total, best, prefer) then break end
             if compatiblePair(first, second) then
@@ -1467,6 +1528,7 @@ local function ownedLoadout(context, group, storage)
     local revision = storage and addon.ForeverScoring and addon.ForeverScoring.revision
     local cached = context.ownedLoadouts[key]
     if cached and cached.revision == revision then return cached end
+    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
     local outside = copy(context.equipmentFacts)
     local options = {}
     local unresolved = context.owned.bagsIncomplete and "unavailable" or nil
@@ -1477,6 +1539,7 @@ local function ownedLoadout(context, group, storage)
     for index, definition in ipairs(group.definitions) do
         local choices = {}
         for order, instance in ipairs(context.ownedCopies) do
+            if checkpoint then checkpoint() end
             local option = ownedOption(context, outside, definition, instance)
             if option and (not storage or inScope(context, instance.facts)) then
                 if storage then
@@ -1494,6 +1557,7 @@ local function ownedLoadout(context, group, storage)
             end
         end
         for _, copy in ipairs(context.unresolvedCopies) do
+            if checkpoint then checkpoint() end
             local item = copy.item
             local slot = item and targetSlot(item, definition)
             if not item or (slot and not item.excluded and (not item.level or item.level <= context.level)
