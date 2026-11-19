@@ -355,11 +355,34 @@ or loses.
 
 ## Verification and rollout
 
-- The Gear Guide includes all compatible catalog items. The 70%, 85% and 97%
-  thresholds describe strength and its useful leveling ranges. Every rarity is
-  eligible. Verified utility retains its reviewed description. Searches and
-  ownership filters preserve the full slot denominator. The player's talents
-  and gear determine the swap estimate and **Within Reach** actions.
+- Full-slot rankings include every compatible catalog item. The 70%, 85% and
+  97% thresholds describe strength and its useful leveling ranges. The Gear
+  Guide browses verified targets at the viewed level with a positive swap over
+  the best legal owned setup, plus specifically reviewed utility. Exact item
+  lookup explains hidden gear against the same ranking. Activities count eligible
+  loot separately from distinct upgrades and share the Guide's owned comparison.
+- In the level-51 Retribution replay with Gothic Plate Helmet of the Gorilla,
+  the four helm targets were Embrace of the Lycan, Bloomsprout Headpiece,
+  Raging Berserker's Helm and Icemetal Barbute. Herod's helm was rank 143
+  and gained 2.1 points. Tusken Helm lost 6.5 points. A stored Embrace removed
+  Herod's helm from the shortlist and became its comparison in exact lookup.
+- Six fresh Windows Lua 5.1 processes loaded the shipped data and opened the
+  Guide at 60 frames per second using an elapsed-time clock. First useful
+  rows took 34.8–41.4 ms across all slots, Head, and the three Activity sorts.
+  The longest recorded addon frame was 4.0 ms. The shared worker checks a
+  1 ms deadline. Individual callbacks took up to 3.1 ms. Idle and duplicate-event
+  replays produced zero list rebuilds. The native bag tooltip showed its
+  signed verdict on the first call. Client measurements use `/bbltest perf`.
+- The November 19 source pass checked 483 items recorded only through trade in
+  the canonical leveling and Pre-Raid item families against the committed Forever
+  item, NPC, spell, and provider snapshots. It recovered Muad's Small Green
+  Dagger, Wallace the Blind's Fine Longbow, and recipes for Earthen Silk Slippers
+  and Gnomish Universal Remote. The 54 client spell-output leads include Flying
+  Tiger Goggles and Azure Silk Hood. A client spell-output link alone still
+  needs evidence that the craft is available in Forever.
+- The Malignant Root exchange takes one Rotheap Innards. Its canonical source
+  records the cost as a quantity. The exporter carries that quantity into the
+  runtime cost so the Guide can name Rethiel the Greenwarden and the turn-in.
 - The native and in-addon comparisons share item facts and one worn-swap
   evaluator. Placement uses base gear. Swap estimates apply verified permanent
   modifiers from exact links. Unknown modifiers, unscored effects, and

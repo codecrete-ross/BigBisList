@@ -49,6 +49,7 @@ local function flush()
 end
 
 local routeTransitions = {}
+local activities, activityIds = {}, {}
 local function routes(item)
     local known = routeTransitions[item.id]
     if not known then
@@ -181,7 +182,17 @@ local function intervals(contexts, id, routeCache, first, last)
     local function add(level, final)
         local verified, reason = addon:IsStatRankGuideItemAvailable(id, contexts[level], route.options)
         if verified or reason == "missing_item_record" or reason == "unverified_route" then
-            result[#result + 1] = { level, final, verified }
+            local ids = {}
+            if verified then
+                for _, name in ipairs(addon:GetGuideTargetActivities(contexts[level], route.options)) do
+                    if not activityIds[name] then
+                        activities[#activities + 1] = name
+                        activityIds[name] = #activities
+                    end
+                    ids[#ids + 1] = activityIds[name]
+                end
+            end
+            result[#result + 1] = { level, final, verified, ids }
         end
     end
     if first == last then
@@ -316,12 +327,13 @@ local function buildSlot(slot, contexts, routeCache, first, last)
     for ordinal, item in ipairs(items) do
         local low, high = rating:GetReferenceWindow(contexts[first], contexts[last], item, slot, at)
         if low then
-            local record = {ordinal = ordinal, ranked = {}, verified = {}, recommended = {}, strength = {}, leading = {}}
+            local record = {ordinal = ordinal, ranked = {}, verified = {}, recommended = {}, strength = {}, leading = {}, targets = {}}
             local timeline = intervals(contexts, item.id, routeCache, first, last)
             for _, interval in ipairs(timeline) do
                 for level = math.max(low, interval[1]), math.min(high, interval[2]) do
                     extend(record.ranked, level)
                     if interval[3] then extend(record.verified, level) end
+                    if #interval[4] > 0 then record.targets[level] = interval[4] end
                     record[level] = true
                 end
             end
@@ -414,11 +426,18 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         recordRefs[ordinal] = pack(record and store(packRanges(record)) or 0, 4)
         if record and record.verified[1] then verified[#verified + 1] = pack(ordinal, 3) end
     end
-    local packedLevels = {}
+    local packedLevels, targetLevels = {}, {}
     for level = first, last do
         local state, ordered = states[level], {}
-        local lowerScored, lowerUnscored = {}, {}
+        local lowerScored, lowerUnscored, targets, byActivity = {}, {}, {}, {}
         for _, record in ipairs(allowed) do
+            if record.targets[level] then
+                targets[#targets + 1] = record.ordinal + (type(record[level]) == "number" and record[level] or 131071) * 131072
+                for _, id in ipairs(record.targets[level]) do
+                    byActivity[id] = byActivity[id] or {}
+                    byActivity[id][#byActivity[id] + 1] = pack(record.ordinal, 3)
+                end
+            end
             local recommended = record.recommended[1] ~= nil
             local range = rangesAt(recommended and record.recommended or record.ranked, level)
             local routeLevel, order = level, recommended and 1 or 4
@@ -446,8 +465,18 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         local packed = {}
         for index, number in ipairs(state) do packed[index] = pack(number, index == 11 and 6 or 4) end
         packedLevels[#packedLevels + 1] = table.concat(packed)
+        table.sort(targets)
+        for n, value in ipairs(targets) do targets[n] = pack(value % 131072, 3) end
+        local destinations = {}
+        for id = 1, #activities do
+            if byActivity[id] then
+                destinations[#destinations + 1] = pack(id, 2) .. pack(store(table.concat(byActivity[id])), 4)
+            end
+        end
+        targetLevels[#targetLevels + 1] = pack(store(table.concat(targets)), 4) .. pack(store(table.concat(destinations)), 4)
     end
-    return { store(table.concat(recordRefs)), store(table.concat(verified)), store(table.concat(packedLevels)), #allowed }
+    return { store(table.concat(recordRefs)), store(table.concat(verified)), store(table.concat(packedLevels)), #allowed,
+        store(table.concat(targetLevels)) }
 end
 
 local specKeys = {}
@@ -493,5 +522,6 @@ for _, phase in ipairs(data.phases) do
         scoreOrders = {}
     end
 end
-write("end\n")
+for id, name in ipairs(activities) do activities[id] = quote(name) end
+write("archive.activities={", table.concat(activities, ","), "}\nend\n")
 out:close()

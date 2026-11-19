@@ -333,6 +333,8 @@ def compact_value(schema_name: str, key: str, value):
 
 def compact_record(record: dict, schema_name: str) -> list:
     schema = LEVELING_AVAILABILITY_SCHEMA if schema_name == "leveling_availability" else SCHEMAS[schema_name]
+    if schema_name == "cost" and "amount" not in record and "quantity" in record:
+        record = {**record, "amount": record["quantity"]}
     if schema_name == "source" and any(field in record for field in ("eligibility", "reward_type", "repeatable")):
         schema = FOREVER_SOURCE_SCHEMA
     elif schema_name == "leveling_recommendation" and "faction" in record:

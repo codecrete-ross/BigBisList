@@ -1338,6 +1338,25 @@ function FILTER_FACETS.optionIsVerifiedGuideRoute(option)
         and not option.is_inferred_trade_option and (not BigBiSList.isForever or not option.is_trade_option)
 end
 
+-- An observed market sale proves availability, but gives the player no farm target.
+function BigBiSList:IsGuideTargetRoute(option)
+    if not FILTER_FACETS.optionIsVerifiedGuideRoute(option) then return false end
+    local source = option.source or {}
+    local kind = option.source_type
+    if kind == "drop" then
+        local name = lower(source.entity_name)
+        return name ~= "" and name ~= "world drop" and name ~= "world drops" and name ~= "unknown"
+            and not source.world_drop and source.content_type ~= "world_drop"
+            and (source.zone ~= nil or source.content_type == "dungeon" or source.content_type == "heroic_dungeon")
+    end
+    if kind == "quest" then return (source.quest_id or source.entity_id) ~= nil end
+    if kind == "crafted" then return (source.spell_id or source.profession) ~= nil end
+    if kind == "vendor" or kind == "pvp" or kind == "token_turnin" then
+        return (source.entity_id or source.entity_name or option.vendor_label) ~= nil
+    end
+    return false
+end
+
 function FILTER_FACETS.promoteCompleteAccessOption(options)
     local primary
     local preferred
@@ -4125,6 +4144,8 @@ function BigBiSList:GetMatchingRowAccessOption(row, filters, phaseKey, includeFu
         if (not includeFuture or candidatePhase)
             and FILTER_FACETS.optionIsCompleteRoute(option)
             and (not verifiedOnly or FILTER_FACETS.optionIsVerifiedGuideRoute(option))
+            and (not filters or not filters._guideTarget or self:IsGuideTargetRoute(option))
+            and (not filters or not filters._questAvailable or filters._questAvailable(option))
             and optionMatchesSourceContext(option, scopedFilters, candidatePhase)
             and (not best or (candidatePhase or 0) < (bestPhase or 0)
                 or (candidatePhase == bestPhase and option == primary)) then
@@ -4184,7 +4205,8 @@ function BigBiSList:GetRowAcquisitionDisplay(row, filters, phaseKey, includeFutu
         matched_dependency = sourceMatch and sourceMatch.dependency,
         activity_zone = sourceMatch and sourceMatch.activity_zone,
         activity_zones = sourceMatch and sourceMatch.activity_zones,
-        source_label = option and (option.source_filter_label or SOURCE_TYPE_LABELS[option.source_type])
+        source_label = option and filters and filters._guideTarget and option.source_filter_key == "trade" and SOURCE_TYPE_LABELS[option.source_type]
+            or option and (option.source_filter_label or SOURCE_TYPE_LABELS[option.source_type])
             or (row and (row.source_filter_label or row.source_type_label))
             or SOURCE_TYPE_LABELS.unknown,
         location_label = option and FILTER_FACETS.accessOptionLocationLabel(option) or (row and row.source_summary) or "",
@@ -4917,6 +4939,23 @@ function BigBiSList:IsStatRankGuideItemAvailable(itemId, context, knownOptions)
 end
 
 -- Inputs shared by the offline compiler and the live route matcher.
+function BigBiSList:GetGuideTargetActivities(context, options)
+    local names = {}
+    for _, option in ipairs(options or {}) do
+        if self:IsGuideTargetRoute(option) then
+            for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, context.guideEligibility, context.phaseIndex)) do
+                local display = {option = option, source_match = match, activity_zone = match.activity_zone,
+                    activity_zones = match.activity_zones, source_label = option.source_filter_label}
+                names[self:GetActivityGroup({acquisition_display = display})] = true
+            end
+        end
+    end
+    local sorted = {}
+    for name in pairs(names) do sorted[#sorted + 1] = name end
+    table.sort(sorted)
+    return sorted
+end
+
 function BigBiSList:GetGuideRouteTransitions(itemId)
     local marks, levels = {}, {}
     local function add(level)
@@ -6347,6 +6386,8 @@ function BigBiSList:GetLevelingActivityRows(row, filters, level)
     local phase = self:GetAvailabilityPhaseIndex(LEVELING_PHASE_KEY)
     FILTER_FACETS.addMatchingOptionsFromRow(row, scoped, phase, function(option, match)
         if not FILTER_FACETS.optionIsVerifiedGuideRoute(option) then return end
+        if scoped._guideTarget and not self:IsGuideTargetRoute(option) then return end
+        if scoped._questAvailable and not scoped._questAvailable(option) then return end
         local primary = row.acquisition_display
         if primary and primary.option == option and primary.source_match == match then return end
         local display = {option = option, source_match = match, activity_zone = match.activity_zone,
@@ -6821,10 +6862,12 @@ function LEVELING_HELPERS.journeyAccess(addon, row, ranges, context, filters)
     end
 end
 
-function BigBiSList:GetPackedGuideRow(context, slot, ordinal, filters, match)
+function BigBiSList:GetPackedGuideRow(context, slot, ordinal, filters, match, targetLevel)
     local rating = self.ForeverGearRating
-    local record, entry, routeLevel, order, available = rating:PackedGuideRowInfo(context, slot, ordinal)
+    local checkpoint = rating:GetWorkCheckpoint()
+    local record, entry, routeLevel, order, available = rating:PackedGuideRowInfo(context, slot, ordinal, targetLevel)
     if not record then return end
+    if checkpoint then checkpoint() end
     if entry.source_unknown and (filters._verifiedOnly or hasActiveSourceContextFilter(filters)) then return end
     local index = self:GetDataIndex()
     local preferred
@@ -6847,6 +6890,7 @@ function BigBiSList:GetPackedGuideRow(context, slot, ordinal, filters, match)
     end
     local row = LEVELING_HELPERS.guideCandidate(index, entry, context, preferred, {effect = record.note})
     if not row then return end
+    if checkpoint then checkpoint() end
     local access
     local scoped = filters
     if routeLevel ~= context.level or filters.class ~= context.class then
@@ -6856,7 +6900,8 @@ function BigBiSList:GetPackedGuideRow(context, slot, ordinal, filters, match)
             context.class, routeLevel, context.race, context.faction, true
     end
     if match and not includeByFilter(row, scoped, context.phaseIndex) then return end
-    if match and not entry.source_unknown and hasActiveSourceContextFilter(scoped) then
+    if checkpoint then checkpoint() end
+    if match and not targetLevel and not entry.source_unknown and hasActiveSourceContextFilter(scoped) then
         local ranges = record.recommended[1] and record.recommended or record.ranked
         local candidate, level, position = LEVELING_HELPERS.journeyAccess(self, row, ranges, context, filters)
         if not candidate then return end
@@ -7540,9 +7585,12 @@ function FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseInde
     local options = buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}
     local matched = false
     for _, option in ipairs(options) do
-        for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)) do
-            callback(option, match)
-            matched = true
+        if not filters or not filters._guideTarget or (BigBiSList:IsGuideTargetRoute(option)
+            and (not filters._questAvailable or filters._questAvailable(option))) then
+            for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)) do
+                callback(option, match)
+                matched = true
+            end
         end
     end
     return matched, #options > 0
@@ -7566,7 +7614,12 @@ local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPha
 
     if FILTER_FACETS.hasActiveOptionContextFilter(filters) then
         local matched, hasOptions = FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option, match)
-            FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex, match)
+            if filters._guideTarget and match.source_filter_key == "trade" then
+                addUnique(sourceTypes, seen, option.source_type)
+            else
+                FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex, match)
+                if filters._guideTarget and option.source_type == "token_turnin" then addUnique(sourceTypes, seen, option.source_type) end
+            end
         end)
         if matched or hasOptions or hasActiveSourceContextFilter(filters) then
             return
@@ -7774,7 +7827,7 @@ local function collectAvailabilityRows(addon, className, specName, phaseKey, tab
     return rows
 end
 
-function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters)
+function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters, visitTargets)
     local availabilityPhaseKey = phaseKey
     if tabName == "Wishlist" and phaseKey == LEVELING_PHASE_KEY then
         availabilityPhaseKey = filters and (filters.endgamePhase or filters.selectedEndgamePhase) or "PR"
@@ -7798,7 +7851,8 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
     local costScopedFilters = FILTER_FACETS.cloneFiltersForCostOptions(filters)
     local vendorScopedFilters = FILTER_FACETS.cloneFiltersForVendorOptions(filters)
     local reputationScopedFilters = cloneFiltersForReputationOptions(filters)
-    local rows = collectAvailabilityRows(self, className, specName, phaseKey, tabName, cloneFiltersForAvailabilityRows(filters))
+    local baseFilters = cloneFiltersForAvailabilityRows(filters)
+    local rows = not visitTargets and collectAvailabilityRows(self, className, specName, phaseKey, tabName, baseFilters) or {}
 
     local function collectFacets(row, level)
         if level then
@@ -7821,6 +7875,7 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
             addReputationsFromRow(reputations, reputationSeen, row, reputationScopedFilters, selectedIndex)
         end
     end
+    if visitTargets then visitTargets(baseFilters, collectFacets) end
     local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
     for _, row in ipairs(rows) do
         if checkpoint then checkpoint() end

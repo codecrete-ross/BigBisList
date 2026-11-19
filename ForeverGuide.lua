@@ -126,7 +126,76 @@ local function dataset(context, slot, phase)
     if not (indices and slotInfo) then return false end
     return { archive = archive, indices = indices, ranges = archive.strings[slotInfo[1]],
         verified = archive.strings[slotInfo[2]], states = archive.strings[slotInfo[3]], count = slotInfo[4],
+        targets = slotInfo[5] and archive.strings[slotInfo[5]],
         first = (phase or context.phase) == "LEVELING" and 1 or 60, slot = slot }
+end
+
+function rating:GetGuideTargetPage(data, level)
+    if not data or not data.targets then return end
+    local offset = (level - data.first) * 8 + 1
+    local archive = data.archive
+    local members = archive.strings[packedRead(archive, data.targets, offset, 4)]
+    local activities = archive.strings[packedRead(archive, data.targets, offset + 4, 4)]
+    return {count = size(members) / 3, at = function(index)
+        return packedRead(archive, members, (index - 1) * 3 + 1, 3)
+    end, visitActivities = function(visit)
+        for pos = 1, size(activities), 6 do
+            local id = packedRead(archive, activities, pos, 2)
+            local items = archive.strings[packedRead(archive, activities, pos + 2, 4)]
+            visit(archive.activities[id], items, size(items) / 3, function(i)
+                return packedRead(archive, items, (i - 1) * 3 + 1, 3)
+            end)
+        end
+    end}
+end
+
+-- The postings cover item, slot, source, vendor, cost and reputation text.
+local function searchRanges(indices, lower)
+    local hits
+    for offset = 1, #lower - 2 do
+        local token = lower:sub(offset, offset + 2)
+        if not token:find("[\128-\255]") then
+            local matches = indices.search[token]
+            if not matches then return "" end
+            if not hits or #matches < #hits then hits = matches end
+        end
+    end
+    return hits
+end
+
+function rating:GuideSearchPredicate(indices, search)
+    local hits = searchRanges(indices, search:lower())
+    if not hits then return end
+    local count = #hits / 6
+    return function(ordinal)
+        local index = lowerBound(count, ordinal, function(i) return read(hits, (i - 1) * 6 + 4, 3) end)
+        return index <= count and read(hits, (index - 1) * 6 + 1, 3) <= ordinal
+    end
+end
+
+function rating:FindGuideItem(context, indices, search)
+    local id = tonumber(search:match("item:(%d+)"))
+    if id then
+        local key = self:NormalizeLink(id, search)
+        return key and indices.lookup[key], key
+    end
+    if search == "" then return end
+    local lower = search:lower()
+    local hits = searchRanges(indices, lower)
+    if not hits then return end
+    local checkpoint = self:GetWorkCheckpoint()
+    for pos = 1, #hits, 6 do
+        for ordinal = read(hits, pos, 3), read(hits, pos + 3, 3) do
+            if checkpoint then checkpoint() end
+            local key = indices.keys[ordinal]
+            local item = context.catalog.items[key]
+            if item.name:lower() == lower then return ordinal, key end
+            if item.variant_id then
+                local base = context.catalog.items[tostring(item.id)]
+                if base and base.name:lower() == lower then return nil, base.key end
+            end
+        end
+    end
 end
 
 function rating:GetPackedGuide(context)
@@ -474,20 +543,23 @@ function rating:GetPackedLevelingSuccessor(record, placement)
     end
 end
 
-function rating:PackedGuideRowInfo(context, slot, ordinal)
+function rating:PackedGuideRowInfo(context, slot, ordinal, targetLevel)
     local slots = self:GetPackedGuide(context)
     local data = slots and slots[slot]
     if not data then return end
     local key = data.indices.keys[ordinal]
     local record = self:GetPackedLevelingRecord(context, slot, key, true)
     if not record then return end
-    local level = context.level
+    local level = targetLevel or context.level
     local range = self:LevelingRangeAt(record.recommended[1] and record.recommended or record.ranked, level)
     local routeLevel, order = level, record.recommended[1] and 1 or 4
     if range.firstLevel > level then routeLevel, order = range.firstLevel, 2
     elseif range.lastLevel < level then routeLevel, order = range.lastLevel, 3 end
     local eligible = self:LevelingRangeAt(record.ranked, level)
     local evaluation = math.min(eligible.lastLevel, math.max(eligible.firstLevel, level))
+    if targetLevel then
+        routeLevel, order = evaluation, evaluation > context.level and 2 or evaluation < context.level and 3 or 1
+    end
     local placement = updatedEntry(data, context, key, evaluation)
     if not placement then return end
     return record, placement, routeLevel, order, evaluation == level

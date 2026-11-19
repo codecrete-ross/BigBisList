@@ -173,7 +173,7 @@ end
 
 function rating:GetGearSnapshotKey(owned)
     if owned.gearSnapshotKey then return owned.gearSnapshotKey end
-    local checkpoint = addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = self:GetWorkCheckpoint()
     local equipment = {}
     local function fingerprint(entry, location)
         local id, link = entry.item_id, entry.item_link
@@ -200,15 +200,34 @@ function rating:GetWorkCheckpoint()
     return addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
 end
 
-function rating:QueueWork(priority, build, isCurrent, onReady)
+local function runWorkSlice(self, job, start)
+    job.started, job.steps = start, 0
+    self.work = job
+    local ok, result = coroutine.resume(job.thread, job.checkpoint)
+    self.work = nil
+    if not ok then
+        job.cancelled = true
+        if geterrorhandler then geterrorhandler()(result) else error(result) end
+    elseif coroutine.status(job.thread) == "dead" then
+        if job.onReady then job.onReady(result) end
+    elseif job.isCurrent() then
+        return true
+    else job.cancelled = true end
+end
+
+function rating:QueueWork(priority, build, isCurrent, onReady, firstSlice)
     local job = { priority = priority, thread = coroutine.create(build), isCurrent = isCurrent, onReady = onReady }
     job.checkpoint = function()
         job.steps = job.steps + 1
         if job.steps >= (job.started and 4096 or 128)
-            or (job.started and job.steps % 8 == 0 and debugprofilestop() >= job.started + 1) then coroutine.yield() end
+            or (job.started and debugprofilestop() >= job.started + 1) then coroutine.yield() end
     end
     self.workQueue = self.workQueue or {}
     local queue = self.workQueue
+    if firstSlice and not self.work then
+        local start = debugprofilestop and debugprofilestop()
+        if not runWorkSlice(self, job, start) then return job end
+    end
     queue[#queue + 1] = job
     if self.workScheduled then return job end
     local function run()
@@ -221,22 +240,14 @@ function rating:QueueWork(priority, build, isCurrent, onReady)
         for index, nextJob in ipairs(queue) do
             if not first or nextJob.priority < queue[first].priority then first = index end
         end
-        local current = first and table.remove(queue, first)
+        local stats = addon.UI and addon.UI.performanceStats
+        local frame = GetTime and GetTime()
+        local busy = start and stats and stats.timingFrame == frame and stats.frameTime >= 2
+            and self.deferredWorkFrame ~= frame
+        if busy then self.deferredWorkFrame = frame end
+        local current = not busy and first and table.remove(queue, first)
         if current then
-            current.started, current.steps = start, 0
-            self.work = current
-            local ok, result = coroutine.resume(current.thread, current.checkpoint)
-            self.work = nil
-            if not ok then
-                current.cancelled = true
-                if geterrorhandler then geterrorhandler()(result) else error(result) end
-            elseif coroutine.status(current.thread) == "dead" then
-                if current.onReady then current.onReady(result) end
-            elseif current.isCurrent() then
-                queue[#queue + 1] = current
-            else
-                current.cancelled = true
-            end
+            if runWorkSlice(self, current, start) then queue[#queue + 1] = current end
         end
         if start and addon.UI and addon.UI.RecordAddonTime then addon.UI:RecordAddonTime("background", debugprofilestop() - start) end
         if #queue > 0 and not self.workScheduled then
@@ -2197,7 +2208,7 @@ local function ownedSwap(context, group, candidate, extraCopy, quantity, storage
     local other = best[3 - chosenIndex].instance
     local gear = copy(state.outside)
     local result = { definition = group.definitions[chosenIndex], slot = chosen.slot, gear = gear, replacements = {},
-        delta = chosen.hasPoints and best.score - baseline.score, basis = context.activeBuild and "active" or "reference",
+        delta = chosen.hasPoints and (best.score - baseline.score) or nil, basis = context.activeBuild and "active" or "reference",
         conditional = best.conditional or baseline.conditional }
     for index, definition in ipairs(group.definitions) do
         local proposed = best[index].instance
@@ -2633,6 +2644,61 @@ function rating:GetOwnedRival(context, candidate, worn)
     end
 end
 
+-- Membership, points, and the named comparison travel together into every Guide view.
+function rating:GetGuideTargetVerdict(row, guide, player, owned)
+    local evaluated = math.max(guide.level, row.guide_route_level or 0, player and player.level or 0)
+    local item, pending = self:GetRowItem(row)
+    local note = item and self:GetReviewedGuideEffect(guide, item)
+    if not player or player.class ~= guide.class or player.spec ~= guide.spec then
+        local entry = row.stat_rank or {}
+        local pick = note or entry.rank == 1 or (entry.score_percent or 0) >= 70
+        return {kind = pick and (note and "utility" or "reference") or "hidden", reference = true, note = note}
+    end
+    local personal = owned and self:GetContext(player.class, player.spec, evaluated >= 60 and "PR" or "LEVELING", evaluated, owned)
+    local swap, status
+    if personal and item then
+        swap, status = self:GetOwnedOpportunity(personal, item, row.item_link, evaluated == player.level)
+    end
+    local gain = self:ReliableGain(swap)
+    local held = personal and item and personal.ownedFacts[item.key]
+    local kind
+    if gain then kind = "upgrade"
+    elseif note and not held then kind = "utility"
+    elseif status == "blocked" or swap and not swap.conditional and finite(swap.delta) then kind = "hidden"
+    else kind = "unknown" end
+    local result = swap or {status = pending or status or "unavailable"}
+    local proficiencyLevel
+    if evaluated > player.level then
+        if personal and item then
+            local function atLevel(level)
+                return self:GetContext(player.class, player.spec, level == 60 and "PR" or "LEVELING", level, owned)
+            end
+            proficiencyLevel = self:GetReferenceWindow(atLevel(player.level), personal, item, row.slot, atLevel)
+        end
+        result = copy(result)
+        result.level = evaluated
+        result = {forecast = result}
+    end
+    return {kind = kind, swap = result, gain = gain, note = note, level = evaluated,
+        proficiencyLevel = proficiencyLevel, owned = held}
+end
+
+function rating:GetGuideOwnedNames(context, slot, live)
+    if not context then return end
+    local build, missing = self:WithCharacterBuild(context, live)
+    if missing then return end
+    local group = groupFor({slot = slot})
+    if #group.definitions == 0 then return end
+    local state = ownedLoadout(build, group)
+    if state.unresolved then return end
+    local names = {}
+    for i, definition in ipairs(group.definitions) do
+        local instance = state.baseline[i].instance
+        if instance then names[#names + 1] = referenceItem(instance, definition.label).name end
+    end
+    return table.concat(names, " + ")
+end
+
 function rating:GetEquippedAlternative(context, item, physical)
     local build, missing = self:WithCharacterBuild(context, true)
     local group = groupFor(item)
@@ -2786,7 +2852,7 @@ local function gearVerdict(self, input, view)
         end
         return
     end
-    if delta == nil then return end
+    if not finite(delta) then return end
     local gain = self:ReliableGain(result)
     local points = self:EstimateSwapPoints(delta)
     local baseline = names ~= "" and names or (result.status == "empty" and ("an empty " .. slot .. " slot")
@@ -2874,8 +2940,9 @@ function rating:LevelingPresentation(input)
     if minimum and playerLevel and minimum > playerLevel and not input.nativeRequirement then
         view.requirement = "Requires Level " .. minimum
     end
-    if forecast and minimum and forecast.level > math.max(playerLevel or 0, minimum) then
-        local proficiency = "Can equip at Level " .. forecast.level
+    local unlock = input.proficiencyLevel or (not input.guideForecast and forecast and forecast.level)
+    if unlock and minimum and unlock > math.max(playerLevel or 0, minimum) then
+        local proficiency = "Can equip at Level " .. unlock
         view.requirement = view.requirement and (view.requirement .. " · " .. proficiency) or proficiency
     end
     if input.sourceLevel and input.sourceLevel > (minimum or 0)
@@ -2929,6 +2996,7 @@ function rating:LevelingPresentationLines(view)
     if view.strength ~= view.today then add(view.strength) end
     if view.range ~= view.strength then add(view.range) end
     add(view.acquisition)
+    add(view.lookupReason)
     if view.sourceUnknown then add("Source unknown") end
     return lines
 end

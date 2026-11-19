@@ -54,17 +54,21 @@ def reviewed_guide_items(reviewed: list[dict]) -> tuple[list[dict], list[dict]]:
 
 def reviewed_source_items(review: dict, inventory: dict) -> list[dict]:
     equipment = {row[0]: dict(zip(inventory["fields"], row)) for row in inventory["items"]}
-    by_item = {}
+    by_item, bindings = {}, {}
     for route in review["routes"]:
-        source = {**route["source"], "attribution": review["attribution"]}
+        source = {**route["source"], "attribution": route.get("attribution", review["attribution"])}
         if not valid_source(source) or not route["corroboration_url"].startswith("https://"):
             raise ValueError(f"Invalid Forever acquisition review: {route}")
         for identifier in route["item_ids"]:
             if identifier not in equipment or source in by_item.get(identifier, []):
                 raise ValueError(f"Invalid Forever route for item {identifier}")
             by_item.setdefault(identifier, []).append(source)
+            binding = route.get("binding", review["binding"])
+            if bindings.setdefault(identifier, binding) != binding:
+                raise ValueError(f"Conflicting Forever binding for item {identifier}")
     return [{"id": identifier, "name": equipment[identifier]["name"], "quality": equipment[identifier]["quality"],
-             "inventory_slot": equipment[identifier]["slot"], "binding": review["binding"], "boe": False,
+             "inventory_slot": equipment[identifier]["slot"], "binding": bindings[identifier],
+             "boe": bindings[identifier] == "bind_on_equip",
              "wowhead_url": f"https://www.wowhead.com/forever/item={identifier}", "acquisition_phase": "PR",
              "primary_source": sources[0], "sources": sources, "source_summary": summarize_sources(sources)}
             for identifier, sources in sorted(by_item.items())]

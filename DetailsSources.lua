@@ -364,11 +364,13 @@ function UI:QuestStateChanged()
     table.sort(entries)
     self.questLogSignature = table.concat(entries, "/")
     local changed = before ~= nil and before ~= self.questLogSignature
+    self.changedGuideQuests = {}
     for questId, previous in pairs(self.watchedQuests or {}) do
         local state, turnIn = readQuestState(questId)
         local current = state .. "/" .. tostring(turnIn)
         if current ~= previous then
             self.watchedQuests[questId] = current
+            self.changedGuideQuests[questId] = true
             changed = true
         end
     end
@@ -424,6 +426,30 @@ function UI:GetSourceNextStep(data)
         or access.status == "ready_alternate" or access.status == "check_prereq") then
         local quest = self:GetAcquisitionQuestProgress(option.source)
         if quest and quest.state ~= "Unknown" then return self:GetQuestStepText(quest) end
+    end
+    local source = option.source
+    if data.targetVerdict and source then
+        if source.type == "crafted" then
+            local profession = source.profession or "the required profession"
+            local selfCraft = (data.binding or (data.item and data.item.binding)) == "bind_on_pickup"
+            local text = selfCraft and ("Craft it yourself · " .. profession) or ("Have it crafted · " .. profession)
+            for _, requirement in ipairs(option.requirements or {}) do
+                if requirement.type == "profession" and requirement.scope == "equip_or_use" then
+                    text = text .. " · Requires " .. (requirement.profession or profession)
+                        .. (requirement.skill and (" (" .. requirement.skill .. ")") or "")
+                    break
+                end
+            end
+            return text
+        elseif source.type == "drop" and source.entity_name then
+            if source.entity_type == "gameobject" or source.entity_type == "object"
+                or source.source_url and source.source_url:find("/object=", 1, true) then return "Loot " .. source.entity_name end
+            return "Drops from " .. source.entity_name
+        elseif source.type == "quest" and source.entity_name then return "Quest reward · " .. source.entity_name
+        elseif (source.type == "vendor" or source.type == "pvp" or source.type == "token_turnin") and source.entity_name then
+            local action = source.type == "token_turnin" and "Turn in to " or "Buy from "
+            return action .. source.entity_name .. (option.cost_summary and option.cost_summary ~= "" and (" · " .. option.cost_summary) or "")
+        end
     end
 end
 
