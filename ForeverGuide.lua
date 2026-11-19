@@ -1,0 +1,494 @@
+-- Random access to the reference rankings shipped with Forever.
+local addon = BigBiSList
+local rating = addon.ForeverGearRating
+if not rating then return end
+
+local bundle, source = BigBiSListData.guide_index, BigBiSListData.runtime_indexes
+if bundle and not (source and source.guide_signature and bundle.signature == source.guide_signature) then
+    BigBiSListData.guide_index = nil
+end
+
+local BYTE_OFFSET, RECORD_WIDTH, BLOCK_SIZE, ARCHIVE_CHUNK_SIZE = 48, 78, 420, 32768
+local POINT_ZERO = 2147483648
+local powers, bitCounts = {}, {[0] = 0}
+for index = 0, 12 do powers[index] = 2 ^ index end
+for value = 1, 63 do bitCounts[value] = bitCounts[math.floor(value / 2)] + value % 2 end
+
+local function read(text, offset, width)
+    local value = 0
+    for index = offset, offset + width - 1 do
+        value = value * 64 + text:byte(index) - BYTE_OFFSET
+    end
+    return value
+end
+
+local function archiveArray(chunks, offsets)
+    if not offsets then return chunks end
+    return setmetatable({}, { __index = function(_, index)
+        local low = read(offsets, (index - 1) * 5 + 1, 5)
+        local high = read(offsets, index * 5 + 1, 5)
+        local chunkIndex = math.floor(low / ARCHIVE_CHUNK_SIZE) + 1
+        local start = low % ARCHIVE_CHUNK_SIZE + 1
+        local length = high - low
+        if length == 0 then return "" end
+        local head = chunks[chunkIndex]
+        if start + length - 1 <= #head then return head:sub(start, start + length - 1) end
+        head = head:sub(start)
+        return head .. chunks[chunkIndex + 1]:sub(1, length - #head)
+    end })
+end
+
+local function block(archive, id)
+    local cache = archive.decoded
+    if not cache then
+        cache = { data = {}, order = {}, next = 1 }
+        archive.decoded = cache
+    end
+    local text = cache.data[id]
+    if text then return text end
+    local encoded = archive.blocks[id]
+    local start = 1
+    local marker = encoded:find("~", start, true)
+    if not marker then return encoded end
+    local decoded = ""
+    repeat
+        decoded = decoded .. encoded:sub(start, marker - 1)
+        local distance, length = read(encoded, marker + 1, 2), read(encoded, marker + 3, 1) + 4
+        local pattern = decoded:sub(#decoded - distance + 1)
+        local repeats = math.ceil(length / #pattern)
+        decoded = decoded .. pattern:rep(repeats):sub(1, length)
+        start = marker + 4
+        marker = encoded:find("~", start, true)
+    until not marker
+    text = decoded .. encoded:sub(start)
+    local position = cache.next
+    local previous = cache.order[position]
+    if previous then cache.data[previous] = nil end
+    cache.order[position], cache.data[id] = id, text
+    cache.next = position % 256 + 1
+    return text
+end
+
+local function size(text)
+    return text:byte(1) == 126 and read(text, 2, 4) or #text
+end
+
+local function packedRead(archive, text, offset, width)
+    if text:byte(1) ~= 126 then return read(text, offset, width) end
+    local zero = offset - 1
+    local index, within = math.floor(zero / BLOCK_SIZE), zero % BLOCK_SIZE + 1
+    local chunk = block(archive, read(text, 6 + 4 * index, 4))
+    if within + width - 1 <= #chunk then return read(chunk, within, width) end
+    local head = chunk:sub(within)
+    local tail = block(archive, read(text, 10 + 4 * index, 4))
+    return read(head .. tail:sub(1, width - #head), 1, width)
+end
+
+local function lowerBound(count, value, at)
+    local lo, hi = 1, count + 1
+    while lo < hi do
+        local mid = math.floor((lo + hi) / 2)
+        if at(mid) < value then lo = mid + 1 else hi = mid end
+    end
+    return lo
+end
+
+local function choice(archive, directory, index)
+    local position = lowerBound(size(directory) / 7, index, function(position)
+        return packedRead(archive, directory, (position - 1) * 7 + 1, 3)
+    end)
+    local offset = (position - 1) * 7
+    local prior = position > 1 and packedRead(archive, directory, offset - 6, 3) or 0
+    return archive.strings[packedRead(archive, directory, offset + 4, 4)], index - prior
+end
+
+local function profile(context, phase)
+    local bundle = BigBiSListData.guide_index
+    if not bundle or bundle.version ~= 1 or bundle.data ~= context.catalog.data
+        or not context.catalog.rollBuildMatches then return end
+    local archive = bundle.classes[context.class]
+    if not archive or not context.race or not context.faction then return end
+    if not archive.open then
+        archive.open = true
+        archive.strings = archiveArray(archive.strings, archive.stringsOffsets)
+        archive.blocks = archiveArray(archive.blocks, archive.blocksOffsets)
+    end
+    local key = context.spec .. "/" .. context.race .. "/" .. context.faction .. "/" .. (addon.phaseOrder[context.phaseIndex] or "")
+    local spec = archive.profiles[key]
+    if spec then return bundle, archive, spec[phase or context.phase] end
+end
+
+local function dataset(context, slot, phase)
+    local bundle, archive, spec = profile(context, phase)
+    if not spec then return end
+    local indices = bundle.slots[slot]
+    local slotInfo = spec[slot]
+    if not (indices and slotInfo) then return false end
+    return { archive = archive, indices = indices, ranges = archive.strings[slotInfo[1]],
+        verified = archive.strings[slotInfo[2]], states = archive.strings[slotInfo[3]], count = slotInfo[4],
+        first = (phase or context.phase) == "LEVELING" and 1 or 60, slot = slot }
+end
+
+function rating:GetPackedGuide(context)
+    if not context then return end
+    local bundle = profile(context)
+    if not bundle then return end
+    if not context.packedGuide then
+        context.packedGuide = setmetatable({}, { __index = function(slots, slot)
+            local data = dataset(context, slot)
+            rawset(slots, slot, data)
+            return data
+        end })
+    end
+    return context.packedGuide
+end
+
+local function state(data, level)
+    local archive = data.archive
+    local offset = (level - data.first) * RECORD_WIDTH
+    local function field(index, width)
+        local address = (index - 1) * 4 + (index <= 11 and 1 or 3)
+        return packedRead(archive, data.states, offset + address, width or 4)
+    end
+    return {
+        order = archive.strings[field(1)], inverse = archive.strings[field(2)], masks = archive.strings[field(3)],
+        count = field(4), leader = field(5), unresolved = field(6) == 1, conditional = archive.strings[field(7)],
+        groups = archive.strings[field(8)], inverseWidth = field(9), prefixes = archive.strings[field(10)],
+        best = (field(11, 6) - POINT_ZERO) / 10000, browse = archive.strings[field(12)], featuredCount = field(19),
+        low = {masks = archive.strings[field(13)], prefixes = archive.strings[field(14)], count = field(15)},
+        unscored = {masks = archive.strings[field(16)], prefixes = archive.strings[field(17)], count = field(18)},
+    }
+end
+
+local function countBits(mask)
+    return bitCounts[mask % 64] + bitCounts[math.floor(mask / 64)]
+end
+
+local function before(archive, levelState, position)
+    local index = position - 1
+    local blockNumber, boundary = math.floor(index / 12), index % 12
+    local group = math.floor(blockNumber / 5)
+    local count = group > 0 and packedRead(archive, levelState.prefixes, (group - 1) * 3 + 1, 3) or 0
+    for offset = group * 5, blockNumber - 1 do
+        count = count + countBits(packedRead(archive, levelState.masks, offset * 2 + 1, 2))
+    end
+    if boundary > 0 then
+        count = count + countBits(packedRead(archive, levelState.masks, blockNumber * 2 + 1, 2) % powers[boundary])
+    end
+    return count
+end
+
+local function recordText(data, ordinal)
+    local ref = packedRead(data.archive, data.ranges, (ordinal - 1) * 4 + 1, 4)
+    return ref > 0 and data.archive.strings[ref] or nil
+end
+
+local function readRanges(data, ordinal, upto)
+    local text = recordText(data, ordinal)
+    if not text then return end
+    -- A record is small and is kept in one chunk.
+    if text:byte(1) == 126 then text = block(data.archive, read(text, 6, 4)) end
+    local lists, offset = {}, 1
+    for column = 1, upto or 5 do
+        local count = text:byte(offset) - BYTE_OFFSET
+        offset = offset + 1
+        local ranges = {}
+        lists[column] = ranges
+        for index = 1, count do
+            local first, last = text:byte(offset, offset + 1)
+            local range = {firstLevel = first - BYTE_OFFSET, lastLevel = last - BYTE_OFFSET}
+            offset = offset + 2
+            if column == 4 then
+                local strength = text:byte(offset) - BYTE_OFFSET
+                range.grade, range.estimated = strength % 8, strength >= 8 or nil
+                offset = offset + 1
+            end
+            ranges[index] = range
+        end
+    end
+    return unpack(lists)
+end
+
+local function inside(ranges, level)
+    local range = rating:LevelingRangeAt(ranges, level)
+    return range and range.firstLevel <= level and range.lastLevel >= level
+end
+
+local function resolve(data, context, ordinal, level, verified)
+    local archive = data.archive
+    local levelState
+    if level == context.level then
+        data.current = data.current or state(data, level)
+        levelState = data.current
+    else
+        levelState = state(data, level)
+    end
+    local width = levelState.inverseWidth
+    local position = packedRead(archive, levelState.inverse, (ordinal - 1) * width + 1, width)
+    local key = data.indices.keys[ordinal]
+    local item = context.catalog.items[key]
+    local entry = { item = item, slot = data.slot, level = level, phase = context.phase, spec = context.spec,
+        source_unknown = not verified or nil }
+    if position == 0 then
+        local fallback = rating:GetUnfilteredReferenceEntry(context, item, data.slot)
+        entry.status, entry.conditional = fallback.status, fallback.conditional
+        return entry
+    end
+    local function endpoint(group) return packedRead(archive, levelState.groups, (group - 1) * 9 + 1, 3) end
+    local band = lowerBound(size(levelState.groups) / 9, position, endpoint)
+    local first = band == 1 and 1 or endpoint(band - 1) + 1
+    local last = endpoint(band)
+    local score = packedRead(archive, levelState.groups, (band - 1) * 9 + 4, 6)
+    local rank = before(archive, levelState, first) + 1
+    local ties = before(archive, levelState, last + 1) - rank + 1
+    entry.rank, entry.total, entry.score = rank, levelState.count, (score - POINT_ZERO) / 10000
+    entry.tied = ties > 1 or nil
+    entry.conditional = packedRead(archive, levelState.order, (position - 1) * 3 + 1, 3) >= 131072
+    if entry.tied and size(levelState.conditional) > 0 then
+        local function at(index) return -packedRead(archive, levelState.conditional, (index - 1) * 6 + 1, 6) end
+        local n = size(levelState.conditional) / 6
+        local index = lowerBound(n, -score, at)
+        entry.conditional_tie = index <= n and at(index) == -score or nil
+    end
+    entry.provisional = rank == 1 and (levelState.unresolved or entry.source_unknown) or nil
+    if levelState.count > 1 and levelState.count <= 12 and levelState.best > 0 and levelState.tiers == nil then
+        local rows, n = {}, size(levelState.order) / 3
+        for index = 1, levelState.count do
+            local ordinalPosition = lowerBound(n, index, function(pos) return before(archive, levelState, pos + 1) end)
+            local group = lowerBound(size(levelState.groups) / 9, ordinalPosition, endpoint)
+            rows[index] = {score = (packedRead(archive, levelState.groups, (group - 1) * 9 + 4, 6) - POINT_ZERO) / 10000}
+        end
+        levelState.tiers = rating:GetPackedRankTiers(rows, levelState.count, levelState.best) or false
+    end
+    rating:ApplyPackedRankTier(entry, levelState.best, levelState.tiers)
+    return entry
+end
+
+local function baseEntry(data, context, ordinal, level)
+    if not ordinal then return end
+    local ranked, verified = readRanges(data, ordinal, 2)
+    if inside(ranked, level) then return resolve(data, context, ordinal, level, inside(verified, level)) end
+end
+
+local function scoreAt(archive, levelState, position)
+    local group = lowerBound(size(levelState.groups) / 9, position, function(index)
+        return packedRead(archive, levelState.groups, (index - 1) * 9 + 1, 3)
+    end)
+    return (packedRead(archive, levelState.groups, (group - 1) * 9 + 4, 6) - POINT_ZERO) / 10000
+end
+
+local function liveChanges(data, context, level)
+    local catalog = context.catalog
+    if not (catalog.changedSlots and catalog.changedSlots[data.slot]) then return end
+    data.liveLevels = data.liveLevels or {}
+    local current = data.liveLevels[level]
+    if current and current.revision == catalog.observedVersion then return current end
+    local evaluated = level == context.level and context or rating:GetGuideContext(
+        context.class, context.spec, context.phase, level, context.race, context.faction)
+    local levelState = state(data, level)
+    local changes = {revision = catalog.observedVersion, state = levelState, changes = {}, total = levelState.count,
+        best = levelState.best, unresolved = levelState.unresolved}
+    for key, item in pairs(catalog.observed) do
+        if item.slot == data.slot or item.slot == "One Hand" and (data.slot == "Main Hand" or data.slot == "Off Hand") then
+            local old = baseEntry(data, evaluated, data.indices.lookup[key], level)
+            local new = rating:GetReferenceCandidate(evaluated, item, data.slot)
+            if new then
+                local verified, reason = addon:IsStatRankGuideItemAvailable(item.id, evaluated)
+                if verified or reason == "unverified_route" or reason == "missing_item_record" then
+                    new.source_unknown = not verified or nil
+                else
+                    new = nil
+                end
+            end
+            if old or new then
+                changes.changes[key] = {before = old, after = new}
+                if old and old.score ~= nil then changes.total = changes.total - 1 end
+                if new and new.score ~= nil then changes.total = changes.total + 1 end
+                if new and not new.item.utility then
+                    changes.unresolved = changes.unresolved or new.score == nil or new.conditional
+                end
+            end
+        end
+    end
+    if next(changes.changes) then
+        local best
+        for index = 1, levelState.count do
+            local position = lowerBound(size(levelState.order) / 3, index, function(pos)
+                return before(data.archive, levelState, pos + 1)
+            end)
+            local ordinal = packedRead(data.archive, levelState.order, (position - 1) * 3 + 1, 3) % 131072
+            if not changes.changes[data.indices.keys[ordinal]] then
+                best = scoreAt(data.archive, levelState, position)
+                break
+            end
+        end
+        for _, diff in pairs(changes.changes) do
+            local score = diff.after and diff.after.score
+            if score and (not best or score > best) then best = score end
+        end
+        changes.best = best
+    end
+    data.liveLevels[level] = changes
+    return changes
+end
+
+local function updatedEntry(data, context, key, level)
+    local changes = liveChanges(data, context, level)
+    local diff = changes and changes.changes[key]
+    local entry
+    if diff then
+        if not diff.after then return end
+        entry = {}
+        for field, value in pairs(diff.after) do entry[field] = value end
+    else
+        entry = baseEntry(data, context, data.indices.lookup[key], level)
+    end
+    if not entry or entry.score == nil or not changes or not next(changes.changes) then return entry end
+    local archive, levelState, score = data.archive, changes.state, entry.score
+    local points = math.floor(score * 10000 + 0.5) + POINT_ZERO
+    local groupCount = size(levelState.groups) / 9
+    local function groupScore(index) return -packedRead(archive, levelState.groups, (index - 1) * 9 + 4, 6) end
+    local group = lowerBound(groupCount, -points, groupScore)
+    local function endPosition(index) return packedRead(archive, levelState.groups, (index - 1) * 9 + 1, 3) end
+    local higher = group == 1 and 0 or before(archive, levelState, endPosition(group - 1) + 1)
+    local tied = group <= groupCount and groupScore(group) == -points
+        and before(archive, levelState, endPosition(group) + 1) - higher or 0
+    local conditional = entry.conditional_tie or entry.conditional
+    for _, change in pairs(changes.changes) do
+        local old, new = change.before and change.before.score, change.after and change.after.score
+        if old then
+            if old > score then higher = higher - 1 elseif old == score then tied = tied - 1 end
+        end
+        if new then
+            if new > score then higher = higher + 1
+            elseif new == score then tied = tied + 1; conditional = conditional or change.after.conditional end
+        end
+    end
+    entry.rank, entry.total, entry.tied = higher + 1, changes.total, tied > 1 or nil
+    entry.provisional = entry.rank == 1 and (entry.source_unknown or changes.unresolved) or nil
+    entry.conditional_tie = entry.tied and conditional or nil
+    entry.score_percent, entry.tier, entry.placement_color = nil, nil, nil
+    if changes.best then rating:ApplyPackedRankTier(entry, changes.best) end
+    return entry
+end
+
+function rating:PackedLevelEntries(context, slot, level, callback)
+    local slots = self:GetPackedGuide(context)
+    local data = slots and slots[slot]
+    if not data then return end
+    local levelState = state(data, level)
+    for position = 1, size(levelState.order) / 3 do
+        local mask = packedRead(data.archive, levelState.masks, math.floor((position - 1) / 12) * 2 + 1, 2)
+        if math.floor(mask / powers[(position - 1) % 12]) % 2 == 1 then
+            local ordinal = packedRead(data.archive, levelState.order, (position - 1) * 3 + 1, 3) % 131072
+            local _, verified = readRanges(data, ordinal, 2)
+            callback(resolve(data, context, ordinal, level, inside(verified, level)))
+        end
+    end
+end
+
+function rating:GetPackedGuideEntry(context, slot, key, level)
+    local slots = self:GetPackedGuide(context)
+    if not slots then return nil, false end
+    local data = slots[slot]
+    if not data then return nil, true end
+    return updatedEntry(data, context, key, level or context.level), true
+end
+
+function rating:GetPackedBrowseOrdinal(data, level, index)
+    if index < 1 or index > data.count then return end
+    data.current = data.current or state(data, level)
+    local current = data.current
+    if index > current.featuredCount then
+        index = index - current.featuredCount
+        local positions = current.low
+        if index > positions.count then index, positions = index - positions.count, current.unscored end
+        local count = positions == current.low and size(current.order) / 3 or #data.indices.keys
+        local position = lowerBound(count, index, function(value) return before(data.archive, positions, value + 1) end)
+        if positions == current.unscored then return position end
+        return packedRead(data.archive, current.order, (position - 1) * 3 + 1, 3) % 131072
+    end
+    local directory, position = choice(data.archive, current.browse, index)
+    local page, row = choice(data.archive, directory, position)
+    return packedRead(data.archive, page, (row - 1) * 3 + 1, 3)
+end
+
+function rating:VisitPackedGuideOrdinals(data, level, search, verifiedOnly, visit, checkpoint)
+    if verifiedOnly then
+        for offset = 1, size(data.verified), 3 do
+            if checkpoint then checkpoint() end
+            visit(packedRead(data.archive, data.verified, offset, 3))
+        end
+    elseif search and #search >= 3 and not search:sub(1, 3):find("[\128-\255]") then
+        local matches = data.indices.search[search:sub(1, 3)] or ""
+        for offset = 1, #matches, 6 do
+            for ordinal = read(matches, offset, 3), read(matches, offset + 3, 3) do
+                if checkpoint then checkpoint() end
+                if recordText(data, ordinal) then visit(ordinal) end
+            end
+        end
+    else
+        for index = 1, data.count do
+            if checkpoint then checkpoint() end
+            visit(self:GetPackedBrowseOrdinal(data, level, index))
+        end
+    end
+end
+
+function rating:GetPackedLevelingRecord(context, slot, key, cheap)
+    local slots = self:GetPackedGuide(context)
+    if not slots then return nil, false end
+    local data = slots[slot]
+    local ordinal = data and data.indices.lookup[key]
+    if not ordinal then return nil, true end
+    local ranked, verified, recommended, strength, leading = readRanges(data, ordinal)
+    if not ranked then return nil, true end
+    local item = context.catalog.items[key]
+    local record = { ranked = ranked, recommended = recommended, strength = strength, leading = leading,
+        item = item, slot = slot, verified = verified, ordinal = ordinal, data = data, context = context,
+        note = self:GetReviewedGuideEffect(context, item) }
+    if not cheap then
+        for _, range in ipairs(ranked) do
+            range.firstEntry = resolve(data, context, ordinal, range.firstLevel, inside(verified, range.firstLevel))
+            range.lastEntry = range.firstLevel == range.lastLevel and range.firstEntry
+                or resolve(data, context, ordinal, range.lastLevel, inside(verified, range.lastLevel))
+        end
+    end
+    return record, true
+end
+
+function rating:GetPackedLevelingSuccessor(record, placement)
+    local leading = self:LevelingRangeAt(record.leading, placement.level)
+    if not leading or leading.firstLevel > placement.level or leading.lastLevel < placement.level then return end
+    for level = leading.lastLevel + 1, addon.maxLevelingLevel do
+        if inside(record.ranked, level) and not inside(record.leading, level) then
+            local data = record.data
+            local levelState = state(data, level)
+            if levelState.leader > 0 then
+                local flagged = packedRead(data.archive, levelState.order, (levelState.leader - 1) * 3 + 1, 3)
+                local key = data.indices.keys[flagged % 131072]
+                local item = record.context.catalog.items[key]
+                return {level = level, name = item.name, conditional = flagged >= 131072 or placement.conditional}
+            end
+        end
+    end
+end
+
+function rating:PackedGuideRowInfo(context, slot, ordinal)
+    local slots = self:GetPackedGuide(context)
+    local data = slots and slots[slot]
+    if not data then return end
+    local key = data.indices.keys[ordinal]
+    local record = self:GetPackedLevelingRecord(context, slot, key, true)
+    if not record then return end
+    local level = context.level
+    local range = self:LevelingRangeAt(record.recommended[1] and record.recommended or record.ranked, level)
+    local routeLevel, order = level, record.recommended[1] and 1 or 4
+    if range.firstLevel > level then routeLevel, order = range.firstLevel, 2
+    elseif range.lastLevel < level then routeLevel, order = range.lastLevel, 3 end
+    local eligible = self:LevelingRangeAt(record.ranked, level)
+    local evaluation = math.min(eligible.lastLevel, math.max(eligible.firstLevel, level))
+    local placement = updatedEntry(data, context, key, evaluation)
+    if not placement then return end
+    return record, placement, routeLevel, order, evaluation == level
+end

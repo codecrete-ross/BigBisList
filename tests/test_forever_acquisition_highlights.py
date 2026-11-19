@@ -212,7 +212,8 @@ assert(comparisons == 0 and not addon.dataIndex, "hidden bags do no cold indexin
 
 panel:Show()
 assert(not showTip(rows[1], contents[1]):find("Big BiS List", 1, true), "a cold hover returns the native tooltip")
-assert(H.tick() and highlights.queued and not addon.dataIndex, "the cold index yields before publishing")
+assert(H.tick() and highlights.queued, "cold bag comparisons yield before publishing")
+assert(comparisons <= 2, "item lookup can finish on the first frame within the scoring budget")
 local syncIndex = addon:GetDataIndex()
 local scoringFrames = 0
 while highlights.queued do
@@ -251,7 +252,7 @@ local contents = {link(901002), link(901006)}
 local panel, rows = bagView(contents)
 local elapsed = 0
 debugprofilestop = function()
-    elapsed = elapsed + 0.004
+    elapsed = elapsed + 0.75
     return elapsed
 end
 addon:InitUIEvents()

@@ -275,16 +275,21 @@ function H.settle()
     end
     error("UI geometry or refresh timers did not settle after 600 passes")
 end
-function H.load(flavor)
+function H.load(flavor, fullGuide)
     local forever = flavor == "forever"
     assert(loadfile(forever and "DataForever.lua" or "Data.lua"))("BigBiSList")
+    if forever and fullGuide then dofile("GuideDataForever.lua") end
     assert(loadfile("Config.lua"))("BigBiSList")
     if forever then
         assert(loadfile("ForeverScoring.lua"))("BigBiSList")
         assert(loadfile("ForeverGearRating.lua"))("BigBiSList")
     end
     for _, file in ipairs({ "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
-    if forever then assert(loadfile("AcquisitionHighlights.lua"))("BigBiSList") end
+    if forever then
+        for _, file in ipairs({"ForeverGuide.lua", "ForeverBrowse.lua", "AcquisitionHighlights.lua"}) do
+            assert(loadfile(file))("BigBiSList")
+        end
+    end
     BigBiSList:EnsureDatabase()
     BigBiSList:InitTooltip()
     return BigBiSList.UI

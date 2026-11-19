@@ -315,6 +315,20 @@ local function schemaPositions(schemas, schemaName)
 end
 
 local function compactField(index, schemaName, record, key)
+    if schemaName == "use" and type(record) == "number" then record = index.dataSource.uses[record] end
+    if schemaName == "leveling_recommendation" and type(record) == "number" then
+        local columns = index.dataSource.runtime_indexes and index.dataSource.runtime_indexes.recommendation_columns
+        if columns then
+            local column = columns[key]
+            if not column then return nil end
+            local width, values, dictionary = column[1], column[2], column[3]
+            local offset = (record - 1) * width + 1
+            local value = 0
+            for position = offset, offset + width - 1 do value = value * 64 + values:byte(position) - 48 end
+            return dictionary[value]
+        end
+        record = index.dataSource.leveling_recommendations[record]
+    end
     if not index or not index.compact or type(record) ~= "table" then
         return record and record[key] or nil
     end
@@ -372,6 +386,13 @@ local function inflateCompactField(index, schemaName, key, value)
 end
 
 inflateCompactRecord = function(index, schemaName, record)
+    if schemaName == "leveling_recommendation" and type(record) == "number" then
+        local result = {}
+        for _, key in ipairs(index.schemas[schemaName] or {}) do
+            result[key] = inflateCompactField(index, schemaName, key, compactField(index, schemaName, record, key))
+        end
+        return result
+    end
     if not index or not index.compact or type(record) ~= "table" then
         return record
     end
@@ -400,6 +421,7 @@ inflateCompactList = function(index, schemaName, records)
 end
 
 local function inflateUseRef(index, useRef)
+    if type(useRef) == "number" then useRef = index.dataSource.uses[useRef] end
     return inflateCompactRecord(index, "use", useRef)
 end
 
@@ -2958,7 +2980,8 @@ local function buildLevelingGearRow(index, levelingGearRef)
 end
 
 local function buildLevelingRecommendationRow(index, recommendationRef)
-    local entry = recommendationRef.item_id and recommendationRef or inflateCompactRecord(index, "leveling_recommendation", recommendationRef)
+    local entry = type(recommendationRef) == "table" and recommendationRef.item_id and recommendationRef
+        or inflateCompactRecord(index, "leveling_recommendation", recommendationRef)
     if not entry or not LEVELING_HELPERS.itemAllowsClass(index, entry) then
         return nil
     end
@@ -4516,7 +4539,7 @@ FILTER_FACETS.SHARED_PROGRESSION_INDEX_FIELDS = {
 }
 
 function BigBiSList:GetDataIndex(selectedPhaseKey)
-    local checkpoint = self.AcquisitionHighlights and self.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
     local livePhase = self:GetCurrentPhaseKey()
     local scheduleId = (BigBiSListData or {}).active_schedule
     local contentPhase = selectedPhaseKey and self:GetProgressionContext(selectedPhaseKey).content_phase or livePhase
@@ -4593,22 +4616,25 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
     end
 
     if compact then
+        local generated = data.runtime_indexes
         if not sharedBase then
-            for _, itemRecord in ipairs(data.items or {}) do
-                if checkpoint then checkpoint() end
-                local itemId = compactField(index, "item", itemRecord, "id")
-                if itemId then
-                    index.itemRecordsById[itemId] = itemRecord
+            local function byId(field, schema, records, positions)
+                if positions then
+                    index[field] = setmetatable({}, { __index = function(_, id)
+                        local position = positions[tostring(id)]
+                        return position and records[position]
+                    end })
+                else
+                    for _, record in ipairs(records or {}) do
+                        if checkpoint then checkpoint() end
+                        local id = compactField(index, schema, record, "id")
+                        if id then index[field][id] = record end
+                    end
                 end
             end
-
-            for _, itemFallbackRecord in ipairs(data.item_fallbacks or {}) do
-                if checkpoint then checkpoint() end
-                local itemId = compactField(index, "item_fallback", itemFallbackRecord, "id")
-                if itemId then
-                    index.itemFallbackRecordsById[itemId] = itemFallbackRecord
-                end
-            end
+            byId("itemRecordsById", "item", data.items, generated and generated.item_records == data.items and generated.items)
+            byId("itemFallbackRecordsById", "item_fallback", data.item_fallbacks,
+                generated and generated.fallback_records == data.item_fallbacks and generated.item_fallbacks)
         end
 
         index.itemsById = setmetatable({}, {
@@ -4629,29 +4655,39 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
             end,
         })
 
-        local tooltipAliasesByItemId = {}
-        for _, aliasRecord in ipairs(data.tooltip_aliases or {}) do
-            if checkpoint then checkpoint() end
-            tooltipAliasesByItemId[aliasRecord[1]] = aliasRecord[2]
-        end
+        local generatedUses = generated and generated.uses_by_phase
+            and generated.use_records == data.uses and generated.uses_by_phase[contentPhase]
+        if generatedUses then
+            local function byNumber(records)
+                return setmetatable({}, { __index = function(_, id) return records[tostring(id)] end })
+            end
+            index.useRefsByItemId, index.tooltipUseRefsByItemId = byNumber(generatedUses[1]), byNumber(generatedUses[2])
+            index.useRefsByClassSpec, index.useRefsByClassSpecPhase = generatedUses[3], generatedUses[4]
+        else
+            local tooltipAliasesByItemId = {}
+            for _, aliasRecord in ipairs(data.tooltip_aliases or {}) do
+                if checkpoint then checkpoint() end
+                tooltipAliasesByItemId[aliasRecord[1]] = aliasRecord[2]
+            end
 
-        for _, useRef in ipairs(data.uses or {}) do
-            if checkpoint then checkpoint() end
-            local itemId = compactField(index, "use", useRef, "item_id")
-            local className = compactField(index, "use", useRef, "class")
-            local specName = compactField(index, "use", useRef, "spec")
-            local phaseKey = compactField(index, "use", useRef, "phase")
-            local useContentPhase = compactField(index, "use", useRef, "content_phase")
+            for _, useRef in ipairs(data.uses or {}) do
+                if checkpoint then checkpoint() end
+                local itemId = compactField(index, "use", useRef, "item_id")
+                local className = compactField(index, "use", useRef, "class")
+                local specName = compactField(index, "use", useRef, "spec")
+                local phaseKey = compactField(index, "use", useRef, "phase")
+                local useContentPhase = compactField(index, "use", useRef, "content_phase")
 
-            if phaseKey ~= "PR" or not useContentPhase or useContentPhase == contentPhase then
-                addUseRef(index.useRefsByItemId, itemId, useRef)
-                addUseRef(index.tooltipUseRefsByItemId, itemId, useRef)
-                for _, aliasItemId in ipairs(tooltipAliasesByItemId[itemId] or {}) do
-                    addUseRef(index.tooltipUseRefsByItemId, aliasItemId, useRef)
+                if phaseKey ~= "PR" or not useContentPhase or useContentPhase == contentPhase then
+                    addUseRef(index.useRefsByItemId, itemId, useRef)
+                    addUseRef(index.tooltipUseRefsByItemId, itemId, useRef)
+                    for _, aliasItemId in ipairs(tooltipAliasesByItemId[itemId] or {}) do
+                        addUseRef(index.tooltipUseRefsByItemId, aliasItemId, useRef)
+                    end
+
+                    table.insert(ensureNestedUseBucket(index.useRefsByClassSpec, className, specName), useRef)
+                    table.insert(ensureNestedUseBucket(index.useRefsByClassSpecPhase, className, specName, phaseKey), useRef)
                 end
-
-                table.insert(ensureNestedUseBucket(index.useRefsByClassSpec, className, specName), useRef)
-                table.insert(ensureNestedUseBucket(index.useRefsByClassSpecPhase, className, specName, phaseKey), useRef)
             end
         end
 
@@ -4665,13 +4701,20 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
                 table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, className, specName), levelingGearRef)
             end
 
-            for _, recommendationRef in ipairs(data.leveling_recommendations or {}) do
-                if checkpoint then checkpoint() end
-                local itemId = compactField(index, "leveling_recommendation", recommendationRef, "item_id")
-                local className = compactField(index, "leveling_recommendation", recommendationRef, "class")
-                local specName = compactField(index, "leveling_recommendation", recommendationRef, "spec")
-                addUseRef(index.levelingRecommendationRefsByItemId, itemId, recommendationRef)
-                table.insert(ensureNestedUseBucket(index.levelingRecommendationRefsByClassSpec, className, specName), recommendationRef)
+            if generated and generated.leveling_records == data.leveling_recommendations then
+                index.levelingRecommendationRefsByClassSpec = generated.leveling_by_profile
+                index.levelingRecommendationRefsByItemId = setmetatable({}, { __index = function(_, id)
+                    return generated.leveling_by_item[tostring(id)]
+                end })
+            else
+                for _, recommendationRef in ipairs(data.leveling_recommendations or {}) do
+                    if checkpoint then checkpoint() end
+                    local itemId = compactField(index, "leveling_recommendation", recommendationRef, "item_id")
+                    local className = compactField(index, "leveling_recommendation", recommendationRef, "class")
+                    local specName = compactField(index, "leveling_recommendation", recommendationRef, "spec")
+                    addUseRef(index.levelingRecommendationRefsByItemId, itemId, recommendationRef)
+                    table.insert(ensureNestedUseBucket(index.levelingRecommendationRefsByClassSpec, className, specName), recommendationRef)
+                end
             end
 
             for _, sourceData in ipairs(data.gem_sources or {}) do
@@ -4844,8 +4887,7 @@ function BigBiSList:ComparisonItemInScope(itemId, phase, selectedIndex)
     return not known
 end
 
-function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
-    local item = self:GetItemData(itemId)
+function BigBiSList:IsStatRankGuideItemAvailable(itemId, context, knownOptions)
     if not context.guideEligibility then
         context.guideEligibility = FILTER_FACETS.progressionFilters({
             class = context.class, race = context.race, faction = context.faction,
@@ -4858,9 +4900,10 @@ function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
     if not FILTER_FACETS.eligibilityMatchesCharacter(eligibility, filters, true) then
         return false, "character_restriction"
     end
-    if not item then return false, "missing_item_record" end
+    local item = knownOptions == nil and self:GetItemData(itemId)
+    if not item and not knownOptions then return false, "missing_item_record" end
     local verified, nextPhase
-    for _, option in ipairs(self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
+    for _, option in ipairs(knownOptions or self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
         if FILTER_FACETS.optionIsVerifiedGuideRoute(option) then
             verified = true
             if #FILTER_FACETS.accessOptionFilterMatches(option, filters, context.phaseIndex) > 0 then return true end
@@ -4871,6 +4914,40 @@ function BigBiSList:IsStatRankGuideItemAvailable(itemId, context)
     end
     if nextPhase then return false, "future_phase", PHASE_ORDER[nextPhase] end
     return false, verified and "route_out_of_scope" or "unverified_route"
+end
+
+-- Inputs shared by the offline compiler and the live route matcher.
+function BigBiSList:GetGuideRouteTransitions(itemId)
+    local marks, levels = {}, {}
+    local function add(level)
+        level = tonumber(level)
+        if level and level >= 1 and level <= 59 and not marks[level] then
+            marks[level] = true
+            levels[#levels + 1] = level
+        end
+    end
+    local function requirement(eligibility)
+        if not eligibility then return end
+        add(eligibility.min_level)
+        if eligibility.max_level then add(eligibility.max_level + 1) end
+    end
+    add(1)
+    requirement(FILTER_FACETS.tableValueById(BigBiSListData.item_eligibility or {}, itemId))
+    local item = self:GetItemData(itemId)
+    local options = item and {}
+    if item then
+        for _, option in ipairs(self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
+            if FILTER_FACETS.optionIsVerifiedGuideRoute(option) then
+                options[#options + 1] = option
+                requirement(option.eligibility)
+                for _, path in ipairs(FILTER_FACETS.optionSourcePaths(option)) do
+                    for _, node in ipairs(path.nodes) do requirement(node.eligibility) end
+                end
+            end
+        end
+    end
+    table.sort(levels)
+    return levels, options or false
 end
 
 function BigBiSList:GetAccessOptionDetailFields(option)
@@ -6744,8 +6821,77 @@ function LEVELING_HELPERS.journeyAccess(addon, row, ranges, context, filters)
     end
 end
 
+function BigBiSList:GetPackedGuideRow(context, slot, ordinal, filters, match)
+    local rating = self.ForeverGearRating
+    local record, entry, routeLevel, order, available = rating:PackedGuideRowInfo(context, slot, ordinal)
+    if not record then return end
+    if entry.source_unknown and (filters._verifiedOnly or hasActiveSourceContextFilter(filters)) then return end
+    local index = self:GetDataIndex()
+    local preferred
+    if match and (LEVELING_HELPERS.isCategoryKey(filters.rankGroup) or tableHasAnyEnabled(filters.rankGroups)) then
+        local schema = "leveling_recommendation"
+        for _, ref in ipairs(index.levelingRecommendationRefsByItemId[entry.item.id] or {}) do
+            local function value(field) return compactField(index, schema, ref, field) end
+            if value("class") == context.class and value("spec") == context.spec and value("slot") == slot
+                and raceMatches(value("race"), context.race) and value("faction") == context.faction
+                and value("variant_id") == entry.item.variant_id
+                and routeLevel >= (value("level_min") or 1) and routeLevel <= (value("level_max") or 59) then
+                local row = buildLevelingRecommendationRow(index, ref)
+                if row and (row.leveling_category_key == filters.rankGroup
+                    or filters.rankGroups and filters.rankGroups[row.leveling_category_key]) then
+                    preferred = row
+                    break
+                end
+            end
+        end
+    end
+    local row = LEVELING_HELPERS.guideCandidate(index, entry, context, preferred, {effect = record.note})
+    if not row then return end
+    local access
+    local scoped = filters
+    if routeLevel ~= context.level or filters.class ~= context.class then
+        scoped = {}
+        for key, value in pairs(filters) do scoped[key] = value end
+        scoped.class, scoped.level, scoped.race, scoped.faction, scoped._leveling =
+            context.class, routeLevel, context.race, context.faction, true
+    end
+    if match and not includeByFilter(row, scoped, context.phaseIndex) then return end
+    if match and not entry.source_unknown and hasActiveSourceContextFilter(scoped) then
+        local ranges = record.recommended[1] and record.recommended or record.ranked
+        local candidate, level, position = LEVELING_HELPERS.journeyAccess(self, row, ranges, context, filters)
+        if not candidate then return end
+        access, routeLevel, order = candidate, level, position == 1 and not record.recommended[1] and 4 or position
+    else
+        access = self:GetRowAcquisitionDisplay(row, scoped, context.phase, false, true)
+    end
+    if match and not entry.source_unknown and access.status ~= "ready" then return end
+    row.acquisition_display, row.matched_access_option = access, access.option
+    row.guide_order, row.guide_route_level, row.guide_available_now = order, routeLevel, available
+    row.guide_levels = record.recommended
+    row.guide_record = record
+    return row
+end
+
 function BigBiSList:GetLevelingJourneyRows(className, specName, level, filters, summary, currentGroups)
-    if not summary or not next(summary.slots) then return currentGroups end
+    if not summary then return currentGroups end
+    if summary.packed then
+        local groups, context = {}, summary.context
+        local rating = self.ForeverGearRating
+        local checkpoint = rating:GetWorkCheckpoint()
+        for _, slot in ipairs(SLOT_ORDER) do
+            local data = rowMatchesSelectedSlots(slot, filters.slots) and summary.slots[slot]
+            if data then
+                local rows = {}
+                rating:VisitPackedGuideOrdinals(data, level, filters.search, filters._verifiedOnly, function(ordinal)
+                    local candidate = self:GetPackedGuideRow(context, slot, ordinal, filters, true)
+                    if candidate then rows[#rows + 1] = candidate end
+                end, checkpoint)
+                if #rows > 0 then groups[#groups + 1] = {slot = slot, items = rows} end
+            end
+        end
+        return groups
+    end
+    if not next(summary.slots) then return currentGroups end
     local index, rating = self:GetDataIndex(), self.ForeverGearRating
     local context = LEVELING_HELPERS.statGuideContext(self, className, specName, LEVELING_PHASE_KEY, level, filters)
     local groups, bySlot = {}, {}
@@ -7599,10 +7745,15 @@ local function collectAvailabilityRows(addon, className, specName, phaseKey, tab
 
     if phaseKey == LEVELING_PHASE_KEY then
         local level = clampLevelingLevel(filters and filters.level)
-        local groups = addon:GetLevelingRows(className, specName, level, filters)
-        if addon.isForever and tabName == "Gear Guide" then
-            local summary = addon:GetLevelingGuideSummary(className, specName, level, filters or {})
-            groups = addon:GetLevelingJourneyRows(className, specName, level, filters or {}, summary, groups)
+        local summary = addon.isForever and tabName == "Gear Guide"
+            and addon:GetLevelingGuideSummary(className, specName, level, filters or {})
+        local groups
+        if summary and summary.packed then
+            filters._verifiedOnly = true
+            groups = addon:GetLevelingJourneyRows(className, specName, level, filters, summary, {})
+        else
+            groups = addon:GetLevelingRows(className, specName, level, filters)
+            if summary then groups = addon:GetLevelingJourneyRows(className, specName, level, filters, summary, groups) end
         end
         for _, group in ipairs(groups) do
             for _, row in ipairs(group.items or {}) do
@@ -7670,7 +7821,9 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
             addReputationsFromRow(reputations, reputationSeen, row, reputationScopedFilters, selectedIndex)
         end
     end
+    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
     for _, row in ipairs(rows) do
+        if checkpoint then checkpoint() end
         local ranges = row.guide_levels
         if ranges then
             local levels = {}

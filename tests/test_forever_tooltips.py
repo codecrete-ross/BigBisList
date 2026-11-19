@@ -284,7 +284,7 @@ local function activities()
     return actions, table.concat(labels, "\n")
 end
 local pending = activities()
-assert(pending[1].detail == "4 guide items · Checking gear…", pending[1].detail)
+assert(pending[1].detail == "4 guide items · Comparing upgrades…", pending[1].detail)
 assert(ui.sortDropdown:IsVisible() and ui:GetSortDropdownText() == "Most loot")
 H.settle()
 local result = activities()

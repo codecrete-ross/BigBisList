@@ -194,22 +194,105 @@ function rating:GetGearSnapshotKey(owned)
 end
 
 function rating:GetWorkCheckpoint()
+    if self.work and coroutine.running() == self.work.thread then return self.work.checkpoint end
     if self.guideWorker and coroutine.running() == self.guideWorker then return self.guideCheckpoint end
     if self.opportunityWorker and coroutine.running() == self.opportunityWorker then return self.opportunityCheckpoint end
     return addon.AcquisitionHighlights and addon.AcquisitionHighlights:GetCheckpoint()
+end
+
+function rating:QueueWork(priority, build, isCurrent, onReady)
+    local job = { priority = priority, thread = coroutine.create(build), isCurrent = isCurrent, onReady = onReady }
+    job.checkpoint = function()
+        job.steps = job.steps + 1
+        if job.steps >= (job.started and 4096 or 128)
+            or (job.started and job.steps % 8 == 0 and debugprofilestop() >= job.started + 1) then coroutine.yield() end
+    end
+    self.workQueue = self.workQueue or {}
+    local queue = self.workQueue
+    queue[#queue + 1] = job
+    if self.workScheduled then return job end
+    local function run()
+        self.workScheduled = nil
+        local start = debugprofilestop and debugprofilestop()
+        for index = #queue, 1, -1 do
+            if not queue[index].isCurrent() then table.remove(queue, index).cancelled = true end
+        end
+        local first
+        for index, nextJob in ipairs(queue) do
+            if not first or nextJob.priority < queue[first].priority then first = index end
+        end
+        local current = first and table.remove(queue, first)
+        if current then
+            current.started, current.steps = start, 0
+            self.work = current
+            local ok, result = coroutine.resume(current.thread, current.checkpoint)
+            self.work = nil
+            if not ok then
+                current.cancelled = true
+                if geterrorhandler then geterrorhandler()(result) else error(result) end
+            elseif coroutine.status(current.thread) == "dead" then
+                if current.onReady then current.onReady(result) end
+            elseif current.isCurrent() then
+                queue[#queue + 1] = current
+            else
+                current.cancelled = true
+            end
+        end
+        if start and addon.UI and addon.UI.RecordAddonTime then addon.UI:RecordAddonTime("background", debugprofilestop() - start) end
+        if #queue > 0 and not self.workScheduled then
+            self.workScheduled = true
+            C_Timer.After(0, run)
+        end
+    end
+    self.workScheduled = true
+    C_Timer.After(0, run)
+    return job
+end
+
+function rating:SortInWork(values, less, checkpoint)
+    if #values <= 48 or not checkpoint then table.sort(values, less); return values end
+    local ordered, width = {}, 48
+    for first = 1, #values, width do
+        local run = {}
+        local last = math.min(first + width - 1, #values)
+        for index = first, last do run[#run + 1] = values[index] end
+        table.sort(run, less)
+        for index, value in ipairs(run) do ordered[first + index - 1] = value end
+        checkpoint()
+    end
+    local destination = values
+    while width < #ordered do
+        for start = 1, #ordered, width * 2 do
+            local middle, finish = math.min(start + width, #ordered + 1), math.min(start + width * 2, #ordered + 1)
+            local left, right = start, middle
+            for index = start, finish - 1 do
+                if left < middle and (right == finish or not less(ordered[right], ordered[left])) then
+                    destination[index], left = ordered[left], left + 1
+                else
+                    destination[index], right = ordered[right], right + 1
+                end
+                checkpoint()
+            end
+        end
+        ordered, destination, width = destination, ordered, width * 2
+    end
+    return ordered
 end
 
 function rating:GetCatalog(data)
     if self.catalog and self.catalog.data == data then return self.catalog end
     local checkpoint = rating:GetWorkCheckpoint()
     local _, build = call(GetBuildInfo)
-    local catalog = { data = data, slots = {}, families = {}, observed = {},
+    local slotKeys = data.slot_key_items == data.items and data.slot_keys
+    local catalog = { data = data, slots = slotKeys or {}, families = {}, observed = {},
         rollBuildMatches = not data.roll_build or not tonumber(build) or tonumber(build) == data.roll_build }
-    for key, row in pairs(data.items) do
-        if checkpoint then checkpoint() end
-        local slot = row[3]
-        catalog.slots[slot] = catalog.slots[slot] or {}
-        table.insert(catalog.slots[slot], key)
+    if not slotKeys then
+        for key, row in pairs(data.items) do
+            if checkpoint then checkpoint() end
+            local slot = row[3]
+            catalog.slots[slot] = catalog.slots[slot] or {}
+            table.insert(catalog.slots[slot], key)
+        end
     end
     catalog.items = setmetatable({}, { __index = function(items, key)
         local row = data.items[key]
@@ -470,7 +553,7 @@ function rating:InvalidateItem(id)
     self.loadedItems = self.loadedItems or {}
     self.loadedItems[id] = true
     if self.native then self.native[id] = nil end
-    if self.catalog then
+    if self.catalog and not BigBiSListData.guide_index then
         for key, facts in pairs(self.catalog.observed) do
             if facts.id == id then
                 self.catalog.observed[key] = nil
@@ -513,8 +596,25 @@ local function resolveLink(self, context, entry)
                 observed.nativeFacts, observed.stats_unavailable = native, nil
                 observed.variant_id = (facts and facts.variant_id) or (key ~= tostring(id) and key or nil)
                 observed.variant_link = (facts and facts.variant_link) or link
+                if BigBiSListData.guide_index and facts and not facts.stats_unavailable and
+                    observed.level == facts.level and observed.slot == facts.slot and observed.name == facts.name
+                    and observed.unreadable_effects == facts.unreadable_effects
+                    and observed.max_equipped == facts.max_equipped and observed.unique_group == facts.unique_group
+                    and sameValues(facts.stats, observed.stats) and sameValues(facts.effects, observed.effects)
+                    and sameValues(facts.classes, observed.classes) and sameValues(facts.races, observed.races) then
+                    return facts
+                end
                 context.catalog.observed[key] = observed
-                self.guideData, self.levelingSummaryData = nil, nil
+                if BigBiSListData.guide_index then
+                    context.catalog.observedVersion = (context.catalog.observedVersion or 0) + 1
+                    context.catalog.changedSlots = context.catalog.changedSlots or {}
+                    context.catalog.changedSlots[observed.slot] = true
+                    if observed.slot == "One Hand" then
+                        context.catalog.changedSlots["Main Hand"], context.catalog.changedSlots["Off Hand"] = true, true
+                    end
+                else
+                    self.guideData, self.levelingSummaryData = nil, nil
+                end
                 self.contexts, self.inventory = nil, nil
                 if not self.observedRefresh and addon.UI and addon.UI.frame and addon.UI.frame:IsShown()
                     and C_Timer and C_Timer.After then
@@ -703,10 +803,10 @@ function rating:GetGuideContext(className, spec, phase, level, race, faction)
     return context
 end
 
-local function fitsEquipment(context, item, slot)
+local function fitsEquipment(context, item, slot, anyRace)
     if item.slot ~= slot and not (item.slot == "One Hand" and (slot == "Main Hand" or slot == "Off Hand")) then return false end
-    if not permitted(item.classes, context.class) or not permitted(item.races, context.race)
-        or not permitted(item.race_ids, context.raceId) then return false end
+    if not permitted(item.classes, context.class) or (not anyRace and (not permitted(item.races, context.race)
+        or not permitted(item.race_ids, context.raceId))) then return false end
     local policy, weapon, armor = context.policy, item.weapon_subtype, item.armor_type
     if not permitted(policy.slot_weapon_types and policy.slot_weapon_types[slot], weapon) and weapon then return false end
     if not context.leveling then
@@ -976,6 +1076,12 @@ local function setRankTier(entry, bestScore, tiers)
     entry.placement_color = tiers ~= nil or nil
 end
 
+rating.GetPackedRankTiers = function(_, ...) return placementTiers(...) end
+
+function rating:ApplyPackedRankTier(entry, bestScore, tiers)
+    if entry.total > 1 and bestScore > 0 then setRankTier(entry, bestScore, tiers or nil) end
+end
+
 local function currentComparisonSlot(context, physical, slots)
     local equipped = context.equipmentFacts[physical]
     local reference = equipped and equipped.facts
@@ -1026,6 +1132,33 @@ end
 
 function rating:GetReferenceCandidate(context, item, slot)
     if usable(context, item, slot) then return resultFor(context, item, nil, slot) end
+end
+
+-- The offline index uses the same score and compatibility rules as a live pool.
+function rating:GetReferenceWindow(firstContext, lastContext, item, slot, contextAt, anyRace)
+    local first = math.max(firstContext.level, item.level or 100)
+    local last = lastContext.level
+    if firstContext.leveling then
+        local policy = firstContext.policy
+        last = math.min(last, (policy.slot_max_levels or {})[slot] or last)
+        if slot == "Two Hand" and policy.weapon_style == "dual_wield" and policy.dual_wield_level then
+            last = math.min(last, policy.dual_wield_level - 1)
+        end
+    end
+    if item.excluded or first > last or not fitsEquipment(contextAt(last), item, slot, anyRace) then return end
+    local low, high = first, last
+    while low < high do
+        local middle = math.floor((low + high) / 2)
+        if fitsEquipment(contextAt(middle), item, slot, anyRace) then high = middle else low = middle + 1 end
+    end
+    return low, last
+end
+
+function rating:GetUnfilteredReferenceEntry(context, item, slot)
+    if item.has_random_stats then
+        return { status = "unavailable", item = item }
+    end
+    return resultFor(context, item, nil, slot)
 end
 
 local function slotPool(context, physical, slot, handType, gear, cacheKey, checkpoint)
@@ -1151,7 +1284,7 @@ function rating:GetComparisonCandidates(pool)
     local checkpoint = self:GetWorkCheckpoint()
     local rows = {}
     for _, entry in ipairs(pool.rows) do rows[#rows + 1] = entry end
-    for key, record in pairs(ranges.items) do
+    local function add(key, record)
         if checkpoint then checkpoint() end
         local item = record.item
         if not pool.byVariant[key] and usable(context, item, pool.slot)
@@ -1160,12 +1293,33 @@ function rating:GetComparisonCandidates(pool)
             if other and other.level ~= context.level then rows[#rows + 1] = other end
         end
     end
+    if summary.packed then
+        self:VisitPackedGuideOrdinals(ranges, context.level, nil, false, function(ordinal)
+            local key = ranges.indices.keys[ordinal]
+            if not pool.byVariant[key] then
+                local record = self:GetPackedLevelingRecord(guide, pool.slot, key, true)
+                if record then add(key, record) end
+            end
+        end, checkpoint)
+    else
+        for key, record in pairs(ranges.items) do add(key, record) end
+    end
     pool.comparisonRows = rows
     return rows
 end
 
 function rating:GetGuidePlacement(context, slot, checkpoint)
     return slotPool(context, slot, slot, nil, {}, slot, checkpoint)
+end
+
+function rating:GetGuideEntry(context, slot, key)
+    local entry, indexed
+    if self.GetPackedGuideEntry then
+        entry, indexed = self:GetPackedGuideEntry(context, slot, key)
+    end
+    if indexed then return entry, nil, true end
+    local pool = self:GetGuidePlacement(context, slot)
+    return pool.byVariant[key], pool
 end
 
 local function levelingGrade(entry)
@@ -1315,6 +1469,11 @@ end
 
 function rating:GetLevelingSummary(context)
     if not context or not context.leveling then return nil end
+    local packed = self.GetPackedGuide and self:GetPackedGuide(context)
+    if packed then
+        context.packedSummary = context.packedSummary or { context = context, slots = packed, revision = 1, packed = true }
+        return context.packedSummary
+    end
     local data, phase = context.catalog.data, context.phaseIndex
     if self.levelingSummaryData ~= data or self.levelingSummaryPhase ~= phase then
         self.levelingSummaryData, self.levelingSummaryPhase = data, phase
@@ -1345,7 +1504,7 @@ function rating:LevelingGuideSlots(context, order)
 end
 
 function rating:RequestLevelingSummary(summary, slots, watcher)
-    if not summary or not watcher or not (C_Timer and C_Timer.After) then return end
+    if not summary or summary.packed or not watcher or not (C_Timer and C_Timer.After) then return end
     for _, slot in ipairs(slots) do
         if not summary.slots[slot] then
             summary.watchers[watcher.owner] = { slots = slots, watcher = watcher }
@@ -1372,18 +1531,27 @@ function rating:LevelingPlacementAt(record, level, current)
     if current and (current.rank or not record) then return current end
     local range = record and self:LevelingRangeAt(record.ranked, level)
     if not range then return current end
+    if record.data then
+        local evaluated = math.min(range.lastLevel, math.max(range.firstLevel, level))
+        return self:GetPackedGuideEntry(record.context, record.slot, record.item.key, evaluated)
+    end
     if level > range.lastLevel then return range.lastEntry end
     if level < range.firstLevel or not current then return range.firstEntry end
     return current
 end
 
 function rating:GetLevelingRecord(summary, slot, key)
+    if summary and summary.packed then return self:GetPackedLevelingRecord(summary.context, slot, key, true) end
     local data = summary and summary.slots[slot]
     return data and data.items[key]
 end
 
 function rating:GetLevelingSuccessor(summary, placement)
     if not placement or placement.rank ~= 1 or placement.phase ~= "LEVELING" then return nil end
+    if summary and summary.packed then
+        local record = self:GetLevelingRecord(summary, placement.slot, placement.item.key)
+        return record and self:GetPackedLevelingSuccessor(record, placement) or nil
+    end
     local data = summary and summary.slots[placement.slot]
     local record = data and data.items[placement.item.key]
     local leading = record and self:LevelingRangeAt(record.leading, placement.level)
@@ -1732,9 +1900,8 @@ end
 local function referencePlacement(context, item, slot)
     local reference = rating:GetGuideContext(context.class, context.spec, context.phase, context.level,
         context.race, context.faction)
-    local pool = rating:GetGuidePlacement(reference, slot)
-    local known = pool.byVariant[item.key]
-    if known then return known, pool.scope end
+    local known, pool, indexed = rating:GetGuideEntry(reference, slot, item.key)
+    if known then return known, pool and pool.scope end
     local access = guideAccess(reference, item.id)
     if access == "future_phase" then
         return { item = item, slot = slot, phase = context.phase, level = context.level, status = access,
@@ -1745,6 +1912,7 @@ local function referencePlacement(context, item, slot)
             local records = rating:GetLevelingSummary(reference)
             local entry = rating:LevelingPlacementAt(rating:GetLevelingRecord(records, slot, item.key), context.level)
             if entry then return entry end
+            if indexed then return { item = item, slot = slot, phase = context.phase, level = context.level, status = "out_of_scope" } end
             local function at(level)
                 local other = contextAtLevel(reference, "LEVELING", level)
                 if usable(other, item, slot) and inScope(other, item) then
@@ -1765,6 +1933,7 @@ local function referencePlacement(context, item, slot)
     end
     local placement = resultFor(context, item, nil, slot)
     if placement.score == nil then return placement end
+    if indexed then return placement end
     return rating:ProjectPlacement(item, placement, pool), pool.scope
 end
 
@@ -2425,7 +2594,7 @@ function rating:GetRowItem(row)
 end
 
 -- Activity totals compare an additional copy with the best legal gear already owned.
-function rating:GetOwnedOpportunity(context, item, link, live)
+function rating:GetOwnedOpportunity(context, item, link, live, transient)
     if not context or not item or not item.level or item.level > context.level then return nil end
     local group = groupFor(item)
     if not inScope(context, item) or not firstUsableSlot(context, group, item) then return nil end
@@ -2439,7 +2608,7 @@ function rating:GetOwnedOpportunity(context, item, link, live)
     if not result then
         result = ownedSwap(build, group, {facts = item, key = item.key, entry = {item_id = item.id}, item_link = link}, true)
             or {status = "blocked"}
-        build.opportunities[key] = result
+        if not transient then build.opportunities[key] = result end
     end
     return result, result.status
 end

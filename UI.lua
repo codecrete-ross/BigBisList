@@ -1514,12 +1514,12 @@ function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinit
     end
 end
 
-function UI:BuildOwnedItems()
+function UI:BuildOwnedItems(equippedOnly)
     self:CountPerformance("ownershipBuilds")
-    local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = BigBiSList.ForeverGearRating and BigBiSList.ForeverGearRating:GetWorkCheckpoint()
     local char = BigBiSList:GetCharacterDB()
     local bankCache = not BigBiSList.isForever and char.bankCache
-    local statBank = BigBiSList.isForever and char.bankCache.scanned and char.bankCache
+    local statBank = not equippedOnly and BigBiSList.isForever and char.bankCache.scanned and char.bankCache
 
     local owned = {
         equippedSlots = {},
@@ -1588,7 +1588,8 @@ function UI:BuildOwnedItems()
         end
     end
 
-    for bag = 0, 4 do
+    local lastBag = equippedOnly and -1 or 4
+    for bag = 0, lastBag do
         local numSlots, bagReadable = getContainerNumSlotsSafe(bag)
         if BigBiSList.isForever and not bagReadable then owned.bagsIncomplete = true end
 
@@ -1608,7 +1609,9 @@ function UI:BuildOwnedItems()
             addEnhancedItem(itemLink, "bag", "Bags")
         end
     end
+    if equippedOnly then owned.bagsIncomplete = true end
     if owned.bagsIncomplete then owned.inventoryIncomplete = true end
+    owned.equippedOnly = equippedOnly or nil
 
     if bankCache and bankCache.items then
         for itemIdText in pairs(bankCache.items) do
@@ -1652,11 +1655,20 @@ function UI:GetOwnedSnapshot()
     self.ownedCharacter = character
     if not self.currentOwned then
         local owned = self:BuildOwnedItems()
-        local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
+        local checkpoint = BigBiSList.ForeverGearRating and BigBiSList.ForeverGearRating:GetWorkCheckpoint()
         if checkpoint then checkpoint() end
         self.currentOwned = self.currentOwned or owned
     end
     return self.currentOwned
+end
+
+function UI:GetTooltipOwnedSnapshot()
+    if self.currentOwned or not BigBiSListData.guide_index or not (C_Timer and C_Timer.After) then return self:GetOwnedSnapshot() end
+    if not self.tooltipEquipped then
+        self.tooltipEquipped = self:BuildOwnedItems(true)
+        self:QueueOwnershipCheck("inventory ready")
+    end
+    return self.tooltipEquipped
 end
 
 function UI:BuildAccessState()
@@ -2460,7 +2472,7 @@ function UI:ScanBankItems()
     end
 
     local cache = { items = {}, links = {} }
-    local checkpoint = BigBiSList.AcquisitionHighlights and BigBiSList.AcquisitionHighlights:GetCheckpoint()
+    local checkpoint = BigBiSList.ForeverGearRating and BigBiSList.ForeverGearRating:GetWorkCheckpoint()
     if strict then cache.guids, cache.locations = {}, {} end
     for _, bag in ipairs(tabs) do
         if strict and (not BigBiSList.IsReadableValue(bag) or type(bag) ~= "number") then return false end
@@ -2533,6 +2545,16 @@ end
 function UI:ResetPerformanceStats()
     self.performanceStats = nil
     self:GetPerformanceStats()
+end
+
+function UI:RecordAddonTime(kind, duration)
+    local stats = self:GetPerformanceStats()
+    local frame = GetTime and GetTime() or 0
+    if stats.timingFrame ~= frame then stats.timingFrame, stats.frameTime = frame, 0 end
+    stats.frameTime = (stats.frameTime or 0) + duration
+    stats.worstFrame = math.max(stats.worstFrame or 0, stats.frameTime)
+    stats.timings = stats.timings or {}
+    stats.timings[kind] = math.max(stats.timings[kind] or 0, duration)
 end
 
 function UI:CountPerformance(key, amount, reason)
@@ -2631,6 +2653,9 @@ function UI:GetFilterAvailabilitySnapshot()
     local selection = self:GetSelection()
     local filters = self:GetAvailabilityFilters()
     local phaseKey = normalizeTabName(selection.tab) == "Wishlist" and selection.phase or self:GetEffectivePhaseKey()
+    if self.GetPackedFilterAvailability and selection.tab == "Gear Guide" and BigBiSListData.guide_index then
+        return self:GetPackedFilterAvailability(selection, phaseKey, filters)
+    end
     self:CountPerformance("availabilityBuilds")
     self.currentAvailabilitySnapshot = BigBiSList:GetFilterAvailabilitySnapshot(selection.class, selection.spec, phaseKey, selection.tab, filters)
     self.filterFacetLabelCache = self.filterFacetLabelCache or { costLabels = {}, vendorLabels = {} }
@@ -3376,12 +3401,31 @@ function UI:CaptureNavigationState()
         selectedRowKey = self.selectedRowKey,
         detailsScroll = self.detailsScroll and self.detailsScroll.GetVerticalScroll and self.detailsScroll:GetVerticalScroll() or 0,
     }
-    for _, entry in ipairs((self.renderModel and self.renderModel.entries) or {}) do
-        if entry.kind == "row" and entry.bottom > state.scroll then
-            state.anchorKey = self:GetRowKey(entry.data, entry.mode)
-            state.anchorOffset = state.scroll - entry.top
-            break
+    local function anchor(entry)
+        state.anchorKey = self:GetRowKey(entry.data, entry.mode)
+        if not state.anchorKey and entry.activityName then state.anchorKey = "activity/" .. entry.activityName end
+        state.anchorOffset = state.scroll - entry.top
+        state.anchorSpan, state.anchorIndex = entry.span, entry.spanIndex
+    end
+    local reading, viewport = nil, scroll and scroll:GetHeight() or 0
+    for _, frame in ipairs(self.activeRenderFrames or {}) do
+        if (frame.hovered or frame.selected) and self:IsCurrentRenderFrame(frame) then
+            local entry = frame.__bigBisBoundRenderEntry
+            if entry.kind == "row" and entry.bottom > state.scroll and entry.top < state.scroll + viewport then
+                reading = entry
+                if frame.hovered then break end
+            end
         end
+    end
+    if reading then
+        anchor(reading)
+    else
+        self:VisitListEntries(self.renderModel, state.scroll, math.huge, function(entry)
+            if (entry.kind == "row" or entry.activityName) and entry.bottom > state.scroll then
+                anchor(entry)
+                return false
+            end
+        end)
     end
     self.navigationStates = self.navigationStates or {}
     self.navigationStates[self.renderedContextKey or self:GetNavigationContextKey()] = state
@@ -3401,9 +3445,13 @@ function UI:ApplyNavigationState(model, state)
     local scroll = self.contentScroll
     if not scroll or not scroll.SetVerticalScroll then return end
     local offset = state and state.scroll or 0
-    if state and state.anchorKey then
+    local anchor = model and model.locate and state and model.locate(state)
+    if anchor then
+        offset = anchor.top + (state.anchorOffset or 0)
+    elseif state and state.anchorKey and not (model and model.locate) then
         for _, entry in ipairs(model and model.entries or {}) do
-            if entry.kind == "row" and self:GetRowKey(entry.data, entry.mode) == state.anchorKey then
+            if (entry.kind == "row" and self:GetRowKey(entry.data, entry.mode) == state.anchorKey)
+                or (entry.activityName and "activity/" .. entry.activityName == state.anchorKey) then
                 offset = entry.top + (state.anchorOffset or 0)
                 break
             end
@@ -3957,8 +4005,10 @@ function UI:RequestItemPresentation(itemId)
             UI:Invalidate("ownership", "owned-item-info")
             UI:ScheduleRefresh(nil, "owned-item-info")
         elseif completed and completed.statRating then
-            UI:Invalidate("query", "gear-stats")
-            UI:ScheduleRefresh(nil, "gear-stats")
+            if not (UI.RefreshPackedRows and UI:RefreshPackedRows(itemId)) then
+                UI:Invalidate("query", "gear-stats")
+                UI:ScheduleRefresh(nil, "gear-stats")
+            end
         end
         if completed and (completed.statRating or completed.ownedMetadata) and BigBiSList.isForever
             and BigBiSList.ScheduleItemTooltipRefresh then
@@ -4676,10 +4726,11 @@ function UI:RequestLevelingGuideSummary(class, spec, level, filters)
     })
 end
 
-function UI:GetLevelingGearView(data, mode, nativeRequirement)
+function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly)
     local service = BigBiSList.ForeverGearRating
     local item, pending
-    if service then item, pending = service:GetRowItem(data) end
+    if referenceOnly then item = data.stat_rank and data.stat_rank.item
+    elseif service then item, pending = service:GetRowItem(data) end
     if not item then
         if pending == "loading" then
             self:QueueStatLoads({[data.item_id] = true})
@@ -4695,16 +4746,16 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement)
     local slot = placement and placement.slot or data.slot or item.slot
     if slot == "One Hand" then slot = "Main Hand" end
     local summary = leveling and self:RequestLevelingGuideSummary(context.class, context.spec, level, filters)
-    local record = service:GetLevelingRecord(summary, slot, item.key)
+    local record = data.guide_record or service:GetLevelingRecord(summary, slot, item.key)
     if not placement then
         local guide = service:GetGuideContext(context.class, context.spec, leveling and LEVELING_PHASE_KEY or "PR", level,
             filters.race or BigBiSList:GetPlayerRaceName(), filters.faction or BigBiSList:GetPlayerFactionName())
-        local reference = guide and service:GetGuidePlacement(guide, slot).byVariant[item.key]
+        local reference = guide and service:GetGuideEntry(guide, slot, item.key)
         placement = service:LevelingPlacementAt(record, level, reference)
     elseif leveling and (placement.setup_rank or placement.level ~= level or placement.spec ~= context.spec) then
         local guide = service:GetGuideContext(context.class, context.spec, LEVELING_PHASE_KEY, level,
             filters.race or BigBiSList:GetPlayerRaceName(), filters.faction or BigBiSList:GetPlayerFactionName())
-        local reference = guide and service:GetGuidePlacement(guide, placement.slot).byVariant[item.key]
+        local reference = guide and service:GetGuideEntry(guide, placement.slot, item.key)
         placement = service:LevelingPlacementAt(record, level, reference) or placement
     end
     local player = BigBiSList:GetTooltipPlayerContext()
@@ -4712,7 +4763,8 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement)
     local equipped = mode == "gear" or data.is_reference or data.context and data.context.occupancy == "equipped" or ownership == "equipped"
     local reference = self.slotComparison and self.slotComparison.reference
     local physical = mode == "comparison" and reference and reference.slotKey or data.slotKey
-    local swap = service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, physical, player, equipped)
+    local swap
+    if not referenceOnly then swap = service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, physical, player, equipped) end
     local sourceLevel, sourceType = BigBiSList:GetLevelingSourceGate(data.acquisition_display)
     local playerLevel = player and player.level or BigBiSList:GetDetectedPlayerLevel()
     local view = service:LevelingPresentation({ item = item, placement = placement, record = record, swap = swap,
@@ -4789,7 +4841,8 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     row.subText:ClearAllPoints()
     row.subText:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -2)
     row.subText:SetWidth(nameWidth)
-    local gearView = self:GetLevelingGearView(data, mode)
+    local deferPersonal = data.guide_record ~= nil and self.renderModel and self.renderModel.packed
+    local gearView = self:GetLevelingGearView(data, mode, nil, deferPersonal)
     local slot = (mode == "phase" and (self:GetViewState().groupBy or "slot") == "slot") and "" or self:GetRowSlotDisplay(data)
     if mode == "leveling" and data.guide_note then slot = slot .. " · " .. data.guide_note end
     if gearView and gearView.today then
@@ -4909,6 +4962,22 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         row.boundWishlistSaved = saved
         row.actionButton:SetIcon(saved and "starFilled" or "starOutline")
         row.actionButton:SetSelected(saved); row.actionButton:Show()
+    end
+    if deferPersonal then
+        local token, model = row.bindToken, self.renderModel
+        local rating = BigBiSList.ForeverGearRating
+        local function current()
+            return row.bindToken == token and self.renderModel == model and self:IsCurrentRenderFrame(row)
+                and self.frame and self.frame:IsShown() and row:IsShown()
+        end
+        rating:QueueWork(0, function() return self:GetLevelingGearView(data, mode) end, current, function(view)
+            if not view or not view.today or not current() then return end
+            local text = widgets:GearAdviceText(view)
+            if view.evidence then text = text .. " · " .. view.evidence end
+            row.subText:SetTextColor(widgets:GearAdviceColor(view.tone))
+            widgets:SetCellText(row.subText, text, 1, 12, nameWidth)
+            row.subText:Show()
+        end)
     end
     return row, rowHeight
 end
@@ -5233,6 +5302,45 @@ function UI:AddListRow(model, data, mode)
     })
 end
 
+function UI:AddListSpan(model, span, count)
+    if count == 0 then return end
+    model.rowCount = model.rowCount + count
+    if model.activeSection then
+        model.activeSection.count = model.activeSection.count + count
+        if model.activeSection.collapsed then return end
+    end
+    local height = self:GetDensityMetrics()
+    span.kind, span.count, span.rowHeight, span.height = "span", count, height, count * height
+    span.sectionKey = model.activeSection and model.activeSection.sectionKey
+    model.columnMode = model.columnMode or "leveling"
+    self:AddListRenderEntry(model, span)
+end
+
+function UI:VisitListEntries(model, low, high, visit, lazy)
+    local entries = model and model.entries or {}
+    local first, last = 1, #entries + 1
+    while first < last do
+        local middle = math.floor((first + last) / 2)
+        if entries[middle].bottom < low then first = middle + 1 else last = middle end
+    end
+    for index = first, #entries do
+        local entry = entries[index]
+        if entry.top > high then return end
+        if entry.kind == "span" then
+            local height = entry.rowHeight
+            local start = math.max(1, math.floor((low - entry.top) / height) + 1)
+            local stop = math.min(entry.count, math.floor((high - entry.top) / height) + 1)
+            for position = start, stop do
+                local data = not lazy and entry.get(position)
+                local top = entry.top + (position - 1) * height
+                if (lazy or data) and visit({kind = "row", data = data, mode = "leveling", top = top, bottom = top + height,
+                    rowHeight = height, height = height, sectionKey = entry.sectionKey,
+                    span = entry, spanIndex = position}) == false then return end
+            end
+        elseif entry.kind ~= "gap" and visit(entry) == false then return end
+    end
+end
+
 function UI:AddGuideEquippedRows(model, slot)
     if self:GetFocusedBrowseSlot() or not self.currentOwned then return end
     local selection = self:GetSelection()
@@ -5419,6 +5527,14 @@ function UI:RebindSelectedRowFromModel(model)
         if self.selectedItemId then self:ClearSelectedRow() end
         return
     end
+    if model and model.rebind then
+        local data = model.rebind(self.selectedRowKey)
+        if data then
+            self.selectedItemId, self.selectedItemData, self.selectedItemMode = data.item_id, data, "leveling"
+            self.selectedEntityType = "item"
+            return
+        end
+    end
     for _, entry in ipairs((model and model.entries) or {}) do
         local data = entry.kind == "row" and entry.data or nil
         if data and self:GetRowKey(data, entry.mode) == self.selectedRowKey then
@@ -5452,7 +5568,7 @@ function UI:RenderListModel(model)
         end
         self.pendingNavigation = nil
         self.renderedContextKey = contextKey
-        self:ReleaseRenderFrames()
+        if not model.packed then self:ReleaseRenderFrames() end
         self.renderModel = model
         model.contextKey = contextKey
         self.hasRenderedContent = true
@@ -5476,7 +5592,7 @@ function UI:RenderListModel(model)
     end)
 end
 
-function UI:UpdateVirtualList(force)
+function UI:UpdateVirtualList(force, paint)
     if (self.renderTransactionDepth or 0) > 0 then
         self.virtualListUpdatePending = true
         self.virtualListForcePending = self.virtualListForcePending or force
@@ -5489,6 +5605,20 @@ function UI:UpdateVirtualList(force)
     local scroll = self.contentScroll
     local child = self.contentListLayer or self.contentChild
     if not model or not scroll or not child then
+        return
+    end
+    if model.packed and not paint and C_Timer and C_Timer.After then
+        self.packedPaintForce = self.packedPaintForce or force
+        if not self.packedPaintPending then
+            self.packedPaintPending = true
+            C_Timer.After(0, function()
+                local pendingForce = self.packedPaintForce
+                self.packedPaintPending, self.packedPaintForce = nil, nil
+                if self.frame and self.frame:IsShown() and self.renderModel and self.renderModel.packed then
+                    self:UpdateVirtualList(pendingForce, true)
+                end
+            end)
+        end
         return
     end
 
@@ -5509,8 +5639,21 @@ function UI:UpdateVirtualList(force)
         return
     end
 
+    local started = debugprofilestop and debugprofilestop()
+    local painted, unfinished = 0, false
     self:RunRenderTransaction(function()
-        self:ReleaseRenderFrames()
+        local prior = {}
+        if model.packed then
+            for _, frame in ipairs(self.activeRenderFrames or {}) do
+                local entry = frame.__bigBisBoundRenderEntry
+                if entry then
+                    local key = entry.span and entry.span.key .. "/" .. entry.spanIndex or entry
+                    prior[key] = frame
+                end
+            end
+        else
+            self:ReleaseRenderFrames()
+        end
         self.renderRangeKey = rangeKey
         local realized = 0
         local childrenBefore = {}
@@ -5521,17 +5664,38 @@ function UI:UpdateVirtualList(force)
         end
         local bindingPoolKind
         local ok, bindError = xpcall(function()
-            for _, entry in ipairs(model.entries or {}) do
-                if entry.top > maxBottom then
-                    break
-                end
-                if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
+            self:VisitListEntries(model, minTop, maxBottom, function(entry)
+                if entry.bottom >= minTop and entry.top <= maxBottom then
                     local poolKind = entry.nextAction and "planner-action" or entry.kind
                     if entry.kind == "row" and not entry.nextAction then
                         poolKind = entry.kind .. ":" .. tostring(entry.mode or "phase") .. ":" .. (compact and "compact" or "wide")
                     end
                     bindingPoolKind = poolKind
-                    local frame = self:AcquireRenderFrame(poolKind)
+                    local key = entry.span and entry.span.key .. "/" .. entry.spanIndex or entry
+                    local previous = prior[key]
+                    if previous and previous.__bigBisListRenderKind ~= poolKind then previous = nil end
+                    if previous then
+                        local old = previous.__bigBisBoundRenderEntry
+                        if previous.__bigBisBoundRenderModel == model and previous.__bigBisColumnSignature == columnLayout.signature
+                            and (entry.span or old.data == entry.data) and old.top == entry.top then
+                            prior[key] = nil
+                            realized = realized + 1
+                            return
+                        end
+                    end
+                    local firstUsefulRow = self.firstRowsStarted and entry.kind == "row"
+                    local reachedBudget = painted >= 3 or (started and debugprofilestop() - started >= 1)
+                    if model.packed and painted > 0 and reachedBudget
+                        and not (firstUsefulRow and (not started or debugprofilestop() - started < 2)) then
+                        unfinished = true
+                        return false
+                    end
+                    if entry.span then
+                        entry.data = entry.span.get(entry.spanIndex)
+                        if not entry.data then return end
+                    end
+                    if previous then prior[key] = nil end
+                    local frame = previous or self:AcquireRenderFrame(poolKind)
                     local alreadyTracked = frame ~= nil
                     if alreadyTracked then
                         self:TrackRenderFrame(poolKind, frame)
@@ -5554,11 +5718,17 @@ function UI:UpdateVirtualList(force)
                         frame.__bigBisBoundRenderModel = model
                         frame.__bigBisBoundRenderEntry = entry
                         frame.__bigBisBoundRenderSerial = self.renderModelSerial
+                        frame.__bigBisColumnSignature = columnLayout.signature
                         realized = realized + 1
+                        painted = painted + 1
+                        if entry.kind == "row" and self.firstRowsStarted then
+                            self:GetPerformanceStats().firstRowsMs = debugprofilestop() - self.firstRowsStarted
+                            self.firstRowsStarted = nil
+                        end
                     end
                     bindingPoolKind = nil
                 end
-            end
+            end, model.packed)
         end, function(message)
             return tostring(message)
         end)
@@ -5582,6 +5752,23 @@ function UI:UpdateVirtualList(force)
             self:ReleaseRenderFrames()
             error(bindError, 0)
         end
+        if next(prior) then
+            local kept = {}
+            for _, frame in pairs(prior) do
+                local entry = frame.__bigBisBoundRenderEntry
+                if not unfinished or entry.bottom < minTop or entry.top > maxBottom then
+                    self.renderActiveMembership[frame] = nil
+                    frame.__bigBisBoundRenderModel, frame.__bigBisBoundRenderEntry, frame.__bigBisBoundRenderSerial = nil, nil, nil
+                    frame:Hide()
+                    frame:ClearAllPoints()
+                    self:PoolRenderFrame(frame.__bigBisListRenderKind, frame)
+                end
+            end
+            for _, frame in ipairs(self.activeRenderFrames) do
+                if self.renderActiveMembership[frame] then kept[#kept + 1] = frame end
+            end
+            self.activeRenderFrames = kept
+        end
         -- Recover any previously stranded managed child while preserving unrelated UI.
         if child.GetChildren then
             for _, frame in ipairs({ child:GetChildren() }) do
@@ -5594,6 +5781,11 @@ function UI:UpdateVirtualList(force)
         end
         self:CountPerformance("realizedEntries", realized)
     end)
+    if started and not self.refreshInProgress then self:RecordAddonTime("visible rows", debugprofilestop() - started) end
+    if unfinished and C_Timer and C_Timer.After then
+        self.renderRangeKey = nil
+        self:UpdateVirtualList()
+    end
 end
 
 function UI:RenderEmpty(message)
@@ -5809,6 +6001,7 @@ function UI:GetWithinReach(rows)
     local context = rating:GetContext(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
     if not context then return nil end
     local bags, groups, seen = {}, { {}, {}, {} }, {}
+    local checkpoint = rating:GetWorkCheckpoint()
     local physical = self:GetLevelingReferenceSlot()
     for _, copy in ipairs(context.ownedCopies) do
         if copy.state == "bag" then
@@ -5818,6 +6011,7 @@ function UI:GetWithinReach(rows)
         end
     end
     for _, row in ipairs(rows) do
+        if checkpoint then checkpoint() end
         local facts = (row.guide_available_now or not row.guide_order or row.guide_order == 1) and row.stat_rank and row.stat_rank.item
         if facts and (bags[facts.key] or hasVerifiedLevelingRoute(row)) and not seen[facts.key] then
             local ownership = self:GetRowOwnershipState(row)
@@ -5860,8 +6054,8 @@ function UI:GetWithinReach(rows)
     return groups
 end
 
-function UI:AddWithinReach(model, rows, scope)
-    local groups = self:GetWithinReach(rows)
+function UI:AddWithinReach(model, rows, scope, prepared)
+    local groups = prepared or self:GetWithinReach(rows)
     if not groups then return end
     local titles = { "Equip from bags", "Ready to turn in", "Reward quest in progress" }
     local added
@@ -5910,14 +6104,15 @@ function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
     local key = table.concat({"opportunities", scope, selection.class, selection.spec, player.spec, level, player.level,
         tostring(BigBiSList.ForeverScoring and BigBiSList.ForeverScoring.revision)}, ":")
     local batch = self:GetCachedViewQuery(key, function() return {level = evaluated, playerLevel = player.level, spec = player.spec} end)
+    if batch.worker and batch.worker.cancelled then batch.worker, batch.running = nil, nil end
     if batch.gains or batch.running then return batch end
     local cache = self.currentViewQueryCache
-    if not batch.worker then
-        batch.worker = coroutine.create(function()
+    batch.running = true
+    batch.worker = service:QueueWork(3, function(checkpoint)
             local context = service:GetContext(player.class, player.spec, evaluated == 60 and "PR" or "LEVELING", evaluated, owned)
             local gains, unknown, seen = {}, {}, {}
             for _, row in ipairs(rows) do
-                batch.checkpoint()
+                checkpoint()
                 local id = row.variant_id or tostring(row.item_id)
                 if not seen[id] then
                     seen[id] = true
@@ -5941,7 +6136,7 @@ function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
             for _, destination in ipairs(activities or {}) do
                 local counted, total = {}, {upgrades = 0, bestGain = 0}
                 for _, row in ipairs(destination.rows) do
-                    batch.checkpoint()
+                    checkpoint()
                     local id = row.variant_id or tostring(row.item_id)
                     if not counted[id] and (row.guide_available_now or not row.guide_order or row.guide_order == 1) and hasVerifiedLevelingRoute(row) then
                         counted[id] = true
@@ -5958,37 +6153,23 @@ function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
                 totals[destination] = total
             end
             batch.gains, batch.totals = gains, totals
-        end)
-    end
-    batch.checkpoint = function()
-        batch.steps = batch.steps + 1
-        if batch.steps >= 96 or (batch.deadline and debugprofilestop() >= batch.deadline) then coroutine.yield() end
-    end
-    batch.running = true
-    local function step()
-        if self.currentViewQueryCache ~= cache or self.currentOwned ~= owned or not self.frame or not self.frame:IsShown() then
-            batch.running = nil
-            return
-        end
-        batch.steps, batch.deadline = 0, debugprofilestop and debugprofilestop() + 3
-        service.opportunityWorker, service.opportunityCheckpoint = batch.worker, batch.checkpoint
-        local ok, err = coroutine.resume(batch.worker)
-        service.opportunityWorker, service.opportunityCheckpoint = nil, nil
-        if not ok then batch.running = nil; error(err) end
-        if coroutine.status(batch.worker) == "dead" then
-            batch.worker, batch.running, batch.checkpoint = nil, nil, nil
-            self:Invalidate("presentation", "activity-upgrades")
-            self:ScheduleRefresh(nil, "activity-upgrades")
-        else
-            C_Timer.After(0, step)
-        end
-    end
-    C_Timer.After(0, step)
+    end, function()
+        return self.currentViewQueryCache == cache and self.currentOwned == owned and self.frame and self.frame:IsShown()
+    end, function()
+        batch.worker, batch.running = nil, nil
+        self:Invalidate("presentation", "activity-upgrades")
+        self:ScheduleRefresh(nil, "activity-upgrades")
+    end)
     return batch
 end
 
 function UI:GetLevelingActivities(groups, selection, level, filters, journeyReady)
     return self:GetCachedViewQuery("leveling-activities:" .. level, function()
+        return self:BuildLevelingActivities(groups, selection, level, filters, journeyReady)
+    end)
+end
+
+function UI:BuildLevelingActivities(groups, selection, level, filters, journeyReady, checkpoint)
         local ordered, byName, counted, seen = {}, {}, {}, {}
         local aliases = {Deadmines = "The Deadmines", ["Trade/AH"] = "Trade / Auction House"}
         local function activityFor(row)
@@ -6020,6 +6201,7 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
         end
         for _, group in ipairs(groups) do
             for _, item in ipairs(group.items) do
+                if checkpoint then checkpoint() end
                 for _, row in ipairs(BigBiSList:GetLevelingActivityRows(item, filters, level)) do addCurrent(row) end
             end
         end
@@ -6047,7 +6229,6 @@ function UI:GetLevelingActivities(groups, selection, level, filters, journeyRead
             return lower(a.name) < lower(b.name)
         end)
         return {ordered = ordered, byName = byName}
-    end)
 end
 
 function UI:GetLevelingQuestActions(rows, selection, level)
@@ -6088,8 +6269,8 @@ function UI:SetLevelingActivity(name)
     self:ScheduleRefresh(nil, "leveling-activity")
 end
 
-function UI:RenderLevelingActivities(groups, selection, level, filters, emptyText, title, journeyReady)
-    local activities = self:GetLevelingActivities(groups, selection, level, filters, journeyReady)
+function UI:RenderLevelingActivities(groups, selection, level, filters, emptyText, title, journeyReady, packedActivities, reach)
+    local activities = packedActivities or self:GetLevelingActivities(groups, selection, level, filters, journeyReady)
     local activity = activities.byName[self.levelingActivity]
     if self.levelingActivity and not activity then
         self.levelingActivity = nil
@@ -6098,11 +6279,14 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
     if #activities.ordered == 0 then self:RenderEmpty(emptyText); return end
 
     local model = self:NewListRenderModel()
+    if packedActivities and packedActivities.context then
+        model.packed, model.guideContext, model.guideFilters = true, packedActivities.context, filters
+    end
     if title then self:AddListRenderEntry(model, { kind = "note", text = title, height = 22 }) end
     if not activity then
         local rows = {}
         for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows + 1] = row end end
-        self:AddWithinReach(model, rows, "activities")
+        if reach or not packedActivities then self:AddWithinReach(model, rows, "activities", reach) end
         local batch = self:RequestGearOpportunities(rows, selection, level, "activities", activities.ordered)
         local order = self:GetViewState().activitySort or "most_loot"
         local ordered = {}
@@ -6139,14 +6323,14 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
                     if order == "best_upgrade" and total.bestName then
                         detail = detail .. " · " .. total.bestName .. " (" .. BigBiSList.ForeverGearRating:EstimateSwapPoints(total.bestGain) .. ")"
                     end
-                elseif batch then detail = detail .. " · Checking gear…"
+                elseif batch then detail = detail .. " · Comparing upgrades…"
                 else detail = detail .. " · Personal comparison unavailable" end
             elseif nextLevel then
                 detail = "Recommended at Level " .. nextLevel
             elseif destination.lastLevel then
                 detail = "Recommended through Level " .. destination.lastLevel
             end
-            self:AddListRenderEntry(model, {kind = "action", title = name, detail = detail, height = 30,
+            self:AddListRenderEntry(model, {kind = "action", title = name, detail = detail, height = 30, activityName = name,
                 activate = function() self:SetLevelingActivity(name) end})
             self:AddListGap(model, 4)
         end
@@ -6190,6 +6374,13 @@ end
 
 function UI:BuildGearRowsInSlices(job, build, isCurrent, onReady)
     local service = BigBiSList.ForeverGearRating
+    if service.QueueWork then
+        job.worker = service:QueueWork(2, build, isCurrent, function(rows)
+            job.rows, job.worker = rows, nil
+            onReady()
+        end)
+        return
+    end
     job.worker = coroutine.create(build)
     local steps, deadline
     local function checkpoint()
@@ -6236,6 +6427,16 @@ function UI:RenderLevelingTab()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local level = BigBiSList:GetSelectedLevelingLevel()
+    local player = BigBiSList:GetTooltipPlayerContext()
+    local liveLevel = player and player.level or BigBiSList:GetDetectedPlayerLevel()
+    local title = "Gear for Level " .. level .. (liveLevel and level ~= liveLevel and (" · You’re Level " .. liveLevel) or "")
+    local rating = BigBiSList.ForeverGearRating
+    local guide = rating and rating.GetPackedGuide and rating:GetGuideContext(selection.class, selection.spec,
+        LEVELING_PHASE_KEY, level, filters.race, filters.faction)
+    if guide and rating:GetPackedGuide(guide) and self.RenderPackedGuide then
+        self:RenderPackedGuide(guide, filters, title)
+        return
+    end
     local summary = self:RequestLevelingGuideSummary(selection.class, selection.spec, level, filters)
     local groups, pending = self:GetLevelingBrowseGroups(selection, level, filters, summary)
     local journeyReady = summary and next(summary.slots) ~= nil
@@ -6257,10 +6458,12 @@ function UI:RenderLevelingTab()
     end
     local emptyText = #notes > 0 and table.concat(notes, "\n\n") or "No gear matches this level and filters."
     if summary and summary.queued and not journeyReady then emptyText = "Finding gear across levels…" end
-    local player = BigBiSList:GetTooltipPlayerContext()
-    local liveLevel = player and player.level or BigBiSList:GetDetectedPlayerLevel()
-    local title = "Gear for Level " .. level .. (liveLevel and level ~= liveLevel and (" · You’re Level " .. liveLevel) or "")
-    if pending then self:RenderEmpty(title .. "\n\nFinding gear for this level…"); return end
+    if pending then
+        if not self.renderModel or self.renderModel.contextKey ~= self:GetNavigationContextKey() then
+            self:RenderEmpty(title .. "\n\nFinding gear for this level…")
+        end
+        return
+    end
     if self:IsLevelingActivityView() then
         self:RenderLevelingActivities(groups, selection, level, filters, emptyText, title, journeyReady)
         return
@@ -8729,6 +8932,7 @@ function UI:Refresh(reason)
         return
     end
 
+    local start = debugprofilestop and debugprofilestop()
     self.refreshInProgress = true
     self:CountPerformance("executedRefreshes", 1, reason or self.lastInvalidationReason or "refresh")
     local ok, refreshError = xpcall(function()
@@ -8768,6 +8972,7 @@ function UI:Refresh(reason)
         return tostring(message)
     end)
     self.refreshInProgress = false
+    if start then self:RecordAddonTime("refresh", debugprofilestop() - start) end
     if not ok then
         self.refreshPending = false
         self.layoutPending = false
@@ -8846,6 +9051,8 @@ function UI:RunPerformanceSmoke()
             local endMemory = collectgarbage and collectgarbage("count") or startMemory
             local elapsed = debugprofilestop and (debugprofilestop() - startTime) or 10500
             write(table.concat({
+                "first rows=" .. (stats.firstRowsMs and string.format("%.1f ms", stats.firstRowsMs) or "already open"),
+                "worst addon frame=" .. string.format("%.1f ms", stats.worstFrame or 0),
                 "idle refreshes=" .. tostring(stats.executedRefreshes - baseline.refreshes),
                 "layouts=" .. tostring(stats.layoutPasses - baseline.layouts),
                 "data builds=" .. tostring((stats.ownershipBuilds - baseline.ownership) + (stats.accessBuilds - baseline.access) + (stats.availabilityBuilds - baseline.availability) + (stats.queryBuilds - baseline.queries)),
@@ -8856,6 +9063,10 @@ function UI:RunPerformanceSmoke()
                 "memory delta=" .. string.format("%.1f KB", endMemory - startMemory),
                 "elapsed=" .. string.format("%.0f ms", elapsed),
             }, ", "))
+            local why = {}
+            for reason, count in pairs(stats.reasons) do why[#why + 1] = reason .. " (" .. count .. ")" end
+            table.sort(why)
+            if #why > 0 then write("Refresh reasons · " .. table.concat(why, ", ")) end
         end)
     end)
 end
@@ -9056,6 +9267,12 @@ end
 
 function UI:SetFilterDrawerOpen(open)
     self.filterDrawerOpen = open and true or false
+    if self.filterDrawerOpen and not self.filterDrawer and self.contentRegion then
+        self:CreateFilterDrawer(self.contentRegion)
+    end
+    if self.filterDrawerOpen and BigBiSListData.guide_index and self:GetViewKey() == "gearGuide" then
+        self:GetFilterAvailabilitySnapshot()
+    end
     if self.filterToggleButton then
         self.filterToggleButton:SetSelected(self:GetActiveFilterCount() > 0)
     end
@@ -9494,7 +9711,7 @@ function UI:CreateBody(frame)
     contentRegion:SetPoint("RIGHT", details, "LEFT", -8, 0)
 
     self:CreateListToolbar(contentRegion)
-    self:CreateFilterDrawer(contentRegion)
+    if not BigBiSListData.guide_index then self:CreateFilterDrawer(contentRegion) end
 
     local contentPanel = widgets:CreatePanel(nil, body, { 0.035, 0.035, 0.042, 0.94 }, { 0.15, 0.15, 0.17, 1 })
     contentPanel:SetParent(contentRegion)
@@ -9609,7 +9826,7 @@ function UI:ApplyBodyLayout()
         self.contentRegion:SetPoint("RIGHT", geometry.docked and self.details or self.body, geometry.docked and "LEFT" or "RIGHT", geometry.docked and -8 or 0, 0)
     end
     self.listToolbar:SetShown(supportsFilters)
-    self.filterDrawer:SetShown(supportsFilters and self.filterDrawerOpen == true)
+    if self.filterDrawer then self.filterDrawer:SetShown(supportsFilters and self.filterDrawerOpen == true) end
     self:RefreshFilterDrawer()
     local activeHeight = supportsFilters and self:RefreshFixedActiveFilterBar() or 0
     if self.fixedActiveFilterBar then
@@ -9746,6 +9963,8 @@ function UI:CreateMainFrame()
 end
 
 function UI:Open()
+    local start = debugprofilestop and debugprofilestop()
+    if start and not self.hasRenderedContent then self.firstRowsStarted = start end
     if not self.frame then
         self:CreateMainFrame()
     end
@@ -9769,6 +9988,7 @@ function UI:Open()
             self:UpdateVirtualList(true)
         end
     end
+    if start then self:RecordAddonTime("open", debugprofilestop() - start) end
 end
 
 function UI:Close()
@@ -9803,6 +10023,50 @@ function BigBiSList:RefreshUI(domains, reason)
     end
 end
 
+local function ownershipKey(rating, owned)
+    if owned.uiOwnershipKey then return owned.uiOwnershipKey end
+    local tokens = {rating:GetGearSnapshotKey(owned), tostring(owned.bankScanned), tostring(owned.inventoryIncomplete)}
+    local items = {}
+    for id, value in pairs(owned) do
+        if type(id) == "number" then items[#items + 1] = id .. "/" .. tostring(value) end
+    end
+    table.sort(items)
+    tokens[#tokens + 1] = table.concat(items, "/")
+    owned.uiOwnershipKey = table.concat(tokens, "\031")
+    return owned.uiOwnershipKey
+end
+
+function UI:QueueOwnershipCheck(reason)
+    local rating = BigBiSList.ForeverGearRating
+    if not rating or not (C_Timer and C_Timer.After) then
+        BigBiSList:RefreshUI("ownership", reason)
+        return
+    end
+    self.ownershipCheckRevision = (self.ownershipCheckRevision or 0) + 1
+    self.ownershipCheckReason = reason
+    if self.ownershipCheck then return end
+    local started
+    self.ownershipCheck = rating:QueueWork(1, function()
+        started = self.ownershipCheckRevision
+        if self.pendingPersonalBankScan and self.personalBankOpen then
+            self.pendingPersonalBankScan = nil
+            self:ScanBankItems()
+        end
+        return self:BuildOwnedItems()
+    end, function() return true end, function(owned)
+        self.ownershipCheck = nil
+        if started ~= self.ownershipCheckRevision then self:QueueOwnershipCheck(self.ownershipCheckReason); return end
+        local previous = self.currentOwned
+        if previous and ownershipKey(rating, previous) == ownershipKey(rating, owned) then return end
+        if BigBiSList.ForeverScoring then BigBiSList.ForeverScoring:Invalidate() end
+        self:Invalidate("ownership", self.ownershipCheckReason)
+        self.currentOwned = owned
+        self.tooltipEquipped = nil
+        if self.frame and self.frame:IsShown() then self:ScheduleRefresh(nil, self.ownershipCheckReason) end
+        if BigBiSList.ScheduleItemTooltipRefresh then BigBiSList:ScheduleItemTooltipRefresh() end
+    end)
+end
+
 function BigBiSList:InitUIEvents()
     if self.uiEventFrame then
         return
@@ -9829,11 +10093,14 @@ function BigBiSList:InitUIEvents()
     end
     frame:SetScript("OnEvent", function(_, event, interaction)
         if event == "QUEST_LOG_UPDATE" then
+            if self.UI.QuestStateChanged and not self.UI:QuestStateChanged() then return end
+            self.UI.questRevision = (self.UI.questRevision or 0) + 1
             self.UI.currentAccessEvaluationCache = nil
+            if self.UI.RefreshPackedRows and self.UI:RefreshPackedRows(nil, true) then return end
             self:RefreshUI("details", event)
             return
         end
-        if self.ForeverScoring and (event == "PLAYER_EQUIPMENT_CHANGED" or event == "SPELLS_CHANGED") then
+        if self.ForeverScoring and event == "SPELLS_CHANGED" then
             self.ForeverScoring:Invalidate()
             self:RefreshUI("query", event)
         end
@@ -9850,7 +10117,7 @@ function BigBiSList:InitUIEvents()
             end
             if self.UI.personalBankOpen and (event == "BANKFRAME_OPENED" or event == "PLAYERBANKSLOTS_CHANGED"
                 or event == "BAG_UPDATE_DELAYED" or event == "BANK_TABS_CHANGED") then
-                if self.AcquisitionHighlights and self.AcquisitionHighlights.eventFrame then
+                if BigBiSListData.guide_index or self.AcquisitionHighlights and self.AcquisitionHighlights.eventFrame then
                     self.UI.pendingPersonalBankScan = true
                 else
                     self.UI:ScanBankItems()
@@ -9864,6 +10131,9 @@ function BigBiSList:InitUIEvents()
             self:RefreshUI("all", event)
         elseif event == "UPDATE_FACTION" or event == "SKILL_LINES_CHANGED" or event == "SPELLS_CHANGED" then
             self:RefreshUI("access", event)
+        elseif self.isForever and BigBiSListData.guide_index then
+            self.UI:QueueOwnershipCheck(event)
+            return
         else
             self:RefreshUI("ownership", event)
         end

@@ -219,11 +219,13 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
                         roll_armor=base.get("armor"), roll_complete=base.get("roll_complete"))
     variant_links = {key: item["variant_link"] for key, item in items.items() if item.get("variant_link")}
     packed = {}
+    by_slot = {}
     for key, item in items.items():
         row = [item.get(field) for field in ITEM_FIELDS]
         while row[-1] is None:
             row.pop()
         packed[key] = row
+        by_slot.setdefault(item["slot"], []).append(key)
     return {
         "version": VERSION,
         "roll_build": int(catalog["client_build"].split(".")[-1]),
@@ -238,6 +240,7 @@ def compile_comparison_data(item_stats: list[dict]) -> dict:
         "item_fields": list(ITEM_FIELDS),
         **({"variant_links": variant_links} if variant_links else {}),
         "items": packed,
+        "slot_keys": {slot: sorted(keys) for slot, keys in by_slot.items()},
     }
 
 

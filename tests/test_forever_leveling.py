@@ -1045,15 +1045,27 @@ assert(addon:GetContentMode()=="leveling" and addon.minimapButton)
 addon:SetSelection("Warrior","Arms","LEVELING","Gear Guide")
 addon.UI:Open()
 H.settle()
-local rows=addon:GetLevelingRows("Warrior","Arms",14,{})
-assert(#rows==1 and #rows[1].items==1 and rows[1].items[1].item_id==72,
+assert(not BigBiSListData.guide_index, "The production index must not bind to fixture data")
+local function fixtureRings()
+    local result = {}
+    for _, group in ipairs(addon:GetLevelingRows("Warrior","Arms",14,{})) do
+        if group.slot == "Ring" then
+            for _, row in ipairs(group.items) do
+                if row.item_id >= 72 and row.item_id <= 75 then result[#result + 1] = row end
+            end
+        end
+    end
+    return result
+end
+local rows = fixtureRings()
+assert(#rows==1 and rows[1].item_id==72,
     "generated eligibility keys and the stat floor must resolve for the Human player")
 assert(addon:GetItemBestLevelingUseForSpec(72,"Warrior","Arms",14))
 assert(#addon:GetLevelingTooltipMatches(72,"Warrior","Arms",14,true)>0)
 side="Horde"
-rows=addon:GetLevelingRows("Warrior","Arms",14,{})
-assert(#rows==1 and #rows[1].items==3)
-for _,row in ipairs(rows[1].items) do assert(row.item_id>=73) end
+rows=fixtureRings()
+assert(#rows==3)
+for _,row in ipairs(rows) do assert(row.item_id>=73) end
 assert(#addon:GetLevelingTooltipMatches(72,"Warrior","Arms",14,true)==0)
 assert(#H.errors==0,table.concat(H.errors,"\n"))
 '''

@@ -327,7 +327,7 @@ local function questFlag(method, questId)
     if ok and BigBiSList.IsReadableValue(value) and type(value) == "boolean" then return value end
 end
 
-function UI:GetAcquisitionQuestState(questId)
+local function readQuestState(questId)
     local log = C_QuestLog or {}
     local completed = questFlag(log.IsQuestFlaggedCompleted, questId)
     if completed then return "Completed", nil end
@@ -335,6 +335,44 @@ function UI:GetAcquisitionQuestState(questId)
     if active then return "In progress", questFlag(log.IsComplete, questId) end
     if completed == false and active == false then return "Not started", nil end
     return "Unknown", nil
+end
+
+function UI:GetAcquisitionQuestState(questId)
+    local state, turnIn = readQuestState(questId)
+    self.watchedQuests = self.watchedQuests or {}
+    if questId then self.watchedQuests[questId] = state .. "/" .. tostring(turnIn) end
+    return state, turnIn
+end
+
+function UI:QuestStateChanged()
+    local log = C_QuestLog or {}
+    local before = self.questLogSignature
+    local entries = {}
+    if log.GetInfo and log.GetNumQuestLogEntries then
+        local ok, count = pcall(log.GetNumQuestLogEntries)
+        if ok and BigBiSList.IsReadableValue(count) and type(count) == "number" then
+            for index = 1, count do
+                local readable, entry = pcall(log.GetInfo, index)
+                if readable and BigBiSList.IsReadableValue(entry) and type(entry) == "table"
+                    and BigBiSList.IsReadableValue(entry.questID) and entry.questID and entry.questID > 0 then
+                    entries[#entries + 1] = entry.questID
+                end
+            end
+            self.activeQuestIds = entries
+        end
+    end
+    table.sort(entries)
+    self.questLogSignature = table.concat(entries, "/")
+    local changed = before ~= nil and before ~= self.questLogSignature
+    for questId, previous in pairs(self.watchedQuests or {}) do
+        local state, turnIn = readQuestState(questId)
+        local current = state .. "/" .. tostring(turnIn)
+        if current ~= previous then
+            self.watchedQuests[questId] = current
+            changed = true
+        end
+    end
+    return changed
 end
 
 function UI:GetAcquisitionQuestProgress(source)

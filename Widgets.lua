@@ -738,7 +738,10 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
         UIDropDownMenu_SetText(frame, getText and getText() or "Select")
     end
 
+    -- The template calls the initializer at registration, before any menu is open.
+    local installing = true
     UIDropDownMenu_Initialize(frame, function(_, level)
+        if installing then return end
         local items = getItems and getItems() or {}
         for _, item in ipairs(items) do
             local info = UIDropDownMenu_CreateInfo()
@@ -758,6 +761,7 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
             UIDropDownMenu_AddButton(info, level)
         end
     end)
+    installing = false
 
     prepareDropdownLists()
 
@@ -796,6 +800,14 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
 
     frame.nativeButton = nativeButton
     frame.clickCover = clickCover
+    function frame:RefreshOpenMenu()
+        local list = _G and _G.DropDownList1
+        if _G and _G.UIDROPDOWNMENU_OPEN_MENU == self and list and list:IsShown() and ToggleDropDownMenu then
+            ToggleDropDownMenu(1, nil, self)
+            ToggleDropDownMenu(1, nil, self)
+            prepareDropdownLists(self)
+        end
+    end
 
     frame.Refresh = refresh
     refresh()

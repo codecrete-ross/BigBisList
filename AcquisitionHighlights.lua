@@ -791,6 +791,10 @@ local function display(mark, animate, immediate)
 end
 
 local function checkpoint()
+    if rating.work and coroutine.running() == rating.work.thread then
+        rating.work.checkpoint()
+        return
+    end
     highlights.steps = highlights.steps + 1
     if highlights.generation ~= highlights.workerGeneration
         or (debugprofilestop and debugprofilestop() >= highlights.deadline)
@@ -1065,6 +1069,20 @@ end
 function highlights:ScheduleRefresh()
     if not self.eventFrame then return end
     self.requested = true
+    if BigBiSListData.guide_index and rating.QueueWork then
+        local generation = self.generation
+        if self.packedWork and self.packedGeneration == generation then return end
+        self.packedGeneration = generation
+        self.packedWork = rating:QueueWork(3, function()
+            self.requested = nil
+            self.worker, self.workerGeneration = coroutine.running(), generation
+            refresh()
+        end, function() return self.generation == generation end, function()
+            self.packedWork, self.worker = nil, nil
+            if self.requested then self:ScheduleRefresh() end
+        end)
+        return
+    end
     if self.queued or self:GetCheckpoint() then return end
     self.queued = true
     C_Timer.After(0, step)
@@ -1082,6 +1100,7 @@ function highlights:InvalidateStorage()
 end
 
 function highlights:ShouldDeferStorageTooltip(owner, getter)
+    if BigBiSListData.guide_index then return false end
     if not self.eventFrame or (ui.currentOwned and not self.worker and not self.queued) then return false end
     return getter == "GetBagItem" or (owner and (baganatorItems[owner]
         or type(owner.GetBagID) == "function" or type(owner.GetBankTabID) == "function"))

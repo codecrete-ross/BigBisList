@@ -310,10 +310,11 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
     local args = info and readable(info.getterArgs)
     local wornSlot = getter == "GetInventoryItem" and type(args) == "table"
         and readable(args[1]) == "player" and readable(args[2]) or nil
-    local snapshot = ui:GetOwnedSnapshot()
+    local snapshot = ui.GetTooltipOwnedSnapshot and ui:GetTooltipOwnedSnapshot() or ui:GetOwnedSnapshot()
     local offerAssessments = offer and offer.assessments or {}
     local inventoryPending
     for _, spec in ipairs(player.specs) do
+        if snapshot.equippedOnly and #block.rows > 0 then break end
         local context = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot)
         if context then
             inventoryPending = context.pending
@@ -324,7 +325,7 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                     break
                 end
             end
-            if not assessment and getter == "GetBagItem" and type(args) == "table" then
+            if not assessment and not snapshot.equippedOnly and getter == "GetBagItem" and type(args) == "table" then
                 local bag, index = readable(args[1]), readable(args[2])
                 if type(bag) == "number" and type(index) == "number" then
                     local stored = rating:GetStorageComparison(context, candidate, bag .. ":" .. index)
@@ -337,7 +338,9 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                 local result = rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
                     (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter],
                     { live = true, lookahead = true, quantity = offer and offer.quantity })
-                if worn and not (offer and offer.owned) then result.rival = rating:GetOwnedRival(context, candidate, result) end
+                if worn and not snapshot.equippedOnly and not (offer and offer.owned) then
+                    result.rival = rating:GetOwnedRival(context, candidate, result)
+                end
                 assessment = { result = result, ownedBaseline = not worn }
             end
             if assessment then
@@ -555,9 +558,15 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
 
     local showExpanded = self.isForever or (settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown())
     local groupedMatches = {}
-    local rawMatches = levelingMode
-        and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext, itemLink)
-        or self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
+    local first = statBlock and statBlock.rows[1]
+    local rawMatches
+    if levelingMode and first and first.summary and first.summary.packed then
+        rawMatches = {}
+    else
+        rawMatches = levelingMode
+            and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext, itemLink)
+            or self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
+    end
     if #rawMatches == 0 and not statBlock and not mark then return end
     if #rawMatches > 0 then
         groupedMatches = levelingMode
@@ -643,6 +652,7 @@ end
 
 function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if not shouldAnnotateTooltip(tooltip) or tooltip.__bigBisListState then return end
+    local start = debugprofilestop and debugprofilestop()
     local database = self:EnsureDatabase() or (not self.isForever and BigBiSListDB)
     local settings = database and database.profile and database.profile.tooltips
     if not settings or settings.enabled == false then return end
@@ -684,6 +694,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     end
     local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData)
     if prepared then showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared) end
+    if start and self.UI and self.UI.RecordAddonTime then self.UI:RecordAddonTime("tooltip", debugprofilestop() - start) end
 end
 
 local function hookTooltip(tooltip)
