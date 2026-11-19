@@ -860,6 +860,79 @@ rewards:Hide(); H.settle()
 assert(not mark(first, bonus))
 ''')
 
+    def test_incompatible_quest_rewards_leave_only_the_highest_sell_badge(self):
+        self.run_lua(r'''
+local data = BigBiSListData.stat_rank
+data.equipment.Paladin = publishedRanks.equipment.Paladin
+data.profiles["Paladin/Retribution"] = publishedRanks.profiles["Paladin/Retribution"]
+data.item_fields[#data.item_fields + 1] = "weapon_subtype"
+addon.DetectPlayerSpec = function()
+    return "Retribution", {{displayName = "Retribution", icon = 10101}, {displayName = "Holy", icon = 20202}}
+end
+addon:GetAccountDB().profile.gearHighlights.animate = false
+
+local dagger, staff, sword, futureSword, fixedStaff = 901010, 901011, 901012, 901013, 901014
+local function twoHanded(id, weapon, requiredLevel)
+    items[tostring(id)] = {id, "Fixture " .. weapon, "Two Hand", requiredLevel, {strength = 100, dps = 40}, weapon}
+end
+twoHanded(staff, "Staff", 52)
+twoHanded(sword, "Sword", 1)
+twoHanded(futureSword, "Sword", 50)
+twoHanded(fixedStaff, "Staff", 1)
+local originalInstant, originalStats = C_Item.GetItemInfoInstant, C_Item.GetItemStats
+C_Item.GetItemInfoInstant = function(value)
+    if idOf(value) == dagger then return dagger, "Weapon", "Dagger", "INVTYPE_WEAPON", 0, 2, 15 end
+    return originalInstant(value)
+end
+C_Item.GetItemStats = function(value)
+    if idOf(value) == dagger then return {ITEM_MOD_STRENGTH_SHORT = 100} end
+    return originalStats(value)
+end
+
+local frame = CreateFrame("Frame", nil, UIParent)
+local first, second, fixed = row(frame, 1), row(frame, 2), row(frame, 1)
+first.type, second.type, fixed.type = "choice", "choice", "reward"
+for _, reward in ipairs({first, second, fixed}) do reward.objectType, reward.questID = "item", 42 end
+frame.RewardButtons = {first, second, fixed}
+QuestInfoFrame = {rewardsFrame = frame}
+local rewards = {choice = {dagger, staff}, reward = {fixedStaff}}
+GetQuestItemLink = function(kind, index) return link(rewards[kind][index]) end
+GetQuestItemInfo = function(kind, index)
+    local count = kind == "choice" and index == 1 and 4 or 1
+    -- The trainable sword also reports unusable before the weapon skill is learned.
+    return "Item", 0, count, 2, false, rewards[kind][index]
+end
+GetQuestLogItemLink = GetQuestItemLink
+GetQuestLogChoiceInfo = function(index) return GetQuestItemInfo("choice", index) end
+GetQuestLogRewardInfo = function(index) return GetQuestItemInfo("reward", index) end
+QuestInfo_Display = function() end
+highlights:Initialize()
+
+for _, questLog in ipairs({false, true}) do
+    QuestInfoFrame.questLog = questLog
+    QuestInfo_Display(); H.settle()
+    local sale = assert(mark(first, dagger))
+    assert(sale.sellValue == 60 and not sale.spec, "Expected the highest total vendor value badge on the dagger")
+    assert(not mark(second, staff) and not mark(fixed, fixedStaff))
+    local overlay = first:GetChildren()
+    assert(overlay.corner.symbol:IsVisible() and overlay.corner.symbol:GetTexture() == "Interface\\MoneyFrame\\UI-GoldIcon")
+    assert(not overlay.corner.arrow:IsShown() and not overlay.bis:IsShown())
+end
+
+local corner = first:GetChildren().corner
+rewards.choice[1] = sword
+QuestInfo_Display(); H.settle()
+local upgrade = assert(mark(first, sword))
+assert(upgrade.spec.name == "Retribution" and upgrade.bestChoice)
+assert(corner.symbol:IsVisible() and corner.symbol:GetTexture() == 10101)
+assert(not mark(second, staff) and not mark(fixed, fixedStaff))
+
+rewards.choice[1] = futureSword
+QuestInfo_Display(); H.settle()
+assert(mark(first, futureSword).result.forecast.level == 50)
+assert(corner.level:IsVisible() and corner.level:GetText() == "Lv 50" and not corner.symbol:IsShown())
+''')
+
     def test_quest_choices_use_guaranteed_gear_for_each_specialization(self):
         self.run_lua(r'''
 local rewards = CreateFrame("Frame", nil, UIParent)

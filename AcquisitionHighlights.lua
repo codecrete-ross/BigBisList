@@ -441,7 +441,8 @@ local function assess(batch, entry, evaluation)
                 assessment.futureBiS = true
             end
         end
-        local noteworthy = result.conditional or result.preview or result.bis
+        -- A lookahead can finish without finding a legal equip level.
+        local noteworthy = result.conditional or result.forecast ~= nil or result.bis
             or assessment.futureBiS or result.placement.status == "effect" or result.placement.status == "utility"
         return ready and (qualifies or noteworthy) and assessment or nil, ready, assessment
     end
