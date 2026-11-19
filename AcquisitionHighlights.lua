@@ -422,7 +422,7 @@ local function assess(batch, entry, evaluation)
     if context.owned.variantUnknownItems and context.owned.variantUnknownItems[id] then return nil, false end
     local quest = entry.kind == "quest"
     local worn = not quest and spec.role == "active" and entry.compareWorn
-    local key = table.concat({ spec.name, context.scenario or "", tostring(worn), entry.link }, "\031")
+    local key = table.concat({ spec.name, tostring(worn), entry.link }, "\031")
     local cached = not quest and batch.swaps[key]
     if cached then return cached.mark, cached.ready, cached.assessment end
 
@@ -431,7 +431,7 @@ local function assess(batch, entry, evaluation)
     local ready = not unresolved(result) and not unresolved(result.placement)
     local gain = rating:RoundedGain(result.delta) or 0
     local qualifies = not result.conditional and gain > 0
-    local assessment = { spec = spec, scenario = context.scenario, result = result, gain = gain,
+    local assessment = { spec = spec, result = result, gain = gain,
         ownedBaseline = not worn, guaranteed = evaluation.guaranteed }
     if quest then
         local slot = result.slot or result.placement.item and result.placement.item.slot
@@ -490,17 +490,16 @@ local function rankStorage(batch, entry, checkpoint)
     for _, evaluation in ipairs(batch.contexts) do
         checkpoint()
         local context, spec = evaluation.context, evaluation.spec
-        local comparison, resolved = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid, evaluation.primary)
+        local comparison, resolved = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid)
         ready = ready and resolved
         if comparison then
             local result = comparison.result
-            local assessment = { spec = spec, scenario = context.scenario, result = result, storage = comparison,
-                alternate = comparison.alternate }
+            local assessment = { spec = spec, result = result, storage = comparison }
             assessments[#assessments + 1] = assessment
             if resolved and comparison.qualifies then primary = primary or assessment end
-            signature[#signature + 1] = table.concat({ spec.name, context.scenario, tostring(result.delta),
+            signature[#signature + 1] = table.concat({ spec.name, tostring(result.delta),
                 tostring(result.conditional), tostring(result.placement.rank), tostring(result.placement.total),
-                tostring(comparison.qualifies), tostring(comparison.alternate), tostring(comparison.sidegrade),
+                tostring(comparison.qualifies), tostring(comparison.sidegrade),
                 tostring(comparison.unavailable) }, "\031")
             for _, item in ipairs(comparison.stronger or {}) do
                 signature[#signature + 1] = item.name .. "\031" .. tostring(item.state)
@@ -582,11 +581,6 @@ local function newStorageBadge(row)
     badge.bis:SetJustifyV("MIDDLE")
     badge.bis:SetText("BiS")
     badge.bis:SetTextColor(unpack(widgets.Theme.bisGold))
-    badge.alternate = badge:CreateTexture(nil, "OVERLAY")
-    badge.alternate:SetSize(3, 3)
-    badge.alternate:SetPoint("BOTTOMRIGHT", badge, "BOTTOMRIGHT", -2, 2)
-    badge.alternate:SetColorTexture(0.94, 0.94, 0.98, 1)
-    badge.alternate:Hide()
     badge.border = {}
     for _, side in ipairs({ "TOP", "BOTTOM", "LEFT", "RIGHT" }) do
         local edge = badge:CreateTexture(nil, "OVERLAY")
@@ -616,9 +610,8 @@ local function displayStorage(mark, r, g, b, immediate)
     end
     local bis = result.bis == true
     local icon = mark.spec and mark.spec.icon
-    local alternate = mark.alternate == true
     if bis then r, g, b = unpack(widgets.Theme.bisGold) end
-    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), tostring(alternate), r, g, b }, "\031")
+    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), r, g, b }, "\031")
     if badge.visualKey == visualKey then
         if not badge.managed then badge:Show() end
         recordMark(mark, visualKey, immediate)
@@ -634,7 +627,6 @@ local function displayStorage(mark, r, g, b, immediate)
     end
     badge.icon:SetShown(not bis)
     badge.bis:SetShown(bis)
-    badge.alternate:SetShown(alternate)
     if bis then
         badge.background:SetColorTexture(r * 0.15, g * 0.15, b * 0.15, 0.95)
     else
@@ -779,9 +771,9 @@ local function newBatch(player, owned)
     if player and player.spec then
         for _, spec in ipairs(player.specs) do
             if spec.role == "active" or spec.role == "dual" then
-                local contexts = rating:GetScenarioContexts(player.class, spec.name, player.phase, player.level, owned)
-                for index, context in ipairs(contexts) do
-                    batch.contexts[#batch.contexts + 1] = { spec = spec, context = context, primary = index > 1 and contexts[1] or nil }
+                local context = rating:GetContext(player.class, spec.name, player.phase, player.level, owned)
+                if context then
+                    batch.contexts[#batch.contexts + 1] = { spec = spec, context = context }
                     for id in pairs(context.pending) do batch.pending[id] = true end
                 end
             end
@@ -794,20 +786,13 @@ local function selectStorageContext(owned, player)
     local key = rating:GetGearSnapshotKey(owned)
     local revision = addon.ForeverScoring and addon.ForeverScoring.revision
     local phaseIndex = addon:GetAvailabilityPhaseIndex(player.phase)
-    local scenarios = {}
-    for _, spec in ipairs(player.specs) do
-        if spec.role == "active" or spec.role == "dual" then
-            scenarios[#scenarios + 1] = rating:GetScenario(player.class, spec.name, player.phase, player.level)
-        end
-    end
-    local scenarioKey = table.concat(scenarios, "\031")
     local data = BigBiSListData.stat_rank
     checkpoint()
     local current = storageContext
     if not current or current.key ~= key or current.player ~= player or current.revision ~= revision
-        or current.phaseIndex ~= phaseIndex or current.scenarios ~= scenarioKey or current.data ~= data then
+        or current.phaseIndex ~= phaseIndex or current.data ~= data then
         storageCache = {}
-        current = { key = key, player = player, revision = revision, phaseIndex = phaseIndex, scenarios = scenarioKey,
+        current = { key = key, player = player, revision = revision, phaseIndex = phaseIndex,
             data = data, pending = {} }
         storageContext = current
         for row, entry in pairs(offers) do
@@ -955,7 +940,7 @@ local function refresh()
                     for _, assessment in ipairs(entry.assessments) do
                         if assessment.show then primary = primary or assessment end
                         bestChoice = bestChoice or assessment.bestChoice
-                        signature[#signature + 1] = table.concat({assessment.spec.name, assessment.scenario or "",
+                        signature[#signature + 1] = table.concat({assessment.spec.name,
                             assessment.gain, tostring(assessment.result.conditional), tostring(assessment.bestChoice),
                             tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
                             tostring(assessment.result.placement.status)}, "\031")

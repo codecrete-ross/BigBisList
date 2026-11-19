@@ -395,6 +395,8 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     traits, profiles, bindings = {}, {}, {}
     enchants = {int(key): value["stats"] for key, value in snapshot["enchants"].items()}
     for name, settings in sorted(model["profiles"].items()):
+        if "dungeon" in settings:
+            raise ValueError(f"Dungeon scoring presets have been retired for {name}")
         profile = all_profiles[name]
         class_name, spec = profile["class"], profile["spec"]
         shared = model.get("class_mechanics", {}).get(class_name, {})
@@ -427,7 +429,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
         selected_traits = {identifier: snapshot["traits"][str(identifier)] for identifier in entry_ids}
         for identifier, trait in selected_traits.items():
             traits[identifier] = {key: trait[key] for key in ("node_id", "definition_id", "spell_id", "tree_id", "max_rank", "name")}
-        scenarios, dungeon = {}, {}
+        scenarios = {}
         crit_domain = {"caster": "spell", "healer": "spell", "melee": "physical", "ranged": "physical"}.get(profile["role"])
         personas = [row for row in rules["races"] if class_name in row["classes"]]
         allowed_personas = {row["id"]: [row["name"], row["faction"]] for row in personas}
@@ -496,24 +498,9 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 scenario["crit_domain"] = crit_domain
             if sets:
                 scenario["set_effect_spells"] = {row["spell_id"]: True for row in sets}
-            if preset := settings.get("dungeon", {}).get(mode):
-                low, high = preset.get("min_level"), preset.get("max_level")
-                floor, ceiling = (1, 59) if mode == "leveling" else (60, 60)
-                dungeon_settings = {key: value for key, value in preset.items()
-                                    if key not in {"min_level", "max_level", "version", "basis"}}
-                scope = f"{name}/dungeon/{mode}"
-                if (type(low) is not int or type(high) is not int or not floor <= low <= high <= ceiling
-                        or not preset.get("version") or not preset.get("basis") or not preset.get("evidence")):
-                    raise ValueError(f"Missing reviewed level range or evidence for {scope}")
-                validate_scenario(dungeon_settings, scope)
-                dungeon[mode] = {"min_level": low, "max_level": high, "version": preset["version"], "basis": preset["basis"],
-                    "weights": [[start, end, {**band, **dungeon_settings.get("weights", {})}]
-                                for start, end, band in weights if start <= high and end >= low],
-                    **scenario_effect_inputs(dungeon_settings, effect_items, scope)}
-                bindings[scope] = digest({"base": bindings[f"{name}/{mode}"], "preset": dungeon[mode]})
         profiles[name] = {"entries": entry_ids, "operations": operations, "scenarios": scenarios,
                           "unresolved": settings["unresolved"], "uncertainty": uncertainty, "ability": ability,
-                          "weapon_speed_proc": speed_proc, **({"dungeon": dungeon} if dungeon else {})}
+                          "weapon_speed_proc": speed_proc}
     return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]), "profiles": profiles,
             "traits": traits, "items": items, "enchants": enchants, "triggers": snapshot["ability_triggers"],
             **({"item_sets": item_sets} if item_sets else {}), **({"set_names": set_names} if set_names else {})}, bindings

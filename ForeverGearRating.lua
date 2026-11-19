@@ -480,43 +480,7 @@ local function resolveInventory(self, catalog, owned)
     return inventory
 end
 
-local SCENARIO_LABELS = { outdoor = "Outdoor", dungeon = "Dungeon", pre_raid = "Pre-Raid" }
-
-function rating:GetScenarios(className, spec, phase, level)
-    local mode = phase == "LEVELING" and "leveling" or "pre_raid"
-    local default = mode == "leveling" and "outdoor" or "pre_raid"
-    local scorer = addon.ForeverScoring
-    if scorer and scorer.GetPreset and scorer:GetPreset(className, spec, mode, level, "dungeon") then
-        return {default, "dungeon"}
-    end
-    return {default}
-end
-
-function rating:GetScenario(className, spec, phase, level, requested)
-    local scenarios = self:GetScenarios(className, spec, phase, level)
-    requested = requested or (addon.GetGearScenario and addon:GetGearScenario(className, spec, phase))
-    return contains(scenarios, requested) and requested or scenarios[1]
-end
-
-function rating:GetScenarioContexts(className, spec, phase, level, owned)
-    local result = {}
-    local selected = self:GetScenario(className, spec, phase, level)
-    local current = self:GetContext(className, spec, phase, level, owned, selected)
-    if current then result[1] = current end
-    for _, scenario in ipairs(self:GetScenarios(className, spec, phase, level)) do
-        if scenario ~= selected then
-            local context = self:GetContext(className, spec, phase, level, owned, scenario)
-            if context then result[#result + 1] = context end
-        end
-    end
-    return result
-end
-
-function rating:ScenarioLabel(key)
-    return SCENARIO_LABELS[key]
-end
-
-local function scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction, scenarioKey)
+local function scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction)
     local leveling = phase == "LEVELING"
     local policy = leveling and profile.leveling or profile.pre_raid
     local weights = policy.weights
@@ -527,12 +491,7 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
     end
     local scorer = addon.ForeverScoring
     local scenario = scorer and scorer.GetPreset
-        and scorer:GetPreset(className, spec, leveling and "leveling" or "pre_raid", level, scenarioKey)
-    if scenarioKey == "dungeon" and scenario then
-        for _, band in ipairs(scenario.weights) do
-            if level >= band[1] and level <= band[2] then weights = band[3]; break end
-        end
-    end
+        and scorer:GetPreset(className, spec, leveling and "leveling" or "pre_raid")
     scenario = copy(scenario)
     scenario.crit_domain = (profile.role == "caster" or profile.role == "healer") and "spell"
         or (profile.role == "ranged" or profile.role == "melee") and "physical"
@@ -545,18 +504,17 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
         leveling = leveling, policy = policy, weights = weights, equipment = data.equipment[className], role = profile.role,
         commonSlots = data.common_slots, feralPolicy = profile.leveling, feralDps = data.feral_uses_weapon_dps,
         phaseIndex = phaseIndex, inScope = {}, pools = {},
-        scenario = scenarioKey, referenceScenario = scenario, raceId = raceId,
+        referenceScenario = scenario, raceId = raceId,
     }
 end
 
-local function contextAtLevel(context, phase, level, scenario)
+local function contextAtLevel(context, phase, level)
     local data = context.catalog.data
     local profile = data.profiles[context.class .. "/" .. context.spec]
     local samePhase = phase == context.phase
     local phaseIndex = samePhase and context.phaseIndex or addon:GetAvailabilityPhaseIndex(phase)
     local projected = scoringContext(data, profile, context.class, context.spec, phase, level, phaseIndex,
-        context.race, context.faction, rating:GetScenario(context.class, context.spec, phase, level,
-            scenario or (samePhase and context.scenario or nil)))
+        context.race, context.faction)
     projected.catalog, projected.ownedFacts = context.catalog, context.ownedFacts
     projected.owned, projected.equipmentFacts, projected.guide = context.owned, context.equipmentFacts, context.guide
     projected.ownedCopies, projected.unresolvedCopies, projected.ownedLoadouts = context.ownedCopies, context.unresolvedCopies, {}
@@ -565,7 +523,7 @@ local function contextAtLevel(context, phase, level, scenario)
     return projected
 end
 
-function rating:GetContext(className, spec, phase, level, owned, requested)
+function rating:GetContext(className, spec, phase, level, owned)
     local data = model()
     if not data or not owned then return nil end
     local profile = data.profiles[className .. "/" .. spec]
@@ -574,8 +532,7 @@ function rating:GetContext(className, spec, phase, level, owned, requested)
     local livePhase = addon:GetAvailabilityPhaseIndex(phase)
     local race = addon:GetPlayerRaceName()
     local faction = addon.GetPlayerFactionName and addon:GetPlayerFactionName()
-    local scenario = self:GetScenario(className, spec, phase, level, requested)
-    local key = table.concat({className, spec, phase, level, livePhase, race or "", faction or "", scenario}, "\031")
+    local key = table.concat({className, spec, phase, level, livePhase, race or "", faction or ""}, "\031")
     local matches = self.snapshot == owned and self.contextData == data
     local cached = matches and self.contexts and self.contexts[key]
     if cached then return cached end
@@ -586,7 +543,7 @@ function rating:GetContext(className, spec, phase, level, owned, requested)
         inventory = self.inventory
         if self.contexts[key] then return self.contexts[key] end
     end
-    local context = scoringContext(data, profile, className, spec, phase, level, livePhase, race, faction, scenario)
+    local context = scoringContext(data, profile, className, spec, phase, level, livePhase, race, faction)
     context.owned, context.catalog, context.pending = owned, inventory.catalog, inventory.pending
     context.equipmentFacts, context.ownedFacts = inventory.equipment, inventory.byVariant
     context.storageCopies = inventory.bySource
@@ -595,14 +552,13 @@ function rating:GetContext(className, spec, phase, level, owned, requested)
     return context
 end
 
-function rating:GetGuideContext(className, spec, phase, level, race, faction, requested)
+function rating:GetGuideContext(className, spec, phase, level, race, faction)
     local data = model()
     local profile = data and data.profiles[className .. "/" .. spec]
     if not profile then return nil end
     level = phase == "LEVELING" and level or 60
     local phaseIndex = addon:GetAvailabilityPhaseIndex(phase)
-    local scenario = self:GetScenario(className, spec, phase, level, requested)
-    local key = table.concat({className, spec, phase, level, phaseIndex, race or "", faction or "", scenario}, "\031")
+    local key = table.concat({className, spec, phase, level, phaseIndex, race or "", faction or ""}, "\031")
     if self.guideData == data then
         for _, context in ipairs(self.guideContexts) do
             if context.key == key then return context end
@@ -616,7 +572,7 @@ function rating:GetGuideContext(className, spec, phase, level, race, faction, re
             if context.key == key then return context end
         end
     end
-    local context = scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction, scenario)
+    local context = scoringContext(data, profile, className, spec, phase, level, phaseIndex, race, faction)
     context.key, context.catalog, context.guide = key, catalog, true
     context.ownedFacts = {}
     self.guideContexts[#self.guideContexts + 1] = context
@@ -794,7 +750,7 @@ function rating:WithCharacterBuild(context, live)
     local scorer = addon.ForeverScoring
     if not (scorer and scorer.ReferenceItem and (context.leveling or context.phase == "PR")) then return context end
     local active, missing = scorer:GetContext(context.class, context.spec, context.leveling and "leveling" or "pre_raid",
-        context.level, { live = live, race = context.race, faction = context.faction, scenario = context.scenario })
+        context.level, { live = live, race = context.race, faction = context.faction })
     if not active then return context, missing end
     local recorded = context.ownedBuild
     if recorded and recorded.activeBuild == active then return recorded end
@@ -824,7 +780,7 @@ local function resultFor(context, item, status, slot)
         status = item and (item.utility and "utility" or (next(item.effects or {}) and "effect")) or "unavailable"
     end
     return { item = item, score = points, status = status, spec = context.spec, level = context.level, phase = context.phase,
-        scenario = context.scenario, slot = slot, conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
+        slot = slot, conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
 end
 
 local function scorePercent(score, bestScore)
@@ -1199,7 +1155,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
     local scorer, live, missing = addon.ForeverScoring
     if scorer and (context.leveling or context.phase == "PR") then
         live, missing = scorer:GetContext(context.class, context.spec, context.leveling and "leveling" or "pre_raid",
-            context.level, { live = scope.live, race = context.race, scenario = context.scenario })
+            context.level, { live = scope.live, race = context.race })
     end
     if live and not live.comparisonRoleWeights then
         live.comparisonRoleWeights = copy(live.weights)
@@ -1327,7 +1283,7 @@ end
 
 local function referencePlacement(context, item, slot)
     local reference = rating:GetGuideContext(context.class, context.spec, context.phase, context.level,
-        context.race, context.faction, context.scenario)
+        context.race, context.faction)
     local pool = rating:GetGuidePlacement(reference, slot)
     local known = pool.byVariant[item.key]
     if known then return known, pool.scope end
@@ -1336,7 +1292,7 @@ local function referencePlacement(context, item, slot)
     return rating:ProjectPlacement(item, placement, pool), pool.scope
 end
 
-local function lookaheadPlacement(context, item, requestedScenario)
+local function lookaheadPlacement(context, item)
     local cap = addon.maxLevelingLevel + 1
     if item.level > cap then return { status = "out_of_scope", phase = "PR" } end
     if item.excluded or item.has_random_stats or not permitted(item.classes, context.class)
@@ -1348,11 +1304,9 @@ local function lookaheadPlacement(context, item, requestedScenario)
     for level = math.max(item.level, context.level + 1), cap do
         if checkpoint then checkpoint() end
         local phase = level == cap and "PR" or "LEVELING"
-        local scenario = rating:GetScenario(context.class, context.spec, phase, level,
-            requestedScenario or (phase == context.phase and context.scenario or nil))
         local preview = context.tooltipLookahead
-        if not preview or preview.level ~= level or preview.scenario ~= scenario then
-            preview = contextAtLevel(context, phase, level, scenario)
+        if not preview or preview.level ~= level then
+            preview = contextAtLevel(context, phase, level)
         end
         local slot = firstUsableSlot(preview, group, item)
         if slot then
@@ -1369,7 +1323,7 @@ local function placementAtLevel(scope, item, level)
     local context = contextAtLevel(scope.context, "LEVELING", level)
     -- Keep the anchor's physical slot and the other pieces in its comparison setup.
     local slot, physical, gear = scope.slot, scope.physical, scope.gear
-    if context.scenario ~= scope.context.scenario or not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
+    if not usable(context, item, slot) or not legalSwap(context, item, physical, slot, gear)
         or not inScope(context, item) then return nil end
     local pool = slotPool(context, physical, slot, scope.handType, gear, scope.key)
     local placement = pool.byVariant[item.key]
@@ -1686,12 +1640,12 @@ end
 
 local function previewTooltipItem(context, candidate, extraCopy, options)
     local item = candidate.facts
-    local placement, scope, preview = lookaheadPlacement(context.forecastBaseline or context, item, options.futureScenario)
+    local placement, scope, preview = lookaheadPlacement(context.forecastBaseline or context, item)
     local result = { placement = placement, rankScope = scope, preview = true }
     if preview then
         local comparison = ownedSwap(preview, groupFor(item), candidate, extraCopy, options.quantity)
         result.forecast = comparison or { status = "blocked" }
-        result.forecast.level, result.forecast.phase, result.forecast.scenario = preview.level, preview.phase, preview.scenario
+        result.forecast.level, result.forecast.phase = preview.level, preview.phase
     end
     return result
 end
@@ -1760,7 +1714,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
         and last.extraCopy == extraCopy and last.revision == revision and last.live == scope.live
         and last.physical == scope.physical and last.slot == scope.slot
         and last.skipPlacement == scope.skipPlacement
-        and last.quantity == scope.quantity and last.futureScenario == scope.futureScenario
+        and last.quantity == scope.quantity
         and (last.lookahead == scope.lookahead or last.result.slot) then
         return last.result
     end
@@ -1770,7 +1724,7 @@ function rating:CompareTooltipItem(context, candidate, useWorn, wornSlot, extraC
     result.bis = approvedBiS(context, candidate, result.slot)
     context.lastTooltip = { candidate = candidate, useWorn = useWorn, wornSlot = wornSlot, extraCopy = extraCopy,
         result = result, revision = revision, live = scope.live, physical = scope.physical, slot = scope.slot,
-        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity, futureScenario = scope.futureScenario }
+        lookahead = scope.lookahead, skipPlacement = scope.skipPlacement, quantity = scope.quantity }
     return result
 end
 
@@ -1842,18 +1796,6 @@ local function getStorageActions(context, group, state)
     return actions
 end
 
-local function alternateGain(context, group, state, primary)
-    if state.alternate and state.alternate.primary == primary then return state.alternate end
-    local preferred, missing = rating:WithCharacterBuild(primary, true)
-    local first = ownedLoadout(preferred, group, true)
-    local alternate = { primary = primary, first = first.baseline, ready = not missing and not first.unresolved }
-    if alternate.ready then
-        alternate.meaningful = rating:IsMeaningfulOwnedUpgrade(storageSwap(context, group, state, first.baseline, state.baseline))
-    end
-    state.alternate = alternate
-    return alternate
-end
-
 local function storageComparison(context, group, state, instance, candidate, result, rankContext)
     local action = getStorageActions(context, group, state)[instance]
     if action and action.swap.delta then
@@ -1881,7 +1823,7 @@ local function storageComparison(context, group, state, instance, candidate, res
     return comparison
 end
 
-function rating:GetStorageComparison(context, candidate, sourceId, guid, primary)
+function rating:GetStorageComparison(context, candidate, sourceId, guid)
     local instance = context.storageCopies[sourceId]
     if not instance or (guid and instance.entry.guid and instance.entry.guid ~= guid)
         or not self:SameExactItemLink(candidate.entry.item_id, instance.item_link, candidate.item_link) then
@@ -1904,31 +1846,15 @@ function rating:GetStorageComparison(context, candidate, sourceId, guid, primary
         end
         state.comparisons[instance] = comparison
     end
-    if primary and comparison.qualifies then
-        local alternate = alternateGain(build, group, state, primary)
-        comparison = copy(comparison)
-        comparison.alternate = not groupHas(alternate.first, instance)
-        comparison.qualifies = alternate.ready and (not comparison.alternate or alternate.meaningful)
-    end
     return comparison, not comparison.unavailable
 end
 
-function rating:GetScenarioUpgrades(contexts, candidate, owned, scope)
-    local upgrades = {}
-    for _, context in ipairs(contexts) do
-        local swap = self:CompareTooltipItem(context, candidate, owned, nil, not owned, scope)
-        if not swap.conditional and (owned and self:IsMeaningfulOwnedUpgrade(swap)
-            or not owned and (self:RoundedGain(swap.delta) or 0) > 0) then
-            upgrades[#upgrades + 1] = { scenario = context.scenario, swap = swap }
-        end
+function rating:GetQualifyingUpgrade(context, candidate, owned, scope)
+    local swap = self:CompareTooltipItem(context, candidate, owned, nil, not owned, scope)
+    if not swap.conditional and (owned and self:IsMeaningfulOwnedUpgrade(swap)
+        or not owned and (self:RoundedGain(swap.delta) or 0) > 0) then
+        return swap
     end
-    return upgrades
-end
-
-function rating:UpgradeScenarioSummary(upgrades)
-    local labels = {}
-    for _, upgrade in ipairs(upgrades or {}) do labels[#labels + 1] = self:ScenarioLabel(upgrade.scenario) end
-    return table.concat(labels, " / ")
 end
 
 function rating:WithGuaranteedRewards(context, rewards)
@@ -2003,8 +1929,7 @@ function rating:ScopeLabel(entry)
 end
 
 function rating:ContextLabel(entry)
-    local scenario = entry.scenario ~= "pre_raid" and self:ScenarioLabel(entry.scenario)
-    return entry.spec .. " · " .. self:ScopeLabel(entry) .. (scenario and (" · " .. scenario) or "")
+    return entry.spec .. " · " .. self:ScopeLabel(entry)
 end
 
 function rating:DescriptionLines(entry)

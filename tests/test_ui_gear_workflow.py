@@ -816,6 +816,28 @@ ui:ClearFilters(); H.settle()
 assert(not ui.levelingSlotReference and not ui.slotContextFrame:IsShown())
 ''')
 
+    def test_pre_raid_planner_surfaces_reference_upgrades_at_level_60(self):
+        self.run_lua(r'''
+local addon = BigBiSList
+local level = 59
+function UnitLevel() return level end
+function UnitClassBase() return "PALADIN" end
+function UnitRace() return "Human", "Human" end
+local filters = { slots = { Head = true }, ownedItems = ui:GetOwnedSnapshot() }
+local function findAugmentedChainHelm()
+    for _, row in ipairs(addon:GetPlannerRows("Paladin", "Protection", "PR", filters)) do
+        if row.item_id == 3891 then return row end
+    end
+end
+assert(not findAugmentedChainHelm())
+level = 60
+local helm = assert(findAugmentedChainHelm())
+assert(helm.reference_upgrade and helm.stat_rank.rank and helm.upgrade_candidate and helm.hasCurrent)
+assert(helm.acquisition_display.option.source_type == "vendor")
+local action = assert(ui:GetNextUpgradeActions({helm})[1])
+assert(action.data == helm and action.source:find("Wrinkle Goodsteel", 1, true))
+''')
+
     def test_retired_build_tab_migrates_in_both_modes(self):
         self.run_lua(r'''
 local addon = BigBiSList

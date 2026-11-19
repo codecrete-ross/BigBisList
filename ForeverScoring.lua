@@ -490,27 +490,11 @@ local function acquireContext(model, profile, scenario, mode, level, raceId)
         items = model.items[mode], profile = profile, slots = {}, model = model }
 end
 
-function Scoring:GetPreset(className, specName, mode, level, scenarioKey)
+function Scoring:GetPreset(className, specName, mode)
     local model = BigBiSListData and BigBiSListData.character_scoring
     local profile = model and model.version == VERSION and model.profiles[className .. "/" .. specName]
     if not profile then return end
-    local base = profile.scenarios[mode]
-    if scenarioKey == "dungeon" then
-        local dungeon = profile.dungeon and profile.dungeon[mode]
-        if base and dungeon and level and level >= dungeon.min_level and level <= dungeon.max_level then
-            profile.dungeonContexts = profile.dungeonContexts or {}
-            if not profile.dungeonContexts[mode] then
-                local merged = copy(base)
-                for _, field in ipairs({ "caps", "conversions", "effect_expectations", "effect_state_observations",
-                    "terrain", "target_family" }) do merged[field] = nil end
-                for key, value in pairs(dungeon) do merged[key] = value end
-                profile.dungeonContexts[mode] = merged
-            end
-            return profile.dungeonContexts[mode], profile
-        end
-        return
-    end
-    return base, profile
+    return profile.scenarios[mode], profile
 end
 
 function Scoring:Invalidate()
@@ -526,8 +510,7 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         if character and character.leveling and character.leveling.manualLevel then return nil end
     end
     local key = className .. "/" .. specName
-    local scenarioKey = filters and filters.scenario
-    local scenario, profile = self:GetPreset(className, specName, mode, level, scenarioKey)
+    local scenario, profile = self:GetPreset(className, specName, mode)
     if not profile or not GetBuildInfo or not UnitRace or not UnitLevel then return nil end
     if not scenario then return nil end
     local ok, result, status = pcall(function()
@@ -539,7 +522,7 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         local actor = byId(scenario.personas, race)
         if not actor or actor[2] ~= BigBiSList:GetPlayerFactionName()
             or (filters and ((filters.race and filters.race ~= actor[1]) or (filters.faction and filters.faction ~= actor[2]))) then return nil end
-        local stateKey = table.concat({key, mode, level, race, scenarioKey or "default"}, ":")
+        local stateKey = table.concat({key, mode, level, race}, ":")
         if BigBiSList:DetectPlayerSpec(className) ~= specName then
             return nil
         end

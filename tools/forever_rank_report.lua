@@ -14,10 +14,9 @@ end
 assert(supported, "Unknown Forever content phase " .. tostring(phase))
 function addon:GetCurrentPhaseKey() return phase end
 
-local race, faction, scenario
+local race, faction
 function UnitRace() return race, race end
 function UnitFactionGroup() return faction end
-function addon:GetGearScenario() return scenario end
 
 local function report(class, spec, level, mode)
     local filters = { race = race, faction = faction }
@@ -88,9 +87,9 @@ if arg[2] == "coverage" then
             for _, row in ipairs(group.items) do byKey[row.stat_identity or row.variant_id or tostring(row.item_id)] = true end
             shown[group.slot] = byKey
         end
-        local context = rating:GetGuideContext(class, spec, list, level, race, faction, scenario)
+        local context = rating:GetGuideContext(class, spec, list, level, race, faction)
         for _, slot in ipairs(slots) do
-            local scope = table.concat({ class, spec, race, faction, list, scenario, slot }, "/")
+            local scope = table.concat({ class, spec, race, faction, list, slot }, "/")
             local pool, visible = rating:GetGuidePlacement(context, slot), shown[slot] or {}
             local best, higherRarity = nil, {}
             for _, entry in ipairs(pool.rows) do
@@ -142,11 +141,8 @@ if arg[2] == "coverage" then
                     race, faction = persona.name, persona.faction
                     for _, level in ipairs(levels) do
                         local list = level == 60 and "PR" or "LEVELING"
-                        for _, activity in ipairs(rating:GetScenarios(class, spec, list, level)) do
-                            scenario = activity
-                            audit(class, spec, level, list)
-                            contexts = contexts + 1
-                        end
+                        audit(class, spec, level, list)
+                        contexts = contexts + 1
                     end
                     break
                 end

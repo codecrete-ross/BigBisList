@@ -275,7 +275,7 @@ assert(rating:Label(head.rows[1]) == "Top tier · Tied #1 / 13")
 assert(rating:Label(head.rows[1], "compact") == "Top tier Tied #1/13")
 assert(rating:Label(head.rows[1], "stacked") == "Top tier\nTied #1 / 13")
 local summary = rating:DescriptionLines(head.rows[7])
-assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47 · Outdoor")
+assert(summary[1] == "Strong · #7 / 13" and summary[2] == "Protection · Level 47")
 assert(summary[3] == "70% of the best known stat score")
 local only = rating:GetPlacement(context, "Neck", {"Neck"}).rows[1]
 assert(not only.tier and not only.score_percent and rating:Label(only) == "5.0 pts")
@@ -609,20 +609,47 @@ assert(protection.byVariant[tiger].rank == 1)
         self.assertEqual(facts["stats"], {"armor": 57, "dps": 38, "weapon_speed": 2,
                                           "weapon_min_damage": 51, "weapon_max_damage": 101})
 
-    def test_dungeon_preset_has_separate_level_range_and_approval(self):
+    def test_dungeon_presets_are_rejected_by_forever_compiler(self):
         model = copy.deepcopy(self.model)
         key = "Paladin/Protection"
-        model["profiles"][key]["dungeon"] = {"leveling": {
-            "version": "fixture", "basis": "Test fixture for a reviewed level range",
-            "min_level": 45, "max_level": 50, "weights": {"stamina": 1.8},
-            "evidence": [self.snapshot["url"]],
-        }}
-        compiled, bindings = compile_model(model, self.snapshot)
-        preset = compiled["profiles"][key]["dungeon"]["leveling"]
-        self.assertEqual((preset["min_level"], preset["max_level"]), (45, 50))
-        self.assertEqual(bindings[f"{key}/leveling"], self.bindings[f"{key}/leveling"])
-        self.assertEqual(len(review_issues(model, self.snapshot, bindings)), 1)
-        self.assertIn(f"{key}/dungeon/leveling", review_issues(model, self.snapshot, bindings)[0])
+        model["profiles"][key]["dungeon"] = {"leveling": {"weights": {"stamina": 1.8}}}
+        with self.assertRaisesRegex(ValueError, f"Dungeon scoring presets have been retired for {key}"):
+            compile_model(model, self.snapshot)
+
+    def test_overall_leveling_reference_keeps_tank_gear_tradeoffs(self):
+        self.lua_run(r'''
+dofile("DataForever.lua")
+dofile("Config.lua")
+dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
+dofile("DataIndex.lua")
+local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+function addon:GetCurrentPhaseKey() return "PR" end
+
+local cases = {
+    -- Crested Heater Shield and Battered Viking Shield
+    {"Paladin", "Protection", "Human", "Off Hand", "2451", "9403", 137.26, 129.36},
+    -- Platemail Leggings and Mighty Chain Pants
+    {"Warrior", "Protection", "Human", "Legs", "8093", "4800", 31.92, 26.40},
+    -- Grimlok's Charge and Ironshod Bludgeon
+    {"Druid", "Feral tank", "Night Elf", "Two Hand", "9416", "9408", 115.895, 102.20},
+}
+for _, case in ipairs(cases) do
+    local class, spec, race, slot, firstId, secondId, firstScore, secondScore = unpack(case)
+    local context = rating:GetGuideContext(class, spec, "LEVELING", 49, race, "Alliance")
+    local pool = rating:GetGuidePlacement(context, slot)
+    local first, second = assert(pool.byVariant[firstId]), assert(pool.byVariant[secondId])
+    assert(first.rank < second.rank and not first.conditional and not second.conditional)
+    assert(math.abs(first.score - firstScore) < 1e-6 and math.abs(second.score - secondScore) < 1e-6)
+end
+
+local bear = rating:GetGuideContext("Druid", "Feral tank", "LEVELING", 10, "Night Elf", "Alliance")
+local weights = rating:ReferenceWeights(bear, true, true)
+assert(weights.armor > 0 and weights.stamina > 0 and weights.dps > 0)
+assert(weights.block_value == 0 and weights.parry_percent == 0)
+local caster = rating:GetGuideContext("Druid", "Feral tank", "LEVELING", 9, "Night Elf", "Alliance")
+assert(caster.weights.armor == 0 and caster.weights.dps == 0 and caster.weights.spell_damage > 0)
+''')
 
     def test_ranged_damage_is_separate_from_scalable_melee_damage(self):
         bow = pack_item({"id": 1, "name": "Bow", "slot": "Ranged", "weapon_subtype": "Bow", "dps": 30})

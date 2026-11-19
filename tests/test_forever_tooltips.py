@@ -149,7 +149,7 @@ excludes(tip, "vs Blood Ritual Ring")
 detected = "Protection"
 onEvent(core, "PLAYER_TALENT_UPDATE"); H.settle()
 excludes(tip, "Spec previews")
-local protection = "Outdoor · Strong #3/6 at Lv 47 (64% of best)"
+local protection = "Strong #3/6 at Lv 47 (64% of best)"
 includes(tip, "Protection\n" .. protection)
 excludes(tip, "Tier range")
 local rgb = tip.rowColors.Protection
@@ -209,7 +209,7 @@ events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
 includes(tip, "+7.0 pts|r vs Lower ring (Finger 2)")
 
 showNative(tip, "item:900005", "GetMerchantItem", {1})
-includes(tip, "Protection\nOutdoor · Top tier #1/7 at Lv 55 (100% of best)")
+includes(tip, "Protection\nTop tier #1/7 at Lv 55 (100% of best)")
 excludes(tip, "Requires level")
 includes(tip, "At Lv 55 · Est.")
 addon.GetRecommendationHistory = function(_, id, class, spec, phase, slot)
@@ -256,8 +256,8 @@ H.equipped[11], H.equipped[12] = 900001, 900002
 nativeRequirements[900005] = "|cffff2020Requires Level 55|r"
 local tip = ItemRefTooltip
 showNative(tip, "item:900005")
-includes(tip, "Protection\nOutdoor · Strong #2/8 at Lv 55 (75% of best)")
-includes(tip, "Retribution\nOutdoor · Strong #2/8 at Lv 55 (75% of best)")
+includes(tip, "Protection\nStrong #2/8 at Lv 55 (75% of best)")
+includes(tip, "Retribution\nStrong #2/8 at Lv 55 (75% of best)")
 assert(tip.lines[4] == nativeRequirements[900005])
 excludes(tip, "Requires level")
 includes(tip, "At Lv 55 · Est.")
@@ -273,8 +273,8 @@ assert(not result.delta and not result.placement.rank and not result.bis, "Acqui
 showNative(tip, "item:900005")
 includes(tip, "Strong #2/8 at Lv 55 (75% of best)")
 H.settle()
-includes(tip, "Protection\nOutdoor · Strong #2/8 at Lv 55 (75% of best)")
-includes(tip, "Retribution\nOutdoor · Strong #2/8 at Lv 55 (75% of best)")
+includes(tip, "Protection\nStrong #2/8 at Lv 55 (75% of best)")
+includes(tip, "Retribution\nStrong #2/8 at Lv 55 (75% of best)")
 excludes(tip, "Tier range")
 includes(tip, "At Lv 55 · Est.")
 assert(tip.lines[4] == nativeRequirements[900005])
@@ -348,17 +348,12 @@ local incomplete = rating:GetContext("Paladin", "Protection", "LEVELING", level,
 local unavailable = rating:CompareTooltipItem(incomplete, item, false, nil, true, {lookahead = true})
 assert(unavailable.placement.rank == 1 and unavailable.forecast.status == "unavailable" and not unavailable.forecast.delta)
 
-local getPreset = addon.ForeverScoring.GetPreset
-function addon.ForeverScoring:GetPreset(class, spec, mode, atLevel, scenario)
-    if spec == "Protection" and mode == "leveling" and atLevel == 50 and scenario == "dungeon" then
-        return { weights = {{50, 50, {stamina = 2}}} }
-    end
-    return getPreset(self, class, spec, mode, atLevel, scenario)
-end
 showNative(tip, "item:900022", "GetAuctionItem", {1})
-includes(tip, "Outdoor · Top tier #1/4 at Lv 50")
-includes(tip, "Dungeon · Top tier #1/4 at Lv 50")
-includes(tip, "+32.2 pts|r vs best owned")
+local protection = assert((text(tip) .. "\n \n"):match("\nProtection\n(.-)\n \n"))
+local _, ranks = protection:gsub("Top tier #1/4 at Lv 50", "")
+assert(ranks == 1, protection)
+excludes(tip, "Outdoor")
+excludes(tip, "Dungeon")
 ''')
 
     def test_auction_forecast_waits_for_an_unknown_owned_equip_level(self):
@@ -420,9 +415,9 @@ for offset = 1, 13 do gear(900020 + offset, "Gloves " .. offset, "Hands", offset
 H.equipped[10] = 900014
 local tip = GameTooltip
 showNative(tip, "item:900014")
-includes(tip, "Outdoor · Top tier #1/14 at Lv 47")
+includes(tip, "Top tier #1/14 at Lv 47")
 showNative(tip, "item:900015", "GetAuctionItem", {1})
-includes(tip, "Outdoor · Top tier #1/15 at Lv 49")
+includes(tip, "Top tier #1/15 at Lv 49")
 includes(tip, "+3.0 pts|r vs best owned")
 H.settle()
 excludes(tip, "Tier range")
@@ -445,9 +440,9 @@ assert(range.stronger.level == 49 and range.stronger.name == "Later gloves")
 level = 50
 addon:RefreshTooltipPlayerContext()
 showNative(tip, "item:900014")
-includes(tip, "Outdoor · Top tier #3/16 at Lv 50 (97% of best)")
+includes(tip, "Top tier #3/16 at Lv 50 (97% of best)")
 showNative(tip, "item:900015")
-includes(tip, "Outdoor · Top tier Tied #1/16 at Lv 50")
+includes(tip, "Top tier Tied #1/16 at Lv 50")
 ''')
 
     def test_bank_snapshot_copy_counts_and_legal_weapon_and_ring_swaps(self):

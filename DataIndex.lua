@@ -6342,7 +6342,7 @@ function BigBiSList:GetGuideStatComparison(row, owned, physical)
     local swap = row.stat_swap
     local contributions
     if (not swap or not swap.contributions) and not row.is_reference then
-        local context = service:GetContext(row.class, row.spec, row.phase, placement.level, owned, placement.scenario)
+        local context = service:GetContext(row.class, row.spec, row.phase, placement.level, owned)
         local traced = service:GetGuideSwap(context, placement.item, physical, row.slot, row.item_link, true)
         if not swap then swap = traced
         elseif traced and traced.delta and swap.delta and traced.basis == swap.basis and math.abs(traced.delta - swap.delta) < 0.0001 then
@@ -6555,7 +6555,7 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context)
     return groups
 end
 
-function LEVELING_HELPERS.filterGuideCandidates(addon, context, filters, primaryOnly)
+function LEVELING_HELPERS.filterGuideCandidates(addon, context, filters)
     local groups = {}
     for _, group in ipairs(context.guideCandidates) do
         local rows = {}
@@ -6573,39 +6573,6 @@ function LEVELING_HELPERS.filterGuideCandidates(addon, context, filters, primary
             end
         end
         if #rows > 0 then groups[#groups + 1] = { slot = group.slot, items = rows } end
-    end
-    if primaryOnly then return groups end
-    local rating = addon.ForeverGearRating
-    local groupsBySlot, found = {}, {}
-    for _, group in ipairs(groups) do
-        groupsBySlot[group.slot], found[group.slot] = group, {}
-        for _, row in ipairs(group.items) do found[group.slot][row.stat_identity] = true end
-    end
-    for _, scenario in ipairs(rating:GetScenarios(context.class, context.spec, context.phase, context.level)) do
-        if scenario ~= context.scenario then
-            local other = rating:GetGuideContext(context.class, context.spec, context.phase, context.level,
-                context.race, context.faction, scenario)
-            if other.guideIndex ~= context.guideIndex then
-                other.guideCandidates = LEVELING_HELPERS.buildGuideCandidates(addon, context.guideIndex, {}, other)
-                other.guideIndex = context.guideIndex
-            end
-            for _, group in ipairs(LEVELING_HELPERS.filterGuideCandidates(addon, other, filters, true)) do
-                local target = groupsBySlot[group.slot]
-                if not target then
-                    target = { slot = group.slot, items = {} }
-                    groupsBySlot[group.slot], found[group.slot] = target, {}
-                    groups[#groups + 1] = target
-                end
-                for _, row in ipairs(group.items) do
-                    if not found[group.slot][row.stat_identity] then
-                        local label = rating:ScenarioLabel(scenario) .. " option"
-                        row.guide_note = row.guide_note and (label .. " · " .. row.guide_note) or label
-                        row.guide_alternate = true
-                        target.items[#target.items + 1], found[group.slot][row.stat_identity] = row, true
-                    end
-                end
-            end
-        end
     end
     table.sort(groups, function(a, b) return slotIndex(a.slot) < slotIndex(b.slot) end)
     return groups
@@ -6928,14 +6895,16 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
     return rows
 end
 
-function LEVELING_HELPERS.scenarioPlannerRows(addon, rows, index, className, specName, phase, filters)
+function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, className, specName, phase, filters)
     local rating, owned = addon.ForeverGearRating, filters.ownedItems
-    if not (addon.isForever and rating and owned and phase == "PR" and addon:GetDetectedPlayerLevel() == 60
-        and addon:DetectPlayerClass() == className) then return end
+    if not (addon.isForever and rating and owned and phase == "PR" and addon:DetectPlayerClass() == className) then return end
+    local levelOK, level = pcall(UnitLevel, "player")
+    if not levelOK or not addon.IsReadableValue(level) or level ~= 60 then return end
     local guide = LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, 60, filters)
     if not guide or not guide.catalog.data.published_routes_only then return end
-    local contexts = rating:GetScenarioContexts(className, specName, phase, 60, owned)
-    if contexts[1] then rows.statsPending = contexts[1].pending end
+    local context = rating:GetContext(className, specName, phase, 60, owned)
+    if not context then return end
+    rows.statsPending = context.pending
     local seen = {}
     for _, row in ipairs(rows) do seen[row.slot .. ":" .. (row.variant_id or tostring(row.item_id))] = row end
     for _, slot in ipairs(SLOT_ORDER) do
@@ -6946,7 +6915,7 @@ function LEVELING_HELPERS.scenarioPlannerRows(addon, rows, index, className, spe
                 class = className, spec = specName, item_id = item.id, slot = slot,
                 level_min = 60, level_max = 60, variant_id = item.variant_id, variant_name = item.name,
             })
-            local held = contexts[1] and contexts[1].ownedFacts[item.key]
+            local held = context.ownedFacts[item.key]
             if row and (not held or held.state ~= "equipped") then
                 if not seen[key] then
                     row.phase, row.leveling, row.computed_recommendation = phase, nil, nil
@@ -6957,11 +6926,8 @@ function LEVELING_HELPERS.scenarioPlannerRows(addon, rows, index, className, spe
                 if (held or access.option) and includeByFilter(row, filters, guide.phaseIndex) then
                     local candidate = { facts = item, key = item.key, entry = { item_id = item.id },
                         item_link = held and held.item_link }
-                    local upgrades = rating:GetScenarioUpgrades(contexts, candidate, held ~= nil, { skipPlacement = true })
-                    if upgrades[1] then
-                        row.scenario_upgrades = upgrades
-                        row.scenario_priority = upgrades[1].scenario == guide.scenario and 2 or 1
-                        row.scenario_summary = rating:UpgradeScenarioSummary(upgrades)
+                    if rating:GetQualifyingUpgrade(context, candidate, held ~= nil, { skipPlacement = true }) then
+                        row.reference_upgrade = true
                         row.stat_rank, row.stat_identity = placement, item.key
                         row.upgrade_candidate, row.higher_rated, row.hasCurrent = true, true, true
                         if not seen[key] then
@@ -7078,10 +7044,10 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         end
     end
 
-    LEVELING_HELPERS.scenarioPlannerRows(self, rows, index, className, specName, selectedPhaseKey, filters)
+    LEVELING_HELPERS.addReferencePlannerUpgrades(self, rows, index, className, specName, selectedPhaseKey, filters)
     table.sort(rows, function(a, b)
-        if (a.scenario_priority or 0) ~= (b.scenario_priority or 0) then
-            return (a.scenario_priority or 0) > (b.scenario_priority or 0)
+        if a.reference_upgrade ~= b.reference_upgrade then
+            return a.reference_upgrade == true
         end
         if a.priority ~= b.priority then
             return a.priority > b.priority

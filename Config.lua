@@ -1141,25 +1141,6 @@ function BigBiSList:GetContentMode()
     return activeCharacterDB().selection.mode
 end
 
-function BigBiSList:GetGearScenario(className, specName, phase)
-    if not self.isForever or not className or not specName then return nil end
-    self:EnsureDatabase()
-    local settings = activeCharacterDB().foreverScenarios
-    local profile = type(settings) == "table" and settings[className .. "/" .. specName]
-    return type(profile) == "table" and profile[phase == LEVELING_PHASE_KEY and "leveling" or "pre_raid"] or nil
-end
-
-function BigBiSList:SetGearScenario(className, specName, phase, scenario)
-    if not self.isForever or not className or not specName then return end
-    self:EnsureDatabase()
-    local character = activeCharacterDB()
-    if type(character.foreverScenarios) ~= "table" then character.foreverScenarios = {} end
-    local key = className .. "/" .. specName
-    local settings = character.foreverScenarios
-    if type(settings[key]) ~= "table" then settings[key] = {} end
-    settings[key][phase == LEVELING_PHASE_KEY and "leveling" or "pre_raid"] = scenario
-end
-
 function BigBiSList:SetContentMode(mode)
     self:EnsureDatabase()
 
@@ -1325,9 +1306,10 @@ function BigBiSList:EnsureDatabase()
     normalizeContentModeState(characterDB)
     migrateViewState(characterDB, charPreviousVersion)
     if self.isForever then
-        -- Retire the saved state owned by the Builds tab.
+        -- Retire the saved state for Builds and activity-specific rankings.
         characterDB.trackedBuilds = nil
         characterDB.viewState.builds = nil
+        characterDB.foreverScenarios = nil
         if not charPreviousVersion or charPreviousVersion < 19 then
             local guide, bis = characterDB.viewState.gearGuide, characterDB.viewState.bisList
             if guide.sort == "priority" then guide.sort, guide.sortDirection = "stat_rank", "asc" end

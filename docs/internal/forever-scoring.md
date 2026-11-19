@@ -1,10 +1,10 @@
 # Character-aware gear scoring for WoW Forever
 
-The Forever scoring audit covers 28 specializations in two settings. Leveling
-uses the selected level's reference weights for outdoor enemies at that level.
-Pre-Raid uses level-60 weights for first-tier boss combat. Each approval covers
-the fixed gear comparison documented for that setting. Encounter-dependent
-effects outside those calculations have separate review requirements.
+The Forever scoring audit covers 28 specializations in Leveling and Pre-Raid.
+Leveling uses one overall BiS ranking for outdoor play and dungeons, based on
+the reviewed level-matched reference weights. Pre-Raid uses level-60 weights
+for first-tier boss combat. Each approval covers the documented gear comparison.
+Encounter-dependent effects have separate review requirements.
 
 ## Client 1.60.1.70959
 
@@ -69,10 +69,6 @@ the equipped combination and its cooldown interaction. The scorer keeps
 unresolved effects conditional and the Guide can still surface reviewed
 qualitative effects.
 
-Outdoor and Pre-Raid retain the existing reference profiles. An optional
-Dungeon preset has its own level range, evidence, and approval digest. The
-selector appears where that preset has passed review. Preferences are saved
-by character and specialization, separately for leveling and level 60.
 Unreadable gear or talents use reference scores with the available evidence.
 
 The usable Alliance level-49 reference includes both Sword of Serenity and
@@ -81,7 +77,7 @@ and 105.57. Thrash's additional swing is confirmed. A realized rate for the
 Protection Paladin in the relevant content remains open. The new Guide route
 checks use quest acceptance levels and prerequisites. At a choice, the
 guaranteed rewards are included in the baseline and winning choices are
-evaluated independently for each available scenario and specialization.
+evaluated independently for each specialization in the character's level scope.
 [Client-derived Thrash effect](https://wow-forever.gg/db/spells/21919-thrash/)
 [November 13 Blizzard hotfixes](https://us.forums.blizzard.com/en/wow/t/wow-forever-hotfixes-november-13-2026/2403040/10)
 
@@ -135,15 +131,16 @@ weights and credits Intellect at 0.55, mana per five seconds at 1.6, shield
 block value at 0.9, and general spell power, spell damage, and Holy-only
 damage at 1.1 per point. Spell and block value weights follow the existing
 pre-raid Protection profile. The mana weights reuse existing caster and healer
-reference coefficients. These coefficients describe an outdoor leveling
-balance. Talent ranks and associated mana refunds still need their own model.
+reference coefficients. The resulting leveling weights balance mitigation,
+threat, and recovery. Talent ranks and associated mana refunds still need
+their own model.
 Specialization weight revisions reopen the rankings for that specialization.
 [Blizzard Paladin deep dive](https://worldofwarcraft.blizzard.com/en-us/news/24302099/world-of-warcraft-forever-class-deep-dives-paladin)
 [Forever leveling stat guidance](https://www.icy-veins.com/wow-forever/protection-paladin-leveling/#stats)
 
 The level-49 Crested Heater Shield comparison isolates 170 Armor and one
 Block Value against five Spell Damage and ten Spirit on Battered Viking
-Shield. The current Outdoor weights put those shields 7.9 points apart. In
+Shield. The leveling weights put those shields 7.9 points apart. In
 an illustrative setup with 2,000 Armor outside the shield, extrapolating the
 curve measured in beta combat logs to a level-49 attacker gives about 1.23
 percentage points more physical mitigation from Crested. The Block Value
@@ -152,15 +149,18 @@ weights need a measured balance of incoming damage, threat, and recovery
 for further calibration.
 [Forever beta combat-log measurements](https://github.com/magey/forever-warrior/issues/24)
 
-At level 43, Assassination's Outdoor scores for Rondel and Thornspike are
+At level 43, Assassination's leveling scores for Rondel and Thornspike are
 144.36 and 123.54. Their listed weapon DPS is 24.06 and 20.59. The comparison
 stays conditional while Thornspike's effect is unresolved. At level 49,
-Protection Warrior's Outdoor scores for Platemail Leggings and Mighty Chain
+Protection Warrior's leveling scores for Platemail Leggings and Mighty Chain
 Pants are 31.92 and 26.40. The higher score comes entirely from 399 Armor.
 
 Feral tank previously inherited the Cat DPS weights after level 9. The Bear
 revision uses the tank mitigation and threat coefficients with the reviewed
 Feral tank Agility and weapon DPS weights. It values no shield block or parry.
+At level 49, Grimlok's Charge scores 115.90 against Ironshod Bludgeon's 102.20.
+This comparison weighs the higher weapon DPS against the extra Stamina on
+Ironshod.
 The replay retained the same item and route scope. It updated 409 approvals,
 with a change in item choice or order in 211. The level 1–9 casting weights
 and other specializations retain their existing approvals. The prior decisions
@@ -193,7 +193,7 @@ reference build.
   Dexterity conversion. Enhancement's current weights score the damage
   contribution. With max Ancestral Knowledge and Mental Dexterity, level-42 Orc
   Owl Bracers move from 7.70 to 8.44 at rank two, overtaking Patterned Bronze
-  Bracers at 8.00. The outdoor preset puts value on the extra mana, which
+  Bracers at 8.00. The leveling weights put value on the extra mana, which
   contributes to that reversal. Pre-raid gives 10 Strength 16.00 points and 10
   Intellect 15.46 at all three talents' maximum ranks. Hit still uses a flat
   weight. The next calibration needs separate melee and spell hit curves and
@@ -225,8 +225,8 @@ reference build.
 
 ## Scoring contexts
 
-- **Levels 1–59.** Model outdoor leveling against level-matched enemies over
-  combat and recovery. Account for throughput, survivability, and recovery.
+- **Levels 1–59.** Use the same ranking outdoors and in dungeons. The
+  level-matched reference accounts for throughput, survivability, and recovery.
 - **Level 60 Pre-Raid.** Rank gear obtainable before raiding for first-tier
   raid bosses. Verify the combat tables and caps. Evaluate sustained damage
   for DPS, effective healing and mana for healers, and survivability and threat
@@ -293,8 +293,8 @@ or loses.
   Power, and spell damage. The live reader fills missing stats from those
   tooltip lines and keeps unresolved effects conditional.
 - Guide and item tooltip reference ranks use the same eligible pool for a
-  given spec, slot, level, and scenario. Compare Slot identifies its equipped
-  setup. Details shows tier persistence, the first level a known contender
+  given spec, slot, level, and content phase. Compare Slot identifies its
+  equipped setup. Details shows tier persistence, the first level a known contender
   scores higher, and the largest weighted changes in the selected swap.
   Above-level tooltips compare both sides at the first usable level with
   owned items, including future-eligible bags and cached bank gear.
@@ -325,9 +325,8 @@ or loses.
 - Storage recommendations choose the best legal slot or paired-slot setup from
   worn gear, bags, and the last readable personal bank scan. The spec icon
   requires a meaningful improvement over the worn setup. On an exact tie,
-  equipped copies take priority, followed by bags and bank. Another reviewed
-  scenario can earn a dotted badge when it favors a meaningfully stronger
-  choice for that use. Native containers and Baganator share the same assessment.
+  equipped copies take priority, followed by bags and bank. Native containers
+  and Baganator share the same assessment.
   Storage marks are static badges in the upper-right corner. A talent icon has
   a rank-colored border, and an approved item uses a gold BiS label in the same
   footprint. Baganator owns the visibility and priority of its corner widget.

@@ -444,7 +444,7 @@ assert(rating:GetExactBaseFacts(10128, champion).stats.defense == 5)
 local plain = champion:match("item:[%d:]+"):gsub(":49:1486:", ":50:1486:")
 local tip = showTip(rows[1], plain)
 assert(tip:find("+36.1 pts", 1, true) and tip:find("vs Embossed Plate Armor of the Gorilla", 1, true))
-assert(tip:find("Recommended for Outdoor", 1, true) and not tip:find("Conditional", 1, true))
+assert(tip:find("Recommended upgrade", 1, true) and not tip:find("Conditional", 1, true))
 tip = showTip(rows[2], (golem:match("item:[%d:]+"):gsub("::1::1:", "::1:0:1:")))
 assert(tip:find("Stronger option you own · Revenant Chestplate of the Champion · In bags", 1, true))
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("12753", "12723")))
@@ -512,7 +512,7 @@ assert(mark(rows[1], 901043) and mark(rows[2], 901043) and not mark(rows[3], 901
 assert(mark(rows[4], 901045) and mark(rows[5], 901046), "A legal pair may fill both trinket slots")
 assert(not mark(rows[8], 901001), "An equipped copy wins a tie")
 assert(mark(rows[6], 901052).result.delta == 14 and mark(rows[7], 901053).result.delta == 14)
-assert(showTip(rows[7], link(901053)):find("Recommended for Outdoor · With Fixture gear 901052", 1, true))
+assert(showTip(rows[7], link(901053)):find("Recommended upgrade · With Fixture gear 901052", 1, true))
 
 links[1], links[2] = link(901044), link(901044)
 ui:Invalidate("ownership", "unique-ring"); panel:UpdateItems(); H.settle()
@@ -522,40 +522,57 @@ ui:Invalidate("ownership", "independent-cutoff"); panel:UpdateItems(); H.settle(
 assert(mark(rows[1], 901044) and not mark(rows[2], 901047) and not mark(rows[3], 901047))
 ''')
 
-    def test_storage_scenario_marks_only_meaningfully_distinct_winners(self):
+    def test_storage_and_guide_use_the_same_ranking_outdoors_and_in_dungeons(self):
         self.run_lua(r'''
-addon:GetCharacterDB().tooltipTalentSpecs[2] = nil
-local original = addon.ForeverScoring.GetPreset
-addon.ForeverScoring.GetPreset = function(self, class, spec, mode, atLevel, scenario)
-    if spec == "Protection" and mode == "leveling" and scenario == "dungeon" then
-        return {weights = {{40, 59, {intellect = 1}}}}
-    end
-    return original(self, class, spec, mode, atLevel, scenario)
-end
+local saved = {
+    defaultsVersion = addon:GetCharacterDB().defaultsVersion,
+    foreverLevelingMigrated = true,
+    selection = {class = "Paladin", spec = "Protection", mode = "leveling", phase = "PR"},
+    foreverScenarios = {["Paladin/Protection"] = {leveling = "dungeon", pre_raid = "dungeon"}},
+}
+BigBiSListCharDB.forever = saved
+assert(addon:GetCharacterDB() == saved and not saved.foreverScenarios)
+assert(saved.selection.class == "Paladin" and saved.selection.spec == "Protection" and saved.selection.mode == "leveling")
+saved.tooltipTalentSpecs[2] = nil
+BigBiSListData.character_scoring.profiles["Paladin/Protection"].dungeon = {
+    leveling = {min_level = 40, max_level = 59, weights = {{40, 59, {intellect = 1}}}},
+}
+local inside = false
+IsInInstance = function() return inside, inside and "party" or "none" end
+GetInstanceInfo = function() return inside and "Fixture instance" or "Fixture outdoors", inside and "party" or "none" end
+
 item(901031, "Head", 14, 8)
 item(901032, "Head", 10, 14)
-item(901033, "Head", 10, 9)
 item(901034, "Head", 16, 16)
 local links = {link(901031), link(901032)}
 local panel, rows = bagView(links)
+ui:Open(); H.settle()
+assert(not ui.scenarioDropdown)
 highlights:Initialize(); H.settle()
-local main, alternate = assert(mark(rows[1], 901031)), assert(mark(rows[2], 901032))
-assert(not main.alternate and main.scenario == "outdoor" and alternate.alternate and alternate.scenario == "dungeon")
-local function badge(row)
-    for _, child in ipairs(row.children) do if child.alternate then return child end end
-end
-assert(not badge(rows[1]).alternate:IsShown() and badge(rows[2]).alternate:IsShown())
-H.expectBounded(badge(rows[2]).alternate, badge(rows[2]), "Alternate-use dot")
-assert(showTip(rows[2], link(901032)):find("Recommended for Dungeon", 1, true))
 
-links[2] = link(901033)
-ui:Invalidate("ownership", "close-context-winner"); panel:UpdateItems(); H.settle()
-assert(mark(rows[1], 901031) and not mark(rows[2], 901033))
+local function observe()
+    local main = assert(mark(rows[1], 901031))
+    assert(main.spec.name == "Protection" and main.result.delta == 8 and not mark(rows[2], 901032))
+    for _, child in ipairs(rows[1].children) do assert(not child.alternate) end
+    local guide = rating:GetGuideContext("Paladin", "Protection", "LEVELING", level, "Human", "Alliance")
+    local pool = rating:GetGuidePlacement(guide, "Head")
+    local first, second = pool.byVariant["901031"], pool.byVariant["901032"]
+    assert(first.rank < second.rank and first.score == 14 and second.score == 10)
+    local reach = assert(ui:GetWithinReach({{stat_rank = first, slot = "Head"}}))
+    assert(reach[1][1].swap.delta == main.result.delta)
+    local tip = showTip(rows[1], link(901031))
+    assert(tip:find("Recommended upgrade", 1, true))
+    assert(not tip:find("Outdoor", 1, true) and not tip:find("Dungeon", 1, true))
+    return tip
+end
+local outdoors = observe()
+inside = true
+highlights:InvalidateStorage(); panel:UpdateItems(); H.settle()
+assert(observe() == outdoors)
+
 links[2] = link(901034)
-ui:Invalidate("ownership", "same-winner"); panel:UpdateItems(); H.settle()
-assert(not mark(rows[1], 901031) and mark(rows[2], 901034) and not badge(rows[2]).alternate:IsShown())
-local tip = showTip(rows[2], link(901034))
-assert(tip:find("Recommended for Outdoor", 1, true) and tip:find("Recommended for Dungeon", 1, true))
+ui:Invalidate("ownership", "better-item"); panel:UpdateItems(); H.settle()
+assert(not mark(rows[1], 901031) and mark(rows[2], 901034))
 ''')
 
     def test_baganator_corner_uses_live_slots_and_clears_stale_or_disabled_items(self):
@@ -812,7 +829,7 @@ rewards:Hide(); H.settle()
 assert(not mark(first, bonus))
 ''')
 
-    def test_quest_choices_use_guaranteed_gear_and_keep_each_context_visible(self):
+    def test_quest_choices_use_guaranteed_gear_for_each_specialization(self):
         self.run_lua(r'''
 local rewards = CreateFrame("Frame", nil, UIParent)
 local first, second, fixed = row(rewards, 1), row(rewards, 2), row(rewards, 1)
@@ -821,13 +838,6 @@ for _, reward in ipairs({first, second, fixed}) do reward.objectType = "item"; r
 rewards.RewardButtons = {first, second, fixed}
 QuestInfoFrame = {rewardsFrame = rewards}
 local choices, guaranteed = {901004, 901005}, 901003
-local original = addon.ForeverScoring.GetPreset
-addon.ForeverScoring.GetPreset = function(self, class, spec, mode, atLevel, scenario)
-    if spec == "Protection" and mode == "leveling" and scenario == "dungeon" then
-        return { weights = {{40, 59, {intellect = 1}}} }
-    end
-    return original(self, class, spec, mode, atLevel, scenario)
-end
 local function rewardId(kind, index)
     if kind == "choice" then return choices[index] end
     return guaranteed
@@ -836,11 +846,10 @@ GetQuestItemLink = function(kind, index) return link(rewardId(kind, index)) end
 GetQuestItemInfo = function(kind, index) return "Item", 0, 1, 2, true, rewardId(kind, index) end
 QuestInfo_Display = function() end
 highlights:Initialize(); H.settle()
-assert(mark(first, 901004).scenario == "outdoor" and mark(first, 901004).result.delta == 2)
-assert(mark(second, 901005).scenario == "dungeon" and mark(second, 901005).result.delta == 20)
-local tip = showTip(second, link(901005))
-assert(tip:find("Best choice for Protection in Dungeon", 1, true))
-assert(tip:find("Best choice for Holy in Outdoor", 1, true))
+assert(mark(first, 901004).spec.name == "Protection" and mark(first, 901004).result.delta == 2)
+assert(mark(second, 901005).spec.name == "Holy" and mark(second, 901005).result.delta == 20)
+assert(showTip(first, link(901004)):find("Best choice for Protection", 1, true))
+assert(showTip(second, link(901005)):find("Best choice for Holy", 1, true))
 
 guaranteed = 901004
 QuestInfo_Display(); H.settle()
@@ -851,7 +860,7 @@ choices, guaranteed = {901004, 901004}, 901003
 QuestInfo_Display(); H.settle()
 assert(mark(first, 901004) and not mark(first, 901004).bestChoice)
 assert(mark(second, 901004) and not mark(second, 901004).bestChoice)
-assert(showTip(first, link(901004)):find("Tied for best choice in Outdoor", 1, true))
+assert(showTip(first, link(901004)):find("Tied for best choice", 1, true))
 
 choices = {901004, nil}
 QuestInfo_Display(); H.settle()
@@ -859,13 +868,11 @@ assert(mark(first, 901004) and not mark(first, 901004).bestChoice)
 assert(not showTip(first, link(901004)):find("Best choice", 1, true))
 
 choices = {901004, 901005}
-addon:SetGearScenario("Paladin", "Protection", "LEVELING", "dungeon")
-assert(rating:GetScenario("Paladin", "Protection", "LEVELING", level) == "dungeon")
-assert(rating:GetScenario("Paladin", "Protection", "PR", 60) == "pre_raid")
-assert(rating:GetScenario("Paladin", "Holy", "LEVELING", level) == "outdoor")
 QuestInfo_Display(); H.settle()
 local offer = highlights:GetTooltipOffer(second, 901005, link(901005))
-assert(offer.assessments[1].scenario == "dungeon" and offer.assessments[1].bestChoice)
+assert(#offer.assessments == 2)
+assert(offer.assessments[1].spec.name == "Protection" and not offer.assessments[1].bestChoice)
+assert(offer.assessments[2].spec.name == "Holy" and offer.assessments[2].bestChoice)
 ''')
 
     def test_direct_loot_and_active_rolls_recycle_exact_bindings(self):
