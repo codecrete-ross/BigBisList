@@ -1,5 +1,5 @@
 {
-  "acquisition_evidence_digest": "a6b054cfdfe4c865e7545508d9c1962149872942bcf3966b71e0bc5572b6b6ae",
+  "acquisition_evidence_digest": "f771f2ccb6ed38357552672e60d0032406baebbc580f78bdb264a2f3ed41eed2",
   "candidate_count": 6071,
   "candidate_reviews": [
     {
@@ -74270,14 +74270,16 @@
       ]
     },
     {
-      "candidate_digest": "d056cc6e5a3d4dc3acc84b1a0b19b6e3fcaaf90170d611f8c1b005a89b5d1fbd",
+      "candidate_digest": "7300760582aa71e52431b16291545674f6c5588d6e0f1704004cd6e43672a7d9",
       "item_id": 274652,
       "name": "Wall of Water",
       "slots": [
         "Off Hand"
       ],
       "status": "excluded_from_current_missing_scopes",
-      "tooltip_urls": []
+      "tooltip_urls": [
+        "https://www.wowhead.com/forever/item=274652"
+      ]
     },
     {
       "candidate_digest": "b2aadbab537c5f29cef924e1db2ad351714ff22b05805925a4e48b54f406e70d",
@@ -85598,14 +85600,16 @@
       "tooltip_urls": []
     },
     {
-      "candidate_digest": "2f9a06c1c82a44c25ebc8eff06dfbdd332c8997de52d836aeddc92a34e13a3f8",
+      "candidate_digest": "2ba46b01698f69922362e34d3646f94a0acfb909300fadcea14f91476ff74be4",
       "item_id": 287034,
       "name": "Grove Subjugator's Blade",
       "slots": [
         "Off Hand"
       ],
       "status": "excluded_from_current_missing_scopes",
-      "tooltip_urls": []
+      "tooltip_urls": [
+        "https://www.wowhead.com/forever/item=287034"
+      ]
     },
     {
       "candidate_digest": "eff02f28f0a41cff422106dc2f08dcdd28fa41016996bb83443e38353dfa56bf",
@@ -446058,7 +446062,7 @@
       ]
     },
     {
-      "candidate_digest": "d056cc6e5a3d4dc3acc84b1a0b19b6e3fcaaf90170d611f8c1b005a89b5d1fbd",
+      "candidate_digest": "7300760582aa71e52431b16291545674f6c5588d6e0f1704004cd6e43672a7d9",
       "item_id": 274652,
       "observations": [
         {
@@ -446127,6 +446131,21 @@
           "slot": "Off Hand",
           "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938",
           "subclass": "Shield"
+        },
+        {
+          "armor_type": "Shield",
+          "client_build": null,
+          "evidence_ref": {
+            "content_digest": "3f2a7e734ae23bebc96ec97ae3c98d9fa57bff72dc96cb3d74b6af7830a48095",
+            "evidence_id": "wowhead:a1937bc94cccd7633780bf71"
+          },
+          "item_kind": "equipment",
+          "kind": "item",
+          "name": "Wall of Water",
+          "required_level": 43,
+          "requirements": [],
+          "slot": "Off Hand",
+          "source_url": "https://www.wowhead.com/forever/item=274652"
         }
       ],
       "slots": [
@@ -481799,7 +481818,7 @@
       ]
     },
     {
-      "candidate_digest": "2f9a06c1c82a44c25ebc8eff06dfbdd332c8997de52d836aeddc92a34e13a3f8",
+      "candidate_digest": "2ba46b01698f69922362e34d3646f94a0acfb909300fadcea14f91476ff74be4",
       "item_id": 287034,
       "observations": [
         {
@@ -481850,6 +481869,21 @@
           "required_skill_rank": 0,
           "slot": "One Hand",
           "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938",
+          "weapon_subtype": "Dagger"
+        },
+        {
+          "client_build": null,
+          "evidence_ref": {
+            "content_digest": "a76b51bb2b423c3ada37530bb118e6d403ff3b9590daf324bfe204adaecb0b76",
+            "evidence_id": "wowhead:b84199c9f7d1410affe273a7"
+          },
+          "item_kind": "equipment",
+          "kind": "item",
+          "name": "Grove Subjugator's Blade",
+          "required_level": 55,
+          "requirements": [],
+          "slot": "One Hand",
+          "source_url": "https://www.wowhead.com/forever/item=287034",
           "weapon_subtype": "Dagger"
         }
       ],
@@ -484853,7 +484887,7 @@
     ]
   },
   "decision_issues": [],
-  "inventory_digest": "641e1c86a1ed3613c235989f8736cdfb315b058a6cecb9a5e3c0229a4459a2b6",
+  "inventory_digest": "1b76723480d8d1c5cc209331b4ffe827f7c7a16af82f868ed632cd89b9775bd5",
   "profession_rules": [
     {
       "client_build": "1.60.1.70938",

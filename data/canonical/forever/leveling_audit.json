@@ -353012,6 +353012,40 @@
       "weapon_subtype": null
     },
     {
+      "armor_type": "Shield",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 43,
+      "evidence_ref": {
+        "content_digest": "3f2a7e734ae23bebc96ec97ae3c98d9fa57bff72dc96cb3d74b6af7830a48095",
+        "evidence_id": "wowhead:a1937bc94cccd7633780bf71"
+      },
+      "exclusion_reason": null,
+      "item_id": 274652,
+      "item_reviewed": false,
+      "name": "Wall of Water",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [
+        {
+          "confidence": "wowhead_tooltip",
+          "drop_percent": 29.25,
+          "entity_name": "Hydromancer Velratha",
+          "evidence_url": "https://www.wowhead.com/forever/item=274652",
+          "source_url": "https://www.wowhead.com/forever/item=274652",
+          "type": "drop"
+        }
+      ],
+      "slot": "Off Hand",
+      "snapshot_url": "https://www.wowhead.com/forever/item=274652",
+      "stats": {
+        "block_value": 27.0,
+        "mp5": 3.0,
+        "spell_power": 14.0
+      },
+      "weapon_subtype": null
+    },
+    {
       "armor_type": "Mail",
       "conflicting_evidence": [],
       "effects_need_review": false,
@@ -366228,6 +366262,203 @@
       "weapon_subtype": null
     },
     {
+      "armor_type": "Cloth",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 28,
+      "evidence_ref": {
+        "content_digest": "fcfbe1f8eb4ed98f1b90061d58e94bf22eec5daa09d25ff46d582f9b5b6c22d0",
+        "evidence_id": "wowhead:1a3336af66742dd2a148c906"
+      },
+      "exclusion_reason": null,
+      "item_id": 286987,
+      "item_reviewed": false,
+      "name": "Violet Sorcerer's Sandals",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.normal.alliance.eu",
+          "object_id": 286987,
+          "object_type": "item",
+          "observed_at": "2026-11-06T21:56:43+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.normal.alliance.eu",
+          "subject_id": "forever/normal/alliance/eu",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.us",
+          "object_id": 286987,
+          "object_type": "item",
+          "observed_at": "2026-11-06T22:00:32+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.us",
+          "subject_id": "forever/pvp/alliance/us",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.us",
+          "object_id": 286987,
+          "object_type": "item",
+          "observed_at": "2026-11-06T22:03:07+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.us",
+          "subject_id": "forever/pvp/horde/us",
+          "subject_type": "market"
+        }
+      ],
+      "slot": "Feet",
+      "snapshot_url": "https://www.wowhead.com/forever/item=286987",
+      "stats": {
+        "intellect": 11.0,
+        "stamina": 7.0
+      },
+      "weapon_subtype": null
+    },
+    {
+      "armor_type": "Cloth",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 29,
+      "evidence_ref": {
+        "content_digest": "dff0d276ebd62f799cc648e24d68a30a8b22799ffe667fb32e13e40facf9abf0",
+        "evidence_id": "wowhead:9f0cd6456b2196f70929abae"
+      },
+      "exclusion_reason": null,
+      "item_id": 286988,
+      "item_reviewed": false,
+      "name": "Violet Sorcerer's Leggings",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.normal.alliance.eu",
+          "object_id": 286988,
+          "object_type": "item",
+          "observed_at": "2026-11-06T21:56:43+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.normal.alliance.eu",
+          "subject_id": "forever/normal/alliance/eu",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.eu",
+          "object_id": 286988,
+          "object_type": "item",
+          "observed_at": "2026-11-06T20:05:48+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.eu",
+          "subject_id": "forever/pvp/horde/eu",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.us",
+          "object_id": 286988,
+          "object_type": "item",
+          "observed_at": "2026-11-06T22:03:07+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.us",
+          "subject_id": "forever/pvp/horde/us",
+          "subject_type": "market"
+        }
+      ],
+      "slot": "Legs",
+      "snapshot_url": "https://www.wowhead.com/forever/item=286988",
+      "stats": {
+        "intellect": 13.0,
+        "spell_power": 12.0,
+        "spirit": 5.0
+      },
+      "weapon_subtype": null
+    },
+    {
+      "armor_type": "Cloth",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 28,
+      "evidence_ref": {
+        "content_digest": "6b3adbac63f938cfc07d53dae1c877abd655d51df879bbca1820b40abfff6954",
+        "evidence_id": "wowhead:a53cbeab2648a0e86bbcbf41"
+      },
+      "exclusion_reason": null,
+      "item_id": 286989,
+      "item_reviewed": false,
+      "name": "Violet Sorcerer's Wraps",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.eu",
+          "object_id": 286989,
+          "object_type": "item",
+          "observed_at": "2026-11-06T16:20:55+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.eu",
+          "subject_id": "forever/pvp/alliance/eu",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.us",
+          "object_id": 286989,
+          "object_type": "item",
+          "observed_at": "2026-11-06T22:00:32+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.alliance.us",
+          "subject_id": "forever/pvp/alliance/us",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.eu",
+          "object_id": 286989,
+          "object_type": "item",
+          "observed_at": "2026-11-06T20:05:48+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.pvp.horde.eu",
+          "subject_id": "forever/pvp/horde/eu",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.rp.alliance.us",
+          "object_id": 286989,
+          "object_type": "item",
+          "observed_at": "2026-11-06T21:36:59+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.rp.alliance.us",
+          "subject_id": "forever/rp/alliance/us",
+          "subject_type": "market"
+        },
+        {
+          "confidence": "observed_auction_listing",
+          "evidence_url": "https://api.ahledger.com/v1/pricetable/forever.rppvp.alliance.eu",
+          "object_id": 286989,
+          "object_type": "item",
+          "observed_at": "2026-11-06T22:08:30+00:00",
+          "relation": "offered_for_trade",
+          "source_url": "https://api.ahledger.com/v1/pricetable/forever.rppvp.alliance.eu",
+          "subject_id": "forever/rppvp/alliance/eu",
+          "subject_type": "market"
+        }
+      ],
+      "slot": "Hands",
+      "snapshot_url": "https://www.wowhead.com/forever/item=286989",
+      "stats": {
+        "hit_percent": 1.0,
+        "intellect": 9.0
+      },
+      "weapon_subtype": null
+    },
+    {
       "armor_type": "Leather",
       "conflicting_evidence": [],
       "effects_need_review": true,
@@ -366492,6 +366723,55 @@
       "weapon_subtype": null
     },
     {
+      "armor_type": "Leather",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 49,
+      "evidence_ref": {
+        "content_digest": "1679d13a10714c99f34a06f098b6bda4ec11af484916b1d2efbb2848e100c6c7",
+        "evidence_id": "wowhead:87fa5a6ff568905d481216a8"
+      },
+      "exclusion_reason": null,
+      "item_id": 287020,
+      "item_reviewed": false,
+      "name": "Defias Enforcer's Chest",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [],
+      "slot": "Chest",
+      "snapshot_url": "https://www.wowhead.com/forever/item=287020",
+      "stats": {
+        "agility": 22.0,
+        "stamina": 11.0,
+        "strength": 14.0
+      },
+      "weapon_subtype": null
+    },
+    {
+      "armor_type": "Leather",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 48,
+      "evidence_ref": {
+        "content_digest": "9993c7cb902af374891dbdd3a022c76cbdc2ccca8e9c158ca171efa1297027ab",
+        "evidence_id": "wowhead:2b9c943b60e1b58c49fca884"
+      },
+      "exclusion_reason": null,
+      "item_id": 287021,
+      "item_reviewed": false,
+      "name": "Defias Enforcer's Prowlers",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [],
+      "slot": "Feet",
+      "snapshot_url": "https://www.wowhead.com/forever/item=287021",
+      "stats": {
+        "attack_power": 28.0,
+        "stamina": 16.0
+      },
+      "weapon_subtype": null
+    },
+    {
       "armor_type": "Mail",
       "conflicting_evidence": [],
       "effects_need_review": true,
@@ -366539,6 +366819,31 @@
       "weapon_subtype": null
     },
     {
+      "armor_type": "Cloth",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 53,
+      "evidence_ref": {
+        "content_digest": "bdd6cc0ef518ccc46f2ec495727a216adacb3ea40a836ff3ec4fbc1a8db633bc",
+        "evidence_id": "wowhead:58211aa61b2332b8b3612812"
+      },
+      "exclusion_reason": null,
+      "item_id": 287028,
+      "item_reviewed": false,
+      "name": "Tormented Cuffs",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [],
+      "slot": "Wrist",
+      "snapshot_url": "https://www.wowhead.com/forever/item=287028",
+      "stats": {
+        "hp5": 14.0,
+        "spell_power": 9.0,
+        "stamina": 13.0
+      },
+      "weapon_subtype": null
+    },
+    {
       "armor_type": "Leather",
       "conflicting_evidence": [],
       "effects_need_review": true,
@@ -366562,6 +366867,56 @@
         "nature_damage": 24.0
       },
       "weapon_subtype": null
+    },
+    {
+      "armor_type": "Plate",
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 52,
+      "evidence_ref": {
+        "content_digest": "336b828fed680841e0723a5b3f0385576e3565d2cdff5ace6333b76fed24148c",
+        "evidence_id": "wowhead:8ff486f4ef5a6f8dc2cefc3d"
+      },
+      "exclusion_reason": null,
+      "item_id": 287032,
+      "item_reviewed": false,
+      "name": "Den Champion's Binding",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [],
+      "slot": "Waist",
+      "snapshot_url": "https://www.wowhead.com/forever/item=287032",
+      "stats": {
+        "spell_power": 14.0,
+        "spirit": 8.0,
+        "strength": 16.0
+      },
+      "weapon_subtype": null
+    },
+    {
+      "armor_type": null,
+      "conflicting_evidence": [],
+      "effects_need_review": true,
+      "equip_level": 55,
+      "evidence_ref": {
+        "content_digest": "a76b51bb2b423c3ada37530bb118e6d403ff3b9590daf324bfe204adaecb0b76",
+        "evidence_id": "wowhead:b84199c9f7d1410affe273a7"
+      },
+      "exclusion_reason": null,
+      "item_id": 287034,
+      "item_reviewed": false,
+      "name": "Grove Subjugator's Blade",
+      "recommendation_excluded": false,
+      "restrictions": {},
+      "route_leads": [],
+      "slot": "One Hand",
+      "snapshot_url": "https://www.wowhead.com/forever/item=287034",
+      "stats": {
+        "crit_percent": 1.0,
+        "spell_power": 68.0,
+        "stamina": 6.0
+      },
+      "weapon_subtype": "Dagger"
     },
     {
       "armor_type": "Cloth",
@@ -369764,7 +370119,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0da3e18bc14395a34d3a2760c67b2c6f1e6366b896015476a84bd23324497a93",
+        "availability_digest": "ed8a4a8d99f0de0ecb29fa4c883f44049ad9b60a77746d393200d40fd58a9848",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -369823,7 +370178,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4dbe3b71e1c6b28ac6ea585147a9d4698d9e540d65605279e0cb13b45e94b979",
+        "availability_digest": "a914194709729ee8ddbdac5c5cb2fe6e9124c0caa6db0a64b4f7728c0d93483f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -369882,7 +370237,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7166ccb60ef76d7f93f00297ec55a54c3b945d3cf4df3f04fcf6cc6c30b5286f",
+        "availability_digest": "e46e7d9f6e905807930504c65c55ca43c2105b21fd529b71b9bdd437292e351e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -369941,7 +370296,7 @@
     },
     {
       "availability": {
-        "availability_digest": "876b39c439b6b043baa46a60d223d39b277c106b42e9ff1f8eb4d43779a2fbc6",
+        "availability_digest": "0cac36f3c23bd1005d7f42954cd7483f8afa38096a986f9bd0aa9eafa23568bf",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -372002,7 +372357,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7c2e3e9b32fcdc1f0a2fad5aff7f06a9f7cef35c0a61273dc37ad95e43c2584c",
+        "availability_digest": "72283bea62c16f399ef4dea4fff483f5c7afc6623f53af0c83debfd226402aa3",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -372061,66 +372416,7 @@
     },
     {
       "availability": {
-        "availability_digest": "360d73a28269d3dc1b65608c6f55ffc9dcdc34ba285b6e872bc1bb379469d264",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 873,
-          "equipment_rule": 924,
-          "non_gearing_effect": 2,
-          "not_useful": 92,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Alliance",
-      "level_max": 2,
-      "level_min": 2,
-      "race": "Skyborne",
-      "race_id": 95,
-      "slot": "Off Hand",
-      "spec": "Balance",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "73971ae5ae11ad586d346dcd12864ea305c8eb8587136eeb942c5b4f0b4d028f",
+        "availability_digest": "140a34ead1b506f7cbdbccb6a1b83cfad7cdfe62e4afbf662a2a72d2c5815acd",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -372179,7 +372475,66 @@
     },
     {
       "availability": {
-        "availability_digest": "aeb913adbb02c622c21a844b896ff9bb97e3fd972db79b280df13ad56f434ea0",
+        "availability_digest": "8c621ef9053267bfc840ba80285382de6ccc6bea718087ff6c9d28ece0d5456a",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 873,
+          "equipment_rule": 924,
+          "non_gearing_effect": 2,
+          "not_useful": 92,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Alliance",
+      "level_max": 2,
+      "level_min": 2,
+      "race": "Skyborne",
+      "race_id": 95,
+      "slot": "Off Hand",
+      "spec": "Balance",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "3a97fb78a94ad16f7b7de7852fd5532519747ecaf0fb4e8a126fce974ca90531",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -373138,7 +373493,7 @@
     },
     {
       "availability": {
-        "availability_digest": "506480091e58885d2c726406d9c545140335b2535e49527e90d7af62c1b884ec",
+        "availability_digest": "301e6db6623205b10fbdc5f77ee3d491135236bd53689f3e39425c064c1ba88f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -373197,66 +373552,7 @@
     },
     {
       "availability": {
-        "availability_digest": "360c7ec281d925e77650848a5483180bfd60a56d1f49040815832abd73fddfad",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 866,
-          "equipment_rule": 931,
-          "non_gearing_effect": 2,
-          "not_useful": 92,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Alliance",
-      "level_max": 3,
-      "level_min": 3,
-      "race": "Skyborne",
-      "race_id": 95,
-      "slot": "Off Hand",
-      "spec": "Balance",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "779a64df72a9c0b6129805dd309c04e2eecfa272038a7828c13f47703a3c1914",
+        "availability_digest": "6d1b3a6384e452222ae3204a5cbae8d7609801c60db59bfa2cd25cbc8ee07f68",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -373315,7 +373611,66 @@
     },
     {
       "availability": {
-        "availability_digest": "baaa5d24ba35110933d3e68e74bb7c12120784875554e2b88b92c07eab3836eb",
+        "availability_digest": "aefea2aa4c85b1ea5c6ee2d45a626be1fc11e1129d4f42c82e8ff43a5797e63a",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 866,
+          "equipment_rule": 931,
+          "non_gearing_effect": 2,
+          "not_useful": 92,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Alliance",
+      "level_max": 3,
+      "level_min": 3,
+      "race": "Skyborne",
+      "race_id": 95,
+      "slot": "Off Hand",
+      "spec": "Balance",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "19a389242024379accfb671dbe0ff092add6c85c848c33a81f95630e7db82e3e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -375218,7 +375573,7 @@
     },
     {
       "availability": {
-        "availability_digest": "91c7ff887b38378a506028b857b86c29c3fe0ad5c803c95065c3155806ca6321",
+        "availability_digest": "f1749e1571856a49ab3c6f54fdc52c45a10b16adc95f4bd81c33f0f25d5baf84",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -375277,66 +375632,7 @@
     },
     {
       "availability": {
-        "availability_digest": "490cc4ba5d44bb37b23840d994da6b10f9f34693d1e4b17293e1e3198b0f151a",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 856,
-          "equipment_rule": 941,
-          "non_gearing_effect": 2,
-          "not_useful": 92,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Alliance",
-      "level_max": 4,
-      "level_min": 4,
-      "race": "Skyborne",
-      "race_id": 95,
-      "slot": "Off Hand",
-      "spec": "Balance",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "9647a961e6a13e84209bdb99e478df45ddf6f7b1963648f74dead47bad6d0bd1",
+        "availability_digest": "7cb4205c3567eee61f011f4e497ef38e44cd3f70971dec836ce6496c3da68889",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -375395,7 +375691,66 @@
     },
     {
       "availability": {
-        "availability_digest": "8925a93cc6c9ca99061126340a12fd8d196bf316339f3a1e39c0cdb5f985ce13",
+        "availability_digest": "aaa15c582ad7a3c8d1aff18a4b0783e3648c40db1b2d4947d49d83197a08b80a",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 856,
+          "equipment_rule": 941,
+          "non_gearing_effect": 2,
+          "not_useful": 92,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Alliance",
+      "level_max": 4,
+      "level_min": 4,
+      "race": "Skyborne",
+      "race_id": 95,
+      "slot": "Off Hand",
+      "spec": "Balance",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "4ccbfc6fe4abda8c7c14d7a187a8e2f478f4333e4c9e40eae49932d743c23e95",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -542230,7 +542585,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d6cc9ac431004d1ed4cbac769072252ed0affc796edb34ecbb2a846b3df5c21e",
+        "availability_digest": "e8fa779218000cdab631d71189996bd00ee8ce60c7adf70ace644f371235bd98",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -542289,66 +542644,7 @@
     },
     {
       "availability": {
-        "availability_digest": "62b9aa7c6134a9629d59984fc8d1cd75f5bd8bc293dd04732c3e8fc4b609282e",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 878,
-          "equipment_rule": 920,
-          "non_gearing_effect": 2,
-          "not_useful": 91,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Alliance",
-      "level_max": 1,
-      "level_min": 1,
-      "race": "Skyborne",
-      "race_id": 95,
-      "slot": "Off Hand",
-      "spec": "Restoration",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "cfa355321419d71724ce8576297d85a0654d7adac0ee9c7eebf55443692dc04b",
+        "availability_digest": "95e670774b50f9b54e9f9c301ca996bbbecaf7719b41b25e0f6080d8771f847b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -542407,7 +542703,66 @@
     },
     {
       "availability": {
-        "availability_digest": "24998e42139f83ed4f3763b250bd41e2401cb80cb74bcde42bf318e8a058e55d",
+        "availability_digest": "e79f8ffefbb350398372f4ab3e45fac3fdd9a9737c0e09ceffffe89eafdcb870",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 878,
+          "equipment_rule": 920,
+          "non_gearing_effect": 2,
+          "not_useful": 91,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Alliance",
+      "level_max": 1,
+      "level_min": 1,
+      "race": "Skyborne",
+      "race_id": 95,
+      "slot": "Off Hand",
+      "spec": "Restoration",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "e557bde08c12e47e34388f64cb930099c131dfdfb0e8df0b13b663f0ca871c94",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -544468,7 +544823,7 @@
     },
     {
       "availability": {
-        "availability_digest": "fd4ffb624c2b504f8fe8a102efb1e3a6f2d714e481de08b63f3128c70f274e1b",
+        "availability_digest": "fd04c82da5916305ed063fe57a3d59d1256aec756b2afc50e542362c97a43ecf",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -544527,66 +544882,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6cbc8e1acbeeb1f3bdb5fab13b279c96b2728a3bbae339908999556fba91cd06",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 873,
-          "equipment_rule": 924,
-          "non_gearing_effect": 2,
-          "not_useful": 92,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Alliance",
-      "level_max": 2,
-      "level_min": 2,
-      "race": "Skyborne",
-      "race_id": 95,
-      "slot": "Off Hand",
-      "spec": "Restoration",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "fdb0799c858076c5f5f1bf394a454728ded0a662ca427439f7e26c5b69990135",
+        "availability_digest": "40fd2d5b8e97f0c78d7892a58740b74fa6968b0aa02cfd1c0cbbeaaf28298128",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -544645,7 +544941,66 @@
     },
     {
       "availability": {
-        "availability_digest": "a8e41edc88903eaa521cca9db16ee153449a55c8d6eb33bc8b01a113994fef86",
+        "availability_digest": "6eb1c4e135d82d642a25c664f789cb58fefa6d8cd102faebe6a5373abe630ce1",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 873,
+          "equipment_rule": 924,
+          "non_gearing_effect": 2,
+          "not_useful": 92,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Alliance",
+      "level_max": 2,
+      "level_min": 2,
+      "race": "Skyborne",
+      "race_id": 95,
+      "slot": "Off Hand",
+      "spec": "Restoration",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "b2fc2f5eeb5f31c65cf4fb764c698314c742993312ce83b356f440246cea8968",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -545604,7 +545959,7 @@
     },
     {
       "availability": {
-        "availability_digest": "a29d79b52bb847834cc02094b967b0ea6187c5afa011db56e67876f3672bdd4f",
+        "availability_digest": "133dbea45ee36a85607faa0aac2d49192e7965a4dd158b5e40d762397adc8296",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -545663,66 +546018,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3a04caab94305a470bf2fc27c4f81e414882b27a88b30903092eb4635281e0ce",
-        "complete": true,
-        "exclusion_counts": {
-          "acquisition_minimum": 50,
-          "class_restriction": 12,
-          "equip_minimum": 866,
-          "equipment_rule": 931,
-          "non_gearing_effect": 2,
-          "not_useful": 92,
-          "other_slot": 4,
-          "unavailable": 63,
-          "unresolved": 22
-        },
-        "review_issues": [],
-        "unresolved_item_ids": [
-          16768,
-          20582,
-          20694,
-          216498,
-          220597,
-          220598,
-          220599,
-          221447,
-          223533,
-          227812,
-          228077,
-          234749,
-          235893,
-          237486,
-          239100,
-          276897,
-          278405,
-          279911,
-          280046,
-          281730,
-          286747,
-          289293
-        ]
-      },
-      "candidate_choices": [],
-      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
-      "candidate_item_ids": [],
-      "candidate_scores": [],
-      "class": "Druid",
-      "eligible_candidate_count": 0,
-      "faction": "Horde",
-      "level_max": 3,
-      "level_min": 3,
-      "race": "Skyborne",
-      "race_id": 96,
-      "slot": "Off Hand",
-      "spec": "Restoration",
-      "status": "unreviewed_availability",
-      "statuses": [
-        "unreviewed_availability"
-      ]
-    },
-    {
-      "availability": {
-        "availability_digest": "8a7341dc34233971e4aa41e55f31a518f8288f08a371db75e4e5ee6c3726a8c2",
+        "availability_digest": "1d759970820faaa702a9bb40e538a815e599bb5ed2679c5375c883326ee308c6",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -545781,7 +546077,66 @@
     },
     {
       "availability": {
-        "availability_digest": "d52bb0e19840b19d6c32466cc26e03f660d661dc1c390131556d6581bd32f7f1",
+        "availability_digest": "7207cfeb6b26447ccf5360b36ff4bc24b66d397fbcc1bbe2dce196d15019e372",
+        "complete": true,
+        "exclusion_counts": {
+          "acquisition_minimum": 50,
+          "class_restriction": 12,
+          "equip_minimum": 866,
+          "equipment_rule": 931,
+          "non_gearing_effect": 2,
+          "not_useful": 92,
+          "other_slot": 4,
+          "unavailable": 63,
+          "unresolved": 22
+        },
+        "review_issues": [],
+        "unresolved_item_ids": [
+          16768,
+          20582,
+          20694,
+          216498,
+          220597,
+          220598,
+          220599,
+          221447,
+          223533,
+          227812,
+          228077,
+          234749,
+          235893,
+          237486,
+          239100,
+          276897,
+          278405,
+          279911,
+          280046,
+          281730,
+          286747,
+          289293
+        ]
+      },
+      "candidate_choices": [],
+      "candidate_digest": "e7039217bac40f77ba56195bea320a4663155c95f455a598e4ddb9b706e45379",
+      "candidate_item_ids": [],
+      "candidate_scores": [],
+      "class": "Druid",
+      "eligible_candidate_count": 0,
+      "faction": "Horde",
+      "level_max": 3,
+      "level_min": 3,
+      "race": "Skyborne",
+      "race_id": 96,
+      "slot": "Off Hand",
+      "spec": "Restoration",
+      "status": "unreviewed_availability",
+      "statuses": [
+        "unreviewed_availability"
+      ]
+    },
+    {
+      "availability": {
+        "availability_digest": "6dfbcada4d0d165aa29cf63595f7ef10779c5d5ae4e877972991280eaa708dfe",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -547684,7 +548039,7 @@
     },
     {
       "availability": {
-        "availability_digest": "69eb07df3255629130788b729dd64c65d485e18c2838aa1f34ee558eb6edd56c",
+        "availability_digest": "e6d6afcd4d36669ad73311b16533e6d028aebf563027c80cb3aa359ddb40f6bb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -547743,7 +548098,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7adc79e4ef6dca4e66eeea461ba306f0cff6ebb8709cfa16c8c72fa48b56596d",
+        "availability_digest": "2c5f150598196681f11fde7261da21ea7327f0668bb3afa722e59382370060ae",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -547802,7 +548157,7 @@
     },
     {
       "availability": {
-        "availability_digest": "bbf9c174c354a92e8e843aa9645e860830c4f71dc825ffe1bcb2a41d46673fe8",
+        "availability_digest": "809895f024b3dffb7aa0920f9ea873339d6f9fba0097573cec6e27ca7d9c2b61",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -547861,7 +548216,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3004d0f6f6b8c1fe628f1bb38b06498cf8273f688f7c9605ff11416aed4b6f76",
+        "availability_digest": "2302ebe1c35e3302d05982a3266a7e4ae0ecfe584c99edc541d5dfd163bf8ff8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 50,
@@ -1019476,7 +1019831,7 @@
     },
     {
       "availability": {
-        "availability_digest": "a078239a4cf38ca7ef744ffb5a6f1f5afb2fb1bdb20a1436c33f7bb9380adc08",
+        "availability_digest": "20a6c509cf5c5e246e5c20c741fc6783a8b00e27776285ff3fcb76a1497f183c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1019535,7 +1019890,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3eb37b8abdf8d348e68898fba66b047eb0fb4226e2df798ea38443d89c185346",
+        "availability_digest": "6b5438ae18297bd34e54f1c2a1661c9e3a42d42f7cb29185d51d2dc457dfce34",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1019594,7 +1019949,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6580b2464a603b756ef7fbeea60ea011a0804de1e82df93031d50fb5dc7cc63b",
+        "availability_digest": "dd4e16a5855e59c843509e6c7b5dec7970564829f8ca51991af69f6f9cb26901",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1019653,7 +1020008,7 @@
     },
     {
       "availability": {
-        "availability_digest": "472e13059909244fc0ed59cc3992296a5d3d0850cb478a18e01c83b46b5acbcd",
+        "availability_digest": "7493231aadb8e0cb8439ee4f39c347c35f12c3e77f0a8d6910e5678d9e5d0aec",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1019712,7 +1020067,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7e111f61810489c525992d98e4e0c1ec372bafc1a6e0b9277e99391655cd534f",
+        "availability_digest": "eb359ff04519a3494e559b334adebbbe13dc38c4d1fdf15e1bc7e3817cd76717",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1019771,7 +1020126,7 @@
     },
     {
       "availability": {
-        "availability_digest": "efd5ce4a5bdf328f7c8664caf7a766428568695abc9e7041ba16d51a48ecd1ad",
+        "availability_digest": "ffffea3ea8e6eed4a15c7ea597ac3bfe40929647e2b67f98dd1d338c7e6263c5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022599,7 +1022954,7 @@
     },
     {
       "availability": {
-        "availability_digest": "805ab55ab8d57bf5434e32d61a2a71305055394cd16168c089662e1003f70c81",
+        "availability_digest": "16adc1c4ba4ede58ae9b8963e71ec18beedd048719078a3db5849a6e5e17c457",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022658,7 +1023013,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2c047cbcce83a68b80d00f8f34241825ea99f021388c432d56eb0dcbd6f6a35f",
+        "availability_digest": "762d9104dd247c56818173d853cf5dfd0225b9481f3a0eaa8bd1cd927764fe83",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022717,7 +1023072,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8c2c2f8ed8b0ff089c2e113340bfaf335bfae2e50cc1bea661ceba82853aafe2",
+        "availability_digest": "719172b8c04b21eb8291c772a158eaf04106b0ebc386abc1f9e3d3770b6f86d7",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022776,7 +1023131,7 @@
     },
     {
       "availability": {
-        "availability_digest": "723af8537d6ccbcff45f20e5d893b233684221fbbebedcde137ebb18e7b9b31c",
+        "availability_digest": "bd743c2f4cc5c22aad6db3422a2e9cfbb72e83348f11c9f4a834b870009ae192",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022835,7 +1023190,7 @@
     },
     {
       "availability": {
-        "availability_digest": "61aa622da4c2e7f7368008b3465138493d4197964b4cdccf8df985feef467f6a",
+        "availability_digest": "832c0c0d2cfb13404407f584a239e7bca0f89a472582632fee80a0263ca57d63",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1022894,7 +1023249,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2199a21b041b5bdf404a291823506ec8c7538138537ccbcfc2259dd64adb265f",
+        "availability_digest": "3e1267c3d29f0439e1854de4cd04a2bbd89197ba683ea387dad0d4c5ed6c5fbd",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023703,7 +1024058,7 @@
     },
     {
       "availability": {
-        "availability_digest": "57a36e0d4ca48013a9c85ec3379c601a93d13a9e8fe98705c06c98f052fb4f9a",
+        "availability_digest": "d37b45c3a6e1f64507380b454a4312609c93ff6932873275787becf4164648ca",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023762,7 +1024117,7 @@
     },
     {
       "availability": {
-        "availability_digest": "1ebd5fd2bfe374648cd3b144bd8dd9f473d68cbfa06c029f0e1c593452d4a5ba",
+        "availability_digest": "65ed567e8b8fea5e07577e2938cc1fdd736163ca8970be9a21d009bd817c7286",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023821,7 +1024176,7 @@
     },
     {
       "availability": {
-        "availability_digest": "76bdfd0254cf67825f8b4e120cba1980c55917d4154363b5131321a67c1b4791",
+        "availability_digest": "e2297b0b180d7b19602ce2d8abdaa1257e7ac11dc8008876419b54ba14b1d2b5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023880,7 +1024235,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9d5fe6b3dec060943f41fd7795063aed71c6e408ca4991fba1909e30473f6f2f",
+        "availability_digest": "dd731eb89c9e3b30d22732267f24f4e2e6ee23427fdc23e3dc99b4ea912b087d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023939,7 +1024294,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ed8bcf5f4836d0e507c45dc0912865b10b672258495b4eb77cc7325d0c9d8e6e",
+        "availability_digest": "c065a3ef06a7186d379096c94f517ca7118af0659569e646672213edfaab51c8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1023998,7 +1024353,7 @@
     },
     {
       "availability": {
-        "availability_digest": "763ca4288784c5513fa759f48f272664d58d45408953900e94cc501cd5fb51c6",
+        "availability_digest": "e099dc829b528bfe7e5c9a919337ac5785f71d96e6d2332a524905831f0b792b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026259,7 +1026614,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b31e2b23ea1014665f30e6aa821960030c99578266770affa7d12dbd4ba34fd0",
+        "availability_digest": "4614f3e18f8391e372dfaa0d67abe8e5f4c471878882b2a026206526e47be9aa",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026318,7 +1026673,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3e48bb54e0c4fc7979b1e347e6d0eb5c686c9fbeef91bd3047b9850e1cba386d",
+        "availability_digest": "1587c0833335720a3b7919d579dd32c35b35497897fa154a3b03ce7c1213efe2",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026377,7 +1026732,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d00bb39616406c10570e3de3c7e7600f685065d39b7fbcdff4d766cd408a7178",
+        "availability_digest": "07060120018b05a1b7ebf5a1615c64f96d243b7d6f6d9e1ab4a89a24170c3961",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026436,7 +1026791,7 @@
     },
     {
       "availability": {
-        "availability_digest": "744328645e3a0ad73beb05cebef1f2c44b06ea58962272c6577b285ff66fdef1",
+        "availability_digest": "b1c6a43b14d2ded587e7126b0e051b9f9270f4d8d735d94b76c3b3a3a40c7349",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026495,7 +1026850,7 @@
     },
     {
       "availability": {
-        "availability_digest": "dfa67ee88d168033d479710150184c4d225bbbf5394982949d23dfa755a6554c",
+        "availability_digest": "043b4299594c0f72d6bb2e7342b03297fd00e5079d94c3801f5fff954aad3353",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1026554,7 +1026909,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5f1fc043ab161abc844c4d5275b5b4823906f5d14d223235306f691ef1c53514",
+        "availability_digest": "641063954d78e8edd15f291aacc09fc5f1adb368bed7396b00d84a7e64194781",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099651,7 +1100006,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d567c2903f22222c44f1c07b13a04e52edf0e1a3f18636429bc01139d2b47a82",
+        "availability_digest": "a568ab4d2a338f4cbed307e0e9fd98598dc8a813dce680c849df4885550459a1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099710,7 +1100065,7 @@
     },
     {
       "availability": {
-        "availability_digest": "a982dc64289069339957434897edea7a16bbda9f4acfda1aef63a9c41a02bbf0",
+        "availability_digest": "8bd7f60b339ad7cad49261e8a16d76c22bc4bddb35038b82478e06b38a07ef4e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099769,7 +1100124,7 @@
     },
     {
       "availability": {
-        "availability_digest": "659a3aebf0a80066477d89d7700c459c7dc6096148f332d3a076a974fff52408",
+        "availability_digest": "1d3296466aa4ebe6b2cf601ce729cc64d81f378e633b0575c9ec736ef7ec0fed",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099828,7 +1100183,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4a8599262eef3af8dcf15ac4d8bf55a47e6fd7f79f01705ffb4dad458e57d62a",
+        "availability_digest": "2a1576954aa926ea1b82112656c894a39f2afa756d113406663fba9c52a6a164",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099887,7 +1100242,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3c9d74b25de1f0cd0bc825d149291049fedad46c4983698ec18eddb484f2723e",
+        "availability_digest": "867546e058b6ad7bbfdae1ead327c01489920dc513e5d6d737b7d9235fecb087",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1099946,7 +1100301,7 @@
     },
     {
       "availability": {
-        "availability_digest": "461af13683d8d59dccb876d1e10c89ffeead38a8dde2c7f85f0a749c72b5b0df",
+        "availability_digest": "1be908be1918fc905cd565c6069332450925dbdebeb88cfc83dece7aaa458296",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1102774,7 +1103129,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d726ad5ad90568f3eb95a31ff4fc122a2e075e381364560d1970bbf353e93c6a",
+        "availability_digest": "0d029160732bd9159fef33dd61b190f3db740ac1ea97164761c5f22f3e03e78d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1102833,7 +1103188,7 @@
     },
     {
       "availability": {
-        "availability_digest": "732ebfc8725ee5b12702921dba002a582d451171715d496f5256bd4d6dc49b44",
+        "availability_digest": "a05e06457001cfd41d4db9a094f64b20e76fa848ed8c7bbffb93d1e4d3205f7a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1102892,7 +1103247,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c6dd0f715b951185cd7a26c41821b3a1e350fc9687b7107aafaf84f34a578522",
+        "availability_digest": "f61b1c71db8293b1b4c857384df90131b6a4512927f47657927bfc8cf0a885e1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1102951,7 +1103306,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c20ad26120cea2e58fc909c90c05907bd463a0c1882165a47f46b578c0a5b815",
+        "availability_digest": "fa6108bbe60ba23afecb767cdd6f3bc7c37e4a51f8abc3c0af0f9f9b650c8289",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1103010,7 +1103365,7 @@
     },
     {
       "availability": {
-        "availability_digest": "819fa6c2d9788e96e601077a98b4060cde367302a6caba7a20da097ad59b2b89",
+        "availability_digest": "415f582bb778d4acb80d51c2cd19e3039fbcbcaf5791edbc3c13f48e500e9e8c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1103069,7 +1103424,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b58fa563e2006d336df90ca0641ca949bdc5b9aadb5d495fecc428e85b9fea3f",
+        "availability_digest": "991697be9ede86be77be6fb0d3b6d92f17d171e71159653d160f8b5fbf7bb7e9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1103878,7 +1104233,7 @@
     },
     {
       "availability": {
-        "availability_digest": "18826a6cc0585fdb6eb6a8d58886466e969576fd4729cdeec70b83e5818d7d76",
+        "availability_digest": "4347bb2be526f2d3f413178e59c64ce7da02f9bdc2cf599fb3ed3672196f27da",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1103937,7 +1104292,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ebc66272c35ce9e7a456784cab23e990493c8e0905e6a4d87643b7028cf2b9bc",
+        "availability_digest": "bdac3c5988eadeb72d7e627e988fd367d39e73f871aabdaf1fcb54ec574921b0",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1103996,7 +1104351,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d41307d9f0ba81941d3dafb7565cf10020636235c290a50121fc42e210099aed",
+        "availability_digest": "aa632cfc2b1660ec3e36919d81770856fa386c749ef78042be66a9a70a953773",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1104055,7 +1104410,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f32960a3261f83a6d0fc34ed68e104f217c80d5ff988ba45cce93cc2d8174bb6",
+        "availability_digest": "6bd35a0d78bde18459b9f7b03786e441bcd34f4c11d04471dfdaa2d1041170bb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1104114,7 +1104469,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7e5ed06a0572e60851a92b60a76f68c516a1d25943b09523875ded87fa75c866",
+        "availability_digest": "ad26fbb3e70bf586ec7e515243d70cbce7d496ca677be2f24021ec474d862556",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1104173,7 +1104528,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9977e055eb3cd02967cd3a752e8116490b35db57f39fef4df79f08f75948c82c",
+        "availability_digest": "fa3a2a503cc73588d10df750e1ce2c714bb2fa3e5361d4ddcad732628502c5b4",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106434,7 +1106789,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ecaff2ef99bb5a38c1d11ed3601116530486e51e83545ef458f0416c777491e4",
+        "availability_digest": "161fbaaeb2412cd36a1c3df8ac8ac0eb0246c1a083bcb5b409da904e63515750",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106493,7 +1106848,7 @@
     },
     {
       "availability": {
-        "availability_digest": "375252076ece57575a7220ad3a853605a54a01593931e74d3fab1e2cf4487f92",
+        "availability_digest": "0f8e349f8a65afd46cae3861183db7561f84aa87de8bd7197ff559ff7ae21567",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106552,7 +1106907,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d61f8ef95af43c6fed26261a4d125e5b5c8cc12b1881c45c30ae8cfa2a6c013d",
+        "availability_digest": "ecac9e03a53814f609faefe27aafbab3416fb81b0ecf8d753e50a599f374e3db",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106611,7 +1106966,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e8ef18df60284cdb3cded73ac20e974b8cf2b7ec126c40a9f56bf160418f55ac",
+        "availability_digest": "2fcf9a31a410d67fa5a8f1e1a40dcc9f099961aafe06728442cff87b3a4301de",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106670,7 +1107025,7 @@
     },
     {
       "availability": {
-        "availability_digest": "fb8c7d966cbcf6cafca0fc7a74946a348099bd5be7f58276456a60be8b80e7a9",
+        "availability_digest": "e419dd8510b3cdfddbe64d49e5eab9c3a1a8363c42c6a97f9fb305c796b541ec",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1106729,7 +1107084,7 @@
     },
     {
       "availability": {
-        "availability_digest": "37fd7d0e70f4e46354d93fbe8e81f524549490a132af4e161a6fc788aba4de38",
+        "availability_digest": "29376d74468e573c638cb12bc6b89d2c59f1b8996b0745f03be6ef0d2ea4c2a2",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1179826,7 +1180181,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ae3e53f07caff784c829b27cffc781e23f556ba2fc288b6663df1a33905cdad7",
+        "availability_digest": "7fdfd9254789c2e3f358624fe09216071da9d99a002ecf9000bd829621c2cf67",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1179885,7 +1180240,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0270e1de5bad5001c8cf8605b863fd4b231b9ccbf929f806821766e9d30c5553",
+        "availability_digest": "54e84a1ac8248d9b119476984c1808f32c4b84da1cbfede359f8a1a4b52005e9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1179944,7 +1180299,7 @@
     },
     {
       "availability": {
-        "availability_digest": "89893ca266e93d674dabe73fabf5a2934f3442ac5a0d3b1cec90a994faeeba93",
+        "availability_digest": "7e20fd7240d9f116da24cf1961771f8d64e2ce0e4b95f29531890c47b4cf30e4",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1180003,7 +1180358,7 @@
     },
     {
       "availability": {
-        "availability_digest": "89bec67d717b351990060cc96530504436701804a9d5932b657c06ab000d772b",
+        "availability_digest": "6388d10beacb389c3cf7a2f9c28294f5c65d946fc8148cc9ffaf6345b8525531",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1180062,7 +1180417,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6778795ee858b2d7427d28c5dfc39ce756c16733a3a64f3dad21edbd21755e0d",
+        "availability_digest": "a447c804b7dadb77876a665eb058bb58cd27736a2c2f02e6ca88575af8513d5f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1180121,7 +1180476,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0e6b6f8119d4b470beeeaf70a24e2f1fc378e5d95d9af3475542d42b19c8d51b",
+        "availability_digest": "bc526377611212af5e9c6a9d13176a3c43e997f90f91f7a14f20d6f0c0435d6b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1182949,7 +1183304,7 @@
     },
     {
       "availability": {
-        "availability_digest": "09bcedc923560f9905f3425de3b218313a4bc398ea018a5221c6e7e0bac226b4",
+        "availability_digest": "66066defbb5ee2f68494617782b998b367f71dee9c840a1c5ec0aeb6a29e67d8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1183008,7 +1183363,7 @@
     },
     {
       "availability": {
-        "availability_digest": "16c180c248f71b31326c4c9952bb9831afd92f62f952eb95b4241a8251157024",
+        "availability_digest": "612201b0351be22fe9db316944e681c64d299b6333ef538843ddd4e4976ef264",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1183067,7 +1183422,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e53c12989ec483a43f88d862a6154bc1cf6fccdb4ec79ab65f8af0fd9ea340a7",
+        "availability_digest": "7f9727fe752ad0a9a63c0f1351e9f3e7c836eb6760f557fb9d2b59ada8da554c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1183126,7 +1183481,7 @@
     },
     {
       "availability": {
-        "availability_digest": "02c59ca9a1fa150b4f52c1a8aba989dac56d99f539fe7f1f5c7d66f28fcb0206",
+        "availability_digest": "10904700ac3bfda06b5f08506e76348ac4361933bf43217d62af3e869765d651",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1183185,7 +1183540,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c041e97e26f736c01e1940dda4298bcf62b93f344cfb192737ccb9118bf957bc",
+        "availability_digest": "c8f4707c489bed3eb99ec9f8fc95056bf37ea2096a26a7c4ee4b03fb174fd515",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1183244,7 +1183599,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ceb2e813b51f2bdfaa4e0503fefd00b9ac82352d6fba7c1d7ed324223ed710d5",
+        "availability_digest": "215519da96a53f352a7d4abfb2b696fafaef8650af93b561a859e866e6f38516",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184053,7 +1184408,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2f53549c83a2e07528bda31afe18a413e6725c97aa8b2afe3624450bad55542e",
+        "availability_digest": "9e0e758bbb35f619cdf8029bbc5921f38f5d34d8040199596e093b72926ecade",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184112,7 +1184467,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f0d6e395c1db598c53928ba3127e62e60a853741af84c5a9983ba1016535eb85",
+        "availability_digest": "d2c055a012a54e2311c5c7cdcdbe17057a878e0b3f0328575d0c1388158d3863",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184171,7 +1184526,7 @@
     },
     {
       "availability": {
-        "availability_digest": "08adb8f2b8d2f20ca14598b9d04d80910eefbce86ed61e8e2f10e3630e84e75e",
+        "availability_digest": "2a08c9e32ac87df14929586dfbd4a38b5349af3b589a547503838d42e2f67a59",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184230,7 +1184585,7 @@
     },
     {
       "availability": {
-        "availability_digest": "60b0d6629d86af12c260e0cdd76a9d8c503b2abdfba3a490641d4e9105429063",
+        "availability_digest": "1ffec195136c89bd56f949fef2f8f61e7567ec7b1b00ef8e3518a5f2b6fd9406",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184289,7 +1184644,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3646399565abf357241a77546f9968ccaa5e70576951802123c926288de2e21c",
+        "availability_digest": "08fe978a452dca764b3364f76e059d51684c96003a240cac20ebc783842519e4",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1184348,7 +1184703,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3498561be1d8dc10f141fe938b137a218c181cc0e6e4a462bbca019e28b3822c",
+        "availability_digest": "208183e9d8e5726c96af77b9c009cd585ed265a100537288e004519896664ece",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186609,7 +1186964,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f73c38c214fbc1e055b8257336d60f4965f10f759917cdf77d8b4c10e52b899e",
+        "availability_digest": "9c72281dad5a731502bb575a895c8505e45f157d75d189aaaa31c61873057136",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186668,7 +1187023,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6801356402b10939ec8badc581b4ab02b7966a260fa914b12382cfd6213eac5e",
+        "availability_digest": "49b75eab806b4d3b9a12d1b17e2203018c4480df2d2197ed2f3f9d62513f10d1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186727,7 +1187082,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3fb7bc114a2dd85a25c1c9f973cb8f36d8e477605e8929ff58cf5412c5c4dff6",
+        "availability_digest": "53721f2dedf86c5bf3782e3232d5b82b14d429c6f69dd985086f324705181563",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186786,7 +1187141,7 @@
     },
     {
       "availability": {
-        "availability_digest": "31f1168048f1c9abffde5df3dee12327ca7c1a6768af5216ef452d2bdbfa90a0",
+        "availability_digest": "02d57b2962ae35dfb181cd6566d5722065b50975807687c0dc46a3a1d3debf5a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186845,7 +1187200,7 @@
     },
     {
       "availability": {
-        "availability_digest": "31ea1801b00b8c80c67d75130a212f7a8c8b1cde2d313d35c8fee626385262de",
+        "availability_digest": "273831ed3ccf931238a56c8154ed7acd14641283a9dc2b996f54d5b609ebe3c6",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1186904,7 +1187259,7 @@
     },
     {
       "availability": {
-        "availability_digest": "bded7c50bba89471203b257ca7a0bb2a6fc2dc0699ba078a7193047450fbe5ac",
+        "availability_digest": "44287a05b5ec3ae1aa54ab726c3a1e45139812ee951ea10f69a6d17ce2dfa8e6",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -1404326,7 +1404681,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5cdd39441135ac0caa95925c17173acfad0cac4e180351d1334c40dec0c7c285",
+        "availability_digest": "27dfda30f069ed916f38816e9282379dd5d141860c3584c5e1eb148bb4cfa3cb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1404385,7 +1404740,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b21ce34cdecb8687b12b75f8c0dbf3383501492fd3bf0dd6022516002a5aa9a0",
+        "availability_digest": "89a607809374981fc2e7372076e2b686ceeb106b67da9e9aeec01e1f6fed2764",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1404444,7 +1404799,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2c84c791ddf54b939c936ebbcc00bcd0069000b84e1af2fc5409fbd63491cf98",
+        "availability_digest": "4c37f0a34ab6dd5dfbc4293e223917a80dc4a603c5e982c120c68786d67acb77",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1404503,7 +1404858,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6c63c884069da9d1edac0161fe1e0b83c3dd610b9059d88bd93ffe081c3a57c3",
+        "availability_digest": "acf7c4dd9de2e5a171e6653beee4a4a4a42921196cb96ef70882f497133f3680",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1404562,7 +1404917,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3180966735d8fb9ffede41691ec803db8f6729c78b06a96d70b1dc7d3fb1b448",
+        "availability_digest": "34c74a08f1884aab6910471af69d055dc930b8123a4e51c9b7f763415b8e4488",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1404621,7 +1404976,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9e291ff669117433856ada69d7ac9b8691d8a97aa70d1911b7de9a2f7a48e9f3",
+        "availability_digest": "407326185446b347373f5f084bd88b0ef2ccd92005c39335cf631ac1d79dbba9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407386,7 +1407741,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8fa00c6e5580bfd89fcb89c17837083cf6d603f24fca2fbbffe1daeb4243ac8c",
+        "availability_digest": "2daffde2a742b66cc97b577a3c5738c1dbed4cd243052a10e9264880dd4061bd",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407445,7 +1407800,7 @@
     },
     {
       "availability": {
-        "availability_digest": "96a5ffebf0afe488cc1d7665855eaf7ed84f73e798a6846b2937bc276f367c50",
+        "availability_digest": "cb5d76dc74ea378461154c470f828da6fa506e882e0f5f639dcc5db3cb136183",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407504,7 +1407859,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4bae63b27e31f287bf1dda4b51e33648a7de34f04b87a0599239fc7fe8a2852c",
+        "availability_digest": "35a743d5676f0b496aa385c0a7552b7282dc13fa6a98ac27485ed215a14527af",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407563,7 +1407918,7 @@
     },
     {
       "availability": {
-        "availability_digest": "def2b65a7473b15d899346d9c664db7acca953079b6f24329f60010e5207b8ab",
+        "availability_digest": "43d2fe1373a4c070bde66cd9d1585a4d56982371a3b41fdb703cfca710f53264",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407622,7 +1407977,7 @@
     },
     {
       "availability": {
-        "availability_digest": "75b5efde8d93e6cfb420c966bf36870ad6a6eb53f8cce518f8678c7dc62da812",
+        "availability_digest": "2c81f6766910b6d96a38c6ab7e2e9998e9f1a8cdfaa791a3336c194bf084ab6c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1407681,7 +1408036,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5a9b972b008595c4b89f3726ea5cc28d0a31056315a3959a1245744bdc587405",
+        "availability_digest": "fe5836fa93d0111e6d9fee3db787c0b3e24aa83b8cdb11e6307c1ebcc0a8e693",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408340,7 +1408695,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9b784ef2604116ce65b7b221d463e679bfe64cd7679631e716fa25825f01a35b",
+        "availability_digest": "b0d90d8726e3d983c1ee82a3614d1546e1989212141257e262c6dc0aed9fd422",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408399,7 +1408754,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ef2668eb6853f9c75ab6c348bb5c9f65d5111c283bd5fdefe2b9c0ae2981cb94",
+        "availability_digest": "5692eda07796689134d157bb7120162b94840600b38c6be901182e5476f93bce",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408458,7 +1408813,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2284f0e1a817e326eca17d26659815abbcdbe60d7bcb25fd3d92603518118b97",
+        "availability_digest": "70b695d4077fd04b7ed267d7523a1fb40287cda277ba0161bc9f2bea29c7ec54",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408517,7 +1408872,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7c55c8976cb87d8553c96d98341f90c0376f6075fed02aaf5519368bc9a14476",
+        "availability_digest": "ed63c625325a307c7b6f100bbd16ba7e3e12822014141d0d1614ed18581994a8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408576,7 +1408931,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6d5f730b6cf368d6ae6e98ff4944f196d9efc918d3cf2f5c9ec1807b09f0c541",
+        "availability_digest": "e8fffc2979d137ab5f0953c82f1d734ab2dee83a4220f45be01aa3fad07463b4",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1408635,7 +1408990,7 @@
     },
     {
       "availability": {
-        "availability_digest": "fc71a072f8c94370819a552cbc0cfe4e8f1a7be763e6558620ed09a81a16d22d",
+        "availability_digest": "06ef90a053079f6669d99103d02ebe236cb279c3a1aa9166271b7bc97be56875",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1410852,7 +1411207,7 @@
     },
     {
       "availability": {
-        "availability_digest": "19cd43c699c6a0bcc6a4491ce011f8d14daa5e98e2adbc9c30175489c5b96fd3",
+        "availability_digest": "b207fe62ad4a6a59934372f1acb50db30adaa58eb1d3075d8b2a7275d69227b6",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1410911,7 +1411266,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d413f39859e7aa7b468e3c349b3365d79185322c98bacdc4e698aa41e6a41910",
+        "availability_digest": "66eb500f915ac4780333ad2e30a28a4470e90913a41290485d233f0fbb906b7b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1410970,7 +1411325,7 @@
     },
     {
       "availability": {
-        "availability_digest": "854433f7bac3c4de8eb002f8ef493adb1052f60a244299079ba5a0de0fdb365d",
+        "availability_digest": "c65e60f82b2c14598ab27798d8d10229a688e6ac0b5bc4da9deff2315dc0c758",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1411029,7 +1411384,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c328d109f294d7e12499453454fdff1e86bf4eb4f9a9212c6d23a53a249177e5",
+        "availability_digest": "66f2002ceff0baa25e23bb58cb5f97e7352c5b2d7213f562de27678e29ef0257",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1411088,7 +1411443,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8ddcee5cd192f4586505b928087f4bdb7b073308cbcab4850788e5e8c7732692",
+        "availability_digest": "1b518d9746be0385c85867144ed70fd02e1241cce299db694523a97919121330",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1411147,7 +1411502,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d97e9ba57f3a0a00f27f82c71ee3a0d60a59c3760789c129a08981777fa88496",
+        "availability_digest": "c0e933f2c40a2726ba0a24c81ed63c554498b1d85f0f0d41621e2b83a22b5859",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483278,7 +1483633,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2a478ee907dad7597ff6aa87885b6aef0f2274c5086ff2997fbc455b0825dbe2",
+        "availability_digest": "fcd98096da652db0871c420acc27736020a15da3fefe1c3149108a2089232ac5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483337,7 +1483692,7 @@
     },
     {
       "availability": {
-        "availability_digest": "1ad212989661af82660be538bc096e6d1b86bae2560e88c78a508cbd726f5c46",
+        "availability_digest": "313f150952a32d271207fd90327ddbd0ba9c19817f83a243ae6b82c864cfa998",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483396,7 +1483751,7 @@
     },
     {
       "availability": {
-        "availability_digest": "025a6ef71783e5c25849177c5c575f91efa41a3ab53027037f2b3b55510ad6cd",
+        "availability_digest": "9e5322f50d82603afe53e317b693ea48755dfd1742ecc236e0f9a908585ae2e6",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483455,7 +1483810,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5d3294d31bd1ce627c1d3684ed6d7f6ec54b11d8d70720915f8ded0e37589ae5",
+        "availability_digest": "8a4479fc5684121deef307142d40165af6440f52c15d8917556b46e5c62a04e2",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483514,7 +1483869,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f5d8368e2e9fd855e5f2cf91a9368645272304f4a0de6346b74e49d5f50ff1a4",
+        "availability_digest": "0a67a842ea678fa3c58b8e6325f3e5cdc1702f33dae82fe2c0cf3aa6f8ef928f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1483573,7 +1483928,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e918faab4da5f99d1e044fc3bf3854bc33c3df4d1d134a884747273a7b822b0e",
+        "availability_digest": "9447ecdb21d57da2e22819a8c74156d58ed0b3d53873fb2fc1c97cd2a846e0c8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486338,7 +1486693,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7b7ff5b6027ee084b4ed56f45fb20e926013313e4a93f414f5d91ba78d1795db",
+        "availability_digest": "05b0cd5c9da7a79d470902fb0fc1062ceb7f5dbde8ccd361be24bdac51c2f4a1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486397,7 +1486752,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2f58af2e80d253ddfbb106a7d466f632cf01b5452c097a346dd8c7e6b252d999",
+        "availability_digest": "7526eb2072d10722fd0e4aea624e12b6d95c458808e2aff5139cb3c45510a9bb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486456,7 +1486811,7 @@
     },
     {
       "availability": {
-        "availability_digest": "613ff26ad8bc7db48532a5bc0e70aaf17aff1249856e29023f9c0d18467964de",
+        "availability_digest": "4dfd9c8d9417596f920f40ada2ee3ccdaf23d02baaf735e14deccf998134e31f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486515,7 +1486870,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0edbbfd011fe417ae5840f728d2f436482fafe27864c7d150da13c26d517ad16",
+        "availability_digest": "425817e0cab0d21c98d2c94c518491c5114a6282b8857d157618b5f6ea4a78c2",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486574,7 +1486929,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6d01901c45f586407b7dd8ece3f84c782c9fe060499e6d4869c05a83099108a0",
+        "availability_digest": "7aefb08eccaaeba06b8883358459fc42bf65692bdcd92f2d8a7e92c52595ef80",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1486633,7 +1486988,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9cb353054dc2645b5900234339af800a80538bbac7ac005eef7ecc2af31a6c65",
+        "availability_digest": "9e885cd7a34cb0508353b282426b4b312578ca254c69e75aa0338d754c858f80",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487292,7 +1487647,7 @@
     },
     {
       "availability": {
-        "availability_digest": "828d6e8ae948924b41f1e4cf54df10076e507c5cea83694325438e10c21f0bb1",
+        "availability_digest": "47903f90a53299b03528e6e14aec9193339eaa556a0e9353630ef9d14a16248d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487351,7 +1487706,7 @@
     },
     {
       "availability": {
-        "availability_digest": "24dd37b8b18d70fc71dd44d079f1f9adf9563dc29efe257e8595003a5d5fda75",
+        "availability_digest": "4884bbf047e660ca38fcfc5fff770fd252fda99684f9a528ecdb1384c47a846a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487410,7 +1487765,7 @@
     },
     {
       "availability": {
-        "availability_digest": "018e0a0b11d43d6d3f1a98f5cd2ede1ddf079f785f0bebe9003ef8760a3ea1f5",
+        "availability_digest": "cfcdf9fb300e2375714f990caade9d00022607e8c9bd717099c8582d6cee3966",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487469,7 +1487824,7 @@
     },
     {
       "availability": {
-        "availability_digest": "bf593f4fa5d6d82170de269ae7690d50e172a0d9542ffe7d4cdc3137a0801e50",
+        "availability_digest": "e3da1897a1ea9284cf723628494f306a6e168c9744c00d552c07ecb9f3835bd0",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487528,7 +1487883,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4055a5a2b0233a0b36f9ae0b59776d8b57165c3dc3124f61d0f05770418640e2",
+        "availability_digest": "2b7ab510000fb1b9b7ca4898982a4233cf9815965fbeef20b9fac759d27b081e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1487587,7 +1487942,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b0d586383facbe0a8460edb1e4c9b03efe9a8a784ef4de55d71e015d1558556a",
+        "availability_digest": "d44611030d690fa27088c874ff3dc4a5d59a62241328632467e5d923c5629e4a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1489804,7 +1490159,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7090b7d2618f196ab2e3dd9d1517a7e3dcef09e26c3bbcb11d3225f9c535cb89",
+        "availability_digest": "e079c0cd6030130d9d0e68428ca8f4993abf72b9013ffdd4c2f52a05b3101d71",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1489863,7 +1490218,7 @@
     },
     {
       "availability": {
-        "availability_digest": "468b3a0fa0cc01155f468746913fff4fcf9c9294874089992d4dfcf53a7259b7",
+        "availability_digest": "5f10b27cdc6d954ecec8e5b613d832a6e05d55b3a6a1a970fa30a925a64717ad",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1489922,7 +1490277,7 @@
     },
     {
       "availability": {
-        "availability_digest": "03fa5fa45cb251ba26cc32355f24816bd67c1062540b5a689ba44dcfde667eba",
+        "availability_digest": "8becf01ab64513b7351a8349a32415201284daef44b270af3a3463e6d56a9cee",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1489981,7 +1490336,7 @@
     },
     {
       "availability": {
-        "availability_digest": "610c61da3ec529a4e8ceec62f2bc345dd4bb95ffbc8c7451215c0319158907c7",
+        "availability_digest": "0518cf44f2338de52188212e4958dc12c363856b361e8f34cc153ed095793f97",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1490040,7 +1490395,7 @@
     },
     {
       "availability": {
-        "availability_digest": "200c3f641bce177cbb9ea235b8848e8e50a778a92e580ed6559c0c50bf25f087",
+        "availability_digest": "b307df607108e79706c9b6bbcd14f9e4bb28addb5e8986cd05a8b2de9ed6f955",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1490099,7 +1490454,7 @@
     },
     {
       "availability": {
-        "availability_digest": "022dd71e9ce499bf47963e7a86dfe531bc158261de0d71d0580667c191982016",
+        "availability_digest": "17c527f890fc6bbde2b803f0fbe6f8bd4aa8f8004faace709433b0a1dd1acc49",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562230,7 +1562585,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d9e00fc17be2b9e508dbf07d9827be611c2e71742928f79a8b7aa370598bd8d4",
+        "availability_digest": "b533690f4f0289c55fef26d81e8b8e85d89a8064de423d700ef7e5c2ae96d4f1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562289,7 +1562644,7 @@
     },
     {
       "availability": {
-        "availability_digest": "725a94939d4bd7d47c45d16506775f93d97b1c777d1b7a51397335b9ce9723c3",
+        "availability_digest": "d3acca17e06ddf9d60cdc44af2a9c6504f32a2b873572ca658738caea32e6ce2",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562348,7 +1562703,7 @@
     },
     {
       "availability": {
-        "availability_digest": "29741df781da28562a3e0ee02aca2c4c5e0a46228851e07953fc04b9c87a8720",
+        "availability_digest": "ff8e377f9f84a7072d58633907e2813ffec32f40554696df3f5512ac013feb1d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562407,7 +1562762,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c7f36e270c0075f5a4aee6dc5efd306afb23f08c295e42f9df8a4d398ac17e1f",
+        "availability_digest": "a2ff4e7ec6ef9fb9695614d67a5d33341fa71a822067155c1a0ebbd868461268",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562466,7 +1562821,7 @@
     },
     {
       "availability": {
-        "availability_digest": "58b08ee56f0b5ac852f7e7975d73fe57657bd6559f8eb73e349eb1557dae3694",
+        "availability_digest": "4f05d72a99e04518b66c4691a7ae52a40f7d3546408343b69a015f138f8b5cb7",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1562525,7 +1562880,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d6b1449c30a0adcd309877fc3fc6968cd893a5dfabffd042b050e29c389ca4a1",
+        "availability_digest": "f75f130bb661e7b2f866c96fac174b7ff2d7af541c4a9df41e319c85e51cf2fa",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565290,7 +1565645,7 @@
     },
     {
       "availability": {
-        "availability_digest": "25838f6451b1702793694dc2ac6710054e88da79d28dd42db5f5f636aff46ce2",
+        "availability_digest": "736be5a214ab35b8dd12fec4feb149f28bf64d3fb0b129114a2d7ba75a1c19c9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565349,7 +1565704,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e6cecb37e31e2dc0c04f6024eb2af1cdc21cb1472407dfde4e7150ee98aba853",
+        "availability_digest": "03c996d86b0ce6b9e74c0212bd2dc0dbe4a3964e351470a40e320915ae7eb1de",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565408,7 +1565763,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9c1c5213bac16f19f06e48406eb6977b4382e0efbeb771b31d037c9898e01aae",
+        "availability_digest": "650d6dfc12e9d230172e235c357c8278f83de760d57248d948141bb50fd7bfa9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565467,7 +1565822,7 @@
     },
     {
       "availability": {
-        "availability_digest": "3b2765e189ba2cbab3024cf964105fc938811f9a88c59cd3ed0efd0ee01e7946",
+        "availability_digest": "16d78d0efd2f645fa840627815a82bbcab0e459fb289d5494aa34b221c4f03e1",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565526,7 +1565881,7 @@
     },
     {
       "availability": {
-        "availability_digest": "69060d3bcf3f9681b0cd4ff2ee0fe940d2d72d9e7f7d25df85b0eb6b6df9f560",
+        "availability_digest": "6cee941463878e8135561ed7e54e89eba48d0446b642289841349dcacd933aaf",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1565585,7 +1565940,7 @@
     },
     {
       "availability": {
-        "availability_digest": "efeba159f60678cb30c6c74ef5714e659c33c72bab1e48670b6846027f9afe14",
+        "availability_digest": "7dd5bb17d74e484cf89fe1a1ef233ba543f9633664d895af5783af677e59faea",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566244,7 +1566599,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4ffd1135a7f1a9920d5939f6dce505dc5f74cc01b8e0766d0188381715759e3d",
+        "availability_digest": "a9af6702016eae5aa271dee52a865024949870351c341f904689783e976c30f7",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566303,7 +1566658,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b2703b0432a5182d52fb01c8feb740787542d15198a0049c955f1738c294ca6a",
+        "availability_digest": "86f9d69e775acdd6851156e9f041c2309a48d68ad85349ace4ab691ab8330bba",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566362,7 +1566717,7 @@
     },
     {
       "availability": {
-        "availability_digest": "587032cc5489035c7e795d4c696c11cc4e08456c8898c6410fa05a8dc81a9137",
+        "availability_digest": "7eec101c73d15b3a85bd7e53127956c70237307673e425f277e39bed5fcb12ac",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566421,7 +1566776,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7f85c8e2048ee87ebafdd8ba920f8dbf9dc374edd3166fa8b5606cedbfd8e4ff",
+        "availability_digest": "0569cb6c63a70247be61b97f9dc266b37187151b2b6ff297f66bb43c8691c6fb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566480,7 +1566835,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f8eaad37ea80647afbb0faa47c40684fb211dc9b88c6a0face868f800638d81f",
+        "availability_digest": "2467bf6f9e0ff4a579ed0a4ceb38f6adda98282853864e6941ab5ef6b89a7ba3",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1566539,7 +1566894,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8ff97774aa07403e99b28948ac76c9d0e9c25c49e98e8e7e6338b5e8afaf8108",
+        "availability_digest": "52b0ebea784c02dddfb0dca06745d884ff4acf5f294824ec7a612ba88e3da492",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1568756,7 +1569111,7 @@
     },
     {
       "availability": {
-        "availability_digest": "7d009a67e1fe8e4e591687769e6f1523c98d3c923edf085f3739aaf8c5c1c0a9",
+        "availability_digest": "84ef838c2f6bd7309889aa4b5f2c030fe17b0991a2cb3d2d31c577cd9f668568",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1568815,7 +1569170,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9f337e1981de7783003b518da7c2e33383a9d64188a10dbbc1d5c614c8e00e5a",
+        "availability_digest": "b8eceb7f123d2717d6d7cf0ff53bfc9370b25ec05074c9b0baff46a9586cdbdf",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1568874,7 +1569229,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4d3caac4f5e5741382aed2ce9cbad3a92f3054fcad4ae3bb4219b92021af17b2",
+        "availability_digest": "a9a23a7d9b3dfa71d2c32641933548a17b0db339fac9c86853b0a1897f5ef0df",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1568933,7 +1569288,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0208f5cb6f04cf7705a8ed28f89213f6162eacc26f10d38b699ee2fed02e8e1f",
+        "availability_digest": "f88384bc7e3fa09b75abe6109267aab05eb95b88de7cbbbfb5f3ec99ff263fe5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1568992,7 +1569347,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0ec6bb051e759e837acf4483498dbc35bd6736269aa77d688b148138a985eab2",
+        "availability_digest": "ab7b507b2ec7f6a3bc910d1dd8b9790e1efc7fc4019c5d6b5edbce9ce0f75a1e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -1569051,7 +1569406,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5a929449cb87d695baddd535e45eb1a677a2768abdd8c8ccb18800bca7ca91db",
+        "availability_digest": "10a8300a622659d4b15f9747b884495c5e60e91d8ea2ae7a62aa26a6998eb6c3",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 49,
@@ -2303562,7 +2303917,7 @@
     },
     {
       "availability": {
-        "availability_digest": "cecc4b78fe70cf47de941f1622f17c66b602cf76e136e56fe6a63513beca30da",
+        "availability_digest": "3606ec5c0a1801ae362c99f3b0cdd68299371bf2aeb4d09e02ba492b196e395d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2303621,7 +2303976,7 @@
     },
     {
       "availability": {
-        "availability_digest": "036adc16c9d03099b44ffcb4fc6536a5acaa585faa0851a83f3751f724c61a70",
+        "availability_digest": "e6220e6242a9ab974ae2fc7c356d025615512a47ed1911b3b546147edea32269",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2303680,7 +2304035,7 @@
     },
     {
       "availability": {
-        "availability_digest": "00731954470413fe038d4db2e0c152f84ca8b97d3dbe86f477e525f4f927f171",
+        "availability_digest": "60254b81030449f4dbb66b9e17fd1cb42efa65c6b9ba6677c0557ed46f4c7ad8",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2303739,7 +2304094,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f514e1605abb0e9e4cec137e447aaa5c00b98b353f65812cd9e4ac205b857454",
+        "availability_digest": "cdf96a868eaf3bb0524ea17967bbd2ecd6bc2b90a73776a487a0702f5a2a22b5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2303798,7 +2304153,7 @@
     },
     {
       "availability": {
-        "availability_digest": "09083572343dbe4334a369c37462692e57ba4171ad164f4e9584ff7b819dbddd",
+        "availability_digest": "450de8472d45e7569d66128968e35b7b4fef2ca90e3a518952a29f1e5543f69f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2306199,7 +2306554,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8917bad837e92b2ad1cc58450094f7b12476dbf90c31b32f456aa84ef34cd61e",
+        "availability_digest": "5464e67b8de84ca4062abc1ea1a238a63b488c89ac47724a5f3eeba85dfad418",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2306258,7 +2306613,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6571baa84cf1d8b6dcc605a915cebc2ffcb3c0ef91f5624eed8506376de10aea",
+        "availability_digest": "5b8b4076db660c2fd7e4b92aecb9f60d9dd4e7315e5c08a19a41c5b92b25a95e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2306317,7 +2306672,7 @@
     },
     {
       "availability": {
-        "availability_digest": "157d38addd568e1c55f18dc56580e6eefb212993a76b67caf83f87ab895ac827",
+        "availability_digest": "48fb491fde9ed94a16254295d92e1da1dbfd985ffb3ea795e60baed1051bc1db",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2306376,7 +2306731,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e1e97b0b8de03a07cdd3e22e66b125f311666b48589beccccdc6fde997e59995",
+        "availability_digest": "412048eb881c5122818cc2c5586af551ce9b89cdc6a53f6dba608467a32a9caa",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2306435,7 +2306790,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4870cd47dbafcfebc1b16bf09416d632b9efe27139b80202bae4a86d0335a50e",
+        "availability_digest": "5e5e7d972a37492b7c5ab7210297bf76db65487a2d90f0684d0bd77a21853522",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2307144,7 +2307499,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0559c29d1eceaad641c1055546a5ebc7222a06ab0f4efac2df3d73cafd6e9bbd",
+        "availability_digest": "abd56391acf4da4146665db24cd49121ed17c753b204a3a778367e29dd42520c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2307203,7 +2307558,7 @@
     },
     {
       "availability": {
-        "availability_digest": "014442d451eea9ffb0737162ebc2539459de4b784f6d7bd1f1b402f648db159a",
+        "availability_digest": "7b4c6c478369700f3e0d832600ccb6a4148d167f5e7f729ef314fa97f3efe239",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2307262,7 +2307617,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f881adecbd77a3c9da04ddb0ffd4974c5622a3d624b2cc4b7ddba46fa9a79da9",
+        "availability_digest": "1d0ae896ce0b466b206d6cf5b75330a872fb7f1509cfc3c617e889ed3a7dcbad",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2307321,7 +2307676,7 @@
     },
     {
       "availability": {
-        "availability_digest": "15e243c9e3d17746e79ae91df17805e18c4a083a6abb171020d746afcd9e6d1f",
+        "availability_digest": "334ac93393c240e9d51921676ec39ba10ae8d2c2d78e7bb2307a09b14d8fe0ae",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2307380,7 +2307735,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b82977d82d970b2bc157373b8995a571aa475058304cd379d6f3ceff3ae92cfa",
+        "availability_digest": "e9823fb21dc958dd60cab643886d2e1a22e1db6a2f484e156873f26dc4339e2a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2309294,7 +2309649,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c1358130145814b58ca67b29a6c09095a428f35fe7da548bcf0f2aba92915c37",
+        "availability_digest": "34562d4cfb980578048cbc4830f6d36212ccae6ba770149460e19170da1344dc",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2309353,7 +2309708,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8fe75a29105da5340f56eef78f691a5349bdfa293107a20345c51c94ed8807a3",
+        "availability_digest": "9abc071c1a349cc09253d42a7cd810e2cd2868405f9887653184a7ae5700d773",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2309412,7 +2309767,7 @@
     },
     {
       "availability": {
-        "availability_digest": "d1bb50b0cb46e8f8146a950a94fc506ddf5633909ed14815bea7830c1c97f692",
+        "availability_digest": "affcd6b1f30c648370ef6498ffdb027c4b4a471882f16b1caf9c89e6a7483146",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2309471,7 +2309826,7 @@
     },
     {
       "availability": {
-        "availability_digest": "382f393d8f5a28afa159de6b11ac2b3f73e47e01b7a2dc1d3f41b68206888b63",
+        "availability_digest": "620684ea18158b221c143f833ae108fefd4880286e131a4aae08adf8bba3f65d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2309530,7 +2309885,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6c22b3816646f0852cdd4e0d31a6f7ee64cfa6009185c3c55c806052537292d0",
+        "availability_digest": "f6d3b089c359ad947f2934979d0c9a2e746bea55868a221941c30e6ba35fc091",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2370364,7 +2370719,7 @@
     },
     {
       "availability": {
-        "availability_digest": "53ecfb7281b39f077920ffa42b9c177921311631b86ce57d8d53f3a5c3dece17",
+        "availability_digest": "0d81f9cc1e91bbb37e08bc15784da1d6444c517b46d6141addf19fb20692b431",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2370423,7 +2370778,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6c7eab34fa0bcc9d430ace18519a45a27f589e8c5d1d4e84428ed65942f61f67",
+        "availability_digest": "b254bb85ea6f4db5dc0e858f8bec08cfb7cfd9891adc86630833fbef6d71e27a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2370482,7 +2370837,7 @@
     },
     {
       "availability": {
-        "availability_digest": "05c591b21acbfbcbcfcf43839681b2a3e70564b0045a83c7b79ea391678bcff5",
+        "availability_digest": "0ea8a6154b9cec09ff7a3f993a4356c6f8b0ef2f83a56d2645af8c71ca4250d9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2370541,7 +2370896,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0d6363056ae16e2a3d5af951b4f49e2ed40967673afa9dfef60e01e3d7b0be4d",
+        "availability_digest": "2e8102978da1ae9ee0acf4c0ca859a6ef0b746dc41dd36fdc1f5b1c09310dc80",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2370600,7 +2370955,7 @@
     },
     {
       "availability": {
-        "availability_digest": "8b7a772cad2ac27c3101f7afc5d672aa00e3954f7f23e132d2a99ab2c7118d20",
+        "availability_digest": "18e950c40629bad47102b5841ac56041cbe74db1878d606d348233bb0446995f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373001,7 +2373356,7 @@
     },
     {
       "availability": {
-        "availability_digest": "aba0186802eda183f7f6edbcf9ba6a8bea98534122a04e123fe1e7aac6197b20",
+        "availability_digest": "58524752afb3d0e38c5b0a351551dc6901fd368eb5fa3135427b48f4fabb9441",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373060,7 +2373415,7 @@
     },
     {
       "availability": {
-        "availability_digest": "363a40a4b01182bfc8ba02922e3740caca39b0980b479d6529ad8c6223ca3f41",
+        "availability_digest": "5f3e66a2b10ed110b1e4bdbba276f837c8ec10dac95ab9624878ebcff7c7038f",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373119,7 +2373474,7 @@
     },
     {
       "availability": {
-        "availability_digest": "58ab10ffb533081ce4b5076955260d144a7751f5ec22f3c0d36b0fe3669a606e",
+        "availability_digest": "01c17170296112063bd6627238e4dbd8926d2e86c7bc81a28a8f7f005428d926",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373178,7 +2373533,7 @@
     },
     {
       "availability": {
-        "availability_digest": "1e4621f878778e25df5a9adc5d8f2f331922751341112ad6ccb4c48c93def76a",
+        "availability_digest": "ca3cda759fc44b10f8f882e2e99a1b719882adb0b4c7b2d6da8b333e7ed84de5",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373237,7 +2373592,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f65b1929d228066121655f878dbc73bba46d05c4d4cfe702c0ee32f2a17cd277",
+        "availability_digest": "ba3974c8fdd0b5529fc356d74abb2f33a6372a7938a6a4e39cb02f1485205cbb",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2373946,7 +2374301,7 @@
     },
     {
       "availability": {
-        "availability_digest": "de082a9ace16d9dfd6fcc989d32c568101c6a9312e4d69314d0df83c18945297",
+        "availability_digest": "6c565b213383dc1c3c0c806b4212db929e7ce66cc213192d0a46fe54c32e6748",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2374005,7 +2374360,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e4d3ffe83f25b2c929974b80732a3fd746a1065c0b569bed4d9d259742b9f0bc",
+        "availability_digest": "2bfab4aa617ec387617de91448a743b812673417144114c028c92594607c28aa",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2374064,7 +2374419,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b9b29ed38a76d7110ec450cf15825d5681ecb263472eba6de2c85bdbc3e6ec74",
+        "availability_digest": "e887d040dc86842076cfd8355fbe49271e523168ec5935b6eb9028c2a1628762",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2374123,7 +2374478,7 @@
     },
     {
       "availability": {
-        "availability_digest": "36cd56517615b37d3a57d82bf09c3e84326f61b8c25e55ddc636a23afd11e95a",
+        "availability_digest": "637d72f1b9df8b0b76a0eb2324c6b78f0d948ed2ca29443473d1e15013416e4c",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2374182,7 +2374537,7 @@
     },
     {
       "availability": {
-        "availability_digest": "165e28eb9cc79f1cca0fbbbc66aca06f4162b28e8daaed229417e236a9c64a36",
+        "availability_digest": "0f6fac4b1a15550265dc0a5039099eb34796fda81ff63cb122a9803656c02f72",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2376096,7 +2376451,7 @@
     },
     {
       "availability": {
-        "availability_digest": "695b4bb36f1bd252e76cf09b044fdeb96e50785a5fa3acbc3837428440af92cb",
+        "availability_digest": "f61d819f9c5a7fc22aa35ca00e99e3ec49ad310c78eb208fe38901413edb96aa",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2376155,7 +2376510,7 @@
     },
     {
       "availability": {
-        "availability_digest": "bb18820c0137be9cd54b070dcce16be9e2ec3774733722dee3a018036dd990b1",
+        "availability_digest": "23d39d25031cb53cd5ea734ac9993e8748647430bcfb980a4121d08d75db3979",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2376214,7 +2376569,7 @@
     },
     {
       "availability": {
-        "availability_digest": "2d84121f248046511617f11ccf0ea241ee2593c3979fca7812070dac533bcd10",
+        "availability_digest": "51ca2186ee03d00d96882d4af2112ae5f311cba3d5cc3e141c906887ac61f609",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2376273,7 +2376628,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f470b93cf0616ff15cb46a089b8969eecd7c8d6befd90b78536e74d7bde844dd",
+        "availability_digest": "b301369fda859e9e4723ec0c04c9076d54bab1fec287b36175b306146318045b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2376332,7 +2376687,7 @@
     },
     {
       "availability": {
-        "availability_digest": "548240a7aad47890ccc5e6fb398e764e5615f520f88d72f45929f5ee6a837a70",
+        "availability_digest": "d3f6dbc3e8377d5f85d735bb81a753052ddd90f5679ab02ddca1c7a82f4572e9",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2437166,7 +2437521,7 @@
     },
     {
       "availability": {
-        "availability_digest": "be895a45cd58ebf8c4498e19f0e727c5f4f40a0b8744527c6ab5de820ea3f82f",
+        "availability_digest": "21997d642a1d72f910a39188fd568eb56529bfcee12f9f9484751de8760a02e7",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2437225,7 +2437580,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b1a38dbf2e38e1f41d1a68f28e4ede9edeb4506d66e1493838d3d4dc99d1ec29",
+        "availability_digest": "0be7fc941ef771252e45c8b6bff51f8177e67fa8c63b3adda0417a39aa528178",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2437284,7 +2437639,7 @@
     },
     {
       "availability": {
-        "availability_digest": "0e20381aa9f4c18f15679b88a3951cc105941afb95ce67ef9ed094ff65c1d269",
+        "availability_digest": "0adbfe0ef423c60d2e5e8869a2eaddd009b3663d92ed6410f2cb0fa9b9656218",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2437343,7 +2437698,7 @@
     },
     {
       "availability": {
-        "availability_digest": "ad5fc1ec8e682854ac0046f52ad9a12d278104526de92f41d9f594e40695ca97",
+        "availability_digest": "9441123dafb23188388d45143638c50cebdd16e2389d7c5b229daf3ae78a873a",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2437402,7 +2437757,7 @@
     },
     {
       "availability": {
-        "availability_digest": "1fc20c30b90fbd3c4e87b18c3c44ed9175cb1fed0e8a4921b88cb3a2b49d07f9",
+        "availability_digest": "d96034240cb537eba86a2a44d4cf83888f2feeb537ac62e61b241ff0150d8014",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2439803,7 +2440158,7 @@
     },
     {
       "availability": {
-        "availability_digest": "10aa2da7bb0fc54de38763b9307b9ab79c3f9a19039fed4c000312d5c9a77ecc",
+        "availability_digest": "38d8deaecc5a264a7d872896615508d39d829a452ce3025b1b2374ced87674b0",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2439862,7 +2440217,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5a6758645a0738d7e01ea5408f450db1780a039f1a4c5aba6cf7a35efdbd4d5a",
+        "availability_digest": "7bbb1607ed3a05d43d12406fa20f29a6a5352796ee8de6ecf66a770a1a0aa590",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2439921,7 +2440276,7 @@
     },
     {
       "availability": {
-        "availability_digest": "f08b51860568d2cab050dbb080fdc677aaa35988ec41ecba80943eb5badfc9a8",
+        "availability_digest": "3f9d7d71feb342dee46736eb9532fd29b0809ea76563f3ad090b8998856e84da",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2439980,7 +2440335,7 @@
     },
     {
       "availability": {
-        "availability_digest": "9383b3329e95b5fe1600c9790eda5d6086b993e2945aa1ac12572092879c5b39",
+        "availability_digest": "23865cec3657336ed62a241a787b288e029a5dca0d39937678eb88b78ec47a4d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440039,7 +2440394,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5f8540f60db33d6ef412846519a295903a36b2b42b8657e4360337b737e18615",
+        "availability_digest": "735a9c7aae52f9e613123eec19be17bf88d16e8f521735c6d45485dc5fa8009d",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440748,7 +2441103,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c86a4b7ea8b0abb97db8b15b7e9811fbee49a86a3b92bc3e4a1a3b2883b39742",
+        "availability_digest": "01f3e6492f1b449099db4845f497a9e9814fc0ad575aa9d8d19384d9ad29d853",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440807,7 +2441162,7 @@
     },
     {
       "availability": {
-        "availability_digest": "a1357d588966a1a6ee4b872c1f7e46533eb7070989e686950ac1c96fe8d4befd",
+        "availability_digest": "fbdd7a3939f50061b871e4bcae4a006bee5538580c52dc80354ea972d511a333",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440866,7 +2441221,7 @@
     },
     {
       "availability": {
-        "availability_digest": "5f98e0f5e25118f5bb4dcd637cd177b0dbd216c163c13d539850e8455029d8ed",
+        "availability_digest": "cd3bd4168dcbd8a6b3565ad7d7aea03b6c81af9673e73e2524f3ee7681f27e64",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440925,7 +2441280,7 @@
     },
     {
       "availability": {
-        "availability_digest": "4810ec9f90b079382b102da6cdc329d5d707329c32a33e879baef0faf48ada5f",
+        "availability_digest": "e9c8090177d193cc28a7f017da18ab1bb0157afa30c54e96db57cb4c9b97be86",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2440984,7 +2441339,7 @@
     },
     {
       "availability": {
-        "availability_digest": "dc69bcb0ae65c2b1a709edc24cdc8afa95d34a85dcbdb544e3ec44900d9f5a47",
+        "availability_digest": "14851c1f788102a64913c5278001746f6252103824e1e7bd0c39f71452b04e34",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2442898,7 +2443253,7 @@
     },
     {
       "availability": {
-        "availability_digest": "6a0ed7b3c89189faac36afc2e540fd32f3680f8d41b80fce9fc5b46964eb41a2",
+        "availability_digest": "38cb931df2b1c6ca973e7f0ae782d482ea79ba159af434bb71d7a5893459790b",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2442957,7 +2443312,7 @@
     },
     {
       "availability": {
-        "availability_digest": "05de1c3ec8d9a8ab76fe9f9b6ca56ca6e9afe04a3bda8ba33a22529ec98e6138",
+        "availability_digest": "45d4eadaa2cf14c3c0a0dc976dd397b2b84896d180d4ca50956bdb1db296d711",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2443016,7 +2443371,7 @@
     },
     {
       "availability": {
-        "availability_digest": "e8f355ebb0ed2d0c2600477be45d11f3b98937cdabbb82349c383df7287ba22d",
+        "availability_digest": "76b594409ca4be9b1221d01b2dbbc420e69a4f516fa47702b77c753cb8f94a31",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2443075,7 +2443430,7 @@
     },
     {
       "availability": {
-        "availability_digest": "b673c944e6a29e3a61f664646e4eabf17167be4012fe8b5d174de99f5447f4ad",
+        "availability_digest": "3d8c5793d4caa5210c72c6497f3d4dd4756f3cc1a10f934234e4289498029636",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -2443134,7 +2443489,7 @@
     },
     {
       "availability": {
-        "availability_digest": "c4b06b466a422d66d911fcce32b2daa0a5c0d9c50a92dce13a3b7711b7b4fe8d",
+        "availability_digest": "102b9e34a677d8e5026fdfda82a6492c8fa517a9f8c407c26af8df8d90f23e6e",
         "complete": true,
         "exclusion_counts": {
           "acquisition_minimum": 53,
@@ -3004232,7 +3004587,7 @@
     "excluded_items": 6,
     "pending_ranking_combinations": 0,
     "profiles": 28,
-    "provisional_items": 6096,
+    "provisional_items": 6105,
     "recommendations": 268954,
     "review_issues": 0,
     "reviewed_rules": true,

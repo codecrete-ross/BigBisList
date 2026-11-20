@@ -6540,7 +6540,7 @@ end
 
 function LEVELING_HELPERS.swapContributionText(contributions)
     local stats, names = {}, { dps = "Weapon DPS", ranged_dps = "Ranged DPS", wand_dps = "Wand DPS",
-        mp5 = "Mana per 5 sec", hp5 = "Health per 5 sec", proc_dps = "Damage procs" }
+        mp5 = "Mana per 5 sec", hp5 = "Health per 5 sec", proc_dps = "Damage procs", proc_hps = "Healing and absorbs" }
     for stat, points in pairs(contributions or {}) do
         if math.abs(points) >= 0.05 then stats[#stats + 1] = { stat = stat, points = points } end
     end
@@ -6586,7 +6586,10 @@ function BigBiSList:GetGuideStatComparison(row, owned, physical)
             contributions = traced.contributions
         end
     end
-    return LEVELING_HELPERS.formatSwap(service, swap, contributions)
+    local text = LEVELING_HELPERS.formatSwap(service, swap, contributions)
+    local effects = service:EffectComparisonLines(swap)
+    if text and effects and #effects > 0 then text = text .. "\n" .. table.concat(effects, "\n") end
+    return text
 end
 
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level, identityOnly)

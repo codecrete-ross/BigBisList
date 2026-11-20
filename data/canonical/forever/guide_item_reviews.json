@@ -632,6 +632,836 @@
         "Equip: Has a 2% chance when struck in combat of increasing all stats by 21 for 1 min. (Proc chance: 2%, 2m cooldown)"
       ],
       "max_equipped": 1
+    },
+    {
+      "id": 3456,
+      "name": "Dog Whistle",
+      "required_level": 25,
+      "item_level": 30,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "slot": "Trinket",
+      "stats": {
+        "shadow_resistance": 5.0
+      },
+      "use_effects": [
+        "Use: Summons a tracking hound that will protect you for 3 min. (10 Min Cooldown)"
+      ],
+      "effect_stats": [
+        {
+          "type": "use",
+          "raw_text": "Use: Summons a tracking hound that will protect you for 3 min. (10 Min Cooldown)"
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=3456",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3456",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/scarlet-monastery"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Scarlet Monastery",
+          "entity_name": "Houndmaster Loksey",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 30
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/scarlet-monastery",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/scarlet-monastery"
+            }
+          ],
+          "entity_id": 3974
+        }
+      ]
+    },
+    {
+      "id": 274652,
+      "name": "Wall of Water",
+      "required_level": 43,
+      "item_level": 48,
+      "quality": "rare",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "slot": "Off Hand",
+      "armor_type": "Shield",
+      "weapon_type": "One Hand",
+      "armor": 1676,
+      "stats": {
+        "block_value": 27.0,
+        "spell_power": 14.0,
+        "mp5": 3.0
+      },
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+          "stats": {
+            "spell_power": 14.0
+          }
+        },
+        {
+          "type": "passive",
+          "raw_text": "Equip: Restores +3 mana per 5 sec.",
+          "stats": {
+            "mp5": 3
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274652",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274652",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/zulfarrak"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Zul'Farrak",
+          "entity_name": "Hydromancer Velratha",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 42
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/zulfarrak",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/zulfarrak"
+            }
+          ],
+          "entity_id": 7795
+        }
+      ]
+    },
+    {
+      "id": 286987,
+      "name": "Violet Sorcerer's Sandals",
+      "required_level": 28,
+      "item_level": 33,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Feet",
+      "armor_type": "Cloth",
+      "armor": 34,
+      "stats": {
+        "stamina": 7.0,
+        "intellect": 11.0
+      },
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=286987",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+5 Arcane Resistance.",
+          "spell_id": 1324311
+        },
+        {
+          "pieces": 3,
+          "text": "+10 Spirit.",
+          "spell_id": 1324312
+        },
+        {
+          "pieces": 4,
+          "text": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities.",
+          "spell_id": 1324318
+        },
+        {
+          "pieces": 5,
+          "text": "Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown)",
+          "spell_id": 1324323
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286987",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "City of Dalaran",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 28
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 286988,
+      "name": "Violet Sorcerer's Leggings",
+      "required_level": 29,
+      "item_level": 34,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Legs",
+      "armor_type": "Cloth",
+      "armor": 44,
+      "stats": {
+        "intellect": 13.0,
+        "spirit": 5.0,
+        "spell_power": 12.0
+      },
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+          "stats": {
+            "spell_power": 12.0
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=286988",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+5 Arcane Resistance.",
+          "spell_id": 1324311
+        },
+        {
+          "pieces": 3,
+          "text": "+10 Spirit.",
+          "spell_id": 1324312
+        },
+        {
+          "pieces": 4,
+          "text": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities.",
+          "spell_id": 1324318
+        },
+        {
+          "pieces": 5,
+          "text": "Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown)",
+          "spell_id": 1324323
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286988",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "City of Dalaran",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 28
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 286989,
+      "name": "Violet Sorcerer's Wraps",
+      "required_level": 28,
+      "item_level": 33,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Hands",
+      "armor_type": "Cloth",
+      "armor": 31,
+      "stats": {
+        "intellect": 9.0,
+        "hit_percent": 1.0
+      },
+      "equip_effects": [
+        "Equip: Improves your chance to hit by 1.0%."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+          "stats": {
+            "hit_percent": 1.0
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=286989",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+5 Arcane Resistance.",
+          "spell_id": 1324311
+        },
+        {
+          "pieces": 3,
+          "text": "+10 Spirit.",
+          "spell_id": 1324312
+        },
+        {
+          "pieces": 4,
+          "text": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities.",
+          "spell_id": 1324318
+        },
+        {
+          "pieces": 5,
+          "text": "Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown)",
+          "spell_id": 1324323
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286989",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "City of Dalaran",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 28
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/city-of-dalaran"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287019,
+      "name": "Defias Enforcer's Mask",
+      "required_level": 48,
+      "item_level": 53,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Head",
+      "armor_type": "Leather",
+      "armor": 124,
+      "stats": {
+        "stamina": 20.0,
+        "attack_power": 30.0
+      },
+      "equip_effects": [
+        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+      ],
+      "effect_stats": [
+        {
+          "type": "proc",
+          "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+        },
+        {
+          "type": "passive",
+          "raw_text": "Equip: +30 Attack Power.",
+          "stats": {
+            "attack_power": 30
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287019",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+10 Fire Resistance.",
+          "spell_id": 1324673
+        },
+        {
+          "pieces": 3,
+          "text": "+15 Stamina.",
+          "spell_id": 1324674
+        },
+        {
+          "pieces": 4,
+          "text": "Increased Swords +1.",
+          "spell_id": 1324675
+        },
+        {
+          "pieces": 5,
+          "text": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps.",
+          "spell_id": 1324684
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287019",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Alcaz Prison",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 48
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287020,
+      "name": "Defias Enforcer's Chest",
+      "required_level": 49,
+      "item_level": 54,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Chest",
+      "armor_type": "Leather",
+      "armor": 156,
+      "stats": {
+        "strength": 14.0,
+        "agility": 22.0,
+        "stamina": 11.0
+      },
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287020",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+10 Fire Resistance.",
+          "spell_id": 1324673
+        },
+        {
+          "pieces": 3,
+          "text": "+15 Stamina.",
+          "spell_id": 1324674
+        },
+        {
+          "pieces": 4,
+          "text": "Increased Swords +1.",
+          "spell_id": 1324675
+        },
+        {
+          "pieces": 5,
+          "text": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps.",
+          "spell_id": 1324684
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287020",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Alcaz Prison",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 48
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287021,
+      "name": "Defias Enforcer's Prowlers",
+      "required_level": 48,
+      "item_level": 53,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Feet",
+      "armor_type": "Leather",
+      "armor": 105,
+      "stats": {
+        "stamina": 16.0,
+        "attack_power": 28.0
+      },
+      "equip_effects": [
+        "Equip: +28 Attack Power."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: +28 Attack Power.",
+          "stats": {
+            "attack_power": 28
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287021",
+      "set_bonuses": [
+        {
+          "pieces": 2,
+          "text": "+10 Fire Resistance.",
+          "spell_id": 1324673
+        },
+        {
+          "pieces": 3,
+          "text": "+15 Stamina.",
+          "spell_id": 1324674
+        },
+        {
+          "pieces": 4,
+          "text": "Increased Swords +1.",
+          "spell_id": 1324675
+        },
+        {
+          "pieces": 5,
+          "text": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps.",
+          "spell_id": 1324684
+        }
+      ],
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287021",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Alcaz Prison",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 48
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/alcaz-prison",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/alcaz-prison"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287028,
+      "name": "Tormented Cuffs",
+      "required_level": 53,
+      "item_level": 58,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Wrist",
+      "armor_type": "Cloth",
+      "armor": 36,
+      "stats": {
+        "stamina": 13.0,
+        "spell_power": 9.0,
+        "hp5": 14.0
+      },
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+          "stats": {
+            "spell_power": 9.0
+          }
+        },
+        {
+          "type": "passive",
+          "raw_text": "Equip: Restores +14 health per 5 sec.",
+          "stats": {
+            "hp5": 14
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287028",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287028",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Blackmaw Hold",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 55
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287032,
+      "name": "Den Champion's Binding",
+      "required_level": 52,
+      "item_level": 57,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Waist",
+      "armor_type": "Plate",
+      "armor": 336,
+      "stats": {
+        "strength": 16.0,
+        "spirit": 8.0,
+        "spell_power": 14.0
+      },
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+          "stats": {
+            "spell_power": 14.0
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287032",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287032",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Blackmaw Hold",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 55
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287034,
+      "name": "Grove Subjugator's Blade",
+      "required_level": 55,
+      "item_level": 60,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "One Hand",
+      "weapon_type": "One Hand",
+      "weapon_subtype": "Dagger",
+      "weapon_speed": 1.8,
+      "weapon_min_damage": 33,
+      "weapon_max_damage": 62,
+      "dps": 26.39,
+      "stats": {
+        "stamina": 6.0,
+        "crit_percent": 1.0,
+        "spell_power": 68.0
+      },
+      "equip_effects": [
+        "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 68. \"To subjugate a soul takes a toll on one's own.\""
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+          "stats": {
+            "crit_percent": 1.0
+          }
+        },
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 68.",
+          "stats": {
+            "spell_power": 68.0
+          }
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287034",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287034",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "Blackmaw Hold",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 55
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/blackmaw-hold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 287037,
+      "name": "Shaper's Robe",
+      "required_level": 55,
+      "item_level": 60,
+      "quality": "rare",
+      "binding": "bind_on_equip",
+      "boe": true,
+      "slot": "Chest",
+      "armor_type": "Cloth",
+      "armor": 85,
+      "stats": {
+        "intellect": 15.0,
+        "spirit": 15.0,
+        "spell_power": 18.0
+      },
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+      ],
+      "effect_stats": [
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+          "stats": {
+            "spell_power": 18.0
+          }
+        },
+        {
+          "type": "passive",
+          "raw_text": "Equip: Increases damage done to Beasts by magical spells and effects by up to 26."
+        }
+      ],
+      "source_summary": "",
+      "wowhead_url": "https://www.wowhead.com/forever/item=287037",
+      "review": {
+        "client_build": "1.60.1.70959",
+        "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287037",
+        "route_url": "https://playfulls.com/loot-tables/dungeons/shapers-terrace"
+      },
+      "sources": [
+        {
+          "type": "drop",
+          "zone": "The Shaper's Terrace",
+          "entity_name": "Trash mobs",
+          "side": "Both",
+          "difficulty": "Normal",
+          "available_from_phase": "PR",
+          "content_type": "dungeon",
+          "confidence": "reviewed",
+          "eligibility": {
+            "min_level": 58
+          },
+          "source_url": "https://playfulls.com/loot-tables/dungeons/shapers-terrace",
+          "attribution": [
+            {
+              "credit": "Playfulls Forever dungeon loot",
+              "source": "https://playfulls.com/loot-tables/dungeons/shapers-terrace"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

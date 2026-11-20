@@ -114,6 +114,7 @@ def pack_archive(part: Path, packed: Path) -> None:
 
 
 def compile_index(lua: str, *, output: Path = OUTPUT) -> None:
+    signature = contents_digest()
     names = sorted({key.split("/")[0] for key in dataset_json("forever", "leveling_rules")["spec_policies"]})
     build = ROOT / "build"
     build.mkdir(exist_ok=True)
@@ -140,9 +141,11 @@ def compile_index(lua: str, *, output: Path = OUTPUT) -> None:
         for part in parts:
             digest.update(part.read_bytes())
         body_digest = digest.hexdigest()
+        if contents_digest() != signature:
+            raise ValueError("Forever Guide inputs changed during generation. Rebuild the index with the current inputs.")
         candidate = staging / OUTPUT.name
         with candidate.open("wb") as bundle:
-            bundle.write(f"-- Generated Forever Guide {contents_digest()} {body_digest}\n".encode())
+            bundle.write(f"-- Generated Forever Guide {signature} {body_digest}\n".encode())
             for part in parts:
                 bundle.write(part.read_bytes())
         candidate.replace(output)

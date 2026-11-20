@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Defias Enforcer's Prowlers Item Level 53 Binds when equipped Feet Leather 105 Armor +16 Stamina Durability 50 / 50 Requires Level 48 Equip: + 28 Attack Power. Defias Enforcer's Garb (0/5) Defias Enforcer's Mask Defias Enforcer's Shoulderpads Defias Enforcer's Chest Defias Enforcer's Legguards Defias Enforcer's Prowlers (2) Set : +10 Fire Resistance. (3) Set : +15 Stamina. (4) Set : Increased Swords +1. (5) Set : Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps. Sell Price: 1 25 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-20T09:36:41.817743+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 287021,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 105,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +28 Attack Power."
+    ],
+    "id": 287021,
+    "item_level": 53,
+    "name": "Defias Enforcer's Prowlers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1324673,
+        "text": "+10 Fire Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1324674,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1324675,
+        "text": "Increased Swords +1."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1324684,
+        "text": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287021"
+  },
+  "linked_entities": [
+    {
+      "id": 276741,
+      "name": "Defias Enforcer's Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=276741"
+    },
+    {
+      "id": 276746,
+      "name": "Defias Enforcer's Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=276746"
+    },
+    {
+      "id": 287019,
+      "name": "Defias Enforcer's Mask",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287019"
+    },
+    {
+      "id": 287020,
+      "name": "Defias Enforcer's Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287020"
+    },
+    {
+      "id": 287021,
+      "name": "Defias Enforcer's Prowlers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287021"
+    },
+    {
+      "id": 1324673,
+      "name": "+10 Fire Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324673"
+    },
+    {
+      "id": 1324674,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324674"
+    },
+    {
+      "id": 1324675,
+      "name": "Increased Swords +1.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324675"
+    },
+    {
+      "id": 1324684,
+      "name": "Melee attacks have a chance to increase your Critical Strike chance by 2% for 20 sec. This effect is doubled in swamps.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324684"
+    }
+  ],
+  "name": "Defias Enforcer's Prowlers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "93b4bf01816c30b8039a2dbd24a4f2bc0267dca45e38f445d971e6f215eb1165",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287021",
+  "url": "https://www.wowhead.com/forever/item=287021"
+}

@@ -573,7 +573,7 @@ def merge_forever_leveling_rows(base: list[dict], supplemental: list[dict]) -> l
     return [merged[key] for key in sorted(merged)]
 
 
-def forever_items(items: list[dict], item_stats: list[dict]) -> tuple[list[dict], list[dict]]:
+def forever_items(items: list[dict], item_stats: list[dict], *, include_route_catalog=True) -> tuple[list[dict], list[dict]]:
     from tools.forever_comparison import reviewed_guide_items, reviewed_source_items
     from tools.project import FOREVER_CANONICAL_DIR
 
@@ -592,6 +592,9 @@ def forever_items(items: list[dict], item_stats: list[dict]) -> tuple[list[dict]
     if (FOREVER_CANONICAL_DIR / "guide_source_reviews.json").is_file():
         source_items = reviewed_source_items(dataset_json("forever", "guide_source_reviews"), dataset_json("forever", "guide_equipment"))
         items = merge_forever_leveling_rows(items, source_items)
+    if include_route_catalog and (FOREVER_CANONICAL_DIR / "guide_routes.json").is_file():
+        from tools.forever_guide_routes import add_catalog_routes
+        items = add_catalog_routes(items, dataset_json("forever", "guide_routes"), dataset_json("forever", "guide_equipment"))
     return items, item_stats
 
 

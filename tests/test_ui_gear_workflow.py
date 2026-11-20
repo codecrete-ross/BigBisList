@@ -11,15 +11,14 @@ class GearWorkflowTests(unittest.TestCase):
     def setUpClass(cls):
         cls.lua = find_lua51()
 
-    def run_lua(self, script):
+    def run_lua(self, script, *, full_guide=False):
         if not self.lua:
             self.skipTest("Lua 5.1 is unavailable")
         result = subprocess.run(
             [self.lua, "-"], cwd=ADDON_DIR,
             input=r'''
 local H = dofile("tests/lua_ui_harness.lua")
-local ui = H.load("forever")
-''' + script + r'''
+''' + ('local ui = H.load("forever", true)\n' if full_guide else 'local ui = H.load("forever")\n') + script + r'''
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
 ''',
             capture_output=True, encoding="utf-8", timeout=90,
@@ -57,7 +56,11 @@ local function heading(title)
     return entry(function(item) return item.kind == "section" and item.title == title end)
 end
 local function itemRow(id)
-    return entry(function(item) return item.kind == "row" and item.data.item_id == id end)
+    local found
+    ui:VisitListEntries(ui.renderModel, 0, math.huge, function(item)
+        if item.kind == "row" and item.data.item_id == id then found = item end
+    end)
+    return found
 end
 assert(heading("Equip from bags").count == 1 and not heading("Equip from bags").collapsed)
 assert(heading("Ready to turn in").collapsed and heading("Ready to turn in").count >= 1)
@@ -66,10 +69,11 @@ local events = addon.uiEventFrame
 events:GetScript("OnEvent")(events, "QUEST_LOG_UPDATE"); H.settle()
 assert(not heading("Ready to turn in") and heading("Reward quest in progress").collapsed)
 ui:ToggleSlot("Shoulder"); H.settle()
-assert(not heading("More options") and ui.renderModel.rowCount > 7)
-assert(itemRow(9476) and itemRow(10774))
+assert(heading("Shoulder").count == ui.renderModel.rowCount and ui.renderModel.rowCount > 0)
+assert(entry(function(item) return item.kind == "action" and item.title == "Big Bad Pauldrons" end))
+assert(not itemRow(9476), "Shoulders already in the bag should appear as an equip action")
 local lastOrder, lastLevel = 0
-for _, row in ipairs(ui.renderModel.entries) do
+ui:VisitListEntries(ui.renderModel, 0, math.huge, function(row)
     if row.kind == "row" then
         local order, level = row.data.guide_order, row.data.guide_route_level
         assert(order >= lastOrder)
@@ -78,8 +82,9 @@ for _, row in ipairs(ui.renderModel.entries) do
         end
         lastOrder, lastLevel = order, level
     end
-end
-local selected = itemRow(10774)
+end)
+ui:SetFilter("search", "Fleshhide Shoulders"); H.settle()
+local selected = assert(itemRow(10774))
 ui:ShowInspectorFor(selected.data.item_id, selected.data, "leveling"); H.settle()
 for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
     if size[1] == 900 then UIParent:SetSize(900, 500) end
@@ -92,8 +97,6 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         H.expectRowsBounded(ui, "Leveling Guide")
     end
 end
-ui:GetFilters().search = "Fleshhide Shoulders"
-ui:Invalidate("query", "test search"); ui:Refresh(); H.settle()
 assert(itemRow(10774) and ui.renderModel.rowCount == 1)
 local view = ui:GetViewState()
 local sort, direction, grouping = view.sort, view.sortDirection, view.groupBy
@@ -101,7 +104,7 @@ ui.filterToggleButton:Click(); H.settle()
 ui.clearFiltersButton:Click(); H.settle()
 assert(view.sort == sort and view.sortDirection == direction and view.groupBy == grouping)
 assert(not ui.filterToggleButton.selected and not ui.filterDrawerOpen)
-''')
+''', full_guide=True)
 
     def test_details_project_the_guide_route_and_compare_slot_pools(self):
         self.run_lua(r'''
@@ -723,7 +726,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         assert(ui.comparisonColumns.rank.stacked == (size[1] == 900))
         verifyComparison()
         ui.comparisonPinnedRows[2]:GetScript("OnEnter")(ui.comparisonPinnedRows[2])
-        assert(table.concat(GameTooltip.lines, "\n"):find("of the best known stat score", 1, true))
+        assert(table.concat(GameTooltip.lines, "\n"):find("of the best known gear score", 1, true))
         for _, row in ipairs(state.rows) do
             if row.item_link == bagLink then shown = row; break end
         end
@@ -740,7 +743,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         local explained
         for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
             local text = block.body:GetText()
-            if block:IsVisible() and text:find("of the best known stat score", 1, true)
+            if block:IsVisible() and text:find("of the best known gear score", 1, true)
                 and text:find("Rank #", 1, true)
                 and text:find("Default spec weights", 1, true)
                 and text:find("Compare with Blood Ritual Ring (Finger 2)", 1, true) then explained = true end
@@ -759,7 +762,7 @@ slots.OffHand:Click(); ui.gearFrame.summary.statCompare:Click(); H.settle()
 assert(ui.slotComparison.statRank and ui.slotComparison.level == 60 and ui.slotComparison.reference.slotKey == "OffHand")
 assert(#ui.slotComparison.rows > 1)
 for _, item in ipairs(ui.slotComparison.rows) do assert(item.stat_rank.item.armor_type == "Shield") end
-''')
+''', full_guide=True)
 
     def test_find_upgrades_and_slot_picker_use_existing_filters(self):
         self.run_lua(r'''
@@ -890,6 +893,9 @@ assert(ui:UndoLastAction() and char.wishlist[id] == true)
         self.run_lua(r'''
 local addon = BigBiSList
 function UnitLevel() return 49 end
+function UnitClass() return "Paladin", "PALADIN" end
+function UnitClassBase() return "PALADIN" end
+function UnitRace() return "Human", "Human", 1 end
 
 for _, mode in ipairs({"leveling", "endgame"}) do
     local wishlist, bank = {[18520] = true}, {scanned = true, links = {"item:12930"}}
@@ -925,7 +931,7 @@ ui:SetTab("Equipped"); H.settle()
 assert(ui.gearFrame:IsVisible() and not ui.contentScroll:IsVisible())
 ui:SetContentMode("leveling"); H.settle()
 assert(ui:GetViewKey() == "gearGuide" and ui.contentScroll:IsVisible())
-''')
+''', full_guide=True)
 
     def test_late_stats_refresh_the_current_equipped_item_after_swapping(self):
         self.run_lua(r'''

@@ -45,6 +45,7 @@ end
 
 local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats, breakdown)
     local stats, sets, explanations = {}, {}, {}
+    local tooltipSets
     local shield = false
     local mainHand, offHand = loadout[16], loadout[17]
     local twoHand = mainHand and mainHand.slot == "Two Hand"
@@ -55,6 +56,12 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
         addStats(stats, item.stats)
         shield = shield or item.shield
         if item.set_id then sets[item.set_id] = (sets[item.set_id] or 0) + 1 end
+        if item.effect_set then
+            local key = item.effect_set.key
+            tooltipSets = tooltipSets or {}
+            tooltipSets[key] = item
+            sets[key] = (sets[key] or 0) + 1
+        end
         for _, proc in ipairs(item.procs or {}) do
             local events = (scenario.events_per_minute or {})[proc.trigger] or 0
             local rate = math.min(events * proc.chance, proc.max_per_minute or events)
@@ -66,6 +73,26 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     addStats(stats, bonusStats)
     for _, bonus in ipairs(scenario.sets or {}) do
         if (sets[bonus.set_id] or 0) >= bonus.pieces then addStats(stats, bonus.stats) end
+    end
+    if tooltipSets then
+        for key, item in pairs(tooltipSets) do
+            for _, bonus in ipairs(item.effect_set.bonuses) do
+                if bonus.stats and sets[key] >= bonus.pieces then
+                    local credited
+                    if item.set_id then
+                        for _, legacy in ipairs(scenario.sets or {}) do
+                            if legacy.set_id == item.set_id and legacy.pieces == bonus.pieces then credited = true; break end
+                        end
+                    end
+                    if not credited then addStats(stats, bonus.stats) end
+                end
+            end
+        end
+    end
+    local bonusHit = bonusStats and bonusStats.spell_hit_percent
+    if bonusHit and scenario.effect_benchmark then
+        local outside = (stats.spell_hit_percent or 0) - bonusHit + (stats.hit_percent or 0)
+        stats.spell_hit_percent = stats.spell_hit_percent - math.max(0, bonusHit - math.max(0, scenario.effect_benchmark.spell_hit_cap - outside))
     end
     for _, racial in ipairs(scenario.racial_scaling or {}) do
         if racial.race_id == raceId then
@@ -79,6 +106,11 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     end
     local specificCrit = scenario.crit_domain == "spell" and "spell_crit_percent"
         or scenario.crit_domain == "physical" and "physical_crit_percent"
+    local role = scenario.effect_benchmark and scenario.effect_benchmark.role
+    if stats.melee_crit_percent and (role == "melee" or role == "tank") then
+        local stat = specificCrit or "crit_percent"
+        stats[stat] = (stats[stat] or 0) + stats.melee_crit_percent
+    end
     if specificCrit and not weights[specificCrit] then
         stats.crit_percent = (stats.crit_percent or 0) + (stats[specificCrit] or 0)
     end
@@ -172,6 +204,14 @@ end
 local function itemEffect(rule, observation, loadout, position, scenario)
     if not observation then return nil end
     if observation.applicable == false then return {} end
+    if rule.kind == "situational" then return {} end
+    if rule.kind == "passive_stats" then
+        local stats = {}
+        for key, value in pairs(rule.stats) do
+            stats[key] = rule.requires_form and value or math.max(0, value - (loadout[position].stats[key] or 0))
+        end
+        return stats
+    end
     if rule.kind == "timed_stats" then
         if rule.requires_target_fraction and observation.target_fraction == nil then return nil end
         local uptime = observation.uptime
@@ -184,6 +224,9 @@ local function itemEffect(rule, observation, loadout, position, scenario)
                 * ((rule.target_multiplier or {})[scenario.target_family] or 1)
             local stats = {}
             addStats(stats, rule.stats, multiplier)
+            if observation.benchmark and stats.health then
+                stats.stamina, stats.health = (stats.stamina or 0) + stats.health / 10, nil
+            end
             return stats, uptime * (observation.target_fraction or 1)
         end
     elseif rule.kind == "mana_cost" then
@@ -196,29 +239,115 @@ local function itemEffect(rule, observation, loadout, position, scenario)
             local scale = (rule.terrain_multiplier or {})[scenario.terrain] or 1
             local stats = {}
             addStats(stats, rule.amounts, rate * scale * observation.useful_fraction / 60)
+            if observation.benchmark and stats.hp5 then
+                stats.proc_hps, stats.hp5 = (stats.proc_hps or 0) + stats.hp5 / 5, nil
+            end
             return stats
         elseif rule.kind == "extra_attack" then
             local weapon = loadout[observation.weapon_slot or position]
             local stats = weapon and weapon.stats
-            if not stats or not stats.weapon_min_damage or not stats.weapon_max_damage
-                or observation.damage_factor == nil then return nil end
-            local average = (stats.weapon_min_damage + stats.weapon_max_damage) / 2
+            local average = observation.benchmark and scenario.isolated_swing_damage or nil
+            if stats and stats.weapon_min_damage and stats.weapon_max_damage then
+                average = (stats.weapon_min_damage + stats.weapon_max_damage) / 2
+                if observation.form_period and stats.weapon_speed then average = average * observation.form_period / stats.weapon_speed end
+            end
+            if not average or observation.damage_factor == nil then return nil end
+            if observation.benchmark then
+                if position == 17 then average = average * (scenario.offhand_dps_factor or 1) end
+                return { proc_dps = average * rate * rule.count * observation.damage_factor / 60 }
+            end
             return { dps = average * rate * rule.count * observation.damage_factor / 60 }
         elseif rule.kind == "damage" and observation.damage_factor ~= nil then
-            return { proc_dps = rule.amount * rate * observation.damage_factor / 60 }
+            local damage = rule.amount * rate * observation.damage_factor / 60
+            return { proc_dps = damage, proc_hps = rule.leech and damage * observation.useful_fraction or nil }
         end
     end
 end
 
+local function benchmarkObservation(rule, scenario, position, useScale, level, loadout)
+    local preset = scenario.effect_benchmark
+    if not preset then return nil end
+    if rule.kind == "situational" or rule.kind == "passive_stats" then
+        return { benchmark = true, applicable = not rule.requires_form or (level or 60) >= (scenario.form_min_level or 61) }
+    end
+    if not rule.rates then return nil end
+    local rate = rule.rates[preset.index]
+    local form = (level or 60) >= (scenario.form_min_level or 61) and scenario.form_attack_period
+    if rule.trigger == "block" then
+        local shield = loadout[17]
+        if not ((shield and (shield.shield or shield.armor_type == "Shield"))
+            or (scenario.isolated_swing_seconds and not form)) then rate = 0 end
+    end
+    if rule.kind == "extra_attack" and rule.benchmark_chance then
+        local weapon = loadout[position == 17 and 17 or 16]
+        local period = form or (weapon and weapon.stats.weapon_speed) or scenario.isolated_swing_seconds
+        if period then
+            rate = 60 * preset.melee * rule.benchmark_chance / period
+            rate = rate / (1 + rate * (rule.cooldown or 0) / 60)
+        end
+    end
+    local scale = rule.use_lockout and useScale or 1
+    local factor = (rule.school == "physical" or rule.kind == "extra_attack") and preset.physical
+        or rule.school == "bleed" and 1 or preset.magic
+    if rule.periodic then factor = factor * preset.periodic_fraction
+    elseif rule.periodic_amount then factor = factor * (1 + rule.periodic_amount * preset.periodic_fraction / rule.amount) end
+    return { benchmark = true, applicable = rate > 0, per_minute = rate * scale, damage_factor = factor,
+        useful_fraction = preset.useful_healing, target_fraction = 1,
+        uptime = rule.uptimes and rule.uptimes[preset.index] * scale,
+        weapon_slot = rule.kind == "extra_attack" and (position == 17 and 17 or 16) or nil, form_period = form }
+end
+
+local function modeledStates(keys, timed)
+    local edges, cursor = {}, 0
+    for _, key in ipairs(keys) do
+        local effect = timed[key]
+        if not effect.estimated then return end
+        effect.start = effect.rule.use_lockout and cursor or 0
+        effect.finish = math.min(1, effect.start + effect.uptime)
+        if effect.rule.use_lockout then cursor = effect.finish end
+        edges[#edges + 1] = effect.start
+        edges[#edges + 1] = effect.finish
+    end
+    table.sort(edges)
+    local states = {}
+    for index = 2, #edges do
+        local left, right = edges[index - 1], edges[index]
+        if right > left then
+            local active = {}
+            for _, key in ipairs(keys) do
+                if timed[key].start <= left and left < timed[key].finish then active[#active + 1] = key end
+            end
+            states[#states + 1] = { active = active, fraction = right - left }
+        end
+    end
+    return states
+end
+
+local function markEffect(applied, position, rule, observation)
+    local row = applied[position] or {}
+    applied[position] = row
+    row[rule.label] = observation or true
+    for _, alias in ipairs(rule.aliases or {}) do row[alias] = row[rule.label] end
+end
+
 local function setCoverage(loadout, scenario)
     local applied = {}
-    if not scenario.set_effect_spells then return applied end
     local equipped = {}
     for _, item in pairs(loadout) do
         if item.set_id then equipped[item.set_id] = (equipped[item.set_id] or 0) + 1 end
+        if item.effect_set then
+            local key = item.effect_set.key
+            equipped[key] = (equipped[key] or 0) + 1
+        end
     end
     for position, item in pairs(loadout) do
-        if item.set_id and item.set_bonuses then
+        if item.effect_set then
+            local covered = true
+            for _, bonus in ipairs(item.effect_set.bonuses) do
+                if bonus.pieces <= equipped[item.effect_set.key] and not (bonus.stats or bonus.situational) then covered = false; break end
+            end
+            if covered then applied[position] = { ["Set bonuses"] = true } end
+        elseif item.set_id and item.set_bonuses and scenario.set_effect_spells then
             local covered = true
             for _, bonus in ipairs(item.set_bonuses) do
                 if bonus.pieces <= equipped[item.set_id] and not byId(scenario.set_effect_spells, bonus.spell_id) then
@@ -235,7 +364,16 @@ end
 function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level, includeBreakdown)
     local applied = setCoverage(loadout, scenario)
     local breakdown = includeBreakdown and {} or nil
-    if not scenario.effect_expectations then
+    local hasRules, budget = false, 0
+    for _, item in pairs(loadout) do
+        for _, rule in ipairs(item.effect_rules or {}) do
+            hasRules = true
+            if rule.use_lockout and rule.rates and scenario.effect_benchmark then
+                budget = budget + rule.rates[scenario.effect_benchmark.index] * rule.use_lockout / 60
+            end
+        end
+    end
+    if not hasRules or not (scenario.effect_expectations or scenario.effect_benchmark) then
         local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, nil, breakdown)
         return points, explanations, applied, sets, breakdown
     end
@@ -256,25 +394,25 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         local expectations = item and byId(scenario.effect_expectations, item.key or item.variant_id or item.id)
         for _, rule in ipairs(item and item.effect_rules or {}) do
             local observation = expectations and expectations[rule.key]
+                or benchmarkObservation(rule, scenario, position, 1 / math.max(1, budget), level, loadout)
             local stats, uptime = itemEffect(rule, observation, loadout, position, scenario)
             if observation and observation.applicable == false then
-                applied[position] = applied[position] or {}
-                applied[position][rule.label] = true
+                markEffect(applied, position, rule, observation)
             elseif stats then
-                local modeled = hasScoredChannel(stats, channels)
+                local modeled = hasScoredChannel(stats, channels) or observation.benchmark
                 local use = rule.trigger == "use"
-                local scoped = not use or #useRules < 2 or observation.use_signature == useSignature
+                local scoped = observation.benchmark or not use or #useRules < 2 or observation.use_signature == useSignature
                 if uptime then
                     local key = position .. ":" .. (item.key or item.variant_id or item.id) .. ":" .. rule.key
                     timedKeys[#timedKeys + 1] = key
-                    timed[key] = { rule = rule, stats = stats, uptime = uptime, position = position, modeled = modeled }
+                    timed[key] = { rule = rule, stats = stats, uptime = uptime, position = position, modeled = modeled,
+                        estimated = observation.benchmark, observation = observation }
                     if use then timedUses = timedUses + 1 end
                     allScoped = allScoped and scoped
                 elseif scoped then
                     addStats(flat, stats)
                     if modeled then
-                        applied[position] = applied[position] or {}
-                        applied[position][rule.label] = true
+                        markEffect(applied, position, rule, observation)
                     end
                 end
             end
@@ -287,6 +425,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
     elseif #timedKeys > 1 and (allScoped or timedUses == #useRules) then
         table.sort(timedKeys)
         states = (scenario.effect_state_observations or {})[table.concat(timedKeys, "|")]
+            or modeledStates(timedKeys, timed)
     end
     if states then
         local baseline, baselineExplanations = total, copy(explanations)
@@ -309,8 +448,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         end
         for _, effect in pairs(timed) do
             if effect.modeled then
-                applied[effect.position] = applied[effect.position] or {}
-                applied[effect.position][effect.rule.label] = true
+                markEffect(applied, effect.position, effect.rule, effect.observation)
             end
         end
     end
@@ -329,7 +467,7 @@ function Scoring:ReferenceItem(facts, stats)
     return { id = facts.id, key = facts.key or facts.variant_id, stats = stats, slot = facts.slot,
         shield = facts.armor_type == "Shield", effect_rules = facts.effect_rules, effects = facts.effects,
         unreadable_effects = facts.unreadable_effects, utility = facts.utility,
-        set_id = model and byId(model.item_sets, facts.id), set_bonuses = facts.set_bonuses }
+        set_id = model and byId(model.item_sets, facts.id), set_bonuses = facts.set_bonuses, effect_set = facts.effect_set }
 end
 
 function Scoring:HasUnresolvedEffects(item, applied)
@@ -624,8 +762,18 @@ local function dependsOnUnmodeledCombat(state, incoming, target, slot)
             end
         end
     end
-    if (target == 16 or target == 17) and not (state.scenario.form_attack_period and state.level >= 10)
+    if (target == 16 or target == 17) and not (state.scenario.form_attack_period and state.level >= (state.scenario.form_min_level or 10))
         and (state.weights.dps or 0) > 0 and #(state.profile.unresolved or {}) > 0 then
+        -- An ordinary proc estimate already uses the affected weapon's swing
+        -- period. Specific active talent interactions are checked above.
+        local preset = state.scenario.effect_benchmark
+        if preset then
+            for _, piece in pairs({incoming, first, offHand}) do
+                for _, rule in ipairs(piece and piece.effect_rules or {}) do
+                    if rule.trigger == "weapon_hit" and rule.rates and rule.rates[preset.index] > 0 then return false end
+                end
+            end
+        end
         return incoming.stats.weapon_speed ~= (first and first.stats.weapon_speed or nil)
             or (offHand and offHand.stats.weapon_speed ~= nil)
     end

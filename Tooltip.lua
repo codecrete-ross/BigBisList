@@ -442,6 +442,11 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
                 tooltip:AddLine("Tied for best choice", 0.86, 0.88, 0.91, true)
             end
             if comparison.futureBiS then tooltip:AddLine("Pre-Raid Guide BiS", 0.86, 0.88, 0.91, true) end
+            if not row.view then
+                for _, line in ipairs(BigBiSList.ForeverGearRating:EffectComparisonLines(result) or {}) do
+                    tooltip:AddLine(line, 0.76, 0.8, 0.86, true)
+                end
+            end
             if result.effectNote then tooltip:AddLine(result.effectNote, 0.76, 0.8, 0.86, true) end
             if result.effectBreakEven then
                 local estimate = string.format("%.1f full extra swings per minute to close the gap at tooltip weapon damage",

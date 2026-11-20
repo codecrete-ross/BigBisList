@@ -320,6 +320,7 @@ function rating:GetCatalog(data)
         local item = { key = key }
         if row then
             for index, field in ipairs(data.item_fields) do item[field] = row[index] end
+            item.effect_set = item.set_key and data.effect_sets and data.effect_sets[item.set_key]
             item.variant_link = data.variant_links and data.variant_links[key]
         else
             local id, suffix = key:match("^(%d+):0:0:0:1:(%d+)$")
@@ -552,7 +553,16 @@ function rating:ReadNative(id, key, link, base)
         facts.max_equipped, facts.unique_group = base.max_equipped, base.unique_group
         facts.requires_dual_wield, facts.excluded = base.requires_dual_wield, base.excluded
         facts.utility = base.utility
-        if key == base.key then facts.effect_rules = base.effect_rules end
+        if key == base.key then
+            facts.effect_rules, facts.effect_set = base.effect_rules, base.effect_set
+        elseif base.effect_rules then
+            for _, rule in ipairs(base.effect_rules) do
+                if contains(facts.effects, rule.label) then
+                    facts.effect_rules = facts.effect_rules or {}
+                    facts.effect_rules[#facts.effect_rules + 1] = rule
+                end
+            end
+        end
         for _, effect in ipairs(base.effects or {}) do addEffect(facts.effects, effect) end
     elseif #facts.effects == 0 then
         local spell = call(api.GetItemSpell or GetItemSpell, link)
@@ -751,12 +761,17 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
     for identifier, actor in pairs(scenario.personas or {}) do
         if actor[1] == race and actor[2] == faction then raceId = tonumber(identifier); break end
     end
+    local isolated = copy(scenario)
+    for _, reference in ipairs(scenario.reference_weapons or {}) do
+        if reference[1] > level then break end
+        isolated.isolated_swing_damage, isolated.isolated_swing_seconds = reference[2], reference[3]
+    end
     return {
         class = className, spec = spec, phase = phase, level = level, race = race, faction = faction,
         leveling = leveling, policy = policy, weights = weights, equipment = data.equipment[className], role = profile.role,
         commonSlots = data.common_slots, feralPolicy = profile.leveling, feralDps = data.feral_uses_weapon_dps,
         phaseIndex = phaseIndex, inScope = {}, pools = {},
-        referenceScenario = scenario, raceId = raceId,
+        referenceScenario = scenario, isolatedScenario = isolated, raceId = raceId,
     }
 end
 
@@ -935,6 +950,11 @@ function rating:ReferenceWeights(context, roleOnly, guide)
     return result
 end
 
+local function referencePosition(slot)
+    return (slot == "Main Hand" or slot == "One Hand" or slot == "Two Hand") and 16
+        or slot == "Off Hand" and 17 or slot == "Ranged" and 18 or slot == "Trinket" and 13 or 1
+end
+
 local function score(context, item, roleOnly, guide, stats, slot)
     stats = stats or (item and item.stats)
     if not stats or item.stats_unavailable then return nil end
@@ -942,13 +962,18 @@ local function score(context, item, roleOnly, guide, stats, slot)
     local scorer = addon.ForeverScoring
     slot = slot or item.slot
     if scorer and scorer.ReferenceItem then
-        local position = (slot == "Main Hand" or slot == "One Hand" or slot == "Two Hand") and 16
-            or slot == "Off Hand" and 17 or slot == "Ranged" and 18 or 1
+        local position = referencePosition(slot)
         local scoringItem = scorer:ReferenceItem(item, stats)
         local points, _, applied = scorer.ScoreLoadout({[position] = scoringItem}, weights, {}, {},
-            context.referenceScenario, context.raceId, context.level)
+            context.isolatedScenario or context.referenceScenario, context.raceId, context.level)
         local known = applied and applied[position]
-        if not next(stats) and not known then return nil end
+        if not next(stats) then
+            local numeric = false
+            for _, rule in ipairs(item.effect_rules or {}) do
+                if rule.kind ~= "situational" and known and known[rule.label] then numeric = true; break end
+            end
+            if not numeric then return nil end
+        end
         return math.floor(points * 10000 + 0.5) / 10000, scorer:HasUnresolvedEffects(scoringItem, known)
     end
     if not next(stats) then return nil end
@@ -961,6 +986,13 @@ local function score(context, item, roleOnly, guide, stats, slot)
     return math.floor(total * 10000 + 0.5) / 10000
 end
 
+function rating:ReferenceEffectPoints(context, item, slot, total)
+    if not item.effect_rules or not item.effect_rules[1] then return nil end
+    local bare = copy(item)
+    bare.effect_rules, bare.effects = nil, nil
+    return total - (score(context, bare, nil, nil, nil, slot) or 0)
+end
+
 local function swapStats(item, link)
     if not item then return nil end
     local scoring = addon.ForeverScoring
@@ -970,6 +1002,33 @@ end
 
 local function hasUnscoredEffect(item)
     return item and not item.utility and (item.unreadable_effects or next(item.effects or {}) ~= nil)
+end
+
+local function traceEffects(context, result, before, after, item, active)
+    local involved = hasUnscoredEffect(item)
+    local function estimated(piece)
+        local preset = context.referenceScenario and context.referenceScenario.effect_benchmark
+        for _, rule in ipairs(piece and piece.effect_rules or {}) do
+            if preset and rule.rates and rule.rates[preset.index] > 0 then return true end
+        end
+    end
+    result.estimatedEffects = estimated(item)
+    for _, old in ipairs(result.replacements) do
+        involved = involved or hasUnscoredEffect(old.facts)
+        result.estimatedEffects = result.estimatedEffects or estimated(old.facts)
+    end
+    if involved then
+        result.effectTrace = {context = context, before = before, after = after, active = active}
+    end
+end
+
+local function applyMissingBuild(result, missing)
+    if not result or not missing then return end
+    result.buildUnavailable = missing
+    if missing ~= "talents" or not result.estimatedEffects then
+        result.conditional = true
+        result.equipSwap, result.equipNow = nil, nil
+    end
 end
 
 function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
@@ -1015,6 +1074,136 @@ function rating:WithCharacterBuild(context, live)
     return derived
 end
 
+-- Compute marginal points only when a player opens the explanation. Keeping
+-- the rest of the loadout fixed preserves caps, set thresholds and shared uses.
+local function effectRateText(rule, estimate)
+    local name = rule.spell_name or (rule.trigger == "use" and "On use" or "Item effect")
+    local text = string.format("%s · %.2f %s/min", name, estimate.per_minute, rule.trigger == "use" and "uses" or "procs")
+    if estimate.uptime then text = text .. string.format(" · %.1f%% uptime", 100 * estimate.uptime) end
+    if estimate.benchmark and rule.family then
+        text = text .. " · " .. rule.family .. " estimate"
+        if rule.nominal_ppm then text = text .. string.format(" (%g base PPM)", rule.nominal_ppm)
+        elseif rule.benchmark_chance then text = text .. string.format(" (%g%% per eligible event)", 100 * rule.benchmark_chance) end
+    end
+    return text
+end
+
+function rating:EffectComparisonLines(result)
+    result = result and (result.forecast or result)
+    local trace = result and result.effectTrace
+    if not trace then return end
+    if trace.lines then return trace.lines end
+    local lines, context, active = {}, trace.context, trace.active or trace.context.activeBuild
+    if result.buildUnavailable == "talents" then lines[#lines + 1] = "Default spec weights · Talent ranks unavailable" end
+    local scorer = addon.ForeverScoring
+    local scenario, weights = active and active.scenario or context.referenceScenario,
+        active and active.weights or self:ReferenceWeights(context)
+    local function value(gear)
+        return scorer.ScoreLoadout(gear, weights, active and active.profile.operations or {},
+            active and active.ranks or {}, scenario, context.raceId, context.level)
+    end
+    local before, after = {}, {}
+    local function read(instance)
+        if instance and instance.facts then
+            local facts = instance.facts
+            local stats = swapStats(facts, instance.item_link)
+            return stats and scorer:ReferenceItem(facts, stats)
+        end
+    end
+    local definitions = addon:GetEquipmentSlotDefinitions()
+    for _, def in ipairs(definitions) do
+        before[def.inventorySlotId] = read(trace.before[def.key])
+        after[def.inventorySlotId] = read(trace.after[def.key])
+    end
+    local function describe(gear, position, instance, incoming)
+        if not instance or not gear[position] then return end
+        local item, facts = gear[position], instance.facts
+        local total, _, applied = value(gear)
+        local without = copy(gear)
+        without[position] = nil
+        local empty = value(without)
+        local bare = copy(item)
+        bare.effect_rules, bare.effect_set, bare.set_id = nil, nil, nil
+        without[position] = bare
+        local intrinsic = value(without)
+        local points = total - intrinsic
+        lines[#lines + 1] = string.format("%s · %.2f stat pts · %+.2f effect pts", facts.name, intrinsic - empty, points)
+        local known = applied[position] or {}
+        for _, rule in ipairs(item.effect_rules or {}) do
+            local estimate = known[rule.label]
+            if type(estimate) == "table" and estimate.per_minute then
+                local rate = estimate.per_minute
+                lines[#lines + 1] = effectRateText(rule, estimate)
+                if rule.kind == "damage" and estimate.damage_factor and weights.proc_dps then
+                    lines[#lines + 1] = string.format("%.2f expected DPS × %g pts/DPS", rule.amount * rate * estimate.damage_factor / 60, weights.proc_dps)
+                end
+                if #item.effect_rules > 1 then
+                    local reduced = copy(item)
+                    reduced.effect_rules = {}
+                    for _, other in ipairs(item.effect_rules) do
+                        if other ~= rule then reduced.effect_rules[#reduced.effect_rules + 1] = other end
+                    end
+                    without[position] = reduced
+                    lines[#lines + 1] = string.format("%+.2f pts from this effect in this loadout", total - value(without))
+                end
+                if rule.kind == "damage" and rule.bonus_targets then
+                    lines[#lines + 1] = string.format("%g base damage per proc · %g against %s", rule.amount,
+                        rule.amount * rule.bonus_multiplier, rule.bonus_targets)
+                end
+                if result.delta and #item.effect_rules == 1 and rule.family
+                    and (rule.kind == "damage" or rule.kind == "extra_attack") and points > 0 then
+                    local procPoints = points
+                    if item.effect_set or item.set_id then
+                        local reduced = copy(item)
+                        reduced.effect_rules = nil
+                        without[position] = reduced
+                        procPoints = total - value(without)
+                    end
+                    local threshold = procPoints > 0 and rate * (1 - (incoming and result.delta or -result.delta) / procPoints)
+                    if threshold and threshold > 0 then
+                        lines[#lines + 1] = string.format("%s pulls ahead above %.2f procs/min", facts.name, threshold)
+                    end
+                end
+                if rule.secondary then lines[#lines + 1] = rule.label end
+            elseif rule.kind == "situational" or rule.kind == "passive_stats" then
+                lines[#lines + 1] = rule.label
+            end
+        end
+        for _, label in ipairs(facts.effects or {}) do
+            if label == "Set bonuses" and item.effect_set then
+                local count, nextBonus = 0, nil
+                for _, piece in pairs(gear) do
+                    if piece.effect_set and piece.effect_set.key == item.effect_set.key then count = count + 1 end
+                end
+                for _, bonus in ipairs(item.effect_set.bonuses) do
+                    if count >= bonus.pieces then
+                        lines[#lines + 1] = string.format("%d-piece %s · %s%s", bonus.pieces, item.effect_set.name,
+                            bonus.text, bonus.reason and (" · " .. bonus.reason) or "")
+                    elseif not nextBonus or nextBonus.pieces > bonus.pieces then nextBonus = bonus end
+                end
+                if nextBonus then
+                    lines[#lines + 1] = string.format("%s · %d/%d pieces for %s", item.effect_set.name, count, nextBonus.pieces, nextBonus.text)
+                end
+            elseif not known[label] then
+                local gaps = model() and model().effect_gaps
+                lines[#lines + 1] = label .. " · " .. (gaps and gaps[label] or "Value depends on the encounter")
+            end
+        end
+        for _, lead in ipairs(facts.missing_effects or {}) do
+            lines[#lines + 1] = lead .. " · Effect description unavailable"
+        end
+    end
+    for _, def in ipairs(definitions) do
+        local old, new = trace.before[def.key], trace.after[def.key]
+        if old ~= new and (not old or not new or old.facts ~= new.facts or old.item_link ~= new.item_link) then
+            describe(after, def.inventorySlotId, new, true)
+            describe(before, def.inventorySlotId, old, false)
+        end
+    end
+    trace.lines = lines
+    return lines
+end
+
 function rating:HasGuideRoleStats(context, item, slot)
     return (score(context, item, true, true, nil, slot) or 0) > 0
 end
@@ -1034,7 +1223,9 @@ local function resultFor(context, item, status, slot)
     if not cache and context.catalog then
         local catalog = context.catalog
         catalog.scoreBands = catalog.scoreBands or {}
-        local key = table.concat({context.class, context.spec, context.phase, context.race or "", tostring(context.weights)}, "/")
+        local form = context.feralPolicy.form_level
+        local key = table.concat({context.class, context.spec, context.phase, context.race or "", tostring(context.weights),
+            tostring(form and context.level >= form)}, "/")
         cache = catalog.scoreBands[key]
         if not cache then
             catalog.scoreBandOrder = catalog.scoreBandOrder or {}
@@ -1047,8 +1238,12 @@ local function resultFor(context, item, status, slot)
     end
     local points, conditional
     if item then
-        local byItem = cache and cache[slot]
-        if cache and not byItem then byItem = {}; cache[slot] = byItem end
+        local band = slot
+        if slot == "Trinket" and context.isolatedScenario then
+            band = slot .. tostring(context.isolatedScenario.isolated_swing_damage or 0)
+        end
+        local byItem = cache and cache[band]
+        if cache and not byItem then byItem = {}; cache[band] = byItem end
         local known = byItem and byItem[item]
         if known then points, conditional = known[1], known[2]
         else
@@ -1060,7 +1255,8 @@ local function resultFor(context, item, status, slot)
         status = item and (item.utility and "utility" or (next(item.effects or {}) and "effect")) or "unavailable"
     end
     return { item = item, score = points, status = status, spec = context.spec, level = context.level, phase = context.phase,
-        slot = slot, conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
+        slot = slot, effectContext = item and item.effect_rules and context,
+        conditional = conditional or (points == nil and hasUnscoredEffect(item)) }
 end
 
 local function scorePercent(score, bestScore)
@@ -1630,10 +1826,11 @@ local function benchmarkChoices(context, definition, slots, handType)
         local packed = guide and rating:GetPackedScoredChoices(guide, slot)
         if packed == nil then
             local pool = slotPool(context, definition.key, slot, handType, {}, "outfit:" .. definition.key .. ":" .. slot)
-            for _, entry in ipairs(pool.rows) do
-                if checkpoint then checkpoint() end
-                if not entry.score or entry.score <= 0 then break end
-                choices[#choices + 1] = entry
+            local index = 0
+            readers[#readers + 1] = function()
+                index = index + 1
+                local entry = pool.rows[index]
+                if entry and entry.score and entry.score > 0 then return entry end
             end
         else
             local seen = {}
@@ -1688,9 +1885,25 @@ end
 local function bestKnownOutfit(context, positions)
     local checkpoint = rating:GetWorkCheckpoint()
     local remaining, outfit, best, bestOutfit = {}, {}, 0, {}
+    local function points(choice)
+        return choice and math.floor(choice.score * 10000 + 0.5) or 0
+    end
     remaining[#positions + 1] = 0
     for index = #positions, 1, -1 do
-        remaining[index] = remaining[index + 1] + positions[index].choiceAt(1).score
+        local position, following = positions[index], positions[index + 1]
+        local top = position.choiceAt(1)
+        remaining[index] = points(top) + remaining[index + 1]
+        if following then
+            local nextTop = following.choiceAt(1)
+            local one = {[position.key] = {facts = top.item, entry = {item_id = top.item.id}}}
+            if not legalSwap(context, nextTop.item, following.key, nextTop.slot, one) then
+                -- Unique rings and trinkets cannot lead both slots. Every legal
+                -- pair gives up at least one first choice, even with empty slots.
+                local paired = math.max(points(top) + points(following.choiceAt(2)),
+                    points(position.choiceAt(2)) + points(nextTop))
+                remaining[index] = math.min(remaining[index], paired + remaining[index + 2])
+            end
+        end
     end
     local function search(index, total)
         if total + remaining[index] <= best then return end
@@ -1700,11 +1913,12 @@ local function bestKnownOutfit(context, positions)
         local choice = position.choiceAt(at)
         while choice do
             if checkpoint then checkpoint() end
-            if total + choice.score + remaining[index + 1] <= best then break end
+            local withChoice = total + points(choice)
+            if withChoice + remaining[index + 1] <= best then break end
             local item = choice.item
             if legalSwap(context, item, position.key, choice.slot, outfit) then
                 outfit[position.key] = { facts = item, entry = { item_id = item.id } }
-                search(index + 1, total + choice.score)
+                search(index + 1, withChoice)
                 outfit[position.key] = nil
             end
             at = at + 1
@@ -1713,7 +1927,7 @@ local function bestKnownOutfit(context, positions)
         search(index + 1, total)
     end
     search(1, 0)
-    return best, bestOutfit
+    return best / 10000, bestOutfit
 end
 
 function rating:GetGearScore(context, definitions)
@@ -1907,6 +2121,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                 local proposal, without = copy(gear), copy(gear)
                 proposal[key], without[key] = { facts = item, item_link = link }, nil
                 if slot == "Two Hand" then proposal.OffHand, without.OffHand = nil, nil end
+                traceEffects(context, result, gear, proposal, item)
                 local reference = context.wornReference
                 local baseline, before = reference.total, reference.conditional
                 if baseline then
@@ -1935,6 +2150,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                     active.contributions = evaluation.contributions
                     active.roleDelta, active.roleDisplaced = evaluation.roleDelta, evaluation.roleDisplaced
                     active.conditional = evaluation.conditional
+                    if active.effectTrace then active.effectTrace = copy(active.effectTrace); active.effectTrace.active = live end
                     if not bestLive or active.delta > bestLive.delta then bestLive = active end
                 else
                     incompleteLive = true
@@ -1943,7 +2159,8 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
         end
     end
     if bestLive and not incompleteLive then return bestLive end
-    if best and (missing or incompleteLive) then best.conditional = true end
+    applyMissingBuild(best, missing)
+    if best and incompleteLive then best.conditional = true end
     return best
 end
 
@@ -1953,7 +2170,7 @@ local function explainBlockEffect(context, result, item)
         for _, rule in ipairs(piece and piece.effect_rules or {}) do
             if rule.trigger == "block" and rule.school == "holy" then
                 local scorer, scenario = addon.ForeverScoring, context.referenceScenario
-                if not scorer or not scenario.effect_expectations then return true end
+                if not scorer or not (scenario.effect_expectations or scenario.effect_benchmark) then return true end
                 local shield = scorer:ReferenceItem(piece, piece.stats or {})
                 local build = context.activeBuild
                 local _, _, applied = scorer.ScoreLoadout({[17] = shield}, rating:ReferenceWeights(context),
@@ -2200,7 +2417,8 @@ local function ownedLoadout(context, group)
     local scenario, scorer = context.referenceScenario, addon.ForeverScoring
     local value
     if scorer and scorer.ReferenceItem
-        and (context.activeBuild or scenario.sets or scenario.caps or scenario.conversions or scenario.effect_expectations) then
+        and (context.activeBuild or scenario.sets or scenario.caps or scenario.conversions or scenario.effect_expectations
+            or scenario.effect_benchmark) then
         local gear = copy(outside)
         value = function(first, second)
             gear[group.definitions[1].key] = first.instance
@@ -2367,6 +2585,7 @@ local function ownedSwap(context, group, candidate, quantity, held)
         end
     end
     if result.delta and result.delta > 0 and not state.unresolved then setRoleChange(context, result, previousGear, retained) end
+    traceEffects(context, result, previousGear, gear, candidate.facts)
     if context.activeBuild and addon.ForeverScoring:HasUnmodeledSwap(context.activeBuild, candidate.facts,
         result.definition.inventorySlotId, result.slot) then result.conditional = true end
     if state.unresolved then
@@ -2430,11 +2649,7 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
     else
         local build, missing = rating:WithCharacterBuild(context, scope.live)
         result = ownedSwap(build, group, candidate, quantity, held)
-        if result and missing then
-            result.conditional = true
-            result.buildUnavailable = missing
-            result.equipSwap, result.equipNow = nil, nil
-        end
+        applyMissingBuild(result, missing)
     end
     if not result then
         if scope.skipPlacement then return { placement = { status = "blocked" } } end
@@ -2451,10 +2666,10 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
     end
     explainBlockEffect(context, result, item)
     result.effectNote = rating:GetReviewedGuideEffect(context, item)
-        or (result.conditional and hasUnscoredEffect(item) and "Some item effects have an unverified value")
+        or (result.conditional and not result.estimatedEffects and hasUnscoredEffect(item) and "Some item effects have an unverified value")
     if result.conditional and result.basis == "reference" and result.delta and result.delta < 0
         and (result.slot == "Main Hand" or result.slot == "Two Hand") and #(item.effect_rules or {}) == 1
-        and item.effect_rules[1].kind == "extra_attack" then
+        and item.effect_rules[1].kind == "extra_attack" and not item.effect_rules[1].rates then
         local low, high = item.stats.weapon_min_damage, item.stats.weapon_max_damage
         local weight = rating:ReferenceWeights(context).dps
         if low and high and low + high > 0 and weight and weight > 0 then
@@ -2628,11 +2843,33 @@ function rating:DescriptionLines(entry)
     end
     local lines = { exact, self:ContextLabel(entry) }
     if entry.score_percent ~= nil then
-        lines[3] = string.format("%d%% of the best known stat score", entry.score_percent)
+        lines[3] = string.format("%d%% of the best known gear score", entry.score_percent)
     end
     if entry.placement_color and entry.phase ~= "LEVELING" then lines[#lines + 1] = "Color uses placement in this slot" end
     if entry.setup_rank then lines[#lines + 1] = "Rank in this equipped setup" end
     if entry.projected then lines[#lines + 1] = "Projected placement among known gear" end
+    local item, context = entry.item, entry.effectContext
+    if entry.effectPoints == nil and context and entry.score then
+        entry.effectPoints = self:ReferenceEffectPoints(context, item, entry.slot, entry.score)
+    end
+    if entry.effectPoints and entry.effectPoints ~= 0 then
+        lines[#lines + 1] = string.format("Default weights · %.2f stat pts · %+.2f effect pts", entry.score - entry.effectPoints, entry.effectPoints)
+    end
+    if context and item.effect_rules then
+        local scorer = addon.ForeverScoring
+        local pos = referencePosition(entry.slot)
+        local _, _, applied = scorer.ScoreLoadout({[pos] = scorer:ReferenceItem(item, item.stats or {})},
+            self:ReferenceWeights(context), {}, {}, context.isolatedScenario or context.referenceScenario, context.raceId, entry.level)
+        for _, rule in ipairs(item.effect_rules) do
+            local estimate = applied[pos] and applied[pos][rule.label]
+            if type(estimate) == "table" and estimate.per_minute then lines[#lines + 1] = effectRateText(rule, estimate) end
+        end
+    end
+    local gaps = model() and model().effect_gaps or {}
+    for _, label in ipairs(item and item.effects or {}) do
+        if gaps[label] and (label ~= "Set bonuses" or not item.effect_set) then lines[#lines + 1] = label .. " · " .. gaps[label] end
+    end
+    for _, lead in ipairs(item and item.missing_effects or {}) do lines[#lines + 1] = lead .. " · Effect description unavailable" end
     if entry.conditional or entry.conditional_tie then lines[#lines + 1] = "Some item effects have an unverified value" end
     return lines
 end
@@ -2675,7 +2912,7 @@ function rating:GetOwnedOpportunity(context, item, link, live)
     if not result then
         result = ownedSwap(build, group, {facts = item, key = item.key, entry = {item_id = item.id}, item_link = link})
             or {status = "blocked"}
-        if missing then result.conditional, result.buildUnavailable = true, missing end
+        applyMissingBuild(result, missing)
         build.opportunities[key] = result
     end
     return result, result.status
@@ -2967,14 +3204,14 @@ local function gearVerdict(self, input, view)
         view.today = delta > 0 and "Possible upgrade" or "Depends on your setup"
         local item = input.item
         if result.unscoredHolyBlock then view.today = view.today .. " · Holy damage on block unscored" end
-        for _, effect in ipairs(item and item.effects or {}) do
+        for _, effect in ipairs(not result.estimatedEffects and item and item.effects or {}) do
             if type(effect) == "string" and effect:lower():find("chance on hit", 1, true) then
                 view.today = view.today .. " · Chance-on-hit effect unscored"
                 break
             end
         end
         view.today = view.today .. suffix
-        view.evidence = view.evidence .. " · Scored stats only"
+        view.evidence = view.evidence .. (result.estimatedEffects and " · Includes estimated effects" or " · Scored stats only")
         view.tone = "uncertain"
     elseif forecast then
         view.tone = "future"
@@ -3001,6 +3238,7 @@ local function gearVerdict(self, input, view)
     else
         view.today = "Sidegrade"
     end
+    if result.estimatedEffects and view.evidence and not conditional then view.evidence = view.evidence .. " · Estimated effects" end
     if not winner and input.activeSpec == false and input.spec then view.today = view.today .. " for " .. input.spec end
     if previewing and not forecast then view.today = view.today .. atLevels(input.playerLevel) end
     if forecast then
@@ -3088,6 +3326,7 @@ function rating:LevelingPresentationLines(view)
     if view.range ~= view.strength then add(view.range) end
     add(view.acquisition)
     add(view.comparisonDetail)
+    for _, line in ipairs(self:EffectComparisonLines(view.swap) or {}) do add(line) end
     add(view.lookupReason)
     if view.sourceUnknown then add("Source unknown") end
     return lines

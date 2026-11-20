@@ -18,6 +18,7 @@ ENTITY_TYPES = {"item", "npc", "quest", "spell", "zone", "faction", "currency", 
 GUIDE_EVIDENCE_TYPES = {"equipment_facts", "equipment_routes"}
 PROVIDER_RAW_DIR = ROOT / "data" / "raw" / "forever"
 PROVIDER_HOSTS = {
+    "playfulls": {"playfulls.com"},
     "blizzard": {"worldofwarcraft.blizzard.com"},
     "blizzard_forums": {"us.forums.blizzard.com"},
     "bindonforever": {"bindonforever.com"},
@@ -124,6 +125,9 @@ def source_provider(url: str) -> str | None:
     for provider, hosts in PROVIDER_HOSTS.items():
         if parsed.netloc in hosts:
             paths = PROVIDER_EXACT_PATHS.get(provider)
+            if provider == "playfulls" and (parsed.query or parsed.fragment or not re.fullmatch(
+                    r"/(?:loot-tables/dungeons/[a-z0-9-]+|api/recipes__skill-\d+\.[a-f0-9]+\.json)", parsed.path)):
+                continue
             if paths is not None and parsed.path not in paths:
                 continue
             if (provider == "daybreak" and parsed.path == "/static/forever/datamine.json"

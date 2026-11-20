@@ -729,12 +729,17 @@ def validate() -> tuple[list[str], dict]:
     if dataset_json("forever", "phases")["phases"] != [{"key": PRE_RAID, "name": "Pre-Raid"}]:
         errors.append("Forever pilot requires a single Pre-Raid phase")
     try:
-        documents = derive(read_snapshots(FOREVER_RAW_DIR))
+        from tools.forever_guide_routes import reconcile
+        snapshots = read_snapshots(FOREVER_RAW_DIR)
+        documents = derive(snapshots)
+        guide_routes, _, guide_coverage = reconcile(snapshots)
+        documents["guide_routes"] = guide_routes
         for name, document in documents.items():
             path = FOREVER_CANONICAL_DIR / f"{name}.json"
             if not path.is_file() or load_json(path) != document:
                 errors.append(f"Forever {name}.json differs from the reviewed snapshots and scoring inputs")
         summary = {key: value for key, value in coverage().items() if key not in {"missing", "ok"}}
+        summary["guide_routes"] = guide_coverage
         summary["items"] = len(documents["items"]["items"])
         leveling = documents.get("leveling_audit", {}).get("summary", {})
         summary["leveling_recommendations"] = len(documents.get("leveling_recommendations", {}).get("leveling_recommendations", []))

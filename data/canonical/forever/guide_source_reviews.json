@@ -1,6 +1,6 @@
 {
   "binding": "bind_on_pickup",
-  "reviewed_at": "2026-11-19",
+  "reviewed_at": "2026-11-20",
   "review": "Quest rewards use corrected Forever quest records for class, faction, level and prerequisites. Dungeon and rare drops use named loot and NPC records. The Fine Longbow purchase uses the vendor's rendered inventory and price. The two commissioned crafts match the crafting spell output, taught recipe and bind-on-equip tooltip. Individual routes carry their binding and credit where these differ from the quest reviews.",
   "attribution": [
     {
@@ -11,6 +11,25 @@
     }
   ],
   "routes": [
+    {
+      "item_ids": [9418],
+      "source": {
+        "type": "drop",
+        "entity_id": 2748,
+        "entity_type": "npc",
+        "entity_name": "Archaedas",
+        "zone": "Uldaman",
+        "difficulty": "Normal",
+        "content_type": "dungeon",
+        "side": "Both",
+        "available_from_phase": "PR",
+        "confidence": "reviewed",
+        "eligibility": {"min_level": 44, "basis": "Conservative target level at Stoneslayer's equip requirement."},
+        "source_url": "https://guide.wow4ever.se/en/items/9418"
+      },
+      "corroboration_url": "https://bindonforever.com/item/9418",
+      "attribution": [{"credit": "Forever Scout", "source": "https://guide.wow4ever.se/en/items/9418"}]
+    },
     {
       "item_ids": [11824],
       "source": {

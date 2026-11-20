@@ -100,7 +100,7 @@ for _, slot in ipairs(addon.slotOrder) do
 end
 if className == "catalog" then
     local signature = data.runtime_indexes and data.runtime_indexes.guide_signature
-    write("BigBiSListData.guide_index = {version=1, signature=", signature and quote(signature) or "nil",
+    write("BigBiSListData.guide_index = {version=2, signature=", signature and quote(signature) or "nil",
         ", data=BigBiSListData.stat_rank, slots={}, classes={}, quests={}}\n")
     local questItems = {}
     for _, slot in ipairs(slotKeys) do
@@ -287,11 +287,15 @@ local function scoreOrder(slot, contexts, items, low, high)
     end
     local key = table.concat(signature, "/")
     if scoreOrders[key] then return unpack(scoreOrders[key]) end
-    local scores = {}
+    local scores, effectPoints = {}, {}
     for ordinal, item in ipairs(items) do
         if rating:GetReferenceWindow(context, contexts[high], item, slot, function(level) return contexts[level] end, true) then
             local result = rating:GetUnfilteredReferenceEntry(context, item, slot)
             if result.score ~= nil then
+                local effect = rating:ReferenceEffectPoints(context, item, slot, result.score)
+                if effect and math.abs(effect) >= 0.00005 then
+                    effectPoints[#effectPoints + 1] = pack(ordinal, 3) .. pack(math.floor(effect * 10000 + 0.5) + 2147483648, 6)
+                end
                 scores[#scores + 1] = { ordinal = ordinal, points = math.floor(result.score * 10000 + 0.5),
                     conditional = result.conditional and true or false }
             end
@@ -316,7 +320,7 @@ local function scoreOrder(slot, contexts, items, low, high)
     local width = #scores < 4096 and 2 or 3
     for ordinal = 1, #items do inverse[ordinal] = pack(positions[ordinal] or 0, width) end
     local valuesRef, inverseRef, groupsRef = store(table.concat(values)), store(table.concat(inverse)), store(table.concat(groups))
-    local saved = {scores, positions, valuesRef, inverseRef, groupsRef, width}
+    local saved = {scores, positions, valuesRef, inverseRef, groupsRef, width, store(table.concat(effectPoints))}
     scoreOrders[key] = saved
     return unpack(saved)
 end
@@ -352,9 +356,11 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         while high < last and contexts[high + 1].weights == context.weights do
             local form = context.feralPolicy.form_level
             if form and high + 1 == form then break end
+            if slot == "Trinket" and contexts[high + 1].isolatedScenario.isolated_swing_damage
+                ~= context.isolatedScenario.isolated_swing_damage then break end
             high = high + 1
         end
-        local scores, positions, valueRef, inverseRef, groupRef, inverseWidth = scoreOrder(slot, contexts, items, low, high)
+        local scores, positions, valueRef, inverseRef, groupRef, inverseWidth, effects = scoreOrder(slot, contexts, items, low, high)
         local unresolved = {}
         for _, record in ipairs(allowed) do
             if not positions[record.ordinal] and not items[record.ordinal].utility then
@@ -416,6 +422,7 @@ local function buildSlot(slot, contexts, routeCache, first, last)
                 store(table.concat(conditional)), groupRef, inverseWidth, store(table.concat(prefix)),
                 best and best + 2147483648 or 2147483648 }
             states[level].positions, states[level].scoreCount = positions, #scores
+            states[level].effects = effects
         end
         low = high + 1
     end
@@ -462,6 +469,7 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         state[13], state[14], state[15] = sparseOrder(lowerScored, state.scoreCount)
         state[16], state[17], state[18] = sparseOrder(lowerUnscored, #items)
         state[19] = #ordered
+        state[20] = state.effects
         local packed = {}
         for index, number in ipairs(state) do packed[index] = pack(number, index == 11 and 6 or 4) end
         packedLevels[#packedLevels + 1] = table.concat(packed)

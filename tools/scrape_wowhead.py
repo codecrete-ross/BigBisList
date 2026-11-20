@@ -7399,7 +7399,9 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
             parser.error("--breakdowns requires --strict to run the reviewed swaps")
         result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir, include_breakdowns=args.breakdowns)
         if args.effects:
-            from tools.forever_item_effects import glossary
+            from tools.forever_comparison import compile_comparison_data
+            from tools.forever_item_effects import catalog_coverage, glossary
+            from tools.generate_lua import forever_items
             from tools.recommend_leveling import materialized_items
 
             inventory = {row["id"]: row for row in dataset_json("forever", "comparison_item_stats")["items"]}
@@ -7411,6 +7413,9 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
             variants = dataset_json("forever", "item_variants")["item_variants"]
             result["effects"] = glossary(snapshots, materialized_items(list(inventory.values()), variants),
                                          mechanics=source[1] if source else None)
+            _, ranked_stats = forever_items(dataset_json("forever", "items")["items"],
+                                           dataset_json("forever", "item_stats")["item_stats"])
+            result["effects"]["catalog_coverage"] = catalog_coverage(compile_comparison_data(ranked_stats))
         if args.rankings:
             try:
                 result["rankings"] = ranking_snapshot(args.lua, args.content_phase)

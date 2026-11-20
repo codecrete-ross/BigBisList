@@ -8,7 +8,7 @@ if bundle and not (source and source.guide_signature and bundle.signature == sou
     BigBiSListData.guide_index = nil
 end
 
-local BYTE_OFFSET, RECORD_WIDTH, BLOCK_SIZE, ARCHIVE_CHUNK_SIZE = 48, 78, 420, 32768
+local BYTE_OFFSET, RECORD_WIDTH, BLOCK_SIZE, ARCHIVE_CHUNK_SIZE = 48, 82, 420, 32768
 local POINT_ZERO = 2147483648
 local powers, bitCounts = {}, {[0] = 0}
 for index = 0, 12 do powers[index] = 2 ^ index end
@@ -104,7 +104,7 @@ end
 
 local function profile(context, phase)
     local bundle = BigBiSListData.guide_index
-    if not bundle or bundle.version ~= 1 or bundle.data ~= context.catalog.data
+    if not bundle or bundle.version ~= 2 or bundle.data ~= context.catalog.data
         or not context.catalog.rollBuildMatches then return end
     local archive = bundle.classes[context.class]
     if not archive or not context.race or not context.faction then return end
@@ -233,7 +233,7 @@ local function state(data, level)
     return {
         order = archive.strings[field(1)], inverse = archive.strings[field(2)], masks = archive.strings[field(3)],
         count = field(4), leader = field(5), unresolved = field(6) == 1, conditional = archive.strings[field(7)],
-        groups = archive.strings[field(8)], inverseWidth = field(9), prefixes = archive.strings[field(10)],
+        groups = archive.strings[field(8)], inverseWidth = field(9), prefixes = archive.strings[field(10)], effects = archive.strings[field(20)],
         best = (field(11, 6) - POINT_ZERO) / 10000, browse = archive.strings[field(12)], featuredCount = field(19),
         low = {masks = archive.strings[field(13)], prefixes = archive.strings[field(14)], count = field(15)},
         unscored = {masks = archive.strings[field(16)], prefixes = archive.strings[field(17)], count = field(18)},
@@ -308,7 +308,7 @@ local function resolve(data, context, ordinal, level, verified)
     local key = data.indices.keys[ordinal]
     local item = context.catalog.items[key]
     local entry = { item = item, slot = data.slot, level = level, phase = context.phase, spec = context.spec,
-        source_unknown = not verified or nil }
+        effectContext = item.effect_rules and context, source_unknown = not verified or nil }
     if position == 0 then
         local fallback = rating:GetUnfilteredReferenceEntry(context, item, data.slot)
         entry.status, entry.conditional = fallback.status, fallback.conditional
@@ -322,6 +322,13 @@ local function resolve(data, context, ordinal, level, verified)
     local rank = before(archive, levelState, first) + 1
     local ties = before(archive, levelState, last + 1) - rank + 1
     entry.rank, entry.total, entry.score = rank, levelState.count, (score - POINT_ZERO) / 10000
+    if item.effect_rules then
+        local effects = levelState.effects
+        local count = size(effects) / 9
+        local function at(i) return packedRead(archive, effects, (i - 1) * 9 + 1, 3) end
+        local i = lowerBound(count, ordinal, at)
+        entry.effectPoints = i <= count and at(i) == ordinal and (packedRead(archive, effects, (i - 1) * 9 + 4, 6) - POINT_ZERO) / 10000 or 0
+    end
     entry.tied = ties > 1 or nil
     entry.conditional = packedRead(archive, levelState.order, (position - 1) * 3 + 1, 3) >= 131072
     if entry.tied and size(levelState.conditional) > 0 then

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Grove Subjugator's Blade Item Level 60 Binds when equipped One-Hand Dagger 33 - 62 Damage Speed 1.80 (26.39 damage per second) +6 Stamina -10 Spirit Durability 65 / 65 Requires Level 55 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 68 . \"To subjugate a soul takes a toll on one's own.\" Sell Price: 4 81 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-20T09:36:42.140059+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 287034,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 26.39,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 68.",
+        "stats": {
+          "spell_power": 68.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 68. \"To subjugate a soul takes a toll on one's own.\""
+    ],
+    "id": 287034,
+    "item_level": 60,
+    "name": "Grove Subjugator's Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "spell_power": 68.0,
+      "stamina": 6.0
+    },
+    "weapon_max_damage": 62,
+    "weapon_min_damage": 33,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=287034"
+  },
+  "linked_entities": [],
+  "name": "Grove Subjugator's Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3cae5b4c51b2dd85a0cb12e42a5723a0a722e3d833c17b722859f64ac1015487",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287034",
+  "url": "https://www.wowhead.com/forever/item=287034"
+}

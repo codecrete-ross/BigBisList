@@ -1,11 +1,13 @@
 import copy
+from math import exp
 import subprocess
 import unittest
 from unittest.mock import patch
 
 from tests.test_addon_runtime_lua import find_lua51
 from tools.forever_comparison import comparison_document, comparison_facts, compile_comparison_data
-from tools.forever_item_effects import effect_rule
+from tools.forever_effect_benchmarks import compile_rule
+from tools.forever_item_effects import attach_rules, catalog_coverage, effect_rule, resolve_spell_leads, set_catalog
 from tools.forever_scoring import compile_model, pack_item, read_model, refresh_review_scope, review_issues, scoring_audit, swap_score
 from tools.generate_lua import lua_value
 from tools.project import ADDON_DIR, dataset_json
@@ -395,7 +397,7 @@ assert(rating:Label(head.rows[1], "compact") == "Top tier Tied #1/13")
 assert(rating:Label(head.rows[1], "stacked") == "Top tier\nTied #1 / 13")
 local summary = rating:DescriptionLines(head.rows[7])
 assert(summary[1] == "Rank #7 of 13" and summary[2] == "Protection · Level 47")
-assert(summary[3] == "70% of the best known stat score")
+assert(summary[3] == "70% of the best known gear score")
 local only = rating:GetPlacement(context, "Neck", {"Neck"}).rows[1]
 assert(not only.tier and not only.score_percent and rating:Label(only) == "5.0 pts")
 for _, entry in ipairs(rating:GetPlacement(context, "Back", {"Back"}).rows) do
@@ -555,14 +557,120 @@ local function pool(class, spec, level, faction, race, slot)
 end
 assert(not pool("Paladin", "Protection", 44, "Alliance", "Human", "Main Hand")["17705"])
 local weapons = pool("Paladin", "Protection", 49, "Alliance", "Human", "Main Hand")
-assert(weapons["6829"] and weapons["17705"] and weapons["17705"].conditional)
+assert(weapons["6829"] and weapons["17705"] and not weapons["17705"].conditional)
 assert(weapons["17705"].item.effect_rules[1].kind == "extra_attack")
+assert(weapons["17705"].score > 105.57)
 assert(not pool("Warrior", "Protection", 49, "Horde", "Orc", "Main Hand")["6829"])
 local tank = pool("Paladin", "Protection", 60, "Alliance", "Human", "Trinket")
 assert(tank["13966"].item.stats.dodge_percent == 1 and tank["13966"].score > 0)
 local caster = pool("Mage", "Fire", 60, "Alliance", "Human", "Trinket")
 assert(caster["13968"].item.stats.spell_crit_percent == 1 and caster["13968"].score > 0)
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
+''')
+
+    def test_benchmark_proc_thresholds_caps_and_shared_uses_agree_in_both_scorers(self):
+        catalog = {r["id"]: r for r in dataset_json("forever", "comparison_item_stats")["items"]}
+
+        def item(identifier):
+            row = catalog[identifier]
+            return {**row, **attach_rules(row)}
+
+        sword, mace, blade, shield, eye, hand, card = map(item, (9418, 7723, 17705, 7726, 13968, 11815, 19288))
+        ret = self.runtime["profiles"]["Paladin/Retribution"]["scenarios"]["leveling"]
+        mage = self.runtime["profiles"]["Mage/Fire"]["scenarios"]["pre_raid"]
+        tank = self.runtime["profiles"]["Paladin/Protection"]["scenarios"]["leveling"]
+        damage = {"proc_dps": 5}
+        cases = []
+
+        def expect(gear, scenario, weights, points):
+            # Only pass inputs used by this calculation to the independent Lua run.
+            scenario = {k: v for k, v in scenario.items() if k in {"effect_benchmark", "effect_expectations", "crit_domain"}}
+            self.assertAlmostEqual(swap_score(gear, weights, [], {}, scenario, level=51)[0], points, places=6)
+            cases.append([gear, scenario, weights, points])
+
+        expected = 196 * .85 * .70 * 5 / 60
+        expect({16: sword}, ret, damage, expected)
+        self.assertEqual(sword["effect_rules"][0]["spell_id"], 12731)
+        self.assertEqual(sword["effect_rules"][0]["bonus_multiplier"], 3)
+        self.assertGreater(expected, 4.25)
+        for rate, wins in ((.25, False), (.50, True)):
+            exact = {"9418": {sword["effect_rules"][0]["key"]: {"per_minute": rate, "damage_factor": .70}}}
+            points = 196 * rate * .70 * 5 / 60
+            expect({16: sword}, {**ret, "effect_expectations": exact}, damage, points)
+            self.assertEqual(213.45 + points > 217.70, wins)
+        expect({16: blade}, ret, damage, 95 * (.85 * 60 / 2.7 * .01) * .70 * 5 / 60)
+        expect({17: shield}, tank, damage, 14 * 4 * .95 * 5 / 60)
+        expect({17: shield}, ret, damage, 0)
+        # A successful spellcast can be a heal. Harmful-cast effects use a
+        # different event budget, including on melee/caster hybrids.
+        healer = self.runtime["profiles"]["Priest/Holy"]["scenarios"]["pre_raid"]
+        expect({13: card}, healer, {"spirit": 1}, 150 * (1 - exp(-20 * .02 * 15 / 60)))
+        self.assertGreater(ret["effect_benchmark"]["casts"], 0)
+        # Hand of Justice uses the actual main-hand swing and its two-second internal cooldown.
+        first = mace["stats"]
+        rate = .85 * 60 / first["weapon_speed"] * .01
+        average = (first["weapon_min_damage"] + first["weapon_max_damage"]) / 2
+        expect({13: hand, 16: mace}, ret, damage, average * rate / (1 + rate / 30) * .70 * 5 / 60)
+        for hit in (0, 15, 16, 18):
+            outside = {1: {"id": 1, "stats": {"spell_hit_percent": hit}}}
+            expected = 10 * (hit + min(7, max(0, 16 - hit)) * 20 / 300)
+            expect({**outside, 13: eye}, mage, {"spell_hit_percent": 10}, expected)
+        # Two distinct 30-second trinkets share a 20-second lockout. Their
+        # ordinary uptime is 3/8 each and their effects never stack.
+        quick = "Use: Increases your Spell Hit chance by 7% for 15 sec. (30 Sec Cooldown)"
+        rule = compile_rule({**eye["effect_rules"][0], "duration": 15, "cooldown": 30, "label": quick}, {"slot": "Trinket"})
+        trinkets = {p: {"id": p, "stats": {}, "effect_rules": [rule]} for p in (13, 14)}
+        expect(trinkets, mage, {"spell_hit_percent": 10}, 7 * 10 * .75)
+        self.lua_run('BigBiSList = {}\ndofile("ForeverScoring.lua")\nlocal cases = ' + lua_value(cases) + r'''
+for _, case in ipairs(cases) do
+    local gear = {}
+    for slot, item in pairs(case[1]) do gear[tonumber(slot)] = item end
+    local total = BigBiSList.ForeverScoring.ScoreLoadout(gear, case[3], {}, {}, case[2], nil, 51)
+    assert(math.abs(total - case[4]) < 1e-6, total .. " expected " .. case[4])
+end
+''')
+
+    def test_effect_inventory_preserves_exact_spell_and_charge_limits(self):
+        line = "Chance on hit: Blasts a target for 45 Fire damage."
+        link = "chance on hit: 123 Flame"
+        base = {"id": 1, "name": "Burning sword", "slot": "Two Hand", "weapon_subtype": "Sword",
+                "stats": {"dps": 10, "weapon_speed": 3}, "effects": [line], "effect_leads": [link], "effects_known": True}
+        inherited = {**base, "id": 2, "effects_known": False, "effects": []}
+        unknown = {**inherited, "id": 3, "effect_leads": ["chance on hit: 124 Flame"]}
+        charged = {"id": 4, "name": "Charged trinket", "slot": "Trinket", "stats": {}, "effects_known": True,
+                   "effects": ["Use: Increases your armor by 100 for 15 sec. (2 Min Cooldown)"],
+                   "effect_leads": ["use: 125 Armor (3 charges, 120 s cooldown)"]}
+        rows = [base, inherited, unknown, charged]
+        resolved = resolve_spell_leads(rows)
+        self.assertEqual(attach_rules(resolved["2"])["effect_rules"][0]["spell_id"], 123)
+        self.assertEqual(resolved["3"]["missing_effects"], unknown["effect_leads"])
+        self.assertNotIn("rates", attach_rules(charged)["effect_rules"][0])
+        compiled = compile_comparison_data([], data={"version": "forever-stat-ranks-1", "items": rows})
+        result = catalog_coverage(compiled)
+        self.assertEqual(result["counts"]["family_estimate"], 2)
+        self.assertEqual(result["counts"]["missing_description"], 1)
+        self.assertIn("Limited charges", result["items_requiring_context_or_evidence"]["4"][0]["reason"])
+
+    def test_tooltip_set_thresholds_activate_once_and_identify_unknown_active_bonuses(self):
+        groups, members = set_catalog(dataset_json("forever", "comparison_item_stats"))
+        stormcloth = groups[members[10010]]
+        six_piece = next(bonus for bonus in stormcloth["bonuses"] if bonus["pieces"] == 6)
+        self.assertEqual(six_piece["stats"], {"healing_power": 22, "spell_damage": 8})
+        group = groups[members[6473]]
+        self.assertEqual(group["name"], "Embrace of the Viper")
+        self.assertEqual(group["bonuses"][0]["stats"], {"intellect": 10})
+        pieces = [dict(id=int(i), stats={}, effects=["Set bonuses"], effect_set=group) for i in group["key"].split(",")]
+        for count, points in [(1, 0), (2, 10), (3, 20), (4, 20)]:
+            total, _ = swap_score(dict(enumerate(pieces[:count], 1)), {"intellect": 1, "attack_power": 1}, [], {}, {})
+            self.assertEqual(total, points)
+        self.lua_run('BigBiSList = {}\ndofile("ForeverScoring.lua")\nlocal pieces = ' + lua_value(pieces) + r'''
+local scorer, gear = BigBiSList.ForeverScoring, {}
+for count = 1, 4 do
+    gear[count] = pieces[count]
+    local points, _, applied = scorer.ScoreLoadout(gear, {intellect = 1, attack_power = 1}, {}, {}, {})
+    assert(points == ({0,10,20,20})[count])
+    assert(scorer:HasUnresolvedEffects(gear[count], applied[count]) == (count == 4))
+end
 ''')
 
     def test_damage_proc_needs_a_scored_channel_and_breakdown_includes_the_modeled_points(self):
@@ -626,7 +734,7 @@ for _, level in ipairs({39, 43, 49, 60}) do
     local guide = rating:GetGuideContext("Paladin", "Protection", phase, level, "Human", "Alliance")
     local pool = rating:GetGuidePlacement(guide, "Off Hand")
     local scarlet = assert(pool.byVariant["7726"])
-    assert(scarlet.conditional)
+    assert(not scarlet.conditional and scarlet.item.effect_rules[1].trigger == "block")
     local stormwind = rating:GetPublishedFacts("1203")
     local match = rating:GetReferenceCandidate(guide, stormwind, "Off Hand")
     if level < 49 then assert(not match)
@@ -636,14 +744,16 @@ for _, level in ipairs({39, 43, 49, 60}) do
         local worn = rating:GetPlacement(live, "OffHand", {"Off Hand"}).reference
         assert(worn.item.name == "Wall of Water" and worn.item.stats.block_value == 27)
         local swap = rating:GetGuideSwap(live, scarlet.item, "OffHand", "Off Hand", nil, true)
-        assert(swap.conditional and swap.replacements[1].name == "Wall of Water" and swap.delta < 0)
+        assert(swap.estimatedEffects and swap.replacements[1].name == "Wall of Water" and swap.delta < 0)
         local advice = rating:LevelingPresentation({item=scarlet.item,swap=swap,playerLevel=level,viewedLevel=level})
-        assert(advice.today:find("Holy damage on block unscored", 1, true))
+        local details = table.concat(rating:LevelingPresentationLines(advice), "\n")
+        assert(not details:find("Holy damage on block unscored", 1, true))
+        assert(details:find(level == 60 and "+3.78 effect pts" or "+2.66 effect pts", 1, true), details)
         local reverse = rating:GetContext("Paladin", "Protection", phase, level,
             {equippedSlots={OffHand={item_id=7726,item_link="item:7726"}}})
         local gain = rating:GetGuideSwap(reverse, worn.item, "OffHand", "Off Hand", link)
         local alternative = rating:LevelingPresentation({item=worn.item,swap=gain,playerLevel=level,viewedLevel=level})
-        assert(gain.delta > 0 and alternative.today:find("Possible upgrade · Holy damage on block unscored", 1, true))
+        assert(gain.delta > 0 and not alternative.today:find("unscored", 1, true))
         local summed = 0
         for _, points in pairs(swap.contributions) do summed = summed + points end
         assert(math.abs(summed - swap.delta) < 0.0001)

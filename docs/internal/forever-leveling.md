@@ -76,10 +76,34 @@ remains open.
 
 Review occupied slots too. The November 18 ranking sweep found that Aegis of
 Stormwind (1203) and Wall of the Dead (1979) had scoring facts and lacked
-indexed Guide routes. Wall of Water (274652) still needs indexed stats and
-its Zul’Farrak route. Use the exact item IDs to review acquisition and equip
+indexed Guide routes. The November 20 review recovered Wall of Water's
+complete shield tooltip and Hydromancer Velratha's Zul’Farrak loot table.
+Use the exact item IDs to review acquisition and equip
 requirements. A faction's observed trade route applies to that faction.
 See the [ranking coverage commands](forever-scoring.md#verification-and-rollout).
+
+The Forever route audit joins equipment IDs to individual encounters, quest
+rewards, vendor stock and crafting spells. It checks alternate sources even
+when an item already has a reviewed route. The saved dungeon tables identify
+named encounters and instance-specific trash separately. Quest access uses
+the acceptance level, prerequisites, faction and class. A price observed
+with a reputation discount retains its standing. Commissionable crafts need
+a transferable output and evidence of how the recipe can be learned.
+
+```powershell
+python -m tools.forever_guide_routes --audit build/forever-guide-route-audit.json --lua build/ui-acceptance-tools/lua5.1.exe
+```
+
+The report records a disposition for each source relationship. The Lua check
+verifies membership on the shipped target list and each eligible activity
+page in Leveling and Pre-Raid for every supported class, spec and race. It
+checks the levels where equipment or route eligibility changes. Data
+validation also repeats the offline reconciliation. A published equipment
+drop missing either its catalog record or its encounter fails validation.
+After an intentional source refresh, rebuild the route catalog with
+`python -m tools.forever_guide_routes --write` and regenerate the Forever
+payload. The registered snapshots retain the dungeon URLs, versioned recipe
+exports, and digests of the corrected QuestieDB and server inputs.
 
 The November 12, 2026 retry recovered three of 670 Forever tooltips.
 Runed Ring requires level 45, Innervating Band requires 54, and Band of the

@@ -8,9 +8,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "4e9dd2190a1f71e0f64a698871a31a19e9ba2b951158bc336e12bd2f4f3d48da",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Balance and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "2477d8424c622956997225adc191fa4ca48153daba5063c89fd6472ce7db8dde",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Balance and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -107,7 +107,7 @@
             "target": 10
           }
         ],
-        "input_digest": "4e9dd2190a1f71e0f64a698871a31a19e9ba2b951158bc336e12bd2f4f3d48da"
+        "input_digest": "2477d8424c622956997225adc191fa4ca48153daba5063c89fd6472ce7db8dde"
       }
     },
     "Druid/Balance/pre_raid": {
@@ -118,9 +118,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "34157dd19f4467e8ecb6d31c3045a8468d15e80d1fa59c60940ba004481aa48b",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Balance and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "e7c9ac680179d92711995883e4291db3ff309bb3542a517583579ae6089271c8",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Balance and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -151,7 +151,7 @@
             "target": 10
           }
         ],
-        "input_digest": "34157dd19f4467e8ecb6d31c3045a8468d15e80d1fa59c60940ba004481aa48b"
+        "input_digest": "e7c9ac680179d92711995883e4291db3ff309bb3542a517583579ae6089271c8"
       }
     },
     "Druid/Feral dps/leveling": {
@@ -162,9 +162,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "1b04d17d3aa720d8bce93909875edda00eea4d882d64e6bfffdf1c4b4445e214",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Feral dps and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "48e7bb138f40ef59a6bbbfefbf104786a402fe621ec4a110e93caa13a0750b62",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Feral dps and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -262,7 +262,7 @@
             "target": 16
           }
         ],
-        "input_digest": "1b04d17d3aa720d8bce93909875edda00eea4d882d64e6bfffdf1c4b4445e214"
+        "input_digest": "48e7bb138f40ef59a6bbbfefbf104786a402fe621ec4a110e93caa13a0750b62"
       }
     },
     "Druid/Feral dps/pre_raid": {
@@ -273,9 +273,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "67e341928a1616d2d736b41fef4618cd69dd42e9f2441b4678342e49cd7e350b",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Feral dps and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "cc9be6c86b54d15390e8fa858d9478d09acef81c7dacf1719f9b9544235eb23e",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Feral dps and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -287,7 +287,7 @@
             "level": 60,
             "offers": [
               {
-                "delta": 46.5195,
+                "delta": 64.1145,
                 "variant": "12969"
               },
               {
@@ -300,12 +300,12 @@
               "129582": 5,
               "129618": 5
             },
-            "reason": "Base swap Headmaster's Charge to Seeping Willow or Grimlok's Charge, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +41.7450 and +32.4250. The recorded ranks change these deltas by +4.7745 and +2.3025.",
+            "reason": "Base swap Headmaster's Charge to Seeping Willow or Grimlok's Charge, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +41.7450 and +32.4250. The recorded ranks change these deltas by +4.7745 and +2.3025. Seeping Willow adds 51 Nature damage per tick for five ticks at 0.92 activations per minute, with a 0.90 damage factor and 5 points per DPS.",
             "slot": "Two Hand",
             "target": 16
           }
         ],
-        "input_digest": "67e341928a1616d2d736b41fef4618cd69dd42e9f2441b4678342e49cd7e350b"
+        "input_digest": "cc9be6c86b54d15390e8fa858d9478d09acef81c7dacf1719f9b9544235eb23e"
       }
     },
     "Druid/Feral tank/leveling": {
@@ -316,9 +316,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "8ea6975d1a96e4b72345f76501cffaddf13649517dd6ac74e5688f48eae8726c",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Feral tank and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "8dca5bafb85a1b25d23116158de8fd595c00738eb1a708805f3f90e2d9ea53b6",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Feral tank and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -416,7 +416,7 @@
             "target": 1
           }
         ],
-        "input_digest": "8ea6975d1a96e4b72345f76501cffaddf13649517dd6ac74e5688f48eae8726c"
+        "input_digest": "8dca5bafb85a1b25d23116158de8fd595c00738eb1a708805f3f90e2d9ea53b6"
       }
     },
     "Druid/Feral tank/pre_raid": {
@@ -427,9 +427,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "f6d557c0caa5eea3ef43eb75102b272ca65114dd34562742bb69e1f7c99308fd",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Feral tank and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "09e447fbfec352e595f06fe9bd034574366bce868415f30b97a085374232ab5c",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Feral tank and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -459,7 +459,7 @@
             "target": 1
           }
         ],
-        "input_digest": "f6d557c0caa5eea3ef43eb75102b272ca65114dd34562742bb69e1f7c99308fd"
+        "input_digest": "09e447fbfec352e595f06fe9bd034574366bce868415f30b97a085374232ab5c"
       }
     },
     "Druid/Restoration/leveling": {
@@ -470,9 +470,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "76d26cd83306f615071e92cfe4b0c947b102996097f3c1baddcb698ad64f0d3c",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Restoration and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "7df68add8710193e41237acabb346f9a5a476f858e317bf8beff0a70744660fe",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Restoration and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -570,7 +570,7 @@
             "target": 11
           }
         ],
-        "input_digest": "76d26cd83306f615071e92cfe4b0c947b102996097f3c1baddcb698ad64f0d3c"
+        "input_digest": "7df68add8710193e41237acabb346f9a5a476f858e317bf8beff0a70744660fe"
       }
     },
     "Druid/Restoration/pre_raid": {
@@ -581,9 +581,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "3bfde3863e651e216ca11c990bb9f6cc24225e844fb2d29a034a6aed16bab05b",
-      "reason": "Reviewed the build-pinned talent rows for Druid/Restoration and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "57f771c77a6730859770791aab003ea0f06ed217730abeb9ca703a307f975f16",
+      "reason": "Reviewed the build-pinned talent rows for Druid/Restoration and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -614,7 +614,7 @@
             "target": 11
           }
         ],
-        "input_digest": "3bfde3863e651e216ca11c990bb9f6cc24225e844fb2d29a034a6aed16bab05b"
+        "input_digest": "57f771c77a6730859770791aab003ea0f06ed217730abeb9ca703a307f975f16"
       }
     },
     "Hunter/Beast mastery/leveling": {
@@ -625,9 +625,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "6a084db2fe70201ee39cfdead3f484d2419d70442be8267163be41cfd938e4aa",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Beast mastery and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "23e75fbf6c7376c74ca2a224d3f5b4972c827f411e6a5540068cf9f0c5953107",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Beast mastery and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -706,7 +706,7 @@
             "level": 59,
             "offers": [
               {
-                "delta": 82.9488,
+                "delta": 84.2788,
                 "variant": "18755"
               },
               {
@@ -719,12 +719,12 @@
               "129662": 3,
               "129672": 5
             },
-            "reason": "Base swap Baelog's Shortbow to Xorothian Firestick or Sylvan Shortbow, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +80.7600 and +0.1200. The recorded ranks change these deltas by +2.1888 and +0.0336.",
+            "reason": "Base swap Baelog's Shortbow to Xorothian Firestick or Sylvan Shortbow, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +80.7600 and +0.1200. The recorded ranks change these deltas by +2.1888 and +0.0336. Xorothian Firestick adds 42 Fire damage at 0.80 activations per minute, with 50% of the periodic damage realized, a 0.95 damage factor and 5 points per DPS.",
             "slot": "Ranged",
             "target": 18
           }
         ],
-        "input_digest": "6a084db2fe70201ee39cfdead3f484d2419d70442be8267163be41cfd938e4aa"
+        "input_digest": "23e75fbf6c7376c74ca2a224d3f5b4972c827f411e6a5540068cf9f0c5953107"
       }
     },
     "Hunter/Beast mastery/pre_raid": {
@@ -735,9 +735,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "bce5797461789587b553e611b5da0701070f9ba49fbd50f37c45a24ab91a1f43",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Beast mastery and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "f3c562b016d79dfb12235310b4eb88aa2a19189bebb5c064342343d21b8c9557",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Beast mastery and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -749,7 +749,7 @@
             "level": 60,
             "offers": [
               {
-                "delta": 87.74,
+                "delta": 90.638,
                 "variant": "18755"
               },
               {
@@ -762,12 +762,12 @@
               "129662": 5,
               "129672": 5
             },
-            "reason": "Base swap Glass Shooter to Xorothian Firestick or Baelog's Shortbow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +83.6000 and +21.8800. The recorded ranks change these deltas by +4.1400 and +1.4040.",
+            "reason": "Base swap Glass Shooter to Xorothian Firestick or Baelog's Shortbow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +83.6000 and +21.8800. The recorded ranks change these deltas by +4.1400 and +1.4040. Xorothian Firestick adds 42 Fire damage at 0.92 activations per minute, with a 0.90 damage factor and 5 points per DPS.",
             "slot": "Ranged",
             "target": 18
           }
         ],
-        "input_digest": "bce5797461789587b553e611b5da0701070f9ba49fbd50f37c45a24ab91a1f43"
+        "input_digest": "f3c562b016d79dfb12235310b4eb88aa2a19189bebb5c064342343d21b8c9557"
       }
     },
     "Hunter/Marksmanship/leveling": {
@@ -778,9 +778,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "ea095d34ec1464562204f872c3ec0acf4f237f8ba4ae0475acf5b6902758b5c6",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Marksmanship and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "d02fdb06fc8d9f35a1127a41d605f2ec4f9838e219d1fc5245cb8b5a4b5cf904",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Marksmanship and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -860,7 +860,7 @@
             "level": 59,
             "offers": [
               {
-                "delta": 84.408,
+                "delta": 85.738,
                 "variant": "18755"
               },
               {
@@ -873,12 +873,12 @@
               "129662": 5,
               "129672": 5
             },
-            "reason": "Base swap Baelog's Shortbow to Xorothian Firestick or Sylvan Shortbow, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +80.7600 and +0.1200. The recorded ranks change these deltas by +3.6480 and +0.0560.",
+            "reason": "Base swap Baelog's Shortbow to Xorothian Firestick or Sylvan Shortbow, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +80.7600 and +0.1200. The recorded ranks change these deltas by +3.6480 and +0.0560. Xorothian Firestick adds 42 Fire damage at 0.80 activations per minute, with 50% of the periodic damage realized, a 0.95 damage factor and 5 points per DPS.",
             "slot": "Ranged",
             "target": 18
           }
         ],
-        "input_digest": "ea095d34ec1464562204f872c3ec0acf4f237f8ba4ae0475acf5b6902758b5c6"
+        "input_digest": "d02fdb06fc8d9f35a1127a41d605f2ec4f9838e219d1fc5245cb8b5a4b5cf904"
       }
     },
     "Hunter/Marksmanship/pre_raid": {
@@ -889,9 +889,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "abbf155842e3541758130b346ce0dcecb4ead5cb048eb4f095e51a803dfd0226",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Marksmanship and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "db2ee0fa4d7b351b37e04dba0f3f96b700cf7dfe93c4d6cf6b396b8891d15958",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Marksmanship and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -903,7 +903,7 @@
             "level": 60,
             "offers": [
               {
-                "delta": 88.54,
+                "delta": 91.438,
                 "variant": "18755"
               },
               {
@@ -916,12 +916,12 @@
               "129662": 5,
               "129672": 5
             },
-            "reason": "Base swap Glass Shooter to Xorothian Firestick or Baelog's Shortbow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +84.4000 and +21.8800. The recorded ranks change these deltas by +4.1400 and +1.4040.",
+            "reason": "Base swap Glass Shooter to Xorothian Firestick or Baelog's Shortbow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +84.4000 and +21.8800. The recorded ranks change these deltas by +4.1400 and +1.4040. Xorothian Firestick adds 42 Fire damage at 0.92 activations per minute, with a 0.90 damage factor and 5 points per DPS.",
             "slot": "Ranged",
             "target": 18
           }
         ],
-        "input_digest": "abbf155842e3541758130b346ce0dcecb4ead5cb048eb4f095e51a803dfd0226"
+        "input_digest": "db2ee0fa4d7b351b37e04dba0f3f96b700cf7dfe93c4d6cf6b396b8891d15958"
       }
     },
     "Hunter/Survival/leveling": {
@@ -932,9 +932,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "1e08c07886c155dc0ed6ea930f1ac06fcf6ca8b098d8daa01b5be722e02005cf",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Survival and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "e3981f89d46b3f6ab4ef0f7be639ccd37e28f464e8590fdb2430a712d3ee8666",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Survival and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1032,7 +1032,7 @@
             "target": 11
           }
         ],
-        "input_digest": "1e08c07886c155dc0ed6ea930f1ac06fcf6ca8b098d8daa01b5be722e02005cf"
+        "input_digest": "e3981f89d46b3f6ab4ef0f7be639ccd37e28f464e8590fdb2430a712d3ee8666"
       }
     },
     "Hunter/Survival/pre_raid": {
@@ -1043,9 +1043,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "1b31b5e8cfab7f47ca3ecf5eae6af9853ad1473ed2401bf5ec90c520cefd0bad",
-      "reason": "Reviewed the build-pinned talent rows for Hunter/Survival and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "839981876d99e8ed8998396d017520e4481b62602d72b1666605e7d7eb6d12b4",
+      "reason": "Reviewed the build-pinned talent rows for Hunter/Survival and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1076,7 +1076,7 @@
             "target": 11
           }
         ],
-        "input_digest": "1b31b5e8cfab7f47ca3ecf5eae6af9853ad1473ed2401bf5ec90c520cefd0bad"
+        "input_digest": "839981876d99e8ed8998396d017520e4481b62602d72b1666605e7d7eb6d12b4"
       }
     },
     "Mage/Arcane/leveling": {
@@ -1087,9 +1087,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "393ec73b27b482a291e0c3799e10b7fad8107bf3fa4fafb55e09aeb90508d88b",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Arcane and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "111a6c97fb50db3498a8837c9bd00c1997a88c12bd762819d8d94c38e8ef5c0d",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Arcane and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1187,7 +1187,7 @@
             "target": 1
           }
         ],
-        "input_digest": "393ec73b27b482a291e0c3799e10b7fad8107bf3fa4fafb55e09aeb90508d88b"
+        "input_digest": "111a6c97fb50db3498a8837c9bd00c1997a88c12bd762819d8d94c38e8ef5c0d"
       }
     },
     "Mage/Arcane/pre_raid": {
@@ -1198,9 +1198,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "c36832c841516e7d84d69a189a50ce18e768ac5857872caf85f8a73ba9316d59",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Arcane and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "2e91b07bc53f713b2c7ecd488054e541a6961e4f342fc29b08adc2b4613a39c6",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Arcane and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1230,7 +1230,7 @@
             "target": 1
           }
         ],
-        "input_digest": "c36832c841516e7d84d69a189a50ce18e768ac5857872caf85f8a73ba9316d59"
+        "input_digest": "2e91b07bc53f713b2c7ecd488054e541a6961e4f342fc29b08adc2b4613a39c6"
       }
     },
     "Mage/Fire/leveling": {
@@ -1241,9 +1241,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "a503843d99b4a0ec50bf47c5106a6b68c6bfddaf97a1301f0277dd6970d2ecd1",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Fire and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "5f5404ed4d70e0780323ff7cd70c06b8fb7bcb8099a4d7c9858bb696445de4cf",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Fire and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1340,7 +1340,7 @@
             "target": 18
           }
         ],
-        "input_digest": "a503843d99b4a0ec50bf47c5106a6b68c6bfddaf97a1301f0277dd6970d2ecd1"
+        "input_digest": "5f5404ed4d70e0780323ff7cd70c06b8fb7bcb8099a4d7c9858bb696445de4cf"
       }
     },
     "Mage/Fire/pre_raid": {
@@ -1351,9 +1351,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "2cd7c52b50936757bdbbbcdf9d2991bf20b9f639da03c048a57f605c1b771f00",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Fire and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "c8e4e6b8948a385ca904a4fa581b50e0cfc7bcec7cbe55503a968bcef047d1c0",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Fire and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1384,7 +1384,7 @@
             "target": 18
           }
         ],
-        "input_digest": "2cd7c52b50936757bdbbbcdf9d2991bf20b9f639da03c048a57f605c1b771f00"
+        "input_digest": "c8e4e6b8948a385ca904a4fa581b50e0cfc7bcec7cbe55503a968bcef047d1c0"
       }
     },
     "Mage/Frost/leveling": {
@@ -1395,9 +1395,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "ad4966da4f88779a324fefa47b32c98fec8579d143ea10e05b5e8d1355666c98",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Frost and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "d56e1fa6127e8fc9c3b511535ecdd7011daca0cf05856b029ea228654f377403",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Frost and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1495,7 +1495,7 @@
             "target": 1
           }
         ],
-        "input_digest": "ad4966da4f88779a324fefa47b32c98fec8579d143ea10e05b5e8d1355666c98"
+        "input_digest": "d56e1fa6127e8fc9c3b511535ecdd7011daca0cf05856b029ea228654f377403"
       }
     },
     "Mage/Frost/pre_raid": {
@@ -1506,9 +1506,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "d44487cc4ee8bc737f6b0ec20aff6a3936cf902800aa1fc580df774fad2949a0",
-      "reason": "Reviewed the build-pinned talent rows for Mage/Frost and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "e4e66fb8f010271b3014f396d320f1a24ace2cea7993ce05fb61ca53a3f26566",
+      "reason": "Reviewed the build-pinned talent rows for Mage/Frost and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1538,7 +1538,7 @@
             "target": 1
           }
         ],
-        "input_digest": "d44487cc4ee8bc737f6b0ec20aff6a3936cf902800aa1fc580df774fad2949a0"
+        "input_digest": "e4e66fb8f010271b3014f396d320f1a24ace2cea7993ce05fb61ca53a3f26566"
       }
     },
     "Paladin/Holy/leveling": {
@@ -1549,9 +1549,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "beaa764f00e9b4326c201351afc3026efa5370acd77a35a795bf8bcb989cc3ab",
-      "reason": "Reviewed the build-pinned talent rows for Paladin/Holy and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "f7b6e6a35dac15b9bf895f19e5384f4bdf02887c34626178a31f480640fd253e",
+      "reason": "Reviewed the build-pinned talent rows for Paladin/Holy and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1650,7 +1650,7 @@
             "target": 11
           }
         ],
-        "input_digest": "beaa764f00e9b4326c201351afc3026efa5370acd77a35a795bf8bcb989cc3ab"
+        "input_digest": "f7b6e6a35dac15b9bf895f19e5384f4bdf02887c34626178a31f480640fd253e"
       }
     },
     "Paladin/Holy/pre_raid": {
@@ -1661,9 +1661,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "8f6557b1a9f68d9315f48f3986b46759cbffd5722231b6d274db8ffa960ade11",
-      "reason": "Reviewed the build-pinned talent rows for Paladin/Holy and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "367bd15f4de4cad8d6f922d62cc62cf2df9b3a2d64773598410f1dce3943746a",
+      "reason": "Reviewed the build-pinned talent rows for Paladin/Holy and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1693,7 +1693,7 @@
             "target": 11
           }
         ],
-        "input_digest": "8f6557b1a9f68d9315f48f3986b46759cbffd5722231b6d274db8ffa960ade11"
+        "input_digest": "367bd15f4de4cad8d6f922d62cc62cf2df9b3a2d64773598410f1dce3943746a"
       }
     },
     "Paladin/Protection/leveling": {
@@ -1704,9 +1704,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "0008616be1422fa4bd1a11d1db0ee64b3f7cf6fc0fe401cf4188ef1068732748",
-      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "37038d97827d7693a3c7448e77b73e394f56c8ea03e035187279c9dfa9f3a903",
+      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1762,7 +1762,7 @@
             "level": 39,
             "offers": [
               {
-                "delta": 104.6474,
+                "delta": 107.3074,
                 "variant": "7726"
               },
               {
@@ -1775,7 +1775,7 @@
               "130354": 3,
               "137872": 1
             },
-            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus.",
+            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus. Scarlet Commander's Aegis adds 14 average Holy damage per block at four blocks per minute, with a 0.95 damage factor and 3 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           },
@@ -1786,7 +1786,7 @@
             "level": 59,
             "offers": [
               {
-                "delta": 120.88,
+                "delta": 123.54,
                 "variant": "7726"
               },
               {
@@ -1801,12 +1801,12 @@
               "137872": 2,
               "141292": 5
             },
-            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus.",
+            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus. Scarlet Commander's Aegis adds 14 average Holy damage per block at four blocks per minute, with a 0.95 damage factor and 3 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           }
         ],
-        "input_digest": "0008616be1422fa4bd1a11d1db0ee64b3f7cf6fc0fe401cf4188ef1068732748"
+        "input_digest": "37038d97827d7693a3c7448e77b73e394f56c8ea03e035187279c9dfa9f3a903"
       }
     },
     "Paladin/Protection/pre_raid": {
@@ -1817,9 +1817,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "614c91cb3dbb4ae5491539d2b61b7071ceac445858a70efe1ace6d36276c28e2",
-      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "9cccb2925caeb8f8db2c92ecdeb5a909452684f4cf381b53138cfd38fb15d4f7",
+      "reason": "Reviewed all four flat talent scalings on 70959, shield conditioning, eligibility, the full candidate pool and the inherited tank baseline. The raid mana and Holy damage coefficients reuse the reviewed leveling baseline. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1835,7 +1835,7 @@
                 "variant": "12602"
               },
               {
-                "delta": 73.128,
+                "delta": 76.908,
                 "variant": "7726"
               }
             ],
@@ -1846,12 +1846,12 @@
               "137872": 2,
               "141292": 4
             },
-            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus.",
+            "reason": "Hand calculation using tooltip armor, Strength, Intellect and shield block. Apply the two-percent primary-stat and armor ranks, then the 15/30% shield-block bonus. Scarlet Commander's Aegis adds 14 average Holy damage per block at six blocks per minute, with a 0.90 damage factor and 3 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           }
         ],
-        "input_digest": "614c91cb3dbb4ae5491539d2b61b7071ceac445858a70efe1ace6d36276c28e2"
+        "input_digest": "9cccb2925caeb8f8db2c92ecdeb5a909452684f4cf381b53138cfd38fb15d4f7"
       }
     },
     "Paladin/Retribution/leveling": {
@@ -1862,9 +1862,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "4475b341181f6bb1c73f64eaf723f4001dc0696d36afd196991877a0ae08fb04",
-      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "27e340a0c9352aa0ce6399c77dc47c4f6549a33ade8cd06a32bdfa5d706f7535",
+      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -1960,7 +1960,7 @@
             "target": 3
           }
         ],
-        "input_digest": "4475b341181f6bb1c73f64eaf723f4001dc0696d36afd196991877a0ae08fb04"
+        "input_digest": "27e340a0c9352aa0ce6399c77dc47c4f6549a33ade8cd06a32bdfa5d706f7535"
       }
     },
     "Paladin/Retribution/pre_raid": {
@@ -1971,9 +1971,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "2e7383e0d94b654e1c2aa541f155a792dc6c31322894614d7f8118e4d1cb3737",
-      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "269f28f2c9b9a8dd161b634556d501fa54f98ac2c7b9022d822d7b8e627dadc3",
+      "reason": "Reviewed Champion of the Light rank curves and melee proc classification. Ordinary Intellect and spell damage have independent pilot weights. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2002,7 +2002,7 @@
             "target": 3
           }
         ],
-        "input_digest": "2e7383e0d94b654e1c2aa541f155a792dc6c31322894614d7f8118e4d1cb3737"
+        "input_digest": "269f28f2c9b9a8dd161b634556d501fa54f98ac2c7b9022d822d7b8e627dadc3"
       }
     },
     "Priest/Discipline/leveling": {
@@ -2013,9 +2013,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "cb165b9dbb2cc9373ea6b555e39452b2c524db603f42a3e9b8340d2c81c2944f",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Discipline and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "b32c58813ddd89b51e2b4a06eb9abff5f74c0ab2bee3247dc100753d2dd211d7",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Discipline and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2114,7 +2114,7 @@
             "target": 11
           }
         ],
-        "input_digest": "cb165b9dbb2cc9373ea6b555e39452b2c524db603f42a3e9b8340d2c81c2944f"
+        "input_digest": "b32c58813ddd89b51e2b4a06eb9abff5f74c0ab2bee3247dc100753d2dd211d7"
       }
     },
     "Priest/Discipline/pre_raid": {
@@ -2125,9 +2125,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "b6d668e71a9e463d1f9f47ed2996bbc9967a240bccd3d68b3c145d5424cb16f3",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Discipline and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "ee6588476092531269bf26d31930b490ecf709f1fe921929f0d533c58ca29fea",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Discipline and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2157,7 +2157,7 @@
             "target": 11
           }
         ],
-        "input_digest": "b6d668e71a9e463d1f9f47ed2996bbc9967a240bccd3d68b3c145d5424cb16f3"
+        "input_digest": "ee6588476092531269bf26d31930b490ecf709f1fe921929f0d533c58ca29fea"
       }
     },
     "Priest/Holy/leveling": {
@@ -2168,9 +2168,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "0f2aa190f0b31fcdbb298a7c5fb59b615bbb14ad4be6766a55001c48de2e6ab9",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Holy and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "1f120d277d63189fda5f6b27e2bc7cce4870829ed536984d957a8f81c09610a2",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Holy and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2268,7 +2268,7 @@
             "target": 11
           }
         ],
-        "input_digest": "0f2aa190f0b31fcdbb298a7c5fb59b615bbb14ad4be6766a55001c48de2e6ab9"
+        "input_digest": "1f120d277d63189fda5f6b27e2bc7cce4870829ed536984d957a8f81c09610a2"
       }
     },
     "Priest/Holy/pre_raid": {
@@ -2279,9 +2279,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "66afe1d1c4ebfe50b3c9e0aaab2a7f1b8de2dc58c9ae5e5dbcc1dc9f5c515ef4",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Holy and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "f41813a466e2435d5a23f347f11fc2954415cca81f4f72541077a23fa2ea3f3f",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Holy and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2311,7 +2311,7 @@
             "target": 11
           }
         ],
-        "input_digest": "66afe1d1c4ebfe50b3c9e0aaab2a7f1b8de2dc58c9ae5e5dbcc1dc9f5c515ef4"
+        "input_digest": "f41813a466e2435d5a23f347f11fc2954415cca81f4f72541077a23fa2ea3f3f"
       }
     },
     "Priest/Shadow/leveling": {
@@ -2322,9 +2322,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "aef07ebdea7741f82af7a6eaae16fe3d4c5332d72333b2941f53b961662227de",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Shadow and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "8fdb341ff324daa66e4949f36b3efc68578eb06b3a20ae890f206d47027203d3",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Shadow and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2421,7 +2421,7 @@
             "target": 18
           }
         ],
-        "input_digest": "aef07ebdea7741f82af7a6eaae16fe3d4c5332d72333b2941f53b961662227de"
+        "input_digest": "8fdb341ff324daa66e4949f36b3efc68578eb06b3a20ae890f206d47027203d3"
       }
     },
     "Priest/Shadow/pre_raid": {
@@ -2432,9 +2432,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "376ea9fa75afab93952d3823a7a3438f3a42b1f5db42db2f62bbc656a030416b",
-      "reason": "Reviewed the build-pinned talent rows for Priest/Shadow and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "78b73804b7c060d4be186b237855a9b68b240269b1f5138c80810d414bd9312b",
+      "reason": "Reviewed the build-pinned talent rows for Priest/Shadow and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2464,7 +2464,7 @@
             "target": 18
           }
         ],
-        "input_digest": "376ea9fa75afab93952d3823a7a3438f3a42b1f5db42db2f62bbc656a030416b"
+        "input_digest": "78b73804b7c060d4be186b237855a9b68b240269b1f5138c80810d414bd9312b"
       }
     },
     "Rogue/Assassination/leveling": {
@@ -2475,9 +2475,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "466900c93e5f72aee70c1633485442d988ef8553c8bcd77b721ffd746637c679",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Assassination and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "69dc4e461c5e820f8e904f61947bf4d8972f04727303f58cceebb8a679ed595b",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Assassination and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2533,11 +2533,11 @@
             "level": 39,
             "offers": [
               {
-                "delta": 13.0125,
+                "delta": 10.78125,
                 "variant": "2534"
               },
               {
-                "delta": 0.0625,
+                "delta": -2.16875,
                 "variant": "2941"
               }
             ],
@@ -2546,7 +2546,7 @@
               "130443": 3,
               "141297": 1
             },
-            "reason": "Base swap Thornspike to Rondel or Prison Shank, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +10.4100 and +2.1700. The recorded ranks change these deltas by +2.6025 and -2.1075.",
+            "reason": "Base swap Thornspike to Rondel or Prison Shank, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +10.4100 and +2.1700. The recorded ranks change these deltas by +2.6025 and -2.1075. Thornspike adds 45 Physical damage to the primary target at 0.85 activations per minute, with a 0.70 damage factor and 5 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           },
@@ -2562,7 +2562,7 @@
                 "variant": "2534"
               },
               {
-                "delta": 2.045,
+                "delta": 4.27625,
                 "variant": "6681"
               }
             ],
@@ -2571,12 +2571,12 @@
               "130443": 5,
               "141297": 2
             },
-            "reason": "Base swap Prison Shank to Rondel or Thornspike, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +8.2400 and -2.1700. The recorded ranks change these deltas by +9.4200 and +4.2150.",
+            "reason": "Base swap Prison Shank to Rondel or Thornspike, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +8.2400 and -2.1700. The recorded ranks change these deltas by +9.4200 and +4.2150. Thornspike adds 45 Physical damage to the primary target at 0.85 activations per minute, with a 0.70 damage factor and 5 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           }
         ],
-        "input_digest": "466900c93e5f72aee70c1633485442d988ef8553c8bcd77b721ffd746637c679"
+        "input_digest": "69dc4e461c5e820f8e904f61947bf4d8972f04727303f58cceebb8a679ed595b"
       }
     },
     "Rogue/Assassination/pre_raid": {
@@ -2587,9 +2587,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "47a1b4bf3ae6d752bf3469a2493e26a91406b41306b2ee7cb81a7d804056b052",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Assassination and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "bcec3e37abf2b893ffe59248c2f842234788a7208dfd7d7d899dfe5931af6e6d",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Assassination and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2620,7 +2620,7 @@
             "target": 17
           }
         ],
-        "input_digest": "47a1b4bf3ae6d752bf3469a2493e26a91406b41306b2ee7cb81a7d804056b052"
+        "input_digest": "bcec3e37abf2b893ffe59248c2f842234788a7208dfd7d7d899dfe5931af6e6d"
       }
     },
     "Rogue/Combat/leveling": {
@@ -2631,9 +2631,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "f6b8cf4c64cafbf72c700a7b3e19f82bc5f63908f1a56012eb184776571e575d",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Combat and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "560669943f8d8d5d879fa7c112c87a9d72c7e792beaf9e0d5cf47d6809015b0e",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Combat and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2693,7 +2693,7 @@
                 "variant": "7687"
               },
               {
-                "delta": 2.045,
+                "delta": 4.27625,
                 "variant": "6681"
               }
             ],
@@ -2702,7 +2702,7 @@
               "130466": 2,
               "141297": 2
             },
-            "reason": "Base swap Prison Shank to Ironspine's Fist or Thornspike, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +10.4200 and -2.1700. The recorded ranks change these deltas by +7.7100 and +4.2150.",
+            "reason": "Base swap Prison Shank to Ironspine's Fist or Thornspike, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +10.4200 and -2.1700. The recorded ranks change these deltas by +7.7100 and +4.2150. Thornspike adds 45 Physical damage to the primary target at 0.85 activations per minute, with a 0.70 damage factor and 5 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           },
@@ -2732,7 +2732,7 @@
             "target": 17
           }
         ],
-        "input_digest": "f6b8cf4c64cafbf72c700a7b3e19f82bc5f63908f1a56012eb184776571e575d"
+        "input_digest": "560669943f8d8d5d879fa7c112c87a9d72c7e792beaf9e0d5cf47d6809015b0e"
       }
     },
     "Rogue/Combat/pre_raid": {
@@ -2743,9 +2743,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "5fd6de5dad24b4be3b6bbeb4de607f764d273f55cefd0ca02cf18e8aacd27fcc",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Combat and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "efbd4e0889696634d1952c18b8dc27d04013de3df599ec6a0d204556f734557c",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Combat and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2777,7 +2777,7 @@
             "target": 17
           }
         ],
-        "input_digest": "5fd6de5dad24b4be3b6bbeb4de607f764d273f55cefd0ca02cf18e8aacd27fcc"
+        "input_digest": "efbd4e0889696634d1952c18b8dc27d04013de3df599ec6a0d204556f734557c"
       }
     },
     "Rogue/Subtlety/leveling": {
@@ -2788,9 +2788,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "cd253f8b4701df6138ee09049ff2378e4511f0beaef31008b4e23042d79c77e1",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Subtlety and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "b0a9ca6bfc7db0dff096edd3119ae064353252ecc54288b90718ab090ad40d02",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Subtlety and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2846,11 +2846,11 @@
             "level": 39,
             "offers": [
               {
-                "delta": 14.4375,
+                "delta": 12.20625,
                 "variant": "7683"
               },
               {
-                "delta": 0.0625,
+                "delta": -2.16875,
                 "variant": "2941"
               }
             ],
@@ -2858,7 +2858,7 @@
             "ranks": {
               "141297": 1
             },
-            "reason": "Base swap Thornspike to Bloody Brass Knuckles or Prison Shank, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +13.4700 and +2.1700. The recorded ranks change these deltas by +0.9675 and -2.1075.",
+            "reason": "Base swap Thornspike to Bloody Brass Knuckles or Prison Shank, using the same_level preset. Direct expansion of the reviewed stat products gives rank-zero deltas +13.4700 and +2.1700. The recorded ranks change these deltas by +0.9675 and -2.1075. Thornspike adds 45 Physical damage to the primary target at 0.85 activations per minute, with a 0.70 damage factor and 5 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           },
@@ -2888,7 +2888,7 @@
             "target": 17
           }
         ],
-        "input_digest": "cd253f8b4701df6138ee09049ff2378e4511f0beaef31008b4e23042d79c77e1"
+        "input_digest": "b0a9ca6bfc7db0dff096edd3119ae064353252ecc54288b90718ab090ad40d02"
       }
     },
     "Rogue/Subtlety/pre_raid": {
@@ -2899,9 +2899,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "2cfa71521e435a422213584f441769413e30e562c175083b7366a4ae772b4b8d",
-      "reason": "Reviewed the build-pinned talent rows for Rogue/Subtlety and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "3a72f099dfd8480832306fd8c9c033b8e3912982cb47a8d93bfa75d1504afe56",
+      "reason": "Reviewed the build-pinned talent rows for Rogue/Subtlety and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -2932,7 +2932,7 @@
             "target": 17
           }
         ],
-        "input_digest": "2cfa71521e435a422213584f441769413e30e562c175083b7366a4ae772b4b8d"
+        "input_digest": "3a72f099dfd8480832306fd8c9c033b8e3912982cb47a8d93bfa75d1504afe56"
       }
     },
     "Shaman/Elemental/leveling": {
@@ -2943,9 +2943,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "7259e64778def334f92baa3b429813e3d0f3a9a24b36a4285b228a3b922dbd03",
-      "reason": "Reviewed the build-pinned talent rows for Shaman/Elemental and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "297fbfdd024253702819a7daa32183d004102188a69c0204384127572aa35c5b",
+      "reason": "Reviewed the build-pinned talent rows for Shaman/Elemental and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3045,7 +3045,7 @@
             "target": 10
           }
         ],
-        "input_digest": "7259e64778def334f92baa3b429813e3d0f3a9a24b36a4285b228a3b922dbd03"
+        "input_digest": "297fbfdd024253702819a7daa32183d004102188a69c0204384127572aa35c5b"
       }
     },
     "Shaman/Elemental/pre_raid": {
@@ -3056,9 +3056,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "7b67acfa66b1ed2a7400eec607b8461cec23b4447352b7de3d21c7e58ed4c9d3",
-      "reason": "Reviewed the build-pinned talent rows for Shaman/Elemental and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "9b5f7a8b10fcc6b22de2a65b35af014375c27746d62905555d684e42253dfffa",
+      "reason": "Reviewed the build-pinned talent rows for Shaman/Elemental and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3089,7 +3089,7 @@
             "target": 10
           }
         ],
-        "input_digest": "7b67acfa66b1ed2a7400eec607b8461cec23b4447352b7de3d21c7e58ed4c9d3"
+        "input_digest": "9b5f7a8b10fcc6b22de2a65b35af014375c27746d62905555d684e42253dfffa"
       }
     },
     "Shaman/Enhancement/leveling": {
@@ -3100,9 +3100,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "c5c69a968d381d1ab51461405dd4fa06a5a70b84638680f2ef5edcb399c45055",
-      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "a728825380d5132c269b420a1e0686966d816f2c309ab65b187eb0d88ed643b9",
+      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3200,7 +3200,7 @@
             "target": 12
           }
         ],
-        "input_digest": "c5c69a968d381d1ab51461405dd4fa06a5a70b84638680f2ef5edcb399c45055"
+        "input_digest": "a728825380d5132c269b420a1e0686966d816f2c309ab65b187eb0d88ed643b9"
       }
     },
     "Shaman/Enhancement/pre_raid": {
@@ -3211,9 +3211,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "a866b4731c45e6f483abae64c7f0d5173a022d70e22f2ca4b7d06e5cac027cc3",
-      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "29a80b21e869cc722a3b42f2158d2608140d9781486ce6c3d15eac55c3e3dcd1",
+      "reason": "Reviewed the build-pinned Mental Quickness rank curves for Intellect to spell damage and healing, and retained the post-hotfix Mental Dexterity conversion. Both conversions use the Intellect total after Ancestral Knowledge. Current Enhancement profiles value the damage contribution. Weapon-speed, proc and encounter cap effects still need separate review. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3248,7 +3248,7 @@
             "target": 12
           }
         ],
-        "input_digest": "a866b4731c45e6f483abae64c7f0d5173a022d70e22f2ca4b7d06e5cac027cc3"
+        "input_digest": "29a80b21e869cc722a3b42f2158d2608140d9781486ce6c3d15eac55c3e3dcd1"
       }
     },
     "Shaman/Restoration/leveling": {
@@ -3259,9 +3259,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "095f38eac63b92bada42616b675576423075df58e3fc414089130e97aea7acf0",
-      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "9100fc41c73c5fbd309cb920e395a567f12b2d0858a2166c94856c777558c9fa",
+      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3361,7 +3361,7 @@
             "target": 12
           }
         ],
-        "input_digest": "095f38eac63b92bada42616b675576423075df58e3fc414089130e97aea7acf0"
+        "input_digest": "9100fc41c73c5fbd309cb920e395a567f12b2d0858a2166c94856c777558c9fa"
       }
     },
     "Shaman/Restoration/pre_raid": {
@@ -3372,9 +3372,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "e9ddc8b3345295a16487fd29e5c2f33faab09e3ee46da0200160fd05086321c1",
-      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "f28db48f273c5d7ae3c73e8ad3b1eae0398f246039aaf0f2271670cab3d6a929",
+      "reason": "Reviewed Intellect, healing power and mana efficiency in the fixed healing preset. Tidal Focus prices the healing budget using the published cost reduction. The review covers the prerelease candidate pool and recorded unresolved effects. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3405,7 +3405,7 @@
             "target": 12
           }
         ],
-        "input_digest": "e9ddc8b3345295a16487fd29e5c2f33faab09e3ee46da0200160fd05086321c1"
+        "input_digest": "f28db48f273c5d7ae3c73e8ad3b1eae0398f246039aaf0f2271670cab3d6a929"
       }
     },
     "Warlock/Affliction/leveling": {
@@ -3416,9 +3416,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "47604f5f64004e77eb1a34abf116fdd1d9c3527c7f4251841cd11608bb1dfd27",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Affliction and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "ade0c2354586ec5c627fdf93a6d1224549959cf6fe2f27551f35859681cb2c7c",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Affliction and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3515,7 +3515,7 @@
             "target": 11
           }
         ],
-        "input_digest": "47604f5f64004e77eb1a34abf116fdd1d9c3527c7f4251841cd11608bb1dfd27"
+        "input_digest": "ade0c2354586ec5c627fdf93a6d1224549959cf6fe2f27551f35859681cb2c7c"
       }
     },
     "Warlock/Affliction/pre_raid": {
@@ -3526,9 +3526,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "8db30d03c9ce4ea02abc6bcbd95b5a453294a7732456c77ae090b811f30cca27",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Affliction and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "92367b36c8238cedc599a6b1f2b36854359fde9f65a81c47dbfc2c11812e4028",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Affliction and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3558,7 +3558,7 @@
             "target": 11
           }
         ],
-        "input_digest": "8db30d03c9ce4ea02abc6bcbd95b5a453294a7732456c77ae090b811f30cca27"
+        "input_digest": "92367b36c8238cedc599a6b1f2b36854359fde9f65a81c47dbfc2c11812e4028"
       }
     },
     "Warlock/Demonology/leveling": {
@@ -3569,9 +3569,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "f58438d30b95bd048bd1f2d732b9f00ea83ccad6f134088a25fc4a1415dd502a",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Demonology and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "202c245f87ab13e6af8a2b74b23ca5c449a716645f9fcc7fd83d006aef106902",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Demonology and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3668,7 +3668,7 @@
             "target": 9
           }
         ],
-        "input_digest": "f58438d30b95bd048bd1f2d732b9f00ea83ccad6f134088a25fc4a1415dd502a"
+        "input_digest": "202c245f87ab13e6af8a2b74b23ca5c449a716645f9fcc7fd83d006aef106902"
       }
     },
     "Warlock/Demonology/pre_raid": {
@@ -3679,9 +3679,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "8963309cf36a7f2e58836cd4b1681f71a20711b2a58259001db7c13ec365ccea",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Demonology and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "ac357fa6494167ee25516547cc03cf3617b1a67bfe2bdc149927fd43830d319e",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Demonology and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3711,7 +3711,7 @@
             "target": 1
           }
         ],
-        "input_digest": "8963309cf36a7f2e58836cd4b1681f71a20711b2a58259001db7c13ec365ccea"
+        "input_digest": "ac357fa6494167ee25516547cc03cf3617b1a67bfe2bdc149927fd43830d319e"
       }
     },
     "Warlock/Destruction/leveling": {
@@ -3722,9 +3722,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "806ea704d7c0d211da6f4153edee2910c8df6715bc61f4fea2e95041aeb03e1c",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Destruction and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "c5a3386987eafdf444bbe37912b5621cd791ca0c8f96ad8d242fa07dbbad45cf",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Destruction and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3821,7 +3821,7 @@
             "target": 11
           }
         ],
-        "input_digest": "806ea704d7c0d211da6f4153edee2910c8df6715bc61f4fea2e95041aeb03e1c"
+        "input_digest": "c5a3386987eafdf444bbe37912b5621cd791ca0c8f96ad8d242fa07dbbad45cf"
       }
     },
     "Warlock/Destruction/pre_raid": {
@@ -3832,9 +3832,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "606929c25534c171b51b068a282839cbd961993c096ee45655fee20c35198cc4",
-      "reason": "Reviewed the build-pinned talent rows for Warlock/Destruction and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "530bd5fe15bca3e664e4241bdcba98a6e6df7a516a8d39115536d99335a5d31d",
+      "reason": "Reviewed the build-pinned talent rows for Warlock/Destruction and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3864,7 +3864,7 @@
             "target": 11
           }
         ],
-        "input_digest": "606929c25534c171b51b068a282839cbd961993c096ee45655fee20c35198cc4"
+        "input_digest": "530bd5fe15bca3e664e4241bdcba98a6e6df7a516a8d39115536d99335a5d31d"
       }
     },
     "Warrior/Arms/leveling": {
@@ -3875,9 +3875,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "3c10d6cbc13c098e1e3ecaab30c249ddb2c8bd584d71553aeda1f29e69646154",
-      "reason": "Reviewed the build-pinned talent rows for Warrior/Arms and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "21d0279293833db519731d984e51d00a3350c5d353be916bb571a9d7c09a8fce",
+      "reason": "Reviewed the build-pinned talent rows for Warrior/Arms and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -3971,7 +3971,7 @@
             "target": 16
           }
         ],
-        "input_digest": "3c10d6cbc13c098e1e3ecaab30c249ddb2c8bd584d71553aeda1f29e69646154"
+        "input_digest": "21d0279293833db519731d984e51d00a3350c5d353be916bb571a9d7c09a8fce"
       }
     },
     "Warrior/Arms/pre_raid": {
@@ -3982,9 +3982,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "87523e694360fbb53012d151c4502fc4512629f6779a1c66e89a051189050ecb",
-      "reason": "Reviewed the build-pinned talent rows for Warrior/Arms and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "6727343e3562d15b140701ea272736674415fdb79dfc7068f2563d759ac756c4",
+      "reason": "Reviewed the build-pinned talent rows for Warrior/Arms and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -4000,7 +4000,7 @@
                 "variant": "18520"
               },
               {
-                "delta": 29.348,
+                "delta": 46.943,
                 "variant": "12969"
               }
             ],
@@ -4008,12 +4008,12 @@
             "ranks": {
               "130678": 3
             },
-            "reason": "Base swap Grimlok's Charge to Barbarous Blade or Seeping Willow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +72.9000 and +26.6000. The recorded ranks change these deltas by +5.1540 and +2.7480.",
+            "reason": "Base swap Grimlok's Charge to Barbarous Blade or Seeping Willow, using the first_tier_raid_boss preset. Direct expansion of the reviewed stat products gives rank-zero deltas +72.9000 and +26.6000. The recorded ranks change these deltas by +5.1540 and +2.7480. Seeping Willow adds 51 Nature damage per tick for five ticks at 0.92 activations per minute, with a 0.90 damage factor and 5 points per DPS.",
             "slot": "Two Hand",
             "target": 16
           }
         ],
-        "input_digest": "87523e694360fbb53012d151c4502fc4512629f6779a1c66e89a051189050ecb"
+        "input_digest": "6727343e3562d15b140701ea272736674415fdb79dfc7068f2563d759ac756c4"
       }
     },
     "Warrior/Fury/leveling": {
@@ -4024,9 +4024,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "128158a5538fe561f4b2fe700d8dee3f887bb9e3e298e008b918ed559b53b6e5",
-      "reason": "Reviewed the build-pinned talent rows for Warrior/Fury and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "1ca8ac789a54627a8e6ee1c262bef03247925698efa8f08b70057007b1bf2b98",
+      "reason": "Reviewed the build-pinned talent rows for Warrior/Fury and the same_level reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -4123,7 +4123,7 @@
             "target": 17
           }
         ],
-        "input_digest": "128158a5538fe561f4b2fe700d8dee3f887bb9e3e298e008b918ed559b53b6e5"
+        "input_digest": "1ca8ac789a54627a8e6ee1c262bef03247925698efa8f08b70057007b1bf2b98"
       }
     },
     "Warrior/Fury/pre_raid": {
@@ -4134,9 +4134,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "6146bff1f1f22cfd7e7a372d62367f1dcf23813e60b5e250cca8bbb074f445a4",
-      "reason": "Reviewed the build-pinned talent rows for Warrior/Fury and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "84dd9ce3883626e28708437c4c37ec15c05d9bfe65e00587483e118aad01ca6a",
+      "reason": "Reviewed the build-pinned talent rows for Warrior/Fury and the first_tier_raid_boss reference. Compared the selected exact items with literal talent coefficients and fixed role weights. Controlled assumptions and unavailable encounter contributions are recorded on the profile. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "Codex (offline client data and swap fixture review)",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -4167,7 +4167,7 @@
             "target": 17
           }
         ],
-        "input_digest": "6146bff1f1f22cfd7e7a372d62367f1dcf23813e60b5e250cca8bbb074f445a4"
+        "input_digest": "84dd9ce3883626e28708437c4c37ec15c05d9bfe65e00587483e118aad01ca6a"
       }
     },
     "Warrior/Protection/leveling": {
@@ -4178,9 +4178,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "d4da956fd6efc99e063834f17e9fa16de8d1a1a2349efddc39d41f358c941567",
-      "reason": "Rechecked the same Defiance mechanics and eligible pool after separating ranged weapon DPS from melee weapon DPS. Defiance still requires a shield and never scales the DPS of a ranged weapon. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "c0696b6e990aa024f0392d7fa37894fb93bacec72beea219ee08a6c90d91e4f5",
+      "reason": "Rechecked the same Defiance mechanics and eligible pool after separating ranged weapon DPS from melee weapon DPS. Defiance still requires a shield and never scales the DPS of a ranged weapon. Revalidated on the November 17 client and verified cache. The modeled ranking inputs match the previous build. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -4276,7 +4276,7 @@
             "target": 12
           }
         ],
-        "input_digest": "d4da956fd6efc99e063834f17e9fa16de8d1a1a2349efddc39d41f358c941567"
+        "input_digest": "c0696b6e990aa024f0392d7fa37894fb93bacec72beea219ee08a6c90d91e4f5"
       }
     },
     "Warrior/Protection/pre_raid": {
@@ -4287,9 +4287,9 @@
           "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
         }
       ],
-      "input_digest": "4cf3a8b41a35a5c2e0fd511a72da9b3926b00b06bb95ae8de32a5db6b18308e2",
-      "reason": "Reviewed the shielded level-63 8% melee hit cap and the autoattack-only threat contribution of gear Attack Power using 14 points per raw DPS. Strength supplies 2 Attack Power and 0.05 block value. Checked the exact flat set thresholds and Human Spirit racial in the same scenario.",
-      "reviewed_at": "2026-11-17",
+      "input_digest": "e72a8dba8a7f0985776b896a172213991aab04ed56cf9caf35d51e9b649b0e20",
+      "reason": "Reviewed the shielded level-63 8% melee hit cap and the autoattack-only threat contribution of gear Attack Power using 14 points per raw DPS. Strength supplies 2 Attack Power and 0.05 block value. Checked the exact flat set thresholds and Human Spirit racial in the same scenario. Reviewed ordinary-target item effect estimates against the role and activity preset and the independent swap fixtures.",
+      "reviewed_at": "2026-11-20",
       "reviewer": "codex",
       "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70959%2FenUS%2FDBCache-izHdfSXFchPg5gdswVDqeC.bin",
       "validation": {
@@ -4305,7 +4305,7 @@
                 "variant": "12602"
               },
               {
-                "delta": 74.63,
+                "delta": 78.41,
                 "variant": "7726"
               }
             ],
@@ -4313,12 +4313,12 @@
             "ranks": {
               "137848": 3
             },
-            "reason": "Hand calculation applying the Defiance rank to weapon DPS and Attack Power. The Pre-Raid shield fixture adds two Attack Power per Strength and one block value per twenty Strength under the recorded preset.",
+            "reason": "Hand calculation applying the Defiance rank to weapon DPS and Attack Power. The Pre-Raid shield fixture adds two Attack Power per Strength and one block value per twenty Strength under the recorded preset. Scarlet Commander's Aegis adds 14 average Holy damage per block at six blocks per minute, with a 0.90 damage factor and 3 points per DPS.",
             "slot": "Off Hand",
             "target": 17
           }
         ],
-        "input_digest": "4cf3a8b41a35a5c2e0fd511a72da9b3926b00b06bb95ae8de32a5db6b18308e2"
+        "input_digest": "e72a8dba8a7f0985776b896a172213991aab04ed56cf9caf35d51e9b649b0e20"
       }
     }
   },

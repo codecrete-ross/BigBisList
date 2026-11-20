@@ -41,7 +41,7 @@ class ForeverGuidePerformanceTests(unittest.TestCase):
                                 capture_output=True, input=SETUP + code + "\nassert(#H.errors == 0, table.concat(H.errors, '\\n'))")
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
-    def test_stoneslayer_and_layered_tunic_use_bundled_stats(self):
+    def test_stoneslayer_proc_changes_the_packed_rank_and_owned_upgrade(self):
         self.lua_run(r'''
 GetItemInfo, GetItemStats, GetItemInfoInstant, C_Item, C_TooltipInfo = nil, nil, nil, nil, nil
 local context = assert(rating:GetGuideContext("Paladin", "Retribution", "LEVELING", 51, "Human", "Alliance"))
@@ -51,13 +51,67 @@ assert(sword.level == 44 and sword.stats.dps == 42.69 and sword.stats.weapon_spe
 assert(sword.stats.weapon_min_damage == 133 and sword.stats.weapon_max_damage == 200 and sword.stats.strength == nil)
 assert(sword.effects[1]:find("196 Physical damage", 1, true))
 local entry = rating:GetUnfilteredReferenceEntry(context, sword, "Two Hand")
-assert(entry.score and entry.score > 0 and entry.conditional)
+local scorer = addon.ForeverScoring
+local calculate = scorer.ScoreLoadout
+scorer.ScoreLoadout = function() error("A packed reference lookup performed combat scoring") end
+local packed = assert(rating:GetPackedGuideEntry(context, "Two Hand", "9418"))
+local mace = assert(rating:GetPackedGuideEntry(context, "Two Hand", "7723"))
+scorer.ScoreLoadout = calculate
+assert(entry.score == packed.score and not entry.conditional and packed.rank < mace.rank)
+assert(math.abs(packed.effectPoints - 9.7183) < 0.0001 and mace.score == 217.7)
 local withoutProc = {}
 for field, value in pairs(sword) do withoutProc[field] = value end
 withoutProc.effects, withoutProc.effect_rules = {}, nil
-assert(rating:GetUnfilteredReferenceEntry(context, withoutProc, "Two Hand").score == entry.score)
+assert(rating:GetUnfilteredReferenceEntry(context, withoutProc, "Two Hand").score == 213.45)
+level = 51
+local owned = {equippedSlots = {MainHand = {item_id = 7723, item_link = "item:7723"}}}
+local personal = rating:GetContext("Paladin", "Retribution", "LEVELING", level, owned)
+local row = {item_id = 9418, item_link = "item:9418", slot = "Two Hand", stat_rank = packed}
+local verdict = rating:GetGuideTargetVerdict(row, context, {class = "Paladin", level = 51}, owned)
+assert(verdict.kind == "upgrade" and math.abs(verdict.gain - 5.468333) < 0.0001)
+local swap = rating:GetGuideSwap(personal, sword, "MainHand", "Two Hand", "item:9418")
+assert(math.abs(swap.delta - verdict.gain) < 0.0001 and swap.estimatedEffects)
+local lines = rating:EffectComparisonLines(swap)
+local text = table.concat(lines, "\n")
+for _, term in ipairs({"Stoneslayer", "213.45 stat pts", "+9.72 effect pts", "Mograine's Might", "217.70 stat pts",
+    "Strength of Stone", "0.85 procs/min", "weapon damage estimate", "above 0.37 procs/min", "588 against Earth Elementals"}) do
+    assert(text:find(term, 1, true), text)
+end
+assert(lines == rating:EffectComparisonLines(swap))
+GetInventoryItemID = function(_, slot) if slot == 16 then return 7723 end end
+GetInventoryItemLink = function(_, slot) if slot == 16 then return "item:7723" end end
+scorer:Invalidate()
+addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {["Two Hand"] = true}
+ui:Open(); H.settle()
+local bucket = ui.renderModel.targetQuery.slots["Two Hand"]
+local listed = assert(bucket.rows[assert(bucket.positions["9418"], "Stoneslayer missing from normal upgrade list")])
+assert(listed.targetVerdict.kind == "upgrade" and listed.matched_access_option.source.entity_name == "Archaedas")
 local tunic = assert(rating:GetTooltipItem(60, "item:60"))
 assert(tunic.facts.stats.armor == 33)
+''')
+
+    def test_recovered_dungeon_gear_reaches_leveling_and_pre_raid_at_equip_level(self):
+        self.lua_run(r'''
+local function onPage(spec, mode, level, slot, id)
+    local context = assert(rating:GetGuideContext("Paladin", spec, mode, level, "Human", "Alliance"))
+    local data = rating:GetPackedGuide(context)[slot]
+    local page = rating:GetGuideTargetPage(data, level)
+    for index = 1, page and page.count or 0 do
+        if data.indices.keys[page.at(index)] == tostring(id) then return true end
+    end
+    return false
+end
+local shield = assert(rating:GetTooltipItem(274652, "item:274652").facts)
+assert(shield.stats.armor == 1676 and shield.stats.block_value == 27 and shield.stats.spell_power == 14)
+assert(not onPage("Protection", "LEVELING", 42, "Off Hand", 274652))
+assert(onPage("Protection", "LEVELING", 43, "Off Hand", 274652))
+assert(onPage("Protection", "PR", 60, "Off Hand", 274652))
+local _, options = addon:GetGuideRouteTransitions(274652)
+local source = options[1].source
+assert(source.entity_name == "Hydromancer Velratha" and source.zone == "Zul'Farrak")
+assert(onPage("Holy", "LEVELING", 28, "Feet", 286987))
 ''')
 
     def test_cold_window_never_asks_for_full_pools_or_hidden_facets(self):
@@ -83,7 +137,8 @@ local function rows()
 end
 assert(rows() > 0 and queried == 0)
 H.settle()
-assert(ui.renderModel.rowCount > 0 and ui.renderModel.rowCount < 400 and #ui.renderModel.entries < 100)
+assert(ui.renderModel.rowCount > #ui.renderModel.entries and #ui.renderModel.entries < 100)
+assert(#ui.activeRenderFrames <= 24, "Only the visible page should own row frames")
 ui:VisitListEntries(ui.renderModel, 0, math.huge, function(entry)
     local row = entry.data
     if row then
@@ -278,17 +333,20 @@ UnitFactionGroup = function() return faction end
 ui:GetFilters("Gear Guide").slots = {Head = true}
 local score = rating.GetOwnedOpportunity
 function rating:GetOwnedOpportunity(context, item, ...)
-    if item.id == 10574 or item.id == 1930 then return {delta = 4} end
+    if item.id == 287011 or item.id == 10574 or item.id == 1930 then return {delta = 4} end
     return score(self, context, item, ...)
 end
 ui:Open(); H.settle()
 local function head() return ui.renderModel.targetQuery.slots.Head end
-local function shroud()
+local function guise()
     local bucket = head().market
-    return bucket and bucket.rows[bucket.positions["10574"]]
+    return bucket and bucket.rows[bucket.positions["287011"]]
 end
-local row = assert(shroud())
-assert(not head().positions["10574"] and row.targetVerdict.gain == 4)
+local row = assert(guise())
+assert(not head().positions["287011"] and row.targetVerdict.gain == 4)
+local shroud = assert(head().rows[head().positions["10574"]])
+assert(shroud.matched_access_option.source.zone == "Razorfen Downs")
+assert(not head().market.positions["10574"])
 assert(ui:GetSourceNextStep(row) == "Check AH")
 assert(row.matched_access_option.source.market_observation.market == "forever/normal/alliance/eu")
 assert(not addon:IsGuideMarketRoute(row.matched_access_option, "forever/normal/horde/eu"))
@@ -296,7 +354,7 @@ assert(not addon:IsGuideMarketRoute({source_type = "trade", is_inferred_trade_op
     source = row.matched_access_option.source}))
 region = 1
 ui:Invalidate("query", "market"); ui:ScheduleRefresh(); H.settle()
-assert(not shroud())
+assert(not guise())
 ui:SetFilter("slots", {Back = true}); H.settle()
 local back = ui.renderModel.targetQuery.slots.Back
 local cloak = assert(back.rows[back.positions["1930"]])
@@ -409,14 +467,16 @@ local function bagsChanged()
     local f = addon.uiEventFrame
     f:GetScript("OnEvent")(f, "BAG_UPDATE_DELAYED"); H.settle()
 end
-assert(#head().rows == 4 and not find(6686) and not find(10574))
+assert(find(274644).matched_access_option.source.entity_name == "Nekrum Gutchewer")
+assert(find(287019).matched_access_option.source.zone == "Alcaz Prison")
+assert(not find(6686) and not find(10574))
 local herod = assert(find(7719))
 assert(herod.stat_rank.rank and math.abs(herod.targetVerdict.gain - 2.1) < 0.001)
 assert(advice(herod):find("+2.1 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
 lookup("Tusken Helm")
 assert(#head().rows == 1 and advice(find(6686)):find("-6.5 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
-lookup("Corpseshroud")
-assert(find(10574).lookupReason:find("Auction House", 1, true))
+lookup("Guise of Battle")
+assert(find(287011).lookupReason:find("Auction House", 1, true))
 lookup(gothic)
 assert(head().rows[1].stat_identity == "10090:0:0:0:1:12723")
 lookup("")

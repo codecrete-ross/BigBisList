@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Violet Sorcerer's Leggings Item Level 34 Binds when equipped Legs Cloth 44 Armor +13 Intellect +5 Spirit Durability 65 / 65 Requires Level 29 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Violet Sorcerer's Vestments (0/5) Violet Sorcerer's Mantle Violet Sorcerer's Leggings Violet Sorcerer's Sandals Violet Sorcerer's Wraps Violet Sorcerer's Robes (2) Set : +5 Arcane Resistance. (3) Set : +10 Spirit. (4) Set : Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities. (5) Set : Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown) Sell Price: 32 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-20T09:36:41.388520+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 286988,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 286988,
+    "item_level": 34,
+    "name": "Violet Sorcerer's Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 29,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1324311,
+        "text": "+5 Arcane Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1324312,
+        "text": "+10 Spirit."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1324318,
+        "text": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1324323,
+        "text": "Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown)"
+      }
+    ],
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 12.0,
+      "spirit": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=286988"
+  },
+  "linked_entities": [
+    {
+      "id": 273044,
+      "name": "Violet Sorcerer's Robes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273044"
+    },
+    {
+      "id": 273051,
+      "name": "Violet Sorcerer's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273051"
+    },
+    {
+      "id": 286987,
+      "name": "Violet Sorcerer's Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286987"
+    },
+    {
+      "id": 286988,
+      "name": "Violet Sorcerer's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286988"
+    },
+    {
+      "id": 286989,
+      "name": "Violet Sorcerer's Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286989"
+    },
+    {
+      "id": 1324311,
+      "name": "+5 Arcane Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324311"
+    },
+    {
+      "id": 1324312,
+      "name": "+10 Spirit.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324312"
+    },
+    {
+      "id": 1324318,
+      "name": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324318"
+    },
+    {
+      "id": 1324323,
+      "name": "Chance on damaging spell to summon an Arcane elemental to aid you in combat. (15s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324323"
+    }
+  ],
+  "name": "Violet Sorcerer's Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9d82878bd3c800d302a6caa1806982a95ca08b4a4ec2ca56aaa5ec42afc331c7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286988",
+  "url": "https://www.wowhead.com/forever/item=286988"
+}

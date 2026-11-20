@@ -1,0 +1,49 @@
+{
+  "client_build": "1.60.1.70959",
+  "version": "forever-effect-benchmarks-1",
+  "sources": {
+    "weapon_damage_ppm": "https://gtsims.com/forever.html",
+    "extra_attack_chance": "https://www.wowhead.com/forever/item=11815",
+    "accessory_damage_chance": "https://www.wowhead.com/forever/item=12805",
+    "spell_buff_chance": "https://www.wowhead.com/forever/item=21190",
+    "stoneslayer": "https://www.wowhead.com/forever/item=9418",
+    "timed_stats": "https://www.wowhead.com/forever/item=17774",
+    "spell_hit": "https://www.wowhead.com/forever/item=13968",
+    "block_damage": "https://www.wowhead.com/forever/item=7726"
+  },
+  "family_rates": {
+    "weapon_damage_ppm": 1,
+    "accessory_damage_chance": 0.01,
+    "extra_attack_chance": 0.01,
+    "spell_buff_chance": 0.05
+  },
+  "basis": [
+    "GT's Forever warrior simulator lists Firebreather and Iceblade Hacker at an assumed 1 PPM. Use this nominal family estimate for damaging weapon procs with an undisclosed rate. Per-hit chance is nominal PPM times base weapon speed divided by 60. The preset supplies eligible landed attacks.",
+    "Hand of Justice describes a 1% ordinary-target extra swing chance. Wrath of Cenarius describes a 5% chance on landed harmful spells for a temporary spell-power buff. Use those rates only for matching triggers and effect families with missing rates.",
+    "The rows below are explicit reference encounter assumptions per minute of combat. Swing participation includes time attacking and the chance to land. For a weapon use its own period. For an accessory use the preset's reference swing. The other event columns are counts of eligible landed casts, incoming hits and blocks.",
+    "Physical and magical damage factors represent ordinary-target damage delivered per point of tooltip damage. Proc DPS receives its own editorial points per delivered DPS. Effective healing and prevented damage use points per useful HP per second. The use fraction is the proportion of on-cooldown uses realized over sustained activity.",
+    "Shared combat trinket uses reserve the larger of a 20-second lockout and their active duration. Stagger these windows. Other modeled stat buffs overlap conservatively for capped stats. Short leveling fights realize half of periodic damage and sustained pre-raid fights realize the full duration."
+  ],
+  "casting_basis": "Counts are illustrative eligible casts per combat minute. Successful-spellcast triggers also count helpful casts. Healers assume eight helpful casts while leveling and twenty in Pre-Raid. Retribution, Protection Paladin and Enhancement include offensive casts in their melee rotations.",
+  "helpful_casts": {"healer": [8, 20]},
+  "hybrid_harmful_casts": {
+    "Paladin/Protection": ["tank", 6, 8],
+    "Paladin/Retribution": ["melee", 5, 5],
+    "Shaman/Enhancement": ["melee", 6, 10]
+  },
+  "shared_trinket_seconds": 20,
+  "reference_weapons": [[1, 25], [10, 1161], [19, 5191], [40, 6829], [49, 17705], [58, 12940]],
+  "fields": ["role", "mode", "melee", "ranged", "swing_seconds", "casts", "struck", "blocks", "use_fraction", "physical", "magic", "useful_healing", "proc_dps", "proc_hps", "spell_hit_cap", "periodic_fraction"],
+  "presets": [
+    ["melee", "leveling", 0.85, 0, 2.6, 0, 12, 0, 0.65, 0.70, 0.95, 0.65, 5, 0.8, 3, 0.5],
+    ["melee", "pre_raid", 0.92, 0, 2.6, 0, 2, 0, 1, 0.65, 0.90, 0.5, 5, 0.5, 16, 1],
+    ["ranged", "leveling", 0.12, 0.8, 2.8, 0, 5, 0, 0.65, 0.70, 0.95, 0.65, 5, 0.8, 3, 0.5],
+    ["ranged", "pre_raid", 0, 0.92, 2.8, 0, 1, 0, 1, 0.65, 0.90, 0.5, 5, 0.5, 16, 1],
+    ["caster", "leveling", 0.10, 0.10, 2.6, 18, 8, 0, 0.65, 0.70, 0.95, 0.65, 3.5, 0.8, 3, 0.5],
+    ["caster", "pre_raid", 0, 0, 2.6, 24, 1, 0, 1, 0.65, 0.90, 0.5, 3.5, 0.5, 16, 1],
+    ["healer", "leveling", 0.15, 0.10, 2.6, 9, 6, 0, 0.65, 0.70, 0.95, 0.75, 2, 2.5, 3, 0.5],
+    ["healer", "pre_raid", 0, 0, 2.6, 0, 1, 0, 1, 0.65, 0.90, 0.75, 0.5, 2.5, 16, 1],
+    ["tank", "leveling", 0.85, 0, 2.4, 0, 24, 4, 0.65, 0.70, 0.95, 0.8, 3, 2.5, 3, 0.5],
+    ["tank", "pre_raid", 0.92, 0, 2.4, 0, 30, 6, 1, 0.65, 0.90, 0.85, 3, 2.5, 16, 1]
+  ]
+}

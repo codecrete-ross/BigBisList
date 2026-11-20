@@ -69,10 +69,12 @@ CANONICAL_FILES = {
 }
 
 FOREVER_ONLY_CANONICAL_FILES = {
+    "effect_benchmarks": "effect_benchmarks.json",
     "comparison_item_stats": "comparison_item_stats.json",
     "guide_item_reviews": "guide_item_reviews.json",
     "guide_equipment": "guide_equipment.json",
     "guide_source_reviews": "guide_source_reviews.json",
+    "guide_routes": "guide_routes.json",
     "leveling_guide_effects": "leveling_guide_effects.json",
     "leveling_rules": "leveling_rules.json",
     "leveling_scoring_profiles": "leveling_scoring_profiles.json",

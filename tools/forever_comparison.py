@@ -5,7 +5,9 @@ import re
 
 from tools.forever import item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
 from tools.forever_equipment_sources import publication_key
-from tools.forever_item_effects import FLAT_PASSIVE_STATS, attach_rules, effect_lines, recover_permanent_stats, unresolved_lines
+from tools.forever_effect_benchmarks import missing_reason, preset
+from tools.forever_item_effects import (FLAT_PASSIVE_STATS, attach_rules, effect_lines, recover_permanent_stats,
+                                       resolve_spell_leads, set_catalog, tooltip_sets, unresolved_lines)
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
 from tools.sources import summarize_sources
@@ -19,7 +21,8 @@ ITEM_FIELDS = (
     "id", "name", "slot", "level", "stats", "armor_type", "weapon_subtype",
     "classes", "races", "max_equipped", "unique_group", "effects", "utility",
     "variant_id", "has_random_stats", "requires_dual_wield", "excluded", "effect_rules", "set_bonuses",
-    "quality", "stats_unavailable", "roll_group", "roll_budget", "roll_armor", "roll_complete", "race_ids", "unreadable_effects",
+    "quality", "stats_unavailable", "roll_group", "roll_budget", "roll_armor", "roll_complete", "race_ids",
+    "unreadable_effects", "missing_effects", "set_key",
 )
 TOOLTIP_CONFIDENCE = {"tooltip", "tooltip_endpoint", "observed_tooltip"}
 WEAPON_STATS = {"dps", "ranged_dps", "wand_dps", "weapon_min_damage", "weapon_max_damage", "weapon_speed"}
@@ -309,7 +312,8 @@ def comparison_document(snapshots: dict[str, dict], catalog: dict | None = None)
             best = {**best, "attributes_known": False,
                     "stats": {key: value for key, value in best["stats"].items() if key not in disputed_attributes}}
         rows.append(best)
-    return {"version": VERSION, "items": rows, "conflicts": conflicts}
+    effect_sets = tooltip_sets(observations, rows)
+    return {"version": VERSION, "items": rows, "conflicts": conflicts, **({"effect_sets": effect_sets} if effect_sets else {})}
 
 
 def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None, catalog: dict | None = None) -> dict:
@@ -317,7 +321,8 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
     if data["version"] != VERSION:
         raise ValueError("Unexpected Forever comparison catalog version")
     items = {}
-    for item in data["items"]:
+    definitions, set_members = set_catalog(data)
+    for item in resolve_spell_leads(data["items"], set_members).values():
         facts = {**item, "stats": dict(item["stats"])}
         recover_permanent_stats(facts["stats"], effect_lines(item))
         if "effects" in facts:
@@ -354,12 +359,27 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
         if review["effect"] not in items[key].get("effects", []):
             raise ValueError(f"Forever Gear Guide effect changed for {key}")
         guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
+    gaps = {}
     for key, item in items.items():
+        if set_key := set_members.get(item["id"]):
+            item["set_key"] = set_key
+            if "Set bonuses" not in item.setdefault("effects", []):
+                item["effects"].append("Set bonuses")
         items[key] = item | attach_rules(item)
+        rules_by_label = {label: rule for rule in items[key].get("effect_rules", [])
+                          for label in (rule["label"], *rule.get("aliases", []))}
+        for label in item.get("effects", []):
+            rule = rules_by_label.get(label)
+            if rule and rule["kind"] == "situational":
+                gaps[label] = "Situational benefit outside the ordinary encounter"
+            elif not rule or (not rule.get("rates") and rule["kind"] != "passive_stats"):
+                gaps[label] = rule.get("gap", "Missing eligible activation rate or resource use") if rule else missing_reason(label)
     catalog = dataset_json("forever", "guide_equipment") if catalog is None else catalog
     for base in equipment_rows(catalog).values():
         key = str(base["id"])
         item = items.setdefault(key, {})
+        if not item and base["id"] in set_members:
+            item.update(set_key=set_members[base["id"]], effects=["Set bonuses"], stats_unavailable=True)
         for field in ("id", "name", "slot", "armor_type", "weapon_subtype", "classes", "race_ids", "quality"):
             if base.get(field) is not None and (field != "weapon_subtype" or base["slot"] in WEAPON_SLOTS):
                 item.setdefault(field, base[field])
@@ -399,6 +419,8 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
         "flat_passive_stats": [list(rule) for rule in FLAT_PASSIVE_STATS],
         "profiles": profiles,
         "guide_effects": guide_effects,
+        "effect_gaps": gaps,
+        "effect_sets": definitions,
         "equipment": rules["class_equipment"],
         "common_slots": rules["common_slots"],
         "feral_uses_weapon_dps": rules["feral_uses_weapon_dps"],
@@ -429,6 +451,11 @@ def reference_profiles(rules: dict, *, leveling: dict | None = None, model: dict
                         **scenarios.get("pre_raid", {}).get("weights", {})}
         if key == "Druid/Feral tank":
             raid_weights["parry_percent"] = 0
+        for mode, bands in (("leveling", weights), ("pre_raid", [(60, 60, raid_weights)])):
+            benchmark = preset(profile["role"], mode)
+            for _, _, values in bands:
+                for channel in ("proc_dps", "proc_hps"):
+                    values[channel] = benchmark[channel]
         profiles[key] = {
             "role": profile["role"],
             "leveling": {**rules["spec_policies"][key], "weights": weights},

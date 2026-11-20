@@ -6,8 +6,10 @@ from collections import Counter, defaultdict
 from hashlib import sha256
 import re
 
+from tools.forever_effect_benchmarks import compile_rule, extra_rule, missing_reason
 
-VERSION = "forever-item-effects-1"
+
+VERSION = "forever-item-effects-2"
 CHANCE_STATS = {
     "hit": "hit_percent",
     "dodge": "dodge_percent",
@@ -167,12 +169,189 @@ def effect_rule(label: str) -> dict | None:
     if match := POWER_AND_SPEED.fullmatch(label):
         return {**identity, "kind": "timed_stats", "trigger": "weapon_hit", "duration": int(match[3]),
                 "stats": {"attack_power": int(match[1]), "melee_haste_percent": int(match[2])}}
-    return None
+    parsed = extra_rule(label)
+    return {**identity, **parsed} if parsed else None
 
 
 def attach_rules(item: dict) -> dict:
-    rules = [rule for label in unresolved_lines(item) if (rule := effect_rule(label))]
+    lines = unresolved_lines(item)
+    facts = effect_lines(item)
+    leads = defaultdict(set)
+    for lead in item.get("effect_leads", []):
+        if match := re.fullmatch(r"(chance on hit|equip|use): (\d+) ([^(]+?)(?: \(([^)]+)\))?", lead, re.I):
+            leads[match[1].lower()].add((int(match[2]), match[3], match[4] or ""))
+    rules, seen = [], {}
+    charged = {re.sub(r" \d+ Charges?$", "", line, flags=re.I) for line in lines if re.search(r" \d+ Charges?$", line, re.I)}
+    for label in lines:
+        clean = label.split(' "', 1)[0]
+        if clean in seen:
+            seen[clean].setdefault("aliases", []).append(label)
+            continue
+        if rule := effect_rule(clean):
+            rule = {**rule, "label": label}
+            if not rule.get("bonus_targets") and re.search(r"\b(?:doubled|tripled|if there is|against|times as much)\b", clean, re.I):
+                rule["secondary"] = True
+            trigger = clean.partition(":")[0].lower()
+            spells = leads[trigger]
+            if spell_id := facts[label].get("spell_id"):
+                rule["spell_id"] = spell_id
+                spells = {s for s in spells if s[0] == spell_id}
+            same_trigger = {line.split(' "', 1)[0] for line in lines if line.partition(":")[0].lower() == trigger}
+            if len(spells) == 1 and (rule.get("spell_id") or len(same_trigger) == 1 or clean in charged):
+                rule["spell_id"], rule["spell_name"], timers = next(iter(spells))
+                if timer := re.search(r"(?:^|, )(\d+) s shared cooldown", timers):
+                    rule["shared_cooldown"] = int(timer[1])
+                if timer := re.search(r"(?:^|, )(\d+) s cooldown", timers):
+                    rule.setdefault("cooldown", int(timer[1]))
+                if re.search(r"\b\d+ charges?\b", timers, re.I):
+                    charged.add(clean)
+            if clean in charged and rule["kind"] != "situational":
+                rule["gap"] = "Limited charges and replacement or recharge frequency"
+            else:
+                rule = compile_rule(rule, item)
+            seen[clean] = rule
+            rules.append(rule)
     return {"effect_rules": rules} if rules else {}
+
+
+def tooltip_sets(observations: dict, items: list[dict]) -> dict:
+    """Bind a set to the full, linked member list printed in a Forever tooltip."""
+    names = {row["id"]: [s[5:] for s in row.get("effect_leads", []) if s.startswith("Set: ")] for row in items}
+    sets, conflicts = {}, set()
+    for identifier, rows in sorted(observations.items()):
+        for row in sorted(rows, key=lambda r: r["evidence_url"]):
+            bonuses = row.get("item_stats", {}).get("set_bonuses")
+            if not bonuses or any(not b.get("spell_id") or not b.get("text") for b in bonuses):
+                continue
+            match = re.search(r"\(0/(\d+)\)\s*(.*?)\s*\(\d+\)\s*Set\s*:", row.get("description", ""))
+            if not match:
+                continue
+            members = sorted({e["id"] for e in row.get("linked_entities", []) if e.get("type") == "item"
+                              and e.get("name") and e["name"] in match[2]})
+            if len(members) != int(match[1]) or identifier not in members:
+                continue
+            key = ",".join(map(str, members))
+            if key in sets:
+                if sets[key]["bonuses"] != bonuses:
+                    conflicts.add(key)
+                continue
+            labels = {s for i in members for s in names.get(i, []) if s + " (0/" in row["description"]}
+            sets[key] = {"name": next(iter(labels)) if len(labels) == 1 else row["name"] + " set",
+                         "members": members, "bonuses": bonuses, "source": row["evidence_url"]}
+    return {key: row for key, row in sets.items() if key not in conflicts}
+
+
+def set_stat(text: str) -> dict | None:
+    stats = {s.replace("_", " "): s for s in ("strength", "agility", "intellect", "spirit", "stamina", "armor",
+             "attack_power", "ranged_attack_power", "defense", "block_value", "spell_power",
+             "shadow_resistance", "nature_resistance", "frost_resistance", "fire_resistance", "arcane_resistance")}
+    if match := re.fullmatch(r"\+(\d+) ([\w ]+)\.?", text, re.I):
+        amount, stat = int(match[1]), match[2].casefold()
+        if stat == "all resistances":
+            return {key: amount for key in stats.values() if key.endswith("_resistance")}
+        if stat in stats:
+            return {stats[stat]: amount}
+    if parsed := permanent_stat("Equip: " + text):
+        return {parsed[0]: parsed[1]}
+    if match := re.fullmatch(r"Restores (\d+) (mana|health) per (\d+) sec\.", text, re.I):
+        return {"mp5" if match[2].lower() == "mana" else "hp5": 5 * int(match[1]) / int(match[3])}
+    if match := re.fullmatch(r"Increases healing done by spells and effects by up to (\d+)\.", text, re.I):
+        return {"healing_power": int(match[1])}
+    if match := re.fullmatch(r"Improves your chance to get a critical strike with melee attacks by ([\d.]+)%\.", text, re.I):
+        return {"melee_crit_percent": float(match[1])}
+    rule = extra_rule("Equip: " + text)
+    if rule and rule["kind"] == "passive_stats" and not rule.get("secondary") and not rule.get("requires_form"):
+        return rule["stats"]
+    return None
+
+
+def set_catalog(document: dict) -> tuple[dict, dict]:
+    definitions, members = {}, defaultdict(list)
+    for key, row in document.get("effect_sets", {}).items():
+        bonuses = []
+        for bonus in row["bonuses"]:
+            stats = set_stat(bonus["text"])
+            reason = missing_reason("Equip: " + bonus["text"]) if not stats else None
+            bonuses.append({**bonus, **({"stats": stats} if stats else {"reason": reason}),
+                            **({"situational": True} if reason and reason.startswith("Situational") else {})})
+        definitions[key] = {"key": key, "name": row["name"], "bonuses": bonuses}
+        for identifier in row["members"]:
+            members[identifier].append(key)
+    # Some classes have multiple sets with similar names. Only an unambiguous
+    # exact membership can activate a threshold in a loadout.
+    return definitions, {i: groups[0] for i, groups in members.items() if len(groups) == 1}
+
+
+def resolve_spell_leads(rows: list[dict], set_members: dict | None = None) -> dict[str, dict]:
+    """Reuse a verified description only for the exact spell, trigger and item cooldown."""
+    texts = defaultdict(set)
+    for row in rows:
+        if not row.get("effects_known"):
+            continue
+        for trigger in ("chance on hit:", "equip:", "use:"):
+            leads = [s for s in row.get("effect_leads", []) if s.lower().startswith(trigger)]
+            labels = {s.split(' "', 1)[0] for s in row.get("effects", []) if s.lower().startswith(trigger)}
+            if len(leads) == len(labels) == 1:
+                texts[leads[0]].update(labels)
+    resolved = {}
+    for row in rows:
+        set_key = (set_members or {}).get(row["id"])
+        if set_key:
+            row = {**row, "set_key": set_key, "effects": list(dict.fromkeys([*row.get("effects", []), "Set bonuses"]))}
+        if row.get("effect_leads") and not row.get("effects_known"):
+            missing, effects = [], list(row.get("effects", []))
+            for lead in row["effect_leads"]:
+                if set_key and lead.startswith("Set: "):
+                    continue
+                if len(texts.get(lead, ())) == 1:
+                    label = next(iter(texts[lead]))
+                    if label not in effects:
+                        effects.append(label)
+                else:
+                    missing.append(lead)
+            row = {**row, "effects": effects, "effects_known": not missing, "missing_effects": missing}
+        resolved[str(row["id"])] = row
+    return resolved
+
+
+def catalog_coverage(data: dict) -> dict:
+    """Count scored effects separately from recognized text and list every outstanding item."""
+    fields = data["item_fields"]
+    counts, by_kind, pending = Counter(), defaultdict(Counter), {}
+    for key, packed in sorted(data["items"].items()):
+        item = dict(zip(fields, packed))
+        rules = {label: rule for rule in item.get("effect_rules") or []
+                 for label in (rule["label"], *rule.get("aliases", []))}
+        for label in item.get("effects") or []:
+            if label == "Set bonuses" and (group := data.get("effect_sets", {}).get(item.get("set_key"))):
+                for bonus in group["bonuses"]:
+                    status = "threshold_stats" if bonus.get("stats") else "situational" if bonus.get("situational") else "unresolved"
+                    counts[status] += 1
+                    by_kind["set_bonus"][status] += 1
+                    if bonus.get("reason"):
+                        pending.setdefault(key, []).append({"effect": f"{bonus['pieces']}-piece {group['name']} · {bonus['text']}",
+                                                           "spell_id": bonus["spell_id"], "reason": bonus["reason"]})
+                continue
+            rule = rules.get(label, {})
+            if label in rule.get("aliases", []):
+                continue
+            reason = data["effect_gaps"].get(label)
+            if rule.get("rates") or rule.get("kind") == "passive_stats":
+                status = "family_estimate" if rule.get("family") else "item_mechanics"
+            else:
+                status = "situational" if rule.get("kind") == "situational" else "unresolved"
+            kind = rule.get("kind") or classify(label)
+            counts[status] += 1
+            by_kind[kind][status] += 1
+            if status in {"situational", "unresolved"}:
+                pending.setdefault(key, []).append({"effect": label, "reason": reason,
+                    **({"spell_id": rule["spell_id"]} if rule.get("spell_id") else {})})
+        for lead in item.get("missing_effects") or []:
+            counts["missing_description"] += 1
+            by_kind["set_bonus" if lead.startswith("Set:") else "spell_link"]["missing_description"] += 1
+            pending.setdefault(key, []).append({"effect": lead, "reason": "Missing verified Forever effect description"})
+    return {"catalog_identities": len(data["items"]), "counts": dict(counts),
+            "by_mechanic": dict(by_kind), "items_requiring_context_or_evidence": pending}
 
 
 def glossary(snapshots: dict | None, items: list[dict], *, mechanics: dict | None = None, limit: int = 20) -> dict:
@@ -219,13 +398,21 @@ def glossary(snapshots: dict | None, items: list[dict], *, mechanics: dict | Non
             label = f"{bonus['pieces']} pieces · {bonus['text']}"
             lines[label] = {"type": "set_bonus", "spell_id": bonus.get("spell_id")}
         lines.pop("Set bonuses", None)
-
+        parsed = {s: r for r in attach_rules({**item, "effects": list(lines)}).get("effect_rules", [])
+                  for s in (r["label"], *r.get("aliases", []))}
         for label, facts in lines.items():
             kind = "set_bonus" if facts.get("type") == "set_bonus" else classify(label)
             accounted = (kind == "permanent_stat" or (facts.get("type") == "passive" and facts.get("stats"))
                          or facts.get("spell_id") in reviewed_sets)
             status = "accounted" if accounted else (
                 "situational" if kind == "travel" else "needs_evidence")
+            rule = parsed.get(label)
+            if rule and (rule.get("rates") or rule["kind"] == "passive_stats"):
+                status = "family_estimate" if rule.get("family") else "item_mechanics"
+            elif rule and rule["kind"] == "situational":
+                status = "situational"
+            elif kind == "set_bonus" and set_stat(label.partition(" · ")[2]):
+                status = "threshold_stats"
             normalized = label.removeprefix("Equip: ").removeprefix("Use: ").removeprefix("Chance on hit: ").strip().rstrip(".")
             spell_ids = tuple(sorted(linked[(identifier, normalized)] | ({facts["spell_id"]} if facts.get("spell_id") else set())))
             signature = (kind, spell_ids, label)
@@ -237,8 +424,8 @@ def glossary(snapshots: dict | None, items: list[dict], *, mechanics: dict | Non
             group["evidence"].update(evidence[(identifier, label)])
             if status == "needs_evidence" or "status" not in group:
                 group["status"] = status
-            if rule := effect_rule(label):
-                group["rule"] = rule
+            if rule:
+                group["rule"] = {k: v for k, v in rule.items() if k not in {"rates", "uptimes"}}
             counts[status] += 1
 
     unresolved = [row for row in groups.values() if row["status"] == "needs_evidence"]

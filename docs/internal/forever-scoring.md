@@ -59,22 +59,43 @@ exact set spell IDs and reports the flat enchant effects verified for the
 client build. The exception queue groups repeat descriptions so one review
 can cover the mechanic across multiple items.
 
-A numeric proc or on-use value needs a reviewed estimate for a specific
-build, character profile, activity, and level range. Extra attacks use the
-effective gain in weapon swings and the contribution per swing. Temporary
-stats are valued in the active loadout before applying uptime, including any
-shared caps. Multiple temporary stats need observations of the joint states
-to receive a combined value. Concurrent on-use estimates need evidence for
-the equipped combination and its cooldown interaction. The scorer keeps
-unresolved effects conditional and the Guide can still surface reviewed
-qualitative effects.
+The build-pinned presets in `data/canonical/forever/effect_benchmarks.json`
+specify attack participation, landed casts, incoming hits, blocks, damage
+delivery, useful healing and cooldown usage for ordinary single-target combat.
+An exact item and spell mechanic takes precedence over a comparable-family
+estimate. A future exact variant and encounter override takes precedence over
+the preset. The audit lists every remaining description and spell link with
+the input it still needs.
+
+For example, Stoneslayer deals 196 Physical damage per proc, or 588 against
+Earth Elementals, Golems and Titan-forged. The leveling Retribution preset
+uses the one-proc-per-minute damaging-weapon family estimate and 85% landed
+attack participation. Its ordinary effect adds
+`196 × 0.85 × 0.70 × 5 / 60 = 9.72` points. At level 51 with default
+weights, Stoneslayer reaches 223.17 versus 217.70 for Mograine's Might.
+The break-even is 0.372 effective procs per combat minute. The family rate
+comes from the published simulator assumptions for Firebreather and Iceblade
+Hacker. Stoneslayer's individual rate remains unverified.
+[Strength of Stone](https://bindonforever.com/spell/12731) · [Forever warrior simulator](https://gtsims.com/forever.html)
+
+Extra attacks use the relevant weapon's average damage and swing period.
+Isolated trinket ranks use a level-banded reference weapon from the bundled
+catalog. Worn comparisons use the equipped weapon. Temporary stats are valued
+while active with the rest of the loadout in place. Shared trinket uses are
+staggered and independent buffs use maximum overlap at caps. The Guide ships
+precomputed ordinary rankings and effect points. Personal comparisons cache
+the adjusted result and compute the per-item explanation on demand.
+
+Set bonuses use the complete member list and thresholds linked by a saved
+Forever tooltip. The scorer counts equipped pieces and awards each supported
+threshold once. Unmodeled active thresholds, limited charges and abilities
+with insufficient mechanics retain their individual descriptions.
 
 Unreadable gear or talents use reference scores with the available evidence.
 
 The usable Alliance level-49 reference includes both Sword of Serenity and
-Thrash Blade. The measured scores for a Human Protection Paladin are 108.44
-and 105.57. Thrash's additional swing is confirmed. A realized rate for the
-Protection Paladin in the relevant content remains open. The new Guide route
+Thrash Blade. Thrash uses the extra-attack family estimate for its confirmed
+additional swing. The Guide route
 checks use quest acceptance levels and prerequisites. At a choice, the
 guaranteed rewards are included in the baseline and winning choices are
 evaluated independently for each specialization in the character's level scope.
@@ -162,13 +183,13 @@ from Strength, Attack Power and weapon DPS and the mana saved between pulls
 still need controlled gear changes. The sample contained no identified
 level-60 Pre-Raid boss comparison with controlled gear changes. Keep the 1.1
 leveling baseline. The level-60 profile still gives Strength, Attack Power
-and weapon DPS zero direct weight. Aegis of the Scarlet Commander reports
-its unscored Holy damage on block until a supported encounter model supplies
-its damage rate.
+and weapon DPS zero direct weight. Aegis of the Scarlet Commander averages
+14 Holy damage per block. The ordinary tank presets use four blocks per minute
+while leveling and six in Pre-Raid, worth 2.66 and 3.78 points respectively.
 
 At level 43, Assassination's leveling scores for Rondel and Thornspike are
-144.36 and 123.54. Their listed weapon DPS is 24.06 and 20.59. The comparison
-stays conditional while Thornspike's effect is unresolved. At level 49,
+144.36 and 125.77. Their listed weapon DPS is 24.06 and 20.59. Thornspike
+gains 2.23 points for its primary-target damage. At level 49,
 Protection Warrior's leveling scores for Platemail Leggings and Mighty Chain
 Pants are 31.92 and 26.40. The higher score comes entirely from 399 Armor.
 

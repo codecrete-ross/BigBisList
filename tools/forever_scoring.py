@@ -7,7 +7,8 @@ from pathlib import Path
 
 from tools.forever import SOURCE_CHILDREN, digest, eligible, has_review, numeric, roster, scoring_profiles, valid_source
 from tools.forever_comparison import normalized_item_stats, reference_profiles
-from tools.forever_item_effects import VERSION as ITEM_EFFECT_VERSION, attach_rules
+from tools.forever_effect_benchmarks import policy as effect_policy, preset
+from tools.forever_item_effects import VERSION as ITEM_EFFECT_VERSION, attach_rules, resolve_spell_leads, set_catalog, unresolved_lines
 from tools.forever_leveling import eligibility_allows, eligible_item
 from tools.forever_mechanics import snapshot_path
 from tools.forever_sources import check_evidence_refs, evidence_index, evidence_ref, source_provider
@@ -96,6 +97,7 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
                  scenario: dict, race_id: int | None, level: int, bonus_stats: dict,
                  breakdown: dict | None = None) -> tuple[float, dict]:
     stats, sets, procs = defaultdict(float), defaultdict(int), []
+    tooltip_sets = {}
     gear = loadout if isinstance(loadout, dict) else {}
     items = gear.values() if isinstance(loadout, dict) else loadout
     shield = any(item.get("shield") for item in items)
@@ -107,6 +109,9 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
             stats[key] += value
         if item.get("set_id"):
             sets[item["set_id"]] += 1
+        if group := item.get("effect_set"):
+            sets[group["key"]] += 1
+            tooltip_sets[group["key"]] = (group, item.get("set_id"))
         procs.extend(item.get("procs", []))
     stats["dps"] -= offhand_dps * (1 - offhand_factor)
     stats["weapon_speed"] = gear.get(16, {}).get("stats", {}).get("weapon_speed", 0)
@@ -116,6 +121,16 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
         if sets[bonus["set_id"]] >= bonus["pieces"]:
             for key, value in bonus["stats"].items():
                 stats[key] += value
+    for key, (group, legacy_id) in tooltip_sets.items():
+        for bonus in group["bonuses"]:
+            legacy = legacy_id and any(b["set_id"] == legacy_id and b["pieces"] == bonus["pieces"] for b in scenario.get("sets", []))
+            if sets[key] >= bonus["pieces"] and not legacy:
+                for stat, value in bonus.get("stats", {}).items():
+                    stats[stat] += value
+    bonus_hit = bonus_stats.get("spell_hit_percent", 0)
+    if bonus_hit and (bench := scenario.get("effect_benchmark")):
+        outside = stats["spell_hit_percent"] - bonus_hit + stats["hit_percent"]
+        stats["spell_hit_percent"] -= max(0, bonus_hit - max(0, bench["spell_hit_cap"] - outside))
     for proc in procs:
         events = scenario.get("events_per_minute", {}).get(proc["trigger"], 0)
         rate = min(events * proc["chance"], proc.get("max_per_minute", events))
@@ -128,6 +143,8 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
         if conversion.get("condition") != "shield" or shield:
             stats[conversion["stat"]] += stats[conversion["from_stat"]] * conversion["factor"]
     specific_crit = {"spell": "spell_crit_percent", "physical": "physical_crit_percent"}.get(scenario.get("crit_domain"))
+    if scenario.get("effect_benchmark", {}).get("role") in {"melee", "tank"}:
+        stats[specific_crit or "crit_percent"] += stats["melee_crit_percent"]
     if specific_crit and specific_crit not in weights:
         stats["crit_percent"] += stats[specific_crit]
     if scenario.get("crit_domain") == "spell" and "spell_hit_percent" not in weights:
@@ -190,6 +207,11 @@ def expected_item_effect(rule: dict, observation: dict, loadout: dict, position:
     if observation.get("applicable") is False:
         return {}, None
     kind = rule["kind"]
+    if kind == "situational":
+        return {}, None
+    if kind == "passive_stats":
+        worn = {} if rule.get("requires_form") else loadout[position]["stats"]
+        return {key: max(0, amount - worn.get(key, 0)) for key, amount in rule["stats"].items()}, None
     if kind == "mana_cost" and "mana_per_minute" in observation:
         return {"mp5": observation["mana_per_minute"] * rule["fraction"] / 12}, None
     rate = effective_activations(rule, observation, loadout, position)
@@ -203,21 +225,89 @@ def expected_item_effect(rule: dict, observation: dict, loadout: dict, position:
             return {}, None
         multiplier = (rule.get("terrain_multiplier", {}).get(scenario.get("terrain"), 1)
                       * rule.get("target_multiplier", {}).get(scenario.get("target_family"), 1))
-        return {key: amount * multiplier for key, amount in rule["stats"].items()}, uptime * observation.get("target_fraction", 1)
+        stats = {key: amount * multiplier for key, amount in rule["stats"].items()}
+        if observation.get("benchmark") and "health" in stats:
+            stats["stamina"] = stats.get("stamina", 0) + stats.pop("health") / 10
+        return stats, uptime * observation.get("target_fraction", 1)
     if rate is None:
         return {}, None
     if kind == "instant" and "useful_fraction" in observation:
         terrain = rule.get("terrain_multiplier", {}).get(scenario.get("terrain"), 1)
         scale = rate * terrain * observation["useful_fraction"] / 60
-        return {key: amount * scale for key, amount in rule["amounts"].items()}, None
+        stats = {key: amount * scale for key, amount in rule["amounts"].items()}
+        if observation.get("benchmark") and "hp5" in stats:
+            stats["proc_hps"] = stats.get("proc_hps", 0) + stats.pop("hp5") / 5
+        return stats, None
     if kind == "extra_attack" and "damage_factor" in observation:
         stats = loadout.get(observation.get("weapon_slot", position), {}).get("stats", {})
+        average = scenario.get("isolated_swing_damage") if observation.get("benchmark") else None
         if "weapon_min_damage" in stats and "weapon_max_damage" in stats:
             average = (stats["weapon_min_damage"] + stats["weapon_max_damage"]) / 2
-            return {"dps": average * rate * rule["count"] * observation["damage_factor"] / 60}, None
+            if observation.get("form_period") and stats.get("weapon_speed"):
+                average *= observation["form_period"] / stats["weapon_speed"]
+        if average is not None:
+            if observation.get("benchmark") and position == 17:
+                average *= scenario.get("offhand_dps_factor", 1)
+            return {"proc_dps" if observation.get("benchmark") else "dps":
+                    average * rate * rule["count"] * observation["damage_factor"] / 60}, None
     if kind == "damage" and "damage_factor" in observation:
-        return {"proc_dps": rule["amount"] * rate * observation["damage_factor"] / 60}, None
+        damage = rule["amount"] * rate * observation["damage_factor"] / 60
+        return {"proc_dps": damage, **({"proc_hps": damage * observation["useful_fraction"]} if rule.get("leech") else {})}, None
     return {}, None
+
+
+def benchmark_observation(rule: dict, scenario: dict, position: int, use_scale: float = 1, level: int = 60,
+                          loadout: dict | None = None) -> dict | None:
+    bench = scenario.get("effect_benchmark")
+    if not bench:
+        return None
+    if rule["kind"] in {"situational", "passive_stats"}:
+        return {"benchmark": True, "applicable": not rule.get("requires_form") or level >= scenario.get("form_min_level", 61)}
+    if not rule.get("rates"):
+        return None
+    index = bench["index"] - 1
+    rate = rule["rates"][index]
+    form_period = scenario.get("form_attack_period") if level >= scenario.get("form_min_level", 61) else None
+    if rule["trigger"] == "block":
+        off_hand = (loadout or {}).get(17, {})
+        if not (off_hand.get("shield") or off_hand.get("armor_type") == "Shield" or
+                (scenario.get("isolated_swing_seconds") and not form_period)):
+            rate = 0
+    if rule["kind"] == "extra_attack" and rule.get("benchmark_chance") is not None:
+        weapon = (loadout or {}).get(17 if position == 17 else 16, {}).get("stats", {})
+        speed = form_period or weapon.get("weapon_speed") or scenario.get("isolated_swing_seconds")
+        if speed:
+            rate = 60 * bench["melee"] * rule["benchmark_chance"] / speed
+            rate /= 1 + rate * rule.get("cooldown", 0) / 60
+    scale = use_scale if rule.get("use_lockout") else 1
+    factor = bench["physical"] if rule.get("school") == "physical" or rule["kind"] == "extra_attack" else (
+        1 if rule.get("school") == "bleed" else bench["magic"])
+    if rule.get("periodic"):
+        factor *= bench["periodic_fraction"]
+    elif rule.get("periodic_amount"):
+        factor *= 1 + rule["periodic_amount"] * bench["periodic_fraction"] / rule["amount"]
+    observed = {"per_minute": rate * scale, "damage_factor": factor, "target_fraction": 1,
+                "benchmark": True, "useful_fraction": bench["useful_healing"], "applicable": rate > 0}
+    if rule.get("uptimes"):
+        observed["uptime"] = rule["uptimes"][index] * scale
+    if rule["kind"] == "extra_attack":
+        observed["weapon_slot"] = position if position in (16, 17) else 16
+        observed["form_period"] = form_period
+    return observed
+
+
+def modeled_states(timed: list) -> list[dict]:
+    """Stagger shared uses, overlap independent buffs conservatively at stat caps."""
+    windows, cursor = [], 0
+    for key, _, fraction, _, _, shared, _ in timed:
+        start = cursor if shared else 0
+        end = min(1, start + fraction)
+        windows.append((key, start, end))
+        if shared:
+            cursor = end
+    boundaries = sorted({v for _, lo, hi in windows for v in (lo, hi)})
+    return [{"active": [key for key, lo, hi in windows if lo <= left < hi], "fraction": right - left}
+            for left, right in zip(boundaries, boundaries[1:])]
 
 
 def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations: list[dict], ranks: dict, scenario: dict,
@@ -226,19 +316,27 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
     flat, timed = defaultdict(float), []
     expectations = scenario.get("effect_expectations", {})
     use_rules = []
-    if expectations and isinstance(loadout, dict):
+    bench = scenario.get("effect_benchmark")
+    if (expectations or bench) and isinstance(loadout, dict):
         use_rules = sorted(f"{position}:{identity(item)}:{rule['key']}" for position, item in loadout.items()
-                           for rule in item.get("effect_rules", []) if rule["trigger"] == "use")
+                           for rule in item.get("effect_rules", []) if rule.get("trigger") == "use")
         use_signature = "|".join(use_rules)
+        budget = sum(rule["rates"][bench["index"]-1] * rule["use_lockout"] / 60
+                     for item in loadout.values() for rule in item.get("effect_rules", [])
+                     if bench and rule.get("rates") and rule.get("use_lockout"))
         for position, item in sorted(loadout.items()):
             for rule in item.get("effect_rules", []):
                 observation = expectations.get(identity(item), {}).get(rule["key"])
                 if observation is None:
+                    observation = benchmark_observation(rule, scenario, position, 1 / max(1, budget), level, loadout)
+                if observation is None:
                     continue
                 stats, uptime = expected_item_effect(rule, observation, loadout, position, scenario)
-                solo = rule["trigger"] != "use" or len(use_rules) < 2 or observation.get("use_signature") == use_signature
+                modeled = observation.get("benchmark", False)
+                solo = modeled or rule.get("trigger") != "use" or len(use_rules) < 2 or observation.get("use_signature") == use_signature
                 if uptime is not None:
-                    timed.append((f"{position}:{identity(item)}:{rule['key']}", stats, uptime, solo, rule["trigger"]))
+                    timed.append((f"{position}:{identity(item)}:{rule['key']}", stats, uptime, solo, rule["trigger"],
+                                  bool(rule.get("use_lockout")), modeled))
                 elif solo:
                     for key, value in stats.items():
                         flat[key] += value
@@ -246,14 +344,16 @@ def swap_score(loadout: dict[int, dict] | list[dict], weights: dict, operations:
     total, explanations = base_loadout(loadout, weights, operations, ranks, scenario, race_id, level, flat, breakdown)
     states = []
     if len(timed) == 1:
-        key, _, uptime, solo, _ = timed[0]
+        key, _, uptime, solo, *_ = timed[0]
         if solo:
             states = [{"active": [key], "fraction": uptime}]
     elif timed:
-        scoped = sum(trigger == "use" for _, _, _, _, trigger in timed) == len(use_rules)
-        if scoped or all(solo for _, _, _, solo, _ in timed):
+        scoped = sum(row[4] == "use" for row in timed) == len(use_rules)
+        if scoped or all(row[3] for row in timed):
             signature = "|".join(sorted(key for key, *_ in timed))
             states = scenario.get("effect_state_observations", {}).get(signature, [])
+            if not states and all(row[6] for row in timed):
+                states = modeled_states(timed)
     if states:
         timed_stats = {key: stats for key, stats, *_ in timed}
         baseline, baseline_explanations = total, dict(explanations)
@@ -386,10 +486,24 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
     set_names = {row["set_id"]: row["name"] for row in sets if row.get("name")}
     if len(item_sets) != sum(len(row["item_ids"]) for row in sets):
         raise ValueError("Reviewed item sets have overlapping membership")
-    items = {mode: {identity(item): {**pack_item(item),
+    comparison = document("comparison_item_stats")
+    effect_sets, set_members = set_catalog(comparison)
+    catalog_effects = resolve_spell_leads(comparison["items"], set_members)
+
+    reference_weapons = []
+    for low, identifier in effect_policy()["reference_weapons"]:
+        weapon = catalog_effects[str(identifier)]["stats"]
+        reference_weapons.append([low, (weapon["weapon_min_damage"] + weapon["weapon_max_damage"]) / 2,
+                                  weapon["weapon_speed"]])
+
+    def effect_facts(item):
+        return {**catalog_effects.get(identity(item), {}), **item}
+    items = {mode: {identity(item): {**pack_item(item), **attach_rules(effect_facts(item)),
+                                    **({"effects": lines} if (lines := unresolved_lines(effect_facts(item))) else {}),
+                                    **({"effect_set": effect_sets[set_members[item["id"]]]} if item["id"] in set_members else {}),
                                     **({"set_id": item_sets[item["id"]]} if item["id"] in item_sets else {})}
                     for item in source_items[mode]} for mode in MODES}
-    effect_items = {identity(item): item for pool in source_items.values() for item in pool}
+    effect_items = {**catalog_effects, **{identity(item): effect_facts(item) for pool in source_items.values() for item in pool}}
     effect_items.update({identity(item): item for item in document("guide_item_reviews")["items"]})
     all_profiles = {f"{row['class']}/{row['spec']}": row for row in pre_raid["profiles"]}
     traits, profiles, bindings = {}, {}, {}
@@ -469,6 +583,11 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
             scenario = {**model["scenarios"][mode], "weights": weights, "pools": pools,
                         "personas": allowed_personas, **{k: v for k, v in policies.items() if v is not None},
                         **scenario_effect_inputs(scenario_settings, effect_items, f"{name}/{mode}")}
+            if effect_policy()["client_build"] != model["client_build"]:
+                raise ValueError("Recheck Forever item effect benchmarks for the new client build")
+            scenario["item_effect_version"] = ITEM_EFFECT_VERSION
+            scenario["effect_benchmark"] = {**preset(profile["role"], mode, name), "version": effect_policy()["version"]}
+            scenario["reference_weapons"] = reference_weapons
             offhand_factor = settings.get("offhand_dps_factor", shared.get("offhand_dps_factor"))
             if offhand_factor is not None:
                 if not numeric(offhand_factor) or not 0 < offhand_factor <= 1:
@@ -476,6 +595,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 scenario["offhand_dps_factor"] = offhand_factor
             if settings.get("form_attack_period"):
                 scenario["form_attack_period"] = settings["form_attack_period"]
+                scenario["form_min_level"] = rules["spec_policies"][name]["form_level"]
             if sets:
                 scenario["sets"] = [{key: row[key] for key in ("set_id", "pieces", "stats")} for row in sets]
             if racials := [row for row in snapshot.get("racial_scaling", []) if row["race_id"] in allowed_personas]:

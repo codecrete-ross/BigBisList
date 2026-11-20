@@ -1022,7 +1022,8 @@ end
 function UI:ApplySlotComparisonLayout()
     local state = self.slotComparison
     if not state or not self.comparisonFrameReady then return false end
-    self.contentRegion:Hide(); self.filterDrawer:Hide()
+    self.contentRegion:Hide()
+    if self.filterDrawer then self.filterDrawer:Hide() end
     if self.fixedActiveFilterBar then self.fixedActiveFilterBar:Hide() end
     self.comparisonFrame:SetShown(not state.detailsOpen)
     self.details:SetShown(state.detailsOpen == true)
