@@ -339,11 +339,11 @@ or loses.
   guaranteed rewards. If the choices offer no reliable gain at the current
   level or their first usable level, the coin marks the highest total vendor
   value. Relevant unreadable inputs defer the recommendation.
-- Storage recommendations choose the best legal slot or paired-slot setup from
-  worn gear, bags, and the last readable personal bank scan. The spec icon
-  requires a meaningful improvement over the worn setup. On an exact tie,
-  equipped copies take priority, followed by bags and bank. Native containers
-  and Baganator share the same assessment.
+- Storage tooltips compare the exact copy with the best legal slot or paired
+  setup from equipment, bags, and the last readable personal bank scan. A
+  winning copy shows **Best you own**. A stored winner gets an equip cue when
+  it improves the worn setup. On an exact tie, equipped copies take priority,
+  followed by bags and bank. Native containers and Baganator share the verdict.
   Storage marks are static badges in the upper-right corner. A talent icon has
   a rank-colored border, and an approved item uses a gold BiS label in the same
   footprint. Baganator owns the visibility and priority of its corner widget.
@@ -383,11 +383,12 @@ or loses.
 - The Malignant Root exchange takes one Rotheap Innards. Its canonical source
   records the cost as a quantity. The exporter carries that quantity into the
   runtime cost so the Guide can name Rethiel the Greenwarden and the turn-in.
-- The native and in-addon comparisons share item facts and one worn-swap
-  evaluator. Placement uses base gear. Swap estimates apply verified permanent
-  modifiers from exact links. Unknown modifiers, unscored effects, and
-  weapon-speed or hit changes outside the reviewed model can make an estimate
-  conditional. Acquisition uses default weights for best-owned comparisons.
+- Automatic native and in-addon comparisons share the best-owned evaluator.
+  Compare Slot scores against the selected reference. Placement uses base gear.
+  Swap estimates apply verified permanent modifiers from exact links. Unknown
+  modifiers, unscored effects, and weapon-speed or hit changes outside the
+  reviewed model can make an estimate conditional. The active spec uses
+  verified live talents when available. Other specs use their default weights.
 - The scoring audit checks four Leveling bands and Pre-Raid for each of the
   28 specs. At least one exact swap in every context must change with an active
   talent. Each fixture records the reason, character, physical slots, exact

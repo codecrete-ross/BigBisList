@@ -106,9 +106,11 @@ assert(ui:CaptureNavigationState().anchorOffset == position.anchorOffset)
 function rating:GetGuidePlacement() error("A native hover must read its indexed rank") end
 local tip = GameTooltip
 tip:SetOwner(UIParent)
-tip.hyperlink = "item:7719"
+tip:SetHyperlink("item:7719")
 tip:Show()
-addon:AddTooltipInfo(tip, { id = 7719, hyperlink = tip.hyperlink, getterName = "GetBagItem", getterArgs = {0, 1}, lines = {} })
+local cold = table.concat(tip.lines or {}, "\n")
+assert(cold:find("Waiting for item stats", 1, true) and not cold:find("pts vs", 1, true), cold)
+H.settle()
 local lines = table.concat(tip.lines or {}, "\n")
 assert(lines:find("Slight upgrade", 1, true) and lines:find("+2.1 pts vs Gothic Plate Helmet of the Gorilla", 1, true), lines)
 
@@ -166,6 +168,10 @@ bag = 9479; bagsChanged()
 assert(not find(7719) and not find(9479), "The better bag helm is already owned")
 lookup("item:7719")
 assert(advice(find(7719)):find("pts vs Embrace of the Lycan", 1, true))
+lookup("item:9479")
+local winner = advice(find(9479))
+assert(winner:find("Best you own for this slot", 1, true) and not winner:find("pts vs", 1, true), winner)
+lookup("item:7719")
 bag = nil
 local bank = addon:GetCharacterDB().bankCache
 bank.scanned, bank.links, bank.locations = true, {"item:9479"}, {"bank:1"}
@@ -346,7 +352,7 @@ assert(not addon:IsGuideTargetRoute({source_type = "drop", source = {entity_name
 assert(not addon:IsGuideTargetRoute({source_type = "trade", source = {entity_name = "Auction House"}}))
 ui:SetFilter("search", ""); H.settle()
 ui:SetSpec("Protection"); H.settle()
-assert(ui.renderModel.targetQuery.reference and ui.renderModel.entries[1].text:find("Reference gear for Protection", 1, true))
+assert(not ui.renderModel.targetQuery.reference and ui.renderModel.targetQuery.context.spec == "Protection")
 ''')
 
     def test_search_can_find_future_targets_and_completed_quest_rewards(self):

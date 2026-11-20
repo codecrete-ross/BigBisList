@@ -135,7 +135,7 @@ local function mark(row, item)
 end
 local function bestSwap(row, item)
     local advice = mark(row, item)
-    return advice and advice.storage and advice.storage.qualifies
+    return advice and advice.result.equipSwap
 end
 local function showTip(row, item)
     GameTooltip:SetOwner(row, "ANCHOR_RIGHT")
@@ -182,7 +182,8 @@ for _, child in ipairs(reward.children) do if child.corner then questBadge = chi
 assert(bagBadge and bagBadge.bis:GetText() == "Lv 50" and bagBadge.bis:IsShown() and not bagBadge.icon:IsShown())
 assert(questBadge and questBadge.level:GetText() == "Lv 50" and questBadge.level:IsShown() and not questBadge.arrow:IsShown())
 local tip = showTip(rows[1], link(901004))
-assert(tip:find("Keep for Level 50\nEstimated +6.0 pts vs Fixture gear 901001 at Level 50", 1, true))
+local protection = tip:match("\nProtection\n(.-)\n \n")
+assert(protection and protection:find("Best you own for this slot at Level 50", 1, true) and not protection:find("pts vs", 1, true), tip)
 level = 50
 addon:RefreshTooltipPlayerContext()
 highlights:InvalidateStorage()
@@ -268,9 +269,12 @@ local inventory = addon.uiEventFrame
 inventory:GetScript("OnEvent")(inventory, "BAG_UPDATE_DELAYED")
 event("BAG_UPDATE_DELAYED")
 assert(not table.concat(GameTooltip.lines, "\n"):find("Big BiS List", 1, true), "a tooltip for the old slot item stays unannotated")
-assert(not mark(rows[1], 901002) and mark(rows[2], 901002) and not bestSwap(rows[2], 901002), "the older snapshot may not publish a winner")
-assert(mark(rows[1], 901004).result.delta == 6)
-assert(showTip(rows[1], contents[1]):find("|t Equip now · Major upgrade", 1, true))
+assert(not mark(rows[1], 901002) and not mark(rows[2], 901002), "the older snapshot may not publish a winner")
+assert(bestSwap(rows[1], 901004).delta == 6)
+local tip = showTip(rows[1], contents[1])
+local protection = tip:match("\nProtection\n(.-)\n \n")
+assert(protection and protection:find("Best you own for this slot", 1, true) and protection:find("Equip now", 1, true)
+    and not protection:find("pts vs", 1, true), tip)
 ''')
 
     def test_bags_and_personal_bank_mark_owned_upgrades_and_refresh_reused_slots(self):
@@ -302,23 +306,21 @@ panel.GenerateItemSlotsForSelectedTab, panel.RefreshAllItemsForSelectedTab = fun
 ui.personalBankOpen = true
 assert(ui:ScanBankItems())
 highlights:Initialize(); H.settle()
-assert(mark(first, 901002) and not bestSwap(first, 901002))
+assert(not mark(first, 901002))
 local offered = assert(mark(bankItem, 901004))
-assert(offered.entry.owned and not offered.ownedBaseline and offered.result.delta == 6)
+assert(offered.entry.owned and offered.result.status == "best_owned" and offered.result.equipSwap.delta == 6)
 local badge
 for _, child in ipairs(bankItem.children) do if child.border then badge = child end end
 assert(badge and not badge.animation and not badge.glow and badge.icon:IsShown())
 H.expectBounded(badge, bankItem, "bank badge")
 for _, edge in ipairs(badge.border) do H.expectBounded(edge, badge, "bag badge border") end
-assert(mark(second, 901005).spec.name == "Holy", "An owned off-spec upgrade compares with worn gear")
-assert(mark(bankItem, 901004).result.delta == 6)
+assert(mark(second, 901005).spec.name == "Holy", "The best Holy helm is a different physical item")
 local tip = showTip(first, link(901002))
-assert(tip:find("|t Equip now · Upgrade\n+4.0 pts vs Fixture gear 901001", 1, true) and tip:find("Finger", 1, true) == nil)
-assert(tip:find("Stronger option you own · Fixture gear 901004 · In bank (last visit)", 1, true))
-assert(not tip:find("vs the best gear you own", 1, true))
+assert(tip:find("You own a stronger option · Fixture gear 901004\n-2.0 pts vs Fixture gear 901004", 1, true), tip)
+assert(tip:find("Includes cached bank gear", 1, true) and not tip:find("Equip now", 1, true), tip)
 ui.personalBankOpen = false
 event("BANKFRAME_CLOSED")
-assert(not mark(bankItem, 901004) and mark(first, 901002) and not bestSwap(first, 901002))
+assert(not mark(bankItem, 901004) and not mark(first, 901002))
 ui.personalBankOpen = true
 local getLink = C_Container.GetContainerItemLink
 C_Container.GetContainerItemLink = function(bag, slot)
@@ -327,34 +329,34 @@ C_Container.GetContainerItemLink = function(bag, slot)
 end
 assert(not ui:ScanBankItems() and addon:GetCharacterDB().bankCache.locations[1] == "20:1")
 highlights:ScheduleRefresh(); H.settle()
-assert(mark(first, 901002) and not bestSwap(first, 901002) and not mark(bankItem, 901004))
+assert(not mark(first, 901002) and not mark(bankItem, 901004))
 C_Container.GetContainerItemLink = getLink
 highlights:ScheduleRefresh(); H.settle()
 assert(mark(bankItem, 901004))
 contents[0][1], contents[20][1] = contents[20][1], contents[0][1]
 assert(ui:ScanBankItems())
 ui:Invalidate("ownership", "withdraw-winner"); event("BAG_UPDATE_DELAYED")
-assert(bestSwap(first, 901004) and mark(bankItem, 901002) and not bestSwap(bankItem, 901002))
+assert(bestSwap(first, 901004) and not mark(bankItem, 901002))
 contents[0][1], contents[20][1] = contents[20][1], contents[0][1]
 assert(ui:ScanBankItems())
 
 H.equipped[1] = 901002
 ui:Invalidate("ownership", "equip-from-bag"); event("BAG_UPDATE_DELAYED")
-assert(not mark(first, 901002) and mark(bankItem, 901004).result.delta == 2)
+assert(not mark(first, 901002) and bestSwap(bankItem, 901004).delta == 2)
 contents[0][1] = "item:901006:0:0:0:0:0:0:0:47:0:0:0:1:700"
 ui:Invalidate("ownership", "exact-variant-move"); bags:UpdateItems(); H.settle()
-assert(not mark(first, 901002) and mark(first, contents[0][1]).result.delta == 4)
+assert(not mark(first, 901002) and bestSwap(first, contents[0][1]).delta == 4)
 
 contents[0][1], cold[901020] = link(901020), true
 ui:Invalidate("ownership", "cold-bag-item"); bags:UpdateItems(); H.settle()
 assert(not mark(first, 901020) and not mark(bankItem, 901004) and coldCallbacks[901020])
 cold[901020] = nil
 coldCallbacks[901020](); H.settle()
-assert(mark(first, 901020).result.delta == 5 and mark(bankItem, 901004) and not bestSwap(bankItem, 901004))
+assert(bestSwap(first, 901020).delta == 5 and not mark(bankItem, 901004))
 
 addon:GetAccountDB().profile.gearHighlights.bags = false
 highlights:ScheduleRefresh(); H.settle()
-assert(not mark(first, 901020) and mark(bankItem, 901004) and not bestSwap(bankItem, 901004))
+assert(not mark(first, 901020) and not mark(bankItem, 901004))
 contents[0][1] = link(901006)
 ui:Invalidate("ownership", "bank-visible-winner"); event("BAG_UPDATE_DELAYED")
 assert(mark(bankItem, 901004))
@@ -385,13 +387,12 @@ local panel, rows = bagView({link(901032), link(901033), link(901034)})
 
 highlights:Initialize(); H.settle()
 local best = assert(mark(rows[1], 901032))
-assert(best.spec.name == "Protection" and best.result.delta == 8)
-assert(mark(rows[2], 901033).storage.improves and not bestSwap(rows[2], 901033))
-assert(mark(rows[3], 901034).storage.improves and not bestSwap(rows[3], 901034))
+assert(best.spec.name == "Protection" and best.result.status == "best_owned" and best.result.equipSwap.delta == 8)
+assert(not mark(rows[2], 901033) and not mark(rows[3], 901034))
 local inferior = showTip(rows[2], link(901033))
-assert(inferior:find("|t Upgrade for Protection\n+5.0 pts vs Fixture gear 901031", 1, true) and inferior:find("Stronger option you own · Fixture gear 901032 · In bags", 1, true))
+assert(inferior:find("You own a stronger option · Fixture gear 901032 for Protection\n-3.0 pts vs Fixture gear 901032", 1, true), inferior)
 local near = showTip(rows[3], link(901034))
-assert(near:find("Sidegrade to Fixture gear 901032 · In bags", 1, true))
+assert(near:find("-1.0 pts vs Fixture gear 901032", 1, true) and not near:find("Equip now", 1, true), near)
 
 panel:Hide(); highlights:ScheduleRefresh(); H.settle(); panel:Show()
 assert(mark(rows[1], 901032).result == best.result, "An unchanged native bag reopens with the same recommendation")
@@ -406,6 +407,89 @@ addon.GetRecommendationHistory = function(_, id, class, spec, phase)
 end
 addon:RefreshTooltipPlayerContext(); highlights:InvalidateStorage(); H.settle()
 assert(mark(rows[1], 901032) and not bestSwap(rows[2], 901033), "A Guide pick cannot displace the best legal bag action")
+''')
+
+    def test_best_owned_belt_drives_loot_badges_tooltips_lists_and_details(self):
+        self.run_lua(r'''
+slots[#slots + 1] = "Waist"
+item(901031, "Waist", 10, 6)
+item(901032, "Waist", 20, 0)
+item(901033, "Waist", 4, 30)
+item(901034, "Waist", 15, 10)
+item(901035, "Waist", 25, 10)
+H.equipped[1], H.equipped[6] = nil, 901031
+local contents = {link(901032), link(901033)}
+local _, bags = bagView(contents)
+
+LootFrame = CreateFrame("Frame", nil, UIParent)
+local drop, stronger = row(LootFrame, 1), row(LootFrame, 2)
+for _, button in ipairs({drop, stronger}) do
+    button.GetSlotIndex, button.Item = button.GetID, row(button, button.slotIndex)
+end
+LootFrame.ScrollBox = scrollBox({drop, stronger})
+GetLootSlotLink = function(index) return link(index == 1 and 901034 or 901035) end
+GetLootSlotType = function() return Enum.LootSlotType.Item end
+GetLootSlotInfo = function() return 0, "Belt", 1, nil, 2, false, false, nil, false end
+
+addon:InitUIEvents()
+highlights:Initialize(); H.settle()
+assert(not mark(drop.Item, 901034))
+assert(mark(stronger.Item, 901035).result.delta == 5)
+assert(mark(bags[1], 901032).spec.name == "Protection" and mark(bags[2], 901033).spec.name == "Holy")
+local weakerTip = showTip(drop.Item, link(901034))
+assert(weakerTip:find("-5.0 pts vs Fixture gear 901032", 1, true), weakerTip)
+assert(weakerTip:find("-20.0 pts vs Fixture gear 901033", 1, true), weakerTip)
+assert(showTip(stronger.Item, link(901035)):find("+5.0 pts vs Fixture gear 901032", 1, true))
+local winnerTip = showTip(bags[1], link(901032))
+assert(winnerTip:find("Protection\nBest you own for this slot", 1, true) and winnerTip:find("Equip now", 1, true), winnerTip)
+assert(not winnerTip:find("\n0.0 pts", 1, true), winnerTip)
+
+ItemRefTooltip:SetOwner(UIParent)
+ItemRefTooltip:SetHyperlink(link(901034))
+ItemRefTooltip:Show()
+assert(table.concat(ItemRefTooltip.lines, "\n"):find("-5.0 pts vs Fixture gear 901032", 1, true))
+
+local guide = rating:GetGuideContext("Paladin", "Protection", "LEVELING", level, "Human", "Alliance")
+local pool = rating:GetGuidePlacement(guide, "Waist")
+local candidate = {item_id = 901034, item_link = link(901034), name = items["901034"][2], slot = "Waist",
+    slotKey = "Waist", class = "Paladin", spec = "Protection", phase = "LEVELING", leveling = true,
+    stat_rank = pool.byVariant["901034"], stat_identity = "901034"}
+addon.GetLevelingRows = function() return {{slot = "Waist", items = {candidate}}} end
+addon.GetLevelingJourneyRows = function(_, _, _, _, _, _, current) return current end
+ui:Open(); H.settle()
+ui:SetClass("Paladin"); ui:SetSpec("Protection"); ui:SetContentMode("leveling"); ui:SetLevelingLevel(level); H.settle()
+local player, owned = addon:GetTooltipPlayerContext(), ui.currentOwned
+local target = rating:GetGuideTargetVerdict(candidate, guide, player, owned)
+assert(target.kind == "hidden" and target.swap.delta == -5, target.kind)
+local visible
+for _, frame in ipairs(ui.activeRenderFrames) do
+    if frame.boundData == candidate and frame.subText then visible = frame.subText.fullText end
+end
+assert(visible and visible:find("-5.0 pts vs Fixture gear 901032", 1, true), tostring(visible))
+ui:ShowInspectorFor(candidate.item_id, candidate, "leveling")
+ui:SetInspectorVisible(true); H.settle()
+local detail = ""
+for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
+    if block:IsVisible() then detail = detail .. block.body:GetText() end
+end
+assert(detail:find("-5.0 pts vs Fixture gear 901032", 1, true) and not detail:find("pts vs Fixture gear 901031", 1, true), detail)
+
+assert(ui:OpenSlotComparison(candidate, "leveling", true)); H.settle()
+local manual
+for _, compared in ipairs(ui.slotComparison.rows) do if compared.item_id == candidate.item_id then manual = compared end end
+assert(manual and ui:GetLevelingGearView(manual, "comparison").evidence == "+5.0 pts vs Fixture gear 901031")
+ui:CloseSlotComparison(); H.settle()
+ui:SetSpec("Holy"); H.settle()
+assert(ui:GetLevelingGearView(candidate, "leveling").evidence == "-20.0 pts vs Fixture gear 901033")
+
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {link(901032)}, {"20:1"}
+contents[1] = link(901006)
+local events = addon.uiEventFrame
+events:GetScript("OnEvent")(events, "BAG_UPDATE_DELAYED")
+event("BAG_UPDATE_DELAYED")
+local refreshed = table.concat(ItemRefTooltip.lines, "\n")
+assert(refreshed:find("-5.0 pts vs Fixture gear 901032", 1, true) and refreshed:find("Includes cached bank gear", 1, true), refreshed)
 ''')
 
     def test_level_49_revenant_chest_uses_verified_passives_and_storage_comparison(self):
@@ -473,18 +557,18 @@ highlights:Initialize(); H.settle()
 local function checkChampion()
     local winner = assert(mark(rows[1], champion))
     assert(winner.spec.name == "Protection" and not winner.result.conditional)
-    assert(math.abs(winner.result.delta - 36.14) < 0.001, "Include the five Defense exactly once")
-    assert(mark(rows[2], golem).storage.improves and not bestSwap(rows[2], golem))
+    assert(math.abs(winner.result.equipSwap.delta - 36.14) < 0.001, "Include the five Defense exactly once")
+    assert(not mark(rows[2], golem))
     assert(bestSwap(rows[1], champion))
 end
 checkChampion()
 assert(rating:GetExactBaseFacts(10128, champion).stats.defense == 5)
 local plain = champion:match("item:[%d:]+"):gsub(":49:1486:", ":50:1486:")
 local tip = showTip(rows[1], plain)
-assert(tip:find("+36.1 pts vs Embossed Plate Armor of the Gorilla", 1, true))
-assert(tip:find("|t Major upgrade for Protection", 1, true) and not tip:find("Equip now", 1, true))
+assert(tip:find("Best you own for this slot", 1, true) and not tip:find("+36.1 pts", 1, true), tip)
+assert(not tip:find("Equip now", 1, true), tip)
 tip = showTip(rows[2], (golem:match("item:[%d:]+"):gsub("::1::1:", "::1:0:1:")))
-assert(tip:find("Stronger option you own · Revenant Chestplate of the Champion · In bags", 1, true))
+assert(tip:find("pts vs Revenant Chestplate of the Champion", 1, true), tip)
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("12753", "12723")))
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128::", "item:10128:1900:")))
 assert(not highlights:GetTooltipOffer(rows[1], 10128, plain:gsub("item:10128:::", "item:10128::4001:")))
@@ -503,9 +587,9 @@ assert(#normalized.effects == 1 and normalized.effects[1]:find("when fighting Un
 
 bank.links[1] = bankUpgrade
 refresh()
-assert(mark(rows[1], champion).storage.improves and not bestSwap(rows[1], champion))
+assert(not mark(rows[1], champion))
 tip = showTip(rows[1], plain)
-assert(tip:find("Stronger option you own · Bank upgrade · In bank (last visit)", 1, true))
+assert(tip:find("pts vs Bank upgrade", 1, true) and tip:find("Includes cached bank gear", 1, true), tip)
 bank.links[1] = mail
 fixtures[10128].lines[2] = "Use: Unleash a burst of Holy damage. (5 Min Cooldown)"
 refresh(10128)
@@ -515,9 +599,9 @@ assert(showTip(rows[1], plain):find("Estimated", 1, true))
 contents[1], contents[2] = defenseOnly, nil
 refresh()
 local winner = assert(mark(rows[1], defenseOnly))
-assert(winner.spec.name == "Protection" and math.abs(winner.result.delta - 6.25) < 0.001)
+assert(winner.spec.name == "Protection" and math.abs(winner.result.equipSwap.delta - 6.25) < 0.001)
 local offer = assert(highlights:GetTooltipOffer(rows[1], 901061, defenseOnly))
-assert(offer.assessments[1].spec.name == "Retribution" and not offer.assessments[1].storage.qualifies)
+assert(offer.assessments[1].spec.name == "Retribution" and not offer.assessments[1].result.equipSwap)
 ''')
 
     def test_storage_winners_obey_pair_legality_and_copy_ties(self):
@@ -547,11 +631,12 @@ local links = {link(901043), link(901043), link(901043), link(901045), link(9010
 local panel, rows = bagView(links)
 highlights:Initialize(); H.settle()
 assert(bestSwap(rows[1], 901043) and bestSwap(rows[2], 901043))
-assert(mark(rows[3], 901043).storage.improves and not bestSwap(rows[3], 901043))
+assert(not mark(rows[3], 901043))
+assert(showTip(rows[3], link(901043)):find("Sidegrade", 1, true))
 assert(mark(rows[4], 901045) and mark(rows[5], 901046), "A legal pair may fill both trinket slots")
 assert(not mark(rows[8], 901001), "An equipped copy wins a tie")
-assert(mark(rows[6], 901052).result.delta == 14 and mark(rows[7], 901053).result.delta == 14)
-assert(showTip(rows[7], link(901053)):find("+14.0 pts vs Fixture gear 901051 · With Fixture gear 901052", 1, true))
+assert(bestSwap(rows[6], 901052).delta == 14 and bestSwap(rows[7], 901053).delta == 14)
+assert(showTip(rows[7], link(901053)):find("Equip now · With Fixture gear 901052", 1, true))
 
 links[1], links[2] = link(901044), link(901044)
 ui:Invalidate("ownership", "unique-ring"); panel:UpdateItems(); H.settle()
@@ -559,7 +644,7 @@ assert(bestSwap(rows[1], 901044) and not bestSwap(rows[2], 901044) and bestSwap(
 links[2], links[3] = link(901047), link(901047)
 ui:Invalidate("ownership", "independent-cutoff"); panel:UpdateItems(); H.settle()
 assert(bestSwap(rows[1], 901044) and bestSwap(rows[2], 901047) and not bestSwap(rows[3], 901047))
-assert(showTip(rows[2], link(901047)):find("|t Equip now · Slight upgrade", 1, true))
+assert(showTip(rows[2], link(901047)):find("Equip now", 1, true))
 ''')
 
     def test_storage_and_guide_use_the_same_ranking_outdoors_and_in_dungeons(self):
@@ -592,22 +677,22 @@ highlights:Initialize(); H.settle()
 
 local function observe()
     local main = assert(mark(rows[1], 901031))
-    assert(main.spec.name == "Protection" and main.result.delta == 8 and mark(rows[2], 901032).storage.improves and not bestSwap(rows[2], 901032))
+    assert(main.spec.name == "Protection" and main.result.equipSwap.delta == 8 and not mark(rows[2], 901032))
     for _, child in ipairs(rows[1].children) do assert(not child.alternate) end
     local guide = rating:GetGuideContext("Paladin", "Protection", "LEVELING", level, "Human", "Alliance")
     local pool = rating:GetGuidePlacement(guide, "Head")
     local first, second = pool.byVariant["901031"], pool.byVariant["901032"]
     assert(first.rank < second.rank and first.score == 14 and second.score == 10)
     local reach = assert(ui:GetWithinReach({{stat_rank = first, slot = "Head"}}))
-    assert(reach[1][1].swap.delta == main.result.delta)
+    assert(reach[1][1].swap.delta == main.result.equipSwap.delta)
     local tip = showTip(rows[1], link(901031))
-    assert(tip:find("|t Equip now · Major upgrade\n+8.0 pts vs Fixture gear 901001", 1, true))
+    assert(tip:find("Best you own for this slot", 1, true) and tip:find("Equip now", 1, true), tip)
     local context = rating:GetContext("Paladin", "Protection", "LEVELING", level, ui.currentOwned)
     local equipped = context.equipmentFacts.Head
     local gearView = ui:GetLevelingGearView({item_id = 901001, item_link = equipped.item_link, slotKey = "Head",
         slot = "Head", stat_rank = pool.byVariant["901001"]}, "gear")
-    assert(gearView.today:find("Upgrade in your bags · Fixture gear 901031", 1, true), gearView.today)
-    assert(gearView.evidence == "+8.0 pts over Fixture gear 901001")
+    assert(gearView.today == "You own a stronger option · Fixture gear 901031", gearView.today)
+    assert(gearView.evidence == "-8.0 pts vs Fixture gear 901031")
     assert(not tip:find("Outdoor", 1, true) and not tip:find("Dungeon", 1, true))
     return tip
 end
@@ -618,7 +703,7 @@ assert(observe() == outdoors)
 
 links[2] = link(901034)
 ui:Invalidate("ownership", "better-item"); panel:UpdateItems(); H.settle()
-assert(mark(rows[1], 901031).storage.improves and not bestSwap(rows[1], 901031) and bestSwap(rows[2], 901034))
+assert(not mark(rows[1], 901031) and bestSwap(rows[2], 901034))
 ''')
 
     def test_baganator_corner_uses_live_slots_and_clears_stale_or_disabled_items(self):
@@ -693,7 +778,7 @@ assert(not widget.animation and not widget.glow and widget.icon:IsShown() and no
 H.expectBounded(widget, button, "Baganator badge")
 H.expectBounded(widget.icon, widget, "Baganator talent icon")
 for _, edge in ipairs(widget.border) do H.expectBounded(edge, widget, "Baganator badge border") end
-assert(mark(button, 901002).result.delta == 4 and mark(button, 901002).entry.widget == widget)
+assert(bestSwap(button, 901002).delta == 4 and mark(button, 901002).entry.widget == widget)
 local initialRefreshes = refreshes
 local cached = mark(button, 901002).result
 local textureWrites, setTexture = 0, widget.icon.SetTexture
@@ -744,7 +829,7 @@ button.BGR, ui.personalBankOpen = details, true
 assert(ui:ScanBankItems())
 ui:Invalidate("ownership", "bank-scan")
 redraw(details); H.settle()
-assert(mark(button, 901004).result.delta == 6)
+assert(bestSwap(button, 901004).delta == 6)
 details = {itemLink = link(901004)}
 button.BGR = details
 redraw(details); H.settle()
@@ -813,7 +898,7 @@ H.settle()
 assert(not ui.frame)
 assert(not mark(first, 901003))
 assert(mark(second, 901004).outline and mark(second, 901004).result.delta == 2)
-assert(mark(fixed, 901005).spec.role == "dual" and mark(fixed, 901005).ownedBaseline)
+assert(mark(fixed, 901005).spec.role == "dual")
 assert(showTip(second, link(901004)):find("Best choice for Protection", 1, true))
 QuestInfoItem_OnClick(first); H.settle()
 assert(mark(second, 901004).bestChoice and not mark(second, 901004).outline and first.selected)
@@ -889,7 +974,7 @@ GetQuestLogItemLink = function(kind, index)
     return getLink(kind, index)
 end
 QuestInfo_Display(); H.settle()
-assert(not mark(first, 901006) and not mark(first, bonus).result.bis and mark(first, bonus).gain > 0)
+assert(not mark(first, 901006) and not mark(first, bonus).result.bis and mark(first, bonus).result.delta > 0)
 assert(showTip(first, bonus):find("Protection", 1, true))
 rewards:Hide(); H.settle()
 assert(not mark(first, bonus))
@@ -1128,7 +1213,7 @@ H.settle()
 assert(not mark(lootRow.Item, 901003))
 assert(showTip(lootRow.Item, link(901003)):find("You own a stronger option · Fixture gear 901002", 1, true))
 assert(not mark(desktop, 901003))
-assert(mark(controller.IconFrame, 901004).result.delta == 2 and mark(controller, 901004).ownedBaseline)
+assert(mark(controller.IconFrame, 901004).result.delta == 2)
 assert(not controller.canNeed and controller.canGreed)
 local tip = showTip(controller.IconFrame, link(901004))
 assert(tip:find("|t Upgrade\n+2.0 pts vs Fixture gear 901002", 1, true))
@@ -1147,7 +1232,7 @@ assert(not mark(controller, 901007))
 lootRow.slotIndex = 1
 slots[1] = 901004
 LootFrame.ScrollBox.initRow(lootRow); H.settle()
-assert(mark(lootRow, 901004).ownedBaseline and mark(lootRow, 901004).result.delta == 2)
+assert(mark(lootRow, 901004).result.delta == 2)
 event("LOOT_SLOT_CLEARED", 1)
 assert(not mark(lootRow, 901004))
 LootFrame:Hide(); H.settle()
@@ -1203,7 +1288,7 @@ highlights:Initialize()
 H.settle()
 for _, tile in ipairs({vendor, auction, incoming, attachment, form.OutputIcon}) do
     local recommendation = assert(mark(tile, 901004))
-    assert(recommendation.ownedBaseline and recommendation.result.delta == 2)
+    assert(recommendation.result.delta == 2)
 end
 assert(not mark(service, 901004))
 

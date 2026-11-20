@@ -1002,7 +1002,7 @@ end
 local live = {label = "Keeper", zone = "Live Dungeon", source_type = "drop"}
 local future = {label = "Future boss", zone = "Future Dungeon", source_type = "drop"}
 local bag = candidate(990051, "unknown", nil, true)
-bag.planner_swap.storage = {qualifies = true, winner = true, equipNow = true}
+bag.planner_swap = {status = "best_owned", equipNow = true, equipSwap = {delta = 5}}
 BigBiSList.DetectPlayerSpec = function() return "Protection" end
 local available = candidate(990052, "ready", live)
 local upcoming = candidate(990053, "ready", future)
@@ -1228,12 +1228,6 @@ function addon:GetLevelingRows(class, spec, level, filters)
     end
     return {{items = picks}}
 end
-local comparisonReference
-local compare = addon.GetLevelingEquipmentComparison
-function addon:GetLevelingEquipmentComparison(row, reference)
-    comparisonReference = reference
-    return compare(self, row, reference)
-end
 local function questActions()
     local actions = {}
     for _, entry in ipairs(ui.renderModel.entries) do if entry.kind == "action" then actions[#actions + 1] = entry.title end end
@@ -1260,6 +1254,7 @@ ui.gearFrame.slots.Finger1:Click(); ui.gearFrame.summary.findButton:Click(); H.s
 ui:SelectGrouping("activity"); H.settle(); click(area)
 assert(questActions() == "Turn in Report / Pick up Orders / Pick up Supplies")
 click("Turn in Report")
+local comparisonReference = ui.slotContextFrame.reference
 assert(ui.selectedItemId == rows[3].item_id and comparisonReference.inventorySlotId == 12)
 assert(comparisonReference.item_link == "item:990001:0:12")
 assert(ui.detailsWidgetPools.fields[1].fields[1].value:GetText() == "Trial source 3")

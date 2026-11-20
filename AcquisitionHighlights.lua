@@ -397,6 +397,24 @@ local function unresolved(result)
     return result and (result.status == "loading" or result.status == "unavailable")
 end
 
+local function assessmentReady(result)
+    return result and not result.buildUnavailable and not unresolved(result)
+        and not unresolved(result.placement) and not unresolved(result.forecast)
+end
+
+local function appendComparisonSignature(signature, assessment)
+    local result = assessment.result
+    local comparison = result.forecast or result
+    local placement = result.placement
+    signature[#signature + 1] = table.concat({ assessment.spec.name, tostring(comparison.delta),
+        tostring(comparison.status), tostring(comparison.bank), tostring(comparison.equipNow),
+        tostring(result.conditional or comparison.conditional), tostring(comparison.level),
+        tostring(placement.status), tostring(placement.rank), tostring(placement.total) }, "\031")
+    for _, replacement in ipairs(comparison.replacements or {}) do
+        signature[#signature + 1] = replacement.name .. "\031" .. tostring(replacement.state)
+    end
+end
+
 local function rewardItem(batch, entry)
     local id = entry.itemId
     if not entry.link then
@@ -431,11 +449,9 @@ local function assess(batch, entry, evaluation)
     if cached then return cached.assessment, cached.ready end
 
     local result = rating:CompareTooltipItem(context, candidate, false, nil, true,
-        { live = true, lookahead = quest, quantity = quest and entry.quantity or nil })
-    local ready = not result.buildUnavailable and not unresolved(result) and not unresolved(result.placement)
-        and not unresolved(result.forecast)
-    local assessment = { spec = spec, result = result, gain = result.delta or 0,
-        ownedBaseline = true, guaranteed = evaluation.guaranteed }
+        { live = true, lookahead = true, quantity = entry.quantity })
+    local ready = assessmentReady(result)
+    local assessment = { spec = spec, result = result, guaranteed = evaluation.guaranteed }
     if quest then
         local slot = result.slot or result.placement.item and result.placement.item.slot
         if context.leveling and slot and addon.IsConfirmedGearBiS then
@@ -469,6 +485,9 @@ local function rankOffers(batch, entry)
     if primary then
         primary = exactMark(primary, entry)
         primary.assessments = assessments
+        local signature = {}
+        for _, assessment in ipairs(assessments) do appendComparisonSignature(signature, assessment) end
+        entry.assessmentKey = table.concat(signature, "\030")
     end
     return primary
 end
@@ -480,23 +499,17 @@ local function rankStorage(batch, entry, checkpoint)
     for _, evaluation in ipairs(batch.contexts) do
         checkpoint()
         local context, spec = evaluation.context, evaluation.spec
-        local comparison, resolved = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid)
+        local result = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid)
+        local resolved = assessmentReady(result)
         ready = ready and resolved
-        if comparison then
-            local result = comparison.result
-            local assessment = { spec = spec, result = result, storage = comparison }
+        if result then
+            local assessment = { spec = spec, result = result }
             assessments[#assessments + 1] = assessment
             local _, futureLevel = rating:GetLevelingCue(result)
-            if resolved and (comparison.improves or futureLevel) then
-                if not primary or (not primary.storage.improves and comparison.improves) then primary = assessment end
+            if resolved and (result.equipSwap or futureLevel) then
+                if not primary or (not primary.result.equipSwap and result.equipSwap) then primary = assessment end
             end
-            signature[#signature + 1] = table.concat({ spec.name, tostring(result.delta),
-                tostring(result.conditional), tostring(result.placement.rank), tostring(result.placement.total),
-                tostring(comparison.qualifies), tostring(comparison.sidegrade),
-                tostring(comparison.unavailable), tostring(futureLevel) }, "\031")
-            for _, item in ipairs(comparison.stronger or {}) do
-                signature[#signature + 1] = item.name .. "\031" .. tostring(item.state)
-            end
+            appendComparisonSignature(signature, assessment)
         end
     end
     entry.assessments, entry.assessmentKey = assessments, table.concat(signature, "\030")
@@ -624,7 +637,7 @@ local function displayStorage(mark, r, g, b, immediate, futureLevel)
         widgets:SetIcon(badge.icon, "upgradeArrow")
         badge.icon:SetVertexColor(r, g, b)
     end
-    local cue = futureLevel or rating:ReliableGain(result)
+    local cue = futureLevel or result.equipSwap
     badge:SetSize(futureLevel and 44 or cue and 32 or 20, 16)
     badge.cue:SetShown(cue ~= nil)
     widgets:SetIcon(badge.cue, futureLevel and "clock" or "upgradeArrow")
@@ -979,15 +992,10 @@ local function refresh()
                             primary = assessment
                         end
                         bestChoice = bestChoice or assessment.bestChoice
-                        local comparison = result.forecast or result
-                        signature[#signature + 1] = table.concat({assessment.spec.name,
-                            tostring(comparison.delta), tostring(comparison.status), tostring(comparison.bank),
-                            tostring(result.conditional or comparison.conditional), tostring(comparison.level),
+                        appendComparisonSignature(signature, assessment)
+                        signature[#signature + 1] = table.concat({
                             tostring(assessment.bestChoice), tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
-                            tostring(assessment.guaranteed), tostring(entry.turnIn), tostring(result.placement.status)}, "\031")
-                        for _, replacement in ipairs(comparison.replacements or {}) do
-                            signature[#signature + 1] = replacement.name .. "\031" .. tostring(replacement.state)
-                        end
+                            tostring(assessment.guaranteed), tostring(entry.turnIn)}, "\031")
                     end
                     entry.assessmentKey = table.concat(signature, "\030")
                     local previous = offers[entry.row]

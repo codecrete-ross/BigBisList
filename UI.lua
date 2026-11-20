@@ -4736,6 +4736,8 @@ end
 
 function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, includeSummary)
     local service = BigBiSList.ForeverGearRating
+    local comparison = mode == "comparison" and self.slotComparison
+    if comparison and not comparison.statRank then return nil end
     local item, pending
     if referenceOnly then item = data.stat_rank and data.stat_rank.item
     elseif service then item, pending = service:GetRowItem(data) end
@@ -4769,19 +4771,26 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
     end
     local player = BigBiSList:GetTooltipPlayerContext()
     local ownership = self:GetRowOwnershipState(data)
-    local equipped = mode == "gear" or data.is_reference or data.context and data.context.occupancy == "equipped" or ownership == "equipped"
-    local reference = self.slotComparison and self.slotComparison.reference
-    local physical = mode == "comparison" and reference and reference.slotKey or data.slotKey
     local swap
-    local target = data.targetVerdict
-    if target then swap = target.swap
-    elseif not referenceOnly then swap = service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, physical, player, equipped) end
+    local target = not comparison and data.targetVerdict
+    if comparison then
+        swap = data.stat_swap
+        local reference = comparison.reference
+        if reference and (data.is_reference or (data.context and data.context.slotKey == reference.slotKey)) then
+            swap = {status = "equipped", definition = reference.slot and {label = reference.slot}}
+        end
+    elseif target then
+        swap = target.swap
+    elseif not referenceOnly and player and player.class == context.class then
+        local spec = { class = player.class, spec = context.spec, phase = player.phase, level = player.level }
+        swap = data.planner_swap or service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, data.slotKey, spec, mode == "gear")
+    end
     local sourceLevel, sourceType = BigBiSList:GetLevelingSourceGate(data.acquisition_display)
     local playerLevel = player and player.level or BigBiSList:GetDetectedPlayerLevel()
     local view = service:LevelingPresentation({ item = item, placement = placement, record = record, swap = swap,
-        ownership = ownership, ownedBaseline = target ~= nil, guideForecast = target ~= nil,
+        ownership = swap and swap.ownership or ownership, ownedBaseline = not comparison, guideForecast = target ~= nil,
         proficiencyLevel = target and target.proficiencyLevel, playerLevel = playerLevel, viewedLevel = level,
-        personalSpec = not target and player and player.spec ~= context.spec and player.spec,
+        activeSpec = player and player.spec == context.spec,
         explicitPreview = playerLevel and playerLevel ~= level,
         sourceLevel = sourceLevel, sourceType = sourceType, nativeRequirement = nativeRequirement })
     if target then
@@ -6030,14 +6039,14 @@ function UI:GetWithinReach(rows)
     local level = addon:GetSelectedLevelingLevel()
     local player = rating and addon:GetTooltipPlayerContext()
     if not rating or not self.currentOwned or not self.GetAcquisitionQuestProgress
-        or not player or player.class ~= selection.class or player.spec ~= selection.spec or player.level ~= level then return nil end
+        or not player or player.class ~= selection.class or player.level ~= level then return nil end
     local context = rating:GetContext(selection.class, selection.spec, "LEVELING", level, self.currentOwned)
     if not context then return nil end
     local bags, groups, seen = {}, { {}, {}, {} }, {}
     local checkpoint = rating:GetWorkCheckpoint()
     local physical = self:GetLevelingReferenceSlot()
     for _, copy in ipairs(context.ownedCopies) do
-        if copy.state == "bag" then
+        if copy.state == "bag" and player.spec == selection.spec then
             local key = copy.facts.key
             bags[key] = bags[key] or {}
             bags[key][#bags[key] + 1] = copy
@@ -6047,12 +6056,10 @@ function UI:GetWithinReach(rows)
         if checkpoint then checkpoint() end
         local facts = (row.guide_available_now or not row.guide_order or row.guide_order == 1) and row.stat_rank and row.stat_rank.item
         if facts and (bags[facts.key] or hasVerifiedLevelingRoute(row)) and not seen[facts.key] then
-            local ownership = self:GetRowOwnershipState(row)
             local best
             for _, copy in ipairs(bags[facts.key] or {}) do
-                local candidate = rating:GetTooltipItem(facts.id, copy.item_link)
-                local advised = candidate and rating:GetHeldComparison(context, candidate, copy)
-                local swap = advised and advised.equipNow and advised.result
+                local advised = rating:GetHeldComparison(context, copy)
+                local swap = advised.equipNow and advised.equipSwap
                 if swap and (not physical or physical == swap.definition.key) and (not best or swap.delta > best.swap.delta) then
                     best = { row = row, swap = swap, link = copy.item_link }
                 end
@@ -6060,7 +6067,7 @@ function UI:GetWithinReach(rows)
             if best then
                 seen[facts.key] = true
                 groups[1][#groups[1] + 1] = best
-            elseif ownership == "missing" and hasVerifiedLevelingRoute(row) then
+            elseif hasVerifiedLevelingRoute(row) then
                 local display = row.acquisition_display
                 local route, access = self:GetSelectedAcquisitionRoute(row)
                 local source = route == display.option and route.source
@@ -6071,7 +6078,7 @@ function UI:GetWithinReach(rows)
                         local state, turnIn = self:GetAcquisitionQuestState(questId)
                         nextQuest = { step = { quest_id = questId, name = source.entity_name }, state = state, turnIn = turnIn }
                     end
-                    local candidate = { facts = facts, key = facts.key, entry = { item_id = facts.id } }
+                    local candidate = { facts = facts, key = facts.key, item_link = row.item_link, entry = { item_id = facts.id } }
                     local swap = rating:GetQualifyingUpgrade(context, candidate, false, {live = true, skipPlacement = true})
                     if nextQuest and nextQuest.step.quest_id == questId and nextQuest.state == "In progress"
                         and swap then
@@ -6108,8 +6115,8 @@ function UI:AddWithinReach(model, rows, scope, prepared)
                     local row, swap, quest = item.row, item.swap, item.quest
                     local detail = quest and self:GetQuestStepText(quest) or swap.definition.label
                     if item.choiceReward then detail = (detail or row.slot) .. " · Choice reward" end
-                    self:AddListRenderEntry(model, { kind = "action", title = row.name, height = 30,
-                        detail = (detail or row.slot) .. " · " .. BigBiSList.ForeverGearRating:EstimateSwapPoints(swap.delta),
+                    if quest then detail = (detail or row.slot) .. " · " .. BigBiSList.ForeverGearRating:EstimateSwapPoints(swap.delta) end
+                    self:AddListRenderEntry(model, { kind = "action", title = row.name, height = 30, detail = detail,
                         activate = function()
                             local data = row
                             if item.link then
@@ -6131,18 +6138,18 @@ end
 function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
     local service = BigBiSList.ForeverGearRating
     local player = service and BigBiSList:GetTooltipPlayerContext()
-    if not player or player.class ~= selection.class or not player.spec or not self.currentOwned then return nil end
+    if not player or player.class ~= selection.class or not selection.spec or not self.currentOwned then return nil end
     local evaluated = math.max(player.level, level)
     local owned = self.currentOwned
-    local key = table.concat({"opportunities", scope, selection.class, selection.spec, player.spec, level, player.level,
+    local key = table.concat({"opportunities", scope, selection.class, selection.spec, player.spec or "", level, player.level,
         tostring(BigBiSList.ForeverScoring and BigBiSList.ForeverScoring.revision)}, ":")
-    local batch = self:GetCachedViewQuery(key, function() return {level = evaluated, playerLevel = player.level, spec = player.spec} end)
+    local batch = self:GetCachedViewQuery(key, function() return {level = evaluated, playerLevel = player.level, spec = selection.spec} end)
     if batch.worker and batch.worker.cancelled then batch.worker, batch.running = nil, nil end
     if batch.gains or batch.running then return batch end
     local cache = self.currentViewQueryCache
     batch.running = true
     batch.worker = service:QueueWork(3, function(checkpoint)
-            local context = service:GetContext(player.class, player.spec, evaluated == 60 and "PR" or "LEVELING", evaluated, owned)
+            local context = service:GetContext(selection.class, selection.spec, evaluated == 60 and "PR" or "LEVELING", evaluated, owned)
             local gains, unknown, seen = {}, {}, {}
             for _, row in ipairs(rows) do
                 checkpoint()
@@ -6152,8 +6159,7 @@ function UI:RequestGearOpportunities(rows, selection, level, scope, activities)
                     local item = service:GetRowItem(row)
                     local result, status
                     if not activities and evaluated == player.level then
-                        result = row.spec == player.spec and row.planner_swap or service:GetLiveLevelingSwap(item, row.item_link, owned, row.slotKey, player,
-                            self:GetRowOwnershipState(row) == "equipped")
+                        result = row.planner_swap or service:GetLiveLevelingSwap(item, row.item_link, owned, row.slotKey, context)
                         status = result and result.status
                     else
                         result, status = service:GetOwnedOpportunity(context, item, row.item_link, evaluated == player.level)
@@ -6557,14 +6563,14 @@ function UI:GetNextUpgradeActions(rows)
         local live = BigBiSList:GetAvailabilityPhaseIndex(BigBiSList:GetCurrentPhaseKey())
         for _, row in ipairs(rows) do
             local swap = row.planner_swap
-            local gain = service and service:ReliableGain(swap)
+            local equipNow = swap and swap.equipNow and row.spec and BigBiSList:DetectPlayerSpec(row.class) == row.spec
+            local gain = service and service:ReliableGain(equipNow and swap.equipSwap or swap)
             local key = row.variant_id or tostring(row.item_id)
             if gain and row.hasCurrent and not seen[key] then
-                local state = row.owned_state or self:GetRowOwnershipState(row)
                 local priority, source, reason
-                if state == "bag" and swap.storage and swap.storage.equipNow and row.spec and BigBiSList:DetectPlayerSpec(row.class) == row.spec then
+                if equipNow then
                     priority, source, reason = 1, "In your bags", "Equip now"
-                elseif state == "missing" then
+                else
                     local route, access = self:GetSelectedAcquisitionRoute(row)
                     if route and route.source_type ~= "unknown" and not isReportedOnlyAccessOption(route)
                         and (access.status == "ready" or access.status == "ready_alternate") and optionIsPhaseAvailable(route, live) then
@@ -6578,7 +6584,8 @@ function UI:GetNextUpgradeActions(rows)
                 end
                 if priority then
                     seen[key] = true
-                    actions[#actions + 1] = {data = row, reason = BigBiSList.Widgets:GearIconText("upgradeArrow", reason .. " · " .. service:EstimateSwapPoints(gain)),
+                    if not equipNow then reason = reason .. " · " .. service:EstimateSwapPoints(gain) end
+                    actions[#actions + 1] = {data = row, reason = BigBiSList.Widgets:GearIconText("upgradeArrow", reason),
                         source = source, priority = priority, gain = gain, key = key}
                 end
             end
@@ -6987,7 +6994,7 @@ local function layoutGearSlotText(button)
     local rating = data.overlay
     local view = occupied and UI:GetLevelingGearView(data, "gear")
     if view then
-        rating = view.swap and view.swap.alternative and widgets:GearAdviceText(view) or view.strength or widgets:GearAdviceText(view) or "Gear comparison unavailable"
+        rating = view.tone == "loss" and widgets:GearAdviceText(view) or view.strength or widgets:GearAdviceText(view) or "Gear comparison unavailable"
         if view.grade then tier = view.grade > 0 and {quality = view.grade} or nil end
     elseif occupied and badge then
         rating = service:Label(placement, nil, true)
@@ -8211,6 +8218,7 @@ function UI:GetDetailsEquipmentComparison(data)
         end
         return lines
     end
+    if BigBiSList.isForever then return lines end
     local contexts = BigBiSList:GetEquipmentComparisonContexts(selection.class, selection.spec, selection.phase, self.currentOwned, data.slot)
     for _, context in ipairs(contexts) do
         local position = context.slot or data.slot
@@ -8591,10 +8599,6 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         appendText(recommendationLines, detailData.level_value_text)
         appendText(recommendationLines, detailData.guide_note)
         appendText(recommendationLines, detailData.section)
-        if BigBiSList.ForeverScoring and not detailData.stat_rank then
-            local reference = self:GetLevelingReferenceSlot() and (self.slotContextFrame.reference or {})
-            appendText(recommendationLines, BigBiSList:GetLevelingEquipmentComparison(detailData, reference))
-        end
     end
     local function appendRecommendation()
         local placement = rated or (detailData and detailData.stat_rank)
@@ -8617,13 +8621,6 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             if comparison and comparison.statRank then
                 appendText(lines, "Compare with " .. self:GetComparisonReferenceLabel(comparison.reference))
                 appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, comparison.reference.slotKey))
-            elseif detailMode == "phase" then
-                appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, self:GetLevelingReferenceSlot()))
-            elseif detailMode == "leveling" then
-                local player = BigBiSList:GetTooltipPlayerContext()
-                if player and player.level == placement.level and player.spec == placement.spec and placement == detailData.stat_rank then
-                    appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, self:GetLevelingReferenceSlot()))
-                end
             end
             local effects = placement.item and placement.item.effects
             if effects and #effects > 0 then

@@ -292,7 +292,7 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
     end
     local view = rating:LevelingPresentation({ item = item, placement = placement, record = record,
         swap = result, playerLevel = context.level, sourceLevel = sourceLevel, sourceType = sourceType,
-        ownedBaseline = assessment.ownedBaseline, storage = assessment.storage, ownership = offer and (offer.owned and result.ownership or "offered"),
+        ownedBaseline = true, ownership = offer and (offer.owned and result.ownership or "offered"),
         activeSpec = spec.role == "active", spec = spec.name, chooseReward = assessment.bestChoice and spec.role == "active"
             and offer and offer.turnIn, nativeRequirement = addon:TooltipHasLevelRequirement(tooltip, item.level, tooltipData) })
     return view, summary, slot
@@ -308,8 +308,18 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
     end
     local getter = info and readable(info.getterName)
     local args = info and readable(info.getterArgs)
-    local wornSlot = getter == "GetInventoryItem" and type(args) == "table"
-        and readable(args[1]) == "player" and readable(args[2]) or nil
+    local storageId, equippedKey
+    if offer and offer.owned then
+        storageId = offer.sourceId
+    elseif getter == "GetBagItem" and type(args) == "table" then
+        local bag, index = readable(args[1]), readable(args[2])
+        if type(bag) == "number" and type(index) == "number" then storageId = bag .. ":" .. index end
+    elseif getter == "GetInventoryItem" and type(args) == "table" and readable(args[1]) == "player" then
+        local slot = readable(args[2])
+        for _, definition in ipairs(addon:GetEquipmentSlotDefinitions()) do
+            if definition.inventorySlotId == slot then equippedKey = definition.key; break end
+        end
+    end
     local snapshot = ui.GetTooltipOwnedSnapshot and ui:GetTooltipOwnedSnapshot() or ui:GetOwnedSnapshot()
     local offerAssessments = offer and offer.assessments or {}
     local inventoryPending
@@ -325,30 +335,22 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                     break
                 end
             end
-            if not assessment and not snapshot.equippedOnly and getter == "GetBagItem" and type(args) == "table" then
-                local bag, index = readable(args[1]), readable(args[2])
-                if type(bag) == "number" and type(index) == "number" then
-                    local stored = rating:GetStorageComparison(context, candidate, bag .. ":" .. index)
-                    if stored then assessment = {result = stored.result, storage = stored} end
-                end
-            end
             if not assessment and (#offerAssessments == 0 or offer.kind ~= "quest") then
+                local result
+                if storageId and not snapshot.equippedOnly then
+                    result = rating:GetStorageComparison(context, candidate, storageId, offer and offer.guid)
+                elseif equippedKey then
+                    local held = context.equipmentFacts[equippedKey]
+                    if held and held.facts and rating:SameExactItemLink(candidate.entry.item_id, candidate.item_link, held.item_link) then
+                        result = rating:GetHeldComparison(context, held)
+                    end
+                end
                 local extraCopy = EXTRA_COPY_GETTERS[getter]
                 if offer then extraCopy = not offer.owned end
-                local worn = not extraCopy and (spec.role == "active" or (offer and offer.owned))
-                local result = rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
-                    extraCopy,
-                    { live = true, lookahead = true, quantity = offer and offer.quantity })
-                if worn and not snapshot.equippedOnly and not (offer and offer.owned) then
-                    result.rival = rating:GetOwnedRival(context, candidate, result)
-                end
-                assessment = { result = result, ownedBaseline = not worn }
+                assessment = { result = result or rating:CompareTooltipItem(context, candidate, false, nil, extraCopy,
+                    { live = true, lookahead = true, quantity = offer and offer.quantity }) }
             end
             if assessment then
-                if assessment.result.status == "equipped" and spec.role == "active" and wornSlot then
-                    local definition = assessment.result.definition
-                    assessment.result.alternative = rating:GetEquippedAlternative(context, candidate.facts, definition and definition.key)
-                end
                 local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment, spec, offer)
                 block.rows[#block.rows + 1] = { spec = spec.name, result = assessment.result, assessment = assessment,
                     view = view, summary = summary, summarySlot = slot }
@@ -377,18 +379,6 @@ local function tooltipRank(result)
     end
     if placement.score_percent then label = label .. " (" .. placement.score_percent .. "% of best)" end
     return placement.projected and ("Projected · " .. label) or label
-end
-
-local function storageText(comparison)
-    if comparison.winner then return "Best you own for this slot" end
-    if comparison.stronger and #comparison.stronger > 0 then
-        local names = {}
-        for _, item in ipairs(comparison.stronger) do
-            local location = OWNED_LABELS[item.state]
-            names[#names + 1] = item.name .. (location and (" · " .. location) or "")
-        end
-        return (comparison.sidegrade and "Sidegrade to " or "Stronger option you own · ") .. table.concat(names, " + ")
-    end
 end
 
 local function renderSpecBlocks(tooltip, statBlock, matches, selection)
@@ -445,10 +435,6 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
                 tooltip:AddLine(rank, r, g, b, true)
                 if result.conditional then tooltip:AddLine("Some item effects have an unverified value", 0.86, 0.88, 0.91, true) end
                 placementColor = placementColor or result.placement.placement_color
-            end
-            if comparison.storage and not comparison.storage.qualifies and not comparison.storage.unavailable and not comparison.result.preview then
-                local recommendation = storageText(comparison.storage)
-                if recommendation then tooltip:AddLine(recommendation, 0.86, 0.88, 0.91, true) end
             end
             if comparison.bestChoice and not (row.view and row.view.action and row.view.action:find("Choose this reward", 1, true)) then
                 tooltip:AddLine("Best choice for " .. row.spec, 0.86, 0.88, 0.91, true)

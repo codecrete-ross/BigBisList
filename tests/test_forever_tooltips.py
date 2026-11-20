@@ -219,9 +219,12 @@ GetContainerItemID = function() return 900040 end
 GetContainerItemLink = function() return bagLink end
 ui:Invalidate("ownership", "sword-looted"); ui:Refresh(); H.settle()
 showNative(tip, bagLink, "GetBagItem", {0, 1})
-includes(tip, "|t Equip now · Major upgrade\n+95.0 pts vs Worn sword")
+includes(tip, "Best you own for this slot")
+includes(tip, "Equip now")
+excludes(tip, "pts vs")
 local inBags = assert(ui:GetLevelingGearView(sword, "leveling"))
-assert(inBags.today == "Equip now · Major upgrade at Level 38" and inBags.evidence == "+95.0 pts vs Worn sword", inBags.today)
+assert(inBags.today == "Best you own for this slot at Level 38" and inBags.evidence == "Equip now", inBags.today)
+assert(inBags.swap.equipSwap.delta == 95)
 ''')
 
     def test_verdict_thresholds_require_net_and_role_gains(self):
@@ -411,8 +414,9 @@ local topTier = tip.rowColors["|cffffd152Pre-Raid BiS|r  Protection"]
 assert(topTier[1] == 1 and topTier[2] == 128/255 and topTier[3] == 0)
 oneSection(tip)
 showNative(tip, "item:900013", "GetInventoryItem", {"player", 12})
-includes(tip, "Equipped · Finger 2")
-excludes(tip, "fill an empty slot")
+includes(tip, "Equipped")
+includes(tip, "Best you own for this slot")
+excludes(tip, "pts vs")
 
 addon:GetAccountDB().profile.tooltips.enabled = false
 showNative(ItemRefTooltip, "item:900003")

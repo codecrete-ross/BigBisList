@@ -79,7 +79,7 @@ end
 
 function UI:RequestPackedReach(context, filters)
     local player, owned = addon:GetTooltipPlayerContext(), self.currentOwned
-    if not player or player.class ~= context.class or player.spec ~= context.spec or player.level ~= context.level or not owned then return end
+    if not player or player.class ~= context.class or player.level ~= context.level or not owned then return end
     local current = self.packedReach
     if current and current.context == context and current.filters == filters and current.owned == owned and current.questRevision == self.questRevision
         and not (current.job and current.job.cancelled) then return current.result end
@@ -197,7 +197,7 @@ function UI:BuildPackedGuideModel(context, filters, title, query, reach)
             and self.selectedItemData.targetVerdict and self.selectedItemData.stat_identity == identity then
             local copy = {}
             for k, v in pairs(self.selectedItemData) do copy[k] = v end
-            copy.targetVerdict = rating:GetGuideTargetVerdict(copy, context, addon:GetTooltipPlayerContext(), self.currentOwned)
+            copy.targetVerdict = rating:GetGuideTargetVerdict(copy, context, addon:GetTooltipPlayerContext(), self.currentOwned, copy.exactLookup)
             found = copy
         end
         return found
@@ -386,7 +386,7 @@ local function finishActivities(query, player, context, checkpoint)
             dest.unknown = dest.unknown or part.unknown
         end
     end
-    local batch = {totals = {}, playerLevel = player and player.level, spec = player and player.spec}
+    local batch = {totals = {}, playerLevel = player and player.level, spec = context.spec}
     local kept = {}
     for _, dest in ipairs(activities.ordered) do
         if #dest.rows > 0 or dest.unknown then
@@ -455,7 +455,8 @@ local function exactLookup(context, slot, ordinal, key, search, filters, player,
         row.matched_access_option = row.acquisition_display.option
     end
     if search:find("item:", 1, true) then row.item_link = search end
-    row.targetVerdict = rating:GetGuideTargetVerdict(row, context, player, owned)
+    row.exactLookup = true
+    row.targetVerdict = rating:GetGuideTargetVerdict(row, context, player, owned, true)
     lookup._guideTarget = true
     lookup.level = row.guide_route_level or context.level
     local display = addon:GetRowAcquisitionDisplay(row, lookup, "LEVELING", true, true)
@@ -489,7 +490,7 @@ local function exactLookup(context, slot, ordinal, key, search, filters, player,
             or option and option.source_type == "world_drop" and "World drop · No known farming spot"
             or row.guide_route_level > context.level and ("Available at Level " .. row.guide_route_level)
             or row.stat_rank.status == "incompatible" and "No ranking for this spec at this level" or "No available farming route at this level"
-    elseif row.targetVerdict.kind == "hidden" then
+    elseif row.targetVerdict.kind == "hidden" and row.targetVerdict.swap.status ~= "best_owned" then
         row.lookupReason = "Gear you own is as good or better."
     end
     return row
@@ -506,7 +507,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
     local scoped = {}
     for k, v in pairs(filters) do scoped[k] = v end
     scoped._guideTarget, scoped.class, scoped.race, scoped.faction = true, context.class, context.race, context.faction
-    query.reference = not player or player.spec ~= context.spec or player.class ~= context.class
+    query.reference = not player or player.class ~= context.class
     if not query.reference then scoped._questAvailable = questAvailable end
     local search = (filters.search or ""):match("^%s*(.-)%s*$")
     query.search = search ~= "" and search or nil
@@ -617,7 +618,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
                 for index, row in ipairs(bucket.rows) do bucket.positions[row.stat_identity] = index end
                 if not activity and not query.reference and not query.search and not bucket.rows[1] then
                     local level = math.max(context.level, player.level)
-                    local personal = rating:GetContext(player.class, player.spec, level == 60 and "PR" or "LEVELING", level, owned)
+                    local personal = rating:GetContext(context.class, context.spec, level == 60 and "PR" or "LEVELING", level, owned)
                     bucket.best = rating:GetGuideOwnedNames(personal, slot, level == player.level)
                 end
             end
@@ -697,7 +698,7 @@ function UI:GetPackedFilterAvailability(selection, phase, filters)
         local player, scoped = addon:GetTooltipPlayerContext(), {}
         for key, value in pairs(filters) do scoped[key] = value end
         scoped.class, scoped.race, scoped.faction, scoped._guideTarget = guide.class, guide.race, guide.faction, true
-        if player and player.class == guide.class and player.spec == guide.spec then scoped._questAvailable = questAvailable end
+        if player and player.class == guide.class then scoped._questAvailable = questAvailable end
         local function visit(base, collect)
             local search = base.search and base.search ~= "" and base.search
             for _, slot in ipairs(addon.slotOrder) do

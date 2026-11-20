@@ -7347,16 +7347,24 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
     return rows
 end
 
-function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, className, specName, phase, filters)
-    local rating, owned = addon.ForeverGearRating, filters.ownedItems
-    if not (addon.isForever and rating and owned and phase == "PR" and addon:DetectPlayerClass() == className) then return end
-    local levelOK, level = pcall(UnitLevel, "player")
-    if not levelOK or not addon.IsReadableValue(level) or level ~= 60 then return end
+function LEVELING_HELPERS.applyForeverPlannerComparison(rating, context, row, item)
+    if not item then return end
+    local held = context.ownedFacts[item.key]
+    local swap = held and rating:GetHeldComparison(context, held)
+        or rating:GetOwnedOpportunity(context, item, row.item_link or item.variant_link, true)
+    row.class, row.spec = context.class, context.spec
+    row.planner_swap, row.owned_state = swap, held and held.state or "missing"
+    local upgrade = swap ~= nil and (swap.equipSwap ~= nil or rating:ReliableGain(swap) ~= nil)
+    row.upgrade_candidate, row.higher_rated = upgrade, upgrade
+    return upgrade
+end
+
+function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, context, filters)
+    if not context then return end
+    local rating = addon.ForeverGearRating
+    local className, specName, phase = context.class, context.spec, context.phase
     local guide = LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, 60, filters)
     if not guide then return end
-    local context = rating:GetContext(className, specName, phase, 60, owned)
-    if not context then return end
-    rows.statsPending = context.pending
     local seen = {}
     for _, row in ipairs(rows) do seen[row.slot .. ":" .. (row.variant_id or tostring(row.item_id))] = row end
     for _, slot in ipairs(SLOT_ORDER) do
@@ -7368,31 +7376,22 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, classN
                 class = className, spec = specName, item_id = item.id, slot = slot,
                 level_min = 60, level_max = 60, variant_id = item.variant_id, variant_name = item.name,
             }))
-            if row and (not held or held.state ~= "equipped") then
+            if row then
                 if not seen[key] then
                     row.phase, row.leveling, row.computed_recommendation = phase, nil, nil
                     row.category_label, row.level_label, row.leveling_category_key = nil, nil, nil
                     row.rank_group = "option"
                 end
                 local access = addon:GetRowAcquisitionDisplay(row, filters, phase, false, true)
-                if (held or access.option) and includeByFilter(row, filters, guide.phaseIndex) then
-                    local swap
-                    if held then
-                        swap = rating:GetLiveLevelingSwap(item, held.item_link, owned, nil, context, false)
-                    else
-                        swap = rating:GetOwnedOpportunity(context, item, item.variant_link, true)
-                    end
-                    if rating:ReliableGain(swap) then
-                        row.planner_swap, row.owned_state = swap, held and held.state or "missing"
-                        row.reference_upgrade = true
-                        row.stat_rank, row.stat_identity = placement, item.key
-                        row.upgrade_candidate, row.higher_rated, row.hasCurrent = true, true, true
-                        if not seen[key] then
-                            row.acquisition_display, row.matched_access_option = access, access.option
-                            row.display_rank_label, row.rank_label = rating:Label(placement, "compact"), "Reference ranking"
-                            row.display_rank_kind, row.priority = "alternative", 0
-                            rows[#rows + 1], seen[key] = row, row
-                        end
+                if (held or access.option) and includeByFilter(row, filters, guide.phaseIndex)
+                    and (row.upgrade_candidate or LEVELING_HELPERS.applyForeverPlannerComparison(rating, context, row, item)) then
+                    row.reference_upgrade, row.hasCurrent = true, true
+                    row.stat_rank, row.stat_identity = placement, item.key
+                    if not seen[key] then
+                        row.acquisition_display, row.matched_access_option = access, access.option
+                        row.display_rank_label, row.rank_label = rating:Label(placement, "compact"), "Reference ranking"
+                        row.display_rank_kind, row.priority = "alternative", 0
+                        rows[#rows + 1], seen[key] = row, row
                     end
                 end
             end
@@ -7405,7 +7404,15 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
     local index = self:GetDataIndex(selectedPhaseKey)
     local groups = {}
     local selectedIndex = self:GetAvailabilityPhaseIndex(selectedPhaseKey)
-    local upgradeBaselines = buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters and filters.ownedItems)
+    local upgradeBaselines = not self.isForever and buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)
+    local rating = self.isForever and self.ForeverGearRating
+    local personal
+    if rating and filters.ownedItems and selectedPhaseKey == "PR" and self:DetectPlayerClass() == className then
+        local ok, level = pcall(UnitLevel, "player")
+        if ok and self.IsReadableValue(level) and level == 60 then
+            personal = rating:GetContext(className, specName, selectedPhaseKey, level, filters.ownedItems)
+        end
+    end
     local useRefs = index.useRefsByClassSpec[className]
         and index.useRefsByClassSpec[className][specName]
         or {}
@@ -7455,7 +7462,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         end
     end
 
-    local rows = {}
+    local rows = {statsPending = personal and personal.pending}
     for _, group in pairs(groups) do
         table.sort(group.uses, function(a, b)
             if a.phaseIndex ~= b.phaseIndex then
@@ -7483,10 +7490,13 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
 
         if upgradeBaselines then
             annotatePlannerUpgradeGroup(group, filters, upgradeBaselines, selectedPhaseKey)
+        elseif personal then
+            LEVELING_HELPERS.applyForeverPlannerComparison(rating, personal, group, rating:GetRowItem(group))
         end
 
         local eligibleHistory = group.historical_only and filters.includeEarlier ~= false
-        if (group.priority > 0 or eligibleHistory) and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) and plannerGroupMatchesUpgradeMode(group, filters) then
+        local matchesMode = (self.isForever and not personal) or plannerGroupMatchesUpgradeMode(group, filters)
+        if (group.priority > 0 or eligibleHistory) and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) and matchesMode then
             if filters and filters.longevity == "current" and not group.hasCurrent then
                 -- excluded below
             elseif filters and filters.longevity == "future" and phaseIndex(group.lastUsefulPhase) <= selectedIndex then
@@ -7501,7 +7511,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         end
     end
 
-    LEVELING_HELPERS.addReferencePlannerUpgrades(self, rows, index, className, specName, selectedPhaseKey, filters)
+    LEVELING_HELPERS.addReferencePlannerUpgrades(self, rows, index, personal, filters)
     table.sort(rows, function(a, b)
         if a.reference_upgrade ~= b.reference_upgrade then
             return a.reference_upgrade == true
