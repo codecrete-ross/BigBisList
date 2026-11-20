@@ -1,0 +1,61 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:38.444613+00:00",
+  "flavor": "forever",
+  "item_id": 274606,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Bloodspine Staff Item Level 41 Binds when picked up Two-Hand Staff 71 - 108 Damage Speed 3.30 (27.12 damage per second) +12 Stamina +11 Intellect +12 Spirit Durability 100 / 100 Requires Level 36 Equip: Increases damage and healing done by magical spells and effects by up to 46 . Sell Price: 1 77 84 Dropped by: Deathless Marrow Drop Chance: 27.87%",
+      "dps": 27.12,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+          "stats": {
+            "spell_power": 46.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 46."
+      ],
+      "id": 274606,
+      "item_level": 41,
+      "name": "Bloodspine Staff",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 36,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 11.0,
+        "spell_power": 46.0,
+        "spirit": 12.0,
+        "stamina": 12.0
+      },
+      "weapon_max_damage": 108,
+      "weapon_min_damage": 71,
+      "weapon_speed": 3.3,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274606"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.87,
+      "entity_name": "Deathless Marrow",
+      "source_url": "https://www.wowhead.com/forever/item=274606",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "0ac4dfbb51deb923256e65d3a6b35bbe747c0207b98075736cfc82e842e5e93d",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/274606#sha256-0ac4dfbb51deb923256e65d3a6b35bbe747c0207b98075736cfc82e842e5e93d"
+}

@@ -573,6 +573,28 @@ def merge_forever_leveling_rows(base: list[dict], supplemental: list[dict]) -> l
     return [merged[key] for key in sorted(merged)]
 
 
+def forever_items(items: list[dict], item_stats: list[dict]) -> tuple[list[dict], list[dict]]:
+    from tools.forever_comparison import reviewed_guide_items, reviewed_source_items
+    from tools.project import FOREVER_CANONICAL_DIR
+
+    for name, key in (("leveling_items", "items"), ("leveling_item_stats", "item_stats")):
+        if (FOREVER_CANONICAL_DIR / (name + ".json")).is_file():
+            rows = dataset_json("forever", name)[key]
+            if key == "items":
+                items = merge_forever_leveling_rows(items, rows)
+            else:
+                item_stats = merge_forever_leveling_rows(item_stats, rows)
+    if (FOREVER_CANONICAL_DIR / "guide_item_reviews.json").is_file():
+        extra_items, extra_stats = reviewed_guide_items(dataset_json("forever", "guide_item_reviews")["items"])
+        existing = {item["id"] for item in items}
+        items = sorted([*items, *(item for item in extra_items if item["id"] not in existing)], key=lambda item: item["id"])
+        item_stats = sorted([*item_stats, *(item for item in extra_stats if item["id"] not in existing)], key=lambda item: item["id"])
+    if (FOREVER_CANONICAL_DIR / "guide_source_reviews.json").is_file():
+        source_items = reviewed_source_items(dataset_json("forever", "guide_source_reviews"), dataset_json("forever", "guide_equipment"))
+        items = merge_forever_leveling_rows(items, source_items)
+    return items, item_stats
+
+
 def build_data(flavor: str) -> dict:
     def document(name: str) -> dict:
         return dataset_json(flavor, name)
@@ -588,13 +610,7 @@ def build_data(flavor: str) -> dict:
     items = document("items")["items"]
     item_stats = document("item_stats")["item_stats"]
     if flavor == "forever":
-        from tools.project import FOREVER_CANONICAL_DIR
-        for name, key in (("leveling_items", "items"), ("leveling_item_stats", "item_stats")):
-            if (FOREVER_CANONICAL_DIR / (name + ".json")).is_file():
-                if key == "items":
-                    items = merge_forever_leveling_rows(items, document(name)[key])
-                else:
-                    item_stats = merge_forever_leveling_rows(item_stats, document(name)[key])
+        items, item_stats = forever_items(items, item_stats)
     bis_lists = document("bis_lists")["lists"]
     gems = optional_rows("gems")
     gem_sources = optional_rows("gem_sources")
@@ -606,20 +622,12 @@ def build_data(flavor: str) -> dict:
     leveling_recommendations = optional_rows("leveling_recommendations")
     availability_data = {}
     if flavor == "forever":
-        from tools.forever_comparison import compile_comparison_data, reviewed_guide_items, reviewed_source_items
+        from tools.forever_comparison import compile_comparison_data
         from tools.forever_scoring import reviewed_runtime_model
         from tools.project import FOREVER_CANONICAL_DIR
         availability_rows = (document("leveling_availability")["leveling_availability"]
                              if (FOREVER_CANONICAL_DIR / "leveling_availability.json").is_file() else [])
         rules = document("leveling_rules")
-        if (FOREVER_CANONICAL_DIR / "guide_item_reviews.json").is_file():
-            extra_items, extra_stats = reviewed_guide_items(document("guide_item_reviews")["items"])
-            existing = {item["id"] for item in items}
-            items = sorted([*items, *(item for item in extra_items if item["id"] not in existing)], key=lambda item: item["id"])
-            item_stats = sorted([*item_stats, *(item for item in extra_stats if item["id"] not in existing)], key=lambda item: item["id"])
-        if (FOREVER_CANONICAL_DIR / "guide_source_reviews.json").is_file():
-            source_items = reviewed_source_items(document("guide_source_reviews"), document("guide_equipment"))
-            items = merge_forever_leveling_rows(items, source_items)
         comparisons = compile_comparison_data(item_stats)
         availability_data = {
             "stat_rank": comparisons,

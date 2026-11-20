@@ -587,10 +587,12 @@ local function resolveLink(self, context, entry)
     if facts and facts.has_random_stats then facts = nil end
     local unavailable
     local checkRoll = facts and facts.roll_group and facts.variant_id
-    if statLink and (checkRoll or not facts or facts.stats_unavailable or not facts.level) then
+    local stats = facts and facts.stats
+    local partialShield = facts and facts.armor_type == "Shield" and stats and (not stats.armor or not stats.block_value)
+    if statLink and (checkRoll or not facts or facts.stats_unavailable or not facts.level or partialShield) then
         local native
         native, unavailable = self:ReadNative(id, key, statLink, base)
-        if native and (checkRoll or not facts or facts.stats_unavailable) and next(native.stats or {}) then
+        if native and (checkRoll or not facts or facts.stats_unavailable or partialShield) and next(native.stats or {}) then
             -- Keep the readable exact item in the same slot pool on the next
             -- refresh. A later unreadable link never erases observed facts.
             local seen = context.catalog.observed[key]
@@ -602,7 +604,7 @@ local function resolveLink(self, context, entry)
                 or not sameValues(old.races, native.races))) then
                 local observed = copy(facts)
                 for field, value in pairs(native) do observed[field] = value end
-                observed.stats = copy(facts and facts.stats)
+                observed.stats = copy(partialShield and seen and seen.stats or stats)
                 for stat, value in pairs(native.stats) do observed.stats[stat] = value end
                 observed.nativeFacts, observed.stats_unavailable = native, nil
                 observed.variant_id = (facts and facts.variant_id) or (key ~= tostring(id) and key or nil)
@@ -640,6 +642,8 @@ local function resolveLink(self, context, entry)
             facts = context.catalog.observed[key]
         elseif facts and facts.stats_unavailable then
             facts = nil
+        elseif partialShield and context.catalog.observed[key] then
+            facts = context.catalog.observed[key]
         elseif facts and native then
             facts = copy(facts)
             facts.level = native.level

@@ -169,6 +169,7 @@ jobs:
             ${{ env.WEEKLY_STATE }}/weekly.json
             ${{ env.WEEKLY_STATE }}/publish.json
             ${{ env.WEEKLY_STATE }}/released.json
+            ${{ env.WEEKLY_STATE }}/equipment.patch
             ${{ env.WEEKLY_STATE }}/*.log
           if-no-files-found: ignore
           retention-days: 30

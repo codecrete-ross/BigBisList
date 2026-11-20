@@ -15,6 +15,7 @@ from tools.project import FOREVER_CANONICAL_DIR, ROOT, load_json, write_text
 
 WOWHEAD_ROOT = "https://www.wowhead.com/forever/"
 ENTITY_TYPES = {"item", "npc", "quest", "spell", "zone", "faction", "currency", "skill", "object"}
+GUIDE_EVIDENCE_TYPES = {"equipment_facts", "equipment_routes"}
 PROVIDER_RAW_DIR = ROOT / "data" / "raw" / "forever"
 PROVIDER_HOSTS = {
     "blizzard": {"worldofwarcraft.blizzard.com"},
@@ -34,6 +35,7 @@ PROVIDER_HOSTS = {
     "hearthproof": {"hearthproof.com"},
     "howtovideogame": {"howtovideogame.com"},
     "icyveins": {"db.icy-veins.com"},
+    "libitemdb": {"edge.forgecdn.net"},
     "method": {"www.method.gg"},
     "polestar": {"polestar.guide"},
     "questiedb": {"github.com", "raw.githubusercontent.com"},
@@ -114,8 +116,10 @@ def source_provider(url: str) -> str | None:
         return None
     if parsed.netloc == "www.wowhead.com" and parsed.path.startswith("/forever/"):
         return "wowhead"
-    if (parsed.netloc == "nether.wowhead.com" and not parsed.query and not parsed.fragment
-            and re.fullmatch(r"/forever/tooltip/(?:item|quest|npc|spell)/[1-9]\d*", parsed.path)):
+    if (parsed.netloc == "nether.wowhead.com" and not parsed.query
+            and re.fullmatch(r"/forever/tooltip/(?:item|quest|npc|spell)/[1-9]\d*", parsed.path)
+            and (not parsed.fragment or (parsed.path.startswith("/forever/tooltip/item/")
+                 and re.fullmatch(r"sha256-[a-f0-9]{64}", parsed.fragment)))):
         return "wowhead"
     for provider, hosts in PROVIDER_HOSTS.items():
         if parsed.netloc in hosts:
@@ -157,7 +161,8 @@ def source_provider(url: str) -> str | None:
                         fragment_pattern = r"/sources/npc:[1-9]\d*\|group"
                     else:
                         fragment_pattern = r"/quests/[1-9]\d*"
-                    if parsed.query or (parsed.fragment and not re.fullmatch(fragment_pattern, parsed.fragment)):
+                    guide_routes = parsed.fragment == "gear-guide" and parsed.path.endswith(("/loot.json", "/vendors.json", "/quests.enUS.json"))
+                    if parsed.query or (parsed.fragment and not guide_routes and not re.fullmatch(fragment_pattern, parsed.fragment)):
                         continue
                     if parsed.fragment and parsed.path.endswith(("/quest_scan.json", "/item_hotfixes.enUS.json")):
                         continue
@@ -195,6 +200,8 @@ def source_provider(url: str) -> str | None:
                 r"/wowsims/gamedata/[0-9a-f]{40}/(?:items|patches/1\.60\.\d+\.\d+/hotfix-\d+(?:\+|%2B)\d+)/items\.txt",
                 parsed.path,
             ):
+                continue
+            if provider == "libitemdb" and (parsed.query or parsed.fragment or parsed.path != "/files/9633/029/ItemDB-ItemDB-v1.10.0.zip"):
                 continue
             if provider == "zephras" and url != ZEPHRAS_UNREVEALED:
                 continue
@@ -502,10 +509,12 @@ def check_evidence_refs(row: dict, records: dict[str, dict]) -> list[dict]:
     return resolved
 
 
-def route_leads(snapshots: dict[str, dict]) -> dict[int, list[dict]]:
+def route_leads(snapshots: dict[str, dict], *, include_guide: bool = False) -> dict[int, list[dict]]:
     leads = defaultdict(list)
     for url, snapshot in sorted(snapshots.items()):
-        if snapshot.get("page_type") == "item" and type(snapshot.get("item_id")) is int:
+        if snapshot.get("page_type") in GUIDE_EVIDENCE_TYPES and not include_guide:
+            continue
+        if snapshot.get("page_type") in {"item", "equipment_facts"} and type(snapshot.get("item_id")) is int:
             for source in snapshot.get("normalized_sources", []):
                 leads[snapshot["item_id"]].append({**source, "evidence_url": url})
         for table in snapshot.get("tables", []):
@@ -926,19 +935,23 @@ def record_attempt(url: str, error: str | None) -> None:
     record_attempts([(url, error)])
 
 
-def record_attempts(attempts: list[tuple[str, str | None]]) -> None:
+def record_attempts(attempts: list[tuple[str, str | None]], *, timestamps: dict[str, str] | None = None) -> None:
     """Commit a coordinated batch without discarding older metadata or attempts."""
     if not attempts:
         return
     path = FOREVER_CANONICAL_DIR / "retry_ledger.json"
     document = load_json(path) if path.is_file() else {"flavor": "forever", "entries": []}
     entries = {row["url"]: row for row in document["entries"]}
+    changed = False
     for url, error in attempts:
         row = entries.setdefault(url, {"url": url, "retry_after": "provider_or_build_change"})
+        at = timestamps[url] if timestamps else datetime.now(timezone.utc).isoformat(timespec="microseconds")
+        if timestamps and row.get("last_attempt_at") and datetime.fromisoformat(row["last_attempt_at"]) >= datetime.fromisoformat(at):
+            continue
         history = row.setdefault("history", [])
         if row.get("last_attempt_at") and not history:
             history.append({"at": row["last_attempt_at"], "status": row.get("status"), "error": row.get("last_error")})
-        row["last_attempt_at"] = datetime.now(timezone.utc).isoformat(timespec="microseconds")
+        row["last_attempt_at"] = at
         row["status"] = "pending" if error else "collected"
         if error:
             row["last_error"] = error
@@ -946,5 +959,7 @@ def record_attempts(attempts: list[tuple[str, str | None]]) -> None:
             row.pop("last_error", None)
         attempt = {"at": row["last_attempt_at"], "status": row["status"], "error": error}
         history.append(attempt)
-    document["entries"] = [entries[key] for key in sorted(entries)]
-    write_text(path, json.dumps(document, indent=2, sort_keys=True) + "\n")
+        changed = True
+    if changed:
+        document["entries"] = [entries[key] for key in sorted(entries)]
+        write_text(path, json.dumps(document, indent=2, sort_keys=True) + "\n")

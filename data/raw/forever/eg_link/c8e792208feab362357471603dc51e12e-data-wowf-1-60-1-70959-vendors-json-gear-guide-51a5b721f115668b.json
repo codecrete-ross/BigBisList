@@ -1,0 +1,3423 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/JIVESCORP/eg-link-output-wowf"
+    }
+  ],
+  "client_build": "1.60.1.70959",
+  "confidence": "eg_link_observation",
+  "fetched_at": "2026-11-20T05:17:11.791521+00:00",
+  "flavor": "forever",
+  "page_type": "equipment_routes",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 17192,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3960
+        },
+        "itemId": 17192,
+        "name": "Reinforced Targe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2148,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2617
+        },
+        "itemId": 2148,
+        "name": "Polished Scale Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2149,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3958
+        },
+        "itemId": 2149,
+        "name": "Polished Scale Boots",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2150,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2637
+        },
+        "itemId": 2150,
+        "name": "Polished Scale Bracers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2151,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2647
+        },
+        "itemId": 2151,
+        "name": "Polished Scale Gloves",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2152,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 5316
+        },
+        "itemId": 2152,
+        "name": "Polished Scale Leggings",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2153,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 5335
+        },
+        "itemId": 2153,
+        "name": "Polished Scale Vest",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2446,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 5564
+        },
+        "itemId": 2446,
+        "name": "Kite Shield",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4797,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3836
+        },
+        "itemId": 4797,
+        "limited": true,
+        "name": "Fiery Cloak",
+        "sources": 1,
+        "stack": 1,
+        "stockMax": 1
+      },
+      "subject_id": 226,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3107,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1647
+        },
+        "itemId": 3107,
+        "name": "Keen Throwing Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3108,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 6834
+        },
+        "itemId": 3108,
+        "name": "Heavy Throwing Dagger",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3135,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1647
+        },
+        "itemId": 3135,
+        "name": "Sharp Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3137,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 6834
+        },
+        "itemId": 3137,
+        "name": "Deadly Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2946,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 270
+        },
+        "itemId": 2946,
+        "name": "Balanced Throwing Dagger",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 791,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3107,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1647
+        },
+        "itemId": 3107,
+        "name": "Keen Throwing Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 791,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3131,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 270
+        },
+        "itemId": 3131,
+        "name": "Weighted Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 791,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3135,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1647
+        },
+        "itemId": 3135,
+        "name": "Sharp Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 791,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2520,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 22166
+        },
+        "itemId": 2520,
+        "name": "Broadsword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2521,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 27807
+        },
+        "itemId": 2521,
+        "name": "Flamberge",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2522,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 20294
+        },
+        "itemId": 2522,
+        "name": "Crescent Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2523,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 25457
+        },
+        "itemId": 2523,
+        "name": "Bullova",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2524,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 17273
+        },
+        "itemId": 2524,
+        "name": "Truncheon",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2525,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 23841
+        },
+        "itemId": 2525,
+        "name": "War Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2526,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 17403
+        },
+        "itemId": 2526,
+        "name": "Main Gauche",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2527,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 26421
+        },
+        "itemId": 2527,
+        "name": "Battle Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1146,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2901,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 9
+        },
+        "itemId": 2901,
+        "name": "Mining Pick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1286,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 5956,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 17
+        },
+        "itemId": 5956,
+        "name": "Blacksmith Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1286,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7005,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 9
+        },
+        "itemId": 7005,
+        "name": "Skinning Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1286,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1196,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1993
+        },
+        "itemId": 1196,
+        "name": "Tabar",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1197,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2400
+        },
+        "itemId": 1197,
+        "name": "Giant Mace",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1198,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2409
+        },
+        "itemId": 1198,
+        "name": "Claymore",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15810,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 9131
+        },
+        "itemId": 15810,
+        "name": "Short Spear",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15811,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 24419
+        },
+        "itemId": 15811,
+        "name": "Heavy Spear",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2024,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 5471
+        },
+        "itemId": 2024,
+        "name": "Espadon",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2025,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 4774
+        },
+        "itemId": 2025,
+        "name": "Bearded Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2026,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 5658
+        },
+        "itemId": 2026,
+        "name": "Rock Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2027,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3434
+        },
+        "itemId": 2027,
+        "name": "Scimitar",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2028,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 4559
+        },
+        "itemId": 2028,
+        "name": "Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2029,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3978
+        },
+        "itemId": 2029,
+        "name": "Cleaver",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2030,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 4990
+        },
+        "itemId": 2030,
+        "name": "Gnarled Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2207,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2151
+        },
+        "itemId": 2207,
+        "name": "Jambiya",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2208,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3285
+        },
+        "itemId": 2208,
+        "name": "Poniard",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2209,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 6404
+        },
+        "itemId": 2209,
+        "name": "Kris",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 851,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1821
+        },
+        "itemId": 851,
+        "name": "Cutlass",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 852,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1566
+        },
+        "itemId": 852,
+        "name": "Mace",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 853,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2169
+        },
+        "itemId": 853,
+        "name": "Hatchet",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 854,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 2720
+        },
+        "itemId": 854,
+        "name": "Quarter Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 922,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 10835
+        },
+        "itemId": 922,
+        "name": "Dacian Falx",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 923,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 7869
+        },
+        "itemId": 923,
+        "name": "Longsword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 924,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 9875
+        },
+        "itemId": 924,
+        "name": "Maul",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 925,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 7018
+        },
+        "itemId": 925,
+        "name": "Flail",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 926,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 8806
+        },
+        "itemId": 926,
+        "name": "Battle Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 927,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 6258
+        },
+        "itemId": 927,
+        "name": "Double Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 928,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 8874
+        },
+        "itemId": 928,
+        "name": "Long Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1289,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 200,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 2270
+        },
+        "itemId": 200,
+        "name": "Thick Cloth Vest",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 201,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 2278
+        },
+        "itemId": 201,
+        "name": "Thick Cloth Pants",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 202,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1714
+        },
+        "itemId": 202,
+        "name": "Thick Cloth Shoes",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 203,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1147
+        },
+        "itemId": 203,
+        "name": "Thick Cloth Gloves",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3589,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 576
+        },
+        "itemId": 3589,
+        "name": "Heavy Weave Belt",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3590,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 578
+        },
+        "itemId": 3590,
+        "name": "Heavy Weave Bracers",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3597,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1081
+        },
+        "itemId": 3597,
+        "name": "Thick Cloth Belt",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3598,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1085
+        },
+        "itemId": 3598,
+        "name": "Thick Cloth Bracers",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3602,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 145
+        },
+        "itemId": 3602,
+        "name": "Knitted Belt",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3603,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 145
+        },
+        "itemId": 3603,
+        "name": "Knitted Bracers",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 792,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 207
+        },
+        "itemId": 792,
+        "name": "Knitted Sandals",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 793,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 139
+        },
+        "itemId": 793,
+        "name": "Knitted Gloves",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 794,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 279
+        },
+        "itemId": 794,
+        "name": "Knitted Pants",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 795,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 280
+        },
+        "itemId": 795,
+        "name": "Knitted Tunic",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 837,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1124
+        },
+        "itemId": 837,
+        "name": "Heavy Weave Armor",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 838,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1128
+        },
+        "itemId": 838,
+        "name": "Heavy Weave Pants",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 839,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 566
+        },
+        "itemId": 839,
+        "name": "Heavy Weave Gloves",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 840,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 853
+        },
+        "itemId": 840,
+        "name": "Heavy Weave Shoes",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 1291,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 11304,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 4375
+        },
+        "itemId": 11304,
+        "limited": true,
+        "name": "Fine Longbow",
+        "sources": 1,
+        "stack": 1,
+        "stockMax": 1
+      },
+      "subject_id": 1668,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2507,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 1576
+        },
+        "itemId": 2507,
+        "name": "Laminated Recurve Bow",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1668,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3026,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "6": 3431
+        },
+        "itemId": 3026,
+        "name": "Reinforced Bow",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 1668,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2901,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 2901,
+        "name": "Mining Pick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2118,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 5956,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 18
+        },
+        "itemId": 5956,
+        "name": "Blacksmith Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2118,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7005,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 7005,
+        "name": "Skinning Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2118,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2946,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 299
+        },
+        "itemId": 2946,
+        "name": "Balanced Throwing Dagger",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2134,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2947,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 42
+        },
+        "itemId": 2947,
+        "name": "Small Throwing Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2134,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3111,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 42
+        },
+        "itemId": 3111,
+        "name": "Crude Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2134,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3131,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 299
+        },
+        "itemId": 3131,
+        "name": "Weighted Throwing Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2134,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2520,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 24628
+        },
+        "itemId": 2520,
+        "name": "Broadsword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2521,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 30896
+        },
+        "itemId": 2521,
+        "name": "Flamberge",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2522,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 22548
+        },
+        "itemId": 2522,
+        "name": "Crescent Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2523,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 28285
+        },
+        "itemId": 2523,
+        "name": "Bullova",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2524,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 19192
+        },
+        "itemId": 2524,
+        "name": "Truncheon",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2525,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 26489
+        },
+        "itemId": 2525,
+        "name": "War Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2526,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 19336
+        },
+        "itemId": 2526,
+        "name": "Main Gauche",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2527,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 29356
+        },
+        "itemId": 2527,
+        "name": "Battle Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2482,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2520,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 24628
+        },
+        "itemId": 2520,
+        "name": "Broadsword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2521,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 30896
+        },
+        "itemId": 2521,
+        "name": "Flamberge",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2526,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 19336
+        },
+        "itemId": 2526,
+        "name": "Main Gauche",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2528,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 51836
+        },
+        "itemId": 2528,
+        "name": "Falchion",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2529,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 65031
+        },
+        "itemId": 2529,
+        "name": "Zweihander",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2534,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "4": 45431
+        },
+        "itemId": 2534,
+        "name": "Rondel",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 2843,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2509,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 414,
+          "6": 373
+        },
+        "itemId": 2509,
+        "name": "Ornate Blunderbuss",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 3322,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2511,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1324,
+          "6": 1192
+        },
+        "itemId": 2511,
+        "name": "Hunter's Boomstick",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 3322,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3023,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 3771,
+          "6": 3394
+        },
+        "itemId": 3023,
+        "name": "Large Bore Blunderbuss",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 3322,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3024,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 7098,
+          "6": 6389
+        },
+        "itemId": 3024,
+        "name": "BKP 2700 \"Enforcer\"",
+        "sources": 2,
+        "stack": 1
+      },
+      "subject_id": 3322,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2901,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 2901,
+        "name": "Mining Pick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 4587,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 5956,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 18
+        },
+        "itemId": 5956,
+        "name": "Blacksmith Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 4587,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272399,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 100,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272399,
+        "name": "Stormseeker's Girdle",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272402,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 100,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272402,
+        "name": "Prophet's Waistcord",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272406,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272406,
+        "name": "Channeler's Ring",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272407,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272407,
+        "name": "Blessed Band of Light",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272408,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272408,
+        "name": "Cutthroat's Signet",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272409,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272409,
+        "name": "Ring of Awareness",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272410,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 100,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272410,
+        "name": "Windseeker's Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272411,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272411,
+        "name": "Arcanoweave Cloak",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272413,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272413,
+        "name": "Drape of Recovery",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272414,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272414,
+        "name": "Howler's Furs",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272415,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 75,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272415,
+        "name": "Stalwart Cloak",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272427,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272427,
+        "name": "Howling Idol",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272428,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272428,
+        "name": "Enraged Idol",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272429,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272429,
+        "name": "Idol of Synthesis",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272430,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272430,
+        "name": "Swarming Idol",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272431,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272431,
+        "name": "Tidal Totem",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272432,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272432,
+        "name": "Totem of the Storm",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272433,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272433,
+        "name": "Burning Totem",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272434,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272434,
+        "name": "Sentinel's Libram",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272435,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272435,
+        "name": "Libram of Law",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272436,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 50,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272436,
+        "name": "Libram of Economy",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272437,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 125,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272437,
+        "name": "Adaptive Combat Assistant",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272438,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 125,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272438,
+        "name": "Weakness Analyzer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272439,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 125,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272439,
+        "name": "Serenity Field",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 272440,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costItems": [
+          {
+            "amount": 125,
+            "currencyId": 3469,
+            "name": "Tarnished Undermine Real"
+          }
+        ],
+        "itemId": 272440,
+        "name": "Defender's Grip Stabilizer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2117,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 36
+        },
+        "itemId": 2117,
+        "name": "Thin Cloth Shoes",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2119,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 24
+        },
+        "itemId": 2119,
+        "name": "Thin Cloth Gloves",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2120,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 50
+        },
+        "itemId": 2120,
+        "name": "Thin Cloth Pants",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2121,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 50
+        },
+        "itemId": 2121,
+        "name": "Thin Cloth Armor",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2122,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 32
+        },
+        "itemId": 2122,
+        "name": "Cracked Leather Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2123,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 48
+        },
+        "itemId": 2123,
+        "name": "Cracked Leather Boots",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2124,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 32
+        },
+        "itemId": 2124,
+        "name": "Cracked Leather Bracers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2125,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 32
+        },
+        "itemId": 2125,
+        "name": "Cracked Leather Gloves",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2126,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 59
+        },
+        "itemId": 2126,
+        "name": "Cracked Leather Pants",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2127,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 60
+        },
+        "itemId": 2127,
+        "name": "Cracked Leather Vest",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3599,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 24
+        },
+        "itemId": 3599,
+        "name": "Thin Cloth Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3600,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 24
+        },
+        "itemId": 3600,
+        "name": "Thin Cloth Bracers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251365,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2901,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 2901,
+        "name": "Mining Pick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251913,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 5956,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 18
+        },
+        "itemId": 5956,
+        "name": "Blacksmith Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251913,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 17184,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 34
+        },
+        "itemId": 17184,
+        "name": "Small Shield",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2129,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 77
+        },
+        "itemId": 2129,
+        "name": "Large Round Shield",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2379,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 75
+        },
+        "itemId": 2379,
+        "name": "Tarnished Chain Vest",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2380,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 37
+        },
+        "itemId": 2380,
+        "name": "Tarnished Chain Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2381,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 75
+        },
+        "itemId": 2381,
+        "name": "Tarnished Chain Leggings",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2383,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 57
+        },
+        "itemId": 2383,
+        "name": "Tarnished Chain Boots",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2384,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 37
+        },
+        "itemId": 2384,
+        "name": "Tarnished Chain Bracers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2385,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 37
+        },
+        "itemId": 2385,
+        "name": "Tarnished Chain Gloves",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251965,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7005,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 7005,
+        "name": "Skinning Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 251993,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2901,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 2901,
+        "name": "Mining Pick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 254360,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 5956,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 18
+        },
+        "itemId": 5956,
+        "name": "Blacksmith Hammer",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 254360,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7005,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 10
+        },
+        "itemId": 7005,
+        "name": "Skinning Knife",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 254360,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1194,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 104
+        },
+        "itemId": 1194,
+        "name": "Bastard Sword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2130,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 54
+        },
+        "itemId": 2130,
+        "name": "Club",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2131,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 54
+        },
+        "itemId": 2131,
+        "name": "Shortsword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2132,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 102
+        },
+        "itemId": 2132,
+        "name": "Short Staff",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2134,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 82
+        },
+        "itemId": 2134,
+        "name": "Hand Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2139,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 57
+        },
+        "itemId": 2139,
+        "name": "Dirk",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2479,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 107
+        },
+        "itemId": 2479,
+        "name": "Broad Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2480,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 72
+        },
+        "itemId": 2480,
+        "name": "Large Club",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2488,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 536
+        },
+        "itemId": 2488,
+        "name": "Gladius",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2489,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 342
+        },
+        "itemId": 2489,
+        "name": "Two-handed Sword",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2490,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 540
+        },
+        "itemId": 2490,
+        "name": "Tomahawk",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2491,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 484
+        },
+        "itemId": 2491,
+        "name": "Large Axe",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2492,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 284
+        },
+        "itemId": 2492,
+        "name": "Cudgel",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2493,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 701
+        },
+        "itemId": 2493,
+        "name": "Wooden Mallet",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2494,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 401
+        },
+        "itemId": 2494,
+        "name": "Stiletto",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2495,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 504
+        },
+        "itemId": 2495,
+        "name": "Walking Stick",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2506,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 285
+        },
+        "itemId": 2506,
+        "name": "Hornwood Recurve Bow",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2507,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 1751
+        },
+        "itemId": 2507,
+        "name": "Laminated Recurve Bow",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 257421,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277086,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 860
+        },
+        "itemId": 277086,
+        "name": "Zephrali Harness",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277087,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 435
+        },
+        "itemId": 277087,
+        "name": "Zephrali Bracers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277088,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 437
+        },
+        "itemId": 277088,
+        "name": "Zephrali Gloves",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277089,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 438
+        },
+        "itemId": 277089,
+        "name": "Zephrali Belt",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277090,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 873
+        },
+        "itemId": 277090,
+        "name": "Zephrali Trousers",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277091,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 659
+        },
+        "itemId": 277091,
+        "name": "Zephrali Boots",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277092,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 880
+        },
+        "itemId": 277092,
+        "name": "Zephrali Jerkin",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277093,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 445
+        },
+        "itemId": 277093,
+        "name": "Zephrali Armguards",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277094,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 458
+        },
+        "itemId": 277094,
+        "name": "Zephrali Mitts",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277095,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 460
+        },
+        "itemId": 277095,
+        "name": "Zephrali Strap",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277096,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 916
+        },
+        "itemId": 277096,
+        "name": "Zephrali Pants",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277097,
+      "object_type": "item",
+      "relation": "sells",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide",
+      "stock": {
+        "costs": {
+          "5": 691
+        },
+        "itemId": 277097,
+        "name": "Zephrali Footwraps",
+        "sources": 1,
+        "stack": 1
+      },
+      "subject_id": 271483,
+      "subject_type": "npc"
+    }
+  ],
+  "source_content_digest": "2b5c9972bf12782562756412f00fca613f33a94d786938ebfa5d0b05d1a2313a",
+  "targets": "8788d8551820c60b94b7b599edae83c5d2bcc1d0dcd299f9d24d997f4b7f6f2d",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/30c3bb9c8e792208feab362357471603dc51e12e/data/wowf/1.60.1.70959/vendors.json#gear-guide"
+}

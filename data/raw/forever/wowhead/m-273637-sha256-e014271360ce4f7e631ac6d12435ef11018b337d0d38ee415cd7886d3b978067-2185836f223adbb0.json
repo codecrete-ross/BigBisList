@@ -1,0 +1,59 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:33.199022+00:00",
+  "flavor": "forever",
+  "item_id": 273637,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Blade of Silverlaine Item Level 26 Binds when picked up Main Hand Sword 17 - 33 Damage Speed 2.30 (10.87 damage per second) +6 Shadow Resistance Durability 80 / 80 Requires Level 21 Equip: Increases damage and healing done by magical spells and effects by up to 28 . Sell Price: 37 72 Dropped by: Baron Silverlaine Drop Chance: 31.92%",
+      "dps": 10.87,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+          "stats": {
+            "spell_power": 28.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+      ],
+      "id": 273637,
+      "item_level": 26,
+      "name": "Blade of Silverlaine",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 21,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "shadow_resistance": 6.0,
+        "spell_power": 28.0
+      },
+      "weapon_max_damage": 33,
+      "weapon_min_damage": 17,
+      "weapon_speed": 2.3,
+      "weapon_subtype": "Sword",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=273637"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.92,
+      "entity_name": "Baron Silverlaine",
+      "source_url": "https://www.wowhead.com/forever/item=273637",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "e014271360ce4f7e631ac6d12435ef11018b337d0d38ee415cd7886d3b978067",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/273637#sha256-e014271360ce4f7e631ac6d12435ef11018b337d0d38ee415cd7886d3b978067"
+}

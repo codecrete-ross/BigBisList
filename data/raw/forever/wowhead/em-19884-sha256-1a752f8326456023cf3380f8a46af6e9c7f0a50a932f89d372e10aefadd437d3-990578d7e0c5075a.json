@@ -1,0 +1,77 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:06.004664+00:00",
+  "flavor": "forever",
+  "item_id": 19884,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Jin'do's Judgement Item Level 66 Binds when picked up Two-Hand Staff 122 - 184 Damage Speed 3.30 (46.36 damage per second) +10 Stamina +10 Intellect Restores + 14 mana per 5 sec. Durability 120 / 120 Requires Level 60 Equip: Improves your chance to hit by 2.0%. Equip: Increases damage and healing done by magical spells and effects by up to 94 . Sell Price: 10 79 9 Dropped by: Jin'do the Hexxer Drop Chance: 14.50%",
+      "dps": 46.36,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+          "stats": {
+            "hit_percent": 2.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 94.",
+          "stats": {
+            "spell_power": 94.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Restores +14 mana per 5 sec.",
+          "stats": {
+            "mp5": 14
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to hit by 2.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 94."
+      ],
+      "id": 19884,
+      "item_level": 66,
+      "name": "Jin'do's Judgement",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "epic",
+      "required_level": 60,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "hit_percent": 2.0,
+        "intellect": 10.0,
+        "mp5": 14.0,
+        "spell_power": 94.0,
+        "stamina": 10.0
+      },
+      "weapon_max_damage": 184,
+      "weapon_min_damage": 122,
+      "weapon_speed": 3.3,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=19884"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.5,
+      "entity_name": "Jin'do the Hexxer",
+      "source_url": "https://www.wowhead.com/forever/item=19884",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "1a752f8326456023cf3380f8a46af6e9c7f0a50a932f89d372e10aefadd437d3",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/19884#sha256-1a752f8326456023cf3380f8a46af6e9c7f0a50a932f89d372e10aefadd437d3"
+}

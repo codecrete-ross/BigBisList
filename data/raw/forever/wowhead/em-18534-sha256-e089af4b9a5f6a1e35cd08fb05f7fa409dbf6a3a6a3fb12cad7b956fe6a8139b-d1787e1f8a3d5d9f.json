@@ -1,0 +1,69 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:04.499572+00:00",
+  "flavor": "forever",
+  "item_id": 18534,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Rod of the Ogre Magi Item Level 63 Binds when picked up Two-Hand Staff 86 - 130 Damage Speed 2.70 (40.00 damage per second) +14 Stamina +20 Intellect +11 Spirit Durability 100 / 100 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 72 . Sell Price: 7 19 78 Dropped by: Mizzle the Crafty",
+      "dps": 40.0,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+          "stats": {
+            "crit_percent": 1.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 72.",
+          "stats": {
+            "spell_power": 72.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+      ],
+      "id": 18534,
+      "item_level": 63,
+      "name": "Rod of the Ogre Magi",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 58,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "crit_percent": 1.0,
+        "intellect": 20.0,
+        "spell_power": 72.0,
+        "spirit": 11.0,
+        "stamina": 14.0
+      },
+      "weapon_max_damage": 130,
+      "weapon_min_damage": 86,
+      "weapon_speed": 2.7,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=18534"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Mizzle the Crafty",
+      "source_url": "https://www.wowhead.com/forever/item=18534",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "e089af4b9a5f6a1e35cd08fb05f7fa409dbf6a3a6a3fb12cad7b956fe6a8139b",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/18534#sha256-e089af4b9a5f6a1e35cd08fb05f7fa409dbf6a3a6a3fb12cad7b956fe6a8139b"
+}

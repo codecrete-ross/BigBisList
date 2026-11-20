@@ -15,7 +15,7 @@ import re
 from urllib.parse import unquote, urlsplit
 
 from tools.forever import check_evidence_refs, digest, has_review, valid_source, validate_route_review
-from tools.forever_sources import evidence_ref, route_leads, source_provider
+from tools.forever_sources import GUIDE_EVIDENCE_TYPES, evidence_ref, route_leads, source_provider
 from tools.recommend_leveling import rules_allow_equipment, slot_matches
 
 
@@ -467,7 +467,8 @@ def build_inventory(snapshots: dict, document: dict, rules: dict, records: dict)
         except (KeyError, TypeError, ValueError) as exc:
             issues.append({"source_url": review.get("source_url"), "reason": str(exc)})
     candidate_rows = [candidates[key] for key in sorted(candidates)]
-    acquisition_digest = digest({key:row["content_digest"] for key,row in sorted(records.items())})
+    acquisition_digest = digest({key: row["content_digest"] for key, row in sorted(records.items())
+                                 if snapshots.get(row["source_url"], {}).get("page_type") not in GUIDE_EVIDENCE_TYPES})
     signature = digest({"version": INVENTORY_VERSION, "build": document.get("client_build"),
                         "candidates": candidate_rows, "sources": source_reviews, "acquisition_evidence":acquisition_digest,
                         "profession_rules":document.get("profession_rules", [])})

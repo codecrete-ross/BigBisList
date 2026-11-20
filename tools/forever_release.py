@@ -14,6 +14,8 @@ from tools.project import ROOT
 VERSION = re.compile(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)")
 CONFIG_VERSION = re.compile(r'^([ \t]*version[ \t]*=[ \t]*")(\d+\.\d+\.\d+)("[ \t]*\r?$)', re.M)
 PAYLOAD = "DataForever.lua"
+GUIDE_PAYLOAD = "GuideDataForever.lua"
+PAYLOADS = {PAYLOAD, GUIDE_PAYLOAD}
 CANONICAL = "data/canonical/forever/"
 LIVE_ACCEPTANCE = CANONICAL + "live_acceptance.json"
 DATA_PREFIXES = (CANONICAL, "data/raw/forever/", "data/raw/wowhead/forever/")
@@ -88,7 +90,7 @@ def verify_patch(root: Path, before: str, after: str, previous: str, version: st
     if not is_ancestor(root, before, after) or version != patch_version(previous):
         raise ValueError("A Forever data patch must extend its base by one patch version")
     changes = changed_paths(root, before, after)
-    forbidden = changes - METADATA - {PAYLOAD}
+    forbidden = changes - METADATA - PAYLOADS
     forbidden = sorted(path for path in forbidden if not allowed_data(path))
     if forbidden:
         raise ValueError(f"Changes outside the Forever data release scope: {', '.join(forbidden[:5])}")
@@ -137,7 +139,7 @@ def baseline_acceptance(tag: str, *, root: Path = ROOT, revision: str = "HEAD") 
         if rules["review"]["client_build"] != document["client_build"]:
             raise ValueError("The reviewed client build requires a fresh live baseline")
         paths = forever.release_manifest_files(blob(root, baseline, forever.FOREVER_MANIFEST).decode())
-        protected = (set(paths) - {PAYLOAD, "Config.lua"}) | POLICY | {"assets", "lib", ".pkgmeta"}
+        protected = (set(paths) - (PAYLOADS | {"Config.lua"})) | POLICY | {"assets", "lib", ".pkgmeta"}
         changes = changed_paths(root, baseline, candidate, *sorted(protected))
         if changes:
             raise ValueError(f"The live-tested runtime or policy changed: {', '.join(sorted(changes)[:5])}")

@@ -1,0 +1,1446 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/JIVESCORP/eg-link-output-wowf"
+    }
+  ],
+  "client_build": "1.60.1.70959",
+  "confidence": "eg_link_observation",
+  "fetched_at": "2026-11-20T05:33:54.265794+00:00",
+  "flavor": "forever",
+  "page_type": "equipment_routes",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1512,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1162|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1162,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1499,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1163|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1163,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1509,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1163|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1163,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 6537,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1164|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1164,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1811,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1180|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1180,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15248,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1180|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1180,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1815,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1181|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1181,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2974,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1197|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1197,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3373,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1380|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1380,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1418,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1535",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1535,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1411,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1536|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1536,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1433,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1537|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1537,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2212,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1537|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1537,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2642,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1537|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1537,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2958,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1537|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1537,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1411,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1537|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1537,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2642,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1544",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1544,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3370,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1544",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1544,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1420,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1544|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1544,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3327,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1544|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1544,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1417,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1545",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1545,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3325,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1545",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1545,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3041,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:1754|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 1754,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1431,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 9743,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1411,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1419,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1429,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4689,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7351,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250282|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250282,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1512,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250283|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250283,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2648,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:250283|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 250283,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15260,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0588,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:255769|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 255769,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3810,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.25,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:255772|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 255772,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3778,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:255772|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 255772,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4054,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:255774|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 255774,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3803,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:256798|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 256798,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3817,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:256798|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 256798,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3787,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:256952|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 256952,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 6416,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:257926|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 257926,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15243,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258792|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258792,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3783,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.25,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258797|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258797,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4731,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.25,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258797|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258797,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3782,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258799|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258799,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7443,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258799|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258799,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7492,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0909,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258799|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258799,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3782,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258897|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258897,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274599,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:258905|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 258905,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1988,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.125,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:259987|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 259987,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274603,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260042|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260042,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274605,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260042|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260042,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274606,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260202|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260202,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274607,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260202|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260202,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 271718,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260243|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260243,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274608,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 2,
+        "quantity": 2
+      },
+      "observed_channel": "npc:260243|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260243,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3783,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.25,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:260353|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 260353,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1265,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:261710|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 261710,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3787,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0323,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:262397|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 262397,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7111,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0323,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:262397|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 262397,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7443,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0323,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:262397|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 262397,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3795,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:263196|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 263196,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4043,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:263196|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 263196,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 286999,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:263196|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 263196,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274611,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:263886|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 263886,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274615,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:263886|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 263886,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3313,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3713|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3713,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15493,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3713|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3713,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 2764,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3717|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3717,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1816,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.25,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3739|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3739,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1790,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3740|quest",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3740,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1819,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3925",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3925,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15505,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1667,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3925",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3925,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274292,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3974|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3974,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3810,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3975|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3975,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7717,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3975|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3975,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7724,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3976|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3976,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7722,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3977|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3977,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7683,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:3983|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 3983,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3796,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0833,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4287|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4287,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3799,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0833,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4287|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4287,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3783,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4290|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4290,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 1625,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4295|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4295,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7455,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.1429,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4295|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4295,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7727,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4296|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4296,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7472,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4298|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4298,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3807,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.3333,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4301|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4301,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 15929,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4303|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4303,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 19509,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4542|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4542,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274291,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:4543|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 4543,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3786,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:6426|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 6426,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 4719,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.5,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:6426|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 6426,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7712,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:6487|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 6487,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274293,
+      "object_type": "item",
+      "observation": {
+        "chance": 1.0,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:6487|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 6487,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 3210,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.2,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:6575|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 6575,
+      "subject_type": "npc"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 7484,
+      "object_type": "item",
+      "observation": {
+        "chance": 0.0323,
+        "drops": 1,
+        "quantity": 1
+      },
+      "observed_channel": "npc:687|quest|group",
+      "relation": "drops",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide",
+      "subject_id": 687,
+      "subject_type": "npc"
+    }
+  ],
+  "source_content_digest": "59446a1b447e0c8be175db441324cd5a57bf9ca5180c67b998c50d2e6c35afbd",
+  "targets": "34c3448a4c642237b6e3bf3153f8f9002d44ead365245bd6640f3c30aa9cbf9f",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/c389a874888debc41eec9b0219af65ccceebac6d/data/wowf/1.60.1.70959/loot.json#gear-guide"
+}

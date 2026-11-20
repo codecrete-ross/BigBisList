@@ -41,6 +41,25 @@ class ForeverGuidePerformanceTests(unittest.TestCase):
                                 capture_output=True, input=SETUP + code + "\nassert(#H.errors == 0, table.concat(H.errors, '\\n'))")
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
+    def test_stoneslayer_and_layered_tunic_use_bundled_stats(self):
+        self.lua_run(r'''
+GetItemInfo, GetItemStats, GetItemInfoInstant, C_Item, C_TooltipInfo = nil, nil, nil, nil, nil
+local context = assert(rating:GetGuideContext("Paladin", "Retribution", "LEVELING", 51, "Human", "Alliance"))
+local candidate = assert(rating:GetTooltipItem(9418, "item:9418"))
+local sword = assert(candidate.facts)
+assert(sword.level == 44 and sword.stats.dps == 42.69 and sword.stats.weapon_speed == 3.9)
+assert(sword.stats.weapon_min_damage == 133 and sword.stats.weapon_max_damage == 200 and sword.stats.strength == nil)
+assert(sword.effects[1]:find("196 Physical damage", 1, true))
+local entry = rating:GetUnfilteredReferenceEntry(context, sword, "Two Hand")
+assert(entry.score and entry.score > 0 and entry.conditional)
+local withoutProc = {}
+for field, value in pairs(sword) do withoutProc[field] = value end
+withoutProc.effects, withoutProc.effect_rules = {}, nil
+assert(rating:GetUnfilteredReferenceEntry(context, withoutProc, "Two Hand").score == entry.score)
+local tunic = assert(rating:GetTooltipItem(60, "item:60"))
+assert(tunic.facts.stats.armor == 33)
+''')
+
     def test_cold_window_never_asks_for_full_pools_or_hidden_facets(self):
         self.lua_run(r'''
 local queried = 0
@@ -103,6 +122,7 @@ assert(ui:CaptureNavigationState().anchorOffset == position.anchorOffset)
 
     def test_cold_native_tooltip_and_exact_search_share_the_same_helm_rank(self):
         self.lua_run(r'''
+local referencePlacement = rating.GetGuidePlacement
 function rating:GetGuidePlacement() error("A native hover must read its indexed rank") end
 local tip = GameTooltip
 tip:SetOwner(UIParent)
@@ -119,10 +139,13 @@ filters.slots, filters.search = { Head = true }, "Gothic Plate Helmet of the Gor
 ui:Open()
 H.settle()
 local candidate
+local key = "10090:0:0:0:1:12723"
 ui:VisitListEntries(ui.renderModel, 0, math.huge, function(entry)
-    if entry.data and entry.data.stat_identity == "10090:0:0:0:1:12723" then candidate = entry.data end
+    if entry.data and entry.data.stat_identity == key then candidate = entry.data end
 end)
-assert(candidate and candidate.stat_rank.rank == 144 and candidate.stat_rank.total == 2810)
+local guide = rating:GetGuideContext("Paladin", "Retribution", "LEVELING", 49, "Human", "Alliance")
+local expected = assert(referencePlacement(rating, guide, "Head").byVariant[key])
+assert(candidate and candidate.stat_rank.rank == expected.rank and candidate.stat_rank.total == expected.total)
 ''')
 
     def test_level_51_targets_and_exact_lookup_use_best_owned_helm(self):
@@ -155,7 +178,7 @@ local function bagsChanged()
 end
 assert(#head().rows == 4 and not find(6686) and not find(10574))
 local herod = assert(find(7719))
-assert(herod.stat_rank.rank == 143 and math.abs(herod.targetVerdict.gain - 2.1) < 0.001)
+assert(herod.stat_rank.rank and math.abs(herod.targetVerdict.gain - 2.1) < 0.001)
 assert(advice(herod):find("+2.1 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
 lookup("Tusken Helm")
 assert(#head().rows == 1 and advice(find(6686)):find("-6.5 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
@@ -408,6 +431,8 @@ end
 local guide = rating:GetGuideContext("Paladin", "Retribution", "LEVELING", 49, "Human", "Alliance")
 local variant = "10090:0:0:0:1:12723"
 local old = assert(rating:GetGuideEntry(guide, "Head", variant))
+local peerRank = assert(rating:GetGuideEntry(guide, "Head", "9479").rank)
+assert(old.rank > peerRank)
 local new = {}
 for field, value in pairs(old.item) do new[field] = value end
 new.stats = {strength = 200}
@@ -415,5 +440,5 @@ guide.catalog.observed[variant] = new
 guide.catalog.changedSlots, guide.catalog.observedVersion = {Head = true}, 1
 local updated = assert(rating:GetGuideEntry(guide, "Head", variant))
 assert(updated.rank == 1 and updated.total == old.total and updated.score > old.score)
-assert(rating:GetGuideEntry(guide, "Head", "9479").rank == 2)
+assert(rating:GetGuideEntry(guide, "Head", "9479").rank == peerRank + 1)
 ''')

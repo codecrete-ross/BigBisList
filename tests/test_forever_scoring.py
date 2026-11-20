@@ -221,13 +221,15 @@ assert(label(1)=="Highest known score at Level 49" and label(3)=="Stats unavaila
 
     def test_reference_catalog_requires_consistent_equipment_facts(self):
         tooltip = {"id": 100, "name": "Charm", "slot": "Trinket", "required_level": 20,
-                   "stats": {"stamina": 8}, "parse_confidence": "tooltip", "use_effects": ["Use: A burst of light."]}
+                   "stats": {"stamina": 8, "intellect": 4}, "parse_confidence": "tooltip", "use_effects": ["Use: A burst of light."]}
         observations = {}
-        for url, item in (("one", tooltip), ("two", {**tooltip, "stats": {"stamina": 9}})):
+        for url, item in (("one", tooltip), ("two", {**tooltip, "stats": {"stamina": 9, "intellect": 4}})):
             observations[url] = {"page_type": "item", "item_id": 100, "item_kind": "equipment", "item_stats": item}
-        self.assertEqual(comparison_document(observations)["items"], [])
+        disputed = comparison_document(observations)
+        self.assertEqual(disputed["items"][0]["stats"], {"intellect": 4.0})
+        self.assertTrue(disputed["conflicts"][0]["needs_tooltip"])
         imported = comparison_document({"one": observations["one"]})["items"][0]
-        self.assertEqual(imported["stats"], {"stamina": 8.0})
+        self.assertEqual(imported["stats"], {"stamina": 8.0, "intellect": 4.0})
         self.assertEqual(imported["effects"], ["Use: A burst of light."])
         self.assertEqual(imported["evidence"]["url"], "one")
         self.assertIsNone(comparison_facts({**tooltip, "stats": {"stamina": "8"}}))
@@ -589,7 +591,7 @@ for _, case in ipairs(cases) do
 end
 ''')
 
-    def test_guide_includes_poor_starter_gear_and_compares_against_an_unindexed_equipped_shield(self):
+    def test_guide_includes_poor_starter_gear_and_completes_partial_shield_stats_from_the_client(self):
         self.lua_run(r'''
 local H = dofile("tests/lua_ui_harness.lua")
 H.load("forever")

@@ -93,7 +93,7 @@ def review_blocked(report: dict) -> bool:
                 or report.get("disappeared_item_ids") or report.get("unresolved"))
 
 
-def apply_snapshots(report: dict, state: Path, build: str) -> None:
+def apply_snapshots(report: dict, state: Path, build: str, *, equipment_only: bool = False) -> int:
     """Promote validated receipts without creating item, route, or ranking approvals."""
     from tools import forever, forever_review_carry as carry, forever_sources as sources
     from tools.project import FOREVER_CANONICAL_DIR, FOREVER_RAW_DIR, dataset_json
@@ -106,19 +106,29 @@ def apply_snapshots(report: dict, state: Path, build: str) -> None:
     rules = dataset_json("forever", "leveling_rules")
     if build != rules["review"]["client_build"]:
         raise ValueError("Integration requires the exact reviewed Forever build")
+    guide_build = dataset_json("forever", "guide_equipment")["client_build"]
+    equipment = report.get("equipment", {})
+    if equipment and (equipment["build"] != guide_build or equipment["fidelity_errors"]):
+        raise ValueError("The equipment batch needs the current Guide build and a passing fidelity audit")
     original = forever.read_snapshots(FOREVER_RAW_DIR)
     registered = forever.registered_urls()
     current = dict(original)
     pending = []
+    availability_changed = False
     for entry in report["staged_snapshots"]:
         url = entry["url"]
         address = (state / entry["file"]).resolve()
         if not address.is_relative_to(state / "snapshots"):
             raise ValueError("Staged snapshot path escaped its evidence directory")
         snapshot = load_json(address)
+        guide = snapshot.get("page_type") in sources.GUIDE_EVIDENCE_TYPES
+        if equipment_only and not guide:
+            continue
+        if guide and not equipment:
+            raise ValueError("Guide evidence requires its equipment audit receipt")
         provider = sources.source_provider(url)
         if (snapshot.get("url") != url or snapshot.get("flavor") != "forever" or not provider
-                or snapshot.get("provider", provider) != provider or snapshot.get("client_build") not in (None, build)
+                or snapshot.get("provider", provider) != provider or snapshot.get("client_build") not in (None, guide_build if guide else build)
                 or sources.content_digest(snapshot) != entry["digest"]):
             raise ValueError("Staged snapshot did not match its evidence receipt")
         location = FOREVER_RAW_DIR if sources.entity_key(url) else sources.PROVIDER_RAW_DIR / provider
@@ -127,21 +137,47 @@ def apply_snapshots(report: dict, state: Path, build: str) -> None:
         if path != entry["target"] or not release.allowed_data(path):
             raise ValueError("Staged snapshot did not match its Forever destination")
         current[url] = snapshot
+        availability_changed |= not guide
         if url not in registered:
             manifest["sources"].append({"url": url, "provider": provider, "status": "pending_live_review",
-                                        "data_family": "acquisition" if sources.entity_key(url) else "leveling_evidence"})
+                                        "data_family": "item_corpus" if snapshot.get("page_type") == "equipment_facts"
+                                        else "acquisition" if guide or sources.entity_key(url) else "leveling_evidence"})
             registered.add(url)
         pending.append((target, snapshot))
 
-    scoped = carry.scoped_reviews(reviews, original, rules)
-    updated = carry.carry_additive_catalogs(scoped, original, current)
-    if updated != reviews:
-        json_file(reviews_path, updated)
+    if availability_changed:
+        scoped = carry.scoped_reviews(reviews, original, rules)
+        updated = carry.carry_additive_catalogs(scoped, original, current)
+        if updated != reviews:
+            json_file(reviews_path, updated)
     if manifest != original_manifest:
         json_file(manifest_path, manifest)
     for target, snapshot in pending:
         target.parent.mkdir(parents=True, exist_ok=True)
         json_file(target, snapshot)
+    return len(pending)
+
+
+def prepare_equipment_patch(worktree: Path, state: Path, cache: Path, report: dict, log: Path) -> dict:
+    if release.git(worktree, "status", "--porcelain").strip():
+        raise ValueError("An equipment patch needs a clean checkout")
+    count = apply_snapshots(report, cache, report["build"], equipment_only=True)
+    if not count:
+        return {}
+    command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "import", "--flavor", "forever", log=log)
+    command(worktree, sys.executable, "-B", "-m", "tools.generate_lua", "--flavor", "forever", log=log)
+    command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "coverage", "--flavor", "forever",
+            "--family", "item_corpus", "--summary", "--strict", log=log)
+    patch = state / "equipment.patch"
+    with tempfile.TemporaryDirectory(dir=state) as directory:
+        env = {**os.environ, "GIT_INDEX_FILE": str(Path(directory) / "index")}
+        subprocess.run(["git", "read-tree", "HEAD"], cwd=worktree, env=env, check=True)
+        subprocess.run(["git", "add", "-A", "--", "."], cwd=worktree, env=env, check=True)
+        candidate = Path(directory) / patch.name
+        with candidate.open("wb") as output:
+            subprocess.run(["git", "diff", "--cached", "--binary", "HEAD"], cwd=worktree, env=env, stdout=output, check=True)
+        candidate.replace(patch)
+    return {"equipment_patch": patch.name, "equipment_snapshots": count}
 
 
 def prepare_patch(worktree: Path, state: Path, report: dict, baseline: str, previous: str, today: str, log: Path) -> dict:
@@ -152,7 +188,7 @@ def prepare_patch(worktree: Path, state: Path, report: dict, baseline: str, prev
             "--state-dir", str(state), log=log)
     command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "import", "--flavor", "forever", log=log)
     command(worktree, sys.executable, "-B", "-m", "tools.generate_lua", "--flavor", "forever", log=log)
-    if not release.git(worktree, "diff", "--name-only", "HEAD", "--", release.PAYLOAD).strip():
+    if not release.git(worktree, "diff", "--name-only", "HEAD", "--", *sorted(release.PAYLOADS)).strip():
         return {"status": "unchanged", "reason": "Generated player data is unchanged"}
 
     version = release.patch_version(previous)
@@ -201,7 +237,18 @@ def prepare(root: Path, state: Path, baseline: str, today: str, *, online: bool,
     if comparison:
         return {**summary, "status": "comparison", "comparison": report["build_comparison"]["status"]}
     if review_blocked(report):
+        equipment_patch = {}
+        if report.get("equipment") and not report["equipment"]["fidelity_errors"]:
+            # Use the checkout's paths even if this prepare call came from a
+            # different clone. Never update the source checkout.
+            try:
+                output = command(worktree, sys.executable, "-B", "-m", "tools.forever_weekly", "apply",
+                                 "--equipment-only", "--write-patch", str(state), "--state-dir", str(report_dir))
+                equipment_patch = json.loads(output)
+            except (ValueError, subprocess.CalledProcessError) as exc:
+                equipment_patch = {"equipment_error": str(exc)[:420]}
         return {**summary, "status": "blocked", "reason": "Evidence, approvals, or coverage need review",
+                **equipment_patch,
                 "review_groups": [{"fact": row["missing_fact"], "item_ids": row["item_ids"][:5]}
                                   for row in report.get("review_groups", [])[:5]]}
     if not report["staged_snapshots"]:
@@ -375,6 +422,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--baseline-tag", default="")
     parser.add_argument("--compare-build")
     parser.add_argument("--online", action="store_true")
+    parser.add_argument("--equipment-only", action="store_true", help="Apply verified Guide evidence independently of leveling approvals.")
+    parser.add_argument("--write-patch", type=Path, help=argparse.SUPPRESS)
     parser.add_argument("--date", type=date.fromisoformat)
     parser.add_argument("--commit", default="HEAD")
     parser.add_argument("--repository", default=os.environ.get("GITHUB_REPOSITORY", ""))
@@ -391,10 +440,15 @@ def main(argv: list[str] | None = None) -> int:
         state.mkdir(parents=True, exist_ok=True)
         today = (args.date or date.today()).isoformat()
         if args.action == "apply":
-            report = load_json(state / "integration.json")
-            if report.get("build_comparison") or review_blocked(report):
+            report = load_json(state / ("report.json" if args.equipment_only else "integration.json"))
+            if report.get("build_comparison") or (not args.equipment_only and review_blocked(report)):
                 raise ValueError("Only complete reviewed-build batches can be integrated")
-            apply_snapshots(report, state, report["build"])
+            if args.equipment_only and args.write_patch:
+                out = args.write_patch.resolve()
+                result = prepare_equipment_patch(ROOT, out, state, report, out / "prepare.log")
+                print(json.dumps(result, sort_keys=True))
+            else:
+                print(json.dumps({"applied": apply_snapshots(report, state, report["build"], equipment_only=args.equipment_only)}))
             return 0
         if args.action == "prepare":
             result = prepare(ROOT, state, args.baseline_tag, today, online=args.online, comparison=args.compare_build)

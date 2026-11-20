@@ -7371,7 +7371,8 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
 
         directory = args.state_dir or REFRESH_DIR
         try:
-            report = refresh_availability(online=args.online, directory=directory, comparison_build=args.compare_build)
+            report = refresh_availability(online=args.online, directory=directory, comparison_build=args.compare_build,
+                                          equipment_only=args.equipment_only, equipment_revision=args.equipment_revision)
         except (OSError, ValueError) as exc:
             parser.error(str(exc))
         print_summary(report, directory / "compare" / args.compare_build if args.compare_build else directory)
@@ -7538,9 +7539,13 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
         if args.family == "leveling":
             from tools.forever_leveling import generate
             report = generate(forever.read_snapshots(FOREVER_RAW_DIR), diagnostic=True)["coverage"]
+        elif args.family == "item_corpus":
+            from tools.forever_equipment import audit
+
+            report = audit(summary=args.summary)
         else:
             if args.family not in (None, "bis_lists"):
-                parser.error("Forever coverage covers pre-raid BiS lists and leveling")
+                parser.error("Forever coverage covers pre-raid BiS lists, leveling and the equipment corpus")
             report = forever.coverage()
         if args.summary:
             report.pop("missing", None)
@@ -7647,10 +7652,12 @@ def build_parser() -> argparse.ArgumentParser:
     sources_parser.add_argument("--write", action="store_true", help="Register the discovered URLs in the Forever manifest.")
 
     refresh_parser = subparsers.add_parser("refresh-availability", parents=[flavor_parser],
-        help="Stage a bounded refresh of Forever's leveling availability evidence.")
+        help="Stage a bounded refresh of Forever's availability and equipment evidence.")
     refresh_parser.add_argument("--online", action="store_true", help="Enable bounded public HTTP collection.")
     refresh_parser.add_argument("--compare-build", help="Stage exact evidence for this other Forever client build.")
     refresh_parser.add_argument("--state-dir", type=Path, help="Use this directory for resumable refresh artifacts.")
+    refresh_parser.add_argument("--equipment-only", action="store_true", help="Refresh the Guide equipment corpus and acquisition observations.")
+    refresh_parser.add_argument("--equipment-revision", help="Replay a pinned WoWSims Game Data revision for the Guide build.")
 
     mechanics_parser = subparsers.add_parser("collect-mechanics", parents=[flavor_parser],
         help="Stage build-pinned Forever mechanics snapshots.")

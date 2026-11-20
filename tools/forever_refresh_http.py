@@ -27,7 +27,7 @@ EVERLOOT_HOURLY_LIMIT = 30
 MAX_BODY_BYTES = 64 * 1024 * 1024
 REDIRECTS = {301, 302, 303, 307, 308}
 WINDOWS_TLS_HOSTS = {"api.github.com", "raw.githubusercontent.com", "www.raidbots.com", "storage.googleapis.com",
-                     "ahledger.com", "everloot.app", "eternadex.com", "zephras.com"}
+                     "ahledger.com", "everloot.app", "eternadex.com", "zephras.com", "nether.wowhead.com", "edge.forgecdn.net"}
 
 
 def windows_https(executable: Path, url: str, headers: dict, timeout: float) -> tuple[int, dict, bytes]:

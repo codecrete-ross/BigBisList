@@ -518,6 +518,37 @@ all 197 unresolved item lookups is retained.
 The review can consult public ForeverDB pages. Keyed API access remains
 unavailable. The current scope uses public records and existing caches.
 
+### Gear Guide equipment refresh
+
+The equipment pass uses the Guide catalog's client build. It replays saved
+tooltips, reads WoWSims equipment and Wago armor tables by pinned revision or
+build, and joins EG Link loot, quest rewards, and vendor stock by exact item
+ID. The pinned LibItemDB archive identifies its client interface only. Its DPS
+readings corroborate equipment or trigger an exact tooltip check. The Guide
+report keeps recorded acquisition leads open until their eligibility can be
+established.
+
+Use the normal refresh for weekly intake. Use the equipment pass on its own to
+recover facts while the leveling availability review is open. Omit `--online`
+to replay the responses in the state directory. `--equipment-revision` selects
+an exact WoWSims Git revision for a reproducible backfill.
+
+```powershell
+python -m tools.scrape_wowhead refresh-availability --flavor forever --equipment-only --online --state-dir build/forever-equipment
+python -m tools.forever_weekly apply --equipment-only --state-dir build/forever-equipment
+python -m tools.scrape_wowhead import --flavor forever
+python -m tools.generate_lua --flavor forever
+python -m tools.scrape_wowhead coverage --flavor forever --family item_corpus --summary --strict
+```
+
+`report.json` keeps the item and variant counts, changes since the previous
+run, sources checked for each field, and pending lookups. The strict equipment
+check verifies that accepted facts reach the runtime data. The public release
+gate also checks recommendation coverage and rebuilds the packed Guide index.
+When other coverage reviews
+block a weekly release, the verification artifact can include `equipment.patch`
+with the verified equipment changes from that run.
+
 ## Audits and deployment
 
 Use the explicit flavor on every command:

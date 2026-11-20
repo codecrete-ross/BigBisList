@@ -1,0 +1,59 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:43.569415+00:00",
+  "flavor": "forever",
+  "item_id": 275648,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Purified Gnarlybark Staff Item Level 59 Binds when picked up Two-Hand Staff 84 - 127 Damage Speed 3.10 (34.03 damage per second) +19 Spirit Durability 85 / 85 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 52 . Sell Price: 5 13 35",
+      "dps": 34.03,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+          "stats": {
+            "crit_percent": 1.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 52.",
+          "stats": {
+            "spell_power": 52.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 52."
+      ],
+      "id": 275648,
+      "item_level": 59,
+      "name": "Purified Gnarlybark Staff",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "crit_percent": 1.0,
+        "spell_power": 52.0,
+        "spirit": 19.0
+      },
+      "weapon_max_damage": 127,
+      "weapon_min_damage": 84,
+      "weapon_speed": 3.1,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=275648"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "ce357c4d32766493def8348907936447fe49f2a69f1ae8b41e693a64f53ac663",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/275648#sha256-ce357c4d32766493def8348907936447fe49f2a69f1ae8b41e693a64f53ac663"
+}

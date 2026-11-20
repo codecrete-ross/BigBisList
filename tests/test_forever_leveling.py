@@ -989,8 +989,17 @@ assert(not addon:AccessOptionMatchesCharacter(option,filters))
                    "leveling_items":{"items":list(result["items"].values())},
                    "leveling_item_stats":{"item_stats":list(result["item_stats"].values())},
                    "leveling_gear":result["leveling_gear"], "leveling_recommendations":result["leveling_recommendations"]}
+        from tools.forever_comparison import VERSION, compile_comparison_data
+
+        catalog = dict(dataset_json("forever", "guide_equipment"), items=[], templates={}, groups=[])
+
+        def compile_fixture(stats):
+            return compile_comparison_data([row for row in stats if 71 <= row["id"] <= 75],
+                                           data={"version": VERSION, "items": []}, catalog=catalog)
+
         actual = generate_lua.dataset_json
-        with patch.object(generate_lua,"dataset_json",side_effect=lambda flavor,name: overlay[name] if name in overlay else actual(flavor,name)):
+        with (patch.object(generate_lua, "dataset_json", side_effect=lambda flavor, name: overlay[name] if name in overlay else actual(flavor, name)),
+              patch("tools.forever_comparison.compile_comparison_data", side_effect=compile_fixture)):
             payload = generate_lua.render_lua("forever")
         script = r'''
 local H = dofile("tests/lua_ui_harness.lua")

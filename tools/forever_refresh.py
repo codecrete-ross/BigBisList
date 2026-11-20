@@ -46,6 +46,10 @@ RECEIPT_FIELDS = {"fetched_at", "collected_at", "source_content_digest", "input_
 def snapshot_content(snapshot: dict) -> str:
     """Skip changes that only affect the collection receipt."""
     facts = {k: v for k, v in snapshot.items() if k not in RECEIPT_FIELDS}
+    if snapshot.get("page_type") in sources.GUIDE_EVIDENCE_TYPES and "parser_version" in snapshot:
+        facts["parser_version"] = snapshot["parser_version"]
+    if snapshot.get("page_type") == "equipment_routes":
+        facts.pop("targets", None)
     if snapshot.get("page_type") == "item":
         if facts.get("provider") == sources.source_provider(facts["url"]):
             facts.pop("provider", None)
@@ -94,6 +98,8 @@ def sitemap_page(raw: bytes) -> tuple[set[int], list[str]]:
 
 def exact_facts(snapshot: dict) -> dict:
     """Index fields by exact item or source ID for the retry queue and report."""
+    if snapshot.get("page_type") in sources.GUIDE_EVIDENCE_TYPES:
+        return {}
     index = defaultdict(set)
 
     def add(kind, identifier, value):
@@ -150,7 +156,8 @@ def exact_facts(snapshot: dict) -> dict:
 
 class AvailabilityRefresh:
     def __init__(self, http: RefreshHTTP, registered: set[str], baseline: dict, candidate_audit: dict, summary: dict, ledger: dict,
-                 *, review_issues=(), comparison_build: str | None = None):
+                 *, review_issues=(), comparison_build: str | None = None, equipment_catalog: dict | None = None,
+                 equipment_only: bool = False, equipment_revision: str | None = None):
         self.http = http
         self.registered = {sources.canonical_url(url) for url in registered}
         self.original = baseline
@@ -172,6 +179,12 @@ class AvailabilityRefresh:
         self.bulk_results = {}
         self.exact_results = {}
         self.disclosed = set()
+        self.equipment = None
+        self.equipment_only = equipment_only
+        if equipment_catalog is not None and not self.comparing:
+            from tools.forever_equipment_refresh import EquipmentRefresh
+
+            self.equipment = EquipmentRefresh(self, equipment_catalog, equipment_revision)
 
     @property
     def snapshots(self) -> dict:
@@ -828,10 +841,12 @@ class AvailabilityRefresh:
         relevant = self.known | self.registered_items | self.discoveries()
         routes = set().union(*(acquisition_keys(lead) for row in self.open.values()
                                for lead in row.get("route_leads", [])))
-        if self.comparing or not self.staged or (changes is not None
+        availability_staged = {url: row for url, row in self.staged.items()
+                               if row.get("page_type") not in sources.GUIDE_EVIDENCE_TYPES}
+        if self.comparing or not availability_staged or (changes is not None
                 and not any(key in routes or (key[0] == "item" and key[1] in relevant) for key in changes)
                 and all(url not in self.registered and row.get("page_type") == "observations"
-                        for url, row in self.staged.items())):
+                        for url, row in availability_staged.items())):
             return {"summary": self.summary, "unresolved": compact(self.open.values()),
                     "review_issues": {"leveling": self.review_issues, "pre_raid": []},
                     "errors": [], "conflicts": {}, "inventory_ids": sorted(self.known), "audit_reused": True}
@@ -848,7 +863,7 @@ class AvailabilityRefresh:
         if previous.get("fingerprint") == fingerprint:
             return {**previous["result"], "audit_reused": True}
 
-        snapshots = self.snapshots
+        snapshots = {**self.original, **availability_staged}
         rules = dataset_json("forever", "leveling_rules")
         reviews = dataset_json("forever", "leveling_reviews")
         migrated = carry.scoped_reviews(reviews, self.original, rules)
@@ -922,12 +937,19 @@ class AvailabilityRefresh:
         from tools.forever_scoring import refresh_review_scope
 
         started = monotonic()
-        with self.http.bulk_budget(reserve_exact=bool(self.open)):
-            self.collect_bulk()
+        with self.http.bulk_budget(reserve_exact=bool(self.open or self.equipment)):
+            if self.equipment:
+                self.equipment.collect_bulk()
+            if not self.equipment_only:
+                self.collect_bulk()
         changed_bulk = self.evidence_changes(self.original, bulk_only=True)
         bulk_done = monotonic()
-        self.collect_exact(changed_bulk, items=True)
-        self.collect_exact(changed_bulk, items=False)
+        remaining_requests = self.http.request_limit - self.http.request_count
+        equipment = (self.equipment.collect_exact(max_requests=None if self.equipment_only else remaining_requests // 2)
+                     if self.equipment else None)
+        if not self.equipment_only:
+            self.collect_exact(changed_bulk, items=True)
+            self.collect_exact(changed_bulk, items=False)
         changes = self.evidence_changes(self.original)
         exact_done = monotonic()
         diagnostic = self.audit_overlay(changes)
@@ -956,9 +978,12 @@ class AvailabilityRefresh:
                    for (kind, identifier), change in sorted(changes.items())
                    if (kind == "item" and identifier in relevant) or f"{sources.WOWHEAD_ROOT}{kind}={identifier}" in linked]
         staged_snapshots = [{"url": url, **self.http.state["snapshots"][url]} for url in sorted(self.staged)]
-        proposed = [{"url": url, "provider": snapshot["provider"], "data_family": "acquisition" if sources.entity_key(url) else "leveling_evidence",
+        proposed = [{"url": url, "provider": snapshot["provider"],
+                     "data_family": "item_corpus" if snapshot.get("page_type") == "equipment_facts"
+                     else "acquisition" if snapshot.get("page_type") == "equipment_routes" or sources.entity_key(url) else "leveling_evidence",
                      "status": "pending_live_review"} for url, snapshot in sorted(self.staged.items()) if url not in self.registered]
         return {"build": self.build, "mode": "online" if self.http.online else "cached", "http_attempts": self.http.request_count,
+                **({"equipment_only": True} if self.equipment_only else {}),
                 "http_results": self.http.state["attempts"][self.http.attempts_before:], "providers": self.bulk_results,
                 "candidate_ids_before": len(self.open), "availability_ranges_before": len(self.summary["availability_review_ranges"]),
                 "availability_ranges_after": diagnostic["summary"]["availability_review_ranges"],
@@ -974,6 +999,7 @@ class AvailabilityRefresh:
                 "unresolved": unresolved, "exact_lookups": self.exact_results, "conflicts": diagnostic["conflicts"],
                 "review_issues": diagnostic["review_issues"], "audit_errors": diagnostic["errors"], "ranking_review": ranking_review,
                 "staged_snapshots": staged_snapshots, "proposed_manifest_sources": proposed,
+                **({"equipment": equipment} if equipment is not None else {}),
                 "stage_seconds": {"bulk": round(bulk_done - started, 2), "exact": round(exact_done - bulk_done, 2),
                                   "diagnostic": round(monotonic() - exact_done, 2)},
                 "review_groups": review_groups(unresolved),
@@ -1032,7 +1058,7 @@ def compact_intake(directory: Path) -> dict:
               "candidate_audit": {"client_build": target, "candidate_reviews": [
                   row if pending(row) else {"item_id": row["item_id"], "status": row["status"]}
                   for row in candidate["candidate_reviews"]]},
-              "ledger": {"entries": [{k: row[k] for k in ("url", "status", "last_attempt_at") if k in row} | {
+              "ledger": {"entries": [{k: row[k] for k in ("url", "status", "last_attempt_at", "last_error") if k in row} | {
                   "history": row.get("history", [])[-1:]} for row in ledger["entries"]]}}
     write_json(path, result)
     return result
@@ -1051,21 +1077,32 @@ def replay_fingerprint(directory: Path, comparison_build: str | None) -> str:
     return forever.digest([comparison_build, file_stamp(paths)])
 
 
-def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR, comparison_build: str | None = None) -> dict:
+def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR, comparison_build: str | None = None,
+                         equipment_only: bool = False, equipment_revision: str | None = None) -> dict:
     from tools.scrape_wowhead import USER_AGENT
 
+    if equipment_revision and not re.fullmatch(r"[0-9a-f]{40}", equipment_revision):
+        raise ValueError("An equipment revision must be a pinned WoWSims Git SHA")
     if comparison_build:
+        if equipment_only or equipment_revision:
+            raise ValueError("A leveling build comparison cannot be combined with an equipment backfill")
         if not BUILD_PATTERN.fullmatch(comparison_build):
             raise ValueError("Expected a Forever comparison build such as 1.60.1.70959")
         directory = directory / "compare" / comparison_build
     with workspace_lock(directory):
         report_path = directory / "report.json"
         receipt_path = directory / "replay.json"
-        key = replay_fingerprint(directory, comparison_build)
+        def fingerprint():
+            base = replay_fingerprint(directory, comparison_build)
+            return forever.digest([base, equipment_only, equipment_revision]) if equipment_only or equipment_revision else base
+
+        key = fingerprint()
         if not online and receipt_path.is_file() and report_path.is_file() and load_json(receipt_path).get("key") == key:
             report = {**load_json(report_path), "mode": "cached", "http_attempts": 0, "http_results": [],
                       "new_snapshot_count": 0, "changed_this_run": [], "audit_reused": True,
                       "stage_seconds": {"bulk": 0, "exact": 0, "diagnostic": 0}}
+            if report.get("equipment"):
+                report["equipment"]["changed_this_run"] = []
             write_json(report_path, report)
             return report
         intake = compact_intake(directory)
@@ -1079,18 +1116,21 @@ def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR, compari
             http.checkpoint()
         refresh = AvailabilityRefresh(http, registered, snapshots, intake["candidate_audit"], intake["summary"],
                                       intake["ledger"], review_issues=intake["review_issues"],
-                                      comparison_build=comparison_build)
+                                      comparison_build=comparison_build,
+                                      equipment_catalog=dataset_json("forever", "guide_equipment"),
+                                      equipment_only=equipment_only, equipment_revision=equipment_revision)
         report = refresh.run()
         write_json(report_path, report)
         if online:
             write_json(directory / "online-report.json", report)
-        write_json(receipt_path, {"key": replay_fingerprint(directory, comparison_build)})
+        write_json(receipt_path, {"key": fingerprint()})
         return report
 
 
 def print_summary(report: dict, directory: Path = REFRESH_DIR) -> None:
     examples = report["changed_this_run"][:5]
     comparison = report.get("build_comparison")
+    equipment = report.get("equipment")
     print(json.dumps({
         "mode": report["mode"], "http_attempts": report["http_attempts"], "new_snapshots": report["new_snapshot_count"],
         "new_item_ids": len(report["new_item_ids"]), "candidate_ids_before": report["candidate_ids_before"],
@@ -1099,8 +1139,13 @@ def print_summary(report: dict, directory: Path = REFRESH_DIR) -> None:
         "scoring_contexts_to_recheck": len(report["ranking_review"]["existing_contexts_to_recheck"]),
         "changed_examples": examples,
         "stage_seconds": report.get("stage_seconds", {}),
+        **({"equipment": {key: equipment[key] for key in ("build", "before", "after")},
+            "equipment_changed_ids": len(equipment["changed_ids"]),
+            "equipment_changed_this_run": len(equipment["changed_this_run"]),
+            "equipment_fidelity_errors": len(equipment["fidelity_errors"])}
+           if equipment else {}),
         "review_groups": [{**row, "item_ids": row["item_ids"][:5], "scopes": row["scopes"][:2], "sources": row["sources"][:2]}
-                          for row in report.get("review_groups", [])[:5]],
+                          for row in ([] if report.get("equipment_only") else report.get("review_groups", [])[:5])],
         **({"comparison": {key: len(value) if isinstance(value, list) else value
                            for key, value in comparison.items()}} if comparison else {}),
         "report": str(directory / "report.json"),

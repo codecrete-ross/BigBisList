@@ -1,0 +1,55 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:30.906737+00:00",
+  "flavor": "forever",
+  "item_id": 273003,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Searing Dagger Item Level 18 Binds when picked up Main Hand Dagger 9 - 17 Damage Speed 1.60 (8.13 damage per second) +4 Spirit Durability 45 / 45 Requires Level 13 Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown) Sell Price: 12 46 Dropped by: Bazzalan Drop Chance: 33.32%",
+      "dps": 8.13,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown)",
+          "type": "temporary"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Harmful spell casts sear the target for 7 Fire damage. (10ms cooldown)"
+      ],
+      "id": 273003,
+      "item_level": 18,
+      "name": "Searing Dagger",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 13,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "spirit": 4.0
+      },
+      "weapon_max_damage": 17,
+      "weapon_min_damage": 9,
+      "weapon_speed": 1.6,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=273003"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.32,
+      "entity_name": "Bazzalan",
+      "source_url": "https://www.wowhead.com/forever/item=273003",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "6ba496f79208b9bb8fe8d3174749f010ce623aad9a7b14e726d474226605ac0a",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/273003#sha256-6ba496f79208b9bb8fe8d3174749f010ce623aad9a7b14e726d474226605ac0a"
+}

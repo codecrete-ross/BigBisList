@@ -480,8 +480,15 @@ def import_snapshots(input_dir: Path, *, dry_run: bool, family: str | None = Non
     if not dry_run:
         for name, document in documents.items():
             write_text(FOREVER_CANONICAL_DIR / f"{name}.json", json.dumps(document, indent=2, sort_keys=True) + "\n")
-        from tools.forever_sources import enrich_retry_metadata
+        from tools.forever_sources import enrich_retry_metadata, record_attempts
         enrich_retry_metadata(snapshots)
+        timestamps = {}
+        for snapshot in snapshots.values():
+            if snapshot.get("page_type") == "equipment_facts" and snapshot.get("confidence") == "forever_tooltip":
+                url = f"{WOWHEAD_ROOT}item={snapshot['items'][0]['id']}"
+                at = snapshot["fetched_at"]
+                timestamps[url] = max(at, timestamps.get(url, at))
+        record_attempts([(url, None) for url in sorted(timestamps)], timestamps=timestamps)
     return {name: len(next((value for value in document.values() if isinstance(value, list)), [])) for name, document in documents.items()}
 
 

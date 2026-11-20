@@ -1,0 +1,52 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:17:10.547937+00:00",
+  "flavor": "forever",
+  "item_id": 9418,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Stoneslayer Item Level 49 Binds when picked up Two-Hand Sword 133 - 200 Damage Speed 3.90 (42.69 damage per second) Durability 100 / 100 Requires Level 44 Chance on hit: Rend earth and stone, dealing 196 Physical damage. Deals 3 times as much damage to Earth Elementals, Golems, and Titan-forged. Sell Price: 3 27 60 Dropped by: Archaedas Drop Chance: 32.51%",
+      "dps": 42.69,
+      "effect_stats": [
+        {
+          "raw_text": "Chance on hit: Rend earth and stone, dealing 196 Physical damage. Deals 3 times as much damage to Earth Elementals, Golems, and Titan-forged.",
+          "type": "proc"
+        }
+      ],
+      "equip_effects": [
+        "Chance on hit: Rend earth and stone, dealing 196 Physical damage. Deals 3 times as much damage to Earth Elementals, Golems, and Titan-forged."
+      ],
+      "id": 9418,
+      "item_level": 49,
+      "name": "Stoneslayer",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 44,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "weapon_max_damage": 200,
+      "weapon_min_damage": 133,
+      "weapon_speed": 3.9,
+      "weapon_subtype": "Sword",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=9418"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.51,
+      "entity_name": "Archaedas",
+      "source_url": "https://www.wowhead.com/forever/item=9418",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "87f62034016e94d71971e7eb354de20817b0fdcdddbb708dfce5b42d7cd315ed",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/9418#sha256-87f62034016e94d71971e7eb354de20817b0fdcdddbb708dfce5b42d7cd315ed"
+}

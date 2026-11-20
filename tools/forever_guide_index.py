@@ -113,7 +113,7 @@ def pack_archive(part: Path, packed: Path) -> None:
         out.write(b"end\n")
 
 
-def compile_index(lua: str) -> None:
+def compile_index(lua: str, *, output: Path = OUTPUT) -> None:
     names = sorted({key.split("/")[0] for key in dataset_json("forever", "leveling_rules")["spec_policies"]})
     build = ROOT / "build"
     build.mkdir(exist_ok=True)
@@ -145,7 +145,7 @@ def compile_index(lua: str) -> None:
             bundle.write(f"-- Generated Forever Guide {contents_digest()} {body_digest}\n".encode())
             for part in parts:
                 bundle.write(part.read_bytes())
-        candidate.replace(OUTPUT)
+        candidate.replace(output)
 
 
 def check_index() -> bool:
@@ -162,9 +162,26 @@ def check_index() -> bool:
         return digest.hexdigest() == fields[5].decode()
 
 
+def verify_index(lua: str) -> bool:
+    """Rebuild from the trusted compiler before accepting a data-only patch."""
+    if not check_index():
+        return False
+    (ROOT / "build").mkdir(exist_ok=True)
+    with TemporaryDirectory(prefix="forever-guide-verify-", dir=ROOT / "build") as directory:
+        rebuilt = Path(directory) / OUTPUT.name
+        compile_index(lua, output=rebuilt)
+        with OUTPUT.open("rb") as published, rebuilt.open("rb") as fresh:
+            for line in fresh:
+                if published.readline().replace(b"\r\n", b"\n") != line:
+                    return False
+            return not published.read(1)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true")
+    checks = parser.add_mutually_exclusive_group()
+    checks.add_argument("--check", action="store_true")
+    checks.add_argument("--verify", action="store_true", help="Rebuild and compare the shipped Guide index.")
     parser.add_argument("--lua")
     args = parser.parse_args()
     if args.check:
@@ -174,6 +191,10 @@ def main() -> int:
     lua = find_lua51(args.lua)
     if not lua:
         parser.error("A working Lua 5.1 executable is required")
+    if args.verify:
+        valid = verify_index(lua)
+        print(f"{OUTPUT.name} {'matches' if valid else 'differs from'} the rebuilt Guide index.")
+        return 0 if valid else 1
     compile_index(lua)
     return 0
 

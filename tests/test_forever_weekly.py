@@ -14,13 +14,14 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.addCleanup(scratch.cleanup)
         self.root = Path(scratch.name)
         release.git(self.root, "init", "-b", "main")
-        self.write(forever.FOREVER_MANIFEST, "## Interface: 16001\nDataForever.lua\nUI.lua\nConfig.lua\n")
+        self.write(forever.FOREVER_MANIFEST, "## Interface: 16001\nDataForever.lua\nGuideDataForever.lua\nUI.lua\nConfig.lua\n")
         self.write("UI.lua", "return true\n")
         self.write("Config.lua", 'version = "0.15.0"\n')
         self.write("README.md", "Current release 0.15.0. Run -Version 0.15.0.\n")
         self.write("CHANGELOG.md", "# Changelog\n\n## 0.15.0 - 2026-11-17\n\n- Added Forever gear.\n")
         self.write("RELEASE_NOTES.md", "Initial notes\n")
         self.write(release.PAYLOAD, "return {1}\n")
+        self.write(release.GUIDE_PAYLOAD, "return {}\n")
         self.write("assets/icon.tga", "icon\n")
         self.write(release.CANONICAL + "leveling_rules.json", json.dumps({"review": {"client_build": "1.60.1.70959"}}))
         self.write(release.LIVE_ACCEPTANCE, json.dumps({
@@ -52,6 +53,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.write("CHANGELOG.md", f"# Changelog\n\n## {version} - 2026-11-18\n\n- Updated Forever gear.\n\n{history}")
         self.write("RELEASE_NOTES.md", f"Verified notes for {version}\n")
         self.write(release.PAYLOAD, f'return {{ "{version}" }}\n')
+        self.write(release.GUIDE_PAYLOAD, f'return {{ "{version}" }}\n')
         self.write(release.CANONICAL + "items.json", '{"items": []}\n')
         return self.commit(f"Data patch {version}")
 
@@ -59,6 +61,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         candidate = self.data_patch()
         changes = release.verify_patch(self.root, self.base, candidate, "0.15.0", "0.15.1")
         self.assertIn(release.PAYLOAD, changes)
+        self.assertIn(release.GUIDE_PAYLOAD, changes)
         self.assertNotIn(release.LIVE_ACCEPTANCE, changes)
         receipt = weekly.validate_candidate(self.root, candidate, "0.15.0")
         self.assertEqual(receipt["status"], "scripted_data_only")
@@ -127,6 +130,26 @@ class WeeklyReleaseTests(unittest.TestCase):
                     {"unresolved": [{"item_id": 21}]}):
             self.assertTrue(weekly.review_blocked(bad))
         self.assertFalse(weekly.review_blocked({"review_issues": {"leveling": []}}))
+
+    def test_prepare_can_export_equipment_while_release_coverage_is_open(self):
+        state = self.root / ".git" / "equipment"
+        candidate = weekly.checkout(self.root, state, self.base)
+        report = {"build": "1.60.1.70959", "uncovered_combinations": 1}
+        self.assertTrue(weekly.review_blocked(report))
+
+        def build(worktree, *args, **_kwargs):
+            if "tools.generate_lua" in args:
+                (worktree / release.PAYLOAD).write_text("return {2}\n", encoding="utf-8")
+                (worktree / release.GUIDE_PAYLOAD).write_text("return {2}\n", encoding="utf-8")
+
+        with (patch.object(weekly, "apply_snapshots", return_value=1) as apply,
+              patch.object(weekly, "command", side_effect=build)):
+            result = weekly.prepare_equipment_patch(candidate, state, state, report, state / "test.log")
+        apply.assert_called_once_with(report, state, report["build"], equipment_only=True)
+        patch_text = (state / result["equipment_patch"]).read_text(encoding="utf-8")
+        self.assertIn(release.PAYLOAD, patch_text)
+        self.assertIn(release.GUIDE_PAYLOAD, patch_text)
+        self.assertEqual(release.git(candidate, "diff", "--cached").strip(), b"")
 
     def test_existing_mismatched_tag_is_never_replaced(self):
         candidate = self.data_patch()
