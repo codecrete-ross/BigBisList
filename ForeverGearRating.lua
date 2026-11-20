@@ -2272,7 +2272,10 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
     else
         local build, missing = rating:WithCharacterBuild(context, scope.live)
         result = ownedSwap(build, group, candidate, extraCopy, scope.quantity)
-        if result and missing then result.conditional = true end
+        if result and missing then
+            result.conditional = true
+            result.buildUnavailable = missing
+        end
     end
     if not result then
         if scope.skipPlacement then return { placement = { status = "blocked" } } end

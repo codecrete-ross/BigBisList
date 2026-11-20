@@ -80,7 +80,10 @@ local function watchFrame(frame, kind)
     if not frame or not frame.HookScript or watchedFrames[frame] then return end
     watchedFrames[frame] = true
     frame:HookScript("OnShow", function() highlights:ScheduleRefresh() end)
-    frame:HookScript("OnHide", function() clearKind(kind, true); highlights:ScheduleRefresh() end)
+    frame:HookScript("OnHide", function()
+        clearKind(kind, true)
+        highlights:ScheduleRefresh(kind == "quest")
+    end)
 end
 
 local function watchScrollBox(scrollBox)
@@ -103,7 +106,6 @@ local function addItem(items, entry, link, id)
     entry.itemId = itemIdFromLink(entry.link) or read(id, "number")
     if entry.itemId and entry.itemId <= 0 then entry.itemId = nil end
     if not itemIdFromLink(entry.link) then entry.link = nil end
-    entry.compareWorn = entry.owned or entry.kind == "quest" or entry.kind == "loot"
     if entry.link or entry.kind == "quest" or entry.itemId then items[#items + 1] = entry end
 end
 
@@ -334,7 +336,7 @@ local function collectStorage(items, settings, checkpoint)
             if read(tab, "number") then bankTabs[tab] = true end
         end
     end
-    local lastBag = read(NUM_TOTAL_BAG_FRAMES, "number") or read(NUM_BAG_SLOTS, "number") or 4
+    local lastBag = ui:GetLastCarriedBagID()
     local function add(row, bag, slot, panel, expectedLink, widget, expectedGUID)
         if not shown(row) or not bag or not slot or slot < 1 then return end
         local kind = bankTabs[bag] and "bank" or (bag >= 0 and bag <= lastBag and "bags")
@@ -392,7 +394,7 @@ local collectors = { quest = collectQuest, vendor = collectVendor, loot = collec
     auction = collectAuctions, trade = collectTrade, mail = collectMail, crafting = collectCrafting }
 
 local function unresolved(result)
-    return result.status == "loading" or result.status == "unavailable"
+    return result and (result.status == "loading" or result.status == "unavailable")
 end
 
 local function rewardItem(batch, entry)
@@ -408,7 +410,10 @@ local function rewardItem(batch, entry)
         batch.items[entry.link] = item
     end
     local candidate, status = item.candidate, item.status
-    if status == "loading" or (candidate and candidate.status == "loading") then batch.pending[id] = true end
+    if status == "loading" or (candidate and candidate.status == "loading") then
+        batch.pending[id] = true
+        return nil, false
+    end
     if not candidate then return nil, status == nil end
     if not candidate.facts then return nil, false end
     return candidate, true
@@ -416,24 +421,21 @@ end
 
 local function assess(batch, entry, evaluation)
     local candidate, exact = rewardItem(batch, entry)
-    if not candidate or not evaluation then return nil, exact and evaluation ~= nil end
+    if not candidate then return nil, exact end
     local id, spec, context = entry.itemId, evaluation.spec, evaluation.context
     if entry.kind == "crafting" and rating:IsUnresolvedVariant(id, candidate.key) then return nil, false end
     if context.owned.variantUnknownItems and context.owned.variantUnknownItems[id] then return nil, false end
     local quest = entry.kind == "quest"
-    local worn = not quest and spec.role == "active" and entry.compareWorn
-    local key = table.concat({ spec.name, tostring(worn), entry.link }, "\031")
-    local cached = not quest and batch.swaps[key]
-    if cached then return cached.mark, cached.ready, cached.assessment end
+    local key = not quest and (spec.name .. "\031" .. entry.link)
+    local cached = key and batch.swaps[key]
+    if cached then return cached.assessment, cached.ready end
 
-    local result = rating:CompareTooltipItem(context, candidate, worn, nil, true,
+    local result = rating:CompareTooltipItem(context, candidate, false, nil, true,
         { live = true, lookahead = quest, quantity = quest and entry.quantity or nil })
-    if worn then result.rival = rating:GetOwnedRival(context, candidate, result) end
-    local ready = not unresolved(result) and not unresolved(result.placement)
-    local gain = result.delta or 0
-    local qualifies = rating:ReliableGain(result) ~= nil
-    local assessment = { spec = spec, result = result, gain = gain,
-        ownedBaseline = not worn, guaranteed = evaluation.guaranteed }
+    local ready = not result.buildUnavailable and not unresolved(result) and not unresolved(result.placement)
+        and not unresolved(result.forecast)
+    local assessment = { spec = spec, result = result, gain = result.delta or 0,
+        ownedBaseline = true, guaranteed = evaluation.guaranteed }
     if quest then
         local slot = result.slot or result.placement.item and result.placement.item.slot
         if context.leveling and slot and addon.IsConfirmedGearBiS then
@@ -442,25 +444,10 @@ local function assess(batch, entry, evaluation)
                 assessment.futureBiS = true
             end
         end
-        -- A lookahead can finish without finding a legal equip level.
-        local noteworthy = result.conditional or result.forecast ~= nil or result.bis
-            or assessment.futureBiS or result.placement.status == "effect" or result.placement.status == "utility"
-        return ready and (qualifies or noteworthy) and assessment or nil, ready, assessment
+    else
+        batch.swaps[key] = { assessment = assessment, ready = ready }
     end
-    local mark
-    if ready and (qualifies or result.bis) then
-        local extraGain = gain
-        if result.ownership and worn then
-            local owned = rating:CompareTooltipItem(context, candidate, false, nil, true)
-            ready = not unresolved(owned)
-            extraGain = rating:ReliableGain(owned) or 0
-        end
-        if ready and (not result.ownership or extraGain > 0) then
-            mark = assessment
-        end
-    end
-    batch.swaps[key] = { mark = mark, ready = ready, assessment = assessment }
-    return mark, ready, assessment
+    return assessment, ready
 end
 
 local function exactMark(mark, entry)
@@ -471,18 +458,19 @@ local function exactMark(mark, entry)
 end
 
 local function rankOffers(batch, entry)
-    local primary, ready, assessments = nil, #batch.contexts > 0, {}
+    local primary, assessments = nil, {}
     for _, evaluation in ipairs(batch.contexts) do
-        local mark, resolved, assessment = assess(batch, entry, evaluation)
-        ready = ready and resolved
-        primary = primary or mark
-        if assessment then assessments[#assessments + 1] = assessment end
+        local assessment, ready = assess(batch, entry, evaluation)
+        if assessment then
+            assessments[#assessments + 1] = assessment
+            if not primary and ready and rating:ReliableGain(assessment.result) then primary = assessment end
+        end
     end
     if primary then
         primary = exactMark(primary, entry)
         primary.assessments = assessments
     end
-    return primary, ready
+    return primary
 end
 
 local function rankStorage(batch, entry, checkpoint)
@@ -515,29 +503,32 @@ local function rankStorage(batch, entry, checkpoint)
     return primary and exactMark(primary, entry), ready
 end
 
-local function rankRewards(batch, rewards, evaluation, rows, ready, allowBest)
+local function rankRewards(batch, rewards, evaluation, rows, baselineReady, allowBest)
     local bestGain, best = 0, {}
+    local allReady = baselineReady
     for _, entry in ipairs(rewards) do
-        local mark, resolved, assessment = assess(batch, entry, evaluation)
+        local assessment, resolved = assess(batch, entry, evaluation)
+        local quantityReady = entry.quantity and entry.quantity >= 1
+        allReady = allReady and resolved and quantityReady
         if assessment then
             rows[entry.row][#rows[entry.row] + 1] = assessment
-            if not ready then assessment.result = setmetatable({ conditional = true }, { __index = assessment.result }) end
-        end
-        if mark then
-            mark.show = true
-            local result = mark.result
-            if result.conditional or result.preview or result.placement.status == "effect"
-                or result.placement.status == "utility" then resolved = false end
-            if rating:ReliableGain(result) then
-                if mark.gain > bestGain then bestGain, best = mark.gain, {} end
-                if mark.gain == bestGain then best[#best + 1] = mark end
+            if not baselineReady or not quantityReady then
+                assessment.result = setmetatable({ conditional = true }, { __index = assessment.result })
+            elseif resolved then
+                local gain = rating:ReliableGain(assessment.result)
+                local _, futureLevel = rating:GetLevelingCue(assessment.result)
+                assessment.show = gain ~= nil or futureLevel ~= nil
+                if gain then
+                    if gain > bestGain then bestGain, best = gain, {} end
+                    if gain == bestGain then best[#best + 1] = assessment end
+                end
             end
         end
-        if not resolved then evaluation.unresolved = true end
     end
-    if allowBest and ready and not evaluation.unresolved then
+    if allowBest and allReady then
         for _, mark in ipairs(best) do mark.bestChoice = #best == 1; mark.tiedChoice = #best > 1 end
     end
+    return allReady
 end
 
 local function highestSellValue(batch, entries)
@@ -816,6 +807,8 @@ local function newBatch(player, owned)
                 if context then
                     batch.contexts[#batch.contexts + 1] = { spec = spec, context = context }
                     for id in pairs(context.pending) do batch.pending[id] = true end
+                else
+                    batch.missingContext = true
                 end
             end
         end
@@ -950,13 +943,14 @@ local function refresh()
         local guaranteed, fixedReady, selected = {}, true, false
         for _, entry in ipairs(rewards.reward) do
             local candidate, ready = rewardItem(batch, entry)
-            if candidate and entry.quantity and entry.quantity >= 1 then
+            if candidate and candidate.facts.level and entry.quantity and entry.quantity >= 1 then
                 guaranteed[#guaranteed + 1] = { candidate = candidate, quantity = entry.quantity }
             elseif candidate or not ready then
                 fixedReady = false
             end
         end
-        local rows, canSuggestSale = {}, fixedReady and batch and #batch.contexts > 0
+        local rows = {}
+        local canSuggestSale = fixedReady and batch and #batch.contexts > 0 and not batch.missingContext
         for _, kind in ipairs({ "reward", "choice" }) do
             table.sort(rewards[kind], function(a, b) return a.order < b.order end)
             for _, entry in ipairs(rewards[kind]) do
@@ -970,8 +964,8 @@ local function refresh()
                 local build = rating:WithCharacterBuild(evaluation.context, true)
                 local choice = { spec = evaluation.spec, context = rating:WithGuaranteedRewards(build, guaranteed),
                     guaranteed = #guaranteed > 0 }
-                rankRewards(batch, rewards.choice, choice, rows, fixedReady, #rewards.choice > 1)
-                canSuggestSale = canSuggestSale and not evaluation.unresolved and not choice.unresolved
+                local choicesReady = rankRewards(batch, rewards.choice, choice, rows, fixedReady, #rewards.choice > 1)
+                canSuggestSale = canSuggestSale and choicesReady
             end
             for _, kind in ipairs({ "reward", "choice" }) do
                 for _, entry in ipairs(rewards[kind]) do
@@ -979,13 +973,21 @@ local function refresh()
                     local primary, bestChoice
                     local signature = {}
                     for _, assessment in ipairs(entry.assessments) do
-                        if assessment.show then primary = primary or assessment end
+                        local result = assessment.result
+                        if assessment.show and (not primary
+                            or (rating:ReliableGain(result) and not rating:ReliableGain(primary.result))) then
+                            primary = assessment
+                        end
                         bestChoice = bestChoice or assessment.bestChoice
-                        local _, futureLevel = rating:GetLevelingCue(assessment.result)
+                        local comparison = result.forecast or result
                         signature[#signature + 1] = table.concat({assessment.spec.name,
-                            assessment.gain, tostring(assessment.result.conditional), tostring(assessment.bestChoice),
-                            tostring(assessment.tiedChoice), tostring(assessment.futureBiS), tostring(entry.turnIn),
-                            tostring(assessment.result.placement.status), tostring(futureLevel)}, "\031")
+                            tostring(comparison.delta), tostring(comparison.status), tostring(comparison.bank),
+                            tostring(result.conditional or comparison.conditional), tostring(comparison.level),
+                            tostring(assessment.bestChoice), tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
+                            tostring(assessment.guaranteed), tostring(entry.turnIn), tostring(result.placement.status)}, "\031")
+                        for _, replacement in ipairs(comparison.replacements or {}) do
+                            signature[#signature + 1] = replacement.name .. "\031" .. tostring(replacement.state)
+                        end
                     end
                     entry.assessmentKey = table.concat(signature, "\030")
                     local previous = offers[entry.row]
@@ -994,7 +996,8 @@ local function refresh()
                         local mark = exactMark(primary, entry)
                         mark.assessments, mark.bestChoice = entry.assessments, bestChoice
                         mark.outline = kind == "choice" and #rewards.choice > 1 and not selected and bestChoice
-                        results[entry.row], canSuggestSale = mark, false
+                        results[entry.row] = mark
+                        if kind == "choice" then canSuggestSale = false end
                     end
                 end
             end
@@ -1066,7 +1069,8 @@ local function step()
     end
 end
 
-function highlights:ScheduleRefresh()
+function highlights:ScheduleRefresh(restart)
+    if restart then self.generation = (self.generation or 0) + 1 end
     if not self.eventFrame then return end
     self.requested = true
     if BigBiSListData.guide_index and rating.QueueWork then
@@ -1089,8 +1093,7 @@ function highlights:ScheduleRefresh()
 end
 
 function highlights:OwnershipChanged()
-    self.generation = (self.generation or 0) + 1
-    self:ScheduleRefresh()
+    self:ScheduleRefresh(true)
 end
 
 function highlights:InvalidateStorage()
@@ -1139,7 +1142,7 @@ function highlights:GetTooltipOffer(owner, itemId, link)
                     if storageContextMatches(entry) and liveStorageEntry(entry, settings) then return entry, marks[owner] end
                     self:ScheduleRefresh()
                 end
-            elseif entry.link == link or rating:NormalizeLink(itemId, link) == rating:NormalizeLink(itemId, entry.link) then
+            elseif rating:SameExactItemLink(itemId, link, entry.link) then
                 return entry, marks[owner]
             end
         end
@@ -1155,7 +1158,10 @@ local function hookGlobal(name, callback)
 end
 
 local function onUpdated(kind)
-    return function() clearKind(kind); highlights:ScheduleRefresh() end
+    return function()
+        clearKind(kind)
+        highlights:ScheduleRefresh(kind == "quest")
+    end
 end
 
 local function migrateBaganatorCorner()
@@ -1253,7 +1259,7 @@ local function hookPanels()
     hookBaganator()
     hookGlobal("QuestInfo_Display", onUpdated("quest"))
     hookGlobal("QuestInfo_ShowRewards", onUpdated("quest"))
-    hookGlobal("QuestInfoItem_OnClick", function() highlights:ScheduleRefresh() end)
+    hookGlobal("QuestInfoItem_OnClick", function() highlights:ScheduleRefresh(true) end)
     hookGlobal("MerchantFrame_Update", onUpdated("vendor"))
     hookGlobal("TradeFrame_UpdateTargetItem", onUpdated("trade"))
     hookGlobal("GroupLootFrame_SetupItemDisplay", function(row)
@@ -1289,6 +1295,10 @@ function highlights:Initialize()
     frame:SetScript("OnEvent", function(_, event, id)
         if event == "ADDON_LOADED" or event == "PLAYER_ENTERING_WORLD" then
             hookPanels()
+        elseif event == "QUEST_ITEM_UPDATE" or event == "QUEST_FINISHED" then
+            clearKind("quest")
+            self:ScheduleRefresh(true)
+            return
         elseif event == "LOOT_SLOT_CHANGED" or event == "LOOT_SLOT_CLEARED" then
             local slot = read(id, "number")
             if slot then lootSlotsCleared[slot] = event == "LOOT_SLOT_CLEARED" or nil end

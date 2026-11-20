@@ -301,7 +301,7 @@ end
 local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
-    if not candidate.facts or not candidate.facts.level then
+    if candidate.status == "loading" or not candidate.facts or not candidate.facts.level then
         block.rows[1] = { spec = player.spec or "Gear", result = { placement = { status = candidate.status or "unavailable" } } }
         if candidate.status == "loading" then block.pending[candidate.entry.item_id] = true end
         return block
@@ -333,10 +333,11 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                 end
             end
             if not assessment and (#offerAssessments == 0 or offer.kind ~= "quest") then
-                local worn = (spec.role == "active" or (offer and offer.owned)) and (not offer or offer.compareWorn)
-                if not offer and EXTRA_COPY_GETTERS[getter] and getter ~= "GetLootItem" then worn = false end
+                local extraCopy = EXTRA_COPY_GETTERS[getter]
+                if offer then extraCopy = not offer.owned end
+                local worn = not extraCopy and (spec.role == "active" or (offer and offer.owned))
                 local result = rating:CompareTooltipItem(context, candidate, worn, worn and wornSlot or nil,
-                    (offer and not offer.owned) or EXTRA_COPY_GETTERS[getter],
+                    extraCopy,
                     { live = true, lookahead = true, quantity = offer and offer.quantity })
                 if worn and not snapshot.equippedOnly and not (offer and offer.owned) then
                     result.rival = rating:GetOwnedRival(context, candidate, result)

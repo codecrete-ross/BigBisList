@@ -796,7 +796,9 @@ local counts = {1, 1}
 local function getReward(kind, index) return offers[kind][index] end
 GetQuestItemLink = function(kind, index) return link(getReward(kind, index)) end
 GetQuestItemInfo = function(kind, index)
-    return "Item", 0, counts[index], 2, true, getReward(kind, index)
+    local quantity = counts[index]
+    if kind == "reward" then quantity = 1 end
+    return "Item", 0, quantity, 2, true, getReward(kind, index)
 end
 GetQuestLogItemLink = GetQuestItemLink
 GetQuestLogChoiceInfo = function(index) return GetQuestItemInfo("choice", index) end
@@ -826,14 +828,19 @@ assert(not mark(second, 901006) and mark(fixed, 901004).spec.name == "Protection
 offers.choice, counts = {901010, 901011}, {4, 1}
 QuestInfo_Display(); H.settle()
 assert(mark(fixed, 901004).spec.role == "active")
-assert(not mark(first, 901010) and not mark(second, 901011))
-assert(not showTip(first, link(901010)):find("Highest sell value", 1, true))
+assert(mark(first, 901010).sellValue == 60 and not mark(second, 901011))
+assert(showTip(first, link(901010)):find("Highest sell value", 1, true))
 
 offers.reward = {901005}
 QuestInfo_Display(); H.settle()
 assert(mark(fixed, 901005).spec.role == "dual")
+assert(mark(first, 901010).sellValue == 60 and not mark(second, 901011))
+
+counts[1] = nil
+QuestInfo_Display(); H.settle()
 assert(not mark(first, 901010) and not mark(second, 901011))
 
+counts[1] = 4
 offers.reward = {901006}
 cold[901010] = true
 QuestInfo_Display(); H.settle()
@@ -844,6 +851,14 @@ assert(mark(first, 901010).sellValue == 60 and not mark(second, 901011))
 local overlay = first:GetChildren()
 assert(overlay.corner.symbol:IsVisible() and overlay.corner.symbol:GetTexture() == "Interface\\MoneyFrame\\UI-GoldIcon")
 assert(showTip(first, link(901010)):find("Highest sell value", 1, true))
+
+prices[901011] = 60
+rewards.RewardButtons = {second, first, fixed}
+QuestInfo_Display(); H.settle()
+assert(mark(first, 901010).sellValue == 60 and not mark(second, 901011), "Break sale ties by quest choice index")
+QuestInfoItem_OnClick(second); H.settle()
+assert(not mark(first, 901010).outline and overlay.corner.symbol:IsVisible())
+QuestInfoItem_OnClick(nil); H.settle()
 
 offers.choice[2] = 901004
 QuestInfo_Display(); H.settle()
@@ -857,19 +872,24 @@ addon.GetRecommendationHistory = function(_, id, class, spec, phase)
     return {}
 end
 addon:RefreshTooltipPlayerContext()
-counts, offers.choice = {1, 1}, {901006, 901004}
+prices[901006] = 75
+counts, offers.choice = {1, 1}, {901006, 901011}
 local getLink = GetQuestLogItemLink
 local bonus = "item:901006:0:0:0:0:0:0:0:60:0:0:0:1:700"
 QuestInfo_Display(); H.settle()
-assert(mark(first, 901006).result.bis and not mark(first, 901006).bestChoice)
-assert(mark(second, 901004).bestChoice)
-assert(mark(first, 901006).gain < 0 and mark(second, 901004).gain > 0)
+assert(mark(first, 901006).sellValue == 75 and not mark(second, 901011))
+local rankedTip = showTip(first, link(901006))
+assert(rankedTip:find("Pre-Raid BiS", 1, true) and rankedTip:find("Highest sell value", 1, true))
+
+offers.choice[2] = 901004
+QuestInfo_Display(); H.settle()
+assert(not mark(first, 901006) and mark(second, 901004).bestChoice)
 GetQuestLogItemLink = function(kind, index)
     if kind == "choice" and index == 1 then return bonus end
     return getLink(kind, index)
 end
 QuestInfo_Display(); H.settle()
-assert(not mark(first, 901006) and not mark(first, bonus).result.bis)
+assert(not mark(first, 901006) and not mark(first, bonus).result.bis and mark(first, bonus).gain > 0)
 assert(showTip(first, bonus):find("Protection", 1, true))
 rewards:Hide(); H.settle()
 assert(not mark(first, bonus))
@@ -948,6 +968,71 @@ assert(mark(first, futureSword).result.forecast.level == 50)
 assert(corner.level:IsVisible() and corner.level:GetText() == "Lv 50" and not corner.symbol:IsShown())
 ''')
 
+    def test_quest_choice_badge_changes_with_owned_forecast_and_effects(self):
+        self.run_lua(r'''
+local weaker, stronger, unscored = 901006, 901004, 901008
+items[tostring(weaker)][4], items[tostring(stronger)][4] = 50, 50
+BigBiSListData.stat_rank.item_fields[6] = "effects"
+item(unscored, "Head", 30, 0)
+items[tostring(unscored)][6] = {"Use: Fixture effect"}
+addon:GetAccountDB().profile.gearHighlights.animate = false
+
+local frame = CreateFrame("Frame", nil, UIParent)
+local first, second = row(frame, 1), row(frame, 2)
+for _, reward in ipairs({first, second}) do reward.type, reward.objectType = "choice", "item" end
+frame.RewardButtons = {first, second}
+QuestInfoFrame = {rewardsFrame = frame, displayContext = "questComplete"}
+local choices = {weaker, 901011}
+GetQuestItemLink = function(_, index) return link(choices[index]) end
+GetQuestItemInfo = function(_, index) return "Item", 0, 1, 2, true, choices[index] end
+QuestInfo_Display = function() end
+highlights:Initialize(); H.settle()
+
+assert(not mark(first, weaker) and mark(second, 901011).sellValue == 50)
+assert(showTip(first, link(weaker)):find("Likely downgrade at Level 50", 1, true))
+local coin = second:GetChildren()
+assert(coin.corner.symbol:GetTexture() == "Interface\\MoneyFrame\\UI-GoldIcon")
+
+choices[1] = stronger
+QuestInfo_Display(); H.settle()
+assert(mark(first, stronger).result.forecast.delta == 2 and not coin:IsShown())
+local gearBadge = first:GetChildren()
+assert(gearBadge.corner.level:IsVisible() and gearBadge.corner.level:GetText() == "Lv 50")
+
+level = 50
+addon:RefreshTooltipPlayerContext(); H.settle()
+assert(mark(first, stronger).bestChoice and gearBadge.corner.symbol:GetTexture() == 10101)
+assert(gearBadge.corner.symbol:IsVisible() and not gearBadge.corner.level:IsShown())
+
+local compare = rating.CompareTooltipItem
+local paused
+function rating:CompareTooltipItem(context, candidate, ...)
+    if candidate.entry.item_id == stronger and not paused then
+        paused = true
+        coroutine.yield()
+    end
+    return compare(self, context, candidate, ...)
+end
+highlights:ScheduleRefresh()
+for _ = 1, 10 do
+    if paused then break end
+    H.tick()
+end
+assert(paused, "Pause an upgrade comparison before the quest reward changes")
+rating.CompareTooltipItem = compare
+choices[1] = unscored
+QuestInfo_Display()
+for _ = 1, 10 do
+    H.tick()
+    assert(not gearBadge:IsShown(), "A resumed comparison should never restore the old reward's upgrade icon")
+    if mark(second, 901011) then break end
+end
+H.settle()
+assert(not mark(first, unscored) and not gearBadge:IsShown())
+assert(mark(second, 901011).sellValue == 50 and coin:IsShown())
+assert(showTip(first, link(unscored)):find("Possible upgrade", 1, true))
+''')
+
     def test_quest_choices_use_guaranteed_gear_for_each_specialization(self):
         self.run_lua(r'''
 local rewards = CreateFrame("Frame", nil, UIParent)
@@ -976,6 +1061,11 @@ local turnIn = showTip(first, link(901004))
 assert(turnIn:find("|t Choose this reward", 1, true) and turnIn:find("+2.0 pts vs Fixture gear 901002", 1, true), turnIn)
 assert(not showTip(second, link(901005)):find("Choose this reward", 1, true))
 
+guaranteed = nil
+QuestInfo_Display(); H.settle()
+assert(not mark(first, 901004) and not mark(second, 901005))
+assert(not showTip(first, link(901004)):find("Best choice", 1, true))
+
 guaranteed = 901004
 QuestInfo_Display(); H.settle()
 assert(not mark(first, 901004) and mark(second, 901005).bestChoice)
@@ -1002,6 +1092,11 @@ assert(offer.assessments[2].spec.name == "Holy" and offer.assessments[2].bestCho
 
     def test_direct_loot_and_active_rolls_recycle_exact_bindings(self):
         self.run_lua(r'''
+NUM_TOTAL_BAG_FRAMES = 5
+GetContainerNumSlots = function(bag) return bag == 5 and 1 or 0 end
+GetContainerItemID = function(bag, slot) return bag == 5 and slot == 1 and 901002 or nil end
+GetContainerItemLink = function(bag, slot) return link(GetContainerItemID(bag, slot)) end
+
 LootFrame = CreateFrame("Frame", nil, UIParent)
 local lootRow = row(LootFrame, 1)
 lootRow.GetSlotIndex = lootRow.GetID
@@ -1030,7 +1125,8 @@ highlights:Initialize()
 desktop.rollID, controller.rollID = 84, 85
 assert(GroupLootFrame_SetupItemDisplay(desktop) and GroupLootFrame_SetupItemDisplay(controller))
 H.settle()
-assert(mark(lootRow.Item, 901003).result.delta == 3)
+assert(not mark(lootRow.Item, 901003))
+assert(showTip(lootRow.Item, link(901003)):find("You own a stronger option · Fixture gear 901002", 1, true))
 assert(not mark(desktop, 901003))
 assert(mark(controller.IconFrame, 901004).result.delta == 2 and mark(controller, 901004).ownedBaseline)
 assert(not controller.canNeed and controller.canGreed)
@@ -1049,12 +1145,13 @@ event("CANCEL_LOOT_ROLL", 86)
 assert(not mark(controller, 901007))
 
 lootRow.slotIndex = 1
+slots[1] = 901004
 LootFrame.ScrollBox.initRow(lootRow); H.settle()
-assert(mark(lootRow, 901003))
+assert(mark(lootRow, 901004).ownedBaseline and mark(lootRow, 901004).result.delta == 2)
 event("LOOT_SLOT_CLEARED", 1)
-assert(not mark(lootRow, 901003))
+assert(not mark(lootRow, 901004))
 LootFrame:Hide(); H.settle()
-assert(not mark(lootRow, 901003))
+assert(not mark(lootRow, 901004))
 ''')
 
     def test_purchases_trade_mail_crafting_and_late_bank_scores(self):

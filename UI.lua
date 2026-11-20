@@ -765,6 +765,14 @@ function UI:GetTableColumnLayout(width, mode, forceCompact)
     return layout
 end
 
+function UI:GetLastCarriedBagID()
+    local lastBag = NUM_TOTAL_BAG_FRAMES
+    if BigBiSList.IsReadableValue(lastBag) and type(lastBag) == "number" then return lastBag end
+    lastBag = NUM_BAG_SLOTS
+    if BigBiSList.IsReadableValue(lastBag) and type(lastBag) == "number" then return lastBag end
+    return 4
+end
+
 local function getContainerNumSlotsSafe(bag)
     local ok, result
     if C_Container and C_Container.GetContainerNumSlots then
@@ -1588,7 +1596,7 @@ function UI:BuildOwnedItems(equippedOnly)
         end
     end
 
-    local lastBag = equippedOnly and -1 or 4
+    local lastBag = equippedOnly and -1 or (BigBiSList.isForever and self:GetLastCarriedBagID() or 4)
     for bag = 0, lastBag do
         local numSlots, bagReadable = getContainerNumSlotsSafe(bag)
         if BigBiSList.isForever and not bagReadable then owned.bagsIncomplete = true end

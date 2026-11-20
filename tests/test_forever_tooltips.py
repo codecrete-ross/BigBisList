@@ -631,6 +631,7 @@ includes(tip, "Tied for highest known score at Level 50")
 
     def test_bank_snapshot_copy_counts_and_legal_weapon_and_ring_swaps(self):
         self.lua_run(r'''
+gear(900019, "Loot ring", "Ring", 6)
 local bankLinks = {"item:900004", "item:900004"}
 local bags = {"item:900003"}
 local bankReads, unreadable = 0, false
@@ -666,6 +667,8 @@ addon:InitUIEvents()
 local frame = addon.uiEventFrame
 local fire = frame:GetScript("OnEvent")
 local tip = ItemRefTooltip
+showNative(tip, "item:900019", "GetLootItem", {1})
+includes(tip, "Downgrade\n-2.0 pts vs Stronger ring")
 showNative(tip, "item:900003")
 includes(tip, "In bags")
 includes(tip, "Best you own for this slot")

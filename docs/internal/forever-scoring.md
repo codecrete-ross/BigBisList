@@ -332,13 +332,13 @@ or loses.
   Gold BiS requires an unconditional approval for the exact variant and guide
   context. A neutral coin identifies a resolved quest choice's best sell value.
 - My Gear and Compare Slot follow the selected spec and level. Native item
-  acquisition uses the live spec and Leveling weights through 59, then Pre-Raid
-  weights. Active-spec quest and direct loot marks compare against worn gear.
-  Other acquisition comparisons and the remembered inactive spec use the best
-  legal setup from equipment, bags, and the last readable personal bank scan.
-  Relevant unreadable inputs defer the gain. An owned variant requires a legal
-  gain from adding another copy. The same assessment supplies the mark and its
-  tooltip row.
+  acquisition uses Leveling weights through 59, then Pre-Raid weights. For the
+  active and remembered inactive specs, an upgrade mark requires a reliable
+  gain from adding the exact item to the best legal setup from equipment, bags,
+  and the last readable personal bank scan. Quest choices also account for
+  guaranteed rewards. If the choices offer no reliable gain at the current
+  level or their first usable level, the coin marks the highest total vendor
+  value. Relevant unreadable inputs defer the recommendation.
 - Storage recommendations choose the best legal slot or paired-slot setup from
   worn gear, bags, and the last readable personal bank scan. The spec icon
   requires a meaningful improvement over the worn setup. On an exact tie,

@@ -922,7 +922,7 @@ end
 function BigBiSList:RefreshTooltipPlayerContext()
     self.tooltipPlayerContext = nil
     self:GetTooltipPlayerContext()
-    if self.AcquisitionHighlights then self.AcquisitionHighlights:ScheduleRefresh() end
+    if self.AcquisitionHighlights then self.AcquisitionHighlights:ScheduleRefresh(true) end
 end
 
 function BigBiSList:ApplyDetectedPlayerLevel()
