@@ -865,6 +865,7 @@ local function sourceIdentity(source)
             tostring(point.map_id or ""), tostring(point.x or ""), tostring(point.y or ""),
             tostring(eligibility.min_level or ""), tostring(eligibility.max_level or ""),
             concatValues(eligibility.races), concatValues(eligibility.classes),
+            tostring(source.market_observation and source.market_observation.market or ""),
         }, ":")
     end
     if FILTER_FACETS.VENDOR_PURCHASE_SOURCE_TYPES[sourceType] then
@@ -1355,6 +1356,30 @@ function BigBiSList:IsGuideTargetRoute(option)
         return (source.entity_id or source.entity_name or option.vendor_label) ~= nil
     end
     return false
+end
+
+function BigBiSList:GetGuideMarket(faction)
+    local region = ({[1] = "us", [3] = "eu", [5] = "cn"})[GetCurrentRegion and GetCurrentRegion() or 0]
+    local realm = GetRealmName and GetRealmName()
+    faction = lower(faction)
+    if not (region and realm and (faction == "alliance" or faction == "horde")) then return false end
+    local kind = lower(realm):gsub("[^a-z]", "")
+    if kind == "pve" then kind = "normal" end
+    if kind == "normal" or kind == "pvp" or kind == "rp" or kind == "rppvp" then
+        return "forever/" .. kind .. "/" .. faction .. "/" .. region
+    end
+    return false
+end
+
+function BigBiSList:IsGuideMarketRoute(option, market)
+    if not FILTER_FACETS.optionIsVerifiedGuideRoute(option) or option.source_type ~= "trade" then return false end
+    local observed = option.source and option.source.market_observation
+    return observed and type(observed.market) == "string" and (market == nil or observed.market == market) or false
+end
+
+local function matchesGuideTarget(addon, option, filters)
+    return not filters or not filters._guideTarget or addon:IsGuideTargetRoute(option)
+        or addon:IsGuideMarketRoute(option, filters._guideMarket or false)
 end
 
 function FILTER_FACETS.promoteCompleteAccessOption(options)
@@ -4141,14 +4166,19 @@ function BigBiSList:GetMatchingRowAccessOption(row, filters, phaseKey, includeFu
         if includeFuture then
             candidatePhase = FILTER_FACETS.nextAvailableOptionPhase(option, selectedPhaseIndex)
         end
+        local preferred = option == primary
+        if best and filters and filters._guideTarget then
+            local trade, bestTrade = option.source_type == "trade", best.source_type == "trade"
+            if trade ~= bestTrade then preferred = not trade end
+        end
         if (not includeFuture or candidatePhase)
             and FILTER_FACETS.optionIsCompleteRoute(option)
             and (not verifiedOnly or FILTER_FACETS.optionIsVerifiedGuideRoute(option))
-            and (not filters or not filters._guideTarget or self:IsGuideTargetRoute(option))
+            and matchesGuideTarget(self, option, filters)
             and (not filters or not filters._questAvailable or filters._questAvailable(option))
             and optionMatchesSourceContext(option, scopedFilters, candidatePhase)
             and (not best or (candidatePhase or 0) < (bestPhase or 0)
-                or (candidatePhase == bestPhase and option == primary)) then
+                or (candidatePhase == bestPhase and preferred)) then
             best, bestPhase = option, candidatePhase
         end
     end
@@ -4942,11 +4972,12 @@ end
 function BigBiSList:GetGuideTargetActivities(context, options)
     local names = {}
     for _, option in ipairs(options or {}) do
-        if self:IsGuideTargetRoute(option) then
+        local market = self:IsGuideMarketRoute(option)
+        if market or self:IsGuideTargetRoute(option) then
             for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, context.guideEligibility, context.phaseIndex)) do
                 local display = {option = option, source_match = match, activity_zone = match.activity_zone,
                     activity_zones = match.activity_zones, source_label = option.source_filter_label}
-                names[self:GetActivityGroup({acquisition_display = display})] = true
+                names[market and "Auction House" or self:GetActivityGroup({acquisition_display = display})] = true
             end
         end
     end
@@ -6366,6 +6397,7 @@ function BigBiSList:GetActivityGroup(row)
         or kind == "heroic_dungeon_drop" or kind == "drop" or kind == "quest" then
         return zone or display.source_label or "Other activities"
     end
+    if self:IsGuideMarketRoute(option) then return "Auction House" end
     if option.is_trade_option then return "Trade / Auction House" end
     if option.reputations and #option.reputations > 0 then return "Reputation · " .. option.reputations[1] end
     for _, requirement in ipairs(option.requirements or {}) do
@@ -6386,7 +6418,9 @@ function BigBiSList:GetLevelingActivityRows(row, filters, level)
     local phase = self:GetAvailabilityPhaseIndex(LEVELING_PHASE_KEY)
     FILTER_FACETS.addMatchingOptionsFromRow(row, scoped, phase, function(option, match)
         if not FILTER_FACETS.optionIsVerifiedGuideRoute(option) then return end
-        if scoped._guideTarget and not self:IsGuideTargetRoute(option) then return end
+        if not matchesGuideTarget(self, option, scoped) then return end
+        if scoped._guideTarget and option.source_type == "trade"
+            and row.matched_access_option and row.matched_access_option.source_type ~= "trade" then return end
         if scoped._questAvailable and not scoped._questAvailable(option) then return end
         local primary = row.acquisition_display
         if primary and primary.option == option and primary.source_match == match then return end
@@ -6555,28 +6589,27 @@ function BigBiSList:GetGuideStatComparison(row, owned, physical)
     return LEVELING_HELPERS.formatSwap(service, swap, contributions)
 end
 
-function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level)
+function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level, identityOnly)
     local rows = {}
     local equippedSlots = ownedItems and ownedItems.equippedSlots or {}
     local selectedLevel = clampLevelingLevel(level)
     local levelingMode = phaseKey == LEVELING_PHASE_KEY
     local service = self.ForeverGearRating
-    local scoring = service and service:GetContext(className, specName, phaseKey, selectedLevel, ownedItems)
-    rows.statsPending = scoring and scoring.pending
-    rows.gearScore = scoring and service:GetGearScore(scoring, EQUIPMENT_SLOTS)
+    local checkpoint = not identityOnly and service and service:GetWorkCheckpoint()
 
     for _, slot in ipairs(EQUIPMENT_SLOTS) do
+        if checkpoint then checkpoint() end
         local equipped = equippedSlots[slot.key]
         local itemId = equipped and equipped.item_id
-        local placement = itemId and scoring and service:GetPlacement(scoring, slot.key, slot.slots).reference
         local item = itemId and self:GetItemData(itemId) or nil
         local metadata = itemId and FILTER_FACETS.tableValueById(ownedItems.inventoryItems, itemId)
         local unknown = not itemId and ownedItems and ownedItems.unreadableEquipmentSlots
             and ownedItems.unreadableEquipmentSlots[slot.key]
-        local bestUse = itemId and levelingMode
+        local bestUse = not identityOnly and itemId and levelingMode
             and self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots, nil, equipped.item_link)
             or nil
-        local history = itemId and not levelingMode and self:GetRecommendationHistory(itemId, className, specName, phaseKey, slot.key)
+        local history = not identityOnly and itemId and not levelingMode
+            and self:GetRecommendationHistory(itemId, className, specName, phaseKey, slot.key)
         local ratingCell = history and (history.selected and history.selected.matched and history.selected or history.latest_earlier)
         local historical = ratingCell and ratingCell.phase ~= phaseKey or false
         if not levelingMode then
@@ -6680,7 +6713,7 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             display_rank_label = itemId and displayRankLabel or "Empty",
             display_rank_kind = itemId and displayRankKind or "missing",
             equipped_bis = equippedBiS,
-            stat_rank = placement,
+            usesGearRating = service ~= nil,
             recommendation_summary = recommendation,
             guide_badge = guideBadge,
             guide_note = guideNote,
@@ -7595,8 +7628,8 @@ function FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseInde
     local options = buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}
     local matched = false
     for _, option in ipairs(options) do
-        if not filters or not filters._guideTarget or (BigBiSList:IsGuideTargetRoute(option)
-            and (not filters._questAvailable or filters._questAvailable(option))) then
+        if matchesGuideTarget(BigBiSList, option, filters)
+            and (not filters or not filters._questAvailable or filters._questAvailable(option)) then
             for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)) do
                 callback(option, match)
                 matched = true

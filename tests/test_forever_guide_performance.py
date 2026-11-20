@@ -88,7 +88,8 @@ ui:VisitListEntries(ui.renderModel, 0, math.huge, function(entry)
     local row = entry.data
     if row then
         assert(addon:IsGuideTargetRoute(row.matched_access_option))
-        assert(row.targetVerdict.kind == "upgrade" or row.targetVerdict.kind == "utility")
+        assert(row.targetVerdict.kind == "upgrade" or row.targetVerdict.kind == "utility"
+            or row.targetVerdict.kind == "situational")
     end
 end)
 ui.contentScroll:SetVerticalScroll(1200)
@@ -146,6 +147,238 @@ end)
 local guide = rating:GetGuideContext("Paladin", "Retribution", "LEVELING", 49, "Human", "Alliance")
 local expected = assert(referencePlacement(rating, guide, "Head").byVariant[key])
 assert(candidate and candidate.stat_rank.rank == expected.rank and candidate.stat_rank.total == expected.total)
+''')
+
+    def test_my_gear_paints_both_level_51_outfits_before_scoring(self):
+        for spec in ("Retribution", "Protection"):
+            with self.subTest(spec=spec):
+                self.lua_run("local spec = " + repr(spec) + "\n" + r'''
+level = 51
+local retribution = {10090, 276740, 9476, 0, 276739, 274653, 11882, 275003, 270102, 9640,
+    270081, 11118, 280766, 17774, 274612, 7723}
+local protection = {14919, 7673, 9476, 0, 10203, 276742, 10133, 10131, 14914, 9410,
+    274642, 11118, 280766, 17774, 276737, 17705, 1203}
+local outfit = spec == "Retribution" and retribution or protection
+local bonuses = {[10090]=12723, [9640]=13023, [11118]=13099, [14919]=12754, [10203]=12754, [10133]=12754,
+    [10131]=12754, [14914]=12752, [9410]=13182}
+GetInventoryItemID = function(_, slot) return outfit[slot] ~= 0 and outfit[slot] or nil end
+GetInventoryItemLink = function(unit, slot)
+    local id = GetInventoryItemID(unit, slot)
+    if id then return "item:" .. id .. (bonuses[id] and ("::::::::51:1486::1:1:" .. bonuses[id]) or "") end
+end
+local oldInstant = GetItemInfoInstant
+GetItemInfoInstant = function(value)
+    local id = tonumber(value) or tonumber(tostring(value):match("item:(%d+)"))
+    if id == 7723 then return id, "Weapon", "Mace", "INVTYPE_2HWEAPON", nil, 2, 5 end
+    if id == 1203 then return id, "Armor", "Shield", "INVTYPE_SHIELD", nil, 4, 6 end
+    return oldInstant(value)
+end
+addon.DetectPlayerSpec = function() return spec end
+addon:RefreshTooltipPlayerContext()
+selection.spec = spec
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head = true}
+local calls = 0
+local build = rating.GetGearScore
+function rating:GetGearScore(...)
+    calls = calls + 1
+    return build(self, ...)
+end
+function rating:GetPlacement() error("My Gear must not build a full slot pool") end
+function rating:GetGuidePlacement() error("My Gear must use indexed ranks") end
+addon:InitUIEvents()
+ui:Open(); H.settle()
+ui:SetTab("My Gear")
+H.now = H.now + 1/60; H.tick()
+local gear = ui.gearFrame
+assert(gear:IsVisible() and gear.slots.Head.gearData.item_id == outfit[1])
+assert(gear.slots.MainHand.gearData.item_id == outfit[16] and calls == 0)
+assert((gear.slots.OffHand.gearData.disabledReason ~= nil) == (spec == "Retribution"))
+H.settle()
+assert(gear.score and gear.score.percent and gear.slots.Head.gearData.stat_rank.rank)
+local completed, count = gear.ratingRequest, calls
+ui:SetTab("Gear Guide"); H.settle()
+ui:SetTab("My Gear"); H.settle()
+assert(gear.ratingRequest == completed and calls == count)
+local frame = addon.uiEventFrame
+outfit[1], outfit[2] = 7719, 7722
+frame:GetScript("OnEvent")(frame, "PLAYER_EQUIPMENT_CHANGED", 1)
+H.settle()
+assert(gear.ratingRequest ~= completed and gear.slots.Head.gearData.item_id == 7719)
+local current = gear.ratingRequest
+ui:SetSpec(spec == "Protection" and "Retribution" or "Protection")
+H.tick()
+local abandoned = gear.ratingRequest
+assert(abandoned ~= current and not abandoned.ready)
+ui:SetSpec(spec); H.settle()
+assert(gear.ratingRequest == current and not abandoned.ready and gear.slots.Head.gearData.stat_rank.spec == spec)
+''')
+
+    def test_cyclopean_band_and_exact_name_lookup_for_the_equipped_id(self):
+        self.lua_run(r'''
+level = 51
+addon:RefreshTooltipPlayerContext()
+local links = {[3] = "item:9476::::::::51:1486::1::1:28:5255",
+    [11] = "item:274642", [12] = "item:11118::::::::51:1486::1:1:13099", [16] = "item:7723"}
+GetInventoryItemLink = function(_, slot) return links[slot] end
+GetInventoryItemID = function(_, slot) return links[slot] and tonumber(links[slot]:match("item:(%d+)")) end
+ui:GetFilters("Gear Guide").slots = {Ring = true}
+selection.spec = "Protection"
+addon:SetSelectedLevelingLevel(51, true)
+ui:Open(); H.settle()
+local query = ui.renderModel.targetQuery
+local ring = query.slots.Ring.rows[query.slots.Ring.positions["11824"]]
+assert(ring and ring.targetVerdict.gain > 0 and ring.matched_access_option.source.entity_id == 9030)
+assert(ring.matched_access_option.zone == "Blackrock Depths")
+for _, exact in ipairs({{"Big Bad Pauldrons", "Shoulder", 9476}, {"Mograine's Might", "Two Hand", 7723}}) do
+    ui:SetFilter("search", exact[1]); H.settle()
+    local found = ui.renderModel.targetQuery.slots[exact[2]].rows[1]
+    assert(found.item_id == exact[3] and found.item_link == links[exact[3] == 9476 and 3 or 16])
+end
+''')
+
+    def test_selected_gear_slot_names_the_item_and_next_action(self):
+        self.lua_run(r'''
+level, worn = 51, 6686
+addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head = true}
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:9479"}, {"bank:1"}
+local bag
+C_Container = {
+    GetContainerNumSlots = function(id) return id == 0 and bag and 1 or 0 end,
+    GetContainerItemID = function() return bag end,
+    GetContainerItemLink = function() return bag and ("item:" .. bag) end,
+}
+addon:InitUIEvents()
+ui:Open(); H.settle()
+ui:SetTab("My Gear"); H.settle()
+ui.gearFrame.slots.Head:Click(); H.settle()
+local summary = ui.gearFrame.summary
+assert(summary.rating:GetText():find("Bank · Embrace of the Lycan", 1, true))
+local events = addon.uiEventFrame
+bank.links, bag = {}, 9479
+events:GetScript("OnEvent")(events, "BAG_UPDATE_DELAYED"); H.settle()
+assert(summary.rating:GetText():find("Equip Embrace of the Lycan", 1, true))
+bag = nil
+events:GetScript("OnEvent")(events, "BAG_UPDATE_DELAYED"); H.settle()
+assert(summary.rating:GetText():find("Embrace of the Lycan · Drops from Chief Ukorz Sandscalp", 1, true))
+''')
+
+    def test_documented_auction_house_targets_follow_the_players_market(self):
+        self.lua_run(r'''
+level, worn = 51, 6686
+addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+local region, faction = 3, "Alliance"
+GetRealmName = function() return "Normal" end
+GetCurrentRegion = function() return region end
+UnitFactionGroup = function() return faction end
+ui:GetFilters("Gear Guide").slots = {Head = true}
+local score = rating.GetOwnedOpportunity
+function rating:GetOwnedOpportunity(context, item, ...)
+    if item.id == 10574 or item.id == 1930 then return {delta = 4} end
+    return score(self, context, item, ...)
+end
+ui:Open(); H.settle()
+local function head() return ui.renderModel.targetQuery.slots.Head end
+local function shroud()
+    local bucket = head().market
+    return bucket and bucket.rows[bucket.positions["10574"]]
+end
+local row = assert(shroud())
+assert(not head().positions["10574"] and row.targetVerdict.gain == 4)
+assert(ui:GetSourceNextStep(row) == "Check AH")
+assert(row.matched_access_option.source.market_observation.market == "forever/normal/alliance/eu")
+assert(not addon:IsGuideMarketRoute(row.matched_access_option, "forever/normal/horde/eu"))
+assert(not addon:IsGuideMarketRoute({source_type = "trade", is_inferred_trade_option = true,
+    source = row.matched_access_option.source}))
+region = 1
+ui:Invalidate("query", "market"); ui:ScheduleRefresh(); H.settle()
+assert(not shroud())
+ui:SetFilter("slots", {Back = true}); H.settle()
+local back = ui.renderModel.targetQuery.slots.Back
+local cloak = assert(back.rows[back.positions["1930"]])
+assert(cloak.matched_access_option.source_type == "drop")
+assert(not back.market or not back.market.positions["1930"])
+local buying
+for _, evaluation in ipairs(ui:GetAccessEvaluation(cloak).options) do
+    if evaluation.option.source_type == "trade" then buying = evaluation.option end
+end
+assert(addon:IsGuideMarketRoute(buying, "forever/normal/alliance/us"))
+ui:SetFilter("sourceTypes", {trade = true}); H.settle()
+local market = ui.renderModel.targetQuery.slots.Back.market
+assert(market.rows[market.positions["1930"]].matched_access_option.source_type == "trade")
+''')
+
+    def test_packed_benchmark_and_effect_language_cover_all_profiles(self):
+        self.lua_run(r'''
+local checked = 0
+for key, profile in pairs(BigBiSListData.stat_rank.profiles) do
+    local class, spec = key:match("^([^/]+)/(.+)$")
+    local preset = addon.ForeverScoring:GetPreset(class, spec, "leveling")
+    local _, actor = next(preset.personas)
+    local context = assert(rating:GetGuideContext(class, spec, "LEVELING", 51, actor[1], actor[2]))
+    local read = assert(rating:GetPackedScoredChoices(context, "Ring"))
+    local previous = math.huge
+    for _ = 1, 3 do
+        local choice = assert(read())
+        local entry = assert(rating:GetPackedGuideEntry(context, "Ring", choice.item.key))
+        assert(choice.score == entry.score and choice.score <= previous and not choice.item.excluded)
+        previous = choice.score
+    end
+    local aoe = {effects = {"Use: Deals Fire damage to all enemies in front of you."}}
+    assert(rating:GetGearPurpose(context, aoe) == "AoE")
+    local proc = {effects = {"Chance on hit: Grants an extra attack."}}
+    assert(rating:GetGearPurpose(context, proc) == (profile.role == "tank" and "Threat" or "DPS"))
+    checked = checked + 1
+end
+assert(checked == 28)
+''')
+
+    def test_waiting_on_an_equipped_or_banked_item_retries_that_item(self):
+        self.lua_run(r'''
+level = 51
+addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head = true}
+local id, name = 901077, "Late helm"
+local ready, waiting, requested = false, nil, 0
+local originalInfo, originalInstant = GetItemInfo, GetItemInfoInstant
+local function itemID(value) return tonumber(value) or tonumber(tostring(value):match("item:(%d+)")) end
+GetItemInfo = function(value)
+    if itemID(value) ~= id then return originalInfo(value) end
+    if ready then return name, "item:" .. id, 3, 51, 42, "Armor", "Plate", 1, "INVTYPE_HEAD", "icon" end
+end
+GetItemInfoInstant = function(value)
+    if itemID(value) == id then return id, "Armor", "Plate", "INVTYPE_HEAD", "icon", 4, 4 end
+    return originalInstant(value)
+end
+C_Item = {
+    IsItemDataCachedByID = function(item) return item ~= id or ready end,
+    GetItemStats = function(link) if itemID(link) == id and ready then return {ITEM_MOD_STRENGTH_SHORT = 1} end end,
+}
+Item = {CreateFromItemID = function(_, item)
+    assert(item == id)
+    requested = requested + 1
+    return {ContinueOnItemLoad = function(_, callback) waiting = callback end}
+end}
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:" .. id}, {"bank:1"}
+addon:InitUIEvents()
+ui:Open(); H.settle()
+local function head() return ui.renderModel.targetQuery.slots.Head end
+assert(requested == 1 and head().pending[id] and head().comparisonDetail)
+assert(not head().positions["9479"])
+ready = true; waiting(); H.settle()
+assert(not head().pending and head().positions["9479"])
+bank.links, worn, id, ready = {}, 901078, 901078, false
+local events = addon.uiEventFrame
+events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED", 1); H.settle()
+assert(requested == 2 and head().pending[id] and head().comparisonDetail:find("Waiting for ", 1, true))
+ready = true; waiting(); H.settle()
+assert(not head().pending and head().positions["9479"])
 ''')
 
     def test_level_51_targets_and_exact_lookup_use_best_owned_helm(self):
@@ -269,14 +502,19 @@ rating.GetOwnedOpportunity = function() return swap end
 local function verdict() return rating:GetGuideTargetVerdict(row, guide, player, owned) end
 assert(verdict().kind == "upgrade" and verdict().gain == 0.002)
 swap = {delta = 0}; assert(verdict().kind == "hidden")
-swap = {status = "loading"}; assert(verdict().kind == "unknown")
+swap = {status = "loading", blocker = {name = "Bank helm"}, pending = {[901001] = true}}
+local waiting = verdict()
+assert(waiting.kind == "loading" and waiting.pending[901001] and waiting.detail == "Waiting for Bank helm")
+swap = {delta = 0.3, conditional = true}
+assert(verdict().kind == "situational" and not verdict().gain and verdict().purpose)
 local index = BigBiSListData.guide_index.slots.Trinket.lookup["744"]
 row = addon:GetPackedGuideRow(guide, "Trinket", index, {}, false, 51)
 swap = {delta = -4, slot = "Trinket", replacements = {{name = "Owned trinket"}}, definition = {label = "Trinket"}}
 row.targetVerdict = verdict()
 assert(row.targetVerdict.kind == "utility" and not row.targetVerdict.gain)
 local view = ui:GetLevelingGearView(row, "leveling")
-assert(view.today:find("On-use fire damage", 1, true) and view.evidence:find("-4.0 pts vs Owned trinket", 1, true))
+assert(view.today == "AoE" and view.comparisonDetail:find("all enemies", 1, true))
+assert(view.evidence:find("-4.0 pts vs Owned trinket", 1, true))
 ''')
 
     def test_activity_counts_and_sorts_share_recommendations(self):
@@ -297,7 +535,8 @@ local function overview(sort)
     local confirmed = 0
     for _, action in ipairs(actions) do
         if action.detail:find("upgrade option", 1, true) then confirmed = confirmed + 1
-        else assert(action.detail:find("Some items couldn’t be compared", 1, true)) end
+        else assert(action.detail:find("situational", 1, true) or action.detail:find("Stats unavailable", 1, true)
+            or action.detail:find("Check ", 1, true) or action.detail:find("Waiting for ", 1, true)) end
     end
     assert(confirmed == 4)
     return actions

@@ -1,4 +1,16 @@
 {
+  "exclusions": [
+    {
+      "item_ids": [18968, 18970, 18982, 22316],
+      "reason": "Exact test items with a documented player-unavailable status and no player grant in Forever.",
+      "evidence": "leveling_reviews.json"
+    },
+    {
+      "item_ids": [20144, 20250],
+      "reason": "The current ItemSparse records carry the deprecated equipment flag.",
+      "evidence": "leveling_reviews.json"
+    }
+  ],
   "items": [
     {
       "id": 9476,

@@ -372,9 +372,13 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
             item.update(roll_group=base["group"], roll_budget=base.get("budget"),
                         roll_armor=base.get("armor"), roll_complete=base.get("roll_complete"))
     variant_links = {key: item["variant_link"] for key, item in items.items() if item.get("variant_link")}
+    guide_reviews = dataset_json("forever", "guide_item_reviews")
+    excluded = {identifier for review in guide_reviews.get("exclusions", []) for identifier in review["item_ids"]}
     packed = {}
     by_slot = {}
     for key, item in items.items():
+        if item["id"] in excluded:
+            item["excluded"] = True
         stats = item.get("stats", {})
         if (not stats and not item.get("effects") and not item.get("attributes_known")) or (
             item.get("weapon_subtype") and not DPS_STATS.intersection(stats)

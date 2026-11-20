@@ -173,7 +173,7 @@ function rating:GuideSearchPredicate(indices, search)
     end
 end
 
-function rating:FindGuideItem(context, indices, search)
+function rating:FindGuideItem(context, indices, search, owned, slot)
     local id = tonumber(search:match("item:(%d+)"))
     if id then
         local key = self:NormalizeLink(id, search)
@@ -181,21 +181,32 @@ function rating:FindGuideItem(context, indices, search)
     end
     if search == "" then return end
     local lower = search:lower()
+    for _, worn in pairs(owned and owned.equippedSlots or {}) do
+        local key = self:NormalizeLink(worn.item_id, worn.item_link) or tostring(worn.item_id)
+        local ordinal = indices.lookup[key]
+        local item = ordinal and (context.catalog.observed[key] or context.catalog.items[key])
+        if item and item.name:lower() == lower then return ordinal, key, worn.item_link end
+    end
     local hits = searchRanges(indices, lower)
     if not hits then return end
     local checkpoint = self:GetWorkCheckpoint()
+    local fallbackOrdinal, fallbackKey
     for pos = 1, #hits, 6 do
         for ordinal = read(hits, pos, 3), read(hits, pos + 3, 3) do
             if checkpoint then checkpoint() end
             local key = indices.keys[ordinal]
             local item = context.catalog.items[key]
-            if item.name:lower() == lower then return ordinal, key end
+            if item.name:lower() == lower then
+                if not slot or not item.excluded and self:GetPackedGuideEntry(context, slot, key) then return ordinal, key end
+                if not fallbackKey then fallbackOrdinal, fallbackKey = ordinal, key end
+            end
             if item.variant_id then
                 local base = context.catalog.items[tostring(item.id)]
-                if base and base.name:lower() == lower then return nil, base.key end
+                if base and base.name:lower() == lower and not fallbackKey then fallbackKey = base.key end
             end
         end
     end
+    return fallbackOrdinal, fallbackKey
 end
 
 function rating:GetPackedGuide(context)
@@ -453,6 +464,26 @@ function rating:PackedLevelEntries(context, slot, level, callback)
             local _, verified = readRanges(data, ordinal, 2)
             callback(resolve(data, context, ordinal, level, inside(verified, level)))
         end
+    end
+end
+
+function rating:GetPackedScoredChoices(context, slot)
+    local slots = self:GetPackedGuide(context)
+    if not slots then return end
+    local data = slots[slot]
+    if not data then return false end
+    local levelState = state(data, context.level)
+    local archive = data.archive
+    local sizeInOrder = size(levelState.order) / 3
+    local index = 0
+    return function()
+        index = index + 1
+        if index > levelState.count then return end
+        local position = lowerBound(sizeInOrder, index, function(at) return before(archive, levelState, at + 1) end)
+        local score = scoreAt(archive, levelState, position)
+        if score <= 0 then return end
+        local ordinal = packedRead(archive, levelState.order, (position - 1) * 3 + 1, 3) % 131072
+        return {item = context.catalog.items[data.indices.keys[ordinal]], score = score, slot = slot}
     end
 end
 

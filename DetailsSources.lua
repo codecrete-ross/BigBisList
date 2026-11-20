@@ -429,7 +429,9 @@ function UI:GetSourceNextStep(data)
     end
     local source = option.source
     if data.targetVerdict and source then
-        if source.type == "crafted" then
+        if BigBiSList:IsGuideMarketRoute(option, BigBiSList:GetGuideMarket(BigBiSList:GetPlayerFactionName())) then
+            return "Check AH" .. (data.targetRoll and (" · " .. data.targetRoll) or "")
+        elseif source.type == "crafted" then
             local profession = source.profession or "the required profession"
             local selfCraft = (data.binding or (data.item and data.item.binding)) == "bind_on_pickup"
             local text = selfCraft and ("Craft it yourself · " .. profession) or ("Have it crafted · " .. profession)

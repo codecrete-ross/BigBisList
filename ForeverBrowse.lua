@@ -143,14 +143,14 @@ function UI:RequestPackedReach(context, filters)
     return prior
 end
 
-local guideExplanation = "Compares equipped gear, bags, and your last readable bank scan. Reviewed utility shows what the item does for your spec."
+local guideExplanation = "Compares equipped gear, bags, and your last readable bank scan. Catalog rank includes gear with unverified sources."
 local slotNouns = { Head = "helm", Shoulder = "shoulder", Feet = "boot", Hands = "glove", Legs = "leg",
     ["Two Hand"] = "two-handed weapon", ["Main Hand"] = "main-hand", ["Off Hand"] = "off-hand" }
 
 function UI:BuildPackedGuideModel(context, filters, title, query, reach)
     local model = self:NewListRenderModel()
     model.packed, model.guideContext, model.guideFilters = true, context, filters
-    local spans, empty = {}, {}
+    local spans, marketSpans, empty = {}, {}, {}
     self:AddListRenderEntry(model, {kind = "note", text = title, height = 22, tooltip = guideExplanation})
     if query.lookupReason then self:AddListRenderEntry(model, {kind = "note", text = query.lookupReason, height = 24}) end
     if reach then self:AddWithinReach(model, nil, "guide", reach) end
@@ -164,15 +164,31 @@ function UI:BuildPackedGuideModel(context, filters, title, query, reach)
             if span.top then spans[slot] = span end
             model.activeSection = nil
             if grouped then self:AddListGap(model, 6) end
-        elseif bucket and query.done and not query.search and not query.reference then
+            if bucket.comparisonDetail and query.done then
+                self:AddListRenderEntry(model, {kind = "note", text = bucket.comparisonDetail, height = 22})
+            end
+        elseif bucket and not (bucket.market and #bucket.market.rows > 0)
+            and query.done and not query.search and not query.reference then
             local notice
-            if bucket.unknown then notice = slot .. " · Some items couldn’t be compared"
+            if bucket.comparisonDetail then notice = slot .. " · " .. bucket.comparisonDetail
             elseif filtered(filters) then notice = "No upgrades match these filters · " .. slot
             else notice = "No known " .. (slotNouns[slot] or slot:lower()) .. " upgrades at Level " .. context.level end
             if bucket.best and bucket.best ~= "" then notice = notice .. " · Best owned · " .. bucket.best end
             empty[#empty + 1] = notice
         end
     end
+    local marketSection
+    for _, slot in ipairs(addon.slotOrder) do
+        local bucket = query.slots[slot]
+        local market = bucket and bucket.market
+        if market and #market.rows > 0 then
+            if not marketSection then marketSection = self:AddListSection(model, "Auction House", "leveling", false, "guide-market") end
+            local span = {key = "market:" .. slot, bucket = market, get = function(i) return market.rows[i] end}
+            self:AddListSpan(model, span, #market.rows)
+            if span.top then marketSpans[slot] = span end
+        end
+    end
+    model.activeSection = nil
     if #empty > 0 then
         local section = #empty > 1 and model.rowCount > 0 and self:AddListSection(model, "Other slots", nil, true, "guide-empty-slots")
         if section then section.count = #empty end
@@ -181,9 +197,8 @@ function UI:BuildPackedGuideModel(context, filters, title, query, reach)
         end
         model.activeSection = nil
     end
-    if not query.done or (query.unknown and model.rowCount > 0) or (model.rowCount == 0 and #empty == 0) then
-        local message = not query.done and "Comparing gear…" or query.unknown and "Some items couldn’t be compared"
-            or "No gear matches this level and filters."
+    if not query.done or (model.rowCount == 0 and #empty == 0) then
+        local message = not query.done and "Comparing gear…" or query.comparisonDetail or "No gear matches this level and filters."
         self:AddListRenderEntry(model, {kind = "note", text = message, height = 22})
     end
     local function parse(key)
@@ -193,6 +208,8 @@ function UI:BuildPackedGuideModel(context, filters, title, query, reach)
         local slot, identity = parse(key)
         local bucket = query.slots[slot]
         local found = bucket and bucket.rows[bucket.positions[identity]]
+        local market = bucket and bucket.market
+        found = found or market and market.rows[market.positions[identity]]
         if not found and self.selectedItemData and self:IsInspectorVisible() and query.owned == self.currentOwned
             and self.selectedItemData.targetVerdict and self.selectedItemData.stat_identity == identity then
             local copy = {}
@@ -204,7 +221,8 @@ function UI:BuildPackedGuideModel(context, filters, title, query, reach)
     end
     model.locate = function(navigation)
         local slot, key = parse(navigation.anchorKey)
-        local span = spans[slot]
+        local market = marketSpans[slot]
+        local span = market and market.bucket.positions[key] and market or spans[slot]
         if not span and slot then
             local first
             for index, name in ipairs(addon.slotOrder) do if name == slot then first = index; break end end
@@ -234,9 +252,13 @@ function UI:RefreshPackedRows(itemId, quest)
             end
         end
         if itemId then
+            for slot, bucket in pairs(model.targetQuery.slots) do
+                if bucket.pending and bucket.pending[itemId] then changed[slot] = true end
+            end
             local facts = model.guideContext.catalog.items[tostring(itemId)]
             if facts then
-                if facts.slot == "One Hand" then changed["Main Hand"], changed["Off Hand"] = true, true
+                if facts.slot == "One Hand" or facts.slot == "Main Hand" or facts.slot == "Off Hand" or facts.slot == "Two Hand" then
+                    changed["Main Hand"], changed["Off Hand"], changed["Two Hand"] = true, true, true
                 else changed[facts.slot] = true end
             end
         end
@@ -310,7 +332,7 @@ local function rewardKey(row, context)
 end
 
 local function visible(verdict)
-    return verdict.kind == "upgrade" or verdict.kind == "utility" or verdict.kind == "reference"
+    return verdict.kind == "upgrade" or verdict.kind == "utility" or verdict.kind == "reference" or verdict.kind == "situational"
 end
 
 local function visitTargets(context, data, filters, search, player, owned, checkpoint, visit)
@@ -343,6 +365,11 @@ local function better(row, old)
     if not old then return true end
     local a, b = row.targetVerdict.gain, old.targetVerdict.gain
     if a ~= b then return a ~= nil and (b == nil or a > b) end
+    local first = row.targetVerdict.swap
+    local second = old.targetVerdict.swap
+    local left = first and (first.forecast or first).delta
+    local right = second and (second.forecast or second).delta
+    if left and right and left ~= right then return left > right end
     return (row.stat_rank.rank or math.huge) < (old.stat_rank.rank or math.huge)
 end
 
@@ -383,15 +410,15 @@ local function finishActivities(query, player, context, checkpoint)
             local dest = activityEntry(activities, part.name)
             for key in pairs(part.items) do checkpoint(); activityLoot(dest, key) end
             for _, row in ipairs(part.rows) do checkpoint(); keep(dest, row, rewardKey(row, context)) end
-            dest.unknown = dest.unknown or part.unknown
+            dest.comparisonDetail = dest.comparisonDetail or part.comparisonDetail
         end
     end
     local batch = {totals = {}, playerLevel = player and player.level, spec = context.spec}
     local kept = {}
     for _, dest in ipairs(activities.ordered) do
-        if #dest.rows > 0 or dest.unknown then
+        if #dest.rows > 0 or dest.comparisonDetail then
             kept[#kept + 1] = dest
-            local total = {upgrades = 0, bestGain = 0, unknown = dest.unknown, unconfirmed = #dest.rows == 0}
+            local total = {upgrades = 0, bestGain = 0, situational = 0, comparisonDetail = dest.comparisonDetail}
             for _, row in ipairs(dest.rows) do
                 checkpoint()
                 local gain = row.targetVerdict.gain
@@ -400,13 +427,16 @@ local function finishActivities(query, player, context, checkpoint)
                     if gain > total.bestGain or gain == total.bestGain and row.name < total.bestName then
                         total.bestName, total.bestGain = row.name, gain
                     end
+                elseif row.targetVerdict.kind == "utility" or row.targetVerdict.kind == "situational" then
+                    total.situational = total.situational + 1
                 end
             end
+            total.unconfirmed = total.upgrades == 0
             batch.totals[dest] = total
         else activities.byName[dest.name] = nil end
     end
     activities.ordered, activities.batch = kept, batch
-    activities.reference, activities.unknown = query.reference, query.unknown
+    activities.reference = query.reference
 end
 
 local function targetSort(ui, rows, state, checkpoint)
@@ -437,7 +467,35 @@ local function targetSort(ui, rows, state, checkpoint)
     end, checkpoint)
 end
 
-local function exactLookup(context, slot, ordinal, key, search, filters, player, owned)
+function UI:FindBestGearGuideTarget(context, slots, player, owned, checkpoint)
+    local packed = rating:GetPackedGuide(context)
+    if not packed then return end
+    local filters = {
+        _guideTarget = true, _guideMarket = addon:GetGuideMarket(context.faction), _questAvailable = questAvailable,
+        class = context.class, race = context.race, faction = context.faction, level = context.level,
+        _leveling = context.leveling, hideIgnored = true, ignoredItems = addon:GetCharacterDB().ignoredItems,
+    }
+    local query = self.lastUnfilteredGuide
+    if query and (query.context.key ~= context.key or query.owned ~= owned or query.questRevision ~= self.questRevision
+        or query.catalogRevision ~= context.catalog.observedVersion) then query = nil end
+    local best
+    local function consider(row)
+        local kind = row.targetVerdict.kind
+        if (kind == "upgrade" or kind == "situational" or kind == "utility") and better(row, best) then best = row end
+    end
+    for _, slot in ipairs(slots) do
+        local bucket = query and query.slots[slot]
+        if bucket then
+            for _, row in ipairs(bucket.rows) do checkpoint(); consider(row) end
+            for _, row in ipairs(bucket.market and bucket.market.rows or {}) do checkpoint(); consider(row) end
+        elseif packed[slot] then
+            visitTargets(context, packed[slot], filters, nil, player, owned, checkpoint, consider)
+        end
+    end
+    return best
+end
+
+local function exactLookup(context, slot, ordinal, key, search, filters, player, owned, wornLink)
     local id = tonumber(search:match("item:(%d+)"))
     local native = id and rating:GetTooltipItem(id, search)
     local item = native and native.facts or context.catalog.items[key]
@@ -454,17 +512,19 @@ local function exactLookup(context, slot, ordinal, key, search, filters, player,
         row.acquisition_display = addon:GetRowAcquisitionDisplay(row, lookup, "LEVELING", true, true)
         row.matched_access_option = row.acquisition_display.option
     end
-    if search:find("item:", 1, true) then row.item_link = search end
+    if wornLink or id then row.item_link = wornLink or search end
     row.exactLookup = true
     row.targetVerdict = rating:GetGuideTargetVerdict(row, context, player, owned, true)
-    lookup._guideTarget = true
+    lookup._guideTarget, lookup._guideMarket = true, filters._guideMarket
     lookup.level = row.guide_route_level or context.level
     local display = addon:GetRowAcquisitionDisplay(row, lookup, "LEVELING", true, true)
     local later, hasTarget
     if not display.option then
         local levels, options = addon:GetGuideRouteTransitions(item.id)
         for _, option in ipairs(options or {}) do
-            if addon:IsGuideTargetRoute(option) then hasTarget = true; break end
+            if addon:IsGuideTargetRoute(option) or addon:IsGuideMarketRoute(option, filters._guideMarket or false) then
+                hasTarget = true; break
+            end
         end
         if hasTarget then
             for _, at in ipairs(levels) do
@@ -507,6 +567,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
     local scoped = {}
     for k, v in pairs(filters) do scoped[k] = v end
     scoped._guideTarget, scoped.class, scoped.race, scoped.faction = true, context.class, context.race, context.faction
+    scoped._guideMarket = addon:GetGuideMarket(context.faction)
     query.reference = not player or player.class ~= context.class
     if not query.reference then scoped._questAvailable = questAvailable end
     local search = (filters.search or ""):match("^%s*(.-)%s*$")
@@ -514,6 +575,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
     scoped.search = query.search
     query.activities = activity and {ordered = {}, byName = {}, context = context, targets = true}
     query.context, query.sort, query.direction, query.owned = context, state.sort, state.sortDirection, owned
+    query.questRevision, query.catalogRevision = self.questRevision, context.catalog.observedVersion
     local retry = self.targetRetry
     if retry and (not retry.query.done or retry.query.context ~= context or query.search or
         retry.query.activities and not activity or activity and not retry.query.activities or retry.query.sort ~= state.sort
@@ -545,6 +607,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
                 local data = slotSelected(filters, slot) and packed[slot]
                 local page = data and rating:GetGuideTargetPage(data, context.level)
                 if page then page.visitActivities(function(name, _, count, at)
+                    if name == "Auction House" then return end
                     local dest = activityEntry(preview, name)
                     for i = 1, count do
                         checkpoint()
@@ -562,12 +625,14 @@ function UI:RequestPackedGuideRows(context, filters, activity)
         for _, slot in ipairs(addon.slotOrder) do
             local indices = BigBiSListData.guide_index.slots[slot]
             if indices and query.search then
-                local ordinal, identity = rating:FindGuideItem(context, indices, search)
+                local ordinal, identity, link = rating:FindGuideItem(context, indices, search, owned, slot)
                 local found = identity and (native and native.facts or context.catalog.items[identity])
                 if ordinal or found and (found.slot == slot or found.slot == "One Hand" and slot == "Main Hand") then
-                    local row = exactLookup(context, slot, ordinal, identity, search, scoped, player, owned)
+                    local row = exactLookup(context, slot, ordinal, identity, search, scoped, player, owned, link)
                     if row then
                         local bucket = newBucket()
+                        bucket.pending = row.targetVerdict.pending
+                        self:QueueStatLoads(bucket.pending)
                         append(bucket, row)
                         query.slots[slot] = bucket
                         query.lookupReason = row.lookupReason or query.lookupReason
@@ -581,7 +646,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
             local data = slotSelected(filters, slot) and packed[slot]
             if data and retry and not retry.changed[slot] and retry.query.slots[slot] then
                 query.slots[slot] = retry.query.slots[slot]
-                query.unknown = query.unknown or query.slots[slot].unknown
+                query.comparisonDetail = query.comparisonDetail or query.slots[slot].comparisonDetail
             elseif data then
                 local bucket = newBucket()
                 if activity then bucket.activities = {ordered = {}, byName = {}} end
@@ -589,19 +654,23 @@ function UI:RequestPackedGuideRows(context, filters, activity)
                 visitTargets(context, data, scoped, query.search, player, owned, checkpoint, function(row, level)
                     local verdict, reward = row.targetVerdict, rewardKey(row, context)
                     if visible(verdict) then
-                        local new = not bucket.rewards[reward]
-                        keep(bucket, row, reward)
+                        local market = addon:IsGuideMarketRoute(row.matched_access_option, scoped._guideMarket)
+                        if market and not bucket.market then bucket.market = newBucket() end
+                        local destination = market and bucket.market or bucket
+                        local new = not destination.rewards[reward]
+                        keep(destination, row, reward)
                         if not activity and new then
                             publishFirst()
                             query.visibleCount = (query.visibleCount or 0) + 1
                             if query.visibleCount == 6 then self:ScheduleRefresh(nil, "visible gear targets") end
                         end
-                    elseif verdict.kind == "unknown" then
-                        bucket.unknown, query.unknown = true, true
-                        local comparison = verdict.swap and (verdict.swap.forecast or verdict.swap)
-                        if comparison and comparison.status == "loading" and not (rating.loadedItems or {})[row.item_id] then
-                            self:QueueStatLoads({[row.item_id] = true})
-                        end
+                    elseif verdict.kind == "loading" or verdict.kind == "unavailable" then
+                        bucket.comparisonDetail = bucket.comparisonDetail or verdict.detail
+                        query.comparisonDetail = query.comparisonDetail or verdict.detail
+                    end
+                    if verdict.pending and next(verdict.pending) then
+                        bucket.pending = bucket.pending or {}
+                        for id in pairs(verdict.pending) do bucket.pending[id] = true end
                     end
                     if activity then
                         checkpoint()
@@ -610,12 +679,20 @@ function UI:RequestPackedGuideRows(context, filters, activity)
                             local dest = activityEntry(bucket.activities, addon:GetActivityGroup(routed))
                             activityLoot(dest, reward)
                             if visible(verdict) then keep(dest, routed, reward)
-                            elseif verdict.kind == "unknown" then dest.unknown = true end
+                            elseif verdict.kind == "loading" or verdict.kind == "unavailable" then
+                                dest.comparisonDetail = dest.comparisonDetail or verdict.detail
+                            end
                         end
                     end
                 end)
                 bucket.rows = targetSort(self, bucket.rows, state, checkpoint)
                 for index, row in ipairs(bucket.rows) do bucket.positions[row.stat_identity] = index end
+                if bucket.market then
+                    local market = bucket.market
+                    market.rows = targetSort(self, market.rows, state, checkpoint)
+                    for index, row in ipairs(market.rows) do market.positions[row.stat_identity] = index end
+                end
+                self:QueueStatLoads(bucket.pending)
                 if not activity and not query.reference and not query.search and not bucket.rows[1] then
                     local level = math.max(context.level, player.level)
                     local personal = rating:GetContext(context.class, context.spec, level == 60 and "PR" or "LEVELING", level, owned)
@@ -626,6 +703,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
         if activity then finishActivities(query, player, context, checkpoint) end
     end, current, function()
         query.done, query.job = true, nil
+        if not filtered(filters) and not query.reference then self.lastUnfilteredGuide = query end
         if not priming then self:ScheduleRefresh(nil, "gear targets ready") end
     end, priming)
     priming = false
@@ -638,7 +716,7 @@ function UI:RenderPackedGuide(context, filters, title)
     local reach = not query.search and self:RequestPackedReach(context, filters)
     if query.exact then title = title .. " · Exact item lookup" end
     if query.reference then title = title .. " · Reference gear for " .. context.spec
-    elseif not query.exact then title = title .. " · Sidegrades and downgrades hidden" end
+    elseif not query.exact then title = title .. " · Upgrades and situational choices" end
     local existing = self.renderModel
     if not query.done and existing and existing.targetQuery ~= query and existing.targetQuery and (existing.rowCount or 0) > 0
         and existing.contextKey == self:GetNavigationContextKey() and not self.pendingNavigation then
@@ -665,6 +743,7 @@ function UI:RenderPackedGuide(context, filters, title)
             self:AddListRenderEntry(model, {kind = "note", text = title, height = 22, tooltip = guideExplanation})
             if reach then self:AddWithinReach(model, nil, "activities", reach) end
             local message = not query.done and "Comparing gear…" or query.reference and "No matching activities"
+                or query.comparisonDetail
                 or ("No known upgrades from activities at Level " .. context.level)
             self:AddListRenderEntry(model, {kind = "note", height = 28, text = message})
             self:RenderListModel(model)
@@ -698,6 +777,7 @@ function UI:GetPackedFilterAvailability(selection, phase, filters)
         local player, scoped = addon:GetTooltipPlayerContext(), {}
         for key, value in pairs(filters) do scoped[key] = value end
         scoped.class, scoped.race, scoped.faction, scoped._guideTarget = guide.class, guide.race, guide.faction, true
+        scoped._guideMarket = addon:GetGuideMarket(guide.faction)
         if player and player.class == guide.class then scoped._questAvailable = questAvailable end
         local function visit(base, collect)
             local search = base.search and base.search ~= "" and base.search

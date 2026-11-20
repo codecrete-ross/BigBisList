@@ -11,6 +11,44 @@
     }
   ],
   "routes": [
+    {
+      "item_ids": [11824],
+      "source": {
+        "type": "drop",
+        "entity_id": 9030,
+        "entity_type": "npc",
+        "entity_name": "Ok'thor the Breaker",
+        "zone": "Blackrock Depths",
+        "difficulty": "Normal",
+        "content_type": "dungeon",
+        "side": "Both",
+        "available_from_phase": "PR",
+        "confidence": "reviewed",
+        "eligibility": {"min_level": 49, "basis": "Conservative target level at the equip requirement."},
+        "source_url": "https://www.wowhead.com/forever/item=11824"
+      },
+      "corroboration_url": "https://www.wowhead.com/forever/npc=9030",
+      "attribution": [{"credit": "Wowhead", "source": "https://www.wowhead.com/forever/item=11824"}]
+    },
+    {
+      "item_ids": [17713],
+      "source": {
+        "type": "drop",
+        "entity_id": 12201,
+        "entity_type": "npc",
+        "entity_name": "Princess Theradras",
+        "zone": "Maraudon",
+        "difficulty": "Normal",
+        "content_type": "dungeon",
+        "side": "Both",
+        "available_from_phase": "PR",
+        "confidence": "reviewed",
+        "eligibility": {"min_level": 49, "basis": "Conservative target level at the equip requirement."},
+        "source_url": "https://www.wowhead.com/forever/item=17713"
+      },
+      "corroboration_url": "https://www.wowhead.com/forever/npc=12201",
+      "attribution": [{"credit": "Wowhead", "source": "https://www.wowhead.com/forever/item=17713"}]
+    },
     {"item_ids":[4302],"binding":"bind_on_equip","source":{"type":"drop","content_type":"other","entity_id":1910,"entity_name":"Muad","zone":"Tirisfal Glades","side":"Both","available_from_phase":"PR","confidence":"reviewed","eligibility":{"min_level":7,"basis":"Conservative target level at the equip requirement."},"source_url":"https://www.wowhead.com/forever/item=4302"},"corroboration_url":"https://www.wowhead.com/forever/npc=1910","attribution":[{"credit":"Wowhead Forever item and NPC observations","source":"https://www.wowhead.com/forever/item=4302"}]},
     {"item_ids":[11304],"binding":"bind_on_equip","source":{"type":"vendor","entity_id":3534,"entity_name":"Wallace the Blind","zone":"Silverpine Forest","price_copper":4861,"side":"Both","available_from_phase":"PR","confidence":"reviewed","eligibility":{"min_level":1},"source_url":"https://www.wowhead.com/forever/npc=3534"},"corroboration_url":"https://www.wowhead.com/forever/item=11304","attribution":[{"credit":"Wowhead Forever vendor inventory","source":"https://www.wowhead.com/forever/npc=3534"}]},
     {"item_ids":[254013],"binding":"bind_on_equip","source":{"type":"crafted","entity_name":"Earthen Silk Slippers","profession":"Tailoring","spell_id":1257432,"side":"Both","available_from_phase":"PR","confidence":"reviewed","eligibility":{"min_level":1},"source_url":"https://www.wowhead.com/forever/spell=1257432"},"corroboration_url":"https://www.wowhead.com/forever/item=254014","attribution":[{"credit":"Wowhead Forever crafting spell and pattern","source":"https://www.wowhead.com/forever/spell=1257432"}]},

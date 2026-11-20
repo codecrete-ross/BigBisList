@@ -2051,9 +2051,12 @@ function UI:GetAccessEvaluation(data)
         local firstReadyEvaluation
         local contextEvaluation
         local preferredEvaluation
+        local market = data.targetVerdict and BigBiSList:GetGuideMarket(accessState.playerSide)
 
         for _, option in ipairs(options) do
-            if optionMatchesPlayerSide(option, accessState) then
+            local allowedMarket = not data.targetVerdict or option.source_type ~= "trade"
+                or BigBiSList:IsGuideMarketRoute(option, market) or data.exactLookup and option == preferredOption
+            if allowedMarket and optionMatchesPlayerSide(option, accessState) then
                 local evaluation = self:EvaluateAccessOption(option, accessState)
                 if option == preferredOption and liveLevel and sourceLevel > liveLevel then
                     evaluation.status = "future"
@@ -2563,6 +2566,10 @@ function UI:RecordAddonTime(kind, duration)
     stats.worstFrame = math.max(stats.worstFrame or 0, stats.frameTime)
     stats.timings = stats.timings or {}
     stats.timings[kind] = math.max(stats.timings[kind] or 0, duration)
+    local gear = self.gearTransition
+    if gear and (not gear.endedFrame or gear.endedFrame == frame) then
+        gear.worstFrame = math.max(gear.worstFrame or 0, stats.frameTime)
+    end
 end
 
 function UI:CountPerformance(key, amount, reason)
@@ -3632,6 +3639,13 @@ end
 
 function UI:SetTab(tabName, reason)
     if normalizeTabName(tabName) == normalizeTabName(self:GetSelection().tab) then return end
+    if BigBiSList.ForeverGearRating and debugprofilestop then
+        if normalizeTabName(tabName) == "Equipped" then
+            self.gearTransition = {started = debugprofilestop()}
+        elseif self.gearTransition and not self.gearTransition.endedFrame then
+            self.gearTransition.endedFrame = GetTime and GetTime() or 0
+        end
+    end
     if normalizeTabName(self:GetSelection().tab) ~= "Settings" then
         self.lastWorkspaceTab = self:GetSelection().tab
         if normalizeTabName(tabName) == "Settings" then self.settingsReturnTab = self.lastWorkspaceTab end
@@ -3865,7 +3879,13 @@ local function applyItemPresentation(button, itemId, bindToken, presentation)
     if presentation.name and button.boundNameText then
         local label = button.boundNameText
         local name = exactItemName(button.detailData, button.detailMode) or presentation.name
-        BigBiSList.Widgets:SetCellText(label, name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
+        local data = button.detailData
+        if button.detailMode == "gear" and data and data.usesGearRating and not data.gearRated then
+            label:SetText(name)
+            label.fullText = name
+        else
+            BigBiSList.Widgets:SetCellText(label, name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
+        end
     end
     if presentation.link and not (button.detailData and button.detailData.item_link) then
         button.itemLink = presentation.link
@@ -3947,7 +3967,10 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
         nameText:SetTextColor(r, g, b, 1)
     end
 
-    ensureEntityButtonScripts(button)
+    -- The paper-doll tile owns the interaction for its decorative icon.
+    if detailMode ~= "gear" or not (detailData and detailData.usesGearRating) then
+        ensureEntityButtonScripts(button)
+    end
 
     self.itemPresentationCache = self.itemPresentationCache or {}
     self.pendingItemLoads = self.pendingItemLoads or {}
@@ -4736,14 +4759,19 @@ end
 
 function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, includeSummary)
     local service = BigBiSList.ForeverGearRating
+    if not service or not data then return end
     local comparison = mode == "comparison" and self.slotComparison
     if comparison and not comparison.statRank then return nil end
+    local gear = mode == "gear" and data.usesGearRating
+    local target = not comparison and data.targetVerdict
     local item, pending
-    if referenceOnly then item = data.stat_rank and data.stat_rank.item
-    elseif service then item, pending = service:GetRowItem(data) end
+    if gear then item, pending = data.stat_rank and data.stat_rank.item, data.stat_rank and data.stat_rank.status
+    elseif referenceOnly then item = data.stat_rank and data.stat_rank.item
+    else item, pending = service:GetRowItem(data) end
     if not item then
+        if target and target.detail then return {today = target.detail, tone = "unknown"} end
         if pending == "loading" then
-            self:QueueStatLoads({[data.item_id] = true})
+            if not gear then self:QueueStatLoads({[data.item_id] = true}) end
             return {today = "Waiting for item stats", tone = "unknown"}
         end
         return nil
@@ -4772,7 +4800,6 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
     local player = BigBiSList:GetTooltipPlayerContext()
     local ownership = self:GetRowOwnershipState(data)
     local swap
-    local target = not comparison and data.targetVerdict
     if comparison then
         swap = data.stat_swap
         local reference = comparison.reference
@@ -4781,6 +4808,8 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
         end
     elseif target then
         swap = target.swap
+    elseif gear then
+        swap = data.gearSwap
     elseif not referenceOnly and player and player.class == context.class then
         local spec = { class = player.class, spec = context.spec, phase = player.phase, level = player.level }
         swap = data.planner_swap or service:GetLiveLevelingSwap(item, data.item_link, self.currentOwned, data.slotKey, spec, mode == "gear")
@@ -4794,13 +4823,25 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
         explicitPreview = playerLevel and playerLevel ~= level,
         sourceLevel = sourceLevel, sourceType = sourceType, nativeRequirement = nativeRequirement })
     if target then
-        if target.kind == "utility" then view.today, view.tone = "Utility · " .. target.note, nil
+        if target.kind == "utility" or target.kind == "situational" then
+            view.today = target.purpose or "Utility"
+            view.tone = target.kind == "situational" and "uncertain" or nil
+            view.comparisonDetail = target.detail
+        elseif target.kind == "loading" or target.kind == "unavailable" then
+            view.today, view.tone = target.detail, "unknown"
         elseif target.reference then view.today, view.tone = "Reference gear for " .. context.spec, nil end
-        if data.targetRoll then view.today = (view.today or "Upgrade") .. " · Required roll · " .. data.targetRoll end
+        if data.exactLookup and target.kind == "hidden" then view.comparisonDetail = target.detail end
+        if data.targetRoll and (not data.matched_access_option or data.matched_access_option.source_type ~= "trade") then
+            view.today = (view.today or "Upgrade") .. " · Required roll · " .. data.targetRoll
+        end
         if target.level and playerLevel and target.level > playerLevel and view.evidence then
             view.evidence = "Estimated at Level " .. target.level .. " · " .. view.evidence:gsub("^Estimated ", ""):gsub(" at Level %d+$", "")
         end
         if data.lookupReason ~= view.acquisition then view.lookupReason = data.lookupReason end
+    elseif gear and data.gearSwap and data.gearSwap.blocker then
+        view.today = service:GuideItemDependency(data.gearSwap, data)
+    elseif gear and data.gearPurpose then
+        view.today, view.comparisonDetail = data.gearPurpose, data.gearEffect
     end
     return view, summary, record, placement
 end
@@ -4878,7 +4919,10 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     if mode == "leveling" and data.guide_note then slot = slot .. " · " .. data.guide_note end
     if gearView and gearView.today then
         slot = widgets:GearAdviceText(gearView)
-        if gearView.evidence then slot = slot .. " · " .. gearView.evidence end
+        local verdict = data.targetVerdict
+        if gearView.evidence and (not verdict or (verdict.kind ~= "utility" and verdict.kind ~= "situational")) then
+            slot = slot .. " · " .. gearView.evidence
+        end
     end
     if data.wishlist_any then slot = slot ~= "" and (slot .. " · Any version") or "Any version" end
     -- The secondary slot line has a reserved budget; item names never overlap it.
@@ -4947,17 +4991,20 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         local tier = placement and placement.tier
         if gearView then
             local strength = gearView.strength or self:GetRowRecommendationText(data, mode) or "Gear comparison unavailable"
-            local position = data.targetVerdict and placement and placement.rank and ("#" .. placement.rank .. " · ") or ""
+            local range = gearView.range ~= strength and gearView.range
+            local position = data.targetVerdict and placement and placement.rank and ("Catalog #" .. placement.rank .. " · ") or ""
             strength = position .. strength
             if data.guide_bis then strength = "BiS · " .. strength end
-            if gearView.range and gearView.range ~= strength then strength = strength .. "\n" .. gearView.range end
+            if range then strength = strength .. "\n" .. range end
             local color = data.guide_bis and widgets.Theme.bisGold or gearView.grade and gearView.grade > 0
                 and { widgets:GetRankColor(gearView.grade) } or tier and { widgets:GetRankColor(tier.quality) }
             bindCell("stat_rank", strength, color, 2)
             if row.cells.stat_rank.isTruncated and gearView.compact then
                 local compact = position .. gearView.compact
                 if data.guide_bis then compact = "BiS · " .. compact end
-                if gearView.compactRange and gearView.compactRange ~= compact then compact = compact .. "\n" .. gearView.compactRange end
+                if gearView.compactRange and gearView.compactRange ~= gearView.compact then
+                    compact = compact .. "\n" .. gearView.compactRange
+                end
                 bindCell("stat_rank", compact, color, 2)
             end
         else
@@ -4971,10 +5018,14 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     bindCell("source", source, {0.70,0.77,0.84})
     bindCell("location", location, {0.65,0.67,0.72})
     local nextStep = layout.acquisition and BigBiSList.isForever and self.GetSourceNextStep and self:GetSourceNextStep(data)
-    if gearView and gearView.acquisition then
+    if nextStep then
+        local option = data.matched_access_option
+        local zone = option and option.source_type ~= "trade" and option.zone
+        local detail = gearView and gearView.acquisition or (data.targetVerdict and zone or not data.targetVerdict and location)
+        if detail and detail ~= "" and not nextStep:find(detail, 1, true) then nextStep = nextStep .. "\n" .. detail end
+        bindCell("acquisition", nextStep, {0.70,0.77,0.84}, 2)
+    elseif gearView and gearView.acquisition then
         bindCell("acquisition", source .. "\n" .. gearView.acquisition, {0.70,0.77,0.84}, 2)
-    elseif nextStep then
-        bindCell("acquisition", nextStep .. (location ~= "" and ("\n" .. location) or ""), {0.70,0.77,0.84}, 2)
     else
         bindCell("acquisition", source .. (location ~= "" and ((maxLines == 1 and " · " or "\n") .. location) or ""), {0.70,0.77,0.84})
     end
@@ -6327,7 +6378,6 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
         local rows = {}
         for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows + 1] = row end end
         if reach or not packedActivities then self:AddWithinReach(model, rows, "activities", reach) end
-        if activities.unknown then self:AddListRenderEntry(model, {kind = "note", height = 22, text = "Some items couldn’t be compared"}) end
         local batch = activities.batch
         if not activities.targets then batch = self:RequestGearOpportunities(rows, selection, level, "activities", activities.ordered) end
         local order = self:GetViewState().activitySort or "most_loot"
@@ -6363,10 +6413,14 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
                 elseif batch and batch.totals then
                     local total = batch.totals[destination]
                     local n = total.upgrades
-                    if not total.unconfirmed then
-                        detail = detail .. " · " .. n .. (total.unknown and " known" or "") .. (n == 1 and " upgrade option" or " upgrade options")
+                    if n > 0 then
+                        detail = detail .. " · " .. n .. (n == 1 and " upgrade option" or " upgrade options")
                     end
-                    if total.unknown then detail = detail .. " · Some items couldn’t be compared" end
+                    local situations = total.situational or 0
+                    if situations > 0 then detail = detail .. " · " .. situations .. " situational" end
+                    if n == 0 and situations == 0 and total.comparisonDetail then
+                        detail = detail .. " · " .. total.comparisonDetail
+                    end
                     if order == "best_upgrade" and total.bestName then
                         detail = detail .. " · " .. total.bestName .. " (" .. BigBiSList.ForeverGearRating:EstimateSwapPoints(total.bestGain) .. ")"
                     end
@@ -6396,9 +6450,9 @@ function UI:RenderLevelingActivities(groups, selection, level, filters, emptyTex
     end
     local rows = self:SortDisplayRows(activity.rows, "leveling")
     if not activities.pending then self:AddWithinReach(model, rows, "activity:" .. activity.name) end
-    if activities.pending or activity.unknown then
+    if activities.pending or activity.comparisonDetail then
         self:AddListRenderEntry(model, {kind = "note", height = 22,
-            text = activities.pending and "Comparing gear…" or "Some items couldn’t be compared"})
+            text = activities.pending and "Comparing gear…" or activity.comparisonDetail})
     end
     local actions = self:GetLevelingQuestActions(rows, selection, level)
     if #actions > 0 then
@@ -6738,6 +6792,7 @@ local function layoutPaperDoll(host, buttons, sideWidth, weaponWidth, size, gap,
                 button:SetPoint(point, host, point, 0, -top - row * (size + gap))
                 button:SetSize(sideWidth, size)
                 button.iconButton:SetSize(size - 6, size - 6)
+                button.tileWidth, button.tileHeight = sideWidth, size
                 row = row + 1
             end
         end
@@ -6748,6 +6803,7 @@ local function layoutPaperDoll(host, buttons, sideWidth, weaponWidth, size, gap,
         button:SetPoint("BOTTOM", host, "BOTTOM", (index - 2) * (weaponWidth + gap), top)
         button:SetSize(weaponWidth, size)
         button.iconButton:SetSize(size - 6, size - 6)
+        button.tileWidth, button.tileHeight = weaponWidth, size
     end
 end
 
@@ -6953,13 +7009,28 @@ local function layoutGearSlotText(button)
     if not data then return end
     local widgets = BigBiSList.Widgets
     local occupied = data.item_id ~= nil
-    local width = math.max(1, button:GetWidth() - button.iconButton:GetWidth() - 15)
-    local twoLines = button:GetHeight() >= 27 and width >= 24
-    local nameHeight = math.min(14, button:GetHeight())
+    local height = button.tileHeight or button:GetHeight()
+    local iconWidth = button.tileHeight and height - 6 or button.iconButton:GetWidth()
+    local width = math.max(1, (button.tileWidth or button:GetWidth()) - iconWidth - 15)
+    local twoLines = height >= 27 and width >= 24
+    local nameHeight = math.min(14, height)
     local nameY = twoLines and 6.5 or 0
     local service, placement = BigBiSList.ForeverGearRating, data.stat_rank
     local rankColor = RANK_COLORS[data.display_rank_kind]
     local badge = button.guideBadge
+    if occupied and data.usesGearRating and not data.gearRated then
+        local name = button.itemName
+        name:SetPoint("LEFT", button.iconButton, "RIGHT", 6, 0)
+        name:SetWidth(width)
+        name:SetHeight(nameHeight)
+        name:SetWordWrap(false)
+        name:SetText(name.fullText or data.name)
+        if badge then badge:Hide() end
+        button.label:Hide()
+        button.rating:Hide()
+        button.stateIcon:Hide()
+        return
+    end
     local nameWidth = width
     if badge then
         badge:SetShown(occupied and data.guide_badge ~= nil)
@@ -7212,14 +7283,40 @@ function UI:CreateGearWorkspace(parent)
     return gear
 end
 
+function UI:RefreshGearScore()
+    local gear = self.gearFrame
+    local label = gear.preview.score
+    if not label then return end
+    local score = gear.score
+    local text = "Gear score unavailable"
+    if score and score.percent then
+        text = "Gear score · " .. score.percent .. "%" .. (score.partial > 0 and " · Partial" or "")
+    elseif gear.ratingRequest and not gear.ratingRequest.ready then
+        text = "Scoring gear…"
+    end
+    label:SetText(text)
+    if score and score.tier then
+        label:SetTextColor(BigBiSList.Widgets:GetRankColor(score.tier.quality))
+    else
+        label:SetTextColor(unpack(BigBiSList.Widgets.Theme.muted))
+    end
+end
+
 function UI:RefreshGearPreview()
-    local preview = self.gearFrame.preview
+    local gear = self.gearFrame
+    local preview = gear.preview
     local useModel = preview.model and preview:GetHeight() >= 158 and preview:GetWidth() >= 150
+    local request = gear.ratingRequest
+    if request and not request.ready and preview.appearance ~= gear.appearance then useModel = false end
     local hasModel = false
     if useModel then
         preview.model:Show()
-        local ok, result = pcall(preview.model.SetUnit, preview.model, "player")
-        hasModel = ok and result ~= false
+        if not preview.modelBound or preview.appearance ~= gear.appearance then
+            local ok, result = pcall(preview.model.SetUnit, preview.model, "player")
+            preview.modelBound = ok and result ~= false
+            preview.appearance = gear.appearance
+        end
+        hasModel = preview.modelBound
     end
     if preview.model then preview.model:SetShown(hasModel) end
     local ok = false
@@ -7228,16 +7325,7 @@ function UI:RefreshGearPreview()
     end
     preview.portrait:SetShown(ok)
     preview.name:SetText(UnitName and UnitName("player") or "")
-    if preview.score then
-        local score = self.gearFrame.score
-        preview.score:SetText(score and score.percent and ("Gear score · " .. score.percent .. "%"
-            .. (score.partial > 0 and " · Partial" or "")) or "Gear score unavailable")
-        if score and score.tier then
-            preview.score:SetTextColor(BigBiSList.Widgets:GetRankColor(score.tier.quality))
-        else
-            preview.score:SetTextColor(unpack(BigBiSList.Widgets.Theme.muted))
-        end
-    end
+    self:RefreshGearScore()
 end
 
 function UI:LayoutGearWorkspace()
@@ -7274,6 +7362,53 @@ function UI:LayoutGearWorkspace()
     return true
 end
 
+function UI:RequestGearNextStep(data)
+    local service = BigBiSList.ForeverGearRating
+    local request = self.gearFrame.ratingRequest
+    if not (request and data and not data.disabledReason and BigBiSListData.guide_index
+        and self.FindBestGearGuideTarget and C_Timer and C_Timer.After) then return end
+    local player = BigBiSList:GetTooltipPlayerContext()
+    if not player or player.class ~= request.class or request.owned.equippedOnly then return end
+    request.steps = request.steps or {}
+    local step = request.steps[data.slotKey]
+    if step and step.questRevision == self.questRevision and not (step.job and step.job.cancelled) then return step.text end
+    step = {questRevision = self.questRevision}
+    request.steps[data.slotKey] = step
+    step.job = service:QueueWork(1, function(checkpoint)
+        local live = service:GetContext(request.class, request.spec, player.phase, player.level, request.owned)
+        local own = live and service:GetOwnedGearAction(live, data.slotKey, data.dataSlots)
+        if own then
+            local names, bank = {}, false
+            for _, item in ipairs(own.incoming) do
+                names[#names + 1] = item.name
+                bank = bank or item.state == "bank"
+            end
+            if names[1] then
+                local action = bank and "Bank · " or (request.spec == player.spec and "Equip " or "Bags · ")
+                return action .. table.concat(names, " + ")
+            end
+        end
+        local phase = request.phase
+        local guide = service:GetGuideContext(request.class, request.spec, phase, request.level,
+            BigBiSList:GetPlayerRaceName(), BigBiSList:GetPlayerFactionName())
+        if not guide then return end
+        local slots = data.dataSlots
+        if data.slotKey == "OffHand" and request.owned.equippedTwoHand then return end
+        local target = self:FindBestGearGuideTarget(guide, slots, player, request.owned, checkpoint)
+        if not target then return end
+        local _, location = self:GetRowAcquisitionDisplay(target)
+        local source = self:GetSourceNextStep(target) or location
+        return target.name .. (source and source ~= "" and (" · " .. source) or "")
+    end, function()
+        return self.frame:IsShown() and self:GetViewKey() == "myGear" and self.gearSlotKey == data.slotKey
+            and self.gearFrame.ratingRequest == request and self.currentOwned == request.owned
+            and step.questRevision == self.questRevision
+    end, function(nextStep)
+        step.job, step.text = nil, nextStep
+        self:RefreshGearSelection()
+    end)
+end
+
 function UI:RefreshGearSelection()
     local gear = self.gearFrame
     local summary = gear.summary
@@ -7284,6 +7419,7 @@ function UI:RefreshGearSelection()
     if summary.statCompare then summary.statCompare:SetShown(data ~= nil and data.stat_rank ~= nil) end
     for _, button in pairs(gear.slots) do button:SetSelected(button == selected) end
     if data then
+        local nextStep = self:RequestGearNextStep(data)
         summary.slot:SetText(data.slot)
         summary.itemButton:SetShown(data.item_id ~= nil)
         if data.stat_rank then
@@ -7306,7 +7442,11 @@ function UI:RefreshGearSelection()
             summary.rating:SetText(data.recommendation_summary)
             summary.rating:SetTextColor(1, 1, 1)
         end
-        summary.rating:SetShown(data.item_id ~= nil)
+        if nextStep then
+            local rating = data.item_id and summary.rating:GetText()
+            summary.rating:SetText(rating and rating ~= "" and (rating .. "\n" .. nextStep) or nextStep)
+        end
+        summary.rating:SetShown(data.item_id ~= nil or nextStep ~= nil)
         if data.item_id then
             self:SetItemButton(summary.itemButton, data.item_id, summary.itemName, data.name, data.item and data.item.quality, data, "gear")
         else
@@ -7327,15 +7467,102 @@ function UI:RefreshGearSelection()
     end
 end
 
+function UI:GetGearRatingRequest(selection, phase, level)
+    local service = BigBiSList.ForeverGearRating
+    if not service then return end
+    local owned = self.currentOwned
+    local revision = BigBiSList.ForeverScoring and BigBiSList.ForeverScoring.revision or 0
+    local observed = service.catalog and service.catalog.observedVersion or 0
+    local key = table.concat({selection.class, selection.spec, phase, level, self:GetProgressionCacheKey(), revision, observed}, "/")
+    local cache = self.gearRatingCache
+    if not cache or cache.owned ~= owned or cache.revision ~= revision or cache.observed ~= observed then
+        cache = {owned = owned, revision = revision, observed = observed, requests = {}, order = {}}
+        self.gearRatingCache = cache
+    end
+    local request = cache.requests[key]
+    if not request then
+        request = {
+            rows = BigBiSList:GetEquippedGearRows(selection.class, selection.spec, phase, owned, level, true),
+            class = selection.class, spec = selection.spec, phase = phase, level = level, owned = owned,
+        }
+        cache.requests[key] = request
+        cache.order[#cache.order + 1] = key
+        if #cache.order > 6 then cache.requests[table.remove(cache.order, 1)] = nil end
+    end
+    return request
+end
+
+function UI:QueueGearRatings(request)
+    if request.ready or (request.job and not request.job.cancelled) then return end
+    local service, gear = BigBiSList.ForeverGearRating, self.gearFrame
+    local function current()
+        local selection = self:GetSelection()
+        return gear.ratingRequest == request and self.currentOwned == request.owned
+            and self.frame:IsShown() and self:GetViewKey() == "myGear"
+            and selection.class == request.class and selection.spec == request.spec
+            and self:GetEffectivePhaseKey() == request.phase
+            and BigBiSList:GetSelectedLevelingLevel() == request.level
+    end
+    local function build(checkpoint)
+        local ratedRows = BigBiSList:GetEquippedGearRows(request.class, request.spec, request.phase, request.owned, request.level)
+        local context = service:GetContext(request.class, request.spec, request.phase, request.level, request.owned)
+        if context then self:QueueStatLoads(context.pending) end
+        local player = BigBiSList:GetTooltipPlayerContext()
+        local live = player and player.class == request.class and {
+            class = request.class, spec = request.spec, phase = player.phase, level = player.level,
+        }
+        for i, row in ipairs(request.rows) do
+            if row.item_id then
+                if checkpoint then checkpoint() end
+                local placement = context and service:GetEquippedPlacement(context, row.slotKey, row.dataSlots)
+                local item = placement and placement.item
+                local swap = item and live and service:GetLiveLevelingSwap(item, row.item_link, request.owned, row.slotKey, live, true)
+                if checkpoint then checkpoint() end
+                for field, value in pairs(ratedRows[i]) do row[field] = value end
+                row.stat_rank, row.gearSwap, row.gearRated = placement, swap, true
+                if swap and swap.conditional then
+                    row.gearPurpose, row.gearEffect = service:GetGearPurpose(context, item, swap)
+                    if not row.gearPurpose and row.gearEffect then
+                        if row.gearEffect:match("^Use:") then row.gearPurpose = "On-use"
+                        elseif row.gearEffect:lower():find("chance", 1, true) then row.gearPurpose = "Proc"
+                        else row.gearPurpose = "Effect" end
+                    end
+                end
+                if gear:IsVisible() and gear.slots[row.slotKey].gearData == row then
+                    local button = gear.slots[row.slotKey]
+                    BigBiSList.Widgets:SetEquippedBiS(button, row.equipped_bis)
+                    layoutGearSlotText(button)
+                    if self.gearSlotKey == row.slotKey then self:RefreshGearSelection() end
+                end
+            end
+        end
+        if context then return service:GetGearScore(context, BigBiSList:GetEquipmentSlotDefinitions()) end
+    end
+    local function ready(score)
+        request.job, request.score, request.ready = nil, score, true
+        if gear.ratingRequest == request then
+            gear.score = score
+            self:RefreshGearPreview()
+            if self.gearTransition then self.gearTransition.endedFrame = GetTime and GetTime() or 0 end
+        end
+    end
+    if C_Timer and C_Timer.After then
+        request.job = service:QueueWork(0, build, current, ready)
+    else
+        ready(build())
+    end
+end
+
 function UI:RenderGearTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
     local gear = self.gearFrame
-    local rows = self:GetCachedViewQuery("gear", function()
+    local request = self:GetGearRatingRequest(selection, self:GetEffectivePhaseKey(), filters.level)
+    local rows = request and request.rows or self:GetCachedViewQuery("gear", function()
         return BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)
     end)
-    self:QueueStatLoads(rows.statsPending)
+    gear.ratingRequest, gear.score = request, request and request.score
     self:RunRenderTransaction(function()
         self.renderModel = nil
         self:ReleaseRenderFrames()
@@ -7349,29 +7576,42 @@ function UI:RenderGearTab()
         self.contentStaticLayer:Hide()
         self.emptyLabel:Hide()
         for _, button in ipairs(self.emptyActions or {}) do button:Hide() end
-        gear.score = rows.gearScore
         gear:SetShown(not self.inspectorExclusive)
         self.contentScroll:Hide()
-        for _, data in ipairs(rows) do
-            local button = gear.slots[data.slotKey]
-            button.gearData = data
-            BigBiSList.Widgets:SetEquippedBiS(button, data.equipped_bis)
-            if data.item_id then
-                self:SetItemButton(button.iconButton, data.item_id, button.itemName, data.name, data.item and data.item.quality, data, "gear")
-            else
-                self:ResetEntityButton(button.iconButton, button.itemName, data.slot)
-                button.itemName:SetTextColor(0.75, 0.76, 0.81)
-                if data.overlayKind ~= "unknown" then button.iconButton.icon:SetTexture(button.slotTexture) end
+        if gear.renderedRows ~= rows then
+            local appearance = {}
+            for _, data in ipairs(rows) do
+                local button = gear.slots[data.slotKey]
+                button.gearData = data
+                BigBiSList.Widgets:SetEquippedBiS(button, data.equipped_bis)
+                if data.item_id then
+                    self:SetItemButton(button.iconButton, data.item_id, button.itemName, data.name, data.item and data.item.quality, data, "gear")
+                    appearance[#appearance + 1] = data.slotKey .. "/" .. (data.item_link or data.item_id)
+                else
+                    self:ResetEntityButton(button.iconButton, button.itemName, data.slot)
+                    button.itemName:SetTextColor(0.75, 0.76, 0.81)
+                    if data.overlayKind ~= "unknown" then button.iconButton.icon:SetTexture(button.slotTexture) end
+                end
             end
-            layoutGearSlotText(button)
+            gear.appearance = table.concat(appearance, "|")
+            gear.renderedRows = rows
+            if not self:LayoutGearWorkspace() then
+                for _, data in ipairs(rows) do layoutGearSlotText(gear.slots[data.slotKey]) end
+            end
+        else
+            self:LayoutGearWorkspace()
         end
-        local geometryChanged = self:LayoutGearWorkspace()
         self:RefreshGearSelection()
-        if gear:IsVisible() and self.gearPreviewOwnership ~= self.currentOwned then
-            self.gearPreviewOwnership = self.currentOwned
-            if not geometryChanged then self:RefreshGearPreview() end
-        end
+        if gear:IsVisible() then self:RefreshGearPreview() end
     end)
+    if request then
+        local transition = self.gearTransition
+        if transition and not transition.firstPaint and gear:IsVisible() then
+            transition.firstPaint = debugprofilestop() - transition.started
+            if request.ready then transition.endedFrame = GetTime and GetTime() or 0 end
+        end
+        self:QueueGearRatings(request)
+    end
 end
 
 function UI:RenderEnhanceTab()
@@ -9003,6 +9243,11 @@ function UI:Refresh(reason)
         self:ValidateSelection()
         local tabName = normalizeTabName(self:GetSelection().tab)
         if tabName ~= "Settings" and not self.currentFilterPayload then
+            if tabName == "Equipped" and BigBiSListData.guide_index and not self.currentOwned
+                and C_Timer and C_Timer.After then
+                self.currentOwned = self:GetTooltipOwnedSnapshot()
+                self.ownedCharacter = BigBiSList:GetCharacterDB()
+            end
             self:BuildFilterPayload()
         end
         self:RefreshControls()
@@ -9111,11 +9356,14 @@ function UI:RunPerformanceSmoke()
                 return
             end
             local stats = UI:GetPerformanceStats()
+            local gear = UI.gearTransition
             local endMemory = collectgarbage and collectgarbage("count") or startMemory
             local elapsed = debugprofilestop and (debugprofilestop() - startTime) or 10500
             write(table.concat({
                 "first rows=" .. (stats.firstRowsMs and string.format("%.1f ms", stats.firstRowsMs) or "already open"),
                 "worst addon frame=" .. string.format("%.1f ms", stats.worstFrame or 0),
+                "My Gear first paint=" .. (gear and gear.firstPaint and string.format("%.1f ms", gear.firstPaint) or "not sampled"),
+                "My Gear worst frame=" .. (gear and gear.worstFrame and string.format("%.1f ms", gear.worstFrame) or "not sampled"),
                 "idle refreshes=" .. tostring(stats.executedRefreshes - baseline.refreshes),
                 "layouts=" .. tostring(stats.layoutPasses - baseline.layouts),
                 "data builds=" .. tostring((stats.ownershipBuilds - baseline.ownership) + (stats.accessBuilds - baseline.access) + (stats.availabilityBuilds - baseline.availability) + (stats.queryBuilds - baseline.queries)),
@@ -9932,7 +10180,7 @@ function UI:ApplyBodyLayout()
             self:Invalidate("presentation", "gear-show")
             self:ScheduleRefresh(nil, "gear-show")
         end
-        if self:LayoutGearWorkspace() then self:RefreshGearSelection() end
+        if not self.refreshInProgress and self:LayoutGearWorkspace() then self:RefreshGearSelection() end
     end
     self:LayoutSlotPicker()
     self.inspectorToggleButton:SetSelected(showInspector)
@@ -10028,6 +10276,10 @@ end
 function UI:Open()
     local start = debugprofilestop and debugprofilestop()
     if start and not self.hasRenderedContent then self.firstRowsStarted, self.attemptedFirstGuidePaint = start, nil end
+    if start and BigBiSList.ForeverGearRating and self:GetViewKey() == "myGear"
+        and (not self.frame or not self.frame:IsShown()) then
+        self.gearTransition = {started = start}
+    end
     if BigBiSList.isForever and BigBiSListData.guide_index and (not self.frame or not self.frame:IsShown())
         and self:GetViewKey() == "gearGuide" then
         local live = BigBiSList:GetDetectedPlayerLevel()
@@ -10096,7 +10348,8 @@ end
 
 local function ownershipKey(rating, owned)
     if owned.uiOwnershipKey then return owned.uiOwnershipKey end
-    local tokens = {rating:GetGearSnapshotKey(owned), tostring(owned.bankScanned), tostring(owned.inventoryIncomplete)}
+    local tokens = {rating:GetGearSnapshotKey(owned), tostring(owned.bankScanned), tostring(owned.inventoryIncomplete),
+        tostring(owned.equippedOnly)}
     local items = {}
     for id, value in pairs(owned) do
         if type(id) == "number" then items[#items + 1] = id .. "/" .. tostring(value) end
