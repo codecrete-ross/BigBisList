@@ -9,6 +9,7 @@ dofile("DataIndex.lua")
 
 local addon, data = BigBiSList, BigBiSListData
 local rating, source = addon.ForeverGearRating, data.stat_rank
+GetBuildInfo = function() return "Forever", source.roll_build end
 local catalog = rating:GetCatalog(source)
 local out = assert(io.open(output, "wb"))
 local write = function(...) assert(out:write(...)) end
@@ -50,6 +51,19 @@ end
 
 local routeTransitions = {}
 local activities, activityIds = {}, {}
+local routeHints, routeHintIds = {}, {}
+local function storeHints(hints)
+    local values, seen = {}, {}
+    for _, hint in ipairs(hints) do
+        local fields = {}
+        for i, value in ipairs(hint) do fields[i] = type(value) == "number" and tostring(value) or quote(value) end
+        local literal = "{" .. table.concat(fields, ",") .. "}"
+        local id = routeHintIds[literal]
+        if not id then id = #routeHints + 1; routeHintIds[literal], routeHints[id] = id, literal end
+        if not seen[id] then values[#values + 1], seen[id] = pack(id, 3), true end
+    end
+    return store(table.concat(values))
+end
 local function routes(item)
     local known = routeTransitions[item.id]
     if not known then
@@ -100,7 +114,7 @@ for _, slot in ipairs(addon.slotOrder) do
 end
 if className == "catalog" then
     local signature = data.runtime_indexes and data.runtime_indexes.guide_signature
-    write("BigBiSListData.guide_index = {version=2, signature=", signature and quote(signature) or "nil",
+    write("BigBiSListData.guide_index = {version=4, signature=", signature and quote(signature) or "nil",
         ", data=BigBiSListData.stat_rank, slots={}, classes={}, quests={}}\n")
     local questItems = {}
     for _, slot in ipairs(slotKeys) do
@@ -182,9 +196,11 @@ local function intervals(contexts, id, routeCache, first, last)
     local function add(level, final)
         local verified, reason = addon:IsStatRankGuideItemAvailable(id, contexts[level], route.options)
         if verified or reason == "missing_item_record" or reason == "unverified_route" then
-            local ids = {}
+            local ids, methods, hints = {}, {}, {}
             if verified then
-                for _, name in ipairs(addon:GetGuideTargetActivities(contexts[level], route.options)) do
+                local names
+                names, methods, hints = addon:GetGuideTargetActivities(contexts[level], route.options)
+                for _, name in ipairs(names) do
                     if not activityIds[name] then
                         activities[#activities + 1] = name
                         activityIds[name] = #activities
@@ -192,7 +208,7 @@ local function intervals(contexts, id, routeCache, first, last)
                     ids[#ids + 1] = activityIds[name]
                 end
             end
-            result[#result + 1] = { level, final, verified, ids }
+            result[#result + 1] = { level, final, verified, ids, methods, storeHints(hints) }
         end
     end
     if first == last then
@@ -325,6 +341,54 @@ local function scoreOrder(slot, contexts, items, low, high)
     return unpack(saved)
 end
 
+-- Keep the best reward for each distinct trip/cost, plus reviewed uses. A
+-- normal page starts with competitive trips and the best of each acquisition
+-- method. A dungeon filter can still address every reward through its posting.
+local function pickPage(targets, records, items, state, level, fixedOnly)
+    local trips, approaches, easiest, choices, picks = {}, {}, {}, {}, {}
+    local best
+    for _, value in ipairs(targets) do
+        local ordinal = value % 131072
+        local record, item = records[ordinal], items[ordinal]
+        if not fixedOnly or source.items[item.key] then
+            local pos = state.positions[ordinal]
+            local points = pos and state.scores[pos].points or 0
+            if points > 0 or record.reviewed then
+                local distinct = record.reviewed or item.effect_rules or item.set_key
+                for trip, route in pairs(record.methods[level]) do
+                    local gate = easiest[route.family]
+                    if not trips[trip] then
+                        -- Retain candidates for a different personal baseline. The cold page
+                        -- needs a distinct route or an easier requirement than the stronger pick.
+                        choices[ordinal] = true
+                        if not gate or route.level and route.level < gate then distinct = true end
+                    end
+                    if route.level and (not gate or route.level < gate) then easiest[route.family] = route.level end
+                    if not approaches[route.method] or record.reviewed then picks[ordinal] = true end
+                    trips[trip], approaches[route.method] = true, true
+                end
+                if distinct then choices[ordinal] = true end
+                best = best or points
+                if distinct and points >= best * 0.85 then picks[ordinal] = true end
+            end
+        end
+    end
+    local function members(set)
+        local list = {}
+        for _, value in ipairs(targets) do
+            local ordinal = value % 131072
+            if set[ordinal] then list[#list + 1] = pack(ordinal, 3) end
+        end
+        return pack(store(table.concat(list)), 4)
+    end
+    local hints = {}
+    for _, value in ipairs(targets) do
+        local ordinal = value % 131072
+        if picks[ordinal] then hints[#hints + 1] = pack(records[ordinal].hints[level], 4) end
+    end
+    return members(picks) .. members(choices) .. pack(store(table.concat(hints)), 4)
+end
+
 local function buildSlot(slot, contexts, routeCache, first, last)
     local items, allowed, records, states = universe(slot), {}, {}, {}
     local function at(level) return contexts[level] end
@@ -332,12 +396,18 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         local low, high = rating:GetReferenceWindow(contexts[first], contexts[last], item, slot, at)
         if low then
             local record = {ordinal = ordinal, ranked = {}, verified = {}, recommended = {}, strength = {}, leading = {}, targets = {}}
+            record.methods, record.hints = {}, {}
+            if source.items[item.key] then
+                record.fixed = {ranked = record.ranked, verified = record.verified, recommended = {}, leading = {}, strength = {}}
+            end
             local timeline = intervals(contexts, item.id, routeCache, first, last)
             for _, interval in ipairs(timeline) do
                 for level = math.max(low, interval[1]), math.min(high, interval[2]) do
                     extend(record.ranked, level)
                     if interval[3] then extend(record.verified, level) end
-                    if #interval[4] > 0 then record.targets[level] = interval[4] end
+                    if #interval[4] > 0 then
+                        record.targets[level], record.methods[level], record.hints[level] = interval[4], interval[5], interval[6]
+                    end
                     record[level] = true
                 end
             end
@@ -371,10 +441,30 @@ local function buildSlot(slot, contexts, routeCache, first, last)
             local count, rank, leader, conditional, best, previous = 0, 0, 0, {}, nil, nil
             local bitmap, prefix, mask, power = {}, {}, 0, 1
             local uncertain = false
+            local fixed, fixedLeader, fixedTies, fixedUncertain = {}, nil, {}, false
             for position, score in ipairs(scores) do
                 local record = records[score.ordinal]
                 if record and record[level] then
                     local points = score.points
+                    if record.fixed then
+                        fixed[position] = true
+                        fixedLeader = fixedLeader or position
+                        local fixedBest = scores[fixedLeader].points
+                        if points == fixedBest then extend(record.fixed.leading, level) end
+                        local ratio = fixedBest > 0 and math.floor(points * 100 / fixedBest + 1e-9) or 0
+                        if record.reviewed or points > 0 and ratio >= 70 then extend(record.fixed.recommended, level) end
+                        if ratio >= 70 then
+                            local strength = ratio >= 97 and 5 or ratio >= 85 and 4 or 3
+                            extend(record.fixed.strength, level, strength + (score.conditional and 8 or 0))
+                        end
+                        if score.conditional then
+                            fixedUncertain = true
+                            if fixedTies.last ~= points then
+                                fixedTies[#fixedTies + 1] = pack(points + 2147483648, 6)
+                                fixedTies.last = points
+                            end
+                        end
+                    end
                     count = count + 1
                     if not best then best, leader = points, position end
                     if previous ~= points then rank, previous = count, points end
@@ -416,24 +506,43 @@ local function buildSlot(slot, contexts, routeCache, first, last)
                 end
             end
             for _, record in ipairs(allowed) do
-                if record.reviewed and record[level] == true then extend(record.recommended, level) end
+                if record.reviewed and record[level] == true then
+                    extend(record.recommended, level)
+                    if record.fixed then extend(record.fixed.recommended, level) end
+                end
             end
             states[level] = { valueRef, inverseRef, store(table.concat(bitmap)), count, leader, uncertain and 1 or 0,
                 store(table.concat(conditional)), groupRef, inverseWidth, store(table.concat(prefix)),
                 best and best + 2147483648 or 2147483648 }
             states[level].positions, states[level].scoreCount = positions, #scores
             states[level].effects = effects
+            states[level].scores = scores
+            for _, record in ipairs(unresolved) do
+                if record[level] and source.items[items[record.ordinal].key] then fixedUncertain = true; break end
+            end
+            local masks, prefixes, fixedCount = sparseOrder(fixed, #scores)
+            if fixedCount == 1 then
+                local strengths = records[scores[fixedLeader].ordinal].fixed.strength
+                local tail = strengths[#strengths]
+                if tail and tail[2] == level then
+                    if tail[1] == level then strengths[#strengths] = nil else tail[2] = level - 1 end
+                end
+            end
+            states[level].fixed = pack(masks, 4) .. pack(prefixes, 4) .. pack(fixedCount, 3)
+                .. pack(fixedLeader or 0, 3) .. pack((fixedLeader and scores[fixedLeader].points or 0) + 2147483648, 6)
+                .. pack(store(table.concat(fixedTies)), 4) .. pack(fixedUncertain and 1 or 0, 1)
         end
         low = high + 1
     end
 
-    local recordRefs, verified = {}, {}
+    local recordRefs, fixedRefs, verified = {}, {}, {}
     for ordinal = 1, #items do
         local record = records[ordinal]
         recordRefs[ordinal] = pack(record and store(packRanges(record)) or 0, 4)
+        fixedRefs[ordinal] = pack(record and record.fixed and store(packRanges(record.fixed)) or 0, 4)
         if record and record.verified[1] then verified[#verified + 1] = pack(ordinal, 3) end
     end
-    local packedLevels, targetLevels = {}, {}
+    local packedLevels, targetLevels, pickLevels, fixedLevels = {}, {}, {}, {}
     for level = first, last do
         local state, ordered = states[level], {}
         local lowerScored, lowerUnscored, targets, byActivity = {}, {}, {}, {}
@@ -474,6 +583,9 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         for index, number in ipairs(state) do packed[index] = pack(number, index == 11 and 6 or 4) end
         packedLevels[#packedLevels + 1] = table.concat(packed)
         table.sort(targets)
+        pickLevels[#pickLevels + 1] = pickPage(targets, records, items, state, level, false)
+            .. pickPage(targets, records, items, state, level, true)
+        fixedLevels[#fixedLevels + 1] = state.fixed
         for n, value in ipairs(targets) do targets[n] = pack(value % 131072, 3) end
         local destinations = {}
         for id = 1, #activities do
@@ -484,7 +596,7 @@ local function buildSlot(slot, contexts, routeCache, first, last)
         targetLevels[#targetLevels + 1] = pack(store(table.concat(targets)), 4) .. pack(store(table.concat(destinations)), 4)
     end
     return { store(table.concat(recordRefs)), store(table.concat(verified)), store(table.concat(packedLevels)), #allowed,
-        store(table.concat(targetLevels)) }
+        store(table.concat(targetLevels)), store(table.concat(pickLevels)), store(table.concat(fixedLevels)), store(table.concat(fixedRefs)) }
 end
 
 local specKeys = {}
@@ -531,5 +643,6 @@ for _, phase in ipairs(data.phases) do
     end
 end
 for id, name in ipairs(activities) do activities[id] = quote(name) end
+write("archive.hints={", table.concat(routeHints, ","), "}\n")
 write("archive.activities={", table.concat(activities, ","), "}\nend\n")
 out:close()

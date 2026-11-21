@@ -4,7 +4,8 @@ local rating = addon.ForeverGearRating
 if not rating then return end
 
 local bundle, source = BigBiSListData.guide_index, BigBiSListData.runtime_indexes
-if bundle and not (source and source.guide_signature and bundle.signature == source.guide_signature) then
+local INDEX_VERSION = 4
+if bundle and not (bundle.version == INDEX_VERSION and source and source.guide_signature and bundle.signature == source.guide_signature) then
     BigBiSListData.guide_index = nil
 end
 
@@ -104,8 +105,7 @@ end
 
 local function profile(context, phase)
     local bundle = BigBiSListData.guide_index
-    if not bundle or bundle.version ~= 2 or bundle.data ~= context.catalog.data
-        or not context.catalog.rollBuildMatches then return end
+    if not bundle or bundle.version ~= INDEX_VERSION or bundle.data ~= context.catalog.data then return end
     local archive = bundle.classes[context.class]
     if not archive or not context.race or not context.faction then return end
     if not archive.open then
@@ -115,7 +115,8 @@ local function profile(context, phase)
     end
     local key = context.spec .. "/" .. context.race .. "/" .. context.faction .. "/" .. (addon.phaseOrder[context.phaseIndex] or "")
     local spec = archive.profiles[key]
-    if spec then return bundle, archive, spec[phase or context.phase] end
+    local page = spec and spec[phase or context.phase]
+    if page then return bundle, archive, page end
 end
 
 local function dataset(context, slot, phase)
@@ -124,21 +125,48 @@ local function dataset(context, slot, phase)
     local indices = bundle.slots[slot]
     local slotInfo = spec[slot]
     if not (indices and slotInfo) then return false end
-    return { archive = archive, indices = indices, ranges = archive.strings[slotInfo[1]],
+    local fixedRanks = not context.catalog.rollBuildMatches and slotInfo[8]
+    return { archive = archive, indices = indices, ranges = archive.strings[fixedRanks or slotInfo[1]],
         verified = archive.strings[slotInfo[2]], states = archive.strings[slotInfo[3]], count = slotInfo[4],
-        targets = slotInfo[5] and archive.strings[slotInfo[5]],
+        targets = archive.strings[slotInfo[5]], picks = archive.strings[slotInfo[6]],
+        fixed = not context.catalog.rollBuildMatches and archive.strings[slotInfo[7]],
         first = (phase or context.phase) == "LEVELING" and 1 or 60, slot = slot }
 end
 
-function rating:GetGuideTargetPage(data, level)
+function rating:GetGuideTargetPage(data, level, selection)
+    if data and data.core then
+        local list = data.members
+        return {count = #list, at = function(i) return list[i] end, visitActivities = function() end}
+    end
     if not data or not data.targets then return end
     local offset = (level - data.first) * 8 + 1
     local archive = data.archive
-    local members = archive.strings[packedRead(archive, data.targets, offset, 4)]
-    local activities = archive.strings[packedRead(archive, data.targets, offset + 4, 4)]
-    return {count = size(members) / 3, at = function(index)
+    local members, routes
+    if selection then
+        local start = (level - data.first) * 24 + (data.fixed and 12 or 0) + 1
+        members = archive.strings[packedRead(archive, data.picks, start + (selection == "candidates" and 4 or 0), 4)]
+        if selection == "picks" then
+            local hints = archive.strings[packedRead(archive, data.picks, start + 8, 4)]
+            routes = function(index, accept)
+                local ids = archive.strings[packedRead(archive, hints, (index - 1) * 4 + 1, 4)]
+                local market
+                for pos = 1, size(ids), 3 do
+                    local hint = archive.hints[packedRead(archive, ids, pos, 3)]
+                    if accept(hint) then
+                        if hint[6] == "" then return hint end
+                        market = market or hint
+                    end
+                end
+                return market
+            end
+        end
+    else
+        members = archive.strings[packedRead(archive, data.targets, offset, 4)]
+    end
+    return {count = size(members) / 3, route = routes, at = function(index)
         return packedRead(archive, members, (index - 1) * 3 + 1, 3)
     end, visitActivities = function(visit)
+        local activities = archive.strings[packedRead(archive, data.targets, offset + 4, 4)]
         for pos = 1, size(activities), 6 do
             local id = packedRead(archive, activities, pos, 2)
             local items = archive.strings[packedRead(archive, activities, pos + 2, 4)]
@@ -164,6 +192,7 @@ local function searchRanges(indices, lower)
 end
 
 function rating:GuideSearchPredicate(indices, search)
+    if indices.core then return end
     local hits = searchRanges(indices, search:lower())
     if not hits then return end
     local count = #hits / 6
@@ -187,6 +216,42 @@ function rating:FindGuideItem(context, indices, search, owned, slot)
         local item = ordinal and (context.catalog.observed[key] or context.catalog.items[key])
         if item and item.name:lower() == lower then return ordinal, key, worn.item_link end
     end
+    if source and source.guide_core and source.guide_core.items == context.catalog.data.items then
+        local names = source.guide_core.names
+        local function named(name)
+            local i = lowerBound(#names, name, function(pos) return context.catalog.items[names[pos]].name:lower() end)
+            local closest, closestLevel, fallback
+            while i <= #names do
+                local key, item = names[i], context.catalog.items[names[i]]
+                if item.name:lower() ~= name then break end
+                if indices.lookup[key] or item.has_random_stats and (item.slot == slot or item.slot == "One Hand" and slot == "Main Hand") then
+                    fallback = fallback or key
+                    if not item.excluded then
+                        local record = self:GetPackedLevelingRecord(context, slot, key, true)
+                        local range = record and self:LevelingRangeAt(record.verified, context.level)
+                        if range and context.level >= range.firstLevel and context.level <= range.lastLevel then return key end
+                        if range and range.firstLevel > context.level and (not closestLevel or range.firstLevel < closestLevel) then
+                            closest, closestLevel = key, range.firstLevel
+                        end
+                    end
+                end
+                i = i + 1
+            end
+            return closest or fallback
+        end
+        local key = named(lower)
+        if not key then
+            for bonus, template in pairs(context.catalog.data.roll_templates or {}) do
+                local suffix = " " .. template[1]:lower()
+                if lower:sub(-#suffix) == suffix then
+                    local base = named(lower:sub(1, -#suffix - 1))
+                    local exact = base and (base .. ":0:0:0:1:" .. bonus)
+                    if exact and context.catalog.items[exact] then key = exact; break end
+                end
+            end
+        end
+        return key and indices.lookup[key], key
+    end
     local hits = searchRanges(indices, lower)
     if not hits then return end
     local checkpoint = self:GetWorkCheckpoint()
@@ -209,16 +274,60 @@ function rating:FindGuideItem(context, indices, search, owned, slot)
     return fallbackOrdinal, fallbackKey
 end
 
+local function coreSlots(context)
+    local core = source and source.guide_core
+    if not core or core.data ~= context.catalog.data or core.items ~= core.data.items then return end
+    local profileKey = table.concat({context.class, context.spec, context.race or "", context.faction or ""}, "/")
+    local levels = core.profiles[profileKey]
+    if not levels then return end
+    local slots = {}
+    for _, slot in ipairs(addon.slotOrder) do
+        local name = slot
+        local identities = setmetatable({}, {__index = function(_, key)
+            local item = type(key) == "string" and context.catalog.items[key]
+            if item and (item.slot == name or item.slot == "One Hand" and (name == "Main Hand" or name == "Off Hand")) then return key end
+        end})
+        slots[slot] = {core = true, slot = slot, members = {}, ranges = {}, indices = {core = true, keys = identities, lookup = identities}}
+    end
+    local function add(slot, key, low, high)
+        local group = slots[slot]
+        if group and not group.ranges[key] then
+            group.members[#group.members + 1] = key
+            group.count = #group.members
+            group.ranges[key] = {firstLevel = low, lastLevel = high}
+        end
+    end
+    if context.leveling then
+        local function field(ref, name)
+            local col = source.recommendation_columns[name]
+            return col[3][read(col[2], (ref - 1) * col[1] + 1, col[1])]
+        end
+        for _, ref in ipairs(core.pages[levels[context.level]] or {}) do
+            add(field(ref, "slot"), tostring(field(ref, "item_id")), field(ref, "level_min"), field(ref, "level_max"))
+        end
+    else
+        local index = addon:GetDataIndex()
+        local class = index.useRefsByClassSpecPhase[context.class] or {}
+        local refs = (class[context.spec] or {})[context.phase] or {}
+        local fields = index.schemaPositions.use
+        for _, ref in ipairs(refs) do
+            local row = BigBiSListData.uses[ref]
+            add(row[fields.slot], tostring(row[fields.item_id]), context.level, context.level)
+        end
+    end
+    context.coreGuide = true
+    return slots
+end
+
 function rating:GetPackedGuide(context)
     if not context then return end
     local bundle = profile(context)
-    if not bundle then return end
     if not context.packedGuide then
-        context.packedGuide = setmetatable({}, { __index = function(slots, slot)
+        context.packedGuide = bundle and setmetatable({}, { __index = function(slots, slot)
             local data = dataset(context, slot)
             rawset(slots, slot, data)
             return data
-        end })
+        end }) or coreSlots(context)
     end
     return context.packedGuide
 end
@@ -230,7 +339,7 @@ local function state(data, level)
         local address = (index - 1) * 4 + (index <= 11 and 1 or 3)
         return packedRead(archive, data.states, offset + address, width or 4)
     end
-    return {
+    local current = {
         order = archive.strings[field(1)], inverse = archive.strings[field(2)], masks = archive.strings[field(3)],
         count = field(4), leader = field(5), unresolved = field(6) == 1, conditional = archive.strings[field(7)],
         groups = archive.strings[field(8)], inverseWidth = field(9), prefixes = archive.strings[field(10)], effects = archive.strings[field(20)],
@@ -238,6 +347,15 @@ local function state(data, level)
         low = {masks = archive.strings[field(13)], prefixes = archive.strings[field(14)], count = field(15)},
         unscored = {masks = archive.strings[field(16)], prefixes = archive.strings[field(17)], count = field(18)},
     }
+    if data.fixed then
+        local base = (level - data.first) * 25
+        local function get(at, width) return packedRead(archive, data.fixed, base + at, width) end
+        current.masks, current.prefixes = archive.strings[get(1, 4)], archive.strings[get(5, 4)]
+        current.count, current.leader = get(9, 3), get(12, 3)
+        current.best = (get(15, 6) - POINT_ZERO) / 10000
+        current.conditional, current.unresolved = archive.strings[get(21, 4)], get(25, 1) == 1
+    end
+    return current
 end
 
 local function countBits(mask)
@@ -353,6 +471,7 @@ end
 
 local function baseEntry(data, context, ordinal, level)
     if not ordinal then return end
+    if data.fixed and not context.catalog.data.items[data.indices.keys[ordinal]] then return end
     local ranked, verified = readRanges(data, ordinal, 2)
     if inside(ranked, level) then return resolve(data, context, ordinal, level, inside(verified, level)) end
 end
@@ -463,6 +582,13 @@ function rating:PackedLevelEntries(context, slot, level, callback)
     local slots = self:GetPackedGuide(context)
     local data = slots and slots[slot]
     if not data then return end
+    if data.core then
+        for _, key in ipairs(data.members) do
+            local entry = self:GetPackedGuideEntry(context, slot, key, level)
+            if entry then callback(entry) end
+        end
+        return
+    end
     local levelState = state(data, level)
     for position = 1, size(levelState.order) / 3 do
         local mask = packedRead(data.archive, levelState.masks, math.floor((position - 1) / 12) * 2 + 1, 2)
@@ -479,6 +605,15 @@ function rating:GetPackedScoredChoices(context, slot)
     if not slots then return end
     local data = slots[slot]
     if not data then return false end
+    if data.core then
+        local rows = self:GetBrowsePlacements(context, slot)
+        local i = 0
+        return function()
+            i = i + 1
+            local row = rows[i]
+            if row and row.score and row.score > 0 then return row end
+        end
+    end
     local levelState = state(data, context.level)
     local archive = data.archive
     local sizeInOrder = size(levelState.order) / 3
@@ -499,10 +634,45 @@ function rating:GetPackedGuideEntry(context, slot, key, level)
     if not slots then return nil, false end
     local data = slots[slot]
     if not data then return nil, true end
+    if data.core then
+        local item = context.catalog.observed[key] or context.catalog.items[key]
+        if not item then return nil, true end
+        local entry = self:GetReferenceCandidate(context, item, slot)
+        if entry then
+            local verified = addon:IsStatRankGuideItemAvailable(item.id, context)
+            entry.source_unknown = not verified or nil
+        end
+        return entry, true
+    end
     return updatedEntry(data, context, key, level or context.level), true
 end
 
+function rating:GetBrowsePlacements(context, slot, owned)
+    local slots = self:GetPackedGuide(context)
+    if not slots then return end
+    local data, rows, seen = slots[slot], {}, {}
+    if not data then return rows end
+    local function add(key)
+        if not seen[key] then
+            seen[key] = true
+            local entry = self:GetPackedGuideEntry(context, slot, key)
+            if entry then rows[#rows + 1] = entry end
+        end
+    end
+    local page = self:GetGuideTargetPage(data, context.level, owned and "candidates" or "picks")
+    for i = 1, page.count do add(data.indices.keys[page.at(i)]) end
+    for key in pairs(owned or {}) do
+        if data.indices.lookup[key] or context.catalog.observed[key] then add(key) end
+    end
+    table.sort(rows, function(a, b)
+        if a.score ~= b.score then return (a.score or -math.huge) > (b.score or -math.huge) end
+        return a.item.key < b.item.key
+    end)
+    return rows
+end
+
 function rating:GetPackedBrowseOrdinal(data, level, index)
+    if data.core then return data.members[index] end
     if index < 1 or index > data.count then return end
     data.current = data.current or state(data, level)
     local current = data.current
@@ -521,7 +691,9 @@ function rating:GetPackedBrowseOrdinal(data, level, index)
 end
 
 function rating:VisitPackedGuideOrdinals(data, level, search, verifiedOnly, visit, checkpoint)
-    if verifiedOnly then
+    if data.core then
+        for _, key in ipairs(data.members) do if checkpoint then checkpoint() end; visit(key) end
+    elseif verifiedOnly then
         for offset = 1, size(data.verified), 3 do
             if checkpoint then checkpoint() end
             visit(packedRead(data.archive, data.verified, offset, 3))
@@ -548,6 +720,15 @@ function rating:GetPackedLevelingRecord(context, slot, key, cheap)
     local data = slots[slot]
     local ordinal = data and data.indices.lookup[key]
     if not ordinal then return nil, true end
+    if data.core then
+        local range = data.ranges[key]
+        if not range then return nil, true end
+        local item = context.catalog.items[key]
+        return {ranked = {range}, verified = {range}, recommended = {range}, strength = {}, leading = {},
+            item = item, slot = slot, context = context, data = data, ordinal = key,
+            note = self:GetReviewedGuideEffect(context, item)}, true
+    end
+    if data.fixed and not context.catalog.data.items[key] then return nil, true end
     local ranked, verified, recommended, strength, leading = readRanges(data, ordinal)
     if not ranked then return nil, true end
     local item = context.catalog.items[key]
@@ -598,7 +779,108 @@ function rating:PackedGuideRowInfo(context, slot, ordinal, targetLevel)
     if targetLevel then
         routeLevel, order = evaluation, evaluation > context.level and 2 or evaluation < context.level and 3 or 1
     end
-    local placement = updatedEntry(data, context, key, evaluation)
+    local placement = self:GetPackedGuideEntry(context, slot, key, evaluation)
     if not placement then return end
     return record, placement, routeLevel, order, evaluation == level
+end
+
+-- Save plain, reproducible comparisons only. Runtime gear, frames and effect
+-- traces contain references to the whole outfit and must stay in this session.
+local function opportunityCache(context, missing)
+    local owned, catalog = context.owned, context.catalog
+    if missing or not source or not source.guide_signature or not owned or owned.equippedOnly
+        or owned.bagsIncomplete or owned.inventoryIncomplete or next(context.pending or {})
+        or not rating.inventory or context.equipmentFacts ~= rating.inventory.equipment
+        or next(context.unresolvedCopies or {}) then return end
+    if context.savedOpportunities and context.savedRevision == catalog.observedVersion then return context.savedOpportunities end
+    -- An exact roll or enchant can change the baseline even when its item ID stays the same.
+    local liveFacts = {}
+    for _, copy in ipairs(context.ownedCopies or {}) do
+        local item = copy.facts
+        if item and (item.native or item.nativeFacts or catalog.observed[item.key]) then
+            if item.stats_unavailable or item.unreadable_effects then return end
+            local values = {item.key, tostring(item.level), tostring(item.unique_group), tostring(item.max_equipped)}
+            for stat, value in pairs(item.stats or {}) do values[#values + 1] = stat .. "=" .. value end
+            for _, effect in ipairs(item.effects or {}) do values[#values + 1] = effect end
+            table.sort(values)
+            liveFacts[#liveFacts + 1] = table.concat(values, "|")
+        end
+    end
+    table.sort(liveFacts)
+    context.savedRevision = catalog.observedVersion
+    local talents = {}
+    for id, rank in pairs(context.activeBuild and context.activeBuild.ranks or {}) do
+        talents[#talents + 1] = tostring(id) .. "=" .. tostring(rank)
+    end
+    table.sort(talents)
+    local _, build
+    if GetBuildInfo then _, build = GetBuildInfo() end
+    local generation = BigBiSListData.guide_index and BigBiSListData.guide_index.generation or source.guide_signature
+    local signature = table.concat({generation, tostring(build or ""), context.class, context.spec,
+        context.race or "", context.faction or "", context.phase, context.phaseIndex, context.level,
+        context.activeBuild and "active" or "reference", table.concat(talents, ","), rating:GetGearSnapshotKey(owned),
+        table.concat(liveFacts, "\030")}, "\029")
+    local db = addon:GetCharacterDB()
+    local saved = db.guideComparisons
+    if type(saved) ~= "table" or saved.version ~= 2 or type(saved.sets) ~= "table" then
+        saved = {version = 2, sets = {}}
+        db.guideComparisons = saved
+    end
+    for _, entry in ipairs(saved.sets) do
+        if entry.signature == signature then context.savedOpportunities = entry; return entry end
+    end
+    if #saved.sets >= 3 then table.remove(saved.sets, 1) end
+    local entry = {signature = signature, values = {}, order = {}, next = 1}
+    saved.sets[#saved.sets + 1], context.savedOpportunities = entry, entry
+    return entry
+end
+
+function rating:ReadSavedOpportunity(context, item, key, missing)
+    if item.native or not context.catalog.data.items[item.key] then return end
+    local cache = opportunityCache(context, missing)
+    local value = cache and cache.values[key]
+    if not value then return end
+    local definition
+    for _, def in ipairs(addon:GetEquipmentSlotDefinitions()) do if def.key == value.physical then definition = def; break end end
+    if not definition then return end
+    local result = {definition = definition, slot = value.slot, delta = value.delta, basis = value.basis,
+        roleDelta = value.roleDelta, roleDisplaced = value.roleDisplaced, status = value.status, bank = value.bank,
+        weaponSetup = value.weaponSetup, replacements = {}}
+    for _, entry in ipairs(value.displaced) do
+        local owned = context.ownedFacts[entry.key]
+        if entry.link and (not owned or owned.state ~= entry.state or owned.item_link ~= entry.link) then
+            owned = nil
+            for _, instance in ipairs(context.ownedCopies) do
+                if instance.key == entry.key and instance.state == entry.state and instance.item_link == entry.link then
+                    owned = instance
+                    break
+                end
+            end
+            if not owned then return end
+        end
+        local facts = owned and owned.facts or context.catalog.items[entry.key]
+        if not facts then return end
+        result.replacements[#result.replacements + 1] = {key = entry.key, slot = entry.slot, state = entry.state, name = entry.name, facts = facts, item_link = entry.link}
+    end
+    return result
+end
+
+function rating:SaveOpportunity(context, item, key, result, missing)
+    if type(result.delta) ~= "number" or not result.definition or result.effectTrace or result.conditional
+        or result.estimatedEffects or item.native or not context.catalog.data.items[item.key] then return end
+    local cache = opportunityCache(context, missing)
+    if not cache then return end
+    local displaced = {}
+    for i, entry in ipairs(result.replacements) do
+        if not entry.facts then return end
+        displaced[i] = {key = entry.key, name = entry.name, slot = entry.slot, state = entry.state, link = entry.item_link}
+    end
+    if not cache.values[key] then
+        local prior = cache.order[cache.next]
+        if prior then cache.values[prior] = nil end
+        cache.order[cache.next], cache.next = key, cache.next % 256 + 1
+    end
+    cache.values[key] = {physical = result.definition.key, slot = result.slot, delta = result.delta,
+        roleDelta = result.roleDelta, roleDisplaced = result.roleDisplaced, basis = result.basis,
+        status = result.status, bank = result.bank, weaponSetup = result.weaponSetup, displaced = displaced}
 end

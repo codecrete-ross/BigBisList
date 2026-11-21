@@ -298,7 +298,7 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
     return view, summary, slot
 end
 
-local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData)
+local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
     if candidate.status == "loading" or not candidate.facts or not candidate.facts.level then
@@ -323,8 +323,7 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
     local snapshot = ui.GetTooltipOwnedSnapshot and ui:GetTooltipOwnedSnapshot() or ui:GetOwnedSnapshot()
     local offerAssessments = offer and offer.assessments or {}
     local inventoryPending
-    for _, spec in ipairs(player.specs) do
-        if snapshot.equippedOnly and #block.rows > 0 then break end
+    local function addSpec(spec)
         local context = rating:GetContext(player.class, spec.name, player.phase, player.level, snapshot)
         if context then
             inventoryPending = context.pending
@@ -352,11 +351,25 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
             end
             if assessment then
                 local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment, spec, offer)
-                block.rows[#block.rows + 1] = { spec = spec.name, result = assessment.result, assessment = assessment,
-                    view = view, summary = summary, summarySlot = slot }
+                block.rows[#block.rows + 1] = { spec = spec.name, activeSpec = spec.role == "active", result = assessment.result, assessment = assessment,
+                    view = view, summary = summary, summarySlot = slot, item = candidate.facts, context = context }
                 block.ownership = block.ownership or assessment.result.ownership
             end
         end
+    end
+    for index, spec in ipairs(player.specs) do
+        if snapshot.equippedOnly and #block.rows > 0 then break end
+        if #block.rows > 0 and deadline and debugprofilestop() >= deadline then
+            block.finishSpecs = function(checkpoint)
+                for remaining = index, #player.specs do
+                    checkpoint()
+                    addSpec(player.specs[remaining])
+                end
+                for id in pairs(inventoryPending or {}) do block.pending[id] = true end
+            end
+            break
+        end
+        addSpec(spec)
     end
     for id in pairs(inventoryPending or {}) do block.pending[id] = true end
     for id, request in pairs(ui.pendingItemLoads or {}) do
@@ -381,7 +394,47 @@ local function tooltipRank(result)
     return placement.projected and ("Projected · " .. label) or label
 end
 
-local function renderSpecBlocks(tooltip, statBlock, matches, selection)
+local function compactSpecLine(row)
+    local result, assessment, view = row.result, row.assessment or {}, row.view or {}
+    if not result then
+        local match = row.matches[1]
+        return match and ("Guide pick · " .. (match.slot or match.spec))
+    end
+    local evaluated = result.forecast or result
+    local reason = BigBiSList.Widgets:DecisionReason(row.item, result, row.context)
+    local verdict = view.today
+    if assessment.tiedChoice then verdict, reason = "Tied reward", "equal to another choice"
+    elseif assessment.bestChoice then verdict = result.forecast and ("Best reward at level " .. evaluated.level) or "Best reward"
+    elseif evaluated.status == "loading" or result.placement.status == "loading" then verdict = "Waiting for item stats"
+    elseif result.forecast and evaluated.delta then
+        local keep = evaluated.ownership == "bank" or evaluated.ownership == "bag" or result.ownership == "bank" or result.ownership == "bag"
+        if evaluated.delta > 0 or evaluated.status == "best_owned" and keep then
+            verdict = evaluated.conditional and "Possible upgrade" or keep and "Keep" or "Likely upgrade"
+            verdict = verdict .. (verdict == "Keep" and " for level " or " at level ") .. evaluated.level
+        else
+            verdict = (evaluated.conditional and "Depends on your setup" or evaluated.delta < 0 and "Likely downgrade" or "Likely sidegrade")
+                .. " at level " .. evaluated.level
+        end
+    elseif evaluated.status == "best_owned" and not evaluated.conditional then
+        if evaluated.equipSwap and not row.activeSpec then verdict = "Keep for " .. row.spec
+        elseif evaluated.equipNow then verdict = "Equip now"
+        elseif evaluated.equipSwap and evaluated.ownership == "bank" then verdict = "Get from bank"
+        elseif evaluated.ownership == "equipped" then verdict = "Keep equipped"
+        elseif evaluated.ownership == "bank" then verdict = "Keep in bank"
+        else verdict = "Keep" end
+    elseif result.bis and not verdict then verdict = "Guide BiS"
+    elseif not result.forecast and evaluated.conditional then verdict = (evaluated.delta or 0) > 0 and "Possible upgrade" or "Depends on your setup"
+    elseif evaluated.status == "empty" then verdict = "Upgrade"
+    elseif evaluated.delta == 0 and evaluated.status ~= "best_owned" then verdict = "Sidegrade"
+    elseif evaluated.delta and evaluated.delta < 0 then verdict = "Downgrade"
+    end
+    verdict = verdict or view.requirement or BigBiSList.ForeverGearRating:Label(result.placement, "compact")
+    local suffix = " for " .. row.spec
+    if verdict ~= "Keep" .. suffix and verdict:sub(-#suffix) == suffix then verdict = verdict:sub(1, -#suffix - 1) end
+    return verdict .. (reason and (" · " .. reason) or ""), view.tone
+end
+
+local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded)
     local blocks, bySpec = {}, {}
     for _, row in ipairs(statBlock and statBlock.rows or {}) do
         row.class, row.matches = selection.class, {}
@@ -399,6 +452,17 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
         row.matches[#row.matches + 1] = match
     end
     local placementColor
+    if not expanded then
+        for _, row in ipairs(blocks) do
+            if row.spec == selection.spec or not row.result or row.result.placement.status ~= "incompatible" then
+                local decision, tone = compactSpecLine(row)
+                local r, g, b = BigBiSList.Widgets:GearAdviceColor(tone)
+                local spec = row.class == selection.class and row.spec or row.class .. " " .. row.spec
+                if decision then tooltip:AddLine(spec .. " — " .. decision, r, g, b, true) end
+            end
+        end
+        return
+    end
     for _, row in ipairs(blocks) do
         tooltip:AddLine(" ")
         local spec = row.class == selection.class and row.spec or (row.class .. " " .. row.spec)
@@ -428,6 +492,14 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection)
                 if comparison.guaranteed then tooltip:AddLine("Compared with guaranteed rewards", 0.76, 0.8, 0.86, true) end
                 if result.bank or (result.forecast and result.forecast.bank) then
                     tooltip:AddLine("Includes cached bank gear", 0.76, 0.8, 0.86, true)
+                end
+                local setup = (result.forecast or result).weaponSetup
+                if setup then
+                    local names = {}
+                    for _, piece in ipairs(setup) do
+                        names[#names + 1] = piece.name .. (piece.state == "bank" and " (bank)" or "")
+                    end
+                    tooltip:AddLine("Best owned setup · " .. table.concat(names, " + "), 0.83, 0.85, 0.88, true)
                 end
             else
                 local rank = tooltipRank(result)
@@ -500,7 +572,7 @@ local function refreshTooltipForModifier(tooltip)
     local database = BigBiSList.isForever and BigBiSList:GetAccountDB() or BigBiSListDB
     local settings = database and database.profile and database.profile.tooltips
     if not settings or settings.enabled == false or not settings.showAllOnAlt then return end
-    local expanded = not not (IsAltKeyDown and IsAltKeyDown())
+    local expanded = (BigBiSList.isForever and settings.compact == false) or not not (IsAltKeyDown and IsAltKeyDown())
     local state = tooltip.__bigBisListState
     if state.expanded ~= expanded then rebuildTooltip(tooltip, state) end
 end
@@ -523,17 +595,18 @@ function BigBiSList:ScheduleItemTooltipRefresh(itemId)
     if C_Timer and C_Timer.After then C_Timer.After(0, refresh) else refresh() end
 end
 
-local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData)
+local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData, deadline)
     local offer, mark
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
-    if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not addonTooltip(tooltip) then
-        local exactLink = offer and offer.owned and offer.link or itemLink
-        local candidate = self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
-        live = candidate and self:GetTooltipPlayerContext()
-        if live then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData) end
-    end
     local comparisonContext = comparisonTooltipContext(tooltip)
+    if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not comparisonContext then
+        live = self:GetTooltipPlayerContext()
+        if live and addonTooltip(tooltip) and self.UI:GetSelection().class ~= live.class then live = nil end
+        local exactLink = offer and offer.owned and offer.link or itemLink
+        local candidate = live and self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
+        if candidate then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData, deadline) else live = nil end
+    end
     local selection = comparisonContext or live or self:GetCharacterDB().selection or {}
     local effectivePhaseKey = comparisonContext and comparisonContext.phase
         or (live and live.phase) or (self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase)
@@ -548,7 +621,7 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
     priorityContext.selectedPhase = effectivePhaseKey
     priorityContext.itemLink = itemLink
 
-    local showExpanded = self.isForever or (settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown())
+    local showExpanded = self.isForever and settings.compact == false or (settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown())
     local groupedMatches = {}
     local first = statBlock and statBlock.rows[1]
     local rawMatches
@@ -596,7 +669,7 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     end
 
     if self.isForever then
-        renderSpecBlocks(tooltip, statBlock, matches, selection)
+        renderSpecBlocks(tooltip, statBlock, matches, selection, showExpanded)
     else
         for index = 1, math.min(#matches, maxRows) do
             local match = matches[index]
@@ -621,6 +694,20 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     if statBlock then
         self.UI:QueueStatLoads(statBlock.pending)
         local state = tooltip.__bigBisListState
+        if statBlock.finishSpecs then
+            local finish = statBlock.finishSpecs
+            statBlock.finishSpecs = nil
+            local function current()
+                return tooltip.__bigBisListState == state and tooltip:IsShown() and self:GetTooltipPlayerContext() == live
+            end
+            self.ForeverGearRating:QueueWork(0, finish, current, function()
+                if current() then
+                    tooltip.__bigBisPrepared = {state = state, result = prepared}
+                    rebuildTooltip(tooltip, state)
+                    tooltip.__bigBisPrepared = nil
+                end
+            end)
+        end
         local function rangesReady()
             for _, row in ipairs(statBlock.rows) do
                 if row.summary and not row.summary.slots[row.summarySlot] then return end
@@ -654,6 +741,11 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if info and readable(info.append) then return end
     local itemLink = itemLinkFromTooltip(tooltip, tooltipData, itemId, info)
     local owner = readable(call(tooltip.GetOwner, tooltip))
+    local ready = tooltip.__bigBisPrepared
+    if ready and ready.state.itemId == itemId and ready.state.link == itemLink and ready.state.owner == owner then
+        showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, ready.result)
+        return
+    end
     local highlights = self.AcquisitionHighlights
     if highlights and itemLink and highlights:ShouldDeferStorageTooltip(owner, info and readable(info.getterName)) then
         local state = { itemId = itemId, link = itemLink, owner = owner }
@@ -684,7 +776,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         end)
         return
     end
-    local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData)
+    local deadline = start and C_Timer and C_Timer.After and start + 1
+    local prepared = prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, settings, tooltipData, deadline)
     if prepared then showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, prepared) end
     if start and self.UI and self.UI.RecordAddonTime then self.UI:RecordAddonTime("tooltip", debugprofilestop() - start) end
 end
@@ -719,7 +812,7 @@ function BigBiSList:InitTooltip()
     hookTooltip(GameTooltip)
     hookTooltip(ItemRefTooltip)
 
-    if not self.isForever and CreateFrame then
+    if CreateFrame then
         local modifierFrame = CreateFrame("Frame")
         modifierFrame:RegisterEvent("MODIFIER_STATE_CHANGED")
         modifierFrame:SetScript("OnEvent", function(_, _, key)

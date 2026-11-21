@@ -19,6 +19,7 @@ from tools.forever_scoring_checks import find_lua51
 from tools.project import ROOT, dataset_json, lua_string
 
 OUTPUT = ROOT / "GuideDataForever.lua"
+CONTINUATION = "GuideRanksForever.lua"
 COMPILER = ROOT / "tools/build_forever_guide.lua"
 INPUTS = ("DataForever.lua", "ForeverScoring.lua", "ForeverGearRating.lua", "DataIndex.lua",
           "tools/build_forever_guide.lua", "tools/forever_guide_index.py")
@@ -137,32 +138,38 @@ def compile_index(lua: str, *, output: Path = OUTPUT) -> None:
         with ThreadPoolExecutor(max_workers=min(6, os.cpu_count() or 1)) as executor:
             parts = list(executor.map(compile_part, ["catalog", *names]))
 
-        digest = sha256()
-        for part in parts:
-            digest.update(part.read_bytes())
-        body_digest = digest.hexdigest()
         if contents_digest() != signature:
             raise ValueError("Forever Guide inputs changed during generation. Rebuild the index with the current inputs.")
-        candidate = staging / OUTPUT.name
-        with candidate.open("wb") as bundle:
-            bundle.write(f"-- Generated Forever Guide {signature} {body_digest}\n".encode())
-            for part in parts:
-                bundle.write(part.read_bytes())
-        candidate.replace(output)
+        # Split at class boundaries so both text payloads stay below Git's hosting limit.
+        middle = (len(parts) + 1) // 2
+        guard = f'BigBiSListData.guide_index.generation == "{signature}"'.encode()
+        segments = ((output, parts[:middle], b"", f'BigBiSListData.guide_index.generation="{signature}"\n'.encode()),
+                    (output.with_name(CONTINUATION), parts[middle:],
+                     b"if BigBiSListData.guide_index and " + guard + b" then\n", b"end\n"))
+        for path, files, prefix, suffix in segments:
+            body = prefix + b"".join(part.read_bytes() for part in files) + suffix
+            (staging / path.name).write_bytes(f"-- Generated Forever Guide {signature} {sha256(body).hexdigest()}\n".encode() + body)
+        for path, *_ in reversed(segments):
+            (staging / path.name).replace(path)
 
 
-def check_index() -> bool:
-    if not OUTPUT.is_file():
+def check_part(path: Path, signature: str) -> bool:
+    if not path.is_file():
         return False
-    with OUTPUT.open("rb") as bundle:
+    with path.open("rb") as bundle:
         fields = bundle.readline().strip().split()
         if (len(fields) != 6 or fields[:4] != [b"--", b"Generated", b"Forever", b"Guide"]
-                or fields[4].decode() != contents_digest()):
+                or fields[4].decode() != signature):
             return False
         digest = sha256()
         for line in bundle:
             digest.update(line[:-2] + b"\n" if line.endswith(b"\r\n") else line)
         return digest.hexdigest() == fields[5].decode()
+
+
+def check_index() -> bool:
+    signature = contents_digest()
+    return all(check_part(path, signature) for path in (OUTPUT, OUTPUT.with_name(CONTINUATION)))
 
 
 def verify_index(lua: str) -> bool:
@@ -173,11 +180,11 @@ def verify_index(lua: str) -> bool:
     with TemporaryDirectory(prefix="forever-guide-verify-", dir=ROOT / "build") as directory:
         rebuilt = Path(directory) / OUTPUT.name
         compile_index(lua, output=rebuilt)
-        with OUTPUT.open("rb") as published, rebuilt.open("rb") as fresh:
-            for line in fresh:
-                if published.readline().replace(b"\r\n", b"\n") != line:
+        for path in (OUTPUT, OUTPUT.with_name(CONTINUATION)):
+            with path.open("rb") as published, rebuilt.with_name(path.name).open("rb") as fresh:
+                if any(published.readline().replace(b"\r\n", b"\n") != line for line in fresh) or published.read(1):
                     return False
-            return not published.read(1)
+        return True
 
 
 def main() -> int:

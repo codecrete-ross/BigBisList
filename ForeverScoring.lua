@@ -640,6 +640,28 @@ function Scoring:Invalidate()
     self.revision = (self.revision or 0) + 1
 end
 
+function Scoring:PlayerTalentsChanged()
+    local class = BigBiSList:DetectPlayerClass()
+    local spec = class and BigBiSList:DetectPlayerSpec(class)
+    local level = BigBiSList:GetDetectedPlayerLevel()
+    local model = BigBiSListData and BigBiSListData.character_scoring
+    local _, build
+    if GetBuildInfo then _, build = GetBuildInfo() end
+    local key = tostring(class) .. "/" .. tostring(spec) .. "/" .. tostring(level)
+    local profile = model and model.profiles and model.profiles[tostring(class) .. "/" .. tostring(spec)]
+    if profile and tonumber(build) == model.build and level then
+        local ok, ranks = pcall(readRanks, model, profile, level)
+        if ok and ranks then
+            local values = {}
+            for _, id in ipairs(profile.entries) do values[#values + 1] = ranks[id] or 0 end
+            key = key .. "/" .. table.concat(values, ",")
+        end
+    end
+    local changed = key ~= self.talentSignature
+    self.talentSignature = key
+    return changed
+end
+
 function Scoring:GetContext(className, specName, mode, level, filters)
     local model = BigBiSListData and BigBiSListData.character_scoring
     if not model or model.version ~= VERSION then return nil end

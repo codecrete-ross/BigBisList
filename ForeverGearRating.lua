@@ -173,6 +173,10 @@ function rating:SameExactItemLink(id, first, second)
     return key ~= nil and key == exactLinkKey(self, id, second)
 end
 
+function rating:GetOwnedCopyKey(id, link)
+    return link and (exactLinkKey(self, id, link) or link)
+end
+
 function rating:IsPotentialGear(id, link)
     local data = model()
     if data and data.items[tostring(id)] then return true end
@@ -306,7 +310,7 @@ function rating:GetCatalog(data)
     local _, build = call(GetBuildInfo)
     local slotKeys = data.slot_key_items == data.items and data.slot_keys
     local catalog = { data = data, slots = slotKeys or {}, families = {}, observed = {},
-        rollBuildMatches = not data.roll_build or not tonumber(build) or tonumber(build) == data.roll_build }
+        rollBuildMatches = not data.roll_build or tonumber(build) == data.roll_build }
     if not slotKeys then
         for key, row in pairs(data.items) do
             if checkpoint then checkpoint() end
@@ -1031,6 +1035,19 @@ local function applyMissingBuild(result, missing)
     end
 end
 
+local function loadoutItem(scorer, instance)
+    local facts, link = instance.facts, instance.item_link
+    local known = instance.referenceItem
+    if known and known.facts == facts and known.link == link and known.revision == scorer.revision then return known.item end
+    local stats, unknown = swapStats(facts, link)
+    if not stats then return end
+    local item = scorer:ReferenceItem(facts, stats)
+    if not unknown then
+        instance.referenceItem = {facts = facts, link = link, revision = scorer.revision, item = item}
+    end
+    return item, unknown
+end
+
 function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
     local scorer = addon.ForeverScoring
     if not (scorer and scorer.ReferenceItem) then return nil end
@@ -1038,12 +1055,8 @@ function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
     for _, definition in ipairs(addon:GetEquipmentSlotDefinitions()) do
         local instance = gear[definition.key]
         if instance and instance.facts then
-            local stats, unknown = swapStats(instance.facts, instance.item_link)
-            if stats then
-                local position = definition.inventorySlotId
-                loadout[position] = scorer:ReferenceItem(instance.facts, stats)
-                uncertain[position] = unknown
-            end
+            local position = definition.inventorySlotId
+            loadout[position], uncertain[position] = loadoutItem(scorer, instance)
         end
     end
     local active = context.activeBuild
@@ -1518,6 +1531,27 @@ function rating:GetEquippedPlacement(context, physical, slots)
     return placement
 end
 
+function rating:GetGuideComparisonPool(context, guide, physical, slots)
+    if not (self.GetBrowsePlacements and self:GetPackedGuide(guide)) then return self:GetPlacement(context, physical, slots) end
+    local slot, hand = currentComparisonSlot(context, physical, slots)
+    local rows, byKey = {}, {}
+    local reference = self:GetEquippedPlacement(context, physical, slots)
+    for _, placement in ipairs(self:GetBrowsePlacements(guide, slot, context.ownedFacts)) do
+        local item = placement.item
+        if (not hand or offHandType(item) == hand) and usable(context, item, slot)
+            and legalSwap(context, item, physical, slot, context.equipmentFacts) then
+            local entry = copy(placement)
+            entry.ownership = context.ownedFacts[item.key]
+            rows[#rows + 1], byKey[item.key] = entry, entry
+            if reference and reference.item and item.key == reference.item.key then reference = entry end
+        end
+    end
+    if reference and reference.item and not byKey[reference.item.key] then
+        rows[#rows + 1], byKey[reference.item.key] = reference, reference
+    end
+    return {slot = slot, reference = reference, comparisonRows = rows, rows = rows, byVariant = byKey}
+end
+
 function rating:GetComparisonCandidates(pool)
     if pool.comparisonRows then return pool.comparisonRows end
     local context = pool.scope.context
@@ -1554,6 +1588,7 @@ function rating:GetComparisonCandidates(pool)
 end
 
 function rating:GetGuidePlacement(context, slot, checkpoint)
+    self.fullPoolRequests = (self.fullPoolRequests or 0) + 1
     return slotPool(context, slot, slot, nil, {}, slot, checkpoint)
 end
 
@@ -1719,6 +1754,7 @@ function rating:GetLevelingSummary(context)
         context.packedSummary = context.packedSummary or { context = context, slots = packed, revision = 1, packed = true }
         return context.packedSummary
     end
+    self.unindexedSummaryRequests = (self.unindexedSummaryRequests or 0) + 1
     local data, phase = context.catalog.data, context.phaseIndex
     if self.levelingSummaryData ~= data or self.levelingSummaryPhase ~= phase then
         self.levelingSummaryData, self.levelingSummaryPhase = data, phase
@@ -2042,7 +2078,7 @@ end
 local function referenceItem(instance, slotLabel)
     local linkName = instance.item_link and instance.item_link:match("|h%[(.-)%]|h")
     return { name = linkName or instance.facts.name, slot = slotLabel, state = instance.state, key = instance.facts.key,
-        facts = instance.facts }
+        facts = instance.facts, item_link = instance.item_link }
 end
 
 local function wornReplacement(context, result, key, label)
@@ -2515,11 +2551,14 @@ local function equipSwap(context, group, state, worn, proposal, index)
     local oldValue, oldUncertain = rating:ReferenceLoadout(context, previous)
     local newValue, newUncertain = rating:ReferenceLoadout(context, proposed)
     if oldValue == nil or newValue == nil or newValue <= oldValue then return nil end
-    local result = { delta = newValue - oldValue, definition = group.definitions[index], incoming = {} }
+    local result = { delta = newValue - oldValue, definition = group.definitions[index], incoming = {}, replacements = {} }
     for position, definition in ipairs(group.definitions) do
         local old, new = worn[position].instance, proposal[position].instance
         if new and not groupHas(worn, new) then
             result.incoming[#result.incoming + 1] = referenceItem(new, definition.label)
+        end
+        if old and not groupHas(proposal, old) then
+            result.replacements[#result.replacements + 1] = referenceItem(old, definition.label)
         end
         if old ~= new or group.weapons then
             local id = definition.inventorySlotId
@@ -2579,6 +2618,11 @@ local function ownedSwap(context, group, candidate, quantity, held)
             result.conditional = result.conditional or baseline[index].conditional or best[index].conditional
         end
         if (previous and previous.state == "bank") or (other and other.state == "bank") then result.bank = true end
+        if group.weapons and previous then
+            result.weaponSetup = result.weaponSetup or {}
+            result.weaponSetup[#result.weaponSetup + 1] = {name = referenceItem(previous, definition.label).name,
+                slot = baseline[index].slot, state = previous.state}
+        end
         if previous and not groupHas(best, previous) then
             retained[definition.key] = nil
             result.replacements[#result.replacements + 1] = referenceItem(previous, definition.label)
@@ -2646,6 +2690,9 @@ local function assessTooltipItem(context, candidate, useWorn, wornSlot, extraCop
     local result
     if useWorn then
         result = wornSwap(context, group, item, candidate.item_link, wornSlot, scope)
+    elseif inGuide and not held and (not quantity or quantity == 1) then
+        local shared = rating:GetOwnedOpportunity(context, item, candidate.item_link, scope.live)
+        if shared and shared.status ~= "blocked" then result = copy(shared) end
     else
         local build, missing = rating:WithCharacterBuild(context, scope.live)
         result = ownedSwap(build, group, candidate, quantity, held)
@@ -2907,12 +2954,17 @@ function rating:GetOwnedOpportunity(context, item, link, live)
     local revision = addon.ForeverScoring and addon.ForeverScoring.revision
     if build.opportunityRevision ~= revision then build.opportunities, build.opportunityRevision = nil, revision end
     build.opportunities = build.opportunities or {}
-    local key = item.key .. "\031" .. (link or "") .. "\031" .. (missing or "")
+    local identity = exactLinkKey(self, item.id, link or item.variant_link or ("item:" .. item.id)) or item.key
+    local key = identity .. "\031" .. (missing or "")
     local result = build.opportunities[key]
     if not result then
-        result = ownedSwap(build, group, {facts = item, key = item.key, entry = {item_id = item.id}, item_link = link})
-            or {status = "blocked"}
-        applyMissingBuild(result, missing)
+        result = self.ReadSavedOpportunity and self:ReadSavedOpportunity(build, item, key, missing)
+        if not result then
+            result = ownedSwap(build, group, {facts = item, key = item.key, entry = {item_id = item.id}, item_link = link})
+                or {status = "blocked"}
+            applyMissingBuild(result, missing)
+            if self.SaveOpportunity then self:SaveOpportunity(build, item, key, result, missing) end
+        end
         build.opportunities[key] = result
     end
     return result, result.status
@@ -3004,9 +3056,9 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
     local kind, detail
     if gain then kind = "upgrade"
     elseif status == "blocked" then kind = "hidden"
-    elseif swap and swap.conditional and finite(swap.delta) and swap.delta > 0 then
+    elseif swap and swap.conditional and finite(swap.delta) and swap.delta > 0 and (purpose or effect or note or statPurpose(guide, item, swap)) then
         kind = "situational"
-        purpose = purpose or statPurpose(guide, item, swap) or "Stat gain"
+        purpose = purpose or statPurpose(guide, item, swap)
     elseif note and not held then kind = "utility"
     elseif swap and not held and purpose and effect and not finite(swap.delta)
         and status ~= "loading" and status ~= "unavailable" then kind = "utility"
@@ -3036,7 +3088,7 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
         result.level = evaluated
         result = {forecast = result}
     end
-    return {kind = kind, swap = result, gain = gain, note = note or effect, level = evaluated,
+    return {kind = kind, swap = result, gain = gain, meaningful = self:IsMeaningfulOwnedUpgrade(swap), note = note or effect, level = evaluated,
         proficiencyLevel = proficiencyLevel, owned = held, purpose = purpose, detail = detail, pending = loads}
 end
 
@@ -3230,6 +3282,11 @@ local function gearVerdict(self, input, view)
         view.today, view.tone = "Downgrade", "loss"
         for _, other in ipairs(result.replacements or {}) do
             if ownedBaseline and (other.state == "bag" or other.state == "bank") then
+                if result.weaponSetup and (#result.replacements > 1 or other.facts and input.item
+                    and (other.facts.slot == "Two Hand") ~= (input.item.slot == "Two Hand")) then
+                    view.today = "Stronger weapon setup · " .. itemNames(result.weaponSetup)
+                    break
+                end
                 local kind = result.slot == "Ring" and "ring" or result.slot == "Trinket" and "trinket" or "option"
                 view.today = "You own a stronger " .. kind .. " · " .. other.name
                 break

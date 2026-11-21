@@ -2,6 +2,7 @@
 assert(_VERSION == "Lua 5.1")
 dofile("DataForever.lua")
 dofile("GuideDataForever.lua")
+dofile("GuideRanksForever.lua")
 dofile("Config.lua")
 dofile("ForeverScoring.lua")
 dofile("ForeverGearRating.lua")
@@ -11,6 +12,7 @@ dofile("ForeverGuide.lua")
 local addon, data = BigBiSList, BigBiSListData
 function addon:GetCurrentPhaseKey() return data.phases[1].key end
 local rating = addon.ForeverGearRating
+GetBuildInfo = function() return "Forever", data.stat_rank.roll_build end
 local catalog = rating:GetCatalog(data.stat_rank)
 local items, seen = {}, {}
 local ammunition = 0

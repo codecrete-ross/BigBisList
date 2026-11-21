@@ -26,6 +26,9 @@ local selection = ui:GetSelection()
 selection.class, selection.spec, selection.mode, selection.phase, selection.tab =
     "Paladin", "Retribution", "leveling", "LEVELING", "Gear Guide"
 addon:SetSelectedLevelingLevel(49, true)
+local function applyListUpdate()
+    if ui.updateGuideButton and ui.updateGuideButton:IsVisible() then ui.updateGuideButton:Click(); H.settle() end
+end
 '''
 
 
@@ -36,10 +39,400 @@ class ForeverGuidePerformanceTests(unittest.TestCase):
         if not cls.lua:
             raise unittest.SkipTest("Lua 5.1 is unavailable")
 
-    def lua_run(self, code: str):
+    def lua_run(self, code: str, setup=SETUP):
         result = subprocess.run([self.lua, "-"], cwd=ADDON_DIR, timeout=120, encoding="utf-8",
-                                capture_output=True, input=SETUP + code + "\nassert(#H.errors == 0, table.concat(H.errors, '\\n'))")
+                                capture_output=True, input=setup + code + "\nassert(#H.errors == 0, table.concat(H.errors, '\\n'))")
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
+
+    def test_first_page_survives_client_patches_and_index_loss(self):
+        for build, index in ((70959, "shipped"), (71037, "shipped"), (71037, "missing"), (71037, "incompatible"), (71037, "partial")):
+            with self.subTest(build=build, index=index):
+                loader = f'GetBuildInfo = function() return "Forever", "{build}" end\n'
+                if index == "incompatible":
+                    loader += '''local load = dofile
+dofile = function(file)
+    local result = load(file)
+    if file == "GuideDataForever.lua" then BigBiSListData.guide_index.signature = "old data" end
+    return result
+end
+'''
+                loader += 'local ui = H.load("forever", ' + ("false" if index == "missing" else "true") + ')'
+                if index == "partial":
+                    loader += '\nBigBiSListData.guide_index.classes.Paladin = nil'
+                setup = SETUP.replace('local ui = H.load("forever", true)', loader)
+                self.lua_run(r'''
+function addon:GetLevelingRows() error("Opened the entire catalog") end
+function rating:GetGuidePlacement() error("Rebuilt a full ranking") end
+local inventory = ui.BuildOwnedItems
+function ui:BuildOwnedItems(equippedOnly)
+    assert(equippedOnly or rating:GetWorkCheckpoint(), "Scanned all bags on the interaction frame")
+    assert(equippedOnly or self:GetPerformanceStats().firstViewportMs,
+        "A bag scan interrupted the first usable page")
+    return inventory(self, equippedOnly)
+end
+local function tick() H.now = H.now + 1/60; H.tick() end
+local function visible()
+    local count, row = 0
+    for _, frame in ipairs(ui.activeRenderFrames or {}) do
+        if frame:IsVisible() and frame.boundData and frame.boundData.stat_rank then
+            count, row = count + 1, row or frame
+        end
+    end
+    return count, row
+end
+addon:InitUIEvents()
+ui:Open()
+for i = 1, 3 do tick() end
+local count, first = visible()
+assert(count >= 3 and ui.renderModel.rowCount >= count, "Cold page lacks actionable rows")
+assert(not ui.gearFrame, "Opening the Guide constructed the My Gear paper doll")
+assert(ui:GetPerformanceStats().firstViewportMs and ui:GetPerformanceStats().firstViewportMs <= 50.01,
+    "The visible page must bind within three 60 Hz frames")
+assert(first.boundData.acquisition_display.status == "ready" and ui:GetSourceNextStep(first.boundData))
+first.iconButton:Click(); tick()
+assert(ui.selectedItemData and ui.selectedItemData.item_id == first.boundData.item_id)
+assert(ui.selectedItemData.matched_access_option.source)
+ui:SetInspectorVisible(false)
+H.settle(); ui:Close(); ui:Open(); tick()
+assert(visible() > 0)
+local _, reopened = visible()
+reopened.iconButton:GetScript("OnEnter")(reopened.iconButton); H.settle()
+assert(table.concat(GameTooltip.lines, "\n"):find("Retribution —", 1, true), "The Guide hover missed the active spec")
+reopened.iconButton:GetScript("OnLeave")(reopened.iconButton)
+ui:SetFilter("search", "item:7719"); H.settle()
+assert(ui.renderModel.targetQuery.exact and ui.renderModel.rowCount == 1)
+ui:SetFilter("search", ""); level = 51
+ui:SetLevelingLevel(51); H.settle()
+assert(visible() > 0 and ui.renderModel.guideContext.level == 51)
+ui:SetTab("Home"); H.settle()
+assert(ui:GetViewKey() == "home" and ui.renderModel.targetQuery and ui.renderModel.rowCount > 0)
+local action
+for _, entry in ipairs(ui.renderModel.entries) do
+    if entry.kind == "action" and entry.activate then action = entry; break end
+end
+assert(action and action.detail and action.detail ~= ""); action.activate()
+assert(ui.selectedItemData and ui.selectedItemData.item_id)
+assert((rating.fullPoolRequests or 0) == 0 and (rating.unindexedSummaryRequests or 0) == 0)
+''', setup)
+
+    def test_core_route_preparation_yields_before_showing_the_click_targets(self):
+        setup = SETUP.replace('H.load("forever", true)', 'H.load("forever", false)')
+        self.lua_run(r'''
+level = 51
+addon.DetectPlayerSpec = function() return "Protection" end
+addon:SetSelection("Paladin", "Protection", "LEVELING", "Gear Guide")
+addon:RefreshTooltipPlayerContext(); addon:SetSelectedLevelingLevel(51, true)
+local spent, prepare = 0, addon.GetRowAcquisitionDisplay
+debugprofilestop = function() return H.now * 1000 + spent end
+function addon:GetRowAcquisitionDisplay(...)
+    if ui.openingGuide then spent = spent + 0.7 end
+    return prepare(self, ...)
+end
+local waiting, first
+ui:Open()
+for i=1,3 do
+    spent = 0; H.now = H.now + 1/60; H.tick()
+    if ui.frame:IsVisible() then
+        first = i
+        assert(ui.guideDisplay and #ui.activeRenderFrames > 0)
+        break
+    end
+    waiting = true
+    assert(#(ui.activeRenderFrames or {}) == 0 and ui.currentOwned.equippedOnly)
+end
+assert(waiting and first and ui:GetPerformanceStats().worstFrame <= 4)
+''', setup)
+
+    def test_collapsing_or_closing_the_first_page_finishes_the_inventory_snapshot(self):
+        for opening in ("collapsed", "closed"):
+            with self.subTest(opening=opening):
+                self.lua_run('local opening = "' + opening + '"\n' + r'''
+if opening == "collapsed" then
+    local groups = {}
+    ui:GetViewState().collapsedGroups = groups
+    for _, slot in ipairs(addon.slotOrder) do groups["leveling:" .. slot] = true end
+    groups["leveling:guide-market"] = true
+end
+addon:InitUIEvents()
+ui:Open()
+if opening == "closed" then
+    H.now = H.now + 1/60; H.tick(); ui:Close(); H.settle(); ui:Open()
+end
+H.settle()
+assert(ui.currentOwned and not ui.currentOwned.equippedOnly, "Guide never finished checking the bags")
+assert(not ui.guideInventoryWaiting and ui.renderModel.targetQuery.done)
+ui:SelectGrouping("collapse"); H.settle()
+for _, frame in ipairs(ui.activeRenderFrames) do assert(not frame.boundData) end
+ui:SelectGrouping("expand"); H.settle()
+local gear = false
+for _, frame in ipairs(ui.activeRenderFrames) do gear = gear or frame.boundData end
+assert(gear, "Expanding the sections did not restore the clickable picks")
+''')
+
+    def test_idle_first_open_and_personalization_keep_the_item_under_the_pointer(self):
+        self.lua_run(r'''
+level = 51; addon:RefreshTooltipPlayerContext(); addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head=true}
+local resume = ui.StartGuideInventory
+ui.StartGuideInventory = function() end
+function rating:GetOwnedOpportunity() return {delta=-2, replacements={}} end
+ui:Open()
+assert(not ui.frame:IsVisible())
+local first, picked, visible, bindings
+for i=1,900 do
+    H.now = H.now + 1/60; H.tick()
+    if ui.frame:IsVisible() then
+        local wanted = 0
+        local viewport = ui.contentScroll:GetHeight()
+        ui:VisitListEntries(ui.renderModel, 0, viewport, function(entry)
+            if entry.top < viewport and entry.bottom > 0 then wanted = wanted + 1 end
+        end)
+        assert(#ui.activeRenderFrames == wanted)
+        if not first then
+            first, visible, bindings = i, ui.guideDisplay, {}
+            for index, f in ipairs(ui.activeRenderFrames) do
+                bindings[index] = f.bindToken
+                if f.boundData and not picked then picked = f end
+            end
+            assert(picked); picked:SetHovered(true)
+        else
+            assert(ui.guideDisplay == visible and ui.contentScroll:GetVerticalScroll() == 0)
+            for index, f in ipairs(ui.activeRenderFrames) do assert(f.bindToken == bindings[index]) end
+        end
+    end
+end
+assert(first and first <= 3)
+local key, token = picked.boundData.stat_identity, picked.bindToken
+ui.StartGuideInventory = resume
+ui:StartGuideInventory(); H.settle()
+assert(ui.pendingGuideModel and ui.updateGuideButton:IsVisible(), "An automatic swap displaced the pointer")
+assert(ui.guideDisplay == visible and picked:IsVisible() and picked.hovered and picked.bindToken == token)
+assert(picked.boundData.stat_identity == key and picked.boundData.targetVerdict.swap.delta == -2)
+picked.iconButton:Click()
+assert(ui.selectedItemData.stat_identity == key and ui:GetSourceNextStep(ui.selectedItemData))
+applyListUpdate()
+assert(not ui.updateGuideButton:IsShown() and ui.renderModel.targetQuery.done and ui.renderModel.rowCount == 0)
+''')
+
+    def test_patched_client_uses_observed_gothic_helm_and_banked_upgrade(self):
+        setup = SETUP.replace('local ui = H.load', 'GetBuildInfo = function() return "Forever", "71037" end\nlocal ui = H.load')
+        self.lua_run(r'''
+level = 51
+local info, instant = GetItemInfo, GetItemInfoInstant
+local function gothicLink(value) return type(value) == "string" and value:find("item:10090:", 1, true) end
+GetItemInfo = function(value)
+    if gothicLink(value) then return "Gothic Plate Helmet of the Gorilla", gothic, 2, 47, 41, "Armor", "Plate", 1, "INVTYPE_HEAD", 1 end
+    return info(value)
+end
+GetItemInfoInstant = function(value)
+    if gothicLink(value) then return 10090, "Armor", "Plate", "INVTYPE_HEAD", 1, 4, 4 end
+    return instant(value)
+end
+C_Item = {GetItemInfo = GetItemInfo, GetItemInfoInstant = GetItemInfoInstant, GetItemStats = function(link)
+    if gothicLink(link) then return {RESISTANCE0_NAME=362, ITEM_MOD_STRENGTH_SHORT=13, ITEM_MOD_INTELLECT_SHORT=13} end
+end}
+C_TooltipInfo = {GetHyperlink = function(link)
+    if gothicLink(link) then return {lines={{leftText="362 Armor"}}} end
+end}
+addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head=true}
+addon:InitUIEvents(); ui:Open(); H.settle()
+local function bucket() return ui.renderModel.targetQuery.slots.Head end
+local exact = rating:NormalizeLink(10090, gothic)
+local seen = assert(ui.renderModel.guideContext.catalog.observed[exact])
+assert(seen.stats.strength == 13 and not ui.renderModel.guideContext.catalog.rollBuildMatches)
+local expected = {["Embrace of the Lycan"]=true, ["Raging Berserker's Helm"]=true,
+    ["Icemetal Barbute"]=true, ["Undying Headdress"]=true}
+for _, row in ipairs(bucket().rows) do
+    assert(expected[row.name] and row.targetVerdict.kind == "upgrade" and addon:IsGuideTargetRoute(row.matched_access_option), row.name)
+    expected[row.name] = nil
+end
+assert(not next(expected), "A known obtainable helm upgrade disappeared")
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:9479"}, {"bank:1"}
+local frame = addon.uiEventFrame
+frame:GetScript("OnEvent")(frame, "BAG_UPDATE_DELAYED"); H.settle()
+assert(ui.updateGuideButton:IsVisible() and bucket().positions["9479"])
+applyListUpdate()
+assert(not bucket().positions["9479"])
+ui:SetFilter("search","item:7719"); H.settle()
+local row = assert(bucket().rows[1])
+assert(row.targetVerdict.swap.replacements[1].state == "bank" and row.lookupReason)
+''', setup)
+
+    def test_home_in_endgame_remembers_the_tab_and_opens_the_selected_route(self):
+        self.lua_run(r'''
+level = 60; addon:RefreshTooltipPlayerContext()
+ui:Open(); H.settle()
+ui:SetContentMode("endgame"); H.settle()
+assert(ui:GetSelection().tab ~= "Home")
+ui:SetTab("Home"); H.settle()
+local model = ui.renderModel
+assert(model.guideContext.phase == "PR" and model.rowCount > 0)
+for _, entry in ipairs(model.entries) do
+    if entry.activate and entry.kind == "action" then
+        entry.activate(); H.settle()
+        assert(ui.selectedItemData and ui.selectedItemData.name == entry.title)
+        break
+    end
+end
+assert(ui.selectedItemData and ui.selectedItemData.acquisition_display.option.source)
+ui:Close(); ui:Open(); H.settle(); assert(ui:GetViewKey() == "home")
+ui:SetContentMode("leveling"); H.settle(); assert(ui:GetViewKey() == "gearGuide")
+ui:SetContentMode("endgame"); H.settle(); assert(ui:GetViewKey() == "home")
+''')
+
+    def test_saved_comparisons_survive_reload_and_change_with_the_bank(self):
+        self.lua_run(r'''
+level, worn = 51, 7719
+local function profile(a)
+    a.DetectPlayerSpec = function() return "Retribution" end
+    a:RefreshTooltipPlayerContext()
+    local bank = a:GetCharacterDB().bankCache
+    bank.scanned = true
+    bank.links, bank.locations = bank.links or {}, bank.locations or {}
+    return bank
+end
+local function inspect(a)
+    local service = a.ForeverGearRating
+    local owned = a.UI:GetOwnedSnapshot()
+    local context = service:GetContext("Paladin", "Retribution", "LEVELING", level, owned)
+    local item = context.catalog.items["9479"]
+    local result = service:GetOwnedOpportunity(context, item, "item:9479", false)
+    return result, a.Widgets:DecisionReason(item, result, context)
+end
+profile(addon)
+local first, firstReason = inspect(addon)
+assert(first and firstReason)
+local cache = assert(addon:GetCharacterDB().guideComparisons)
+assert(first.delta and cache.version == 2 and #cache.sets == 1 and #cache.sets[1].order > 0)
+BigBiSList, BigBiSListData = nil, nil
+ui = H.load("forever", true)
+addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+profile(addon)
+local read, hits = rating.ReadSavedOpportunity, 0
+function rating:ReadSavedOpportunity(...)
+    local result = read(self, ...)
+    if result then hits = hits + 1 end
+    return result
+end
+local second, secondReason = inspect(addon)
+assert(second.delta == first.delta and hits == 1 and second.replacements[1].key == first.replacements[1].key)
+assert(second.status == first.status and secondReason == firstReason)
+for _, key in ipairs({"name", "slot", "state", "item_link"}) do
+    assert(second.replacements[1][key] == first.replacements[1][key], key)
+end
+local bank = addon:GetCharacterDB().bankCache
+bank.links, bank.locations = {"item:9479"}, {"bank:1"}
+ui:Invalidate("ownership", "bank visit")
+local banked = assert(inspect(addon))
+assert(hits == 1 and (banked.status == "best_owned" or banked.delta == 0))
+assert(#addon:GetCharacterDB().guideComparisons.sets == 2)
+''')
+
+    def test_banked_sword_and_exact_roll_agree_across_wishlist_details_and_scoring(self):
+        self.lua_run(r'''
+level, worn = 51, 7719
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:6829", gothic}, {"20:1", "20:2"}
+local owned = ui:GetOwnedSnapshot()
+local ctx = rating:GetContext("Paladin", "Protection", "LEVELING", level, owned)
+assert(ctx.ownedFacts["6829"].state == "bank")
+local exact = rating:NormalizeLink(10090, gothic)
+local stars = {["6829"]=true, [exact]={item_id=10090, variant_id=exact, item_link=gothic}}
+local saved = addon:GetWishlistRows(stars, "Paladin", "Protection", "LEVELING", {ownedItems=owned})
+assert(#saved == 2)
+for _, row in ipairs(saved) do assert(row.owned and row.ownership_state == "bank" and ui:GetRowOwnershipState(row) == "bank") end
+assert(ui:GetRowOwnershipState({item_id=10090, variant_id=exact.."9"}) == "missing")
+assert(owned.bankScanned and ui:GetOwnershipState(6829) == "bank")
+''')
+
+    def test_equipped_aegis_keeps_its_banked_partner_and_verdict_after_reload(self):
+        self.lua_run(r'''
+level = 51
+local weapons = {[16]=17705, [17]=1203}
+GetInventoryItemID = function(_, slot) return weapons[slot] end
+GetInventoryItemLink = function(_, slot) if weapons[slot] then return "item:" .. weapons[slot] end end
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:6829"}, {"20:1"}
+local function verify(a)
+    a.DetectPlayerSpec = function() return "Protection" end
+    a:RefreshTooltipPlayerContext()
+    local service = a.ForeverGearRating
+    local ctx = service:GetContext("Paladin", "Protection", "LEVELING", level, a.UI:GetOwnedSnapshot())
+    local shield = assert(ctx.ownedFacts["1203"])
+    local verdict = service:GetHeldComparison(ctx, shield)
+    assert(verdict.status == "best_owned" and verdict.delta == 0 and verdict.ownership == "equipped")
+    assert(a.Widgets:DecisionReason(shield.facts, verdict, ctx) == "Best shield you own")
+    local main, off = unpack(verdict.weaponSetup)
+    assert(main.name == "Sword of Serenity" and main.state == "bank")
+    assert(off.name == "Aegis of Stormwind" and off.state == "equipped")
+end
+verify(addon)
+BigBiSList, BigBiSListData = nil, nil
+H.load("forever", true)
+verify(BigBiSList)
+''')
+
+    def test_rounded_zero_pick_stays_out_of_dungeon_and_partial_search(self):
+        self.lua_run(r'''
+level = 51; addon:RefreshTooltipPlayerContext(); addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head=true}
+local ordinal = BigBiSListData.guide_index.slots.Head.lookup["6686"]
+function rating:GetGuideTargetPage() return {count=1, at=function() return ordinal end} end
+function rating:GetOwnedOpportunity() return {delta=0.002} end
+ui:Open(); H.settle()
+local function head() return ui.renderModel.targetQuery.slots.Head end
+assert(#head().rows == 0)
+ui:SetFilter("zones", {["Razorfen Kraul"]=true}); H.settle(); assert(#head().rows == 0)
+ui:SetFilter("zones", {}); ui:SetFilter("search", "Tuske"); H.settle(); assert(#head().rows == 0)
+ui:SetFilter("search", "item:6686"); H.settle()
+local helm = head().rows[1]
+assert(helm.exactLookup and helm.targetVerdict.gain == 0.002 and helm.lookupReason:find("too small", 1, true))
+''')
+
+    def test_long_scroll_commits_one_clickable_page_and_keeps_the_last_requested_offset(self):
+        self.lua_run(r'''
+local window = addon:GetAccountDB().profile.window
+window.width, window.height, window.density = 1020, 790, "comfortable"
+ui:Open(); H.settle()
+local previous = ui.guideDisplay
+local first = ui.activeRenderFrames[1]
+local screenTop = first:GetTop()
+local spent, bind = 0, ui.BindListEntry
+debugprofilestop = function() return H.now * 1000 + spent end
+function ui:BindListEntry(...)
+    spent = spent + 1.2
+    return bind(self, ...)
+end
+ui.contentScroll:SetVerticalScroll(920)
+ui.contentScroll:SetVerticalScroll(1650)
+local function check()
+    local page = ui.guideDisplay
+    local index = 0
+    ui:VisitListEntries(ui.renderModel, page.offset, page.offset+page.height, function(e)
+        if e.bottom > page.offset and e.top < page.offset+page.height then
+            index = index + 1
+            local f = assert(ui.activeRenderFrames[index])
+            assert(f:IsVisible() and ui:IsCurrentRenderFrame(f) and f.__bigBisBoundRenderEntry.top == e.top)
+            if e.data then assert(f.iconButton.itemId == e.data.item_id and f.boundData.stat_identity == e.data.stat_identity) end
+        end
+    end)
+    assert(index == #ui.activeRenderFrames)
+    if page == previous then assert(math.abs(first:GetTop() - screenTop) < 0.5, "The previous page moved before its replacement was ready") end
+end
+for i=1,60 do
+    check()
+    if not ui.guideStage and ui.guideDisplay.offset == 1650 then break end
+    spent = 0; H.now = H.now+1/60; H.tick()
+end
+check(); assert(ui.guideDisplay.offset == 1650)
+local target
+for _, frame in ipairs(ui.activeRenderFrames) do if frame.boundData then target = frame; break end end
+assert(target); target.iconButton:Click()
+assert(ui.selectedItemData.stat_identity == target.boundData.stat_identity and ui:GetSourceNextStep(ui.selectedItemData))
+''')
 
     def test_stoneslayer_proc_changes_the_packed_rank_and_owned_upgrade(self):
         self.lua_run(r'''
@@ -86,8 +479,11 @@ addon:SetSelectedLevelingLevel(51, true)
 ui:GetFilters("Gear Guide").slots = {["Two Hand"] = true}
 ui:Open(); H.settle()
 local bucket = ui.renderModel.targetQuery.slots["Two Hand"]
-local listed = assert(bucket.rows[assert(bucket.positions["9418"], "Stoneslayer missing from normal upgrade list")])
+ui:SetFilter("zones", {Uldaman=true}); H.settle()
+bucket = ui.renderModel.targetQuery.slots["Two Hand"]
+local listed = assert(bucket.rows[bucket.positions["9418"]], "A useful pickup should appear when browsing its dungeon")
 assert(listed.targetVerdict.kind == "upgrade" and listed.matched_access_option.source.entity_name == "Archaedas")
+assert(listed.guideSpecialty:find("Earth Elementals", 1, true))
 local tunic = assert(rating:GetTooltipItem(60, "item:60"))
 assert(tunic.facts.stats.armor == 33)
 ''')
@@ -172,6 +568,8 @@ ui:SetFilterDrawerOpen(false)
 worn = 7719
 frame:GetScript("OnEvent")(frame, "PLAYER_EQUIPMENT_CHANGED", 1)
 H.settle()
+assert(ui.renderModelSerial == serial and ui.updateGuideButton:IsVisible())
+applyListUpdate()
 assert(ui.renderModelSerial > serial and ui:CaptureNavigationState().anchorKey == position.anchorKey)
 assert(ui:CaptureNavigationState().anchorOffset == position.anchorOffset)
 ''')
@@ -181,6 +579,7 @@ assert(ui:CaptureNavigationState().anchorOffset == position.anchorOffset)
 local referencePlacement = rating.GetGuidePlacement
 function rating:GetGuidePlacement() error("A native hover must read its indexed rank") end
 local tip = GameTooltip
+H.modifiers.alt = true
 tip:SetOwner(UIParent)
 tip:SetHyperlink("item:7719")
 tip:Show()
@@ -333,7 +732,7 @@ UnitFactionGroup = function() return faction end
 ui:GetFilters("Gear Guide").slots = {Head = true}
 local score = rating.GetOwnedOpportunity
 function rating:GetOwnedOpportunity(context, item, ...)
-    if item.id == 287011 or item.id == 10574 or item.id == 1930 then return {delta = 4} end
+    if item.id == 287011 or item.id == 10574 or item.id == 1930 then return {delta = 4, roleDelta = 4, roleDisplaced = 10} end
     return score(self, context, item, ...)
 end
 ui:Open(); H.settle()
@@ -354,8 +753,10 @@ assert(not addon:IsGuideMarketRoute({source_type = "trade", is_inferred_trade_op
     source = row.matched_access_option.source}))
 region = 1
 ui:Invalidate("query", "market"); ui:ScheduleRefresh(); H.settle()
+applyListUpdate()
 assert(not guise())
 ui:SetFilter("slots", {Back = true}); H.settle()
+ui:SetFilter("search", "item:1930"); H.settle()
 local back = ui.renderModel.targetQuery.slots.Back
 local cloak = assert(back.rows[back.positions["1930"]])
 assert(cloak.matched_access_option.source_type == "drop")
@@ -365,9 +766,14 @@ for _, evaluation in ipairs(ui:GetAccessEvaluation(cloak).options) do
     if evaluation.option.source_type == "trade" then buying = evaluation.option end
 end
 assert(addon:IsGuideMarketRoute(buying, "forever/normal/alliance/us"))
+ui:SetFilter("search", ""); H.settle()
 ui:SetFilter("sourceTypes", {trade = true}); H.settle()
 local market = ui.renderModel.targetQuery.slots.Back.market
-assert(market.rows[market.positions["1930"]].matched_access_option.source_type == "trade")
+assert(market and #market.rows > 0)
+for _, pick in ipairs(market.rows) do assert(addon:IsGuideMarketRoute(pick.matched_access_option, "forever/normal/alliance/us")) end
+ui:SetFilter("search", "item:1930"); H.settle()
+local searched = ui.renderModel.targetQuery.slots.Back.rows[1]
+assert(searched.item_id == 1930 and addon:IsGuideMarketRoute(searched.matched_access_option, "forever/normal/alliance/us"))
 ''')
 
     def test_packed_benchmark_and_effect_language_cover_all_profiles(self):
@@ -428,14 +834,18 @@ addon:InitUIEvents()
 ui:Open(); H.settle()
 local function head() return ui.renderModel.targetQuery.slots.Head end
 assert(requested == 1 and head().pending[id] and head().comparisonDetail)
-assert(not head().positions["9479"])
+local unresolved = assert(head().rows[head().positions["9479"]])
+assert(unresolved.targetVerdict.pending[id] and unresolved.targetVerdict.detail)
 ready = true; waiting(); H.settle()
+applyListUpdate()
 assert(not head().pending and head().positions["9479"])
 bank.links, worn, id, ready = {}, 901078, 901078, false
 local events = addon.uiEventFrame
 events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED", 1); H.settle()
+applyListUpdate()
 assert(requested == 2 and head().pending[id] and head().comparisonDetail:find("Waiting for ", 1, true))
 ready = true; waiting(); H.settle()
+applyListUpdate()
 assert(not head().pending and head().positions["9479"])
 ''')
 
@@ -466,13 +876,16 @@ end
 local function bagsChanged()
     local f = addon.uiEventFrame
     f:GetScript("OnEvent")(f, "BAG_UPDATE_DELAYED"); H.settle()
+    applyListUpdate()
 end
-assert(find(274644).matched_access_option.source.entity_name == "Nekrum Gutchewer")
-assert(find(287019).matched_access_option.source.zone == "Alcaz Prison")
+assert(find(9479) and #head().rows < 20)
+for _, row in ipairs(head().rows) do assert(addon:IsGuideTargetRoute(row.matched_access_option)) end
 assert(not find(6686) and not find(10574))
+ui:SetFilter("zones", {["Scarlet Monastery"] = true}); H.settle()
 local herod = assert(find(7719))
 assert(herod.stat_rank.rank and math.abs(herod.targetVerdict.gain - 2.1) < 0.001)
 assert(advice(herod):find("+2.1 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
+ui:SetFilter("zones", {}); H.settle()
 lookup("Tusken Helm")
 assert(#head().rows == 1 and advice(find(6686)):find("-6.5 pts vs Gothic Plate Helmet of the Gorilla", 1, true))
 lookup("Guise of Battle")
@@ -561,6 +974,10 @@ local swap = {delta = 0.002}
 rating.GetOwnedOpportunity = function() return swap end
 local function verdict() return rating:GetGuideTargetVerdict(row, guide, player, owned) end
 assert(verdict().kind == "upgrade" and verdict().gain == 0.002)
+ui.lastUnfilteredGuide = nil
+local function coldSlotTarget() return ui:FindBestGearGuideTarget(guide, {"Head"}, player, owned, function() end) end
+assert(not coldSlotTarget(), "My Gear recommended a trip for a rounded-zero gain")
+swap = {delta = 5}; assert(coldSlotTarget().item_id == 6686)
 swap = {delta = 0}; assert(verdict().kind == "hidden")
 swap = {status = "loading", blocker = {name = "Bank helm"}, pending = {[901001] = true}}
 local waiting = verdict()
@@ -575,6 +992,47 @@ assert(row.targetVerdict.kind == "utility" and not row.targetVerdict.gain)
 local view = ui:GetLevelingGearView(row, "leveling")
 assert(view.today == "AoE" and view.comparisonDetail:find("all enemies", 1, true))
 assert(view.evidence:find("-4.0 pts vs Owned trinket", 1, true))
+''')
+
+    def test_dungeon_keeps_an_earlier_pick_and_hides_a_weaker_later_one(self):
+        self.lua_run(r'''
+level = 51; addon:RefreshTooltipPlayerContext()
+addon:SetSelectedLevelingLevel(51, true)
+ui:GetFilters("Gear Guide").slots = {Head = true}
+local examples = {[9479]={gain=12, gate=43}, [7719]={gain=11, gate=35}, [10763]={gain=11, gate=45}}
+local ids = {9479, 7719, 10763}
+local indices = BigBiSListData.guide_index.slots.Head.lookup
+function rating:GetGuideTargetPage() return {count=#ids, at=function(i) return indices[tostring(ids[i])] end} end
+local original, verdict = addon.GetPackedGuideRow, rating.GetGuideTargetVerdict
+function addon:GetPackedGuideRow(...)
+    local row = original(self, ...)
+    local example = row and examples[row.item_id]
+    if example then
+        local option = row.matched_access_option
+        row.acquisition_display.activity_zone = "Same dungeon"
+        row.acquisition_display.testGate = example.gate
+        assert(option.source_type == "drop")
+    end
+    return row
+end
+local gate = addon.GetLevelingSourceGate
+function addon:GetLevelingSourceGate(display)
+    if display and display.testGate then return display.testGate end
+    return gate(self, display)
+end
+function rating:GetGuideTargetVerdict(row, ...)
+    local value = verdict(self, row, ...)
+    local example = examples[row.item_id]
+    if example then value.gain, value.kind, value.purpose, value.meaningful = example.gain, "upgrade", nil, true end
+    return value
+end
+ui:Open(); H.settle()
+local bucket = ui.renderModel.targetQuery.slots.Head
+assert(bucket.positions["9479"] and bucket.positions["7719"] and not bucket.positions["10763"])
+assert(bucket.exclusions["10763"]:find("Embrace of the Lycan", 1, true))
+examples[10763].gain = 12
+ui:Invalidate("query", "equal dungeon rewards"); ui:Refresh(); H.settle()
+assert(ui.renderModel.targetQuery.slots.Head.exclusions["10763"] == "Same gain from this activity · Embrace of the Lycan")
 ''')
 
     def test_activity_counts_and_sorts_share_recommendations(self):
@@ -598,10 +1056,16 @@ local function overview(sort)
         else assert(action.detail:find("situational", 1, true) or action.detail:find("Stats unavailable", 1, true)
             or action.detail:find("Check ", 1, true) or action.detail:find("Waiting for ", 1, true)) end
     end
-    assert(confirmed == 4)
+    local expected = 0
+    for _, total in pairs(ui.renderModel.targetQuery.activities.batch.totals) do
+        if total.upgrades > 0 then expected = expected + 1 end
+    end
+    assert(confirmed == expected and confirmed > 0)
     return actions
 end
-assert(overview("most_loot")[1].title == "Scarlet Monastery")
+local largest = overview("most_loot")[1]
+local byName = ui.renderModel.targetQuery.activities.byName
+for _, activity in pairs(byName) do assert(activity.itemCount <= byName[largest.activityName].itemCount) end
 local best = overview("best_upgrade")[1]
 assert(best.title == "Zul'Farrak" and best.detail:find("Embrace of the Lycan (+15.1 pts)", 1, true))
 assert(overview("most_upgrades")[1].title == "Zul'Farrak")
@@ -635,6 +1099,7 @@ local function herod()
     return assert(b.rows[b.positions["7719"]])
 end
 ui:SetLevelingLevel(55); H.settle()
+ui:SetFilter("search", "item:7719"); H.settle()
 local row = herod()
 local text = table.concat(rating:LevelingPresentationLines(ui:GetLevelingGearView(row, "leveling")), "\n")
 assert(row.targetVerdict.swap.forecast.level == 55 and text:find("Estimated at Level 55", 1, true))
@@ -697,6 +1162,7 @@ assert(b.positions["10658"])
 done[3370] = true
 local f = addon.uiEventFrame
 f:GetScript("OnEvent")(f, "QUEST_LOG_UPDATE"); H.settle()
+applyListUpdate()
 assert(not ui.renderModel.targetQuery.slots.Feet.positions["10658"])
 ui:SetFilter("search", "Quagmire Galoshes"); H.settle()
 local known = ui.renderModel.targetQuery.slots.Feet.rows[1]

@@ -818,14 +818,16 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         self.assertRegex(ui, r"(?i)overscan[a-z_]*\s*=\s*120")
 
-        render_body = ui.split("function UI:RenderListModel(model)", 1)[1].split("function UI:UpdateVirtualList", 1)[0]
+        render_body = ui.split("function UI:RenderListModel(model)", 1)[1].split("\nfunction ", 1)[0]
         self.assertIn("self:UpdateVirtualList(true)", render_body)
         self.assertNotIn("for _, entry in ipairs(model.entries) do", render_body)
         self.assertNotIn("self:CreateDataRow(", render_body)
 
         update_body = ui.split("function UI:UpdateVirtualList", 1)[1].split("function UI:RenderEmpty", 1)[0]
-        self.assertIn("for _, entry in ipairs", update_body)
-        self.assertIn("self:CreateDataRow(", update_body)
+        self.assertIn("self:VisitListEntries(", update_body)
+        self.assertIn("self:BindListEntry(", update_body)
+        bind_body = ui.split("function UI:BindListEntry(", 1)[1].split("\nfunction ", 1)[0]
+        self.assertIn("self:CreateDataRow(", bind_body)
         self.assertIn("LIST_OVERSCAN_PIXELS", update_body)
         self.assertIn("scroll:GetVerticalScroll()", update_body)
         self.assertIn("scroll:GetHeight()", update_body)

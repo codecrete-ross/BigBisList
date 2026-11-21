@@ -729,6 +729,7 @@ def build_data(flavor: str) -> dict:
                 by_list.setdefault(class_name, {}).setdefault(spec, {}).setdefault(list_key, []).append(offset)
             uses_by_phase[phase_key] = [all_uses, tooltip_uses, by_spec, by_list]
         data["runtime_indexes"] = {
+            "guide_core": core_guide_pages(leveling_recommendations, comparisons),
             "items": {row["id"]: offset for offset, row in enumerate(items, 1)},
             "item_fallbacks": {row["id"]: offset for offset, row in enumerate(item_fallbacks, 1)},
             "leveling_by_item": by_item,
@@ -736,6 +737,37 @@ def build_data(flavor: str) -> dict:
             "uses_by_phase": uses_by_phase,
         }
     return data
+
+
+def core_guide_pages(recommendations, model):
+    """Small, independently usable pages of reviewed, fixed-stat leveling rewards."""
+    profiles, pages, interned = {}, [], {}
+    for offset, row in enumerate(recommendations, 1):
+        if row.get("variant_id") or row["source_bucket"] not in {
+            "dungeon_drop", "other_drop", "quest", "vendor", "crafted", "token_turnin"
+        } or not row.get("score", 0) > 0:
+            continue
+        profile = "/".join(row[field] for field in ("class", "spec", "race", "faction"))
+        levels = profiles.setdefault(profile, {})
+        for level in range(row["level_min"], row["level_max"] + 1):
+            by_route = levels.setdefault(level, {})
+            key = (row["slot"], row["source_bucket"])
+            candidate = (row["score"], -row["item_id"], -offset)
+            if key not in by_route or candidate > by_route[key]:
+                by_route[key] = candidate
+    directory = {}
+    for profile, levels in sorted(profiles.items()):
+        refs = []
+        for level in range(1, 60):
+            page = tuple(-entry[2] for _, entry in sorted(levels.get(level, {}).items()))
+            if page not in interned:
+                pages.append(list(page))
+                interned[page] = len(pages)
+            refs.append(interned[page])
+        directory[profile] = refs
+    name_field = model["item_fields"].index("name")
+    names = sorted(model["items"], key=lambda key: (model["items"][key][name_field].lower(), key))
+    return {"pages": pages, "profiles": directory, "names": names}
 
 
 def compact_lua(value) -> str:
@@ -797,6 +829,8 @@ def render_lua(flavor: str) -> str:
                       "index.fallback_records = BigBiSListData.item_fallbacks",
                       "index.leveling_records = BigBiSListData.leveling_recommendations",
                       "index.use_records = BigBiSListData.uses",
+                      "index.guide_core.data = BigBiSListData.stat_rank",
+                      "index.guide_core.items = BigBiSListData.stat_rank.items",
                       "BigBiSListData.stat_rank.slot_key_items = BigBiSListData.stat_rank.items", ""))
         return "\n".join(lines)
     return "\n".join(

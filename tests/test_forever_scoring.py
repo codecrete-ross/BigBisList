@@ -107,7 +107,7 @@ assert(scoring.WeaponProcChance(trigger, 0, slow) == nil)
     def test_full_guide_scores_worn_and_unowned_exact_paladin_items(self):
         self.lua_run(r'''
 local H = dofile("tests/lua_ui_harness.lua")
-H.load("forever")
+H.load("forever", true)
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
 local function guide(spec, level)
     return rating:GetGuideContext("Paladin", spec, level == 60 and "PR" or "LEVELING", level, "Human", "Alliance")
@@ -156,11 +156,12 @@ local key = rating:NormalizeLink(10090, link)
 local helm = assert(pool.byVariant[key])
 assert(helm.item.name == "Gothic Plate Helmet of the Gorilla" and helm.item.stats.armor == 362)
 assert(helm.item.stats.strength == 13 and helm.item.stats.intellect == 13)
-local groups = addon:GetLevelingRows("Paladin", "Retribution", 49, {search = helm.item.name,
-    slots = {Head = true}, race = "Human", faction = "Alliance"})
-assert(#groups == 1 and #groups[1].items == 1)
-local row = groups[1].items[1]
-assert(row.stat_rank == helm and row.variant_id == key and row.acquisition_display.source_label == "Source unknown")
+local context = guide("Retribution", 49)
+local indices = rating:GetPackedGuide(context).Head.indices
+local ordinal, identity = rating:FindGuideItem(context, indices, helm.item.name, nil, "Head")
+assert(identity == key and indices.keys[ordinal] == key)
+local row = assert(addon:GetPackedGuideRow(context, "Head", ordinal, {}, false, 49))
+assert(row.stat_rank.rank == helm.rank and row.variant_id == key and row.acquisition_display.source_label == "Source unknown")
 assert(#addon:GetLevelingActivityRows(row, {}, 49) == 0)
 UnitRace = function() return "Human","Human",1 end
 UnitFactionGroup = function() return "Alliance" end
@@ -702,16 +703,15 @@ end
     def test_guide_includes_poor_starter_gear_and_completes_partial_shield_stats_from_the_client(self):
         self.lua_run(r'''
 local H = dofile("tests/lua_ui_harness.lua")
-H.load("forever")
+H.load("forever", true)
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
 function UnitRace() return "Human", "Human" end
 function UnitFactionGroup() return "Alliance" end
 local filters = { race = "Human", faction = "Alliance" }
-local rows = addon:GetLevelingRows("Paladin", "Protection", 1, filters)
-local vest
-for _, group in ipairs(rows) do
-    for _, row in ipairs(group.items) do if row.item_id == 2656 then vest = row end end
-end
+local context = rating:GetGuideContext("Paladin", "Protection", "LEVELING", 1, "Human", "Alliance")
+local indices = rating:GetPackedGuide(context).Chest.indices
+local ordinal = assert(rating:FindGuideItem(context, indices, "item:2656", nil, "Chest"))
+local vest = addon:GetPackedGuideRow(context, "Chest", ordinal, filters, false, 1)
 assert(vest and vest.quality == "poor" and vest.stat_rank.rank and vest.stat_rank.total >= 2)
 local link = "|cffffffff|Hitem:274652|h[Wall of Water]|h|r"
 local getInfo, instant = GetItemInfo, GetItemInfoInstant

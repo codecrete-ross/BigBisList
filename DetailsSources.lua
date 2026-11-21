@@ -415,6 +415,7 @@ function UI:GetQuestStepText(quest)
 end
 
 function UI:GetSourceNextStep(data)
+    if data and data.previewNext then return data.previewNext end
     local display = data and data.acquisition_display
     local option = display and display.option
     if not option or not display.source_match or display.status ~= "ready" then return end
@@ -428,7 +429,7 @@ function UI:GetSourceNextStep(data)
         if quest and quest.state ~= "Unknown" then return self:GetQuestStepText(quest) end
     end
     local source = option.source
-    if data.targetVerdict and source then
+    if source then
         if BigBiSList:IsGuideMarketRoute(option, BigBiSList:GetGuideMarket(BigBiSList:GetPlayerFactionName())) then
             return "Check AH" .. (data.targetRoll and (" · " .. data.targetRoll) or "")
         elseif source.type == "crafted" then

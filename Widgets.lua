@@ -17,8 +17,15 @@ Widgets.Theme = {
     bisGold = { 1, 0.82, 0.32, 1 },
     text = { 0.90, 0.90, 0.92, 1 },
     muted = { 0.68, 0.68, 0.72, 1 },
+    status = { 0.62, 0.62, 0.66, 1 },
     disabled = { 0.42, 0.42, 0.46, 1 },
 }
+if BigBiSList.isForever then
+    Widgets.Theme.text = { 0.97, 0.96, 0.92, 1 }
+    Widgets.Theme.muted = { 0.78, 0.81, 0.86, 1 }
+    Widgets.Theme.status = Widgets.Theme.muted
+    Widgets.Theme.accent = { 1, 0.82, 0.28, 1 }
+end
 
 -- This order is shared with tools/generate_ui_icons.py. Each glyph occupies a
 -- padded 32px cell in the addon-owned 256px atlas; no client atlas API is needed.
@@ -61,6 +68,64 @@ end
 function Widgets:GearAdviceText(view)
     local icon = view.tone == "gain" and "upgradeArrow" or view.tone == "future" and "clock"
     return self:GearIconText(icon, view.today)
+end
+
+local decisionStats = {
+    {"stamina", "Stamina"}, {"strength", "Strength"}, {"agility", "Agility"}, {"intellect", "Intellect"},
+    {"spirit", "Spirit"}, {"healing_power", "Healing"}, {"spell_power", "Spell Power"},
+    {"dps", "weapon DPS"}, {"ranged_dps", "ranged DPS"}, {"wand_dps", "wand DPS"}, {"attack_power", "Attack Power"},
+    {"mp5", "mana per 5 sec"}, {"defense", "Defense"}, {"block_value", "Block Value"}, {"armor", "Armor"},
+}
+
+function Widgets:DecisionReason(item, swap, context)
+    local result = swap and (swap.forecast or swap)
+    if not result then return end
+    if result.status == "loading" or result.status == "unavailable" then
+        return result.blocker and result.blocker.name
+    end
+    if result.conditional or result.estimatedEffects then
+        if result.unscoredHolyBlock then return "Holy damage on block" end
+        for _, effect in ipairs(item and item.effects or {}) do
+            if effect:lower():find("chance", 1, true) then return "depends on how often it triggers" end
+        end
+        if result.estimatedEffects then return "includes an estimated effect" end
+        if result.buildUnavailable then return "uses default spec weights" end
+        return "item effects may change the result"
+    end
+    if result.status == "empty" then return "fills an empty slot" end
+    if result.status == "best_owned" then
+        if result.equipSwap then
+            local names = {}
+            for _, old in ipairs(result.equipSwap.replacements or {}) do names[#names + 1] = old.name end
+            return names[1] and ("replaces " .. table.concat(names, " + ")) or "fills an empty slot"
+        end
+        if item and item.armor_type == "Shield" then return "Best shield you own" end
+        return "Best you own for this slot"
+    end
+    if result.delta == 0 then return "same score as your best owned gear" end
+    if result.delta and result.delta < 0 then
+        local previous = result.replacements or {}
+        if result.weaponSetup and (#previous > 1 or previous[1] and previous[1].facts and
+            (previous[1].facts.slot == "Two Hand") ~= (item and item.slot == "Two Hand")) then
+            local names = {}
+            for _, piece in ipairs(result.weaponSetup) do names[#names + 1] = piece.name end
+            return "your setup uses " .. table.concat(names, " + ")
+        end
+        if previous[1] then
+            return previous[1].name .. (previous[1].state == "bank" and " in your bank" or
+                previous[1].state == "bag" and " in your bags" or " is stronger")
+        end
+    end
+    if (result.delta or 0) <= 0 or not item then return end
+    local weights = context and BigBiSList.ForeverGearRating:ReferenceWeights(context)
+    local highest, reason = 0, nil
+    for _, stat in ipairs(decisionStats) do
+        local delta = (item.stats or {})[stat[1]] or 0
+        for _, other in ipairs(result.replacements or {}) do delta = delta - ((other.facts and other.facts.stats or {})[stat[1]] or 0) end
+        local contribution = delta * (weights and (weights[stat[1]] or 0) or 1)
+        if contribution > highest and delta > 0 then highest, reason = contribution, string.format("+%g %s", delta, stat[2]) end
+    end
+    return reason
 end
 
 function Widgets:AddGearAdviceLines(tooltip, service, view)
@@ -254,7 +319,7 @@ function Widgets:CloseDropdownMenus()
 end
 
 local function setBackdrop(frame, bg, border)
-    if not frame.SetBackdrop then
+    if frame.nativePanel or not frame.SetBackdrop then
         return
     end
 
@@ -270,7 +335,11 @@ local function setBackdrop(frame, bg, border)
     frame:SetBackdropBorderColor(border[1], border[2], border[3], frame.__bigBisStatusBadge and 0 or border[4])
 end
 
-function Widgets:CreatePanel(name, parent, bg, border)
+function Widgets:CreatePanel(name, parent, bg, border, nativeTemplate)
+    if BigBiSList.isForever and nativeTemplate then
+        local ok, native = pcall(CreateFrame, "Frame", name, parent, nativeTemplate)
+        if ok and native then native.nativePanel = true; return native end
+    end
     local template = BackdropTemplateMixin and "BackdropTemplate" or nil
     local frame = CreateFrame("Frame", name, parent, template)
     setBackdrop(frame, bg, border)
@@ -353,6 +422,15 @@ function Widgets:SetCellText(label, text, maxLines, lineHeight, width)
     label:SetWordWrap(true)
     if label.SetJustifyV then label:SetJustifyV("MIDDLE") end
     if label.SetNonSpaceWrap then label:SetNonSpaceWrap(true) end
+    -- Guide picks have fixed-height columns and full text on hover. Let the
+    -- font string clip to its bounds without measuring and reflowing each word.
+    if label.guideBounds then
+        label:SetHeight(maxLines * lineHeight)
+        label:SetText(text)
+        label.fullText, label.displayedText, label.isTruncated = text, text, false
+        label.maxLines, label.lineHeight = maxLines, lineHeight
+        return text, false
+    end
     label:SetHeight(0)
     local availableHeight = maxLines * lineHeight
     local function fits(value)
@@ -505,13 +583,18 @@ local function paintButton(button)
 end
 
 function Widgets:CreateTextButton(parent, text, width, height, onClick)
-    local template = BackdropTemplateMixin and "BackdropTemplate" or nil
-    local button = CreateFrame("Button", nil, parent, template)
+    local button
+    if BigBiSList.isForever then
+        local ok, native = pcall(CreateFrame, "Button", nil, parent, "UIPanelButtonTemplate")
+        if ok and native then button = native; button.nativePanel = true end
+    end
+    button = button or CreateFrame("Button", nil, parent, BackdropTemplateMixin and "BackdropTemplate" or nil)
     button:SetSize(width or 80, height or 24)
     button:EnableMouse(true)
     button:RegisterForClicks("LeftButtonUp")
 
-    local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    local label = button.GetFontString and button:GetFontString() or button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:ClearAllPoints()
     label:SetPoint("LEFT", button, "LEFT", 6, 0)
     label:SetPoint("RIGHT", button, "RIGHT", -6, 0)
     label:SetJustifyH("CENTER")

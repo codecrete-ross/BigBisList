@@ -1,4 +1,4 @@
-local addonName = ...
+local addonName, private = ...
 
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
@@ -194,8 +194,13 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
         or event == "ACTIVE_COMBAT_CONFIG_CHANGED"
         or event == "PLAYER_LEVEL_UP" then
         if addonInitialized and BigBiSList.ForeverScoring then
-            BigBiSList.ForeverScoring:Invalidate()
-            BigBiSList:RefreshUI("query", event)
+            local changed = BigBiSList.ForeverScoring:PlayerTalentsChanged()
+            if changed or event == "PLAYER_LEVEL_UP" or event == "PLAYER_ENTERING_WORLD" then
+                BigBiSList.ForeverScoring:Invalidate()
+                BigBiSList:RefreshUI("query", event)
+            elseif event ~= "PLAYER_LOGIN" then
+                return
+            end
         end
         retryDetectedPlayerSelection()
         if addonInitialized and BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
@@ -215,6 +220,10 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
     BigBiSList:InitMinimapButton()
     addonInitialized = true
     retryDetectedPlayerSelection()
+    if type(private) == "table" and private.loadStarted and debugprofilestop then
+        BigBiSList.loadTimeMs = debugprofilestop() - private.loadStarted
+        BigBiSList.loadHeapKB = private.heapAtLoad and collectgarbage("count") - private.heapAtLoad
+    end
     printLine("loaded. Use /bbl or /bigbis.")
 end)
 

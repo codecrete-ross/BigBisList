@@ -114,7 +114,158 @@ contained none of the missing IDs. `build/forever-item-recovery/metadata-snapsho
 preserves the base fields for all 197 and separately attributes catalog identity
 hints for 190. The metadata file stays outside the addon import. [Launch `Item` table](https://wago.tools/db2/Item?build=1.60.1.70790)
 
+## Gear Guide presentation and correctness
+
+Commit `faaf96f8` reduced the level-51 Retribution head list from 4,386
+catalog entries to four obtainable upgrades. The archived rolls used build
+70959. On build 71037 the old compatibility check rejected the entire index.
+The fallback produced 42,661 rows, including 40,853 with an unknown source.
+The regression covers those builds, an incomplete index, and core data alone.
+
+The Forever Guide opens on a complete, clickable viewport. Shipped picks,
+named routes, activity groups, ranks, ranges, and exact lookup indexes supply
+the first page. Core picks cover an unavailable index. A changed client build
+requires new evidence for inferred rolls. A single pending comparison names
+its dependency on the affected row.
+
+The displayed page owns its scroll position and click targets until its
+replacement is ready. One automatic personalization per opening can publish
+when the item under the pointer keeps its position. Further membership or
+ordering changes wait for **Update list** in the footer. Verdicts on retained
+rows can update in place.
+Explicit navigation shows the requested page. Returning to an item preserves
+its screen position and Details when possible.
+
+Each pursuit needs an obtainable route and a practical reason. Keep the best
+attainable slot choices, competitive easier routes, useful bag gear, claimable
+rewards, and gear with a named situational use. Group weaker same-activity
+choices, alternate routes, and random rolls. Dungeon filters and partial search
+use the same rules. Exact item inspection includes the comparison and any
+reason for exclusion.
+
+The same per-character evidence drives the Guide, My Gear, Home, hovers, and
+loot badges. Gear Guide and Upgrades name destinations, BiS List labels guide
+rank, My Gear gives the selected slot a next action, Wishlist shows the route
+and ownership, Compare Slot names its reference, and Details leads with the
+reason and the route. Use native item quality colors, Blizzard controls, and a
+word or icon with each decision. Compact hovers put the active spec first and
+give one supported reason per spec. Alt exposes the named comparison and the
+rank, score, and effect assumptions. Home remains experimental in both modes.
+Leveling opens to Gear Guide and endgame opens to Upgrades on a fresh save.
+Subsequent opens honor the remembered tab.
+
+| Offline regression | Expected player outcome |
+| --- | --- |
+| Level-51 Protection, equipped Aegis of Stormwind, banked Sword of Serenity | Keep the equipped shield. Alt names both pieces of the best owned pair. |
+| Equal shield, stronger banked shield, or winning banked two-hander | Show a tie, the competing shield by name, or the stronger weapon setup, respectively. |
+| A bank-only sword and an exact random roll on Wishlist | Ownership, filters, Details, and scoring agree on each copy from the last bank visit. |
+| Withdrawal from a bank snapshot without instance IDs | The carried ring counts once and the new ring gains 5 points. With a second identical ring verified at the bank the comparison correctly loses 5 points. |
+| Bag item for the second spec; future tie, loss, or gain | Equip advice applies to the active spec. Other specs name the gear to keep. Every forecast includes its level. |
+| Tusken Helm with only a +0.002 gain | Filtering to Razorfen Kraul or a partial name yields no trip. Exact lookup explains the gain. |
+| Level-51 Retribution with the Gothic helm, then a better banked helm | Four obtainable targets in the original fixture. Adding the banked item changes the personal result. Retain useful immediate gains, proc-dependent options, and quest winners by spec. |
+| Fresh save, reload, warm reopen, level change, matching, newer and unavailable indexes | Full first viewport within 50 ms, warm reopen by the next frame, and at most 4 ms of addon work per interaction frame at 60 Hz. Record loading time and retained memory. Ordinary opens, hovers, and duplicate events perform zero full-catalog or all-level ranking passes. |
+| Fifteen stationary seconds, duplicate events, long scroll jumps, and opening Details | Row identity, position, highlight, and click targets stay consistent on every visible frame. Repeat in both densities and at 900 × 500. |
+
+The level-51 replay with 43 saved bank links identifies Sword of Serenity
+in the bank and Aegis of Stormwind equipped. The native inventory hover
+uses the held shield comparison. An additional equal shield uses the loot
+comparison. The copy-count test also closes the bank during a scan and
+checks that the last successful visit survives. The Aegis test loads the
+addon again with the same saved variables and checks the verdict and both
+weapon locations.
+
+Stoneslayer keeps its Uldaman route with its reviewed bonus against Earth
+Elementals. The rounding test checks Tusken Helm in the Guide, in Razorfen
+Kraul, in partial search, and by exact item link. The quest replay changes a
+ready turn-in while the section is visible, applies **Update list**, then
+checks that filtering by slot includes the bag action on the first personal
+page.
+
 ## Verify the live client
+
+The user runs the in-game checks personally. Agent verification uses the
+offline Lua harness and package checks. Computer Use is excluded. The update
+is pending user verification on build 71037. Record the client build,
+character level, spec, and the values printed by `/bbltest perf` after a fresh
+open and a reopen. Check that a Guide pick opens its named route with one
+click, and that an ordinary item hover says who benefits, when, and why.
+Check both list densities with Details open at 900 × 500.
+Check the equipped shield with its banked weapon partner and the evidence
+under Alt. Hold the pointer still during the first personalization, then use
+Update list after a real inventory change. The peak frame in `/bbltest perf`
+includes the work that last contributed to it. A cold hover gives the active
+spec first and can finish the other specs while the same item is under the
+pointer.
+For the Home experiment, use the same outfit and spec in Home and the usual
+tab. Time how long it takes to identify the next item to equip or the next
+boss or quest to visit. Record the chosen item and destination in each view.
+### Offline timing replay
+
+Run `lua5.1 tests/forever_guide_timing.lua 71037 full Protection comfortable`
+from the repository root. The other choices are build `70959`, payload
+`core`, spec `Retribution`, and density `compact`. Append `details` to
+exercise the route click at 900 × 500. Each process loads the Forever manifest
+and dispatches the addon and player login events on a fresh save. The replay
+checks the complete clickable viewport, watches 900 stationary frames,
+sends duplicate events, reopens the Guide, hovers an item and opens its route.
+Frame numbers use a simulated 60 Hz clock. Load time, handler time, and
+retained Lua heap come from the local interpreter. The replay fails when a
+viewport arrives after frame three or an interaction exceeds 4 ms. The
+second heap sample includes the simulated widgets, equipment comparisons
+and open Details after browsing.
+
+### November 21, 2026 offline checks
+
+All 138 focused checks passed, including the complete first viewport, stable
+row bindings, exact lookup, both level-51 outfits and the saved verdict after
+reload. The Forever canonical payload and both generated Guide files passed
+their integrity checks. The local prerelease audit reports all 28 Pre-Raid
+profiles reviewed and 3,448 uncovered leveling combinations.
+
+Thirteen final timing replays passed the 50 ms first-page and 4 ms per-frame
+checks. Each fresh-save configuration ran twice in a separate Lua process.
+The last replay used the saved 43-link bank with the level-51 Protection
+outfit. Every first visible page had all its click targets. The 15-second
+hold and subsequent duplicate events changed zero row bindings, positions or
+item targets. All runs recorded zero full rankings and zero unindexed level
+summaries across opening, hovering and clicking.
+
+| Build and payload | Level-51 spec and density | First clickable frame | Highest addon frame | Retained heap after browsing |
+| --- | --- | ---: | ---: | ---: |
+| 71037 full | Protection, comfortable | 2 | 4 ms | 173.0 MiB |
+| 70959 full | Protection, compact, Details at 900 × 500 | 2 | 4 ms | 172.5 MiB |
+| 71037 full | Retribution, compact, Details at 900 × 500 | 2 | 3 ms | 170.3 MiB |
+| 70959 full | Retribution, comfortable | 2 | 3 ms | 168.0 MiB |
+| 71037 core | Protection, compact | 3 | 3 ms | 44.9 MiB |
+| 71037 core | Retribution, comfortable | 2 | 4 ms | 44.4 MiB |
+| 71037 full, saved bank | Protection, comfortable | 2 | 4 ms | 173.2 MiB |
+
+At simulated 60 Hz, frame two is about 33 ms and frame three is 50 ms.
+Warm pages were clickable immediately and reopening took 0–1 ms. Loading
+the full manifest took 0.98–1.09 s and retained 157.6 MiB before browsing.
+The core manifest took 0.37–0.38 s and retained 42.2 MiB. The login handlers
+took 0–1 ms at the interpreter clock's 1 ms resolution. The saved-bank hover
+took 2 ms and the click into its named route took 4 ms.
+
+During tuning, the elapsed-time check caught a 10 ms background slice and
+a 6 ms core refresh. The final renderer can yield between shipped picks
+while preparing the first page. Keep the strict check and the in-game
+measurement in the pilot.
+
+### Earlier incremental renderer
+
+Three full-payload runs on build 71037
+showed the first item on frame two. The complete viewport
+appeared on frame three. Warm opens
+took 1 ms. Loading the addon took 0.98–1.02 s and retained 157.5 MiB, about
+22 MiB more than the previous Guide. The login event handlers took 0–1 ms
+at the replay clock’s 1 ms resolution across all nine runs. The three
+matching-build runs also filled the viewport on frame three. The core
+payload alone retained 42.1 MiB and one of its three runs needed a fourth
+frame. All nine reported zero full rankings
+and zero unindexed level summaries. The highest measured frame was 4 ms
+on 71037 with the full payload and 5 ms across all configurations. The
+earlier renderer missed the 4 ms target across configurations.
 
 Stage the Forever manifest through the [release workflow](release-process.md).
 The local prerelease can be used for gameplay checks during availability review.

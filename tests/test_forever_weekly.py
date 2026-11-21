@@ -14,7 +14,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.addCleanup(scratch.cleanup)
         self.root = Path(scratch.name)
         release.git(self.root, "init", "-b", "main")
-        self.write(forever.FOREVER_MANIFEST, "## Interface: 16001\nDataForever.lua\nGuideDataForever.lua\nUI.lua\nConfig.lua\n")
+        self.write(forever.FOREVER_MANIFEST, "## Interface: 16001\nDataForever.lua\nGuideDataForever.lua\nGuideRanksForever.lua\nUI.lua\nConfig.lua\n")
         self.write("UI.lua", "return true\n")
         self.write("Config.lua", 'version = "0.15.0"\n')
         self.write("README.md", "Current release 0.15.0. Run -Version 0.15.0.\n")
@@ -22,6 +22,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.write("RELEASE_NOTES.md", "Initial notes\n")
         self.write(release.PAYLOAD, "return {1}\n")
         self.write(release.GUIDE_PAYLOAD, "return {}\n")
+        self.write("GuideRanksForever.lua", "return {}\n")
         self.write("assets/icon.tga", "icon\n")
         self.write(release.CANONICAL + "leveling_rules.json", json.dumps({"review": {"client_build": "1.60.1.70959"}}))
         self.write(release.LIVE_ACCEPTANCE, json.dumps({

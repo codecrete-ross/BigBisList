@@ -15,7 +15,7 @@ VERSION = re.compile(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)")
 CONFIG_VERSION = re.compile(r'^([ \t]*version[ \t]*=[ \t]*")(\d+\.\d+\.\d+)("[ \t]*\r?$)', re.M)
 PAYLOAD = "DataForever.lua"
 GUIDE_PAYLOAD = "GuideDataForever.lua"
-PAYLOADS = {PAYLOAD, GUIDE_PAYLOAD}
+PAYLOADS = {PAYLOAD, GUIDE_PAYLOAD, "GuideRanksForever.lua"}
 CANONICAL = "data/canonical/forever/"
 LIVE_ACCEPTANCE = CANONICAL + "live_acceptance.json"
 DATA_PREFIXES = (CANONICAL, "data/raw/forever/", "data/raw/wowhead/forever/")

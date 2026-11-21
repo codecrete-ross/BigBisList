@@ -1680,7 +1680,7 @@ local function addSourceInput(inputs, seen, source, isPrimary, fallbackLabel)
     return input
 end
 
-local function addSourceRecordInputs(inputs, seen, record, primaryAssigned)
+local function addSourceRecordInputs(inputs, seen, record, primaryAssigned, checkpoint)
     if type(record) ~= "table" then
         return primaryAssigned
     end
@@ -1693,6 +1693,7 @@ local function addSourceRecordInputs(inputs, seen, record, primaryAssigned)
     end
 
     for sourceIndex, source in ipairs(record.sources or {}) do
+        if checkpoint then checkpoint() end
         local input = addSourceInput(inputs, seen, source, sourceIndex == 1 and not primaryAssigned, record.name)
         if input and sourceIndex == 1 and not primaryAssigned then
             primaryAssigned = true
@@ -1746,6 +1747,8 @@ end
 local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     options = options or {}
     sourceRecords = normalizeSourceRecords(sourceRecords)
+    local rating = BigBiSList.ForeverGearRating
+    local checkpoint = rating and rating.GetWorkCheckpoint and rating:GetWorkCheckpoint()
 
     local globalRequirements = {}
     local globalSeen = {}
@@ -1756,12 +1759,12 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     local primaryAssigned = false
 
     if item then
-        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, item, primaryAssigned)
+        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, item, primaryAssigned, checkpoint)
         splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, item.requirements, options)
     end
 
     for _, record in ipairs(sourceRecords) do
-        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, record, primaryAssigned)
+        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, record, primaryAssigned, checkpoint)
         splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, record.requirements, options)
     end
 
@@ -1776,6 +1779,7 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     end
 
     for _, requirement in ipairs(sourceRequirements) do
+        if checkpoint then checkpoint() end
         local matched = false
         for _, input in ipairs(inputs) do
             if sourceMatchesRequirement(input.source, requirement) then
@@ -1797,6 +1801,7 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
 
     local accessOptions = {}
     for _, input in ipairs(inputs) do
+        if checkpoint then checkpoint() end
         local source = input.source
         local requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements)
         local filterKey = sourceOptionFilterKey(source)
@@ -1870,6 +1875,7 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
 
     FILTER_FACETS.promoteCompleteAccessOption(accessOptions)
     for _, option in ipairs(accessOptions) do
+        if checkpoint then checkpoint() end
         option.detail_fields = FILTER_FACETS.accessOptionDetailFields(option)
         option.detail_summary = FILTER_FACETS.accessOptionDetailSummary(option)
     end
@@ -4927,7 +4933,8 @@ function BigBiSList:ComparisonItemInScope(itemId, phase, selectedIndex)
     local item = self:GetItemData(itemId)
     if not item then return true end
     local known = false
-    for _, option in ipairs(self:GetRowAccessOptions({ item_id = itemId, item = item }) or {}) do
+    local row = {item_id = itemId, item = item, _access_cache_key = "guide-item/" .. itemId}
+    for _, option in ipairs(self:GetRowAccessOptions(row) or {}) do
         if option.source_type ~= "unknown" and not option.is_inferred_trade_option and FILTER_FACETS.optionIsCompleteRoute(option) then
             known = true
             if accessOptionIsPhaseAvailable(option, selectedIndex)
@@ -4970,21 +4977,37 @@ end
 
 -- Inputs shared by the offline compiler and the live route matcher.
 function BigBiSList:GetGuideTargetActivities(context, options)
-    local names = {}
+    local names, methods, routes = {}, {}, {}
     for _, option in ipairs(options or {}) do
         local market = self:IsGuideMarketRoute(option)
         if market or self:IsGuideTargetRoute(option) then
             for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, context.guideEligibility, context.phaseIndex)) do
                 local display = {option = option, source_match = match, activity_zone = match.activity_zone,
                     activity_zones = match.activity_zones, source_label = option.source_filter_label}
-                names[market and "Auction House" or self:GetActivityGroup({acquisition_display = display})] = true
+                local name = market and "Auction House" or self:GetActivityGroup({acquisition_display = display})
+                names[name] = true
+                local requirement = option.cost_summary or ""
+                local reputation = table.concat(option.reputations or {}, ",")
+                local method = option.source_type
+                if market then method = method .. "/" .. tostring((option.source.market_observation or {}).market) end
+                local gate = self:GetLevelingSourceGate(display)
+                local source = option.source
+                -- Different prerequisite chains cannot be ordered by their level alone.
+                local specific = not gate or next(option.requirements or {}) or next(source.dependencies or {})
+                local family = table.concat({name, method, requirement, reputation, specific and (source.entity_name or option.label) or ""}, "\031")
+                methods[family .. "\031" .. (gate or 0)] = {method = method, family = family, level = gate}
+                local hint = {name, option.source_type, source.entity_name or option.vendor_label or option.label or name,
+                    type(option.zone) == "string" and option.zone or "", tonumber(source.quest_id or source.type == "quest" and source.entity_id) or 0,
+                    market and source.market_observation.market or "", source.repeatable and 1 or 0,
+                    source.profession or "", source.entity_type or ""}
+                if option.is_primary and not market then table.insert(routes, 1, hint) else routes[#routes + 1] = hint end
             end
         end
     end
     local sorted = {}
     for name in pairs(names) do sorted[#sorted + 1] = name end
     table.sort(sorted)
-    return sorted
+    return sorted, methods, routes
 end
 
 function BigBiSList:GetGuideRouteTransitions(itemId)
@@ -6451,14 +6474,14 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
     end
     if not definition then return {} end
     local contexts = self:GetEquipmentComparisonContexts(className, specName, phase, owned, definition.slots[1])
-    local pool = service:GetPlacement(scoring, physical, definition.slots)
+    local guide = service:GetGuideContext(className, specName, phase, scoring.level, scoring.race, scoring.faction)
+    local pool = service:GetGuideComparisonPool(scoring, guide, physical, definition.slots)
     local rows = { contexts = contexts, statsPending = scoring.pending, slot = pool.slot, swapBasis = "reference" }
     local leveling = phase == LEVELING_PHASE_KEY
-    local guide = service:GetGuideContext(className, specName, phase, scoring.level, scoring.race, scoring.faction)
-    local referencePool = service:GetGuidePlacement(guide, pool.slot)
+    local indexed = service.GetPackedGuide and service:GetPackedGuide(guide)
+    local referencePool = indexed and pool or service:GetGuidePlacement(guide, pool.slot)
     for _, context in ipairs(contexts) do
-        local ranked = service:GetPlacement(scoring, context.slotKey, context.dataSlots)
-        local entry = ranked.reference
+        local entry = service:GetEquippedPlacement(scoring, context.slotKey, context.dataSlots)
         context.stat_rank = entry and entry.item and referencePool.byVariant[entry.item.key] or entry
         context.stat_rank_scope = referencePool.scope
         context.stat_identity = entry and entry.item and entry.item.key
@@ -6737,10 +6760,9 @@ function LEVELING_HELPERS.attachPhasePlacements(addon, grouped, context)
     if not context then return end
     local rating = addon.ForeverGearRating
     for slot, group in pairs(grouped) do
-        local pool = rating:GetGuidePlacement(context, slot)
         for _, row in ipairs(group.items) do
             local key = row.variant_id or tostring(row.item_id)
-            row.stat_rank, row.stat_identity = pool.byVariant[key], key
+            row.stat_rank, row.stat_identity = rating:GetGuideEntry(context, slot, key), key
             if row.stat_rank then row.item_link = row.item_link or row.stat_rank.item.variant_link end
             row.guide_bis = addon:IsConfirmedGearBiS(row.history, context.phase, row.item_id, key)
         end
@@ -6780,6 +6802,8 @@ function LEVELING_HELPERS.guideCandidate(index, entry, context, preferred, choic
         row = buildLevelingRecommendationRow(index, { class = context.class, spec = context.spec,
             item_id = item.id, slot = entry.slot, level_min = entry.level, level_max = entry.level,
             variant_id = item.variant_id, variant_name = item.name })
+        -- These rows use only the base item's routes. Rolls and levels share them.
+        if row then row._access_cache_key = "guide-item/" .. item.id end
     end
     if not row then return nil end
     if not preferred then
@@ -6800,7 +6824,8 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context, s
     local rating, groups = addon.ForeverGearRating, {}
     local checkpoint = rating:GetWorkCheckpoint()
     for _, slot in ipairs(slots or SLOT_ORDER) do
-        local pool = rating:GetGuidePlacement(context, slot)
+        local picks = rating.GetBrowsePlacements and rating:GetBrowsePlacements(context, slot)
+        local pool = picks and {slot = slot, rows = picks, upcoming = {}} or rating:GetGuidePlacement(context, slot)
         local preferred, rows = {}, {}
         local choices = addon:GetStatRankGuideChoices(context, pool)
         for _, row in ipairs(grouped[slot] and grouped[slot].items or {}) do
@@ -7404,7 +7429,8 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, contex
     local seen = {}
     for _, row in ipairs(rows) do seen[row.slot .. ":" .. (row.variant_id or tostring(row.item_id))] = row end
     for _, slot in ipairs(SLOT_ORDER) do
-        for _, placement in ipairs(rating:GetGuidePlacement(guide, slot).rows) do
+        local picks = rating.GetBrowsePlacements and rating:GetBrowsePlacements(guide, slot, context.ownedFacts)
+        for _, placement in ipairs(picks or rating:GetGuidePlacement(guide, slot).rows) do
             local item = placement.item
             local key = slot .. ":" .. item.key
             local held = context.ownedFacts[item.key]

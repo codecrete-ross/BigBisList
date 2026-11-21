@@ -156,11 +156,33 @@ function methods:SetCheckedTexture(texture) self.checkedTexture = make("Texture"
 function methods:GetCheckedTexture() return self.checkedTexture end
 function methods:SetClampedToScreen(value) self.clamped = value end
 function methods:IsClampedToScreen() return self.clamped end
-for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "RegisterEvent", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
+for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
     methods[name] = function() end
 end
 function methods:SetColorTexture(r, g, b, a) self.colorTexture = { r, g, b, a } end
 function methods:SetTextColor(r, g, b, a) self.textColor = { r, g, b, a } end
+function methods:RegisterEvent(event)
+    self.events = self.events or {}
+    self.events[event] = true
+end
+function methods:UnregisterEvent(event)
+    if self.events then self.events[event] = nil end
+end
+function H.installMinimap()
+    Minimap = CreateFrame("Frame", "Minimap", UIParent)
+    Minimap:SetSize(140, 140)
+    function methods:GetVertexColor() return 1, 1, 1 end
+    function methods:CreateAnimationGroup() return make("AnimationGroup", nil) end
+    function methods:CreateAnimation() return make("Animation", nil) end
+    for _, name in ipairs({"SetOrder", "SetDuration", "SetFromAlpha", "SetToAlpha", "SetOffset", "SetStartDelay",
+        "SetToFinalAlpha", "Play", "Stop"}) do methods[name] = function() end end
+end
+function H.fireEvent(event, ...)
+    for index = 1, #H.frames do
+        local frame = H.frames[index]
+        if frame.events and frame.events[event] and frame.scripts.OnEvent then frame.scripts.OnEvent(frame, event, ...) end
+    end
+end
 CreateFrame = function(kind, name, parent, template)
     local node = make(kind, name, parent)
     if template and template:find("UICheckButtonTemplate", 1, true) then
@@ -278,11 +300,21 @@ end
 function H.load(flavor, fullGuide)
     local forever = flavor == "forever"
     assert(loadfile(forever and "DataForever.lua" or "Data.lua"))("BigBiSList")
-    if forever and fullGuide then dofile("GuideDataForever.lua") end
+    if forever and fullGuide then
+        dofile("GuideDataForever.lua")
+        local continuation = loadfile("GuideRanksForever.lua")
+        if continuation then continuation() end
+    end
     assert(loadfile("Config.lua"))("BigBiSList")
     if forever then
         assert(loadfile("ForeverScoring.lua"))("BigBiSList")
         assert(loadfile("ForeverGearRating.lua"))("BigBiSList")
+        -- Existing offline scoring fixtures use the published rolls and omit the live talent APIs.
+        if not GetBuildInfo then
+            GetBuildInfo = function() return "Forever", BigBiSListData.stat_rank.roll_build end
+            BigBiSList.ForeverGearRating:GetCatalog(BigBiSListData.stat_rank)
+            GetBuildInfo = nil
+        end
     end
     for _, file in ipairs({ "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
     if forever then

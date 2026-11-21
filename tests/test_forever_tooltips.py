@@ -14,6 +14,8 @@ TooltipDataProcessor = {AddTooltipPostCall = function(kind, callback)
     postItem = callback
 end}
 local ui = H.load("forever")
+-- These fixtures check the expanded calculations and their native comparison basis.
+BigBiSList:GetAccountDB().profile.tooltips.compact = false
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
 local level, group, detected = 47, 1, "Protection"
 UnitLevel = function() return level end
@@ -126,6 +128,165 @@ class ForeverTooltipTests(unittest.TestCase):
             input=FIXTURE + code + '\nassert(#H.errors == 0, table.concat(H.errors, "\\n"))\n',
         )
         self.assertEqual(process.returncode, 0, process.stderr or process.stdout)
+
+    def test_compact_native_hover_names_each_spec_once_and_alt_adds_the_evidence(self):
+        self.lua_run(r'''
+addon:GetAccountDB().profile.tooltips.compact = true
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Retribution"
+H.equipped[11], H.equipped[12] = 900001, 900002
+addon:RefreshTooltipPlayerContext()
+local tip = GameTooltip
+local explain, calls = rating.EffectComparisonLines, 0
+function rating:EffectComparisonLines(...) calls = calls + 1; return explain(self, ...) end
+showNative(tip, "item:900003"); H.settle()
+includes(tip, "Protection — Upgrade · +5 Stamina")
+local _, count = text(tip):gsub("Protection —", "")
+assert(count == 1 and calls == 0, text(tip))
+local other = assert(text(tip):find("Retribution —", 1, true), text(tip))
+assert(text(tip):find("Protection —", 1, true) < other)
+excludes(tip, "pts vs")
+local frame = addon.tooltipModifierFrame
+H.modifiers.alt = true
+frame:GetScript("OnEvent")(frame, "MODIFIER_STATE_CHANGED", "LALT", 1)
+includes(tip, "pts vs Blood Ritual Ring")
+H.modifiers.alt = false
+frame:GetScript("OnEvent")(frame, "MODIFIER_STATE_CHANGED", "LALT", 0)
+includes(tip, "Protection — Upgrade · +5 Stamina")
+excludes(tip, "pts vs")
+
+-- An item inside the Guide uses the same spec verdicts, including the Alt evidence.
+ui.frame = CreateFrame("Frame", nil, UIParent)
+ui:GetSelection().class = "Paladin"
+owner:SetParent(ui.frame)
+showNative(tip, "item:900003"); H.settle()
+local ordinary = text(tip)
+includes(tip, "Protection — Upgrade · +5 Stamina")
+assert(ui:AddLevelingGearTooltip(tip, {item_id=900003}, "leveling", true) and text(tip) == ordinary)
+H.modifiers.alt = true
+frame:GetScript("OnEvent")(frame, "MODIFIER_STATE_CHANGED", "LALT", 1)
+includes(tip, "pts vs Blood Ritual Ring")
+''')
+
+    def test_cold_secondary_spec_finishes_only_on_the_same_hover(self):
+        self.lua_run(r'''
+H.equipped[11], H.equipped[12] = 900001, 900002
+addon:GetAccountDB().profile.tooltips.compact = true
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Retribution"
+addon:RefreshTooltipPlayerContext()
+ui:GetOwnedSnapshot()
+local elapsed, compare = 0, rating.CompareTooltipItem
+debugprofilestop = function() return H.now * 1000 + elapsed end
+function rating:CompareTooltipItem(context, ...)
+    local result = compare(self, context, ...)
+    if context.spec == "Protection" then elapsed = elapsed + 2 end
+    return result
+end
+local tip = GameTooltip
+showNative(tip, "item:900003")
+includes(tip, "Protection — Upgrade"); excludes(tip, "Retribution —")
+H.settle()
+includes(tip, "Retribution —"); oneSection(tip)
+showNative(tip, "item:900003")
+showNative(tip, "item:900004"); H.settle()
+assert(tip.__bigBisListState.itemId == 900004)
+includes(tip, "Retribution —"); oneSection(tip)
+''')
+
+    def test_shield_compares_the_actual_offhand_and_names_a_weapon_setup(self):
+        self.lua_run(r'''
+BigBiSListData.stat_rank.item_fields[8] = "armor_type"
+BigBiSListData.stat_rank.equipment.Paladin.armor_tiers = {{level=1, types={"Shield"}}}
+gear(900060, "Only shield", "Off Hand", 10)
+gear(900061, "Bank sword", "Main Hand", 20, nil, nil, "Sword")
+gear(900062, "Equal shield", "Off Hand", 10)
+gear(900063, "Stronger shield", "Off Hand", 25)
+gear(900064, "Bank greatsword", "Two Hand", 70, nil, nil, "Sword")
+for _, id in ipairs({"900060", "900062", "900063"}) do rows[id][8] = "Shield" end
+H.equipped[16], H.equipped[17] = 900007, 900060
+addon:GetAccountDB().profile.tooltips.compact = true
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned = true
+local function visit(id)
+    bank.links = id and {"item:" .. id} or {}
+    ui:Invalidate("ownership", "bank visit")
+    addon:RefreshTooltipPlayerContext()
+end
+local tip = GameTooltip
+visit(900061)
+showNative(tip, "item:900060", "GetInventoryItem", {"player", 17}); H.settle()
+includes(tip, "Protection — Keep equipped · Best shield you own")
+excludes(tip, "better gear in your bank")
+H.modifiers.alt = true; showNative(tip, "item:900060")
+includes(tip, "Bank sword (bank) + Only shield")
+H.modifiers.alt = false; showNative(tip, "item:900062", "GetLootItem", {1})
+includes(tip, "Protection — Sidegrade"); excludes(tip, "your bank")
+visit(900063); showNative(tip, "item:900060"); H.settle()
+includes(tip, "Protection — Downgrade · Stronger shield in your bank")
+visit(900064); showNative(tip, "item:900060"); H.settle()
+includes(tip, "Protection — Downgrade · your setup uses Bank greatsword")
+H.equipped[17] = nil
+visit(900060); showNative(tip, "item:900060"); H.settle()
+includes(tip, "Protection — Get from bank · fills an empty slot")
+excludes(tip, "better gear in your bank")
+''')
+
+    def test_offspec_and_future_decisions_keep_their_spec_level_and_basis(self):
+        self.lua_run(r'''
+slots[#slots+1] = "Hands"
+gear(900070, "Worn gloves", "Hands", 12)
+gear(900071, "Off-spec gloves", "Hands", 1)
+rows["900071"][5].intellect = 30
+BigBiSListData.stat_rank.profiles["Paladin/Retribution"] = {leveling = {slots=slots,
+    weights={{1,59,{stamina=.01,intellect=2}}}}, pre_raid={slots=slots, weights={intellect=2}}}
+gear(900072, "Future downgrade", "Hands", 1, nil, 55)
+gear(900073, "Future equal", "Hands", 12, nil, 55)
+H.equipped[10] = 900070
+C_Container = {GetContainerNumSlots=function(bag) return bag == 0 and 1 or 0 end,
+    GetContainerItemID=function() return 900071 end, GetContainerItemLink=function() return "item:900071" end}
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Retribution"
+addon:GetAccountDB().profile.tooltips.compact = true
+addon:RefreshTooltipPlayerContext()
+showNative(GameTooltip, "item:900071", "GetBagItem", {0,1}); H.settle()
+includes(GameTooltip, "Protection — Downgrade")
+includes(GameTooltip, "Retribution — Keep for Retribution · replaces Worn gloves")
+excludes(GameTooltip, "Equip now")
+showNative(GameTooltip, "item:900072", "GetMerchantItem", {1}); H.settle()
+includes(GameTooltip, "Protection — Likely downgrade at level 55")
+showNative(GameTooltip, "item:900073", "GetMerchantItem", {1}); H.settle()
+includes(GameTooltip, "Protection — Likely sidegrade at level 55")
+''')
+
+    def test_anonymous_withdrawal_cannot_fill_two_slots(self):
+        self.lua_run(r'''
+H.equipped[11], H.equipped[12] = 900004, 900002
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:900004"}, {"20:1"}
+local function compare()
+    ui:Invalidate("ownership", "bank visit")
+    local ctx = rating:GetContext("Paladin", "Protection", "LEVELING", 47, ui:GetOwnedSnapshot())
+    local ring = rating:GetTooltipItem(900003, "item:900003")
+    return rating:CompareTooltipItem(ctx, ring, false, nil, true, {live=true}).delta
+end
+assert(compare() == 5, "An anonymous bank entry counted the worn ring twice")
+Enum.BankType = {Character=0}
+C_Bank = {FetchPurchasedBankTabIDs=function() return {20} end}
+C_Container = {
+    GetContainerNumSlots=function(bag) return bag == 20 and 1 or 0 end,
+    GetContainerItemID=function(bag) if bag == 20 then return 900004 end end,
+    GetContainerItemLink=function(bag) if bag == 20 then return "item:900004" end end,
+}
+ui.personalBankOpen = true
+assert(ui:ScanBankItems())
+bank = addon:GetCharacterDB().bankCache
+assert(compare() == -5, "Two copies observed together at the bank must remain distinct")
+ui.personalBankOpen = false
+assert(compare() == -5, "Lost the confirmed copy on closing the bank")
+-- A background scan that resumes after closing the bank cannot overwrite the last visit.
+C_Bank = {FetchPurchasedBankTabIDs=function() return {} end}
+ui.personalBankOpen = true
+rating.GetWorkCheckpoint = function() return function() ui.personalBankOpen = false end end
+assert(ui:ScanBankItems() == false and addon:GetCharacterDB().bankCache == bank)
+''')
 
     def test_one_sword_shows_the_players_swap_and_its_leveling_ranges(self):
         self.lua_run(r'''
@@ -351,7 +512,7 @@ excludes(tip, "Small pools use slot placement for color")
 excludes(tip, "(Off-spec)")
 includes(tip, "Guide fixture")
 excludes(tip, "Hold Alt")
-assert(not addon.tooltipModifierFrame)
+assert(addon.tooltipModifierFrame)
 for index, line in ipairs(tip.lines) do
     if line == "Protection" or line == "Retribution" or line == "Holy" then
         assert(tip.lines[index - 1] == " ", "Each spec starts a separate block")
@@ -368,7 +529,7 @@ assert(context.lastTooltip.result == before and ui:GetPerformanceStats().ownersh
 H.modifiers.alt = true
 local original = text(tip)
 showNative(tip, "item:900003", "GetQuestItem", {"reward", 1})
-assert(text(tip) == original, "Alt does not change the tooltip")
+assert(text(tip) == original, "The always-expanded preference keeps the same detail")
 includes(tip, "Guide fixture")
 assert(levelSeen == 47 and roleSeen == "Protection")
 assert(tip.lines[2] == "Native enchant" and tip.lines[3] == "Native source")

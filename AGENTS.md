@@ -123,6 +123,10 @@ code already does so.
 
 ## Required Checks
 
+- The user personally verifies the addon in the Forever client. Agent verification
+  uses offline replays, generated-data checks, and package checks. Do not use
+  Computer Use to launch or operate the game for verification. Record live
+  acceptance as pending until the user supplies their results.
 - For release work, use the authoritative gate in
   `docs/internal/release-process.md`; a release run must include `-FullData`.
 - For non-release changes, run the narrow checks relevant to the files changed.

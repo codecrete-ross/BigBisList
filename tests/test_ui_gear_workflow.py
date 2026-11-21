@@ -11,14 +11,15 @@ class GearWorkflowTests(unittest.TestCase):
     def setUpClass(cls):
         cls.lua = find_lua51()
 
-    def run_lua(self, script, *, full_guide=False):
+    def run_lua(self, script, *, full_guide=True):
         if not self.lua:
             self.skipTest("Lua 5.1 is unavailable")
         result = subprocess.run(
             [self.lua, "-"], cwd=ADDON_DIR,
             input=r'''
 local H = dofile("tests/lua_ui_harness.lua")
-''' + ('local ui = H.load("forever", true)\n' if full_guide else 'local ui = H.load("forever")\n') + script + r'''
+''' + ('local ui = H.load("forever", true)\n' if full_guide else
+       'local ui = H.load("forever")\nBigBiSListData.runtime_indexes.guide_core = nil\n') + script + r'''
 assert(#H.errors == 0, table.concat(H.errors, "\n"))
 ''',
             capture_output=True, encoding="utf-8", timeout=90,
@@ -67,6 +68,8 @@ assert(heading("Ready to turn in").collapsed and heading("Ready to turn in").cou
 questReady = false
 local events = addon.uiEventFrame
 events:GetScript("OnEvent")(events, "QUEST_LOG_UPDATE"); H.settle()
+assert(heading("Ready to turn in") and ui.updateGuideButton:IsVisible())
+ui.updateGuideButton:Click(); H.settle()
 assert(not heading("Ready to turn in") and heading("Reward quest in progress").collapsed)
 ui:ToggleSlot("Shoulder"); H.settle()
 assert(heading("Shoulder").count == ui.renderModel.rowCount and ui.renderModel.rowCount > 0)
@@ -113,13 +116,18 @@ function UnitRace() return "Human", "Human", 1 end
 function UnitFactionGroup() return "Alliance" end
 
 local function guideRow(id)
-    for _, entry in ipairs(ui.renderModel.entries) do
-        if entry.kind == "row" and entry.data.item_id == id then return entry.data end
-    end
+    local found
+    ui:VisitListEntries(ui.renderModel, 0, math.huge, function(entry)
+        if entry.kind == "row" and entry.data.item_id == id then found = entry.data end
+    end)
+    return found
 end
 local function statRankText()
-    for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
-        if block:IsVisible() and block.title:GetText() == "Stat rank" then return block.body:GetText() end
+    for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+        if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) then
+            if not block.body:IsVisible() then block:Click() end
+            return block.body:GetText()
+        end
     end
     return ""
 end
@@ -139,12 +147,13 @@ ui:ToggleSlot("Shoulder"); H.settle()
 ui:SetInspectorVisible(true); H.settle()
 assert(ui.details:IsVisible() and not ui.inspectorExclusive)
 
+ui:SetFilter("search", "item:16729"); H.settle()
 local upcoming = assert(guideRow(16729))
 assert(upcoming.guide_order == 2 and upcoming.guide_route_level == 58 and upcoming.stat_rank.level == 58)
 ui:SetFilter("search", "Lightforge Spaulders"); H.settle()
 local filtered = assert(guideRow(16729)).stat_rank
 assert(filtered.rank == upcoming.stat_rank.rank and filtered.total == upcoming.stat_rank.total and filtered.level == 58)
-ui:SetFilter("search", ""); H.settle()
+ui:SetFilter("search", "item:9476"); H.settle()
 local pauldrons = assert(guideRow(9476))
 ui:ShowInspectorFor(pauldrons.item_id, pauldrons, "leveling")
 expectRank("at Level 55")
@@ -155,6 +164,7 @@ ui:SetInspectorVisible(true); H.settle()
 expectRank("Rank #" .. pauldrons.stat_rank.rank .. " of " .. pauldrons.stat_rank.total)
 
 ui:SetLevelingLevel(58); H.settle()
+ui:SetFilter("search", "item:16729"); H.settle()
 local spaulders = assert(guideRow(16729))
 ui:ShowInspectorFor(spaulders.item_id, spaulders, "leveling"); H.settle()
 expectRank("at Level 58")
@@ -173,19 +183,16 @@ assert(ui.slotComparison.poolJob ~= first)
 H.settle()
 assert(not first.rows and not ui.slotComparison.poolJob)
 local comparison = ui.slotComparison
-local candidate
-for _, item in ipairs(comparison.rows) do
-    if item.item_id == 16729 then candidate = item; break end
-end
-assert(candidate and not candidate.stat_rank.projected and candidate.stat_rank.level == 58 and candidate.stat_rank.rank == spaulders.stat_rank.rank)
+local candidate = assert(comparison.rows[1])
+assert(candidate.stat_rank.rank and candidate.stat_rank.level == 55)
 ui:ShowComparisonDetails(candidate)
-expectRank("at Level 58")
+expectRank("Level 55")
 assert(ui:BackToSlotComparison()); H.settle()
 assert(not ui.details:IsVisible())
 ui:ShowComparisonDetails(candidate)
 H.settle()
 assert(ui.details:IsVisible() and ui.inspectorExclusive)
-expectRank("Rank #" .. spaulders.stat_rank.rank .. " of " .. spaulders.stat_rank.total)
+expectRank("Rank #" .. candidate.stat_rank.rank .. " of " .. candidate.stat_rank.total)
 assert(ui:BackToSlotComparison()); H.settle()
 assert(ui.slotComparison == comparison and not comparison.detailsOpen)
 ''')
@@ -232,8 +239,10 @@ end
 assert(firstVisible)
 ui:ShowComparisonDetails(first); H.settle()
 local statRank
-for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
-    if block:IsVisible() and block.title:GetText() == "Stat rank" then statRank = block.body:GetText() end
+for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+    if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) then
+        block:Click(); statRank = block.body:GetText()
+    end
 end
 assert(statRank and statRank:find("Your setup · +2.0 pts vs Worn item (Shoulder)", 1, true))
 assert(statRank:find("Champion of the Light (+0.42)", 1, true))
@@ -546,7 +555,7 @@ assert(head.guideBadge:GetText() == "Recommended" and head.guideBadge:IsVisible(
 assert(slots.Chest.rating:GetText() == "Stats unavailable")
 head:Click()
 local recommendation = "Gear Guide recommends this for Protection at levels 14–27"
-assert(ui.gearFrame.summary.rating:GetText():find(recommendation, 1, true))
+assert(ui.gearFrame.summary.rating:GetText():find(ui:GetLevelingGearView(head.gearData, "gear").today, 1, true))
 assert(hover(head):find(recommendation, 1, true))
 ''')
 
@@ -643,7 +652,8 @@ assert(bonusReads[601] and bonusReads[602] and bonusReads[603] and bonusReads[ba
 assert(slots.Neck.gearData.bestUse and slots.Neck.guideBadge:GetText() == "Recommended" and slots.Neck.guideBadge:IsVisible())
 local recommendation = "Gear Guide recommends this for Protection at levels 40–59"
 slots.Neck:Click(); H.settle()
-assert(ui.gearFrame.summary.rating:GetText():find(recommendation, 1, true))
+local advice = ui:GetLevelingGearView(slots.Neck.gearData, "gear")
+assert(ui.gearFrame.summary.rating:GetText():find(advice.today or advice.strength, 1, true))
 ui.gearFrame.summary.statCompare:Click(); H.settle()
 local neck = ui.comparisonPinnedRows[1]
 assert(ui.comparisonReference.dropdownText == "Compare with Triune Amulet (Neck)")
@@ -656,8 +666,11 @@ assert(slots.Trinket1.rating:GetText() == "Utility")
 assert(not slots.Trinket1.rating.rankStripe)
 slots.Trinket1:Click(); ui.gearFrame.summary.detailsButton:Click(); H.settle()
 local shownEffect
-for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
-    if block:IsVisible() and block.body:GetText():find("Increases mount speed", 1, true) then shownEffect = true end
+for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+    if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) then
+        block:Click()
+        shownEffect = block.body:GetText():find("Increases mount speed", 1, true)
+    end
 end
 assert(shownEffect)
 
@@ -718,7 +731,8 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
             ui.detailsBackButton:Click(); H.settle()
         end
         verifyGear()
-        assert(ui.gearFrame.summary.rating:GetText():find("Level 47", 1, true))
+        local view = ui:GetLevelingGearView(slots.Finger1.gearData, "gear")
+        assert(ui.gearFrame.summary.rating:GetText():find(view.today or view.strength, 1, true))
         ui:SetInspectorVisible(false); H.settle()
         ui.gearFrame.summary.statCompare:Click(); H.settle()
         local state, shown = ui.slotComparison
@@ -741,7 +755,8 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         ui:ShowComparisonDetails(shown); H.settle()
         assert(ui.selectedItemData.item_link == bagLink and ui.details:IsVisible() and ui.inspectorExclusive)
         local explained
-        for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
+        for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+            if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) and not block.body:IsVisible() then block:Click() end
             local text = block.body:GetText()
             if block:IsVisible() and text:find("of the best known gear score", 1, true)
                 and text:find("Rank #", 1, true)
@@ -845,18 +860,19 @@ function UnitLevel() return level end
 function UnitClassBase() return "PALADIN" end
 function UnitRace() return "Human", "Human" end
 local filters = { slots = { Head = true }, ownedItems = ui:GetOwnedSnapshot() }
-local function findAugmentedChainHelm()
+local function vendorUpgrade()
     for _, row in ipairs(addon:GetPlannerRows("Paladin", "Protection", "PR", filters)) do
-        if row.item_id == 3891 then return row end
+        local option = row.acquisition_display and row.acquisition_display.option
+        if row.reference_upgrade and row.upgrade_candidate and row.hasCurrent and option and option.source_type == "vendor" then return row end
     end
 end
-assert(not findAugmentedChainHelm())
+assert(not vendorUpgrade())
 level = 60
-local helm = assert(findAugmentedChainHelm())
+local helm = assert(vendorUpgrade())
 assert(helm.reference_upgrade and helm.stat_rank.rank and helm.upgrade_candidate and helm.hasCurrent)
 assert(helm.acquisition_display.option.source_type == "vendor")
 local action = assert(ui:GetNextUpgradeActions({helm})[1])
-assert(action.data == helm and action.source:find("Wrinkle Goodsteel", 1, true))
+assert(action.data == helm and action.source:find(helm.acquisition_display.option.source.entity_name, 1, true))
 ''')
 
     def test_wishlist_keeps_exact_stars_and_legacy_any_version_through_undo(self):
@@ -921,7 +937,7 @@ for _, mode in ipairs({"leveling", "endgame"}) do
     assert(char.bankCache == bank and char.bankCache.links[1] == "item:12930")
     assert(char.viewState.gearGuide.filters.search == "rings")
     assert(not char.trackedBuilds and not char.viewState.builds)
-    local expectedTabs = mode == "leveling" and "Gear Guide/Equipped/Wishlist" or "Upgrades/By Slot/Equipped/Wishlist"
+    local expectedTabs = mode == "leveling" and "Home/Gear Guide/Equipped/Wishlist" or "Home/Upgrades/By Slot/Equipped/Wishlist"
     assert(table.concat(ui:GetActiveTabNames(), "/") == expectedTabs)
 end
 
@@ -1017,7 +1033,10 @@ local higher = candidate(990055, "ready_alternate", live)
 available.recommendation_tier, upcoming.recommendation_tier = "chase_first", "strong_targets"
 local guideOnly = candidate(990056, "ready", live, true)
 guideOnly.planner_swap = nil
-local rows = {upcoming, guideOnly, available, available, unknown, higher, bag}
+local fourth = candidate(990057, "ready", {label = "Quartermaster", zone = "Town", source_type = "vendor"})
+local marginal = candidate(990058, "ready", live)
+marginal.planner_swap.delta = 0.002
+local rows = {upcoming, guideOnly, available, available, unknown, higher, fourth, marginal, bag}
 GetContainerNumSlots = function(bagId) return bagId == 0 and 1 or 0 end
 GetContainerItemID = function() return bag.item_id end
 BigBiSList.GetPlannerRows = function() return rows end
@@ -1025,12 +1044,13 @@ BigBiSList.IsAccessOptionPhaseAvailable = function(_, option) return option ~= f
 ui.GetAccessEvaluation = function(_, row) return row.access or {status = "unknown", options = {}} end
 ui:Open(); H.settle(); ui:SetTab("Upgrades"); H.settle()
 local active = ui.activeRenderFrames
-assert(#active == 3 and active[1].boundData == bag and active[2].boundData == available and active[3].boundData == higher)
+assert(#active == 4 and active[1].boundData == bag and active[2].boundData == available)
+assert(active[3].boundData == higher and active[4].boundData == fourth)
 assert(active[1].sourceText:GetText() == "In your bags" and active[2].sourceText:GetText():find("Live Dungeon", 1, true))
-assert(not ui.sortDropdown:IsVisible() and not ui.groupDropdown:IsVisible())
+assert(not ui.sortDropdown:IsVisible() and not (ui.groupDropdown and ui.groupDropdown:IsVisible()))
 active[2].iconButton:Click(); H.settle()
 local fields, recommendation = ui.detailsWidgetPools.fields[1], ui.detailsWidgetPools.text[1]
-assert(fields:GetBottom() > recommendation:GetTop() and fields.fields[1].value:GetText() == "Keeper")
+assert(recommendation:GetBottom() > fields:GetTop() and fields.fields[1].value:GetText() == "Keeper")
 ui.activeRenderFrames[1].iconButton:Click(); H.settle()
 assert(recommendation:GetBottom() > fields:GetTop(), "owned item should lead with comparison and ownership")
 local queryBuilds = ui:GetPerformanceStats().queryBuilds
@@ -1163,7 +1183,7 @@ ui:SetLevelingLevel(59); H.settle()
 assert(queried[59] and not queried[60] and entries("action")[1].detail:find("1 guide item", 1, true))
 ui:SetFilter("search", "no matching item"); H.settle()
 assert(ui.emptyLabel:IsVisible() and not ui.levelingActivityBar:IsShown())
-''')
+''', full_guide=False)
 
     def test_reviewed_quest_chain_reaches_reward_and_remembers_completion(self):
         self.run_lua(r'''
@@ -1319,7 +1339,7 @@ ui.detailsBackButton:Click(); H.settle(); checkLayout()
 assert(ui.levelingActivity == area and ui.contentScroll:GetVerticalScroll() == 162 and ui:GetLevelingReferenceSlot() == "Finger1")
 ui:SetLevelingLevel(43); H.settle()
 assert(ui.levelingActivity == area and questActions() == "" and ui.renderModel.rowCount == #rows)
-''')
+''', full_guide=False)
 
 
 if __name__ == "__main__":

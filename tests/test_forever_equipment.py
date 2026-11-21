@@ -114,14 +114,20 @@ class ForeverEquipmentTests(unittest.TestCase):
             root = Path(directory)
             payload = root / "GuideDataForever.lua"
             payload.write_bytes(b"expected\n")
+            continuation = root / forever_guide_index.CONTINUATION
+            continuation.write_bytes(b"ranks\n")
 
             def rebuild(_lua, *, output):
                 output.write_bytes(b"expected\n")
+                output.with_name(continuation.name).write_bytes(b"ranks\n")
 
             with (patch.object(forever_guide_index, "ROOT", root), patch.object(forever_guide_index, "OUTPUT", payload),
                   patch.object(forever_guide_index, "check_index", return_value=True),
                   patch.object(forever_guide_index, "compile_index", side_effect=rebuild)):
                 self.assertTrue(forever_guide_index.verify_index("lua"))
+                continuation.write_bytes(b"wrong class rankings\n")
+                self.assertFalse(forever_guide_index.verify_index("lua"))
+                continuation.write_bytes(b"ranks\n")
                 payload.write_bytes(b"changed with a valid header\n")
                 self.assertFalse(forever_guide_index.verify_index("lua"))
 

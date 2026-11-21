@@ -79,6 +79,7 @@ local MODE_DEFAULT_TABS = {
 
 local MODE_TABS = {
     endgame = {
+        Home = BigBiSList.isForever,
         Upgrades = true,
         ["By Slot"] = true,
         Equipped = true,
@@ -87,6 +88,7 @@ local MODE_TABS = {
         Settings = true,
     },
     leveling = {
+        Home = BigBiSList.isForever,
         ["Gear Guide"] = true,
         Equipped = true,
         Wishlist = true,

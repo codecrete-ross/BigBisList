@@ -9,6 +9,8 @@ from tools.project import ADDON_DIR
 FIXTURE = r'''
 local H = dofile("tests/lua_ui_harness.lua")
 local ui = H.load("forever")
+-- Check the evidence behind each badge in the expanded tooltip.
+H.modifiers.alt = true
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
 local highlights = addon.AcquisitionHighlights
 local publishedRanks = BigBiSListData.stat_rank
@@ -594,7 +596,8 @@ bank.links[1] = mail
 fixtures[10128].lines[2] = "Use: Unleash a burst of Holy damage. (5 Min Cooldown)"
 refresh(10128)
 assert(not mark(rows[1], champion))
-assert(showTip(rows[1], plain):find("Estimated", 1, true))
+local conditional = showTip(rows[1], plain)
+assert(conditional:find("Depends on your setup", 1, true) and conditional:find("unverified value", 1, true), conditional)
 
 contents[1], contents[2] = defenseOnly, nil
 refresh()
