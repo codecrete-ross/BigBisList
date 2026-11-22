@@ -72,7 +72,7 @@ class RefreshTests(unittest.TestCase):
 
     def test_identical_offline_run_uses_replay_without_loading_original_snapshots(self):
         report = {"mode": "cached", "http_attempts": 0, "new_snapshot_count": 1, "audit_reused": False}
-        intake = {"build": "1.60.1.70790", "summary": {}, "review_issues": [], "ledger": {"entries": []},
+        intake = {"build": "1.60.1.70790", "summary": {}, "gap_rows": [], "review_issues": [], "ledger": {"entries": []},
                   "candidate_audit": {"client_build": "1.60.1.70790", "candidate_reviews": []}}
         with (patch.object(refresh, "replay_fingerprint", return_value="same-build-and-evidence"),
               patch.object(refresh, "compact_intake", return_value=intake),

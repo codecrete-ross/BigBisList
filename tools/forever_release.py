@@ -44,6 +44,12 @@ def blob(root: Path, commit: str, path: str) -> bytes:
     return git(root, "cat-file", "blob", f"{commit}:{path}")
 
 
+def artifact_digest(root: Path, commit: str) -> str:
+    paths = git(root, "ls-tree", "-r", "--name-only", "-z", commit, "--", "assets")
+    assets = [name.decode() for name in paths.split(b"\0") if name]
+    return forever.artifact_digest(lambda path: blob(root, commit, path), assets)
+
+
 def changed_paths(root: Path, before: str, after: str, *paths: str) -> set[str]:
     output = git(root, "diff", "--name-only", "--no-renames", "-z", before, after, "--", *paths)
     return {name.decode("utf-8") for name in output.split(b"\0") if name}
@@ -132,7 +138,7 @@ def baseline_acceptance(tag: str, *, root: Path = ROOT, revision: str = "HEAD") 
             raise ValueError("The live-tested tag must be an ancestor of the candidate")
         document = json.loads(blob(root, baseline, LIVE_ACCEPTANCE))
         errors = forever.live_acceptance_errors(
-            document, forever.artifact_digest(lambda path: blob(root, baseline, path)))
+            document, artifact_digest(root, baseline))
         if errors:
             return {**result, "errors": errors}
         rules = json.loads(blob(root, candidate, CANONICAL + "leveling_rules.json"))
@@ -154,7 +160,7 @@ def baseline_acceptance(tag: str, *, root: Path = ROOT, revision: str = "HEAD") 
             raise ValueError("Config.lua changed beyond the fallback version")
         return {**result, "ok": True, "status": "scripted_data_only", "baseline_commit": baseline,
                 "client_build": document["client_build"], "commit": candidate,
-                "artifact_digest": forever.artifact_digest(lambda path: blob(root, candidate, path))}
+                "artifact_digest": artifact_digest(root, candidate)}
     except (ValueError, KeyError, TypeError, subprocess.CalledProcessError) as exc:
         result["errors"].append(str(exc))
         return result

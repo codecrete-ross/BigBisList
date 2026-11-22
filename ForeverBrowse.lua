@@ -788,6 +788,25 @@ local function previewRows(context, packed, filters, activity, checkpoint, limit
     return slots, destinations
 end
 
+-- Resume the same preview when a refresh has already used its frame budget.
+local function stepPreview(request, deadline, build)
+    if not request.previewThread then
+        request.previewThread = coroutine.create(function(stopAt)
+            local function checkpoint()
+                if stopAt and debugprofilestop() >= stopAt then stopAt = coroutine.yield() end
+            end
+            return build(checkpoint)
+        end)
+    end
+    local ok, result, activities = coroutine.resume(request.previewThread, deadline)
+    if not ok then
+        request.previewThread = nil
+        error(result, 0)
+    end
+    if result then request.previewThread = nil end
+    return result, activities
+end
+
 -- Show routed Pre-Raid reference picks while the unchanged personal queries finish.
 -- A preview never claims a gain before the comparison has actually run.
 function UI:RenderEndgamePage(mode, selection, filters)
@@ -806,6 +825,9 @@ function UI:RenderEndgamePage(mode, selection, filters)
     end
     if request.presentation ~= presentation or request.questRevision ~= self.questRevision then
         if request.job then request.job.cancelled = true end
+        if request.questRevision ~= self.questRevision then
+            request.rows, request.preview, request.previewThread = nil, nil, nil
+        end
         request.model, request.job = nil, nil
         request.presentation, request.questRevision = presentation, self.questRevision
     end
@@ -815,27 +837,35 @@ function UI:RenderEndgamePage(mode, selection, filters)
         request.preview = self.renderModel
     end
     if not request.preview then
-        local model = self:NewListRenderModel()
-        model.packed, model.endgame, model.guideContext = true, true, context
-        local heading = mode == "planner" and "Pre-Raid targets · Comparing your gear" or "Pre-Raid gear"
-        self:AddListRenderEntry(model, {kind = "note", text = heading, height = 22})
-        if not filtered(filters) then
-            local scoped = {}
-            for k, v in pairs(filters) do scoped[k] = v end
-            scoped._guideMarket, scoped._questAvailable = addon:GetGuideMarket(context.faction), questAvailable
-            local rowHeight = self:GetDensityMetrics()
-            local visible = math.ceil(self.contentScroll:GetHeight() / rowHeight) + 2
-            local slots = previewRows(context, packed, scoped, false, nil, math.max(6, visible))
-            for _, slot in ipairs(addon.slotOrder) do
-                local bucket = slots[slot]
-                for _, row in ipairs(bucket and bucket.rows or {}) do self:AddListRow(model, row, "leveling") end
-                for _, row in ipairs(bucket and bucket.market and bucket.market.rows or {}) do self:AddListRow(model, row, "leveling") end
+        local deadline = self.refreshStartedAt and self.refreshStartedAt + 2.5
+        request.preview = stepPreview(request, deadline, function(checkpoint)
+            local model = self:NewListRenderModel()
+            model.packed, model.endgame, model.guideContext = true, true, context
+            local heading = mode == "planner" and "Pre-Raid targets · Comparing your gear" or "Pre-Raid gear"
+            self:AddListRenderEntry(model, {kind = "note", text = heading, height = 22})
+            if not filtered(filters) then
+                local scoped = {}
+                for k, v in pairs(filters) do scoped[k] = v end
+                scoped._guideMarket, scoped._questAvailable = addon:GetGuideMarket(context.faction), questAvailable
+                local rowHeight = self:GetDensityMetrics()
+                local visible = math.ceil(self.contentScroll:GetHeight() / rowHeight) + 2
+                local slots = previewRows(context, packed, scoped, false, checkpoint, math.max(6, visible))
+                for _, slot in ipairs(addon.slotOrder) do
+                    local bucket = slots[slot]
+                    for _, row in ipairs(bucket and bucket.rows or {}) do self:AddListRow(model, row, "leveling") end
+                    for _, row in ipairs(bucket and bucket.market and bucket.market.rows or {}) do self:AddListRow(model, row, "leveling") end
+                end
             end
+            return model
+        end)
+        if not request.preview then
+            self.refreshPending, self.pendingRefreshReason = true, "endgame preview"
+            return true
         end
-        request.preview = model
     end
     if request.job and request.job.cancelled then request.job = nil end
-    if not request.model and not request.job and not filters.ownedItems.equippedOnly then
+    -- Give the first clickable page the whole interaction frame before ranking starts.
+    if request.preview == self.renderModel and not request.model and not request.job and not filters.ownedItems.equippedOnly then
         local job
         job = rating:QueueWork(1, function(checkpoint)
             local rows = request.rows
@@ -944,18 +974,11 @@ function UI:RequestPackedGuideRows(context, filters, activity)
             and previous.reference == query.reference then
             query.previewSlots, query.previewThread = previous.previewSlots, nil
         elseif self.openingGuide and self.refreshStartedAt and C_Timer and C_Timer.After then
-            if not query.previewThread then
-                query.previewThread = coroutine.create(function(deadline)
-                    local function checkpoint()
-                        if debugprofilestop() >= deadline then deadline = coroutine.yield() end
-                    end
-                    return previewRows(context, packed, scoped, activity, checkpoint)
-                end)
-            end
-            local ok, slots, destinations = coroutine.resume(query.previewThread, self.refreshStartedAt + 2.5)
-            if not ok then query.previewThread = nil; error(slots, 0) end
+            local slots, destinations = stepPreview(query, self.refreshStartedAt + 2.5, function(checkpoint)
+                return previewRows(context, packed, scoped, activity, checkpoint)
+            end)
             if not slots then self.refreshPending = true; return query end
-            query.previewSlots, query.preview, query.previewThread = slots, destinations, nil
+            query.previewSlots, query.preview = slots, destinations
         else
             query.previewThread = nil
             query.previewSlots, query.preview = previewRows(context, packed, scoped, activity)
@@ -1322,7 +1345,7 @@ function UI:PaintGuideSlice()
     local frameTime = GetTime and GetTime()
     local spent = stats.timingFrame == frameTime and stats.frameTime or 0
     if self.refreshStartedAt and start then spent = spent + start - self.refreshStartedAt end
-    local paintBudget = page.model.endgame and 2 or 3
+    local paintBudget = page.model.endgame and page.model.complete and 2 or 3
     while page.index <= #page.entries do
         if C_Timer and C_Timer.After and start and spent + debugprofilestop() - start >= paintBudget then break end
         local entry = page.entries[page.index]
@@ -1418,6 +1441,9 @@ function UI:PublishGuidePage(page)
     end
     self:CountPerformance("realizedEntries", #page.frames)
     self:StartGuideInventory()
+    if model.endgame and not model.complete and not page.scrollOnly then
+        self:ScheduleRefresh(nil, "endgame preview")
+    end
 end
 
 function UI:RenderPackedGuide(context, filters, title)

@@ -1989,6 +1989,11 @@ end
 
 local LEVELING_HELPERS = {}
 
+function LEVELING_HELPERS.workCheckpoint(addon)
+    local rating = addon.ForeverGearRating
+    return rating and rating.GetWorkCheckpoint and rating:GetWorkCheckpoint()
+end
+
 LEVELING_HELPERS.reasonTagLabels = {
     best_overall = "Best Overall",
     best_survival = "Best Survival",
@@ -4601,7 +4606,7 @@ FILTER_FACETS.SHARED_PROGRESSION_INDEX_FIELDS = {
 }
 
 function BigBiSList:GetDataIndex(selectedPhaseKey)
-    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(self)
     local livePhase = self:GetCurrentPhaseKey()
     local scheduleId = (BigBiSListData or {}).active_schedule
     local contentPhase = selectedPhaseKey and self:GetProgressionContext(selectedPhaseKey).content_phase or livePhase
@@ -4934,6 +4939,14 @@ function BigBiSList:GetRowAccessOptions(row)
 end
 
 function BigBiSList:ComparisonItemInScope(itemId, phase, selectedIndex)
+    local data = BigBiSListData
+    local bundle = data and data.guide_index
+    local scope = bundle and bundle.preRaidScope
+    if scope and (phase == "PR" or phase == LEVELING_PHASE_KEY) and selectedIndex == scope.phaseIndex
+        and scope.items == data.items and bundle.data == data.stat_rank
+        and data.runtime_indexes and bundle.signature == data.runtime_indexes.guide_signature then
+        return not scope.blocked[tonumber(itemId)]
+    end
     local item = self:GetItemData(itemId)
     if not item then return true end
     local known = false
@@ -6625,7 +6638,7 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
     local selectedLevel = clampLevelingLevel(level)
     local levelingMode = phaseKey == LEVELING_PHASE_KEY
     local service = self.ForeverGearRating
-    local checkpoint = not identityOnly and service and service:GetWorkCheckpoint()
+    local checkpoint = not identityOnly and LEVELING_HELPERS.workCheckpoint(self)
 
     for _, slot in ipairs(EQUIPMENT_SLOTS) do
         if checkpoint then checkpoint() end
@@ -6761,9 +6774,9 @@ function LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, le
 end
 
 function LEVELING_HELPERS.attachPhasePlacements(addon, grouped, context)
-    local checkpoint = addon.ForeverGearRating:GetWorkCheckpoint()
     if not context then return end
     local rating = addon.ForeverGearRating
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(addon)
     for slot, group in pairs(grouped) do
         for _, row in ipairs(group.items) do
             if checkpoint then checkpoint() end
@@ -7133,7 +7146,7 @@ function LEVELING_HELPERS.addPhaseGuideAlternatives(addon, index, grouped, conte
 end
 
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
-    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(self)
     filters = FILTER_FACETS.progressionFilters(filters, phaseKey, className) or {}
     local index = self:GetDataIndex(phaseKey)
     local useRefs = index.useRefsByClassSpecPhase[className]
@@ -7432,9 +7445,9 @@ function LEVELING_HELPERS.applyForeverPlannerComparison(rating, context, row, it
 end
 
 function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, context, filters)
-    local checkpoint = addon.ForeverGearRating and addon.ForeverGearRating:GetWorkCheckpoint()
     if not context then return end
     local rating = addon.ForeverGearRating
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(addon)
     local className, specName, phase = context.class, context.spec, context.phase
     local guide = LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, 60, filters)
     if not guide then return end
@@ -7475,7 +7488,7 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, contex
 end
 
 function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filters)
-    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(self)
     filters = FILTER_FACETS.progressionFilters(filters, selectedPhaseKey, className) or {}
     local index = self:GetDataIndex(selectedPhaseKey)
     local groups = {}
@@ -7972,7 +7985,7 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
         end
     end
     if visitTargets then visitTargets(baseFilters, collectFacets) end
-    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
+    local checkpoint = LEVELING_HELPERS.workCheckpoint(self)
     for _, row in ipairs(rows) do
         if checkpoint then checkpoint() end
         local ranges = row.guide_levels

@@ -253,6 +253,28 @@ local row = assert(bucket().rows[1])
 assert(row.targetVerdict.swap.replacements[1].state == "bank" and row.lookupReason)
 ''', setup)
 
+    def test_packed_pre_raid_scope_matches_every_published_item(self):
+        self.lua_run(r"""
+local bundle = BigBiSListData.guide_index
+local scope = assert(bundle.preRaidScope)
+local expected, phase = {}, addon:GetAvailabilityPhaseIndex("PR")
+assert(scope.items == BigBiSListData.items and scope.phaseIndex == phase)
+bundle.preRaidScope = nil
+for key in pairs(BigBiSListData.runtime_indexes.items) do
+    local id = assert(tonumber(key))
+    expected[id] = addon:ComparisonItemInScope(id, "PR", phase)
+end
+assert(next(expected))
+bundle.preRaidScope = scope
+local lookup = addon.GetItemData
+addon.GetItemData = function() error("The indexed Pre-Raid comparison rebuilt acquisition routes") end
+for id, result in pairs(expected) do
+    assert(addon:ComparisonItemInScope(id, "PR", phase) == result, id)
+end
+assert(addon:ComparisonItemInScope(9999999, "PR", phase))
+addon.GetItemData = lookup
+""")
+
     def test_retired_home_and_settings_preserve_workspace_and_saved_gear(self):
         self.lua_run(r'''
 for _, mode in ipairs({"leveling","endgame"}) do
@@ -307,7 +329,11 @@ ui.slotContextFrame.compareButton:Click(); H.settle()
 local comp = assert(ui.slotComparison)
 assert(ui.comparisonBackButton.label:GetText() == "Back to Gear Guide")
 ui:SetComparisonSort("item"); H.settle()
-local row = assert(comp.rows[1])
+local cmpScroll = math.min(120,ui.comparisonScroll:GetVerticalScrollRange())
+assert(cmpScroll > 0)
+ui.comparisonScroll:SetVerticalScroll(cmpScroll); H.settle()
+local reference = comp.reference
+local row = assert(comp.rows[2])
 ui:ShowComparisonDetails(row); H.settle()
 local scroll = math.min(50,ui.detailsScroll:GetVerticalScrollRange())
 ui.detailsScroll:SetVerticalScroll(scroll)
@@ -318,7 +344,11 @@ ui.settingsBackButton:Click(); H.settle()
 assert(ui.slotComparison==comp and comp.sort=="item" and ui.selectedItemId==row.item_id and ui.details:IsVisible())
 assert(ui.detailsScroll:GetVerticalScroll()==scroll)
 ui.detailsBackButton:Click(); H.settle()
-assert(not comp.detailsOpen and ui.comparisonFrame:IsVisible())
+assert(not comp.detailsOpen and ui.comparisonFrame:IsVisible() and comp.reference == reference)
+assert(ui.comparisonScroll:GetVerticalScroll() == cmpScroll)
+ui.comparisonBackButton:Click(); H.settle()
+assert(not ui.slotComparison and ui.contentRegion:IsVisible() and ui:GetFocusedBrowseSlot()=="Head")
+ui.slotContextFrame.compareButton:Click(); H.settle(); assert(ui.slotComparison)
 ui.tabButtons["Gear Guide"]:Click(); H.settle()
 assert(not ui.slotComparison and ui.contentRegion:IsVisible() and ui:GetFocusedBrowseSlot()=="Head")
 if frame.CloseButton then frame.CloseButton:Click(); assert(not frame:IsShown()) end
@@ -330,6 +360,9 @@ level = 60
 addon:SetContentMode("endgame"); addon:SetSelection("Paladin", "Retribution", "PR", "By Slot")
 ui:Open(); H.settle()
 assert(ui.renderModel and ui.renderModel.endgame and ui.renderModel.complete)
+local listOffset = math.min(240, ui.contentScroll:GetVerticalScrollRange())
+assert(listOffset > 0)
+ui.contentScroll:SetVerticalScroll(listOffset); H.settle()
 local frame
 for _, row in ipairs(ui.activeRenderFrames) do if row.boundData then frame = row; break end end
 assert(frame and frame.iconButton.itemId == frame.boundData.item_id)
@@ -338,6 +371,14 @@ frame.iconButton:Click(); H.settle()
 assert(ui.details:IsVisible() and ui.detailsCompareButton:IsVisible() and ui.selectedItemId == id)
 ui.detailsCompareButton:Click(); H.settle()
 assert(ui.comparisonBackButton:IsVisible() and ui.comparisonBackButton.label:GetText() == "Back to Details")
+ui.comparisonBackButton:Click(); H.settle()
+assert(ui.details:IsVisible() and ui.selectedItemId == id and ui.contentScroll:GetVerticalScroll() == scroll)
+local compareAction, addMenuButton = nil, UIDropDownMenu_AddButton
+UIDropDownMenu_AddButton = function(info) if info.text == "Compare slot" then compareAction = info.func end end
+ui.detailsIdentity.menu:Click()
+UIDropDownMenu_AddButton = addMenuButton
+assert(compareAction)(); H.settle()
+assert(ui.comparisonBackButton.label:GetText() == "Back to Details")
 ui.comparisonBackButton:Click(); H.settle()
 assert(ui.details:IsVisible() and ui.selectedItemId == id and ui.contentScroll:GetVerticalScroll() == scroll)
 ui.tabButtons["By Slot"]:Click(); H.settle()

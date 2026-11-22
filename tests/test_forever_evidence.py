@@ -45,9 +45,14 @@ class ForeverEquipmentEvidenceTests(unittest.TestCase):
             document={"status":"accepted","artifact_digest":"tested","reviewer":"fixture","reviewed_at":"2026-11-06",
                 "client_build":"1.60.1.70790","source_url":ROOT+"guide/acceptance-fixture","reason":"Fixture live acceptance",
                 "checks":{key:True for key in forever.LIVE_ACCEPTANCE_CHECKS},"performance":{"startup_ms":10,"first_open_ms":20}}
+            builds_path=directory/"reviewed_builds.json"
+            builds_path.write_text(json.dumps({"target_client":"1.60.1.71037"}),encoding="utf-8")
             path=directory/"live_acceptance.json"
             path.write_text(json.dumps(document),encoding="utf-8")
             with patch.object(forever,"FOREVER_CANONICAL_DIR",directory),patch.object(forever,"release_artifact_digest",return_value="tested"):
+                self.assertIn("Gameplay acceptance must cover the configured target client build",forever.live_acceptance()["errors"])
+                document["client_build"]="1.60.1.71037"
+                path.write_text(json.dumps(document),encoding="utf-8")
                 self.assertTrue(forever.live_acceptance()["ok"])
                 document["checks"]["combat"]=False
                 path.write_text(json.dumps(document),encoding="utf-8")

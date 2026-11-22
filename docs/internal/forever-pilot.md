@@ -15,12 +15,18 @@ live acceptance record remains pending.
 
 | Milestone | Evidence and remaining work |
 | --- | --- |
-| Home and navigation | Home has been retired in both modes. Offline tests cover save migration, native and fallback chrome, Settings over comparison Details, and returning to the selected item or workspace. |
-| Endgame response | Compare full Protection and Retribution results with the original synchronous calculations. Measure the complete first viewport within three simulated 60 Hz frames and peak addon work within 4 ms. Record client timings separately. |
-| Gearing evidence | Release coverage compares the 3,448 reviewed early-level cells and 242 unresolved candidates with the fixed review commit. Strict scoring and Pre-Raid checks remain required. |
-| Client acceptance | Install the packaged candidate and record its digest, target build, cold and warm performance, title bar, return paths and gameplay checks in the release PR. Acceptance belongs to the player. |
-| Publication | Merge the checked integration PR, dispatch one read-only hosted refresh from untagged main, review its evidence in release preparation and repeat client acceptance if the digest changes. Run the clean merged Forever full-data gate before the regular GitHub and CurseForge release. Verify the actual public Forever file. |
+| Home and navigation | Home expanded from 72 to 420 similar buttons on the level-51 Retribution replay. Both modes now use their specialist workspaces. Offline tests cover Home save migration, native and fallback title bars, and both ways of opening Compare from Details. A nonzero list or comparison scroll offset survives the return. |
+| Endgame response | All six isolated fresh-save replays passed on the installed candidate. Upgrades and BiS List had a complete clickable page in one or two frames (4–18 ms of harness time) with 2–4 ms peak work. The leveling Guide took two or three frames. Protection’s 25 upgrades and 117 BiS rows and Retribution’s 625 upgrades and 115 BiS rows matched the canonical rank, route and ownership order. A run during package validation reached 13 ms of background work. Record live timings separately. |
+| Gearing evidence | Replaying the committed evidence made zero HTTP requests. All 3,448 early-level gaps and 242 unresolved candidates matched their reviewed cells and evidence. The equipment fidelity check passed on Guide source build 70959. Leveling sources are pinned to 70938 and the client target is 71037. |
+| Client acceptance | All 25 installed files matched the candidate on Forever 1.60.1.71037. Its artifact digest is `5996106718454459a359f278b3f87d222753fa786ffa25dd3f7b2f03026278bf`. Record the player's cold and warm performance, native window, return paths, and gameplay checks in the release PR. |
+| Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
+
+The Home experiment promised a next action. Equip-from-bags advice and ready quest rewards
+are available in the Guide and Upgrades, and Activities names destinations. The saved-bank
+replay still distinguishes an equipped Aegis of Stormwind from its banked weapon partner.
+The scoring review identified 2,417 item records with effects that still need evidence or
+encounter context for a numeric score.
 
 ## Collect and review
 

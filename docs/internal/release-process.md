@@ -153,7 +153,7 @@ The ordinary strict coverage command continues reporting every unresolved cell.
 Record `status: accepted`, the tester, date, client build, supporting evidence
 URL, reason, and `artifact_digest`. Obtain the digest from
 `tools.forever.release_artifact_digest()` after generation; it covers the
-Forever manifest and its listed runtime files. All keys in
+Forever manifest, its listed runtime files, and the packaged assets. All keys in
 `tools.forever.LIVE_ACCEPTANCE_CHECKS` must be true, and `performance` must
 include measured `startup_ms` and `first_open_ms`. A later runtime or data
 change invalidates that artifact-specific acceptance. Leave this document

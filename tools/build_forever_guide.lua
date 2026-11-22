@@ -116,6 +116,18 @@ if className == "catalog" then
     local signature = data.runtime_indexes and data.runtime_indexes.guide_signature
     write("BigBiSListData.guide_index = {version=4, signature=", signature and quote(signature) or "nil",
         ", data=BigBiSListData.stat_rank, slots={}, classes={}, quests={}}\n")
+    -- This gate depends on the published routes and phase, independently of the player's gear.
+    local preRaidIndex = addon:GetAvailabilityPhaseIndex("PR")
+    local blocked = {}
+    local idField = assert(addon:GetDataIndex().schemaPositions.item.id)
+    for _, record in ipairs(data.items) do
+        local id = assert(record[idField])
+        if not addon:ComparisonItemInScope(id, "PR", preRaidIndex) then blocked[#blocked + 1] = id end
+    end
+    table.sort(blocked)
+    write("BigBiSListData.guide_index.preRaidScope={items=BigBiSListData.items,phaseIndex=", preRaidIndex, ",blocked={")
+    for _, id in ipairs(blocked) do write("[", id, "]=true,") end
+    write("}}\n")
     local questItems = {}
     for _, slot in ipairs(slotKeys) do
         local keys, lookup, search = {}, {}, {}

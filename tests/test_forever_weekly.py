@@ -23,7 +23,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.write(release.PAYLOAD, "return {1}\n")
         self.write(release.GUIDE_PAYLOAD, "return {}\n")
         self.write("GuideRanksForever.lua", "return {}\n")
-        self.write("assets/icon.tga", "icon\n")
+        self.write("assets/icon.tga", "\x00icon\n")
         self.write(release.CANONICAL + "leveling_rules.json", json.dumps({"review": {"client_build": "1.60.1.70938"}}))
         self.write(release.CANONICAL + "reviewed_builds.json", json.dumps({
             "target_client": "1.60.1.71037", "leveling_sources": "1.60.1.70938", "guide_sources": "1.60.1.70959",
@@ -33,7 +33,7 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.write(release.LIVE_ACCEPTANCE, json.dumps({
             "status": "accepted", "reviewer": "Tester", "reviewed_at": "2026-11-17",
             "client_build": "1.60.1.71037", "reason": "Gameplay checks", "source_url": "https://example.com/evidence",
-            "artifact_digest": forever.artifact_digest(lambda name: (self.root / name).read_bytes()),
+            "artifact_digest": forever.release_artifact_digest(self.root),
             "checks": dict.fromkeys(forever.LIVE_ACCEPTANCE_CHECKS, True),
             "performance": {"startup_ms": 12, "first_open_ms": 17},
         }))
@@ -288,7 +288,34 @@ class WeeklyReleaseTests(unittest.TestCase):
             write_remote.assert_not_called()
         self.assertEqual(release.tag_commit(self.root, "0.15.1"), self.base)
 
+    def test_retry_after_publication_verifies_regular_channel_and_notes(self):
+        candidate = self.data_patch()
+        release.git(self.root, "tag", "0.15.1", candidate)
+        state = self.root / ".git" / "receipts"
+        state.mkdir()
+        result = weekly.validate_candidate(self.root, candidate, "0.15.0")
+        weekly.json_file(state / "publish.json", {**result, "status": "verified", "pr": 9})
+        notes = release.blob(self.root, candidate, "RELEASE_NOTES.md").decode()
+        tag_info = {"tagName": "0.15.1", "isDraft": False, "isPrerelease": False, "body": notes}
+        def published(_root, tag):
+            return tag_info if tag == "0.15.1" else {"tagName": tag, "isDraft": False, "isPrerelease": False}
+        with (patch.object(weekly, "fetch_main", return_value=candidate),
+              patch.object(weekly, "published", side_effect=published),
+              patch.object(weekly, "newest_tag", return_value="0.15.1"),
+              patch.object(weekly, "git_text", return_value=candidate),
+              patch.object(weekly, "command") as write_remote):
+            self.assertEqual(weekly.publish(self.root, state, "0.15.0")["status"], "published")
+            tag_info["isPrerelease"] = True
+            with self.assertRaises(ValueError):
+                weekly.publish(self.root, state, "0.15.0")
+            write_remote.assert_not_called()
+
     def test_windows_checkout_line_endings_do_not_stale_receipt(self):
-        same = forever.artifact_digest(lambda name: (self.root / name).read_bytes().replace(b"\n", b"\r\n"))
+        def checkout_bytes(name):
+            raw = (self.root / name).read_bytes()
+            return raw.replace(b"\n", b"\r\n") if name.endswith((".lua", ".toc")) else raw
+        same = forever.artifact_digest(checkout_bytes, ["assets/icon.tga"])
         accepted = json.loads((self.root / release.LIVE_ACCEPTANCE).read_text())
         self.assertEqual(same, accepted["artifact_digest"])
+        self.write("assets/icon.tga", "changed icon")
+        self.assertNotEqual(forever.release_artifact_digest(self.root), accepted["artifact_digest"])

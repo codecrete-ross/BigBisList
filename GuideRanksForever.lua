@@ -1,5 +1,5 @@
--- Generated Forever Guide 78a2bbb68935acc8d30517deeb375efb2d392795f1af9b33d7097c8e1dc8ec16 f2016d50f60692d658a3bf1e565e4774d7091c42f25c63aa903e95d01c8d9833
-if BigBiSListData.guide_index and BigBiSListData.guide_index.generation == "78a2bbb68935acc8d30517deeb375efb2d392795f1af9b33d7097c8e1dc8ec16" then
+-- Generated Forever Guide d394671f563d29c637af165c0171a6c2a64c3327fd6e7be561c7d56b6058ce93 3ab531ef16dc57015030fec0954f82f364fc64502a50ebe76c132fce04b86d7b
+if BigBiSListData.guide_index and BigBiSListData.guide_index.generation == "d394671f563d29c637af165c0171a6c2a64c3327fd6e7be561c7d56b6058ce93" then
 do
 local archive={strings={},profiles={}}
 BigBiSListData.guide_index.classes["Priest"]=archive

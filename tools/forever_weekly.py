@@ -308,13 +308,17 @@ def gh_json(root: Path, *args: str):
 
 
 def published(root: Path, tag: str) -> dict | None:
-    result = subprocess.run(["gh", "release", "view", tag, "--json", "tagName,isDraft,body"],
+    result = subprocess.run(["gh", "release", "view", tag, "--json", "tagName,isDraft,isPrerelease,body"],
                             cwd=root, capture_output=True, check=False)
     if result.returncode == 0:
         return json.loads(result.stdout)
     if b"release not found" in result.stderr.lower() or b"http 404" in result.stderr.lower():
         return None
     raise subprocess.CalledProcessError(result.returncode, result.args, stderr=result.stderr)
+
+
+def regular_release(info: dict | None) -> bool:
+    return bool(info and not info["isDraft"] and not info.get("isPrerelease"))
 
 
 def author_login(login: str) -> str:
@@ -359,7 +363,7 @@ def submit(root: Path, state: Path, baseline: str, today: str, author: str) -> d
     validate_candidate(root, commit, baseline)
     last = published(root, previous)
     live = published(root, baseline)
-    if not last or last["isDraft"] or not live or live["isDraft"] or newest_tag(root, main) != previous:
+    if not regular_release(last) or not regular_release(live) or newest_tag(root, main) != previous:
         raise ValueError("The preceding release must be published and current")
     tree = git_text(root, "rev-parse", f"{commit}^{{tree}}")
     branch = DATA_BRANCH + version + "-" + tree[:12]
@@ -453,7 +457,7 @@ def publish(root: Path, state: Path, baseline: str) -> dict:
         raise ValueError("The release receipt no longer matches main and its tag history")
     last = published(root, previous)
     live = published(root, baseline)
-    if not last or last["isDraft"] or not live or live["isDraft"]:
+    if not regular_release(last) or not regular_release(live):
         raise ValueError("The preceding release must be published")
     ref = f"refs/tags/{version}"
     if git_text(root, *GIT_AUTH, "ls-remote", "--tags", "origin", ref):
@@ -478,8 +482,8 @@ def publish(root: Path, state: Path, baseline: str) -> dict:
         command(root, "gh", "release", "create", version, "--verify-tag", "--title", version,
                 "--notes-file", str(note_path))
         existing = published(root, version)
-    if not existing or existing["isDraft"] or existing["tagName"] != version or existing["body"].strip() != notes.strip():
-        raise ValueError("GitHub release notes do not match the verified tag")
+    if not regular_release(existing) or existing["tagName"] != version or existing["body"].strip() != notes.strip():
+        raise ValueError("GitHub release must be regular and match the verified tag and notes")
     return {**receipt, "status": "published"}
 
 

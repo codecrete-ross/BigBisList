@@ -4851,7 +4851,7 @@ function UI:HandleEntityGesture(data, mode, buttonName, owner)
     elseif id then self:ShowInspectorFor(id, data, mode) end
 end
 
-function UI:ShowItemActionMenu(data, mode, owner)
+function UI:ShowItemActionMenu(data, mode, owner, returnTo)
     if not data or not UIDropDownMenu_Initialize or not ToggleDropDownMenu then return end
     self.itemActionMenu = self.itemActionMenu or CreateFrame("Frame", "BigBiSListItemActionMenu", UIParent, "UIDropDownMenuTemplate")
     local itemId = data.item_id
@@ -4871,7 +4871,7 @@ function UI:ShowItemActionMenu(data, mode, owner)
         end
         if not self.slotComparison and self.OpenSlotComparison and data.slot and mode ~= "enhance"
             and (mode ~= "leveling" or BigBiSList.ForeverGearRating) then
-            add("Compare slot", function() self:OpenSlotComparison(data, mode) end)
+            add("Compare slot", function() self:OpenSlotComparison(data, mode, nil, returnTo) end)
         end
         local char = BigBiSList:GetCharacterDB()
         local saved = self:IsWishlisted(data)
@@ -8529,7 +8529,7 @@ function UI:RefreshDetailsHeader(entityId, entityType, itemId, data, mode, title
         meta:SetWordWrap(false)
         meta:SetTextColor(0.68, 0.72, 0.78, 1)
         local menu = widgets:CreateUtilityButton(created, "menu", 28, function(button)
-            if button.itemId then UI:ShowItemActionMenu(button.data, button.mode, button) end
+            if button.itemId then UI:ShowItemActionMenu(button.data, button.mode, button, "Details") end
         end, "Item actions")
         menu:SetPoint("RIGHT", created, "RIGHT", -30, 0)
         local star = widgets:CreateUtilityButton(created, "starOutline", 28, function(button)
@@ -9453,7 +9453,7 @@ function UI:Refresh(reason)
         end
         local opening = self.openingGuide and tabName == "Gear Guide" and not self.renderModel
         local controlsReady = opening and self.firstGuideControls == self.currentFilterPayload and not dirtyAtStart.controls
-        local endgameRowsReady = reason == "endgame rows ready" and not next(dirtyAtStart)
+        local endgameRowsReady = (reason == "endgame rows ready" or reason == "endgame preview") and not next(dirtyAtStart)
             and (tabName == "Upgrades" or tabName == "By Slot")
         if not controlsReady and not endgameRowsReady then self:RefreshControls() end
         self.firstGuideControls = opening and self.currentFilterPayload or nil
@@ -9483,7 +9483,8 @@ function UI:Refresh(reason)
         if self:IsInspectorVisible() and (dirtyAtStart.details or self.selectedItemId) then
             self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
         end
-        if self.guideInventoryWaiting and not self.guideStage and not (self.openingGuide and not self.renderModel)
+        if self.guideInventoryWaiting and not self.guideStage and self.pendingRefreshReason ~= "endgame preview"
+            and not (self.openingGuide and not self.renderModel)
             and (tabName ~= "Gear Guide"
             or not self.renderModel or not self.renderModel.targetQuery or self.renderModel.rowCount == 0) then
             self:StartGuideInventory()

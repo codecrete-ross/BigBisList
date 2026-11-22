@@ -496,8 +496,10 @@ def live_acceptance() -> dict:
     path = FOREVER_CANONICAL_DIR / "live_acceptance.json"
     document = load_json(path) if path.is_file() else {}
     errors = live_acceptance_errors(document, release_artifact_digest())
-    if document.get("status") == "accepted" and document.get("client_build") != dataset_json("forever", "reviewed_builds")["target_client"]:
-        errors.append("Gameplay acceptance must cover the configured target client build")
+    if document.get("status") == "accepted":
+        target_build = load_json(FOREVER_CANONICAL_DIR / "reviewed_builds.json")["target_client"]
+        if document.get("client_build") != target_build:
+            errors.append("Gameplay acceptance must cover the configured target client build")
     return {"ok": not errors, "status": document.get("status", "pending"), "errors": errors}
 
 
@@ -528,8 +530,8 @@ def release_manifest_files(text: str) -> list[str]:
     return sorted(entries | {FOREVER_MANIFEST})
 
 
-def artifact_digest(read_file) -> str:
-    paths = release_manifest_files(read_file(FOREVER_MANIFEST).decode("utf-8"))
+def artifact_digest(read_file, assets=()) -> str:
+    paths = set(release_manifest_files(read_file(FOREVER_MANIFEST).decode("utf-8"))).union(assets)
     checksums = {}
     for name in paths:
         raw = read_file(name)
@@ -539,14 +541,17 @@ def artifact_digest(read_file) -> str:
     return digest(checksums)
 
 
-def release_artifact_digest() -> str:
+def release_artifact_digest(root: Path = ROOT) -> str:
+    root = root.resolve()
+
     def read_file(name):
-        path = (ROOT / name).resolve()
-        if not path.is_relative_to(ROOT) or not path.is_file():
+        path = (root / name).resolve()
+        if not path.is_relative_to(root) or not path.is_file():
             raise ValueError("Forever manifest contains an invalid release artifact")
         return path.read_bytes()
 
-    return artifact_digest(read_file)
+    assets = (path.relative_to(root).as_posix() for path in (root / "assets").rglob("*") if path.is_file())
+    return artifact_digest(read_file, assets)
 
 
 def coverage() -> dict:

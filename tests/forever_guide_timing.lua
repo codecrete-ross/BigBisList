@@ -104,6 +104,7 @@ if endgame then
         local first, firstMs, ready
         local openedAt = milliseconds()
         open()
+        local openMs = milliseconds() - openedAt
         for frame = 1, 4000 do
             tick()
             local model = ui.renderModel
@@ -121,9 +122,11 @@ if endgame then
             end
         end
         assert(first and ready and #H.errors == 0, table.concat(H.errors, "\n"))
-        local peak = ui:GetPerformanceStats().worstFrame or 0
+        local stats = ui:GetPerformanceStats()
+        local peak, work = stats.worstFrame or 0, stats.worstFrameWork
+        if openMs > peak then peak, work = openMs, "open" end
         print(string.format("%s: first viewport on frame %d (%.1f ms), peak %.1f ms (%s), %d results",
-            tab, first, firstMs, peak, ui:GetPerformanceStats().worstFrameWork or "", ready.rowCount))
+            tab, first, firstMs, peak, work or "", ready.rowCount))
         assert(first <= 3 and firstMs <= 50 and peak <= 4, tab .. " exceeded the first-page or interaction budget")
 
         local expected = {}
