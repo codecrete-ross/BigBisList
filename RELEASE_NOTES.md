@@ -2,7 +2,7 @@
 
 Addon behavior changes in the 0.15.x releases, newest first. Each section describes changes introduced in that version.
 
-## 0.15.0 - 2026-11-18
+## 0.15.0 - 2026-11-21
 
 - Added earlier-tier recommendations for catch-up gearing, enabled by default in Upgrades and optional in BiS List, while keeping the selected tier as the gearing goal.
 - Restored directly clickable tier choices with a Target tier label and a separate Live marker.
@@ -25,4 +25,7 @@ Addon behavior changes in the 0.15.x releases, newest first. Each section descri
 - Item tooltips mark ties, projected exact rolls, and unresolved effects. Above-level items show estimates against the best gear you already own at the first usable level, including items in your cached bank.
 - Compare Slot labels ranks for the equipped setup. Details shows tier ranges, the first level a stronger option appears, and the largest stat gains and losses. Current swap estimates can use active talents where supported.
 - Quest reward tooltips show which choices serve each spec and activity. Acquisition badges highlight upgrades in loot, quest rewards, auctions, bags, and bank. A quest with no gear upgrade can mark its highest-value vendor reward.
+- The Forever window uses the game’s title, portrait, and Close button. Settings returns to the item or comparison you were viewing. Compare slot names the screen its Back button will open.
+- Forever Upgrades and BiS List show Pre-Raid targets while your full results are prepared. Leveling Gear Guide keeps the item under your pointer while personalizing its recommendations.
+- Gear comparisons account for a shield and its best owned weapon partner, including weapons from your last bank visit. Stoneslayer includes its reviewed bonus against Earth Elementals and its Archaedas drop in Uldaman.
 - The Forever minimap button works with Leatrix Plus button collection.

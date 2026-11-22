@@ -139,7 +139,7 @@ function UI:RequestPackedReach(context, filters)
         return self:GetWithinReach(rows) or {}
     end, function()
         return self.packedReach == request and self.frame and self.frame:IsShown() and self.currentFilterPayload == filters
-            and (self:GetViewKey() == "gearGuide" or self:GetViewKey() == "home")
+            and self:GetViewKey() == "gearGuide"
     end, function(result)
         request.job, request.result = nil, result
         local function signature(groups)
@@ -271,6 +271,7 @@ end
 function UI:RefreshPackedRows(itemId, quest)
     local model = self.pendingGuideModel or self.renderModel
     if not (model and model.packed and self.frame and self.frame:IsShown()) then return false end
+    if model.endgame then return false end
     if model.targetQuery then
         local changed, bundle = {}, BigBiSListData.guide_index
         local function mark(key)
@@ -720,8 +721,8 @@ end
 
 local routeVerbs = {drop = "Drops from ", quest = "Quest reward · ", vendor = "Buy from ", pvp = "Buy from ", token_turnin = "Turn in to "}
 
-local function previewRows(context, packed, filters, activity, checkpoint)
-    local slots = {}
+local function previewRows(context, packed, filters, activity, checkpoint, limit)
+    local slots, count = {}, 0
     local destinations = activity and {ordered = {}, byName = {}, context = context, targets = true, pending = true}
     local match = filtered(filters) == true
     local function available(hint)
@@ -774,6 +775,8 @@ local function previewRows(context, packed, filters, activity, checkpoint)
                 if market then bucket.market = bucket.market or newBucket(); bucket = bucket.market end
                 local identity = rewardKey(row, context)
                 keep(bucket, row, identity)
+                count = count + 1
+                if limit and count >= limit then return slots end
                 if destinations and not market then
                     local dest = activityEntry(destinations, row.previewActivity or addon:GetActivityGroup(row))
                     activityLoot(dest, identity)
@@ -783,6 +786,97 @@ local function previewRows(context, packed, filters, activity, checkpoint)
         end
     end
     return slots, destinations
+end
+
+-- Show routed Pre-Raid reference picks while the unchanged personal queries finish.
+-- A preview never claims a gain before the comparison has actually run.
+function UI:RenderEndgamePage(mode, selection, filters)
+    if selection.phase ~= "PR" or not self:HasIndexedGear() or not (C_Timer and C_Timer.After) then return false end
+    local context = rating:GetGuideContext(selection.class, selection.spec, selection.phase, 60,
+        filters.race or addon:GetPlayerRaceName(), filters.faction or addon:GetPlayerFactionName())
+    local packed = context and rating:GetPackedGuide(context)
+    if not packed then return false end
+    local request = self:GetCachedViewQuery("endgame-" .. mode, function() return {} end)
+    local presentation = self.domainVersions and self.domainVersions.presentation or 0
+    local view = mode == "planner" and "upgrades" or "bisList"
+    local function current()
+        return self.currentFilterPayload == filters and self.frame:IsShown() and not self.settingsSelection
+            and self:GetViewKey() == view
+            and self.domainVersions.presentation == presentation and not self.slotComparison
+    end
+    if request.presentation ~= presentation or request.questRevision ~= self.questRevision then
+        if request.job then request.job.cancelled = true end
+        request.model, request.job = nil, nil
+        request.presentation, request.questRevision = presentation, self.questRevision
+    end
+    if not request.preview and not self.pendingNavigation and self.guideDisplay and self.renderModel
+        and self.renderModel.endgame and self.renderModel.contextKey == self:GetNavigationContextKey()
+        and self.guideDisplay.intent == (self.guideRequestSerial or 0) then
+        request.preview = self.renderModel
+    end
+    if not request.preview then
+        local model = self:NewListRenderModel()
+        model.packed, model.endgame, model.guideContext = true, true, context
+        local heading = mode == "planner" and "Pre-Raid targets · Comparing your gear" or "Pre-Raid gear"
+        self:AddListRenderEntry(model, {kind = "note", text = heading, height = 22})
+        if not filtered(filters) then
+            local scoped = {}
+            for k, v in pairs(filters) do scoped[k] = v end
+            scoped._guideMarket, scoped._questAvailable = addon:GetGuideMarket(context.faction), questAvailable
+            local rowHeight = self:GetDensityMetrics()
+            local visible = math.ceil(self.contentScroll:GetHeight() / rowHeight) + 2
+            local slots = previewRows(context, packed, scoped, false, nil, math.max(6, visible))
+            for _, slot in ipairs(addon.slotOrder) do
+                local bucket = slots[slot]
+                for _, row in ipairs(bucket and bucket.rows or {}) do self:AddListRow(model, row, "leveling") end
+                for _, row in ipairs(bucket and bucket.market and bucket.market.rows or {}) do self:AddListRow(model, row, "leveling") end
+            end
+        end
+        request.preview = model
+    end
+    if request.job and request.job.cancelled then request.job = nil end
+    if not request.model and not request.job and not filters.ownedItems.equippedOnly then
+        local job
+        job = rating:QueueWork(1, function(checkpoint)
+            local rows = request.rows
+            if not rows then
+                if mode == "planner" then rows = addon:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+                else
+                    rows = {}
+                    for _, group in ipairs(addon:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)) do
+                        checkpoint()
+                        for _, row in ipairs(group.items) do rows[#rows + 1] = row end
+                    end
+                end
+                request.rows = rows
+            end
+            local model
+            if mode == "planner" then
+                local actions = self:GetNextUpgradeActions(rows)
+                model = self:BuildPlannerModel(rows, actions)
+                model.hasActions = #actions > 0
+            else model = self:BuildGroupedModel(rows, "phase", self:GetViewState().groupBy or "slot", "BiS List") end
+            model.packed, model.endgame, model.complete = true, true, true
+            return model
+        end, function() return request.job == job and current() end, function(model)
+            request.job, request.model = nil, model
+            self:ScheduleRefresh(nil, "endgame rows ready")
+        end)
+        request.job = job
+    end
+    local model = request.model or request.preview
+    if request.model then
+        if mode == "planner" then
+            self:SetUpgradeActionsAvailable(model.hasActions)
+            if request.rows.statsPending then self:QueueStatLoads(request.rows.statsPending) end
+        end
+        if model.rowCount == 0 then
+            model.emptyMessage = mode == "planner" and "No upgrade candidates match your gear and filters."
+                or "No recommendations match this phase and filters."
+        end
+    end
+    if model ~= self.renderModel and not (self.guideStage and self.guideStage.model == model) then self:RenderListModel(model) end
+    return true
 end
 
 function UI:ResolveGuidePreview(row)
@@ -874,7 +968,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
     end
     local function current()
         return self.currentViewQueryCache == cache and cache[key] == query and self.frame and (self.frame:IsShown() or self.openingGuide)
-            and (self:GetViewKey() == "home" or self:GetViewKey() == "gearGuide" and self:IsLevelingActivityView() == activity)
+            and self:GetViewKey() == "gearGuide" and self:IsLevelingActivityView() == activity
             and state.sort == query.sort and state.sortDirection == query.direction
             and self.targetRevision == query.revision
     end
@@ -974,9 +1068,11 @@ function UI:RequestPackedGuideRows(context, filters, activity)
 end
 
 local function pageEntryKey(entry)
-    if entry.data then return (entry.sectionKey or "") .. "/" .. (entry.data.stat_identity or tostring(entry.data.item_id)) end
+    if entry.data then
+        local data = entry.data
+        return (entry.sectionKey or "") .. "/" .. (data.slot or "") .. "/" .. (data.stat_identity or tostring(data.item_id))
+    end
     if entry.activityName then return "activity/" .. entry.activityName end
-    if entry.nextAction then return "action/" .. entry.nextAction.row.stat_identity end
     return entry.sectionKey or entry.title or entry.text or entry.kind
 end
 
@@ -1044,6 +1140,7 @@ local function holdGuidePage(ui, model)
     if ui.pendingGuideModel == model then return end
     ui.pendingGuideModel = model
     ui.updateGuideButton:Show()
+    if model.endgame then return end
     local display = ui.renderModel
     local function current() return ui.pendingGuideModel == model and ui.renderModel == display end
     rating:QueueWork(1, function(checkpoint)
@@ -1138,7 +1235,7 @@ function UI:QueueGuidePage(model, apply, scrollOnly)
     local layout = self:GetTableColumnLayout(width, model.columnMode or "phase")
     local page = {model = model, navigation = nav, offset = offset, nativeOffset = nativeOffset, height = height,
         width = width, layout = layout, intent = intent, entries = {}, prepared = {}, frames = {}, claimed = {}, index = 1,
-        automatic = committed and personal and old ~= model and not apply and not scrollOnly,
+        automatic = committed and (personal or model.endgame and model.complete) and old ~= model and not apply and not scrollOnly,
         personal = personal, scrollOnly = scrollOnly, updateFacts = updateFacts}
     self:VisitListEntries(model, offset, offset + height, function(entry)
         if entry.bottom > offset and entry.top < offset + height then
@@ -1225,8 +1322,9 @@ function UI:PaintGuideSlice()
     local frameTime = GetTime and GetTime()
     local spent = stats.timingFrame == frameTime and stats.frameTime or 0
     if self.refreshStartedAt and start then spent = spent + start - self.refreshStartedAt end
+    local paintBudget = page.model.endgame and 2 or 3
     while page.index <= #page.entries do
-        if C_Timer and C_Timer.After and start and spent + debugprofilestop() - start >= 3 then break end
+        if C_Timer and C_Timer.After and start and spent + debugprofilestop() - start >= paintBudget then break end
         local entry = page.entries[page.index]
         local key = pageEntryKey(entry)
         local prior = display and display.byKey[key]
@@ -1257,7 +1355,8 @@ function UI:PaintGuideSlice()
     if scroll:GetVerticalScroll() ~= page.nativeOffset then
         self:QueueGuidePage(page.model, false, page.scrollOnly)
     elseif page.index > #page.entries then
-        if display and start and C_Timer and C_Timer.After and spent + debugprofilestop() - start >= 3 and not page.commitDeferred then
+        if (display or page.model.endgame) and start and C_Timer and C_Timer.After
+            and spent + debugprofilestop() - start >= paintBudget and not page.commitDeferred then
             page.commitDeferred = true
             self:ScheduleGuidePaint()
         elseif page.automatic and wouldMovePointer(self, page) then
@@ -1269,6 +1368,11 @@ function UI:PaintGuideSlice()
 end
 
 function UI:PublishGuidePage(page)
+    if page.model.emptyMessage then
+        self:CancelGuideStage()
+        self:RenderEmpty(page.model.emptyMessage)
+        return
+    end
     self.publishingGuide = page
     self.guideStage = nil
     local model, old = page.model, self.activeRenderFrames or {}
@@ -1278,7 +1382,7 @@ function UI:PublishGuidePage(page)
     local pointed, oldEntry = hoveredGuideEntry(self)
     for index, frame in ipairs(page.frames) do
         local entry = page.entries[index]
-        if pointed and entry.data and oldEntry.data and entry.data.stat_identity
+        if pointed and entry.data and oldEntry.data and not entry.nextAction and entry.data.stat_identity
             and pageEntryKey(entry) == pageEntryKey(oldEntry) and pointed ~= frame
             and pointed.__bigBisListRenderKind == frame.__bigBisListRenderKind then
             frame:Hide()
@@ -1358,50 +1462,6 @@ function UI:RenderPackedGuide(context, filters, title)
     end
     local model = self:BuildPackedGuideModel(context, filters, title, query, reach)
     model.targetQuery = query
-    self:RenderListModel(model)
-end
-
-function UI:RenderHomeTab()
-    local selection = self:GetSelection()
-    local filters = self.currentFilterPayload or self:BuildFilterPayload()
-    local leveling = self:IsLevelingMode()
-    local level = leveling and addon:GetSelectedLevelingLevel() or 60
-    self.currentOwned = filters.ownedItems
-    local context = rating:GetGuideContext(selection.class, selection.spec, self:GetEffectivePhaseKey(), level,
-        filters.race or addon:GetPlayerRaceName(), filters.faction or addon:GetPlayerFactionName())
-    if not context or not rating:GetPackedGuide(context) then self:RenderEmpty("No targets for this character yet."); return end
-    local query = self.lastUnfilteredGuide
-    if not query or query.activities or query.context.key ~= context.key or query.owned ~= self.currentOwned
-        or query.catalogRevision ~= context.catalog.observedVersion or query.questRevision ~= self.questRevision then
-        query = self:RequestPackedGuideRows(context, filters, false)
-    end
-    local model = self:NewListRenderModel()
-    model.packed, model.guideContext, model.guideFilters, model.targetQuery = true, context, filters, query
-    self:AddListRenderEntry(model, {kind = "note", text = "Home · Experimental", height = 24})
-    local reach = self:RequestPackedReach(context, filters)
-    if reach then self:AddWithinReach(model, nil, "home", {reach[1] or {}, reach[2] or {}}) end
-    local slots, section, shown = query.previewSlots or query.slots, nil, {}
-    for i = 1, 2 do
-        for _, action in ipairs(reach and reach[i] or {}) do shown[action.row.stat_identity] = true end
-    end
-    local function addTarget(target)
-        if shown[target.stat_identity] then return end
-        shown[target.stat_identity] = true
-        if not section then section = self:AddListSection(model, "Attainable targets", nil, false, "home-targets") end
-        model.rowCount, section.count = model.rowCount + 1, section.count + 1
-        if section.collapsed then return end
-        local route = target.matched_access_option or {}
-        local source = route.source or {}
-        local destination = target.previewNext or source.entity_name or route.source_summary or target.source_summary or target.slot
-        self:AddListRenderEntry(model, {kind = "action", title = target.name, height = 36, detail = destination, itemQuality = target.quality,
-            activate = function() self:ShowInspectorFor(target.item_id, target, leveling and "leveling" or "planner") end})
-    end
-    for _, slot in ipairs(addon.slotOrder) do
-        local bucket = slots[slot]
-        for _, row in ipairs(bucket and bucket.rows or {}) do addTarget(row) end
-        for _, row in ipairs(bucket and bucket.market and bucket.market.rows or {}) do addTarget(row) end
-    end
-    if not section and not next(shown) then self:AddListRenderEntry(model, {kind = "note", text = "No new targets for this setup.", height = 26}) end
     self:RenderListModel(model)
 end
 

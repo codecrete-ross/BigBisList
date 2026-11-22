@@ -652,7 +652,9 @@ function rating:GetBrowsePlacements(context, slot, owned)
     if not slots then return end
     local data, rows, seen = slots[slot], {}, {}
     if not data then return rows end
+    local checkpoint = self:GetWorkCheckpoint()
     local function add(key)
+        if checkpoint then checkpoint() end
         if not seen[key] then
             seen[key] = true
             local entry = self:GetPackedGuideEntry(context, slot, key)

@@ -1,5 +1,6 @@
 -- Run from the repository root with Lua 5.1. Each invocation starts with a fresh save.
 local build, payload = assert(tonumber(arg[1]), "Expected a Forever build number"), arg[2] or "full"
+local endgame = arg[6] == "endgame"
 local spec, density = arg[3] or "Retribution", arg[4] or "comfortable"
 assert(payload == "full" or payload == "core", "Expected full or core")
 assert(spec == "Retribution" or spec == "Protection")
@@ -10,7 +11,7 @@ UnitClass = function() return "Paladin", "PALADIN" end
 UnitClassBase = function() return "PALADIN" end
 UnitRace = function() return "Human", "Human", 1 end
 UnitFactionGroup = function() return "Alliance" end
-UnitLevel = function() return 51 end
+UnitLevel = function() return endgame and 60 or 51 end
 GetInventoryItemID = function(_, slot) if slot == 1 then return 10090 end end
 GetInventoryItemLink = function(_, slot)
     if slot == 1 then return "item:10090::::::::50:1486::1:1:12723:1:28:5253:::::" end
@@ -50,8 +51,13 @@ local loginTime = milliseconds() - loaded
 collectgarbage("collect")
 local retained = (collectgarbage("count") - heap) / 1024
 local ui = addon.UI
-addon:SetSelection("Paladin", spec, "LEVELING", "Gear Guide")
-addon:SetSelectedLevelingLevel(51, true)
+if endgame then
+    addon:SetContentMode("endgame")
+    addon:SetSelection("Paladin", spec, "PR", "Upgrades")
+else
+    addon:SetSelection("Paladin", spec, "LEVELING", "Gear Guide")
+    addon:SetSelectedLevelingLevel(51, true)
+end
 local window = addon:GetAccountDB().profile.window
 window.density = density
 if spec == "Protection" then
@@ -84,12 +90,78 @@ local function completePage()
             local bound = frame.__bigBisBoundRenderEntry
             assert(frame:IsVisible() and ui:IsCurrentRenderFrame(frame) and bound.top == entry.top and bound.kind == entry.kind)
             if entry.data then
-                assert(frame.boundData.stat_identity == entry.data.stat_identity and frame.iconButton.itemId == entry.data.item_id)
+                assert(frame.boundData and frame.boundData.item_id == entry.data.item_id
+                    and frame.boundData.stat_identity == entry.data.stat_identity and frame.iconButton.itemId == entry.data.item_id)
             end
         end
     end)
     assert(count == #ui.activeRenderFrames, "Two frames own the same part of the page")
 end
+
+if endgame then
+    local function check(tab, open)
+        ui:ResetPerformanceStats()
+        local first, firstMs, ready
+        local openedAt = milliseconds()
+        open()
+        for frame = 1, 4000 do
+            tick()
+            local model = ui.renderModel
+            if model and model.endgame and model.contextKey == ui:GetNavigationContextKey() and model.rowCount > 0 then
+                completePage()
+                local clickable = 0
+                for _, button in ipairs(ui.activeRenderFrames or {}) do
+                    if button.boundData then
+                        assert(button:IsVisible() and ui:IsCurrentRenderFrame(button), "Stale endgame click target")
+                        clickable = clickable + 1
+                    end
+                end
+                if clickable > 0 and not first then first, firstMs = frame, milliseconds() - openedAt end
+                if model.complete and not ui.guideStage then ready = model; break end
+            end
+        end
+        assert(first and ready and #H.errors == 0, table.concat(H.errors, "\n"))
+        local peak = ui:GetPerformanceStats().worstFrame or 0
+        print(string.format("%s: first viewport on frame %d (%.1f ms), peak %.1f ms (%s), %d results",
+            tab, first, firstMs, peak, ui:GetPerformanceStats().worstFrameWork or "", ready.rowCount))
+        assert(first <= 3 and firstMs <= 50 and peak <= 4, tab .. " exceeded the first-page or interaction budget")
+
+        local expected = {}
+        local filters = ui.currentFilterPayload
+        if tab == "Upgrades" then
+            local rows = addon:GetPlannerRows("Paladin", spec, "PR", filters)
+            local actions = ui:GetNextUpgradeActions(rows)
+            if #actions > 0 then for _, action in ipairs(actions) do expected[#expected + 1] = action.data end
+            else expected = rows end
+        else
+            for _, group in ipairs(addon:GetPhaseRows("Paladin", spec, "PR", filters)) do
+                for _, row in ipairs(group.items) do expected[#expected + 1] = row end
+            end
+        end
+        local function identity(row)
+            local option = row.matched_access_option or {}
+            local source = option.source or {}
+            return table.concat({row.slot, row.variant_id or row.item_id, row.stat_rank and row.stat_rank.rank or "",
+                source.entity_id or source.quest_id or source.entity_name or "", row.owned_state or ""}, "/")
+        end
+        local index = 0
+        for _, entry in ipairs(ready.entries) do
+            if entry.data then
+                index = index + 1
+                assert(identity(entry.data) == identity(expected[index]), "Changed rank, route, or owner at row " .. index)
+            end
+        end
+        assert(ready.rowCount == #expected and index == #expected)
+    end
+    check("Upgrades", function() ui:Open() end)
+    check("BiS List", function() ui:SetTab("By Slot") end)
+    ui:SetTab("Upgrades"); tick(); ui:SetTab("Wishlist")
+    for _ = 1, 45 do tick() end
+    assert(ui:GetViewKey() == "wishlist" and not (ui.renderModel and ui.renderModel.endgame))
+    assert(#H.errors == 0, table.concat(H.errors, "\n"))
+    return
+end
+
 local first, viewport
 ui:Open()
 for frame = 1, 3000 do

@@ -104,14 +104,6 @@ assert(ui.renderModel.targetQuery.exact and ui.renderModel.rowCount == 1)
 ui:SetFilter("search", ""); level = 51
 ui:SetLevelingLevel(51); H.settle()
 assert(visible() > 0 and ui.renderModel.guideContext.level == 51)
-ui:SetTab("Home"); H.settle()
-assert(ui:GetViewKey() == "home" and ui.renderModel.targetQuery and ui.renderModel.rowCount > 0)
-local action
-for _, entry in ipairs(ui.renderModel.entries) do
-    if entry.kind == "action" and entry.activate then action = entry; break end
-end
-assert(action and action.detail and action.detail ~= ""); action.activate()
-assert(ui.selectedItemData and ui.selectedItemData.item_id)
 assert((rating.fullPoolRequests or 0) == 0 and (rating.unindexedSummaryRequests or 0) == 0)
 ''', setup)
 
@@ -261,27 +253,127 @@ local row = assert(bucket().rows[1])
 assert(row.targetVerdict.swap.replacements[1].state == "bank" and row.lookupReason)
 ''', setup)
 
-    def test_home_in_endgame_remembers_the_tab_and_opens_the_selected_route(self):
+    def test_retired_home_and_settings_preserve_workspace_and_saved_gear(self):
         self.lua_run(r'''
-level = 60; addon:RefreshTooltipPlayerContext()
+for _, mode in ipairs({"leveling","endgame"}) do
+    local char = addon:GetCharacterDB()
+    char.selection.mode, char.selection.tab, char.selectedTab = mode, "Home", "Home"
+    char.selection.phase, char.selectedPhase = "PR","PR"
+    char.selection.lastTabs = {endgame="Wishlist", leveling="Wishlist"}
+    char.foreverModeSelected, char.foreverLevelingMigrated = true,true
+    char.defaultsVersion = nil
+    char.wishlist["9479"] = {item_id=9479}
+    char.bankCache.links = {"item:6829"}
+    ui:GetFilters("Gear Guide").search = "Lightforge"
+    char = addon:GetCharacterDB()
+    assert(char.selection.tab == (mode == "leveling" and "Gear Guide" or "Upgrades"))
+    assert(char.selection.lastTabs[mode == "leveling" and "endgame" or "leveling"] == "Wishlist")
+    assert(char.wishlist["9479"].item_id == 9479 and char.bankCache.links[1] == "item:6829")
+    assert(ui:GetFilters("Gear Guide").search == "Lightforge")
+    for _,tab in ipairs(ui:GetActiveTabNames()) do assert(tab ~= "Home") end
+end
+local char = addon:GetCharacterDB()
+char.selection.mode, char.selection.phase, char.selection.tab = "endgame", "PR", "Wishlist"
+char.selectedPhase, char.selectedTab = "PR", "Wishlist"
+char.selection.lastTabs.leveling, char.defaultsVersion = "Home", nil
+char = addon:GetCharacterDB()
+assert(char.selection.tab == "Wishlist" and char.selection.lastTabs.leveling == "Gear Guide")
+ui:Open(); H.settle(); ui:SetTab("Wishlist"); H.settle()
+ui:OpenSettings(); H.settle()
+assert(ui:GetSelection().tab == "Settings" and addon:GetCharacterDB().selection.tab == "Wishlist")
+ui:ReturnFromSettings(); H.settle(); assert(ui:GetSelection().tab == "Wishlist")
+''')
+
+    def test_native_chrome_and_nested_comparison_returns(self):
+        for native, density, width, height in ((True, "compact", 900, 500), (True, "comfortable", 1020, 790),
+                                               (False, "comfortable", 1020, 790)):
+            with self.subTest(native=native, density=density, width=width):
+                self.lua_run(f'''
+H.noPortraitTemplate = {str(not native).lower()}
+UIParent:SetSize({width},{height})
+local window = addon:GetAccountDB().profile.window
+window.width,window.height,window.density = {width},{height},"{density}"
+''' + r'''
 ui:Open(); H.settle()
-ui:SetContentMode("endgame"); H.settle()
-assert(ui:GetSelection().tab ~= "Home")
-ui:SetTab("Home"); H.settle()
-local model = ui.renderModel
-assert(model.guideContext.phase == "PR" and model.rowCount > 0)
-for _, entry in ipairs(model.entries) do
-    if entry.activate and entry.kind == "action" then
-        entry.activate(); H.settle()
-        assert(ui.selectedItemData and ui.selectedItemData.name == entry.title)
-        break
+local frame = ui.frame
+if frame.TitleContainer then
+    assert(frame.TitleContainer.TitleText:GetText() == addon.displayName)
+    assert(frame.CloseButton:GetParent() == frame and frame.TitleContainer:GetScript("OnDragStart"))
+    assert(ui.settingsButton:GetTop() <= frame.TitleContainer:GetBottom())
+    assert(ui.classDropdown:GetTop() <= frame.PortraitContainer.portrait:GetBottom())
+else assert(ui.titleBar:GetScript("OnDragStart")) end
+ui:SetFilter("slots",{Head=true}); H.settle()
+ui.slotContextFrame.compareButton:Click(); H.settle()
+local comp = assert(ui.slotComparison)
+assert(ui.comparisonBackButton.label:GetText() == "Back to Gear Guide")
+ui:SetComparisonSort("item"); H.settle()
+local row = assert(comp.rows[1])
+ui:ShowComparisonDetails(row); H.settle()
+local scroll = math.min(50,ui.detailsScroll:GetVerticalScrollRange())
+ui.detailsScroll:SetVerticalScroll(scroll)
+ui.settingsButton:Click(); H.settle()
+assert(ui.settingsPanel:IsVisible() and not ui.details:IsVisible() and ui.settingsBackButton.label:GetText()=="Back to Details")
+assert(addon:GetCharacterDB().selection.lastTabs.leveling=="Gear Guide")
+ui.settingsBackButton:Click(); H.settle()
+assert(ui.slotComparison==comp and comp.sort=="item" and ui.selectedItemId==row.item_id and ui.details:IsVisible())
+assert(ui.detailsScroll:GetVerticalScroll()==scroll)
+ui.detailsBackButton:Click(); H.settle()
+assert(not comp.detailsOpen and ui.comparisonFrame:IsVisible())
+ui.tabButtons["Gear Guide"]:Click(); H.settle()
+assert(not ui.slotComparison and ui.contentRegion:IsVisible() and ui:GetFocusedBrowseSlot()=="Head")
+if frame.CloseButton then frame.CloseButton:Click(); assert(not frame:IsShown()) end
+''')
+
+    def test_item_details_and_endgame_back_restore_the_selected_row(self):
+        self.lua_run(r"""
+level = 60
+addon:SetContentMode("endgame"); addon:SetSelection("Paladin", "Retribution", "PR", "By Slot")
+ui:Open(); H.settle()
+assert(ui.renderModel and ui.renderModel.endgame and ui.renderModel.complete)
+local frame
+for _, row in ipairs(ui.activeRenderFrames) do if row.boundData then frame = row; break end end
+assert(frame and frame.iconButton.itemId == frame.boundData.item_id)
+local id, scroll = frame.boundData.item_id, ui.contentScroll:GetVerticalScroll()
+frame.iconButton:Click(); H.settle()
+assert(ui.details:IsVisible() and ui.detailsCompareButton:IsVisible() and ui.selectedItemId == id)
+ui.detailsCompareButton:Click(); H.settle()
+assert(ui.comparisonBackButton:IsVisible() and ui.comparisonBackButton.label:GetText() == "Back to Details")
+ui.comparisonBackButton:Click(); H.settle()
+assert(ui.details:IsVisible() and ui.selectedItemId == id and ui.contentScroll:GetVerticalScroll() == scroll)
+ui.tabButtons["By Slot"]:Click(); H.settle()
+assert(not ui.slotComparison and ui.contentRegion:IsVisible())
+ui:SetTab("Upgrades"); H.tick(); ui:SetTab("Wishlist"); H.settle()
+assert(ui:GetViewKey() == "wishlist" and not (ui.renderModel and ui.renderModel.endgame))
+ui:SetTab("Upgrades"); ui:SetFilter("search", "nosuchforeveritem"); H.settle()
+assert(ui.emptyLabel:IsVisible() and not ui.guideStage)
+ui:SetTab("Equipped"); H.settle()
+assert(ui:GetViewKey() == "myGear")
+ui.settingsButton:Click(); H.settle(); ui.settingsBackButton:Click(); H.settle()
+assert(ui:GetViewKey() == "myGear" and addon:GetCharacterDB().selection.tab == "Equipped")
+""")
+
+    def test_endgame_first_page_keeps_its_hovered_click_target_during_updates(self):
+        self.lua_run(r"""
+level = 60
+addon:SetContentMode("endgame"); addon:SetSelection("Paladin", "Retribution", "PR", "Upgrades")
+ui:Open()
+local pointed
+for i = 1, 12 do
+    H.now = H.now + 1/60; H.tick()
+    if ui.renderModel and ui.renderModel.endgame and not ui.renderModel.complete then
+        for _, row in ipairs(ui.activeRenderFrames) do if row.boundData then pointed = row; break end end
+        if pointed then pointed:SetHovered(true); break end
     end
 end
-assert(ui.selectedItemData and ui.selectedItemData.acquisition_display.option.source)
-ui:Close(); ui:Open(); H.settle(); assert(ui:GetViewKey() == "home")
-ui:SetContentMode("leveling"); H.settle(); assert(ui:GetViewKey() == "gearGuide")
-ui:SetContentMode("endgame"); H.settle(); assert(ui:GetViewKey() == "home")
-''')
+assert(pointed)
+local id, top, token = pointed.iconButton.itemId, pointed:GetTop(), pointed.bindToken
+H.settle()
+assert(ui.updateGuideButton:IsVisible() and ui.pendingGuideModel.complete)
+assert(pointed:IsVisible() and pointed.hovered and ui:IsCurrentRenderFrame(pointed))
+assert(pointed.iconButton.itemId == id and pointed:GetTop() == top and pointed.bindToken == token)
+pointed:SetHovered(false); ui.updateGuideButton:Click(); H.settle()
+assert(ui.renderModel.complete and not ui.updateGuideButton:IsShown())
+""")
 
     def test_saved_comparisons_survive_reload_and_change_with_the_bank(self):
         self.lua_run(r'''

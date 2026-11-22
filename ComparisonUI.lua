@@ -111,7 +111,7 @@ function UI:GetComparisonReferenceLabel(reference)
     return reference and ("Item " .. tostring(reference)) or "Empty slot"
 end
 
-function UI:OpenSlotComparison(data, mode, statRank)
+function UI:OpenSlotComparison(data, mode, statRank, returnTo)
     local physical = type(data) == "table" and data.slotKey
     if addon.ForeverGearRating and not physical and type(data) == "table" and (statRank or self:IsLevelingMode() or mode == "wishlist") then
         local item = addon.ForeverGearRating:GetRowItem(data)
@@ -137,7 +137,7 @@ function UI:OpenSlotComparison(data, mode, statRank)
     self:SetSlotPickerOpen(false)
     local selection = self:GetSelection()
     local origin = { scroll = self.contentScroll:GetVerticalScroll(), detailsScroll = self.detailsScroll:GetVerticalScroll(),
-        inspectorVisible = self:IsInspectorVisible(), mode = mode }
+        inspectorVisible = self:IsInspectorVisible(), label = returnTo or self:GetWorkspaceLabel() }
     for _, key in ipairs(SELECTION_FIELDS) do origin[key] = self[key] end
     local reference = (mode == "gear" or statRank) and physical and {slotKey = physical} or nil
     self.slotComparison = { slot = slot, class = selection.class, spec = selection.spec,
@@ -962,7 +962,8 @@ function UI:LayoutSlotComparison()
             .. addon:GetPhaseDisplayName(state.phase) .. " · " .. ownership
     end
     widgets:SetCellText(self.comparisonScope, scope, 1, 12, width)
-    self.comparisonBackButton.label:SetText(state.origin.mode == "gear" and "Back to My Gear" or "Back to results")
+    self.comparisonBackButton.label:SetText("Back to " .. state.origin.label)
+    self.comparisonBackButton:SetWidth(math.min(240, self.comparisonBackButton.label:GetStringWidth() + 24))
     self.comparisonScope:Show()
     self.comparisonReference:Refresh()
     self.comparisonPrev:SetShown(columns.pages > 1); self.comparisonNext:SetShown(columns.pages > 1)
@@ -1022,6 +1023,7 @@ end
 function UI:ApplySlotComparisonLayout()
     local state = self.slotComparison
     if not state or not self.comparisonFrameReady then return false end
+    if self.settingsSelection then return false end
     self.contentRegion:Hide()
     if self.filterDrawer then self.filterDrawer:Hide() end
     if self.fixedActiveFilterBar then self.fixedActiveFilterBar:Hide() end

@@ -3112,6 +3112,10 @@ local function buildLevelingRecommendationRow(index, recommendationRef)
         display_rank_label = levelLabel,
         display_rank_kind = "leveling",
         recommendation_summary = recommendationSummary,
+        -- These rows use the same canonical routes as the character comparison.
+        -- An entry with its own requirements must keep its own cache identity.
+        _access_cache_key = BigBiSList.isForever and item and (not entry.requirements or not next(entry.requirements))
+            and ("guide-item/" .. itemId) or nil,
         _access_context = {
             item = accessItem,
             requirements = entry.requirements,
@@ -6757,10 +6761,12 @@ function LEVELING_HELPERS.statGuideContext(addon, className, specName, phase, le
 end
 
 function LEVELING_HELPERS.attachPhasePlacements(addon, grouped, context)
+    local checkpoint = addon.ForeverGearRating:GetWorkCheckpoint()
     if not context then return end
     local rating = addon.ForeverGearRating
     for slot, group in pairs(grouped) do
         for _, row in ipairs(group.items) do
+            if checkpoint then checkpoint() end
             local key = row.variant_id or tostring(row.item_id)
             row.stat_rank, row.stat_identity = rating:GetGuideEntry(context, slot, key), key
             if row.stat_rank then row.item_link = row.item_link or row.stat_rank.item.variant_link end
@@ -6827,7 +6833,7 @@ function LEVELING_HELPERS.buildGuideCandidates(addon, index, grouped, context, s
         local picks = rating.GetBrowsePlacements and rating:GetBrowsePlacements(context, slot)
         local pool = picks and {slot = slot, rows = picks, upcoming = {}} or rating:GetGuidePlacement(context, slot)
         local preferred, rows = {}, {}
-        local choices = addon:GetStatRankGuideChoices(context, pool)
+        local choices = addon:GetStatRankGuideChoices(context, pool, checkpoint)
         for _, row in ipairs(grouped[slot] and grouped[slot].items or {}) do
             preferred[row.variant_id or tostring(row.item_id)] = row
         end
@@ -7092,6 +7098,7 @@ function BigBiSList:GetLevelingSourceGate(access)
 end
 
 function LEVELING_HELPERS.addPhaseGuideAlternatives(addon, index, grouped, context, filters)
+    local checkpoint = addon.ForeverGearRating:GetWorkCheckpoint()
     if context.phaseGuideIndex ~= index then
         context.phaseGuideCandidates = LEVELING_HELPERS.buildGuideCandidates(addon, index, {}, context)
         context.phaseGuideIndex = index
@@ -7101,6 +7108,7 @@ function LEVELING_HELPERS.addPhaseGuideAlternatives(addon, index, grouped, conte
         local seen = {}
         for _, row in ipairs(target.items) do seen[row.variant_id or tostring(row.item_id)] = true end
         for _, reference in ipairs(group.items) do
+            if checkpoint then checkpoint() end
             if not seen[reference.stat_identity] then
                 local candidate = {}
                 for key, value in pairs(reference) do candidate[key] = value end
@@ -7125,6 +7133,7 @@ function LEVELING_HELPERS.addPhaseGuideAlternatives(addon, index, grouped, conte
 end
 
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
+    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
     filters = FILTER_FACETS.progressionFilters(filters, phaseKey, className) or {}
     local index = self:GetDataIndex(phaseKey)
     local useRefs = index.useRefsByClassSpecPhase[className]
@@ -7137,6 +7146,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     local statGuide = self.isForever and LEVELING_HELPERS.statGuideContext(self, className, specName, phaseKey, 60, filters)
 
     for _, ref in ipairs(useRefs or {}) do
+        if checkpoint then checkpoint() end
         local use = buildUse(index, ref)
         local slotName = use.slot
         grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
@@ -7160,6 +7170,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     if filters.includeEarlier and phaseKey ~= "PR" then
         local seen = {}
         for _, ref in ipairs(index.useRefsByClassSpec[className] and index.useRefsByClassSpec[className][specName] or {}) do
+            if checkpoint then checkpoint() end
             local candidate = buildUse(index, ref)
             local slotName, itemId = candidate.slot, candidate.item_id
             local itemKey = tostring(itemId) .. "\031" .. slotName
@@ -7421,6 +7432,7 @@ function LEVELING_HELPERS.applyForeverPlannerComparison(rating, context, row, it
 end
 
 function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, context, filters)
+    local checkpoint = addon.ForeverGearRating and addon.ForeverGearRating:GetWorkCheckpoint()
     if not context then return end
     local rating = addon.ForeverGearRating
     local className, specName, phase = context.class, context.spec, context.phase
@@ -7431,6 +7443,7 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, contex
     for _, slot in ipairs(SLOT_ORDER) do
         local picks = rating.GetBrowsePlacements and rating:GetBrowsePlacements(guide, slot, context.ownedFacts)
         for _, placement in ipairs(picks or rating:GetGuidePlacement(guide, slot).rows) do
+            if checkpoint then checkpoint() end
             local item = placement.item
             local key = slot .. ":" .. item.key
             local held = context.ownedFacts[item.key]
@@ -7462,6 +7475,7 @@ function LEVELING_HELPERS.addReferencePlannerUpgrades(addon, rows, index, contex
 end
 
 function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filters)
+    local checkpoint = self.ForeverGearRating and self.ForeverGearRating:GetWorkCheckpoint()
     filters = FILTER_FACETS.progressionFilters(filters, selectedPhaseKey, className) or {}
     local index = self:GetDataIndex(selectedPhaseKey)
     local groups = {}
@@ -7480,6 +7494,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         or {}
 
     for _, ref in ipairs(useRefs) do
+        if checkpoint then checkpoint() end
         local use = buildUse(index, ref)
         if RECOMMENDATION.useFitsContext(self, use, selectedPhaseKey) then
             local itemId = use.item_id
@@ -7526,6 +7541,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
 
     local rows = {statsPending = personal and personal.pending}
     for _, group in pairs(groups) do
+        if checkpoint then checkpoint() end
         table.sort(group.uses, function(a, b)
             if a.phaseIndex ~= b.phaseIndex then
                 return a.phaseIndex < b.phaseIndex
@@ -7574,7 +7590,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
     end
 
     LEVELING_HELPERS.addReferencePlannerUpgrades(self, rows, index, personal, filters)
-    table.sort(rows, function(a, b)
+    local function sortPlannerRows(a, b)
         if a.reference_upgrade ~= b.reference_upgrade then
             return a.reference_upgrade == true
         end
@@ -7584,8 +7600,16 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         if slotIndex(a.slot) ~= slotIndex(b.slot) then
             return slotIndex(a.slot) < slotIndex(b.slot)
         end
-        return lower(a.name) < lower(b.name)
-    end)
+        local aName, bName = lower(a.name), lower(b.name)
+        if aName ~= bName then return aName < bName end
+        return tostring(a.variant_id or a.item_id) < tostring(b.variant_id or b.item_id)
+    end
+    if checkpoint then
+        local ordered = rating:SortInWork(rows, sortPlannerRows, checkpoint)
+        ordered.statsPending = rows.statsPending
+        return ordered
+    end
+    table.sort(rows, sortPlannerRows)
 
     return rows
 end

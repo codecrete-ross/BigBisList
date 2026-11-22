@@ -1073,7 +1073,15 @@ assert(addon:GetItemBestLevelingUseForSpec(72,"Warrior","Arms",14))
 assert(#addon:GetLevelingTooltipMatches(72,"Warrior","Arms",14,true)>0)
 side="Horde"
 rows=fixtureRings()
-assert(#rows==3)
+assert(#rows == 1 and rows[1].item_id == 73, "core page must show the strongest Horde quest ring")
+local rating = addon.ForeverGearRating
+local context = rating:GetGuideContext("Warrior","Arms","LEVELING",14,"Orc","Horde")
+local pool = rating:GetGuidePlacement(context,"Ring")
+for rank, id in ipairs({73,74,75}) do
+    assert(pool.rows[rank].item.id == id, "full Horde ring ranking")
+    assert(addon:GetItemBestLevelingUseForSpec(id,"Warrior","Arms",14))
+    assert(#addon:GetLevelingTooltipMatches(id,"Warrior","Arms",14,true) > 0, "reviewed ring tooltip")
+end
 for _,row in ipairs(rows) do assert(row.item_id>=73) end
 assert(#addon:GetLevelingTooltipMatches(72,"Warrior","Arms",14,true)==0)
 assert(#H.errors==0,table.concat(H.errors,"\n"))

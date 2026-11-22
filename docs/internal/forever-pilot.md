@@ -2,14 +2,25 @@
 
 This document records the level-60 Pre-Raid review and Forever client checks.
 On build `1.60.1.70959`, the reviewed Pre-Raid dataset covers all 28 profiles.
-The local prerelease can carry uncovered leveling slots. Standard deployment
-and public release require both strict coverage audits. See the
+The 0.15.x release gate permits only the remaining reviewed leveling gaps.
+Strict scoring and Pre-Raid coverage apply to every release. See the
 [leveling implementation and intake record](forever-leveling.md) and the
 [release process](release-process.md).
 
 The original pilot covered Warrior Protection and Arms, Shaman Restoration,
 and Hunter Marksmanship. Source review now covers nine classes. The user-run
 live acceptance record remains pending.
+
+## 0.15.0 release plan
+
+| Milestone | Evidence and remaining work |
+| --- | --- |
+| Home and navigation | Home has been retired in both modes. Offline tests cover save migration, native and fallback chrome, Settings over comparison Details, and returning to the selected item or workspace. |
+| Endgame response | Compare full Protection and Retribution results with the original synchronous calculations. Measure the complete first viewport within three simulated 60 Hz frames and peak addon work within 4 ms. Record client timings separately. |
+| Gearing evidence | Release coverage compares the 3,448 reviewed early-level cells and 242 unresolved candidates with the fixed review commit. Strict scoring and Pre-Raid checks remain required. |
+| Client acceptance | Install the packaged candidate and record its digest, target build, cold and warm performance, title bar, return paths and gameplay checks in the release PR. Acceptance belongs to the player. |
+| Publication | Merge the checked integration PR, dispatch one read-only hosted refresh from untagged main, review its evidence in release preparation and repeat client acceptance if the digest changes. Run the clean merged Forever full-data gate before the regular GitHub and CurseForge release. Verify the actual public Forever file. |
+| Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
 
 ## Collect and review
 
@@ -143,14 +154,14 @@ choices, alternate routes, and random rolls. Dungeon filters and partial search
 use the same rules. Exact item inspection includes the comparison and any
 reason for exclusion.
 
-The same per-character evidence drives the Guide, My Gear, Home, hovers, and
+The same per-character evidence drives the Guide, My Gear, hovers, and
 loot badges. Gear Guide and Upgrades name destinations, BiS List labels guide
 rank, My Gear gives the selected slot a next action, Wishlist shows the route
 and ownership, Compare Slot names its reference, and Details leads with the
 reason and the route. Use native item quality colors, Blizzard controls, and a
 word or icon with each decision. Compact hovers put the active spec first and
 give one supported reason per spec. Alt exposes the named comparison and the
-rank, score, and effect assumptions. Home remains experimental in both modes.
+rank, score, and effect assumptions.
 Leveling opens to Gear Guide and endgame opens to Upgrades on a fresh save.
 Subsequent opens honor the remembered tab.
 
@@ -196,15 +207,16 @@ Update list after a real inventory change. The peak frame in `/bbltest perf`
 includes the work that last contributed to it. A cold hover gives the active
 spec first and can finish the other specs while the same item is under the
 pointer.
-For the Home experiment, use the same outfit and spec in Home and the usual
-tab. Time how long it takes to identify the next item to equip or the next
-boss or quest to visit. Record the chosen item and destination in each view.
+Check that the native title, portrait, Close, Settings, and class selector are visible and clickable.
+Open Compare slot from Gear Guide, inspect an item, visit Settings, and return through the same
+item and slot to the original filtered list. Also check the first Endgame Upgrades and BiS List pages.
+
 ### Offline timing replay
 
 Run `lua5.1 tests/forever_guide_timing.lua 71037 full Protection comfortable`
 from the repository root. The other choices are build `70959`, payload
 `core`, spec `Retribution`, and density `compact`. Append `details` to
-exercise the route click at 900 × 500. Each process loads the Forever manifest
+exercise the route click at 900 × 500. Append `wide endgame` or `details endgame` after the density to replay level-60 Upgrades and BiS List, including final row order, routes, and ownership. Each process loads the Forever manifest
 and dispatches the addon and player login events on a fresh save. The replay
 checks the complete clickable viewport, watches 900 stationary frames,
 sends duplicate events, reopens the Guide, hovers an item and opens its route.
@@ -461,7 +473,7 @@ normalized evidence, and never approve items or ranks. Limits are 8 MiB per inpu
 captures before starting collection on a new build; the recorder preserves them
 instead of silently resetting the saved table.
 
-## Verification status
+## Earlier verification milestones
 
 At the initial implementation milestone, all 580 tests passed without skips after restoring declared dependencies,
 including Pillow. The safe importer, opt-in recorder, attribution rendering,

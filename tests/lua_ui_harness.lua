@@ -185,6 +185,24 @@ function H.fireEvent(event, ...)
 end
 CreateFrame = function(kind, name, parent, template)
     local node = make(kind, name, parent)
+    if template == "PortraitFrameTemplate" then
+        if H.noPortraitTemplate then error("PortraitFrameTemplate unavailable") end
+        local title = make("Frame", nil, node)
+        title:SetFrameLevel(510); title:SetHeight(20)
+        title:SetPoint("TOPLEFT", node, "TOPLEFT", 58, -1); title:SetPoint("TOPRIGHT", node, "TOPRIGHT", -24, -1)
+        title.TitleText = title:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        title.TitleText:SetPoint("TOP", title, "TOP", 0, -5)
+        node.TitleContainer = title
+        function node:SetTitle(text) self.TitleContainer.TitleText:SetText(text) end
+        node.PortraitContainer = make("Frame", nil, node)
+        node.PortraitContainer:SetFrameLevel(400)
+        local portrait = node.PortraitContainer:CreateTexture(nil, "OVERLAY")
+        portrait:SetSize(62, 62); portrait:SetPoint("TOPLEFT", node, "TOPLEFT", -5, 7)
+        node.PortraitContainer.portrait = portrait
+        node.CloseButton = make("Button", nil, node)
+        node.CloseButton:SetSize(24, 24); node.CloseButton:SetPoint("TOPRIGHT", node, "TOPRIGHT")
+        node.CloseButton:SetScript("OnClick", function() node:Hide() end)
+    end
     if template and template:find("UICheckButtonTemplate", 1, true) then
         node:SetNormalTexture("Check-Normal")
         node:SetPushedTexture("Check-Pressed")

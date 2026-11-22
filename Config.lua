@@ -79,20 +79,18 @@ local MODE_DEFAULT_TABS = {
 
 local MODE_TABS = {
     endgame = {
-        Home = BigBiSList.isForever,
         Upgrades = true,
         ["By Slot"] = true,
         Equipped = true,
         Enhance = not BigBiSList.isForever,
         Wishlist = true,
-        Settings = true,
+        Settings = not BigBiSList.isForever,
     },
     leveling = {
-        Home = BigBiSList.isForever,
         ["Gear Guide"] = true,
         Equipped = true,
         Wishlist = true,
-        Settings = true,
+        Settings = not BigBiSList.isForever,
     },
 }
 
@@ -356,6 +354,8 @@ local function normalizeContentModeState(char)
     local legacyLevelingPhase = selection.phase == LEVELING_PHASE_KEY or char.selectedPhase == LEVELING_PHASE_KEY
     local mode = normalizeContentMode(legacyLevelingPhase and "leveling" or selection.mode)
     local activeTab = normalizeTabName(selection.tab or char.selectedTab)
+
+    if BigBiSList.isForever and activeTab == "Home" then activeTab = MODE_DEFAULT_TABS[mode] end
 
     if type(selection.lastTabs) ~= "table" then
         selection.lastTabs = {}
@@ -1312,6 +1312,7 @@ function BigBiSList:EnsureDatabase()
         -- Retire the saved state for Builds and activity-specific rankings.
         characterDB.trackedBuilds = nil
         characterDB.viewState.builds = nil
+        characterDB.viewState.home = nil
         characterDB.foreverScenarios = nil
         if not charPreviousVersion or charPreviousVersion < 19 then
             local guide, bis = characterDB.viewState.gearGuide, characterDB.viewState.bisList

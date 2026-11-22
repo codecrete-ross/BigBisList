@@ -4,7 +4,7 @@ Big BiS List is an in-game gearing companion for World of Warcraft. It shows
 gear recommendations, acquisition details, item tooltip matches, ownership,
 and a priority planner.
 
-The `0.15.0` release candidate includes TBC Anniversary (interface `20506`)
+The `0.15.0` public prerelease includes TBC Anniversary (interface `20506`)
 and WoW Forever (interface `16001`). Forever is available as a local prerelease
 while leveling coverage review and in-game acceptance are pending.
 
