@@ -136,11 +136,19 @@ The explicit local Forever prerelease command
 leveling combinations. It checks leveling for validation errors, requires strict
 pre-raid coverage, and verifies generated and installed files. Both Forever
 deployment paths require the scoring audit to pass for all supported Leveling
-bands and Pre-Raid. Public publishing requires both strict audits and
+bands and Pre-Raid. Public publishing runs both audits and the version-scoped leveling check below. It also requires
 `data/canonical/forever/live_acceptance.json` to pass
 `python tools/scrape_wowhead.py live-acceptance-audit --flavor forever`;
 the authoritative `-FullData` gate runs that audit itself.
 [Scoring audit](forever-scoring.md#verification-and-rollout)
+
+For 0.15.x only, the full gate compares outstanding leveling cells and their unresolved item IDs
+with the reviewed integration commit `5693519f0e32cd5090ba08b2b2325f5544b82e31`.
+It also checks each candidate’s evidence digest, outstanding facts, disclosure, and route evidence.
+A patch must additionally fit the previous numeric tag’s remaining gaps. This permits
+resolved cases to drop out while blocking new or reopened cases, stale approvals, and
+scoring or Pre-Raid failures. Retain the integration history when merging the release PR.
+The ordinary strict coverage command continues reporting every unresolved cell.
 
 Record `status: accepted`, the tester, date, client build, supporting evidence
 URL, reason, and `artifact_digest`. Obtain the digest from
@@ -197,40 +205,43 @@ publishing or correction step.
 
 ## Weekly Forever data releases
 
-The **Forever weekly data** workflow runs Wednesdays at 9:25 a.m. Pacific
-on `main`. Use its manual dry run to collect and verify from the current
-remote `main` without opening a PR or publishing. `compare_build` stages a
-different client's evidence separately. Request checkpoints and verified
-snapshots are restored from a prior run and retained for 30 days.
+A fresh **Weekly Forever data refresh** chat runs in the BigBisList workspace every Wednesday
+at 9:25 a.m. Pacific using Sol 6.2 with Max reasoning. The chat dispatches the read-only
+**Forever weekly data** workflow on main and follows the run to completion. GitHub retains
+request checkpoints and the **forever-weekly-report** artifact for 30 days. A manual dispatch
+runs the same intake. The optional comparison build stages its evidence separately.
 
-The job creates a disposable worktree from `origin/main`. It applies only
-complete evidence that passes the existing review rules, then imports and
-generates the Forever payload there. Conflicts and stale or missing approvals
-stay in the report. Each applicable patch goes through a data-only PR with the
-existing required GitHub checks. After merge the job checks the entire diff
-since the previous published tag and reruns `-FullData` on the exact clean
-commit before publishing. A tag that already points at that commit can resume
-the GitHub release. The `release_commit` dispatch input accepts the merged
-PR's full SHA for recovery.
+The initial hosted run can emit a verified patch before a published Forever baseline exists.
+For the first release, apply verified changes in the release-preparation PR. Repeat gameplay
+acceptance when the packaged digest changes. Once that release is accepted and published,
+set the repository variables `FOREVER_LIVE_BASELINE_TAG=0.15.0` and
+`FOREVER_DATA_AUTO_RELEASE=true`. Keep the required release check and auto-merge enabled.
 
-Merge the workflow separately from data PRs. The first Forever release uses
-artifact-specific gameplay acceptance and both strict audits. After publishing
-that release, configure the following repository settings:
+For later data patches, fetch main and tags into an isolated checkout. Download the hosted
+**forever-weekly-report** into a run directory and **forever-refresh-state** into its `cache`
+subdirectory. For a **ready** report, use the commands below with the authenticated workspace
+GitHub CLI account. The transfer checks the bundle's parent, tree, and commit against the receipt.
+The submit step checks the entire data delta, opens or reuses the PR, and enables checked
+auto-merge. Wait for the PR to merge and obtain its actual merge SHA for verification.
 
-- `FOREVER_LIVE_BASELINE_TAG` names the published tag with genuine live
-  acceptance for the current client build.
-- `FOREVER_RELEASE_APP_CLIENT_ID` and `FOREVER_RELEASE_BOT_LOGIN` identify
-  the GitHub App and its bot. Install the App only in this repository with
-  Contents and Pull requests write permissions. Store its private key in
-  `FOREVER_RELEASE_APP_PRIVATE_KEY`.
-- Enable GitHub auto-merge and require the release check on data PRs. Set
-  `FOREVER_DATA_AUTO_RELEASE` to `true` after a successful workflow dry run.
+```powershell
+python -m tools.forever_weekly restore --state-dir $state
+python -m tools.forever_weekly submit --state-dir $state --baseline-tag $baseline
+python -m tools.forever_weekly verify-merge --state-dir $state --baseline-tag $baseline --commit $mergeSha --pr-number $prNumber
+python -m tools.forever_weekly publish --state-dir $state --baseline-tag $baseline
+```
+
+Inspect the hosted tag check and the public CurseForge file. An unchanged run keeps its version.
+Blocked runs retain the report and independently verified equipment evidence where available.
+If a run stops after merge or tag push, resume verification and publication on the original merge
+SHA. The publisher checks an existing tag and its release notes before resuming.
 
 The same live-tested baseline covers data-only patches for the same client
 build, manifest, runtime, assets, eligibility rules, and scoring configuration.
 Records of live tests stay with the baseline tag. The `-BaselineTag` gate
 verifies each changed data artifact and records scripted acceptance separately.
-Record a fresh live baseline when the client build, runtime, or rules change.
+The target client and the leveling and Guide source builds are recorded independently in
+`data/canonical/forever/reviewed_builds.json`. Record a fresh live baseline when the target client, runtime, or rules change.
 
 ## Convention References
 

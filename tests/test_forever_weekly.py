@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from tools import forever, forever_release as release, forever_weekly as weekly
+from tools import forever, forever_prerelease as gaps, forever_release as release, forever_weekly as weekly
 
 
 class WeeklyReleaseTests(unittest.TestCase):
@@ -24,10 +24,15 @@ class WeeklyReleaseTests(unittest.TestCase):
         self.write(release.GUIDE_PAYLOAD, "return {}\n")
         self.write("GuideRanksForever.lua", "return {}\n")
         self.write("assets/icon.tga", "icon\n")
-        self.write(release.CANONICAL + "leveling_rules.json", json.dumps({"review": {"client_build": "1.60.1.70959"}}))
+        self.write(release.CANONICAL + "leveling_rules.json", json.dumps({"review": {"client_build": "1.60.1.70938"}}))
+        self.write(release.CANONICAL + "reviewed_builds.json", json.dumps({
+            "target_client": "1.60.1.71037", "leveling_sources": "1.60.1.70938", "guide_sources": "1.60.1.70959",
+        }))
+        for name in ("guide_equipment", "scoring_model", "effect_benchmarks"):
+            self.write(release.CANONICAL + name + ".json", json.dumps({"client_build": "1.60.1.70959"}))
         self.write(release.LIVE_ACCEPTANCE, json.dumps({
             "status": "accepted", "reviewer": "Tester", "reviewed_at": "2026-11-17",
-            "client_build": "1.60.1.70959", "reason": "Gameplay checks", "source_url": "https://example.com/evidence",
+            "client_build": "1.60.1.71037", "reason": "Gameplay checks", "source_url": "https://example.com/evidence",
             "artifact_digest": forever.artifact_digest(lambda name: (self.root / name).read_bytes()),
             "checks": dict.fromkeys(forever.LIVE_ACCEPTANCE_CHECKS, True),
             "performance": {"startup_ms": 12, "first_open_ms": 17},
@@ -118,6 +123,20 @@ class WeeklyReleaseTests(unittest.TestCase):
                 self.assertFalse(release.baseline_acceptance("0.15.0", root=self.root, revision=changed)["ok"])
                 self.assertTrue(release.baseline_acceptance("0.15.0", root=self.root, revision=candidate)["ok"])
 
+    def test_guide_only_patch_and_effect_policy(self):
+        self.data_patch()
+        self.write(release.PAYLOAD, release.blob(self.root, self.base, release.PAYLOAD).decode())
+        candidate = self.commit("Guide-only data")
+        self.assertIn(release.GUIDE_PAYLOAD, release.verify_patch(self.root, self.base, candidate, "0.15.0", "0.15.1"))
+        self.write(release.CANONICAL + "effect_benchmarks.json", '{"client_build":"1.60.1.70959","rules":[]}')
+        changed = self.commit("Different benchmark")
+        with self.assertRaisesRegex(ValueError, "effect_benchmarks"):
+            release.verify_patch(self.root, self.base, changed, "0.15.0", "0.15.1")
+
+    def test_app_author_alias_does_not_match_a_human_login(self):
+        self.assertEqual(weekly.author_login("app/updates"), "updates[bot]")
+        self.assertNotEqual(weekly.author_login("updates"), "updates[bot]")
+
     def test_non_version_config_edit_cannot_pass_scope_check(self):
         self.data_patch()
         self.write("Config.lua", 'version = "0.15.1"\nconfig = {}\n')
@@ -145,12 +164,106 @@ class WeeklyReleaseTests(unittest.TestCase):
 
         with (patch.object(weekly, "apply_snapshots", return_value=1) as apply,
               patch.object(weekly, "command", side_effect=build)):
-            result = weekly.prepare_equipment_patch(candidate, state, state, report, state / "test.log")
+            result = weekly.prepare_evidence_patch(candidate, state, state, report, state / "test.log", equipment_only=True)
         apply.assert_called_once_with(report, state, report["build"], equipment_only=True)
         patch_text = (state / result["equipment_patch"]).read_text(encoding="utf-8")
         self.assertIn(release.PAYLOAD, patch_text)
         self.assertIn(release.GUIDE_PAYLOAD, patch_text)
         self.assertEqual(release.git(candidate, "diff", "--cached").strip(), b"")
+
+    def test_baseline_free_dry_run_reports_changed_unchanged_and_conflicted_intake(self):
+        state = self.root / ".git" / "staged"
+        cache = state / "cache"
+        cache.mkdir(parents=True)
+        report = {"build": "1.60.1.70938", "http_attempts": 4, "new_snapshot_count": 1,
+                  "uncovered_combinations": 0, "staged_snapshots": [{"file": "changed.json"}]}
+
+        def run(updated, evidence=None):
+            weekly.json_file(cache / "report.json", updated)
+            with (patch.object(weekly, "fetch_main", return_value=self.base),
+                  patch.object(weekly, "command", return_value=json.dumps(evidence or {}).encode()) as command,
+                  patch.object(weekly, "submit") as submit):
+                result = weekly.prepare(self.root, state, "", "2026-11-21", online=True, comparison=None)
+            submit.assert_not_called()
+            commands = [call.args for call in command.call_args_list]
+            self.assertTrue(all("gh" not in args and "push" not in args for args in commands))
+            return result, commands
+
+        result, calls = run(report, {"verified_patch": "verified.patch", "verified_snapshots": 1})
+        self.assertEqual((result["status"], result["verified_patch"]), ("review", "verified.patch"))
+        self.assertIn("--write-patch", calls[-1])
+        self.assertNotIn("--equipment-only", calls[-1])
+        result, calls = run({**report, "staged_snapshots": []})
+        self.assertEqual((result["status"], len(calls)), ("unchanged", 1))
+        result, calls = run({**report, "conflicts": {"8": "Changed source facts"}})
+        self.assertEqual((result["status"], len(calls)), ("blocked", 1))
+
+    def test_hosted_bundle_restores_only_the_verified_commit(self):
+        sha = self.data_patch()
+        tree = weekly.git_text(self.root, "rev-parse", sha + "^{tree}")
+        state = self.root / ".git" / "artifact"
+        state.mkdir()
+        receipt = {"status": "ready", "commit": sha, "tree": tree, "base": self.base}
+        weekly.json_file(state / "weekly.json", receipt)
+        weekly.transfer_candidate(self.root, state, restore=False)
+        copy = weekly.checkout(self.root, state, self.base)
+        weekly.transfer_candidate(copy, state, restore=True)
+        self.assertEqual(release.commit_id(copy, "FETCH_HEAD"), sha)
+        weekly.json_file(state / "weekly.json", {**receipt, "commit": self.base})
+        with self.assertRaisesRegex(ValueError, "checked commit"):
+            weekly.transfer_candidate(copy, state, restore=True)
+
+    def test_interrupted_branch_push_resumes_and_checks_the_workspace_author(self):
+        candidate = self.data_patch()
+        remote = self.root / ".git" / "remote.git"
+        release.git(self.root, "init", "--bare", str(remote))
+        release.git(self.root, "remote", "add", "origin", str(remote))
+        tree = weekly.git_text(self.root, "rev-parse", candidate + "^{tree}")
+        branch = weekly.DATA_BRANCH + "0.15.1-" + tree[:12]
+        release.git(self.root, "push", "origin", self.base + ":refs/heads/main", candidate + ":refs/heads/" + branch)
+        state = self.root / ".git" / "state"
+        state.mkdir()
+        doc = {**weekly.validate_candidate(self.root, candidate, "0.15.0"), "base": self.base, "status": "ready"}
+        weekly.json_file(state / "weekly.json", doc)
+        pull = {"headRefName": branch, "headRefOid": candidate, "number": 3, "url": "review/3",
+                "isCrossRepository": False, "author": {"login": "workspace-user"}}
+        for existing in (None, pull, {**pull, "author": {"login": "another-user"}}):
+            with (patch.object(weekly, "published", return_value={"isDraft": False}),
+                  patch.object(weekly, "gh_json", side_effect=([[], pull] if existing is None else [[existing]])),
+                  patch.object(weekly, "command") as command):
+                if existing and existing["author"]["login"] == "another-user":
+                    with self.assertRaisesRegex(ValueError, "another author"):
+                        weekly.submit(self.root, state, "0.15.0", "2026-11-21", "workspace-user")
+                    command.assert_not_called()
+                    continue
+                result = weekly.submit(self.root, state, "0.15.0", "2026-11-21", "workspace-user")
+                self.assertEqual(result["status"], "submitted")
+                self.assertIn("--match-head-commit", command.call_args.args)
+                self.assertEqual(command.call_args.args[-1], candidate)
+
+    def test_leveling_exception_follows_exact_cells_evidence_and_previous_release(self):
+        row = {"class": "Paladin", "spec": "Holy", "race_id": 1, "faction": "Alliance", "slot": "Ring",
+               "level_min": 1, "level_max": 2, "status": "unreviewed_availability", "items": [42]}
+        pending = {"item_id": 42, "status": "missing_tooltip", "candidate_digest": "original", "missing_fact": "level"}
+        baseline = gaps.cells([row]), gaps.reasons([pending])
+        resolved = {**row, "level_max": 1}
+        previous = gaps.cells([resolved]), gaps.reasons([pending])
+        base_summary = {"reviewed_rules": True, "availability_inventory_complete": True, "review_issues": 0,
+                        "pending_ranking_combinations": 0, "availability_pending_candidates": 1}
+        with (patch.object(gaps, "recorded", side_effect=lambda root, ref: previous if ref == "last" else baseline),
+              patch.object(release, "tag_commit", return_value="last")):
+            def evaluate(current, candidate=pending, version="0.15.0", **extra):
+                summary = {**base_summary, "uncovered_combinations": len(gaps.cells([current])), **extra}
+                return gaps.evaluate(version, [current], [candidate], summary)["ok"]
+
+            self.assertTrue(evaluate(row))
+            self.assertTrue(evaluate(resolved, version="0.15.1"))
+            self.assertFalse(evaluate(row, version="0.15.1"))
+            self.assertFalse(evaluate({**row, "race_id": 3}))
+            self.assertFalse(evaluate({**row, "items": [24]}))
+            self.assertFalse(evaluate(row, {**pending, "candidate_digest": "replacement"}))
+            self.assertFalse(evaluate(row, review_issues=1))
+            self.assertFalse(evaluate(row, version="0.16.0"))
 
     def test_existing_mismatched_tag_is_never_replaced(self):
         candidate = self.data_patch()

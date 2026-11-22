@@ -456,7 +456,7 @@ try {
     if ($FullData -and $Flavor -eq "forever") {
         Invoke-CheckedCommand -Label "Forever equipment corpus fidelity" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "item_corpus", "--summary", "--strict")
         Invoke-CheckedCommand -Label "Forever Guide index reproducibility" -Executable $python -Arguments @("-m", "tools.forever_guide_index", "--verify", "--lua", $luaRuntime)
-        Invoke-CheckedCommand -Label "Forever leveling coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "leveling", "--summary", "--strict")
+        Invoke-CheckedCommand -Label "Forever leveling coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--flavor", "forever", "--family", "leveling", "--summary", "--strict", "--release-version", $Version)
         Invoke-CheckedCommand -Label "Forever scoring verification" -Executable $python -Arguments @("tools/scrape_wowhead.py", "scoring-audit", "--flavor", "forever", "--strict", "--lua", $luaRuntime)
         $acceptanceArgs = @("tools/scrape_wowhead.py", "live-acceptance-audit", "--flavor", "forever")
         if ($BaselineTag) {

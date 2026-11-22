@@ -156,7 +156,7 @@ def exact_facts(snapshot: dict) -> dict:
 
 class AvailabilityRefresh:
     def __init__(self, http: RefreshHTTP, registered: set[str], baseline: dict, candidate_audit: dict, summary: dict, ledger: dict,
-                 *, review_issues=(), comparison_build: str | None = None, equipment_catalog: dict | None = None,
+                 *, review_issues=(), gaps=(), comparison_build: str | None = None, equipment_catalog: dict | None = None,
                  equipment_only: bool = False, equipment_revision: str | None = None):
         self.http = http
         self.registered = {sources.canonical_url(url) for url in registered}
@@ -169,6 +169,7 @@ class AvailabilityRefresh:
         self.audit = candidate_audit
         self.summary = summary
         self.review_issues = list(review_issues)
+        self.gap_rows = list(gaps)
         self.open = {row["item_id"]: row for row in candidate_audit["candidate_reviews"] if pending(row)}
         self.known = {row["item_id"] for row in candidate_audit["candidate_reviews"]}
         self.ledger = {sources.canonical_url(row["url"]): row for row in ledger["entries"]}
@@ -832,7 +833,7 @@ class AvailabilityRefresh:
 
     def audit_overlay(self, changes: dict | None = None) -> dict:
         def compact(rows):
-            fields = ("item_id", "name", "status", "missing_fact", "next_evidence_trigger", "affected",
+            fields = ("item_id", "name", "candidate_digest", "status", "missing_fact", "next_evidence_trigger", "affected",
                       "disclosure_observations", "route_leads", "pending_facts", "tooltip_urls")
             return [{key: row[key] for key in fields if key in row} for row in rows if pending(row)]
 
@@ -847,7 +848,7 @@ class AvailabilityRefresh:
                 and not any(key in routes or (key[0] == "item" and key[1] in relevant) for key in changes)
                 and all(url not in self.registered and row.get("page_type") == "observations"
                         for url, row in availability_staged.items())):
-            return {"summary": self.summary, "unresolved": compact(self.open.values()),
+            return {"summary": self.summary, "unresolved": compact(self.open.values()), "gap_rows": self.gap_rows,
                     "review_issues": {"leveling": self.review_issues, "pre_raid": []},
                     "errors": [], "conflicts": {}, "inventory_ids": sorted(self.known), "audit_reused": True}
 
@@ -886,7 +887,8 @@ class AvailabilityRefresh:
                 conflicts.setdefault(str(row["item_id"]), {})["equip_levels"] = {str(level): sorted(urls) for level, urls in sorted(levels.items())}
         pre_raid = forever.gaps(snapshots)
         review_issues = {"leveling": coverage["review_issues"], "pre_raid": pre_raid["review_issues"]}
-        result = {"summary": coverage["summary"], "unresolved": compact(inventory["candidate_reviews"]),
+        from tools.forever_prerelease import gap_rows
+        result = {"summary": coverage["summary"], "gap_rows": gap_rows(coverage["rows"]), "unresolved": compact(inventory["candidate_reviews"]),
                   "review_issues": review_issues, "errors": coverage["errors"], "conflicts": conflicts,
                   "inventory_ids": [row["item_id"] for row in inventory["candidate_reviews"]]}
         write_json(audit_cache, {"fingerprint": fingerprint, "result": result})
@@ -988,6 +990,7 @@ class AvailabilityRefresh:
                 "candidate_ids_before": len(self.open), "availability_ranges_before": len(self.summary["availability_review_ranges"]),
                 "availability_ranges_after": diagnostic["summary"]["availability_review_ranges"],
                 "candidate_ids_after": len(open_ids), "uncovered_combinations": diagnostic["summary"].get("uncovered_combinations", 0),
+                "gap_rows": diagnostic.get("gap_rows", []), "leveling_summary": diagnostic["summary"],
                 "audit_reused": diagnostic["audit_reused"], "new_snapshot_count": sum(
                     url not in self.previous_staged or snapshot_content(snapshot) != snapshot_content(self.previous_staged[url])
                     for url, snapshot in self.staged.items()),
@@ -1046,7 +1049,7 @@ def compact_intake(directory: Path) -> dict:
     path = directory / "intake.json"
     if path.is_file():
         previous = load_json(path)
-        if previous.get("key") == key:
+        if previous.get("key") == key and "gap_rows" in previous:
             return previous
     candidate = dataset_json("forever", "leveling_candidate_audit")
     target = dataset_json("forever", "leveling_rules")["review"]["client_build"]
@@ -1054,7 +1057,8 @@ def compact_intake(directory: Path) -> dict:
         raise ValueError("Refresh needs the candidate audit for the reviewed Forever build")
     audit = dataset_json("forever", "leveling_audit")
     ledger = load_json(FOREVER_CANONICAL_DIR / "retry_ledger.json")
-    result = {"key": key, "build": target, "summary": audit["summary"], "review_issues": audit["review_issues"],
+    from tools.forever_prerelease import gap_rows
+    result = {"key": key, "build": target, "summary": audit["summary"], "gap_rows": gap_rows(audit["rows"]), "review_issues": audit["review_issues"],
               "candidate_audit": {"client_build": target, "candidate_reviews": [
                   row if pending(row) else {"item_id": row["item_id"], "status": row["status"]}
                   for row in candidate["candidate_reviews"]]},
@@ -1115,7 +1119,7 @@ def refresh_availability(*, online: bool, directory: Path = REFRESH_DIR, compari
             http.state.update(reviewed_build=target_build, snapshots={}, collections={})
             http.checkpoint()
         refresh = AvailabilityRefresh(http, registered, snapshots, intake["candidate_audit"], intake["summary"],
-                                      intake["ledger"], review_issues=intake["review_issues"],
+                                      intake["ledger"], review_issues=intake["review_issues"], gaps=intake["gap_rows"],
                                       comparison_build=comparison_build,
                                       equipment_catalog=dataset_json("forever", "guide_equipment"),
                                       equipment_only=equipment_only, equipment_revision=equipment_revision)

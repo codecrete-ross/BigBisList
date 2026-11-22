@@ -22,7 +22,7 @@ DATA_PREFIXES = (CANONICAL, "data/raw/forever/", "data/raw/wowhead/forever/")
 METADATA = {"CHANGELOG.md", "Config.lua", "README.md", "RELEASE_NOTES.md"}
 POLICY = {CANONICAL + name + ".json" for name in (
     "classes", "phases", "leveling_rules", "leveling_scoring_profiles", "racial_modifiers",
-    "scoring_model", "scoring_profiles", "reviewed_builds",
+    "scoring_model", "scoring_profiles", "reviewed_builds", "effect_benchmarks",
 )} | {LIVE_ACCEPTANCE}
 
 
@@ -94,7 +94,7 @@ def verify_patch(root: Path, before: str, after: str, previous: str, version: st
     forbidden = sorted(path for path in forbidden if not allowed_data(path))
     if forbidden:
         raise ValueError(f"Changes outside the Forever data release scope: {', '.join(forbidden[:5])}")
-    if not {PAYLOAD, "CHANGELOG.md", "RELEASE_NOTES.md"} <= changes:
+    if not (PAYLOADS & changes) or not {"CHANGELOG.md", "RELEASE_NOTES.md"} <= changes:
         raise ValueError("The patch needs changed player data and its release notes")
     entries = git(root, "ls-tree", "-r", "-z", after, "--", *sorted(changes))
     modes = {}
@@ -136,8 +136,14 @@ def baseline_acceptance(tag: str, *, root: Path = ROOT, revision: str = "HEAD") 
         if errors:
             return {**result, "errors": errors}
         rules = json.loads(blob(root, candidate, CANONICAL + "leveling_rules.json"))
-        if rules["review"]["client_build"] != document["client_build"]:
-            raise ValueError("The reviewed client build requires a fresh live baseline")
+        builds = json.loads(blob(root, candidate, CANONICAL + "reviewed_builds.json"))
+        if builds["target_client"] != document["client_build"]:
+            raise ValueError("The target client build requires a fresh live baseline")
+        if rules["review"]["client_build"] != builds["leveling_sources"] or any(
+            json.loads(blob(root, candidate, CANONICAL + name + ".json"))["client_build"] != builds["guide_sources"]
+            for name in ("guide_equipment", "scoring_model", "effect_benchmarks")
+        ):
+            raise ValueError("The source build pins changed since live acceptance")
         paths = forever.release_manifest_files(blob(root, baseline, forever.FOREVER_MANIFEST).decode())
         protected = (set(paths) - (PAYLOADS | {"Config.lua"})) | POLICY | {"assets", "lib", ".pkgmeta"}
         changes = changed_paths(root, baseline, candidate, *sorted(protected))

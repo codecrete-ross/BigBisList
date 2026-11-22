@@ -41,7 +41,7 @@ Before reviewing Forever leveling coverage, read
 The [character-aware scoring guide](docs/internal/forever-scoring.md)
 documents the local pilot and the remaining profile reviews. The explicit local
 Forever prerelease can carry uncovered leveling combinations while dataset
-completion is deferred. Both strict audits remain part of the public release gate.
+completion is deferred. The public gate runs both audits and applies the reviewed 0.15.x leveling exception documented in the release playbook.
 
 1. Register or update source coverage in `data/canonical/scrape_manifest.json`.
 2. Fetch or reprocess Wowhead snapshots only when the task explicitly calls for

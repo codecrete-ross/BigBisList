@@ -496,6 +496,8 @@ def live_acceptance() -> dict:
     path = FOREVER_CANONICAL_DIR / "live_acceptance.json"
     document = load_json(path) if path.is_file() else {}
     errors = live_acceptance_errors(document, release_artifact_digest())
+    if document.get("status") == "accepted" and document.get("client_build") != dataset_json("forever", "reviewed_builds")["target_client"]:
+        errors.append("Gameplay acceptance must cover the configured target client build")
     return {"ok": not errors, "status": document.get("status", "pending"), "errors": errors}
 
 

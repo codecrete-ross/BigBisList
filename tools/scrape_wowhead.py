@@ -7543,7 +7543,16 @@ def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -
     if args.command == "coverage":
         if args.family == "leveling":
             from tools.forever_leveling import generate
-            report = generate(forever.read_snapshots(FOREVER_RAW_DIR), diagnostic=True)["coverage"]
+            result = generate(forever.read_snapshots(FOREVER_RAW_DIR), diagnostic=True)
+            report = result["coverage"]
+            if args.release_version and not report["ok"] and not report["errors"] and not report["review_issues"]:
+                from tools import forever_prerelease as prerelease
+
+                inventory = result["leveling_candidate_audit"]
+                if not (inventory.get("source_issues") or inventory.get("decision_issues")):
+                    exception = prerelease.evaluate(args.release_version, prerelease.gap_rows(report["rows"]),
+                                                    inventory["candidate_reviews"], report["summary"])
+                    report["release_exception"], report["ok"] = exception, exception["ok"]
         elif args.family == "item_corpus":
             from tools.forever_equipment import audit
 
@@ -7750,6 +7759,7 @@ def build_parser() -> argparse.ArgumentParser:
     coverage_parser = subparsers.add_parser("coverage", parents=[flavor_parser], help="Report offline manifest coverage without fetching.")
     coverage_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus"])
     coverage_parser.add_argument("--summary", action="store_true", help="Omit the full missing-unit list.")
+    coverage_parser.add_argument("--release-version", help="Apply the reviewed Forever leveling exception for this release line.")
     coverage_parser.add_argument("--strict", action="store_true", help="Fail if the manifest does not cover every expected unit.")
     coverage_parser.set_defaults(func=command_coverage)
     return parser
