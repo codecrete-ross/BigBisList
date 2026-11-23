@@ -1134,16 +1134,13 @@ end
 
 -- Keep the position and mouse owner. Only the item's evidence changes while
 -- a newer list waits for the player in the footer.
-function UI:UpdateGuideRowAdvice(frame, data, context)
+function UI:UpdateGuideRowAdvice(frame, data)
     local view = self:GetLevelingGearView(data, "leveling")
     if not view then return end
-    local text = addon.Widgets:GearAdviceText(view) or ""
-    if data.targetVerdict and data.targetVerdict.kind == "upgrade" then
-        local reason = addon.Widgets:DecisionReason(data.stat_rank and data.stat_rank.item, data.targetVerdict.swap, context)
-        if reason then text = text .. " · " .. reason end
-    end
+    local text = view.today and self:GearRowText(view, data, frame.subText:GetWidth()) or ""
     frame.boundData, frame.detailData, frame.iconButton.detailData = data, data, data
     frame.__bigBisBoundRenderEntry.data = data
+    frame.gearAdvice = view.today and view or nil
     frame.subText:SetTextColor(addon.Widgets:GearAdviceColor(view.tone))
     addon.Widgets:SetCellText(frame.subText, text, 1, 12, frame.subText:GetWidth())
     frame.subText:SetShown(text ~= "")
@@ -1157,6 +1154,14 @@ function UI:UpdateGuideRowAdvice(frame, data, context)
         addon.Widgets:SetCellText(route, step or view.acquisition or "", 2, 13, route:GetWidth())
     end
     self:UpdateRowOwnership(frame, data)
+    self:QueueGearRowExplanation(frame)
+    local owner = GameTooltip and GameTooltip:GetOwner()
+    if owner and (owner == frame.iconButton or owner == frame.cellHovers.stat_rank) then
+        C_Timer.After(0, function()
+            if self:IsCurrentRenderFrame(frame) and frame.boundData == data and GameTooltip:IsVisible()
+                and GameTooltip:GetOwner() == owner then addon.Widgets:ShowBoundTooltip(owner) end
+        end)
+    end
 end
 
 local function holdGuidePage(ui, model)
@@ -1185,7 +1190,7 @@ local function holdGuidePage(ui, model)
             overrides[old] = fresh
             for _, frame in ipairs(ui.activeRenderFrames or {}) do
                 if frame.boundData and frame.boundData.stat_identity == old.stat_identity and frame.boundData.slot == old.slot then
-                    ui:UpdateGuideRowAdvice(frame, fresh, model.guideContext)
+                    ui:UpdateGuideRowAdvice(frame, fresh)
                 end
             end
             if ui.selectedItemData and ui.selectedItemData.stat_identity == old.stat_identity then
@@ -1365,7 +1370,7 @@ function UI:PaintGuideSlice()
         local frame = prior
         if prior then
             page.claimed[prior] = true
-            if page.updateFacts and entry.data and prior.boundData ~= entry.data then self:UpdateGuideRowAdvice(prior, entry.data, page.model.guideContext) end
+            if page.updateFacts and entry.data and prior.boundData ~= entry.data then self:UpdateGuideRowAdvice(prior, entry.data) end
         else
             local kind = entry.nextAction and "planner-action" or entry.kind
             if kind == "row" then kind = "row:" .. entry.mode .. (page.layout.compact and ":compact" or ":wide") end
@@ -1442,6 +1447,7 @@ function UI:PublishGuidePage(page)
         self.viewportStarted, self.firstRowsStarted = nil, nil
     end
     self:CountPerformance("realizedEntries", #page.frames)
+    for _, frame in ipairs(page.frames) do self:QueueGearRowExplanation(frame) end
     self:StartGuideInventory()
     if model.endgame and not model.complete and not page.scrollOnly then
         self:ScheduleRefresh(nil, "endgame preview")

@@ -70,27 +70,107 @@ function Widgets:GearAdviceText(view)
     return self:GearIconText(icon, view.today)
 end
 
-local decisionStats = {
-    {"stamina", "Stamina"}, {"strength", "Strength"}, {"agility", "Agility"}, {"intellect", "Intellect"},
-    {"spirit", "Spirit"}, {"healing_power", "Healing"}, {"spell_power", "Spell Power"},
-    {"dps", "weapon DPS"}, {"ranged_dps", "ranged DPS"}, {"wand_dps", "wand DPS"}, {"attack_power", "Attack Power"},
-    {"mp5", "mana per 5 sec"}, {"defense", "Defense"}, {"block_value", "Block Value"}, {"armor", "Armor"},
+local gearStats = {
+    stamina = {"Stamina", "health", "Stam"}, strength = {"Strength", "strength", "Str"},
+    agility = {"Agility", "agility", "Agi"}, intellect = {"Intellect", "intellect", "Int"},
+    spirit = {"Spirit", "spirit"}, healing_power = {"Healing Power", "healing"},
+    spell_power = {"Spell Power", "spell power", "SP"}, spell_damage = {"Spell Damage", "spell damage"},
+    dps = {"Weapon DPS", "weapon DPS", "DPS"}, ranged_dps = {"Ranged DPS", "ranged DPS"}, wand_dps = {"Wand DPS", "wand DPS"},
+    attack_power = {"Attack Power", "AP"}, ranged_attack_power = {"Ranged Attack Power", "ranged AP", "RAP"},
+    mp5 = {"Mana per 5 sec", "mana regen", "MP5"}, hp5 = {"Health per 5 sec", "health regen", "HP5"},
+    expertise = {"Expertise", "expertise"}, proc_dps = {"Damage procs", "proc damage"}, proc_hps = {"Healing and absorbs", "proc healing"},
+    defense = {"Defense", "defense", "Def"}, block_value = {"Block Value", "block value", "BV"},
 }
 
-function Widgets:DecisionReason(item, swap, context)
+local function swapStatName(stat, style)
+    local names = gearStats[stat]
+    if names then return names[style] or names[2] or names[1] end
+    local name = stat:gsub("_percent$", ""):gsub("_", " ")
+    return style == 1 and name:gsub("%f[%a]%l", string.upper) or name
+end
+
+local function scoredChanges(explanation)
+    if explanation.statChanges then return explanation.statChanges end
+    local stats, included = {}, {}
+    local function add(stat)
+        if included[stat] or stat == "weapon_min_damage" or stat == "weapon_max_damage" or stat == "weapon_speed" then return end
+        included[stat] = true
+        local amount, points = explanation.raw[stat] or 0, explanation.points[stat] or 0
+        if math.abs(amount) >= 0.000001 or math.abs(points) >= 0.000001 then
+            stats[#stats + 1] = {stat = stat, amount = amount, points = points, scored = explanation.points[stat] ~= nil}
+        end
+    end
+    for stat in pairs(explanation.raw) do add(stat) end
+    for stat in pairs(explanation.points) do add(stat) end
+    table.sort(stats, function(a, b)
+        if math.abs(a.points) ~= math.abs(b.points) then return math.abs(a.points) > math.abs(b.points) end
+        return a.stat < b.stat
+    end)
+    explanation.statChanges = stats
+    return stats
+end
+
+local function tradeoff(explanation, delta)
+    local gains, losses, totalGains, totalLosses = {}, {}, 0, 0
+    for _, change in ipairs(scoredChanges(explanation)) do
+        local points = change.points
+        if points > 0.000001 then
+            gains[#gains + 1], totalGains = change, totalGains + points
+        elseif points < -0.000001 then
+            losses[#losses + 1], totalLosses = change, totalLosses - points
+        end
+    end
+    local winning, opposing = gains, totalLosses
+    if delta < 0 then winning, opposing = losses, totalGains end
+    local more = #winning > 1 and math.abs(winning[1].points) <= opposing
+    return gains, losses, more
+end
+
+local function mechanicReason(explanation, delta)
+    local mechanic = explanation.mechanic
+    if not mechanic then return explanation.cap end
+    local featured
+    for _, change in ipairs(mechanic.changes) do
+        if change.gained == (delta > 0) then
+            if featured then return mechanic.kind == "set" and "Set bonuses tip the swap" or "Item effects tip the swap" end
+            featured = change
+        end
+    end
+    if not featured then return end
+    if mechanic.kind == "set" then return (featured.gained and "Completes " or "Breaks ") .. featured.name, "Set bonus tips the swap" end
+    if featured.retained then return featured.name .. " tips the swap", "Item effect tips the swap" end
+    return (featured.gained and "Gains " or "Loses ") .. featured.name, "Item effect tips the swap"
+end
+
+local function numberText(amount, signed)
+    if math.abs(amount) < 0.001 and amount ~= 0 then return (amount < 0 and "−" or signed and "+" or "") .. "<0.001" end
+    local text = string.format("%.3f", math.abs(amount)):gsub("0+$", ""):gsub("%.$", "")
+    return (amount < 0 and "−" or signed and amount > 0 and "+" or "") .. text
+end
+
+local function statAmount(change, signed)
+    local pct = (change.stat:find("_percent$", 1) or change.stat == "expertise") and "%" or ""
+    return numberText(signed and change.amount or math.abs(change.amount), signed) .. pct .. " " .. swapStatName(change.stat, 1)
+end
+
+function Widgets:DecisionReason(item, swap)
     local result = swap and (swap.forecast or swap)
     if not result then return end
     if result.status == "loading" or result.status == "unavailable" then
         return result.blocker and result.blocker.name
     end
-    if result.conditional or result.estimatedEffects then
+    local rating = BigBiSList.ForeverGearRating
+    local explanation = rating and rating.GetSwapExplanation and rating:GetSwapExplanation(result, true)
+    if result.conditional then
+        local reversal = rating and rating.WeightReversalReason and rating:WeightReversalReason(result)
+        if reversal then return reversal end
         if result.unscoredHolyBlock then return "Holy damage on block" end
-        for _, effect in ipairs(item and item.effects or {}) do
-            if effect:lower():find("chance", 1, true) then return "depends on how often it triggers" end
+        if explanation and explanation.unknown and explanation.unknown[1] then
+            return "Unpriced effect · " .. explanation.unknown[1], "Unpriced effect"
         end
-        if result.estimatedEffects then return "includes an estimated effect" end
         if result.buildUnavailable then return "uses default spec weights" end
-        return "item effects may change the result"
+        if result.estimatedEffects then return "depends on effect uptime" end
+        return "depends on the fight"
     end
     if result.status == "empty" then return "fills an empty slot" end
     if result.status == "best_owned" then
@@ -102,42 +182,135 @@ function Widgets:DecisionReason(item, swap, context)
         if item and item.armor_type == "Shield" then return "Best shield you own" end
         return "Best you own for this slot"
     end
-    if result.delta == 0 then return "same score as your best owned gear" end
-    if result.delta and result.delta < 0 then
-        local previous = result.replacements or {}
-        if result.weaponSetup and (#previous > 1 or previous[1] and previous[1].facts and
-            (previous[1].facts.slot == "Two Hand") ~= (item and item.slot == "Two Hand")) then
-            local names = {}
-            for _, piece in ipairs(result.weaponSetup) do names[#names + 1] = piece.name end
-            return "your setup uses " .. table.concat(names, " + ")
-        end
-        if previous[1] then
-            return previous[1].name .. (previous[1].state == "bank" and " in your bank" or
-                previous[1].state == "bag" and " in your bags" or " is stronger")
-        end
+    if result.delta == 0 then return "same score" end
+    if explanation then
+        local reason, short = mechanicReason(explanation, result.delta)
+        if reason then return reason, short end
     end
-    if (result.delta or 0) <= 0 or not item then return end
-    local weights = context and BigBiSList.ForeverGearRating:ReferenceWeights(context)
-    local highest, reason = 0, nil
-    for _, stat in ipairs(decisionStats) do
-        local delta = (item.stats or {})[stat[1]] or 0
-        for _, other in ipairs(result.replacements or {}) do delta = delta - ((other.facts and other.facts.stats or {})[stat[1]] or 0) end
-        local contribution = delta * (weights and (weights[stat[1]] or 0) or 1)
-        if contribution > highest and delta > 0 then highest, reason = contribution, string.format("+%g %s", delta, stat[2]) end
+    local previous = result.replacements or {}
+    if (result.delta or 0) < 0 and result.weaponSetup and (#previous > 1 or previous[1] and previous[1].facts and
+        (previous[1].facts.slot == "Two Hand") ~= (item and item.slot == "Two Hand")) then
+        local names = {}
+        for _, piece in ipairs(result.weaponSetup) do names[#names + 1] = piece.name end
+        return "your setup uses " .. table.concat(names, " + ")
     end
-    return reason
+    if (result.delta or 0) < 0 and previous[1] and (previous[1].state == "bank" or previous[1].state == "bag") then
+        return previous[1].name .. (previous[1].state == "bank" and " in your bank" or " in your bags")
+    end
+    if explanation then
+        local gains, losses, extra = tradeoff(explanation, result.delta)
+        local win, lose = gains[1], losses[1]
+        local more = win and swapStatName(win.stat, 2)
+        local less = lose and swapStatName(lose.stat, 2)
+        local gainText = win and ("+" .. swapStatName(win.stat, 3))
+        local lossText = lose and ("−" .. swapStatName(lose.stat, 3))
+        if extra then
+            if result.delta > 0 then
+                more = more .. " and " .. swapStatName(gains[2].stat, 2)
+                gainText = gainText .. " +" .. swapStatName(gains[2].stat, 3)
+            else
+                less = less .. " and " .. swapStatName(losses[2].stat, 2)
+                lossText = lossText .. " −" .. swapStatName(losses[2].stat, 3)
+            end
+        end
+        if more and less then return "More " .. more .. ", less " .. less, gainText .. " / " .. lossText end
+        if more then return win.amount > 0 and statAmount(win, true) or ("More " .. more), gainText end
+        if less then return "Less " .. less, lossText end
+    end
+    if result.estimatedEffects then return "includes an estimated effect" end
+    if (result.delta or 0) < 0 and previous[1] then return previous[1].name .. " is stronger" end
 end
 
-function Widgets:AddGearAdviceLines(tooltip, service, view)
-    for _, line in ipairs(service:LevelingPresentationLines(view)) do
+function Widgets:SwapExplanationLines(swap, selected, detail)
+    local result = swap and (swap.forecast or swap)
+    if result and result.status == "best_owned" then result = result.equipSwap end
+    if not result or result.delta == nil or not result.replacements then return end
+    local trace = result.comparisonTrace
+    local rating = BigBiSList.ForeverGearRating
+    local evidence = rating:GetSwapExplanation(result, true)
+    local lines, names = {}, {}
+    for _, old in ipairs(result.replacements) do
+        local slot = selected and old.slot and (" (" .. old.slot .. ")") or ""
+        names[#names + 1] = old.name .. slot .. (old.state == "bank" and " (bank)" or old.state == "bag" and " (bags)" or "")
+    end
+    local reference = selected and "Selected reference" or trace and trace.reference == "equipped" and "Equipped" or "Best owned"
+    local basis = rating:GetSwapBasisLabel(result.basis)
+    if result.conditional then basis = basis .. " · Conditional" end
+    lines[1] = reference .. " · " .. (names[1] and table.concat(names, " + ") or "Empty slot")
+    local level = trace and (" · Lv " .. trace.context.level) or ""
+    lines[2] = basis .. level .. " · " .. numberText(result.delta, true) .. " score points"
+    local reversal, why = rating:WeightReversalReason(result)
+    if reversal then
+        lines[#lines + 1] = reversal .. " · " .. numberText(result.weightReversal, true) .. " score points"
+        if why then lines[#lines + 1] = why end
+    end
+    if result.estimatedEffects then lines[#lines + 1] = "Includes estimated item effects" end
+    if detail then
+        for _, effect in ipairs(result.effects or {}) do
+            local shown
+            for _, change in ipairs(evidence and evidence.sets or {}) do
+                if effect == change.name .. (change.gained and " gained" or " lost") then shown = true; break end
+            end
+            if not shown then
+                lines[#lines + 1] = effect:gsub(" %(([+-][%d.]+)%)$", " (%1 score points)")
+            end
+        end
+    end
+    if not evidence then return lines end
+    local reason = mechanicReason(evidence, result.delta)
+    if reason then lines[#lines + 1] = reason end
+    for _, change in ipairs(evidence.sets) do
+        local label = (change.gained and "Completes " or "Breaks ") .. change.name
+        if label ~= reason then lines[#lines + 1] = label end
+    end
+    for _, effect in ipairs(evidence.unknown or {}) do lines[#lines + 1] = "Unpriced effect · " .. effect end
+    if detail then
+        for _, change in ipairs(scoredChanges(evidence)) do
+            local amount, points = change.amount, change.points
+            if math.abs(amount) < 0.000001 then amount = 0 end
+            if math.abs(points) < 0.000001 then points = 0 end
+            local stat = amount ~= 0 and statAmount(change, true) or swapStatName(change.stat, 1) .. " contribution"
+            if amount * points < 0 then
+                lines[#lines + 1] = stat
+                stat = swapStatName(change.stat, 1) .. " contribution"
+            end
+            lines[#lines + 1] = change.scored and (stat .. " (" .. numberText(points, true) .. " score points)") or stat
+        end
+    else
+        local add, remove = {}, {}
+        for _, change in ipairs(scoredChanges(evidence)) do
+            if math.abs(change.amount) >= 0.000001 then
+                local parts = change.amount > 0 and add or remove
+                parts[#parts + 1] = statAmount(change, false)
+            end
+        end
+        if #add > 0 then lines[#lines + 1] = "Gains " .. table.concat(add, ", ") end
+        if #remove > 0 then lines[#lines + 1] = "Gives up " .. table.concat(remove, ", ") end
+        local gains, losses, extra = tradeoff(evidence, result.delta)
+        local winners = result.delta > 0 and gains or losses
+        if extra and not reason then
+            local names = {}
+            for index = 2, #winners do
+                if index <= 3 then names[#names + 1] = swapStatName(winners[index].stat, 1) end
+            end
+            lines[#lines + 1] = table.concat(names, " and ") .. (result.delta > 0 and " help tip the swap." or " also weigh against the swap.")
+        end
+    end
+    return lines
+end
+
+function Widgets:AddGearAdviceLines(tooltip, service, view, spec, summary)
+    local verdict = self:GearAdviceText(view)
+    for _, line in ipairs(service:LevelingPresentationLines(view, true)) do
         local r, g, b = 0.83, 0.85, 0.88
-        if line == self:GearAdviceText(view) then
+        if line == verdict then
             r, g, b = self:GearAdviceColor(view.tone)
+            if spec then line = spec .. " — " .. line end
         elseif line == view.strength then
             if view.grade and view.grade > 0 then r, g, b = self:GetRankColor(view.grade)
             else r, g, b = 0.93, 0.93, 0.96 end
         end
-        tooltip:AddLine(line, r, g, b, true)
+        if not summary or line ~= view.evidence then tooltip:AddLine(line, r, g, b, true) end
     end
 end
 
@@ -165,16 +338,7 @@ function Widgets:BindTooltip(frame, callback)
     frame.__bigBisTooltipBound = true
     appendScript(frame, "OnEnter", function(self)
         if self.SetHovered then self:SetHovered(true) end
-        local content = self.__bigBisTooltip
-        if not content or not GameTooltip then return end
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        if type(content) == "function" then
-            local text = content(self, GameTooltip)
-            if type(text) == "string" then GameTooltip:AddLine(text, 0.90, 0.90, 0.92, true) end
-        else
-            GameTooltip:AddLine(tostring(content), 0.90, 0.90, 0.92, true)
-        end
-        GameTooltip:Show()
+        Widgets:ShowBoundTooltip(self)
     end)
     appendScript(frame, "OnLeave", function(self)
         if self.SetHovered then self:SetHovered(false) end
@@ -184,6 +348,16 @@ function Widgets:BindTooltip(frame, callback)
         if self.SetHovered then self:SetHovered(false) end
         hideOwnedTooltip(self)
     end)
+end
+
+function Widgets:ShowBoundTooltip(owner)
+    local content = owner.__bigBisTooltip
+    if not content or not GameTooltip then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    local text = content
+    if type(content) == "function" then text = content(owner, GameTooltip) end
+    if type(text) == "string" then GameTooltip:AddLine(text, 0.90, 0.90, 0.92, true) end
+    GameTooltip:Show()
 end
 
 local dropdownCounter = 0

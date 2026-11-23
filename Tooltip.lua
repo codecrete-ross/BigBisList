@@ -401,7 +401,7 @@ local function compactSpecLine(row)
         return match and ("Guide pick · " .. (match.slot or match.spec))
     end
     local evaluated = result.forecast or result
-    local reason = BigBiSList.Widgets:DecisionReason(row.item, result, row.context)
+    local reason = BigBiSList.Widgets:DecisionReason(row.item, result)
     local verdict = view.today
     if assessment.tiedChoice then verdict, reason = "Tied reward", "equal to another choice"
     elseif assessment.bestChoice then verdict = result.forecast and ("Best reward at level " .. evaluated.level) or "Best reward"
@@ -434,7 +434,15 @@ local function compactSpecLine(row)
     return verdict .. (reason and (" · " .. reason) or ""), view.tone
 end
 
-local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded)
+local function addSwapExplanation(tooltip, result, spec)
+    local lines = BigBiSList.Widgets:SwapExplanationLines(result) or {}
+    local effects = BigBiSList.ForeverGearRating:EffectComparisonLines(result, true) or {}
+    if spec and (#lines > 0 or #effects > 0) then tooltip:AddLine(spec, 0.93, 0.93, 0.96, true) end
+    for _, line in ipairs(lines) do tooltip:AddLine(line, 0.83, 0.85, 0.88, true) end
+    for _, line in ipairs(effects) do tooltip:AddLine(line, 0.76, 0.8, 0.86, true) end
+end
+
+local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded, explanations)
     local blocks, bySpec = {}, {}
     for _, row in ipairs(statBlock and statBlock.rows or {}) do
         row.class, row.matches = selection.class, {}
@@ -514,11 +522,9 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
                 tooltip:AddLine("Tied for best choice", 0.86, 0.88, 0.91, true)
             end
             if comparison.futureBiS then tooltip:AddLine("Pre-Raid Guide BiS", 0.86, 0.88, 0.91, true) end
-            if not row.view then
-                for _, line in ipairs(BigBiSList.ForeverGearRating:EffectComparisonLines(result) or {}) do
-                    tooltip:AddLine(line, 0.76, 0.8, 0.86, true)
-                end
-            end
+            if BigBiSList.ForeverGearRating:SwapExplanationPending(result, true) then
+                explanations[#explanations + 1] = row
+            else addSwapExplanation(tooltip, result) end
             if result.effectNote then tooltip:AddLine(result.effectNote, 0.76, 0.8, 0.86, true) end
             if result.effectBreakEven then
                 local estimate = string.format("%.1f full extra swings per minute to close the gap at tooltip weapon damage",
@@ -600,7 +606,9 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
     local comparisonContext = comparisonTooltipContext(tooltip)
-    if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not comparisonContext then
+    local row = owner and owner.detailData
+    local rowVerdict = row and row.item_id == itemId and (row.targetVerdict or row.stat_swap or row.gearSwap)
+    if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not comparisonContext and not rowVerdict then
         live = self:GetTooltipPlayerContext()
         if live and addonTooltip(tooltip) and self.UI:GetSelection().class ~= live.class then live = nil end
         local exactLink = offer and offer.owned and offer.link or itemLink
@@ -668,8 +676,9 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
         if not live.spec and #statBlock.rows > 1 then tooltip:AddLine("Spec previews", 0.72, 0.77, 0.84) end
     end
 
+    local explanations = {}
     if self.isForever then
-        renderSpecBlocks(tooltip, statBlock, matches, selection, showExpanded)
+        renderSpecBlocks(tooltip, statBlock, matches, selection, showExpanded, explanations)
     else
         for index = 1, math.min(#matches, maxRows) do
             local match = matches[index]
@@ -694,17 +703,42 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     if statBlock then
         self.UI:QueueStatLoads(statBlock.pending)
         local state = tooltip.__bigBisListState
-        if statBlock.finishSpecs then
-            local finish = statBlock.finishSpecs
-            statBlock.finishSpecs = nil
+        local rating = self.ForeverGearRating
+        local finish = statBlock.finishSpecs
+        local pending = #explanations > 0
+        if not showExpanded then
+            for _, row in ipairs(statBlock.rows) do pending = pending or rating:SwapExplanationPending(row.result) end
+        end
+        if finish or pending then
+            local revision = self.ForeverScoring.revision
+            local ownership = self.UI.domainVersions and self.UI.domainVersions.ownership
             local function current()
                 return tooltip.__bigBisListState == state and tooltip:IsShown() and self:GetTooltipPlayerContext() == live
+                    and revision == self.ForeverScoring.revision
+                    and ownership == (self.UI.domainVersions and self.UI.domainVersions.ownership)
             end
-            self.ForeverGearRating:QueueWork(0, finish, current, function()
+            rating:QueueWork(0, function(checkpoint)
+                if finish then
+                    finish(checkpoint)
+                    statBlock.finishSpecs = nil
+                end
+                for _, row in ipairs(statBlock.rows) do
+                    checkpoint()
+                    rating:GetSwapExplanation(row.result)
+                    if showExpanded then rating:EffectComparisonLines(row.result) end
+                end
+            end, current, function()
                 if current() then
-                    tooltip.__bigBisPrepared = {state = state, result = prepared}
-                    rebuildTooltip(tooltip, state)
-                    tooltip.__bigBisPrepared = nil
+                    if showExpanded and not finish then
+                        for _, row in ipairs(explanations) do
+                            addSwapExplanation(tooltip, row.result, #statBlock.rows > 1 and row.spec or nil)
+                        end
+                        tooltip:Show()
+                    else
+                        tooltip.__bigBisPrepared = {state = state, result = prepared}
+                        rebuildTooltip(tooltip, state)
+                        tooltip.__bigBisPrepared = nil
+                    end
                 end
             end)
         end

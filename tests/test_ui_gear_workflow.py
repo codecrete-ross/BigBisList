@@ -244,8 +244,9 @@ for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
         block:Click(); statRank = block.body:GetText()
     end
 end
-assert(statRank and statRank:find("Your setup · +2.0 pts vs Worn item (Shoulder)", 1, true))
-assert(statRank:find("Champion of the Light (+0.42)", 1, true))
+assert(statRank and statRank:find("Selected reference · Worn item", 1, true))
+assert(statRank:find("Your setup · +2 score points", 1, true))
+assert(statRank:find("Champion of the Light (+0.42 score points)", 1, true))
 assert(statRank:find("3-piece Lightforge Armor bonus gained", 1, true))
 ''')
 
@@ -761,7 +762,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
             if block:IsVisible() and text:find("of the best known gear score", 1, true)
                 and text:find("Rank #", 1, true)
                 and text:find("Default spec weights", 1, true)
-                and text:find("Compare with Blood Ritual Ring (Finger 2)", 1, true) then explained = true end
+                and text:find("Selected reference · Blood Ritual Ring (Finger 2)", 1, true) then explained = true end
         end
         assert(explained, "Details should explain the same stat rank")
         ui:BackToSlotComparison(); H.settle()

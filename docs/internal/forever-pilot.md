@@ -24,7 +24,8 @@ must accept the installed artifact in Forever before merge and publication.
 | Gearing evidence | Replaying the committed evidence made zero HTTP requests. All 3,448 early-level gaps and 242 unresolved candidates matched their reviewed cells and evidence. The equipment fidelity check passed on Guide source build 70959. Leveling sources are pinned to 70938 and the client target is 71037. |
 | Scoring corrections | Implemented and being revalidated. Source 70959 and target 71037 match across the reviewed talents, enchants, sets, racials, triggers and 1,783 random-property families. Ratings normalize once. Hit and Expertise use marginal loadout caps and passive talent bonuses. Hotfixed staves share their facts. Pre-Raid approvals use the Guide's reference scorer. Unknown builds and unresolved mechanics retain qualified advice. |
 | Weight calibration | All 28 numerical profiles have published coefficients, units, representative talents and encounter assumptions. The source ledger also records actual verification outfits and source limitations. SixtySim currently serves 18 profiles from November 22, nine from November 17 and one from November 14; retain each page's provenance. A review of 18 fixture swaps and 1,153 approved-pool swaps changes 23 conditional qualifications under the current healer and tank alternatives. Default coefficients stay fixed in that follow-up. |
-| Client acceptance | Pending for the revised package. The earlier 25-file install on Forever 1.60.1.71037 had artifact digest `5996106718454459a359f278b3f87d222753fa786ffa25dd3f7b2f03026278bf`. That digest predates the scoring corrections and cannot accept this candidate. Record the revised digest and the player's cold and warm performance, native window, return paths, and gameplay checks in the release PR. |
+| Recommendation explanations | Gear rows show the trade-off. Tooltips and Details use the same before and after loadouts as the verdict. The selected reference, exact rolls, enchants, and weapon partners carry into the explanation. Replays cover both Defender glove results, short-fight healing, capped Hit, gained and broken sets, item effects, and bank partners. |
+| Client acceptance | Pending for the recommendation-explanation candidate on Forever 1.60.1.71037. Record the player's cold and warm performance, native window, return paths, and gameplay checks against the current digest in the release PR. See the November 23 evidence below. |
 | Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
 
@@ -242,7 +243,7 @@ repeat the final artifact's replays, and record the user's client result before
 closing this item. Full load retained about 163.5 MiB before browsing and took
 about 1.4–1.6 seconds of CPU time in those checks; startup remains a limitation.
 
-The final [candidate timing receipt](forever-performance-review-0.15.0.json)
+The November 22 [candidate timing receipt](forever-performance-review-0.15.0.json)
 binds all 25 packaged files to artifact `0176afa8c36883686603a230f029fd93a83e2f440da452223fb43a670edf2417`.
 Both unmodified-runtime runs tested all six scenarios. Every first viewport met
 50 ms; the measured pages took 4–11 ms. Two Windows processes and two Linux
@@ -274,6 +275,59 @@ unchanged. [Initial hosted check](https://github.com/codecrete-ross/BigBisList/a
 The complete release sequence above remains in force. Functional and scoring
 implementation is not gameplay acceptance, a merge, a published tag, a CurseForge
 file, or evidence of the future scheduled run.
+
+## November 23 gear comparison explanations
+
+At level 51, Templar Gauntlets of the Defender give Protection Paladin 2 Stamina,
+1 Defense, and 2 Spell Power for 14 Attack Power. With the bundled 318 Armor on
+Vice Grips, Templar also gains 10 Armor and leads by 4.05 score points. With a
+simulated live reading of 330 Armor, Templar gives up 2 Armor and leads by
+3.09 score points. The grades remain **Upgrade** and **Slight upgrade**. The
+compact explanation shows the health and spell power gain and the Attack Power
+loss. Hover and Details identify the exact reference and armor used.
+
+For Discipline, Devout Mantle leads Inquisitor’s Shawl by 0.767 points on the
+default replay and trails by 7.0 in the short-fight replay. The best-owned and
+equipped paths now agree that the winner depends on fight length. The Protection
+endgame fixture offers 60 reliable upgrade actions, down from 101 when the
+best-owned path omitted the encounter check. The Retribution fixture offers
+597. Both retain their 118 and 120 BiS rows respectively.
+
+The tests replay both densities at 900×500 and 1020×790, a stationary pointer
+during the armor update, selected-reference Details, and a restored comparison
+after reload. They also cover a partially capped Hunter, fully capped Hit,
+gaining and breaking a set bonus, a decisive scored item effect, a named unpriced
+effect, an exact tie, and the equipped shield with its banked weapon partner.
+
+The broader 238-check run passed 231 checks initially. Both Compare failures
+passed on retest with explicit score units, reference slot names, and the
+talent and set-bonus notes intact. The five legacy static failures also
+reproduce against `cd5cafed`. They assert previous acquisition labels, Guide
+filter wiring, tooltip expansion, and Details section placement.
+The final tooltip, widget, Details, and Compare rerun passed all 48 checks.
+
+The regenerated Guide bundles match the previous reference rows byte for byte
+after normalizing the compiler fingerprint. The install preflight passed the
+strict scoring audit, strict Pre-Raid coverage, and Lua 5.1 compilation. The
+reviewed local allowance covers 3,448 leveling gaps.
+
+| Timing replays with verified active talents | First clickable viewport | Peak frame |
+| --- | --- | --- |
+| Linux CPU time, six fresh processes | 4.9–16.6 ms, one to three simulated frames | 16.6 ms in Upgrades. Five scenarios exceeded 4 ms, including a 4.1 ms route click. |
+| Windows wall clock, six fresh processes | 7–18 ms of harness work. Two Gear Guide cases took four and five simulated frames. | 71 ms in a BiS List refresh. Five scenarios exceeded 4 ms. |
+| Windows wall clock, repeat interleaved with `cd5cafed` | 3–19 ms of harness work. One Upgrades case took four simulated frames. | 10 ms in the candidate and 5 ms in the baseline. |
+
+The matched Windows run retained 163.6 MiB on cold load and took 1.13–1.32 s to
+load. Both the interaction limit and the three-frame check remain open. The
+player’s native timings and gameplay checks are pending.
+
+The November 23 install on Forever 1.60.1.71037 matches all 25 candidate files.
+The artifact SHA-256 is
+`f439358394c83f76535f11c30a9988f96f018b0c50576da6b98088f82ca4ae77`.
+All six Windows replays of this package showed clickable pages after 6–14 ms
+of measured work. All four endgame scenarios met 4 ms. The leveling scenarios
+peaked at 7 and 11 ms, and Retribution took four simulated frames to show the
+first page.
 
 ## Collect and review
 

@@ -469,13 +469,15 @@ local function inspect(a)
     local context = service:GetContext("Paladin", "Retribution", "LEVELING", level, owned)
     local item = context.catalog.items["9479"]
     local result = service:GetOwnedOpportunity(context, item, "item:9479", false)
+    assert(service:GetSwapExplanation(result))
     return result, a.Widgets:DecisionReason(item, result, context)
 end
 profile(addon)
+addon:GetCharacterDB().guideComparisons = {version = 2, sets = {{signature = "old"}}}
 local first, firstReason = inspect(addon)
 assert(first and firstReason)
 local cache = assert(addon:GetCharacterDB().guideComparisons)
-assert(first.delta and cache.version == 2 and #cache.sets == 1 and #cache.sets[1].order > 0)
+assert(first.delta and cache.version == 3 and #cache.sets == 1 and #cache.sets[1].order > 0)
 BigBiSList, BigBiSListData = nil, nil
 ui = H.load("forever", true)
 addon, rating = BigBiSList, BigBiSList.ForeverGearRating
@@ -498,6 +500,211 @@ ui:Invalidate("ownership", "bank visit")
 local banked = assert(inspect(addon))
 assert(hits == 1 and (banked.status == "best_owned" or banked.delta == 0))
 assert(#addon:GetCharacterDB().guideComparisons.sets == 2)
+''')
+
+    def test_defender_gloves_explain_the_same_swap_in_rows_hover_and_details(self):
+        self.lua_run(r'''
+level, worn = 51, 9640
+addon.DetectPlayerSpec = function() return "Protection" end
+addon:SetSelection("Paladin", "Protection", "LEVELING", "Gear Guide")
+addon:SetSelectedLevelingLevel(level, true)
+addon:RefreshTooltipPlayerContext()
+local vice = assert(rating:GetPublishedFacts("9640:0:0:0:1:13027"))
+local templar = assert(rating:GetPublishedFacts("10165:0:0:0:1:12754"))
+local gloves = vice
+GetInventoryItemID = function(_, slot) return slot == 10 and gloves.id or nil end
+GetInventoryItemLink = function(_, slot) return slot == 10 and gloves.variant_link or nil end
+local widgets = addon.Widgets
+local function expect(text, part) assert(text:find(part, 1, true), text .. " missing " .. part) end
+local function replay(from, to, points, grade, armor)
+    local owned = {equippedSlots={Hands={item_id=from.id,item_link=from.variant_link}}}
+    local ctx = rating:GetContext("Paladin", "Protection", "LEVELING", level, owned)
+    for _, result in ipairs({assert(rating:GetGuideSwap(ctx, to, "Hands", "Hands", to.variant_link)),
+        assert(rating:GetOwnedOpportunity(ctx, to, to.variant_link, false))}) do
+        local changes = assert(rating:GetSwapExplanation(result))
+        assert(math.abs(result.delta - points) < .000001 and changes.raw.armor == armor)
+        if grade then
+            assert(rating:UpgradeSize(result) == grade)
+            assert(widgets:DecisionReason(to, result) == "More health and spell power, less AP")
+        end
+        local summary = table.concat(widgets:SwapExplanationLines(result), "\n")
+        expect(summary, from.name)
+        local detail = table.concat(widgets:SwapExplanationLines(result, true, true), "\n")
+        expect(detail, "Selected reference · " .. from.name)
+        expect(detail, points > 0 and "−14 Attack Power (−4.2 score points)" or "+14 Attack Power (+4.2 score points)")
+        expect(detail, (armor < 0 and "−" or "+") .. math.abs(armor) .. " Armor")
+    end
+end
+replay(vice, templar, 4.05, "Upgrade", 10)
+replay(templar, vice, -4.05, nil, -10)
+ui:GetFilters("Gear Guide").slots = {Hands = true}
+ui:GetFilters("Gear Guide").search = templar.variant_link
+addon:InitUIEvents()
+ui:Open(); H.settle(); applyListUpdate()
+local function row()
+    for _, frame in ipairs(ui.activeRenderFrames) do
+        if frame.boundData and frame.boundData.stat_identity == templar.key then return frame end
+    end
+    error("The exact roll has no visible row")
+end
+local first = row()
+expect(first.subText.fullText, "Upgrade · More health and spell power, less AP")
+local window = addon:GetAccountDB().profile.window
+for _, dimensions in ipairs({{900,500},{1020,790}}) do
+    for _, density in ipairs({"comfortable","compact"}) do
+        window.width, window.height, window.density = dimensions[1], dimensions[2], density
+        UIParent:SetSize(dimensions[1], dimensions[2])
+        ui.frame:SetSize(dimensions[1], dimensions[2])
+        ui:Invalidate("layout", "test gear advice width")
+        ui:ScheduleRefresh(nil, "test gear advice width"); H.settle(); applyListUpdate()
+        first = row()
+        expect(first.subText.fullText, "Upgrade")
+        local readable = first.subText.displayedText
+        assert(readable:find("less AP", 1, true) or readable:find("−AP", 1, true), readable)
+        H.expectBounded(first.subText, first, "Gear advice")
+    end
+end
+first.iconButton:GetScript("OnEnter")(first.iconButton)
+H.settle()
+local hover = table.concat(GameTooltip.lines, "\n")
+expect(hover, "Best owned · Vice Grips of the Defender")
+expect(hover, "Gives up 14 Attack Power")
+expect(hover, "Spell Power and Defense help tip the swap.")
+local oldRead = rating.ReadNative
+function rating:ReadNative(id, key, link, base)
+    if id == 9640 then
+        return {id=id, name=vice.name, level=vice.level, slot="Hands", armor_type="Plate",
+            stats={armor=330, stamina=11, spell_power=5, defense=4, attack_power=14}, effects={}}
+    end
+    return oldRead(self,id,key,link,base)
+end
+rating:InvalidateItem(9640)
+replay(vice, templar, 3.09, "Slight upgrade", -2)
+-- Simulate the candidate and baseline being republished while the pointer stays
+-- on the same row and its tooltip. Its item link and click target must survive.
+local token, top = first.bindToken, first:GetTop()
+local refreshed = {}
+for key, value in pairs(first.boundData) do refreshed[key] = value end
+local ctx = rating:GetContext("Paladin", "Protection", "LEVELING", level,
+    {equippedSlots={Hands={item_id=vice.id,item_link=vice.variant_link}}})
+refreshed.targetVerdict = {kind="upgrade", swap=rating:GetOwnedOpportunity(ctx, templar, templar.variant_link, false)}
+ui:UpdateGuideRowAdvice(first, refreshed); H.settle()
+assert(first.bindToken == token and first:GetTop() == top and first.iconButton.itemId == templar.id)
+assert(GameTooltip:GetOwner() == first.iconButton)
+expect(table.concat(GameTooltip.lines, "\n"), "Gives up 14 Attack Power, 2 Armor")
+expect(first.subText.fullText, "Slight upgrade")
+first.iconButton:GetScript("OnLeave")(first.iconButton)
+first.iconButton:Click(); H.settle()
+assert(ui.selectedItemId == templar.id and ui:IsInspectorVisible())
+local function visibleDetails()
+    local lines = {}
+    for _, frame in ipairs({ui.detailsContent:GetChildren()}) do
+        if frame:IsVisible() then
+            for _, label in ipairs({frame:GetRegions()}) do
+                if label.GetText and label:IsVisible() and label:GetText() then lines[#lines + 1] = label:GetText() end
+            end
+        end
+    end
+    return table.concat(lines, "\n")
+end
+expect(visibleDetails(), "Best owned · Vice Grips of the Defender")
+local section = "calculation:" .. templar.key
+local getExpanded = ui.IsDetailsSectionExpanded
+function ui:IsDetailsSectionExpanded(key, default)
+    if key == section then return true end
+    return getExpanded(self, key, default)
+end
+ui.detailsRenderSignature = nil
+ui:RefreshDetails(templar.id, ui.selectedItemData, ui.selectedItemMode); H.settle()
+expect(visibleDetails(), "−14 Attack Power (−4.2 score points)")
+expect(visibleDetails(), "−2 Armor (−0.16 score points)")
+assert(ui:OpenSlotComparison(ui.selectedItemData, "leveling", true))
+H.settle()
+local selected
+for _, candidate in ipairs(ui.slotComparison.rows) do
+    if candidate.stat_swap and candidate.stat_swap.comparisonTrace and candidate.stat_swap.delta ~= 0 then
+        selected = candidate
+        break
+    end
+end
+assert(selected and ui.slotComparison.reference.slotKey == "Hands")
+assert(selected.stat_swap.comparisonTrace.before.Hands.facts.key == vice.key)
+section = "calculation:" .. selected.stat_identity
+local original = rating.GetGuideSwap
+function rating:GetGuideSwap() error("Details must use the selected comparison's verdict") end
+ui:ShowComparisonDetails(selected); H.settle()
+rating.GetGuideSwap = original
+expect(visibleDetails(), "Selected reference · Vice Grips of the Defender")
+expect(visibleDetails(), " score points)")
+''')
+
+    def test_swap_explanations_identify_encounters_caps_sets_and_unpriced_effects(self):
+        self.lua_run(r'''
+local widgets = addon.Widgets
+local function contains(text, part) assert(text:find(part, 1, true), text .. " missing " .. part) end
+local shawl = assert(rating:GetPublishedFacts("19507"))
+local mantle = assert(rating:GetPublishedFacts("16695"))
+local function priest(before, after)
+    local owned = {equippedSlots={Shoulder={item_id=before.id,item_link="item:"..before.id}}}
+    local ctx = assert(rating:GetContext("Priest", "Discipline", "PR", 60, owned))
+    local equipped = assert(rating:GetGuideSwap(ctx, after, "Shoulder", "Shoulder", "item:"..after.id))
+    local best = assert(rating:GetOwnedOpportunity(ctx, after, "item:"..after.id, false))
+    assert(equipped.conditional and best.conditional and equipped.weightReversal == best.weightReversal)
+    assert(equipped.delta * equipped.weightReversal < 0)
+    assert(not rating:ReliableGain(best))
+    contains(widgets:DecisionReason(after, best), "Short fights")
+    contains(table.concat(widgets:SwapExplanationLines(best), "\n"), "healing output")
+end
+priest(shawl, mantle)
+priest(mantle, shawl)
+
+local blackstone, painweaver = rating:GetPublishedFacts("17713"), rating:GetPublishedFacts("13098")
+local hunter = rating:GetContext("Hunter", "Marksmanship", "PR", 60,
+    {equippedSlots={Finger1={item_id=blackstone.id,item_link="item:17713"}}})
+hunter.equipmentFacts.Head = {entry={item_id=90001},facts={id=90001,stats={hit_percent=8}}}
+local ring = assert(rating:GetGuideSwap(hunter, painweaver, "Finger1", "Ring", "item:13098"))
+local caps = assert(rating:GetSwapExplanation(ring))
+assert(ring.delta > 0 and caps.raw.hit_percent == -1 and math.abs(caps.points.hit_percent) < .000001)
+contains(widgets:DecisionReason(painweaver, ring), "ranged Hit cap")
+contains(table.concat(widgets:SwapExplanationLines(ring, true, true), "\n"), "−1% Hit (0 score points)")
+local partial = rating:GetContext("Hunter", "Marksmanship", "PR", 60,
+    {equippedSlots={Finger1={item_id=blackstone.id,item_link="item:17713"}}})
+partial.equipmentFacts.Head = {entry={item_id=90001},facts={id=90001,stats={hit_percent=7.5}}}
+local partialSwap = assert(rating:GetGuideSwap(partial, painweaver, "Finger1", "Ring", "item:13098"))
+assert(partialSwap.delta > 0 and rating:GetSwapExplanation(partialSwap))
+contains(widgets:DecisionReason(painweaver, partialSwap), "Some ranged Hit is above the cap")
+
+local set = {key="tested",name="Practice Armor",bonuses={{pieces=2,stats={stamina=10}}}}
+local function gloves(id, stats)
+    return {id=id,key=tostring(id),name="Gloves " .. id,slot="Hands",level=41,armor_type="Plate",stats=stats}
+end
+local ordinary, matched = gloves(90004,{stamina=4}), gloves(90005,{stamina=1})
+matched.effect_set, matched.effects = set, {"Set bonuses"}
+local function swap(from,to)
+    local context = rating:GetContext("Paladin", "Protection", "LEVELING", 51, {})
+    context.equipmentFacts.Hands = {entry={item_id=from.id},facts=from,item_link="item:"..from.id}
+    context.equipmentFacts.Chest = {entry={item_id=90006},facts={id=90006,stats={},effect_set=set}}
+    local swap = assert(rating:GetGuideSwap(context, to, "Hands", "Hands"))
+    assert(rating:GetSwapExplanation(swap))
+    return swap
+end
+local gained, lost = swap(ordinary,matched), swap(matched,ordinary)
+assert(gained.delta == 14 and lost.delta == -14)
+assert(widgets:DecisionReason(matched,gained) == "Completes 2-piece Practice Armor bonus")
+assert(widgets:DecisionReason(ordinary,lost) == "Breaks 2-piece Practice Armor bonus")
+local unpriced = gloves(90007,{stamina=8})
+unpriced.effects = {"Use: Ward off flame."}
+local risk = swap(ordinary,unpriced)
+assert(risk.conditional and not rating:ReliableGain(risk))
+contains(widgets:DecisionReason(unpriced,risk), "Ward off flame")
+local tie = swap(ordinary,gloves(90008,{stamina=4}))
+assert(tie.delta == 0 and widgets:DecisionReason(nil,tie) == "same score")
+local special = gloves(90009,{stamina=1})
+special.effects = {"Equip: Stalwart."}
+special.effect_rules = {{key="stalwart",label=special.effects[1],spell_name="Stalwart",kind="passive_stats",stats={stamina=8}}}
+local priced = swap(ordinary,special)
+assert(priced.delta == 8 and not priced.conditional)
+assert(widgets:DecisionReason(special,priced) == "Gains Stalwart")
 ''')
 
     def test_banked_sword_and_exact_roll_agree_across_wishlist_details_and_scoring(self):
@@ -537,6 +744,11 @@ local function verify(a)
     local main, off = unpack(verdict.weaponSetup)
     assert(main.name == "Sword of Serenity" and main.state == "bank")
     assert(off.name == "Aegis of Stormwind" and off.state == "equipped")
+    local swap = assert(service:GetOwnedOpportunity(ctx, ctx.equipmentFacts.MainHand.facts, "item:17705", false))
+    local trace = assert(swap.comparisonTrace)
+    assert(trace.before.MainHand.state == "bank" and trace.before.OffHand == trace.after.OffHand)
+    assert(trace.before.OffHand.facts.id == 1203 and service:GetSwapExplanation(swap))
+    assert(table.concat(a.Widgets:SwapExplanationLines(swap), "\n"):find("Sword of Serenity (bank)", 1, true))
 end
 verify(addon)
 BigBiSList, BigBiSListData = nil, nil

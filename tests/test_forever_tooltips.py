@@ -363,7 +363,7 @@ local contents = ""
 for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
     if block:IsVisible() then contents = contents .. block.body:GetText() end
 end
-assert(contents:find("+92.0 pts vs Worn sword", 1, true), contents)
+assert(contents:find("Best owned · Worn sword", 1, true) and contents:find("+92 score points", 1, true), contents)
 local origin = ui.selectedRowKey
 assert(ui:OpenSlotComparison(sword, "leveling", true)); H.settle()
 assert(ui.slotComparison.level == 35 and ui.slotComparison.reference.slotKey == "MainHand")

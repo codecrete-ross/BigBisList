@@ -4981,9 +4981,11 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
         sourceLevel = sourceLevel, sourceType = sourceType, nativeRequirement = nativeRequirement })
     if target then
         if target.kind == "utility" or target.kind == "situational" then
-            view.today = target.purpose or "Utility"
+            local evaluated = swap and (swap.forecast or swap)
+            if not (evaluated and evaluated.weightReversal) then
+                view.today, view.comparisonDetail = target.purpose or "Utility", target.detail
+            end
             view.tone = target.kind == "situational" and "uncertain" or nil
-            view.comparisonDetail = target.detail
         elseif target.kind == "loading" or target.kind == "unavailable" then
             view.today, view.tone = target.detail, "unknown"
         elseif target.reference then view.today, view.tone = "Guide pick for " .. context.spec, nil end
@@ -5010,7 +5012,69 @@ function UI:AddLevelingGearTooltip(tooltip, data, mode, nativeRequirement)
     local native = nativeRequirement and item and BigBiSList:TooltipHasLevelRequirement(tooltip, item.level)
     local view = self:GetLevelingGearView(data, mode, native)
     if not view then return end
-    BigBiSList.Widgets:AddGearAdviceLines(tooltip, BigBiSList.ForeverGearRating, view)
+    local widgets, rating = BigBiSList.Widgets, BigBiSList.ForeverGearRating
+    local result = view.swap and (view.swap.forecast or view.swap)
+    local hasSummary = result and result.comparisonTrace and result.delta ~= nil and result.status ~= "best_owned"
+    widgets:AddGearAdviceLines(tooltip, rating, view, self:GetItemContext().spec, hasSummary)
+    if not view.swap then return end
+    local owner = tooltip:GetOwner()
+    local token = {}
+    tooltip.__bigBisGearExplanation = token
+    local comparison = self.slotComparison
+    local reference = comparison and comparison.reference
+    local function current()
+        if tooltip.__bigBisGearExplanation ~= token or tooltip:GetOwner() ~= owner or not tooltip:IsShown()
+            or comparison ~= self.slotComparison or (comparison and reference ~= comparison.reference) then return false end
+        local parent = owner and owner.GetParent and owner:GetParent()
+        local bound = owner and (owner.detailData or owner.comparisonData or owner.gearData)
+            or parent and (parent.boundData or parent.comparisonData)
+        return not bound or bound == data
+    end
+    local function addExplanation()
+        for _, line in ipairs(widgets:SwapExplanationLines(view.swap, mode == "comparison") or {}) do
+            tooltip:AddLine(line, 0.83, 0.85, 0.88, true)
+        end
+        for _, line in ipairs(rating:EffectComparisonLines(view.swap, true) or {}) do
+            tooltip:AddLine(line, 0.83, 0.85, 0.88, true)
+        end
+    end
+    if not rating:QueueSwapExplanation(view.swap, 0, current, function()
+        addExplanation()
+        tooltip:Show()
+    end, true) then addExplanation() end
+end
+
+function UI:GearRowText(view, data, width)
+    local widgets = BigBiSList.Widgets
+    local text = widgets:GearAdviceText(view)
+    local swap = view.swap and (view.swap.forecast or view.swap)
+    local reason, short
+    if swap and swap.delta and swap.delta ~= 0 and swap.status ~= "best_owned" then
+        if swap.status ~= "empty" or swap.conditional then
+            reason, short = widgets:DecisionReason(data.stat_rank and data.stat_rank.item, view.swap)
+        end
+    elseif view.evidenceGain then reason = view.evidence end
+    if short and (#view.today + #reason) * 6.4 + 27 > width then reason = short end
+    if reason and (#view.today + #reason) * 6.4 + 27 > width then return text end
+    return reason and (text .. " · " .. reason) or text
+end
+
+function UI:QueueGearRowExplanation(row)
+    local data, view = row.boundData, row.gearAdvice
+    if not view or not view.swap then return end
+    local token = row.bindToken
+    local prior = row.gearExplanationRequest
+    if row.gearExplanationView == view and prior and not prior.cancelled then return end
+    local function current()
+        return row.bindToken == token and row.boundData == data and row.gearAdvice == view
+            and self:IsCurrentRenderFrame(row) and row:IsVisible()
+    end
+    row.gearExplanationView = view
+    row.gearExplanationRequest = BigBiSList.ForeverGearRating:QueueSwapExplanation(view.swap, 3, current, function()
+        row.gearExplanationRequest = nil
+        local width = row.subText:GetWidth()
+        BigBiSList.Widgets:SetCellText(row.subText, self:GearRowText(view, data, width), 1, 12, width)
+    end)
 end
 
 function UI:UpdateRowOwnership(row, data, state)
@@ -5101,17 +5165,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight, retainI
     row.subText:SetWidth(nameWidth)
     local deferPersonal = not data.targetVerdict and data.guide_record ~= nil and self.renderModel and self.renderModel.packed
     local gearView = self:GetLevelingGearView(data, mode, nil, deferPersonal)
+    row.gearAdvice = gearView and gearView.today and gearView or nil
     local slot = (mode == "phase" and (self:GetViewState().groupBy or "slot") == "slot") and "" or self:GetRowSlotDisplay(data)
     if mode == "leveling" and data.guide_note then slot = slot .. " · " .. data.guide_note end
     if gearView and gearView.today then
-        slot = widgets:GearAdviceText(gearView)
-        local verdict = data.targetVerdict
-        if verdict and verdict.kind == "upgrade" and widgets.DecisionReason then
-            local reason = widgets:DecisionReason(data.stat_rank and data.stat_rank.item, verdict.swap, self.renderModel and self.renderModel.guideContext)
-            if reason then slot = slot .. " · " .. reason end
-        elseif gearView.evidence and not verdict then
-            slot = slot .. " · " .. gearView.evidence
-        end
+        slot = self:GearRowText(gearView, data, nameWidth)
     end
     if data.wishlist_any then slot = slot ~= "" and (slot .. " · Any version") or "Any version" end
     -- The secondary slot line has a reserved budget; item names never overlap it.
@@ -5234,13 +5292,15 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight, retainI
         end
         rating:QueueWork(0, function() return self:GetLevelingGearView(data, mode) end, current, function(view)
             if not view or not view.today or not current() then return end
-            local text = widgets:GearAdviceText(view)
-            if view.evidence then text = text .. " · " .. view.evidence end
+            row.gearAdvice = view
+            local text = self:GearRowText(view, data, nameWidth)
             row.subText:SetTextColor(widgets:GearAdviceColor(view.tone))
             widgets:SetCellText(row.subText, text, 1, 12, nameWidth)
             row.subText:Show()
+            self:QueueGearRowExplanation(row)
         end)
     end
+    if self:IsCurrentRenderFrame(row) then self:QueueGearRowExplanation(row) end
     return row, rowHeight
 end
 
@@ -5967,6 +6027,7 @@ function UI:UpdateVirtualList(force)
                         frame.__bigBisBoundRenderEntry = entry
                         frame.__bigBisBoundRenderSerial = self.renderModelSerial
                         frame.__bigBisColumnSignature = columnLayout.signature
+                        if entry.kind == "row" then self:QueueGearRowExplanation(frame) end
                         realized = realized + 1
                         if firstUsefulRow then
                             self:GetPerformanceStats().firstRowsMs = debugprofilestop() - self.firstRowsStarted
@@ -8886,6 +8947,8 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local calculationKey = "calculation:" .. tostring(detailData and detailData.stat_identity or itemId)
     local calculationOpen = self:IsDetailsSectionExpanded(calculationKey, false)
     local stronger = gearView and calculationOpen and BigBiSList.ForeverGearRating:GetLevelingSuccessor(summary, rated)
+    local swap = gearView and gearView.swap
+    local selectedReference = detailMode == "comparison" and self.slotComparison and self.slotComparison.reference
     local signature = table.concat({
         tostring(itemId or "none"),
         tostring(detailMode or ""),
@@ -8895,12 +8958,32 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         tostring(math.floor((detailsWidth or 0) + 0.5)),
         summary and tostring(summary.revision) or "",
         stronger and tostring(stronger.level) or "",
+        tostring(swap), tostring(selectedReference),
     }, ":")
     if self.detailsRenderSignature == signature then
         self:ApplyDetailsScrollGeometry(self.detailsContentHeight, detailsHeight)
         self.pendingDetailsRequest = nil
         return
     end
+    local rating, widgets = BigBiSList.ForeverGearRating, BigBiSList.Widgets
+    if swap and rating:SwapExplanationPending(swap, calculationOpen) then
+        local request = self.detailsExplanationRequest
+        if not request or (request.job and request.job.cancelled) or request.swap ~= swap or request.data ~= detailData or request.calculation ~= calculationOpen
+            or request.reference ~= selectedReference then
+            request = {swap = swap, data = detailData, calculation = calculationOpen, reference = selectedReference}
+            self.detailsExplanationRequest = request
+            local function current()
+                local reference = detailMode == "comparison" and self.slotComparison and self.slotComparison.reference
+                return self.detailsExplanationRequest == request and self.selectedItemData == detailData
+                    and self.selectedItemId == itemId and self.selectedItemMode == detailMode
+                    and reference == selectedReference and self:IsInspectorVisible()
+            end
+            request.job = rating:QueueSwapExplanation(swap, 0, current, function()
+                self.detailsExplanationRequest, self.detailsRenderSignature = nil, nil
+                self:RefreshDetails(itemId, detailData, detailMode)
+            end, calculationOpen)
+        end
+    else self.detailsExplanationRequest = nil end
     -- Only completed renders may be reused. A failure after the fixed header has
     -- been bound must leave the next layout pass free to rebuild the body.
     self.detailsRenderSignature = nil
@@ -9032,7 +9115,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             local service = BigBiSList.ForeverGearRating
             local lines = {}
             if calculationOpen then
-                lines = gearView and service:LevelingPresentationLines(gearView) or {}
+                local breakdown = widgets:SwapExplanationLines(swap, selectedReference, true)
+                lines = breakdown or (gearView and service:LevelingPresentationLines(gearView, true)) or {}
+                for _, line in ipairs(service:EffectComparisonLines(swap, true) or {}) do appendText(lines, line) end
                 local exact = service:DescriptionLines(placement)
                 exact[2] = "Default spec weights · " .. exact[2]
                 for _, line in ipairs(exact) do appendText(lines, line) end
@@ -9045,11 +9130,6 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
                     appendText(lines, label .. stronger.level .. " · " .. stronger.name)
                 end
                 if placement.rank and placement.total > 1 then appendText(lines, string.format("%.1f pts", placement.score)) end
-                local comparison = self.slotComparison
-                if comparison and comparison.statRank then
-                    appendText(lines, "Compare with " .. self:GetComparisonReferenceLabel(comparison.reference))
-                    appendText(lines, BigBiSList:GetGuideStatComparison(detailData, self.currentOwned, comparison.reference.slotKey))
-                end
                 local effects = placement.item and placement.item.effects
                 if effects and #effects > 0 then
                     appendText(lines, "Item effects")
@@ -9062,7 +9142,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     if gearView then
         local why = {gearView.today or gearView.strength}
-        appendText(why, gearView.comparisonDetail or gearView.evidence)
+        local explanation = not calculationOpen and widgets:SwapExplanationLines(swap, selectedReference)
+        if explanation then
+            for _, line in ipairs(explanation) do appendText(why, line) end
+        else appendText(why, gearView.comparisonDetail or gearView.evidence) end
         appendText(why, detailData and detailData.lookupReason)
         appendText(why, ownershipText)
         if #why > 0 then recommendationLines = why end

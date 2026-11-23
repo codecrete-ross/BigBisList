@@ -6578,58 +6578,18 @@ function BigBiSList:GetStatRankComparisonRows(className, specName, phase, level,
     return rows
 end
 
-function LEVELING_HELPERS.swapContributionText(contributions)
-    local stats, names = {}, { dps = "Weapon DPS", ranged_dps = "Ranged DPS", wand_dps = "Wand DPS",
-        mp5 = "Mana per 5 sec", hp5 = "Health per 5 sec", proc_dps = "Damage procs", proc_hps = "Healing and absorbs" }
-    for stat, points in pairs(contributions or {}) do
-        if math.abs(points) >= 0.05 then stats[#stats + 1] = { stat = stat, points = points } end
-    end
-    table.sort(stats, function(a, b)
-        local first, second = math.abs(a.points), math.abs(b.points)
-        return first > second or (first == second and a.stat < b.stat)
-    end)
-    local labels, gains, losses = {}, 0, 0
-    for _, stat in ipairs(stats) do
-        if (stat.points > 0 and gains < 2) or (stat.points < 0 and losses < 2) then
-            local name = names[stat.stat] or stat.stat:gsub("_percent$", " chance"):gsub("_", " "):gsub("%f[%a]%l", string.upper)
-            labels[#labels + 1] = string.format("%+.1f %s", stat.points, name)
-            if stat.points > 0 then gains = gains + 1 else losses = losses + 1 end
-        end
-        if gains == 2 and losses == 2 then break end
-    end
-    return #labels > 0 and ("Largest changes · " .. table.concat(labels, " · ")) or nil
-end
-
-function LEVELING_HELPERS.formatSwap(service, swap, points)
+function LEVELING_HELPERS.formatSwap(service, swap)
     if not swap or swap.delta == nil then return nil end
+    local widgets = BigBiSList.Widgets
+    local lines = widgets and widgets.SwapExplanationLines and widgets:SwapExplanationLines(swap, true, true)
+    if lines then return table.concat(lines, "\n") end
     local replaced = {}
     for _, item in ipairs(swap.replacements) do replaced[#replaced + 1] = item.name .. " (" .. item.slot .. ")" end
     local label = service:GetSwapBasisLabel(swap.basis)
     if swap.conditional then label = label .. " · Conditional" end
-    local contributions = LEVELING_HELPERS.swapContributionText(points or swap.contributions)
-    return label .. " · " .. service:EstimateSwapPoints(swap.delta)
+    return label .. " · " .. service:EstimateSwapPoints(swap.delta):gsub(" pts$", " score points")
         .. (#replaced > 0 and (" vs " .. table.concat(replaced, " + ")) or (" · " .. swap.definition.label))
-        .. (contributions and ("\n" .. contributions) or "")
         .. (swap.effects and #swap.effects > 0 and ("\n" .. table.concat(swap.effects, ", ")) or "")
-end
-
-function BigBiSList:GetGuideStatComparison(row, owned, physical)
-    local service, placement = self.ForeverGearRating, row.stat_rank
-    if not service or not placement or not owned then return nil end
-    local swap = row.stat_swap
-    local contributions
-    if (not swap or not swap.contributions) and not row.is_reference then
-        local context = service:GetContext(row.class, row.spec, row.phase, placement.level, owned)
-        local traced = service:GetGuideSwap(context, placement.item, physical, row.slot, row.item_link, true)
-        if not swap then swap = traced
-        elseif traced and traced.delta and swap.delta and traced.basis == swap.basis and math.abs(traced.delta - swap.delta) < 0.0001 then
-            contributions = traced.contributions
-        end
-    end
-    local text = LEVELING_HELPERS.formatSwap(service, swap, contributions)
-    local effects = service:EffectComparisonLines(swap)
-    if text and effects and #effects > 0 then text = text .. "\n" .. table.concat(effects, "\n") end
-    return text
 end
 
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level, identityOnly)

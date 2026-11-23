@@ -1016,7 +1016,7 @@ local function hasUnscoredEffect(item)
     return item and not item.utility and (item.unreadable_effects or next(item.effects or {}) ~= nil)
 end
 
-local function traceEffects(context, result, before, after, item, active)
+local function traceComparison(context, result, before, after, item, reference)
     local involved = hasUnscoredEffect(item)
     local function estimated(piece)
         local preset = context.referenceScenario and context.referenceScenario.effect_benchmark
@@ -1029,9 +1029,7 @@ local function traceEffects(context, result, before, after, item, active)
         involved = involved or hasUnscoredEffect(old.facts)
         result.estimatedEffects = result.estimatedEffects or estimated(old.facts)
     end
-    if involved then
-        result.effectTrace = {context = context, before = before, after = after, active = active}
-    end
+    result.comparisonTrace = {context = context, before = before, after = after, reference = reference, hasEffects = involved}
 end
 
 local function applyMissingBuild(result, missing)
@@ -1056,9 +1054,7 @@ local function loadoutItem(scorer, instance)
     return item, unknown
 end
 
-function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
-    local scorer = addon.ForeverScoring
-    if not (scorer and scorer.ReferenceItem) then return nil end
+local function scoringLoadout(scorer, gear)
     local loadout, uncertain = {}, {}
     for _, definition in ipairs(addon:GetEquipmentSlotDefinitions()) do
         local instance = gear[definition.key]
@@ -1067,6 +1063,13 @@ function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
             loadout[position], uncertain[position] = loadoutItem(scorer, instance)
         end
     end
+    return loadout, uncertain
+end
+
+function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
+    local scorer = addon.ForeverScoring
+    if not (scorer and scorer.ReferenceItem) then return nil end
+    local loadout, uncertain = scoringLoadout(scorer, gear)
     local active = context.activeBuild
     local operations = active and active.profile.operations or {}
     local ranks = active and active.ranks or {}
@@ -1076,6 +1079,207 @@ function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
         uncertain[position] = uncertain[position] or scorer:HasUnresolvedEffects(item, applied and applied[position])
     end
     return total, uncertain, loadout, breakdown
+end
+
+local function comparisonScore(trace)
+    local context, active, scorer = trace.context, trace.active or trace.context.activeBuild, addon.ForeverScoring
+    local weights = trace.active and trace.active.weights or rating:ReferenceWeights(context)
+    return function(gear, breakdown, evidence)
+        return scorer.ScoreLoadout(gear, weights, active and active.profile.operations or {}, active and active.ranks or {},
+            active and active.scenario or context.referenceScenario, active and active.race or context.raceId,
+            context.level, breakdown, evidence)
+    end
+end
+
+local function comparisonLoadouts(trace)
+    local scorer = addon.ForeverScoring
+    local before = trace.scoredBefore or scoringLoadout(scorer, trace.before)
+    local after = trace.scoredAfter or scoringLoadout(scorer, trace.after)
+    return before, after
+end
+
+local function weightReversal(trace, delta, baselines)
+    local context = trace.context
+    if not context.referenceScenario.weight_alternatives or delta == 0 then return end
+    local before, after = comparisonLoadouts(trace)
+    local active = context.activeBuild
+    local _, alternative = addon.ForeverScoring:SwapDependsOnWeights(before, after, rating:ReferenceWeights(context),
+        active and active.profile.operations or {}, active and active.ranks or {}, context.referenceScenario, context.raceId,
+        context.level, delta, baselines)
+    return alternative
+end
+
+local HIT_CAPS = {
+    hit_percent = "Hit", melee_hit_percent = "melee Hit", ranged_hit_percent = "ranged Hit",
+    spell_hit_percent = "spell Hit", offhand_hit_percent = "dual-wield Hit", expertise = "Expertise",
+}
+
+local function cappedStat(raw, points, before, after, delta)
+    local partial
+    for _, channel in ipairs({"ranged_hit_percent", "melee_hit_percent", "spell_hit_percent", "offhand_hit_percent",
+        "hit_percent", "expertise"}) do
+        local old, new = before[channel], after[channel]
+        local change = (raw[channel] or 0) + (channel ~= "expertise" and channel ~= "hit_percent" and (raw.hit_percent or 0) or 0)
+        if channel == "offhand_hit_percent" then change = change + (raw.melee_hit_percent or 0) end
+        local scored = channel == "expertise" and "expertise" or "hit_percent"
+        if old and new and change * delta < -0.000001 then
+            if math.abs(points[scored] or 0) < 0.000001 and old.minimum >= old.cap - 0.000001
+                and new.minimum >= new.cap - 0.000001 then
+                return "Both reach the " .. HIT_CAPS[channel] .. " cap"
+            end
+            local losing = delta > 0 and old or new
+            if not partial and losing.maximum > losing.cap + 0.000001 then
+                partial = "Some " .. HIT_CAPS[channel] .. " is above the cap"
+            end
+        end
+    end
+    return partial
+end
+
+local function changedSets(before, after)
+    local changes, ignore = {}, {}
+    local function add(bonuses, other, gained)
+        for key, bonus in pairs(bonuses) do
+            if not other[key] then
+                ignore[key] = true
+                if bonus.name then
+                    changes[#changes + 1] = {gained = gained, name = bonus.pieces .. "-piece " .. bonus.name .. " bonus"}
+                end
+            end
+        end
+    end
+    add(after, before, true)
+    add(before, after, false)
+    table.sort(changes, function(a, b)
+        if a.gained ~= b.gained then return a.gained end
+        return a.name < b.name
+    end)
+    return changes, ignore
+end
+
+local function effectChanges(before, after, beforeApplied, afterApplied)
+    local changes, unknown, seen = {}, {}, {}
+    local oldWithout, newWithout
+    local function remove(gear, other, applied, otherApplied, gained)
+        local without
+        for position = 1, 18 do
+            local item, partner = gear[position], other[position]
+            local known = applied[position] or {}
+            local otherKnown = otherApplied[position] or {}
+            local worn = item and item ~= partner
+            if worn and not item.utility then
+                for _, label in ipairs(item.effects or {}) do
+                    if not known[label] and not seen[label] then unknown[#unknown + 1], seen[label] = label, true end
+                end
+                if item.unreadable_effects and #unknown == 0 then
+                    local label = item.name or "Item effect"
+                    unknown[#unknown + 1], seen[label] = label, true
+                end
+            end
+            if item and item.effect_rules then
+                local kept = {}
+                local removed
+                for _, rule in ipairs(item.effect_rules) do
+                    local value, previous = known[rule.label], otherKnown[rule.label]
+                    local weaponSlot = type(value) == "table" and (value.weapon_slot or position)
+                    local revalued = type(value) == "table" and (type(previous) ~= "table"
+                        or value.per_minute ~= previous.per_minute or value.uptime ~= previous.uptime
+                        or (rule.kind == "extra_attack" and gear[weaponSlot] ~= other[weaponSlot]))
+                    if value and rule.kind ~= "situational" and (worn or revalued) then
+                        local name = rule.spell_name or rule.label
+                        changes[#changes + 1] = {gained = gained, name = name, retained = not worn}
+                        removed = true
+                    else
+                        kept[#kept + 1] = rule
+                    end
+                end
+                if removed then
+                    without = without or copy(gear)
+                    without[position] = copy(item)
+                    without[position].effect_rules = kept
+                end
+            end
+        end
+        return without
+    end
+    newWithout = remove(after, before, afterApplied, beforeApplied, true)
+    oldWithout = remove(before, after, beforeApplied, afterApplied, false)
+    return changes, unknown, oldWithout, newWithout
+end
+
+-- Keep explanations on the exact verdict, including best-owned partners and
+-- a selected physical slot. A ready-only read is safe while painting rows.
+local function explainedSwap(swap)
+    local result = swap and (swap.forecast or swap)
+    if result and result.status == "best_owned" then return result.equipSwap end
+    return result
+end
+
+function rating:GetSwapExplanation(swap, readyOnly)
+    local result = explainedSwap(swap)
+    local trace = result and result.comparisonTrace
+    if not trace or not finite(result.delta) then return end
+    if trace.explanation ~= nil or readyOnly then return trace.explanation or nil end
+    local before, after = comparisonLoadouts(trace)
+    local scoreGear = comparisonScore(trace)
+    local oldEvidence, newEvidence = {sets = {}, caps = {}}, {sets = {}, caps = {}}
+    local oldScore, _, oldApplied, _, oldPoints = scoreGear(before, true, oldEvidence)
+    local newScore, _, newApplied, _, newPoints = scoreGear(after, true, newEvidence)
+    if math.abs(newScore - oldScore - result.delta) > 0.000001 then
+        trace.explanation = false
+        return
+    end
+    local scorer = addon.ForeverScoring
+    local points = scorer:StatDifferences(oldPoints, newPoints)
+    local raw = {}
+    local function addChanges(gear, other, sign)
+        for position, item in pairs(gear) do
+            if item ~= other[position] then
+                for stat, amount in pairs(scorer.NormalizeStats(item.stats)) do raw[stat] = (raw[stat] or 0) + sign * amount end
+            end
+        end
+    end
+    addChanges(after, before, 1)
+    addChanges(before, after, -1)
+    local sets, ignored = changedSets(oldEvidence.sets, newEvidence.sets)
+    local effects, unknown, beforeWithout, afterWithout
+    if trace.hasEffects or next(oldApplied) or next(newApplied) then
+        effects, unknown, beforeWithout, afterWithout = effectChanges(before, after, oldApplied, newApplied)
+    end
+    local mechanic
+    local function decides(deltaWithout)
+        return math.abs(result.delta) > 0.000001 and result.delta * deltaWithout <= 0
+    end
+    if #sets > 0 and decides(scoreGear(after, false, {ignoreSets = ignored}) - scoreGear(before, false, {ignoreSets = ignored})) then
+        mechanic = {kind = "set", changes = sets}
+    elseif (beforeWithout or afterWithout)
+        and decides(scoreGear(afterWithout or after) - scoreGear(beforeWithout or before)) then
+        mechanic = {kind = "effect", changes = effects}
+    end
+    trace.explanation = {raw = raw, points = points, mechanic = mechanic, sets = sets, unknown = unknown,
+        cap = cappedStat(raw, points, oldEvidence.caps, newEvidence.caps, result.delta)}
+    return trace.explanation
+end
+
+function rating:SwapExplanationPending(swap, effects)
+    local result = explainedSwap(swap)
+    local trace = result and result.comparisonTrace
+    if not trace or not finite(result.delta) then return end
+    return trace.explanation == nil or effects and trace.hasEffects and not trace.effectLines
+end
+
+function rating:QueueSwapExplanation(swap, priority, isCurrent, onReady, effects)
+    if not self:SwapExplanationPending(swap, effects) then return end
+    local revision = addon.ForeverScoring.revision
+    local function current()
+        return revision == addon.ForeverScoring.revision and isCurrent()
+    end
+    return self:QueueWork(priority, function()
+        self:GetSwapExplanation(swap)
+        if effects then self:EffectComparisonLines(swap) end
+    end, current, function()
+        if current() then onReady() end
+    end)
 end
 
 function rating:WithCharacterBuild(context, live)
@@ -1109,33 +1313,19 @@ local function effectRateText(rule, estimate)
     return text
 end
 
-function rating:EffectComparisonLines(result)
-    result = result and (result.forecast or result)
-    local trace = result and result.effectTrace
-    if not trace then return end
-    if trace.lines then return trace.lines end
+function rating:EffectComparisonLines(result, readyOnly)
+    result = explainedSwap(result)
+    local trace = result and result.comparisonTrace
+    if not trace or not trace.hasEffects then return end
+    if trace.effectLines then return trace.effectLines end
+    if readyOnly then return end
     local lines, context, active = {}, trace.context, trace.active or trace.context.activeBuild
     if result.buildUnavailable == "talents" then lines[#lines + 1] = "Default spec weights · Talent ranks unavailable" end
     local scorer = addon.ForeverScoring
-    local scenario, weights = active and active.scenario or context.referenceScenario,
-        active and active.weights or self:ReferenceWeights(context)
-    local function value(gear)
-        return scorer.ScoreLoadout(gear, weights, active and active.profile.operations or {},
-            active and active.ranks or {}, scenario, context.raceId, context.level)
-    end
-    local before, after = {}, {}
-    local function read(instance)
-        if instance and instance.facts then
-            local facts = instance.facts
-            local stats = swapStats(facts, instance.item_link)
-            return stats and scorer:ReferenceItem(facts, stats)
-        end
-    end
+    local weights = trace.active and trace.active.weights or self:ReferenceWeights(context)
+    local value = comparisonScore(trace)
+    local before, after = comparisonLoadouts(trace)
     local definitions = addon:GetEquipmentSlotDefinitions()
-    for _, def in ipairs(definitions) do
-        before[def.inventorySlotId] = read(trace.before[def.key])
-        after[def.inventorySlotId] = read(trace.after[def.key])
-    end
     local function describe(gear, position, instance, incoming)
         if not instance or not gear[position] then return end
         local item, facts = gear[position], instance.facts
@@ -1221,7 +1411,7 @@ function rating:EffectComparisonLines(result)
             describe(before, def.inventorySlotId, old, false)
         end
     end
-    trace.lines = lines
+    trace.effectLines = lines
     return lines
 end
 
@@ -2165,7 +2355,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                 local proposal, without = copy(gear), copy(gear)
                 proposal[key], without[key] = { facts = item, item_link = link }, nil
                 if slot == "Two Hand" then proposal.OffHand, without.OffHand = nil, nil end
-                traceEffects(context, result, gear, proposal, item)
+                traceComparison(context, result, gear, proposal, item, "equipped")
                 local reference = context.wornReference
                 local baseline, before = reference.total, reference.conditional
                 if baseline then
@@ -2178,13 +2368,9 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                     local position = definition.inventorySlotId
                     result.conditional = before[position] or after[position]
                         or (group.weapons and (before[16] or before[17] or after[16] or after[17]))
-                    if context.referenceScenario.weight_alternatives then
-                        local _, _, original = rating:ReferenceLoadout(context, gear)
-                        local active = context.activeBuild
-                        result.conditional = result.conditional or scorer:SwapDependsOnWeights(original, proposed,
-                            rating:ReferenceWeights(context), active and active.profile.operations or {},
-                            active and active.ranks or {}, context.referenceScenario, context.raceId, context.level)
-                    end
+                    result.comparisonTrace.scoredAfter = proposed
+                    result.weightReversal = weightReversal(result.comparisonTrace, result.delta)
+                    result.conditional = result.conditional or result.weightReversal ~= nil
                 else
                     result.roleDelta = (rolePoints or 0) - result.roleDisplaced
                 end
@@ -2200,8 +2386,12 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                     active.delta, active.effects = evaluation.delta, evaluation.effects
                     active.contributions = evaluation.contributions
                     active.roleDelta, active.roleDisplaced = evaluation.roleDelta, evaluation.roleDisplaced
-                    active.conditional = evaluation.conditional
-                    if active.effectTrace then active.effectTrace = copy(active.effectTrace); active.effectTrace.active = live end
+                    active.conditional, active.weightReversal = evaluation.conditional, evaluation.weightReversal
+                    if active.comparisonTrace then
+                        local trace = copy(active.comparisonTrace)
+                        trace.active, trace.scoredBefore, trace.scoredAfter = live, live.gear, evaluation.proposal
+                        active.comparisonTrace = trace
+                    end
                     if not bestLive or active.delta > bestLive.delta then bestLive = active end
                 else
                     incompleteLive = true
@@ -2566,7 +2756,8 @@ local function equipSwap(context, group, state, worn, proposal, index)
     local oldValue, oldUncertain = rating:ReferenceLoadout(context, previous)
     local newValue, newUncertain = rating:ReferenceLoadout(context, proposed)
     if oldValue == nil or newValue == nil or newValue <= oldValue then return nil end
-    local result = { delta = newValue - oldValue, definition = group.definitions[index], incoming = {}, replacements = {} }
+    local result = { delta = newValue - oldValue, definition = group.definitions[index], incoming = {}, replacements = {},
+        basis = context.activeBuild and "active" or "reference" }
     for position, definition in ipairs(group.definitions) do
         local old, new = worn[position].instance, proposal[position].instance
         if new and not groupHas(worn, new) then
@@ -2584,6 +2775,9 @@ local function equipSwap(context, group, state, worn, proposal, index)
             end
         end
     end
+    traceComparison(context, result, previous, proposed, proposal[index].instance.facts, "equipped")
+    result.weightReversal = weightReversal(result.comparisonTrace, result.delta)
+    result.conditional = result.conditional or result.weightReversal ~= nil
     if rating:ReliableGain(result) then return result end
 end
 
@@ -2618,7 +2812,8 @@ local function ownedSwap(context, group, candidate, quantity, held)
     local best, chosen, chosenIndex = ownedProposal(context, group, state, instance, quantity)
     if not best then return nil end
     local baseline = state.baseline
-    local previousGear = groupGear(group, state, baseline)
+    local previousGear = state.baselineGear
+    if not previousGear then previousGear = groupGear(group, state, baseline); state.baselineGear = previousGear end
     local retained = copy(previousGear)
     local other = best[3 - chosenIndex].instance
     local gear = copy(state.outside)
@@ -2644,14 +2839,22 @@ local function ownedSwap(context, group, candidate, quantity, held)
         end
     end
     if result.delta and result.delta > 0 and not state.unresolved then setRoleChange(context, result, previousGear, retained) end
-    traceEffects(context, result, previousGear, gear, candidate.facts)
+    if finite(result.delta) and not state.unresolved then
+        traceComparison(context, result, previousGear, gear, candidate.facts, "owned")
+        result.comparisonTrace.definitions = group.definitions
+        if context.referenceScenario.weight_alternatives and result.delta ~= 0 then
+            state.alternativeBaselines = state.alternativeBaselines or {}
+            result.weightReversal = weightReversal(result.comparisonTrace, result.delta, state.alternativeBaselines)
+            result.conditional = result.conditional or result.weightReversal ~= nil
+        end
+    end
     if context.activeBuild and addon.ForeverScoring:HasUnmodeledSwap(context.activeBuild, candidate.facts,
         result.definition.inventorySlotId, result.slot) then result.conditional = true end
     if state.unresolved then
         result.delta, result.status = nil, state.unresolved
         result.blocker, result.pending = state.blocker, state.pending
     elseif candidate.facts.unique_group and next(context.owned.unreadableEquipmentSlots or {}) then
-        result.delta, result.status = nil, "unavailable"
+        result.delta, result.status, result.comparisonTrace = nil, "unavailable", nil
     elseif held and groupHas(baseline, held) then
         result.status = "best_owned"
         if not result.conditional and (held.state == "bag" or held.state == "bank") then
@@ -2871,6 +3074,22 @@ function rating:GetSwapBasisLabel(basis)
     return basis == "active" and "Your setup" or "Default spec weights"
 end
 
+function rating:WeightReversalReason(swap)
+    if not swap or not swap.weightReversal then return end
+    local trace = swap.comparisonTrace
+    local context = trace and trace.context
+    if context and context.role == "healer" then
+        return "Short fights can reverse the pick", "Short fights favor healing output, while longer fights can favor mana."
+    elseif context and context.role == "tank" then
+        return "Threat can reverse the pick", "Prioritizing threat over survival reverses the pick."
+    elseif context and context.spec == "Survival" then
+        return "Melee weaving can reverse the pick", "Weaving melee attacks into the ranged rotation reverses the pick."
+    elseif context and context.spec == "Destruction" then
+        return "Spell mix can reverse the pick", "A rotation that relies more on Shadow spells reverses the pick."
+    end
+    return "Encounter assumptions can reverse the pick"
+end
+
 function rating:Label(entry, layout, showProjection)
     if not entry then return "Stats unavailable" end
     if entry.future_phase then return "Available with " .. addon:GetPhaseDisplayName(entry.future_phase) end
@@ -3082,9 +3301,10 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
     else kind = "hidden" end
     if (kind == "utility" or kind == "situational" or inspecting) and not detail then detail = effect or note end
     if kind == "situational" and not detail then
+        detail = self:WeightReversalReason(result)
         for _, replaced in ipairs(result.replacements or {}) do
             local other = replaced.facts and replaced.facts.effects and replaced.facts.effects[1]
-            if other then detail = replaced.name .. " · " .. other; break end
+            if not detail and other then detail = replaced.name .. " · " .. other; break end
         end
         if not detail and result.buildUnavailable then detail = "Default spec weights" end
         if not detail and item and item.unreadable_effects then detail = "Item effect unverified" end
@@ -3278,7 +3498,9 @@ local function gearVerdict(self, input, view)
             end
         end
         view.today = view.today .. suffix
-        view.evidence = view.evidence .. (result.estimatedEffects and " · Includes estimated effects" or " · Scored stats only")
+        if not result.weightReversal then
+            view.evidence = view.evidence .. (result.estimatedEffects and " · Includes estimated effects" or " · Scored stats only")
+        end
         view.tone = "uncertain"
     elseif forecast then
         view.tone = "future"
@@ -3385,7 +3607,7 @@ function rating:LevelingPresentation(input)
     return view
 end
 
-function rating:LevelingPresentationLines(view)
+function rating:LevelingPresentationLines(view, omitEffects)
     local lines = {}
     local function add(text)
         if text then lines[#lines + 1] = text end
@@ -3398,7 +3620,9 @@ function rating:LevelingPresentationLines(view)
     if view.range ~= view.strength then add(view.range) end
     add(view.acquisition)
     add(view.comparisonDetail)
-    for _, line in ipairs(self:EffectComparisonLines(view.swap) or {}) do add(line) end
+    if not omitEffects then
+        for _, line in ipairs(self:EffectComparisonLines(view.swap) or {}) do add(line) end
+    end
     add(view.lookupReason)
     if view.sourceUnknown then add("Source unknown") end
     return lines

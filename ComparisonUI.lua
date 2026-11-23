@@ -708,18 +708,14 @@ function UI:BindComparisonRow(row, entry, pinned)
             row.referenceButton.label:SetText(COMPARE_ACTION)
             row.referenceButton:SetSelected(false); row.referenceButton:SetWidth(columns.evidence.width); row.referenceButton:Show()
         end
-        local hover = view and service:LevelingPresentationLines(view) or {}
         local displayRank = rated or placement
-        if displayRank then
-            for _, line in ipairs(service:DescriptionLines(displayRank)) do hover[#hover + 1] = line end
-        end
-        if swap and swap.delta then
-            local basis = service:GetSwapBasisLabel(swap.basis)
-            if swap.conditional then basis = basis .. " · Conditional" end
-            hover[#hover + 1] = basis .. " at Level " .. state.level .. " · " .. service:EstimateSwapPoints(swap.delta) .. " vs " .. referenceLabel
-        end
-        if data.guide_note then hover[#hover + 1] = data.guide_note end
-        widgets:BindTooltip(row, #hover > 0 and table.concat(hover, "\n") or nil)
+        widgets:BindTooltip(row, function(_, tooltip)
+            if view then self:AddLevelingGearTooltip(tooltip, data, "comparison") end
+            if displayRank then
+                for _, line in ipairs(service:DescriptionLines(displayRank)) do tooltip:AddLine(line, 0.88, 0.88, 0.92, true) end
+            end
+            if data.guide_note then tooltip:AddLine(data.guide_note, 0.88, 0.88, 0.92, true) end
+        end)
     elseif pinned then
         row.referenceButton:ClearAllPoints(); row.referenceButton:SetPoint("LEFT", row, "LEFT", columns.evidence.x, 0)
         row.referenceButton.reference = data.reference_context

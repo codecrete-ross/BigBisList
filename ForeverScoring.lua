@@ -68,7 +68,17 @@ local function marginalPoints(amount, bonus, curve)
     return total
 end
 
-local function hitPoints(stats, curves, level, talents)
+local function recordCap(evidence, channel, amount, cap)
+    local prior = evidence.caps[channel]
+    if prior then
+        prior.minimum = math.min(prior.minimum, amount)
+        prior.maximum = math.max(prior.maximum, amount)
+    else
+        evidence.caps[channel] = {cap = cap, minimum = amount, maximum = amount}
+    end
+end
+
+local function hitPoints(stats, curves, level, talents, evidence)
     local total = 0
     for _, curve in ipairs(curves) do
         local amount = (stats.hit_percent or 0) + (stats[curve.channel .. "_hit_percent"] or 0)
@@ -86,6 +96,7 @@ local function hitPoints(stats, curves, level, talents)
                 - math.max(0, math.min(bonus, cap) - previous)) * segment[2]
             previous = cap
         end
+        if evidence and previous > 0 then recordCap(evidence, curve.channel .. "_hit_percent", amount + bonus, previous) end
     end
     return total
 end
@@ -117,7 +128,15 @@ local function operationApplies(operation, rank, level, shield, twoHand)
             or (operation.condition == "two_hand" and twoHand))
 end
 
-local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats, breakdown)
+local function addSetBonus(stats, bonus, key, name, evidence)
+    if not evidence then addStats(stats, bonus.stats); return end
+    local identity = key .. ":" .. bonus.pieces
+    if evidence.ignoreSets and evidence.ignoreSets[identity] then return end
+    if evidence.sets then evidence.sets[identity] = {name = name, pieces = bonus.pieces} end
+    addStats(stats, bonus.stats)
+end
+
+local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats, breakdown, evidence)
     local stats, sets, explanations = {}, {}, {}
     local tooltipSets
     local shield = false
@@ -146,7 +165,10 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     stats.weapon_speed = mainHand and mainHand.stats.weapon_speed or 0
     addStats(stats, bonusStats)
     for _, bonus in ipairs(scenario.sets or {}) do
-        if (sets[bonus.set_id] or 0) >= bonus.pieces then addStats(stats, bonus.stats) end
+        if (sets[bonus.set_id] or 0) >= bonus.pieces then
+            local model = evidence and BigBiSListData and BigBiSListData.character_scoring
+            addSetBonus(stats, bonus, bonus.set_id, model and byId(model.set_names, bonus.set_id), evidence)
+        end
     end
     if tooltipSets then
         for key, item in pairs(tooltipSets) do
@@ -158,7 +180,7 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
                             if legacy.set_id == item.set_id and legacy.pieces == bonus.pieces then credited = true; break end
                         end
                     end
-                    if not credited then addStats(stats, bonus.stats) end
+                    if not credited then addSetBonus(stats, bonus, key, item.effect_set.name, evidence) end
                 end
             end
         end
@@ -238,15 +260,20 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
         end
     end
     local function value(points)
-        local total = 0
+        local total, caps = 0, points and evidence and evidence.caps and evidence
         for stat, weight in pairs(coefficients) do
             local contribution = 0
             if weight ~= 0 then
                 local cap, bonus = (scenario.caps or {})[stat] or math.huge, talents[stat] or 0
                 local amount = math.min((stats[stat] or 0) + bonus, cap) - math.min(bonus, cap)
-                if stat == "hit_percent" and scenario.hit_curves then amount = hitPoints(stats, scenario.hit_curves, level, talents) end
+                if stat == "hit_percent" and scenario.hit_curves then
+                    amount = hitPoints(stats, scenario.hit_curves, level, talents, caps)
+                elseif caps and cap < math.huge then
+                    recordCap(caps, stat, (stats[stat] or 0) + bonus, cap)
+                end
                 if stat == "expertise" and scenario.expertise_curve then
                     amount = marginalPoints(stats[stat] or 0, bonus, scenario.expertise_curve)
+                    if caps then recordCap(caps, stat, (stats[stat] or 0) + bonus, scenario.expertise_curve[#scenario.expertise_curve][1]) end
                 end
                 contribution = amount * weight
             end
@@ -506,7 +533,7 @@ local function setCoverage(loadout, scenario)
     return applied
 end
 
-function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level, includeBreakdown)
+function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level, includeBreakdown, evidence)
     local rating = BigBiSList.ForeverGearRating
     local checkpoint = rating and rating:GetWorkCheckpoint()
     if checkpoint then checkpoint() end
@@ -522,7 +549,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         end
     end
     if not hasRules or not (scenario.effect_expectations or scenario.effect_benchmark) then
-        local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, nil, breakdown)
+        local points, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, nil, breakdown, evidence)
         return points, explanations, applied, sets, breakdown
     end
     local flat, timed, timedKeys = {}, {}, {}
@@ -566,7 +593,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
             end
         end
     end
-    local total, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat, breakdown)
+    local total, explanations, sets = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, flat, breakdown, evidence)
     local states
     if #timedKeys == 1 and allScoped then
         states = { { active = timedKeys, fraction = timed[timedKeys[1]].uptime } }
@@ -584,7 +611,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
             for _, key in ipairs(state.active) do addStats(stats, timed[key].stats) end
             local activeBreakdown = breakdown and {}
             local active, activeExplanations = baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, stats,
-                activeBreakdown)
+                activeBreakdown, evidence)
             total = total + (active - baseline) * state.fraction
             for id, value in pairs(activeExplanations) do
                 explanations[id] = (explanations[id] or 0) + (value - (baselineExplanations[id] or 0)) * state.fraction
@@ -853,17 +880,21 @@ local function score(state, gear, weights, includeBreakdown)
         state.scenario, state.race, state.level, includeBreakdown)
 end
 
-function Scoring:SwapDependsOnWeights(before, after, weights, operations, ranks, scenario, race, level)
+function Scoring:SwapDependsOnWeights(before, after, weights, operations, ranks, scenario, race, level, ordinary, baselines)
     if not scenario.weight_alternatives then return false end
-    local function delta(values)
-        return Scoring.ScoreLoadout(after, values, operations, ranks, scenario, race, level)
-            - Scoring.ScoreLoadout(before, values, operations, ranks, scenario, race, level)
-    end
-    local ordinary = delta(weights)
-    for _, changes in ipairs(scenario.weight_alternatives) do
+    ordinary = ordinary or Scoring.ScoreLoadout(after, weights, operations, ranks, scenario, race, level)
+        - Scoring.ScoreLoadout(before, weights, operations, ranks, scenario, race, level)
+    if ordinary == 0 then return false end
+    for index, changes in ipairs(scenario.weight_alternatives) do
         local alternative = copy(weights)
         for stat, value in pairs(changes) do alternative[stat] = value end
-        if ordinary * delta(alternative) < -0.000001 then return true end
+        local baseline = baselines and baselines[index]
+        if baseline == nil then
+            baseline = Scoring.ScoreLoadout(before, alternative, operations, ranks, scenario, race, level)
+            if baselines then baselines[index] = baseline end
+        end
+        local delta = Scoring.ScoreLoadout(after, alternative, operations, ranks, scenario, race, level) - baseline
+        if ordinary * delta < -0.000001 then return true, delta end
     end
     return false
 end
@@ -981,6 +1012,7 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights, inc
         state.baseline, state.baselineEffects, state.baselineItemEffects, state.baselineSets, state.baselineBreakdown =
             score(state, state.gear, nil, includeBreakdown)
         state.roleBaseline = score(state, state.gear, roleWeights)
+        if state.scenario.weight_alternatives then state.alternativeBaselines = {} end
         for _, worn in pairs(state.gear) do
             if worn.uncertain then state.uncertain = true; break end
         end
@@ -997,15 +1029,19 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights, inc
         end
     end
     local without = withSwap(state.gear, target, nil, slot)
-    conditional = conditional or self:SwapDependsOnWeights(state.gear, proposal, state.weights,
-        state.profile.operations, state.ranks, state.scenario, state.race, state.level)
+    local delta = total - state.baseline
+    local _, weightReversal = self:SwapDependsOnWeights(state.gear, proposal, state.weights,
+        state.profile.operations, state.ranks, state.scenario, state.race, state.level, delta, state.alternativeBaselines)
     return {
-        delta = total - state.baseline,
+        delta = delta,
         roleDelta = score(state, proposal, roleWeights) - state.roleBaseline,
         roleDisplaced = math.max(0, state.roleBaseline - score(state, without, roleWeights)),
         effects = swapEffects(state, effects, state.baselineEffects, sets, state.baselineSets),
         contributions = self:StatDifferences(state.baselineBreakdown, breakdown),
-        conditional = conditional or state.uncertain or incoming.uncertain or dependsOnUnmodeledCombat(state, incoming, target, slot),
+        conditional = conditional or weightReversal ~= nil or state.uncertain or incoming.uncertain
+            or dependsOnUnmodeledCombat(state, incoming, target, slot),
+        weightReversal = weightReversal,
+        proposal = proposal,
     }
 end
 
