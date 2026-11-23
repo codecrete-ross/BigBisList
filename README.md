@@ -4,9 +4,8 @@ Big BiS List is an in-game gearing companion for World of Warcraft. It shows
 gear recommendations, acquisition details, item tooltip matches, ownership,
 and a priority planner.
 
-The `0.15.0` public prerelease includes TBC Anniversary (interface `20506`)
-and WoW Forever (interface `16001`). Forever is available as a local prerelease
-while leveling coverage review and in-game acceptance are pending.
+Version `0.15.0` includes TBC Anniversary (interface `20506`) and WoW Forever
+(interface `16001`). The Forever build targets client `1.60.1.71037`.
 
 ## Install
 
@@ -35,6 +34,9 @@ test.
 - WoW Forever Leveling and level-60 Pre-Raid gear for 28 profiles, with race,
   faction, and route eligibility. Supported specs can use active talent ranks
   when comparing gear.
+- Forever comparisons account for fractional combat ratings, talent hit bonuses,
+  attack caps, and the other equipped items. Setup-dependent swaps identify
+  cases where the build or encounter can change the result.
 - Forever ranks by spec, activity, and character level. Details shows which
   stats drive a swap and when a stronger option appears. Item tooltips identify
   tied and projected ranks, compare future gear at its first usable level, and

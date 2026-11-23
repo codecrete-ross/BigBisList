@@ -135,7 +135,10 @@ def compile_index(lua: str, *, output: Path = OUTPUT) -> None:
             print(f"{name} Guide index: {result.stat().st_size:,} bytes", flush=True)
             return result
 
-        with ThreadPoolExecutor(max_workers=min(6, os.cpu_count() or 1)) as executor:
+        workers = int(os.environ.get("BBL_GUIDE_WORKERS", "6"))
+        if not 1 <= workers <= 6:
+            raise ValueError("BBL_GUIDE_WORKERS must be between 1 and 6")
+        with ThreadPoolExecutor(max_workers=min(workers, os.cpu_count() or 1)) as executor:
             parts = list(executor.map(compile_part, ["catalog", *names]))
 
         if contents_digest() != signature:

@@ -27,6 +27,69 @@ local function copy(values)
     return result
 end
 
+local RATING_UNITS = {
+    hit_rating = {"hit_percent", 10}, crit_rating = {"crit_percent", 14},
+    haste_rating = {"haste_percent", 10}, expertise_rating = {"expertise", 10},
+    defense_rating = {"defense", 1}, dodge_rating = {"dodge_percent", 12},
+    parry_rating = {"parry_percent", 15}, block_rating = {"block_percent", 5},
+    spell_hit_rating = {"spell_hit_percent", 10}, spell_crit_rating = {"spell_crit_percent", 14},
+    spell_haste_rating = {"spell_haste_percent", 10},
+    melee_hit_rating = {"melee_hit_percent", 10}, ranged_hit_rating = {"ranged_hit_percent", 10},
+    melee_crit_rating = {"melee_crit_percent", 14}, ranged_crit_rating = {"ranged_crit_percent", 14},
+    melee_haste_rating = {"melee_haste_percent", 10}, ranged_haste_rating = {"ranged_haste_percent", 10},
+}
+
+function Scoring.NormalizeStats(stats)
+    local result = copy(stats or {})
+    for rating, rule in pairs(RATING_UNITS) do
+        if result[rating] then
+            if result[rule[1]] == nil then result[rule[1]] = result[rating] / rule[2] end
+            result[rating] = nil
+        end
+    end
+    return result
+end
+
+function Scoring:IsBuildSupported(model, build)
+    if not model or not readable(build) then return false end
+    build = tonumber(build)
+    if not build then return false end
+    return build == model.build or contains(model.supported_builds, build)
+end
+
+local function marginalPoints(amount, bonus, curve)
+    local total, previous = 0, 0
+    for _, segment in ipairs(curve) do
+        local cap = segment[1]
+        total = total + (math.max(0, math.min(amount + bonus, cap) - previous)
+            - math.max(0, math.min(bonus, cap) - previous)) * segment[2]
+        previous = cap
+    end
+    return total
+end
+
+local function hitPoints(stats, curves, level, talents)
+    local total = 0
+    for _, curve in ipairs(curves) do
+        local amount = (stats.hit_percent or 0) + (stats[curve.channel .. "_hit_percent"] or 0)
+        if curve.channel == "offhand" then amount = amount + (stats.melee_hit_percent or 0) end
+        local bonus = (talents.hit_percent or 0) + (talents[curve.channel .. "_hit_percent"] or 0)
+        if curve.channel == "offhand" then bonus = bonus + (talents.melee_hit_percent or 0) end
+        local previous = 0
+        for _, segment in ipairs(curve.segments) do
+            local cap = segment[1]
+            if level < 60 then
+                local spell = curve.channel == "spell"
+                cap = (spell and 4 or 5) + math.max(0, cap - (spell and 17 or 8))
+            end
+            total = total + (math.max(0, math.min(amount + bonus, cap) - previous)
+                - math.max(0, math.min(bonus, cap) - previous)) * segment[2]
+            previous = cap
+        end
+    end
+    return total
+end
+
 local function byId(values, identifier)
     return values and (values[identifier] or values[tostring(identifier)] or values[tonumber(identifier)])
 end
@@ -34,6 +97,17 @@ end
 local function addStats(total, stats, multiplier)
     for key, value in pairs(stats or {}) do
         total[key] = (total[key] or 0) + value * (multiplier or 1)
+    end
+end
+
+local function addNormalizedStats(total, stats)
+    for stat, value in pairs(stats or {}) do
+        local rule = RATING_UNITS[stat]
+        if not rule then
+            total[stat] = (total[stat] or 0) + value
+        elseif stats[rule[1]] == nil then
+            total[rule[1]] = (total[rule[1]] or 0) + value / rule[2]
+        end
     end
 end
 
@@ -53,7 +127,7 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     local offhandFactor = scenario.offhand_dps_factor or 1
     level = level or 60
     for _, item in pairs(loadout) do
-        addStats(stats, item.stats)
+        addNormalizedStats(stats, item.stats)
         shield = shield or item.shield
         if item.set_id then sets[item.set_id] = (sets[item.set_id] or 0) + 1 end
         if item.effect_set then
@@ -89,6 +163,21 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
             end
         end
     end
+    if scenario.form_attack_period and level >= (scenario.form_min_level or 10) then
+        stats.attack_power = (stats.attack_power or 0) + (stats.feral_attack_power or 0)
+    end
+    if stats.weapon_damage then
+        local speed = stats.weapon_speed > 0 and stats.weapon_speed or scenario.isolated_swing_seconds or 2.6
+        stats.dps = (stats.dps or 0) + stats.weapon_damage / speed
+        local offSpeed = offHand and offHand.stats.weapon_speed
+        if offSpeed and offSpeed > 0 then stats.dps = stats.dps + stats.weapon_damage / offSpeed * offhandFactor end
+        local ranged = loadout[18]
+        local benchmark = scenario.effect_benchmark
+        if (ranged and ranged.stats.ranged_dps) or (benchmark and benchmark.role == "ranged") then
+            local rangedSpeed = ranged and ranged.stats.weapon_speed or 2.8
+            stats.ranged_dps = (stats.ranged_dps or 0) + stats.weapon_damage / rangedSpeed
+        end
+    end
     local bonusHit = bonusStats and bonusStats.spell_hit_percent
     if bonusHit and scenario.effect_benchmark then
         local outside = (stats.spell_hit_percent or 0) - bonusHit + (stats.hit_percent or 0)
@@ -107,20 +196,60 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     local specificCrit = scenario.crit_domain == "spell" and "spell_crit_percent"
         or scenario.crit_domain == "physical" and "physical_crit_percent"
     local role = scenario.effect_benchmark and scenario.effect_benchmark.role
-    if stats.melee_crit_percent and (role == "melee" or role == "tank") then
+    if not scenario.crit_shares and stats.melee_crit_percent and (role == "melee" or role == "tank") then
         local stat = specificCrit or "crit_percent"
         stats[stat] = (stats[stat] or 0) + stats.melee_crit_percent
     end
-    if specificCrit and not weights[specificCrit] then
+    if scenario.crit_shares then
+        for channel, share in pairs(scenario.crit_shares) do
+            stats.crit_percent = (stats.crit_percent or 0) + (stats[channel .. "_crit_percent"] or 0) * share
+            stats.haste_percent = (stats.haste_percent or 0) + (stats[channel .. "_haste_percent"] or 0) * share
+        end
+    elseif specificCrit and not weights[specificCrit] then
         stats.crit_percent = (stats.crit_percent or 0) + (stats[specificCrit] or 0)
     end
-    if scenario.crit_domain == "spell" and not weights.spell_hit_percent then
+    if not scenario.hit_curves and scenario.crit_domain == "spell" and not weights.spell_hit_percent then
         stats.hit_percent = (stats.hit_percent or 0) + (stats.spell_hit_percent or 0)
+    end
+    local talents = copy(scenario.reference_bonuses or {})
+    local coefficients = weights
+    if scenario.reference_ranks and #operations > 0 then
+        coefficients = copy(weights)
+        -- Published gear weights include the reference talent pipeline.
+        -- Invert it on the coefficients, then apply the active pipeline to
+        -- stats. This preserves interactions such as Intellect scaling before
+        -- converting Intellect to spell power.
+        for _, operation in ipairs(operations) do
+            local rank = byId(scenario.reference_ranks, operation.entry) or 0
+            if rank > 0 and level >= (operation.min_level or 1) and level <= (operation.max_level or 60) then
+                local factor = operation.factors[rank] or 0
+                if operation.kind == "convert" then
+                    for _, stat in ipairs(operation.stats) do
+                        coefficients[operation.from_stat] = (coefficients[operation.from_stat] or 0)
+                            - factor * (coefficients[stat] or 0)
+                    end
+                elseif operation.kind == "scale" or operation.kind == "efficiency" then
+                    for _, stat in ipairs(operation.stats) do
+                        local value = coefficients[stat] or 0
+                        coefficients[stat] = operation.kind == "scale" and value / (1 + factor) or value * (1 + factor)
+                    end
+                end
+            end
+        end
     end
     local function value(points)
         local total = 0
-        for stat, weight in pairs(weights) do
-            local contribution = math.min(stats[stat] or 0, (scenario.caps or {})[stat] or math.huge) * weight
+        for stat, weight in pairs(coefficients) do
+            local contribution = 0
+            if weight ~= 0 then
+                local cap, bonus = (scenario.caps or {})[stat] or math.huge, talents[stat] or 0
+                local amount = math.min((stats[stat] or 0) + bonus, cap) - math.min(bonus, cap)
+                if stat == "hit_percent" and scenario.hit_curves then amount = hitPoints(stats, scenario.hit_curves, level, talents) end
+                if stat == "expertise" and scenario.expertise_curve then
+                    amount = marginalPoints(stats[stat] or 0, bonus, scenario.expertise_curve)
+                end
+                contribution = amount * weight
+            end
             total = total + contribution
             if points then points[stat] = contribution end
         end
@@ -128,17 +257,24 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
     end
     for _, operation in ipairs(operations) do
         local rank = byId(ranks, operation.entry) or 0
-        if operationApplies(operation, rank, level, shield, twoHand) then
-            local factor = operation.factors[rank]
+        local referenceRank = byId(scenario.reference_ranks, operation.entry) or 0
+        local active = operationApplies(operation, rank, level, shield, twoHand)
+        local referenced = referenceRank > 0 and level >= (operation.min_level or 1)
+            and level <= (operation.max_level or 60)
+        if active or referenced then
+            local factor = active and operation.factors[rank] or 0
+            local reference = referenced and operation.factors[referenceRank] or 0
             local before = value()
             for _, stat in ipairs(operation.stats) do
                 local amount = stats[stat] or 0
                 if operation.kind == "convert" then
                     stats[stat] = amount + (stats[operation.from_stat] or 0) * factor
+                elseif operation.kind == "add" then
+                    talents[stat] = (talents[stat] or 0) + factor - reference
                 elseif operation.kind == "efficiency" then
                     stats[stat] = amount / (1 + factor)
                 elseif operation.kind == "offhand_damage" then
-                    stats[stat] = amount + offhandDps * offhandFactor * factor
+                    stats[stat] = amount + offhandDps * offhandFactor * ((1 + factor) / (1 + reference) - 1)
                 else
                     stats[stat] = amount * (1 + factor)
                 end
@@ -168,6 +304,15 @@ local function scoredChannels(loadout, weights, operations, ranks, scenario, lev
         or scenario.crit_domain == "physical" and "physical_crit_percent"
     if crit and not weights[crit] then channels[crit] = channels.crit_percent end
     if scenario.crit_domain == "spell" and not weights.spell_hit_percent then channels.spell_hit_percent = channels.hit_percent end
+    for channel, share in pairs(scenario.crit_shares or {}) do
+        if share > 0 then
+            channels[channel .. "_crit_percent"] = channels.crit_percent
+            channels[channel .. "_haste_percent"] = channels.haste_percent
+        end
+    end
+    for _, curve in ipairs(scenario.hit_curves or {}) do channels[curve.channel .. "_hit_percent"] = channels.hit_percent end
+    if channels.dps or channels.ranged_dps then channels.weapon_damage = true end
+    if scenario.form_attack_period and channels.attack_power then channels.feral_attack_power = true end
     local conversions = scenario.conversions or {}
     for index = #conversions, 1, -1 do
         local rule = conversions[index]
@@ -362,6 +507,9 @@ local function setCoverage(loadout, scenario)
 end
 
 function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, raceId, level, includeBreakdown)
+    local rating = BigBiSList.ForeverGearRating
+    local checkpoint = rating and rating:GetWorkCheckpoint()
+    if checkpoint then checkpoint() end
     local applied = setCoverage(loadout, scenario)
     local breakdown = includeBreakdown and {} or nil
     local hasRules, budget = false, 0
@@ -431,6 +579,7 @@ function Scoring.ScoreLoadout(loadout, weights, operations, ranks, scenario, rac
         local baseline, baselineExplanations = total, copy(explanations)
         local baselineBreakdown = breakdown and copy(breakdown)
         for _, state in ipairs(states) do
+            if checkpoint then checkpoint() end
             local stats = copy(flat)
             for _, key in ipairs(state.active) do addStats(stats, timed[key].stats) end
             local activeBreakdown = breakdown and {}
@@ -471,6 +620,7 @@ function Scoring:ReferenceItem(facts, stats)
 end
 
 function Scoring:HasUnresolvedEffects(item, applied)
+    if item and item.stats and ((item.stats.spell_penetration or 0) > 0 or (item.stats.armor_penetration or 0) > 0) then return true end
     if not item or item.utility then return false end
     if item.unreadable_effects then return true end
     for _, label in ipairs(item.effects or {}) do
@@ -512,7 +662,7 @@ function Scoring:GetExactStats(itemId, stats, link)
     local model = BigBiSListData and BigBiSListData.character_scoring
     local _, build
     if GetBuildInfo then _, build = GetBuildInfo() end
-    if not model or (GetBuildInfo and (not readable(build) or tonumber(build) ~= model.build)) then return stats, true end
+    if not model or (GetBuildInfo and not self:IsBuildSupported(model, build)) then return stats, true end
 
     local total, uncertain, socketed = copy(stats or {}), false, false
     for index = 2, 6 do
@@ -649,7 +799,7 @@ function Scoring:PlayerTalentsChanged()
     if GetBuildInfo then _, build = GetBuildInfo() end
     local key = tostring(class) .. "/" .. tostring(spec) .. "/" .. tostring(level)
     local profile = model and model.profiles and model.profiles[tostring(class) .. "/" .. tostring(spec)]
-    if profile and tonumber(build) == model.build and level then
+    if profile and self:IsBuildSupported(model, build) and level then
         local ok, ranks = pcall(readRanks, model, profile, level)
         if ok and ranks then
             local values = {}
@@ -677,7 +827,7 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         local _, build = GetBuildInfo()
         local playerLevel = UnitLevel("player")
         local _, _, race = UnitRace("player")
-        if not readable(build) or tonumber(build) ~= model.build or not readable(race) or not readable(playerLevel)
+        if not self:IsBuildSupported(model, build) or not readable(race) or not readable(playerLevel)
             or playerLevel ~= level or BigBiSList:DetectPlayerClass() ~= className then return nil end
         local actor = byId(scenario.personas, race)
         if not actor or actor[2] ~= BigBiSList:GetPlayerFactionName()
@@ -701,6 +851,21 @@ end
 local function score(state, gear, weights, includeBreakdown)
     return Scoring.ScoreLoadout(gear, weights or state.weights, state.profile.operations, state.ranks,
         state.scenario, state.race, state.level, includeBreakdown)
+end
+
+function Scoring:SwapDependsOnWeights(before, after, weights, operations, ranks, scenario, race, level)
+    if not scenario.weight_alternatives then return false end
+    local function delta(values)
+        return Scoring.ScoreLoadout(after, values, operations, ranks, scenario, race, level)
+            - Scoring.ScoreLoadout(before, values, operations, ranks, scenario, race, level)
+    end
+    local ordinary = delta(weights)
+    for _, changes in ipairs(scenario.weight_alternatives) do
+        local alternative = copy(weights)
+        for stat, value in pairs(changes) do alternative[stat] = value end
+        if ordinary * delta(alternative) < -0.000001 then return true end
+    end
+    return false
 end
 
 local function withSwap(gear, target, item, slot)
@@ -764,7 +929,7 @@ local function dependsOnUnmodeledCombat(state, incoming, target, slot)
     local hit = incoming.stats.hit_percent or 0
     local wornHit = (first and first.stats.hit_percent or 0) + (offHand and offHand.stats.hit_percent or 0)
     if hit ~= wornHit and (state.weights.hit_percent or 0) > 0
-        and not (state.scenario.caps and state.scenario.caps.hit_percent) then return true end
+        and not state.scenario.hit_curves and not (state.scenario.caps and state.scenario.caps.hit_percent) then return true end
     local proc = state.profile.weapon_speed_proc
     local rank = proc and byId(state.ranks, proc.entry)
     local trigger = rank and rank > 0 and byId(state.model.triggers, proc.spell)
@@ -832,6 +997,8 @@ function Scoring:EvaluateSwap(state, facts, link, target, slot, roleWeights, inc
         end
     end
     local without = withSwap(state.gear, target, nil, slot)
+    conditional = conditional or self:SwapDependsOnWeights(state.gear, proposal, state.weights,
+        state.profile.operations, state.ranks, state.scenario, state.race, state.level)
     return {
         delta = total - state.baseline,
         roleDelta = score(state, proposal, roleWeights) - state.roleBaseline,

@@ -24,6 +24,7 @@ CHANCE_STATS = {
     "get a critical strike with melee and ranged attacks": "physical_crit_percent",
 }
 CHANCE = re.compile(r"Equip: (?:Improves|Increases) your chance to (.+) by (\d+(?:\.\d+)?)%\.?", re.I)
+EXPERTISE = re.compile(r"Equip: Reduces (?:your )?chance (?:for your (?:melee )?attacks )?to be Dodged or Parried by (\d+(?:\.\d+)?)%\.?", re.I)
 TRAVEL = re.compile(r"(?:Equip:\s*)?Increases mount speed by \d+%\.?", re.I)
 EXTRA_ATTACK = re.compile(r"Chance on hit: Grants (an?|\d+) extra attacks? on your next swing\.?", re.I)
 MANA_COST = re.compile(r"Equip: Reduces the mana cost of your Seal spells by (\d+)%\.", re.I)
@@ -51,6 +52,7 @@ FLAT_PASSIVE_STATS = (
     ("equip: +", " ranged attack power", "ranged_attack_power"),
     ("equip: increases ranged attack power by ", "", "ranged_attack_power"),
     ("equip: +", " block value", "block_value"),
+    ("equip: +", " weapon damage", "weapon_damage"),
     ("equip: increases damage done by magical spells and effects by up to ", "", "spell_damage"),
     ("equip: increases damage done by spells and effects by up to ", "", "spell_damage"),
 )
@@ -71,6 +73,8 @@ def cooldown(amount: str, unit: str) -> int:
 
 
 def permanent_chance(text: str) -> tuple[str, float] | None:
+    if match := EXPERTISE.fullmatch(text):
+        return "expertise", float(match[1])
     match = CHANCE.fullmatch(text)
     if match and (stat := CHANCE_STATS.get(match[1].casefold())):
         return stat, float(match[2])

@@ -43,6 +43,29 @@ for line in io.lines("BigBiSList_Camelot.toc") do
 end
 local addon = BigBiSList
 addon.DetectPlayerSpec = function() return spec end
+-- Exercise the supported client's personal scorer. Omitting the talent APIs
+-- only times the qualified fallback and misses the normal comparison workload.
+if arg[7] ~= "fallback" then
+    local model = BigBiSListData.character_scoring
+    local profile = model.profiles["Paladin/" .. spec]
+    local ranks = profile.scenarios.pre_raid.reference_ranks
+    local nodes, definitions = {}, {}
+    for entry, trait in pairs(model.traits) do
+        nodes[trait.node_id], definitions[trait.definition_id] = tonumber(entry), trait.spell_id
+    end
+    C_ClassTalents = {GetActiveConfigID = function() return 1 end}
+    C_Traits = {
+        GetConfigInfo = function() return {treeIDs = {1100}} end,
+        GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = spec}} end,
+        GetGroupCurrencyInfo = function() return {{traitNodeGroupID = 1, currencyInfos = {{spent = 31}}}} end,
+        GetNodeInfo = function(_, node)
+            local entry = assert(nodes[node])
+            local rank = ranks[tostring(entry)] or 0
+            return {entryIDs = {entry}, activeEntry = rank > 0 and {entryID = entry, rank = rank} or nil}
+        end,
+        GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
+    }
+end
 H.fireEvent("ADDON_LOADED", "BigBiSList")
 local loaded = milliseconds()
 H.fireEvent("PLAYER_LOGIN")
@@ -70,6 +93,10 @@ if arg[5] == "details" then
     window.width, window.height = 900, 500
 end
 assert(addon.loadTimeMs and addon.UI and addon.uiEventFrame, "The packaged addon did not initialize")
+if arg[7] ~= "fallback" and addon.ForeverScoring:IsBuildSupported(BigBiSListData.character_scoring, build) then
+    assert(addon.ForeverScoring:GetContext("Paladin", spec, endgame and "pre_raid" or "leveling",
+        endgame and 60 or 51, {live = true}), "Timing replay fell back from verified active talents")
+end
 
 local function visibleRows()
     local count = 0
@@ -99,6 +126,9 @@ local function completePage()
 end
 
 if endgame then
+    print(string.format("%d %s %s %s: add-on load %.1f ms, login events %.1f ms, retained Lua heap %.1f MiB",
+        build, payload, spec, density, loaded - start, loginTime, retained))
+    local budgetFailures = {}
     local function check(tab, open)
         ui:ResetPerformanceStats()
         local first, firstMs, ready
@@ -127,7 +157,9 @@ if endgame then
         if openMs > peak then peak, work = openMs, "open" end
         print(string.format("%s: first viewport on frame %d (%.1f ms), peak %.1f ms (%s), %d results",
             tab, first, firstMs, peak, work or "", ready.rowCount))
-        assert(first <= 3 and firstMs <= 50 and peak <= 4, tab .. " exceeded the first-page or interaction budget")
+        if first > 3 or firstMs > 50 or peak > 4 then
+            budgetFailures[#budgetFailures + 1] = tab .. " exceeded the first-page or interaction budget"
+        end
 
         local expected = {}
         local filters = ui.currentFilterPayload
@@ -162,6 +194,7 @@ if endgame then
     for _ = 1, 45 do tick() end
     assert(ui:GetViewKey() == "wishlist" and not (ui.renderModel and ui.renderModel.endgame))
     assert(#H.errors == 0, table.concat(H.errors, "\n"))
+    assert(#budgetFailures == 0, table.concat(budgetFailures, "; "))
     return
 end
 

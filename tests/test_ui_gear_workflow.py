@@ -937,7 +937,7 @@ for _, mode in ipairs({"leveling", "endgame"}) do
     assert(char.bankCache == bank and char.bankCache.links[1] == "item:12930")
     assert(char.viewState.gearGuide.filters.search == "rings")
     assert(not char.trackedBuilds and not char.viewState.builds)
-    local expectedTabs = mode == "leveling" and "Home/Gear Guide/Equipped/Wishlist" or "Home/Upgrades/By Slot/Equipped/Wishlist"
+    local expectedTabs = mode == "leveling" and "Gear Guide/Equipped/Wishlist" or "Upgrades/By Slot/Equipped/Wishlist"
     assert(table.concat(ui:GetActiveTabNames(), "/") == expectedTabs)
 end
 

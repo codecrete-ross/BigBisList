@@ -435,6 +435,7 @@ try {
         try {
             $env:BBL_TEST_FLAVOR = "forever"
             Invoke-CheckedCommand -Label "Forever unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests", "-p", "test_forever*.py")
+            Invoke-CheckedCommand -Label "Forever gear workflows" -Executable $python -Arguments @("-m", "unittest", "tests.test_ui_gear_workflow")
         } finally {
             $env:BBL_TEST_FLAVOR = $originalTestFlavor
         }

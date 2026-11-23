@@ -69,6 +69,8 @@ CANONICAL_FILES = {
 }
 
 FOREVER_ONLY_CANONICAL_FILES = {
+    "stat_weight_review": "stat_weight_review.json",
+    "runtime_compatibility": "runtime_compatibility.json",
     "effect_benchmarks": "effect_benchmarks.json",
     "comparison_item_stats": "comparison_item_stats.json",
     "guide_item_reviews": "guide_item_reviews.json",

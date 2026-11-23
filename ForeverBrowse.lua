@@ -974,7 +974,7 @@ function UI:RequestPackedGuideRows(context, filters, activity)
             and previous.reference == query.reference then
             query.previewSlots, query.previewThread = previous.previewSlots, nil
         elseif self.openingGuide and self.refreshStartedAt and C_Timer and C_Timer.After then
-            local slots, destinations = stepPreview(query, self.refreshStartedAt + 2.5, function(checkpoint)
+            local slots, destinations = stepPreview(query, self.refreshStartedAt + 2, function(checkpoint)
                 return previewRows(context, packed, scoped, activity, checkpoint)
             end)
             if not slots then self.refreshPending = true; return query end
@@ -1345,7 +1345,9 @@ function UI:PaintGuideSlice()
     local frameTime = GetTime and GetTime()
     local spent = stats.timingFrame == frameTime and stats.frameTime or 0
     if self.refreshStartedAt and start then spent = spent + start - self.refreshStartedAt end
-    local paintBudget = page.model.endgame and page.model.complete and 2 or 3
+    -- Leave room for the refresh bookkeeping and the background work sharing
+    -- this interaction frame; a paint can finish on the next frame.
+    local paintBudget = 2
     while page.index <= #page.entries do
         if C_Timer and C_Timer.After and start and spent + debugprofilestop() - start >= paintBudget then break end
         local entry = page.entries[page.index]

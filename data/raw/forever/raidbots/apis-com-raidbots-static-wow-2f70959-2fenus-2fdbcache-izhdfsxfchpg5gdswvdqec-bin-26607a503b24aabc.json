@@ -4965,7 +4965,7 @@
       "2538": "Rogue Poisons skill tier"
     }
   },
-  "fetched_at": "2026-11-17T22:46:07.037646+00:00",
+  "fetched_at": "2026-11-23T00:54:18.581127+00:00",
   "flat_sets": [
     {
       "item_ids": [
@@ -5096,8 +5096,8 @@
       "source_url": "https://wago.tools/db2/TraitNodeXTraitNodeEntry/csv?build=1.60.1.70959"
     },
     "hotfix_note": {
-      "collected_at": "2026-11-17T22:23:17.708917+00:00",
-      "source_content_digest": "c09368dd269847def2f185c508d1c1a748ef02383839d7d0bb13dab87977b017",
+      "collected_at": "2026-11-23T00:54:18.581127+00:00",
+      "source_content_digest": "39b7fb80788b151163a0a9973358fbc94de5303299d73cb1bf5f0e07de74c4af",
       "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026"
     },
     "hotfixes": {
@@ -5111,8 +5111,8 @@
       "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/manifest.json"
     },
     "verified_index": {
-      "collected_at": "2026-11-17T21:33:13.997418+00:00",
-      "source_content_digest": "13c140c82fa30265ad993ef8f3ea9effd162434590045794efddeb2f3c970165",
+      "collected_at": "2026-11-23T00:53:54.747707+00:00",
+      "source_content_digest": "655e27a924a6e0a97aabc32bc27b6b23c70c064af3020816d8a8ae9bf429bfbc",
       "source_url": "https://www.raidbots.com/api/dbcache/verified"
     }
   },
@@ -5854,6 +5854,65 @@
       "tooltip_template": "Reduces the cast time of your Healing Touch and Wild Growth spells by $/1000;S1 sec and increases all damage you deal by $m2%.",
       "tree_id": 1089
     },
+    "129589": {
+      "definition_id": 134390,
+      "effects": [
+        {
+          "curve_id": 85329,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 251451,
+              "value": 2.0
+            },
+            {
+              "row_id": 251452,
+              "value": 4.0
+            }
+          ],
+          "row_id": 23753
+        },
+        {
+          "curve_id": 102877,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 310783,
+              "value": 2.0
+            },
+            {
+              "row_id": 310784,
+              "value": 4.0
+            }
+          ],
+          "row_id": 24501
+        }
+      ],
+      "max_rank": 2,
+      "name": "Nature's Reach",
+      "node_id": 104929,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1234845
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1313409
+        }
+      ],
+      "spell_id": 16819,
+      "tooltip_template": "Increases the range of your offensive Balance spells by $m1% and improves your chance to hit by $m2%.",
+      "tree_id": 1089
+    },
     "129596": {
       "definition_id": 134397,
       "effects": [
@@ -6119,6 +6178,78 @@
       ],
       "spell_id": 19168,
       "tooltip_template": "Increases your Agility by $s1%.",
+      "tree_id": 1091
+    },
+    "129651": {
+      "definition_id": 134452,
+      "effects": [
+        {
+          "curve_id": 88007,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 260798,
+              "value": 1.0
+            },
+            {
+              "row_id": 260799,
+              "value": 2.0
+            },
+            {
+              "row_id": 260800,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23843
+        },
+        {
+          "curve_id": 127736,
+          "effect_index": 3,
+          "push_id": 113040,
+          "ranks": [
+            {
+              "push_id": 113040,
+              "row_id": 370795,
+              "value": 1.0
+            },
+            {
+              "push_id": 113040,
+              "row_id": 370796,
+              "value": 2.0
+            },
+            {
+              "push_id": 113040,
+              "row_id": 370797,
+              "value": 3.0
+            }
+          ],
+          "row_id": 25207
+        }
+      ],
+      "max_rank": 3,
+      "name": "Surefooted",
+      "node_id": 104987,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 697452
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 3,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1366114,
+          "push_id": 113040
+        }
+      ],
+      "spell_id": 19290,
+      "tooltip_template": "Increases your hit chance by $m3% and reduces the duration of movement impairing effects on you by $m2%.",
       "tree_id": 1091
     },
     "129656": {
@@ -6718,6 +6849,42 @@
       "tooltip_template": "Increases the damage dealt by your poisons by $m1% and gives your poisons an additional $m3% chance to resist dispel effects.",
       "tree_id": 1111
     },
+    "130455": {
+      "definition_id": 135256,
+      "effects": [
+        {
+          "curve_id": 83025,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240895,
+              "value": 1.0
+            },
+            {
+              "row_id": 240896,
+              "value": 2.0
+            }
+          ],
+          "row_id": 23380
+        }
+      ],
+      "max_rank": 2,
+      "name": "Weapon Expertise",
+      "node_id": 105726,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 240,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 705741
+        }
+      ],
+      "spell_id": 30919,
+      "tooltip_template": "Reduces the chance for your attacks to be Dodged or Parried by $m1%.",
+      "tree_id": 1111
+    },
     "130456": {
       "definition_id": 135257,
       "effects": [
@@ -7056,6 +7223,51 @@
       ],
       "spell_id": 11207,
       "tooltip_template": "Increases the critical strike damage bonus of your Frost spells by $s1%.",
+      "tree_id": 1112
+    },
+    "130507": {
+      "definition_id": 135308,
+      "effects": [
+        {
+          "curve_id": 83078,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 112753,
+              "row_id": 241098,
+              "value": 2.0
+            },
+            {
+              "push_id": 112753,
+              "row_id": 241099,
+              "value": 4.0
+            },
+            {
+              "push_id": 112753,
+              "row_id": 241100,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23434
+        }
+      ],
+      "entry_push_id": 112753,
+      "max_rank": 3,
+      "name": "Precision",
+      "node_id": 105778,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 704780,
+          "push_id": 113277
+        }
+      ],
+      "spell_id": 29438,
+      "tooltip_template": "Improves your chance to hit with all spells by $s1%.",
       "tree_id": 1112
     },
     "130511": {
@@ -7722,6 +7934,89 @@
       ],
       "spell_id": 18182,
       "tooltip_template": "Increases the amount of Mana awarded by your Life Tap spell by $s1%.",
+      "tree_id": 1116
+    },
+    "130655": {
+      "definition_id": 135456,
+      "effects": [
+        {
+          "curve_id": 83231,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241622,
+              "value": 1.0
+            },
+            {
+              "row_id": 241623,
+              "value": 2.0
+            },
+            {
+              "row_id": 241624,
+              "value": 3.0
+            },
+            {
+              "row_id": 241625,
+              "value": 4.0
+            },
+            {
+              "row_id": 241626,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23574
+        },
+        {
+          "curve_id": 88021,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 260837,
+              "value": 1.0
+            },
+            {
+              "row_id": 260838,
+              "value": 2.0
+            },
+            {
+              "row_id": 260839,
+              "value": 3.0
+            },
+            {
+              "row_id": 260840,
+              "value": 4.0
+            },
+            {
+              "row_id": 260841,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23850
+        }
+      ],
+      "max_rank": 5,
+      "name": "Suppression",
+      "node_id": 105925,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695760
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1230309
+        }
+      ],
+      "spell_id": 18174,
+      "tooltip_template": "Improves your chance to hit by $m1% and reduces all threat you generate by $m3%.",
       "tree_id": 1116
     },
     "130663": {

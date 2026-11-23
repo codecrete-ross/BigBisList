@@ -9453,9 +9453,11 @@ function UI:Refresh(reason)
         end
         local opening = self.openingGuide and tabName == "Gear Guide" and not self.renderModel
         local controlsReady = opening and self.firstGuideControls == self.currentFilterPayload and not dirtyAtStart.controls
-        local endgameRowsReady = (reason == "endgame rows ready" or reason == "endgame preview") and not next(dirtyAtStart)
-            and (tabName == "Upgrades" or tabName == "By Slot")
-        if not controlsReady and not endgameRowsReady then self:RefreshControls() end
+        local rowsReady = not next(dirtyAtStart) and (
+            ((reason == "endgame rows ready" or reason == "endgame preview")
+                and (tabName == "Upgrades" or tabName == "By Slot"))
+            or ((reason == "gear targets ready" or reason == "gear within reach") and tabName == "Gear Guide"))
+        if not controlsReady and not rowsReady then self:RefreshControls() end
         self.firstGuideControls = opening and self.currentFilterPayload or nil
 
         if self.settingsSelection then

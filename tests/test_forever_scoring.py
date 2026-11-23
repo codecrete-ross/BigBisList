@@ -55,12 +55,35 @@ class ForeverScoringTests(unittest.TestCase):
             self.assertTrue(release["ok"], release["issues"])
             self.assertEqual(release["issues"], [])
             self.assertEqual(len(release["validated_contexts"]), 56)
+            self.assertEqual(release["reference_rankings"]["profiles"], 28)
+            self.assertGreaterEqual(release["reference_rankings"]["comparable_pools"], 421)
 
     def test_new_client_approval_requires_the_compared_equipment_rules(self):
         rules = dataset_json("forever", "leveling_rules")
         rules["class_equipment"]["Paladin"]["armor_tiers"][0]["types"].append("Plate")
         with self.assertRaisesRegex(ValueError, "current equipment comparison"):
             compile_model(self.model, self.snapshot, {"leveling_rules": rules})
+
+    def test_every_reference_build_reproduces_its_weights_and_untrained_stats_stay_nonnegative(self):
+        for name, profile in self.runtime["profiles"].items():
+            scenario = profile["scenarios"]["pre_raid"]
+            weights = scenario["weights"][0][2]
+            ranks = {int(key): value for key, value in scenario["reference_ranks"].items()}
+            gear = {1: {"stats": dict.fromkeys(weights, 1)}, 16: {"slot": "Main Hand", "stats": {}}}
+            for rule in profile["operations"]:
+                if ranks.get(rule["entry"]):
+                    if rule.get("condition") == "two_hand":
+                        gear[16]["slot"] = "Two Hand"
+                    elif rule.get("condition") == "shield":
+                        gear[17] = {"shield": True, "stats": {}}
+            ordinary = swap_score(gear, weights, [], {}, scenario)[0]
+            personal = swap_score(gear, weights, profile["operations"], ranks, scenario)[0]
+            self.assertAlmostEqual(personal, ordinary, places=6, msg=name)
+            for stat in weights:
+                probe = copy.deepcopy(gear)
+                probe[1]["stats"] = {stat: 1}
+                untalented = swap_score(probe, weights, profile["operations"], {}, scenario)[0]
+                self.assertGreaterEqual(untalented, -.000001, f"{name}/{stat}")
 
     def test_pinned_form_and_physical_weapon_contributions(self):
         two_hand = self.runtime["profiles"]["Warrior/Arms"]["operations"]
@@ -184,7 +207,9 @@ for _, pair in ipairs({{10086,79.88,83.98}, {14915,87.93,91.88}, {10128,88.65,92
 end
 local circlet = rating:GetPublishedFacts("253959")
 local at60 = guide("Protection", 60)
-assert(rating:GetReferenceCandidate(at60, circlet, "Head").score == 34.9)
+-- 35 Armor, 10 Stamina and 11 Holy damage under the reviewed tank scale.
+assert(math.abs(rating:GetReferenceCandidate(at60, circlet, "Head").score
+    - (35 * .08 + 10 * 2 + 11 * .568681)) < .0001)
 local arrow = addon.Widgets:GearAdviceText({today = "Slight upgrade", tone = "gain"})
 local clock = addon.Widgets:GearAdviceText({today = "Keep for Level 50", tone = "future"})
 assert(arrow:match("^|T.-ui%-icons%.tga:.-|t Slight upgrade$") and clock:match("^|T.-|t Keep for Level 50$"))
@@ -465,7 +490,11 @@ assert(publicGrade.grade == 4 and publicGrade.rank == "Estimated · Strong at Le
     def test_changed_mechanics_reopen_approvals(self):
         updated = copy.deepcopy(self.snapshot)
         updated["traits"]["137880"]["effects"][0]["ranks"][0]["value"] = 15
-        _, bindings = compile_model(self.model, updated)
+        with self.assertRaisesRegex(ValueError, "target-client compatibility"):
+            compile_model(self.model, updated)
+        # A source-only draft must still reopen the exact affected approvals.
+        with patch("tools.forever_scoring.supported_builds", return_value=[]):
+            _, bindings = compile_model(self.model, updated)
         changed = {key for key in self.bindings if self.bindings[key] != bindings[key]}
         self.assertEqual(changed, {"Paladin/Retribution/leveling", "Paladin/Retribution/pre_raid"})
         self.assertTrue(review_issues(self.model, updated, bindings))
@@ -612,9 +641,10 @@ assert(#H.errors == 0, table.concat(H.errors, "\n"))
         rate = .85 * 60 / first["weapon_speed"] * .01
         average = (first["weapon_min_damage"] + first["weapon_max_damage"]) / 2
         expect({13: hand, 16: mace}, ret, damage, average * rate / (1 + rate / 30) * .70 * 5 / 60)
-        for hit in (0, 15, 16, 18):
+        self.assertEqual(mage["effect_benchmark"]["spell_hit_cap"], 17)
+        for hit in (0, 15, 16, 17, 18):
             outside = {1: {"id": 1, "stats": {"spell_hit_percent": hit}}}
-            expected = 10 * (hit + min(7, max(0, 16 - hit)) * 20 / 300)
+            expected = 10 * (hit + min(7, max(0, 17 - hit)) * 20 / 300)
             expect({**outside, 13: eye}, mage, {"spell_hit_percent": 10}, expected)
         # Two distinct 30-second trinkets share a 20-second lockout. Their
         # ordinary uptime is 3/8 each and their effects never stack.
@@ -1172,16 +1202,14 @@ local nodes, definitions = {}, {}
 local function setTalentTree(tree, spec)
     nodes, definitions = {}, {}
     for entry, trait in pairs(BigBiSListData.character_scoring.traits) do
-        if ranks[tonumber(entry)] then
-            nodes[trait.node_id] = tonumber(entry)
-            definitions[trait.definition_id] = trait.spell_id
-        end
+        nodes[trait.node_id] = tonumber(entry)
+        definitions[trait.definition_id] = trait.spell_id
     end
     C_Traits.GetConfigInfo = function() return {treeIDs = {tree}} end
     C_Traits.GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = spec}} end
     C_Traits.GetNodeInfo = function(_, node)
         local entry = assert(nodes[node])
-        local active = ranks[entry] > 0 and {entryID = entry, rank = ranks[entry]} or nil
+        local active = (ranks[entry] or 0) > 0 and {entryID = entry, rank = ranks[entry]} or nil
         return {entryIDs = {entry}, activeEntry = active}
     end
     C_Traits.GetDefinitionInfo = function(id) return {spellID = definitions[id]} end
@@ -1202,14 +1230,23 @@ function UnitRace() return "Orc", "Orc", 2 end
 function UnitFactionGroup() return "Horde" end
 ranks = {[129416] = 5, [129415] = 3, [129404] = 0, [129401] = 0}
 setTalentTree(1082, "Enhancement")
-local function thirdWristPick()
+local function wristPairScores()
     local context = assert(addon.ForeverScoring:GetContext("Shaman", "Enhancement", "leveling", 42))
-    return addon.ForeverScoring:RankSlot(context, "Wrist").selected[3].item.id
+    local bronze, owl
+    for _, row in ipairs(addon.ForeverScoring:RankSlot(context, "Wrist").all) do
+        if row.item.id == 2868 then bronze = row.score end
+        if row.item.id == 4796 then owl = row.score end
+    end
+    return assert(bronze), assert(owl)
 end
-assert(thirdWristPick() == 2868) -- Patterned Bronze Bracers
+-- Recovery moves this pair below the compact page, but Mental Quickness
+-- must still reverse Patterned Bronze Bracers and Owl Bracers.
+local bronze, owl = wristPairScores()
+assert(bronze == 8 and owl == 7.7 and bronze > owl)
 ranks[129404] = 2
 addon.ForeverScoring:Invalidate()
-assert(thirdWristPick() == 4796) -- Owl Bracers
+bronze, owl = wristPairScores()
+assert(bronze == 8 and owl == 8.4425 and owl > bronze)
 
 function UnitClass() return "Druid", "DRUID" end
 function UnitRace() return "Night Elf", "NightElf", 4 end
@@ -1283,7 +1320,7 @@ local rating, scoring = addon.ForeverGearRating, addon.ForeverScoring
 local wornId, candidateId = 990001, 990002
 local wornLink = "item:990001:1891:0:0:0:0:0:0:48:1:0:0:1:9999"
 local candidateLink = "item:990002:0:0:0:0:0:0"
-function GetBuildInfo() return "1.60.1", model.build end
+function GetBuildInfo() return "1.60.1", "71037" end
 function UnitLevel() return 48 end
 function UnitRace() return "Human", "Human", 1 end
 function UnitFactionGroup() return "Alliance" end

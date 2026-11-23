@@ -6,7 +6,87 @@ the reviewed level-matched reference weights. Pre-Raid uses level-60 weights
 for first-tier boss combat. Each approval covers the documented gear comparison.
 Encounter-dependent effects have separate review requirements.
 
-## Client 1.60.1.70959
+## November 22 calibration for client 1.60.1.71037
+
+The numerical audit and release checklist are retained in
+[the Forever pilot](forever-pilot.md#0150-release-plan). The reference review in
+`data/canonical/forever/stat_weight_review.json` records all 28 profiles, published
+coefficients, normalization units, representative talent ranks, attack channels,
+and short-fight alternatives. GearMatic's November 21 scales use WoWSims
+`df3746362c`; its healers use a sustainable healing formula and its tank scales
+include a survival formula. SixtySim's current pages use multiple engines and
+publication dates, recorded individually in `comparison_sources`. Its current
+methodology names `92b1673580`; nine numerical pages still use `fcf5afe` and Arms
+still uses `6d3ac2a`. All are based on the older client and the selected one-minute
+boss benchmark. They share simulator ancestry.
+[GearMatic 6.2.0](https://www.curseforge.com/wow/addons/gearmatic/files/9737035) ·
+[SixtySim method](https://sixtysim.com/method/)
+
+The [source ledger](forever-stat-source-review-0.15.0.json) records all 28
+endgame references, actual verification outfits and benchmark limitations.
+Current short-fight and threat alternatives were reviewed through 18 fixture
+swaps and 1,153 approved-pool swaps. Twenty-three qualifications change; default
+numerical coefficients do not. Do not transplant a capped benchmark's small Hit
+derivative into an uncapped tank reference. The tank alternatives retain the
+primary Hit model where the published outfit is already capped.
+
+Damage profiles use the published marginal ratios in the addon's reference
+units. Tanks retain the reviewed survival budget with physical and spell threat
+ratios calibrated to weapon DPS. Healers use the sustainable formula and also
+evaluate the published short-fight weights. A change of winner under the recorded
+alternative qualifies the personal swap. Tanks also evaluate SixtySim's threat
+reference separately from their survival budget. A survival-versus-threat reversal
+qualifies the swap. The default weights include the explicit
+representative talents. Personal scoring inverts that reference pipeline on
+the coefficients, then applies the verified active ranks to the gear. This
+preserves scaling before conversion and removes a weapon talent when its shield
+or two-handed condition is lost. Leveling
+retains its four level-matched bands and adds the reviewed recovery and school
+corrections. Pure recovery gear can contribute to the Guide.
+
+Client gametable units are 10 rating per percent Hit, Haste or dodge/parry
+reduction, 14 per percent Crit, 12 per percent Dodge, 15 per percent Parry,
+5 per percent Block, and one rating per Defense skill. A tooltip percentage
+supersedes the equivalent raw rating on the same item. Flat weapon damage
+contributes through the affected weapon's swing period. Feral attack power
+contributes in the applicable form.
+[Simulator client-table constants](https://github.com/wowsims/forever/blob/master/sim/core/base_stats_auto_gen.go)
+
+GearMatic's scale artifact publishes coefficients and simulator provenance without
+embedding a complete loadout and encounter configuration for each profile. The
+addon records representative talent ranks and its own boss reference rather than
+claiming to reproduce that simulation. SixtySim supplies a separate documented
+loadout and one-minute comparison. Damage per hit and weapon-speed interactions
+still require a rotation model. Different-speed swaps therefore retain conditional
+advice even after calibrating the fixed-speed weapon-DPS coefficient.
+
+Hit is a marginal loadout calculation. Physical specials and shots use the
+8% level-63 cap, spells use 17%, and dual-wield white attacks retain value to
+27%. The ordinary reference fights from behind for damage and from the front
+for tanks. Expertise is capped at 6.5% behind. The tank reference counts both
+dodge and parry until 6.5%, then retains half the value against parry through
+14%. The same-level leveling reference caps Expertise at 5%.
+Split physical, spell and off-hand channels preserve different caps and passive
+talent bonuses. Gear scores exclude the flat value of a talent already present
+without gear. The leveling reference uses equal-level enemies with 5% physical
+and 4% spell miss. Different weapon speeds and encounter-dependent procs retain
+the model's uncertainty qualification.
+
+The build comparison binds the entire reviewed talent, enchant, set, racial
+and trigger scope for source 70959 to target 71037. All values match. The 1,783
+inferred random-property families also match in templates, budgets, links and
+equipment facts. Unknown builds retain the fallback. The 54 changed class
+restrictions on other item IDs come directly from target ItemSparse metadata.
+`runtime_compatibility.json` binds the normalized target snapshot and both
+comparison digests. Changing either scope requires a new comparison.
+
+The refreshed Whiteout Staff and Crackling Staff tooltips both show 25 Stamina,
+25 Intellect and 74 Spell Power. The plan's 92.75-point fixture used the prior
+Frost coefficients. Their revised scores must be equal under the calibrated
+Frost coefficients. Channeler's Ring now has nine Spell Power in place of Spirit.
+[Blizzard hotfixes](https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-20-2026)
+
+## Earlier review on client 1.60.1.70959
 
 The November 17 build review compared the exact client tables and verified
 hotfix caches for 70938 and 70959. All 1,014 published item IDs had matching
@@ -533,3 +613,14 @@ effective stack and cast uptime outside the numeric estimate.
    The last command runs both engines against the approved fixtures before
    the local prerelease can be installed. Keep the source revisions, report
    diff, and validation evidence with the refresh review.
+
+The final Restoration reference follows the published 11/0/40 healing build:
+two Heart of the Wild, three Living Spirit and five Gift of Nature. Deep-Feral
+Natural Instinct is available to verified hybrid characters but is absent from
+this reference. Assuming it in the healing baseline incorrectly made Intellect
+harmful for a player without it under the short-fight comparison. The source's
+small negative MP5 measurement is retained in the evidence; the non-mana-limited
+alternative uses zero, matching the source's stated interpretation. The source
+ledger records 132 real swaps replayed after this correction with no changed
+qualifications. The all-profile regression covers untalented and reference
+marginal values for every default and alternative.

@@ -8,6 +8,7 @@ import subprocess
 from tools.forever import has_review, numeric, roster, scoring_profiles
 from tools.forever_comparison import normalized_item_stats, reference_profiles
 from tools.project import ROOT, dataset_json
+from tools.forever_stats import RATING_UNITS, weight_review
 
 
 TOLERANCE = 0.01
@@ -23,6 +24,11 @@ def reference_issues() -> list[str]:
     rules = dataset_json("forever", "leveling_rules")
     references = reference_profiles(rules)
     issues = []
+    calibration = weight_review()
+    if calibration["rating_source"]["units"] != {key: list(value) for key, value in RATING_UNITS.items()}:
+        issues.append("Combat-rating units differ from the reviewed client table")
+    if set(calibration["profiles"]) != set(references):
+        issues.append("Published numerical references do not cover the Forever roster")
     if not has_review(dataset_json("forever", "leveling_scoring_profiles")["review"]):
         issues.append("Missing Leveling reference weight review")
     if not has_review(scoring_profiles()["review"]):
@@ -35,6 +41,11 @@ def reference_issues() -> list[str]:
             numeric(value) and math.isfinite(value) and value >= 0 for value in weights.values())
 
     for name, profile in references.items():
+        reviewed = calibration["profiles"][name]
+        if (not reviewed.get("priority_url", "").startswith("https://")
+                or not reviewed.get("source_weights", {}).get("source") or not reviewed.get("hit_curves")
+                or not valid_weights(reviewed["weights"])):
+            issues.append(f"{name}: missing numerical reference, units or attack channels")
         bands = profile["leveling"]["weights"]
         levels = [level for start, end, _ in bands for level in range(start, end + 1)]
         if levels != list(range(1, 60)) or not all(valid_weights(weights) for _, _, weights in bands):
@@ -108,8 +119,11 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
         if not equippable or item["required_level"] > level:
             raise ValueError(f"{item['name']} cannot be equipped in fixture slot {index}")
     baseline = {}
-    before, before_effects = swap_score(gear, weights, profile["operations"], ranks, scenario,
+    before, _ = swap_score(gear, weights, profile["operations"], ranks, scenario,
                                         race_id=race, level=level, breakdown=baseline)
+    no_talents = dict.fromkeys(ranks, 0)
+    untalented_before = swap_score(gear, weights, profile["operations"], no_talents, scenario,
+                                  race_id=race, level=level)[0]
     permitted = {key for key, personas in scenario["pools"][slot]
                  if any(low <= level <= high for low, high in personas.get(race, []))}
     if len({row["variant"] for row in fixture["offers"]}) != len(fixture["offers"]):
@@ -128,7 +142,7 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
                 raise ValueError(f"{variant} is an illegal swap")
         else:
             after = {}
-            result, effects = swap_score(proposal, weights, profile["operations"], ranks, scenario,
+            result, _ = swap_score(proposal, weights, profile["operations"], ranks, scenario,
                                          race_id=race, level=level, breakdown=after)
             contributions = {stat: points - baseline[stat] for stat, points in after.items()}
             delta = result - before
@@ -142,7 +156,12 @@ def checked_fixture(runtime: dict, name: str, mode: str, fixture: dict) -> tuple
                         expected_gap == 0 and abs(actual_gap) >= 0.0001):
                     raise ValueError(f"{variant}: candidate rank order differs from the fixture")
             previous = (expected, delta)
-            affected |= any(abs(effects.get(entry, 0) - before_effects.get(entry, 0)) >= 0.0001 for entry in ranks)
+            # Published coefficients already include their reference talents.
+            # Compare the actual swap with zero ranks rather than expecting a
+            # second bonus when an active rank equals the reference build.
+            untalented_delta = swap_score(proposal, weights, profile["operations"], no_talents, scenario,
+                                          race_id=race, level=level)[0] - untalented_before
+            affected |= abs(delta - untalented_delta) >= 0.0001
         offers.append({"item": item, "expected": expected, "python_delta": delta, "target": target, "slot": slot,
                        "contributions": contributions})
     if sum(offer.get("expected") is not None for offer in offers) < 2:
@@ -192,6 +211,84 @@ def ranking_snapshot(lua: str | None, phase: str) -> dict:
     input_digests = {name: sha256((ROOT / name).read_text(encoding="utf-8").encode("utf-8")).hexdigest()
                      for name in inputs}
     return {"content_phase": phase, "input_digests": input_digests, "contexts": contexts}
+
+
+def reference_ranking_issues(lua: str | None) -> tuple[list[str], dict]:
+    """Compare each numerical approval directly with the packaged Guide scorer."""
+    from tools.project import lua_value
+
+    executable = find_lua51(lua)
+    if not executable:
+        return ["Lua 5.1 is required to compare approved and packaged reference ranks"], {}
+    cases = [[row["class"], row["spec"], row["slot"], row["reference_race_id"],
+              [[entry["item_id"], entry["score"]] for entry in row["candidates"]]]
+             for row in dataset_json("forever", "recommendation_audit")["rows"]]
+    script = '''
+dofile("DataForever.lua")
+dofile("Config.lua")
+dofile("ForeverScoring.lua")
+dofile("ForeverGearRating.lua")
+dofile("DataIndex.lua")
+local race, faction
+function UnitRace() return race, race end
+function UnitFactionGroup() return faction end
+local contexts, profiles, checked, pools, skipped = {}, 0, 0, 0, 0
+local rating = BigBiSList.ForeverGearRating
+local cases = ''' + lua_value(cases) + '''
+for _,case in ipairs(cases) do
+    local class, spec, slot = case[1], case[2], case[3]
+    local key = class .. "/" .. spec
+    local context = contexts[key]
+    if not context then
+        local actor
+        for _,candidate in ipairs(BigBiSListData.leveling_availability_rules.races) do
+            for _,allowed in ipairs(candidate.classes) do
+                if allowed==class then actor=candidate; break end
+            end
+            if actor then break end
+        end
+        assert(actor and actor.id==case[4], key .. " reference persona differs")
+        race, faction = actor.name, actor.faction
+        context = assert(rating:GetGuideContext(class,spec,"PR",60,race,faction))
+        contexts[key], profiles = context, profiles+1
+    end
+    local comparable = 0
+    for _,offer in ipairs(case[5]) do
+        local item = rating:GetPublishedFacts(tostring(offer[1]))
+        assert(item, key .. "/" .. offer[1] .. " missing from the packaged catalog")
+        local entry = rating:GetReferenceCandidate(context,item,slot)
+        if entry and entry.score then
+            checked, comparable = checked+1, comparable+1
+            if math.abs(entry.score-offer[2])>.00011 then
+                print("issue",key.."/"..slot,offer[1],offer[2],entry.score)
+            end
+        elseif entry and offer[2]>0 then
+            print("issue",key.."/"..slot,offer[1],offer[2],"unpriced")
+        else skipped=skipped+1 end
+    end
+    if comparable>=2 then pools=pools+1 end
+end
+print("summary",profiles,pools,checked,skipped)
+'''
+    try:
+        result = subprocess.run([executable, "-"], input=script, cwd=ROOT, encoding="utf-8",
+                                capture_output=True, timeout=120)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return [f"Packaged reference comparison failed to run: {exc}"], {}
+    if result.returncode:
+        return [result.stderr.strip() or "Packaged reference comparison failed"], {}
+    issues, summary = [], {}
+    for line in result.stdout.splitlines():
+        fields = line.split("\t")
+        if fields[0] == "issue":
+            _, scope, item, approved, packaged = fields
+            issues.append(f"{scope}/{item}: approved reference {approved}, packaged Guide {packaged}")
+        elif fields[0] == "summary":
+            summary = dict(zip(("profiles", "comparable_pools", "scored_candidates", "unranked_or_ineligible"),
+                               map(int, fields[1:])))
+    if summary.get("profiles") != 28 or not summary.get("scored_candidates"):
+        issues.append("Packaged reference comparison did not cover all 28 profiles")
+    return issues, summary
 
 
 def ranking_coverage(lua: str | None, phase: str, levels: list[int] | None = None) -> dict:

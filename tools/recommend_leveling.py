@@ -579,6 +579,9 @@ def separate_weapon_dps(item: dict, stats: dict) -> None:
 
 def effective_stats(item: dict[str, Any], class_name: str, spec_name: str, role: str, requested_slot: str, *, rules: dict | None = None, level: int | None = None) -> dict[str, float]:
     stats = merged_stats(item)
+    if rules is not None:
+        from tools.forever_stats import normalized_stats
+        stats = normalized_stats(stats)
     expertise_rating = stats.get("expertise_rating")
     conversion = EXPERTISE_RATING_PER_EXPERTISE if rules is None else rules.get("expertise_rating_per_expertise")
     if isinstance(expertise_rating, (int, float)) and conversion:

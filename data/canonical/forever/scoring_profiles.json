@@ -190,7 +190,7 @@
     {
       "class": "Druid",
       "review": {
-        "client_build": "1.60.1.70938",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
@@ -209,11 +209,11 @@
             "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
           }
         ],
-        "profile_digest": "037b473d1a88c953de6d248bfb2491a0d2e9f397d015d425be27631ebd7e0a0f",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
-        "reviewed_at": "2026-11-14",
+        "profile_digest": "d96bfe63606b11113bd378f080616d5cd900b6c38c7cb574e6088f183d37d3e2",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/balance-druid/bis-gear-and-stats"
       },
       "review_history": [
         {
@@ -240,14 +240,41 @@
         "Idol"
       ],
       "weights": {
-        "arcane_damage": 1,
-        "nature_damage": 1
+        "agility": 0,
+        "arcane_damage": 0.6549,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.369567,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 9.665167,
+        "healing_power": 0,
+        "hit_percent": 11.907167,
+        "holy_damage": 0,
+        "intellect": 0.22555,
+        "mp5": 0.078083,
+        "nature_damage": 0.3451,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.0249,
+        "stamina": 0.2,
+        "strength": 0
       }
     },
     {
       "class": "Druid",
       "review": {
-        "client_build": "1.60.1.70938",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
@@ -266,11 +293,11 @@
             "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
           }
         ],
-        "profile_digest": "2aa6927204e5af0889bdc59e8a752744391666d82bd1f20296e9fb5f982f2d37",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
-        "reviewed_at": "2026-11-14",
+        "profile_digest": "fc30111a48cdf82b21ef7895cbd4c5a03f6c4c74d3857fd8c535a68c58f1cdf1",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/tank-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/feral-tank-druid/bis-gear-and-stats"
       },
       "review_history": [
         {
@@ -296,14 +323,29 @@
       ],
       "weights": {
         "agility": 1.1,
+        "armor": 0.08,
+        "attack_power": 0.107154,
+        "block_percent": 0,
         "block_value": 0,
-        "dps": 1.5
+        "crit_percent": 3.015478,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 1.5,
+        "expertise": 2.97495,
+        "haste_percent": 1.126869,
+        "hit_percent": 5,
+        "holy_damage": 0.0,
+        "parry_percent": 0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "stamina": 2,
+        "strength": 0.23573
       }
     },
     {
       "class": "Druid",
       "review": {
-        "client_build": "1.60.1.70938",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
@@ -322,11 +364,11 @@
             "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
           }
         ],
-        "profile_digest": "be459b41d5ee8f7d780f80dea5235f285f12f388f6b83c5a705b9371aaa7ab94",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
-        "reviewed_at": "2026-11-14",
+        "profile_digest": "068472613bf2e9639ca7af93854f256916199bef2d4837bcfed74c1758d580b0",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/feral-dps-druid/bis-gear-and-stats"
       },
       "review_history": [
         {
@@ -351,14 +393,41 @@
         "Idol"
       ],
       "weights": {
-        "agility": 2,
-        "dps": 4.5
+        "agility": 2.0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.712433,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.165733,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 6.487033,
+        "expertise": 14.351,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 8.996,
+        "healing_power": 0,
+        "hit_percent": 15.526,
+        "holy_damage": 0,
+        "intellect": 0.063133,
+        "mp5": 0.097,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.024833,
+        "stamina": 0.2,
+        "strength": 1.709767
       }
     },
     {
       "class": "Druid",
       "review": {
-        "client_build": "1.60.1.70938",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
@@ -377,11 +446,11 @@
             "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
           }
         ],
-        "profile_digest": "d4deac855cdd7bc1571023de4a3c4e38d5ef5907ea3cf859d246bdfd1c576767",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing. The level-60 equipment pool includes trained polearms.",
-        "reviewed_at": "2026-11-14",
+        "profile_digest": "1759aff7c1406c21d0fea8fe74b894f968d358c860d083898f06db8d0dbd309d",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/healer-leveling-tips"
+        "source_url": "https://www.icy-veins.com/wow-forever/restoration-druid-healer-pve-stat-priority"
       },
       "review_history": [
         {
@@ -408,25 +477,54 @@
         "Idol"
       ],
       "weights": {
-        "spirit": 0.65
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.6599,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 1.00445,
+        "mp5": 1.943333,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.30365,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
       }
     },
     {
       "class": "Hunter",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "e0b4c8a341dec3aa1bd27aed37918ad00b2b8ceb216e3e8a7cfd254aab3817c1",
             "evidence_id": "wowhead:127cfc77e5619de5f766ce77"
           }
         ],
-        "profile_digest": "1b2987af68f6083949518f99af1559a15747c5a12a34d11860291ce0dd6e75f9",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "07aae01437389246ae31d28d3d6d922ea9014793659305f9432a47974c90f277",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/beast-mastery/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/beast-mastery-hunter/bis-gear-and-stats"
       },
       "role": "ranged",
       "slot_aliases": {
@@ -443,25 +541,53 @@
         "Ranged"
       ],
       "weights": {
-        "agility": 1.8
+        "agility": 1.8,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.61125,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.24068,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 5.7309,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 10.8603,
+        "healing_power": 0,
+        "hit_percent": 23.2047,
+        "holy_damage": 0,
+        "intellect": 0.70278,
+        "mp5": 0.06081,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.61125,
+        "ranged_dps": 5.27991,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.01794,
+        "stamina": 0.2,
+        "strength": 0
       }
     },
     {
       "class": "Hunter",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "e584d4b2c349263413b991295b23069b909180ff3ef6d482a55ea52a7f1c05f4",
             "evidence_id": "wowhead:90e56a8e62a9e78ef37dabef"
           }
         ],
-        "profile_digest": "bf1051917889392c92816da60d5727fcedec08d0db844267efb52c955272f926",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "1a4559e2bcbd62ddc7222f4c63a2c5eee2079cca464da918058b646e0324ad7b",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/marksmanship/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/marksmanship-hunter/bis-gear-and-stats"
       },
       "role": "ranged",
       "slot_aliases": {
@@ -478,25 +604,53 @@
         "Ranged"
       ],
       "weights": {
-        "intellect": 0.65
+        "agility": 2.0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.677433,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 24.453333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 14.837333,
+        "healing_power": 0,
+        "hit_percent": 23.072,
+        "holy_damage": 0,
+        "intellect": 0.925767,
+        "mp5": 0.277,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.677433,
+        "ranged_dps": 6.465067,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.0762,
+        "stamina": 0.2,
+        "strength": 0
       }
     },
     {
       "class": "Hunter",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "64c1c44a17ddbd0e23e9cd4c03b2821d3bd62e79285057714cd725dc3e8e8746",
             "evidence_id": "wowhead:801b470f77c36ff4a14908a7"
           }
         ],
-        "profile_digest": "24e97b88444e1070e8db2d8bd5dcd4943a716dbb7ab38deecc0275a4ece65dfc",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "cbe105b65fbe26e0a62f3d56eb28aa39c322e07dac79996f94139236c0d2abc4",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/hunter/survival/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/survival-hunter/bis-gear-and-stats"
       },
       "role": "ranged",
       "slot_aliases": {
@@ -514,24 +668,51 @@
       ],
       "weights": {
         "agility": 2.1,
-        "dps": 3
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.989765,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.18034,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 3,
+        "expertise": 11.55,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 12.30705,
+        "healing_power": 0,
+        "hit_percent": 19.88385,
+        "holy_damage": 0,
+        "intellect": 1.0675,
+        "mp5": 0.07861,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.632765,
+        "ranged_dps": 5.922,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.023765,
+        "stamina": 0.2,
+        "strength": 0.378
       }
     },
     {
       "class": "Mage",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "a9f9d4ea4b1d32512ee3f1a7922079b3c6ea7cff3ebf81f3bbaf49bcf43afdc1",
             "evidence_id": "wowhead:380057c05f18abe6299a3a4f"
           }
         ],
-        "profile_digest": "a2b754201a79b3a67de16437337fa9a2c6332b7661243ddbb833d0212a4b4c3a",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "6488239ce209aac181a190f0dd831c00d0fbd7fe7394a378adebbb2e318b0888",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/arcane-mage/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Arcane",
@@ -542,25 +723,53 @@
         "Ranged"
       ],
       "weights": {
-        "arcane_damage": 1,
-        "intellect": 0.95
+        "agility": 0,
+        "arcane_damage": 0.895317,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.5371,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.104683,
+        "frost_damage": 0,
+        "haste_percent": 9.4505,
+        "healing_power": 0,
+        "hit_percent": 16.324667,
+        "holy_damage": 0,
+        "intellect": 0.914283,
+        "mp5": 0.180567,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.198283,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.096183
       }
     },
     {
       "class": "Mage",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "514cd15a30de3a7677d0466d23aadcc1caaff28823f378341ae03ca833abcb6b",
             "evidence_id": "wowhead:f1f7c1d018c7bfa9dd72c5ca"
           }
         ],
-        "profile_digest": "cb640f51dcf3171a735de084d502b5a6d2fe9b29affa7f8578da3189816ebfdc",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "7ef0feebbf492c43a1d3f20b17d591d9c568202bd009d938dc389b53b376ce31",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/fire/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/fire-mage/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Fire",
@@ -571,25 +780,53 @@
         "Ranged"
       ],
       "weights": {
-        "crit_percent": 9,
-        "fire_damage": 1
+        "agility": 0,
+        "arcane_damage": 0.12125,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.857,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.87875,
+        "frost_damage": 0,
+        "haste_percent": 9.267333,
+        "healing_power": 0,
+        "hit_percent": 16.437,
+        "holy_damage": 0,
+        "intellect": 0.29845,
+        "mp5": 0.000467,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.000317,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.076683
       }
     },
     {
       "class": "Mage",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "08aec3dc34184ca8b018ed82510c7b36b3c1c082919997750990bef39a1a0403",
             "evidence_id": "wowhead:8349bf59d332c5d070dafa1e"
           }
         ],
-        "profile_digest": "d22c541b7153ec048200b887152b6ad157e216f366d5619018b247c52f4b482e",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "759c6955874cb16d5118e03a492f1bec0afc756727d25fa911531c2848d6b36b",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/mage/frost/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/frost-mage/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Frost",
@@ -600,24 +837,53 @@
         "Ranged"
       ],
       "weights": {
-        "frost_damage": 1
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 8.860133,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 1.0,
+        "haste_percent": 10.696,
+        "healing_power": 0,
+        "hit_percent": 15.967,
+        "holy_damage": 0,
+        "intellect": 0.1707,
+        "mp5": 0.012067,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.008933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.079867
       }
     },
     {
       "class": "Paladin",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "0394abc4a264092648e56c10b83fbaf1bfb9ecf3419451b00c673caddb6498bb",
             "evidence_id": "wowhead:5d0160f74993ef3c9f647e4b"
           }
         ],
-        "profile_digest": "3d58f6863b2f9b432d85df30962ba21fb5cf3975fe8b6994c9b0cc47bd9e11c2",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "9c1de9ee6092890e79069208fd7bc0d6ca1cb76960b311e4407f5b92de007aa5",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/holy/healer-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/holy-paladin/bis-gear-and-stats"
       },
       "role": "healer",
       "spec": "Holy",
@@ -627,26 +893,54 @@
         "Libram"
       ],
       "weights": {
-        "crit_percent": 8,
-        "intellect": 0.9
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.06,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.882933,
+        "mp5": 1.67575,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.261833,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
       }
     },
     {
       "class": "Paladin",
       "require_shield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "b2f3815af10e69036b6a4c8c751154bd850f6c6c5f443d9d17913682671c5348",
             "evidence_id": "wowhead:d8f4616b504129cce7990ce0"
           }
         ],
-        "profile_digest": "c7e8dab70b6b9719d33389229beac15ad637045c910954dccd3249641375ef8d",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "ebde38e40ff994d19d1c7af6613876728df59b5582647455c0ce4f5e6c17b969",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/tank-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/protection-paladin/bis-gear-and-stats"
       },
       "role": "tank",
       "spec": "Protection",
@@ -656,25 +950,43 @@
         "Libram"
       ],
       "weights": {
+        "agility": 0.65,
+        "armor": 0.08,
+        "attack_power": 0.178533,
+        "block_percent": 5,
         "block_value": 0.9,
-        "spell_power": 1.1
+        "crit_percent": 7.760902,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 2.5,
+        "expertise": 15.285814,
+        "haste_percent": 4.950177,
+        "hit_percent": 5,
+        "holy_damage": 0.568681,
+        "intellect": 0.55,
+        "mp5": 1.6,
+        "parry_percent": 8,
+        "spell_damage": 0.568681,
+        "spell_power": 0.568681,
+        "stamina": 2,
+        "strength": 0.524349
       }
     },
     {
       "class": "Paladin",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "698edc81d8c82c4a639ce98b346cdb181551f88d048e0fabdb3abb045ca4c30c",
             "evidence_id": "wowhead:905db3ea6e0f73854009dda5"
           }
         ],
-        "profile_digest": "64689ebf34110f0135ed4ea2ead9b78ab2c45de902fa3f56e57d5819472d87ef",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "04834591a9823dcb342dec80b1884e827427a87941e28e08f57641bd6406e479",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/paladin/retribution/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/retribution-paladin/bis-gear-and-stats"
       },
       "role": "melee",
       "spec": "Retribution",
@@ -683,25 +995,52 @@
         "Libram"
       ],
       "weights": {
-        "dps": 5,
-        "spell_power": 0.65
+        "agility": 1.185813,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.666667,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 23.147787,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 9.484213,
+        "expertise": 33.5888,
+        "fire_damage": 0.102827,
+        "frost_damage": 0,
+        "haste_percent": 20.956533,
+        "healing_power": 0,
+        "hit_percent": 45.081067,
+        "holy_damage": 1.078933,
+        "intellect": 0.977893,
+        "mp5": 0.000747,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.12448,
+        "spell_damage": 1.30624,
+        "spell_power": 1.30624,
+        "spirit": 0.000613,
+        "stamina": 0.2,
+        "strength": 1.6
       }
     },
     {
       "class": "Priest",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "37bbfaef4d4cd901c668282013380f6730a5f566faff167f19456a50339c317b",
             "evidence_id": "wowhead:50b4254c4157d9742fddc907"
           }
         ],
-        "profile_digest": "23b886e8fc872e85da0f91b6aa0ab8e01323e62f2a3141e004158c88d216515c",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "c75bad667816d7f9e60e6da1bebcc0c490539647ef6f642326f1c2c6a6a2d859",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/healer-leveling-tips"
+        "source_url": "https://www.icy-veins.com/wow-forever/discipline-priest-healer-pve-stat-priority"
       },
       "role": "healer",
       "spec": "Discipline",
@@ -712,25 +1051,53 @@
         "Ranged"
       ],
       "weights": {
-        "intellect": 0.9,
-        "spell_power": 0.65
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.433333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.99725,
+        "mp5": 1.9324,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.301933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
       }
     },
     {
       "class": "Priest",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "c6e701f19f491767d08635766b62c7ca2d5268186860f160b144ae14aef44684",
             "evidence_id": "wowhead:22c4c680c2ee4d9a85df176a"
           }
         ],
-        "profile_digest": "a7331519fcc409384a6428b9852f239b8a76386250776ae7ae7d35d3e92c467c",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "48e86dbdbdc6b6d038ca8b8763e203427dd64e1432bf5ebbf89fc17a821cf7bb",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/holy/healer-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/holy-priest/bis-gear-and-stats"
       },
       "role": "healer",
       "spec": "Holy",
@@ -741,24 +1108,53 @@
         "Ranged"
       ],
       "weights": {
-        "spirit": 0.9
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.433333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.99725,
+        "mp5": 1.9324,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.301933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
       }
     },
     {
       "class": "Priest",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "5b1200d13a2cf89604a9edb79716ede59ded2144829b237bf85ad48ce11cee9b",
             "evidence_id": "wowhead:8c91b04559b4439246a33268"
           }
         ],
-        "profile_digest": "cc1960abb582bdf566fd31909b7da8717380d7aee1b23b5f0e4f1ed363d11340",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "7ef99cb4de5ab40e3e15ccfee7e861fbe95f93e596ccd7f3d8c4b0712ee7d9bb",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/priest/shadow/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/shadow-priest/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Shadow",
@@ -769,25 +1165,54 @@
         "Ranged"
       ],
       "weights": {
-        "shadow_damage": 1
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 12.715267,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0.352833,
+        "healing_power": 0,
+        "hit_percent": 12.047167,
+        "holy_damage": 0,
+        "intellect": 0.255983,
+        "mp5": 0.000617,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 1.0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.00095,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.10175
       }
     },
     {
       "class": "Rogue",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "71b81ec8f9f52c0ca34f857dfeda00e5b213c540cf0751059420b66b3eba7042",
             "evidence_id": "wowhead:92c88e6a14f08398bda1240d"
           }
         ],
-        "profile_digest": "8a5f34ac5fd1de3a1d01c4680792e6e28df80d5e3df88bac1588d1124d4f8870",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "355504d8c73e3ac16417bca00c056ad163c38215f25d5d2873f9779f612f5815",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/assassination/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/assassination-rogue/bis-gear-and-stats"
       },
       "role": "melee",
       "slot_aliases": {
@@ -811,26 +1236,53 @@
         "Ranged"
       ],
       "weights": {
-        "agility": 1.9,
-        "crit_percent": 7
+        "agility": 1.697253,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 23.313631,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 6.3516,
+        "expertise": 17.2455,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 10.707118,
+        "healing_power": 0.0,
+        "hit_percent": 20.943814,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.880025
       }
     },
     {
       "class": "Rogue",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "1365a968e94f1fd32954f1137a59201dbe2f8e208734c46723dbfe813628acd7",
             "evidence_id": "wowhead:fbb968d7c8b1ae390b8d528e"
           }
         ],
-        "profile_digest": "54140e599691b4b1acd25aa9226d246f0d9c3c9214ee09e3e46cd1944cd4131f",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "912aee72f9cb73b91dd19430ea42a3981022fbe816d7de593ea8f195b43f66f9",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/combat-rogue/bis-gear-and-stats"
       },
       "role": "melee",
       "slot_aliases": {
@@ -846,26 +1298,53 @@
         "Ranged"
       ],
       "weights": {
-        "dps": 6,
-        "hit_percent": 12
+        "agility": 1.54704,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 18.073343,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 8.053373,
+        "expertise": 15.719212,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 10.494859,
+        "healing_power": 0.0,
+        "hit_percent": 17.003255,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.880008
       }
     },
     {
       "class": "Rogue",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "4e937f8edc479d6981267acc137716d79cf7032bad0b4122daf49e90e8f9bcbe",
             "evidence_id": "wowhead:c220be2bc211ddc61a04c206"
           }
         ],
-        "profile_digest": "540650c90f35331f29c95c38fde53ce23ea0a45879d69bf36129d3e86ff30c1b",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "150443b5c5567406c8310a65001fd520b979a6367af928757d5725ad5b5642cb",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/rogue/subtlety/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/subtlety-rogue/bis-gear-and-stats"
       },
       "role": "melee",
       "slot_aliases": {
@@ -881,25 +1360,52 @@
         "Ranged"
       ],
       "weights": {
-        "agility": 2,
-        "weapon_speed": 1
+        "agility": 1.590457,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 19.333917,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 6.89108,
+        "expertise": 15.334924,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 9.630483,
+        "healing_power": 0.0,
+        "hit_percent": 26.353877,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.88
       }
     },
     {
       "class": "Shaman",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "5f85c4a4a3dd8945944ff2daad06cfc025be9ae53cd27bba62499f4388cb3c00",
             "evidence_id": "wowhead:a68b41ba52a277fe701d87f5"
           }
         ],
-        "profile_digest": "83e2dba78a014317e09f531fb1a4b9cc9a796e05253ea2c9ac7976e24d836f48",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "fdcf8c61423c4d1b7e68058cc3f19b300c0a6e2801e6b75de2a3c7902af38c6f",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/shaman/elemental/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/elemental-shaman/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Elemental",
@@ -910,14 +1416,41 @@
         "Totem"
       ],
       "weights": {
-        "crit_percent": 9,
-        "nature_damage": 1
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 7.9821,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.117517,
+        "frost_damage": 0,
+        "haste_percent": 7.4715,
+        "healing_power": 0,
+        "hit_percent": 15.463833,
+        "holy_damage": 0,
+        "intellect": 0.4895,
+        "mp5": 0.60435,
+        "nature_damage": 0.882483,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.207133,
+        "stamina": 0.2,
+        "strength": 0
       }
     },
     {
       "class": "Shaman",
       "review": {
-        "client_build": "1.60.1.70888",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "1ab763a30efe6219d03270368ce78770b0f5dd03e0ba0d354b05213dc38bc357",
@@ -932,11 +1465,11 @@
             "evidence_id": "wowhead:abed24aabc371f1f1fd642a3"
           }
         ],
-        "profile_digest": "800099f5ef1c0c99078a4603b69f6de5fbbf3e29262f38fd1214bb6e2e29db4c",
-        "reason": "Blizzard's November 10 hotfix moves Enhancement toward weapon damage, Strength and Attack Power. Intellect and spell damage retain secondary editorial weights. Conditional effects and set bonuses stay separate from the flat-stat comparison.",
-        "reviewed_at": "2026-11-11",
+        "profile_digest": "aa391306284818c1d680888ac42268d4bf2c999c262c166dc2f2510bb7ff9dc5",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-10-2026"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/enhancement-shaman/bis-gear-and-stats"
       },
       "review_history": [
         {
@@ -961,27 +1494,52 @@
         "Totem"
       ],
       "weights": {
-        "dps": 4.5,
-        "intellect": 0.5,
-        "spell_damage": 0.35,
-        "spell_power": 0.35
+        "agility": 1.13664,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.72728,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 35.91616,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 8.809733,
+        "expertise": 30.6192,
+        "fire_damage": 1.165973,
+        "frost_damage": 0,
+        "haste_percent": 21.998133,
+        "healing_power": 0,
+        "hit_percent": 61.783467,
+        "holy_damage": 0,
+        "intellect": 2.31112,
+        "mp5": 0.02512,
+        "nature_damage": 0.717653,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.883627,
+        "spell_power": 1.883627,
+        "spirit": 0.008773,
+        "stamina": 0.2,
+        "strength": 1.6
       }
     },
     {
       "class": "Shaman",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "f9b63be6bfc193de27f6a534cf3a6d87d74f6bc381666fc626ca8fcc90d76a50",
             "evidence_id": "wowhead:4978e4ea10e1c6187f1c24e8"
           }
         ],
-        "profile_digest": "dbe5e158c8ee78f5f5a65a735af51082bf8b212f427e3fd1e61b1e7f0e84a5b9",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "ac8778d1c8ea538919fce7e1b69225f97a7cac1168a32b9b3480e2a8eb0c8c75",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/shaman/restoration/healer-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/restoration-shaman/bis-gear-and-stats"
       },
       "role": "healer",
       "spec": "Restoration",
@@ -992,24 +1550,53 @@
         "Totem"
       ],
       "weights": {
-        "mp5": 1.9
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 9.420833,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.91895,
+        "mp5": 1.823383,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.2849,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
       }
     },
     {
       "class": "Warlock",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "7939e57828261c6510fc7dea7014647a9861cf5e634abaca07536aa0ef9db9a1",
             "evidence_id": "wowhead:41e6a7c0acfca9dafe317113"
           }
         ],
-        "profile_digest": "2d67ba03c1f11e889b725505c80a72eb6628bf4a1272cb23158c72a19c2ecafb",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "22bd1fb607871c39321af0b3c44d9f2f2153b6ca542bc66dd22eb2a324a3fa6b",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/affliction/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/affliction-warlock/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Affliction",
@@ -1020,26 +1607,53 @@
         "Ranged"
       ],
       "weights": {
-        "crit_percent": 4,
-        "shadow_damage": 1,
-        "spirit": 0.55
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 9.150867,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 2.148,
+        "healing_power": 0,
+        "hit_percent": 6.078833,
+        "holy_damage": 0,
+        "intellect": 0.326533,
+        "mp5": 0.222817,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.9821,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.02475,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.060833
       }
     },
     {
       "class": "Warlock",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "7b30f2c8aad2a39abfdda18efcc6ce01a5d47192891ff07dbc779b45a3569683",
             "evidence_id": "wowhead:171da391f1d22549cc8a8b48"
           }
         ],
-        "profile_digest": "79c354d5187f7349bb2628051c9a28e1c4941a6b262bb9e612a40cde5ca1d9f2",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "f6611d1ddbd6e84c3465837dff40656ec9c5da31d063166880da1633e23e3ccf",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/demonology/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/demonology-warlock/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Demonology",
@@ -1050,26 +1664,53 @@
         "Ranged"
       ],
       "weights": {
-        "fire_damage": 0.65,
-        "spirit": 0.55,
-        "stamina": 0.4
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 7.2107,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.74315,
+        "frost_damage": 0,
+        "haste_percent": 4.3115,
+        "healing_power": 0,
+        "hit_percent": 13.212833,
+        "holy_damage": 0,
+        "intellect": 0.265367,
+        "mp5": 0.2855,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.25685,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.095783,
+        "stamina": 0.4,
+        "strength": 0,
+        "wand_dps": 0.067817
       }
     },
     {
       "class": "Warlock",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "0d0f3562222a1f715de05ad1a18aed4a50c29ac449e0d282aed67193e0495574",
             "evidence_id": "wowhead:3ee59cbc8a3bfff49d93661f"
           }
         ],
-        "profile_digest": "6aba86a94a95293fe085aa45e6105bfab81a31e4427747baa97e4f7a96f01273",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "6f4aa6ca92b307832ab765b964e4f37f9293d7db633d5480331af19de2ce5def",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warlock/destruction/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/destruction-warlock/bis-gear-and-stats"
       },
       "role": "caster",
       "spec": "Destruction",
@@ -1080,26 +1721,53 @@
         "Ranged"
       ],
       "weights": {
-        "crit_percent": 8,
-        "fire_damage": 1,
-        "spirit": 0.55
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 8.7262,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.652433,
+        "frost_damage": 0,
+        "haste_percent": 7.492333,
+        "healing_power": 0,
+        "hit_percent": 12.117333,
+        "holy_damage": 0,
+        "intellect": 0.311733,
+        "mp5": 0.308717,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.347567,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.167483,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.066033
       }
     },
     {
       "class": "Warrior",
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "7908688c6eba41246882d67c3f1dea3de74bc4b49be5bf5a67e483b91155b1ba",
             "evidence_id": "wowhead:b17494331940602fbee2b775"
           }
         ],
-        "profile_digest": "c096bfa7a1a07aaa03d1a38e15b4e204b107256309fb37965ec3c7975213b8f4",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "07316c6fe9f8f2e12bb7e492776992b999a3658ca937f43ed8643ac63788f747",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/arms-warrior/bis-gear-and-stats"
       },
       "role": "melee",
       "spec": "Arms",
@@ -1108,26 +1776,53 @@
         "Ranged"
       ],
       "weights": {
-        "strength": 1.9,
-        "weapon_speed": 2
+        "agility": 1.476553,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.95,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 29.72284,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 16.428698,
+        "expertise": 11.333183,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 13.84055,
+        "healing_power": 0,
+        "hit_percent": 39.964917,
+        "holy_damage": 0,
+        "intellect": 0,
+        "mp5": 0,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0,
+        "stamina": 0.2,
+        "strength": 1.9
       }
     },
     {
       "class": "Warrior",
       "dual_wield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "5cb8f13ed8f51c134163739a609a7a2e6e01198f410a1a8a292161ec409967b5",
             "evidence_id": "wowhead:2ac8e5fe5e6c12984022cac3"
           }
         ],
-        "profile_digest": "0d678e6e1266438368e05b37b019d286e40b144b4ad54b9876c0ee4ca42304cd",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "a7bff542e568f17eb5118f10e6fce317bd232f694ec301d176d9fd0e0a4669ad",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/fury/dps-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/fury-warrior/bis-gear-and-stats"
       },
       "role": "melee",
       "slot_aliases": {
@@ -1143,26 +1838,53 @@
         "Ranged"
       ],
       "weights": {
-        "dps": 6,
-        "hit_percent": 11
+        "agility": 1.436453,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.8,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 28.496533,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 8.89352,
+        "expertise": 12.1696,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 14.5664,
+        "healing_power": 0,
+        "hit_percent": 33.303733,
+        "holy_damage": 0,
+        "intellect": 0,
+        "mp5": 0,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0,
+        "stamina": 0.2,
+        "strength": 1.6
       }
     },
     {
       "class": "Warrior",
       "require_shield": true,
       "review": {
-        "client_build": "1.60.1.70790",
+        "client_build": "1.60.1.70959",
         "evidence_refs": [
           {
             "content_digest": "013e0e57d3060cccaabd5803792f7781ef7edd703a413a1b14d443bdf8204e96",
             "evidence_id": "wowhead:58e496238afbe8a232f58275"
           }
         ],
-        "profile_digest": "7cafaacf74820593cf27536caa9608be7921153f2516767a00ad6d852e199df4",
-        "reason": "Offline review of the Forever specialization role and conservative editorial stat coefficients. School-specific spell damage is scoped to this playstyle; feral equipped-weapon DPS and Rogue axe proficiency follow current publisher/client evidence. Assassination retains daggers for its supported abilities. Flat item effects are distinct from conditional procs and set combinations. Slot approvals below identify reviewed alternatives, without claiming a complete BiS inventory or live testing.",
-        "reviewed_at": "2026-11-06",
+        "profile_digest": "fa2a4e275ff054dda4308f0625ae38e3679f9d780df8173fe09553f97def2eab",
+        "reason": "Reviewed the endgame role and the published numerical coefficients recorded in stat_weight_review.json. Use the shared reference calculation with explicit talent baselines, rating units and attack caps. Curated acquisition alternatives retain their own route evidence. Personal swaps use verified live talents relative to this reference.",
+        "reviewed_at": "2026-11-22",
         "reviewer": "Codex (offline source review)",
-        "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips"
+        "source_url": "https://www.method.gg/wow-forever/class-guides/protection-warrior/bis-gear-and-stats"
       },
       "role": "tank",
       "spec": "Protection",
@@ -1172,8 +1894,24 @@
         "Ranged"
       ],
       "weights": {
+        "agility": 0.65,
+        "armor": 0.08,
+        "attack_power": 0.199672,
+        "block_percent": 5,
         "block_value": 1,
-        "dps": 2.5
+        "crit_percent": 6.962021,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 2.5,
+        "expertise": 7.94587,
+        "haste_percent": 5.731499,
+        "hit_percent": 5,
+        "holy_damage": 0.0,
+        "parry_percent": 8,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "stamina": 2,
+        "strength": 0.539556
       }
     }
   ],
@@ -1488,5 +2226,5 @@
   },
   "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303313",
   "status": "source_reviewed",
-  "version": "forever-pre-raid-reviewed-4"
+  "version": "forever-pre-raid-reviewed-5"
 }

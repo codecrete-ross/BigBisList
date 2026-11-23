@@ -379,6 +379,13 @@ def validate_ranking_review(review: dict, version: str, context: dict) -> None:
 
 
 def rank(stats: dict, profiles: dict, overrides: list[dict], guides: dict) -> tuple[list, list]:
+    from tools.forever_comparison import compile_comparison_data, reference_profiles
+    from tools.forever_stats import reference_scenario, reference_score
+
+    references = reference_profiles(dataset_json("forever", "leveling_rules"))
+    packed = compile_comparison_data(list(stats.values()))
+    facts = {key: {field: value for field, value in zip(packed["item_fields"], row) if value is not None}
+             for key, row in packed["items"].items()}
     reviews = {}
     for review in overrides:
         if review.get("type") == "approve_ranking":
@@ -390,14 +397,18 @@ def rank(stats: dict, profiles: dict, overrides: list[dict], guides: dict) -> tu
     lists, audit = [], []
     for profile in sorted(profiles["profiles"], key=profile_key):
         class_name, spec = profile_key(profile)
-        weights = {**profiles["role_weights"][profile["role"]], **profile.get("weights", {})}
+        name = f"{class_name}/{spec}"
+        weights = references[name]["pre_raid"]["weights"]
+        scenario = reference_scenario(name, profile["role"], "pre_raid", facts)
         for slot in profile["slots"]:
-            candidates = [(item_id, score(row, weights)) for item_id, row in stats.items() if eligible(row, profile, slot)]
+            candidates = [(item_id, reference_score(facts[str(item_id)], weights, scenario, slot=slot))
+                          for item_id, row in stats.items() if eligible(row, profile, slot)]
             candidates.sort(key=lambda candidate: (-candidate[1], candidate[0]))
             candidate_ids = {item_id for item_id, _ in candidates}
             key = (class_name, spec, slot)
             observations = guides.get(key, [])
-            candidate_digest = digest({"weights": weights, "items": [stats[item_id] for item_id in sorted(candidate_ids)]})
+            candidate_digest = digest({"weights": weights, "scenario": scenario,
+                                       "items": [stats[item_id] for item_id in sorted(candidate_ids)]})
             if slot == "Off Hand" and profile.get("dual_wield"):
                 main_ids = sorted(item_id for item_id,row in stats.items() if eligible(row,profile,"Main Hand"))
                 candidate_digest = digest({"off_hand":candidate_digest,"main_hand_items":[stats[item_id] for item_id in main_ids]})
@@ -406,6 +417,7 @@ def rank(stats: dict, profiles: dict, overrides: list[dict], guides: dict) -> tu
             guide_ids = review.get("guide_item_ids", []) if review else []
             context = {
                 "class": class_name, "spec": spec, "slot": slot,
+                "reference_race_id": scenario["reference_race_id"],
                 "candidate_digest": candidate_digest,
                 "candidates": [{"item_id": item_id, "score": value} for item_id, value in candidates],
                 "guide_observations": observations,

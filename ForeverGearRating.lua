@@ -30,6 +30,13 @@ local STATS = {
     ITEM_MOD_MANA_REGENERATION_SHORT = "mp5", ITEM_MOD_POWER_REGEN0_SHORT = "mp5", ITEM_MOD_HEALTH_REGEN_SHORT = "hp5",
     ITEM_MOD_ARMOR_SHORT = "armor", RESISTANCE0_NAME = "armor", ITEM_MOD_BLOCK_VALUE_SHORT = "block_value",
     ITEM_MOD_DEFENSE_SKILL_RATING_SHORT = "defense", ITEM_MOD_DAMAGE_PER_SECOND_SHORT = "dps",
+    ITEM_MOD_HIT_RATING_SHORT = "hit_rating", ITEM_MOD_CRIT_RATING_SHORT = "crit_rating",
+    ITEM_MOD_HASTE_RATING_SHORT = "haste_rating", ITEM_MOD_EXPERTISE_RATING_SHORT = "expertise_rating",
+    ITEM_MOD_DODGE_RATING_SHORT = "dodge_rating", ITEM_MOD_PARRY_RATING_SHORT = "parry_rating",
+    ITEM_MOD_BLOCK_RATING_SHORT = "block_rating",
+    ITEM_MOD_HIT_MELEE_RATING_SHORT = "melee_hit_rating", ITEM_MOD_HIT_RANGED_RATING_SHORT = "ranged_hit_rating",
+    ITEM_MOD_HIT_SPELL_RATING_SHORT = "spell_hit_rating", ITEM_MOD_CRIT_SPELL_RATING_SHORT = "spell_crit_rating",
+    ITEM_MOD_CRIT_MELEE_RATING_SHORT = "melee_crit_rating", ITEM_MOD_CRIT_RANGED_RATING_SHORT = "ranged_crit_rating",
     ITEM_MOD_ARCANE_DAMAGE_DONE_SHORT = "arcane_damage", ITEM_MOD_FIRE_DAMAGE_DONE_SHORT = "fire_damage",
     ITEM_MOD_FROST_DAMAGE_DONE_SHORT = "frost_damage", ITEM_MOD_HOLY_DAMAGE_DONE_SHORT = "holy_damage",
     ITEM_MOD_NATURE_DAMAGE_DONE_SHORT = "nature_damage", ITEM_MOD_SHADOW_DAMAGE_DONE_SHORT = "shadow_damage",
@@ -256,9 +263,9 @@ function rating:QueueWork(priority, build, isCurrent, onReady, firstSlice)
         end
         local stats = addon.UI and addon.UI.performanceStats
         local frame = GetTime and GetTime()
+        -- A second timer callback in the same frame has no new time budget.
+        -- Resume once GetTime advances instead of bypassing the deferral.
         local busy = start and stats and stats.timingFrame == frame and stats.frameTime >= 2
-            and self.deferredWorkFrame ~= frame
-        if busy then self.deferredWorkFrame = frame end
         local current = not busy and first and table.remove(queue, first)
         if current then
             if runWorkSlice(self, current, start) then queue[#queue + 1] = current end
@@ -310,7 +317,7 @@ function rating:GetCatalog(data)
     local _, build = call(GetBuildInfo)
     local slotKeys = data.slot_key_items == data.items and data.slot_keys
     local catalog = { data = data, slots = slotKeys or {}, families = {}, observed = {},
-        rollBuildMatches = not data.roll_build or tonumber(build) == data.roll_build }
+        rollBuildMatches = not data.roll_build or tonumber(build) == data.roll_build or contains(data.roll_builds, tonumber(build)) }
     if not slotKeys then
         for key, row in pairs(data.items) do
             if checkpoint then checkpoint() end
@@ -418,6 +425,8 @@ local function readFlatPassiveStat(text, rules)
 end
 
 local function readPassiveStats(text, stats, flatRules)
+    local expertise = text:match("^Equip: Reduces chance to be Dodged or Parried by ([%d.]+)%%%.?$")
+    if expertise then stats.expertise = tonumber(expertise); return true end
     local flat, value = readFlatPassiveStat(text, flatRules)
     if flat then
         stats[flat] = (stats[flat] or 0) + value
@@ -536,6 +545,7 @@ function rating:ReadNative(id, key, link, base)
             if normalized and finite(value) then stats[normalized] = math.max(stats[normalized] or value, value) end
         end
     end
+    if addon.ForeverScoring then stats = addon.ForeverScoring.NormalizeStats(stats) end
     local facts = {
         id = id, key = key, name = name, slot = slot, level = level, stats = stats, effects = {},
         armor_type = class == 4 and ARMOR_TYPES[subclass] or nil,
@@ -944,12 +954,10 @@ function rating:ReferenceWeights(context, roleOnly, guide)
     local ignoreDps = not context.feralDps and feral.weapon_style == "feral"
         and feral.form_level and context.level >= feral.form_level
     local ignoreDefense = roleOnly and not isTank(context)
-    local ignoreRecovery = guide and context.role ~= "healer" and not isTank(context)
-    if not (ignoreDps or ignoreDefense or ignoreRecovery) then return weights end
+    if not (ignoreDps or ignoreDefense) then return weights end
     local result = copy(weights)
     for stat in pairs(weights) do
-        if (ignoreDps and stat == "dps") or (ignoreDefense and DEFENSIVE_STATS[stat])
-            or (ignoreRecovery and (stat == "spirit" or stat == "mp5")) then result[stat] = nil end
+        if (ignoreDps and stat == "dps") or (ignoreDefense and DEFENSIVE_STATS[stat]) then result[stat] = nil end
     end
     return result
 end
@@ -2161,7 +2169,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                 local reference = context.wornReference
                 local baseline, before = reference.total, reference.conditional
                 if baseline then
-                    local total, after, _, breakdown = rating:ReferenceLoadout(context, proposal, nil, scope.breakdown)
+                    local total, after, proposed, breakdown = rating:ReferenceLoadout(context, proposal, nil, scope.breakdown)
                     local roleBaseline = reference.role
                     result.delta = total - baseline
                     if scope.breakdown then result.contributions = scorer:StatDifferences(reference.breakdown, breakdown) end
@@ -2170,6 +2178,13 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                     local position = definition.inventorySlotId
                     result.conditional = before[position] or after[position]
                         or (group.weapons and (before[16] or before[17] or after[16] or after[17]))
+                    if context.referenceScenario.weight_alternatives then
+                        local _, _, original = rating:ReferenceLoadout(context, gear)
+                        local active = context.activeBuild
+                        result.conditional = result.conditional or scorer:SwapDependsOnWeights(original, proposed,
+                            rating:ReferenceWeights(context), active and active.profile.operations or {},
+                            active and active.ranks or {}, context.referenceScenario, context.raceId, context.level)
+                    end
                 else
                     result.roleDelta = (rolePoints or 0) - result.roleDisplaced
                 end

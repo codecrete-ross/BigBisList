@@ -44,6 +44,19 @@ class ForeverGuidePerformanceTests(unittest.TestCase):
                                 capture_output=True, input=setup + code + "\nassert(#H.errors == 0, table.concat(H.errors, '\\n'))")
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
+    def test_background_work_waits_for_a_new_frame_after_spending_its_budget(self):
+        self.lua_run(r'''
+local ran = false
+debugprofilestop = function() return 10 end
+local stats = ui:GetPerformanceStats()
+stats.timingFrame, stats.frameTime = H.now, 2
+rating:QueueWork(1, function() ran = true end, function() return true end)
+H.tick(); H.tick()
+assert(not ran, "A second callback reused the exhausted frame budget")
+H.now = H.now + 1/60; H.tick()
+assert(ran, "Background work did not resume on the next frame")
+''')
+
     def test_first_page_survives_client_patches_and_index_loss(self):
         for build, index in ((70959, "shipped"), (71037, "shipped"), (71037, "missing"), (71037, "incompatible"), (71037, "partial")):
             with self.subTest(build=build, index=index):
@@ -206,10 +219,21 @@ applyListUpdate()
 assert(not ui.updateGuideButton:IsShown() and ui.renderModel.targetQuery.done and ui.renderModel.rowCount == 0)
 ''')
 
-    def test_patched_client_uses_observed_gothic_helm_and_banked_upgrade(self):
+    def test_supported_client_uses_verified_gothic_roll_and_banked_upgrade(self):
         setup = SETUP.replace('local ui = H.load', 'GetBuildInfo = function() return "Forever", "71037" end\nlocal ui = H.load')
         self.lua_run(r'''
 level = 51
+local traits = BigBiSListData.character_scoring.traits
+local nodes, definitions = {}, {}
+for entry, trait in pairs(traits) do
+    nodes[trait.node_id], definitions[trait.definition_id] = tonumber(entry), trait.spell_id
+end
+C_ClassTalents = {GetActiveConfigID = function() return 1 end}
+C_Traits = {
+    GetConfigInfo = function() return {treeIDs = {1100}} end,
+    GetNodeInfo = function(_, node) return {entryIDs = {assert(nodes[node])}} end,
+    GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
+}
 local info, instant = GetItemInfo, GetItemInfoInstant
 local function gothicLink(value) return type(value) == "string" and value:find("item:10090:", 1, true) end
 GetItemInfo = function(value)
@@ -232,8 +256,8 @@ ui:GetFilters("Gear Guide").slots = {Head=true}
 addon:InitUIEvents(); ui:Open(); H.settle()
 local function bucket() return ui.renderModel.targetQuery.slots.Head end
 local exact = rating:NormalizeLink(10090, gothic)
-local seen = assert(ui.renderModel.guideContext.catalog.observed[exact])
-assert(seen.stats.strength == 13 and not ui.renderModel.guideContext.catalog.rollBuildMatches)
+local seen = assert(rating:GetPublishedFacts(exact))
+assert(seen.stats.strength == 13 and ui.renderModel.guideContext.catalog.rollBuildMatches)
 local expected = {["Embrace of the Lycan"]=true, ["Raging Berserker's Helm"]=true,
     ["Icemetal Barbute"]=true, ["Undying Headdress"]=true}
 for _, row in ipairs(bucket().rows) do
@@ -251,6 +275,15 @@ assert(not bucket().positions["9479"])
 ui:SetFilter("search","item:7719"); H.settle()
 local row = assert(bucket().rows[1])
 assert(row.targetVerdict.swap.replacements[1].state == "bank" and row.lookupReason)
+C_ClassTalents, C_Traits = nil, nil
+-- This UI harness omits Core's talent event handler.
+addon.ForeverScoring:Invalidate()
+addon:RefreshTooltipPlayerContext()
+addon:RefreshUI("query", "talents unavailable"); H.settle()
+applyListUpdate()
+row = assert(bucket().rows[1])
+assert(row.targetVerdict.swap.buildUnavailable == "talents" and row.targetVerdict.swap.conditional
+    and not row.targetVerdict.meaningful)
 ''', setup)
 
     def test_packed_pre_raid_scope_matches_every_published_item(self):
@@ -307,8 +340,11 @@ ui:ReturnFromSettings(); H.settle(); assert(ui:GetSelection().tab == "Wishlist")
 ''')
 
     def test_native_chrome_and_nested_comparison_returns(self):
-        for native, density, width, height in ((True, "compact", 900, 500), (True, "comfortable", 1020, 790),
-                                               (False, "comfortable", 1020, 790)):
+        layouts = ((native, density, width, height)
+                   for native in (True, False)
+                   for density in ("comfortable", "compact")
+                   for width, height in ((900, 500), (1020, 790)))
+        for native, density, width, height in layouts:
             with self.subTest(native=native, density=density, width=width):
                 self.lua_run(f'''
 H.noPortraitTemplate = {str(not native).lower()}

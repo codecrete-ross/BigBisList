@@ -1,0 +1,4039 @@
+{
+  "comparison": {
+    "druid/balance": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 10.6,
+        "### Per 1 %~Spell crit": 10.3,
+        "### Per 1 %~Spell hit": 8.7,
+        "### Per point~Arcane damage": 0.66,
+        "### Per point~Crit Rating": 0.73,
+        "### Per point~Haste Rating": 1.06,
+        "### Per point~Hit Rating": 0.87,
+        "### Per point~Intellect": 0.24,
+        "### Per point~Mana per 5 s": 0.02,
+        "### Per point~Nature damage": 0.34,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1.94
+      }
+    ],
+    "druid/feral": [
+      "Agility",
+      {
+        "### Per 1 %~Attack speed": 4.56,
+        "### Per 1 %~Crit": 10,
+        "### Per 1 %~Hit": 8.78,
+        "### Per point~Agility": 1,
+        "### Per point~Armor penetration": 0.14,
+        "### Per point~Attack power": 0.41,
+        "### Per point~Crit Rating": 0.72,
+        "### Per point~Expertise": 0.85,
+        "### Per point~Feral attack power": 0.41,
+        "### Per point~Haste Rating": 0.46,
+        "### Per point~Hit Rating": 0.88,
+        "### Per point~Strength": 0.99
+      }
+    ],
+    "druid/feral-tank": [
+      "Agility",
+      {
+        "### Per 1 %~Attack speed": 9.57,
+        "### Per 1 %~Crit": 19.8,
+        "### Per 1 %~Hit": 15.1,
+        "### Per point~Agility": 1,
+        "### Per point~Armor": 0,
+        "### Per point~Armor penetration": 0.34,
+        "### Per point~Attack power": 0.78,
+        "### Per point~Bonus armor": 0,
+        "### Per point~Crit Rating": 1.42,
+        "### Per point~Defense": -0.15,
+        "### Per point~Dodge": -0.13,
+        "### Per point~Expertise": 5.94,
+        "### Per point~Feral attack power": 0.78,
+        "### Per point~Haste Rating": 0.96,
+        "### Per point~Hit Rating": 1.51,
+        "### Per point~Strength": 1.71
+      }
+    ],
+    "druid/restoration": [
+      "Healing power",
+      {
+        "### Per 1 %~Casting speed": 24.4,
+        "### Per 1 %~Spell crit": 11.5,
+        "### Per point~Crit Rating": 0.82,
+        "### Per point~Haste Rating": 2.44,
+        "### Per point~Healing power": 1,
+        "### Per point~Intellect": 0.06,
+        "### Per point~Mana per 5 s": -0.03,
+        "### Per point~Spirit": 0.32
+      }
+    ],
+    "hunter/beast-mastery": [
+      "Agility",
+      {
+        "### Per 1 %~Attack speed": 7,
+        "### Per 1 %~Crit": 10.7,
+        "### Per 1 %~Hit": 2.74,
+        "### Per 1 %~Ranged crit": 10.7,
+        "### Per 1 %~Ranged hit": 2.74,
+        "### Per 1 weapon DPS~Ranged weapon DPS": 3,
+        "### Per point~Agility": 1,
+        "### Per point~Armor penetration": 0.13,
+        "### Per point~Crit Rating": 0.76,
+        "### Per point~Expertise": 0.51,
+        "### Per point~Haste Rating": 0.7,
+        "### Per point~Hit Rating": 0.27,
+        "### Per point~Intellect": 0.39,
+        "### Per point~Ranged attack power": 0.35
+      }
+    ],
+    "hunter/marksmanship": [
+      "Agility",
+      {
+        "### Per 1 %~Attack speed": 6.68,
+        "### Per 1 %~Crit": 11.7,
+        "### Per 1 %~Hit": 2.23,
+        "### Per 1 %~Ranged crit": 11.7,
+        "### Per 1 %~Ranged hit": 2.23,
+        "### Per 1 weapon DPS~Ranged weapon DPS": 3.39,
+        "### Per point~Agility": 1,
+        "### Per point~Armor penetration": 0.13,
+        "### Per point~Crit Rating": 0.84,
+        "### Per point~Haste Rating": 0.67,
+        "### Per point~Hit Rating": 0.22,
+        "### Per point~Intellect": 0.4,
+        "### Per point~Mana per 5 s": 0.01,
+        "### Per point~Ranged attack power": 0.34
+      }
+    ],
+    "hunter/survival": [
+      "Agility",
+      {
+        "### Per 1 %~Attack speed": -2.71,
+        "### Per 1 %~Crit": 11.4,
+        "### Per 1 %~Hit": 0.28,
+        "### Per 1 %~Ranged crit": 11.4,
+        "### Per 1 %~Ranged hit": 0.28,
+        "### Per 1 weapon DPS~Ranged weapon DPS": 1.88,
+        "### Per point~Agility": 1,
+        "### Per point~Armor penetration": 0.14,
+        "### Per point~Attack power": 0.17,
+        "### Per point~Crit Rating": 0.82,
+        "### Per point~Expertise": 0.55,
+        "### Per point~Haste Rating": -0.27,
+        "### Per point~Hit Rating": 0.03,
+        "### Per point~Intellect": 0.41,
+        "### Per point~Ranged attack power": 0.21,
+        "### Per point~Strength": 0.18
+      }
+    ],
+    "mage/arcane": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 12.7,
+        "### Per 1 %~Spell crit": 9.78,
+        "### Per 1 %~Spell hit": 13.3,
+        "### Per point~Arcane damage": 0.94,
+        "### Per point~Crit Rating": 0.7,
+        "### Per point~Fire damage": 0.06,
+        "### Per point~Haste Rating": 1.27,
+        "### Per point~Hit Rating": 1.33,
+        "### Per point~Intellect": 0.9,
+        "### Per point~Mana per 5 s": 0.06,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1.92,
+        "### Per point~Spirit": 0.04
+      }
+    ],
+    "mage/fire": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 9.41,
+        "### Per 1 %~Spell crit": 10.9,
+        "### Per 1 %~Spell hit": 15.7,
+        "### Per point~Arcane damage": 0.04,
+        "### Per point~Crit Rating": 0.78,
+        "### Per point~Fire damage": 0.96,
+        "### Per point~Haste Rating": 0.94,
+        "### Per point~Hit Rating": 1.57,
+        "### Per point~Intellect": 0.28,
+        "### Per point~Mana per 5 s": -0.02,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 2.3,
+        "### Per point~Spirit": -0.01
+      }
+    ],
+    "mage/frost": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 12.3,
+        "### Per 1 %~Spell crit": 8.97,
+        "### Per 1 %~Spell hit": 10.8,
+        "### Per point~Crit Rating": 0.64,
+        "### Per point~Fire damage": 0.01,
+        "### Per point~Frost damage": 0.99,
+        "### Per point~Haste Rating": 1.23,
+        "### Per point~Hit Rating": 1.08,
+        "### Per point~Intellect": 0.17,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 2.34
+      }
+    ],
+    "paladin/holy": [
+      "Healing power",
+      {
+        "### Per 1 %~Casting speed": 20,
+        "### Per 1 %~Spell crit": 24.7,
+        "### Per point~Crit Rating": 1.77,
+        "### Per point~Haste Rating": 2,
+        "### Per point~Healing power": 1,
+        "### Per point~Intellect": 0.9,
+        "### Per point~Mana per 5 s": 0.22,
+        "### Per point~Spirit": 0.04
+      }
+    ],
+    "paladin/protection": [
+      "Strength",
+      {
+        "### Per 1 %~Attack speed": 21.6,
+        "### Per 1 %~Casting speed": 21.6,
+        "### Per 1 %~Crit": 34.8,
+        "### Per 1 %~Hit": 11.9,
+        "### Per 1 %~Spell crit": 34.8,
+        "### Per 1 %~Spell hit": 11.9,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 5.33,
+        "### Per point~Agility": 1.34,
+        "### Per point~Armor": -0.01,
+        "### Per point~Armor penetration": 0.08,
+        "### Per point~Attack power": 0.42,
+        "### Per point~Block": -0.01,
+        "### Per point~Bonus armor": -0.01,
+        "### Per point~Crit Rating": 2.48,
+        "### Per point~Defense": -0.67,
+        "### Per point~Dodge": -0.27,
+        "### Per point~Expertise": 5.52,
+        "### Per point~Haste Rating": 2.16,
+        "### Per point~Hit Rating": 1.19,
+        "### Per point~Holy damage": 3.22,
+        "### Per point~Intellect": 0.13,
+        "### Per point~Main Hand Speed": -651.3,
+        "### Per point~Mana per 5 s": -0.03,
+        "### Per point~Parry": -0.03,
+        "### Per point~Spell damage": 3.34,
+        "### Per point~Strength": 1
+      }
+    ],
+    "paladin/retribution": [
+      "Strength",
+      {
+        "### Per 1 %~Attack speed": 18.7,
+        "### Per 1 %~Casting speed": 18.7,
+        "### Per 1 %~Crit": 24,
+        "### Per 1 %~Hit": 6.68,
+        "### Per 1 %~Spell crit": 24,
+        "### Per 1 %~Spell hit": 6.68,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 5.38,
+        "### Per point~Agility": 1.17,
+        "### Per point~Armor penetration": 0.08,
+        "### Per point~Attack power": 0.41,
+        "### Per point~Crit Rating": 1.71,
+        "### Per point~Expertise": 2.66,
+        "### Per point~Haste Rating": 1.87,
+        "### Per point~Hit Rating": 0.67,
+        "### Per point~Holy damage": 1.43,
+        "### Per point~Intellect": 1.3,
+        "### Per point~Main Hand Speed": -542,
+        "### Per point~Mana per 5 s": 0,
+        "### Per point~Spell damage": 1.72,
+        "### Per point~Strength": 1
+      }
+    ],
+    "priest/discipline": [
+      "Healing power",
+      {
+        "### Per 1 %~Casting speed": 33.2,
+        "### Per 1 %~Spell crit": 16,
+        "### Per point~Crit Rating": 1.15,
+        "### Per point~Haste Rating": 3.32,
+        "### Per point~Healing power": 1,
+        "### Per point~Intellect": 0.4,
+        "### Per point~Mana per 5 s": 0.01,
+        "### Per point~Spell penetration": 0
+      }
+    ],
+    "priest/holy": [
+      "Healing power",
+      {
+        "### Per 1 %~Casting speed": 31.7,
+        "### Per 1 %~Spell crit": 12.6,
+        "### Per point~Crit Rating": 0.9,
+        "### Per point~Haste Rating": 3.17,
+        "### Per point~Healing power": 1,
+        "### Per point~Intellect": 0.26,
+        "### Per point~Spirit": 0.28
+      }
+    ],
+    "priest/shadow": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 2,
+        "### Per 1 %~Spell crit": 13.2,
+        "### Per 1 %~Spell hit": 11.9,
+        "### Per point~Crit Rating": 0.94,
+        "### Per point~Haste Rating": 0.2,
+        "### Per point~Hit Rating": 1.19,
+        "### Per point~Intellect": 0.27,
+        "### Per point~Mana per 5 s": 0,
+        "### Per point~Shadow damage": 1,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1
+      }
+    ],
+    "rogue/assassination": [
+      "Attack power",
+      {
+        "### Per 1 %~Attack speed": 14.5,
+        "### Per 1 %~Crit": 27.8,
+        "### Per 1 %~Hit": 20.9,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 7.73,
+        "### Per 1 weapon DPS~Off-hand weapon DPS": 2.88,
+        "### Per point~Agility": 2.04,
+        "### Per point~Armor penetration": 0.45,
+        "### Per point~Attack power": 1,
+        "### Per point~Crit Rating": 1.99,
+        "### Per point~Expertise": 3.05,
+        "### Per point~Haste Rating": 1.45,
+        "### Per point~Hit Rating": 2.09,
+        "### Per point~Main Hand Speed": 46.1,
+        "### Per point~Strength": 1.1
+      }
+    ],
+    "rogue/combat": [
+      "Attack power",
+      {
+        "### Per 1 %~Attack speed": 11.6,
+        "### Per 1 %~Crit": 23.1,
+        "### Per 1 %~Hit": 16.9,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 10,
+        "### Per 1 weapon DPS~Off-hand weapon DPS": 3.02,
+        "### Per point~Agility": 1.92,
+        "### Per point~Armor penetration": 0.41,
+        "### Per point~Attack power": 1,
+        "### Per point~Crit Rating": 1.65,
+        "### Per point~Expertise": 2.24,
+        "### Per point~Haste Rating": 1.16,
+        "### Per point~Hit Rating": 1.69,
+        "### Per point~Main Hand Speed": 133.2,
+        "### Per point~Strength": 1.1
+      }
+    ],
+    "rogue/subtlety": [
+      "Attack power",
+      {
+        "### Per 1 %~Attack speed": 12.1,
+        "### Per 1 %~Crit": 23.2,
+        "### Per 1 %~Hit": 17.5,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 9.35,
+        "### Per 1 weapon DPS~Off-hand weapon DPS": 1.89,
+        "### Per point~Agility": 1.9,
+        "### Per point~Armor penetration": 0.33,
+        "### Per point~Attack power": 1,
+        "### Per point~Crit Rating": 1.66,
+        "### Per point~Expertise": 2.42,
+        "### Per point~Haste Rating": 1.21,
+        "### Per point~Hit Rating": 1.75,
+        "### Per point~Main Hand Speed": 142.1,
+        "### Per point~Strength": 1.1
+      }
+    ],
+    "shaman/elemental": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 13.4,
+        "### Per 1 %~Spell crit": 10.6,
+        "### Per 1 %~Spell hit": 9.64,
+        "### Per point~Crit Rating": 0.75,
+        "### Per point~Fire damage": 0.11,
+        "### Per point~Haste Rating": 1.34,
+        "### Per point~Hit Rating": 0.96,
+        "### Per point~Intellect": 0.47,
+        "### Per point~Mana per 5 s": 0.04,
+        "### Per point~Nature damage": 0.86,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 2.42,
+        "### Per point~Spirit": 0
+      }
+    ],
+    "shaman/enhancement": [
+      "Attack power",
+      {
+        "### Per 1 %~Attack speed": 24.1,
+        "### Per 1 %~Casting speed": 24.1,
+        "### Per 1 %~Crit": 34.3,
+        "### Per 1 %~Hit": 17.3,
+        "### Per 1 %~Spell crit": 34.3,
+        "### Per 1 %~Spell hit": 17.3,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 13.3,
+        "### Per point~Agility": 1.36,
+        "### Per point~Armor penetration": 0.36,
+        "### Per point~Attack power": 1,
+        "### Per point~Crit Rating": 2.45,
+        "### Per point~Expertise": 4.29,
+        "### Per point~Haste Rating": 2.41,
+        "### Per point~Hit Rating": 1.73,
+        "### Per point~Intellect": 2.01,
+        "### Per point~Main Hand Speed": 74.1,
+        "### Per point~Mana per 5 s": 0.09,
+        "### Per point~Nature damage": 0.51,
+        "### Per point~Spell damage": 1.22,
+        "### Per point~Strength": 2.2
+      }
+    ],
+    "shaman/restoration": [
+      "Healing power",
+      {
+        "### Per 1 %~Casting speed": 22,
+        "### Per 1 %~Spell crit": 11.1,
+        "### Per point~Crit Rating": 0.79,
+        "### Per point~Haste Rating": 2.2,
+        "### Per point~Healing power": 1,
+        "### Per point~Intellect": 1.21,
+        "### Per point~Mana per 5 s": 0.35
+      }
+    ],
+    "warlock/affliction": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 15,
+        "### Per 1 %~Spell crit": 12.3,
+        "### Per 1 %~Spell hit": 10.3,
+        "### Per point~Crit Rating": 0.88,
+        "### Per point~Fire damage": 0.09,
+        "### Per point~Haste Rating": 1.5,
+        "### Per point~Hit Rating": 1.03,
+        "### Per point~Intellect": 0.49,
+        "### Per point~Mana per 5 s": 0.2,
+        "### Per point~Shadow damage": 0.91,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1.36
+      }
+    ],
+    "warlock/demonology": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 17,
+        "### Per 1 %~Spell crit": 11.9,
+        "### Per 1 %~Spell hit": 15,
+        "### Per point~Crit Rating": 0.85,
+        "### Per point~Fire damage": 0.16,
+        "### Per point~Haste Rating": 1.7,
+        "### Per point~Hit Rating": 1.5,
+        "### Per point~Intellect": 0.21,
+        "### Per point~Mana per 5 s": 0,
+        "### Per point~Shadow damage": 0.82,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1.34
+      }
+    ],
+    "warlock/destruction": [
+      "Spell damage",
+      {
+        "### Per 1 %~Casting speed": 8.66,
+        "### Per 1 %~Spell crit": 11.9,
+        "### Per 1 %~Spell hit": 10.5,
+        "### Per point~Crit Rating": 0.85,
+        "### Per point~Fire damage": 0.18,
+        "### Per point~Haste Rating": 0.87,
+        "### Per point~Hit Rating": 1.05,
+        "### Per point~Intellect": 0.27,
+        "### Per point~Mana per 5 s": 0.05,
+        "### Per point~Shadow damage": 0.82,
+        "### Per point~Spell damage": 1,
+        "### Per point~Spell penetration": 1.22
+      }
+    ],
+    "warrior/arms": [
+      "Strength",
+      {
+        "### Per 1 %~Attack speed": 4.88,
+        "### Per 1 %~Crit": 12,
+        "### Per 1 %~Hit": 0.23,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 7.35,
+        "### Per point~Agility": 0.66,
+        "### Per point~Armor penetration": 0.23,
+        "### Per point~Attack power": 0.45,
+        "### Per point~Crit Rating": 0.86,
+        "### Per point~Expertise": 1.83,
+        "### Per point~Haste Rating": 0.49,
+        "### Per point~Hit Rating": 0.02,
+        "### Per point~Strength": 1
+      }
+    ],
+    "warrior/fury": [
+      "Strength",
+      {
+        "### Per 1 %~Attack speed": 8.9,
+        "### Per 1 %~Crit": 9.62,
+        "### Per 1 %~Hit": 9.01,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 4.69,
+        "### Per 1 weapon DPS~Off-hand weapon DPS": 1.54,
+        "### Per point~Agility": 0.52,
+        "### Per point~Armor penetration": 0.22,
+        "### Per point~Attack power": 0.45,
+        "### Per point~Crit Rating": 0.69,
+        "### Per point~Expertise": 1.58,
+        "### Per point~Haste Rating": 0.89,
+        "### Per point~Hit Rating": 0.9,
+        "### Per point~Main Hand Speed": 92.3,
+        "### Per point~Strength": 1
+      }
+    ],
+    "warrior/protection": [
+      "Strength",
+      {
+        "### Per 1 %~Attack speed": 4.57,
+        "### Per 1 %~Crit": 10.2,
+        "### Per 1 %~Hit": 1.08,
+        "### Per 1 weapon DPS~Main-hand weapon DPS": 2.57,
+        "### Per point~Agility": 0.4,
+        "### Per point~Armor penetration": 0.2,
+        "### Per point~Attack power": 0.44,
+        "### Per point~Block": 0.02,
+        "### Per point~Block value": 0.51,
+        "### Per point~Crit Rating": 0.73,
+        "### Per point~Defense": -0.29,
+        "### Per point~Dodge": -0.24,
+        "### Per point~Expertise": 3.81,
+        "### Per point~Haste Rating": 0.46,
+        "### Per point~Hit Rating": 0.11,
+        "### Per point~Main Hand Speed": 8.59,
+        "### Per point~Parry": -0.04,
+        "### Per point~Stamina": 0.04,
+        "### Per point~Strength": 1
+      }
+    ]
+  },
+  "comparison_history": [
+    {
+      "scope": "Initial pinned comparison, retained for the before/after audit. Its blanket engine label was incomplete; current page-specific provenance is recorded separately.",
+      "weights": {
+        "druid/balance": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 10.6,
+            "### Per 1 %~Spell crit": 10.3,
+            "### Per 1 %~Spell hit": 8.7,
+            "### Per point~Arcane damage": 0.66,
+            "### Per point~Crit Rating": 0.73,
+            "### Per point~Haste Rating": 1.06,
+            "### Per point~Hit Rating": 0.87,
+            "### Per point~Intellect": 0.24,
+            "### Per point~Mana per 5 s": 0.02,
+            "### Per point~Nature damage": 0.34,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 1.94
+          }
+        ],
+        "druid/feral": [
+          "Agility",
+          {
+            "### Per 1 %~Attack speed": 4.64,
+            "### Per 1 %~Crit": 10.1,
+            "### Per 1 %~Hit": 8.92,
+            "### Per point~Agility": 1,
+            "### Per point~Armor penetration": 0.13,
+            "### Per point~Attack power": 0.41,
+            "### Per point~Crit Rating": 0.72,
+            "### Per point~Expertise": 0.87,
+            "### Per point~Feral attack power": 0.41,
+            "### Per point~Haste Rating": 0.46,
+            "### Per point~Hit Rating": 0.89,
+            "### Per point~Strength": 0.99
+          }
+        ],
+        "druid/feral-tank": [
+          "Agility",
+          {
+            "### Per 1 %~Attack speed": 9.11,
+            "### Per 1 %~Crit": 19.7,
+            "### Per 1 %~Hit": 14.3,
+            "### Per point~Agility": 1,
+            "### Per point~Armor penetration": 0.33,
+            "### Per point~Attack power": 0.76,
+            "### Per point~Crit Rating": 1.41,
+            "### Per point~Expertise": 5.72,
+            "### Per point~Feral attack power": 0.76,
+            "### Per point~Haste Rating": 0.91,
+            "### Per point~Hit Rating": 1.43,
+            "### Per point~Strength": 1.68
+          }
+        ],
+        "druid/restoration": [
+          "Healing power",
+          {
+            "### Per 1 %~Casting speed": 22.8,
+            "### Per 1 %~Spell crit": 11.1,
+            "### Per point~Crit Rating": 0.8,
+            "### Per point~Haste Rating": 2.28,
+            "### Per point~Healing power": 1,
+            "### Per point~Intellect": 0.16,
+            "### Per point~Mana per 5 s": 0.2,
+            "### Per point~Spirit": 0.35
+          }
+        ],
+        "hunter/beast-mastery": [
+          "Agility",
+          {
+            "### Per 1 %~Attack speed": 7.36,
+            "### Per 1 %~Crit": 10.5,
+            "### Per 1 %~Hit": 2.57,
+            "### Per 1 %~Ranged crit": 10.5,
+            "### Per 1 %~Ranged hit": 2.57,
+            "### Per 1 weapon DPS~Ranged weapon DPS": 3.29,
+            "### Per point~Agility": 1,
+            "### Per point~Armor penetration": 0.13,
+            "### Per point~Crit Rating": 0.75,
+            "### Per point~Expertise": 0.53,
+            "### Per point~Haste Rating": 0.74,
+            "### Per point~Hit Rating": 0.26,
+            "### Per point~Intellect": 0.39,
+            "### Per point~Ranged attack power": 0.35
+          }
+        ],
+        "hunter/marksmanship": [
+          "Agility",
+          {
+            "### Per 1 %~Attack speed": 6.68,
+            "### Per 1 %~Crit": 11.7,
+            "### Per 1 %~Hit": 2.23,
+            "### Per 1 %~Ranged crit": 11.7,
+            "### Per 1 %~Ranged hit": 2.23,
+            "### Per 1 weapon DPS~Ranged weapon DPS": 3.39,
+            "### Per point~Agility": 1,
+            "### Per point~Armor penetration": 0.13,
+            "### Per point~Crit Rating": 0.84,
+            "### Per point~Haste Rating": 0.67,
+            "### Per point~Hit Rating": 0.22,
+            "### Per point~Intellect": 0.4,
+            "### Per point~Mana per 5 s": 0.01,
+            "### Per point~Ranged attack power": 0.34
+          }
+        ],
+        "hunter/survival": [
+          "Agility",
+          {
+            "### Per 1 %~Attack speed": -2.71,
+            "### Per 1 %~Crit": 11.4,
+            "### Per 1 %~Hit": 0.28,
+            "### Per 1 %~Ranged crit": 11.4,
+            "### Per 1 %~Ranged hit": 0.28,
+            "### Per 1 weapon DPS~Ranged weapon DPS": 1.88,
+            "### Per point~Agility": 1,
+            "### Per point~Armor penetration": 0.14,
+            "### Per point~Attack power": 0.17,
+            "### Per point~Crit Rating": 0.82,
+            "### Per point~Expertise": 0.55,
+            "### Per point~Haste Rating": -0.27,
+            "### Per point~Hit Rating": 0.03,
+            "### Per point~Intellect": 0.41,
+            "### Per point~Ranged attack power": 0.21,
+            "### Per point~Strength": 0.18
+          }
+        ],
+        "mage/arcane": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 22.2,
+            "### Per 1 %~Spell crit": 9.24,
+            "### Per 1 %~Spell hit": 10,
+            "### Per point~Arcane damage": 0.98,
+            "### Per point~Crit Rating": 0.66,
+            "### Per point~Fire damage": 0,
+            "### Per point~Frost damage": 0.01,
+            "### Per point~Haste Rating": 2.22,
+            "### Per point~Hit Rating": 1,
+            "### Per point~Intellect": 1.03,
+            "### Per point~Mana per 5 s": 0.15,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 2.6,
+            "### Per point~Spirit": 0.1
+          }
+        ],
+        "mage/fire": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 9.41,
+            "### Per 1 %~Spell crit": 10.9,
+            "### Per 1 %~Spell hit": 15.7,
+            "### Per point~Arcane damage": 0.04,
+            "### Per point~Crit Rating": 0.78,
+            "### Per point~Fire damage": 0.96,
+            "### Per point~Haste Rating": 0.94,
+            "### Per point~Hit Rating": 1.57,
+            "### Per point~Intellect": 0.28,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 2.3
+          }
+        ],
+        "mage/frost": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 12.3,
+            "### Per 1 %~Spell crit": 8.97,
+            "### Per 1 %~Spell hit": 10.8,
+            "### Per point~Crit Rating": 0.64,
+            "### Per point~Fire damage": 0.01,
+            "### Per point~Frost damage": 0.99,
+            "### Per point~Haste Rating": 1.23,
+            "### Per point~Hit Rating": 1.08,
+            "### Per point~Intellect": 0.17,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 2.34
+          }
+        ],
+        "paladin/holy": [
+          "Healing power",
+          {
+            "### Per 1 %~Casting speed": 20,
+            "### Per 1 %~Spell crit": 24.7,
+            "### Per point~Crit Rating": 1.77,
+            "### Per point~Haste Rating": 2,
+            "### Per point~Healing power": 1,
+            "### Per point~Intellect": 0.9,
+            "### Per point~Mana per 5 s": 0.22,
+            "### Per point~Spirit": 0.04
+          }
+        ],
+        "paladin/protection": [
+          "Strength",
+          {
+            "### Per 1 %~Crit": 32.1,
+            "### Per point~Agility": 1.3,
+            "### Per point~Armor penetration": 0.08,
+            "### Per point~Attack power": 0.41,
+            "### Per point~Block": 0,
+            "### Per point~Crit Rating": 2.3,
+            "### Per point~Expertise": 5.68,
+            "### Per point~Haste Rating": 1.5,
+            "### Per point~Hit Rating": 1.15,
+            "### Per point~Holy damage": 3.25,
+            "### Per point~Intellect": 0.11,
+            "### Per point~Mana per 5 s": 0.02,
+            "### Per point~Parry": 0.01,
+            "### Per point~Spell damage": 3.36,
+            "### Per point~Strength": 1
+          }
+        ],
+        "paladin/retribution": [
+          "Strength",
+          {
+            "### Per 1 %~Attack speed": 17.6,
+            "### Per 1 %~Casting speed": 17.6,
+            "### Per 1 %~Crit": 22.5,
+            "### Per 1 %~Hit": 6.57,
+            "### Per 1 %~Spell crit": 22.5,
+            "### Per 1 %~Spell hit": 6.57,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 5.39,
+            "### Per point~Agility": 1.1,
+            "### Per point~Armor penetration": 0.09,
+            "### Per point~Attack power": 0.41,
+            "### Per point~Crit Rating": 1.6,
+            "### Per point~Expertise": 2.45,
+            "### Per point~Haste Rating": 1.76,
+            "### Per point~Hit Rating": 0.66,
+            "### Per point~Holy damage": 1.41,
+            "### Per point~Intellect": 1.29,
+            "### Per point~Spell damage": 1.69,
+            "### Per point~Strength": 1
+          }
+        ],
+        "priest/discipline": [
+          "Healing power",
+          {
+            "### Per 1 %~Casting speed": 29.9,
+            "### Per 1 %~Spell crit": 16.9,
+            "### Per point~Crit Rating": 1.21,
+            "### Per point~Haste Rating": 2.99,
+            "### Per point~Healing power": 1,
+            "### Per point~Intellect": 1.07,
+            "### Per point~Mana per 5 s": 0.42,
+            "### Per point~Spirit": 0.13
+          }
+        ],
+        "priest/holy": [
+          "Healing power",
+          {
+            "### Per 1 %~Casting speed": 29.1,
+            "### Per 1 %~Spell crit": 12.6,
+            "### Per point~Crit Rating": 0.9,
+            "### Per point~Haste Rating": 2.91,
+            "### Per point~Healing power": 1,
+            "### Per point~Intellect": 0.47,
+            "### Per point~Mana per 5 s": 0.05,
+            "### Per point~Spirit": 0.28
+          }
+        ],
+        "priest/shadow": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 3.36,
+            "### Per 1 %~Spell crit": 13,
+            "### Per 1 %~Spell hit": 13.4,
+            "### Per point~Crit Rating": 0.93,
+            "### Per point~Haste Rating": 0.34,
+            "### Per point~Hit Rating": 1.34,
+            "### Per point~Intellect": 0.27,
+            "### Per point~Shadow damage": 1,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 2.29
+          }
+        ],
+        "rogue/assassination": [
+          "Attack power",
+          {
+            "### Per 1 %~Attack speed": 11.7,
+            "### Per 1 %~Crit": 29,
+            "### Per 1 %~Hit": 18.5,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 8.13,
+            "### Per 1 weapon DPS~Off-hand weapon DPS": 3.19,
+            "### Per point~Agility": 2.12,
+            "### Per point~Armor penetration": 0.46,
+            "### Per point~Attack power": 1,
+            "### Per point~Crit Rating": 2.07,
+            "### Per point~Expertise": 2.58,
+            "### Per point~Haste Rating": 1.17,
+            "### Per point~Hit Rating": 1.85,
+            "### Per point~Main Hand Speed": 64.9,
+            "### Per point~Strength": 1.1
+          }
+        ],
+        "rogue/combat": [
+          "Attack power",
+          {
+            "### Per 1 %~Attack speed": 11.2,
+            "### Per 1 %~Crit": 22.5,
+            "### Per 1 %~Hit": 15.7,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 10.2,
+            "### Per 1 weapon DPS~Off-hand weapon DPS": 2.88,
+            "### Per point~Agility": 1.92,
+            "### Per point~Armor penetration": 0.41,
+            "### Per point~Attack power": 1,
+            "### Per point~Crit Rating": 1.61,
+            "### Per point~Expertise": 2.16,
+            "### Per point~Haste Rating": 1.12,
+            "### Per point~Hit Rating": 1.58,
+            "### Per point~Main Hand Speed": 130.3,
+            "### Per point~Strength": 1.1
+          }
+        ],
+        "rogue/subtlety": [
+          "Attack power",
+          {
+            "### Per 1 %~Attack speed": 10.3,
+            "### Per 1 %~Crit": 23.6,
+            "### Per 1 %~Hit": 15.6,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 10.2,
+            "### Per 1 weapon DPS~Off-hand weapon DPS": 1.85,
+            "### Per point~Agility": 1.93,
+            "### Per point~Armor penetration": 0.34,
+            "### Per point~Attack power": 1,
+            "### Per point~Crit Rating": 1.69,
+            "### Per point~Expertise": 2.36,
+            "### Per point~Haste Rating": 1.03,
+            "### Per point~Hit Rating": 1.56,
+            "### Per point~Main Hand Speed": 143.7,
+            "### Per point~Strength": 1.1
+          }
+        ],
+        "shaman/elemental": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 13.4,
+            "### Per 1 %~Spell crit": 10.6,
+            "### Per 1 %~Spell hit": 9.64,
+            "### Per point~Crit Rating": 0.75,
+            "### Per point~Fire damage": 0.11,
+            "### Per point~Haste Rating": 1.34,
+            "### Per point~Hit Rating": 0.96,
+            "### Per point~Intellect": 0.47,
+            "### Per point~Mana per 5 s": 0.04,
+            "### Per point~Nature damage": 0.86,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 2.42,
+            "### Per point~Spirit": 0
+          }
+        ],
+        "shaman/enhancement": [
+          "Attack power",
+          {
+            "### Per 1 %~Attack speed": 31,
+            "### Per 1 %~Casting speed": 31,
+            "### Per 1 %~Crit": 40.7,
+            "### Per 1 %~Hit": 21.1,
+            "### Per 1 %~Spell crit": 40.7,
+            "### Per 1 %~Spell hit": 21.1,
+            "### Per point~Agility": 1.75,
+            "### Per point~Armor penetration": 0.43,
+            "### Per point~Attack power": 1,
+            "### Per point~Crit Rating": 2.91,
+            "### Per point~Expertise": 3.87,
+            "### Per point~Haste Rating": 3.1,
+            "### Per point~Hit Rating": 2.11,
+            "### Per point~Intellect": 1.93,
+            "### Per point~Nature damage": 0.64,
+            "### Per point~Spell damage": 1.48,
+            "### Per point~Strength": 2.2
+          }
+        ],
+        "shaman/restoration": [
+          "Healing power",
+          {
+            "### Per 1 %~Casting speed": 22,
+            "### Per 1 %~Spell crit": 11.1,
+            "### Per point~Crit Rating": 0.79,
+            "### Per point~Haste Rating": 2.2,
+            "### Per point~Healing power": 1,
+            "### Per point~Intellect": 1.21,
+            "### Per point~Mana per 5 s": 0.35
+          }
+        ],
+        "warlock/affliction": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 17.3,
+            "### Per 1 %~Spell crit": 12.2,
+            "### Per 1 %~Spell hit": 11.4,
+            "### Per point~Crit Rating": 0.87,
+            "### Per point~Fire damage": 0.09,
+            "### Per point~Haste Rating": 1.73,
+            "### Per point~Hit Rating": 1.14,
+            "### Per point~Intellect": 0.45,
+            "### Per point~Mana per 5 s": 0.16,
+            "### Per point~Shadow damage": 0.91,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 1.42
+          }
+        ],
+        "warlock/demonology": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 18.3,
+            "### Per 1 %~Spell crit": 11.4,
+            "### Per 1 %~Spell hit": 13.2,
+            "### Per point~Crit Rating": 0.82,
+            "### Per point~Fire damage": 0.17,
+            "### Per point~Haste Rating": 1.83,
+            "### Per point~Hit Rating": 1.32,
+            "### Per point~Intellect": 0.21,
+            "### Per point~Mana per 5 s": 0,
+            "### Per point~Shadow damage": 0.83,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 1.4
+          }
+        ],
+        "warlock/destruction": [
+          "Spell damage",
+          {
+            "### Per 1 %~Casting speed": 8.59,
+            "### Per 1 %~Spell crit": 11.5,
+            "### Per 1 %~Spell hit": 10.7,
+            "### Per point~Crit Rating": 0.82,
+            "### Per point~Fire damage": 0.18,
+            "### Per point~Haste Rating": 0.86,
+            "### Per point~Hit Rating": 1.07,
+            "### Per point~Intellect": 0.3,
+            "### Per point~Mana per 5 s": 0.06,
+            "### Per point~Shadow damage": 0.82,
+            "### Per point~Spell damage": 1,
+            "### Per point~Spell penetration": 1.45
+          }
+        ],
+        "warrior/arms": [
+          "Strength",
+          {
+            "### Per 1 %~Attack speed": 4.88,
+            "### Per 1 %~Crit": 12,
+            "### Per 1 %~Hit": 0.23,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 7.35,
+            "### Per point~Agility": 0.66,
+            "### Per point~Armor penetration": 0.23,
+            "### Per point~Attack power": 0.45,
+            "### Per point~Crit Rating": 0.86,
+            "### Per point~Expertise": 1.83,
+            "### Per point~Haste Rating": 0.49,
+            "### Per point~Hit Rating": 0.02,
+            "### Per point~Strength": 1
+          }
+        ],
+        "warrior/fury": [
+          "Strength",
+          {
+            "### Per 1 %~Attack speed": 8.8,
+            "### Per 1 %~Crit": 10.4,
+            "### Per 1 %~Hit": 9.78,
+            "### Per 1 weapon DPS~Main-hand weapon DPS": 4.38,
+            "### Per 1 weapon DPS~Off-hand weapon DPS": 1.77,
+            "### Per point~Agility": 0.57,
+            "### Per point~Armor penetration": 0.23,
+            "### Per point~Attack power": 0.45,
+            "### Per point~Crit Rating": 0.74,
+            "### Per point~Expertise": 1.84,
+            "### Per point~Haste Rating": 0.88,
+            "### Per point~Hit Rating": 0.98,
+            "### Per point~Main Hand Speed": 92.8,
+            "### Per point~Strength": 1
+          }
+        ],
+        "warrior/protection": [
+          "Strength",
+          {
+            "### Per 1 %~Attack speed": 4.57,
+            "### Per 1 %~Crit": 10.2,
+            "### Per 1 %~Hit": 1.08,
+            "### Per point~Agility": 0.4,
+            "### Per point~Armor penetration": 0.2,
+            "### Per point~Attack power": 0.44,
+            "### Per point~Block": 0.02,
+            "### Per point~Block value": 0.51,
+            "### Per point~Crit Rating": 0.73,
+            "### Per point~Expertise": 3.81,
+            "### Per point~Haste Rating": 0.46,
+            "### Per point~Hit Rating": 0.11,
+            "### Per point~Main Hand Speed": 8.59,
+            "### Per point~Stamina": 0.04,
+            "### Per point~Strength": 1
+          }
+        ]
+      }
+    }
+  ],
+  "comparison_sources": {
+    "druid/balance": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/druid/balance/stats/"
+    },
+    "druid/feral": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/druid/feral/stats/"
+    },
+    "druid/feral-tank": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/druid/feral-tank/stats/"
+    },
+    "druid/restoration": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/druid/restoration/stats/"
+    },
+    "hunter/beast-mastery": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/hunter/beast-mastery/stats/"
+    },
+    "hunter/marksmanship": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/hunter/marksmanship/stats/"
+    },
+    "hunter/survival": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/hunter/survival/stats/"
+    },
+    "mage/arcane": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/mage/arcane/stats/"
+    },
+    "mage/fire": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/mage/fire/stats/"
+    },
+    "mage/frost": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/mage/frost/stats/"
+    },
+    "paladin/holy": {
+      "engine": "fcf5afe",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "talent_label": "Tuned 31/16/4 \u00b7 1 min \u00b7 utility",
+      "url": "https://sixtysim.com/guides/paladin/holy/stats/"
+    },
+    "paladin/protection": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/paladin/protection/stats/"
+    },
+    "paladin/retribution": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/paladin/retribution/stats/"
+    },
+    "priest/discipline": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "talent_label": "Tuned 31/20/0 \u00b7 1 min \u00b7 utility b",
+      "url": "https://sixtysim.com/guides/priest/discipline/stats/"
+    },
+    "priest/holy": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "talent_label": "Tuned 17/34/0 \u00b7 1 min \u00b7 utility b",
+      "url": "https://sixtysim.com/guides/priest/holy/stats/"
+    },
+    "priest/shadow": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/priest/shadow/stats/"
+    },
+    "rogue/assassination": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/rogue/assassination/stats/"
+    },
+    "rogue/combat": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/rogue/combat/stats/"
+    },
+    "rogue/subtlety": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/rogue/subtlety/stats/"
+    },
+    "shaman/elemental": {
+      "engine": "fcf5afe",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/shaman/elemental/stats/"
+    },
+    "shaman/enhancement": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/shaman/enhancement/stats/"
+    },
+    "shaman/restoration": {
+      "engine": "fcf5afe",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/shaman/restoration/stats/"
+    },
+    "warlock/affliction": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warlock/affliction/stats/"
+    },
+    "warlock/demonology": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warlock/demonology/stats/"
+    },
+    "warlock/destruction": {
+      "engine": "92b1673",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warlock/destruction/stats/"
+    },
+    "warrior/arms": {
+      "engine": "6d3ac2a",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "14 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warrior/arms/stats/"
+    },
+    "warrior/fury": {
+      "engine": "92b1673",
+      "faction": "Alliance",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "22 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warrior/fury/stats/"
+    },
+    "warrior/protection": {
+      "engine": "fcf5afe",
+      "faction": "Horde",
+      "method_url": "https://sixtysim.com/method/",
+      "published_update": "17 Nov 2026",
+      "scope": "One boss, one minute; source weights are marginal to its own optimized outfit.",
+      "url": "https://sixtysim.com/guides/warrior/protection/stats/"
+    }
+  },
+  "profiles": {
+    "Druid/Balance": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/balance-druid/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 4.0,
+        "spell_hit_percent": 4.0
+      },
+      "reference_ranks": {
+        "129582": 5,
+        "129589": 2,
+        "129596": 3
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "arcanespelldamage": 3.9294,
+          "critrating": 4.4441,
+          "hasterating": 5.7991,
+          "hitrating": 7.1443,
+          "intellect": 1.3533,
+          "mp5": 0.4685,
+          "naturespelldamage": 2.0706,
+          "spelldamage": 6,
+          "spellpenetration": 11.5662,
+          "spellpower": 6,
+          "spirit": 0.1494
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0.6549,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.369567,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 9.665167,
+        "healing_power": 0,
+        "hit_percent": 11.907167,
+        "holy_damage": 0,
+        "intellect": 0.22555,
+        "mp5": 0.078083,
+        "nature_damage": 0.3451,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.0249,
+        "stamina": 0.2,
+        "strength": 0
+      }
+    },
+    "Druid/Feral dps": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/feral-dps-druid/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "129582": 5,
+        "129618": 5
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 0.7716,
+          "attackpower": 2.1373,
+          "critrating": 4.7498,
+          "expertiserating": 4.3053,
+          "feralattackpower": 2.1364,
+          "hasterating": 2.6988,
+          "hitrating": 4.6578,
+          "intellect": 0.1894,
+          "meleedps": 19.4611,
+          "mp5": 0.291,
+          "offhanddps": 0,
+          "spellpenetration": 0.0567,
+          "spirit": 0.0745,
+          "strength": 5.1293
+        }
+      },
+      "weights": {
+        "agility": 2.0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.712433,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.165733,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 6.487033,
+        "expertise": 14.351,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 8.996,
+        "healing_power": 0,
+        "hit_percent": 15.526,
+        "holy_damage": 0,
+        "intellect": 0.063133,
+        "mp5": 0.097,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.024833,
+        "stamina": 0.2,
+        "strength": 1.709767
+      }
+    },
+    "Druid/Feral tank": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_source": "https://sixtysim.com/guides/druid/feral-tank/stats/",
+      "alternative_units": "SixtySim Per point Expertise, Block and Parry are rating coefficients, converted to percentage reduction or chance with the client gametable. Explicit Per 1 % entries remain percentage coefficients.",
+      "alternative_weights": [
+        {
+          "agility": 1.1,
+          "armor": 0,
+          "attack_power": 0.858,
+          "block_percent": 0.0,
+          "block_value": 0.0,
+          "crit_percent": 21.78,
+          "defense": 0,
+          "dodge_percent": 0,
+          "expertise": 65.34,
+          "haste_percent": 10.527,
+          "hit_percent": 16.61,
+          "holy_damage": 0.0,
+          "intellect": 0.0,
+          "mp5": 0.0,
+          "parry_percent": 0,
+          "spell_damage": 0.0,
+          "spell_power": 0.0,
+          "spirit": 0.0,
+          "stamina": 0,
+          "strength": 1.881
+        }
+      ],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 14,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ],
+        [
+          14,
+          0.5
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Retain the reviewed survivability budget and calibrate physical and spell threat against the published weapon-DPS ratios. Defense and avoidance are survival inputs. Personal swaps also evaluate the recorded SixtySim one-minute threat coefficients. Armor and avoidance omitted by that threat benchmark score zero only in the alternative. A survival-versus-threat reversal uses conditional advice.",
+      "position": "front",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/feral-tank-druid/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "129582": 5,
+        "129618": 5
+      },
+      "role": "tank",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims+formula",
+        "weights": {
+          "agility": 4.0755,
+          "armor": 1.7113,
+          "armorpen": 0.0992,
+          "attackpower": 0.2866,
+          "critrating": 0.5761,
+          "defenserating": 4.6261,
+          "dodgerating": 4.82,
+          "expertiserating": 0.7957,
+          "feralattackpower": 0.2866,
+          "hasterating": 0.3014,
+          "hitrating": 0.7515,
+          "intellect": 0.0003,
+          "meleedps": 4.012,
+          "offhanddps": 0,
+          "spellpenetration": 0.0088,
+          "stamina": 6,
+          "strength": 0.6305
+        }
+      },
+      "weights": {
+        "agility": 1.1,
+        "armor": 0.08,
+        "attack_power": 0.107154,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 3.015478,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 1.5,
+        "expertise": 2.97495,
+        "haste_percent": 1.126869,
+        "hit_percent": 5,
+        "holy_damage": 0.0,
+        "parry_percent": 0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "stamina": 2,
+        "strength": 0.23573
+      }
+    },
+    "Druid/Restoration": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate. Restoration uses its published 11/0/40 healing reference, without deep-Feral Natural Instinct. The -0.03 MP5 finite-step result is treated as zero: the source describes it as no mana value in this non-mana-limited fight; retain the raw measurement in comparison evidence.",
+      "alternative_weights": [
+        {
+          "crit_percent": 11.5,
+          "haste_percent": 24.4,
+          "intellect": 0.06,
+          "mp5": 0,
+          "spirit": 0.32
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Use the published sustainable healing formula; compare the short-fight simulator separately for mana sensitivity. The recorded short-fight reference is also evaluated; a reversal qualifies the personal swap.",
+      "position": "behind",
+      "priority_url": "https://www.icy-veins.com/wow-forever/restoration-druid-healer-pve-stat-priority",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "129571": 3,
+        "129576": 5,
+        "129610": 0,
+        "129618": 2
+      },
+      "reference_talent_review": {
+        "build": "Horde 11/0/40, two points Heart of the Wild, three Living Spirit and five Gift of Nature; no Feral Natural Instinct.",
+        "reason": "Natural Instinct is deep Feral, absent from the published healing build. Do not subtract its Intellect-to-healing conversion from a Restoration reference coefficient.",
+        "reviewed_at": "2026-11-22",
+        "source_engine": "fcf5afe",
+        "source_updated": "2026-11-17",
+        "url": "https://sixtysim.com/guides/druid/restoration/talents/"
+      },
+      "role": "healer",
+      "source_weights": {
+        "anchor": "healingpower",
+        "source": "formula",
+        "weights": {
+          "critrating": 4.9971,
+          "healingpower": 6,
+          "intellect": 6.0267,
+          "mp5": 11.66,
+          "spellpower": 6,
+          "spirit": 1.8219
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.6599,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 1.00445,
+        "mp5": 1.943333,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.30365,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
+      }
+    },
+    "Hunter/Beast mastery": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "physical": 1,
+        "ranged": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "ranged",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/beast-mastery-hunter/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "129651": 0,
+        "129672": 3
+      },
+      "role": "ranged",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 0.5962,
+          "critrating": 5.2954,
+          "expertiserating": 1.9103,
+          "hasterating": 3.6201,
+          "hitrating": 7.7349,
+          "intellect": 2.3426,
+          "mp5": 0.2027,
+          "rangedattackpower": 2.0375,
+          "rangeddps": 17.5997,
+          "spellpenetration": 2.9673,
+          "spirit": 0.0598,
+          "weaponskill_ranged_1": 23.5148,
+          "weaponskill_ranged_2": 5.6687,
+          "weaponskill_ranged_3": 5.5426
+        }
+      },
+      "weights": {
+        "agility": 1.8,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.61125,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.24068,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 5.7309,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 10.8603,
+        "healing_power": 0,
+        "hit_percent": 23.2047,
+        "holy_damage": 0,
+        "intellect": 0.70278,
+        "mp5": 0.06081,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.61125,
+        "ranged_dps": 5.27991,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.01794,
+        "stamina": 0.2,
+        "strength": 0
+      }
+    },
+    "Hunter/Marksmanship": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "physical": 1,
+        "ranged": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "ranged",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/marksmanship-hunter/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "129651": 0,
+        "129662": 5,
+        "129672": 3
+      },
+      "role": "ranged",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 0.6951,
+          "critrating": 5.24,
+          "hasterating": 4.4512,
+          "hitrating": 6.9216,
+          "intellect": 2.7773,
+          "mp5": 0.831,
+          "rangedattackpower": 2.0323,
+          "rangeddps": 19.3952,
+          "spellpenetration": 3.1992,
+          "spirit": 0.2286,
+          "weaponskill_ranged_1": 27.2381,
+          "weaponskill_ranged_2": 7.1655,
+          "weaponskill_ranged_3": 6.8219
+        }
+      },
+      "weights": {
+        "agility": 2.0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.677433,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 24.453333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 14.837333,
+        "healing_power": 0,
+        "hit_percent": 23.072,
+        "holy_damage": 0,
+        "intellect": 0.925767,
+        "mp5": 0.277,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.677433,
+        "ranged_dps": 6.465067,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.0762,
+        "stamina": 0.2,
+        "strength": 0
+      }
+    },
+    "Hunter/Survival": {
+      "alternative_source": "https://sixtysim.com/guides/hunter/survival/stats/",
+      "alternative_weights": [
+        {
+          "attack_power": 0.798,
+          "crit_percent": 23.94,
+          "expertise": 11.55,
+          "haste_percent": -5.691,
+          "intellect": 0.861,
+          "ranged_attack_power": 0.441,
+          "ranged_dps": 3.948,
+          "strength": 0.378
+        }
+      ],
+      "crit_shares": {
+        "melee": 0.3333333333333333,
+        "physical": 1,
+        "ranged": 0.6666666666666666
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.3333333333333333
+            ]
+          ]
+        },
+        {
+          "channel": "ranged",
+          "segments": [
+            [
+              8,
+              0.6666666666666666
+            ]
+          ]
+        }
+      ],
+      "note": "Weaving reference with one third melee participation and two thirds ranged. GearMatic does not publish the main-hand coefficient and the SixtySim table explicitly does not measure it. Retain the prior reviewed 3-point melee-DPS coefficient and qualify melee-weapon tradeoffs. Add the separately measured SixtySim melee AP, Strength and Expertise contributions; generic item AP and Careful Aim benefit both attack powers. The one-minute SixtySim Haste trend is negative, so Haste-sensitive swaps also use that alternative. This is a qualified reference estimate, not an exact simulation.",
+      "offhand_dps_factor": 0.5,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/survival-hunter/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "129646": 5,
+        "129651": 3,
+        "129656": 5,
+        "129672": 3
+      },
+      "role": "ranged",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 0.6097,
+          "critrating": 4.5266,
+          "hasterating": 3.5163,
+          "hitrating": 5.6811,
+          "intellect": 2.03,
+          "mp5": 0.2246,
+          "rangedattackpower": 1.8079,
+          "rangeddps": 16.92,
+          "spellpenetration": 2.8826,
+          "spirit": 0.0679,
+          "weaponskill_ranged_1": 22.8912,
+          "weaponskill_ranged_2": 5.6369,
+          "weaponskill_ranged_3": 5.7593
+        }
+      },
+      "supplemental_sources": [
+        "https://mobalytics.gg/wow-forever/classes/survival-hunter-guide",
+        "https://www.method.gg/wow-forever/class-guides/survival-hunter/rotation-and-playstyle",
+        "https://sixtysim.com/guides/hunter/survival/stats/"
+      ],
+      "weights": {
+        "agility": 2.1,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.989765,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 22.18034,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 3,
+        "expertise": 11.55,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 12.30705,
+        "healing_power": 0,
+        "hit_percent": 19.88385,
+        "holy_damage": 0,
+        "intellect": 1.0675,
+        "mp5": 0.07861,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0.632765,
+        "ranged_dps": 5.922,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0.023765,
+        "stamina": 0.2,
+        "strength": 0.378
+      }
+    },
+    "Mage/Arcane": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/arcane-mage/bis-gear-and-stats",
+      "reference_bonuses": {
+        "spell_hit_percent": 6.0
+      },
+      "reference_ranks": {
+        "130507": 3,
+        "130528": 3,
+        "130529": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "arcanespelldamage": 5.3719,
+          "critrating": 4.5159,
+          "firespelldamage": 0.6281,
+          "hasterating": 5.6703,
+          "hitrating": 9.7948,
+          "intellect": 5.4857,
+          "mp5": 1.0834,
+          "spelldamage": 6,
+          "spellpenetration": 14.7824,
+          "spellpower": 6,
+          "spirit": 1.1897,
+          "wanddps": 0.5771,
+          "wanddps_leveling": 2.8855
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0.895317,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.5371,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.104683,
+        "frost_damage": 0,
+        "haste_percent": 9.4505,
+        "healing_power": 0,
+        "hit_percent": 16.324667,
+        "holy_damage": 0,
+        "intellect": 0.914283,
+        "mp5": 0.180567,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.198283,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.096183
+      }
+    },
+    "Mage/Fire": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/fire-mage/bis-gear-and-stats",
+      "reference_bonuses": {
+        "spell_hit_percent": 6.0
+      },
+      "reference_ranks": {
+        "130507": 3,
+        "130528": 3,
+        "130529": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "arcanespelldamage": 0.7275,
+          "critrating": 4.653,
+          "firespelldamage": 5.2725,
+          "hasterating": 5.5604,
+          "hitrating": 9.8622,
+          "intellect": 1.7907,
+          "mp5": 0.0028,
+          "spelldamage": 6,
+          "spellpenetration": 11.86,
+          "spellpower": 6,
+          "spirit": 0.0019,
+          "wanddps": 0.4601,
+          "wanddps_leveling": 2.3007
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0.12125,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 10.857,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.87875,
+        "frost_damage": 0,
+        "haste_percent": 9.267333,
+        "healing_power": 0,
+        "hit_percent": 16.437,
+        "holy_damage": 0,
+        "intellect": 0.29845,
+        "mp5": 0.000467,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.000317,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.076683
+      }
+    },
+    "Mage/Frost": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/frost-mage/bis-gear-and-stats",
+      "reference_bonuses": {
+        "spell_hit_percent": 6.0
+      },
+      "reference_ranks": {
+        "130501": 3,
+        "130506": 5,
+        "130507": 3,
+        "130528": 3,
+        "130529": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 3.7972,
+          "frostspelldamage": 6,
+          "hasterating": 6.4176,
+          "hitrating": 9.5802,
+          "intellect": 1.0242,
+          "mp5": 0.0724,
+          "spelldamage": 6,
+          "spellpenetration": 12.0129,
+          "spellpower": 6,
+          "spirit": 0.0536,
+          "wanddps": 0.4792,
+          "wanddps_leveling": 2.396
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 8.860133,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 1.0,
+        "haste_percent": 10.696,
+        "healing_power": 0,
+        "hit_percent": 15.967,
+        "holy_damage": 0,
+        "intellect": 0.1707,
+        "mp5": 0.012067,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.008933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.079867
+      }
+    },
+    "Paladin/Holy": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_weights": [
+        {
+          "crit_percent": 24.7,
+          "haste_percent": 20.0,
+          "intellect": 0.9,
+          "mp5": 0.22,
+          "spirit": 0.04
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Use the published sustainable healing formula; compare the short-fight simulator separately for mana sensitivity. The recorded short-fight reference is also evaluated; a reversal qualifies the personal swap.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/holy-paladin/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "130026": 5,
+        "130027": 3,
+        "130362": 0
+      },
+      "role": "healer",
+      "source_weights": {
+        "anchor": "healingpower",
+        "source": "formula",
+        "weights": {
+          "critrating": 4.74,
+          "healingpower": 6,
+          "intellect": 5.2976,
+          "mp5": 10.0545,
+          "spellpower": 6,
+          "spirit": 1.571
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.06,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.882933,
+        "mp5": 1.67575,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.261833,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
+      }
+    },
+    "Paladin/Protection": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_source": "https://sixtysim.com/guides/paladin/protection/stats/",
+      "alternative_units": "SixtySim Per point Expertise, Block and Parry are rating coefficients, converted to percentage reduction or chance with the client gametable. Explicit Per 1 % entries remain percentage coefficients.",
+      "alternative_weights": [
+        {
+          "agility": 0.628518,
+          "armor": 0,
+          "attack_power": 0.196998,
+          "block_percent": -0.023452,
+          "block_value": 0.0,
+          "crit_percent": 16.322702,
+          "defense": 0,
+          "dodge_percent": 0,
+          "dps": 2.5,
+          "expertise": 25.891182,
+          "haste_percent": 10.131332,
+          "hit_percent": 5,
+          "holy_damage": 1.510319,
+          "intellect": 0.060976,
+          "mp5": -0.014071,
+          "parry_percent": 0,
+          "spell_damage": 1.566604,
+          "spell_power": 1.566604,
+          "spirit": 0.0,
+          "stamina": 0,
+          "strength": 0.469043
+        }
+      ],
+      "crit_shares": {
+        "melee": 0.7,
+        "physical": 0.7,
+        "spell": 0.3
+      },
+      "expertise_cap": 14,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ],
+        [
+          14,
+          0.5
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.7
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.3
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Retain the reviewed survivability budget and calibrate physical and spell threat against the published weapon-DPS ratios. Defense and avoidance are survival inputs. Personal swaps also evaluate the recorded SixtySim one-minute threat coefficients. Armor and avoidance omitted by that threat benchmark score zero only in the alternative. A survival-versus-threat reversal uses conditional advice.",
+      "position": "front",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/protection-paladin/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "130026": 5,
+        "130354": 5,
+        "130362": 3,
+        "137872": 2,
+        "141292": 5
+      },
+      "role": "tank",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims+formula",
+        "weights": {
+          "agility": 2.3064,
+          "armor": 0.2304,
+          "armorpen": 0.0299,
+          "attackpower": 0.1333,
+          "blockrating": 0.8363,
+          "blockvalue": 1.8601,
+          "critrating": 0.4139,
+          "defenserating": 4.1276,
+          "dodgerating": 2.8372,
+          "expertiserating": 1.1413,
+          "hasterating": 0.3696,
+          "hitrating": 1.0476,
+          "holyspelldamage": 0.4246,
+          "intellect": 0.0099,
+          "meleedps": 1.8666,
+          "mp5": 0.0004,
+          "offhanddps": 0,
+          "parryrating": 2.2211,
+          "spelldamage": 0.4246,
+          "spellpenetration": 0.0452,
+          "spellpower": 0.4246,
+          "stamina": 6.0002,
+          "strength": 0.3915,
+          "weaponskill_mh_1": 8.7813,
+          "weaponskill_mh_2": 3.2186
+        }
+      },
+      "weights": {
+        "agility": 0.65,
+        "armor": 0.08,
+        "attack_power": 0.178533,
+        "block_percent": 5,
+        "block_value": 0.9,
+        "crit_percent": 7.760902,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 2.5,
+        "expertise": 15.285814,
+        "haste_percent": 4.950177,
+        "hit_percent": 5,
+        "holy_damage": 0.568681,
+        "intellect": 0.55,
+        "mp5": 1.6,
+        "parry_percent": 8,
+        "spell_damage": 0.568681,
+        "spell_power": 0.568681,
+        "stamina": 2,
+        "strength": 0.524349
+      }
+    },
+    "Paladin/Retribution": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 0.7,
+        "physical": 0.7,
+        "spell": 0.3
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.7
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.3
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/retribution-paladin/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "130026": 5,
+        "130362": 3,
+        "130426": 3,
+        "137880": 5,
+        "141292": 5
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 4.4468,
+          "armorpen": 0.5024,
+          "attackpower": 2.5,
+          "critrating": 6.2003,
+          "expertiserating": 12.5958,
+          "firespelldamage": 0.3856,
+          "hasterating": 7.8587,
+          "hitrating": 16.9054,
+          "holyspelldamage": 4.046,
+          "intellect": 3.6671,
+          "meleedps": 35.5658,
+          "mp5": 0.0028,
+          "offhanddps": 0,
+          "shadowspelldamage": 0.4668,
+          "spelldamage": 4.8984,
+          "spellpenetration": 0.9587,
+          "spellpower": 4.8984,
+          "spirit": 0.0023,
+          "strength": 6,
+          "weaponskill_mh_1": 120.1509,
+          "weaponskill_mh_2": 53.1902,
+          "weaponskill_mh_3": 29.1118
+        }
+      },
+      "weights": {
+        "agility": 1.185813,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.666667,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 23.147787,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 9.484213,
+        "expertise": 33.5888,
+        "fire_damage": 0.102827,
+        "frost_damage": 0,
+        "haste_percent": 20.956533,
+        "healing_power": 0,
+        "hit_percent": 45.081067,
+        "holy_damage": 1.078933,
+        "intellect": 0.977893,
+        "mp5": 0.000747,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.12448,
+        "spell_damage": 1.30624,
+        "spell_power": 1.30624,
+        "spirit": 0.000613,
+        "stamina": 0.2,
+        "strength": 1.6
+      }
+    },
+    "Priest/Discipline": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_weights": [
+        {
+          "crit_percent": 16.0,
+          "haste_percent": 33.2,
+          "intellect": 0.4,
+          "mp5": 0.01,
+          "spirit": 0.0
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Use the published sustainable healing formula; compare the short-fight simulator separately for mana sensitivity. The recorded short-fight reference is also evaluated; a reversal qualifies the personal swap.",
+      "position": "behind",
+      "priority_url": "https://www.icy-veins.com/wow-forever/discipline-priest-healer-pve-stat-priority",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "130566": 5
+      },
+      "role": "healer",
+      "source_weights": {
+        "anchor": "healingpower",
+        "source": "formula",
+        "weights": {
+          "critrating": 4.9,
+          "healingpower": 6,
+          "intellect": 5.9835,
+          "mp5": 11.5944,
+          "spellpower": 6,
+          "spirit": 1.8116,
+          "wanddps": 0.6105,
+          "wanddps_leveling": 3.0526
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.433333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.99725,
+        "mp5": 1.9324,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.301933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
+      }
+    },
+    "Priest/Holy": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_weights": [
+        {
+          "crit_percent": 12.6,
+          "haste_percent": 31.7,
+          "intellect": 0.26,
+          "mp5": 0.0,
+          "spirit": 0.28
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Use the published sustainable healing formula; compare the short-fight simulator separately for mana sensitivity. The recorded short-fight reference is also evaluated; a reversal qualifies the personal swap.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/holy-priest/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "130566": 5,
+        "130581": 3,
+        "130582": 5
+      },
+      "role": "healer",
+      "source_weights": {
+        "anchor": "healingpower",
+        "source": "formula",
+        "weights": {
+          "critrating": 4.9,
+          "healingpower": 6,
+          "intellect": 5.9835,
+          "mp5": 11.5944,
+          "spellpower": 6,
+          "spirit": 1.8116,
+          "wanddps": 0.6105,
+          "wanddps_leveling": 3.0526
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 11.433333,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.99725,
+        "mp5": 1.9324,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.301933,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
+      }
+    },
+    "Priest/Shadow": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/shadow-priest/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "130547": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 5.4494,
+          "hasterating": 0.2117,
+          "hitrating": 7.2283,
+          "intellect": 1.5359,
+          "mp5": 0.0037,
+          "shadowspelldamage": 6,
+          "spelldamage": 6,
+          "spellpenetration": 12.5027,
+          "spellpower": 6,
+          "spirit": 0.0057,
+          "wanddps": 0.6105,
+          "wanddps_leveling": 3.0526
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 12.715267,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0.352833,
+        "healing_power": 0,
+        "hit_percent": 12.047167,
+        "holy_damage": 0,
+        "intellect": 0.255983,
+        "mp5": 0.000617,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 1.0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.00095,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.10175
+      }
+    },
+    "Rogue/Assassination": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.5
+            ],
+            [
+              27,
+              0.35
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.5
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "offhand_dps_factor": 0.43502853,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/assassination-rogue/bis-gear-and-stats",
+      "reference_bonuses": {
+        "expertise": 2.0,
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "130455": 2,
+        "130466": 3,
+        "141297": 2
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 1.2251,
+          "attackpower": 2.8281,
+          "critrating": 5.8869,
+          "expertiserating": 6.0965,
+          "hasterating": 3.7851,
+          "hitrating": 7.4039,
+          "meleedps": 22.4537,
+          "offhanddps": 9.768,
+          "spellpenetration": 1.6706,
+          "strength": 3.111,
+          "weaponskill_mh_1": 61.5077,
+          "weaponskill_mh_2": 28.2852,
+          "weaponskill_mh_3": 8.8024,
+          "weaponskill_oh_1": 26.7576,
+          "weaponskill_oh_2": 12.3049,
+          "weaponskill_oh_3": 3.8293
+        }
+      },
+      "weights": {
+        "agility": 1.697253,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 23.313631,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 6.3516,
+        "expertise": 17.2455,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 10.707118,
+        "healing_power": 0.0,
+        "hit_percent": 20.943814,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.880025
+      }
+    },
+    "Rogue/Combat": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.5
+            ],
+            [
+              27,
+              0.35
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.5
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "offhand_dps_factor": 0.33352116,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/combat-rogue/bis-gear-and-stats",
+      "reference_bonuses": {
+        "expertise": 2.0,
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "130455": 2,
+        "130466": 3,
+        "141297": 2
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 1.2465,
+          "attackpower": 3.1027,
+          "critrating": 5.0068,
+          "expertiserating": 6.0965,
+          "hasterating": 4.0703,
+          "hitrating": 6.5945,
+          "meleedps": 31.234,
+          "offhanddps": 10.4172,
+          "spellpenetration": 0.4579,
+          "strength": 3.413,
+          "weaponskill_mh_1": 64.8043,
+          "weaponskill_mh_2": 30.2881,
+          "weaponskill_mh_3": 8.3891,
+          "weaponskill_oh_1": 32.4686,
+          "weaponskill_oh_2": 15.0112,
+          "weaponskill_oh_3": 3.937
+        }
+      },
+      "weights": {
+        "agility": 1.54704,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 18.073343,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 8.053373,
+        "expertise": 15.719212,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 10.494859,
+        "healing_power": 0.0,
+        "hit_percent": 17.003255,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.880008
+      }
+    },
+    "Rogue/Subtlety": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.5
+            ],
+            [
+              27,
+              0.35
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.5
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "offhand_dps_factor": 0.28904934,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/subtlety-rogue/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "130455": 0,
+        "130466": 3,
+        "141297": 2
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "agility",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 6,
+          "armorpen": 0.7953,
+          "attackpower": 3.018,
+          "critrating": 5.2098,
+          "expertiserating": 5.7851,
+          "hasterating": 3.6331,
+          "hitrating": 9.942,
+          "meleedps": 25.9966,
+          "offhanddps": 7.5143,
+          "spellpenetration": 0.4268,
+          "strength": 3.3198,
+          "weaponskill_mh_1": 86.7749,
+          "weaponskill_mh_2": 36.2222,
+          "weaponskill_mh_3": 12.952,
+          "weaponskill_oh_1": 26.5683,
+          "weaponskill_oh_2": 13.3486,
+          "weaponskill_oh_3": 2.7321
+        }
+      },
+      "weights": {
+        "agility": 1.590457,
+        "arcane_damage": 0.0,
+        "armor": 0.0,
+        "attack_power": 0.8,
+        "block_percent": 0.0,
+        "block_value": 0.0,
+        "crit_percent": 19.333917,
+        "defense": 0.0,
+        "dodge_percent": 0.0,
+        "dps": 6.89108,
+        "expertise": 15.334924,
+        "fire_damage": 0.0,
+        "frost_damage": 0.0,
+        "haste_percent": 9.630483,
+        "healing_power": 0.0,
+        "hit_percent": 26.353877,
+        "holy_damage": 0.0,
+        "intellect": 0.0,
+        "mp5": 0.0,
+        "nature_damage": 0.0,
+        "parry_percent": 0.0,
+        "ranged_attack_power": 0.0,
+        "ranged_dps": 0.0,
+        "shadow_damage": 0.0,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "spirit": 0.0,
+        "stamina": 0.2,
+        "strength": 0.88
+      }
+    },
+    "Shaman/Elemental": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/elemental-shaman/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 5.0,
+        "ranged_hit_percent": 5.0,
+        "spell_hit_percent": 5.0
+      },
+      "reference_ranks": {
+        "129389": 5,
+        "129416": 5,
+        "129432": 5,
+        "129433": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 3.4209,
+          "firespelldamage": 0.7051,
+          "hasterating": 4.4829,
+          "hitrating": 9.2783,
+          "intellect": 2.937,
+          "mp5": 3.6261,
+          "naturespelldamage": 5.2949,
+          "spelldamage": 6,
+          "spellpenetration": 12.9395,
+          "spellpower": 6,
+          "spirit": 1.2428
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 7.9821,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.117517,
+        "frost_damage": 0,
+        "haste_percent": 7.4715,
+        "healing_power": 0,
+        "hit_percent": 15.463833,
+        "holy_damage": 0,
+        "intellect": 0.4895,
+        "mp5": 0.60435,
+        "nature_damage": 0.882483,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.207133,
+        "stamina": 0.2,
+        "strength": 0
+      }
+    },
+    "Shaman/Enhancement": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 0.7,
+        "physical": 0.7,
+        "spell": 0.3
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.7
+            ]
+          ]
+        },
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              0.3
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/enhancement-shaman/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 3.0,
+        "ranged_hit_percent": 3.0,
+        "spell_hit_percent": 3.0
+      },
+      "reference_ranks": {
+        "129389": 3,
+        "129404": 2,
+        "129415": 3,
+        "129416": 5
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 4.2624,
+          "armorpen": 0.7756,
+          "attackpower": 2.7273,
+          "critrating": 9.6204,
+          "expertiserating": 11.4822,
+          "firespelldamage": 4.3724,
+          "hasterating": 8.2493,
+          "hitrating": 23.1688,
+          "intellect": 8.6667,
+          "meleedps": 33.0365,
+          "mp5": 0.0942,
+          "naturespelldamage": 2.6912,
+          "offhanddps": 0,
+          "spelldamage": 7.0636,
+          "spellpenetration": 17.6353,
+          "spellpower": 7.0636,
+          "spirit": 0.0329,
+          "strength": 6,
+          "weaponskill_mh_1": 112.1911,
+          "weaponskill_mh_2": 51.4199,
+          "weaponskill_mh_3": 22.404
+        }
+      },
+      "weights": {
+        "agility": 1.13664,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.72728,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 35.91616,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 8.809733,
+        "expertise": 30.6192,
+        "fire_damage": 1.165973,
+        "frost_damage": 0,
+        "haste_percent": 21.998133,
+        "healing_power": 0,
+        "hit_percent": 61.783467,
+        "holy_damage": 0,
+        "intellect": 2.31112,
+        "mp5": 0.02512,
+        "nature_damage": 0.717653,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 1.883627,
+        "spell_power": 1.883627,
+        "spirit": 0.008773,
+        "stamina": 0.2,
+        "strength": 1.6
+      }
+    },
+    "Shaman/Restoration": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_weights": [
+        {
+          "crit_percent": 11.1,
+          "haste_percent": 22.0,
+          "intellect": 1.21,
+          "mp5": 0.35,
+          "spirit": 0.0
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Use the published sustainable healing formula; compare the short-fight simulator separately for mana sensitivity. The recorded short-fight reference is also evaluated; a reversal qualifies the personal swap.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/restoration-shaman/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 5.0,
+        "ranged_hit_percent": 5.0,
+        "spell_hit_percent": 5.0
+      },
+      "reference_ranks": {
+        "129385": 5,
+        "129389": 5,
+        "129416": 5
+      },
+      "role": "healer",
+      "source_weights": {
+        "anchor": "healingpower",
+        "source": "formula",
+        "weights": {
+          "critrating": 4.0375,
+          "healingpower": 6,
+          "intellect": 5.5137,
+          "mp5": 10.9403,
+          "spellpower": 6,
+          "spirit": 1.7094
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 9.420833,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 0,
+        "healing_power": 1.0,
+        "hit_percent": 0,
+        "holy_damage": 0,
+        "intellect": 0.91895,
+        "mp5": 1.823383,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 1.0,
+        "spirit": 0.2849,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0
+      }
+    },
+    "Warlock/Affliction": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/affliction-warlock/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 5.0,
+        "ranged_hit_percent": 5.0,
+        "spell_hit_percent": 5.0
+      },
+      "reference_ranks": {
+        "130640": 5,
+        "130655": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 3.9218,
+          "hasterating": 1.2888,
+          "hitrating": 3.6473,
+          "intellect": 1.9592,
+          "mp5": 1.3369,
+          "shadowspelldamage": 5.8926,
+          "spelldamage": 6,
+          "spellpenetration": 7.621,
+          "spellpower": 6,
+          "spirit": 0.1485,
+          "wanddps": 0.365,
+          "wanddps_leveling": 1.8248
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 9.150867,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 2.148,
+        "healing_power": 0,
+        "hit_percent": 6.078833,
+        "holy_damage": 0,
+        "intellect": 0.326533,
+        "mp5": 0.222817,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.9821,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.02475,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.060833
+      }
+    },
+    "Warlock/Demonology": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/demonology-warlock/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 5.0,
+        "ranged_hit_percent": 5.0,
+        "spell_hit_percent": 5.0
+      },
+      "reference_ranks": {
+        "130637": 5,
+        "130655": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 3.0903,
+          "firespelldamage": 4.4589,
+          "hasterating": 2.5869,
+          "hitrating": 7.9277,
+          "intellect": 1.5922,
+          "mp5": 1.713,
+          "shadowspelldamage": 1.5411,
+          "spelldamage": 6,
+          "spellpenetration": 7.1201,
+          "spellpower": 6,
+          "spirit": 0.5747,
+          "wanddps": 0.4069,
+          "wanddps_leveling": 2.0346
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 7.2107,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.74315,
+        "frost_damage": 0,
+        "haste_percent": 4.3115,
+        "healing_power": 0,
+        "hit_percent": 13.212833,
+        "holy_damage": 0,
+        "intellect": 0.265367,
+        "mp5": 0.2855,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.25685,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.095783,
+        "stamina": 0.4,
+        "strength": 0,
+        "wand_dps": 0.067817
+      }
+    },
+    "Warlock/Destruction": {
+      "alternative_weights": [
+        {
+          "fire_damage": 0.18,
+          "shadow_damage": 0.82
+        }
+      ],
+      "crit_shares": {
+        "spell": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "spell",
+          "segments": [
+            [
+              17,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/destruction-warlock/bis-gear-and-stats",
+      "reference_bonuses": {
+        "melee_hit_percent": 5.0,
+        "ranged_hit_percent": 5.0,
+        "spell_hit_percent": 5.0
+      },
+      "reference_ranks": {
+        "130609": 3,
+        "130655": 5
+      },
+      "role": "caster",
+      "source_weights": {
+        "anchor": "spellpower",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "critrating": 3.7398,
+          "firespelldamage": 3.9146,
+          "hasterating": 4.4954,
+          "hitrating": 7.2704,
+          "intellect": 1.8704,
+          "mp5": 1.8523,
+          "shadowspelldamage": 2.0854,
+          "spelldamage": 6,
+          "spellpenetration": 7.7654,
+          "spellpower": 6,
+          "spirit": 1.0049,
+          "wanddps": 0.3962,
+          "wanddps_leveling": 1.981
+        }
+      },
+      "weights": {
+        "agility": 0,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 8.7262,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 0,
+        "expertise": 0,
+        "fire_damage": 0.652433,
+        "frost_damage": 0,
+        "haste_percent": 7.492333,
+        "healing_power": 0,
+        "hit_percent": 12.117333,
+        "holy_damage": 0,
+        "intellect": 0.311733,
+        "mp5": 0.308717,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0.347567,
+        "spell_damage": 1.0,
+        "spell_power": 1.0,
+        "spirit": 0.167483,
+        "stamina": 0.2,
+        "strength": 0,
+        "wand_dps": 0.066033
+      }
+    },
+    "Warrior/Arms": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "offhand_dps_factor": 0.29188841,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/arms-warrior/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "130678": 3
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 4.6628,
+          "armorpen": 1.2022,
+          "attackpower": 3,
+          "critrating": 6.7044,
+          "expertiserating": 3.5789,
+          "hasterating": 4.3707,
+          "hitrating": 12.6205,
+          "meleedps": 51.8801,
+          "offhanddps": 15.1432,
+          "spellpenetration": 0.0668,
+          "strength": 6,
+          "weaponskill_mh_1": 109.9081,
+          "weaponskill_mh_2": 44.6641,
+          "weaponskill_mh_3": 17.5589
+        }
+      },
+      "weights": {
+        "agility": 1.476553,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.95,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 29.72284,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 16.428698,
+        "expertise": 11.333183,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 13.84055,
+        "healing_power": 0,
+        "hit_percent": 39.964917,
+        "holy_damage": 0,
+        "intellect": 0,
+        "mp5": 0,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0,
+        "stamina": 0.2,
+        "strength": 1.9
+      }
+    },
+    "Warrior/Fury": {
+      "alternative_weights": [],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 6.5,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              0.6
+            ],
+            [
+              27,
+              0.3
+            ]
+          ]
+        },
+        {
+          "channel": "offhand",
+          "segments": [
+            [
+              8,
+              0.4
+            ],
+            [
+              27,
+              0.2
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model.",
+      "offhand_dps_factor": 0.29188893,
+      "position": "behind",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/fury-warrior/bis-gear-and-stats",
+      "reference_bonuses": {
+        "offhand_hit_percent": 10.0
+      },
+      "reference_ranks": {
+        "130663": 5,
+        "130683": 3
+      },
+      "role": "melee",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims df3746362c",
+        "weights": {
+          "agility": 5.3867,
+          "armorpen": 1.0991,
+          "attackpower": 3,
+          "critrating": 7.633,
+          "expertiserating": 4.5636,
+          "hasterating": 5.4624,
+          "hitrating": 12.4889,
+          "meleedps": 33.3507,
+          "offhanddps": 9.7347,
+          "spellpenetration": 0.0607,
+          "strength": 6,
+          "weaponskill_mh_1": 73.7088,
+          "weaponskill_mh_2": 29.2779,
+          "weaponskill_mh_3": 12.0827,
+          "weaponskill_oh_1": 27.5756,
+          "weaponskill_oh_2": 11.5389
+        }
+      },
+      "weights": {
+        "agility": 1.436453,
+        "arcane_damage": 0,
+        "armor": 0,
+        "attack_power": 0.8,
+        "block_percent": 0,
+        "block_value": 0,
+        "crit_percent": 28.496533,
+        "defense": 0,
+        "dodge_percent": 0,
+        "dps": 8.89352,
+        "expertise": 12.1696,
+        "fire_damage": 0,
+        "frost_damage": 0,
+        "haste_percent": 14.5664,
+        "healing_power": 0,
+        "hit_percent": 33.303733,
+        "holy_damage": 0,
+        "intellect": 0,
+        "mp5": 0,
+        "nature_damage": 0,
+        "parry_percent": 0,
+        "ranged_attack_power": 0,
+        "ranged_dps": 0,
+        "shadow_damage": 0,
+        "spell_damage": 0,
+        "spell_power": 0,
+        "spirit": 0,
+        "stamina": 0.2,
+        "strength": 1.6
+      }
+    },
+    "Warrior/Protection": {
+      "alternative_review": "Current published short-fight or threat coefficients, with units normalized to the default anchor. Capped tank Hit derivatives do not replace uncapped Hit weights; unmeasured bear weapon DPS retains the qualified default estimate.",
+      "alternative_source": "https://sixtysim.com/guides/warrior/protection/stats/",
+      "alternative_units": "SixtySim Per point Expertise, Block and Parry are rating coefficients, converted to percentage reduction or chance with the client gametable. Explicit Per 1 % entries remain percentage coefficients.",
+      "alternative_weights": [
+        {
+          "agility": 0.389105,
+          "armor": 0,
+          "attack_power": 0.428016,
+          "block_percent": 0.097276,
+          "block_value": 0.496109,
+          "crit_percent": 9.922179,
+          "defense": 0,
+          "dodge_percent": 0,
+          "dps": 2.5,
+          "expertise": 37.062257,
+          "haste_percent": 4.445525,
+          "hit_percent": 5,
+          "holy_damage": 0.0,
+          "intellect": 0.0,
+          "mp5": 0.0,
+          "parry_percent": 0,
+          "spell_damage": 0.0,
+          "spell_power": 0.0,
+          "spirit": 0.0,
+          "stamina": 0,
+          "strength": 0.972763
+        }
+      ],
+      "crit_shares": {
+        "melee": 1,
+        "physical": 1
+      },
+      "expertise_cap": 14,
+      "expertise_curve": [
+        [
+          6.5,
+          1
+        ],
+        [
+          14,
+          0.5
+        ]
+      ],
+      "hit_curves": [
+        {
+          "channel": "melee",
+          "segments": [
+            [
+              8,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "note": "Published marginal coefficients normalized to the addon reference units. Talent operations apply changes relative to the explicit representative ranks. Encounter-specific armor penetration and spell piercing require a target resistance or armor model. Retain the reviewed survivability budget and calibrate physical and spell threat against the published weapon-DPS ratios. Defense and avoidance are survival inputs. Personal swaps also evaluate the recorded SixtySim one-minute threat coefficients. Armor and avoidance omitted by that threat benchmark score zero only in the alternative. A survival-versus-threat reversal uses conditional advice.",
+      "position": "front",
+      "priority_url": "https://www.method.gg/wow-forever/class-guides/protection-warrior/bis-gear-and-stats",
+      "reference_bonuses": {},
+      "reference_ranks": {
+        "137848": 3
+      },
+      "role": "tank",
+      "source_weights": {
+        "anchor": "strength",
+        "source": "wowsims+formula",
+        "weights": {
+          "agility": 2.1151,
+          "armor": 0.2248,
+          "armorpen": 0.047,
+          "attackpower": 0.1266,
+          "blockrating": 0.1791,
+          "blockvalue": 1.7775,
+          "critrating": 0.3153,
+          "defenserating": 3.5011,
+          "dodgerating": 2.4065,
+          "expertiserating": 0.5038,
+          "hasterating": 0.3634,
+          "hitrating": 0.525,
+          "meleedps": 1.5851,
+          "offhanddps": 0,
+          "parryrating": 1.9249,
+          "spellpenetration": 0.0078,
+          "stamina": 6.0013,
+          "strength": 0.3421,
+          "weaponskill_mh_1": 5.1942,
+          "weaponskill_mh_2": 2.4232,
+          "weaponskill_mh_3": 0.8592
+        }
+      },
+      "weights": {
+        "agility": 0.65,
+        "armor": 0.08,
+        "attack_power": 0.199672,
+        "block_percent": 5,
+        "block_value": 1,
+        "crit_percent": 6.962021,
+        "defense": 1.25,
+        "dodge_percent": 9,
+        "dps": 2.5,
+        "expertise": 7.94587,
+        "haste_percent": 5.731499,
+        "hit_percent": 5,
+        "holy_damage": 0.0,
+        "parry_percent": 8,
+        "spell_damage": 0.0,
+        "spell_power": 0.0,
+        "stamina": 2,
+        "strength": 0.539556
+      }
+    }
+  },
+  "rating_source": {
+    "reviewed_at": "2026-11-22",
+    "sha256": "e06d6c3f95026f2b14df0872044db5d29a98f8731cfb10d1399feae594ee94f6",
+    "units": {
+      "block_rating": [
+        "block_percent",
+        5
+      ],
+      "crit_rating": [
+        "crit_percent",
+        14
+      ],
+      "defense_rating": [
+        "defense",
+        1
+      ],
+      "dodge_rating": [
+        "dodge_percent",
+        12
+      ],
+      "expertise_rating": [
+        "expertise",
+        10
+      ],
+      "haste_rating": [
+        "haste_percent",
+        10
+      ],
+      "hit_rating": [
+        "hit_percent",
+        10
+      ],
+      "melee_crit_rating": [
+        "melee_crit_percent",
+        14
+      ],
+      "melee_haste_rating": [
+        "melee_haste_percent",
+        10
+      ],
+      "melee_hit_rating": [
+        "melee_hit_percent",
+        10
+      ],
+      "parry_rating": [
+        "parry_percent",
+        15
+      ],
+      "ranged_crit_rating": [
+        "ranged_crit_percent",
+        14
+      ],
+      "ranged_haste_rating": [
+        "ranged_haste_percent",
+        10
+      ],
+      "ranged_hit_rating": [
+        "ranged_hit_percent",
+        10
+      ],
+      "spell_crit_rating": [
+        "spell_crit_percent",
+        14
+      ],
+      "spell_haste_rating": [
+        "spell_haste_percent",
+        10
+      ],
+      "spell_hit_rating": [
+        "spell_hit_percent",
+        10
+      ]
+    },
+    "url": "https://raw.githubusercontent.com/wowsims/forever/master/sim/core/base_stats_auto_gen.go"
+  },
+  "reviewed_at": "2026-11-22",
+  "reviewer": "Codex (published reference and item-swap review)",
+  "sources": {
+    "gearmatic": {
+      "artifact_url": "https://edge.forgecdn.net/files/9737/35/GearMatic-v6.2.0.zip",
+      "hit_normalization": "The piecewise hit curve has unit initial slope under the recorded passive reference talents. Fury off-hand hit is already past the specials cap, so its remaining white-attack contribution is normalized before applying the published marginal coefficient.",
+      "limitations": "The published scale artifact records simulator provenance and coefficients but does not embed a complete per-profile loadout and encounter configuration. The addon records representative talents and a first-tier boss reference rather than claiming to reproduce that simulation. SixtySim provides the separate documented loadout and one-minute comparison.",
+      "published_at": "2026-11-21",
+      "sha256": "56518587085d109d02b0f236a7b74b22d8a077cc6e8ea3b07b726628ad14f97d",
+      "sim_commit": "df3746362c",
+      "units": "Damage and healing scales use anchor 6. Mixed tank formula tables retain their published coefficients and are calibrated by weapon-DPS threat ratios. Rating coefficients are per point. Convert hit, crit, haste and expertise to percentage units with the Forever gametable.",
+      "url": "https://www.curseforge.com/wow/addons/gearmatic/files/9737035"
+    },
+    "sixtysim": {
+      "client_build": "1.60.1.70707",
+      "iterations": 10000,
+      "limitations": "Older build, common simulator ancestry, reference loadouts and rotations. Tank tables emphasize threat. Short healing fights underprice long-fight mana.",
+      "reviewed_at": "2026-11-22",
+      "seconds": 60,
+      "sim_commit": "92b1673580",
+      "sim_commit_scope": "Current methodology page; individual comparison pages retain the engines and dates in comparison_sources.",
+      "targets": 1,
+      "url": "https://sixtysim.com/method/"
+    }
+  },
+  "version": "forever-stat-weight-review-2026-11-22"
+}

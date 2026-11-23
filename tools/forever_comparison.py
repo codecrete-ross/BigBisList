@@ -11,6 +11,8 @@ from tools.forever_item_effects import (FLAT_PASSIVE_STATS, attach_rules, effect
 from tools.project import SLOT_NAMES, dataset_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
 from tools.sources import summarize_sources
+from tools.forever_stats import normalized_stats, weight_review
+from tools.forever_compatibility import supported_builds, target_class_restrictions
 
 
 VERSION = "forever-stat-ranks-1"
@@ -30,7 +32,7 @@ DPS_STATS = {"dps", "ranged_dps", "wand_dps"}
 DPS_TOLERANCE = 0.15
 
 def normalized_item_stats(item: dict) -> dict:
-    stats = merged_stats(item)
+    stats = normalized_stats(merged_stats(item))
     recover_permanent_stats(stats, effect_lines(item))
     stats.pop("socket", None)
     separate_weapon_dps(item, stats)
@@ -312,6 +314,10 @@ def comparison_document(snapshots: dict[str, dict], catalog: dict | None = None)
             best = {**best, "attributes_known": False,
                     "stats": {key: value for key, value in best["stats"].items() if key not in disputed_attributes}}
         rows.append(best)
+    restrictions = target_class_restrictions()
+    for item in rows:
+        if str(item["id"]) in restrictions:
+            item["classes"] = restrictions[str(item["id"])]
     effect_sets = tooltip_sets(observations, rows)
     return {"version": VERSION, "items": rows, "conflicts": conflicts, **({"effect_sets": effect_sets} if effect_sets else {})}
 
@@ -323,7 +329,7 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
     items = {}
     definitions, set_members = set_catalog(data)
     for item in resolve_spell_leads(data["items"], set_members).values():
-        facts = {**item, "stats": dict(item["stats"])}
+        facts = {**item, "stats": normalized_stats(item["stats"])}
         recover_permanent_stats(facts["stats"], effect_lines(item))
         if "effects" in facts:
             facts["effects"] = unresolved_lines(item)
@@ -414,6 +420,7 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
     return {
         "version": VERSION,
         "roll_build": int(catalog["client_build"].split(".")[-1]),
+        "roll_builds": supported_builds(catalog=catalog),
         "roll_templates": catalog["templates"],
         "roll_groups": catalog["groups"],
         "flat_passive_stats": [list(rule) for rule in FLAT_PASSIVE_STATS],
@@ -436,6 +443,7 @@ def reference_profiles(rules: dict, *, leveling: dict | None = None, model: dict
     raid = scoring_profiles()
     model = model or dataset_json("forever", "scoring_model")
     profiles = {}
+    calibration = weight_review()["profiles"]
     for profile in raid["profiles"]:
         class_name, spec = profile["class"], profile["spec"]
         key = f"{class_name}/{spec}"
@@ -449,6 +457,7 @@ def reference_profiles(rules: dict, *, leveling: dict | None = None, model: dict
         ]
         raid_weights = {**raid["role_weights"][profile["role"]], **profile.get("weights", {}), **common,
                         **scenarios.get("pre_raid", {}).get("weights", {})}
+        raid_weights.update(calibration[key]["weights"])
         if key == "Druid/Feral tank":
             raid_weights["parry_percent"] = 0
         for mode, bands in (("leveling", weights), ("pre_raid", [(60, 60, raid_weights)])):

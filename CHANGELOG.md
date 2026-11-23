@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.15.0 - 2026-11-21
+## 0.15.0 - 2026-11-22
 
 - Added earlier-tier recommendations for catch-up gearing, enabled by default in Upgrades and optional in BiS List, while keeping the selected tier as the gearing goal.
 - Restored directly clickable tier choices with a Target tier label and a separate Live marker.
@@ -17,6 +17,11 @@
 
 ### WoW Forever
 
+- Calibrated specialization rankings against published stat weights, including Rogue Agility, Warrior weapons, caster spell schools, healer sustain, and mana recovery while leveling.
+- Fixed personal talent, enchant, and random-property comparisons on client 1.60.1.71037, and applied updated class equipment restrictions.
+- Corrected fractional Hit, Crit, Haste, Expertise, Defense, Dodge, Parry, Block, and flat weapon damage contributions. Hit and Expertise upgrades now account for the equipped loadout and passive talents.
+- Comparisons qualify swaps whose value changes between the supported build or encounter assumptions. Pre-Raid guide choices and their stat rankings use the same reference calculation.
+- Updated Whiteout Staff, Crackling Staff, and Channeler's Ring to their corrected Forever stats.
 - Added a separate Forever client build with isolated saves and race- and faction-aware Leveling and level-60 Pre-Raid recommendations for 28 profiles.
 - Leveling groups obtainable gear by activity and shows next quest steps. Acquisition details show quest progress, eligibility, and separate routes, with waypoint actions for verified Forever destinations.
 - Gear Guide and item tooltips use the same reference ranks for each spec, activity, and level. Verified faction routes determine which items enter the pool. Common and Poor gear can earn a rank.

@@ -23,6 +23,7 @@ METADATA = {"CHANGELOG.md", "Config.lua", "README.md", "RELEASE_NOTES.md"}
 POLICY = {CANONICAL + name + ".json" for name in (
     "classes", "phases", "leveling_rules", "leveling_scoring_profiles", "racial_modifiers",
     "scoring_model", "scoring_profiles", "reviewed_builds", "effect_benchmarks",
+    "stat_weight_review", "runtime_compatibility",
 )} | {LIVE_ACCEPTANCE}
 
 

@@ -13,12 +13,18 @@ live acceptance record remains pending.
 
 ## 0.15.0 release plan
 
+**Hold the `0.15.0` tag.** The revised scorer, UI return paths and updater must
+pass their checks, the peak-work performance item must be resolved, and the user
+must accept the installed artifact in Forever before merge and publication.
+
 | Milestone | Evidence and remaining work |
 | --- | --- |
 | Home and navigation | Home expanded from 72 to 420 similar buttons on the level-51 Retribution replay. Both modes now use their specialist workspaces. Offline tests cover Home save migration, native and fallback title bars, and both ways of opening Compare from Details. A nonzero list or comparison scroll offset survives the return. |
-| Endgame response | All six isolated fresh-save replays passed on the installed candidate. Upgrades and BiS List had a complete clickable page in one or two frames (4–18 ms of harness time) with 2–4 ms peak work. The leveling Guide took two or three frames. Protection’s 25 upgrades and 117 BiS rows and Retribution’s 625 upgrades and 115 BiS rows matched the canonical rank, route and ownership order. A run during package validation reached 13 ms of background work. Record live timings separately. |
+| Endgame response | The timing harness now requires verified active talents; fallback-only timings missed the ordinary scoring workload. The revised replays process 101 Protection and 597 Retribution upgrades, with 118 and 120 BiS rows. First pages remain within 50 ms. Scoring yields between loadouts and timed-effect states, paint work has more headroom, and finished Guide work avoids redundant control layout. The 4 ms peak-work target remains open: CPU-time replays also show occasional overruns. Preserve those failures and obtain the actual client measurements before accepting performance. |
 | Gearing evidence | Replaying the committed evidence made zero HTTP requests. All 3,448 early-level gaps and 242 unresolved candidates matched their reviewed cells and evidence. The equipment fidelity check passed on Guide source build 70959. Leveling sources are pinned to 70938 and the client target is 71037. |
-| Client acceptance | All 25 installed files matched the candidate on Forever 1.60.1.71037. Its artifact digest is `5996106718454459a359f278b3f87d222753fa786ffa25dd3f7b2f03026278bf`. Record the player's cold and warm performance, native window, return paths, and gameplay checks in the release PR. |
+| Scoring corrections | Implemented and being revalidated. Source 70959 and target 71037 match across the reviewed talents, enchants, sets, racials, triggers and 1,783 random-property families. Ratings normalize once. Hit and Expertise use marginal loadout caps and passive talent bonuses. Hotfixed staves share their facts. Pre-Raid approvals use the Guide's reference scorer. Unknown builds and unresolved mechanics retain qualified advice. |
+| Weight calibration | All 28 numerical profiles have published coefficients, units, representative talents and encounter assumptions. The source ledger also records actual verification outfits and source limitations. SixtySim currently serves 18 profiles from November 22, nine from November 17 and one from November 14; retain each page's provenance. A review of 18 fixture swaps and 1,153 approved-pool swaps changes 23 conditional qualifications under the current healer and tank alternatives. Default coefficients stay fixed in that follow-up. |
+| Client acceptance | Pending for the revised package. The earlier 25-file install on Forever 1.60.1.71037 had artifact digest `5996106718454459a359f278b3f87d222753fa786ffa25dd3f7b2f03026278bf`. That digest predates the scoring corrections and cannot accept this candidate. Record the revised digest and the player's cold and warm performance, native window, return paths, and gameplay checks in the release PR. |
 | Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
 
@@ -27,6 +33,231 @@ are available in the Guide and Upgrades, and Activities names destinations. The 
 replay still distinguishes an equipped Aegis of Stormwind from its banked weapon partner.
 The scoring review identified 2,417 item records with effects that still need evidence or
 encounter context for a numeric score.
+
+The original intent and prior reviews remain available in the
+[Home design chat](thread://01a1fc74-1800-7760-869a-74faebb863f9?hostId=local),
+[item-effect scoring chat](thread://01a1f801-c9b9-7a72-8e51-243164fbb4ca?hostId=local),
+and [weekly schedule agreement](thread://01a1aa6e-d056-75b0-b0db-c470bc8580d1?hostId=local).
+
+### Remaining release acceptance
+
+- Preserve Home save migration, specialist actions, native and fallback window controls,
+  and navigation through Guide, Activities, Upgrades, BiS List, My Gear, Wishlist,
+  Details, Compare and Settings. Replay both densities, 900 by 500 and 1020 by 790,
+  nonzero scroll offsets, rapid navigation, empty results and updates under the pointer.
+- Add regression cases for target-build compatibility, rating units, passive talent hit,
+  caps and weapon hands, hotfixed staves, and the published numerical disagreements.
+  Preserve legal equipment, set thresholds, the Horde ring fallback, and the equipped
+  shield with its banked weapon partner.
+- Retain the reviewed 0.15.x exception. Permit the 3,448 early-level gaps and 242
+  unresolved candidates to shrink. Reject new or reopened gaps, changed outstanding
+  evidence, stale scoring approvals and Pre-Raid regressions.
+- Repeat the 50 ms first viewport and 4 ms interaction checks after regeneration.
+  Investigate the recorded 13 ms background frame and record cold load and memory.
+- Install the revised artifact and record its digest. The player personally supplies
+  the Forever build, cold and warm `/bbltest perf`, window, navigation, quest,
+  waypoint, hover and shield/bank acceptance. Live acceptance remains pending.
+- Update PR #1 and merge with integration history after acceptance and the required
+  check. Dispatch one hosted online refresh from untagged main with publishing
+  disabled, apply verified changes through release preparation, update player notes,
+  regenerate `RELEASE_NOTES.md`, and repeat acceptance for a changed artifact.
+- Run the authoritative Forever `-FullData` gate on the exact clean merged commit.
+  Publish regular numeric release `0.15.0` and verify its SHA, hosted check, notes
+  and actual CurseForge file compatibility.
+- Verify the existing Wednesday 9:25 a.m. Pacific workspace automation uses Sol 6.2
+  and Max reasoning. Preserve changed, unchanged, conflicted and interrupted runs.
+  After the accepted release, enable `FOREVER_LIVE_BASELINE_TAG=0.15.0` and
+  `FOREVER_DATA_AUTO_RELEASE=true`, then inspect the first scheduled chat and its
+  hosted `forever-weekly-report`. The next agreed slot is November 25, 2026.
+
+The November 22 audit replayed commit `6374fc75`. All 33 scoring tests and 56 strict
+contexts passed while the defects above reproduced. Of 421 comparable Pre-Raid
+spec-and-slot pools, 56 had a pair ordered differently by the approval calculation
+and the packaged Guide (305 reversed pairs). Numerical comparisons used GearMatic
+6.2.0 (November 21, WoWSims `df3746362c`, with formula healer and tank components)
+and SixtySim (November 17, WoWSims `fcf5afe`, one-minute single-boss benchmarks).
+Both share simulator ancestry. Each benchmark's loadout and assumptions need to
+match the recommendation being reviewed.
+[GearMatic release](https://www.curseforge.com/wow/addons/gearmatic/files/9737035) ·
+[SixtySim methodology](https://sixtysim.com/method/)
+
+| Normalized marginal weight | Before correction | GearMatic | SixtySim |
+| --- | --- | --- | --- |
+| Combat Rogue Agility / Strength in Attack Power | 1.50 / 2.00 | 1.93 / 1.10 | 1.92 / 1.10 |
+| Arms main-hand DPS in Strength | 2.63 | 8.65 | 7.35 |
+| Marksmanship ranged DPS in Agility | 3.00 | 3.23 | 3.39 |
+| Balance Arcane / Nature in general spell damage | 1.00 / 1.00 | 0.65 / 0.35 | 0.66 / 0.34 |
+| Destruction Shadow in general spell damage | 0.00 | 0.35 | 0.82 |
+
+Level-20 Enhancement assigns MP5 zero. The published solo leveling benchmark
+places it first when drinking is part of the kill cycle. Review recovery for the
+combined outdoor and dungeon default, and use conditional advice when a credible
+encounter or build assumption changes the winner.
+[Shaman leveling model](https://sixtysim.com/guides/shaman/leveling/method/)
+
+### November 22 implementation evidence
+
+The calibration tests independently check the original Hunter
+ring calculation (+8.2 below the cap, -2.8 at the cap), fractional rating units,
+remaining dual-wield hit value, front-facing Expertise after the dodge cap,
+passive talent caps without free gear points,
+reference talents counted once, healer damage lines excluded from healing, target
+build scope rejection, and flat weapon damage from gear, effects and sets. The
+level-20 Enhancement bracer case gives Mindthrust Bracers 8.1 points against Wolf
+Bracers at 4.2. Removing recovery reverses that choice, which proves the combined
+outdoor and dungeon default gives useful MP5 credit.
+The packaged item checks cover Edgemaster's Handguards, Felcloth Robe and both
+hotfixed staves. The staves retain the plan's 92.75-point check under the old Frost
+weights and must also score equally under the calibrated weights.
+
+| Packaged numerical regression | Revised reference result |
+| --- | --- |
+| Whiteout Staff and Crackling Staff, Frost | Both 83.267500 with the calibrated coefficients. |
+| Edgemaster's Handguards, Fury | 15.345900 points, including Expertise and flat weapon damage. |
+| Felcloth Robe, Destruction | 13.912400 points, including Shadow damage. The earlier default gave 1.4. |
+| Blackstone minus Painweaver, Marksmanship, no outside hit | +3.438131 points. |
+| Blackstone minus Painweaver, 8% or 9.5% outside hit | -19.633869 points. Extra hit no longer changes the result. |
+
+These scores use the revised profile anchors and are not damage per second.
+The full 28-profile coefficient record retains the published numbers and units.
+
+The strict audit passes all 56 Python/Lua contexts after the final tank-alternative
+and effect changes. Repeat it in the authoritative clean-commit gate. The corrected active-
+talent check compares a swap with its zero-rank version because reference talents
+already contribute to the published coefficients. Protection also has a directly
+calculated shield-equipped weapon fixture that exercises Defiance.
+
+The reference-build contract also checks all 28 profiles. Applying the recorded
+reference ranks reproduces the reference totals, and removing talents never
+makes an otherwise useful tested stat have negative marginal value. Inverting
+the reference pipeline before applying active ranks preserves composed talents.
+The explicit 10-Intellect fixture scores 12.1 with both the 10% scaling and 60%
+conversion, 5.5 without conversion, 11 without scaling, and 5 without either.
+Losing a two-handed or shield requirement also removes its reference benefit.
+
+Further source review found that Survival's numeric scale omits melee weapon
+DPS. Retain its prior reviewed melee coefficient, add the published melee AP,
+Strength and Expertise contributions, and qualify unmeasured weapon tradeoffs.
+Its default models weaving. The alternate one-minute benchmark has negative
+Haste value, which qualifies swaps when that changes the winner. Typed ranged
+hit now reaches the ranged part of that build. Fury's curve is normalized under
+its passive off-hand hit so the published per-percent coefficient keeps its
+intended initial value. Published caster wand coefficients also contribute.
+The original curated choices, ordering and rationale survive in each slot's
+`curation_review` alongside the refreshed numerical approval.
+[Survival playstyle](https://mobalytics.gg/wow-forever/classes/survival-hunter-guide) ·
+[Survival benchmark](https://sixtysim.com/guides/hunter/survival/stats/)
+
+The final reference alignment includes the first legal racial persona for each
+profile, the actual comparison slot and the shield flag. These inputs removed
+the remaining 851 score differences and 79 reversed pairs. A new strict audit
+compares 4,487 numerical approvals directly with the packaged Guide scorer in
+421 comparable pools across all 28 profiles. It reports zero differences.
+Other Guide personas retain their own racial and acquisition eligibility.
+The full band-endpoint replay covers 141 contexts and 2,107 slot pools. Its
+334 changed first-place or tied-leader sets retain before/after facts, scores,
+routes and explanations in [the ranking review](forever-ranking-review-0.15.0.json).
+Rebind that report to the final generated payload before candidate acceptance.
+These are statistical leaders, including catalog entries with an unknown route.
+They do not approve an acquisition: compact action lists still require a verified
+destination, and unknown routes retain their disclosure.
+
+GearMatic publishes scale coefficients and simulator provenance without a complete
+per-profile gear and encounter configuration in its artifact. The recorded talents
+are explicit representative assumptions. SixtySim provides the separate documented
+loadout and one-minute comparison. These are reference rankings, not a claim to
+reproduce either simulator. Different-speed weapon swaps retain conditional advice
+while damage-per-hit and proc interactions require a rotation model.
+
+Local Guide generation and its independent gate rebuild can use
+`BBL_GUIDE_WORKERS=2` to bound concurrent Lua processes on a busy workstation.
+The worker limit changes resource use and preserves deterministic output.
+The existing workspace automation is active with `gpt-6.2-sol`, `max` reasoning,
+the BigBisList project and the Wednesday 9:25 local schedule. Its prompt follows
+the read-only hosted intake through completion and requires checked PRs under
+the authenticated workspace account. The first scheduled run remains future
+evidence for November 25, 2026 at 9:25 a.m. Pacific.
+
+### Current benchmark and performance follow-up
+
+The [28-profile source ledger](forever-stat-source-review-0.15.0.json) retains
+published priority pages, numerical anchors, units, reference talents, verification
+outfits and encounter assumptions. The two Feral Method URLs were corrected.
+Restoration Druid's Method priority section is unfinished, so its primary priority
+reference is the published Icy Veins guide. Several guides explicitly call their
+advice provisional, and the Subtlety page still names Combat in its prose. Those
+pages support a mechanics review; they do not supply precise numerical approval.
+
+The current SixtySim methodology uses engine `92b1673580`, but its individual stat
+pages retain three revisions. The comparison record now preserves the engine and
+publication date for each profile, including unchanged older pages. The original
+comparison remains in history. GearMatic's numerical primary scale remains pinned
+to its November 21 artifact. Neither source discloses a complete equivalent setup
+for the other's numbers, and both share WoWSims ancestry.
+
+The current healer and tank alternatives were checked against 18 existing fixture
+swaps and 1,153 swaps among approved candidates in the reviewed outfits. None of
+the 18 fixture qualifications changes; 23 approved-pool qualifications change.
+For example, Inquisitor's Shawl versus Devout Mantle loses 2.252137 points under
+the Discipline sustain reference but gains 5.515 under the current short-fight
+reference in that outfit. The swap must remain conditional. Tank threat scales
+use the measured weapon-DPS anchor where available. Warrior and Paladin benchmark
+outfits already reach the melee hit cap, so their small remaining Hit derivatives
+must not replace the uncapped marginal Hit coefficient. A regression preserves
+2.5 points for a 7.5% to 8.5% Hit swap under both Warrior tank references.
+
+The final marginal-stat audit also caught an incoherent Restoration reference:
+it included Natural Instinct, a deep-Feral talent absent from the published
+11/0/40 healing build. The corrected reference uses two Heart of the Wild,
+three Living Spirit and five Gift of Nature, with no Natural Instinct. The
+short-fight Intellect coefficient therefore stays useful when the active player
+has no Feral conversion; the preliminary configuration made it worth -0.19.
+The source's -0.03 MP5 finite-step result is retained as evidence and treated
+as zero in its non-mana-limited alternative, consistent with its prose.
+Replaying both fixture swaps and 130 approved-pool swaps with the corrected
+talents changed no conditional qualifications. A new all-profile regression
+checks the default and alternative marginal values with and without reference
+talents. [Published healing build](https://sixtysim.com/guides/druid/restoration/talents/) ·
+[Published stat measurements](https://sixtysim.com/guides/druid/restoration/stats/)
+
+The background scheduler also no longer bypasses a spent frame budget when
+another timer fires during the same frame. Its regression requires the job to
+wait until the frame clock advances.
+
+The performance checks now include active character talents on build 71037. The
+earlier fallback-only runs produced just four Protection and 21 Retribution
+upgrade rows, which understated ordinary work. The full active runs compare final
+rank, route and ownership against the original calculations and exercise rapid
+navigation and stationary hover. New score checkpoints also preserve a capped
+temporary-effect fixture at exactly 77.5 points across coroutine yields.
+
+First-page timing remains comfortably below 50 ms in the measured replays.
+The 4 ms peak-work target is **not yet accepted**. Windows runs showed occasional
+5–8 ms frames and one 81 ms wall-time outlier. Independent Linux CPU-time replays
+also exceeded the target, including an 8.8 ms background frame after the slicing
+changes. Instrumentation observed multi-millisecond Lua 5.1 collector steps and
+layout work, so these failures cannot all be dismissed as Windows scheduling.
+The simulated widgets are not the native client. Keep the failed measurements,
+repeat the final artifact's replays, and record the user's client result before
+closing this item. Full load retained about 163.5 MiB before browsing and took
+about 1.4–1.6 seconds of CPU time in those checks; startup remains a limitation.
+
+The final [candidate timing receipt](forever-performance-review-0.15.0.json)
+binds all 25 packaged files to artifact `0176afa8c36883686603a230f029fd93a83e2f440da452223fb43a670edf2417`.
+Both unmodified-runtime runs tested all six scenarios. Every first viewport met
+50 ms; the measured pages took 4–11 ms. Two Windows processes and two Linux
+processes failed the 4 ms peak target. The largest final peaks were 6.0 ms on
+Windows and 9.7 ms of Linux CPU time. This remains a release blocker.
+The source and ranking reports are bound to the same current inputs.
+
+The final targeted offline coverage passes 24 calibration, 34 scoring, 34 Guide
+performance/workflow and 16 gear-workflow tests (108 total). These functional
+checks include all eight native/fallback window and density combinations; actual
+CPU/wall-clock timing is recorded separately and must satisfy its own budget.
+
+The complete release sequence above remains in force. Functional and scoring
+implementation is not gameplay acceptance, a merge, a published tag, a CurseForge
+file, or evidence of the future scheduled run.
 
 ## Collect and review
 

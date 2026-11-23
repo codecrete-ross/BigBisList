@@ -40,8 +40,8 @@
       },
       "spec": "Balance",
       "weights": {
-        "arcane_damage": 1,
-        "nature_damage": 1
+        "arcane_damage": 0.25,
+        "nature_damage": 0.75
       }
     },
     {
@@ -83,8 +83,8 @@
       },
       "spec": "Balance",
       "weights": {
-        "arcane_damage": 1,
-        "nature_damage": 1
+        "arcane_damage": 0.25,
+        "nature_damage": 0.75
       }
     },
     {
@@ -126,8 +126,8 @@
       },
       "spec": "Balance",
       "weights": {
-        "arcane_damage": 1,
-        "nature_damage": 1
+        "arcane_damage": 0.65,
+        "nature_damage": 0.35
       }
     },
     {
@@ -169,8 +169,8 @@
       },
       "spec": "Balance",
       "weights": {
-        "arcane_damage": 1,
-        "nature_damage": 1
+        "arcane_damage": 0.65,
+        "nature_damage": 0.35
       }
     },
     {
@@ -2972,7 +2972,7 @@
       },
       "spec": "Combat",
       "weights": {
-        "agility": 1.7,
+        "agility": 1.55,
         "attack_power": 0.8,
         "dps": 6,
         "strength": 0.8
@@ -3017,7 +3017,7 @@
       },
       "spec": "Combat",
       "weights": {
-        "agility": 1.7,
+        "agility": 1.55,
         "attack_power": 0.8,
         "dps": 6,
         "strength": 0.8
@@ -3062,7 +3062,7 @@
       },
       "spec": "Combat",
       "weights": {
-        "agility": 1.7,
+        "agility": 1.55,
         "attack_power": 0.8,
         "dps": 6,
         "strength": 0.8
@@ -3107,7 +3107,7 @@
       },
       "spec": "Combat",
       "weights": {
-        "agility": 1.7,
+        "agility": 1.55,
         "attack_power": 0.8,
         "dps": 6,
         "strength": 0.8
@@ -3335,6 +3335,7 @@
         "dps": 1.5,
         "fire_damage": 0.75,
         "intellect": 0.75,
+        "mp5": 1.2,
         "nature_damage": 1,
         "spell_power": 1,
         "spirit": 0.5,
@@ -3384,6 +3385,7 @@
         "dps": 1.5,
         "fire_damage": 0.75,
         "intellect": 0.75,
+        "mp5": 1.2,
         "nature_damage": 1,
         "spell_power": 1,
         "spirit": 0.5,
@@ -3433,6 +3435,7 @@
         "dps": 1.5,
         "fire_damage": 0.75,
         "intellect": 0.75,
+        "mp5": 1.2,
         "nature_damage": 1,
         "spell_power": 1,
         "spirit": 0.5,
@@ -3482,6 +3485,7 @@
         "dps": 0.3,
         "fire_damage": 0.75,
         "intellect": 0.75,
+        "mp5": 1.2,
         "nature_damage": 1,
         "spell_power": 1,
         "spirit": 0.5,
@@ -3555,6 +3559,7 @@
         "dps": 5,
         "fire_damage": 0.45,
         "intellect": 0.6,
+        "mp5": 1.6,
         "nature_damage": 0.3,
         "spell_damage": 0.45,
         "spell_power": 0.45,
@@ -3629,6 +3634,7 @@
         "dps": 5,
         "fire_damage": 0.45,
         "intellect": 0.6,
+        "mp5": 1.6,
         "nature_damage": 0.3,
         "spell_damage": 0.45,
         "spell_power": 0.45,
@@ -3703,6 +3709,7 @@
         "dps": 5,
         "fire_damage": 0.45,
         "intellect": 0.6,
+        "mp5": 1.6,
         "nature_damage": 0.3,
         "spell_damage": 0.45,
         "spell_power": 0.45,
@@ -3777,6 +3784,7 @@
         "dps": 5,
         "fire_damage": 0.45,
         "intellect": 0.6,
+        "mp5": 1.6,
         "nature_damage": 0.3,
         "spell_damage": 0.45,
         "spell_power": 0.45,
@@ -4001,7 +4009,7 @@
       "spec": "Affliction",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4046,7 +4054,7 @@
       "spec": "Affliction",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4091,7 +4099,7 @@
       "spec": "Affliction",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4136,7 +4144,7 @@
       "spec": "Affliction",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4181,7 +4189,7 @@
       "spec": "Demonology",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4226,7 +4234,7 @@
       "spec": "Demonology",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4271,7 +4279,7 @@
       "spec": "Demonology",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4316,7 +4324,7 @@
       "spec": "Demonology",
       "weights": {
         "fire_damage": 0.4,
-        "shadow_damage": 1,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4360,8 +4368,8 @@
       },
       "spec": "Destruction",
       "weights": {
-        "fire_damage": 1,
-        "shadow_damage": 0.7,
+        "fire_damage": 0.2,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4405,8 +4413,8 @@
       },
       "spec": "Destruction",
       "weights": {
-        "fire_damage": 1,
-        "shadow_damage": 0.7,
+        "fire_damage": 0.2,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4450,8 +4458,8 @@
       },
       "spec": "Destruction",
       "weights": {
-        "fire_damage": 1,
-        "shadow_damage": 0.7,
+        "fire_damage": 0.2,
+        "shadow_damage": 0.8,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4495,8 +4503,8 @@
       },
       "spec": "Destruction",
       "weights": {
-        "fire_damage": 1,
-        "shadow_damage": 0.7,
+        "fire_damage": 0.65,
+        "shadow_damage": 0.35,
         "spirit": 0.55,
         "stamina": 0.35
       }
@@ -4539,7 +4547,9 @@
         "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
       },
       "spec": "Arms",
-      "weights": {}
+      "weights": {
+        "dps": 9
+      }
     },
     {
       "class": "Warrior",
@@ -4579,7 +4589,9 @@
         "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
       },
       "spec": "Arms",
-      "weights": {}
+      "weights": {
+        "dps": 10
+      }
     },
     {
       "class": "Warrior",
@@ -4619,7 +4631,9 @@
         "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
       },
       "spec": "Arms",
-      "weights": {}
+      "weights": {
+        "dps": 12
+      }
     },
     {
       "class": "Warrior",
@@ -4659,7 +4673,9 @@
         "source_url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-leveling-tips"
       },
       "spec": "Arms",
-      "weights": {}
+      "weights": {
+        "dps": 14
+      }
     },
     {
       "class": "Warrior",
@@ -5217,7 +5233,7 @@
     "Warrior/Protection": "tank"
   },
   "status": "reviewed",
-  "version": "forever-leveling-reviewed-2",
+  "version": "forever-leveling-reviewed-3",
   "weight_revisions": {
     "Druid/Feral tank": {
       "level_bands": [
@@ -5233,7 +5249,7 @@
             "evidence_id": "wowhead:ea8de4b176893e976a29780c"
           },
           {
-            "content_digest": "2c4296247b5403c523da8cd48d7e86bd371aec2c8828d317885c8594163958ec",
+            "content_digest": "2db006324a6371550882b5bb8a041265f38af9040fbf2d7c7f9efac1df5d0280",
             "evidence_id": "raidbots:26607a503b24aabc9197c4e4"
           },
           {

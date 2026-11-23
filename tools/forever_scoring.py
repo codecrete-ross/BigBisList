@@ -14,6 +14,8 @@ from tools.forever_mechanics import snapshot_path
 from tools.forever_sources import check_evidence_refs, evidence_index, evidence_ref, source_provider
 from tools.project import FOREVER_CANONICAL_DIR, dataset_json, load_json
 from tools.recommend_leveling import materialized_items, slot_matches
+from tools.forever_stats import hit_points, marginal_points, normalized_stats, profile_scenario, weight_review
+from tools.forever_compatibility import supported_builds
 
 
 VERSION = "forever-character-scoring-1"
@@ -105,7 +107,7 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
     offhand_dps = gear.get(17, {}).get("stats", {}).get("dps", 0)
     offhand_factor = scenario.get("offhand_dps_factor", 1)
     for item in items:
-        for key, value in item["stats"].items():
+        for key, value in normalized_stats(item["stats"]).items():
             stats[key] += value
         if item.get("set_id"):
             sets[item["set_id"]] += 1
@@ -136,6 +138,18 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
         rate = min(events * proc["chance"], proc.get("max_per_minute", events))
         for key, value in proc["stats"].items():
             stats[key] += value * min(1, rate * proc["duration"] / 60)
+    if scenario.get("form_attack_period") and level >= scenario.get("form_min_level", 10):
+        stats["attack_power"] += stats["feral_attack_power"]
+    flat_damage = stats["weapon_damage"]
+    if flat_damage:
+        main_speed = stats["weapon_speed"] or scenario.get("isolated_swing_seconds", 2.6)
+        stats["dps"] += flat_damage / main_speed
+        off_speed = gear.get(17, {}).get("stats", {}).get("weapon_speed", 0)
+        if off_speed:
+            stats["dps"] += flat_damage / off_speed * offhand_factor
+        ranged = gear.get(18, {}).get("stats", {})
+        if ranged.get("ranged_dps") or scenario.get("effect_benchmark", {}).get("role") == "ranged":
+            stats["ranged_dps"] += flat_damage / (ranged.get("weapon_speed") or 2.8)
     for racial in scenario.get("racial_scaling", []):
         if racial["race_id"] == race_id:
             stats[racial["stat"]] *= racial["multiplier"]
@@ -143,19 +157,46 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
         if conversion.get("condition") != "shield" or shield:
             stats[conversion["stat"]] += stats[conversion["from_stat"]] * conversion["factor"]
     specific_crit = {"spell": "spell_crit_percent", "physical": "physical_crit_percent"}.get(scenario.get("crit_domain"))
-    if scenario.get("effect_benchmark", {}).get("role") in {"melee", "tank"}:
+    if not scenario.get("crit_shares") and scenario.get("effect_benchmark", {}).get("role") in {"melee", "tank"}:
         stats[specific_crit or "crit_percent"] += stats["melee_crit_percent"]
-    if specific_crit and specific_crit not in weights:
+    if shares := scenario.get("crit_shares"):
+        for channel, share in shares.items():
+            stats["crit_percent"] += stats[channel + "_crit_percent"] * share
+            stats["haste_percent"] += stats[channel + "_haste_percent"] * share
+    elif specific_crit and specific_crit not in weights:
         stats["crit_percent"] += stats[specific_crit]
-    if scenario.get("crit_domain") == "spell" and "spell_hit_percent" not in weights:
+    if not scenario.get("hit_curves") and scenario.get("crit_domain") == "spell" and "spell_hit_percent" not in weights:
         stats["hit_percent"] += stats["spell_hit_percent"]
 
     caps = scenario.get("caps", {})
+    talent_stats = defaultdict(float, scenario.get("reference_bonuses", {}))
+    coefficients = dict(weights)
+    for operation in operations:
+        rank = scenario.get("reference_ranks", {}).get(str(operation["entry"]), 0)
+        if not rank or not operation.get("min_level", 1) <= level <= operation.get("max_level", 60):
+            continue
+        factor = operation["factors"][rank - 1]
+        if operation["kind"] == "convert":
+            for stat in operation["stats"]:
+                source = operation["from_stat"]
+                coefficients[source] = coefficients.get(source, 0) - factor * coefficients.get(stat, 0)
+        elif operation["kind"] in {"scale", "efficiency"}:
+            for stat in operation["stats"]:
+                value = coefficients.get(stat, 0)
+                coefficients[stat] = value / (1 + factor) if operation["kind"] == "scale" else value * (1 + factor)
 
     def value(points: dict | None = None) -> float:
         total = 0.0
-        for stat, weight in weights.items():
-            contribution = min(stats[stat], caps.get(stat, float("inf"))) * weight
+        for stat, weight in coefficients.items():
+            contribution = 0.0
+            if weight:
+                cap = caps.get(stat, float("inf"))
+                amount = min(stats[stat] + talent_stats[stat], cap) - min(talent_stats[stat], cap)
+                if stat == "hit_percent" and scenario.get("hit_curves"):
+                    amount = hit_points(stats, scenario["hit_curves"], level, talent_stats)
+                if stat == "expertise" and scenario.get("expertise_curve"):
+                    amount = marginal_points(stats[stat], talent_stats[stat], scenario["expertise_curve"])
+                contribution = amount * weight
             total += contribution
             if points is not None:
                 points[stat] = contribution
@@ -164,17 +205,23 @@ def base_loadout(loadout: dict[int, dict] | list[dict], weights: dict, operation
     explanations = {}
     for operation in operations:
         rank = ranks.get(operation["entry"], 0)
-        if not operation_applies(operation, rank, level, shield, two_hand):
+        reference_rank = scenario.get("reference_ranks", {}).get(str(operation["entry"]), 0)
+        active = operation_applies(operation, rank, level, shield, two_hand)
+        referenced = reference_rank > 0 and operation.get("min_level", 1) <= level <= operation.get("max_level", 60)
+        if not active and not referenced:
             continue
-        factor = operation["factors"][rank - 1]
+        factor = operation["factors"][rank - 1] if active else 0
+        reference = operation["factors"][reference_rank - 1] if referenced else 0
         basis = value()
         for stat in operation["stats"]:
             if operation["kind"] == "convert":
                 stats[stat] += stats[operation["from_stat"]] * factor
+            elif operation["kind"] == "add":
+                talent_stats[stat] += factor - reference
             elif operation["kind"] == "efficiency":
                 stats[stat] /= 1 + factor
             elif operation["kind"] == "offhand_damage":
-                stats[stat] += offhand_dps * offhand_factor * factor
+                stats[stat] += offhand_dps * offhand_factor * ((1 + factor) / (1 + reference) - 1)
             else:
                 stats[stat] *= 1 + factor
         explanations[operation["entry"]] = explanations.get(operation["entry"], 0) + value() - basis
@@ -521,8 +568,8 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
         for rule in rules_for_spec:
             trait = snapshot["traits"][str(rule["entry"])]
             effect = next(row for row in trait["effects"] if row["effect_index"] == rule["effect"])
-            factors = [point["value"] / 100 for point in effect["ranks"]]
-            if (rule["kind"] not in {"scale", "convert", "efficiency", "offhand_damage"} or not rule["stats"]
+            factors = [point["value"] / (1 if rule["kind"] == "add" else 100) for point in effect["ranks"]]
+            if (rule["kind"] not in {"add", "scale", "convert", "efficiency", "offhand_damage"} or not rule["stats"]
                     or (rule["kind"] == "convert" and (not rule.get("from_stat") or rule["from_stat"] in rule["stats"]))
                     or (rule["kind"] == "offhand_damage" and rule["stats"] != ["dps"])
                     or rule.get("condition") not in {None, "shield", "two_hand"}
@@ -593,6 +640,19 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 if not numeric(offhand_factor) or not 0 < offhand_factor <= 1:
                     raise ValueError(f"Invalid off-hand weapon contribution for {name}/{mode}")
                 scenario["offhand_dps_factor"] = offhand_factor
+            calibrated = profile_scenario(name, mode)
+            calibrated["caps"] = {**scenario.get("caps", {}), **calibrated["caps"]}
+            if calibrated.get("reference_ranks"):
+                bonuses = defaultdict(float)
+                for operation in operations:
+                    rank = calibrated["reference_ranks"].get(str(operation["entry"]), 0)
+                    if rank and operation["kind"] == "add":
+                        for stat in operation["stats"]:
+                            bonuses[stat] += operation["factors"][rank - 1]
+                if dict(bonuses) != calibrated.get("reference_bonuses", {}):
+                    raise ValueError(f"Recheck reference talent bonuses for {name}")
+                calibrated["reference_bonuses"] = dict(bonuses)
+            scenario.update(calibrated)
             if settings.get("form_attack_period"):
                 scenario["form_attack_period"] = settings["form_attack_period"]
                 scenario["form_min_level"] = rules["spec_policies"][name]["form_level"]
@@ -610,6 +670,7 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
                 "traits": selected_traits, "scenario": scenario, "candidate_facts": pool_items,
                 "unresolved": settings["unresolved"], "uncertainty": uncertainty, "weapon_speed_proc": proc_rule,
                 "routes": routes, "enchants": enchants,
+                "weight_review": weight_review()["profiles"][name],
                 **({"equipment_compatibility": compatibility} if compatibility else {})})
             if crit_domain:
                 scenario["crit_domain"] = crit_domain
@@ -618,7 +679,8 @@ def compile_model(model: dict, snapshot: dict, documents: dict | None = None) ->
         profiles[name] = {"entries": entry_ids, "operations": operations, "scenarios": scenarios,
                           "unresolved": settings["unresolved"], "uncertainty": uncertainty, "ability": ability,
                           "weapon_speed_proc": speed_proc}
-    return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]), "profiles": profiles,
+    return {"version": VERSION, "build": int(model["client_build"].rsplit(".", 1)[-1]),
+            "supported_builds": supported_builds(snapshot=snapshot), "profiles": profiles,
             "traits": traits, "items": items, "enchants": enchants, "triggers": snapshot["ability_triggers"],
             **({"item_sets": item_sets} if item_sets else {}), **({"set_names": set_names} if set_names else {})}, bindings
 
@@ -714,13 +776,17 @@ def scoring_audit(*, strict: bool = False, lua: str | None = None, input_dir: Pa
         missing = sorted(required - bindings.keys())
         validation = {}
         if strict:
-            from tools.forever_scoring_checks import reference_issues, validation_issues
+            from tools.forever_scoring_checks import reference_issues, reference_ranking_issues, validation_issues
 
             issues.extend(reference_issues())
             fixture_issues, verified, breakdowns = validation_issues(model, runtime, bindings, lua)
             issues.extend(fixture_issues)
             validation = {"required_contexts": len(required), "validated_contexts": verified,
                           "missing_contexts": missing}
+            if input_dir is None:
+                ranking_issues, ranking_summary = reference_ranking_issues(lua)
+                issues.extend(ranking_issues)
+                validation["reference_rankings"] = ranking_summary
             if include_breakdowns:
                 validation["swap_breakdowns"] = breakdowns
         return {"ok": not issues and (not strict or not missing), "issues": issues,

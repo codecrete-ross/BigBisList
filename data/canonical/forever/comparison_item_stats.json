@@ -55,6 +55,15 @@
       ]
     },
     {
+      "field": "attributes",
+      "id": 1680,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=1680"
+      ]
+    },
+    {
       "field": "weapon",
       "id": 1928,
       "needs_tooltip": true,
@@ -955,15 +964,6 @@
       ]
     },
     {
-      "field": "attributes",
-      "id": 19101,
-      "needs_tooltip": true,
-      "sources": [
-        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
-        "https://www.wowhead.com/forever/item=19101"
-      ]
-    },
-    {
       "field": "weapon",
       "id": 19102,
       "needs_tooltip": true,
@@ -1612,6 +1612,15 @@
       ]
     },
     {
+      "field": "attributes",
+      "id": 271768,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=271768"
+      ]
+    },
+    {
       "field": "weapon",
       "id": 271797,
       "needs_tooltip": false,
@@ -1708,6 +1717,15 @@
       "sources": [
         "https://nether.wowhead.com/forever/tooltip/item/272181#sha256-53d5df82d9c0ae4e40795c43d9024af00cf5411f227fced391b47ba80e0067bd",
         "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
+      ]
+    },
+    {
+      "field": "attributes",
+      "id": 272437,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=272437"
       ]
     },
     {
@@ -2071,6 +2089,15 @@
       ]
     },
     {
+      "field": "attributes",
+      "id": 277236,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=277236"
+      ]
+    },
+    {
       "field": "weapon",
       "id": 277247,
       "needs_tooltip": true,
@@ -2350,12 +2377,30 @@
       ]
     },
     {
+      "field": "attributes",
+      "id": 288927,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=288927"
+      ]
+    },
+    {
       "field": "weapon",
       "id": 289296,
       "needs_tooltip": true,
       "sources": [
         "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
         "https://www.wowhead.com/forever/item=289296"
+      ]
+    },
+    {
+      "field": "attributes",
+      "id": 289303,
+      "needs_tooltip": true,
+      "sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt",
+        "https://www.wowhead.com/forever/item=289303"
       ]
     }
   ],
@@ -11181,7 +11226,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "dps": 46.46,
         "stamina": 11.0,
         "weapon_max_damage": 134,
@@ -12051,7 +12096,7 @@
       "quality": "epic",
       "slot": "Off Hand",
       "stats": {
-        "expertise_rating": 10.0,
+        "expertise": 1.0,
         "hp5": 15.0,
         "stamina": 5.0
       }
@@ -12726,7 +12771,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 56.57,
         "stamina": 16.0,
         "weapon_max_damage": 238,
@@ -16514,7 +16559,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "defense_rating": 9.0
+        "defense": 9.0
       }
     },
     {
@@ -20670,7 +20715,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "block_rating": 10.0,
+        "block_percent": 2.0,
         "stamina": 10.0
       }
     },
@@ -21505,7 +21550,7 @@
       "slot": "Ranged",
       "stats": {
         "agility": 7.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "ranged_dps": 27.78,
         "weapon_max_damage": 98,
         "weapon_min_damage": 52,
@@ -22500,7 +22545,7 @@
       "stats": {
         "agility": 5.0,
         "dps": 38.89,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "weapon_max_damage": 91,
         "weapon_min_damage": 49,
         "weapon_speed": 1.8
@@ -23629,7 +23674,7 @@
       "quality": "epic",
       "slot": "Main Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 40.89,
         "stamina": 5.0,
         "strength": 7.0,
@@ -30277,9 +30322,7 @@
     },
     {
       "attributes_known": true,
-      "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 0.6%."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "cb5abe011445fb62d9c981ea2081b5804cf6303c01711485ddcce456b586bedc",
@@ -30295,6 +30338,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 13.03,
+        "expertise": 0.6,
         "weapon_max_damage": 52,
         "weapon_min_damage": 34,
         "weapon_speed": 3.3
@@ -37379,7 +37423,7 @@
       "slot": "Back",
       "stats": {
         "fire_resistance": 7.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       }
     },
     {
@@ -41512,7 +41556,7 @@
       "quality": "uncommon",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 28.82,
         "weapon_max_damage": 118,
         "weapon_min_damage": 78,
@@ -47133,7 +47177,7 @@
       "quality": "uncommon",
       "slot": "Ranged",
       "stats": {
-        "hit_rating": 3.0,
+        "hit_percent": 0.3,
         "ranged_dps": 11.76,
         "weapon_max_damage": 26,
         "weapon_min_damage": 14,
@@ -48051,7 +48095,6 @@
     {
       "attributes_known": true,
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Equip: Increased Two-Handed Maces +1."
       ],
       "effects_known": true,
@@ -48069,6 +48112,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 30.23,
+        "expertise": 1.0,
         "weapon_max_damage": 80,
         "weapon_min_damage": 53,
         "weapon_speed": 2.2
@@ -70771,7 +70815,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 53.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -75336,7 +75380,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 208.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "spirit": 11.0
       },
       "supporting_sources": [
@@ -75486,7 +75530,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 268.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -75511,7 +75555,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 327.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "strength": 5.0
       },
       "supporting_sources": [
@@ -75683,8 +75727,8 @@
       "slot": "Chest",
       "stats": {
         "armor": 463.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -75710,7 +75754,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 324.0,
-        "dodge_rating": 12.0
+        "dodge_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -75911,7 +75955,7 @@
       "quality": "uncommon",
       "slot": "One Hand",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "dps": 29.06,
         "stamina": 7.0,
         "weapon_max_damage": 61,
@@ -76026,7 +76070,7 @@
       "stats": {
         "agility": 7.0,
         "armor": 115.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -76319,7 +76363,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 231.0,
-        "block_rating": 10.0,
+        "block_percent": 2.0,
         "stamina": 12.0
       },
       "supporting_sources": [
@@ -77870,7 +77914,7 @@
       "quality": "uncommon",
       "slot": "Ranged",
       "stats": {
-        "hit_rating": 3.0,
+        "hit_percent": 0.3,
         "ranged_dps": 10.96,
         "weapon_max_damage": 37,
         "weapon_min_damage": 20,
@@ -80356,7 +80400,7 @@
       "stats": {
         "agility": 6.0,
         "armor": 171.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 7.0
       },
       "supporting_sources": [
@@ -81124,7 +81168,6 @@
       "armor_type": "Leather",
       "attributes_known": true,
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.1%.",
         "Equip: Increased Axes +1."
       ],
       "effects_known": true,
@@ -81140,6 +81183,7 @@
       "stats": {
         "agility": 7.0,
         "armor": 99.0,
+        "expertise": 1.1,
         "stamina": 8.0
       }
     },
@@ -81330,7 +81374,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "dps": 31.29,
         "weapon_max_damage": 117,
         "weapon_min_damage": 77,
@@ -81992,7 +82036,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "dps": 42.7,
         "strength": 5.0,
         "weapon_max_damage": 190,
@@ -98774,7 +98818,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 4.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 17.0
       }
     },
@@ -98996,7 +99040,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "dps": 44.17,
         "stamina": 18.0,
         "strength": 15.0,
@@ -99037,7 +99081,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "spirit": 10.0,
         "stamina": 12.0,
         "strength": 5.0
@@ -99098,7 +99142,7 @@
       "quality": "rare",
       "slot": "One Hand",
       "stats": {
-        "defense_rating": 2.0,
+        "defense": 2.0,
         "dps": 35.79,
         "weapon_max_damage": 89,
         "weapon_min_damage": 47,
@@ -99430,7 +99474,7 @@
       "slot": "Off Hand",
       "stats": {
         "agility": 6.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "intellect": 7.0,
         "stamina": 7.0,
         "strength": 6.0
@@ -99473,7 +99517,7 @@
       "slot": "Main Hand",
       "stats": {
         "dps": 37.08,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "strength": 6.0,
         "weapon_max_damage": 116,
         "weapon_min_damage": 62,
@@ -99495,7 +99539,7 @@
       "slot": "Main Hand",
       "stats": {
         "dps": 35.83,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "spirit": 3.0,
         "stamina": 11.0,
         "weapon_max_damage": 112,
@@ -99518,7 +99562,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spell_power": 8.0,
         "spirit": 20.0,
         "stamina": 10.0
@@ -99590,8 +99634,8 @@
       "slot": "Chest",
       "stats": {
         "agility": 6.0,
-        "defense_rating": 8.0,
-        "dodge_rating": 18.0,
+        "defense": 8.0,
+        "dodge_percent": 1.5,
         "stamina": 14.0
       }
     },
@@ -101092,7 +101136,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 12.0,
         "stamina": 10.0
@@ -101291,7 +101335,7 @@
       "slot": "Waist",
       "stats": {
         "attack_power": 30.0,
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "stamina": 10.0,
         "strength": 8.0
       }
@@ -101336,7 +101380,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "stamina": 12.0,
         "strength": 6.0
       }
@@ -101384,7 +101428,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 14.0,
-        "crit_rating": 21.0,
+        "crit_percent": 1.5,
         "stamina": 18.0,
         "strength": 16.0
       }
@@ -101561,7 +101605,7 @@
       "quality": "rare",
       "slot": "Head",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 18.0,
         "strength": 18.0
       }
@@ -101645,7 +101689,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 10.0,
         "intellect": 12.0,
         "stamina": 10.0
@@ -101665,8 +101709,8 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "defense_rating": 3.0,
-        "dodge_rating": 12.0,
+        "defense": 3.0,
+        "dodge_percent": 1.0,
         "stamina": 7.0,
         "strength": 6.0
       }
@@ -101797,7 +101841,7 @@
       "quality": "rare",
       "slot": "Main Hand",
       "stats": {
-        "hit_rating": 7.0,
+        "hit_percent": 0.7,
         "intellect": 5.0,
         "stamina": 8.0
       },
@@ -101857,7 +101901,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "dodge_rating": 18.0,
+        "dodge_percent": 1.5,
         "stamina": 10.0
       }
     },
@@ -102063,7 +102107,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "fire_resistance": 12.0,
         "spirit": 6.0,
         "stamina": 9.0
@@ -102222,8 +102266,8 @@
       "slot": "Legs",
       "stats": {
         "agility": 7.0,
-        "defense_rating": 7.0,
-        "dodge_rating": 12.0,
+        "defense": 7.0,
+        "dodge_percent": 1.0,
         "stamina": 22.0,
         "strength": 8.0
       }
@@ -102890,7 +102934,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 14.0,
         "strength": 8.0
       }
@@ -103695,9 +103739,9 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 21.0,
+        "crit_percent": 1.5,
         "dps": 48.89,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 18.0,
         "weapon_max_damage": 159,
         "weapon_min_damage": 105,
@@ -103809,7 +103853,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 21.0,
+        "crit_percent": 1.5,
         "stamina": 11.0,
         "strength": 8.0
       }
@@ -103828,8 +103872,8 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "block_rating": 10.0,
-        "defense_rating": 15.0
+        "block_percent": 2.0,
+        "defense": 15.0
       }
     },
     {
@@ -103906,9 +103950,9 @@
       "slot": "Two Hand",
       "stats": {
         "attack_power": 42.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 50.54,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 8.0,
         "weapon_max_damage": 225,
         "weapon_min_damage": 149,
@@ -104113,7 +104157,7 @@
       "stats": {
         "agility": 5.0,
         "dps": 32.5,
-        "hit_rating": 8.0,
+        "hit_percent": 0.8,
         "weapon_max_damage": 68,
         "weapon_min_damage": 36,
         "weapon_speed": 1.6
@@ -105975,7 +106019,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "hit_rating": 13.0,
+        "hit_percent": 1.3,
         "intellect": 7.0,
         "spirit": 7.0,
         "stamina": 7.0
@@ -106144,7 +106188,7 @@
       "quality": "uncommon",
       "slot": "Back",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 16.0,
         "spell_damage": 5.0,
         "spirit": 7.0
@@ -106238,7 +106282,7 @@
       "quality": "uncommon",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "spirit": 9.0,
         "stamina": 9.0
       }
@@ -106552,7 +106596,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 138.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -107569,7 +107613,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 41.2,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "weapon_max_damage": 124,
         "weapon_min_damage": 82,
         "weapon_speed": 2.5
@@ -107965,7 +108009,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "strength": 14.0
       }
     },
@@ -108701,7 +108745,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 575.0,
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 21.0,
         "strength": 20.0
       },
@@ -108781,7 +108825,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 322.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spell_power": 11.0,
         "stamina": 5.0
       },
@@ -109004,7 +109048,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "intellect": 9.0,
         "stamina": 15.0,
         "strength": 9.0
@@ -109104,7 +109148,7 @@
       "slot": "Ranged",
       "stats": {
         "agility": 3.0,
-        "hit_rating": 9.0,
+        "hit_percent": 0.9,
         "ranged_dps": 30.31,
         "weapon_max_damage": 117,
         "weapon_min_damage": 77,
@@ -109367,8 +109411,8 @@
       "stats": {
         "arcane_resistance": 4.0,
         "dps": 48.29,
-        "hit_rating": 20.0,
-        "parry_rating": 21.0,
+        "hit_percent": 2.0,
+        "parry_percent": 1.4,
         "weapon_max_damage": 203,
         "weapon_min_damage": 135,
         "weapon_speed": 3.5
@@ -109459,7 +109503,7 @@
       "slot": "One Hand",
       "stats": {
         "agility": 4.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 41.32,
         "weapon_max_damage": 102,
         "weapon_min_damage": 55,
@@ -109956,7 +110000,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 15.0,
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "fire_resistance": 10.0,
         "stamina": 27.0,
         "strength": 20.0
@@ -110066,7 +110110,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 7.0,
         "spell_power": 6.0,
         "stamina": 8.0
@@ -110114,8 +110158,8 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "dodge_rating": 24.0,
-        "parry_rating": 6.0,
+        "dodge_percent": 2.0,
+        "parry_percent": 0.4,
         "stamina": 16.0,
         "strength": 13.0
       }
@@ -110407,7 +110451,7 @@
       "slot": "Legs",
       "stats": {
         "attack_power": 38.0,
-        "dodge_rating": 18.0,
+        "dodge_percent": 1.5,
         "stamina": 18.0
       }
     },
@@ -112041,7 +112085,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "dps": 21.72,
         "weapon_max_damage": 76,
         "weapon_min_damage": 50,
@@ -112234,7 +112278,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "dps": 23.75,
         "spirit": 4.0,
         "weapon_max_damage": 80,
@@ -112374,8 +112418,8 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 48.21,
-        "hit_rating": 20.0,
-        "parry_rating": 15.0,
+        "hit_percent": 2.0,
+        "parry_percent": 1.0,
         "weapon_max_damage": 162,
         "weapon_min_damage": 108,
         "weapon_speed": 2.8
@@ -114055,7 +114099,7 @@
       "quality": "rare",
       "slot": "Ranged",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "ranged_dps": 17.31,
         "stamina": 4.0,
         "weapon_max_damage": 59,
@@ -114283,7 +114327,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 15.0,
         "strength": 11.0
       }
@@ -114303,8 +114347,8 @@
       "stats": {
         "agility": 9.0,
         "dps": 53.03,
-        "expertise_rating": 10.0,
-        "parry_rating": 15.0,
+        "expertise": 1.0,
+        "parry_percent": 1.0,
         "stamina": 11.0,
         "strength": 20.0,
         "weapon_max_damage": 210,
@@ -114352,7 +114396,7 @@
       "slot": "Shoulder",
       "stats": {
         "attack_power": 20.0,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "stamina": 21.0
       }
     },
@@ -114499,8 +114543,8 @@
       "slot": "Neck",
       "stats": {
         "agility": 8.0,
-        "defense_rating": 6.0,
-        "dodge_rating": 12.0
+        "defense": 6.0,
+        "dodge_percent": 1.0
       }
     },
     {
@@ -114869,7 +114913,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 7.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spirit": 9.0,
         "stamina": 7.0
       }
@@ -115281,7 +115325,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 12.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "spirit": 16.0
       }
     },
@@ -115942,7 +115986,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "block_rating": 6.0,
+        "block_percent": 1.2,
         "strength": 14.0
       }
     },
@@ -115979,7 +116023,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 10.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 22.0,
         "strength": 14.0
       }
@@ -116020,7 +116064,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "block_rating": 5.0,
+        "block_percent": 1.0,
         "stamina": 21.0,
         "strength": 10.0
       }
@@ -116456,7 +116500,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 8.0,
         "strength": 7.0
       }
@@ -116562,7 +116606,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "shadow_resistance": 6.0,
         "stamina": 14.0,
         "strength": 14.0
@@ -116710,9 +116754,7 @@
     {
       "armor_type": "Plate",
       "attributes_known": true,
-      "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "5d10ebd2551b20147a6e494e7fad574e5b2fa21e984c81ad43b2cfd1f7ebb963",
@@ -116725,9 +116767,13 @@
       "slot": "Legs",
       "stats": {
         "armor": 548.0,
+        "expertise": 1.0,
         "stamina": 12.0,
         "strength": 25.0
-      }
+      },
+      "supporting_sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
+      ]
     },
     {
       "armor_base": 369,
@@ -116881,7 +116927,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "fire_resistance": 20.0,
         "stamina": 12.0
       }
@@ -116901,7 +116947,7 @@
       "slot": "Feet",
       "stats": {
         "fire_resistance": 20.0,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "strength": 12.0
       }
     },
@@ -116938,7 +116984,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "defense_rating": 2.0,
+        "defense": 2.0,
         "nature_resistance": 15.0,
         "stamina": 10.0
       }
@@ -116979,7 +117025,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "nature_resistance": 18.0,
         "shadow_resistance": 18.0,
         "stamina": 14.0
@@ -116999,7 +117045,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 9.0,
+        "hit_percent": 0.9,
         "nature_resistance": 13.0,
         "shadow_resistance": 13.0,
         "stamina": 10.0
@@ -117019,7 +117065,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "nature_resistance": 20.0,
         "stamina": 10.0
       }
@@ -117064,7 +117110,7 @@
         "arcane_resistance": 13.0,
         "frost_damage": 20.0,
         "frost_resistance": 20.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       }
     },
     {
@@ -117081,7 +117127,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "frost_resistance": 15.0,
         "stamina": 7.0
       }
@@ -118653,7 +118699,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 12.0,
         "strength": 12.0
       }
@@ -118673,7 +118719,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 7.0,
-        "hit_rating": 3.0,
+        "hit_percent": 0.3,
         "stamina": 17.0
       }
     },
@@ -118771,7 +118817,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "defense_rating": 7.0
+        "defense": 7.0
       }
     },
     {
@@ -118788,7 +118834,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 19.0,
         "stamina": 10.0
       }
@@ -118806,7 +118852,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 12.0,
         "strength": 10.0
       }
@@ -118846,7 +118892,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 9.0,
         "strength": 14.0
       }
@@ -118911,9 +118957,9 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
-        "defense_rating": 6.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "defense": 6.0,
+        "dodge_percent": 1.0,
         "stamina": 6.0
       }
     },
@@ -118932,7 +118978,7 @@
       "slot": "Hands",
       "stats": {
         "agility": 9.0,
-        "hit_rating": 15.0,
+        "hit_percent": 1.5,
         "stamina": 15.0
       }
     },
@@ -119037,7 +119083,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 20.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 4.0
       }
     },
@@ -119203,7 +119249,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "frost_resistance": 10.0,
         "nature_resistance": 10.0,
         "stamina": 8.0
@@ -126014,7 +126060,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 15.0,
         "strength": 16.0
       }
@@ -126285,7 +126331,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "expertise_rating": 10.0,
+        "expertise": 1.0,
         "weapon_damage": 1.0
       }
     },
@@ -126303,7 +126349,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "spell_power": 12.0,
         "stamina": 20.0
       }
@@ -126787,7 +126833,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 10.0,
         "intellect": 15.0,
         "shadow_resistance": 5.0,
@@ -127395,7 +127441,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "intellect": 15.0,
         "mp5": 4.0,
         "stamina": 15.0,
@@ -127462,7 +127508,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "stamina": 10.0,
         "strength": 11.0
@@ -127485,7 +127531,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 8.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 10.0,
         "stamina": 10.0,
         "strength": 9.0
@@ -127507,7 +127553,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "intellect": 11.0,
         "stamina": 15.0
       }
@@ -127528,7 +127574,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "intellect": 14.0,
         "stamina": 11.0
       }
@@ -127549,7 +127595,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "intellect": 11.0,
         "stamina": 14.0
       }
@@ -127570,7 +127616,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 13.0,
+        "defense": 13.0,
         "intellect": 14.0,
         "stamina": 20.0
       }
@@ -127591,7 +127637,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "defense_rating": 17.0,
+        "defense": 17.0,
         "intellect": 11.0,
         "stamina": 16.0
       }
@@ -127731,7 +127777,7 @@
       "slot": "Waist",
       "stats": {
         "attack_power": 40.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 12.0
       }
     },
@@ -127752,7 +127798,7 @@
       "slot": "Chest",
       "stats": {
         "attack_power": 60.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 10.0
       }
     },
@@ -127773,7 +127819,7 @@
       "slot": "Legs",
       "stats": {
         "attack_power": 52.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 18.0
       }
     },
@@ -134864,7 +134910,7 @@
       "stats": {
         "agility": 15.0,
         "armor": 548.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 9.0,
         "intellect": 14.0,
         "spirit": 14.0,
@@ -145604,7 +145650,7 @@
       "quality": "uncommon",
       "slot": "Wrist",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "strength": 4.0
       }
     },
@@ -148085,7 +148131,7 @@
       "stats": {
         "agility": 10.0,
         "armor": 255.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 17.0
       },
       "supporting_sources": [
@@ -148423,7 +148469,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 89.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 20.0,
         "stamina": 20.0
       },
@@ -148514,7 +148560,7 @@
       "slot": "Head",
       "stats": {
         "armor": 73.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 16.0,
         "spirit": 16.0,
         "stamina": 16.0
@@ -148660,7 +148706,7 @@
       "stats": {
         "agility": 9.0,
         "armor": 176.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "spell_power": 16.0,
         "stamina": 14.0,
@@ -148790,7 +148836,7 @@
         "agility": 16.0,
         "armor": 370.0,
         "attack_power": 26.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0
       },
       "supporting_sources": [
@@ -148821,8 +148867,8 @@
       "stats": {
         "agility": 18.0,
         "armor": 324.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "stamina": 17.0
       },
       "supporting_sources": [
@@ -148944,7 +148990,7 @@
       "stats": {
         "agility": 6.0,
         "armor": 657.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 25.0,
         "strength": 9.0
       },
@@ -148975,7 +149021,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 575.0,
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 13.0,
         "strength": 7.0
       },
@@ -149035,7 +149081,7 @@
       "stats": {
         "agility": 8.0,
         "armor": 657.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 25.0,
         "strength": 9.0
       },
@@ -149097,7 +149143,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 575.0,
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 13.0,
         "strength": 7.0
       },
@@ -150780,7 +150826,7 @@
       "slot": "Head",
       "stats": {
         "armor": 73.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 16.0,
         "spirit": 16.0,
         "stamina": 16.0
@@ -150846,7 +150892,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 89.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 20.0,
         "stamina": 20.0
       },
@@ -151256,7 +151302,7 @@
       "stats": {
         "agility": 9.0,
         "armor": 176.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "spell_power": 16.0,
         "stamina": 14.0,
@@ -151545,7 +151591,7 @@
       "stats": {
         "agility": 6.0,
         "armor": 657.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 25.0,
         "strength": 9.0
       },
@@ -151604,7 +151650,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 575.0,
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 13.0,
         "strength": 7.0
       },
@@ -151789,7 +151835,7 @@
       "slot": "Head",
       "stats": {
         "armor": 301.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 9.0,
         "stamina": 25.0,
         "strength": 8.0
@@ -151821,7 +151867,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 370.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 20.0,
         "stamina": 20.0
       },
@@ -151919,7 +151965,7 @@
         "agility": 16.0,
         "armor": 370.0,
         "attack_power": 26.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0
       },
       "supporting_sources": [
@@ -151950,8 +151996,8 @@
       "stats": {
         "agility": 18.0,
         "armor": 324.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "stamina": 17.0
       },
       "supporting_sources": [
@@ -152075,7 +152121,7 @@
       "stats": {
         "agility": 10.0,
         "armor": 255.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 17.0
       },
       "supporting_sources": [
@@ -157891,9 +157937,9 @@
       "quality": "legendary",
       "slot": "One Hand",
       "stats": {
-        "crit_rating": 210.0,
+        "crit_percent": 15.0,
         "dps": 51.36,
-        "haste_rating": 150.0,
+        "haste_percent": 15.0,
         "weapon_max_damage": 61,
         "weapon_min_damage": 52,
         "weapon_speed": 1.1
@@ -160795,7 +160841,7 @@
       "quality": "rare",
       "slot": "Head",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "nature_resistance": 10.0,
         "stamina": 3.0
       }
@@ -161524,7 +161570,7 @@
       "quality": "uncommon",
       "slot": "Shoulder",
       "stats": {
-        "block_rating": 5.0,
+        "block_percent": 1.0,
         "stamina": 13.0
       }
     },
@@ -162003,7 +162049,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "fire_resistance": 6.0,
         "stamina": 17.0,
         "strength": 9.0
@@ -162048,7 +162094,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "fire_resistance": 18.0,
         "stamina": 10.0
       }
@@ -162276,7 +162322,7 @@
       "quality": "epic",
       "slot": "Ranged",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "ranged_attack_power": 22.0,
         "ranged_dps": 36.8,
         "weapon_max_damage": 120,
@@ -162427,7 +162473,7 @@
       "slot": "Off Hand",
       "stats": {
         "agility": 9.0,
-        "block_rating": 10.0
+        "block_percent": 2.0
       }
     },
     {
@@ -162465,7 +162511,7 @@
       "slot": "Legs",
       "stats": {
         "frost_resistance": 10.0,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "strength": 22.0
       }
     },
@@ -162724,7 +162770,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 7.0,
         "intellect": 6.0,
         "spell_damage": 2.0,
@@ -162851,7 +162897,7 @@
       "slot": "Ranged",
       "stats": {
         "attack_power": 4.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "ranged_dps": 29.79,
         "weapon_max_damage": 93,
         "weapon_min_damage": 50,
@@ -162874,7 +162920,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 49.68,
         "strength": 23.0,
         "weapon_max_damage": 185,
@@ -163199,7 +163245,7 @@
       "slot": "Hands",
       "stats": {
         "agility": 15.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spirit": 13.0
       }
     },
@@ -163236,7 +163282,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 5.0
+        "defense": 5.0
       }
     },
     {
@@ -163270,7 +163316,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "hp5": 18.0,
         "intellect": 24.0
       },
@@ -163337,7 +163383,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "spirit": 9.0,
         "stamina": 10.0,
         "strength": 10.0
@@ -163357,7 +163403,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 11.0,
         "stamina": 10.0
@@ -163378,7 +163424,7 @@
       "slot": "Hands",
       "stats": {
         "agility": 9.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "stamina": 10.0
       }
@@ -163397,7 +163443,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 20.0,
         "spell_damage": 7.0,
         "spirit": 10.0,
@@ -163579,8 +163625,8 @@
       "slot": "Hands",
       "stats": {
         "agility": 8.0,
-        "defense_rating": 7.0,
-        "dodge_rating": 6.0,
+        "defense": 7.0,
+        "dodge_percent": 0.5,
         "intellect": 9.0,
         "stamina": 10.0,
         "strength": 7.0
@@ -163646,7 +163692,7 @@
       "slot": "Legs",
       "stats": {
         "arcane_resistance": 8.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 9.0,
         "stamina": 20.0,
         "strength": 15.0
@@ -163666,7 +163712,7 @@
       "slot": "Neck",
       "stats": {
         "agility": 15.0,
-        "defense_rating": 7.0
+        "defense": 7.0
       }
     },
     {
@@ -163701,7 +163747,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 14.0
       }
     },
@@ -163719,7 +163765,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "intellect": 9.0,
         "stamina": 10.0,
         "strength": 17.0
@@ -163785,7 +163831,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 16.0,
         "stamina": 9.0
       }
@@ -163846,7 +163892,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 29.0,
         "spell_damage": 10.0,
         "spirit": 19.0,
@@ -163887,7 +163933,7 @@
       "stats": {
         "agility": 3.0,
         "dps": 40.77,
-        "expertise_rating": 5.0,
+        "expertise": 0.5,
         "weapon_max_damage": 69,
         "weapon_min_damage": 37,
         "weapon_speed": 1.3
@@ -163909,7 +163955,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 13.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 6.0,
         "stamina": 9.0
       }
@@ -164319,7 +164365,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 8.0,
-        "dodge_rating": 9.0
+        "dodge_percent": 0.75
       }
     },
     {
@@ -164340,7 +164386,7 @@
       "slot": "Back",
       "stats": {
         "armor": 214.0,
-        "defense_rating": 5.0
+        "defense": 5.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -164358,7 +164404,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 53.83,
         "strength": 26.0,
         "weapon_max_damage": 194,
@@ -165568,7 +165614,7 @@
       "quality": "uncommon",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "stamina": 15.0,
         "strength": 7.0
       }
@@ -165607,7 +165653,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 15.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 13.0
       }
     },
@@ -165759,7 +165805,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 14.0,
         "stamina": 7.0
       }
@@ -165899,7 +165945,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 15.0
       }
     },
@@ -165916,7 +165962,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0
       }
     },
@@ -165978,7 +166024,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "block_rating": 10.0,
+        "block_percent": 2.0,
         "block_value": 23.0
       }
     },
@@ -166019,7 +166065,7 @@
       "stats": {
         "attack_power": 24.0,
         "dps": 53.1,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 23.0,
         "weapon_max_damage": 185,
         "weapon_min_damage": 123,
@@ -166041,7 +166087,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "stamina": 16.0,
         "strength": 16.0
       }
@@ -166086,7 +166132,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 15.0
       }
     },
@@ -166181,7 +166227,7 @@
       "slot": "Back",
       "stats": {
         "armor": 48.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 12.0,
         "shadow_resistance": 12.0,
         "stamina": 10.0
@@ -166276,7 +166322,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 7.0,
         "strength": 17.0
       }
@@ -166340,7 +166386,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 14.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 13.0,
         "stamina": 21.0
       }
@@ -166469,7 +166515,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 20.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "stamina": 13.0,
         "strength": 8.0
@@ -166488,7 +166534,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "defense_rating": 11.0,
+        "defense": 11.0,
         "dps": 52.97,
         "stamina": 15.0,
         "weapon_max_damage": 204,
@@ -166680,7 +166726,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 13.0,
         "spirit": 8.0,
         "stamina": 11.0
@@ -167388,7 +167434,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "parry_rating": 18.0,
+        "parry_percent": 1.2,
         "stamina": 20.0
       }
     },
@@ -167595,7 +167641,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 6.0,
-        "defense_rating": 2.0,
+        "defense": 2.0,
         "stamina": 16.0
       }
     },
@@ -167688,7 +167734,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "spirit": 6.0
       }
     },
@@ -167778,7 +167824,7 @@
       "quality": "epic",
       "slot": "Ranged",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "ranged_attack_power": 17.0,
         "ranged_dps": 43.97,
         "weapon_max_damage": 166,
@@ -167803,7 +167849,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "dps": 73.28,
         "intellect": 15.0,
         "nature_resistance": 10.0,
@@ -167829,8 +167875,8 @@
       "slot": "Feet",
       "stats": {
         "agility": 13.0,
-        "defense_rating": 3.0,
-        "dodge_rating": 12.0,
+        "defense": 3.0,
+        "dodge_percent": 1.0,
         "stamina": 13.0
       }
     },
@@ -167940,7 +167986,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "strength": 22.0
       }
     },
@@ -167977,7 +168023,7 @@
       "slot": "Two Hand",
       "stats": {
         "attack_power": 56.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 50.44,
         "weapon_max_damage": 206,
         "weapon_min_damage": 137,
@@ -167999,7 +168045,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 15.0
       }
     },
@@ -168146,7 +168192,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 30.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 9.0
       }
     },
@@ -168316,7 +168362,7 @@
       "slot": "Hands",
       "stats": {
         "agility": 13.0,
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "shadow_resistance": 10.0,
         "stamina": 14.0
       }
@@ -168362,7 +168408,7 @@
       "stats": {
         "armor": 67.0,
         "attack_power": 40.0,
-        "crit_rating": 70.0,
+        "crit_percent": 5.0,
         "spell_power": 12.0
       },
       "supporting_sources": [
@@ -168674,7 +168720,7 @@
       "slot": "Ring",
       "stats": {
         "attack_power": 30.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 8.0,
         "strength": 5.0
       }
@@ -169923,7 +169969,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 20.0
       }
     },
@@ -171092,7 +171138,7 @@
       "effects": [],
       "effects_known": true,
       "evidence": {
-        "digest": "e3e6c563c363c3ce93eb7077198f7e117aed26e94489a61794c648b2fe9fb4e5",
+        "digest": "7f447fd70154f9435d43d94badc24b9b58f2e226f6ff6974ea2a00b2937223bf",
         "url": "https://www.wowhead.com/forever/item=19101"
       },
       "id": 19101,
@@ -171103,7 +171149,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 41.29,
-        "intellect": 16.0,
+        "intellect": 25.0,
         "spell_power": 74.0,
         "stamina": 25.0,
         "weapon_max_damage": 154,
@@ -171120,7 +171166,7 @@
       "effects": [],
       "effects_known": true,
       "evidence": {
-        "digest": "b4fdaf90842a3c923d7512169c28373c76a5915e5e2dad2842f519e111598fcc",
+        "digest": "0338015f1726bcffa3d34c471609bcfc827b94095f056578f32efa11e102f713",
         "url": "https://www.wowhead.com/forever/item=19102"
       },
       "id": 19102,
@@ -171132,7 +171178,8 @@
       "stats": {
         "dps": 41.29,
         "intellect": 25.0,
-        "spell_power": 99.0,
+        "spell_power": 74.0,
+        "stamina": 25.0,
         "weapon_max_damage": 154,
         "weapon_min_damage": 102,
         "weapon_speed": 3.1
@@ -171889,7 +171936,7 @@
       "stats": {
         "armor": 279.0,
         "attack_power": 44.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 5.0,
         "frost_resistance": 5.0,
         "nature_resistance": 5.0,
@@ -172068,7 +172115,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 62.62,
         "fire_resistance": 10.0,
         "stamina": 15.0,
@@ -172093,7 +172140,7 @@
       "slot": "One Hand",
       "stats": {
         "dps": 51.67,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 12.0,
         "weapon_max_damage": 121,
         "weapon_min_damage": 65,
@@ -173309,7 +173356,7 @@
       "slot": "Neck",
       "stats": {
         "agility": 30.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       }
     },
     {
@@ -173326,7 +173373,7 @@
       "quality": "epic",
       "slot": "Trinket",
       "stats": {
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "spell_power": 44.0
       }
     },
@@ -173467,7 +173514,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 12.0,
         "spell_power": 21.0,
         "stamina": 9.0
@@ -173488,8 +173535,8 @@
       "slot": "Trinket",
       "stats": {
         "attack_power": 56.0,
-        "dodge_rating": 12.0,
-        "hit_rating": 20.0
+        "dodge_percent": 1.0,
+        "hit_percent": 2.0
       }
     },
     {
@@ -173568,9 +173615,9 @@
       "quality": "epic",
       "slot": "Trinket",
       "stats": {
-        "block_rating": 25.0,
+        "block_percent": 5.0,
         "block_value": 24.0,
-        "defense_rating": 13.0
+        "defense": 13.0
       }
     },
     {
@@ -176998,7 +177045,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 92.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "intellect": 13.0,
         "spell_power": 27.0
       },
@@ -177026,7 +177073,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 80.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 6.0,
         "spell_power": 37.0
       },
@@ -177054,7 +177101,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 63.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 16.0,
         "spell_power": 19.0
       },
@@ -177083,7 +177130,7 @@
       "stats": {
         "agility": 32.0,
         "armor": 181.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 6.0
       },
       "supporting_sources": [
@@ -177111,7 +177158,7 @@
       "stats": {
         "agility": 10.0,
         "armor": 113.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "stamina": 9.0
       },
       "supporting_sources": [
@@ -177139,7 +177186,7 @@
       "stats": {
         "agility": 14.0,
         "armor": 79.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 7.0
       },
       "supporting_sources": [
@@ -177225,7 +177272,7 @@
       "stats": {
         "agility": 9.0,
         "armor": 381.0,
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 13.0
       },
       "supporting_sources": [
@@ -177280,7 +177327,7 @@
       "stats": {
         "agility": 10.0,
         "armor": 238.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 17.0
       },
       "supporting_sources": [
@@ -177336,7 +177383,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 722.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "stamina": 22.0
       },
       "supporting_sources": [
@@ -177363,7 +177410,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 507.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 24.0
       },
       "supporting_sources": [
@@ -178312,7 +178359,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 100.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "intellect": 24.0,
         "spell_power": 16.0,
         "stamina": 23.0
@@ -178415,7 +178462,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 100.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "spell_power": 16.0,
         "stamina": 35.0
       },
@@ -179181,7 +179228,7 @@
       "slot": "Head",
       "stats": {
         "armor": 147.0,
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "stamina": 12.0
       },
       "supporting_sources": [
@@ -179207,8 +179254,8 @@
       "slot": "Head",
       "stats": {
         "armor": 75.0,
-        "crit_rating": 14.0,
-        "hit_rating": 20.0,
+        "crit_percent": 1.0,
+        "hit_percent": 2.0,
         "mp5": 9.0
       },
       "supporting_sources": [
@@ -179230,7 +179277,7 @@
       "stats": {
         "agility": 4.0,
         "dps": 34.5,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "weapon_max_damage": 90,
         "weapon_min_damage": 48,
         "weapon_speed": 2.0
@@ -180318,7 +180365,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 45.0,
         "mp5": 6.0,
         "stamina": 17.0,
@@ -181598,8 +181645,8 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "spell_power": 14.0,
         "stamina": 12.0
       }
@@ -181655,8 +181702,8 @@
       "slot": "Wrist",
       "stats": {
         "armor": 440.0,
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "stamina": 17.0,
         "strength": 18.0
       },
@@ -181689,7 +181736,7 @@
         "armor": 1006.0,
         "fire_resistance": 10.0,
         "frost_resistance": 10.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "nature_resistance": 10.0,
         "shadow_resistance": 10.0,
         "stamina": 31.0,
@@ -181721,7 +181768,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 829.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 23.0,
         "strength": 24.0
       },
@@ -181751,7 +181798,7 @@
       "slot": "Head",
       "stats": {
         "armor": 817.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "hp5": 39.0,
         "stamina": 31.0,
         "strength": 32.0
@@ -181786,7 +181833,7 @@
         "fire_resistance": 10.0,
         "frost_resistance": 10.0,
         "nature_resistance": 10.0,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "shadow_resistance": 10.0,
         "stamina": 31.0,
         "strength": 32.0
@@ -181817,7 +181864,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 954.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 23.0,
         "strength": 24.0
       },
@@ -181848,7 +181895,7 @@
       "stats": {
         "arcane_resistance": 7.0,
         "armor": 691.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 8.0,
         "frost_resistance": 8.0,
         "nature_resistance": 8.0,
@@ -181910,7 +181957,7 @@
       "quality": "epic",
       "slot": "Neck",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "hp5": 16.0,
         "stamina": 17.0,
         "strength": 18.0
@@ -181961,8 +182008,8 @@
       "slot": "Back",
       "stats": {
         "armor": 68.0,
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "stamina": 17.0,
         "strength": 18.0
       },
@@ -181984,7 +182031,7 @@
       "slot": "Ranged",
       "stats": {
         "arcane_resistance": 2.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 3.0,
         "frost_resistance": 2.0,
         "nature_resistance": 2.0,
@@ -182013,7 +182060,7 @@
       "stats": {
         "dps": 97.0,
         "hp5": 39.0,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 31.0,
         "strength": 32.0,
         "weapon_max_damage": 408,
@@ -182833,7 +182880,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 369.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "stamina": 6.0,
         "strength": 15.0
@@ -182890,7 +182937,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 313.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "stamina": 4.0,
         "strength": 11.0
@@ -184454,7 +184501,7 @@
         "agility": 19.0,
         "arcane_resistance": 7.0,
         "armor": 145.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 8.0,
         "frost_resistance": 8.0,
         "nature_resistance": 8.0,
@@ -184486,7 +184533,7 @@
       "stats": {
         "agility": 19.0,
         "armor": 377.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0,
         "strength": 18.0
       },
@@ -184515,7 +184562,7 @@
         "agility": 14.0,
         "arcane_resistance": 5.0,
         "armor": 113.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 4.0,
         "frost_resistance": 4.0,
         "nature_resistance": 4.0,
@@ -184547,7 +184594,7 @@
       "stats": {
         "agility": 25.0,
         "armor": 409.0,
-        "dodge_rating": 24.0,
+        "dodge_percent": 2.0,
         "stamina": 25.0,
         "strength": 24.0
       },
@@ -184575,7 +184622,7 @@
       "stats": {
         "agility": 19.0,
         "armor": 361.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0,
         "strength": 18.0
       },
@@ -184603,7 +184650,7 @@
       "stats": {
         "agility": 25.0,
         "armor": 475.0,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 25.0,
         "strength": 24.0
       },
@@ -184631,7 +184678,7 @@
       "stats": {
         "agility": 19.0,
         "armor": 393.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0,
         "strength": 18.0
       },
@@ -184659,7 +184706,7 @@
       "stats": {
         "agility": 25.0,
         "armor": 457.0,
-        "dodge_rating": 24.0,
+        "dodge_percent": 2.0,
         "stamina": 25.0,
         "strength": 24.0
       },
@@ -184682,7 +184729,7 @@
       "stats": {
         "agility": 14.0,
         "arcane_resistance": 4.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 4.0,
         "frost_resistance": 4.0,
         "nature_resistance": 5.0,
@@ -184711,7 +184758,7 @@
         "agility": 14.0,
         "arcane_resistance": 4.0,
         "armor": 68.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "fire_resistance": 5.0,
         "frost_resistance": 4.0,
         "nature_resistance": 4.0,
@@ -184737,7 +184784,7 @@
       "slot": "Ring",
       "stats": {
         "agility": 14.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "hp5": 16.0,
         "stamina": 14.0,
         "strength": 13.0
@@ -184787,7 +184834,7 @@
       "stats": {
         "agility": 11.0,
         "arcane_resistance": 3.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "dps": 74.5,
         "fire_resistance": 2.0,
         "frost_resistance": 2.0,
@@ -185840,7 +185887,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 76.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "frost_damage": 29.0,
         "intellect": 27.0,
         "spirit": 11.0,
@@ -185898,7 +185945,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 93.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "frost_damage": 29.0,
         "intellect": 27.0,
         "spirit": 11.0,
@@ -185956,7 +186003,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 85.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "frost_damage": 29.0,
         "intellect": 27.0,
         "spirit": 11.0,
@@ -186014,7 +186061,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 101.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "frost_damage": 29.0,
         "intellect": 27.0,
         "spirit": 11.0,
@@ -186106,7 +186153,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "dps": 64.07,
         "frost_damage": 132.0,
         "intellect": 37.0,
@@ -186851,7 +186898,7 @@
       "slot": "Hands",
       "stats": {
         "agility": 6.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 7.0,
         "spirit": 6.0,
         "stamina": 7.0
@@ -187604,7 +187651,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 28.0,
+        "crit_percent": 2.0,
         "dps": 73.28,
         "intellect": 15.0,
         "nature_resistance": 10.0,
@@ -187632,7 +187679,7 @@
       "quality": "epic",
       "slot": "Ranged",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "ranged_attack_power": 17.0,
         "ranged_dps": 43.97,
         "weapon_max_damage": 166,
@@ -187660,7 +187707,7 @@
       "slot": "Off Hand",
       "stats": {
         "armor": 1803.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 6.0
       },
       "supporting_sources": [
@@ -187801,7 +187848,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 10.0,
         "strength": 10.0
       }
@@ -187820,8 +187867,8 @@
       "quality": "rare",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "spirit": 9.0,
         "strength": 18.0
       }
@@ -187976,7 +188023,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 16.0,
         "shadow_damage": 73.0,
         "stamina": 19.0
@@ -188105,7 +188152,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 657.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "shadow_resistance": 25.0,
         "stamina": 14.0
       },
@@ -188132,7 +188179,7 @@
       "slot": "Head",
       "stats": {
         "armor": 534.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "shadow_resistance": 25.0,
         "stamina": 13.0
       },
@@ -188153,8 +188200,8 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "intellect": 10.0,
         "stamina": 10.0,
         "strength": 10.0
@@ -188280,7 +188327,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 6.0,
         "spell_power": 22.0,
         "stamina": 6.0
@@ -189864,9 +189911,7 @@
     },
     {
       "attributes_known": true,
-      "effects": [
-        "Equip: +4 Weapon Damage."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "7b3fa6f572b03c1988019a82bb65af31b26cdd6b325a23b456547f1cac88ae65",
@@ -189883,7 +189928,8 @@
       "slot": "Ring",
       "stats": {
         "hit_percent": 1.0,
-        "stamina": 8.0
+        "stamina": 8.0,
+        "weapon_damage": 4
       },
       "supporting_sources": [
         "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
@@ -193972,8 +194018,8 @@
       "slot": "Hands",
       "stats": {
         "armor": 615.0,
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "stamina": 15.0,
         "strength": 35.0
       },
@@ -194082,7 +194128,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 83.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 37.0,
         "stamina": 19.0
@@ -194111,8 +194157,8 @@
       "stats": {
         "armor": 142.0,
         "attack_power": 64.0,
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "stamina": 20.0
       },
       "supporting_sources": [
@@ -194195,7 +194241,7 @@
       "slot": "Wrist",
       "stats": {
         "armor": 111.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 27.0,
         "stamina": 10.0
@@ -194879,8 +194925,8 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 650.0,
-        "defense_rating": 9.0,
-        "dodge_rating": 12.0,
+        "defense": 9.0,
+        "dodge_percent": 1.0,
         "stamina": 30.0,
         "strength": 11.0
       },
@@ -194974,7 +195020,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 20.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 58.39,
         "stamina": 11.0,
         "weapon_max_damage": 213,
@@ -195026,7 +195072,7 @@
       "slot": "Neck",
       "stats": {
         "attack_power": 44.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 10.0
       }
     },
@@ -195076,7 +195122,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 749.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 68.0,
         "intellect": 23.0,
         "stamina": 17.0,
@@ -195151,7 +195197,7 @@
       "stats": {
         "agility": 20.0,
         "armor": 140.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 6.0,
         "strength": 28.0
       },
@@ -195179,7 +195225,7 @@
       "stats": {
         "agility": 18.0,
         "armor": 535.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 20.0,
         "strength": 19.0
       },
@@ -195412,7 +195458,7 @@
       "slot": "Neck",
       "stats": {
         "agility": 11.0,
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "stamina": 17.0,
         "strength": 12.0
       }
@@ -198182,7 +198228,7 @@
       "stats": {
         "armor": 458.0,
         "attack_power": 76.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -198209,7 +198255,7 @@
       "stats": {
         "armor": 279.0,
         "attack_power": 28.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -198236,7 +198282,7 @@
         "all_resistances": 5.0,
         "armor": 224.0,
         "attack_power": 32.0,
-        "crit_rating": 14.0
+        "crit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -198316,7 +198362,7 @@
       "stats": {
         "all_resistances": 5.0,
         "armor": 2645.0,
-        "block_rating": 10.0
+        "block_percent": 2.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -198539,7 +198585,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 18.0,
         "spell_power": 4.0,
         "stamina": 11.0
@@ -198560,7 +198606,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 21.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "mp5": 2.0
       }
     },
@@ -198604,7 +198650,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 11.0,
         "stamina": 10.0
@@ -198932,7 +198978,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "intellect": 10.0,
         "spell_power": 7.0,
         "stamina": 10.0,
@@ -199128,7 +199174,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 15.0,
         "stamina": 24.0
       }
@@ -199241,7 +199287,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 11.0,
         "stamina": 17.0
       }
@@ -199267,7 +199313,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "intellect": 8.0,
         "stamina": 14.0
       }
@@ -199469,7 +199515,7 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 6.0,
         "mp5": 3.0,
         "stamina": 5.0
@@ -199536,8 +199582,8 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "crit_rating": 14.0,
-        "hit_rating": 5.0,
+        "crit_percent": 1.0,
+        "hit_percent": 0.5,
         "intellect": 8.0,
         "spirit": 8.0
       }
@@ -199576,7 +199622,7 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 12.0,
         "strength": 7.0
       }
@@ -199664,7 +199710,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 53.81,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 21.0,
         "stamina": 21.0,
         "weapon_max_damage": 136,
@@ -199721,7 +199767,7 @@
       "slot": "Ring",
       "stats": {
         "arcane_resistance": 7.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spell_power": 13.0,
         "stamina": 7.0
       }
@@ -199741,7 +199787,7 @@
       "stats": {
         "agility": 10.0,
         "frost_resistance": 10.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       }
     },
     {
@@ -200257,7 +200303,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 8.0,
         "spell_power": 9.0,
         "stamina": 7.0
@@ -200404,7 +200450,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "spell_power": 15.0,
         "spirit": 11.0,
@@ -200444,7 +200490,7 @@
       "quality": "rare",
       "slot": "Head",
       "stats": {
-        "hit_rating": 15.0,
+        "hit_percent": 1.5,
         "stamina": 23.0,
         "strength": 15.0
       }
@@ -201242,7 +201288,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "mp5": 8.0
       },
       "weapon_subtype": "Staff"
@@ -201502,7 +201548,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 9.0,
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "stamina": 13.0,
         "strength": 12.0
       }
@@ -203814,9 +203860,9 @@
       "quality": "epic",
       "slot": "Neck",
       "stats": {
-        "defense_rating": 10.0,
-        "dodge_rating": 12.0,
-        "hit_rating": 10.0,
+        "defense": 10.0,
+        "dodge_percent": 1.0,
+        "hit_percent": 1.0,
         "stamina": 24.0
       }
     },
@@ -205803,8 +205849,8 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "crit_rating": 14.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "hit_percent": 1.0,
         "spell_power": 21.0,
         "stamina": 17.0
       }
@@ -205944,7 +205990,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 698.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0,
         "strength": 33.0
       },
@@ -206235,8 +206281,8 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 10.0,
-        "dodge_rating": 12.0,
+        "defense": 10.0,
+        "dodge_percent": 1.0,
         "stamina": 27.0
       }
     },
@@ -206260,7 +206306,7 @@
       "slot": "Ring",
       "stats": {
         "agility": 20.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 10.0,
         "strength": 20.0
       }
@@ -206308,7 +206354,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 30.0,
         "stamina": 10.0
@@ -211270,7 +211316,7 @@
       "quality": "uncommon",
       "slot": "Ranged",
       "stats": {
-        "hit_rating": 3.0,
+        "hit_percent": 0.3,
         "ranged_dps": 10.96,
         "weapon_max_damage": 37,
         "weapon_min_damage": 20,
@@ -212275,7 +212321,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "dps": 45.74,
         "spell_power": 14.0,
         "strength": 23.0,
@@ -212634,7 +212680,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 11.0,
         "stamina": 10.0
@@ -213112,7 +213158,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 10.0,
-        "hit_rating": 7.0,
+        "hit_percent": 0.7,
         "intellect": 11.0,
         "stamina": 11.0,
         "strength": 10.0
@@ -213288,7 +213334,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 15.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "spirit": 11.0,
         "stamina": 17.0,
@@ -213315,7 +213361,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 5.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 16.0,
         "strength": 8.0
       }
@@ -213340,7 +213386,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 9.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 18.0,
         "strength": 11.0
       }
@@ -213401,7 +213447,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 9.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 31.0,
         "strength": 16.0
       }
@@ -213461,8 +213507,8 @@
       "slot": "Hands",
       "stats": {
         "agility": 7.0,
-        "defense_rating": 7.0,
-        "dodge_rating": 12.0,
+        "defense": 7.0,
+        "dodge_percent": 1.0,
         "stamina": 15.0,
         "strength": 11.0
       }
@@ -213487,7 +213533,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 7.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 26.0,
         "strength": 12.0
       }
@@ -213512,7 +213558,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 12.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 29.0,
         "strength": 18.0
       }
@@ -213767,7 +213813,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 31.0,
-        "hit_rating": 15.0,
+        "hit_percent": 1.5,
         "spirit": 10.0,
         "stamina": 15.0
       }
@@ -213825,7 +213871,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 26.0,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "spirit": 15.0,
         "stamina": 14.0
       }
@@ -213938,7 +213984,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 24.0,
-        "hit_rating": 7.0,
+        "hit_percent": 0.7,
         "stamina": 15.0
       }
     },
@@ -214093,7 +214139,7 @@
       "slot": "Head",
       "stats": {
         "agility": 26.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 18.0,
         "strength": 13.0
       }
@@ -214166,7 +214212,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 31.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "stamina": 15.0
       }
     },
@@ -214288,7 +214334,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 30.0,
         "strength": 19.0
       }
@@ -214346,7 +214392,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 13.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 26.0,
         "strength": 21.0
       }
@@ -214430,7 +214476,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 3.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 16.0,
         "strength": 8.0
       }
@@ -214556,7 +214602,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 33.0,
         "strength": 18.0
       }
@@ -214649,7 +214695,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 12.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 29.0,
         "strength": 18.0
       }
@@ -214674,7 +214720,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 5.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 14.0,
         "strength": 9.0
       }
@@ -214699,7 +214745,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 9.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 12.0,
         "strength": 15.0
       }
@@ -214748,7 +214794,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 11.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 16.0,
         "strength": 25.0
       }
@@ -214772,7 +214818,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 32.0,
         "strength": 18.0
       }
@@ -214796,7 +214842,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 12.0,
         "strength": 18.0
       }
@@ -214820,7 +214866,7 @@
       "quality": "epic",
       "slot": "Feet",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 20.0,
         "strength": 20.0
       }
@@ -214845,7 +214891,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 13.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 26.0,
         "strength": 21.0
       }
@@ -215003,7 +215049,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 25.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 13.0,
         "stamina": 16.0
       }
@@ -215197,7 +215243,7 @@
       "slot": "Head",
       "stats": {
         "agility": 22.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 12.0,
         "stamina": 21.0
       }
@@ -215272,7 +215318,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 25.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 13.0,
         "stamina": 16.0
       }
@@ -215432,7 +215478,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 18.0,
         "spell_power": 15.0,
         "stamina": 21.0
@@ -215457,7 +215503,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 13.0,
         "spell_power": 13.0,
         "stamina": 16.0
@@ -215625,7 +215671,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 24.0,
         "spell_power": 16.0,
         "stamina": 24.0
@@ -215650,7 +215696,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 13.0,
         "spell_power": 13.0,
         "stamina": 16.0
@@ -215699,7 +215745,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 22.0,
         "spell_power": 12.0,
         "stamina": 27.0
@@ -215749,7 +215795,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 12.0,
         "spirit": 9.0,
@@ -215826,7 +215872,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 16.0,
         "spell_power": 19.0,
         "spirit": 11.0,
@@ -216056,7 +216102,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 25.0,
         "spell_power": 11.0,
         "spirit": 14.0,
@@ -216082,7 +216128,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 12.0,
         "spirit": 10.0,
@@ -216159,7 +216205,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 37.0,
         "intellect": 16.0,
         "spell_damage": 12.0,
@@ -216725,7 +216771,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "mp5": 6.0,
         "spell_power": 11.0,
@@ -216829,7 +216875,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "expertise_rating": 10.0,
+        "expertise": 1.0,
         "intellect": 11.0,
         "spell_power": 8.0,
         "stamina": 11.0,
@@ -216880,7 +216926,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 11.0,
         "spell_power": 8.0,
         "stamina": 11.0,
@@ -216931,7 +216977,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "spell_power": 18.0,
         "stamina": 17.0,
@@ -216983,7 +217029,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 9.0,
         "stamina": 10.0,
@@ -217009,7 +217055,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "mp5": 2.0,
         "spell_power": 14.0,
@@ -217062,7 +217108,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 18.0,
         "intellect": 13.0,
         "spell_damage": 6.0,
@@ -217141,7 +217187,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 33.0,
         "intellect": 17.0,
         "spell_damage": 11.0,
@@ -217247,7 +217293,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "intellect": 8.0,
         "spell_power": 6.0,
         "stamina": 16.0
@@ -217272,7 +217318,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "intellect": 13.0,
         "spell_power": 12.0,
         "stamina": 18.0
@@ -217297,8 +217343,8 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "block_rating": 5.0,
-        "defense_rating": 5.0,
+        "block_percent": 1.0,
+        "defense": 5.0,
         "intellect": 12.0,
         "spell_power": 9.0,
         "stamina": 18.0
@@ -217324,7 +217370,7 @@
       "slot": "Legs",
       "stats": {
         "block_value": 14.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "intellect": 16.0,
         "spell_power": 16.0,
         "stamina": 24.0
@@ -217349,7 +217395,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "intellect": 18.0,
         "spell_power": 13.0,
         "stamina": 33.0
@@ -217374,9 +217420,9 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "intellect": 11.0,
-        "parry_rating": 12.0,
+        "parry_percent": 0.8,
         "spell_power": 12.0,
         "stamina": 15.0
       }
@@ -217400,7 +217446,7 @@
       "quality": "epic",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "intellect": 12.0,
         "spell_power": 8.0,
         "stamina": 26.0
@@ -217425,8 +217471,8 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "defense_rating": 5.0,
-        "expertise_rating": 12.0,
+        "defense": 5.0,
+        "expertise": 1.2,
         "intellect": 18.0,
         "spell_power": 14.0,
         "stamina": 29.0
@@ -217554,7 +217600,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "spell_power": 14.0,
         "spirit": 12.0,
@@ -217581,7 +217627,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 11.0,
         "stamina": 10.0,
@@ -217634,7 +217680,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "spell_power": 14.0,
         "spirit": 12.0,
@@ -217780,7 +217826,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 16.0,
         "spell_power": 19.0,
         "spirit": 11.0,
@@ -217806,7 +217852,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 12.0,
         "spirit": 9.0,
@@ -217857,7 +217903,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 11.0,
         "stamina": 10.0
@@ -217908,7 +217954,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 18.0,
         "intellect": 13.0,
         "spell_damage": 6.0,
@@ -218085,7 +218131,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 37.0,
         "intellect": 16.0,
         "spell_damage": 12.0,
@@ -218137,7 +218183,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "intellect": 11.0,
         "spell_power": 8.0,
         "stamina": 11.0,
@@ -218153,9 +218199,7 @@
       "effect_leads": [
         "Set: The Five Thunders"
       ],
-      "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "53b97187e4faf7bdb6b708bb56391a56f15d0a891c8f2e97d18f40bcbb2257f5",
@@ -218171,6 +218215,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 286.0,
+        "expertise": 1.0,
         "intellect": 11.0,
         "spell_power": 8.0,
         "stamina": 11.0,
@@ -218260,7 +218305,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 9.0,
         "stamina": 10.0,
@@ -218312,7 +218357,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "spell_power": 18.0,
         "stamina": 17.0,
@@ -218452,7 +218497,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 21.0,
         "spell_power": 14.0,
         "spirit": 12.0,
@@ -218531,7 +218576,7 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 17.0,
         "spell_power": 14.0,
         "spirit": 16.0,
@@ -222540,7 +222585,6 @@
       ],
       "effects": [
         "Equip: Increases your attack speed and casting speed by 1.0%.",
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -222557,6 +222601,7 @@
         "agility": 32.0,
         "armor": 223.0,
         "defense": 15.0,
+        "expertise": 1.0,
         "hit_percent": 1.0,
         "stamina": 45.0,
         "strength": 12.0
@@ -222569,7 +222614,6 @@
         "Rogue"
       ],
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -222586,6 +222630,7 @@
         "agility": 22.0,
         "armor": 206.0,
         "defense": 12.0,
+        "expertise": 1.0,
         "hit_percent": 1.0,
         "stamina": 31.0,
         "strength": 11.0
@@ -222599,7 +222644,6 @@
       ],
       "effects": [
         "Equip: Increases your attack speed and casting speed by 1.0%.",
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -222615,6 +222659,7 @@
       "stats": {
         "agility": 34.0,
         "armor": 206.0,
+        "expertise": 1.0,
         "hit_percent": 1.0,
         "stamina": 14.0,
         "strength": 22.0
@@ -222781,8 +222826,8 @@
       "quality": "epic",
       "slot": "Legs",
       "stats": {
-        "crit_rating": 42.0,
-        "haste_rating": 10.0,
+        "crit_percent": 3.0,
+        "haste_percent": 1.0,
         "healing_power": 66.0,
         "intellect": 24.0,
         "spell_power": 33.0,
@@ -222808,8 +222853,8 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 28.0,
-        "haste_rating": 20.0,
+        "crit_percent": 2.0,
+        "haste_percent": 2.0,
         "healing_power": 42.0,
         "intellect": 14.0,
         "spell_power": 22.0,
@@ -222835,8 +222880,8 @@
       "quality": "epic",
       "slot": "Feet",
       "stats": {
-        "crit_rating": 14.0,
-        "haste_rating": 20.0,
+        "crit_percent": 1.0,
+        "haste_percent": 2.0,
         "healing_power": 45.0,
         "intellect": 15.0,
         "spell_power": 23.0,
@@ -222863,8 +222908,8 @@
       "slot": "Wrist",
       "stats": {
         "agility": 10.0,
-        "expertise_rating": 10.0,
-        "hit_rating": 10.0,
+        "expertise": 1.0,
+        "hit_percent": 1.0,
         "stamina": 13.0,
         "strength": 29.0
       }
@@ -222888,8 +222933,8 @@
       "quality": "epic",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 28.0,
-        "expertise_rating": 10.0,
+        "crit_percent": 2.0,
+        "expertise": 1.0,
         "stamina": 18.0,
         "strength": 36.0
       }
@@ -222913,9 +222958,9 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
-        "expertise_rating": 10.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "expertise": 1.0,
+        "hit_percent": 1.0,
         "stamina": 15.0,
         "strength": 36.0
       }
@@ -222939,9 +222984,9 @@
       "quality": "epic",
       "slot": "Legs",
       "stats": {
-        "crit_rating": 28.0,
-        "haste_rating": 20.0,
-        "hit_rating": 10.0,
+        "crit_percent": 2.0,
+        "haste_percent": 2.0,
+        "hit_percent": 1.0,
         "stamina": 23.0,
         "strength": 50.0
       }
@@ -222965,9 +223010,9 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 28.0,
-        "expertise_rating": 10.0,
-        "haste_rating": 20.0,
+        "crit_percent": 2.0,
+        "expertise": 1.0,
+        "haste_percent": 2.0,
         "stamina": 19.0,
         "strength": 51.0
       }
@@ -222991,9 +223036,9 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
-        "expertise_rating": 10.0,
-        "haste_rating": 20.0,
+        "crit_percent": 1.0,
+        "expertise": 1.0,
+        "haste_percent": 2.0,
         "stamina": 13.0,
         "strength": 38.0
       }
@@ -223017,9 +223062,9 @@
       "quality": "epic",
       "slot": "Feet",
       "stats": {
-        "crit_rating": 14.0,
-        "haste_rating": 20.0,
-        "hit_rating": 10.0,
+        "crit_percent": 1.0,
+        "haste_percent": 2.0,
+        "hit_percent": 1.0,
         "stamina": 14.0,
         "strength": 37.0
       }
@@ -223043,9 +223088,9 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 28.0,
-        "expertise_rating": 10.0,
-        "haste_rating": 20.0,
+        "crit_percent": 2.0,
+        "expertise": 1.0,
+        "haste_percent": 2.0,
         "stamina": 20.0,
         "strength": 51.0
       }
@@ -223069,8 +223114,8 @@
       "quality": "epic",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 28.0,
-        "haste_rating": 20.0,
+        "crit_percent": 2.0,
+        "haste_percent": 2.0,
         "healing_power": 73.0,
         "intellect": 20.0,
         "spell_power": 37.0,
@@ -223096,8 +223141,8 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 28.0,
-        "haste_rating": 20.0,
+        "crit_percent": 2.0,
+        "haste_percent": 2.0,
         "healing_power": 71.0,
         "intellect": 19.0,
         "spell_power": 35.0,
@@ -223123,7 +223168,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "haste_rating": 30.0,
+        "haste_percent": 3.0,
         "healing_power": 46.0,
         "intellect": 15.0,
         "spell_power": 24.0,
@@ -223149,7 +223194,7 @@
       "quality": "epic",
       "slot": "Wrist",
       "stats": {
-        "haste_rating": 30.0,
+        "haste_percent": 3.0,
         "healing_power": 22.0,
         "intellect": 13.0,
         "spell_power": 11.0,
@@ -223175,8 +223220,8 @@
       "quality": "epic",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
-        "haste_rating": 30.0,
+        "crit_percent": 1.0,
+        "haste_percent": 3.0,
         "healing_power": 36.0,
         "intellect": 15.0,
         "spell_power": 19.0,
@@ -223300,7 +223345,6 @@
         "Druid"
       ],
       "effects": [
-        "Equip: +2 Weapon Damage.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223319,7 +223363,8 @@
         "hit_percent": 1.0,
         "intellect": 15.0,
         "stamina": 13.0,
-        "strength": 34.0
+        "strength": 34.0,
+        "weapon_damage": 2
       }
     },
     {
@@ -223329,7 +223374,6 @@
         "Druid"
       ],
       "effects": [
-        "Equip: +4 Weapon Damage.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223348,7 +223392,8 @@
         "crit_percent": 2.0,
         "intellect": 20.0,
         "stamina": 15.0,
-        "strength": 45.0
+        "strength": 45.0,
+        "weapon_damage": 4
       }
     },
     {
@@ -223414,7 +223459,6 @@
         "Druid"
       ],
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223431,6 +223475,7 @@
         "agility": 11.0,
         "armor": 316.0,
         "defense": 11.0,
+        "expertise": 1.0,
         "hit_percent": 1.0,
         "stamina": 29.0,
         "strength": 14.0
@@ -223445,7 +223490,6 @@
       ],
       "effects": [
         "Equip: Increases your attack speed and casting speed by 1.0%.",
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223462,6 +223506,7 @@
         "agility": 13.0,
         "armor": 343.0,
         "defense": 21.0,
+        "expertise": 1.0,
         "stamina": 41.0,
         "strength": 19.0
       }
@@ -223704,7 +223749,6 @@
       ],
       "effects": [
         "Equip: Increases your attack speed and casting speed by 2.0%.",
-        "Equip: Reduces chance to be Dodged or Parried by 2.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223719,6 +223763,7 @@
       "slot": "Head",
       "stats": {
         "armor": 496.0,
+        "expertise": 2.0,
         "intellect": 23.0,
         "stamina": 18.0,
         "strength": 45.0
@@ -223732,7 +223777,6 @@
       ],
       "effects": [
         "Equip: Increases your attack speed and casting speed by 2.0%.",
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -223747,6 +223791,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 458.0,
+        "expertise": 1.0,
         "hit_percent": 1.0,
         "intellect": 14.0,
         "stamina": 12.0,
@@ -225036,7 +225081,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 184.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 7.0,
         "strength": 4.0
       },
@@ -225063,7 +225108,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 184.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "spell_power": 5.0,
         "stamina": 7.0
       },
@@ -225172,7 +225217,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 176.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 9.0,
         "strength": 5.0
       },
@@ -225199,7 +225244,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 176.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "spell_power": 6.0,
         "stamina": 9.0
       },
@@ -225333,7 +225378,7 @@
       "slot": "Head",
       "stats": {
         "armor": 177.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 11.0
       },
       "supporting_sources": [
@@ -225439,7 +225484,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 131.0,
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "stamina": 5.0,
         "strength": 5.0
       },
@@ -225466,7 +225511,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 131.0,
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "spell_power": 6.0,
         "stamina": 5.0
       },
@@ -225575,7 +225620,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 115.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 5.0,
         "strength": 5.0
       },
@@ -225602,7 +225647,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 115.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "spell_power": 5.0,
         "stamina": 5.0
       },
@@ -225711,7 +225756,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 98.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 4.0,
         "strength": 4.0
       },
@@ -225738,7 +225783,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 98.0,
-        "defense_rating": 2.0,
+        "defense": 2.0,
         "spell_power": 5.0,
         "stamina": 4.0
       },
@@ -225847,7 +225892,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 208.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 10.0,
         "strength": 6.0
       },
@@ -225874,7 +225919,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 208.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "spell_power": 7.0,
         "stamina": 10.0
       },
@@ -225983,7 +226028,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 191.0,
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 11.0,
         "strength": 7.0
       },
@@ -226010,7 +226055,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 191.0,
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "spell_power": 8.0,
         "stamina": 11.0
       },
@@ -226573,7 +226618,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 330.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 13.0,
         "strength": 7.0
       },
@@ -226600,7 +226645,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 330.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "spell_power": 9.0,
         "stamina": 13.0
       },
@@ -226839,7 +226884,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 132.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 10.0,
         "strength": 6.0
       },
@@ -226866,7 +226911,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 132.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "spell_power": 7.0,
         "stamina": 10.0
       },
@@ -227105,7 +227150,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 159.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "stamina": 10.0,
         "strength": 9.0
       },
@@ -227132,7 +227177,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 159.0,
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "spell_power": 11.0,
         "stamina": 10.0
       },
@@ -227241,7 +227286,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 324.0,
-        "defense_rating": 10.0,
+        "defense": 10.0,
         "stamina": 14.0,
         "strength": 13.0
       },
@@ -227931,7 +227976,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 608.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "spell_power": 38.0,
         "strength": 18.0
       },
@@ -228412,7 +228457,7 @@
         "agility": 16.0,
         "attack_power": 54.0,
         "dps": 53.91,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "weapon_max_damage": 207,
         "weapon_min_damage": 138,
         "weapon_speed": 3.2
@@ -230063,8 +230108,8 @@
       "stats": {
         "agility": 37.0,
         "armor": 187.0,
-        "crit_rating": 14.0,
-        "hit_rating": 10.0
+        "crit_percent": 1.0,
+        "hit_percent": 1.0
       },
       "supporting_sources": [
         "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70959#gear-guide-armor"
@@ -230090,7 +230135,7 @@
       "stats": {
         "agility": 18.0,
         "armor": 187.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "strength": 33.0
       },
       "supporting_sources": [
@@ -233307,7 +233352,7 @@
       "stats": {
         "agility": 21.0,
         "armor": 319.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 38.0
       },
       "supporting_sources": [
@@ -243508,7 +243553,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 16.0,
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 18.0
       }
     },
@@ -244376,7 +244421,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "block_rating": 5.0,
+        "block_percent": 1.0,
         "strength": 5.0
       }
     },
@@ -245143,7 +245188,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 26.67,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 8.0,
         "weapon_max_damage": 77,
         "weapon_min_damage": 51,
@@ -246468,7 +246513,7 @@
       "stats": {
         "agility": 27.0,
         "armor": 148.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 12.0
       },
       "supporting_sources": [
@@ -246513,7 +246558,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 37.0,
         "spell_damage": 12.0,
         "stamina": 24.0
@@ -246533,7 +246578,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 27.0,
         "strength": 12.0
       }
@@ -247501,7 +247546,7 @@
       "stats": {
         "agility": 27.0,
         "armor": 148.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 12.0
       },
       "supporting_sources": [
@@ -247546,7 +247591,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 37.0,
         "spell_damage": 12.0,
         "stamina": 24.0
@@ -247566,7 +247611,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 27.0,
         "strength": 12.0
       }
@@ -247824,7 +247869,7 @@
       "stats": {
         "agility": 21.0,
         "armor": 104.0,
-        "hit_rating": 20.0,
+        "hit_percent": 2.0,
         "stamina": 11.0
       },
       "supporting_sources": [
@@ -248089,7 +248134,7 @@
       "slot": "Waist",
       "stats": {
         "armor": 385.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 23.0,
         "spell_damage": 8.0,
         "stamina": 24.0
@@ -248103,7 +248148,7 @@
       "effects": [],
       "effects_known": true,
       "evidence": {
-        "digest": "cb8eb6954a06c0dff3cc12d3d7fd329cddbf4b2b8bb43747823d16cce63602dc",
+        "digest": "9b54e65f620da29b4f9d03d0c655842020188534d096141cd0ea397ab72a08f3",
         "url": "https://www.wowhead.com/forever/item=272406"
       },
       "id": 272406,
@@ -248115,7 +248160,7 @@
       "stats": {
         "hit_percent": 1.0,
         "intellect": 14.0,
-        "spirit": 8.0
+        "spell_power": 9.0
       },
       "supporting_sources": [
         "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
@@ -248183,7 +248228,7 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 10.0,
         "strength": 8.0
       }
@@ -248279,7 +248324,7 @@
       "slot": "Back",
       "stats": {
         "attack_power": 28.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 8.0
       }
     },
@@ -248296,7 +248341,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 14.0
       }
     },
@@ -248496,7 +248541,6 @@
         "use: 1291097 Damage Sigmoid (300 s cooldown, 15 s shared cooldown)"
       ],
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 2.0%.",
         "Use: Absorbs 450 damage for 15 sec. If this shield expires before 15 sec, 90 to 110 Nature damage will be dealt to all enemies in melee range. (1 Min, 30 Sec Cooldown)"
       ],
       "effects_known": true,
@@ -248510,7 +248554,9 @@
       "name": "Adaptive Combat Assistant",
       "quality": "rare",
       "slot": "Trinket",
-      "stats": {},
+      "stats": {
+        "expertise": 2.0
+      },
       "supporting_sources": [
         "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
       ],
@@ -248637,7 +248683,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -248792,7 +248838,7 @@
       "slot": "Head",
       "stats": {
         "armor": 69.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 11.0,
         "stamina": 25.0
@@ -248855,7 +248901,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 85.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "spell_power": 14.0,
         "stamina": 25.0
@@ -249045,7 +249091,7 @@
       "stats": {
         "armor": 106.0,
         "attack_power": 24.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0
       },
       "supporting_sources": [
@@ -249138,7 +249184,7 @@
       "stats": {
         "agility": 5.0,
         "armor": 148.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 26.0,
         "strength": 12.0
       },
@@ -249200,7 +249246,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 169.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "stamina": 26.0,
         "strength": 11.0
@@ -249233,7 +249279,7 @@
       "stats": {
         "armor": 169.0,
         "attack_power": 16.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -249264,8 +249310,8 @@
       "stats": {
         "armor": 137.0,
         "attack_power": 14.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 6.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 0.5,
         "stamina": 25.0
       },
       "supporting_sources": [
@@ -249296,7 +249342,7 @@
       "stats": {
         "armor": 127.0,
         "attack_power": 24.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0
       },
       "supporting_sources": [
@@ -249327,7 +249373,7 @@
       "stats": {
         "agility": 15.0,
         "armor": 148.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -249420,7 +249466,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 627.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 25.0,
         "strength": 11.0
       },
@@ -249451,7 +249497,7 @@
       "slot": "Head",
       "stats": {
         "armor": 509.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 25.0,
         "strength": 16.0
       },
@@ -249544,7 +249590,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 244.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 16.0
@@ -249608,7 +249654,7 @@
       "slot": "Head",
       "stats": {
         "armor": 288.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "spell_power": 14.0,
         "stamina": 25.0
@@ -249640,7 +249686,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 12.0,
         "stamina": 25.0
@@ -249672,7 +249718,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "intellect": 8.0,
         "stamina": 25.0,
         "strength": 14.0
@@ -249802,7 +249848,7 @@
       "stats": {
         "agility": 13.0,
         "armor": 310.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "intellect": 9.0,
         "stamina": 19.0
       },
@@ -249958,7 +250004,7 @@
       "slot": "Head",
       "stats": {
         "armor": 151.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 37.0
@@ -249990,7 +250036,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 148.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 17.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -250022,7 +250068,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 170.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -250208,7 +250254,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 778.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 34.0,
         "strength": 21.0
       },
@@ -250235,7 +250281,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 34.0,
         "strength": 18.0
       }
@@ -250294,7 +250340,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 553.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0,
         "strength": 14.0
       },
@@ -250447,7 +250493,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 237.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "stamina": 37.0,
         "strength": 12.0
@@ -250529,7 +250575,7 @@
       "stats": {
         "agility": 11.0,
         "armor": 203.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 34.0,
         "strength": 17.0
       },
@@ -250776,7 +250822,7 @@
       "stats": {
         "armor": 183.0,
         "attack_power": 28.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -250807,8 +250853,8 @@
       "stats": {
         "armor": 210.0,
         "attack_power": 16.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -250839,7 +250885,7 @@
       "stats": {
         "armor": 198.0,
         "attack_power": 28.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -250870,7 +250916,7 @@
       "stats": {
         "armor": 237.0,
         "attack_power": 32.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -250901,7 +250947,7 @@
       "stats": {
         "agility": 17.0,
         "armor": 223.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -250996,7 +251042,7 @@
       "stats": {
         "agility": 17.0,
         "armor": 414.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "intellect": 12.0,
         "stamina": 34.0
       },
@@ -251308,7 +251354,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 416.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 11.0,
         "stamina": 34.0,
         "strength": 16.0
@@ -251340,7 +251386,7 @@
       "slot": "Head",
       "stats": {
         "armor": 338.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 11.0,
         "stamina": 34.0,
         "strength": 16.0
@@ -251372,7 +251418,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "intellect": 10.0,
         "stamina": 34.0,
         "strength": 18.0
@@ -251744,7 +251790,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 105.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 14.0,
         "stamina": 26.0
@@ -251807,7 +251853,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 140.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 23.0,
         "stamina": 34.0
@@ -252271,7 +252317,7 @@
       "slot": "Head",
       "stats": {
         "armor": 151.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 17.0,
         "spell_power": 19.0,
         "stamina": 34.0
@@ -252327,7 +252373,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 158.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 18.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -252541,7 +252587,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -252563,7 +252609,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -252631,7 +252677,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.25,
         "stamina": 2.0,
         "weapon_max_damage": 114,
@@ -252654,7 +252700,7 @@
       "slot": "Main Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -252677,7 +252723,7 @@
       "slot": "Off Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -252722,7 +252768,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -252744,7 +252790,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -252767,7 +252813,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -252816,7 +252862,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -253068,7 +253114,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "stamina": 25.0,
         "strength": 11.0
@@ -253230,7 +253276,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 8.0,
         "spell_power": 14.0,
         "stamina": 26.0
@@ -253262,7 +253308,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 470.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0,
         "strength": 12.0
       },
@@ -253421,7 +253467,7 @@
       "slot": "Head",
       "stats": {
         "armor": 288.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "stamina": 25.0,
         "strength": 12.0
@@ -253550,7 +253596,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 198.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 9.0,
         "stamina": 26.0
@@ -253900,7 +253946,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.22,
         "stamina": 2.0,
         "weapon_max_damage": 102,
@@ -253965,7 +254011,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -254284,7 +254330,7 @@
       "stats": {
         "armor": 106.0,
         "attack_power": 24.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0
       },
       "supporting_sources": [
@@ -254690,7 +254736,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 85.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "spell_power": 14.0,
         "stamina": 25.0
@@ -254784,7 +254830,7 @@
       "slot": "Head",
       "stats": {
         "armor": 69.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 11.0,
         "stamina": 25.0
@@ -254817,7 +254863,7 @@
       "stats": {
         "armor": 169.0,
         "attack_power": 16.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -254848,8 +254894,8 @@
       "stats": {
         "armor": 137.0,
         "attack_power": 14.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 6.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 0.5,
         "stamina": 25.0
       },
       "supporting_sources": [
@@ -254880,7 +254926,7 @@
       "stats": {
         "agility": 15.0,
         "armor": 148.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -254911,7 +254957,7 @@
       "stats": {
         "armor": 127.0,
         "attack_power": 24.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0
       },
       "supporting_sources": [
@@ -254941,7 +254987,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 169.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "stamina": 26.0,
         "strength": 11.0
@@ -254974,7 +255020,7 @@
       "stats": {
         "agility": 5.0,
         "armor": 148.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "stamina": 26.0,
         "strength": 12.0
       },
@@ -255101,7 +255147,7 @@
       "stats": {
         "agility": 13.0,
         "armor": 310.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "intellect": 9.0,
         "stamina": 19.0
       },
@@ -255195,7 +255241,7 @@
       "slot": "Head",
       "stats": {
         "armor": 509.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 25.0,
         "strength": 16.0
       },
@@ -255226,7 +255272,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 627.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 25.0,
         "strength": 11.0
       },
@@ -255288,7 +255334,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 470.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 19.0,
         "strength": 12.0
       },
@@ -255319,7 +255365,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 627.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "stamina": 25.0,
         "strength": 11.0
@@ -255351,7 +255397,7 @@
       "slot": "Head",
       "stats": {
         "armor": 509.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 25.0,
@@ -255384,7 +255430,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 548.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "spell_power": 7.0,
         "stamina": 25.0,
         "strength": 13.0
@@ -255571,7 +255617,7 @@
       "slot": "Head",
       "stats": {
         "armor": 151.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 37.0
@@ -255603,7 +255649,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 148.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 17.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -255635,7 +255681,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 170.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -255848,7 +255894,7 @@
       "stats": {
         "agility": 11.0,
         "armor": 203.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 34.0,
         "strength": 17.0
       },
@@ -255903,7 +255949,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 237.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "stamina": 37.0,
         "strength": 12.0
@@ -255936,7 +255982,7 @@
       "stats": {
         "armor": 237.0,
         "attack_power": 32.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -255967,7 +256013,7 @@
       "stats": {
         "armor": 183.0,
         "attack_power": 28.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -255998,8 +256044,8 @@
       "stats": {
         "armor": 210.0,
         "attack_power": 16.0,
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -256030,7 +256076,7 @@
       "stats": {
         "agility": 17.0,
         "armor": 223.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 37.0
       },
       "supporting_sources": [
@@ -256061,7 +256107,7 @@
       "stats": {
         "armor": 198.0,
         "attack_power": 28.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0
       },
       "supporting_sources": [
@@ -256372,7 +256418,7 @@
       "stats": {
         "agility": 17.0,
         "armor": 414.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "intellect": 12.0,
         "stamina": 34.0
       },
@@ -256495,7 +256541,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 461.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 26.0,
@@ -256560,7 +256606,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 738.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "stamina": 34.0,
         "strength": 15.0
@@ -256592,7 +256638,7 @@
       "slot": "Head",
       "stats": {
         "armor": 599.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "spell_power": 14.0,
         "stamina": 34.0,
@@ -256625,7 +256671,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 646.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "spell_power": 14.0,
         "stamina": 34.0,
         "strength": 15.0
@@ -256689,7 +256735,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 778.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 34.0,
         "strength": 21.0
       },
@@ -256716,7 +256762,7 @@
       "quality": "epic",
       "slot": "Head",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 34.0,
         "strength": 18.0
       }
@@ -256775,7 +256821,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 553.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 26.0,
         "strength": 14.0
       },
@@ -257175,7 +257221,7 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 105.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 14.0,
         "stamina": 26.0
@@ -257207,7 +257253,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 140.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 12.0,
         "spell_power": 23.0,
         "stamina": 34.0
@@ -257609,7 +257655,7 @@
       "slot": "Head",
       "stats": {
         "armor": 151.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 17.0,
         "spell_power": 19.0,
         "stamina": 34.0
@@ -257641,7 +257687,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 158.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 18.0,
         "spell_power": 18.0,
         "stamina": 34.0
@@ -257989,7 +258035,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -258011,7 +258057,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -258079,7 +258125,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.25,
         "stamina": 2.0,
         "weapon_max_damage": 114,
@@ -258102,7 +258148,7 @@
       "slot": "Main Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -258125,7 +258171,7 @@
       "slot": "Off Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -258170,7 +258216,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.24,
         "stamina": 2.0,
         "weapon_max_damage": 165,
@@ -258192,7 +258238,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -258215,7 +258261,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -258264,7 +258310,7 @@
       "quality": "epic",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 61.58,
         "stamina": 35.0,
         "strength": 23.0,
@@ -258500,7 +258546,7 @@
       "slot": "One Hand",
       "stats": {
         "attack_power": 24.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 47.22,
         "stamina": 2.0,
         "weapon_max_damage": 102,
@@ -259013,7 +259059,7 @@
       "stats": {
         "agility": 10.0,
         "dps": 28.83,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "nature_resistance": 9.0,
         "weapon_max_damage": 104,
         "weapon_min_damage": 69,
@@ -259118,7 +259164,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "strength": 7.0
       }
@@ -259766,7 +259812,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 738.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 33.0,
         "intellect": 13.0,
         "mp5": 5.0,
@@ -259833,7 +259879,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 646.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 33.0,
         "intellect": 18.0,
         "spell_damage": 11.0,
@@ -259900,7 +259946,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 286.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 10.0,
         "stamina": 21.0
@@ -260089,7 +260135,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 16.0,
         "stamina": 34.0
@@ -260282,7 +260328,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 416.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 31.0,
         "intellect": 14.0,
         "spell_damage": 10.0,
@@ -260348,7 +260394,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 31.0,
         "intellect": 14.0,
         "spell_damage": 10.0,
@@ -260540,7 +260586,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 22.0,
         "intellect": 11.0,
         "spell_damage": 7.0,
@@ -260606,7 +260652,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 22.0,
         "intellect": 11.0,
         "spell_damage": 7.0,
@@ -260988,7 +261034,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 169.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 9.0,
         "stamina": 26.0
@@ -261374,7 +261420,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 199.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 9.0,
         "stamina": 26.0
@@ -261406,7 +261452,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 198.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 9.0,
         "stamina": 26.0
@@ -261639,7 +261685,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 203.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 34.0
@@ -261702,7 +261748,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 237.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 34.0
@@ -262027,7 +262073,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 237.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 34.0
@@ -262114,7 +262160,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 203.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 15.0,
         "spell_power": 14.0,
         "stamina": 34.0
@@ -263492,7 +263538,7 @@
       "slot": "Chest",
       "stats": {
         "attack_power": 14.0,
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "stamina": 8.0
       }
     },
@@ -265974,7 +266020,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "block_rating": 10.0,
+        "block_percent": 2.0,
         "spirit": 8.0,
         "stamina": 11.0
       }
@@ -266003,7 +266049,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 244.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 16.0
@@ -266067,7 +266113,7 @@
       "slot": "Head",
       "stats": {
         "armor": 288.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "spell_power": 14.0,
         "stamina": 25.0
@@ -266099,7 +266145,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "spell_power": 12.0,
         "stamina": 25.0
@@ -266131,7 +266177,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "intellect": 8.0,
         "stamina": 25.0,
         "strength": 14.0
@@ -266350,7 +266396,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 416.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 11.0,
         "stamina": 34.0,
         "strength": 16.0
@@ -266382,7 +266428,7 @@
       "slot": "Head",
       "stats": {
         "armor": 338.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 11.0,
         "stamina": 34.0,
         "strength": 16.0
@@ -266414,7 +266460,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "intellect": 10.0,
         "stamina": 34.0,
         "strength": 18.0
@@ -266542,7 +266588,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "stamina": 25.0,
         "strength": 11.0
@@ -266574,7 +266620,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 8.0,
         "spell_power": 14.0,
         "stamina": 26.0
@@ -266606,7 +266652,7 @@
       "slot": "Head",
       "stats": {
         "armor": 288.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 10.0,
         "stamina": 25.0,
         "strength": 12.0
@@ -266670,7 +266716,7 @@
       "slot": "Feet",
       "stats": {
         "armor": 286.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 10.0,
         "spell_power": 10.0,
         "stamina": 21.0
@@ -266793,7 +266839,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 416.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 16.0,
         "stamina": 34.0
@@ -266825,7 +266871,7 @@
       "slot": "Head",
       "stats": {
         "armor": 338.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 16.0,
         "stamina": 34.0
@@ -266857,7 +266903,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 14.0,
         "spell_power": 16.0,
         "stamina": 34.0
@@ -267049,7 +267095,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 416.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 31.0,
         "intellect": 14.0,
         "spell_damage": 10.0,
@@ -267115,7 +267161,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 364.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 31.0,
         "intellect": 14.0,
         "spell_damage": 10.0,
@@ -267307,7 +267353,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 354.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 22.0,
         "intellect": 11.0,
         "spell_damage": 7.0,
@@ -267373,7 +267419,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 310.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 22.0,
         "intellect": 11.0,
         "spell_damage": 7.0,
@@ -267657,7 +267703,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 627.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 11.0,
         "stamina": 25.0,
         "strength": 11.0
@@ -267689,7 +267735,7 @@
       "slot": "Head",
       "stats": {
         "armor": 509.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 25.0,
@@ -267722,7 +267768,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 548.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "spell_power": 7.0,
         "stamina": 25.0,
         "strength": 13.0
@@ -267847,7 +267893,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 461.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 7.0,
         "spell_power": 7.0,
         "stamina": 26.0,
@@ -267912,7 +267958,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 738.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "stamina": 34.0,
         "strength": 15.0
@@ -267944,7 +267990,7 @@
       "slot": "Head",
       "stats": {
         "armor": 599.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 8.0,
         "spell_power": 14.0,
         "stamina": 34.0,
@@ -267977,7 +268023,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 646.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "spell_power": 14.0,
         "stamina": 34.0,
         "strength": 15.0
@@ -268301,7 +268347,7 @@
       "slot": "Chest",
       "stats": {
         "armor": 738.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 33.0,
         "intellect": 13.0,
         "mp5": 5.0,
@@ -268368,7 +268414,7 @@
       "slot": "Legs",
       "stats": {
         "armor": 646.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "healing_power": 33.0,
         "intellect": 18.0,
         "spell_damage": 11.0,
@@ -268842,7 +268888,7 @@
       "slot": "Neck",
       "stats": {
         "attack_power": 6.0,
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "stamina": 10.0
       }
     },
@@ -269010,7 +269056,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 10.0,
         "strength": 5.0
       }
@@ -269212,9 +269258,9 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "dps": 38.83,
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "weapon_max_damage": 140,
         "weapon_min_damage": 93,
         "weapon_speed": 3.0
@@ -269327,7 +269373,7 @@
       "slot": "Wrist",
       "stats": {
         "agility": 6.0,
-        "hit_rating": 9.0
+        "hit_percent": 0.9
       }
     },
     {
@@ -269344,7 +269390,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "strength": 7.0
       }
     },
@@ -269361,9 +269407,9 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "dps": 35.74,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "stamina": 15.0,
         "weapon_max_damage": 146,
         "weapon_min_damage": 97,
@@ -269613,7 +269659,7 @@
       "slot": "Back",
       "stats": {
         "attack_power": 12.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "stamina": 7.0
       }
     },
@@ -269638,9 +269684,7 @@
     },
     {
       "attributes_known": true,
-      "effects": [
-        "Equip: +2 Weapon Damage."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "3fda465b58b1943c31d1e79bb5d3d52d03e90f592c00a23f2af0b96ce287be03",
@@ -269653,8 +269697,12 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "stamina": 7.0
-      }
+        "stamina": 7.0,
+        "weapon_damage": 2
+      },
+      "supporting_sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
+      ]
     },
     {
       "attributes_known": true,
@@ -269991,7 +270039,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 41.18,
         "healing_power": 47.0,
         "spell_damage": 16.0,
@@ -270826,7 +270874,7 @@
       "quality": "uncommon",
       "slot": "One Hand",
       "stats": {
-        "defense_rating": 2.0,
+        "defense": 2.0,
         "dps": 21.5,
         "stamina": 6.0,
         "weapon_max_damage": 56,
@@ -271564,7 +271612,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "defense_rating": 13.0,
+        "defense": 13.0,
         "stamina": 10.0,
         "strength": 10.0
       }
@@ -273849,7 +273897,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "nature_resistance": 8.0,
         "stamina": 10.0
       }
@@ -273888,7 +273936,7 @@
       "slot": "Ring",
       "stats": {
         "attack_power": 20.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 10.0
       }
     },
@@ -273948,8 +273996,8 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 6.0,
-        "expertise_rating": 10.0,
+        "defense": 6.0,
+        "expertise": 1.0,
         "stamina": 10.0
       }
     },
@@ -273967,7 +274015,7 @@
       "slot": "Ring",
       "stats": {
         "attack_power": 24.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 11.0
       }
     },
@@ -274027,8 +274075,8 @@
       "quality": "rare",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 7.0,
-        "expertise_rating": 10.0,
+        "defense": 7.0,
+        "expertise": 1.0,
         "stamina": 14.0
       }
     },
@@ -274046,7 +274094,7 @@
       "slot": "Ring",
       "stats": {
         "attack_power": 30.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 13.0
       }
     },
@@ -274106,8 +274154,8 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
-        "defense_rating": 8.0,
-        "expertise_rating": 10.0,
+        "defense": 8.0,
+        "expertise": 1.0,
         "stamina": 16.0
       }
     },
@@ -274125,7 +274173,7 @@
       "slot": "Ring",
       "stats": {
         "attack_power": 34.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 14.0
       }
     },
@@ -274180,9 +274228,7 @@
     },
     {
       "attributes_known": true,
-      "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "f6a1450e123144250a453419340083c143f53d830d5b0a3481a5a47b93177193",
@@ -274196,8 +274242,12 @@
       "slot": "Ring",
       "stats": {
         "defense": 8.0,
+        "expertise": 1.0,
         "stamina": 18.0
       },
+      "supporting_sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
+      ],
       "unique_group": "Watcher's Ring"
     },
     {
@@ -274728,7 +274778,7 @@
       "stats": {
         "agility": 14.0,
         "armor": 129.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "stamina": 12.0
       },
       "supporting_sources": [
@@ -274821,7 +274871,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 20.0
       }
     },
@@ -275097,7 +275147,7 @@
       "quality": "epic",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 9.0,
+        "hit_percent": 0.9,
         "intellect": 12.0,
         "nature_resistance": 7.0,
         "spell_power": 13.0,
@@ -275124,7 +275174,7 @@
       "quality": "epic",
       "slot": "Shoulder",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 13.0,
         "nature_resistance": 7.0,
         "spell_power": 12.0,
@@ -275544,8 +275594,8 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
-        "dodge_rating": 12.0,
+        "crit_percent": 1.0,
+        "dodge_percent": 1.0,
         "dps": 45.0,
         "strength": 20.0,
         "weapon_max_damage": 173,
@@ -275609,7 +275659,7 @@
       "quality": "rare",
       "slot": "Ranged",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 4.0,
         "stamina": 3.0,
         "wand_dps": 51.0,
@@ -275651,7 +275701,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "stamina": 13.0
       }
     },
@@ -275668,7 +275718,7 @@
       "slot": "One Hand",
       "stats": {
         "agility": 7.0,
-        "dodge_rating": 6.0,
+        "dodge_percent": 0.5,
         "dps": 35.59,
         "weapon_max_damage": 79,
         "weapon_min_damage": 42,
@@ -275691,7 +275741,7 @@
       "slot": "Chest",
       "stats": {
         "attack_power": 32.0,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 20.0
       }
     },
@@ -275708,7 +275758,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "shadow_resistance": 9.0,
         "strength": 7.0
       }
@@ -275853,7 +275903,7 @@
       "stats": {
         "agility": 20.0,
         "fire_resistance": 16.0,
-        "hit_rating": 10.0
+        "hit_percent": 1.0
       }
     },
     {
@@ -279629,7 +279679,7 @@
       "slot": "Wrist",
       "stats": {
         "armor": 66.0,
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "stamina": 9.0
       },
       "supporting_sources": [
@@ -281335,7 +281385,7 @@
       "stats": {
         "agility": 21.0,
         "armor": 160.0,
-        "crit_rating": 21.0,
+        "crit_percent": 1.5,
         "stamina": 31.0
       },
       "supporting_sources": [
@@ -281463,7 +281513,7 @@
       "slot": "One Hand",
       "stats": {
         "dps": 47.29,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 12.0,
         "strength": 8.0,
         "weapon_max_damage": 148,
@@ -281510,7 +281560,7 @@
       "stats": {
         "agility": 8.0,
         "dps": 47.39,
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 12.0,
         "weapon_max_damage": 142,
         "weapon_min_damage": 76,
@@ -281590,7 +281640,7 @@
       "slot": "Hands",
       "stats": {
         "armor": 461.0,
-        "defense_rating": 12.0,
+        "defense": 12.0,
         "stamina": 14.0,
         "strength": 21.0
       },
@@ -281724,7 +281774,7 @@
       "slot": "Back",
       "stats": {
         "armor": 50.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "shadow_damage": 15.0,
         "stamina": 16.0
       },
@@ -282154,7 +282204,7 @@
       "quality": "uncommon",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 8.0,
         "stamina": 9.0,
         "strength": 6.0
@@ -282174,7 +282224,7 @@
       "quality": "uncommon",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "intellect": 8.0,
         "stamina": 9.0,
         "strength": 6.0
@@ -283269,7 +283319,7 @@
       "quality": "uncommon",
       "slot": "Back",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "spirit": 3.0,
         "stamina": 7.0
       }
@@ -283656,7 +283706,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 22.0,
         "strength": 18.0
       }
@@ -283675,7 +283725,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 22.0,
         "strength": 18.0
       }
@@ -283748,7 +283798,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "intellect": 11.0,
         "stamina": 14.0,
         "strength": 9.0
@@ -283768,7 +283818,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 7.0,
+        "defense": 7.0,
         "intellect": 11.0,
         "stamina": 14.0,
         "strength": 9.0
@@ -283787,7 +283837,7 @@
       "quality": "rare",
       "slot": "One Hand",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "dps": 40.8,
         "spirit": 9.0,
         "strength": 6.0,
@@ -283811,7 +283861,7 @@
       "stats": {
         "agility": 26.0,
         "dps": 53.03,
-        "hit_rating": 16.0,
+        "hit_percent": 1.6,
         "weapon_max_damage": 210,
         "weapon_min_damage": 140,
         "weapon_speed": 3.3
@@ -283961,7 +284011,7 @@
       "slot": "Wrist",
       "stats": {
         "attack_power": 20.0,
-        "hit_rating": 8.0,
+        "hit_percent": 0.8,
         "spirit": 5.0,
         "stamina": 11.0
       }
@@ -283980,7 +284030,7 @@
       "quality": "rare",
       "slot": "Waist",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "intellect": 12.0,
         "spirit": 14.0
       }
@@ -284043,7 +284093,7 @@
       "slot": "Off Hand",
       "stats": {
         "nature_resistance": 10.0,
-        "parry_rating": 9.0,
+        "parry_percent": 0.6,
         "strength": 12.0
       }
     },
@@ -284122,7 +284172,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 53.94,
         "stamina": 17.0,
         "strength": 24.0,
@@ -284170,7 +284220,7 @@
       "slot": "Ranged",
       "stats": {
         "attack_power": 14.0,
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "ranged_dps": 32.26,
         "stamina": 5.0,
         "weapon_max_damage": 130,
@@ -284193,7 +284243,7 @@
       "slot": "One Hand",
       "stats": {
         "agility": 10.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "dps": 41.47,
         "nature_resistance": 7.0,
         "weapon_max_damage": 92,
@@ -284265,7 +284315,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 22.0,
         "strength": 18.0
       }
@@ -284320,7 +284370,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "healing_power": 40.0,
         "spell_damage": 13.0,
         "spirit": 21.0
@@ -284340,7 +284390,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "holy_damage": 18.0,
         "intellect": 14.0
       }
@@ -284386,7 +284436,7 @@
       "slot": "Ranged",
       "stats": {
         "arcane_damage": 7.0,
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "spirit": 4.0,
         "wand_dps": 64.12,
         "weapon_max_damage": 142,
@@ -284450,9 +284500,9 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 50.56,
-        "hit_rating": 15.0,
+        "hit_percent": 1.5,
         "intellect": 8.0,
         "strength": 19.0,
         "weapon_max_damage": 219,
@@ -284475,7 +284525,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "hit_rating": 18.0,
+        "hit_percent": 1.8,
         "spell_power": 21.0,
         "stamina": 14.0
       }
@@ -284519,7 +284569,7 @@
       "stats": {
         "agility": 14.0,
         "dps": 51.39,
-        "expertise_rating": 20.0,
+        "expertise": 2.0,
         "stamina": 18.0,
         "weapon_max_damage": 222,
         "weapon_min_damage": 148,
@@ -284569,7 +284619,7 @@
       "slot": "Wrist",
       "stats": {
         "attack_power": 20.0,
-        "hit_rating": 9.0,
+        "hit_percent": 0.9,
         "stamina": 10.0
       }
     },
@@ -284607,7 +284657,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "block_rating": 10.0,
+        "block_percent": 2.0,
         "block_value": 15.0,
         "stamina": 10.0
       }
@@ -284691,7 +284741,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 17.0,
-        "dodge_rating": 12.0,
+        "dodge_percent": 1.0,
         "stamina": 12.0
       }
     },
@@ -284760,7 +284810,7 @@
       "slot": "Waist",
       "stats": {
         "agility": 8.0,
-        "defense_rating": 9.0,
+        "defense": 9.0,
         "spirit": 8.0,
         "stamina": 13.0
       }
@@ -284829,7 +284879,7 @@
       "quality": "rare",
       "slot": "Chest",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spirit": 19.0,
         "stamina": 16.0,
         "strength": 16.0
@@ -284952,7 +285002,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 11.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 12.0
       }
     },
@@ -285096,7 +285146,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 20.0,
-        "hit_rating": 15.0,
+        "hit_percent": 1.5,
         "stamina": 15.0
       }
     },
@@ -285114,7 +285164,7 @@
       "slot": "One Hand",
       "stats": {
         "agility": 7.0,
-        "crit_rating": 6.0,
+        "crit_percent": 0.42857142857142855,
         "dps": 37.5,
         "stamina": 8.0,
         "weapon_max_damage": 78,
@@ -285137,8 +285187,8 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "dodge_rating": 12.0,
-        "hit_rating": 8.0,
+        "dodge_percent": 1.0,
+        "hit_percent": 0.8,
         "stamina": 16.0
       }
     },
@@ -287550,7 +287600,7 @@
       "quality": "rare",
       "slot": "One Hand",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "dps": 39.35,
         "stamina": 11.0,
         "strength": 5.0,
@@ -287805,7 +287855,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "defense_rating": 3.0,
+        "defense": 3.0,
         "fire_resistance": 7.0,
         "stamina": 9.0
       }
@@ -289102,7 +289152,7 @@
       "quality": "uncommon",
       "slot": "Back",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "strength": 7.0
       }
     },
@@ -289679,7 +289729,7 @@
       "slot": "Feet",
       "stats": {
         "agility": 7.0,
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 5.0
       }
     },
@@ -290940,7 +290990,7 @@
       "quality": "uncommon",
       "slot": "Neck",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "spirit": 10.0
       }
     },
@@ -291070,7 +291120,7 @@
       "quality": "rare",
       "slot": "Neck",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spirit": 6.0,
         "stamina": 13.0
       }
@@ -291486,7 +291536,7 @@
       "quality": "uncommon",
       "slot": "Back",
       "stats": {
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 8.0
       }
     },
@@ -291677,7 +291727,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "spell_power": 16.0,
         "stamina": 27.0
       }
@@ -292477,7 +292527,6 @@
         "Set: Partners in Crime"
       ],
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.2%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -292492,6 +292541,7 @@
       "quality": "epic",
       "slot": "Ring",
       "stats": {
+        "expertise": 1.2,
         "stamina": 10.0,
         "strength": 18.0
       },
@@ -292535,7 +292585,7 @@
       "quality": "uncommon",
       "slot": "Legs",
       "stats": {
-        "expertise_rating": 5.0,
+        "expertise": 0.5,
         "stamina": 15.0
       }
     },
@@ -292636,7 +292686,7 @@
       "slot": "Back",
       "stats": {
         "agility": 10.0,
-        "hit_rating": 5.0
+        "hit_percent": 0.5
       }
     },
     {
@@ -292693,7 +292743,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "defense_rating": 6.0,
+        "defense": 6.0,
         "stamina": 13.0,
         "strength": 9.0
       }
@@ -293647,7 +293697,7 @@
       "quality": "rare",
       "slot": "Off Hand",
       "stats": {
-        "defense_rating": 4.0,
+        "defense": 4.0,
         "strength": 6.0
       }
     },
@@ -293805,7 +293855,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 49.71,
         "spell_power": 18.0,
         "strength": 22.0,
@@ -294405,7 +294455,7 @@
       "quality": "uncommon",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 13.0
       }
     },
@@ -294497,7 +294547,7 @@
       "quality": "rare",
       "slot": "Two Hand",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "dps": 43.42,
         "stamina": 14.0,
         "strength": 19.0,
@@ -294628,7 +294678,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spirit": 11.0,
         "stamina": 4.0
       }
@@ -295318,7 +295368,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "stamina": 8.0
       }
     },
@@ -295514,7 +295564,7 @@
       "quality": "rare",
       "slot": "Back",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "intellect": 8.0
       }
     },
@@ -295612,7 +295662,7 @@
       "slot": "Chest",
       "stats": {
         "agility": 11.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 12.0,
         "strength": 7.0
       }
@@ -295673,7 +295723,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 15.0,
         "strength": 8.0
       }
@@ -295692,7 +295742,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "crit_rating": 14.0,
+        "crit_percent": 1.0,
         "stamina": 5.0
       }
     },
@@ -295884,7 +295934,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "parry_rating": 15.0,
+        "parry_percent": 1.0,
         "stamina": 9.0
       }
     },
@@ -295904,7 +295954,7 @@
       "quality": "rare",
       "slot": "Legs",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "stamina": 19.0,
         "strength": 8.0
       }
@@ -295925,7 +295975,7 @@
       "quality": "rare",
       "slot": "Shoulder",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "stamina": 14.0
       }
     },
@@ -295943,7 +295993,7 @@
       "slot": "Two Hand",
       "stats": {
         "dps": 41.18,
-        "expertise_rating": 15.0,
+        "expertise": 1.5,
         "stamina": 6.0,
         "strength": 18.0,
         "weapon_max_damage": 188,
@@ -296011,7 +296061,7 @@
       "quality": "rare",
       "slot": "Hands",
       "stats": {
-        "hit_rating": 10.0,
+        "hit_percent": 1.0,
         "spell_power": 11.0,
         "stamina": 15.0
       }
@@ -296023,7 +296073,6 @@
         "Set: Defias Enforcer's Garb"
       ],
       "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
         "Set bonuses"
       ],
       "effects_known": true,
@@ -296039,6 +296088,7 @@
       "stats": {
         "armor": 124.0,
         "attack_power": 30.0,
+        "expertise": 1.0,
         "stamina": 20.0
       },
       "supporting_sources": [
@@ -296105,9 +296155,7 @@
     {
       "armor_type": "Mail",
       "attributes_known": true,
-      "effects": [
-        "Equip: Reduces chance to be Dodged or Parried by 1.0%."
-      ],
+      "effects": [],
       "effects_known": true,
       "evidence": {
         "digest": "6ec2abd8c84cf636cdefd36f2741fec011a07d938f9cadf8d5bd9258daa3222c",
@@ -296120,9 +296168,13 @@
       "slot": "Shoulder",
       "stats": {
         "armor": 233.0,
+        "expertise": 1.0,
         "stamina": 15.0,
         "strength": 10.0
-      }
+      },
+      "supporting_sources": [
+        "https://raw.githubusercontent.com/wowsims/gamedata/47975c1364aeca65841bf28a02d37c6e27322ef7/items/items.txt"
+      ]
     },
     {
       "armor_type": "Plate",
@@ -296138,7 +296190,7 @@
       "quality": "rare",
       "slot": "Wrist",
       "stats": {
-        "defense_rating": 8.0,
+        "defense": 8.0,
         "spirit": 7.0,
         "stamina": 8.0
       }
@@ -296157,7 +296209,7 @@
       "slot": "Neck",
       "stats": {
         "attack_power": 15.0,
-        "defense_rating": 5.0,
+        "defense": 5.0,
         "stamina": 11.0
       }
     },
@@ -296285,7 +296337,7 @@
       "slot": "Legs",
       "stats": {
         "agility": 17.0,
-        "dodge_rating": 10.0,
+        "dodge_percent": 0.8333333333333334,
         "intellect": 19.0
       }
     },
@@ -296327,7 +296379,7 @@
       "quality": "rare",
       "slot": "Feet",
       "stats": {
-        "expertise_rating": 10.0,
+        "expertise": 1.0,
         "spirit": 9.0,
         "strength": 18.0
       }
@@ -296387,7 +296439,7 @@
       "quality": "rare",
       "slot": "Ranged",
       "stats": {
-        "hit_rating": 5.0,
+        "hit_percent": 0.5,
         "stamina": 9.0,
         "wand_dps": 58.42,
         "weapon_max_damage": 145,
@@ -296916,7 +296968,7 @@
       "quality": "rare",
       "slot": "Ranged",
       "stats": {
-        "crit_rating": 7.0,
+        "crit_percent": 0.5,
         "ranged_dps": 27.41,
         "strength": 3.0,
         "weapon_max_damage": 104,
