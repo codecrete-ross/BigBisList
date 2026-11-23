@@ -994,8 +994,11 @@ assert(not addon:AccessOptionMatchesCharacter(option,filters))
         catalog = dict(dataset_json("forever", "guide_equipment"), items=[], templates={}, groups=[])
 
         def compile_fixture(stats):
-            return compile_comparison_data([row for row in stats if 71 <= row["id"] <= 75],
-                                           data={"version": VERSION, "items": []}, catalog=catalog)
+            # This empty roll catalog exercises packaging, without claiming
+            # compatibility evidence for a target client's suffix tables.
+            with patch("tools.forever_comparison.supported_builds", return_value=[]):
+                return compile_comparison_data([row for row in stats if 71 <= row["id"] <= 75],
+                                               data={"version": VERSION, "items": []}, catalog=catalog)
 
         actual = generate_lua.dataset_json
         with (patch.object(generate_lua, "dataset_json", side_effect=lambda flavor, name: overlay[name] if name in overlay else actual(flavor, name)),

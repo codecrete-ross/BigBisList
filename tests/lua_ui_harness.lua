@@ -312,6 +312,9 @@ function H.settle()
     -- Each visible tooltip can project up to 58 levels per spec.
     for pass = 1, 600 do
         if not H.tick() then return end
+        -- Each active pass is a new rendered frame. Keeping GetTime frozen
+        -- would starve work correctly deferred after a spent frame budget.
+        H.now = H.now + 1/60
     end
     error("UI geometry or refresh timers did not settle after 600 passes")
 end

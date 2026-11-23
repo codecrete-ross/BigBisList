@@ -121,13 +121,13 @@ class ForeverPipelineTests(unittest.TestCase):
         }], "role_weights": {"tank": {"stamina": 1}}, "version": "fixture"}
         vendor = {"type": "vendor", "side": "Both"}
         stats = {
-            71: {"slot": "Ring", "stats": {"stamina": 3}, "sources": [vendor]},
-            72: {"slot": "Ring", "stats": {"stamina": 20}, "sources": [{
+            71: {"id": 71, "name": "Fixture ring", "slot": "Ring", "stats": {"stamina": 3}, "sources": [vendor]},
+            72: {"id": 72, "name": "Other class ring", "slot": "Ring", "stats": {"stamina": 20}, "sources": [{
                 **vendor, "token_sources": [{
                     "type": "quest", "side": "Both", "eligibility": {"min_level": 30, "classes": ["Shaman"]},
                 }],
             }]},
-            73: {"slot": "Ring", "stats": {"stamina": 30}, "sources": [{
+            73: {"id": 73, "name": "Level-capped ring", "slot": "Ring", "stats": {"stamina": 30}, "sources": [{
                 **vendor, "eligibility": {"min_level": 1, "max_level": 19},
             }]},
         }

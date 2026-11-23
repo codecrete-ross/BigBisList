@@ -255,6 +255,22 @@ performance/workflow and 16 gear-workflow tests (108 total). These functional
 checks include all eight native/fallback window and density combinations; actual
 CPU/wall-clock timing is recorded separately and must satisfy its own budget.
 
+The candidate was installed on Forever 71037 and all 25 files matched the
+artifact above, including the normalized aggregate digest. The installation
+receipt is retained with the timing report. The user's gameplay results remain
+pending.
+
+The first complete candidate gate ran 327 Forever tests and stopped at five
+failures. It exposed an approval-tool input bug: ranking read global coefficients
+instead of the profile supplied by the caller. Ranking now honors that input;
+all 28 shipped coefficient maps remain identical to the Guide reference.
+Three fixture integrations were completed for the shared item-fact and client
+compatibility dependencies. The cold-secondary-tooltip replay also needed its
+settling helper to advance the frame clock; freezing GetTime starved a correctly
+deferred background job. All five failed cases pass after correction. The full
+gate must be repeated from the next clean commit; the runtime artifact is
+unchanged. [Initial hosted check](https://github.com/codecrete-ross/BigBisList/actions/runs/45118444350)
+
 The complete release sequence above remains in force. Functional and scoring
 implementation is not gameplay acceptance, a merge, a published tag, a CurseForge
 file, or evidence of the future scheduled run.

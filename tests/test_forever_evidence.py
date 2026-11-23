@@ -390,14 +390,21 @@ class ForeverReviewTests(unittest.TestCase):
             sources.check_evidence_refs({"evidence_refs": [ref]}, sources.evidence_index({row["url"]: changed_facts}))
 
     def test_gap_report_remains_readable_with_stale_approvals_and_both_factions(self):
+        from tools import forever_comparison
+
         row = tooltip()
         review = approval(row)
         row["name"] = "Changed after approval"
         profile = {"class": "Warrior", "spec": "Protection", "role": "tank", "slots": ["Ring"], "armor_types": ["Plate"], "weapon_types": ["Sword"]}
         document = {"profiles": [profile], "role_weights": {"tank": {"stamina": 2}}, "version": "fixture"}
-        with patch.object(forever, "scoring_profiles", return_value=document), patch.object(forever, "dataset_json", side_effect=lambda f,n: {
-            "overrides": {"overrides": [review]}, "scrape_manifest": {"sources": []}
-        }[n]):
+        actual = forever.dataset_json
+        actual_profiles = forever.scoring_profiles
+        inputs = {"overrides": {"overrides": [review]}, "scrape_manifest": {"sources": []}}
+        with patch.object(forever_comparison, "scoring_profiles", actual_profiles), patch.object(
+            forever, "scoring_profiles", return_value=document
+        ), patch.object(
+            forever, "dataset_json", side_effect=lambda f,n: inputs[n] if n in inputs else actual(f,n)
+        ):
             report = forever.gaps({row["url"]: row})
         self.assertEqual(len(report["rows"]), 2)
         self.assertEqual({r["faction"] for r in report["rows"]}, {"Alliance", "Horde"})

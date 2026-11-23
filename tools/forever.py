@@ -379,10 +379,10 @@ def validate_ranking_review(review: dict, version: str, context: dict) -> None:
 
 
 def rank(stats: dict, profiles: dict, overrides: list[dict], guides: dict) -> tuple[list, list]:
-    from tools.forever_comparison import compile_comparison_data, reference_profiles
+    from tools.forever_comparison import compile_comparison_data
+    from tools.forever_effect_benchmarks import preset
     from tools.forever_stats import reference_scenario, reference_score
 
-    references = reference_profiles(dataset_json("forever", "leveling_rules"))
     packed = compile_comparison_data(list(stats.values()))
     facts = {key: {field: value for field, value in zip(packed["item_fields"], row) if value is not None}
              for key, row in packed["items"].items()}
@@ -398,7 +398,10 @@ def rank(stats: dict, profiles: dict, overrides: list[dict], guides: dict) -> tu
     for profile in sorted(profiles["profiles"], key=profile_key):
         class_name, spec = profile_key(profile)
         name = f"{class_name}/{spec}"
-        weights = references[name]["pre_raid"]["weights"]
+        weights = {**profiles["role_weights"][profile["role"]], **profile.get("weights", {})}
+        benchmark = preset(profile["role"], "pre_raid")
+        for channel in ("proc_dps", "proc_hps"):
+            weights[channel] = benchmark[channel]
         scenario = reference_scenario(name, profile["role"], "pre_raid", facts)
         for slot in profile["slots"]:
             candidates = [(item_id, reference_score(facts[str(item_id)], weights, scenario, slot=slot))
