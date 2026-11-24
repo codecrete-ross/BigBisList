@@ -298,7 +298,7 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
     return view, summary, slot
 end
 
-local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline)
+local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline, compact)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
     if candidate.status == "loading" or not candidate.facts or not candidate.facts.level then
@@ -359,7 +359,9 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
     end
     for index, spec in ipairs(player.specs) do
         if snapshot.equippedOnly and #block.rows > 0 then break end
-        if #block.rows > 0 and deadline and debugprofilestop() >= deadline then
+        local first = block.rows[1]
+        if first and ((deadline and debugprofilestop() >= deadline)
+            or (compact and first.activeSpec and rating:SwapExplanationPending(first.result))) then
             block.finishSpecs = function(checkpoint)
                 for remaining = index, #player.specs do
                     checkpoint()
@@ -431,13 +433,39 @@ local function compactSpecLine(row)
     verdict = verdict or view.requirement or BigBiSList.ForeverGearRating:Label(result.placement, "compact")
     local suffix = " for " .. row.spec
     if verdict ~= "Keep" .. suffix and verdict:sub(-#suffix) == suffix then verdict = verdict:sub(1, -#suffix - 1) end
-    return verdict .. (reason and (" · " .. reason) or ""), view.tone
+    local summary
+    if row.activeSpec and not assessment.tiedChoice then
+        local action = evaluated.equipSwap
+        if action and not result.forecast and action.roleDelta and action.replacements[1] then
+            local names = {}
+            for _, old in ipairs(action.replacements) do names[#names + 1] = old.name end
+            local grade = BigBiSList.ForeverGearRating:UpgradeSize(action)
+            if grade then reason = grade .. " over " .. table.concat(names, " + ") end
+        end
+        summary = BigBiSList.Widgets:SwapDecisionSummary(row.item, result)
+        if summary == reason or (reason and summary == "Gains " .. reason:gsub("^%+", "") .. ".") then summary = nil end
+    elseif not row.activeSpec and not assessment.tiedChoice and evaluated.replacements and evaluated.replacements[1] then
+        local names = {}
+        for _, old in ipairs(evaluated.replacements) do
+            local location = old.state == "bag" and " in your bags" or old.state == "bank" and " in your bank" or " equipped"
+            names[#names + 1] = old.name .. location
+        end
+        reason = "vs. " .. table.concat(names, " + ")
+    end
+    local separator = reason and reason:sub(1, 4) == "vs. " and " " or " · "
+    return verdict .. (reason and (separator .. reason) or ""), view.tone, summary
 end
 
-local function addSwapExplanation(tooltip, result, spec)
-    local lines = BigBiSList.Widgets:SwapExplanationLines(result) or {}
+local function addSwapExplanation(tooltip, row, labelSpec)
+    local result, widgets = row.result, BigBiSList.Widgets
+    local lines = widgets:SwapExplanationLines(result, nil, true) or {}
+    local summary = widgets:SwapDecisionSummary(row.item, result)
     local effects = BigBiSList.ForeverGearRating:EffectComparisonLines(result, true) or {}
-    if spec and (#lines > 0 or #effects > 0) then tooltip:AddLine(spec, 0.93, 0.93, 0.96, true) end
+    if labelSpec and (#lines > 0 or #effects > 0) then tooltip:AddLine(row.spec, 0.93, 0.93, 0.96, true) end
+    if summary then
+        for _, line in ipairs(lines) do if line == summary then summary = nil; break end end
+        if summary then tooltip:AddLine(summary, 0.88, 0.89, 0.91, true) end
+    end
     for _, line in ipairs(lines) do tooltip:AddLine(line, 0.83, 0.85, 0.88, true) end
     for _, line in ipairs(effects) do tooltip:AddLine(line, 0.76, 0.8, 0.86, true) end
 end
@@ -462,12 +490,11 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
     local placementColor
     if not expanded then
         for _, row in ipairs(blocks) do
-            if row.spec == selection.spec or not row.result or row.result.placement.status ~= "incompatible" then
-                local decision, tone = compactSpecLine(row)
-                local r, g, b = BigBiSList.Widgets:GearAdviceColor(tone)
-                local spec = row.class == selection.class and row.spec or row.class .. " " .. row.spec
-                if decision then tooltip:AddLine(spec .. " — " .. decision, r, g, b, true) end
-            end
+            local decision, tone, summary = compactSpecLine(row)
+            local r, g, b = BigBiSList.Widgets:GearAdviceColor(tone)
+            local spec = row.class == selection.class and row.spec or row.class .. " " .. row.spec
+            if decision then tooltip:AddLine(spec .. " — " .. decision, r, g, b, true) end
+            if summary then tooltip:AddLine(summary, 0.88, 0.89, 0.91, true) end
         end
         return
     end
@@ -524,7 +551,7 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
             if comparison.futureBiS then tooltip:AddLine("Pre-Raid Guide BiS", 0.86, 0.88, 0.91, true) end
             if BigBiSList.ForeverGearRating:SwapExplanationPending(result, true) then
                 explanations[#explanations + 1] = row
-            else addSwapExplanation(tooltip, result) end
+            else addSwapExplanation(tooltip, row) end
             if result.effectNote then tooltip:AddLine(result.effectNote, 0.76, 0.8, 0.86, true) end
             if result.effectBreakEven then
                 local estimate = string.format("%.1f full extra swings per minute to close the gap at tooltip weapon damage",
@@ -545,7 +572,7 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
     if placementColor then tooltip:AddLine("Small pools use slot placement for color", 0.72, 0.77, 0.84, true) end
 end
 
-local function rebuildTooltip(tooltip, state)
+local function tooltipStillMatches(tooltip, state)
     if not shouldAnnotateTooltip(tooltip) or not state or tooltip.__bigBisListState ~= state
         or tooltip.__bigBisListRefreshing then return end
     if tooltip.IsShown and not tooltip:IsShown() then return end
@@ -554,7 +581,21 @@ local function rebuildTooltip(tooltip, state)
     local itemId = itemIdFromTooltip(tooltip)
     if owner ~= state.owner or itemId ~= state.itemId
         or itemLinkFromTooltip(tooltip, nil, itemId, info) ~= state.link then return end
+    if state.bag ~= nil then
+        local args = info and readable(info.getterArgs)
+        if not args or readable(info.getterName) ~= "GetBagItem" or readable(args[1]) ~= state.bag
+            or readable(args[2]) ~= state.bagSlot then return end
+    end
+    local highlights = BigBiSList.AcquisitionHighlights
+    if highlights and (state.bag ~= nil or state.storageOffer)
+        and not highlights:IsStorageTooltipCurrent(owner, itemId, state.link, info and readable(info.getterName),
+            info and readable(info.getterArgs)) then return end
+    return true, owner, info
+end
 
+local function rebuildTooltip(tooltip, state)
+    local matches, owner, info = tooltipStillMatches(tooltip, state)
+    if not matches then return end
     -- The native rebuild retains source-specific lines, position and the exact link.
     tooltip.__bigBisListRefreshing = true
     local function attempt(method, ...)
@@ -605,15 +646,16 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
     local offer, mark
     if self.AcquisitionHighlights then offer, mark = self.AcquisitionHighlights:GetTooltipOffer(owner, itemId, itemLink) end
     local live, statBlock
+    local showExpanded = self.isForever and settings.compact == false or (settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown())
     local comparisonContext = comparisonTooltipContext(tooltip)
-    local row = owner and owner.detailData
+    local row = owner and (owner.detailData or owner.gearData)
     local rowVerdict = row and row.item_id == itemId and (row.targetVerdict or row.stat_swap or row.gearSwap)
     if self.ForeverGearRating and itemLink and self.UI and self.UI.GetOwnedSnapshot and not comparisonContext and not rowVerdict then
         live = self:GetTooltipPlayerContext()
         if live and addonTooltip(tooltip) and self.UI:GetSelection().class ~= live.class then live = nil end
         local exactLink = offer and offer.owned and offer.link or itemLink
         local candidate = live and self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
-        if candidate then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData, deadline) else live = nil end
+        if candidate then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData, deadline, not showExpanded) else live = nil end
     end
     local selection = comparisonContext or live or self:GetCharacterDB().selection or {}
     local effectivePhaseKey = comparisonContext and comparisonContext.phase
@@ -629,7 +671,6 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
     priorityContext.selectedPhase = effectivePhaseKey
     priorityContext.itemLink = itemLink
 
-    local showExpanded = self.isForever and settings.compact == false or (settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown())
     local groupedMatches = {}
     local first = statBlock and statBlock.rows[1]
     local rawMatches
@@ -659,7 +700,13 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     local live, selection, matches = prepared.live, prepared.selection, prepared.matches
     local showExpanded, maxRows = prepared.expanded, prepared.maxRows
     tooltip.__bigBisListState = { itemId = itemId, link = itemLink, owner = owner, acquisition = offer ~= nil,
-        expanded = not not showExpanded, stats = statBlock ~= nil, pending = statBlock and statBlock.pending or {} }
+        expanded = not not showExpanded, stats = statBlock ~= nil, storageOffer = offer and offer.owned,
+        pending = statBlock and statBlock.pending or {} }
+    local info = primaryInfo(tooltip)
+    local args = info and readable(info.getterArgs)
+    if info and readable(info.getterName) == "GetBagItem" and type(args) == "table" then
+        tooltip.__bigBisListState.bag, tooltip.__bigBisListState.bagSlot = readable(args[1]), readable(args[2])
+    end
 
     tooltip:AddLine(" ")
     local ownership = statBlock and OWNED_LABELS[statBlock.ownership]
@@ -698,7 +745,7 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
     local rawDiffersFromGrouped = prepared.rawCount ~= #matches
     local hasHiddenRows = #matches > maxRows
     if not showExpanded and settings.showAllOnAlt and (statBlock or rawDiffersFromGrouped or hasHiddenRows) then
-        tooltip:AddLine(statBlock and "Hold Alt for more details" or "Hold Alt for all rankings", 0.62, 0.66, 0.72)
+        tooltip:AddLine(statBlock and "Hold Alt for spec details and scores" or "Hold Alt for all rankings", 0.62, 0.66, 0.72)
     end
     if statBlock then
         self.UI:QueueStatLoads(statBlock.pending)
@@ -706,8 +753,14 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
         local rating = self.ForeverGearRating
         local finish = statBlock.finishSpecs
         local pending = #explanations > 0
-        if not showExpanded then
-            for _, row in ipairs(statBlock.rows) do pending = pending or rating:SwapExplanationPending(row.result) end
+        local first = statBlock.rows[1]
+        local activeFirst = not showExpanded and first and first.activeSpec and rating:SwapExplanationPending(first.result)
+        pending = pending or activeFirst
+        local function waitingForRanges()
+            for _, row in ipairs(statBlock.rows) do
+                if row.summary and not row.summary.packed and not row.summary.slots[row.summarySlot] then return true end
+            end
+            return false
         end
         if finish or pending then
             local revision = self.ForeverScoring.revision
@@ -718,34 +771,40 @@ local function showItemTooltip(self, tooltip, itemId, itemLink, owner, settings,
                     and ownership == (self.UI.domainVersions and self.UI.domainVersions.ownership)
             end
             rating:QueueWork(0, function(checkpoint)
+                -- Publish the active reason on this hover before starting the
+                -- secondary specs. The native rebuild resumes the same block.
+                if activeFirst then rating:GetSwapExplanation(first.result); return end
                 if finish then
                     finish(checkpoint)
                     statBlock.finishSpecs = nil
                 end
-                for _, row in ipairs(statBlock.rows) do
-                    checkpoint()
-                    rating:GetSwapExplanation(row.result)
-                    if showExpanded then rating:EffectComparisonLines(row.result) end
+                if showExpanded then
+                    for _, row in ipairs(statBlock.rows) do
+                        checkpoint()
+                        rating:GetSwapExplanation(row.result)
+                        rating:EffectComparisonLines(row.result)
+                    end
                 end
             end, current, function()
                 if current() then
-                    if showExpanded and not finish then
+                    -- A core-only tooltip will rebuild for the level ranges.
+                    -- Supply the expanded evidence while that work finishes.
+                    if showExpanded and not finish and waitingForRanges() then
+                        if not tooltipStillMatches(tooltip, state) then return end
                         for _, row in ipairs(explanations) do
-                            addSwapExplanation(tooltip, row.result, #statBlock.rows > 1 and row.spec or nil)
+                            addSwapExplanation(tooltip, row, #statBlock.rows > 1)
                         end
                         tooltip:Show()
-                    else
-                        tooltip.__bigBisPrepared = {state = state, result = prepared}
-                        rebuildTooltip(tooltip, state)
-                        tooltip.__bigBisPrepared = nil
+                        return
                     end
+                    tooltip.__bigBisPrepared = {state = state, result = prepared}
+                    rebuildTooltip(tooltip, state)
+                    tooltip.__bigBisPrepared = nil
                 end
             end)
         end
         local function rangesReady()
-            for _, row in ipairs(statBlock.rows) do
-                if row.summary and not row.summary.slots[row.summarySlot] then return end
-            end
+            if waitingForRanges() then return end
             rebuildTooltip(tooltip, state)
         end
         for _, row in ipairs(statBlock.rows) do

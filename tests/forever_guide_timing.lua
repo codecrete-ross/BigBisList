@@ -1,6 +1,7 @@
 -- Run from the repository root with Lua 5.1. Each invocation starts with a fresh save.
 local build, payload = assert(tonumber(arg[1]), "Expected a Forever build number"), arg[2] or "full"
 local endgame = arg[6] == "endgame"
+local myGear = arg[6] == "mygear"
 local spec, density = arg[3] or "Retribution", arg[4] or "comfortable"
 assert(payload == "full" or payload == "core", "Expected full or core")
 assert(spec == "Retribution" or spec == "Protection")
@@ -11,7 +12,7 @@ UnitClass = function() return "Paladin", "PALADIN" end
 UnitClassBase = function() return "PALADIN" end
 UnitRace = function() return "Human", "Human", 1 end
 UnitFactionGroup = function() return "Alliance" end
-UnitLevel = function() return endgame and 60 or 51 end
+UnitLevel = function() return endgame and 60 or myGear and 55 or 51 end
 GetInventoryItemID = function(_, slot) if slot == 1 then return 10090 end end
 GetInventoryItemLink = function(_, slot)
     if slot == 1 then return "item:10090::::::::50:1486::1:1:12723:1:28:5253:::::" end
@@ -20,6 +21,12 @@ if spec == "Protection" then
     local worn = {14919, 7673, 9476, 0, 10203, 276742, 10133, 10131, 14914, 9410,
         274642, 11118, 280766, 17774, 276737, 17705, 1203}
     local bonuses = {[14919]=12754, [10203]=12754, [10133]=12754, [10131]=12754, [14914]=12752, [9410]=13182, [11118]=13099}
+    if myGear then
+        worn[10], bonuses[9640] = 9640, 13027
+        C_Container = {GetContainerNumSlots = function(bag) return bag == 0 and 1 or 0 end,
+            GetContainerItemID = function() return 10165 end,
+            GetContainerItemLink = function() return "item:10165::::::::::::1:12754" end}
+    end
     GetInventoryItemID = function(_, slot) return worn[slot] ~= 0 and worn[slot] or nil end
     GetInventoryItemLink = function(unit, slot)
         local id = GetInventoryItemID(unit, slot)
@@ -45,27 +52,7 @@ local addon = BigBiSList
 addon.DetectPlayerSpec = function() return spec end
 -- Exercise the supported client's personal scorer. Omitting the talent APIs
 -- only times the qualified fallback and misses the normal comparison workload.
-if arg[7] ~= "fallback" then
-    local model = BigBiSListData.character_scoring
-    local profile = model.profiles["Paladin/" .. spec]
-    local ranks = profile.scenarios.pre_raid.reference_ranks
-    local nodes, definitions = {}, {}
-    for entry, trait in pairs(model.traits) do
-        nodes[trait.node_id], definitions[trait.definition_id] = tonumber(entry), trait.spell_id
-    end
-    C_ClassTalents = {GetActiveConfigID = function() return 1 end}
-    C_Traits = {
-        GetConfigInfo = function() return {treeIDs = {1100}} end,
-        GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = spec}} end,
-        GetGroupCurrencyInfo = function() return {{traitNodeGroupID = 1, currencyInfos = {{spent = 31}}}} end,
-        GetNodeInfo = function(_, node)
-            local entry = assert(nodes[node])
-            local rank = ranks[tostring(entry)] or 0
-            return {entryIDs = {entry}, activeEntry = rank > 0 and {entryID = entry, rank = rank} or nil}
-        end,
-        GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
-    }
-end
+if arg[7] ~= "fallback" then H.usePaladinReferenceTalents(spec) end
 H.fireEvent("ADDON_LOADED", "BigBiSList")
 local loaded = milliseconds()
 H.fireEvent("PLAYER_LOGIN")
@@ -78,8 +65,8 @@ if endgame then
     addon:SetContentMode("endgame")
     addon:SetSelection("Paladin", spec, "PR", "Upgrades")
 else
-    addon:SetSelection("Paladin", spec, "LEVELING", "Gear Guide")
-    addon:SetSelectedLevelingLevel(51, true)
+    addon:SetSelection("Paladin", spec, "LEVELING", myGear and "Equipped" or "Gear Guide")
+    addon:SetSelectedLevelingLevel(UnitLevel("player"), true)
 end
 local window = addon:GetAccountDB().profile.window
 window.density = density
@@ -95,7 +82,7 @@ end
 assert(addon.loadTimeMs and addon.UI and addon.uiEventFrame, "The packaged addon did not initialize")
 if arg[7] ~= "fallback" and addon.ForeverScoring:IsBuildSupported(BigBiSListData.character_scoring, build) then
     assert(addon.ForeverScoring:GetContext("Paladin", spec, endgame and "pre_raid" or "leveling",
-        endgame and 60 or 51, {live = true}), "Timing replay fell back from verified active talents")
+        UnitLevel("player"), {live = true}), "Timing replay fell back from verified active talents")
 end
 
 local function visibleRows()
@@ -106,6 +93,51 @@ local function visibleRows()
     return count
 end
 local function tick() H.now = H.now + 1/60; H.tick() end
+if myGear then
+    ui:ResetPerformanceStats()
+    local opened = milliseconds()
+    ui:Open()
+    local openMs = milliseconds() - opened
+    local first, firstMs, clickMs
+    for frame = 1, 4000 do
+        tick()
+        local gear = ui.gearFrame
+        local neck = gear and gear.slots.Neck
+        if not first and neck and neck:IsVisible() and neck.gearData and neck.gearData.item_id == 7673 then
+            first, firstMs = frame, milliseconds() - opened
+            local click = milliseconds()
+            neck:Click(); gear.summary.detailsButton:Click()
+            clickMs = milliseconds() - click
+            assert(ui.selectedItemData == neck.gearData)
+        end
+        if first and gear.ratingRequest.ready and not addon.ForeverGearRating.workScheduled then break end
+    end
+    local gear = assert(ui.gearFrame)
+    assert(first and gear.ratingRequest.ready and gear.summary.rating:GetText():find("Tied for 9th", 1, true))
+    local bagButton = CreateFrame("Button", nil, UIParent)
+    local link = C_Container.GetContainerItemLink(0, 1)
+    local tip = GameTooltip
+    tip.GetPrimaryTooltipInfo = function() return {getterName="GetBagItem", getterArgs={0, 1}} end
+    tip.RefreshData = function(self) self:SetHyperlink(link) end
+    tip:SetOwner(bagButton, "ANCHOR_RIGHT"); tip:Show()
+    local hover = milliseconds()
+    tip:SetHyperlink(link)
+    local hoverMs = milliseconds() - hover
+    for frame = 1, 1000 do
+        tick()
+        if table.concat(tip.lines, "\n"):find("Holy —", 1, true) and not addon.ForeverGearRating.workScheduled then break end
+    end
+    local shown = table.concat(tip.lines, "\n")
+    assert(shown:find("14 Attack Power", 1, true) and shown:find("Holy —", 1, true), shown)
+    assert(#H.errors == 0, table.concat(H.errors, "\n"))
+    local stats = ui:GetPerformanceStats()
+    local peak = math.max(stats.worstFrame or 0, openMs, clickMs, hoverMs)
+    print(string.format("My Gear %dx%d %s: viewport frame %d (%.1f ms), open %.1f, select %.1f, bag hover %.1f, peak %.1f ms (%s)",
+        window.width, window.height, density, first, firstMs, openMs, clickMs, hoverMs, peak, stats.worstFrameWork or ""))
+    assert(first <= 3 and firstMs <= 50, "My Gear exceeded the first-page budget")
+    assert(peak <= 4, "My Gear exceeded the interaction budget")
+    return
+end
 local function completePage()
     if not ui.frame:IsVisible() then assert(visibleRows() == 0); return end
     local display = assert(ui.guideDisplay, "Window became visible before its Guide page")

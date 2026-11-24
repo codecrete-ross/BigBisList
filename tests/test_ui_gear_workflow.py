@@ -513,7 +513,8 @@ local function hover(row)
 end
 assert(head.gearData.history.selected.status == "rated" and head.gearData.history.selected.rank_group == "bis")
 assert(head.guideBadge:GetText() == "BiS" and head.guideBadge:IsVisible() and goldVisible(head))
-assert(head.rating:GetText():find("#", 1, true))
+local gearView = ui:GetLevelingGearView(head.gearData, "gear")
+assert(head.rating.fullText == gearView.strength or head.rating.fullText == gearView.compact)
 assert(slots.Neck.guideBadge:GetText() == "Earlier phase" and not goldVisible(slots.Neck))
 local earlier = hover(slots.Neck)
 assert(earlier:find(BigBiSList:GetPhaseDisplayName("T4") .. " · Alternative", 1, true))
@@ -646,8 +647,11 @@ local slots = ui.gearFrame.slots
 for _, key in ipairs({"Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet",
         "Finger0", "Finger1", "MainHand", "OffHand"}) do
     local tile = slots[key]
-    local text = tile.rating:GetText()
-    assert(tile.gearData.stat_rank.rank and (text:find("Levels? %d+") or text:find("Lv %d+")), key .. " " .. text)
+    local view = ui:GetLevelingGearView(tile.gearData, "gear")
+    assert(tile.gearData.stat_rank.rank and view.strength:find("Level 47 Guide", 1, true), key .. " " .. view.strength)
+    if tile.rating:IsVisible() then
+        assert(tile.rating.fullText == view.strength or tile.rating.fullText == view.compact, key .. " " .. tile.rating.fullText)
+    else assert(tile.label:IsVisible() and not tile.label.isTruncated) end
 end
 assert(bonusReads[601] and bonusReads[602] and bonusReads[603] and bonusReads[bagBonus])
 assert(slots.Neck.gearData.bestUse and slots.Neck.guideBadge:GetText() == "Recommended" and slots.Neck.guideBadge:IsVisible())
@@ -684,13 +688,13 @@ local function verifyGear()
         H.expectBounded(tile, ui.gearFrame, key)
         H.expectBounded(tile.rating, tile, key .. " rank")
         local placement = tile.gearData.stat_rank
-        if placement and placement.rank and placement.total > 1 then
+        if placement and placement.rank and placement.total > 1 and tile.rating:IsVisible() then
             local view = ui:GetLevelingGearView(tile.gearData, "gear")
             assert(tile.rating.fullText == view.strength or tile.rating.fullText == view.compact,
                 key .. " has the wrong rank: " .. tile.rating.fullText)
             assert(not tile.rating.isTruncated, key .. " rank clipped: " .. tile.rating.fullText)
-            if view.grade and view.grade > 0 then
-                local color = {addon.Widgets:GetRankColor(view.grade)}
+            if placement.tier then
+                local color = {addon.Widgets:GetRankColor(placement.tier.quality)}
                 for component = 1, 3 do assert(tile.rating.textColor[component] == color[component]) end
             end
             assert(not tile.rating.rankStripe)

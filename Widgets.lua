@@ -153,6 +153,127 @@ local function statAmount(change, signed)
     return numberText(signed and change.amount or math.abs(change.amount), signed) .. pct .. " " .. swapStatName(change.stat, 1)
 end
 
+local function joinBenefits(changes, first, last)
+    local names = {}
+    for index = first, math.min(last, #changes) do
+        local change = changes[index]
+        if change.amount * change.points <= 0 then return end
+        names[#names + 1] = statAmount(change, false)
+    end
+    if #names > 1 then
+        local lastName = table.remove(names)
+        names[#names] = names[#names] .. " and " .. lastName
+    end
+    return table.concat(names, ", ")
+end
+
+function Widgets:SwapDecisionSummary(item, swap)
+    local result = swap and (swap.forecast or swap)
+    if result and result.status == "best_owned" then
+        if result.conditional then return self:DecisionReason(item, result) end
+        result = result.equipSwap
+    end
+    if not result or result.delta == nil then return end
+    if result.conditional then return self:DecisionReason(item, result) end
+    local evidence = BigBiSList.ForeverGearRating:GetSwapExplanation(result, true)
+    if not evidence then return end
+    local mechanic = mechanicReason(evidence, result.delta)
+    if mechanic then return mechanic end
+    if result.delta == 0 then return "Both setups score equally." end
+    local gains, losses = tradeoff(evidence, result.delta)
+    local gain, loss = gains[1], losses[1]
+    if not gain or not loss then
+        local changes = gain and gains or losses
+        local text = joinBenefits(changes, 1, 3)
+        if text and text ~= "" then return (gain and "Gains " or "Gives up ") .. text .. "." end
+        return
+    end
+    local gained, lost = joinBenefits(gains, 1, 3), joinBenefits(losses, 1, 2)
+    if not gained or not lost then return end
+    -- Explain a close trade in the same units as the item tooltip. Use the
+    -- contribution ratio only to choose words, never to decide the winner.
+    if result.delta > 0 and #gains > 1 and #gains <= 4 and #losses <= 2
+        and gain.points >= -loss.points * 0.8 and gain.points <= -loss.points then
+        local rest = joinBenefits(gains, 2, 4)
+        if rest then
+            local extraLoss = losses[2] and (", even with " .. statAmount(losses[2], false) .. " lost") or ""
+            local verb = #gains == 2 and " puts" or " put"
+            return statAmount(gain, false) .. " nearly offsets losing " .. statAmount(loss, false)
+                .. ". The extra " .. rest .. verb .. " the swap ahead" .. extraLoss .. "."
+        end
+    end
+    if #gains > 3 or #losses > 2 then return "Gains include " .. gained .. ". Losses include " .. lost .. "." end
+    if result.delta > 0 then return "Gaining " .. gained .. " outweighs losing " .. lost .. "." end
+    return "Losing " .. lost .. " outweighs gaining " .. gained .. "."
+end
+
+local function ordinal(rank)
+    local last = rank % 10
+    local suffix = rank % 100 >= 11 and rank % 100 <= 13 and "th"
+        or last == 1 and "st" or last == 2 and "nd" or last == 3 and "rd" or "th"
+    return rank .. suffix
+end
+
+-- My Gear asks what to do with a physical slot. The Guide rank describes
+-- the published pool and can coexist with any personal equip decision.
+function Widgets:EquippedAdvice(data, view, spec, player)
+    local rating, placement = BigBiSList.ForeverGearRating, data.stat_rank
+    local swap, action = data.gearSwap, data.gearAction
+    view.swap, view.evidence = swap, nil
+    local scoped = player and player.spec ~= spec and (" for " .. spec) or ""
+    local today, compact, why
+    if action then
+        local incoming, bank = {}, false
+        for _, piece in ipairs(action.incoming) do
+            bank = bank or piece.state == "bank"
+            incoming[#incoming + 1] = piece.name .. (piece.state == "bank" and " from bank" or " from bags")
+        end
+        today = (bank and "Get " or "Equip ") .. table.concat(incoming, " + ") .. scoped
+        compact = bank and "Get from bank" or "Equip from bags"
+        view.swap, view.tone = action, "gain"
+    elseif data.disabledReason then today = data.disabledReason
+    elseif not data.item_id then today = data.overlay or "Empty slot"
+    elseif not data.gearRated and not placement then today, compact = "Checking your gear…", "Checking gear"
+    elseif swap and swap.blocker then
+        today, compact = rating:GuideItemDependency(swap, data), "Check item"
+    elseif swap and swap.conditional then
+        why = self:DecisionReason(placement and placement.item, swap)
+        if data.gearEffect and (not why or why == "depends on the fight") then why = data.gearEffect end
+        today, compact = "Compare for " .. spec, "Compare"
+        view.tone = "uncertain"
+    elseif swap and (swap.status == "best_owned" or swap.status == "equipped" or swap.delta == 0) then
+        today, compact = "Keep equipped" .. scoped, "Keep equipped"
+        if swap.status == "best_owned" then
+            local kind = placement and placement.item and placement.item.armor_type == "Shield" and "shield"
+                or swap.slot == "Neck" and "neck" or swap.slot == "Hands" and "gloves"
+            why = kind and ("Best " .. kind .. " you own for " .. spec .. ".")
+                or ("Part of your best owned setup for " .. spec .. ".")
+        elseif swap.delta == 0 then why = "Both setups score equally." end
+    elseif swap and swap.delta and swap.delta < 0 then
+        today, compact = "Compare owned gear", "Compare"
+        why = self:DecisionReason(placement and placement.item, swap)
+    else
+        today = placement and placement.rank and ("Guide preview for " .. spec)
+            or (placement and rating:Label(placement, "compact")) or "Gear comparison unavailable"
+    end
+    view.today, view.action, view.tileAction, view.comparisonDetail = today, today, compact, why
+    if swap and placement and player and placement.level and player.level ~= placement.level then
+        view.personalScope = "Owned comparison at level " .. player.level .. "."
+    end
+    if placement and placement.rank then
+        local scope = rating:ScopeLabel(placement)
+        view.strength = scope .. " Guide · " .. (placement.tied and "Tied for " or "") .. ordinal(placement.rank)
+        view.compact = "Guide #" .. placement.rank
+        if placement.projected or placement.conditional or placement.conditional_tie then
+            view.rankNote = placement.projected and "Guide rank estimated from this item's observed stats."
+                or "Unverified item effects can change this Guide rank."
+        end
+    elseif placement then
+        view.strength = rating:Label(placement, nil, true)
+    end
+    return view
+end
+
 function Widgets:DecisionReason(item, swap)
     local result = swap and (swap.forecast or swap)
     if not result then return end

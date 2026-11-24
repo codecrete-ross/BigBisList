@@ -467,14 +467,15 @@ local visible
 for _, frame in ipairs(ui.activeRenderFrames) do
     if frame.boundData == candidate and frame.subText then visible = frame.subText.fullText end
 end
-assert(visible and visible:find("-5.0 pts vs Fixture gear 901032", 1, true), tostring(visible))
+assert(visible == "You own a stronger option · Fixture gear 901032", tostring(visible))
 ui:ShowInspectorFor(candidate.item_id, candidate, "leveling")
 ui:SetInspectorVisible(true); H.settle()
 local detail = ""
 for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
     if block:IsVisible() then detail = detail .. block.body:GetText() end
 end
-assert(detail:find("-5.0 pts vs Fixture gear 901032", 1, true) and not detail:find("pts vs Fixture gear 901031", 1, true), detail)
+assert(detail:find("Best owned · Fixture gear 901032 (bags)", 1, true)
+    and detail:find("−5 score points", 1, true) and not detail:find("Fixture gear 901031", 1, true), detail)
 
 assert(ui:OpenSlotComparison(candidate, "leveling", true)); H.settle()
 local manual
@@ -675,6 +676,8 @@ item(901034, "Head", 16, 16)
 local links = {link(901031), link(901032)}
 local panel, rows = bagView(links)
 ui:Open(); H.settle()
+ui:SetClass("Paladin"); ui:SetSpec("Protection"); ui:SetContentMode("leveling"); ui:SetLevelingLevel(level)
+ui:SetTab("Equipped"); H.settle()
 assert(not ui.scenarioDropdown)
 highlights:Initialize(); H.settle()
 
@@ -688,14 +691,15 @@ local function observe()
     assert(first.rank < second.rank and first.score == 14 and second.score == 10)
     local reach = assert(ui:GetWithinReach({{stat_rank = first, slot = "Head"}}))
     assert(reach[1][1].swap.delta == main.result.equipSwap.delta)
-    local tip = showTip(rows[1], link(901031))
+    showTip(rows[1], link(901031)); H.settle()
+    local tip = table.concat(GameTooltip.lines, "\n")
     assert(tip:find("Best you own for this slot", 1, true) and tip:find("Equip now", 1, true), tip)
-    local context = rating:GetContext("Paladin", "Protection", "LEVELING", level, ui.currentOwned)
-    local equipped = context.equipmentFacts.Head
-    local gearView = ui:GetLevelingGearView({item_id = 901001, item_link = equipped.item_link, slotKey = "Head",
-        slot = "Head", stat_rank = pool.byVariant["901001"]}, "gear")
-    assert(gearView.today == "You own a stronger option · Fixture gear 901031", gearView.today)
-    assert(gearView.evidence == "-8.0 pts vs Fixture gear 901031")
+    local head = ui.gearFrame.slots.Head
+    head:Click()
+    local view = ui:GetLevelingGearView(head.gearData, "gear")
+    assert(view.today == "Equip Fixture gear 901031 from bags", view.today)
+    assert(ui.gearFrame.summary.rating:GetText():find(view.today, 1, true))
+    assert(view.swap.delta == 8 and view.swap.replacements[1].name == "Fixture gear 901001")
     assert(not tip:find("Outdoor", 1, true) and not tip:find("Dungeon", 1, true))
     return tip
 end

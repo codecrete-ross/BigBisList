@@ -598,8 +598,9 @@ function UI:FindBestGearGuideTarget(context, slots, player, owned, checkpoint)
         or query.catalogRevision ~= context.catalog.observedVersion) then query = nil end
     local best
     local function consider(row)
-        local kind = row.targetVerdict.kind
-        if (kind == "upgrade" or kind == "situational" or kind == "utility") and better(row, best) then best = row end
+        local verdict, route = row.targetVerdict, row.acquisition_display
+        if verdict.kind == "upgrade" and (not verdict.level or verdict.level <= player.level)
+            and route and route.status == "ready" and route.source_match and better(row, best) then best = row end
     end
     for _, slot in ipairs(slots) do
         local bucket = query and query.slots[slot]

@@ -4920,12 +4920,23 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
     local comparison = mode == "comparison" and self.slotComparison
     if comparison and not comparison.statRank then return nil end
     local gear = mode == "gear" and data.usesGearRating
+    if gear and not includeSummary then
+        -- Every tile already has its Guide placement. Historical level ranges
+        -- belong to the expanded calculation, off the equipment paint path.
+        return BigBiSList.Widgets:EquippedAdvice(data, {}, self:GetItemContext().spec,
+            BigBiSList:GetTooltipPlayerContext()), nil, nil, data.stat_rank
+    end
     local target = not comparison and data.targetVerdict
     local item, pending
     if gear then item, pending = data.stat_rank and data.stat_rank.item, data.stat_rank and data.stat_rank.status
     elseif referenceOnly then item = data.stat_rank and data.stat_rank.item
     else item, pending = service:GetRowItem(data) end
     if not item then
+        if gear then
+            local label = data.stat_rank and service:Label(data.stat_rank, "compact")
+            return BigBiSList.Widgets:EquippedAdvice(data, {today = label}, self:GetItemContext().spec,
+                BigBiSList:GetTooltipPlayerContext()), nil, nil, data.stat_rank
+        end
         if target and target.detail then return {today = target.detail, tone = "unknown"} end
         if pending == "loading" then
             if not gear then self:QueueStatLoads({[data.item_id] = true}) end
@@ -4997,10 +5008,8 @@ function UI:GetLevelingGearView(data, mode, nativeRequirement, referenceOnly, in
             view.evidence = "Estimated at Level " .. target.level .. " · " .. view.evidence:gsub("^Estimated ", ""):gsub(" at Level %d+$", "")
         end
         if data.lookupReason ~= view.acquisition then view.lookupReason = data.lookupReason end
-    elseif gear and data.gearSwap and data.gearSwap.blocker then
-        view.today = service:GuideItemDependency(data.gearSwap, data)
-    elseif gear and data.gearPurpose then
-        view.today, view.comparisonDetail = data.gearPurpose, data.gearEffect
+    elseif gear then
+        BigBiSList.Widgets:EquippedAdvice(data, view, context.spec, player)
     end
     return view, summary, record, placement
 end
@@ -5016,6 +5025,10 @@ function UI:AddLevelingGearTooltip(tooltip, data, mode, nativeRequirement)
     local result = view.swap and (view.swap.forecast or view.swap)
     local hasSummary = result and result.comparisonTrace and result.delta ~= nil and result.status ~= "best_owned"
     widgets:AddGearAdviceLines(tooltip, rating, view, self:GetItemContext().spec, hasSummary)
+    if mode == "gear" and data.bestUse then
+        tooltip:AddLine(data.recommendation_summary, 0.88, 0.88, 0.92, true)
+        if data.guide_note then tooltip:AddLine(data.guide_note, 0.88, 0.88, 0.92, true) end
+    end
     if not view.swap then return end
     local owner = tooltip:GetOwner()
     local token = {}
@@ -7290,7 +7303,7 @@ local function layoutGearSlotText(button)
     if not twoLines then return end
 
     local rating = data.overlay
-    local view = occupied and UI:GetLevelingGearView(data, "gear")
+    local view = (occupied or data.gearAction) and UI:GetLevelingGearView(data, "gear")
     if view then
         rating = view.tone == "loss" and widgets:GearAdviceText(view) or view.strength or widgets:GearAdviceText(view) or "Gear comparison unavailable"
         if view.grade then tier = view.grade > 0 and {quality = view.grade} or nil end
@@ -7308,6 +7321,28 @@ local function layoutGearSlotText(button)
     end
     local metaY = -(nameHeight + 1) / 2
     button.rating:ClearAllPoints()
+    if view and view.tileAction then
+        button.label:Show()
+        local action = view.today
+        if gearLabelWidth(button.label, action) > width then action = view.tileAction end
+        if gearLabelWidth(button.label, action) > width then action = action:match("^%S+") end
+        local actionWidth = gearLabelWidth(button.label, action)
+        local room = width - actionWidth - 8
+        local standing = view.strength
+        if not standing or gearLabelWidth(button.rating, standing) > room then standing = view.compact end
+        local showRank = standing and gearLabelWidth(button.rating, standing) <= room
+        button.label:ClearAllPoints()
+        button.label:SetPoint("LEFT", button.iconButton, "RIGHT", 6, metaY)
+        widgets:SetCellText(button.label, action, 1, 12, showRank and actionWidth or width)
+        button.label:SetTextColor(widgets:GearAdviceColor(view.tone))
+        button.rating:SetShown(showRank and true or false)
+        if showRank then
+            button.rating:SetJustifyH("RIGHT")
+            button.rating:SetPoint("RIGHT", button, "RIGHT", -4, metaY)
+            widgets:SetCellText(button.rating, standing, 1, 12, room)
+        end
+        return
+    end
     if occupied then
         local ratingWidth = gearLabelWidth(button.rating, rating)
         local ratingLimit = math.floor(width * 0.65)
@@ -7334,7 +7369,7 @@ local function layoutGearSlotText(button)
         button.rating:SetPoint("RIGHT", button, "RIGHT", -4, metaY)
         widgets:SetCellText(button.rating, rating, 1, 12, ratingWidth)
         button.label:SetPoint("LEFT", button.iconButton, "RIGHT", 6, metaY)
-        widgets:SetCellText(button.label, view and widgets:GearAdviceText(view) or data.slot, 1, 12, width - ratingWidth - 6)
+        widgets:SetCellText(button.label, data.slot, 1, 12, width - ratingWidth - 6)
     else
         button.rating:SetJustifyH("LEFT")
         button.rating:SetPoint("LEFT", button.iconButton, "RIGHT", 6, metaY)
@@ -7429,8 +7464,13 @@ function UI:CreateGearWorkspace(parent)
         preview.scoreTooltip:EnableMouse(true)
         widgets:BindTooltip(preview.scoreTooltip, function(_, tooltip)
             local data = gear.score
-            tooltip:SetText("Gear score")
-            tooltip:AddLine("Equipped stat points as a share of the best known legal outfit for this spec and weapon setup.", 1, 1, 1, true)
+            tooltip:SetText("Outfit benchmark")
+            local request = gear.ratingRequest
+            local scope = request and (request.phase == LEVELING_PHASE_KEY and ("level " .. request.level)
+                or BigBiSList:GetPhaseDisplayName(request.phase))
+            tooltip:AddLine("Your equipped score as a share of the best known legal outfit for "
+                .. (request and (request.spec .. " at " .. scope) or "this spec")
+                .. ", using the same weapon setup and default spec weights.", 1, 1, 1, true)
             if data then
                 tooltip:AddLine(string.format("%.1f / %.1f stat points", data.score, data.best))
                 if data.partial > 0 then
@@ -7515,9 +7555,9 @@ function UI:RefreshGearScore()
     local label = gear.preview.score
     if not label then return end
     local score = gear.score
-    local text = "Gear score unavailable"
+    local text = "Outfit benchmark unavailable"
     if score and score.percent then
-        text = "Gear score · " .. score.percent .. "%" .. (score.partial > 0 and " · Partial" or "")
+        text = score.percent .. "% of best known outfit" .. (score.partial > 0 and (" · " .. score.partial .. " unscored") or "")
     elseif gear.ratingRequest and not gear.ratingRequest.ready then
         text = "Scoring gear…"
     end
@@ -7592,7 +7632,7 @@ end
 function UI:RequestGearNextStep(data)
     local service = BigBiSList.ForeverGearRating
     local request = self.gearFrame.ratingRequest
-    if not (request and data and not data.disabledReason and self.HasIndexedGear and self:HasIndexedGear()
+    if not (request and data and data.gearRated and not data.gearAction and not data.disabledReason and self.HasIndexedGear and self:HasIndexedGear()
         and self.FindBestGearGuideTarget and C_Timer and C_Timer.After) then return end
     local player = BigBiSList:GetTooltipPlayerContext()
     if not player or player.class ~= request.class or request.owned.equippedOnly then return end
@@ -7601,20 +7641,8 @@ function UI:RequestGearNextStep(data)
     if step and step.questRevision == self.questRevision and not (step.job and step.job.cancelled) then return step.text end
     step = {questRevision = self.questRevision}
     request.steps[data.slotKey] = step
+    data.gearNextStep = nil
     step.job = service:QueueWork(1, function(checkpoint)
-        local live = service:GetContext(request.class, request.spec, player.phase, player.level, request.owned)
-        local own = live and service:GetOwnedGearAction(live, data.slotKey, data.dataSlots)
-        if own then
-            local names, bank = {}, false
-            for _, item in ipairs(own.incoming) do
-                names[#names + 1] = item.name
-                bank = bank or item.state == "bank"
-            end
-            if names[1] then
-                local action = bank and "Bank · " or (request.spec == player.spec and "Equip " or "Bags · ")
-                return action .. table.concat(names, " + ")
-            end
-        end
         local phase = request.phase
         local guide = service:GetGuideContext(request.class, request.spec, phase, request.level,
             BigBiSList:GetPlayerRaceName(), BigBiSList:GetPlayerFactionName())
@@ -7625,13 +7653,13 @@ function UI:RequestGearNextStep(data)
         if not target then return end
         local _, location = self:GetRowAcquisitionDisplay(target)
         local source = self:GetSourceNextStep(target) or location
-        return target.name .. (source and source ~= "" and (" · " .. source) or "")
+        if source and source ~= "" and source ~= "Source unknown" then return target.name .. " · " .. source end
     end, function()
         return self.frame:IsShown() and self:GetViewKey() == "myGear" and self.gearSlotKey == data.slotKey
             and self.gearFrame.ratingRequest == request and self.currentOwned == request.owned
             and step.questRevision == self.questRevision
     end, function(nextStep)
-        step.job, step.text = nil, nextStep
+        step.job, step.text, data.gearNextStep = nil, nextStep, nextStep
         self:RefreshGearSelection()
     end)
 end
@@ -7649,30 +7677,24 @@ function UI:RefreshGearSelection()
         local nextStep = self:RequestGearNextStep(data)
         summary.slot:SetText(data.slot)
         summary.itemButton:SetShown(data.item_id ~= nil)
-        if data.stat_rank then
-            local service = BigBiSList.ForeverGearRating
+        if data.usesGearRating then
             local placement = data.stat_rank
             local view = self:GetLevelingGearView(data, "gear")
-            local label
-            if view then
-                label = view.today or view.strength or data.recommendation_summary or ""
-            else
-                label = service:Label(placement, nil, true) .. " ›"
-                if placement.score_percent then label = label .. " · " .. placement.score_percent .. "% of best" end
-                label = label .. "\n" .. service:ContextLabel(placement)
-                if data.bestUse then label = label .. "\n" .. data.recommendation_summary end
-            end
-            summary.rating:SetText(label)
-            summary.rating:SetTextColor(BigBiSList.Widgets:GearAdviceColor(view and view.tone))
+            local lines = {view.today}
+            appendText(lines, view.comparisonDetail)
+            appendText(lines, view.personalScope)
+            if placement and placement.rank then appendText(lines, view.strength) end
+            summary.rating:SetText(table.concat(lines, "\n"))
+            summary.rating:SetTextColor(BigBiSList.Widgets:GearAdviceColor(view.tone))
         else
             summary.rating:SetText(data.recommendation_summary)
             summary.rating:SetTextColor(1, 1, 1)
         end
         if nextStep then
             local rating = data.item_id and summary.rating:GetText()
-            summary.rating:SetText("Next · " .. nextStep .. (rating and rating ~= "" and ("\n" .. rating) or ""))
+            summary.rating:SetText((rating and rating ~= "" and (rating .. "\n") or "") .. "Next · " .. nextStep)
         end
-        summary.rating:SetShown(data.item_id ~= nil or nextStep ~= nil)
+        summary.rating:SetShown(data.item_id ~= nil or data.gearAction ~= nil or nextStep ~= nil)
         if data.item_id then
             self:SetItemButton(summary.itemButton, data.item_id, summary.itemName, data.name, data.item and data.item.quality, data, "gear")
         else
@@ -7683,10 +7705,11 @@ function UI:RefreshGearSelection()
         summary.findButton:SetEnabled(not data.disabledReason)
         summary.detailsButton:SetShown(data.item_id ~= nil)
     end
-    if self:IsInspectorVisible() and not self.slotComparison and self.selectedItemData ~= data then
+    if self:IsInspectorVisible() and not self.slotComparison then
         if data and data.item_id then
-            self:ShowInspectorFor(data.item_id, data, "gear")
-        else
+            if self.selectedItemData ~= data then self:ShowInspectorFor(data.item_id, data, "gear")
+            else self:RefreshDetails(data.item_id, data, "gear") end
+        elseif self.selectedItemId then
             self:ClearSelectedRow()
             self:RefreshDetails()
         end
@@ -7737,14 +7760,19 @@ function UI:QueueGearRatings(request)
         local live = player and player.class == request.class and {
             class = request.class, spec = request.spec, phase = player.phase, level = player.level,
         }
+        local liveContext = live and not request.owned.equippedOnly
+            and service:GetContext(live.class, live.spec, live.phase, live.level, request.owned)
         for i, row in ipairs(request.rows) do
-            if row.item_id then
+            if row.item_id or not row.disabledReason then
                 if checkpoint then checkpoint() end
-                local placement = context and service:GetEquippedPlacement(context, row.slotKey, row.dataSlots)
+                local placement = row.item_id and context and service:GetEquippedPlacement(context, row.slotKey, row.dataSlots)
                 local item = placement and placement.item
                 local swap = item and live and service:GetLiveLevelingSwap(item, row.item_link, request.owned, row.slotKey, live, true)
                 if checkpoint then checkpoint() end
                 for field, value in pairs(ratedRows[i]) do row[field] = value end
+                if liveContext and (not swap or swap.status ~= "best_owned") and row.overlayKind ~= "unknown" then
+                    row.gearAction = service:GetOwnedGearAction(liveContext, row.slotKey, row.dataSlots)
+                end
                 row.stat_rank, row.gearSwap, row.gearRated = placement, swap, true
                 if swap and swap.conditional then
                     row.gearPurpose, row.gearEffect = service:GetGearPurpose(context, item, swap)
@@ -7754,7 +7782,7 @@ function UI:QueueGearRatings(request)
                         else row.gearPurpose = "Effect" end
                     end
                 end
-                if gear:IsVisible() and gear.slots[row.slotKey].gearData == row then
+                if gear.slots[row.slotKey].gearData == row then
                     local button = gear.slots[row.slotKey]
                     BigBiSList.Widgets:SetEquippedBiS(button, row.equipped_bis)
                     layoutGearSlotText(button)
@@ -8943,22 +8971,27 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     content:SetWidth(detailsWidth)
     local versions = self.domainVersions or {}
-    local gearView, summary, record, rated = self:GetLevelingGearView(detailData, detailMode, nil, false, true)
     local calculationKey = "calculation:" .. tostring(detailData and detailData.stat_identity or itemId)
     local calculationOpen = self:IsDetailsSectionExpanded(calculationKey, false)
+    local gearView, summary, record, rated = self:GetLevelingGearView(detailData, detailMode, nil, false,
+        detailMode ~= "gear" or calculationOpen)
     local stronger = gearView and calculationOpen and BigBiSList.ForeverGearRating:GetLevelingSuccessor(summary, rated)
     local swap = gearView and gearView.swap
+    local gearSlot = detailMode == "gear" and detailData and detailData.usesGearRating
+    local detailContext = self:GetItemContext()
+    local contextPhase = self.slotComparison and detailContext.phase or self:GetEffectivePhaseKey()
     local selectedReference = detailMode == "comparison" and self.slotComparison and self.slotComparison.reference
     local signature = table.concat({
         tostring(itemId or "none"),
         tostring(detailMode or ""),
         tostring(detailData or ""),
-        tostring(self:GetItemContext().class), tostring(self:GetItemContext().spec), tostring(self:GetItemContext().phase),
+        tostring(detailContext.class), tostring(detailContext.spec), tostring(contextPhase),
         tostring(versions.details or 0),
         tostring(math.floor((detailsWidth or 0) + 0.5)),
         summary and tostring(summary.revision) or "",
         stronger and tostring(stronger.level) or "",
-        tostring(swap), tostring(selectedReference),
+        tostring(swap), tostring(selectedReference), tostring(rated),
+        gearSlot and tostring(detailData.gearRated) or "", gearSlot and (detailData.gearNextStep or "") or "",
     }, ":")
     if self.detailsRenderSignature == signature then
         self:ApplyDetailsScrollGeometry(self.detailsContentHeight, detailsHeight)
@@ -9055,7 +9088,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     if detailData and detailData.slot then
         local detailPhase = detailData.phase or (detailData.bestUse and detailData.bestUse.phase)
-        local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetItemContext().phase)
+        local selectedPhase = BigBiSList:GetPhaseDisplayName(detailPhase or contextPhase)
         appendText(recommendationLines, selectedPhase .. " - " .. detailData.slot)
     end
 
@@ -9142,12 +9175,22 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     if gearView then
         local why = {gearView.today or gearView.strength}
+        if gearSlot then
+            appendText(why, gearView.comparisonDetail)
+            appendText(why, gearView.personalScope)
+            if rated and rated.rank then
+                appendText(why, gearView.strength .. " of " .. rated.total .. " ranked options"
+                    .. (rated.score_percent and (" · " .. rated.score_percent .. "% of the top item's score") or ""))
+                appendText(why, gearView.rankNote)
+            end
+            if detailData.gearNextStep then appendText(why, "Next · " .. detailData.gearNextStep) end
+        end
         local explanation = not calculationOpen and widgets:SwapExplanationLines(swap, selectedReference)
         if explanation then
             for _, line in ipairs(explanation) do appendText(why, line) end
-        else appendText(why, gearView.comparisonDetail or gearView.evidence) end
+        elseif not gearSlot then appendText(why, gearView.comparisonDetail or gearView.evidence) end
         appendText(why, detailData and detailData.lookupReason)
-        appendText(why, ownershipText)
+        if not gearSlot then appendText(why, ownershipText) end
         if #why > 0 then recommendationLines = why end
     end
     anchor = self:CreateDetailsText(content, anchor, BigBiSList.isForever and "Why this item" or "Recommendation",
@@ -9171,11 +9214,17 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         end
     end
     if #routeFields == 0 and displayOption then
-        table.insert(routeFields, { label = "Source", value = self:GetAccessOptionDisplayText(displayOption) or displayOption.label or "Source" })
+        local source = trim(self:GetAccessOptionDisplayText(displayOption) or displayOption.label)
+        if source ~= "" and source ~= "Source" and (not gearSlot or source ~= "Source unknown") then
+            table.insert(routeFields, { label = "Source", value = source })
+        end
         if trim(displayOption.zone) ~= "" then table.insert(routeFields, { label = "Location", value = displayOption.zone }) end
         if trim(displayOption.cost_summary) ~= "" then table.insert(routeFields, { label = "Cost", value = displayOption.cost_summary }) end
     elseif #routeFields == 0 then
-        table.insert(routeFields, { label = "Source", value = accessData.source_summary or "Source details are not recorded." })
+        local source = trim(accessData.source_summary)
+        if source ~= "" or not gearSlot then
+            table.insert(routeFields, { label = "Source", value = source ~= "" and source or "Source details are not recorded." })
+        end
     end
     if optionEvaluation and optionEvaluation.status == "ready" and accessData.ready_access_detail and accessData.ready_access_detail ~= "" then
         table.insert(routeFields, { label = "Route note", value = self:GetAccessHelpText(optionEvaluation, accessData) })
@@ -9192,11 +9241,13 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     if prerequisitesText and prerequisitesText ~= "" then
         table.insert(routeFields, { label = "Requires", value = prerequisitesText })
     end
-    if accessEvaluation.status ~= "ready" and accessEvaluation.status ~= "ready_alternate" then
+    if (not gearSlot or #routeFields > 0) and accessEvaluation.status ~= "ready" and accessEvaluation.status ~= "ready_alternate" then
         table.insert(routeFields, { label = "Access", value = self:GetAccessBadgeLabel(accessEvaluation.status, accessData) })
     end
-    anchor = self:CreateDetailsFields(content, anchor, BigBiSList.isForever and "How to get it" or "Selected route", routeFields)
-    contentHeight = contentHeight + anchor.contentHeight
+    if #routeFields > 0 then
+        anchor = self:CreateDetailsFields(content, anchor, BigBiSList.isForever and "How to get it" or "Selected route", routeFields)
+        contentHeight = contentHeight + anchor.contentHeight
+    end
     if self.CreateAcquisitionSteps then
         local acquisitionHeight
         anchor, acquisitionHeight = self:CreateAcquisitionSteps(content, anchor, displayOption, accessEvaluation.status)

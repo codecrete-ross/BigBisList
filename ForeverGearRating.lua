@@ -1081,6 +1081,25 @@ function rating:ReferenceLoadout(context, gear, roleOnly, includeBreakdown)
     return total, uncertain, loadout, breakdown
 end
 
+local function roleScore(context, gear)
+    local total = rating:ReferenceLoadout(context, gear, true)
+    if total then return total end
+    total = 0
+    for _, instance in pairs(gear) do
+        if instance.facts then
+            local stats = swapStats(instance.facts, instance.item_link)
+            total = total + (score(context, instance.facts, true, nil, stats) or 0)
+        end
+    end
+    return total
+end
+
+local function setRoleChange(context, result, previous, retained, proposed)
+    local before = roleScore(context, previous)
+    result.roleDelta = roleScore(context, proposed) - before
+    result.roleDisplaced = math.max(0, before - roleScore(context, retained))
+end
+
 local function comparisonScore(trace)
     local context, active, scorer = trace.context, trace.active or trace.context.activeBuild, addon.ForeverScoring
     local weights = trace.active and trace.active.weights or rating:ReferenceWeights(context)
@@ -1228,6 +1247,17 @@ function rating:GetSwapExplanation(swap, readyOnly)
     if math.abs(newScore - oldScore - result.delta) > 0.000001 then
         trace.explanation = false
         return
+    end
+    -- Storage badges need only the equip decision. Price its grade on the
+    -- explanation queue, using the same displaced pieces as the Guide.
+    if result.incoming and not result.roleDelta then
+        local retained = copy(trace.before)
+        for _, definition in ipairs(addon:GetEquipmentSlotDefinitions()) do
+            for _, old in ipairs(result.replacements) do
+                if old.slot == definition.label then retained[definition.key] = nil end
+            end
+        end
+        setRoleChange(trace.context, result, trace.before, retained, trace.after)
     end
     local scorer = addon.ForeverScoring
     local points = scorer:StatDifferences(oldPoints, newPoints)
@@ -2721,25 +2751,6 @@ local function groupGear(group, state, choices)
     return gear
 end
 
-local function roleScore(context, gear)
-    local total = rating:ReferenceLoadout(context, gear, true)
-    if total then return total end
-    total = 0
-    for _, instance in pairs(gear) do
-        if instance.facts then
-            local stats = swapStats(instance.facts, instance.item_link)
-            total = total + (score(context, instance.facts, true, nil, stats) or 0)
-        end
-    end
-    return total
-end
-
-local function setRoleChange(context, result, previous, retained)
-    local before = roleScore(context, previous)
-    result.roleDelta = roleScore(context, result.gear) - before
-    result.roleDisplaced = math.max(0, before - roleScore(context, retained))
-end
-
 local function findOwnedCopy(context, candidate)
     local preferred = context.ownedFacts[candidate.key]
     if not preferred or not candidate.item_link then return preferred end
@@ -2838,7 +2849,7 @@ local function ownedSwap(context, group, candidate, quantity, held)
             result.replacements[#result.replacements + 1] = referenceItem(previous, definition.label)
         end
     end
-    if result.delta and result.delta > 0 and not state.unresolved then setRoleChange(context, result, previousGear, retained) end
+    if result.delta and result.delta > 0 and not state.unresolved then setRoleChange(context, result, previousGear, retained, gear) end
     if finite(result.delta) and not state.unresolved then
         traceComparison(context, result, previousGear, gear, candidate.facts, "owned")
         result.comparisonTrace.definitions = group.definitions
@@ -3350,10 +3361,24 @@ function rating:GetOwnedGearAction(context, physical, slots)
     if missing or #group.definitions == 0 then return end
     local state = ownedLoadout(build, group)
     if state.unresolved then return end
-    for index, definition in ipairs(group.definitions) do
+    local actions = getEquipActions(build, group, state)
+    for _, definition in ipairs(group.definitions) do
         if definition.key == physical then
-            local instance = state.baseline[index].instance
-            return instance and getEquipActions(build, group, state)[instance]
+            -- A ring or weapon can move to the other position in the best
+            -- pair. Follow what actually leaves the worn outfit.
+            for _, choice in ipairs(state.baseline) do
+                local action = actions[choice.instance]
+                if action then
+                    for _, old in ipairs(action.replacements) do
+                        if old.slot == definition.label then return action end
+                    end
+                    if not build.equipmentFacts[physical] then
+                        for _, new in ipairs(action.incoming) do
+                            if new.slot == definition.label then return action end
+                        end
+                    end
+                end
+            end
         end
     end
 end

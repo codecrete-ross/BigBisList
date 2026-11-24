@@ -13,7 +13,8 @@ TooltipDataProcessor = {AddTooltipPostCall = function(kind, callback)
     assert(kind == Enum.TooltipDataType.Item)
     postItem = callback
 end}
-local ui = H.load("forever")
+if fullCatalog then GetBuildInfo = function() return "Forever", "71037" end end
+local ui = H.load("forever", fullCatalog)
 -- These fixtures check the expanded calculations and their native comparison basis.
 BigBiSList:GetAccountDB().profile.tooltips.compact = false
 local addon, rating = BigBiSList, BigBiSList.ForeverGearRating
@@ -49,14 +50,14 @@ local profile = {
     pre_raid = {slots = slots, weights = weights, dual_wield = true,
         weapon_types = {"Sword"}, two_hand_weapon_types = {"Sword"}},
 }
-BigBiSListData.stat_rank = {
+if not fullCatalog then BigBiSListData.stat_rank = {
     version = "forever-stat-ranks-1",
     profiles = {["Paladin/Protection"] = profile, ["Paladin/Retribution"] = profile, ["Paladin/Holy"] = profile},
     common_slots = slots,
     equipment = {Paladin = {weapon_types = {"Sword"}, two_hand_weapon_types = {"Sword"}}},
     item_fields = {"id", "name", "slot", "level", "stats", "max_equipped", "weapon_subtype"},
     items = rows,
-}
+} end
 local colors = {
     [0] = {157, 157, 157}, {255, 255, 255}, {30, 255, 0}, {0, 112, 221}, {163, 53, 238}, {255, 128, 0},
 }
@@ -120,12 +121,13 @@ class ForeverTooltipTests(unittest.TestCase):
     def setUpClass(cls):
         cls.lua = find_lua51()
 
-    def lua_run(self, code):
+    def lua_run(self, code, *, full_catalog=False):
         if not self.lua:
             self.skipTest("Lua 5.1 is unavailable")
         process = subprocess.run(
             [self.lua, "-"], cwd=ADDON_DIR, encoding="utf-8", capture_output=True, timeout=90,
-            input=FIXTURE + code + '\nassert(#H.errors == 0, table.concat(H.errors, "\\n"))\n',
+            input=('local fullCatalog = true\n' if full_catalog else '') + FIXTURE + code
+                  + '\nassert(#H.errors == 0, table.concat(H.errors, "\\n"))\n',
         )
         self.assertEqual(process.returncode, 0, process.stderr or process.stdout)
 
@@ -191,6 +193,85 @@ showNative(tip, "item:900004"); H.settle()
 assert(tip.__bigBisListState.itemId == 900004)
 includes(tip, "Retribution —"); oneSection(tip)
 ''')
+
+    def test_bag_hover_explains_the_equipped_glove_swap_before_other_specs(self):
+        script = r'''
+level = 55
+UnitClass = function() return "Paladin", "PALADIN" end
+if buildMode ~= "reference" then UnitRace = function() return "Human", "Human", 1 end end
+local useTalents = buildMode == "active"
+if useTalents then H.usePaladinReferenceTalents("Protection") end
+addon:GetAccountDB().profile.tooltips.compact = true
+addon:GetCharacterDB().tooltipTalentSpecs[2] = "Retribution"
+local vice = assert(rating:GetPublishedFacts("9640:0:0:0:1:13027"))
+local templar = assert(rating:GetPublishedFacts("10165:0:0:0:1:12754"))
+local strength = assert(rating:GetPublishedFacts("9640:0:0:0:1:13021"))
+local contents = {templar, strength}
+GetInventoryItemID = function(_, slot) if slot == 10 then return vice.id end end
+GetInventoryItemLink = function(_, slot) if slot == 10 then return vice.variant_link end end
+C_Container = {GetContainerNumSlots = function(bag) return bag == 0 and #contents or 0 end,
+    GetContainerItemID = function(bag, i) return contents[i].id end,
+    GetContainerItemLink = function(bag, i) return contents[i].variant_link end}
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:270025"}, {"20:1"}
+addon:RefreshTooltipPlayerContext()
+ui:GetOwnedSnapshot()
+local tip, activeBeforeOther = GameTooltip, false
+if buildMode == "unreadable" then
+    showNative(tip, templar.variant_link, "GetBagItem", {0,1}); H.settle()
+    includes(tip, "Protection — Depends on your setup · uses default spec weights")
+    excludes(tip, "Equip now"); oneSection(tip)
+    return
+end
+local refresh = tip.RefreshData
+function tip:RefreshData()
+    refresh(self)
+    local rendered = text(self)
+    if rendered:find("2 Stamina nearly offsets losing 14 Attack Power", 1, true)
+        and not rendered:find("Retribution —", 1, true) then activeBeforeOther = true end
+end
+local function check(grade, armor, points)
+    H.modifiers.alt = false
+    showNative(tip, templar.variant_link, "GetBagItem", {0,1}); H.settle()
+    oneSection(tip)
+    includes(tip, "Protection — Equip now · " .. grade .. " over Vice Grips of the Defender")
+    includes(tip, "2 Stamina nearly offsets losing 14 Attack Power.")
+    includes(tip, "2 Spell Power"); includes(tip, "1 Defense"); includes(tip, armor)
+    includes(tip, "Retribution — Downgrade vs. Vice Grips of Strength in your bags")
+    includes(tip, "Holy — Downgrade vs. Silvered Gauntlets in your bank")
+    excludes(tip, "score points")
+    local _, count = text(tip):gsub(" — ", ""); assert(count == 3, text(tip))
+    H.modifiers.alt = true
+    addon.tooltipModifierFrame:GetScript("OnEvent")(addon.tooltipModifierFrame, "MODIFIER_STATE_CHANGED", "LALT", 1)
+    H.settle(); oneSection(tip)
+    includes(tip, (useTalents and "Your setup" or "Default spec weights") .. " · Lv 55 · " .. points .. " score points")
+    includes(tip, "2 Stamina nearly offsets losing 14 Attack Power.")
+    includes(tip, "−14 Attack Power (−4.2 score points)")
+    includes(tip, "Best owned · Vice Grips of Strength (bags)")
+    includes(tip, "Best owned · Silvered Gauntlets (bank)")
+end
+check("Upgrade", "10 Armor", useTalents and "+4.13" or "+4.05")
+assert(activeBeforeOther, "The active reason waited for the off-specs")
+local read = rating.ReadNative
+function rating:ReadNative(id, key, link, base)
+    if key == vice.key then
+        return {id=id, name=vice.name, level=vice.level, slot="Hands", armor_type="Plate", effects={},
+            stats={armor=330, stamina=11, spell_power=5, defense=4, attack_power=14}}
+    end
+    return read(self, id, key, link, base)
+end
+rating:InvalidateItem(vice.id)
+check("Slight upgrade", "2 Armor lost", useTalents and "+3.074" or "+3.09")
+H.modifiers.alt = false
+rating:InvalidateItem(vice.id)
+showNative(tip, templar.variant_link, "GetBagItem", {0,1})
+showNative(tip, strength.variant_link, "GetBagItem", {0,2}); H.settle()
+assert(tip.__bigBisListState.link == strength.variant_link and tip.__bigBisListState.bagSlot == 2)
+excludes(tip, "2 Stamina nearly offsets"); oneSection(tip)
+'''
+        for mode in ("reference", "active", "unreadable"):
+            with self.subTest(build=mode):
+                self.lua_run(f'local buildMode = "{mode}"\n' + script, full_catalog=True)
 
     def test_shield_compares_the_actual_offhand_and_names_a_weapon_setup(self):
         self.lua_run(r'''
@@ -286,6 +367,36 @@ C_Bank = {FetchPurchasedBankTabIDs=function() return {} end}
 ui.personalBankOpen = true
 rating.GetWorkCheckpoint = function() return function() ui.personalBankOpen = false end end
 assert(ui:ScanBankItems() == false and addon:GetCharacterDB().bankCache == bank)
+''')
+
+    def test_my_gear_names_only_the_displaced_ring_and_qualifies_an_unpriced_effect(self):
+        self.lua_run(r'''
+H.equipped[11], H.equipped[12] = 900001, 900002
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:900004"}, {"20:1"}
+addon:RefreshTooltipPlayerContext()
+local owned = ui:GetOwnedSnapshot()
+local ctx = rating:GetContext("Paladin","Protection","LEVELING",level,owned)
+local action = assert(rating:GetOwnedGearAction(ctx,"Finger1",{"Ring"}))
+assert(not rating:GetOwnedGearAction(ctx,"Finger0",{"Ring"}), "The stronger worn ring must stay equipped")
+assert(#action.replacements == 1 and action.replacements[1].name == "Blood Ritual Ring")
+assert(action.replacements[1].slot == "Finger 2" and #action.incoming == 1 and action.incoming[1].state == "bank")
+local view = addon.Widgets:EquippedAdvice({gearAction=action,slot="Finger 2"}, {}, "Protection", addon:GetTooltipPlayerContext())
+assert(view.today == "Get Bank ring from bank" and view.swap == action)
+bank.links, bank.locations = {}, {}; ui:Invalidate("ownership","visit")
+BigBiSListData.stat_rank.item_fields[8] = "effects"
+gear(900090,"Warding ring","Ring",14)
+rows["900090"][8] = {"Use: Ward off flame."}
+gear(900091,"Equal ring","Ring",4)
+C_Container = {GetContainerNumSlots=function(bag) return bag == 0 and 1 or 0 end,
+    GetContainerItemID=function() return 900091 end, GetContainerItemLink=function() return "item:900091" end}
+addon:GetAccountDB().profile.tooltips.compact = true
+showNative(GameTooltip,"item:900091","GetBagItem",{0,1}); H.settle()
+includes(GameTooltip,"Protection — Sidegrade")
+includes(GameTooltip,"Both setups score equally."); excludes(GameTooltip,"Equip now")
+showNative(GameTooltip,"item:900090","GetLootItem",{1}); H.settle()
+includes(GameTooltip,"Protection — Possible upgrade")
+includes(GameTooltip,"Ward off flame"); excludes(GameTooltip,"Equip now")
 ''')
 
     def test_one_sword_shows_the_players_swap_and_its_leveling_ranges(self):

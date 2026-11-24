@@ -318,6 +318,27 @@ function H.settle()
     end
     error("UI geometry or refresh timers did not settle after 600 passes")
 end
+function H.usePaladinReferenceTalents(spec)
+    local model = BigBiSListData.character_scoring
+    local ranks = model.profiles["Paladin/" .. spec].scenarios.pre_raid.reference_ranks
+    local nodes, definitions = {}, {}
+    for entry, trait in pairs(model.traits) do
+        nodes[trait.node_id], definitions[trait.definition_id] = tonumber(entry), trait.spell_id
+    end
+    C_ClassTalents = {GetActiveConfigID = function() return 1 end}
+    C_Traits = {
+        GetConfigInfo = function() return {treeIDs = {1100}} end,
+        GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = spec}} end,
+        GetGroupCurrencyInfo = function() return {{traitNodeGroupID = 1, currencyInfos = {{spent = 31}}}} end,
+        GetNodeInfo = function(_, node)
+            local entry = assert(nodes[node])
+            local rank = ranks[tostring(entry)] or 0
+            return {entryIDs = {entry}, activeEntry = rank > 0 and {entryID = entry, rank = rank} or nil}
+        end,
+        GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
+    }
+end
+
 function H.load(flavor, fullGuide)
     local forever = flavor == "forever"
     assert(loadfile(forever and "DataForever.lua" or "Data.lua"))("BigBiSList")

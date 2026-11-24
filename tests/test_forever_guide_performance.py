@@ -653,6 +653,7 @@ local function priest(before, after)
     assert(equipped.delta * equipped.weightReversal < 0)
     assert(not rating:ReliableGain(best))
     contains(widgets:DecisionReason(after, best), "Short fights")
+    contains(widgets:SwapDecisionSummary(after, best), "Short fights")
     contains(table.concat(widgets:SwapExplanationLines(best), "\n"), "healing output")
 end
 priest(shawl, mantle)
@@ -666,6 +667,7 @@ local ring = assert(rating:GetGuideSwap(hunter, painweaver, "Finger1", "Ring", "
 local caps = assert(rating:GetSwapExplanation(ring))
 assert(ring.delta > 0 and caps.raw.hit_percent == -1 and math.abs(caps.points.hit_percent) < .000001)
 contains(widgets:DecisionReason(painweaver, ring), "ranged Hit cap")
+contains(widgets:SwapDecisionSummary(painweaver, ring), "ranged Hit cap")
 contains(table.concat(widgets:SwapExplanationLines(ring, true, true), "\n"), "−1% Hit (0 score points)")
 local partial = rating:GetContext("Hunter", "Marksmanship", "PR", 60,
     {equippedSlots={Finger1={item_id=blackstone.id,item_link="item:17713"}}})
@@ -691,20 +693,24 @@ end
 local gained, lost = swap(ordinary,matched), swap(matched,ordinary)
 assert(gained.delta == 14 and lost.delta == -14)
 assert(widgets:DecisionReason(matched,gained) == "Completes 2-piece Practice Armor bonus")
+assert(widgets:SwapDecisionSummary(matched,gained) == "Completes 2-piece Practice Armor bonus")
 assert(widgets:DecisionReason(ordinary,lost) == "Breaks 2-piece Practice Armor bonus")
 local unpriced = gloves(90007,{stamina=8})
 unpriced.effects = {"Use: Ward off flame."}
 local risk = swap(ordinary,unpriced)
 assert(risk.conditional and not rating:ReliableGain(risk))
 contains(widgets:DecisionReason(unpriced,risk), "Ward off flame")
+contains(widgets:SwapDecisionSummary(unpriced,risk), "Ward off flame")
 local tie = swap(ordinary,gloves(90008,{stamina=4}))
 assert(tie.delta == 0 and widgets:DecisionReason(nil,tie) == "same score")
+assert(widgets:SwapDecisionSummary(nil,tie) == "Both setups score equally.")
 local special = gloves(90009,{stamina=1})
 special.effects = {"Equip: Stalwart."}
 special.effect_rules = {{key="stalwart",label=special.effects[1],spell_name="Stalwart",kind="passive_stats",stats={stamina=8}}}
 local priced = swap(ordinary,special)
 assert(priced.delta == 8 and not priced.conditional)
 assert(widgets:DecisionReason(special,priced) == "Gains Stalwart")
+assert(widgets:SwapDecisionSummary(special,priced) == "Gains Stalwart")
 ''')
 
     def test_banked_sword_and_exact_roll_agree_across_wishlist_details_and_scoring(self):
@@ -1091,7 +1097,7 @@ ui:Open(); H.settle()
 ui:SetTab("My Gear"); H.settle()
 ui.gearFrame.slots.Head:Click(); H.settle()
 local summary = ui.gearFrame.summary
-assert(summary.rating:GetText():find("Bank · Embrace of the Lycan", 1, true))
+assert(summary.rating:GetText():find("Get Embrace of the Lycan from bank", 1, true))
 local events = addon.uiEventFrame
 bank.links, bag = {}, 9479
 events:GetScript("OnEvent")(events, "BAG_UPDATE_DELAYED"); H.settle()
@@ -1100,6 +1106,77 @@ bag = nil
 events:GetScript("OnEvent")(events, "BAG_UPDATE_DELAYED"); H.settle()
 assert(summary.rating:GetText():find("Embrace of the Lycan · Drops from Chief Ukorz Sandscalp", 1, true))
 ''')
+
+    def test_open_equipped_details_follow_the_selected_slot_and_finished_rating(self):
+        for width, height in ((900, 500), (1020, 790)):
+            for density in ("compact", "comfortable"):
+                with self.subTest(size=(width, height), density=density):
+                    setup = SETUP.replace('local ui = H.load', 'GetBuildInfo = function() return "Forever", "71037" end\nlocal ui = H.load')
+                    self.lua_run(f'local width, height, density = {width}, {height}, "{density}"\n' + r'''
+level = 55
+addon.DetectPlayerSpec = function() return "Protection" end
+H.usePaladinReferenceTalents("Protection")
+local vice = assert(rating:GetPublishedFacts("9640:0:0:0:1:13027"))
+local templar = assert(rating:GetPublishedFacts("10165:0:0:0:1:12754"))
+local slots = {[2]=7673, [10]=vice.id}
+H.itemNames[7673], H.itemNames[vice.id] = "Talvash's Enhancing Necklace", vice.name
+GetInventoryItemID = function(_, slot) return slots[slot] end
+GetInventoryItemLink = function(_, slot) return slot == 10 and vice.variant_link or (slots[slot] and "item:" .. slots[slot]) end
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {templar.variant_link}, {"20:1"}
+addon:RefreshTooltipPlayerContext()
+addon:SetSelection("Paladin", "Protection", "LEVELING", "Equipped")
+addon:SetSelectedLevelingLevel(level, true)
+local window = addon:GetAccountDB().profile.window
+window.width, window.height, window.density = width, height, density
+UIParent:SetSize(width, height)
+addon:InitUIEvents(); ui:Open()
+for i=1,3 do
+    if ui.gearFrame and ui.gearFrame.slots.Neck.gearData then break end
+    H.now = H.now + 1/60; H.tick()
+end
+local gear = assert(ui.gearFrame)
+local neck, hands = gear.slots.Neck, gear.slots.Hands
+local function visibleDetails()
+    local lines = {}
+    for _, frame in ipairs({ui.detailsContent:GetChildren()}) do
+        if frame:IsVisible() then
+            for _, label in ipairs({frame:GetRegions()}) do
+                if label.GetText and label:IsVisible() and label:GetText() then lines[#lines+1]=label:GetText() end
+            end
+        end
+    end
+    return table.concat(lines, "\n")
+end
+local function has(text, part) assert(text:find(part,1,true), text .. " missing " .. part) end
+local function lacks(text, part) assert(not text:find(part,1,true), text) end
+neck:Click(); gear.summary.detailsButton:Click()
+assert(not neck.gearData.gearRated and ui.selectedItemData == neck.gearData)
+has(visibleDetails(),"Checking your gear")
+H.settle()
+local why = visibleDetails()
+has(why,"Keep equipped"); has(why,"Best neck you own for Protection.")
+has(why,"Level 55 Guide · Tied for 9th of 1086"); has(why,"67% of the top item's score")
+lacks(why,"Pre-Raid"); lacks(why,"Not ranked"); lacks(why,"How to get it")
+has(gear.summary.rating:GetText(),"Level 55 Guide · Tied for 9th")
+has(neck.label.displayedText, "Keep"); assert(not neck.label.isTruncated)
+has(gear.preview.score:GetText(), "% of best known outfit")
+ui:SetInspectorVisible(false); H.settle()
+hands:Click(); gear.summary.detailsButton:Click(); H.settle()
+has(visibleDetails(),"Get Templar Gauntlets of the Defender from bank")
+has(visibleDetails(),"Equipped · Vice Grips of the Defender")
+has(visibleDetails(),"Gives up 14 Attack Power")
+assert(not hands.label.isTruncated and hands.label.displayedText:match("^Get"))
+-- Select a different slot while a second ownership snapshot is still being rated.
+ui:SetInspectorVisible(false); H.settle()
+bank.links, bank.locations = {}, {}
+ui:Invalidate("ownership","bank check"); ui:Refresh()
+hands:Click(); gear.summary.detailsButton:Click()
+ui:SetInspectorVisible(false); neck:Click(); gear.summary.detailsButton:Click()
+H.settle()
+assert(ui.selectedItemData == neck.gearData)
+has(visibleDetails(),"Best neck you own"); lacks(visibleDetails(),"Vice Grips"); lacks(visibleDetails(),"Templar")
+''', setup=setup)
 
     def test_documented_auction_house_targets_follow_the_players_market(self):
         self.lua_run(r'''

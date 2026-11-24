@@ -20,12 +20,12 @@ must accept the installed artifact in Forever before merge and publication.
 | Milestone | Evidence and remaining work |
 | --- | --- |
 | Home and navigation | Home expanded from 72 to 420 similar buttons on the level-51 Retribution replay. Both modes now use their specialist workspaces. Offline tests cover Home save migration, native and fallback title bars, and both ways of opening Compare from Details. A nonzero list or comparison scroll offset survives the return. |
-| Endgame response | The timing harness now requires verified active talents; fallback-only timings missed the ordinary scoring workload. The revised replays process 101 Protection and 597 Retribution upgrades, with 118 and 120 BiS rows. First pages remain within 50 ms. Scoring yields between loadouts and timed-effect states, paint work has more headroom, and finished Guide work avoids redundant control layout. The 4 ms peak-work target remains open: CPU-time replays also show occasional overruns. Preserve those failures and obtain the actual client measurements before accepting performance. |
+| Endgame response | The timing harness uses verified active talents. The current replays process 60 Protection and 597 Retribution upgrade actions, with 118 and 120 BiS rows. First pages remain within 50 ms. The 4 ms interaction target remains open across Windows wall-clock and Linux CPU-time replays. Record the player’s native performance before acceptance. |
 | Gearing evidence | Replaying the committed evidence made zero HTTP requests. All 3,448 early-level gaps and 242 unresolved candidates matched their reviewed cells and evidence. The equipment fidelity check passed on Guide source build 70959. Leveling sources are pinned to 70938 and the client target is 71037. |
 | Scoring corrections | Implemented and being revalidated. Source 70959 and target 71037 match across the reviewed talents, enchants, sets, racials, triggers and 1,783 random-property families. Ratings normalize once. Hit and Expertise use marginal loadout caps and passive talent bonuses. Hotfixed staves share their facts. Pre-Raid approvals use the Guide's reference scorer. Unknown builds and unresolved mechanics retain qualified advice. |
 | Weight calibration | All 28 numerical profiles have published coefficients, units, representative talents and encounter assumptions. The source ledger also records actual verification outfits and source limitations. SixtySim currently serves 18 profiles from November 22, nine from November 17 and one from November 14; retain each page's provenance. A review of 18 fixture swaps and 1,153 approved-pool swaps changes 23 conditional qualifications under the current healer and tank alternatives. Default coefficients stay fixed in that follow-up. |
-| Recommendation explanations | Gear rows show the trade-off. Tooltips and Details use the same before and after loadouts as the verdict. The selected reference, exact rolls, enchants, and weapon partners carry into the explanation. Replays cover both Defender glove results, short-fight healing, capped Hit, gained and broken sets, item effects, and bank partners. |
-| Client acceptance | Pending for the recommendation-explanation candidate on Forever 1.60.1.71037. Record the player's cold and warm performance, native window, return paths, and gameplay checks against the current digest in the release PR. See the November 23 evidence below. |
+| Recommendation explanations | The ordinary bag hover explains the active spec’s equipped swap and keeps a verdict for each other spec. Alt shows each comparison’s reference, stat amounts and score points. My Gear names the owned upgrade or says to keep the worn item, then gives its standing in the selected Guide. The [bag and equipped-item replays](#november-23-bag-tooltips-and-my-gear) exercise both reported examples. |
+| Client acceptance | Pending for the My Gear and bag-tooltip candidate on Forever 1.60.1.71037. Record the player’s cold and warm performance, native window, return paths, normal bag hover and open My Gear Details against the digest in the [latest installation record](#november-23-bag-tooltips-and-my-gear). |
 | Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
 
@@ -328,6 +328,75 @@ All six Windows replays of this package showed clickable pages after 6–14 ms
 of measured work. All four endgame scenarios met 4 ms. The leveling scenarios
 peaked at 7 and 11 ms, and Retribution took four simulated frames to show the
 first page.
+
+## November 23 bag tooltips and My Gear
+
+The previous glove regression hovered an add-on Guide row. The new replay opens
+the native bag tooltip with Alt released and the full build-71037 catalogs.
+With the 318-Armor Vice Grips equipped, Protection says **Equip now · Upgrade**
+and Templar leads by 4.05 points under the reference weights. With a simulated
+exact reading of 330 Armor, it says **Equip now · Slight upgrade** and leads by
+3.09. Verified Protection talents produce the same two grades at +4.13 and
++3.074 points. An unreadable talent tree qualifies the verdict. The ordinary tooltip
+explains how 2 Stamina nearly offsets losing 14 Attack Power. The other gains
+are 1 Defense and 2 Spell Power, plus 10 Armor with the first reference or a
+loss of 2 Armor with the second. This reason appears before off-spec scoring
+finishes. Retribution prefers Vice Grips of Strength in bags and Holy prefers
+Silvered Gauntlets in the bank. Alt shows the arithmetic, including
+**−14 Attack Power (−4.2 score points)** for Protection.
+
+At level 55, the equipped Protection necklace first says **Checking your
+gear…**. The open Details panel then says **Keep equipped** and **Best neck you
+own for Protection.** Talvash’s Enhancing Necklace ties for 9th among 1,086
+ranked neck variants and scores 67% of the top variant. The panel labels that
+as level-55 Guide standing and omits the empty source. Changing from Hands to
+Neck while scoring is in progress leaves the necklace, its reference and its
+standing visible. A separate replay names an attainable upgrade and its boss.
+The outfit percentage labels its benchmark and reports unscored slots.
+
+Coverage includes a banked ring that replaces only the weaker worn ring, an
+equally scoring ring pair, a named unpriced effect, the equipped shield with
+its banked weapon partner, and moving the pointer to another bag slot during
+scoring. The two regenerated Guide bundles retain every reference ranking from
+`f0ea6284`. The equip grade uses the role contribution of the actual displaced
+pieces. The default ranking coefficients are unchanged.
+
+The timing replay opens a fresh save, clicks the equipped necklace before the
+paper doll finishes scoring, opens Details, then hovers the bagged gloves. Each
+process uses verified Protection talents. Times below are Windows harness
+milliseconds on the packaged catalogs.
+
+| My Gear window and density | First clickable page | Select neck and open Details | Start bag hover | Peak measured frame or interaction |
+| --- | --- | --- | --- | --- |
+| 900×500 compact | Frame 1, 6 ms | 3 ms | <1 ms | 3 ms |
+| 900×500 comfortable | Frame 1, 4 ms | 1 ms | <1 ms | 3 ms |
+| 1020×790 compact | Frame 1, 7 ms | 3 ms | 1 ms | 5 ms during refresh |
+| 1020×790 comfortable | Frame 1, 8 ms | 4 ms | <1 ms | 4 ms |
+
+Six separate Guide and endgame replays reached a clickable viewport in 5–17 ms
+across two or three simulated frames. Both leveling Guide cases peaked at 3 ms.
+Protection Upgrades and both BiS List profiles stayed within 4 ms. Compact
+Retribution Upgrades recorded an 18 ms background frame. Cold loading took
+1.16–1.37 s and retained 163.6 MiB before browsing. The 50 ms first-page
+target passed throughout this run. The 4 ms interaction target remains open.
+Two fresh-process repeats of wide compact My Gear both peaked at 3 ms. Two
+repeats of compact Retribution Upgrades peaked at 3 ms and 35 ms. All four
+repeat cases met the first-page target.
+
+All 134 tests in the nine tooltip, Guide, acquisition, My Gear, Details,
+Compare, layout and widget suites passed. The expanded native glove test also
+passed separately for reference weights, verified talents and unreadable talents.
+The two failing acquisition assertions from the [previous hosted check](https://github.com/codecrete-ross/BigBisList/actions/runs/45282235204)
+now check the visible reference and arithmetic and compare settled tooltips
+indoors and outdoors.
+
+The install preflight passed strict scoring for all 56 contexts, strict
+Pre-Raid coverage for all 28 profiles, generated data and Lua 5.1 compilation.
+The local prerelease reported the 3,448 reviewed leveling gaps. All 25
+installed files match the source package byte for byte on Forever
+1.60.1.71037. Artifact SHA-256
+`bcca8b0a3c7b122b92c0d1a58dab0f76b2ad8fb1cda23fb54feb8dc8e79925c8`.
+The player’s in-game acceptance is pending for this digest.
 
 ## Collect and review
 

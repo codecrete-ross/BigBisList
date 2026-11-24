@@ -22,6 +22,7 @@
 - Corrected fractional Hit, Crit, Haste, Expertise, Defense, Dodge, Parry, Block, and flat weapon damage contributions. Hit and Expertise upgrades now account for the equipped loadout and passive talents.
 - Comparisons qualify swaps whose value changes between the supported build or encounter assumptions. Pre-Raid guide choices and their stat rankings use the same reference calculation.
 - Gear advice shows what you gain and give up from a swap. Hover for stat changes, and open Rank and calculation in Details for the score breakdown. Comparisons identify when a set bonus, Hit cap, item effect, or fight length affects the result.
+- Ordinary bag tooltips explain the active spec’s trade-off and keep a verdict for every spec. My Gear names upgrades in your bags or bank, distinguishes your best owned gear from its Guide rank, and updates open Details when scoring finishes.
 - Updated Whiteout Staff, Crackling Staff, and Channeler's Ring to their corrected Forever stats.
 - Added a separate Forever client build with isolated saves and race- and faction-aware Leveling and level-60 Pre-Raid recommendations for 28 profiles.
 - Leveling groups obtainable gear by activity and shows next quest steps. Acquisition details show quest progress, eligibility, and separate routes, with waypoint actions for verified Forever destinations.
