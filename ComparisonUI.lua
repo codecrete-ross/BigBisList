@@ -685,16 +685,15 @@ function UI:BindComparisonRow(row, entry, pinned)
         end
         local swap = data.stat_swap
         local delta = swap and (state.sort ~= "comparison" or swap.basis == state.swapBasis) and swap.delta
-        local change = delta and string.format("%s %+.1f pts", swap.conditional and "Conditional" or "Est.", delta) or "—"
-        if delta and lines > 1 then change = change .. "\n" .. service:GetSwapBasisLabel(swap.basis) end
+        local change = "—"
         local referenceLabel = self:GetComparisonReferenceLabel(state.reference)
         local evidence
         if view then
-            change, evidence = widgets:GearAdviceText(view) or "Gear comparison unavailable", widgets:GearIconText(view.evidenceGain and "upgradeArrow", view.evidence)
+            change = widgets:GearAdviceText(view) or "Can't compare this item yet"
+            if swap then evidence = widgets:DecisionReason(rated and rated.item, swap) end
         end
-        if state.sort == "comparison" and not pinned then
-            change = delta and ("Lv " .. state.level .. " · " .. service:EstimateSwapPoints(delta)) or "Comparison unavailable"
-            evidence = (swap and swap.conditional and "Conditional · " or "") .. referenceLabel
+        if state.sort == "comparison" and not pinned and delta and not swap.conditional then
+            evidence = evidence or referenceLabel
         elseif pinned and data.context.slotKey == state.reference.slotKey then
             change, evidence = COMPARED_ITEM, nil
         end
@@ -708,13 +707,8 @@ function UI:BindComparisonRow(row, entry, pinned)
             row.referenceButton.label:SetText(COMPARE_ACTION)
             row.referenceButton:SetSelected(false); row.referenceButton:SetWidth(columns.evidence.width); row.referenceButton:Show()
         end
-        local displayRank = rated or placement
         widgets:BindTooltip(row, function(_, tooltip)
-            if view then self:AddLevelingGearTooltip(tooltip, data, "comparison") end
-            if displayRank then
-                for _, line in ipairs(service:DescriptionLines(displayRank)) do tooltip:AddLine(line, 0.88, 0.88, 0.92, true) end
-            end
-            if data.guide_note then tooltip:AddLine(data.guide_note, 0.88, 0.88, 0.92, true) end
+            self:AddLevelingGearTooltip(tooltip, data, "comparison")
         end)
     elseif pinned then
         row.referenceButton:ClearAllPoints(); row.referenceButton:SetPoint("LEFT", row, "LEFT", columns.evidence.x, 0)

@@ -219,7 +219,7 @@ ui:GetOwnedSnapshot()
 local tip, activeBeforeOther = GameTooltip, false
 if buildMode == "unreadable" then
     showNative(tip, templar.variant_link, "GetBagItem", {0,1}); H.settle()
-    includes(tip, "Protection — Depends on your setup · uses default spec weights")
+    includes(tip, "Protection — Compare before equipping · Your talents could change the result.")
     excludes(tip, "Equip now"); oneSection(tip)
     return
 end
@@ -261,7 +261,7 @@ function rating:ReadNative(id, key, link, base)
     return read(self, id, key, link, base)
 end
 rating:InvalidateItem(vice.id)
-check("Slight upgrade", "2 Armor lost", useTalents and "+3.074" or "+3.09")
+check("Slight upgrade", "2 less Armor", useTalents and "+3.074" or "+3.09")
 H.modifiers.alt = false
 rating:InvalidateItem(vice.id)
 showNative(tip, templar.variant_link, "GetBagItem", {0,1})
@@ -369,7 +369,7 @@ rating.GetWorkCheckpoint = function() return function() ui.personalBankOpen = fa
 assert(ui:ScanBankItems() == false and addon:GetCharacterDB().bankCache == bank)
 ''')
 
-    def test_my_gear_names_only_the_displaced_ring_and_qualifies_an_unpriced_effect(self):
+    def test_my_gear_names_only_the_displaced_ring_and_names_the_uncertain_effect(self):
         self.lua_run(r'''
 H.equipped[11], H.equipped[12] = 900001, 900002
 local bank = addon:GetCharacterDB().bankCache
@@ -395,7 +395,7 @@ showNative(GameTooltip,"item:900091","GetBagItem",{0,1}); H.settle()
 includes(GameTooltip,"Protection — Sidegrade")
 includes(GameTooltip,"Both setups score equally."); excludes(GameTooltip,"Equip now")
 showNative(GameTooltip,"item:900090","GetLootItem",{1}); H.settle()
-includes(GameTooltip,"Protection — Possible upgrade")
+includes(GameTooltip,"Protection — Compare before equipping")
 includes(GameTooltip,"Ward off flame"); excludes(GameTooltip,"Equip now")
 ''')
 
@@ -474,7 +474,17 @@ local contents = ""
 for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
     if block:IsVisible() then contents = contents .. block.body:GetText() end
 end
-assert(contents:find("Best owned · Worn sword", 1, true) and contents:find("+92 score points", 1, true), contents)
+assert(contents:find("Major upgrade at Level 38 over Worn sword", 1, true), contents)
+assert(not contents:find("score points", 1, true), contents)
+local calculation
+for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+    if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) then
+        block:Click()
+        calculation = block.body:GetText()
+    end
+end
+assert(calculation and calculation:find("Best owned · Worn sword", 1, true)
+    and calculation:find("+92 score points", 1, true), calculation)
 local origin = ui.selectedRowKey
 assert(ui:OpenSlotComparison(sword, "leveling", true)); H.settle()
 assert(ui.slotComparison.level == 35 and ui.slotComparison.reference.slotKey == "MainHand")
@@ -518,7 +528,7 @@ assert(verdict(15, 15, 100).today == "Major upgrade")
 assert(verdict(0, 0, 40).today == "Sidegrade")
 local possible = rating:LevelingPresentation({item = {level = 1, effects = {"Chance on hit: deals additional damage."}},
     playerLevel = 31, swap = {conditional = true, delta = 2, replacements = {{name = "Old sword"}}}})
-assert(possible.today == "Possible upgrade · Chance-on-hit effect unscored" and possible.tone == "uncertain")
+assert(possible.today == "Compare before equipping" and possible.tone == "uncertain")
 ''')
 
     def test_activities_sort_actual_and_forecast_owned_gains(self):
@@ -841,7 +851,7 @@ GetItemInfoInstant = function(value)
 end
 local tip = GameTooltip
 showNative(tip, "item:900021", "GetAuctionItem", {1})
-includes(tip, "Gear comparison unavailable at Level 50")
+includes(tip, "Can't compare Worn gloves yet at Level 50")
 excludes(tip, " pts")
 excludes(tip, "empty slot")
 showNative(tip, "item:900020")
@@ -989,7 +999,7 @@ fire(frame, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
 showNative(tip, "item:900010", "GetMerchantItem", {1})
 includes(tip, "Downgrade\n-6.0 pts vs Great sword")
 showNative(tip, "item:900011")
-includes(tip, "No legal swap")
+includes(tip, "Can't equip this with your gear")
 
 H.equipped[11], H.equipped[12] = 900006, 900002
 fire(frame, "PLAYER_EQUIPMENT_CHANGED"); H.settle()
@@ -1068,10 +1078,14 @@ local pool = rating:GetPlacement(context, "Finger1", {"Ring"})
 local originalCount = #pool.rows
 showNative(tip, linkA)
 includes(tip, "Good option at Level 47")
-includes(tip, "Possible upgrade\n+6.0 pts vs Blood Ritual Ring · Scored stats only")
+includes(tip, "Compare before equipping")
+includes(tip, "Best owned · Blood Ritual Ring")
+includes(tip, "+6 Stamina (+6 score points)")
 assert(reads[700] == 1 and #pool.rows == originalCount)
 showNative(tip, linkB)
-includes(tip, "Possible upgrade\n+9.0 pts vs Blood Ritual Ring · Scored stats only")
+includes(tip, "Compare before equipping")
+includes(tip, "Best owned · Blood Ritual Ring")
+includes(tip, "+9 Stamina (+9 score points)")
 assert(reads[800] == 1 and #pool.rows == originalCount)
 showNative(tip, linkB)
 assert(reads[800] == 1)
@@ -1090,7 +1104,9 @@ showNative(tip, linkA, "GetQuestItem", {"reward", 1})
 includes(tip, "Waiting for item stats")
 ready = true
 callbacks[id](); H.settle()
-includes(tip, "Possible upgrade\n+6.0 pts vs Blood Ritual Ring · Scored stats only")
+includes(tip, "Compare before equipping")
+includes(tip, "Best owned · Blood Ritual Ring")
+includes(tip, "+6 Stamina (+6 score points)")
 -- The stat load can publish immediately; all visible spec ranges share one subsequent redraw.
 assert(tip.rebuilds >= rebuilds + 1 and tip.rebuilds <= rebuilds + 2 and tip.lines[3] == "Native source")
 oneSection(tip)

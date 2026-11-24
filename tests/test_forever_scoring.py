@@ -8,7 +8,8 @@ from tests.test_addon_runtime_lua import find_lua51
 from tools.forever_comparison import comparison_document, comparison_facts, compile_comparison_data
 from tools.forever_effect_benchmarks import compile_rule
 from tools.forever_item_effects import attach_rules, catalog_coverage, effect_rule, resolve_spell_leads, set_catalog
-from tools.forever_scoring import compile_model, pack_item, read_model, refresh_review_scope, review_issues, scoring_audit, swap_score
+from tools.forever_scoring import (benchmark_observation, compile_model, pack_item, read_model, refresh_review_scope,
+                                   review_issues, scoring_audit, swap_score)
 from tools.generate_lua import lua_value
 from tools.project import ADDON_DIR, dataset_json
 from tools.recommend_leveling import materialized_items, roll_identity
@@ -27,6 +28,43 @@ class ForeverScoringTests(unittest.TestCase):
         result = subprocess.run([self.lua, "-"], input=code, cwd=ADDON_DIR, encoding="utf-8",
                                 capture_output=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_measured_weapon_procs_apply_target_and_fight_length_in_both_scorers(self):
+        compiled = compile_comparison_data(dataset_json("forever", "item_stats")["item_stats"])
+        scenarios = ({"fight_seconds": 4}, {"fight_seconds": 4, "target_family": "Troll"},
+                     {"fight_seconds": 20}, {"fight_seconds": 20, "target_family": "Troll"},
+                     {"target_family": "Aquatic", "proc_rate_bound": 2})
+        benchmark = {"index": 1, "magic": 1, "physical": 1, "periodic_fraction": 0.5, "useful_healing": 1}
+        results = {}
+        for item_id in (9372, 18324):
+            facts = dict(zip(compiled["item_fields"], compiled["items"][str(item_id)]))
+            self.assertEqual(len(facts["effect_rules"]), 1)
+            self.assertFalse(facts["missing_effects"])
+            rule = facts["effect_rules"][0]
+            results[item_id] = values = []
+            for scenario in scenarios:
+                observation = benchmark_observation(rule, scenario | {"effect_benchmark": benchmark}, 16)
+                values.append(observation["damage_factor"] * rule["amount"] * observation["per_minute"] / 60)
+        self.assertAlmostEqual(results[9372][0], 159 * 1.45 * .85 / 60)
+        self.assertAlmostEqual(results[9372][0], results[9372][1])
+        self.assertAlmostEqual(results[9372][2], 159 * 1.75 * 1.45 * .85 / 60)
+        self.assertAlmostEqual(results[9372][3], 159 * 2.5 * 1.45 * .85 / 60)
+        self.assertAlmostEqual(results[18324][4], 210 * 2.04 * .85 / 60)
+        self.lua_run("local tests=" + lua_value(list(scenarios)) + "\nlocal expected=" + lua_value(results)
+                     + "\nlocal benchmark=" + lua_value(benchmark) + r'''
+local H = dofile("tests/lua_ui_harness.lua")
+H.load("forever")
+local rating, scoring = BigBiSList.ForeverGearRating, BigBiSList.ForeverScoring
+for id, values in pairs(expected) do
+    local item = rating:GetPublishedFacts(tostring(id))
+    local gear = {[16] = scoring:ReferenceItem(item, item.stats)}
+    for index, scenario in ipairs(tests) do
+        scenario.effect_benchmark = benchmark
+        local value = scoring.ScoreLoadout(gear, {proc_dps=1}, {}, {}, scenario, nil, 55)
+        assert(math.abs(value - values[index]) < 0.000001, tostring(id) .. " / " .. index .. " / " .. value)
+    end
+end
+''')
 
     def test_current_rank_facts_and_reviewed_contexts(self):
         self.assertEqual(self.snapshot["client_build"], "1.60.1.70959")
@@ -778,7 +816,7 @@ for _, level in ipairs({39, 43, 49, 60}) do
         local advice = rating:LevelingPresentation({item=scarlet.item,swap=swap,playerLevel=level,viewedLevel=level})
         local details = table.concat(rating:LevelingPresentationLines(advice), "\n")
         assert(not details:find("Holy damage on block unscored", 1, true))
-        assert(details:find(level == 60 and "+3.78 effect pts" or "+2.66 effect pts", 1, true), details)
+        assert(details:find(level == 60 and "+3.78 score points from item effects" or "+2.66 score points from item effects", 1, true), details)
         local reverse = rating:GetContext("Paladin", "Protection", phase, level,
             {equippedSlots={OffHand={item_id=7726,item_link="item:7726"}}})
         local gain = rating:GetGuideSwap(reverse, worn.item, "OffHand", "Off Hand", link)

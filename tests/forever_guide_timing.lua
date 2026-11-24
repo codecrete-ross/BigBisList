@@ -55,11 +55,6 @@ addon.DetectPlayerSpec = function() return spec end
 if arg[7] ~= "fallback" then H.usePaladinReferenceTalents(spec) end
 H.fireEvent("ADDON_LOADED", "BigBiSList")
 local loaded = milliseconds()
-H.fireEvent("PLAYER_LOGIN")
-H.fireEvent("PLAYER_ENTERING_WORLD", true, false)
-local loginTime = milliseconds() - loaded
-collectgarbage("collect")
-local retained = (collectgarbage("count") - heap) / 1024
 local ui = addon.UI
 if endgame then
     addon:SetContentMode("endgame")
@@ -79,6 +74,11 @@ if arg[5] == "details" then
     UIParent:SetSize(900, 500)
     window.width, window.height = 900, 500
 end
+H.fireEvent("PLAYER_LOGIN")
+H.fireEvent("PLAYER_ENTERING_WORLD", true, arg[8] == "reload")
+local loginTime = milliseconds() - loaded
+collectgarbage("collect")
+local retained = (collectgarbage("count") - heap) / 1024
 assert(addon.loadTimeMs and addon.UI and addon.uiEventFrame, "The packaged addon did not initialize")
 if arg[7] ~= "fallback" and addon.ForeverScoring:IsBuildSupported(BigBiSListData.character_scoring, build) then
     assert(addon.ForeverScoring:GetContext("Paladin", spec, endgame and "pre_raid" or "leveling",
@@ -94,23 +94,41 @@ local function visibleRows()
 end
 local function tick() H.now = H.now + 1/60; H.tick() end
 if myGear then
+    print(string.format("%s %s: add-on load %.1f ms, login events %.1f ms, retained Lua heap %.1f MiB",
+        build, payload, addon.loadTimeMs, loginTime, retained))
     ui:ResetPerformanceStats()
     local opened = milliseconds()
     ui:Open()
     local openMs = milliseconds() - opened
-    local first, firstMs, clickMs
+    local first, firstMs, clickMs, detailsBuilds, advice, rows
     for frame = 1, 4000 do
         tick()
         local gear = ui.gearFrame
         local neck = gear and gear.slots.Neck
-        if not first and neck and neck:IsVisible() and neck.gearData and neck.gearData.item_id == 7673 then
+        if not first and gear and gear:IsVisible() then
+            assert(neck and neck.gearData and neck.gearData.item_id == 7673 and neck.gearData.gearRated,
+                "My Gear showed before the first slot was ready")
             first, firstMs = frame, milliseconds() - opened
             local click = milliseconds()
-            neck:Click(); gear.summary.detailsButton:Click()
+            neck:Click()
             clickMs = milliseconds() - click
-            assert(ui.selectedItemData == neck.gearData)
+            advice, rows = gear.summary.rating:GetText(), gear.renderedRows
+            assert(advice:find("Keep equipped", 1, true) and advice:find("Tied for 9th", 1, true), advice)
         end
-        if first and gear.ratingRequest.ready and not addon.ForeverGearRating.workScheduled then break end
+        if first and frame == first + 1 then
+            local click = milliseconds()
+            gear.summary.detailsButton:Click()
+            clickMs = math.max(clickMs, milliseconds() - click)
+            assert(ui.selectedItemData == neck.gearData)
+            detailsBuilds = ui:GetPerformanceStats().detailsBuilds
+        end
+        if detailsBuilds then
+            assert(gear.renderedRows == rows and gear.summary.rating:GetText() == advice and ui.selectedItemData == neck.gearData,
+                "My Gear changed while the character's gear stayed the same")
+            assert(ui:GetPerformanceStats().detailsBuilds == detailsBuilds, "Details rebuilt after the first click")
+            if frame == 10 then H.fireEvent("BAG_UPDATE_DELAYED"); H.fireEvent("PLAYER_EQUIPMENT_CHANGED", 2) end
+            if frame >= 30 and not addon.ForeverGearRating.workScheduled then break end
+        end
     end
     local gear = assert(ui.gearFrame)
     assert(first and gear.ratingRequest.ready and gear.summary.rating:GetText():find("Tied for 9th", 1, true))
@@ -231,6 +249,7 @@ if endgame then
 end
 
 local first, viewport
+ui:ResetPerformanceStats()
 ui:Open()
 for frame = 1, 3000 do
     tick()

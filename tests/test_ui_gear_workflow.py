@@ -232,7 +232,7 @@ local firstVisible = false
 for _, row in ipairs(ui.comparisonActiveRows) do
     if row:IsVisible() and row.comparisonData == first then
         local change = row.evidenceText:GetText()
-        assert(change:find("+2.0 pts", 1, true) and change:find(ui:GetComparisonReferenceLabel(comparison.reference), 1, true) and change:find("Lv " .. comparison.level, 1, true), change)
+        assert(change:find("Slight upgrade", 1, true) and not change:find(" pts", 1, true), change)
         firstVisible = true
     end
 end
@@ -280,15 +280,9 @@ local function verifySlots()
         H.expectBounded(button, gear, key)
         H.expectBounded(button.iconButton, button, key .. " icon")
         H.expectBounded(button.itemName, button, key .. " name")
-        assert(button.rating:IsVisible(), key .. " missing second line")
-        H.expectBounded(button.rating, button, key .. " rating or state")
-        assert(button.itemName:GetBottom() >= button.rating:GetTop(), key .. " overlapping text")
-        if button.gearData.item_id then
-            H.expectBounded(button.label, button, key .. " physical slot")
-            assert(button.label:GetRight() < button.rating:GetLeft(), key .. " overlapping slot and rating")
-        else
-            assert(not button.rating.isTruncated, key .. " slot state clipped: " .. button.rating.fullText)
-        end
+        assert(button.label:IsVisible(), key .. " missing slot advice")
+        H.expectBounded(button.label, button, key .. " slot advice")
+        assert(button.itemName:GetBottom() >= button.label:GetTop(), key .. " overlapping text")
         for _, other in ipairs(shown) do
             assert(button:GetLeft() >= other:GetRight() or button:GetRight() <= other:GetLeft()
                 or button:GetTop() <= other:GetBottom() or button:GetBottom() >= other:GetTop(),
@@ -315,7 +309,7 @@ for _, size in ipairs({{1020, 560}, {1160, 660}}) do
         ui:SetInspectorVisible(true); H.settle(); verifySlots()
         if size[1] == 1020 then
             assert(gear.slots.Head:GetWidth() == 206 and gear.summary:GetWidth() == 204)
-            assert(gear.slots.Finger1.itemName.isTruncated and gear.summary.itemName:GetText() == longName)
+            assert(gear.slots.Finger1.itemName.fullText == longName and gear.summary.itemName:GetText() == longName)
         end
     end
 end
@@ -325,13 +319,13 @@ ui:SetInspectorVisible(true); H.settle()
 assert(gear.preview.portrait:IsVisible(), "native portrait fallback missing")
 assert(gear.slots.Head.gearData.overlayKind == "empty")
 assert(gear.slots.Wrist.gearData.overlayKind == "unknown")
-assert(gear.slots.Head.itemName:GetText() == "Head" and gear.slots.Head.rating:GetText() == "Empty")
-assert(gear.slots.Wrist.rating:GetText() == "Item data unavailable")
-assert(gear.slots.OffHand.rating:GetText() == "Two-handed weapon equipped")
+assert(gear.slots.Head.itemName:GetText() == "Head" and gear.slots.Head.label:GetText() == "Empty")
+assert(gear.slots.Wrist.label:GetText() == "Item data unavailable")
+assert(gear.slots.OffHand.label:GetText() == "Two-handed weapon equipped")
 assert(gear.slots.OffHand.gearData.disabledReason and gear.slots.OffHand.stateIcon:IsVisible())
 assert(gear.slots.Trinket0.iconButton.itemLink ~= gear.slots.Trinket1.iconButton.itemLink)
-assert(gear.slots.Trinket0.label:GetText() == "Trinket 1" and gear.slots.Trinket1.label:GetText() == "Trinket 2")
-assert(gear.slots.Finger0.label:GetText() == "Finger 1" and gear.slots.Finger1.label:GetText() == "Finger 2")
+assert(gear.slots.Trinket0.gearData.slot == "Trinket 1" and gear.slots.Trinket1.gearData.slot == "Trinket 2")
+assert(gear.slots.Finger0.gearData.slot == "Finger 1" and gear.slots.Finger1.gearData.slot == "Finger 2")
 assert(gear.slots.Finger0.itemName.fullText == longName and gear.slots.Finger1.itemName.fullText == longName)
 gear.slots.OffHand:Click(); H.settle()
 assert(not gear.summary.findButton:IsEnabled() and not gear.summary.detailsButton:IsShown())
@@ -508,26 +502,26 @@ local function goldVisible(row)
     return row.bisHighlight and row.bisHighlight[1]:IsVisible()
 end
 local function hover(row)
+    H.modifiers.alt = true
     row:GetScript("OnEnter")(row)
+    H.modifiers.alt = false
     return table.concat(GameTooltip.lines, "\n")
 end
 assert(head.gearData.history.selected.status == "rated" and head.gearData.history.selected.rank_group == "bis")
 assert(head.guideBadge:GetText() == "BiS" and head.guideBadge:IsVisible() and goldVisible(head))
 local gearView = ui:GetLevelingGearView(head.gearData, "gear")
-assert(head.rating.fullText == gearView.strength or head.rating.fullText == gearView.compact)
-assert(slots.Neck.guideBadge:GetText() == "Earlier phase" and not goldVisible(slots.Neck))
+assert(head.label.fullText == (gearView.tileAction or gearView.today))
+assert(slots.Neck.gearData.historical_only and not goldVisible(slots.Neck))
 local earlier = hover(slots.Neck)
 assert(earlier:find(BigBiSList:GetPhaseDisplayName("T4") .. " · Alternative", 1, true))
 assert(earlier:find("With a shield", 1, true))
-assert(slots.Chest.guideBadge:GetText() == "Optional" and not goldVisible(slots.Chest))
-assert(slots.Chest.rating:GetText() == "Stats unavailable")
+assert(slots.Chest.gearData.guide_badge == "Optional" and not goldVisible(slots.Chest))
+assert(slots.Chest.label:GetText() == "Need item stats")
 assert(shoulder.gearData.history.selected.status == "conditional" and not goldVisible(shoulder))
 assert(not shoulder.gearData.stat_rank.projected and shoulder.gearData.stat_rank.rank == 1)
-assert(shoulder.rating.textColor[2] == 128/255)
 shoulder:Click(); H.settle()
 assert(shoulder.selected and not goldVisible(shoulder))
 ui:SetInspectorVisible(true); H.settle()
-assert(shoulder.guideBadge:GetText() == "Guide note" and not shoulder.guideBadge.isTruncated)
 local conditional = hover(shoulder)
 assert(conditional:find("Best in slot with the full set", 1, true) and conditional:find("With set bonus", 1, true))
 ui:SetInspectorVisible(false); H.settle()
@@ -553,8 +547,8 @@ ui:SetSpec("Protection"); H.settle()
 assert(goldVisible(head))
 ui:SetContentMode("leveling"); H.settle()
 ui:SetTab("Equipped"); H.settle()
-assert(head.guideBadge:GetText() == "Recommended" and head.guideBadge:IsVisible() and not goldVisible(head))
-assert(slots.Chest.rating:GetText() == "Stats unavailable")
+assert(head.gearData.bestUse and not head.guideBadge:IsVisible() and not goldVisible(head))
+assert(slots.Chest.label:GetText() == "Need item stats")
 head:Click()
 local recommendation = "Gear Guide recommends this for Protection at levels 14–27"
 assert(ui.gearFrame.summary.rating:GetText():find(ui:GetLevelingGearView(head.gearData, "gear").today, 1, true))
@@ -649,12 +643,10 @@ for _, key in ipairs({"Head", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Wa
     local tile = slots[key]
     local view = ui:GetLevelingGearView(tile.gearData, "gear")
     assert(tile.gearData.stat_rank.rank and view.strength:find("Level 47 Guide", 1, true), key .. " " .. view.strength)
-    if tile.rating:IsVisible() then
-        assert(tile.rating.fullText == view.strength or tile.rating.fullText == view.compact, key .. " " .. tile.rating.fullText)
-    else assert(tile.label:IsVisible() and not tile.label.isTruncated) end
+    assert(tile.label:IsVisible() and tile.label.fullText == (view.tileAction or view.today), key .. " " .. tile.label.fullText)
 end
 assert(bonusReads[601] and bonusReads[602] and bonusReads[603] and bonusReads[bagBonus])
-assert(slots.Neck.gearData.bestUse and slots.Neck.guideBadge:GetText() == "Recommended" and slots.Neck.guideBadge:IsVisible())
+assert(slots.Neck.gearData.bestUse and not slots.Neck.guideBadge:IsVisible())
 local recommendation = "Gear Guide recommends this for Protection at levels 40–59"
 slots.Neck:Click(); H.settle()
 local advice = ui:GetLevelingGearView(slots.Neck.gearData, "gear")
@@ -663,12 +655,13 @@ ui.gearFrame.summary.statCompare:Click(); H.settle()
 local neck = ui.comparisonPinnedRows[1]
 assert(ui.comparisonReference.dropdownText == "Compare with Triune Amulet (Neck)")
 assert(neck.metaText:GetText() == "Neck · Recommended")
+H.modifiers.alt = true
 neck:GetScript("OnEnter")(neck)
+H.modifiers.alt = false
 assert(table.concat(GameTooltip.lines, "\n"):find(recommendation, 1, true))
 ui:CloseSlotComparison(); H.settle()
-assert(slots.Trinket0.rating:GetText() == "Effect only")
-assert(slots.Trinket1.rating:GetText() == "Utility")
-assert(not slots.Trinket1.rating.rankStripe)
+assert(slots.Trinket0.gearData.stat_rank.status == "effect")
+assert(slots.Trinket1.gearData.stat_rank.status == "utility")
 slots.Trinket1:Click(); ui.gearFrame.summary.detailsButton:Click(); H.settle()
 local shownEffect
 for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
@@ -686,19 +679,10 @@ local function verifyGear()
         count = count + 1
         assert(tile:IsVisible() and tile:IsEnabled(), key)
         H.expectBounded(tile, ui.gearFrame, key)
-        H.expectBounded(tile.rating, tile, key .. " rank")
-        local placement = tile.gearData.stat_rank
-        if placement and placement.rank and placement.total > 1 and tile.rating:IsVisible() then
-            local view = ui:GetLevelingGearView(tile.gearData, "gear")
-            assert(tile.rating.fullText == view.strength or tile.rating.fullText == view.compact,
-                key .. " has the wrong rank: " .. tile.rating.fullText)
-            assert(not tile.rating.isTruncated, key .. " rank clipped: " .. tile.rating.fullText)
-            if placement.tier then
-                local color = {addon.Widgets:GetRankColor(placement.tier.quality)}
-                for component = 1, 3 do assert(tile.rating.textColor[component] == color[component]) end
-            end
-            assert(not tile.rating.rankStripe)
-        end
+        H.expectBounded(tile.label, tile, key .. " advice")
+        local view = ui:GetLevelingGearView(tile.gearData, "gear")
+        assert(tile.label.fullText == (view.tileAction or view.today), key .. " has the wrong advice")
+        if view.tileAction then assert(not tile.label.isTruncated, key .. " action clipped") end
         if tile.guideBadge:IsVisible() then
             H.expectBounded(tile.guideBadge, tile, key .. " guide badge")
             assert(not tile.guideBadge.isTruncated, key .. " guide badge clipped")
@@ -745,7 +729,8 @@ for _, size in ipairs({{1020, 560}, {1160, 660}, {900, 500}}) do
         assert(ui.comparisonColumns.rank.stacked == (size[1] == 900))
         verifyComparison()
         ui.comparisonPinnedRows[2]:GetScript("OnEnter")(ui.comparisonPinnedRows[2])
-        assert(table.concat(GameTooltip.lines, "\n"):find("of the best known gear score", 1, true))
+        local pinnedTip = table.concat(GameTooltip.lines, "\n")
+        assert(pinnedTip:find("Equipped", 1, true) and not pinnedTip:find("score points", 1, true), pinnedTip)
         for _, row in ipairs(state.rows) do
             if row.item_link == bagLink then shown = row; break end
         end
@@ -998,18 +983,20 @@ end}
 ui:Open(); H.settle(); ui:SetContentMode("leveling"); H.settle(); ui:SetTab("Equipped"); H.settle()
 local tile = ui.gearFrame.slots.Head
 assert(tile.gearData.stat_rank.status == "loading" and callbacks[first])
-assert(tile.rating:GetText() == "Waiting for item stats" and not tile.rating.rankStripe)
+assert(tile.label:GetText() == "Need item stats")
 tile:Click(); H.settle()
 H.equipped[1] = second
 ui:Invalidate("ownership"); ui:Refresh(); H.settle()
 assert(tile.gearData.item_id == second and callbacks[second])
+local rows = ui.gearFrame.renderedRows
 H.coldItems[first] = nil
 callbacks[first](); H.settle()
 assert(tile.gearData.item_id == second and tile.gearData.stat_rank.status == "loading")
+assert(ui.gearFrame.renderedRows == rows, "An obsolete item response rebuilt My Gear")
 H.coldItems[second] = nil
 callbacks[second](); H.settle()
 assert(tile.gearData.stat_rank.item.id == second and tile.gearData.stat_rank.rank)
-assert(not tile.rating.rankStripe and tile.rating.textColor)
+assert(tile.label.textColor)
 assert(tile.itemName.textColor[1] == 30/255 and tile.itemName.textColor[2] == 1)
 assert(ui.gearFrame.summary.itemName.textColor[1] == 30/255)
 assert(ui.gearFrame.summary.gearData == tile.gearData)

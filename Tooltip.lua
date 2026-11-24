@@ -135,6 +135,7 @@ end
 
 local function clearTooltipRenderGuard(tooltip)
     tooltip.__bigBisListState = nil
+    tooltip.__bigBisGearAdvice = nil
 end
 
 local function shouldAnnotateTooltip(tooltip)
@@ -298,7 +299,7 @@ local function tooltipLevelingView(addon, tooltip, tooltipData, context, candida
     return view, summary, slot
 end
 
-local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline, compact)
+local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
     if candidate.status == "loading" or not candidate.facts or not candidate.facts.level then
@@ -320,7 +321,7 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
             if definition.inventorySlotId == slot then equippedKey = definition.key; break end
         end
     end
-    local snapshot = ui.GetTooltipOwnedSnapshot and ui:GetTooltipOwnedSnapshot() or ui:GetOwnedSnapshot()
+    local snapshot = ui:GetOwnedSnapshot()
     local offerAssessments = offer and offer.assessments or {}
     local inventoryPending
     local function addSpec(spec)
@@ -350,6 +351,7 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
                     { live = true, lookahead = true, quantity = offer and offer.quantity }) }
             end
             if assessment then
+                if spec.role == "active" then rating:GetSwapExplanation(assessment.result) end
                 local view, summary, slot = tooltipLevelingView(addon, tooltip, tooltipData, context, candidate, assessment, spec, offer)
                 block.rows[#block.rows + 1] = { spec = spec.name, activeSpec = spec.role == "active", result = assessment.result, assessment = assessment,
                     view = view, summary = summary, summarySlot = slot, item = candidate.facts, context = context }
@@ -359,9 +361,7 @@ local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, 
     end
     for index, spec in ipairs(player.specs) do
         if snapshot.equippedOnly and #block.rows > 0 then break end
-        local first = block.rows[1]
-        if first and ((deadline and debugprofilestop() >= deadline)
-            or (compact and first.activeSpec and rating:SwapExplanationPending(first.result))) then
+        if block.rows[1] and deadline and debugprofilestop() >= deadline then
             block.finishSpecs = function(checkpoint)
                 for remaining = index, #player.specs do
                     checkpoint()
@@ -411,10 +411,10 @@ local function compactSpecLine(row)
     elseif result.forecast and evaluated.delta then
         local keep = evaluated.ownership == "bank" or evaluated.ownership == "bag" or result.ownership == "bank" or result.ownership == "bag"
         if evaluated.delta > 0 or evaluated.status == "best_owned" and keep then
-            verdict = evaluated.conditional and "Possible upgrade" or keep and "Keep" or "Likely upgrade"
+            verdict = evaluated.conditional and "Compare" or keep and "Keep" or "Likely upgrade"
             verdict = verdict .. (verdict == "Keep" and " for level " or " at level ") .. evaluated.level
         else
-            verdict = (evaluated.conditional and "Depends on your setup" or evaluated.delta < 0 and "Likely downgrade" or "Likely sidegrade")
+            verdict = (evaluated.conditional and "Compare" or evaluated.delta < 0 and "Likely downgrade" or "Likely sidegrade")
                 .. " at level " .. evaluated.level
         end
     elseif evaluated.status == "best_owned" and not evaluated.conditional then
@@ -425,7 +425,7 @@ local function compactSpecLine(row)
         elseif evaluated.ownership == "bank" then verdict = "Keep in bank"
         else verdict = "Keep" end
     elseif result.bis and not verdict then verdict = "Guide BiS"
-    elseif not result.forecast and evaluated.conditional then verdict = (evaluated.delta or 0) > 0 and "Possible upgrade" or "Depends on your setup"
+    elseif not result.forecast and evaluated.conditional then verdict = "Compare before equipping"
     elseif evaluated.status == "empty" then verdict = "Upgrade"
     elseif evaluated.delta == 0 and evaluated.status ~= "best_owned" then verdict = "Sidegrade"
     elseif evaluated.delta and evaluated.delta < 0 then verdict = "Downgrade"
@@ -441,6 +441,11 @@ local function compactSpecLine(row)
             for _, old in ipairs(action.replacements) do names[#names + 1] = old.name end
             local grade = BigBiSList.ForeverGearRating:UpgradeSize(action)
             if grade then reason = grade .. " over " .. table.concat(names, " + ") end
+        elseif not result.forecast and evaluated.delta and evaluated.delta < 0
+            and evaluated.replacements and evaluated.replacements[1] and evaluated.replacements[1].state == "equipped" then
+            local names = {}
+            for _, old in ipairs(evaluated.replacements) do names[#names + 1] = old.name end
+            reason = "vs. " .. table.concat(names, " + ")
         end
         summary = BigBiSList.Widgets:SwapDecisionSummary(row.item, result)
         if summary == reason or (reason and summary == "Gains " .. reason:gsub("^%+", "") .. ".") then summary = nil end
@@ -538,9 +543,7 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
                 end
             else
                 local rank = tooltipRank(result)
-                if result.placement.conditional and not result.placement.conditional_tie then rank = rank .. " · Conditional" end
                 tooltip:AddLine(rank, r, g, b, true)
-                if result.conditional then tooltip:AddLine("Some item effects have an unverified value", 0.86, 0.88, 0.91, true) end
                 placementColor = placementColor or result.placement.placement_color
             end
             if comparison.bestChoice and not (row.view and row.view.action and row.view.action:find("Choose this reward", 1, true)) then
@@ -552,12 +555,8 @@ local function renderSpecBlocks(tooltip, statBlock, matches, selection, expanded
             if BigBiSList.ForeverGearRating:SwapExplanationPending(result, true) then
                 explanations[#explanations + 1] = row
             else addSwapExplanation(tooltip, row) end
-            if result.effectNote then tooltip:AddLine(result.effectNote, 0.76, 0.8, 0.86, true) end
-            if result.effectBreakEven then
-                local estimate = string.format("%.1f full extra swings per minute to close the gap at tooltip weapon damage",
-                    result.effectBreakEven)
-                tooltip:AddLine(estimate, 0.76, 0.8, 0.86, true)
-            end
+            local effectNote = row.item and row.context and BigBiSList.ForeverGearRating:GetReviewedGuideEffect(row.context, row.item)
+            if effectNote then tooltip:AddLine(effectNote, 0.76, 0.8, 0.86, true) end
         end
         for _, match in ipairs(row.matches) do
             local _, summary = lineForTooltipMatch(match)
@@ -615,13 +614,17 @@ local function rebuildTooltip(tooltip, state)
 end
 
 local function refreshTooltipForModifier(tooltip)
-    if not tooltip or not tooltip.__bigBisListState then return end
+    if not tooltip then return end
     local database = BigBiSList.isForever and BigBiSList:GetAccountDB() or BigBiSListDB
     local settings = database and database.profile and database.profile.tooltips
     if not settings or settings.enabled == false or not settings.showAllOnAlt then return end
     local expanded = (BigBiSList.isForever and settings.compact == false) or not not (IsAltKeyDown and IsAltKeyDown())
     local state = tooltip.__bigBisListState
-    if state.expanded ~= expanded then rebuildTooltip(tooltip, state) end
+    if state and state.expanded ~= expanded then rebuildTooltip(tooltip, state) end
+    local advice = tooltip.__bigBisGearAdvice
+    if advice and advice.expanded ~= expanded and advice.owner and advice.owner == tooltip:GetOwner() and tooltip:IsShown() then
+        BigBiSList.Widgets:ShowBoundTooltip(advice.owner)
+    end
 end
 
 function BigBiSList:ScheduleItemTooltipRefresh(itemId)
@@ -655,7 +658,7 @@ local function prepareItemTooltip(self, tooltip, itemId, itemLink, owner, info, 
         if live and addonTooltip(tooltip) and self.UI:GetSelection().class ~= live.class then live = nil end
         local exactLink = offer and offer.owned and offer.link or itemLink
         local candidate = live and self.ForeverGearRating:GetTooltipItem(itemId, exactLink)
-        if candidate then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData, deadline, not showExpanded) else live = nil end
+        if candidate then statBlock = tooltipStatBlock(self, candidate, live, info, offer, tooltip, tooltipData, deadline) else live = nil end
     end
     local selection = comparisonContext or live or self:GetCharacterDB().selection or {}
     local effectivePhaseKey = comparisonContext and comparisonContext.phase
@@ -824,6 +827,10 @@ end
 
 function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if not shouldAnnotateTooltip(tooltip) or tooltip.__bigBisListState then return end
+    local owner = readable(call(tooltip.GetOwner, tooltip))
+    local row = owner and (owner.detailData or owner.gearData)
+    -- Addon rows use their own exact swap instead of rebuilding a bag-style comparison.
+    if self.ForeverGearRating and row and (row.stat_rank or row.targetVerdict or row.usesGearRating or row.stat_swap) then return end
     local start = debugprofilestop and debugprofilestop()
     local database = self:EnsureDatabase() or (not self.isForever and BigBiSListDB)
     local settings = database and database.profile and database.profile.tooltips
@@ -833,7 +840,6 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local info = primaryInfo(tooltip)
     if info and readable(info.append) then return end
     local itemLink = itemLinkFromTooltip(tooltip, tooltipData, itemId, info)
-    local owner = readable(call(tooltip.GetOwner, tooltip))
     local ready = tooltip.__bigBisPrepared
     if ready and ready.state.itemId == itemId and ready.state.link == itemLink and ready.state.owner == owner then
         showItemTooltip(self, tooltip, itemId, itemLink, owner, settings, ready.result)

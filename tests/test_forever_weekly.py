@@ -6,9 +6,22 @@ import unittest
 from unittest.mock import patch
 
 from tools import forever, forever_prerelease as gaps, forever_release as release, forever_weekly as weekly
+from tools.forever_spell_evidence import audit_exports
 
 
 class WeeklyReleaseTests(unittest.TestCase):
+    def test_spell_evidence_reports_changed_source_new_links_and_additional_items(self):
+        lead = "chance on hit: 1294430 Rage of Sul'thraze"
+        new = "use: 102 Test Spell"
+        catalog = {"items": [{"id": 9372, "effect_leads": [lead]}, {"id": 5, "effect_leads": [lead, new]}]}
+        reviewed = {"references": {lead: {"items": [9372], "digest": "old"}}}
+        refreshed = {"references": {lead: {"items": [5, 9372], "digest": "new"}}}
+        report = audit_exports(catalog, reviewed, refreshed)
+        self.assertEqual(report["new_references"], [new])
+        self.assertEqual(report["changed_associations"], [lead])
+        self.assertEqual(report["changed_sources"], [lead])
+        self.assertTrue(weekly.effect_review_blocked(report))
+
     def setUp(self):
         scratch = tempfile.TemporaryDirectory()
         self.addCleanup(scratch.cleanup)

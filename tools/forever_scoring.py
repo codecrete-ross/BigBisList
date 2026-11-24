@@ -329,10 +329,20 @@ def benchmark_observation(rule: dict, scenario: dict, position: int, use_scale: 
     scale = use_scale if rule.get("use_lockout") else 1
     factor = bench["physical"] if rule.get("school") == "physical" or rule["kind"] == "extra_attack" else (
         1 if rule.get("school") == "bleed" else bench["magic"])
+    periodic = bench["periodic_fraction"]
+    if rule.get("delay_seconds") and scenario.get("fight_seconds"):
+        periodic = max(0, 1 - rule["delay_seconds"] / scenario["fight_seconds"])
+    target, family = scenario.get("target_family"), rule.get("target_family") or rule.get("bonus_targets")
+    multiplier = (rule["bonus_multiplier"] if target and family and target.lower().removesuffix("s") ==
+                  family.lower().removesuffix(" enemies").removesuffix("s") else 1)
     if rule.get("periodic"):
-        factor *= bench["periodic_fraction"]
+        factor *= periodic * multiplier
     elif rule.get("periodic_amount"):
-        factor *= 1 + rule["periodic_amount"] * bench["periodic_fraction"] / rule["amount"]
+        factor *= (1 if rule.get("delayed_bonus_only") else multiplier) + rule["periodic_amount"] * periodic * multiplier / rule["amount"]
+    else:
+        factor *= multiplier
+    if scenario.get("proc_rate_bound") and rule.get("ppm_range") and rule.get("nominal_ppm"):
+        rate *= rule["ppm_range"][scenario["proc_rate_bound"] - 1] / rule["nominal_ppm"]
     observed = {"per_minute": rate * scale, "damage_factor": factor, "target_fraction": 1,
                 "benchmark": True, "useful_fraction": bench["useful_healing"], "applicable": rate > 0}
     if rule.get("uptimes"):

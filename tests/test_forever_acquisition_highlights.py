@@ -474,8 +474,17 @@ local detail = ""
 for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
     if block:IsVisible() then detail = detail .. block.body:GetText() end
 end
-assert(detail:find("Best owned · Fixture gear 901032 (bags)", 1, true)
-    and detail:find("−5 score points", 1, true) and not detail:find("Fixture gear 901031", 1, true), detail)
+assert(detail:find("Keep Fixture gear 901032", 1, true)
+    and detail:find("Gives up 5 Stamina", 1, true) and not detail:find("Fixture gear 901031", 1, true), detail)
+local calculation
+for _, block in ipairs(ui.detailsWidgetPools.collapsible or {}) do
+    if block:IsVisible() and block.title:GetText():find("Rank and calculation", 1, true) then
+        block:Click()
+        calculation = block.body:GetText()
+    end
+end
+assert(calculation and calculation:find("Best owned · Fixture gear 901032 (bags)", 1, true)
+    and calculation:find("−5 score points", 1, true), calculation)
 
 assert(ui:OpenSlotComparison(candidate, "leveling", true)); H.settle()
 local manual
@@ -598,7 +607,7 @@ fixtures[10128].lines[2] = "Use: Unleash a burst of Holy damage. (5 Min Cooldown
 refresh(10128)
 assert(not mark(rows[1], champion))
 local conditional = showTip(rows[1], plain)
-assert(conditional:find("Depends on your setup", 1, true) and conditional:find("unverified value", 1, true), conditional)
+assert(conditional:find("Compare before equipping", 1, true) and conditional:find("on-use effect could change the result", 1, true), conditional)
 
 contents[1], contents[2] = defenseOnly, nil
 refresh()
@@ -1122,7 +1131,7 @@ end
 H.settle()
 assert(not mark(first, unscored) and not gearBadge:IsShown())
 assert(mark(second, 901011).sellValue == 50 and coin:IsShown())
-assert(showTip(first, link(unscored)):find("Possible upgrade", 1, true))
+assert(showTip(first, link(unscored)):find("Compare before equipping", 1, true))
 ''')
 
     def test_quest_choices_use_guaranteed_gear_for_each_specialization(self):

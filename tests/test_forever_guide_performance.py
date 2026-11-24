@@ -77,10 +77,10 @@ end
 function addon:GetLevelingRows() error("Opened the entire catalog") end
 function rating:GetGuidePlacement() error("Rebuilt a full ranking") end
 local inventory = ui.BuildOwnedItems
+local scans = 0
 function ui:BuildOwnedItems(equippedOnly)
-    assert(equippedOnly or rating:GetWorkCheckpoint(), "Scanned all bags on the interaction frame")
-    assert(equippedOnly or self:GetPerformanceStats().firstViewportMs,
-        "A bag scan interrupted the first usable page")
+    assert(not equippedOnly, "Built a partial inventory")
+    scans = scans + 1
     return inventory(self, equippedOnly)
 end
 local function tick() H.now = H.now + 1/60; H.tick() end
@@ -94,10 +94,14 @@ local function visible()
     return count, row
 end
 addon:InitUIEvents()
+H.usePaladinReferenceTalents("Retribution")
+ui:PrepareRememberedWorkspace()
+assert(scans == 1 and not ui.frame:IsVisible())
 ui:Open()
 for i = 1, 3 do tick() end
 local count, first = visible()
 assert(count >= 3 and ui.renderModel.rowCount >= count, "Cold page lacks actionable rows")
+assert(scans == 1 and ui.renderModel.targetQuery.done)
 assert(not ui.gearFrame, "Opening the Guide constructed the My Gear paper doll")
 assert(ui:GetPerformanceStats().firstViewportMs and ui:GetPerformanceStats().firstViewportMs <= 50.01,
     "The visible page must bind within three 60 Hz frames")
@@ -110,7 +114,10 @@ H.settle(); ui:Close(); ui:Open(); tick()
 assert(visible() > 0)
 local _, reopened = visible()
 reopened.iconButton:GetScript("OnEnter")(reopened.iconButton); H.settle()
-assert(table.concat(GameTooltip.lines, "\n"):find("Retribution —", 1, true), "The Guide hover missed the active spec")
+local help = table.concat(GameTooltip.lines, "\n"):lower()
+assert(help:find("upgrade", 1, true) or help:find("compare", 1, true) or help:find("guide pick", 1, true)
+    or help:find("fills your empty", 1, true)
+    or reopened.boundData.targetVerdict.kind == "utility" and #GameTooltip.lines >= 2, help)
 reopened.iconButton:GetScript("OnLeave")(reopened.iconButton)
 ui:SetFilter("search", "item:7719"); H.settle()
 assert(ui.renderModel.targetQuery.exact and ui.renderModel.rowCount == 1)
@@ -120,7 +127,7 @@ assert(visible() > 0 and ui.renderModel.guideContext.level == 51)
 assert((rating.fullPoolRequests or 0) == 0 and (rating.unindexedSummaryRequests or 0) == 0)
 ''', setup)
 
-    def test_core_route_preparation_yields_before_showing_the_click_targets(self):
+    def test_core_route_preparation_finishes_before_showing_click_targets(self):
         setup = SETUP.replace('H.load("forever", true)', 'H.load("forever", false)')
         self.lua_run(r'''
 level = 51
@@ -133,19 +140,11 @@ function addon:GetRowAcquisitionDisplay(...)
     if ui.openingGuide then spent = spent + 0.7 end
     return prepare(self, ...)
 end
-local waiting, first
+ui:PrepareRememberedWorkspace()
+assert(not ui.frame:IsVisible() and ui.renderModel.targetQuery.done)
 ui:Open()
-for i=1,3 do
-    spent = 0; H.now = H.now + 1/60; H.tick()
-    if ui.frame:IsVisible() then
-        first = i
-        assert(ui.guideDisplay and #ui.activeRenderFrames > 0)
-        break
-    end
-    waiting = true
-    assert(#(ui.activeRenderFrames or {}) == 0 and ui.currentOwned.equippedOnly)
-end
-assert(waiting and first and ui:GetPerformanceStats().worstFrame <= 4)
+assert(ui.frame:IsVisible() and ui.guideDisplay and #ui.activeRenderFrames > 0)
+assert(not ui.currentOwned.equippedOnly and ui:GetPerformanceStats().firstViewportMs <= 4)
 ''', setup)
 
     def test_collapsing_or_closing_the_first_page_finishes_the_inventory_snapshot(self):
@@ -174,15 +173,14 @@ for _, frame in ipairs(ui.activeRenderFrames) do gear = gear or frame.boundData 
 assert(gear, "Expanding the sections did not restore the clickable picks")
 ''')
 
-    def test_idle_first_open_and_personalization_keep_the_item_under_the_pointer(self):
+    def test_first_open_and_bank_change_keep_the_item_under_the_pointer(self):
         self.lua_run(r'''
 level = 51; addon:RefreshTooltipPlayerContext(); addon:SetSelectedLevelingLevel(51, true)
 ui:GetFilters("Gear Guide").slots = {Head=true}
-local resume = ui.StartGuideInventory
-ui.StartGuideInventory = function() end
-function rating:GetOwnedOpportunity() return {delta=-2, replacements={}} end
-ui:Open()
+addon:InitUIEvents()
+ui:PrepareRememberedWorkspace()
 assert(not ui.frame:IsVisible())
+ui:Open()
 local first, picked, visible, bindings
 for i=1,900 do
     H.now = H.now + 1/60; H.tick()
@@ -208,8 +206,10 @@ for i=1,900 do
 end
 assert(first and first <= 3)
 local key, token = picked.boundData.stat_identity, picked.bindToken
-ui.StartGuideInventory = resume
-ui:StartGuideInventory(); H.settle()
+function rating:GetOwnedOpportunity() return {delta=-2, replacements={}} end
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:9479"}, {"20:1"}
+H.fireEvent("BAG_UPDATE_DELAYED"); H.settle()
 assert(ui.pendingGuideModel and ui.updateGuideButton:IsVisible(), "An automatic swap displaced the pointer")
 assert(ui.guideDisplay == visible and picked:IsVisible() and picked.hovered and picked.bindToken == token)
 assert(picked.boundData.stat_identity == key and picked.boundData.targetVerdict.swap.delta == -2)
@@ -567,9 +567,10 @@ end
 first.iconButton:GetScript("OnEnter")(first.iconButton)
 H.settle()
 local hover = table.concat(GameTooltip.lines, "\n")
-expect(hover, "Best owned · Vice Grips of the Defender")
-expect(hover, "Gives up 14 Attack Power")
-expect(hover, "Spell Power and Defense help tip the swap.")
+expect(hover, "Upgrade over Vice Grips of the Defender")
+expect(hover, "losing 14 Attack Power")
+expect(hover, "2 Spell Power, 1 Defense and 10 Armor")
+assert(not hover:find("score points", 1, true))
 local oldRead = rating.ReadNative
 function rating:ReadNative(id, key, link, base)
     if id == 9640 then
@@ -591,7 +592,7 @@ refreshed.targetVerdict = {kind="upgrade", swap=rating:GetOwnedOpportunity(ctx, 
 ui:UpdateGuideRowAdvice(first, refreshed); H.settle()
 assert(first.bindToken == token and first:GetTop() == top and first.iconButton.itemId == templar.id)
 assert(GameTooltip:GetOwner() == first.iconButton)
-expect(table.concat(GameTooltip.lines, "\n"), "Gives up 14 Attack Power, 2 Armor")
+expect(table.concat(GameTooltip.lines, "\n"), "2 less Armor")
 expect(first.subText.fullText, "Slight upgrade")
 first.iconButton:GetScript("OnLeave")(first.iconButton)
 first.iconButton:Click(); H.settle()
@@ -607,7 +608,7 @@ local function visibleDetails()
     end
     return table.concat(lines, "\n")
 end
-expect(visibleDetails(), "Best owned · Vice Grips of the Defender")
+expect(visibleDetails(), "Slight upgrade over Vice Grips of the Defender")
 local section = "calculation:" .. templar.key
 local getExpanded = ui.IsDetailsSectionExpanded
 function ui:IsDetailsSectionExpanded(key, default)
@@ -616,6 +617,7 @@ function ui:IsDetailsSectionExpanded(key, default)
 end
 ui.detailsRenderSignature = nil
 ui:RefreshDetails(templar.id, ui.selectedItemData, ui.selectedItemMode); H.settle()
+expect(visibleDetails(), "Best owned · Vice Grips of the Defender")
 expect(visibleDetails(), "−14 Attack Power (−4.2 score points)")
 expect(visibleDetails(), "−2 Armor (−0.16 score points)")
 assert(ui:OpenSlotComparison(ui.selectedItemData, "leveling", true))
@@ -638,7 +640,7 @@ expect(visibleDetails(), "Selected reference · Vice Grips of the Defender")
 expect(visibleDetails(), " score points)")
 ''')
 
-    def test_swap_explanations_identify_encounters_caps_sets_and_unpriced_effects(self):
+    def test_swap_explanations_identify_encounters_caps_sets_and_uncertain_effects(self):
         self.lua_run(r'''
 local widgets = addon.Widgets
 local function contains(text, part) assert(text:find(part, 1, true), text .. " missing " .. part) end
@@ -853,7 +855,7 @@ local swap = rating:GetGuideSwap(personal, sword, "MainHand", "Two Hand", "item:
 assert(math.abs(swap.delta - verdict.gain) < 0.0001 and swap.estimatedEffects)
 local lines = rating:EffectComparisonLines(swap)
 local text = table.concat(lines, "\n")
-for _, term in ipairs({"Stoneslayer", "213.45 stat pts", "+9.72 effect pts", "Mograine's Might", "217.70 stat pts",
+for _, term in ipairs({"Stoneslayer", "+9.72 score points from item effects",
     "Strength of Stone", "0.85 procs/min", "weapon damage estimate", "above 0.37 procs/min", "588 against Earth Elementals"}) do
     assert(text:find(term, 1, true), text)
 end
@@ -874,6 +876,128 @@ assert(listed.guideSpecialty:find("Earth Elementals", 1, true))
 local tunic = assert(rating:GetTooltipItem(60, "item:60"))
 assert(tunic.facts.stats.armor == 33)
 ''')
+
+    def test_retribution_weapon_hover_explains_the_actual_swap_in_two_lines(self):
+        setup = SETUP.replace('local ui = H.load', 'GetBuildInfo = function() return "Forever", "71037" end\nlocal ui = H.load')
+        self.lua_run(r'''
+level = 55
+UIParent:SetSize(900, 500)
+addon:GetAccountDB().profile.window.width, addon:GetAccountDB().profile.window.height = 900, 500
+GetInventoryItemID = function(_, slot) if slot == 16 then return 9372 end end
+GetInventoryItemLink = function(_, slot) if slot == 16 then return "item:9372" end end
+H.itemNames[9372] = "Sul'thraze the Lasher"
+H.usePaladinReferenceTalents("Retribution")
+addon:SetSelectedLevelingLevel(level, true)
+addon:RefreshTooltipPlayerContext()
+ui:GetFilters("Gear Guide").slots = {["Main Hand"] = true}
+ui:Open(); H.settle()
+local owned = ui.currentOwned
+local guide = rating:GetGuideContext("Paladin", "Retribution", "LEVELING", level, "Human", "Alliance")
+local player = addon:GetTooltipPlayerContext()
+local expected = {[280056]="Flameslash Crescent", [18324]="Waveslicer", [276732]="Alcaz Willcrusher"}
+local font = UIParent:CreateFontString(nil, "OVERLAY", "GameTooltipText")
+local function wrappedLines(lines)
+    local total = 0
+    for index = 2, #lines do
+        local line = ""
+        total = total + 1
+        for word in lines[index]:gmatch("%S+") do
+            local nextLine = line == "" and word or (line .. " " .. word)
+            font:SetText(nextLine)
+            if line ~= "" and font:GetStringWidth() > 245 then
+                total, line = total + 1, word
+            else line = nextLine end
+        end
+    end
+    return total
+end
+for id, name in pairs(expected) do
+    local item = assert(rating:GetPublishedFacts(tostring(id)))
+    local row = {item_id=id, item_link="item:" .. id, class="Paladin", spec="Retribution", name=name, slot="Two Hand",
+        stat_rank=rating:GetPackedGuideEntry(guide, "Two Hand", tostring(id))}
+    row.targetVerdict = rating:GetGuideTargetVerdict(row, guide, player, owned, true)
+    local swap = assert(row.targetVerdict.swap)
+    local reference = next(swap.replacements or {}) and swap.replacements[1].name
+    assert(reference == "Sul'thraze the Lasher", reference)
+    assert(not swap.blocker)
+    local owner = CreateFrame("Button", nil, UIParent)
+    IsAltKeyDown = function() return false end
+    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    GameTooltip:AddLine("Blizzard's weapon tooltip")
+    ui:AddLevelingGearTooltip(GameTooltip, row, "leveling")
+    assert(#GameTooltip.lines <= 3 and GameTooltip.lines[1] == "Blizzard's weapon tooltip")
+    local shown = table.concat(GameTooltip.lines, "\n")
+    assert(shown:find(reference, 1, true), shown)
+    for _, internal in ipairs({"Unpriced", "score points", "1294430", "description unavailable"}) do
+        assert(not shown:find(internal, 1, true), shown)
+    end
+    if id == 280056 then assert(shown:find("Hit",1,true) or shown:find("Trolls",1,true),shown) end
+    IsAltKeyDown = function() return true end
+    GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+    ui:AddLevelingGearTooltip(GameTooltip, row, "leveling")
+    assert(table.concat(GameTooltip.lines, "\n"):find("score points", 1, true))
+    if swap.conditional then
+        local bucket = ui.renderModel.targetQuery.slots["Two Hand"]
+        assert(not (bucket and bucket.positions[tostring(id)]), "Unconfirmed swap in default targets")
+    end
+    ui:SetFilter("search", name); H.settle()
+    local icon
+    for _, frame in ipairs(ui.activeRenderFrames) do
+        if frame.boundData and frame.boundData.item_id == id then icon = frame.iconButton; break end
+    end
+    assert(icon and icon:IsVisible(), name)
+    IsAltKeyDown = function() return false end
+    icon:GetScript("OnEnter")(icon)
+    assert(GameTooltip:GetOwner() == icon and #GameTooltip.lines <= 3 and wrappedLines(GameTooltip.lines) <= 4,
+        table.concat(GameTooltip.lines, "\n"))
+    assert(table.concat(GameTooltip.lines, "\n"):find(reference, 1, true))
+    IsAltKeyDown = function() return true end
+    H.fireEvent("MODIFIER_STATE_CHANGED", "LALT", 1)
+    assert(table.concat(GameTooltip.lines, "\n"):find("score points", 1, true))
+    icon:GetScript("OnLeave")(icon)
+    icon:Click(); H.settle()
+    assert(ui.selectedItemData and ui.selectedItemData.item_id == id)
+    local detail = ""
+    for _, block in ipairs(ui.detailsWidgetPools.text or {}) do
+        if block:IsVisible() then detail = detail .. block.body:GetText() end
+    end
+    assert(detail:find(reference, 1, true) and not detail:find("score points", 1, true), detail)
+    assert(ui:OpenSlotComparison(ui.selectedItemData, "leveling", true)); H.settle()
+    assert(ui.slotComparison.reference.name == reference and ui.slotComparison.reference.item_id == 9372,
+        ui:GetComparisonReferenceLabel(ui.slotComparison.reference))
+    ui:CloseSlotComparison(); H.settle()
+    assert(ui.selectedItemData and ui.selectedItemData.item_id == id)
+    ui:SetInspectorVisible(false); H.settle()
+    ui:SetFilter("search", ""); H.settle()
+end
+
+local bagged
+C_Container = {
+    GetContainerNumSlots = function(bag) return bag == 0 and 1 or 0 end,
+    GetContainerItemID = function() return bagged end,
+    GetContainerItemLink = function() return "item:" .. bagged end,
+}
+function GameTooltip:GetPrimaryTooltipInfo() return {getterName = "GetBagItem", getterArgs = {0, 1}} end
+local bagButton = CreateFrame("Button", nil, UIParent)
+for id, name in pairs(expected) do
+    bagged = id
+    GameTooltip:Hide()
+    ui:Invalidate("ownership", "bagged weapon")
+    ui:GetOwnedSnapshot()
+    IsAltKeyDown = function() return false end
+    GameTooltip:SetOwner(bagButton, "ANCHOR_RIGHT")
+    GameTooltip:SetHyperlink("item:" .. id)
+    GameTooltip:Show()
+    H.settle()
+    local tip = table.concat(GameTooltip.lines, "\n")
+    assert(tip:find("Retribution — ", 1, true), tip)
+    assert(tip:find("Sul'thraze the Lasher", 1, true), tip)
+    assert(not tip:find("score points", 1, true) and not tip:find("Unpriced", 1, true), tip)
+    if id == 280056 then assert(tip:find("Gains 1.5% Hit and 1% Crit", 1, true), tip) end
+    if id == 18324 then assert(tip:find("Nature damage on hit", 1, true), tip) end
+    if id == 276732 then assert(tip:find("Downgrade", 1, true), tip) end
+end
+''', setup=setup)
 
     def test_recovered_dungeon_gear_reaches_leveling_and_pre_raid_at_equip_level(self):
         self.lua_run(r'''
@@ -909,6 +1033,7 @@ function addon:GetLevelingRows() error("Cold Guide must read the shipped pages")
 function rating:GetGuidePlacement() error("Cold Guide must use indexed rank lookups") end
 function rating:VisitPackedGuideOrdinals() error("Filter menus must read target pages") end
 addon:InitUIEvents()
+ui:PrepareRememberedWorkspace()
 ui:Open()
 for tick = 1, 3 do H.now = H.now + 1/60; H.tick() end
 local function rows()
@@ -971,7 +1096,7 @@ tip:SetOwner(UIParent)
 tip:SetHyperlink("item:7719")
 tip:Show()
 local cold = table.concat(tip.lines or {}, "\n")
-assert(cold:find("Waiting for item stats", 1, true) and not cold:find("pts vs", 1, true), cold)
+assert(cold:find("Slight upgrade", 1, true) and cold:find("Gothic Plate Helmet of the Gorilla", 1, true), cold)
 H.settle()
 local lines = table.concat(tip.lines or {}, "\n")
 assert(lines:find("Slight upgrade", 1, true) and lines:find("+2.1 pts vs Gothic Plate Helmet of the Gorilla", 1, true), lines)
@@ -990,7 +1115,7 @@ local expected = assert(referencePlacement(rating, guide, "Head").byVariant[key]
 assert(candidate and candidate.stat_rank.rank == expected.rank and candidate.stat_rank.total == expected.total)
 ''')
 
-    def test_my_gear_paints_both_level_51_outfits_before_scoring(self):
+    def test_my_gear_binds_both_level_51_outfits_with_finished_advice(self):
         for spec in ("Retribution", "Protection"):
             with self.subTest(spec=spec):
                 self.lua_run("local spec = " + repr(spec) + "\n" + r'''
@@ -1033,7 +1158,7 @@ ui:SetTab("My Gear")
 H.now = H.now + 1/60; H.tick()
 local gear = ui.gearFrame
 assert(gear:IsVisible() and gear.slots.Head.gearData.item_id == outfit[1])
-assert(gear.slots.MainHand.gearData.item_id == outfit[16] and calls == 0)
+assert(gear.slots.MainHand.gearData.item_id == outfit[16] and gear.ratingRequest.ready and calls == 1)
 assert((gear.slots.OffHand.gearData.disabledReason ~= nil) == (spec == "Retribution"))
 H.settle()
 assert(gear.score and gear.score.percent and gear.slots.Head.gearData.stat_rank.rank)
@@ -1050,9 +1175,78 @@ local current = gear.ratingRequest
 ui:SetSpec(spec == "Protection" and "Retribution" or "Protection")
 H.tick()
 local abandoned = gear.ratingRequest
-assert(abandoned ~= current and not abandoned.ready)
+assert(abandoned ~= current and abandoned.ready)
 ui:SetSpec(spec); H.settle()
-assert(gear.ratingRequest == current and not abandoned.ready and gear.slots.Head.gearData.stat_rank.spec == spec)
+assert(gear.ratingRequest == current and gear.slots.Head.gearData.stat_rank.spec == spec)
+''')
+
+    def test_my_gear_reuses_verified_equipped_verdicts_and_bank_swaps_after_reload(self):
+        self.lua_run(r'''
+level, worn = 55, 7673
+GetBuildInfo = function() return "Forever", "71037" end
+GetInventoryItemID = function(_, slot) return slot == 2 and worn or slot == 1 and 6686 or nil end
+GetInventoryItemLink = function(_, slot)
+    local id = GetInventoryItemID(_, slot)
+    return id and "item:" .. id
+end
+H.usePaladinReferenceTalents("Protection")
+local function setup(a)
+    a.DetectPlayerSpec = function() return "Protection" end
+    a:RefreshTooltipPlayerContext()
+    a:SetSelection("Paladin", "Protection", "LEVELING", "Equipped")
+    a:SetSelectedLevelingLevel(level, true)
+end
+setup(addon)
+local bank = addon:GetCharacterDB().bankCache
+bank.scanned, bank.links, bank.locations = true, {"item:9479"}, {"20:1"}
+ui:PrepareRememberedWorkspace()
+local old = assert(ui.gearFrame.slots.Neck.gearData.gearAdvice.today)
+assert(old == "Keep equipped")
+local head = ui.gearFrame.slots.Head.gearData
+assert(head.gearAdvice.today == "Get Embrace of the Lycan from bank", head.gearAdvice.today)
+local gain = head.gearAction.delta
+local function reload()
+    BigBiSList, BigBiSListData = nil, nil
+    ui = H.load("forever", true)
+    addon, rating = BigBiSList, BigBiSList.ForeverGearRating
+    setup(addon)
+end
+reload()
+local compute, calls = rating.GetLiveLevelingSwap, 0
+function rating:GetLiveLevelingSwap(...)
+    calls = calls + 1
+    return compute(self, ...)
+end
+ui:PrepareRememberedWorkspace(); ui:Open()
+assert(ui.gearFrame.slots.Neck.gearData.gearAdvice.today == old and calls == 0)
+local restored = ui.gearFrame.slots.Head.gearData.gearAction
+assert(restored.delta == gain and restored.incoming[1].state == "bank")
+assert(restored.replacements[1].item_link == "item:6686" and rating:GetSwapExplanation(restored, true))
+reload()
+worn = 10711
+compute = rating.GetLiveLevelingSwap
+function rating:GetLiveLevelingSwap(...)
+    calls = calls + 1
+    return compute(self, ...)
+end
+ui:PrepareRememberedWorkspace(); ui:Open()
+assert(ui.gearFrame.slots.Neck.gearData.item_id == 10711 and calls == 2,
+    "A different loadout must recompute the owned swap against the new stats")
+''')
+
+    def test_open_and_reopen_keep_the_prepared_level_preview(self):
+        self.lua_run(r'''
+addon:SetSelectedLevelingLevel(55, true)
+ui:PrepareRememberedWorkspace()
+local model = assert(ui.renderModel)
+assert(model.guideContext.level == 55)
+for _ = 1, 2 do
+    ui:Open()
+    assert(ui.renderModel == model and addon:GetSelectedLevelingLevel() == 55)
+    H.settle()
+    assert(ui.renderModel == model)
+    ui:Close()
+end
 ''')
 
     def test_cyclopean_band_and_exact_name_lookup_for_the_equipped_id(self):
@@ -1151,9 +1345,7 @@ end
 local function has(text, part) assert(text:find(part,1,true), text .. " missing " .. part) end
 local function lacks(text, part) assert(not text:find(part,1,true), text) end
 neck:Click(); gear.summary.detailsButton:Click()
-assert(not neck.gearData.gearRated and ui.selectedItemData == neck.gearData)
-has(visibleDetails(),"Checking your gear")
-H.settle()
+assert(neck.gearData.gearRated and ui.selectedItemData == neck.gearData)
 local why = visibleDetails()
 has(why,"Keep equipped"); has(why,"Best neck you own for Protection.")
 has(why,"Level 55 Guide · Tied for 9th of 1086"); has(why,"67% of the top item's score")
@@ -1161,16 +1353,36 @@ lacks(why,"Pre-Raid"); lacks(why,"Not ranked"); lacks(why,"How to get it")
 has(gear.summary.rating:GetText(),"Level 55 Guide · Tied for 9th")
 has(neck.label.displayedText, "Keep"); assert(not neck.label.isTruncated)
 has(gear.preview.score:GetText(), "% of best known outfit")
+local builds = ui:GetPerformanceStats().detailsBuilds
+local prepared = gear.ratingRequest
+H.fireEvent("PLAYER_EQUIPMENT_CHANGED", 2)
+H.fireEvent("BAG_UPDATE_DELAYED")
+for i=1,30 do
+    H.now = H.now + 1/60; H.tick()
+    assert(visibleDetails() == why and ui.selectedItemData == neck.gearData)
+    assert(ui:GetPerformanceStats().detailsBuilds == builds)
+end
+local getInstant = GetItemInfoInstant
+GetItemInfoInstant = function(item)
+    if item == 117 or item == "item:117" then return 117, "Consumable", "Food", "" end
+    return getInstant(item)
+end
+H.itemNames[117] = "Tough Jerky"
+C_Container = {GetContainerNumSlots = function(bag) return bag == 0 and 1 or 0 end,
+    GetContainerItemID = function() return 117 end, GetContainerItemLink = function() return "item:117" end}
+H.fireEvent("BAG_UPDATE_DELAYED"); H.settle()
+assert(ui.currentOwned[117] == "bag" and gear.ratingRequest == prepared)
+assert(ui:GetPerformanceStats().detailsBuilds == builds and visibleDetails() == why)
 ui:SetInspectorVisible(false); H.settle()
-hands:Click(); gear.summary.detailsButton:Click(); H.settle()
+hands:Click(); gear.summary.detailsButton:Click()
 has(visibleDetails(),"Get Templar Gauntlets of the Defender from bank")
 has(visibleDetails(),"Equipped · Vice Grips of the Defender")
-has(visibleDetails(),"Gives up 14 Attack Power")
+has(visibleDetails(),"losing 14 Attack Power")
 assert(not hands.label.isTruncated and hands.label.displayedText:match("^Get"))
--- Select a different slot while a second ownership snapshot is still being rated.
+-- Select another slot while the new bank snapshot is prepared off screen.
 ui:SetInspectorVisible(false); H.settle()
 bank.links, bank.locations = {}, {}
-ui:Invalidate("ownership","bank check"); ui:Refresh()
+H.fireEvent("BAG_UPDATE_DELAYED")
 hands:Click(); gear.summary.detailsButton:Click()
 ui:SetInspectorVisible(false); neck:Click(); gear.summary.detailsButton:Click()
 H.settle()
@@ -1292,8 +1504,7 @@ addon:InitUIEvents()
 ui:Open(); H.settle()
 local function head() return ui.renderModel.targetQuery.slots.Head end
 assert(requested == 1 and head().pending[id] and head().comparisonDetail)
-local unresolved = assert(head().rows[head().positions["9479"]])
-assert(unresolved.targetVerdict.pending[id] and unresolved.targetVerdict.detail)
+assert(not head().positions["9479"], "An item compared against unreadable bank gear showed as an upgrade")
 ready = true; waiting(); H.settle()
 applyListUpdate()
 assert(not head().pending and head().positions["9479"])
@@ -1301,7 +1512,7 @@ bank.links, worn, id, ready = {}, 901078, 901078, false
 local events = addon.uiEventFrame
 events:GetScript("OnEvent")(events, "PLAYER_EQUIPMENT_CHANGED", 1); H.settle()
 applyListUpdate()
-assert(requested == 2 and head().pending[id] and head().comparisonDetail:find("Waiting for ", 1, true))
+assert(requested == 2 and head().pending[id] and head().comparisonDetail:find("Can't compare ", 1, true))
 ready = true; waiting(); H.settle()
 applyListUpdate()
 assert(not head().pending and head().positions["9479"])
@@ -1424,7 +1635,7 @@ function rating:GetGuideTargetPage() return {count = 1, at = function() return h
 ui:Open(); H.settle()
 local model, query = ui.renderModel, ui.renderModel.targetQuery
 assert(#query.slots.Head.rows == 0 and not query.unknown)
-assert(model.entries[2].text:find("No known helm upgrades at Level 51", 1, true))
+assert(model.entries[2].text:find("No confirmed Head upgrade at level 51", 1, true))
 assert(model.entries[2].text:find("Gothic Plate Helmet of the Gorilla", 1, true))
 local guide, owned, player = model.guideContext, ui.currentOwned, addon:GetTooltipPlayerContext()
 local row = addon:GetPackedGuideRow(guide, "Head", helm, {}, false, 51)
@@ -1439,16 +1650,16 @@ swap = {delta = 5}; assert(coldSlotTarget().item_id == 6686)
 swap = {delta = 0}; assert(verdict().kind == "hidden")
 swap = {status = "loading", blocker = {name = "Bank helm"}, pending = {[901001] = true}}
 local waiting = verdict()
-assert(waiting.kind == "loading" and waiting.pending[901001] and waiting.detail == "Waiting for Bank helm")
+assert(waiting.kind == "loading" and waiting.pending[901001] and waiting.detail == "Can't compare Bank helm yet")
 swap = {delta = 0.3, conditional = true}
-assert(verdict().kind == "situational" and not verdict().gain and verdict().purpose)
+assert(verdict().kind == "situational" and not verdict().gain)
 local index = BigBiSListData.guide_index.slots.Trinket.lookup["744"]
 row = addon:GetPackedGuideRow(guide, "Trinket", index, {}, false, 51)
 swap = {delta = -4, slot = "Trinket", replacements = {{name = "Owned trinket"}}, definition = {label = "Trinket"}}
 row.targetVerdict = verdict()
 assert(row.targetVerdict.kind == "utility" and not row.targetVerdict.gain)
 local view = ui:GetLevelingGearView(row, "leveling")
-assert(view.today == "AoE" and view.comparisonDetail:find("all enemies", 1, true))
+assert(view.today == "AoE" and view.comparisonDetail:find("On-use fire damage", 1, true))
 assert(view.evidence:find("-4.0 pts vs Owned trinket", 1, true))
 ''')
 

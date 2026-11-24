@@ -114,6 +114,18 @@ def regenerate(worktree: Path, log: Path) -> None:
     command(worktree, sys.executable, "-B", "-m", "tools.generate_lua", "--flavor", "forever", log=log)
 
 
+def effect_review(worktree: Path, *, online: bool = False) -> dict:
+    from tools.forever_spell_evidence import audit
+
+    if not (worktree / release.CANONICAL / "spell_effect_review.json").is_file():
+        return {}
+    return audit(worktree, online=online)
+
+
+def effect_review_blocked(report: dict) -> bool:
+    return any(report.get(field) for field in ("new_references", "changed_associations", "changed_sources"))
+
+
 def apply_snapshots(report: dict, state: Path, build: str, *, equipment_only: bool = False) -> int:
     """Promote validated receipts without creating item, route, or ranking approvals."""
     from tools import forever, forever_review_carry as carry, forever_sources as sources
@@ -186,6 +198,7 @@ def prepare_evidence_patch(worktree: Path, state: Path, cache: Path, report: dic
     if not count:
         return {}
     command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "import", "--flavor", "forever", log=log)
+    reviewed_effects = effect_review(worktree)
     regenerate(worktree, log)
     command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "coverage", "--flavor", "forever",
             "--family", "item_corpus", "--summary", "--strict", log=log)
@@ -210,7 +223,8 @@ def prepare_evidence_patch(worktree: Path, state: Path, cache: Path, report: dic
         with candidate.open("wb") as output:
             subprocess.run(["git", "diff", "--cached", "--binary", "HEAD"], cwd=worktree, env=env, stdout=output, check=True)
         candidate.replace(patch)
-    return {"equipment_patch": patch.name, "equipment_snapshots": count} if equipment_only else {"verified_patch": patch.name, "verified_snapshots": count}
+    return ({"equipment_patch": patch.name, "equipment_snapshots": count} if equipment_only
+            else {"verified_patch": patch.name, "verified_snapshots": count}) | {"spell_effect_review": reviewed_effects}
 
 
 def prepare_patch(worktree: Path, state: Path, report: dict, baseline: str, previous: str, today: str, log: Path) -> dict:
@@ -220,6 +234,9 @@ def prepare_patch(worktree: Path, state: Path, report: dict, baseline: str, prev
     command(worktree, sys.executable, "-B", "-m", "tools.forever_weekly", "apply",
             "--state-dir", str(state), log=log)
     command(worktree, sys.executable, "-B", "-m", "tools.scrape_wowhead", "import", "--flavor", "forever", log=log)
+    reviewed_effects = effect_review(worktree)
+    if effect_review_blocked(reviewed_effects):
+        return {"status": "blocked", "reason": "Item effects need review", "spell_effect_review": reviewed_effects}
     regenerate(worktree, log)
     if not release.git(worktree, "diff", "--name-only", "HEAD", "--", *sorted(release.PAYLOADS)).strip():
         return {"status": "unchanged", "reason": "Generated player data is unchanged"}
@@ -269,6 +286,14 @@ def prepare(root: Path, state: Path, baseline: str, today: str, *, online: bool,
                "stage_seconds": report.get("stage_seconds", {}), "state_path": str(report_dir)}
     if comparison:
         return {**summary, "status": "comparison", "comparison": report["build_comparison"]["status"]}
+    try:
+        checked_effects = effect_review(worktree, online=online)
+    except (OSError, ValueError) as exc:
+        return {**summary, "status": "blocked", "reason": "The reviewed Forever spell export could not be verified", "detail": str(exc)}
+    if checked_effects:
+        summary["spell_effect_review"] = checked_effects
+    if effect_review_blocked(checked_effects):
+        return {**summary, "status": "blocked", "reason": "Item effects need review"}
     report = evaluate_leveling(report, worktree, base)
     summary["release_exception"] = report.get("release_exception")
     if review_blocked(report):

@@ -845,29 +845,46 @@ local function savedOwnedCopy(context, entry)
     end
 end
 
-function rating:ReadSavedOpportunity(context, item, key, missing)
-    if item.native or not context.catalog.data.items[item.key] then return end
-    local cache = opportunityCache(context, missing)
-    local value = cache and cache.values[key]
+function rating:GetSavedGearAdvice(context)
+    local active, missing = self:WithCharacterBuild(context, true)
+    local cache = opportunityCache(active, missing)
+    if cache then
+        if type(cache.equipped) ~= "table" then cache.equipped = {} end
+        return cache.equipped, active
+    end
+end
+
+local function restoreSwap(context, value, item)
     if not value or type(value.slots) ~= "table" then return end
     local definition
     for _, def in ipairs(addon:GetEquipmentSlotDefinitions()) do if def.key == value.physical then definition = def; break end end
     if not definition then return end
     local result = {definition = definition, slot = value.slot, delta = value.delta, basis = value.basis,
         roleDelta = value.roleDelta, roleDisplaced = value.roleDisplaced, status = value.status, bank = value.bank,
-        weaponSetup = value.weaponSetup, replacements = {}}
-    for _, entry in ipairs(value.displaced) do
-        local owned = savedOwnedCopy(context, entry)
-        if entry.link and not owned then return end
-        local facts = owned and owned.facts or context.catalog.items[entry.key]
-        if not facts then return end
-        result.replacements[#result.replacements + 1] = {key = entry.key, slot = entry.slot, state = entry.state, name = entry.name, facts = facts, item_link = entry.link}
+        weaponSetup = value.weaponSetup}
+    local function restorePieces(entries)
+        local pieces = {}
+        for _, entry in ipairs(entries) do
+            local owned = savedOwnedCopy(context, entry)
+            if entry.link and not owned then return end
+            local facts = owned and owned.facts or context.catalog.items[entry.key]
+            if not facts then return end
+            pieces[#pieces + 1] = {key = entry.key, slot = entry.slot, state = entry.state, name = entry.name,
+                facts = facts, item_link = entry.link}
+        end
+        return pieces
+    end
+    result.replacements = restorePieces(value.displaced)
+    if not result.replacements then return end
+    if value.incoming then
+        result.incoming = restorePieces(value.incoming)
+        if not result.incoming then return end
     end
     local before, after = {}, {}
     for physical, instance in pairs(context.equipmentFacts) do before[physical], after[physical] = instance, instance end
     local function restore(entry)
         if not entry then return nil end
-        if not entry.state and entry.key == item.key then return {facts = item, item_link = entry.link} end
+        if item and not entry.state and entry.key == item.key then return {facts = item, item_link = entry.link} end
         return savedOwnedCopy(context, entry)
     end
     for _, slot in ipairs(value.slots) do
@@ -876,36 +893,66 @@ function rating:ReadSavedOpportunity(context, item, key, missing)
         before[slot[1]], after[slot[1]] = old, new
     end
     result.gear = after
-    result.comparisonTrace = {context = context, before = before, after = after, reference = "owned"}
+    result.comparisonTrace = {context = context, before = before, after = after,
+        reference = result.incoming and "equipped" or "owned"}
     return result
 end
 
-function rating:SaveOpportunity(context, item, key, result, missing)
+local function saveSwap(result, definitions)
     local trace = result.comparisonTrace
     if type(result.delta) ~= "number" or not result.definition or not trace or trace.hasEffects or result.conditional
-        or result.estimatedEffects or item.native or not context.catalog.data.items[item.key] then return end
-    local cache = opportunityCache(context, missing)
-    if not cache then return end
-    local displaced = {}
-    for i, entry in ipairs(result.replacements) do
-        if not entry.facts then return end
-        displaced[i] = {key = entry.key, name = entry.name, slot = entry.slot, state = entry.state, link = entry.item_link}
+        or result.estimatedEffects then return end
+    local function savePieces(pieces)
+        local entries = {}
+        for i, entry in ipairs(pieces) do
+            if not entry.facts then return end
+            entries[i] = {key = entry.key, name = entry.name, slot = entry.slot, state = entry.state, link = entry.item_link}
+        end
+        return entries
     end
+    local displaced = savePieces(result.replacements)
+    local incoming = result.incoming and savePieces(result.incoming)
+    if not displaced or result.incoming and not incoming then return end
     local function slotCopy(instance)
         if not instance then return false end
         return {key = instance.facts.key, state = instance.state, link = instance.item_link}
     end
     local slots = {}
-    for _, definition in ipairs(trace.definitions) do
+    for _, definition in ipairs(definitions or trace.definitions) do
         local physical = definition.key
-        slots[#slots + 1] = {physical, slotCopy(trace.before[physical]), slotCopy(trace.after[physical])}
+        local before, after = trace.before[physical], trace.after[physical]
+        if not incoming or before ~= after then slots[#slots + 1] = {physical, slotCopy(before), slotCopy(after)} end
     end
+    return {physical = result.definition.key, slot = result.slot, delta = result.delta,
+        roleDelta = result.roleDelta, roleDisplaced = result.roleDisplaced, basis = result.basis,
+        status = result.status, bank = result.bank, weaponSetup = result.weaponSetup,
+        displaced = displaced, incoming = incoming, slots = slots}
+end
+
+function rating:RestoreSavedGearAction(context, value)
+    return value and restoreSwap(context, value)
+end
+
+function rating:SaveGearAction(result)
+    return saveSwap(result, addon:GetEquipmentSlotDefinitions())
+end
+
+function rating:ReadSavedOpportunity(context, item, key, missing)
+    if item.native or not context.catalog.data.items[item.key] then return end
+    local cache = opportunityCache(context, missing)
+    return cache and restoreSwap(context, cache.values[key], item)
+end
+
+function rating:SaveOpportunity(context, item, key, result, missing)
+    if item.native or not context.catalog.data.items[item.key] then return end
+    local value = saveSwap(result)
+    if not value then return end
+    local cache = opportunityCache(context, missing)
+    if not cache then return end
     if not cache.values[key] then
         local prior = cache.order[cache.next]
         if prior then cache.values[prior] = nil end
         cache.order[cache.next], cache.next = key, cache.next % 256 + 1
     end
-    cache.values[key] = {physical = result.definition.key, slot = result.slot, delta = result.delta,
-        roleDelta = result.roleDelta, roleDisplaced = result.roleDisplaced, basis = result.basis,
-        status = result.status, bank = result.bank, weaponSetup = result.weaponSetup, displaced = displaced, slots = slots}
+    cache.values[key] = value
 end

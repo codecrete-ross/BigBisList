@@ -138,6 +138,10 @@ local function mechanicReason(explanation, delta)
     end
     if not featured then return end
     if mechanic.kind == "set" then return (featured.gained and "Completes " or "Breaks ") .. featured.name, "Set bonus tips the swap" end
+    if featured.rule and featured.rule.ppm_range then
+        local school = featured.rule.school
+        return (featured.gained and "Gains " or "You'd lose ") .. school:sub(1, 1):upper() .. school:sub(2) .. " damage on hit"
+    end
     if featured.retained then return featured.name .. " tips the swap", "Item effect tips the swap" end
     return (featured.gained and "Gains " or "Loses ") .. featured.name, "Item effect tips the swap"
 end
@@ -167,6 +171,12 @@ local function joinBenefits(changes, first, last)
     return table.concat(names, ", ")
 end
 
+local function procDamage(item)
+    for _, rule in ipairs(item and item.effect_rules or {}) do
+        if rule.ppm_range and rule.school then return rule.school:sub(1, 1):upper() .. rule.school:sub(2) .. " damage on hit" end
+    end
+end
+
 function Widgets:SwapDecisionSummary(item, swap)
     local result = swap and (swap.forecast or swap)
     if result and result.status == "best_owned" then
@@ -180,7 +190,18 @@ function Widgets:SwapDecisionSummary(item, swap)
     local mechanic = mechanicReason(evidence, result.delta)
     if mechanic then return mechanic end
     if result.delta == 0 then return "Both setups score equally." end
+    local coming = procDamage(item)
+    local leaving
+    for _, old in ipairs(result.replacements or {}) do leaving = leaving or procDamage(old.facts) end
     local gains, losses = tradeoff(evidence, result.delta)
+    if coming and leaving and coming ~= leaving then
+        local change = "Trades " .. leaving:match("^%S+") .. " for " .. coming .. "."
+        local gain = result.delta > 0 and joinBenefits(gains, 1, 2)
+        return gain and gain ~= "" and (gain .. ". " .. change) or change
+    end
+    if leaving and not coming and (evidence.raw.hit_percent or 0) > 0 and (evidence.raw.crit_percent or 0) > 0 then
+        return string.format("Gains %g%% Hit and %g%% Crit. Gives up %s.", evidence.raw.hit_percent, evidence.raw.crit_percent, leaving)
+    end
     local gain, loss = gains[1], losses[1]
     if not gain or not loss then
         local changes = gain and gains or losses
@@ -196,7 +217,11 @@ function Widgets:SwapDecisionSummary(item, swap)
         and gain.points >= -loss.points * 0.8 and gain.points <= -loss.points then
         local rest = joinBenefits(gains, 2, 4)
         if rest then
-            local extraLoss = losses[2] and (", even with " .. statAmount(losses[2], false) .. " lost") or ""
+            local extraLoss = ""
+            if losses[2] then
+                extraLoss = losses[2].stat == "armor" and (", even with " .. numberText(math.abs(losses[2].amount)) .. " less Armor")
+                    or (", even with " .. statAmount(losses[2], false) .. " lost")
+            end
             local verb = #gains == 2 and " puts" or " put"
             return statAmount(gain, false) .. " nearly offsets losing " .. statAmount(loss, false)
                 .. ". The extra " .. rest .. verb .. " the swap ahead" .. extraLoss .. "."
@@ -233,13 +258,14 @@ function Widgets:EquippedAdvice(data, view, spec, player)
         view.swap, view.tone = action, "gain"
     elseif data.disabledReason then today = data.disabledReason
     elseif not data.item_id then today = data.overlay or "Empty slot"
-    elseif not data.gearRated and not placement then today, compact = "Checking your gear…", "Checking gear"
+    elseif placement and (placement.status == "loading" or placement.status == "unavailable") then
+        local name = data.name ~= "Item " .. data.item_id and data.name or data.slot
+        today, compact = "Can't compare " .. name .. " yet", "Need item stats"
     elseif swap and swap.blocker then
         today, compact = rating:GuideItemDependency(swap, data), "Check item"
     elseif swap and swap.conditional then
         why = self:DecisionReason(placement and placement.item, swap)
-        if data.gearEffect and (not why or why == "depends on the fight") then why = data.gearEffect end
-        today, compact = "Compare for " .. spec, "Compare"
+        today, compact = "Keep equipped for now", "Compare"
         view.tone = "uncertain"
     elseif swap and (swap.status == "best_owned" or swap.status == "equipped" or swap.delta == 0) then
         today, compact = "Keep equipped" .. scoped, "Keep equipped"
@@ -283,15 +309,7 @@ function Widgets:DecisionReason(item, swap)
     local rating = BigBiSList.ForeverGearRating
     local explanation = rating and rating.GetSwapExplanation and rating:GetSwapExplanation(result, true)
     if result.conditional then
-        local reversal = rating and rating.WeightReversalReason and rating:WeightReversalReason(result)
-        if reversal then return reversal end
-        if result.unscoredHolyBlock then return "Holy damage on block" end
-        if explanation and explanation.unknown and explanation.unknown[1] then
-            return "Unpriced effect · " .. explanation.unknown[1], "Unpriced effect"
-        end
-        if result.buildUnavailable then return "uses default spec weights" end
-        if result.estimatedEffects then return "depends on effect uptime" end
-        return "depends on the fight"
+        return rating:ComparisonConcern(item, result, explanation)
     end
     if result.status == "empty" then return "fills an empty slot" end
     if result.status == "best_owned" then
@@ -342,6 +360,25 @@ function Widgets:DecisionReason(item, swap)
     if (result.delta or 0) < 0 and previous[1] then return previous[1].name .. " is stronger" end
 end
 
+function Widgets:SwapAdvice(item, view)
+    local swap = view.swap
+    local result = swap and (swap.forecast or swap)
+    local actual = result and (result.equipSwap or result)
+    local verdict = view.today or view.strength
+    if not actual or view.utility then return verdict, view.comparisonDetail end
+    local reference = {}
+    for _, old in ipairs(actual.replacements or {}) do reference[#reference + 1] = old.name end
+    if #reference > 0 then
+        local names = table.concat(reference, " + ")
+        if actual.conditional then verdict = "Compare with " .. names
+        elseif actual.delta and actual.delta < 0 then verdict = "Keep " .. names
+        elseif actual.delta == 0 and actual.status ~= "best_owned" then verdict = "Sidegrade to " .. names
+        elseif result.equipNow then verdict = "Equip now · replaces " .. names
+        elseif actual.delta and actual.delta > 0 then verdict = (verdict or "Upgrade") .. " over " .. names end
+    end
+    return verdict, self:SwapDecisionSummary(item, swap) or view.comparisonDetail
+end
+
 function Widgets:SwapExplanationLines(swap, selected, detail)
     local result = swap and (swap.forecast or swap)
     if result and result.status == "best_owned" then result = result.equipSwap end
@@ -356,7 +393,6 @@ function Widgets:SwapExplanationLines(swap, selected, detail)
     end
     local reference = selected and "Selected reference" or trace and trace.reference == "equipped" and "Equipped" or "Best owned"
     local basis = rating:GetSwapBasisLabel(result.basis)
-    if result.conditional then basis = basis .. " · Conditional" end
     lines[1] = reference .. " · " .. (names[1] and table.concat(names, " + ") or "Empty slot")
     local level = trace and (" · Lv " .. trace.context.level) or ""
     lines[2] = basis .. level .. " · " .. numberText(result.delta, true) .. " score points"
@@ -365,7 +401,6 @@ function Widgets:SwapExplanationLines(swap, selected, detail)
         lines[#lines + 1] = reversal .. " · " .. numberText(result.weightReversal, true) .. " score points"
         if why then lines[#lines + 1] = why end
     end
-    if result.estimatedEffects then lines[#lines + 1] = "Includes estimated item effects" end
     if detail then
         for _, effect in ipairs(result.effects or {}) do
             local shown
@@ -384,7 +419,9 @@ function Widgets:SwapExplanationLines(swap, selected, detail)
         local label = (change.gained and "Completes " or "Breaks ") .. change.name
         if label ~= reason then lines[#lines + 1] = label end
     end
-    for _, effect in ipairs(evidence.unknown or {}) do lines[#lines + 1] = "Unpriced effect · " .. effect end
+    if detail and result.conditional and not reversal then
+        lines[#lines + 1] = rating:ComparisonConcern(nil, result, evidence)
+    end
     if detail then
         for _, change in ipairs(scoredChanges(evidence)) do
             local amount, points = change.amount, change.points

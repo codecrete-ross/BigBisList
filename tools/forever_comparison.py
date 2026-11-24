@@ -5,10 +5,10 @@ import re
 
 from tools.forever import item_observations, numeric, scoring_profiles, snapshot_digest, valid_source
 from tools.forever_equipment_sources import publication_key
-from tools.forever_effect_benchmarks import missing_reason, preset
+from tools.forever_effect_benchmarks import compile_rule, missing_reason, preset
 from tools.forever_item_effects import (FLAT_PASSIVE_STATS, attach_rules, effect_lines, recover_permanent_stats,
                                        resolve_spell_leads, set_catalog, tooltip_sets, unresolved_lines)
-from tools.project import SLOT_NAMES, dataset_json
+from tools.project import FOREVER_CANONICAL_DIR, SLOT_NAMES, dataset_json, load_json
 from tools.recommend_leveling import materialized_items, merged_stats, normalized_slot, profile_weights, separate_weapon_dps
 from tools.sources import summarize_sources
 from tools.forever_stats import normalized_stats, weight_review
@@ -366,12 +366,32 @@ def compile_comparison_data(item_stats: list[dict], *, data: dict | None = None,
             raise ValueError(f"Forever Gear Guide effect changed for {key}")
         guide_effects[key] = {field: review[field] for field in ("roles", "specs", "note") if field in review}
     gaps = {}
+    reviewed = dataset_json("forever", "spell_effect_review")
+    if reviewed["build"] != load_json(FOREVER_CANONICAL_DIR / "reviewed_builds.json")["target_client"]:
+        raise ValueError("Forever spell effect evidence must be reviewed for the target client")
     for key, item in items.items():
         if set_key := set_members.get(item["id"]):
             item["set_key"] = set_key
             if "Set bonuses" not in item.setdefault("effects", []):
                 item["effects"].append("Set bonuses")
         items[key] = item | attach_rules(item)
+        item = items[key]
+        for lead in item.get("effect_leads", []):
+            mechanic = reviewed["rules"].get(lead)
+            if not mechanic or item["id"] not in reviewed["references"][lead]["items"]:
+                continue
+            trigger = lead.partition(":")[0].casefold() + ":"
+            # A single exact spell link owns the description for this trigger.
+            # Leave other triggers and items alone, including copies with different spells.
+            if sum(link.casefold().startswith(trigger) for link in item["effect_leads"]) != 1:
+                continue
+            item["effects"] = [label for label in item.get("effects", []) if not label.casefold().startswith(trigger)]
+            item["effects"].append(mechanic["label"])
+            item_rules = [rule for rule in item.get("effect_rules", []) if not rule["label"].casefold().startswith(trigger)]
+            item_rules.append(compile_rule({k: v for k, v in mechanic.items() if k not in {"source", "rate_source", "rate_sample"}}, item))
+            item["effect_rules"] = item_rules
+            item["missing_effects"] = [other for other in item.get("missing_effects", []) if other != lead]
+            item["effects_known"] = not item["missing_effects"]
         rules_by_label = {label: rule for rule in items[key].get("effect_rules", [])
                           for label in (rule["label"], *rule.get("aliases", []))}
         for label in item.get("effects", []):

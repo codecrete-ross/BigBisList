@@ -473,7 +473,7 @@ local function readTooltip(link, stats, facts)
     local english = locale == nil or locale == "enUS" or locale == "enGB"
     local data = model()
     local flatRules = data and data.flat_passive_stats
-    local passive, seenEffects = {}, {}
+    local passive, seenEffects, triggers = {}, {}, {}
     for _, line in ipairs(tooltip.lines or {}) do
         if readable(line) and type(line) == "table" then
             for _, field in ipairs({ "leftText", "rightText" }) do
@@ -501,6 +501,8 @@ local function readTooltip(link, stats, facts)
                     if races then facts.races = restrictionNames(races) end
                     if not seenEffects[text] and (text:match("^Use:") or text:match("^Chance on hit:") or text:match("^Equip:")) then
                         seenEffects[text] = true
+                        local trigger = label:match("^([^:]+):")
+                        triggers[trigger] = (triggers[trigger] or 0) + 1
                         if not readPassiveStats(text, passive, flatRules) then addEffect(facts.effects, text) end
                     end
                 end
@@ -515,7 +517,7 @@ local function readTooltip(link, stats, facts)
     for stat, value in pairs(passive) do
         if stats[stat] == nil then stats[stat] = value end
     end
-    return true
+    return true, triggers
 end
 
 function rating:ReadNative(id, key, link, base)
@@ -552,7 +554,8 @@ function rating:ReadNative(id, key, link, base)
         weapon_subtype = class == 2 and WEAPON_TYPES[subclass] or nil,
         native = true, statLink = link,
     }
-    if not readTooltip(link, stats, facts) and C_TooltipInfo and C_TooltipInfo.GetHyperlink then
+    local read, nativeTriggers = readTooltip(link, stats, facts)
+    if not read and C_TooltipInfo and C_TooltipInfo.GetHyperlink then
         if pending then return nil, "loading" end
         facts.unreadable_effects = true
     end
@@ -577,7 +580,29 @@ function rating:ReadNative(id, key, link, base)
                 end
             end
         end
+        facts.missing_effects = {}
+        local leadCounts = {}
+        for _, lead in ipairs(base.missing_effects or {}) do
+            local trigger = lead:match("^([^:]+):")
+            trigger = trigger and trigger:lower()
+            if trigger then leadCounts[trigger] = (leadCounts[trigger] or 0) + 1 end
+        end
+        for _, lead in ipairs(base.missing_effects or {}) do
+            local trigger = lead:match("^([^:]+):")
+            trigger = trigger and trigger:lower()
+            if not trigger or not nativeTriggers or nativeTriggers[trigger] ~= 1 or leadCounts[trigger] ~= 1 then
+                facts.missing_effects[#facts.missing_effects + 1] = lead
+            end
+        end
+        for _, rule in ipairs(facts.effect_rules or {}) do
+            if rule.ppm_range and nativeTriggers and nativeTriggers["chance on hit"] == 1 then
+                for i = #facts.effects, 1, -1 do
+                    if facts.effects[i]:match("^Chance on hit:") then table.remove(facts.effects, i) end
+                end
+            end
+        end
         for _, effect in ipairs(base.effects or {}) do addEffect(facts.effects, effect) end
+        facts.unreadable_effects = facts.unreadable_effects or #facts.missing_effects > 0 or nil
     elseif #facts.effects == 0 then
         local spell = call(api.GetItemSpell or GetItemSpell, link)
         if readable(spell) and spell then addEffect(facts.effects, "Item spell") end
@@ -636,7 +661,8 @@ local function resolveLink(self, context, entry)
             if not old or (old ~= native and (old.level ~= native.level or old.name ~= native.name
                 or old.unreadable_effects ~= native.unreadable_effects or old.max_equipped ~= native.max_equipped
                 or old.unique_group ~= native.unique_group or not sameValues(old.stats, native.stats)
-                or not sameValues(old.effects, native.effects) or not sameValues(old.classes, native.classes)
+                or not sameValues(old.effects, native.effects) or not sameValues(old.missing_effects, native.missing_effects)
+                or not sameValues(old.classes, native.classes)
                 or not sameValues(old.races, native.races))) then
                 local observed = copy(facts)
                 for field, value in pairs(native) do observed[field] = value end
@@ -1117,6 +1143,29 @@ local function comparisonLoadouts(trace)
     return before, after
 end
 
+local function qualifyProcSwap(result)
+    local trace = result.comparisonTrace
+    if not trace or not trace.hasEffects or not result.delta or result.delta == 0 then return end
+    local function measured(instance)
+        for _, rule in ipairs(instance and instance.facts and instance.facts.effect_rules or {}) do
+            if rule.ppm_range then return true end
+        end
+    end
+    local changed
+    for _, key in ipairs({"MainHand", "OffHand", "Ranged"}) do
+        local before, after = trace.before[key], trace.after[key]
+        if before ~= after and (measured(before) or measured(after)) then changed = true; break end
+    end
+    if not changed then return end
+    local context, active = trace.context, trace.active or trace.context.activeBuild
+    local before, after = comparisonLoadouts(trace)
+    result.procReversal = addon.ForeverScoring:ProcReversal(before, after,
+        active and active.weights or rating:ReferenceWeights(context), active and active.profile.operations or {},
+        active and active.ranks or {}, active and active.scenario or context.referenceScenario,
+        active and active.race or context.raceId, context.level, result.delta)
+    result.conditional = result.conditional or result.procReversal ~= nil
+end
+
 local function weightReversal(trace, delta, baselines)
     local context = trace.context
     if not context.referenceScenario.weight_alternatives or delta == 0 then return end
@@ -1176,6 +1225,16 @@ local function changedSets(before, after)
     return changes, ignore
 end
 
+local function effectConcern(item, label)
+    local kind = label and label:match("^([^:]+):")
+    kind = kind and kind:lower()
+    local effect = kind == "chance on hit" and "chance-on-hit effect" or kind == "use" and "on-use effect"
+        or (kind == "set" or label == "Set bonuses") and "set bonus" or "equip effect"
+    local name = label and label:match("^[^:]+:%s*([^%d].-)%.$")
+    if name and #name <= 32 then effect = name end
+    return (item.name or "This item") .. "'s " .. effect .. " could change the result."
+end
+
 local function effectChanges(before, after, beforeApplied, afterApplied)
     local changes, unknown, seen = {}, {}, {}
     local oldWithout, newWithout
@@ -1188,11 +1247,12 @@ local function effectChanges(before, after, beforeApplied, afterApplied)
             local worn = item and item ~= partner
             if worn and not item.utility then
                 for _, label in ipairs(item.effects or {}) do
-                    if not known[label] and not seen[label] then unknown[#unknown + 1], seen[label] = label, true end
+                    local concern = effectConcern(item, label)
+                    if not known[label] and not seen[concern] then unknown[#unknown + 1], seen[concern] = concern, true end
                 end
-                if item.unreadable_effects and #unknown == 0 then
-                    local label = item.name or "Item effect"
-                    unknown[#unknown + 1], seen[label] = label, true
+                for _, label in ipairs(item.missing_effects or {}) do
+                    local concern = effectConcern(item, label)
+                    if not seen[concern] then unknown[#unknown + 1], seen[concern] = concern, true end
                 end
             end
             if item and item.effect_rules then
@@ -1206,7 +1266,7 @@ local function effectChanges(before, after, beforeApplied, afterApplied)
                         or (rule.kind == "extra_attack" and gear[weaponSlot] ~= other[weaponSlot]))
                     if value and rule.kind ~= "situational" and (worn or revalued) then
                         local name = rule.spell_name or rule.label
-                        changes[#changes + 1] = {gained = gained, name = name, retained = not worn}
+                        changes[#changes + 1] = {gained = gained, name = name, retained = not worn, rule = rule}
                         removed = true
                     else
                         kept[#kept + 1] = rule
@@ -1368,7 +1428,9 @@ function rating:EffectComparisonLines(result, readyOnly)
         without[position] = bare
         local intrinsic = value(without)
         local points = total - intrinsic
-        lines[#lines + 1] = string.format("%s · %.2f stat pts · %+.2f effect pts", facts.name, intrinsic - empty, points)
+        if math.abs(points) > 0.000001 then
+            lines[#lines + 1] = string.format("%s · %+.2f score points from item effects", facts.name, points)
+        end
         local known = applied[position] or {}
         for _, rule in ipairs(item.effect_rules or {}) do
             local estimate = known[rule.label]
@@ -1388,8 +1450,9 @@ function rating:EffectComparisonLines(result, readyOnly)
                     lines[#lines + 1] = string.format("%+.2f pts from this effect in this loadout", total - value(without))
                 end
                 if rule.kind == "damage" and rule.bonus_targets then
-                    lines[#lines + 1] = string.format("%g base damage per proc · %g against %s", rule.amount,
-                        rule.amount * rule.bonus_multiplier, rule.bonus_targets)
+                    local base = rule.delayed_bonus_only and rule.periodic_amount or rule.amount
+                    lines[#lines + 1] = string.format(rule.delayed_bonus_only and "Second hit deals %g damage, or %g against %s"
+                        or "%g damage per proc, or %g against %s", base, base * rule.bonus_multiplier, rule.bonus_targets)
                 end
                 if result.delta and #item.effect_rules == 1 and rule.family
                     and (rule.kind == "damage" or rule.kind == "extra_attack") and points > 0 then
@@ -1425,13 +1488,7 @@ function rating:EffectComparisonLines(result, readyOnly)
                 if nextBonus then
                     lines[#lines + 1] = string.format("%s · %d/%d pieces for %s", item.effect_set.name, count, nextBonus.pieces, nextBonus.text)
                 end
-            elseif not known[label] then
-                local gaps = model() and model().effect_gaps
-                lines[#lines + 1] = label .. " · " .. (gaps and gaps[label] or "Value depends on the encounter")
             end
-        end
-        for _, lead in ipairs(facts.missing_effects or {}) do
-            lines[#lines + 1] = lead .. " · Effect description unavailable"
         end
     end
     for _, def in ipairs(definitions) do
@@ -2401,6 +2458,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                     result.comparisonTrace.scoredAfter = proposed
                     result.weightReversal = weightReversal(result.comparisonTrace, result.delta)
                     result.conditional = result.conditional or result.weightReversal ~= nil
+                    if not live then qualifyProcSwap(result) end
                 else
                     result.roleDelta = (rolePoints or 0) - result.roleDisplaced
                 end
@@ -2422,6 +2480,7 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                         trace.active, trace.scoredBefore, trace.scoredAfter = live, live.gear, evaluation.proposal
                         active.comparisonTrace = trace
                     end
+                    qualifyProcSwap(active)
                     if not bestLive or active.delta > bestLive.delta then bestLive = active end
                 else
                     incompleteLive = true
@@ -2789,6 +2848,7 @@ local function equipSwap(context, group, state, worn, proposal, index)
     traceComparison(context, result, previous, proposed, proposal[index].instance.facts, "equipped")
     result.weightReversal = weightReversal(result.comparisonTrace, result.delta)
     result.conditional = result.conditional or result.weightReversal ~= nil
+    qualifyProcSwap(result)
     if rating:ReliableGain(result) then return result end
 end
 
@@ -2858,6 +2918,7 @@ local function ownedSwap(context, group, candidate, quantity, held)
             result.weightReversal = weightReversal(result.comparisonTrace, result.delta, state.alternativeBaselines)
             result.conditional = result.conditional or result.weightReversal ~= nil
         end
+        qualifyProcSwap(result)
     end
     if context.activeBuild and addon.ForeverScoring:HasUnmodeledSwap(context.activeBuild, candidate.facts,
         result.definition.inventorySlotId, result.slot) then result.conditional = true end
@@ -3098,7 +3159,22 @@ function rating:WeightReversalReason(swap)
     elseif context and context.spec == "Destruction" then
         return "Spell mix can reverse the pick", "A rotation that relies more on Shadow spells reverses the pick."
     end
-    return "Encounter assumptions can reverse the pick"
+    return "The better choice depends on the fight."
+end
+
+function rating:ComparisonConcern(item, result, explanation)
+    if result.procReversal then return result.procReversal end
+    local reversal = self:WeightReversalReason(result)
+    if reversal then return reversal end
+    if result.unscoredHolyBlock then return "Holy damage on block could change the result." end
+    if explanation and explanation.unknown and explanation.unknown[1] then return explanation.unknown[1] end
+    if result.buildUnavailable == "talents" then return "Your talents could change the result." end
+    for _, old in ipairs(result.replacements or {}) do
+        local facts = old.facts
+        if facts and facts.unreadable_effects then return effectConcern(facts, (facts.missing_effects or {})[1]) end
+    end
+    if item and item.unreadable_effects then return effectConcern(item, (item.missing_effects or {})[1]) end
+    return "The better choice depends on the fight."
 end
 
 function rating:Label(entry, layout, showProjection)
@@ -3145,7 +3221,7 @@ function rating:DescriptionLines(entry)
         entry.effectPoints = self:ReferenceEffectPoints(context, item, entry.slot, entry.score)
     end
     if entry.effectPoints and entry.effectPoints ~= 0 then
-        lines[#lines + 1] = string.format("Default weights · %.2f stat pts · %+.2f effect pts", entry.score - entry.effectPoints, entry.effectPoints)
+        lines[#lines + 1] = string.format("%+.2f score points from item effects", entry.effectPoints)
     end
     if context and item.effect_rules then
         local scorer = addon.ForeverScoring
@@ -3157,12 +3233,10 @@ function rating:DescriptionLines(entry)
             if type(estimate) == "table" and estimate.per_minute then lines[#lines + 1] = effectRateText(rule, estimate) end
         end
     end
-    local gaps = model() and model().effect_gaps or {}
-    for _, label in ipairs(item and item.effects or {}) do
-        if gaps[label] and (label ~= "Set bonuses" or not item.effect_set) then lines[#lines + 1] = label .. " · " .. gaps[label] end
+    if entry.conditional or entry.conditional_tie then
+        local lead = item and item.missing_effects and item.missing_effects[1]
+        lines[#lines + 1] = lead and effectConcern(item, lead) or "Item effects can change this rank."
     end
-    for _, lead in ipairs(item and item.missing_effects or {}) do lines[#lines + 1] = lead .. " · Effect description unavailable" end
-    if entry.conditional or entry.conditional_tie then lines[#lines + 1] = "Some item effects have an unverified value" end
     return lines
 end
 
@@ -3257,9 +3331,7 @@ end
 function rating:GuideItemDependency(result, row)
     local blocker = result and result.blocker
     local name = blocker and blocker.name or row.name or ("Item " .. tostring(row.item_id))
-    if result and result.status == "loading" then return "Waiting for " .. name end
-    if blocker and blocker.name then return "Check " .. name end
-    return "Stats unavailable · " .. name
+    return "Can't compare " .. name .. " yet"
 end
 
 function rating:GetGearPurpose(context, item, swap, note)
@@ -3277,7 +3349,7 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
     local evaluated = math.max(guide.level, row.guide_route_level or 0, player and player.level or 0)
     local item, pending = self:GetRowItem(row)
     local note = item and self:GetReviewedGuideEffect(guide, item)
-    local purpose, effect = self:GetGearPurpose(guide, item, nil, note)
+    local purpose = note and reviewedPurpose(guide, note)
     if not player or player.class ~= guide.class then
         local entry = row.stat_rank or {}
         local pick = note or entry.rank == 1 or (entry.score_percent or 0) >= 70
@@ -3301,25 +3373,13 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
     local kind, detail
     if gain then kind = "upgrade"
     elseif status == "blocked" then kind = "hidden"
-    elseif swap and swap.conditional and finite(swap.delta) and swap.delta > 0 and (purpose or effect or note or statPurpose(guide, item, swap)) then
+    elseif swap and swap.conditional and finite(swap.delta) and (swap.delta > 0 or swap.procReversal or swap.weightReversal) then
         kind = "situational"
-        purpose = purpose or statPurpose(guide, item, swap)
     elseif note and not held then kind = "utility"
-    elseif swap and not held and purpose and effect and not finite(swap.delta)
-        and status ~= "loading" and status ~= "unavailable" then kind = "utility"
     elseif result.status == "loading" or result.status == "unavailable" then
         kind, detail = result.status, self:GuideItemDependency(result, row)
     else kind = "hidden" end
-    if (kind == "utility" or kind == "situational" or inspecting) and not detail then detail = effect or note end
-    if kind == "situational" and not detail then
-        detail = self:WeightReversalReason(result)
-        for _, replaced in ipairs(result.replacements or {}) do
-            local other = replaced.facts and replaced.facts.effects and replaced.facts.effects[1]
-            if not detail and other then detail = replaced.name .. " · " .. other; break end
-        end
-        if not detail and result.buildUnavailable then detail = "Default spec weights" end
-        if not detail and item and item.unreadable_effects then detail = "Item effect unverified" end
-    end
+    if kind == "utility" then detail = note end
     local loads = result.pending
     if pending == "loading" and row.item_id then loads = {[row.item_id] = true} end
     local proficiencyLevel
@@ -3334,7 +3394,7 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
         result.level = evaluated
         result = {forecast = result}
     end
-    return {kind = kind, swap = result, gain = gain, meaningful = self:IsMeaningfulOwnedUpgrade(swap), note = note or effect, level = evaluated,
+    return {kind = kind, swap = result, gain = gain, meaningful = self:IsMeaningfulOwnedUpgrade(swap), note = note, level = evaluated,
         proficiencyLevel = proficiencyLevel, owned = held, purpose = purpose, detail = detail, pending = loads}
 end
 
@@ -3479,9 +3539,8 @@ local function gearVerdict(self, input, view)
     local conditional = result.conditional or swap.conditional
     local status = result.status
     if status == "loading" or status == "unavailable" or status == "blocked" then
-        view.today = (status == "loading" and "Waiting for item stats" or status == "blocked" and "No legal swap"
-            or (input.item and (input.item.stats_unavailable or input.item.has_random_stats)) and "Stats unavailable"
-            or "Gear comparison unavailable") .. suffix
+        view.today = (status == "blocked" and "Can't equip this with your gear"
+            or "Can't compare " .. (result.blocker and result.blocker.name or input.item and input.item.name or "this item") .. " yet") .. suffix
         view.tone = "unknown"
         return
     end
@@ -3501,7 +3560,7 @@ local function gearVerdict(self, input, view)
         view.evidence = (forecast and "Estimated " or "") .. points .. " vs " .. baseline .. suffix
     end
     if winner then
-        view.today = (conditional and "Depends on your setup" or "Best you own for this slot") .. suffix
+        view.today = (conditional and "Compare before equipping" or "Best you own for this slot") .. suffix
         if conditional then view.tone = "uncertain"
         elseif forecast then view.tone = "future"
         elseif result.equipNow and input.activeSpec ~= false then
@@ -3513,19 +3572,7 @@ local function gearVerdict(self, input, view)
             if #partners > 0 then view.evidence = view.evidence .. " · With " .. table.concat(partners, " + ") end
         end
     elseif conditional then
-        view.today = delta > 0 and "Possible upgrade" or "Depends on your setup"
-        local item = input.item
-        if result.unscoredHolyBlock then view.today = view.today .. " · Holy damage on block unscored" end
-        for _, effect in ipairs(not result.estimatedEffects and item and item.effects or {}) do
-            if type(effect) == "string" and effect:lower():find("chance on hit", 1, true) then
-                view.today = view.today .. " · Chance-on-hit effect unscored"
-                break
-            end
-        end
-        view.today = view.today .. suffix
-        if not result.weightReversal then
-            view.evidence = view.evidence .. (result.estimatedEffects and " · Includes estimated effects" or " · Scored stats only")
-        end
+        view.today, view.evidence = "Compare before equipping" .. suffix, nil
         view.tone = "uncertain"
     elseif forecast then
         view.tone = "future"

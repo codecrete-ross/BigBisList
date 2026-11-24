@@ -461,8 +461,27 @@ local function benchmarkObservation(rule, scenario, position, useScale, level, l
     local scale = rule.use_lockout and useScale or 1
     local factor = (rule.school == "physical" or rule.kind == "extra_attack") and preset.physical
         or rule.school == "bleed" and 1 or preset.magic
-    if rule.periodic then factor = factor * preset.periodic_fraction
-    elseif rule.periodic_amount then factor = factor * (1 + rule.periodic_amount * preset.periodic_fraction / rule.amount) end
+    local periodic = preset.periodic_fraction
+    if rule.delay_seconds and scenario.fight_seconds then
+        periodic = math.max(0, 1 - rule.delay_seconds / scenario.fight_seconds)
+    end
+    local target, family = scenario.target_family, rule.target_family or rule.bonus_targets
+    if target and family then
+        target = target:lower():gsub("s$", "")
+        family = family:lower():gsub(" enemies$", ""):gsub("s$", "")
+    end
+    local multiplier = target and target == family and rule.bonus_multiplier or 1
+    if rule.periodic then
+        factor = factor * periodic * multiplier
+    elseif rule.periodic_amount then
+        factor = factor * ((rule.delayed_bonus_only and 1 or multiplier)
+            + rule.periodic_amount * periodic * multiplier / rule.amount)
+    else
+        factor = factor * multiplier
+    end
+    if scenario.proc_rate_bound and rule.ppm_range and rule.nominal_ppm then
+        rate = rate * rule.ppm_range[scenario.proc_rate_bound] / rule.nominal_ppm
+    end
     return { benchmark = true, applicable = rate > 0, per_minute = rate * scale, damage_factor = factor,
         useful_fraction = preset.useful_healing, target_fraction = 1,
         uptime = rule.uptimes and rule.uptimes[preset.index] * scale,
@@ -640,10 +659,37 @@ end
 
 function Scoring:ReferenceItem(facts, stats)
     local model = BigBiSListData and BigBiSListData.character_scoring
-    return { id = facts.id, key = facts.key or facts.variant_id, stats = stats, slot = facts.slot,
+    return { id = facts.id, name = facts.name, key = facts.key or facts.variant_id, stats = stats, slot = facts.slot,
         shield = facts.armor_type == "Shield", effect_rules = facts.effect_rules, effects = facts.effects,
-        unreadable_effects = facts.unreadable_effects, utility = facts.utility,
+        unreadable_effects = facts.unreadable_effects, missing_effects = facts.missing_effects, utility = facts.utility,
         set_id = model and byId(model.item_sets, facts.id), set_bonuses = facts.set_bonuses, effect_set = facts.effect_set }
+end
+
+function Scoring:ProcReversal(before, after, weights, operations, ranks, scenario, race, level, ordinary)
+    if not scenario.effect_benchmark or ordinary == 0 then return end
+    local tests, seen = {}, {}
+    local function consider(item)
+        for _, rule in ipairs(item and item.effect_rules or {}) do
+            if rule.ppm_range and not seen[rule.key] then
+                seen[rule.key] = true
+                if rule.target_family then tests[#tests + 1] = {target_family = rule.target_family, reason = "Against " .. rule.bonus_targets} end
+                if rule.delay_seconds then tests[#tests + 1] = {fight_seconds = rule.delay_seconds, reason = "In fights lasting 5 seconds or less"} end
+                tests[#tests + 1] = {proc_rate_bound = 1, reason = "When " .. rule.spell_name .. " procs less often"}
+                tests[#tests + 1] = {proc_rate_bound = 2, reason = "When " .. rule.spell_name .. " procs more often"}
+            end
+        end
+    end
+    for position = 1, 18 do
+        local old, new = before[position], after[position]
+        if old ~= new then consider(old); consider(new) end
+    end
+    for _, changes in ipairs(tests) do
+        local alternative = copy(scenario)
+        for key, value in pairs(changes) do alternative[key] = value end
+        local delta = Scoring.ScoreLoadout(after, weights, operations, ranks, alternative, race, level)
+            - Scoring.ScoreLoadout(before, weights, operations, ranks, alternative, race, level)
+        if ordinary * delta < -0.000001 then return changes.reason .. ", the other setup wins." end
+    end
 end
 
 function Scoring:HasUnresolvedEffects(item, applied)

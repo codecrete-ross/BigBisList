@@ -172,6 +172,7 @@ local function retryDetectedPlayerSelection()
     if changed then
         BigBiSList:RefreshUI()
     end
+    return changed
 end
 
 local frame = CreateFrame("Frame")
@@ -193,18 +194,25 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
         or event == "TRAIT_CONFIG_UPDATED"
         or event == "ACTIVE_COMBAT_CONFIG_CHANGED"
         or event == "PLAYER_LEVEL_UP" then
+        local scoringChanged
         if addonInitialized and BigBiSList.ForeverScoring then
-            local changed = BigBiSList.ForeverScoring:PlayerTalentsChanged()
-            if changed or event == "PLAYER_LEVEL_UP" or event == "PLAYER_ENTERING_WORLD" then
+            scoringChanged = BigBiSList.ForeverScoring:PlayerTalentsChanged() or event == "PLAYER_LEVEL_UP"
+            if scoringChanged then
                 BigBiSList.ForeverScoring:Invalidate()
                 BigBiSList:RefreshUI("query", event)
-            elseif event ~= "PLAYER_LOGIN" then
+            elseif event ~= "PLAYER_LOGIN" and event ~= "PLAYER_ENTERING_WORLD" then
                 return
             end
         end
-        retryDetectedPlayerSelection()
-        if addonInitialized and BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
-        if addonInitialized and BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:InvalidateStorage() end
+        local selectionChanged = retryDetectedPlayerSelection()
+        if addonInitialized and event == "PLAYER_ENTERING_WORLD" and not BigBiSList.UI.gearRatingCache
+            and BigBiSList.UI.HasIndexedGear and BigBiSList.UI:HasIndexedGear() then
+            BigBiSList.UI:PrepareRememberedWorkspace()
+        end
+        if scoringChanged or selectionChanged then
+            if BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
+            if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:InvalidateStorage() end
+        end
         return
     end
 

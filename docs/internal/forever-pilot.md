@@ -20,12 +20,13 @@ must accept the installed artifact in Forever before merge and publication.
 | Milestone | Evidence and remaining work |
 | --- | --- |
 | Home and navigation | Home expanded from 72 to 420 similar buttons on the level-51 Retribution replay. Both modes now use their specialist workspaces. Offline tests cover Home save migration, native and fallback title bars, and both ways of opening Compare from Details. A nonzero list or comparison scroll offset survives the return. |
-| Endgame response | The timing harness uses verified active talents. The current replays process 60 Protection and 597 Retribution upgrade actions, with 118 and 120 BiS rows. First pages remain within 50 ms. The 4 ms interaction target remains open across Windows wall-clock and Linux CPU-time replays. Record the player’s native performance before acceptance. |
+| Endgame response | The timing harness uses verified active talents. The current replays process 60 Protection and 598 Retribution upgrade actions, with 118 and 120 BiS rows. First pages remain within 50 ms. The 4 ms interaction target remains open. Record the player’s native performance before acceptance. |
 | Gearing evidence | Replaying the committed evidence made zero HTTP requests. All 3,448 early-level gaps and 242 unresolved candidates matched their reviewed cells and evidence. The equipment fidelity check passed on Guide source build 70959. Leveling sources are pinned to 70938 and the client target is 71037. |
 | Scoring corrections | Implemented and being revalidated. Source 70959 and target 71037 match across the reviewed talents, enchants, sets, racials, triggers and 1,783 random-property families. Ratings normalize once. Hit and Expertise use marginal loadout caps and passive talent bonuses. Hotfixed staves share their facts. Pre-Raid approvals use the Guide's reference scorer. Unknown builds and unresolved mechanics retain qualified advice. |
 | Weight calibration | All 28 numerical profiles have published coefficients, units, representative talents and encounter assumptions. The source ledger also records actual verification outfits and source limitations. SixtySim currently serves 18 profiles from November 22, nine from November 17 and one from November 14; retain each page's provenance. A review of 18 fixture swaps and 1,153 approved-pool swaps changes 23 conditional qualifications under the current healer and tank alternatives. Default coefficients stay fixed in that follow-up. |
 | Recommendation explanations | The ordinary bag hover explains the active spec’s equipped swap and keeps a verdict for each other spec. Alt shows each comparison’s reference, stat amounts and score points. My Gear names the owned upgrade or says to keep the worn item, then gives its standing in the selected Guide. The [bag and equipped-item replays](#november-23-bag-tooltips-and-my-gear) exercise both reported examples. |
-| Client acceptance | Pending for the My Gear and bag-tooltip candidate on Forever 1.60.1.71037. Record the player’s cold and warm performance, native window, return paths, normal bag hover and open My Gear Details against the digest in the [latest installation record](#november-23-bag-tooltips-and-my-gear). |
+| First open and weapon advice | Prepare the remembered workspace and My Gear before showing the window. Reuse verified comparisons on reload. An unrelated bag change leaves My Gear advice alone. Guide hovers show the action and the deciding trade-off. Sul’thraze and Waveslicer use measured Forever proc rates. [First-open and weapon replays](#november-23-first-open-and-weapon-advice) |
+| Client acceptance | Pending on Forever 1.60.1.71037. Record the player’s cold and warm performance, native window, return paths, normal bag and Guide hovers and open My Gear Details against the revised installation digest. |
 | Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
 
@@ -397,6 +398,98 @@ installed files match the source package byte for byte on Forever
 1.60.1.71037. Artifact SHA-256
 `bcca8b0a3c7b122b92c0d1a58dab0f76b2ad8fb1cda23fb54feb8dc8e79925c8`.
 The player’s in-game acceptance is pending for this digest.
+
+## November 23 first open and weapon advice
+
+The packaged replay opens My Gear with finished advice on the first available
+frame. Talvash’s Enhancing Necklace says **Keep equipped**, **Best neck you own
+for Protection**, and **Level 55 Guide · Tied for 9th**. Opening its Details before
+the next frame, waiting under the same item, repeating bag and equipment events,
+or adding a consumable leaves the selected item and rendered advice unchanged.
+A changed gear link or banked replacement recomputes from the new outfit.
+Delayed item information for a former slot occupant cannot replace its successor.
+Opening and reopening the Guide preserve a manually selected level preview.
+
+Login prepares the remembered page and My Gear. Saved comparisons with verified
+facts are restored against the client build, scoring data, spec, talents, level,
+exact items and enchants, and bank record. The reload replay reuses both the
+necklace verdict and a banked helm swap, with the same displaced item and score.
+Genuine changes use the new inventory and publish complete slot advice together.
+When the client withholds stats, the affected comparison names the item.
+
+The level-55 Retribution replay wears Sul’thraze the Lasher and uses the verified
+reference talents on build 71037. These are the resulting comparisons in that
+outfit. The live character’s gear, talents, and targets can produce different
+results.
+
+| Weapon | Compared with Sul’thraze | Ordinary advice |
+| --- | ---: | --- |
+| Flameslash Crescent | +32.445 points | Upgrade. Gains 1.5% Hit and 1% Crit. Gives up Shadow damage on hit. |
+| Waveslicer | +22.797 points | Upgrade. 23 Strength and 1% Crit. Trades Shadow for Nature damage on hit. |
+| Alcaz Willcrusher | −16.695 points | Keep Sul’thraze. You’d lose Shadow damage on hit. |
+
+The three replays follow actual Guide rows and icons, native bag tooltips,
+expanded advice, Details, and Compare. Guide hovers fit four wrapped lines in
+the narrow harness. Ordinary bag hovers retain one verdict per spec and give
+the active spec’s deciding trade-off. Situational swaps are available in Compare,
+search, and direct hover. The standard Guide displays confirmed upgrades and
+reviewed utility picks with a specific use.
+
+Sul’thraze averages 159 Shadow damage on the initial hit and another 159 after
+five seconds. Only the delayed hit doubles against Trolls. Its 180 Attack Power
+debuff applies to the enemy. Waveslicer deals 70 Nature damage, tripled against
+Aquatic targets. Their measured rates are 1.45 and 1.93 procs per minute,
+respectively. The Lua and Python replays agree on eligible-hit scaling,
+short fights, and target bonuses. [Sul’thraze client spell](https://zephras.com/forever/enUS/spell/1294430/) ·
+[Sul’thraze log measurements](https://github.com/wowsims/forever/pull/1156) ·
+[Waveslicer client item](https://zephras.com/forever/enUS/item/18324/) ·
+[Waveslicer log measurements](https://github.com/wowsims/forever/pull/1091)
+
+The [spell evidence ledger](../../data/canonical/forever/spell_effect_review.json)
+records the 457 distinct references behind 974 missing descriptions. The
+build-71037 export supplies descriptions for 337 of those references. The two
+weapon rules have measured rates. The other 455 references retain a specific
+gap, including missing rates, unclear proc eligibility, incomplete set
+thresholds, and spells absent from the export. Hosted intake flags new links,
+new item associations, and changed evidence for review. [Client spell export](https://www.everlookdb.com/data.html) ·
+[Client item sets](https://wago.tools/db2/ItemSet/csv?build=1.60.1.71037)
+
+Compared with the prior installed artifact, 25,157 first-place
+profile, level, and slot entries retain their position and score across all 28
+profiles. Strict scoring passes all 56 contexts and Pre-Raid coverage remains
+complete. The ranking changes for the three reported weapons affect lower
+positions and personal swaps.
+
+The Forever, gear workflow, and shared suites ran 366 tests. The local Git retry
+fixture needed a file-only rerun outside the sandbox and passed. The final
+24-test replay covers the level preview, the first necklace click, the three
+weapons, navigation, and native tooltips. It includes one new preview test.
+
+The first timing matrix measured 0–16 ms to a clickable page in harness time.
+It recorded a 5 ms BiS List row-binding frame, one BiS List view on frame four,
+and a 5 ms My Gear click in a wide compact repeat. The revised matrix reached
+every viewport in 0–11 ms and at most three frames. My Gear reached frame one
+at both sizes and densities. Ten of twelve runs met the 4 ms limit as the
+package preflight ran. Wide compact My Gear recorded a 5 ms click in one run
+and 4 ms in its repeat. Wide comfortable Protection BiS List recorded one
+23 ms background frame.
+
+Three isolated repeats of wide compact My Gear met 4 ms. Three isolated
+repeats of wide comfortable Protection BiS List opened in 11–13 ms. One
+met the 4 ms limit, and two reached 6 and 7 ms in background work.
+Four later tracing runs peaked at 2–3 ms and did not reproduce the spike.
+The interaction limit remains open pending the live performance check.
+
+Cold Lua load in the revised run took 1.37–2.07 s, with another 94 ms–1.71 s
+preparing the remembered workspace. Retained Lua heap was 165.9–183.0 MiB.
+Startup now includes the work needed to give the first open a finished page.
+
+The local Forever prerelease passed Lua 5.1 compilation, deterministic data
+validation, strict scoring, and strict Pre-Raid coverage. It reported the
+3,448 reviewed leveling gaps. All 25 installed files match their sources byte
+for byte on Forever 1.60.1.71037. The installed artifact SHA-256 is
+`b543ec780f735589b5563938d87b30092677aee6cfc1ff20733f97bb87302490`.
+The player’s in-game acceptance remains pending for this digest.
 
 ## Collect and review
 
