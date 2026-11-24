@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Greater Magic Wand Item Level 23 Binds when equipped Ranged Wand 22 - 41 Arcane Damage Speed 1.80 (17.50 damage per second) Durability 45 / 45 Requires Level 13 Equip: Increases damage and healing done by magical spells and effects by up to 2 . Sell Price: 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 11288,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 17.5,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 2.",
+        "stats": {
+          "spell_power": 2.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 2."
+    ],
+    "id": 11288,
+    "item_level": 23,
+    "name": "Greater Magic Wand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 13,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 2.0
+    },
+    "weapon_max_damage": 41,
+    "weapon_min_damage": 22,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11288"
+  },
+  "linked_entities": [],
+  "name": "Greater Magic Wand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "f63ab3279c46ee04cb80f9a7c53c858ea475dcbb691c41d43fcd7acc082ab034",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11288",
+  "url": "https://www.wowhead.com/forever/item=11288"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Chief Sharptusk Thornmantle's Head Item Level 1 Quest Item Dropped by: Chief Sharptusk Thornmantle Drop Chance: 94.93%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 10459,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 10459,
+    "item_level": 1,
+    "name": "Chief Sharptusk Thornmantle's Head",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10459"
+  },
+  "linked_entities": [],
+  "name": "Chief Sharptusk Thornmantle's Head",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 94.93,
+      "entity_name": "Chief Sharptusk Thornmantle",
+      "source_url": "https://www.wowhead.com/forever/item=10459",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10459",
+  "url": "https://www.wowhead.com/forever/item=10459"
+}

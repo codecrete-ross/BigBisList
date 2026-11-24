@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Whirlwind Axe Item Level 40 Binds when picked up Two-Hand Axe 102 - 154 Damage Speed 3.60 (35.56 damage per second) +16 Strength +15 Stamina Durability 100 / 100 Classes: Warrior Sell Price: 1 65 41",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 6975,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 35.56,
+    "id": 6975,
+    "item_level": 40,
+    "name": "Whirlwind Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 15.0,
+      "strength": 16.0
+    },
+    "weapon_max_damage": 154,
+    "weapon_min_damage": 102,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6975"
+  },
+  "linked_entities": [],
+  "name": "Whirlwind Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6975",
+  "url": "https://www.wowhead.com/forever/item=6975"
+}

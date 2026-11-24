@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sandarr's Shoulders Item Level 47 Binds when picked up Shoulder Mail 213 Armor +6 Strength +12 Stamina +12 Spirit Durability 70 / 70 Requires Level 42 Sell Price: 99 75 Dropped by: Sandarr Dunereaver Drop Chance: 0.29%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 274660,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 213,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274660,
+    "item_level": 47,
+    "name": "Sandarr's Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "spirit": 12.0,
+      "stamina": 12.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274660"
+  },
+  "linked_entities": [],
+  "name": "Sandarr's Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.29,
+      "entity_name": "Sandarr Dunereaver",
+      "source_url": "https://www.wowhead.com/forever/item=274660",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "47f9e566e5fb0c72ddfffd1e436d5646b364fbd0376cbadb27b4268daf5f1616",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274660",
+  "url": "https://www.wowhead.com/forever/item=274660"
+}

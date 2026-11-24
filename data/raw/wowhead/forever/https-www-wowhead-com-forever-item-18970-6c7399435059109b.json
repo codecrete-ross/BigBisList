@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of Critical Testing 2 Item Level 60 Binds when picked up Finger Equip: Improves your chance to get a critical strike by 50.0%. Sell Price: 5 60 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18970,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 50.0%.",
+        "stats": {
+          "crit_percent": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 50.0%."
+    ],
+    "id": 18970,
+    "item_level": 60,
+    "name": "Ring of Critical Testing 2",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 50.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18970"
+  },
+  "linked_entities": [],
+  "name": "Ring of Critical Testing 2",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "73dba1363c015a147fb87ad06e471bd73e556b648aac270d68669456ea49fd18",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18970",
+  "url": "https://www.wowhead.com/forever/item=18970"
+}

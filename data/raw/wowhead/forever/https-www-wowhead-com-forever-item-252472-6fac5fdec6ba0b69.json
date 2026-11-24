@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mender's Leather Boots Item Level 52 Binds when picked up Feet Leather 104 Armor +9 Stamina +11 Intellect Requires Level 47 Equip: Increases healing done by up to 28 and damage done by up to 9 for all magical spells and effects. Sell Price: 1 21 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 252472,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 104,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 28 and damage done by up to 9 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 28,
+          "spell_damage": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 28 and damage done by up to 9 for all magical spells and effects."
+    ],
+    "id": 252472,
+    "item_level": 52,
+    "name": "Mender's Leather Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 28.0,
+      "intellect": 11.0,
+      "spell_damage": 9.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=252472"
+  },
+  "linked_entities": [],
+  "name": "Mender's Leather Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252472",
+  "url": "https://www.wowhead.com/forever/item=252472"
+}

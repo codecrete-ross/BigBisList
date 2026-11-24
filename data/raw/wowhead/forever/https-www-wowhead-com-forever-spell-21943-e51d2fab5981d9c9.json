@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Gloves of the Greatfather 45 sec cast Reagents: Heavy Leather (8), Elemental Earth (4), Silken Thread Gloves of the Greatfather Item Level 38 Binds when equipped Hands Leather 66 Armor Durability 30 / 30 Requires Level 33 Equip: Increases healing done by up to 26 and damage done by up to 24 for all magical spells and effects. Equip: Increases damage done by Nature spells and effects by up to 10. Sell Price: 22 68",
+  "entity_id": 21943,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:37+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 4234,
+      "name": "Heavy Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4234"
+    },
+    {
+      "id": 4291,
+      "name": "Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4291"
+    },
+    {
+      "id": 7067,
+      "name": "Elemental Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7067"
+    },
+    {
+      "id": 17721,
+      "name": "Gloves of the Greatfather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17721"
+    },
+    {
+      "id": 21943,
+      "name": "Gloves of the Greatfather",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21943"
+    }
+  ],
+  "name": "Gloves of the Greatfather",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 17721,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=21943",
+      "subject_id": 21943,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 21943,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/21943",
+  "url": "https://www.wowhead.com/forever/spell=21943"
+}

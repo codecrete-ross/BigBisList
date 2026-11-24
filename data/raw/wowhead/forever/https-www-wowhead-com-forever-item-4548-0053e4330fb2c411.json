@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Servomechanic Sledgehammer Item Level 41 Binds when picked up Two-Hand Mace 53 - 80 Damage Speed 2.20 (30.23 damage per second) Durability 85 / 85 Requires Engineering (100) Equip: Reduces chance to be Dodged or Parried by 1.0%. Equip: Increased Two-Handed Maces + 1. Sell Price: 1 48 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:56:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 4548,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 30.23,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Increased Two-Handed Maces +1.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+    ],
+    "id": 4548,
+    "item_level": 41,
+    "name": "Servomechanic Sledgehammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 80,
+    "weapon_min_damage": 53,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4548"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Servomechanic Sledgehammer",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Servomechanic Sledgehammer Item Level 41 Binds when picked up Two-Hand Mace 53 - 80 Damage Speed 2.20 (30.23 damage per second) Durability 85 / 85 Requires Engineering (100) Equip: Reduces chance to be Dodged or Parried by 1.0%. Equip: Increased Two-Handed Maces + 1. Sell Price: 1 48 87",
+      "scope": "equip_or_use",
+      "skill": 100,
+      "source_url": "https://www.wowhead.com/forever/item=4548",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4548",
+  "url": "https://www.wowhead.com/forever/item=4548"
+}

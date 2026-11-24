@@ -1,0 +1,69 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=12947/alexs-ring-of-audacity"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 719,
+      "collected_at": "2026-11-13T07:14:04.9134524Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-12947",
+      "source_content_digest": "ef563aa377144a64035b8e5d26e0095313e5675a064d68d2bb44ce8793973715",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/12947"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:46.4588114Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-12947",
+      "source_content_digest": "a5ff1954472954332094bb88821b046e01d1be317b42cc284962f513b061047a",
+      "source_url": "https://www.wowhead.com/forever/item=12947/alexs-ring-of-audacity"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "capture_method": "indexed_item_page",
+    "client_required_level_field": 0,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Alex's Ring of Audacity Item Level 60 Finger Equip: Increased Defense + 1,000.",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 12947,
+    "item_level": 60,
+    "name": "Alex's Ring of Audacity",
+    "page_crawl_age": "5 days ago",
+    "page_line": 403,
+    "source_locale": "en",
+    "source_url": "https://www.wowhead.com/forever/item=12947/alexs-ring-of-audacity",
+    "tooltip_identity": "Finger with +1,000 Defense"
+  },
+  "source_content_digest": "eef4c70b2e5f7d080bc98c08b2da7021b47e3dd0bd002a7b12184ecc7d09bbbe",
+  "unavailable_item_ids": [
+    12947
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=12947/alexs-ring-of-audacity"
+}

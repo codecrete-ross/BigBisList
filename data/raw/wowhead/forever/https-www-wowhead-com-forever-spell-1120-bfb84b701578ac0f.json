@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Drain Soul 55 Mana 30 yd range Channeled (15 sec cast) Requires Warlock Requires level 10 Drains the soul of the target, causing 85 Shadow damage over 15 sec. Non-trivial targets damaged by Drain Soul have a chance to grant you a Soul Shard. Non-trivial targets killed by Drain Soul will always grant you a Soul shard. Soul Shards are required for other spells.",
+  "entity_id": 1120,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:06+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1120,
+      "name": "Drain Soul",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1120"
+    }
+  ],
+  "name": "Drain Soul",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "53ad7d36cf7e6be637ca4ca3fe141a1d06080a12ab740f23deec3ba4642ba9b0",
+  "spell_id": 1120,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1120",
+  "url": "https://www.wowhead.com/forever/spell=1120"
+}

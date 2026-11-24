@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shining Circlet Item Level 25 Binds when picked up Head Cloth 35 Armor +10 Stamina Requires Level 20 Equip: Increases damage done by Holy spells and effects by up to 11. Sell Price: 9 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 253959,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Holy spells and effects by up to 11.",
+        "stats": {
+          "holy_damage": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Holy spells and effects by up to 11."
+    ],
+    "id": 253959,
+    "item_level": 25,
+    "name": "Shining Circlet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "holy_damage": 11.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=253959"
+  },
+  "linked_entities": [],
+  "name": "Shining Circlet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "85dd5d2eaab53401609c1583c1d6ee5a47a6b834abe8ba97a018fc38ffaee258",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/253959",
+  "url": "https://www.wowhead.com/forever/item=253959"
+}

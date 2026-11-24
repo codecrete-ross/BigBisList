@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Sap Rank 1 65 Energy Melee Range Instant Requires Rogue Requires level 10 Requires Melee Weapon Requires Stealth Incapacitates the target for up to 25 sec. Only works on Humanoids that are not in combat. Any damage taken will break the effect. Only [ Quick Getaway : 2 ] targets may be sapped at a time. Does not break Stealth.",
+  "entity_id": 6770,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:53+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6770,
+      "name": "Sap",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6770"
+    }
+  ],
+  "name": "Sap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "618b1da7f95aca6c2723b8fa1290fae64045d9a21bec23cecf9912afaa23210d",
+  "spell_id": 6770,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/6770",
+  "url": "https://www.wowhead.com/forever/spell=6770"
+}

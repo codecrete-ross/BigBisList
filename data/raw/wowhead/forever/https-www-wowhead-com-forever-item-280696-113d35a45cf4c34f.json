@@ -1,0 +1,62 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=280696"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Elementalist's Guard Item Level 40 Binds when picked up Off Hand Shield 1078 Armor 20 Block +9 Stamina +6 Intellect Restores + 2 mana per 5 sec. Durability 100 / 100 Sell Price: 82 81",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T08:34:48.195845+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 280696,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1078,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +2 mana per 5 sec.",
+        "stats": {
+          "mp5": 2
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 280696,
+    "item_level": 40,
+    "name": "Elementalist's Guard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 20.0,
+      "intellect": 6.0,
+      "mp5": 2.0,
+      "stamina": 9.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280696"
+  },
+  "linked_entities": [],
+  "name": "Elementalist's Guard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "94c90f8445d8051093f646ded091eb287093c2677e4c1544cd618adb1a5fe5a4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=280696"
+}

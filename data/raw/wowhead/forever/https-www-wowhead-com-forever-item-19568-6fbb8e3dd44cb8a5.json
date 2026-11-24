@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Advisor's Gnarled Staff Item Level 43 Binds when picked up Two-Hand Staff 88 - 133 Damage Speed 2.90 (38.10 damage per second) +14 Stamina +9 Intellect Restores + 6 mana per 5 sec. Durability 100 / 100 Requires Level 38 Sell Price: 1 98 74",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 19568,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.1,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 19568,
+    "item_level": 43,
+    "name": "Advisor's Gnarled Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 9.0,
+      "mp5": 6.0,
+      "stamina": 14.0
+    },
+    "weapon_max_damage": 133,
+    "weapon_min_damage": 88,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19568"
+  },
+  "linked_entities": [],
+  "name": "Advisor's Gnarled Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19568",
+  "url": "https://www.wowhead.com/forever/item=19568"
+}

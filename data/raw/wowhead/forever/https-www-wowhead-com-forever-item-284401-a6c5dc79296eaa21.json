@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sorrow's Shroud Item Level 29 Binds when picked up Head Cloth 38 Armor +11 Stamina Restores + 3 mana per 5 sec. Durability 50 / 50 Requires Level 24 Equip: Increases healing done by up to 21 and damage done by up to 5 for all magical spells and effects. Sell Price: 14 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 284401,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 21 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 21,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +3 mana per 5 sec.",
+        "stats": {
+          "mp5": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 21 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 284401,
+    "item_level": 29,
+    "name": "Sorrow's Shroud",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 24,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 21.0,
+      "mp5": 3.0,
+      "spell_damage": 5.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284401"
+  },
+  "linked_entities": [],
+  "name": "Sorrow's Shroud",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "320e4a410c8e52240655ebe6d0c134ce8f1059860e2fb11a5b02adbe05700448",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284401",
+  "url": "https://www.wowhead.com/forever/item=284401"
+}

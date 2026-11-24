@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shard of the Splithooves Item Level 57 Binds when picked up Unique-Equipped Trinket Restores + 6 mana per 5 sec. Restores + 6 health per 5 sec. Equip: + 21 Attack Power against Demons. Sell Price: 1 41 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 10659,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +21 Attack Power against Demons.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +6 health per 5 sec.",
+        "stats": {
+          "hp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +21 Attack Power against Demons."
+    ],
+    "id": 10659,
+    "item_level": 57,
+    "name": "Shard of the Splithooves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hp5": 6.0,
+      "mp5": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10659"
+  },
+  "linked_entities": [],
+  "name": "Shard of the Splithooves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10659",
+  "url": "https://www.wowhead.com/forever/item=10659"
+}

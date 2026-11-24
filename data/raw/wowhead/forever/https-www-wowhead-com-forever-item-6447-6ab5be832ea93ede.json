@@ -1,0 +1,72 @@
+{
+  "armor_tooltip_review": {
+    "base_armor": 490,
+    "bonus_armor": 40,
+    "collected_at": "2026-11-11T06:02:25.049626+00:00",
+    "endpoint": "https://nether.wowhead.com/forever/tooltip/item/6447",
+    "previous_evidence": {
+      "content_digest": "fabb7cc05212db0bb58dfd421f0fa7613ae96775f7f49baf5af3f8a50b6bb293",
+      "evidence_id": "wowhead:6ab5be832ea93edefc40fd9f"
+    },
+    "source_content_digest": "1fc33e88ed88b8658ee44e81fcdd2f94843970f80f26f47cdd74214eafc8b942"
+  },
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Worn Turtle Shell Shield Item Level 21 Binds when picked up Off Hand Shield 490 Armor 9 Block +40 Armor Restores + 2 mana per 5 sec. Durability 65 / 65 Requires Level 16 Sell Price: 12 56 Dropped by: Kresh Drop Chance: 61.75%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 6447,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 530,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +2 mana per 5 sec.",
+        "stats": {
+          "mp5": 2
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 6447,
+    "item_level": 21,
+    "name": "Worn Turtle Shell Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 16,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 9.0,
+      "mp5": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6447"
+  },
+  "linked_entities": [],
+  "name": "Worn Turtle Shell Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 61.75,
+      "entity_name": "Kresh",
+      "source_url": "https://www.wowhead.com/forever/item=6447",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6447",
+  "url": "https://www.wowhead.com/forever/item=6447"
+}

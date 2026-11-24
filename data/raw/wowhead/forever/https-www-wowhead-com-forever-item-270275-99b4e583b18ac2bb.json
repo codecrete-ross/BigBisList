@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cleansed Vilebranch Medallion Item Level 51 Binds when picked up Unique-Equipped Trinket Equip: Improves your chance to hit by 0.7%. Equip: +14 Attack Power. This effect is tripled in Forest and Grassland areas. Sell Price: 95 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 270275,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.7%.",
+        "stats": {
+          "hit_percent": 0.7
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +14 Attack Power. This effect is tripled in Forest and Grassland areas.",
+        "stats": {
+          "attack_power": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.7%."
+    ],
+    "id": 270275,
+    "item_level": 51,
+    "name": "Cleansed Vilebranch Medallion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 14.0,
+      "hit_percent": 0.7
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270275"
+  },
+  "linked_entities": [
+    {
+      "id": 1318001,
+      "name": "+14 Attack Power. This effect is tripled in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318001"
+    }
+  ],
+  "name": "Cleansed Vilebranch Medallion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "1b6795f151a9f0587ae9ede006d0b722f1e9ef9a8f5d840fb77551a7c0dca4b6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270275",
+  "url": "https://www.wowhead.com/forever/item=270275"
+}

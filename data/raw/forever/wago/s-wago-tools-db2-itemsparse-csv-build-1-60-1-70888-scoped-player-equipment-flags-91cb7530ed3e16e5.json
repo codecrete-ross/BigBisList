@@ -1,0 +1,85 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client export from Wago.tools.",
+      "source": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888"
+    },
+    {
+      "credit": "TrinityCore item flag definitions",
+      "source": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "reviewed_client_equipment_flag",
+  "fetched_at": "2026-11-11T01:18:52+00:00",
+  "flag_definition_source": {
+    "source_content_digest": "c7258f902655762a7a9b4080872389411488a63788d680f0451db747399b9bbd",
+    "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h"
+  },
+  "flavor": "forever",
+  "input_source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888",
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "equipment_restrictions": [
+      {
+        "field": "Flags_0",
+        "flag": "deprecated",
+        "item_id": 14389,
+        "mask": 16,
+        "name": "Durability Shoulderpads",
+        "value": 16
+      },
+      {
+        "field": "Flags_0",
+        "flag": "deprecated",
+        "item_id": 17769,
+        "mask": 16,
+        "name": "Sagebrush Spaulders",
+        "value": 16
+      },
+      {
+        "field": "Flags_0",
+        "flag": "deprecated",
+        "item_id": 20144,
+        "mask": 16,
+        "name": "90 Epic Warrior Ring",
+        "value": 16
+      },
+      {
+        "field": "Flags_0",
+        "flag": "deprecated",
+        "item_id": 20250,
+        "mask": 16,
+        "name": "90 Green Warrior Ring",
+        "value": 16
+      },
+      {
+        "field": "Flags_3",
+        "flag": "npc_only",
+        "item_id": 223181,
+        "mask": 524288,
+        "name": "Hidden Shoulders (DNT)",
+        "value": 524320
+      },
+      {
+        "field": "Flags_3",
+        "flag": "npc_only",
+        "item_id": 279464,
+        "mask": 524288,
+        "name": "Monster Shoulder (DNT)",
+        "value": 524320
+      }
+    ]
+  },
+  "source_content_digest": "ced52fc6e5ca345805cfe3c015c05426c138aebd23ff1ad8a26cff5f1fe08be9",
+  "unavailable_item_ids": [
+    14389,
+    17769,
+    20144,
+    20250,
+    223181,
+    279464
+  ],
+  "url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888#scoped-player-equipment-flags"
+}

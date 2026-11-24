@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json#/quests/1089"
+    }
+  ],
+  "client_build": "1.60.1.70862",
+  "confidence": "historical_live_server_quest_cache",
+  "fetched_at": "2026-11-11T07:31:13.480170+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-07",
+    "last": "2026-11-10"
+  },
+  "relationships": [
+    {
+      "object_id": 6669,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json#/quests/1089",
+      "subject_id": 1089,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "item_reward_list_is_complete": true,
+    "min_level": 20,
+    "name": "The Den",
+    "quest_id": 1089,
+    "quest_level": 29,
+    "race_mask": "ffffffffffffffff",
+    "reported_by": 3,
+    "reward_item_ids": [
+      6669,
+      6670,
+      6671
+    ]
+  },
+  "source_content_digest": "04d7878ecceb06e2ca80e0057a4c3c61a18266fc322458bee0c3fde8f0464b18",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json#/quests/1089"
+}

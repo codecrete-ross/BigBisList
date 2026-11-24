@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Power Word: Shield Level 60 500 Mana 40 yd range Instant 4 sec cooldown Requires Priest Requires level 60 Draws on the soul of the party member to shield them, absorbing 950 damage. Lasts 30 sec. While the shield holds, spellcasting will not be interrupted by damage. Once shielded, the target cannot be shielded again for 15 sec.",
+  "entity_id": 10901,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:58+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10901,
+      "name": "Power Word: Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10901"
+    }
+  ],
+  "name": "Power Word: Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8cb06293398833a8cf1b35ed5786622086cbb4f3ce233e74fefb5ccc8afa97e4",
+  "spell_id": 10901,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10901",
+  "url": "https://www.wowhead.com/forever/spell=10901"
+}

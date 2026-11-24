@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vile Protector Item Level 40 Binds when picked up Off Hand Shield 1078 Armor 20 Block +6 Strength Durability 85 / 85 Equip: When struck in combat has a 5% chance of inflicting 105 to 175 Shadow damage to the attacker. (Proc chance: 5%) Sell Price: 84 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 7747,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1078,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: When struck in combat has a 5% chance of inflicting 105 to 175 Shadow damage to the attacker. (Proc chance: 5%)",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat has a 5% chance of inflicting 105 to 175 Shadow damage to the attacker. (Proc chance: 5%)"
+    ],
+    "id": 7747,
+    "item_level": 40,
+    "name": "Vile Protector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 20.0,
+      "strength": 6.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7747"
+  },
+  "linked_entities": [
+    {
+      "id": 7619,
+      "name": "When struck in combat has a 5% chance of inflicting 105 to 175 Shadow damage to the attacker. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7619"
+    }
+  ],
+  "name": "Vile Protector",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7747",
+  "url": "https://www.wowhead.com/forever/item=7747"
+}

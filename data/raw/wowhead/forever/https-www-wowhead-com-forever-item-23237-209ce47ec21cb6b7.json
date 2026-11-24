@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of the Eternal Flame Item Level 83 Binds when picked up Unique Finger +10 Intellect Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage done by Fire spells and effects by up to 34. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 23237,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done by Fire spells and effects by up to 34.",
+        "stats": {
+          "fire_damage": 34
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 23237,
+    "item_level": 83,
+    "name": "Ring of the Eternal Flame",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "fire_damage": 34.0,
+      "intellect": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23237"
+  },
+  "linked_entities": [],
+  "name": "Ring of the Eternal Flame",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23237",
+  "url": "https://www.wowhead.com/forever/item=23237"
+}

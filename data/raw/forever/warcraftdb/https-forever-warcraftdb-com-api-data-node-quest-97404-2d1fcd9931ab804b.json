@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97404"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:46.575856+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281538,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97404",
+      "subject_id": 97404,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Too Bad to Bear",
+    "quest_id": 97404,
+    "reward_item_roles": {
+      "281538": "choices",
+      "281539": "choices"
+    },
+    "side": "Horde",
+    "zone": "Winterspring"
+  },
+  "source_content_digest": "9229e30e76df90bf0d4e184f68441ac94b51b9efddceee7b47d02d0d3589f621",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97404"
+}

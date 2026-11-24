@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Item Level 65 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +19 Stamina +11 Intellect Classes: Shaman , Warlock Requires Level 60 Requires Brood of Nozdormu - Friendly Equip: Increased Defense + 5. Equip: While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by 3% per piece of Timeworn armor equipped. \"The Path of the Flamekeeper\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 234967,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +5.",
+        "stats": {
+          "defense": 5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by 3% per piece of Timeworn armor equipped.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +5.",
+      "Equip: While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by 3% per piece of Timeworn armor equipped."
+    ],
+    "id": 234967,
+    "item_level": 65,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman",
+        "Warlock"
+      ]
+    },
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 5.0,
+      "intellect": 11.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=234967"
+  },
+  "linked_entities": [
+    {
+      "id": 910,
+      "name": "Brood of Nozdormu",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=910"
+    },
+    {
+      "id": 1215404,
+      "name": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by 3% per piece of Timeworn armor equipped.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1215404"
+    }
+  ],
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Item Level 65 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +19 Stamina +11 Intellect Classes: Shaman , Warlock Requires Level 60 Requires Brood of Nozdormu - Friendly Equip: Increased Defense + 5. Equip: While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by 3% per piece of Timeworn armor equipped. \"The Path of the Flamekeeper\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=234967",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "8c886d58dd6263ce1481ad623e05f994e7bdbb5d6b01a526879519d95b9ab692",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/234967",
+  "url": "https://www.wowhead.com/forever/item=234967"
+}

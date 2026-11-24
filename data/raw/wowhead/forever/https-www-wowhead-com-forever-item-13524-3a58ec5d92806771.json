@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skull of Burning Shadows Item Level 62 Binds when picked up Held In Off-hand +10 Fire Resistance +10 Shadow Resistance Requires Level 57 Equip: Improves your chance to hit by 1.0%. Sell Price: 2 19 36 Dropped by: Maleki the Pallid Drop Chance: 17.92%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 13524,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 13524,
+    "item_level": 62,
+    "name": "Skull of Burning Shadows",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 10.0,
+      "hit_percent": 1.0,
+      "shadow_resistance": 10.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13524"
+  },
+  "linked_entities": [],
+  "name": "Skull of Burning Shadows",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.92,
+      "entity_name": "Maleki the Pallid",
+      "source_url": "https://www.wowhead.com/forever/item=13524",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8166f85a59247e201fbfe1718d9b4e954e195bfdc8ce32ac22a8d3355549dbb4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13524",
+  "url": "https://www.wowhead.com/forever/item=13524"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Buzz Saw Item Level 23 Binds when picked up One-Hand Sword 24 - 46 Damage Speed 2.30 (15.22 damage per second) +3 Agility +3 Stamina Durability 60 / 60 Requires Level 18 Sell Price: 25 51 Dropped by: Sneed's Shredder Drop Chance: 11.03%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 1937,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.22,
+    "id": 1937,
+    "item_level": 23,
+    "name": "Buzz Saw",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "stamina": 3.0
+    },
+    "weapon_max_damage": 46,
+    "weapon_min_damage": 24,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=1937"
+  },
+  "linked_entities": [],
+  "name": "Buzz Saw",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.03,
+      "entity_name": "Sneed's Shredder",
+      "source_url": "https://www.wowhead.com/forever/item=1937",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1937",
+  "url": "https://www.wowhead.com/forever/item=1937"
+}

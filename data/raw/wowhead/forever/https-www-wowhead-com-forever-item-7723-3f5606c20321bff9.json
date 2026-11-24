@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mograine's Might Item Level 44 Binds when picked up Two-Hand Mace 105 - 159 Damage Speed 3.40 (38.82 damage per second) +8 Strength +14 Stamina +16 Intellect Requires Level 39 Sell Price: 2 25 4 Dropped by: Scarlet Commander Mograine Drop Chance: 34.46%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 7723,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.82,
+    "id": 7723,
+    "item_level": 44,
+    "name": "Mograine's Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 39,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "stamina": 14.0,
+      "strength": 8.0
+    },
+    "weapon_max_damage": 159,
+    "weapon_min_damage": 105,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7723"
+  },
+  "linked_entities": [],
+  "name": "Mograine's Might",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 34.46,
+      "entity_name": "Scarlet Commander Mograine",
+      "source_url": "https://www.wowhead.com/forever/item=7723",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7723",
+  "url": "https://www.wowhead.com/forever/item=7723"
+}

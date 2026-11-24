@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Behemoth Bones Item Level 61 Binds when picked up Unique-Equipped Trinket Requires Level 56 Equip: + 34 Attack Power. Use: Crack open the bone, healing yourself for 480 to 530 and your nearest ally for 480 to 530. (5 Min Cooldown) Sell Price: 2 9 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 280065,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +34 Attack Power.",
+        "stats": {
+          "attack_power": 34
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Crack open the bone, healing yourself for 480 to 530 and your nearest ally for 480 to 530. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 280065,
+    "item_level": 61,
+    "name": "Behemoth Bones",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0
+    },
+    "use_effects": [
+      "Use: Crack open the bone, healing yourself for 480 to 530 and your nearest ally for 480 to 530. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=280065"
+  },
+  "linked_entities": [
+    {
+      "id": 1315849,
+      "name": "Crack open the bone, healing yourself for 480 to 530 and your nearest ally for 480 to 530.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315849"
+    }
+  ],
+  "name": "Behemoth Bones",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "91b5781f6ee011947281476c07e9bd9cc093e301cf34df77b5dc964e6d0168d6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280065",
+  "url": "https://www.wowhead.com/forever/item=280065"
+}

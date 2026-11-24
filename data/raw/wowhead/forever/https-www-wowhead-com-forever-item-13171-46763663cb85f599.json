@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Smokey's Lighter Item Level 61 Binds when picked up Trinket Use: Flick the lighter, dealing 210 Fire damage to all enemies in a cone in front of you. Deals 2 times as much damage to Plants. (1 Min, 30 Sec Cooldown) Sell Price: 1 74 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13171,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Flick the lighter, dealing 210 Fire damage to all enemies in a cone in front of you. Deals 2 times as much damage to Plants. (1 Min, 30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 13171,
+    "item_level": 61,
+    "name": "Smokey's Lighter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Flick the lighter, dealing 210 Fire damage to all enemies in a cone in front of you. Deals 2 times as much damage to Plants. (1 Min, 30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13171"
+  },
+  "linked_entities": [
+    {
+      "id": 17283,
+      "name": "Flick the lighter, dealing 210 Fire damage to all enemies in a cone in front of you. Deals 2 times as much damage to Plants.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17283"
+    }
+  ],
+  "name": "Smokey's Lighter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "b2991080ac109a43da94d03eeaa189224fffa378c0d530c2284cae8a6c885f1f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13171",
+  "url": "https://www.wowhead.com/forever/item=13171"
+}

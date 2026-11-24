@@ -1,0 +1,1039 @@
+{
+  "class_equipment": {
+    "Druid": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather"
+          ]
+        }
+      ],
+      "special_slots": [
+        "Idol"
+      ],
+      "two_hand_weapon_types": [
+        "Mace",
+        "Polearm",
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Fist Weapon",
+        "Mace",
+        "Polearm",
+        "Staff"
+      ],
+      "weapon_unlocks": [
+        {
+          "min_level": 20,
+          "slots": [
+            "Two Hand"
+          ],
+          "weapon_subtype": "Polearm"
+        }
+      ]
+    },
+    "Hunter": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather"
+          ]
+        },
+        {
+          "level": 40,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail"
+          ]
+        }
+      ],
+      "special_slots": [
+        "Ammo",
+        "Quiver"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Polearm",
+        "Staff",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Polearm",
+        "Staff",
+        "Sword",
+        "Thrown"
+      ],
+      "weapon_unlocks": [
+        {
+          "min_level": 20,
+          "slots": [
+            "Two Hand"
+          ],
+          "weapon_subtype": "Polearm"
+        }
+      ]
+    },
+    "Mage": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth"
+          ]
+        }
+      ],
+      "special_slots": [],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Staff",
+        "Sword",
+        "Wand"
+      ]
+    },
+    "Paladin": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail",
+            "Shield"
+          ]
+        },
+        {
+          "level": 40,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail",
+            "Plate",
+            "Shield"
+          ]
+        }
+      ],
+      "special_slots": [
+        "Libram"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Sword"
+      ],
+      "weapon_unlocks": [
+        {
+          "min_level": 20,
+          "slots": [
+            "Two Hand"
+          ],
+          "weapon_subtype": "Polearm"
+        }
+      ]
+    },
+    "Priest": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth"
+          ]
+        }
+      ],
+      "special_slots": [],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Mace",
+        "Staff",
+        "Wand"
+      ]
+    },
+    "Rogue": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather"
+          ]
+        }
+      ],
+      "special_slots": [],
+      "two_hand_weapon_types": [],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Mace",
+        "Sword",
+        "Thrown"
+      ]
+    },
+    "Shaman": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Shield"
+          ]
+        },
+        {
+          "level": 40,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail",
+            "Shield"
+          ]
+        }
+      ],
+      "special_slots": [
+        "Totem"
+      ],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Staff"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Dagger",
+        "Fist Weapon",
+        "Mace",
+        "Staff"
+      ]
+    },
+    "Warlock": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth"
+          ]
+        }
+      ],
+      "special_slots": [],
+      "two_hand_weapon_types": [
+        "Staff"
+      ],
+      "weapon_types": [
+        "Dagger",
+        "Staff",
+        "Sword",
+        "Wand"
+      ]
+    },
+    "Warrior": {
+      "armor_tiers": [
+        {
+          "level": 1,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail",
+            "Shield"
+          ]
+        },
+        {
+          "level": 40,
+          "types": [
+            "Cloth",
+            "Leather",
+            "Mail",
+            "Plate",
+            "Shield"
+          ]
+        }
+      ],
+      "special_slots": [],
+      "two_hand_weapon_types": [
+        "Axe",
+        "Mace",
+        "Polearm",
+        "Staff",
+        "Sword"
+      ],
+      "weapon_types": [
+        "Axe",
+        "Bow",
+        "Crossbow",
+        "Dagger",
+        "Fist Weapon",
+        "Gun",
+        "Mace",
+        "Polearm",
+        "Staff",
+        "Sword",
+        "Thrown"
+      ],
+      "weapon_unlocks": [
+        {
+          "min_level": 20,
+          "slots": [
+            "Two Hand"
+          ],
+          "weapon_subtype": "Polearm"
+        }
+      ]
+    }
+  },
+  "common_slots": [
+    "Head",
+    "Neck",
+    "Shoulder",
+    "Back",
+    "Chest",
+    "Wrist",
+    "Hands",
+    "Waist",
+    "Legs",
+    "Feet",
+    "Ring",
+    "Trinket"
+  ],
+  "feral_uses_weapon_dps": true,
+  "flavor": "forever",
+  "level_bands": [
+    [
+      "1-9",
+      1,
+      9
+    ],
+    [
+      "10-19",
+      10,
+      19
+    ],
+    [
+      "20-39",
+      20,
+      39
+    ],
+    [
+      "40-59",
+      40,
+      59
+    ]
+  ],
+  "max_level": 59,
+  "races": [
+    {
+      "classes": [
+        "Hunter",
+        "Mage",
+        "Paladin",
+        "Priest",
+        "Rogue",
+        "Warlock",
+        "Warrior"
+      ],
+      "faction": "Alliance",
+      "id": 1,
+      "name": "Human",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Hunter",
+        "Mage",
+        "Rogue",
+        "Shaman",
+        "Warlock",
+        "Warrior"
+      ],
+      "faction": "Horde",
+      "id": 2,
+      "name": "Orc",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Hunter",
+        "Paladin",
+        "Priest",
+        "Rogue",
+        "Shaman",
+        "Warrior"
+      ],
+      "faction": "Alliance",
+      "id": 3,
+      "name": "Dwarf",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Druid",
+        "Hunter",
+        "Priest",
+        "Rogue",
+        "Warrior"
+      ],
+      "faction": "Alliance",
+      "id": 4,
+      "name": "Night Elf",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Mage",
+        "Paladin",
+        "Priest",
+        "Rogue",
+        "Warlock",
+        "Warrior"
+      ],
+      "faction": "Horde",
+      "id": 5,
+      "name": "Undead",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Druid",
+        "Hunter",
+        "Shaman",
+        "Warrior"
+      ],
+      "faction": "Horde",
+      "id": 6,
+      "name": "Tauren",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Mage",
+        "Priest",
+        "Rogue",
+        "Warlock",
+        "Warrior"
+      ],
+      "faction": "Alliance",
+      "id": 7,
+      "name": "Gnome",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Hunter",
+        "Mage",
+        "Priest",
+        "Rogue",
+        "Shaman",
+        "Warlock",
+        "Warrior"
+      ],
+      "faction": "Horde",
+      "id": 8,
+      "name": "Troll",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Druid",
+        "Hunter",
+        "Mage",
+        "Rogue",
+        "Warrior"
+      ],
+      "faction": "Alliance",
+      "id": 95,
+      "name": "Skyborne",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    },
+    {
+      "classes": [
+        "Druid",
+        "Hunter",
+        "Rogue",
+        "Shaman",
+        "Warrior"
+      ],
+      "faction": "Horde",
+      "id": 96,
+      "name": "Skyborne",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315643/return-to-azeroth-in-world-of-warcraft-forever"
+    }
+  ],
+  "review": {
+    "client_build": "1.60.1.70938",
+    "evidence_refs": [
+      {
+        "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+        "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+      },
+      {
+        "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+        "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+      },
+      {
+        "content_digest": "b0e23160768edb04e72be3352b9c3df7c9f9f702287aabd2cbb1c82342fe47b7",
+        "evidence_id": "blizzard:935c7f1ccb5f227cb79b0cb4"
+      },
+      {
+        "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+        "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+      },
+      {
+        "content_digest": "d5ef0e8550d400ed5bb4e634800638f93cfae47f281e06e609016478cc39b50d",
+        "evidence_id": "blizzard:51f20017e3d954a8a23b5fb4"
+      },
+      {
+        "content_digest": "95a7259e36aec1d0dc3541799f3eea9be4631977d44717934efb4ff5f070c2db",
+        "evidence_id": "questiedb:7c502bea0ca33cd6bddb0483"
+      },
+      {
+        "content_digest": "7eb110e00361ea3ca0199778dbc1428d405ba82c4c783c60326ab3aba16cd5d4",
+        "evidence_id": "wago:1aee6493dd963cf9749761f9"
+      },
+      {
+        "content_digest": "dd2838a38bbb866e6957b146db3388b4cf8e8f166b13b0ef6c1b9e9a02432914",
+        "evidence_id": "blizzard:d3e7dc748164952bdc1971cc"
+      },
+      {
+        "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+        "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+      },
+      {
+        "content_digest": "d640888627343837a3a4595b2c25f1243607e7938bef9a3ebcd5d33988e7351a",
+        "evidence_id": "wago:ec3eaf9cd8b01d32b2a4f5ce"
+      },
+      {
+        "content_digest": "2a1edd03634cd8cc1472967c1dfab6f08baf57ea2aa22e8cbc957adffbf3a5e2",
+        "evidence_id": "raidbots:03e99a7924854f420079c997"
+      },
+      {
+        "content_digest": "39cbd9fae44c390da46db98a1a2f60b1dd06e3c956ca4538830426155fb857c5",
+        "evidence_id": "timbers_field_guide:2875d4fa454e2419a5d12cca"
+      },
+      {
+        "content_digest": "895da4b61c872aadad02a8a901e8d2b72f936c6a8ed30f4f6ce9796b7552c1a9",
+        "evidence_id": "wowhead:1ee9e675f614cb04f37aec4a"
+      }
+    ],
+    "reason": "Offline review of publisher race/class tables, class deep dives, current launch-client skill reporting, and the registered leveling guides. Armor unlocks are 40; Rogue dual wield is 10 and Warrior/Hunter dual wield 20; polearms have a 20 gate. Rogues gain one-handed axes. Feral weapon DPS and weapon effects remain relevant in forms. Shaman dual wield is excluded from these recommendation policies. Alternative supported weapon training is a proficiency requirement, not an assertion that the character already knows the skill. Target build is review context; offline review is not live gameplay acceptance. Assassination retains daggers in both weapon slots so its Backstab/Mutilate playstyle remains supported without assuming a particular Legacy talent unlock. QuestieDB documents race IDs 95/96 as mask bits 32/33; do not derive their masks as race ID minus one. Re-reviewed the complete launch-client proficiency table: one-handed Sword or Mace training never permits their two-handed forms. Explicitly approve the listed two-handed weapon subtypes independently for each class. Shaman two-handed axes and maces are baseline according to the publisher deep dive; unconfirmed dual wield remains excluded. Compared all previously inventoried equipment levels, skill requirements, armor and weapon types, class masks and race masks with build 70888 and reviewed the publisher hotfixes. The current equipment observations preserve the reviewed eligibility rules. Compared build 70938's exact proficiency, class/race and skill tables. The unchanged rules, current equipment restrictions and public hotfix comparison support the same leveling policies. The November 5 live Woo Ping report confirms the Druid polearm proficiency. The 70938 client skill row requires level 20 and covers all playable Druid races. The published Forever guide identifies the faction trainers.",
+    "reviewed_at": "2026-11-14",
+    "reviewer": "Codex (offline source review)",
+    "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+  },
+  "review_history": [
+    {
+      "document_digest": "c6fb68873299d25d7ec213a4812d01862aab3ac2f5ad8c38cd62024cb9309613",
+      "review": {
+        "client_build": "1.60.1.70790",
+        "evidence_refs": [
+          {
+            "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+            "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+          },
+          {
+            "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+            "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+          },
+          {
+            "content_digest": "b0e23160768edb04e72be3352b9c3df7c9f9f702287aabd2cbb1c82342fe47b7",
+            "evidence_id": "blizzard:935c7f1ccb5f227cb79b0cb4"
+          },
+          {
+            "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+            "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+          },
+          {
+            "content_digest": "d5ef0e8550d400ed5bb4e634800638f93cfae47f281e06e609016478cc39b50d",
+            "evidence_id": "blizzard:51f20017e3d954a8a23b5fb4"
+          },
+          {
+            "content_digest": "95a7259e36aec1d0dc3541799f3eea9be4631977d44717934efb4ff5f070c2db",
+            "evidence_id": "questiedb:7c502bea0ca33cd6bddb0483"
+          }
+        ],
+        "reason": "Offline review of publisher race/class tables, class deep dives, current launch-client skill reporting, and the registered leveling guides. Armor unlocks are 40; Rogue dual wield is 10 and Warrior/Hunter dual wield 20; polearms have a 20 gate. Rogues gain one-handed axes. Feral weapon DPS and weapon effects remain relevant in forms. Unconfirmed Shaman dual wield and Druid polearms are excluded from these conservative recommendation policies. Alternative supported weapon training is a proficiency requirement, not an assertion that the character already knows the skill. Target build is review context; offline review is not live gameplay acceptance. Assassination retains daggers in both weapon slots so its Backstab/Mutilate playstyle remains supported without assuming a particular Legacy talent unlock. QuestieDB documents race IDs 95/96 as mask bits 32/33; do not derive their masks as race ID minus one.",
+        "reviewed_at": "2026-11-06",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+      }
+    },
+    {
+      "client_build": "1.60.1.70790",
+      "evidence_refs": [
+        {
+          "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+          "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+        },
+        {
+          "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+          "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+        },
+        {
+          "content_digest": "b0e23160768edb04e72be3352b9c3df7c9f9f702287aabd2cbb1c82342fe47b7",
+          "evidence_id": "blizzard:935c7f1ccb5f227cb79b0cb4"
+        },
+        {
+          "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+          "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+        },
+        {
+          "content_digest": "d5ef0e8550d400ed5bb4e634800638f93cfae47f281e06e609016478cc39b50d",
+          "evidence_id": "blizzard:51f20017e3d954a8a23b5fb4"
+        },
+        {
+          "content_digest": "95a7259e36aec1d0dc3541799f3eea9be4631977d44717934efb4ff5f070c2db",
+          "evidence_id": "questiedb:7c502bea0ca33cd6bddb0483"
+        }
+      ],
+      "reason": "Offline review of publisher race/class tables, class deep dives, current launch-client skill reporting, and the registered leveling guides. Armor unlocks are 40; Rogue dual wield is 10 and Warrior/Hunter dual wield 20; polearms have a 20 gate. Rogues gain one-handed axes. Feral weapon DPS and weapon effects remain relevant in forms. Unconfirmed Shaman dual wield and Druid polearms are excluded from these conservative recommendation policies. Alternative supported weapon training is a proficiency requirement, not an assertion that the character already knows the skill. Target build is review context; offline review is not live gameplay acceptance. Assassination retains daggers in both weapon slots so its Backstab/Mutilate playstyle remains supported without assuming a particular Legacy talent unlock. QuestieDB documents race IDs 95/96 as mask bits 32/33; do not derive their masks as race ID minus one. Re-reviewed the complete launch-client proficiency table: one-handed Sword or Mace training never permits their two-handed forms. Explicitly approve the listed two-handed weapon subtypes independently for each class. Shaman two-handed axes and maces are baseline according to the publisher deep dive; unconfirmed dual wield remains excluded.",
+      "reviewed_at": "2026-11-06",
+      "reviewer": "Codex (offline source review)",
+      "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+    },
+    {
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+          "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+        },
+        {
+          "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+          "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+        },
+        {
+          "content_digest": "b0e23160768edb04e72be3352b9c3df7c9f9f702287aabd2cbb1c82342fe47b7",
+          "evidence_id": "blizzard:935c7f1ccb5f227cb79b0cb4"
+        },
+        {
+          "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+          "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+        },
+        {
+          "content_digest": "d5ef0e8550d400ed5bb4e634800638f93cfae47f281e06e609016478cc39b50d",
+          "evidence_id": "blizzard:51f20017e3d954a8a23b5fb4"
+        },
+        {
+          "content_digest": "95a7259e36aec1d0dc3541799f3eea9be4631977d44717934efb4ff5f070c2db",
+          "evidence_id": "questiedb:7c502bea0ca33cd6bddb0483"
+        },
+        {
+          "content_digest": "7eb110e00361ea3ca0199778dbc1428d405ba82c4c783c60326ab3aba16cd5d4",
+          "evidence_id": "wago:1aee6493dd963cf9749761f9"
+        },
+        {
+          "content_digest": "dd2838a38bbb866e6957b146db3388b4cf8e8f166b13b0ef6c1b9e9a02432914",
+          "evidence_id": "blizzard:d3e7dc748164952bdc1971cc"
+        }
+      ],
+      "reason": "Offline review of publisher race/class tables, class deep dives, current launch-client skill reporting, and the registered leveling guides. Armor unlocks are 40; Rogue dual wield is 10 and Warrior/Hunter dual wield 20; polearms have a 20 gate. Rogues gain one-handed axes. Feral weapon DPS and weapon effects remain relevant in forms. Unconfirmed Shaman dual wield and Druid polearms are excluded from these conservative recommendation policies. Alternative supported weapon training is a proficiency requirement, not an assertion that the character already knows the skill. Target build is review context; offline review is not live gameplay acceptance. Assassination retains daggers in both weapon slots so its Backstab/Mutilate playstyle remains supported without assuming a particular Legacy talent unlock. QuestieDB documents race IDs 95/96 as mask bits 32/33; do not derive their masks as race ID minus one. Re-reviewed the complete launch-client proficiency table: one-handed Sword or Mace training never permits their two-handed forms. Explicitly approve the listed two-handed weapon subtypes independently for each class. Shaman two-handed axes and maces are baseline according to the publisher deep dive; unconfirmed dual wield remains excluded. Compared all previously inventoried equipment levels, skill requirements, armor and weapon types, class masks and race masks with build 70888 and reviewed the publisher hotfixes. The current equipment observations preserve the reviewed eligibility rules.",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+    },
+    {
+      "document_digest": "00e9f8a32349c344b2e93b3be7808377a9021b5d55eb641e391bd5b154937fde",
+      "review": {
+        "client_build": "1.60.1.70938",
+        "evidence_refs": [
+          {
+            "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+            "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+          },
+          {
+            "content_digest": "5af66624f01621b2d7dea844cc251960c59d0cbad97a43dff66d510ea1bb6399",
+            "evidence_id": "blizzard:5c409f1890536bfb30a5f4e6"
+          },
+          {
+            "content_digest": "b0e23160768edb04e72be3352b9c3df7c9f9f702287aabd2cbb1c82342fe47b7",
+            "evidence_id": "blizzard:935c7f1ccb5f227cb79b0cb4"
+          },
+          {
+            "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+            "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+          },
+          {
+            "content_digest": "d5ef0e8550d400ed5bb4e634800638f93cfae47f281e06e609016478cc39b50d",
+            "evidence_id": "blizzard:51f20017e3d954a8a23b5fb4"
+          },
+          {
+            "content_digest": "95a7259e36aec1d0dc3541799f3eea9be4631977d44717934efb4ff5f070c2db",
+            "evidence_id": "questiedb:7c502bea0ca33cd6bddb0483"
+          },
+          {
+            "content_digest": "7eb110e00361ea3ca0199778dbc1428d405ba82c4c783c60326ab3aba16cd5d4",
+            "evidence_id": "wago:1aee6493dd963cf9749761f9"
+          },
+          {
+            "content_digest": "dd2838a38bbb866e6957b146db3388b4cf8e8f166b13b0ef6c1b9e9a02432914",
+            "evidence_id": "blizzard:d3e7dc748164952bdc1971cc"
+          },
+          {
+            "content_digest": "89542d606c9e444c8c10f3096bfe3261243fbdc7ac8d02be161c14b11dd06c77",
+            "evidence_id": "wago:0762aa37f2a36fa2cd518d4d"
+          },
+          {
+            "content_digest": "d640888627343837a3a4595b2c25f1243607e7938bef9a3ebcd5d33988e7351a",
+            "evidence_id": "wago:ec3eaf9cd8b01d32b2a4f5ce"
+          },
+          {
+            "content_digest": "2a1edd03634cd8cc1472967c1dfab6f08baf57ea2aa22e8cbc957adffbf3a5e2",
+            "evidence_id": "raidbots:03e99a7924854f420079c997"
+          }
+        ],
+        "reason": "Offline review of publisher race/class tables, class deep dives, current launch-client skill reporting, and the registered leveling guides. Armor unlocks are 40; Rogue dual wield is 10 and Warrior/Hunter dual wield 20; polearms have a 20 gate. Rogues gain one-handed axes. Feral weapon DPS and weapon effects remain relevant in forms. Unconfirmed Shaman dual wield and Druid polearms are excluded from these conservative recommendation policies. Alternative supported weapon training is a proficiency requirement, not an assertion that the character already knows the skill. Target build is review context; offline review is not live gameplay acceptance. Assassination retains daggers in both weapon slots so its Backstab/Mutilate playstyle remains supported without assuming a particular Legacy talent unlock. QuestieDB documents race IDs 95/96 as mask bits 32/33; do not derive their masks as race ID minus one. Re-reviewed the complete launch-client proficiency table: one-handed Sword or Mace training never permits their two-handed forms. Explicitly approve the listed two-handed weapon subtypes independently for each class. Shaman two-handed axes and maces are baseline according to the publisher deep dive; unconfirmed dual wield remains excluded. Compared all previously inventoried equipment levels, skill requirements, armor and weapon types, class masks and race masks with build 70888 and reviewed the publisher hotfixes. The current equipment observations preserve the reviewed eligibility rules. Compared build 70938's exact proficiency, class/race and skill tables. The unchanged rules, current equipment restrictions and public hotfix comparison support the same leveling policies.",
+        "reviewed_at": "2026-11-13",
+        "reviewer": "Codex (offline source review)",
+        "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+      }
+    }
+  ],
+  "spec_policies": {
+    "Druid/Balance": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Idol"
+      ],
+      "weapon_style": "any"
+    },
+    "Druid/Feral dps": {
+      "dual_wield_level": null,
+      "form_level": 10,
+      "slot_min_levels": {},
+      "slots": [
+        "Two Hand",
+        "Idol"
+      ],
+      "weapon_style": "feral"
+    },
+    "Druid/Feral tank": {
+      "dual_wield_level": null,
+      "form_level": 10,
+      "slot_min_levels": {},
+      "slots": [
+        "Two Hand",
+        "Idol"
+      ],
+      "weapon_style": "feral"
+    },
+    "Druid/Restoration": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Idol"
+      ],
+      "weapon_style": "any"
+    },
+    "Hunter/Beast mastery": {
+      "dual_wield_level": 20,
+      "slot_min_levels": {
+        "Off Hand": 20
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Hunter/Marksmanship": {
+      "dual_wield_level": 20,
+      "slot_min_levels": {
+        "Off Hand": 20
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Hunter/Survival": {
+      "dual_wield_level": 20,
+      "slot_min_levels": {
+        "Off Hand": 20
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Mage/Arcane": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Mage/Fire": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Mage/Frost": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Paladin/Holy": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Libram"
+      ],
+      "weapon_style": "any"
+    },
+    "Paladin/Protection": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Libram"
+      ],
+      "weapon_style": "shield"
+    },
+    "Paladin/Retribution": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Two Hand",
+        "Libram"
+      ],
+      "weapon_style": "two_hand"
+    },
+    "Priest/Discipline": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Priest/Holy": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Priest/Shadow": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Rogue/Assassination": {
+      "dual_wield_level": 10,
+      "slot_min_levels": {
+        "Off Hand": 10
+      },
+      "slot_weapon_types": {
+        "Main Hand": [
+          "Dagger"
+        ],
+        "Off Hand": [
+          "Dagger"
+        ]
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weapon_style": "dual_wield"
+    },
+    "Rogue/Combat": {
+      "dual_wield_level": 10,
+      "slot_min_levels": {
+        "Off Hand": 10
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weapon_style": "dual_wield"
+    },
+    "Rogue/Subtlety": {
+      "dual_wield_level": 10,
+      "slot_min_levels": {
+        "Off Hand": 10
+      },
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weapon_style": "dual_wield"
+    },
+    "Shaman/Elemental": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Totem"
+      ],
+      "weapon_style": "any"
+    },
+    "Shaman/Enhancement": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Two Hand",
+        "Totem"
+      ],
+      "weapon_style": "any"
+    },
+    "Shaman/Restoration": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Totem"
+      ],
+      "weapon_style": "any"
+    },
+    "Warlock/Affliction": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Warlock/Demonology": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Warlock/Destruction": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "any"
+    },
+    "Warrior/Arms": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Two Hand",
+        "Ranged"
+      ],
+      "weapon_style": "two_hand"
+    },
+    "Warrior/Fury": {
+      "dual_wield_level": 20,
+      "slot_max_levels": {
+        "Two Hand": 19
+      },
+      "slot_min_levels": {
+        "Main Hand": 20,
+        "Off Hand": 20
+      },
+      "slots": [
+        "Two Hand",
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weapon_style": "dual_wield"
+    },
+    "Warrior/Protection": {
+      "dual_wield_level": null,
+      "slot_min_levels": {},
+      "slots": [
+        "Main Hand",
+        "Off Hand",
+        "Ranged"
+      ],
+      "weapon_style": "shield"
+    }
+  },
+  "status": "reviewed",
+  "version": "forever-leveling-rules-reviewed-3"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Sages Item Level 55 Requires Level 55 Use: Drink to increase your Spirit by 25 and chance to critically hit by 2%. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20 Sell Price: 1 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250338,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Drink to increase your Spirit by 25 and chance to critically hit by 2%. Lasts for 30 min. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 250338,
+    "item_level": 55,
+    "name": "Elixir of Sages",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Drink to increase your Spirit by 25 and chance to critically hit by 2%. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250338"
+  },
+  "linked_entities": [
+    {
+      "id": 1250941,
+      "name": "Drink to increase your Spirit by 25 and chance to critically hit by 2%. Lasts for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1250941"
+    }
+  ],
+  "name": "Elixir of Sages",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "1553d1b6fbfb7d70c8377685a6ab73ab14c2ca29fdec00f6f6c99c2b2f417ba4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250338",
+  "url": "https://www.wowhead.com/forever/item=250338"
+}

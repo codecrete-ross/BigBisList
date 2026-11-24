@@ -1,0 +1,39 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/2768"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:13:01.716770+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 9533,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/2768",
+      "subject_id": 2768,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": 40,
+    "name": "Divino-matic Rod",
+    "quest_id": 2768,
+    "reward_item_roles": {
+      "270099": "choices",
+      "9533": "choices",
+      "9534": "choices"
+    },
+    "side": "Both",
+    "zone": "Zul'Farrak"
+  },
+  "source_content_digest": "667a52876bb4804639cee82d979a145d71e75b6e538743ab1d59ab402fffa370",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/2768"
+}

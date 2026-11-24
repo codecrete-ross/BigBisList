@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Premier Warlord's Kodohide Hauberk Item Level 65 Binds when picked up Chest Leather 197 Armor +34 Stamina +12 Intellect +8 Spirit Classes: Druid Requires Level 60 Equip: Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects. Warlord's Refuge (0/6) Premier Champion's Kodohide Gloves Premier Centurion's Kodohide Boots Premier General's Kodohide Leggings Premier Warlord's Kodohide Hauberk Premier General's Kodohide Epaulets Premier Warlord's Kodohide Helmet (2) Set : +20 Stamina. (3) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 273413,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 197,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 44,
+          "spell_damage": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects."
+    ],
+    "id": 273413,
+    "item_level": 65,
+    "name": "Premier Warlord's Kodohide Hauberk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 467550,
+        "text": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 44.0,
+      "intellect": 12.0,
+      "spell_damage": 15.0,
+      "spirit": 8.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273413"
+  },
+  "linked_entities": [
+    {
+      "id": 273413,
+      "name": "Premier Warlord's Kodohide Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273413"
+    },
+    {
+      "id": 273414,
+      "name": "Premier Warlord's Kodohide Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273414"
+    },
+    {
+      "id": 273415,
+      "name": "Premier General's Kodohide Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273415"
+    },
+    {
+      "id": 273416,
+      "name": "Premier General's Kodohide Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273416"
+    },
+    {
+      "id": 273418,
+      "name": "Premier Centurion's Kodohide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273418"
+    },
+    {
+      "id": 273419,
+      "name": "Premier Champion's Kodohide Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273419"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    },
+    {
+      "id": 467550,
+      "name": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=467550"
+    }
+  ],
+  "name": "Premier Warlord's Kodohide Hauberk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273413",
+  "url": "https://www.wowhead.com/forever/item=273413"
+}

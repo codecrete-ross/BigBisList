@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grimlok's Charge Item Level 47 Binds when picked up Two-Hand Polearm 88 - 133 Damage Speed 2.70 (40.93 damage per second) +10 Strength +15 Agility +15 Stamina Durability 100 / 100 Requires Level 42 Sell Price: 2 83 48 Dropped by: Grimlok Drop Chance: 19.29%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 9416,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.93,
+    "id": 9416,
+    "item_level": 47,
+    "name": "Grimlok's Charge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "stamina": 15.0,
+      "strength": 10.0
+    },
+    "weapon_max_damage": 133,
+    "weapon_min_damage": 88,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Polearm",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9416"
+  },
+  "linked_entities": [],
+  "name": "Grimlok's Charge",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.29,
+      "entity_name": "Grimlok",
+      "source_url": "https://www.wowhead.com/forever/item=9416",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9416",
+  "url": "https://www.wowhead.com/forever/item=9416"
+}

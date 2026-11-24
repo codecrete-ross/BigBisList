@@ -1,0 +1,134 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Recipe: Flask of the Titans Item Level 60 Requires Alchemy (300) Use: Teaches you how to make a Flask of the Titans. Sell Price: 1 Dropped by: General Drakkisath Drop Chance: 4.05%",
+  "embedded_items": [
+    {
+      "binding": "unknown",
+      "boe": null,
+      "inventory_slot": null,
+      "item_id": 13510,
+      "item_stats": {
+        "binding": "unknown",
+        "id": 13510,
+        "name": "Flask of the Titans",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "common",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=13510"
+      },
+      "name": "Flask of the Titans",
+      "normalized_requirements": [],
+      "quality": "common",
+      "url": "https://www.wowhead.com/forever/item=13510"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:03:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 13519,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Flask of the Titans.",
+        "type": "use"
+      }
+    ],
+    "id": 13519,
+    "item_level": 60,
+    "name": "Recipe: Flask of the Titans",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Flask of the Titans."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13519"
+  },
+  "linked_entities": [
+    {
+      "id": 8846,
+      "name": "Gromsblood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8846"
+    },
+    {
+      "id": 8925,
+      "name": "Crystal Vial",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8925"
+    },
+    {
+      "id": 13423,
+      "name": "Stonescale Oil",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13423"
+    },
+    {
+      "id": 13468,
+      "name": "Black Lotus",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13468"
+    },
+    {
+      "id": 13510,
+      "name": "Flask of the Titans",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13510"
+    },
+    {
+      "id": 171,
+      "name": "Alchemy",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=171"
+    },
+    {
+      "id": 17626,
+      "name": "Increases the player's maximum health by 1200 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17626"
+    },
+    {
+      "id": 17635,
+      "name": "Teaches you how to make a Flask of the Titans.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17635"
+    }
+  ],
+  "name": "Recipe: Flask of the Titans",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of the Titans Item Level 60 Requires Alchemy (300) Use: Teaches you how to make a Flask of the Titans. Sell Price: 1 Dropped by: General Drakkisath Drop Chance: 4.05%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=13519",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.05,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=13519",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17635
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13519",
+  "url": "https://www.wowhead.com/forever/item=13519"
+}

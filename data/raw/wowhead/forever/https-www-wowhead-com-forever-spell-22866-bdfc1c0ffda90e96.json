@@ -1,0 +1,91 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Belt of the Archmage 1 min cast Reagents: Bolt of Runecloth (16), Ghost Dye (8), Mooncloth (8), Essence of Water (10), Essence of Fire (10), Large Brilliant Shard (4), Rune Thread (6), Viridian Dye (10) Belt of the Archmage Item Level 62 Binds when equipped Waist Cloth 54 Armor +10 Stamina +16 Intellect Durability 35 / 35 Requires Level 57 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 20 . Sell Price: 1 47 44",
+  "entity_id": 22866,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:39+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7078,
+      "name": "Essence of Fire",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7078"
+    },
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 9210,
+      "name": "Ghost Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=9210"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 14344,
+      "name": "Large Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14344"
+    },
+    {
+      "id": 18405,
+      "name": "Belt of the Archmage",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18405"
+    },
+    {
+      "id": 249431,
+      "name": "Viridian Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249431"
+    },
+    {
+      "id": 22866,
+      "name": "Belt of the Archmage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22866"
+    }
+  ],
+  "name": "Belt of the Archmage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 18405,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=22866",
+      "subject_id": 22866,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 22866,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/22866",
+  "url": "https://www.wowhead.com/forever/spell=22866"
+}

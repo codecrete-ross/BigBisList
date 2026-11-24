@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "General Drakkisath's Command Item Level 1 Binds when picked up Unique This Item Begins a Quest Requires Level 55 Dropped by: Overlord Wyrmthalak Drop Chance: 24.58%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:01:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12780,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 12780,
+    "item_level": 1,
+    "name": "General Drakkisath's Command",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12780"
+  },
+  "linked_entities": [
+    {
+      "id": 5089,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=5089"
+    }
+  ],
+  "name": "General Drakkisath's Command",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.58,
+      "entity_name": "Overlord Wyrmthalak",
+      "source_url": "https://www.wowhead.com/forever/item=12780",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12780",
+  "url": "https://www.wowhead.com/forever/item=12780"
+}

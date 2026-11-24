@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soulforge Gauntlets Item Level 55 Binds when picked up Hands Plate 393 Armor +9 Strength +10 Stamina +10 Intellect Durability 55 / 55 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 11 . Soulforge Armor (0/8) Soulforge Belt Soulforge Boots Soulforge Bracers Soulforge Breastplate Soulforge Gauntlets Soulforge Helm Soulforge Legplates Soulforge Spaulders (2) Set : +8 All Resistances. (4) Set : Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec. (6) Set : +40 Attack Power. (8) Set : +200 Armor. Sell Price: 1 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 22090,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 393,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 11.",
+        "stats": {
+          "spell_power": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "id": 22090,
+    "item_level": 55,
+    "name": "Soulforge Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27498,
+        "text": "Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 10.0,
+      "spell_power": 11.0,
+      "stamina": 10.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22090"
+  },
+  "linked_entities": [
+    {
+      "id": 22086,
+      "name": "Soulforge Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22086"
+    },
+    {
+      "id": 22087,
+      "name": "Soulforge Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22087"
+    },
+    {
+      "id": 22088,
+      "name": "Soulforge Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22088"
+    },
+    {
+      "id": 22089,
+      "name": "Soulforge Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22089"
+    },
+    {
+      "id": 22090,
+      "name": "Soulforge Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22090"
+    },
+    {
+      "id": 22091,
+      "name": "Soulforge Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22091"
+    },
+    {
+      "id": 22092,
+      "name": "Soulforge Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22092"
+    },
+    {
+      "id": 22093,
+      "name": "Soulforge Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22093"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27498,
+      "name": "Chance on melee attack to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27498"
+    }
+  ],
+  "name": "Soulforge Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22090",
+  "url": "https://www.wowhead.com/forever/item=22090"
+}

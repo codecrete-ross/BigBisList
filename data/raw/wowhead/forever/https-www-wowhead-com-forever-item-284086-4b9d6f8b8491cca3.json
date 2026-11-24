@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scarlet Executioner's Guise Item Level 62 Binds when picked up Head Leather 141 Armor +24 Strength +17 Spirit Requires Level 57 Equip: Improves your chance to hit by 1.5%. \"Anyone the Scarlet Crusade justified killing saw only empty eyes before their death.\" Sell Price: 2 7 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 284086,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 141,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.5%.",
+        "stats": {
+          "hit_percent": 1.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.5%. \"Anyone the Scarlet Crusade justified killing saw only empty eyes before their death.\""
+    ],
+    "id": 284086,
+    "item_level": 62,
+    "name": "Scarlet Executioner's Guise",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.5,
+      "spirit": 17.0,
+      "strength": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284086"
+  },
+  "linked_entities": [],
+  "name": "Scarlet Executioner's Guise",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c6fd93123e5b05dbf50a68175d735afd8b5a42e3b0006927b99c5c810dc6de14",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284086",
+  "url": "https://www.wowhead.com/forever/item=284086"
+}

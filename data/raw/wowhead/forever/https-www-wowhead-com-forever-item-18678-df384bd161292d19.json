@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Tempestria's Frozen Necklace Item Level 62 Binds when equipped Neck +8 Stamina +5 Intellect +15 Frost Resistance Requires Level 57 Sell Price: 2 66 35 Dropped by: Princess Tempestria Drop Chance: 17.79%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 18678,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 18678,
+    "item_level": 62,
+    "name": "Tempestria's Frozen Necklace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 15.0,
+      "intellect": 5.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18678"
+  },
+  "linked_entities": [],
+  "name": "Tempestria's Frozen Necklace",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.79,
+      "entity_name": "Princess Tempestria",
+      "source_url": "https://www.wowhead.com/forever/item=18678",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18678",
+  "url": "https://www.wowhead.com/forever/item=18678"
+}

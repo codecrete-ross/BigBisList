@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Serpent's Shoulders Item Level 23 Binds when picked up Shoulder Leather 68 Armor +5 Agility +7 Spirit Durability 45 / 45 Requires Level 18 Sell Price: 9 59 Dropped by: Lady Anacondra Drop Chance: 40.55%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 5404,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 68,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5404,
+    "item_level": 23,
+    "name": "Serpent's Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 5.0,
+      "spirit": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5404"
+  },
+  "linked_entities": [],
+  "name": "Serpent's Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 40.55,
+      "entity_name": "Lady Anacondra",
+      "source_url": "https://www.wowhead.com/forever/item=5404",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5404",
+  "url": "https://www.wowhead.com/forever/item=5404"
+}

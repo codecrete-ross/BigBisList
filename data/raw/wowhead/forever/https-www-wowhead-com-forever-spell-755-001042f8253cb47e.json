@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Health Funnel 11 Health, plus 5 per sec 20 yd range Channeled (10 sec cast) Requires Warlock Requires level 12 Gives 12 health to the caster's pet every second for 10 sec as long as the caster channels. Generates reduced threat.",
+  "entity_id": 755,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:10+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 755,
+      "name": "Health Funnel",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=755"
+    }
+  ],
+  "name": "Health Funnel",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "a28dba6c4ed7505023b135b7c229918bfedd2ccb4317a903d735f1d6930a0110",
+  "spell_id": 755,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/755",
+  "url": "https://www.wowhead.com/forever/spell=755"
+}

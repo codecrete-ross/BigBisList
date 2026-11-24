@@ -1,0 +1,74 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mystic Mushroom 10 sec cast Tools: Runed Silver Rod Reagents: Small Glimmering Shard , Greater Magic Essence (2), Strange Dust (5), Red-speckled Mushroom Creates a mystic mushroom. Mystic Mushroom (0) Item Level 25 Binds when picked up Relic Idol Classes: Druid Requires Level 20 Equip: Increases Spirit by 5%. Sell Price: 4 99",
+  "entity_id": 1248752,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:02:18+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 4605,
+      "name": "Red-speckled Mushroom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4605"
+    },
+    {
+      "id": 10939,
+      "name": "Greater Magic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10939"
+    },
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 10978,
+      "name": "Small Glimmering Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10978"
+    },
+    {
+      "id": 249396,
+      "name": "Mystic Mushroom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249396"
+    },
+    {
+      "id": 1248751,
+      "name": "Increases Spirit by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248751"
+    },
+    {
+      "id": 1248752,
+      "name": "Mystic Mushroom",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248752"
+    }
+  ],
+  "name": "Mystic Mushroom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249396,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1248752",
+      "subject_id": 1248752,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "d1de4dbc320c44943b18d3fa378ad67d58a7aba46fd49a8a979922a0e5de5b7c",
+  "spell_id": 1248752,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1248752",
+  "url": "https://www.wowhead.com/forever/spell=1248752"
+}

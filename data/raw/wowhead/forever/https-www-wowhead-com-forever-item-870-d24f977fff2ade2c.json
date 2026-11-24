@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fiery War Axe Item Level 40 Binds when equipped Two-Hand Axe 116 - 175 Damage Speed 3.60 (40.42 damage per second) +15 Strength Durability 120 / 120 Requires Level 35 Chance on hit: Hurls a fiery ball that causes 231 to 293 Fire damage and an additional 60 damage over 6 sec. Sell Price: 2 15 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 870,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 40.42,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Hurls a fiery ball that causes 231 to 293 Fire damage and an additional 60 damage over 6 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Hurls a fiery ball that causes 231 to 293 Fire damage and an additional 60 damage over 6 sec."
+    ],
+    "id": 870,
+    "item_level": 40,
+    "name": "Fiery War Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 35,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "strength": 15.0
+    },
+    "weapon_max_damage": 175,
+    "weapon_min_damage": 116,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=870"
+  },
+  "linked_entities": [
+    {
+      "id": 18796,
+      "name": "Hurls a fiery ball that causes 231 to 293 Fire damage and an additional 60 damage over 6 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18796"
+    }
+  ],
+  "name": "Fiery War Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/870",
+  "url": "https://www.wowhead.com/forever/item=870"
+}

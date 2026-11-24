@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handwraps of Undead Slaying Item Level 63 Binds when picked up Hands Leather 110 Armor +15 Stamina Durability 35 / 35 Equip: + 30 Attack Power. Equip: + 30 Attack Power against Undead. Undead Slayer's Armor (0/3) Handwraps of Undead Slaying Item #23089 Item #23093 (3) Set : Increases your damage against undead by 2%. Sell Price: 1 39 89",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 23081,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 110,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power.",
+        "stats": {
+          "attack_power": 30
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +30 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +30 Attack Power.",
+      "Equip: +30 Attack Power against Undead."
+    ],
+    "id": 23081,
+    "item_level": 63,
+    "name": "Handwraps of Undead Slaying",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 29068,
+        "text": "Increases your damage against undead by 2%."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23081"
+  },
+  "linked_entities": [
+    {
+      "id": 23081,
+      "name": "Handwraps of Undead Slaying",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23081"
+    },
+    {
+      "id": 29068,
+      "name": "Increases your damage against undead by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29068"
+    }
+  ],
+  "name": "Handwraps of Undead Slaying",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23081",
+  "url": "https://www.wowhead.com/forever/item=23081"
+}

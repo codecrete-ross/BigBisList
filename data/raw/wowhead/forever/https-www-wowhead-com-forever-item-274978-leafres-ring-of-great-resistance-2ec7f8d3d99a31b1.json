@@ -1,0 +1,83 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=274978/leafres-ring-of-great-resistance"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T08:05:23.998501+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:57:58.0303867+00:00",
+      "http": "403",
+      "name": "leafre-resistance",
+      "source_content_digest": "f27e61b5001df0f32a5ffb5814a88ceb32d790a08809e18769e22a395bc2d1f2",
+      "source_url": "https://www.wowhead.com/forever/item=274978/leafres-ring-of-great-resistance"
+    },
+    {
+      "bytes": 784,
+      "collected_at": "2026-11-13T07:57:58.5109174+00:00",
+      "http": "200",
+      "name": "tip-274978",
+      "source_content_digest": "f84b47fefecb9a8e3c81f2d827e0ea47df27c3ccf95442cf31693b3004889c11",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/274978"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "bind_on_pickup": true,
+    "capture_method": "indexed exact Forever item page",
+    "current_client_build": "1.60.1.70938",
+    "current_item_row": {
+      "ClassID": "4",
+      "ID": "274978",
+      "InventoryType": "11",
+      "SubclassID": "0"
+    },
+    "current_sparse_row": "withheld",
+    "current_tooltip_identity": "Leafre's Ring of Great Resistance Item Level 1 Binds when picked up Finger +150 Arcane Resistance +150 Fire Resistance +150 Nature Resistance +150 Frost Resistance +150 Shadow Resistance",
+    "digest_input": "normalized indexed item-page finding",
+    "effect_summary": "+150 to all five magic resistances",
+    "indexed_crawl_age": "today",
+    "indexed_rendered_line": 23,
+    "item_id": 274978,
+    "item_level": 1,
+    "name": "Leafre's Ring of Great Resistance",
+    "slot": "Ring",
+    "source_locale": "en"
+  },
+  "source_content_digest": "b84a6c4864a754c5bc7781f3aac77dcc4bcc6ec0fa8b36b99ebda3aae012cfcb",
+  "unavailable_item_ids": [
+    274978
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=274978/leafres-ring-of-great-resistance"
+}

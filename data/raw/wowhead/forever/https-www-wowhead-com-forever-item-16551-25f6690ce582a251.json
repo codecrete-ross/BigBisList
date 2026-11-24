@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Dragonhide Epaulets Item Level 74 Binds when picked up Unique Shoulder Leather 165 Armor +14 Strength +14 Agility +13 Stamina +11 Intellect +11 Spirit +50 Armor Durability 70 / 70 Classes: Druid Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 2 54 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16551,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 165,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 16551,
+    "item_level": 74,
+    "name": "Warlord's Dragonhide Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "intellect": 11.0,
+      "spell_power": 18.0,
+      "spirit": 11.0,
+      "stamina": 13.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16551"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Dragonhide Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16551",
+  "url": "https://www.wowhead.com/forever/item=16551"
+}

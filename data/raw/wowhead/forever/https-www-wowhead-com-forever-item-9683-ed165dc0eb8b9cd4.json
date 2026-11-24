@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Strength of the Treant Item Level 50 Binds when picked up Two-Hand Staff 85 - 128 Damage Speed 3.70 (28.78 damage per second) +7 Stamina +18 Intellect Durability 85 / 85 Equip: Increases damage and healing done by magical spells and effects by up to 42 . Sell Price: 2 99 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 9683,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 28.78,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 42.",
+        "stats": {
+          "spell_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 42."
+    ],
+    "id": 9683,
+    "item_level": 50,
+    "name": "Strength of the Treant",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_power": 42.0,
+      "stamina": 7.0
+    },
+    "weapon_max_damage": 128,
+    "weapon_min_damage": 85,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9683"
+  },
+  "linked_entities": [],
+  "name": "Strength of the Treant",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9683",
+  "url": "https://www.wowhead.com/forever/item=9683"
+}

@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Venomous Totem Item Level 76 Binds when picked up Unique Trinket Classes: Rogue Requires Level 60 Use: Increases the chance to apply Rogue poisons to your target by 30% for 20 sec. (5 Min Cooldown) Sell Price: 7 20 39 Dropped by: Broodlord Lashlayer Drop Chance: 18.63%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19342,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases the chance to apply Rogue poisons to your target by 30% for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19342,
+    "item_level": 76,
+    "name": "Venomous Totem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases the chance to apply Rogue poisons to your target by 30% for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19342"
+  },
+  "linked_entities": [
+    {
+      "id": 23726,
+      "name": "Increases the chance to apply Rogue poisons to your target by 30% for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23726"
+    }
+  ],
+  "name": "Venomous Totem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.63,
+      "entity_name": "Broodlord Lashlayer",
+      "source_url": "https://www.wowhead.com/forever/item=19342",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19342",
+  "url": "https://www.wowhead.com/forever/item=19342"
+}

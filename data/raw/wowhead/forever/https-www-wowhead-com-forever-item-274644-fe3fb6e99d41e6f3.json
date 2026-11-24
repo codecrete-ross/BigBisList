@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Undying Headdress Item Level 48 Binds when picked up Head Mail 235 Armor +17 Stamina +8 Intellect Restores + 8 health per 5 sec. Requires Level 43 Equip: + 26 Attack Power. Sell Price: 1 9 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274644,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 235,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +26 Attack Power.",
+        "stats": {
+          "attack_power": 26
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +8 health per 5 sec.",
+        "stats": {
+          "hp5": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +26 Attack Power."
+    ],
+    "id": 274644,
+    "item_level": 48,
+    "name": "Undying Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 43,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 26.0,
+      "hp5": 8.0,
+      "intellect": 8.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274644"
+  },
+  "linked_entities": [],
+  "name": "Undying Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f714d6029fb2be3803718d4e7ab732613477c5cce37f0c3685373ce68f788281",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274644",
+  "url": "https://www.wowhead.com/forever/item=274644"
+}

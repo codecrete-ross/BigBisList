@@ -66,6 +66,25 @@
                 },
                 "note": {
                   "type": "string"
+                },
+                "guide_evidence": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["table_id", "guide_phase", "original_rating", "conditions", "source_url"],
+                    "properties": {
+                      "table_id": {"type": "string", "pattern": "^guide:[a-f0-9]{24}$"},
+                      "guide_phase": {"enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]},
+                      "rating_phase": {"enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]},
+                      "content_phase": {"enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]},
+                      "original_rating": {"type": "string"},
+                      "grade": {"type": "integer", "minimum": 1, "maximum": 4},
+                      "conditions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+                      "source_url": {"type": "string"},
+                      "table_heading": {"type": "string"}
+                    }
+                  }
                 }
               }
             }

@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Masterwork Stormhammer 1 min cast Tools: Blacksmith Hammer Reagents: Enchanted Thorium Bar (20), Huge Emerald (8), Large Opal (8), Essence of Earth (6), Enchanted Leather (4) Masterwork Stormhammer Item Level 63 Binds when equipped One-Hand Mace 46 - 86 Damage Speed 1.60 (41.25 damage per second) Durability 90 / 90 Requires Level 57 Chance on hit: Blasts up to 3 targets for 105 to 145 Nature damage. Sell Price: 5 63 4",
+  "entity_id": 16993,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:04+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 12364,
+      "name": "Huge Emerald",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12364"
+    },
+    {
+      "id": 12655,
+      "name": "Enchanted Thorium Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12655"
+    },
+    {
+      "id": 12794,
+      "name": "Masterwork Stormhammer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12794"
+    },
+    {
+      "id": 12799,
+      "name": "Large Opal",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12799"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 16921,
+      "name": "Blasts up to 3 targets for 105 to 145 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16921"
+    },
+    {
+      "id": 16993,
+      "name": "Masterwork Stormhammer",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16993"
+    }
+  ],
+  "name": "Masterwork Stormhammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 12794,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=16993",
+      "subject_id": 16993,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 16993,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16993",
+  "url": "https://www.wowhead.com/forever/spell=16993"
+}

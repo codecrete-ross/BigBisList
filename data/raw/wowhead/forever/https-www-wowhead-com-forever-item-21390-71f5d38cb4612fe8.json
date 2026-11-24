@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Avenger's Legguards Item Level 81 Binds when picked up Legs Plate 796 Armor +21 Strength +12 Agility +22 Stamina +22 Intellect +9 Spirit Restores + 4 mana per 5 sec. Durability 120 / 120 Classes: Paladin Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 16 . Avenger's Battlegear (0/5) Avenger's Breastplate Avenger's Crown Avenger's Greaves Avenger's Legguards Avenger's Pauldrons (3) Set : Increases the duration of your Judgements by 20%. (5) Set : Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 7 9 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 21390,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 796,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 21390,
+    "item_level": 81,
+    "name": "Avenger's Legguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26130,
+        "text": "Increases the duration of your Judgements by 20%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 23929,
+        "text": "Increases damage and healing done by magical spells and effects by up to 71."
+      }
+    ],
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "crit_percent": 1.0,
+      "intellect": 22.0,
+      "mp5": 4.0,
+      "spell_power": 16.0,
+      "spirit": 9.0,
+      "stamina": 22.0,
+      "strength": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21390"
+  },
+  "linked_entities": [
+    {
+      "id": 21387,
+      "name": "Avenger's Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21387"
+    },
+    {
+      "id": 21388,
+      "name": "Avenger's Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21388"
+    },
+    {
+      "id": 21389,
+      "name": "Avenger's Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21389"
+    },
+    {
+      "id": 21390,
+      "name": "Avenger's Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21390"
+    },
+    {
+      "id": 21391,
+      "name": "Avenger's Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21391"
+    },
+    {
+      "id": 23929,
+      "name": "Increases damage and healing done by magical spells and effects by up to 71.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23929"
+    },
+    {
+      "id": 26130,
+      "name": "Increases the duration of your Judgements by 20%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26130"
+    }
+  ],
+  "name": "Avenger's Legguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21390",
+  "url": "https://www.wowhead.com/forever/item=21390"
+}

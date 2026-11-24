@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ribsplitter Item Level 53 Binds when equipped Main Hand Axe 66 - 124 Damage Speed 2.70 (35.19 damage per second) <Random enchantment> Durability 90 / 90 Requires Level 48 Equip: + 10 Attack Power. Sell Price: 3 37 14",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:43.1559272Z",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 12527,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 35.19,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +10 Attack Power."
+    ],
+    "id": 12527,
+    "item_level": 53,
+    "name": "Ribsplitter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0
+    },
+    "weapon_max_damage": 124,
+    "weapon_min_damage": 66,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12527"
+  },
+  "linked_entities": [],
+  "name": "Ribsplitter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "46e93700313d620aac2517b1c64fa486ccaea386c136a1081a5c60241b7e9a18",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12527",
+  "url": "https://www.wowhead.com/forever/item=12527"
+}

@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Duskwraith Mantle Sanctified Item Level 98 Binds when picked up Shoulder Leather 206 Armor +11 Strength +22 Agility +31 Stamina Durability 70 / 70 Classes: Rogue Requires Level 60 Equip: Increased Defense + 12. Equip: Improves your chance to hit by 1.0%. Equip: Reduces chance to be Dodged or Parried by 1.0%. Duskwraith Leathers (0/8) Duskwraith Mask Duskwraith Mantle Duskwraith Chestguard Duskwraith Belt Duskwraith Leggings Duskwraith Treads Duskwraith Wristguards Duskwraith Grips (2) Set : Your stacks of Rolling with the Punches also increase all damage you deal by 1%. (4) Set : Your Blade Flurry now also strikes a third target and increases your attack speed by an additional 10%. In addition, each combo point you spend reduces the remaining cooldown on your Blade Flurry by 0.5 sec. (6) Set : Your Rolling with the Punches now grants 2% more health and 1% more damage per stack. At 5 stacks, each time you Dodge or Parry you will gain 10 Energy. (1s cooldown) Sell Price: 8 45 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 239552,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 206,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +12.",
+        "stats": {
+          "defense": 12
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+    ],
+    "id": 239552,
+    "item_level": 98,
+    "name": "Duskwraith Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226874,
+        "text": "Your stacks of Rolling with the Punches also increase all damage you deal by 1%."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226882,
+        "text": "Your Blade Flurry now also strikes a third target and increases your attack speed by an additional 10%. In addition, each combo point you spend reduces the remaining cooldown on your Blade Flurry by 0.5 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226956,
+        "text": "Your Rolling with the Punches now grants 2% more health and 1% more damage per stack. At 5 stacks, each time you Dodge or Parry you will gain 10 Energy. (1s cooldown)"
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 22.0,
+      "defense": 12.0,
+      "hit_percent": 1.0,
+      "stamina": 31.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=239552"
+  },
+  "linked_entities": [
+    {
+      "id": 239547,
+      "name": "Duskwraith Wristguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239547"
+    },
+    {
+      "id": 239548,
+      "name": "Duskwraith Chestguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239548"
+    },
+    {
+      "id": 239549,
+      "name": "Duskwraith Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239549"
+    },
+    {
+      "id": 239550,
+      "name": "Duskwraith Mask",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239550"
+    },
+    {
+      "id": 239551,
+      "name": "Duskwraith Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239551"
+    },
+    {
+      "id": 239552,
+      "name": "Duskwraith Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239552"
+    },
+    {
+      "id": 239553,
+      "name": "Duskwraith Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239553"
+    },
+    {
+      "id": 239554,
+      "name": "Duskwraith Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=239554"
+    },
+    {
+      "id": 1226874,
+      "name": "Your stacks of Rolling with the Punches also increase all damage you deal by 1%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226874"
+    },
+    {
+      "id": 1226882,
+      "name": "Your Blade Flurry now also strikes a third target and increases your attack speed by an additional 10%. In addition, each combo point you spend reduces the remaining cooldown on your Blade Flurry by 0.5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226882"
+    },
+    {
+      "id": 1226956,
+      "name": "Your Rolling with the Punches now grants 2% more health and 1% more damage per stack. At 5 stacks, each time you Dodge or Parry you will gain 10 Energy. (1s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226956"
+    }
+  ],
+  "name": "Duskwraith Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "1fa499a222381990215017d9e4bc1882c29543ccd5834740c624b5128bd0b303",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/239552",
+  "url": "https://www.wowhead.com/forever/item=239552"
+}

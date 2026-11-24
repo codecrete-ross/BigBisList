@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Divinity Item Level 65 Binds when picked up Relic Libram Requires Level 60 Equip: Causes Judgement to heal all nearby party members for 23 to 28. Sell Price: 1 90 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:07:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 23201,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Causes Judgement to heal all nearby party members for 23 to 28.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Causes Judgement to heal all nearby party members for 23 to 28."
+    ],
+    "id": 23201,
+    "item_level": 65,
+    "name": "Libram of Divinity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=23201"
+  },
+  "linked_entities": [
+    {
+      "id": 28853,
+      "name": "Causes Judgement to heal all nearby party members for 23 to 28.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28853"
+    }
+  ],
+  "name": "Libram of Divinity",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2570df5c842c6cfc3b965ebb48d2a655fb2c33d778d5fd34528c357a8875076a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23201",
+  "url": "https://www.wowhead.com/forever/item=23201"
+}

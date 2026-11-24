@@ -1,0 +1,152 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Waywatcher Shoulderpads Sanctified Item Level 98 Binds when picked up Shoulder Leather 206 Armor +34 Strength +23 Agility +13 Stamina +15 Intellect Durability 70 / 70 Classes: Druid Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: + 2 Weapon Damage. Waywatcher Ferocity (0/8) Waywatcher Cowl Waywatcher Shoulderpads Waywatcher Vest Waywatcher Sash Waywatcher Trousers Waywatcher Stompers Waywatcher Wraps Waywatcher Grips (2) Set : You gain 2 Energy each time Rake or Rip deals periodic damage. (4) Set : Multiplies the damage bonus from Tiger's Fury by 2. (6) Set : Your Finishing Moves have a 20% chance per combo point spent to trigger Clearcasting and extend the duration of your active Tiger's Fury by 6 sec. Sell Price: 9 8 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 240062,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 206,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +2 Weapon Damage.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 240062,
+    "item_level": 98,
+    "name": "Waywatcher Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226109,
+        "text": "You gain 2 Energy each time Rake or Rip deals periodic damage."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226116,
+        "text": "Multiplies the damage bonus from Tiger's Fury by 2."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226119,
+        "text": "Your Finishing Moves have a 20% chance per combo point spent to trigger Clearcasting and extend the duration of your active Tiger's Fury by 6 sec."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 23.0,
+      "hit_percent": 1.0,
+      "intellect": 15.0,
+      "stamina": 13.0,
+      "strength": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240062"
+  },
+  "linked_entities": [
+    {
+      "id": 240060,
+      "name": "Waywatcher Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240060"
+    },
+    {
+      "id": 240061,
+      "name": "Waywatcher Sash",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240061"
+    },
+    {
+      "id": 240062,
+      "name": "Waywatcher Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240062"
+    },
+    {
+      "id": 240063,
+      "name": "Waywatcher Trousers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240063"
+    },
+    {
+      "id": 240064,
+      "name": "Waywatcher Cowl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240064"
+    },
+    {
+      "id": 240065,
+      "name": "Waywatcher Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240065"
+    },
+    {
+      "id": 240066,
+      "name": "Waywatcher Stompers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240066"
+    },
+    {
+      "id": 240067,
+      "name": "Waywatcher Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240067"
+    },
+    {
+      "id": 1226109,
+      "name": "You gain 2 Energy each time Rake or Rip deals periodic damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226109"
+    },
+    {
+      "id": 1226116,
+      "name": "Multiplies the damage bonus from Tiger's Fury by 2.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226116"
+    },
+    {
+      "id": 1226119,
+      "name": "Your Finishing Moves have a 20% chance per combo point spent to trigger Clearcasting and extend the duration of your active Tiger's Fury by 6 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226119"
+    }
+  ],
+  "name": "Waywatcher Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "0f75206c90ea5bf47d688238814b6729ac908255ca05ae99a2638bd48df097b7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240062",
+  "url": "https://www.wowhead.com/forever/item=240062"
+}

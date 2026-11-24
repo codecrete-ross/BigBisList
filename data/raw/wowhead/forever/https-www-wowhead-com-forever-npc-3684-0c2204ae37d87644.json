@@ -1,0 +1,305 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Pizznukle Leather Armor Merchant Level 33 Humanoid (Normal) Ratchet",
+  "entity_id": 3684,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:29.209Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 843,
+      "name": "Tanned Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=843"
+    },
+    {
+      "id": 844,
+      "name": "Tanned Leather Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=844"
+    },
+    {
+      "id": 845,
+      "name": "Tanned Leather Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=845"
+    },
+    {
+      "id": 846,
+      "name": "Tanned Leather Jerkin",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=846"
+    },
+    {
+      "id": 1843,
+      "name": "Tanned Leather Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1843"
+    },
+    {
+      "id": 1844,
+      "name": "Tanned Leather Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1844"
+    },
+    {
+      "id": 4788,
+      "name": "Agile Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4788"
+    },
+    {
+      "id": 4789,
+      "name": "Stable Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4789"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 8 of 8",
+    "1 - 8 of 8"
+  ],
+  "location_name": "The Barrens",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          41.8,
+          38.4
+        ],
+        [
+          41.8,
+          38.6
+        ]
+      ]
+    },
+    "zone": 17
+  },
+  "name": "Pizznukle",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 33",
+    "React: A\u00a0H",
+    "Faction: Ratchet",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 1,221"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 843,
+      "object_name": "Tanned Leather Boots",
+      "object_type": "item",
+      "price_copper": 1077,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tanned Leather Boots",
+        "17",
+        "12",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "10 77"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 844,
+      "object_name": "Tanned Leather Gloves",
+      "object_type": "item",
+      "price_copper": 720,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tanned Leather Gloves",
+        "17",
+        "12",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Leather Armor",
+        "7 20"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 845,
+      "object_name": "Tanned Leather Pants",
+      "object_type": "item",
+      "price_copper": 1447,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tanned Leather Pants",
+        "17",
+        "12",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Leather Armor",
+        "14 47"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 846,
+      "object_name": "Tanned Leather Jerkin",
+      "object_type": "item",
+      "price_copper": 1452,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nNew icon",
+        "",
+        "Tanned Leather Jerkin",
+        "17",
+        "12",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Leather Armor",
+        "14 52"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1843,
+      "object_name": "Tanned Leather Belt",
+      "object_type": "item",
+      "price_copper": 725,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tanned Leather Belt",
+        "17",
+        "12",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Leather Armor",
+        "7 25"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1844,
+      "object_name": "Tanned Leather Bracers",
+      "object_type": "item",
+      "price_copper": 728,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Tanned Leather Bracers",
+        "17",
+        "12",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Leather Armor",
+        "7 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4788,
+      "object_name": "Agile Boots",
+      "object_type": "item",
+      "price_copper": 2633,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(2)",
+        "Agile Boots",
+        "20",
+        "15",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "26 33"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4789,
+      "object_name": "Stable Boots",
+      "object_type": "item",
+      "price_copper": 1998,
+      "relation": "sells",
+      "required_level": 13,
+      "source_url": "https://www.wowhead.com/forever/npc=3684",
+      "subject_id": 3684,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Stable Boots",
+        "18",
+        "13",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Leather Armor",
+        "19 98"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3684",
+  "url": "https://www.wowhead.com/forever/npc=3684"
+}

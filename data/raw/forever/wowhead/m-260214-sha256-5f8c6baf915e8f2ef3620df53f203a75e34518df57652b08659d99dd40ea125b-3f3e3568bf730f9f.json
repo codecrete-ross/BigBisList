@@ -1,0 +1,59 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:12.137324+00:00",
+  "flavor": "forever",
+  "item_id": 260214,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Staff of Wild Beasts Item Level 60 Binds when picked up Two-Hand Staff 69 - 104 Damage Speed 2.50 (34.60 damage per second) +19 Spirit Durability 85 / 85 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 52 . Sell Price: 4 97 36",
+      "dps": 34.6,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+          "stats": {
+            "crit_percent": 1.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 52.",
+          "stats": {
+            "spell_power": 52.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 52."
+      ],
+      "id": 260214,
+      "item_level": 60,
+      "name": "Staff of Wild Beasts",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "crit_percent": 1.0,
+        "spell_power": 52.0,
+        "spirit": 19.0
+      },
+      "weapon_max_damage": 104,
+      "weapon_min_damage": 69,
+      "weapon_speed": 2.5,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=260214"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "5f8c6baf915e8f2ef3620df53f203a75e34518df57652b08659d99dd40ea125b",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/260214#sha256-5f8c6baf915e8f2ef3620df53f203a75e34518df57652b08659d99dd40ea125b"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Magister Cowl Item Level 49 Binds when picked up Head Cloth 57 Armor Restores + 8 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 79 94",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 270099,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 57,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 270099,
+    "item_level": 49,
+    "name": "Magister Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "mp5": 8.0,
+      "spell_power": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270099"
+  },
+  "linked_entities": [],
+  "name": "Magister Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d0e59058e940be79eba29077073e773858d6073ed24590f0129fdd88153db30d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270099",
+  "url": "https://www.wowhead.com/forever/item=270099"
+}

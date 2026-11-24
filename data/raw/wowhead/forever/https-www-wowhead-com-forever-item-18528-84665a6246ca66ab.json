@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Spaulders Item Level 61 Binds when picked up Shoulder Leather 129 Armor +11 Stamina +11 Intellect +9 Spirit Durability 60 / 60 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 14 . Sell Price: 1 96 38 Dropped by: Mizzle the Crafty",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 18528,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 129,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+        "stats": {
+          "spell_power": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+    ],
+    "id": 18528,
+    "item_level": 61,
+    "name": "Cyclone Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_power": 14.0,
+      "spirit": 9.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18528"
+  },
+  "linked_entities": [],
+  "name": "Cyclone Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Mizzle the Crafty",
+      "source_url": "https://www.wowhead.com/forever/item=18528",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "46442e4ba45266c94bcae4f26cd3cd8558e84a81d52235735a2e18132612a0cf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18528",
+  "url": "https://www.wowhead.com/forever/item=18528"
+}

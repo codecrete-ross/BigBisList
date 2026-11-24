@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gnomish Universal Remote Item Level 25 Binds when equipped Unique-Equipped Trinket Requires Engineering (125) Equip: + 18 Attack Power against Mechanical units. Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown) Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:11:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 7506,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power against Mechanical units.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 7506,
+    "item_level": 25,
+    "name": "Gnomish Universal Remote",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=7506"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 8344,
+      "name": "Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8344"
+    }
+  ],
+  "name": "Gnomish Universal Remote",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Universal Remote Item Level 25 Binds when equipped Unique-Equipped Trinket Requires Engineering (125) Equip: + 18 Attack Power against Mechanical units. Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown) Sell Price: 5",
+      "scope": "equip_or_use",
+      "skill": 125,
+      "source_url": "https://www.wowhead.com/forever/item=7506",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "1ff09d562b76563b6a4b36918b24543ce5387fb92b3265c0ba6966ba2f4a6669",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7506",
+  "url": "https://www.wowhead.com/forever/item=7506"
+}

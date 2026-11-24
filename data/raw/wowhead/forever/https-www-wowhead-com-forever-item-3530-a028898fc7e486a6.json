@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Wool Bandage Item Level 1 Requires First Aid (50) Use: Heals 161 damage over 7 sec. Max Stack: 20 Sell Price: 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 3530,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 161 damage over 7 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 3530,
+    "item_level": 1,
+    "name": "Wool Bandage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals 161 damage over 7 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=3530"
+  },
+  "linked_entities": [
+    {
+      "id": 2942,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=2942"
+    },
+    {
+      "id": 3267,
+      "name": "Heals 161 damage over 7 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3267"
+    }
+  ],
+  "name": "Wool Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "d9b399d2b0c699b45eb0a1e134d4efe180f44c0295b0bba5c7fbde61e228519a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3530",
+  "url": "https://www.wowhead.com/forever/item=3530"
+}

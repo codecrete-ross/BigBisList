@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Olaf's All Purpose Shield Item Level 42 Binds when picked up Off Hand Shield 1287 Armor 22 Block +11 Stamina Durability 100 / 100 Requires Level 37 Use: Reduces your fall speed for 10 sec. (30 Min Cooldown) Sell Price: 98 78 Dropped by: Olaf Drop Chance: 13.41%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 9404,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1287,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 9404,
+    "item_level": 42,
+    "name": "Olaf's All Purpose Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 22.0,
+      "stamina": 11.0
+    },
+    "use_effects": [
+      "Use: Reduces your fall speed for 10 sec. (30 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9404"
+  },
+  "linked_entities": [
+    {
+      "id": 12438,
+      "name": "Reduces your fall speed for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12438"
+    }
+  ],
+  "name": "Olaf's All Purpose Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 13.41,
+      "entity_name": "Olaf",
+      "source_url": "https://www.wowhead.com/forever/item=9404",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9404",
+  "url": "https://www.wowhead.com/forever/item=9404"
+}

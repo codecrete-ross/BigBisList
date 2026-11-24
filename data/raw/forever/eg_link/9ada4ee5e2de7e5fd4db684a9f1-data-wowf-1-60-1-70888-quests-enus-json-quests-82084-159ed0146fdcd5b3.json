@@ -1,0 +1,65 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/82084"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 221344,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/82084",
+      "subject_id": 82084,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T21:23:46.903446+00:00",
+        "linked_reward_ids": [],
+        "min_level": 42,
+        "name": "A Lesson in Literacy",
+        "side": "Both",
+        "source_content_digest": "7dbf03de66fb3d4cc2712877f2817740256cb82b5b3647d23242ead9c19b986b",
+        "source_url": "https://bindonforever.com/quest/82084",
+        "zone": "Undercity"
+      },
+      {
+        "fetched_at": "2026-11-11T08:12:05.260216+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "A Lesson in Literacy",
+        "side": "Both",
+        "source_content_digest": "88fff7fc623ad0bd43e3e03c2313ab200814344a79a82586951777c8c3097ae9",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/82084",
+        "zone": "Mage"
+      }
+    ],
+    "name": "A Lesson in Literacy",
+    "observation_count": 3,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 82084,
+    "reported_min_level": 42,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "221344": "items"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/82084"
+}

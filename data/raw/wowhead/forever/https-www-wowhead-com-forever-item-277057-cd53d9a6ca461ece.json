@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Al'Aketh Wristguards Item Level 9 Binds when equipped Wrist Mail 44 Armor +1 Agility Durability 20 / 20 Requires Level 4 Sell Price: 56 Dropped by: Al'Aketh Pillager Drop Chance: 0.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 277057,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 277057,
+    "item_level": 9,
+    "name": "Al'Aketh Wristguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 4,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "agility": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277057"
+  },
+  "linked_entities": [],
+  "name": "Al'Aketh Wristguards",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.01,
+      "entity_name": "Al'Aketh Pillager",
+      "source_url": "https://www.wowhead.com/forever/item=277057",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277057",
+  "url": "https://www.wowhead.com/forever/item=277057"
+}

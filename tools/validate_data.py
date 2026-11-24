@@ -13,10 +13,11 @@ if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DATA_FAMILIES, units_covered_by_source
-from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
+from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, add_flavor_argument, canonical_json
 from tools.reputations import CANONICAL_REPUTATIONS, infer_source_side
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.progression import validate_pre_raid_paths, validate_schedules
+from tools.guide_evidence import validate_evidence
 
 
 REQUIREMENT_TYPES = {
@@ -142,6 +143,13 @@ def validate_source_detail_fields(label: str, sources: object, errors: list[str]
             _require(PHASE_KEYS.index(start) < PHASE_KEYS.index(end), errors, f"{source_label} empty availability window")
         if "tradeable" in source:
             _require(isinstance(source["tradeable"], bool), errors, f"{source_label} tradeable must be boolean")
+        if "activity_zones" in source:
+            activities = source["activity_zones"]
+            valid = isinstance(activities, list) and bool(activities) and all(
+                isinstance(zone, str) and bool(zone.strip()) for zone in activities)
+            _require(valid, errors, f"{source_label} activity_zones must be a non-empty array of locations")
+            if valid:
+                _require(len(activities) == len(set(activities)), errors, f"{source_label} activity_zones must be unique")
 
         for field_name in ("location_area", "location_note"):
             if field_name in source:
@@ -464,6 +472,10 @@ def validate() -> ValidationResult:
             _require(bool(entry.get("rank_label")), errors, f"Item {item_id} is missing rank_label")
             _require(bool(entry.get("rank_group")), errors, f"Item {item_id} is missing rank_group")
             _require(bool(entry.get("context")), errors, f"Item {item_id} is missing context")
+            if "guide_evidence" in entry:
+                errors.extend(f"BiS item {item_id}: {message}" for message in validate_evidence(
+                    entry["guide_evidence"], entry.get("rank_label", ""), list_row.get("source_url", ""),
+                    entry.get("context", "standard")))
             validate_requirements(f"BiS list item {item_id}", entry.get("requirements"), errors)
             item_context = (item_id, str(entry.get("context")))
             _require(item_context not in seen_item_contexts, errors, f"Duplicate BiS item/context in {class_name}/{spec_name}/{phase}/{slot}: {item_id}/{entry.get('context')}")
@@ -822,12 +834,24 @@ def validate() -> ValidationResult:
     return ValidationResult(not errors, errors, summary)
 
 
+def validate_dataset(flavor: str) -> ValidationResult:
+    if flavor == "anniversary":
+        return validate()
+    if flavor == "forever":
+        from tools.forever import validate as validate_forever
+
+        errors, summary = validate_forever()
+        return ValidationResult(not errors, errors, summary)
+    raise ValueError(f"Unknown dataset flavor: {flavor}")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate Big BiS List canonical JSON.")
+    add_flavor_argument(parser)
     parser.add_argument("--json", action="store_true", help="Print machine-readable output.")
     args = parser.parse_args(argv)
 
-    result = validate()
+    result = validate_dataset(args.flavor)
     payload = {"ok": result.ok, "errors": result.errors, "summary": result.summary}
 
     if args.json:

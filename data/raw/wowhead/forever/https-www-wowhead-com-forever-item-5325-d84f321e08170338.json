@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Welding Shield Item Level 16 Binds when picked up Off Hand Shield 345 Armor 6 Block +2 Stamina Durability 55 / 55 Sell Price: 4 98",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 5325,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 345,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5325,
+    "item_level": 16,
+    "name": "Welding Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 6.0,
+      "stamina": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5325"
+  },
+  "linked_entities": [],
+  "name": "Welding Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5325",
+  "url": "https://www.wowhead.com/forever/item=5325"
+}

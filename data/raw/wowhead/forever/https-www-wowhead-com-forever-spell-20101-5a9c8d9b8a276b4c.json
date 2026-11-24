@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Benediction Talent Requires Paladin Reduces the Mana cost of all instant cast spells and abilities by 10%.",
+  "entity_id": 20101,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:40+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 20101,
+      "name": "Benediction",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20101"
+    }
+  ],
+  "name": "Benediction",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d65ca4bdb361579a069734c28aa3feac414ecc4cb9a50553fadd27cdcd7f6d63",
+  "spell_id": 20101,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20101",
+  "url": "https://www.wowhead.com/forever/spell=20101"
+}

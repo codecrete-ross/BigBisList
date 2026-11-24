@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talisman of Arathor Item Level 43 Binds when picked up Unique-Equipped: Talisman of Battle (1) Trinket +8 Stamina Requires Level 38 Requires The League of Arathor - Friendly Use: Absorbs 353 to 431 physical damage. Lasts 15 sec. (3 Min Cooldown) Sell Price: 38 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21118,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Absorbs 353 to 431 physical damage. Lasts 15 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21118,
+    "item_level": 43,
+    "name": "Talisman of Arathor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 8.0
+    },
+    "use_effects": [
+      "Use: Absorbs 353 to 431 physical damage. Lasts 15 sec. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21118"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 25747,
+      "name": "Absorbs 353 to 431 physical damage. Lasts 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25747"
+    }
+  ],
+  "name": "Talisman of Arathor",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Talisman of Arathor Item Level 43 Binds when picked up Unique-Equipped: Talisman of Battle (1) Trinket +8 Stamina Requires Level 38 Requires The League of Arathor - Friendly Use: Absorbs 353 to 431 physical damage. Lasts 15 sec. (3 Min Cooldown) Sell Price: 38 7",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=21118",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21118",
+  "url": "https://www.wowhead.com/forever/item=21118"
+}

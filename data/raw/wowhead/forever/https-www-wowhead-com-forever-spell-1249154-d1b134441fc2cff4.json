@@ -1,0 +1,91 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Totem of Thunder 10 sec cast Tools: Runed Arcanite Rod Reagents: Large Brilliant Shard , Greater Eternal Essence (8), Illusion Dust (10), Viridian Dye (8), Magenta Dye (4), Cerulean Dye (2), Star Wood (4) Creates a totem of thunder. Totem of Thunder (0) Item Level 65 Binds when picked up Relic Totem Requires Level 60 Equip: Increases the critical strike chance of Lightning Bolt by 1%.",
+  "entity_id": 1249154,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:01+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11291,
+      "name": "Star Wood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11291"
+    },
+    {
+      "id": 14344,
+      "name": "Large Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14344"
+    },
+    {
+      "id": 16203,
+      "name": "Greater Eternal Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16203"
+    },
+    {
+      "id": 16204,
+      "name": "Illusion Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16204"
+    },
+    {
+      "id": 228176,
+      "name": "Totem of Thunder",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=228176"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249431,
+      "name": "Viridian Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249431"
+    },
+    {
+      "id": 461295,
+      "name": "Increases the critical strike chance of Lightning Bolt by 1%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=461295"
+    },
+    {
+      "id": 1249154,
+      "name": "Totem of Thunder",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249154"
+    }
+  ],
+  "name": "Totem of Thunder",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 228176,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1249154",
+      "subject_id": 1249154,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1249154,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1249154",
+  "url": "https://www.wowhead.com/forever/spell=1249154"
+}

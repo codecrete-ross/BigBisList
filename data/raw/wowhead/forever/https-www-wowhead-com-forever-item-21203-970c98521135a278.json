@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +21 Agility +11 Stamina Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Improves your chance to hit by 1.0%. \"The Path of the Conqueror\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 21203,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%. \"The Path of the Conqueror\""
+    ],
+    "id": 21203,
+    "item_level": 70,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "hit_percent": 1.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21203"
+  },
+  "linked_entities": [
+    {
+      "id": 910,
+      "name": "Brood of Nozdormu",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=910"
+    }
+  ],
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +21 Agility +11 Stamina Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Improves your chance to hit by 1.0%. \"The Path of the Conqueror\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=21203",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21203",
+  "url": "https://www.wowhead.com/forever/item=21203"
+}

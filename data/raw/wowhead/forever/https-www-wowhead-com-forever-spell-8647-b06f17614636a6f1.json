@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Expose Armor Rank 1 25 Energy / 1 to 5 Combo Points Melee Range Instant Requires Rogue Requires level 14 Requires Melee Weapon Finishing move that exposes the target for 30 sec, reducing Armor per combo point: 1 point : 90 Armor 2 points: 180 Armor 3 points: 270 Armor 4 points: 360 Armor 5 points: 450 Armor",
+  "entity_id": 8647,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:27+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 8647,
+      "name": "Expose Armor",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8647"
+    }
+  ],
+  "name": "Expose Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d03a83df2a1876d703f61ebd5d86d04b6ea4b9fbd61f5c62ca6cb59ddacadc70",
+  "spell_id": 8647,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/8647",
+  "url": "https://www.wowhead.com/forever/spell=8647"
+}

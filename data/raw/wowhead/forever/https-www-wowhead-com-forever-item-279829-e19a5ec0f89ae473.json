@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Naga Scale Spaulders Item Level 55 Binds when picked up Shoulder Mail 223 Armor +14 Stamina +3 Spirit Equip: Improves your chance to hit by 0.8%. Sell Price: 1 37 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 279829,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 223,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.8%.",
+        "stats": {
+          "hit_percent": 0.8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.8%."
+    ],
+    "id": 279829,
+    "item_level": 55,
+    "name": "Naga Scale Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.8,
+      "spirit": 3.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279829"
+  },
+  "linked_entities": [],
+  "name": "Naga Scale Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "98d876d890a9ff04f192fae49468e38aa489c57d048edd39fe466bd6f6b9d496",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279829",
+  "url": "https://www.wowhead.com/forever/item=279829"
+}

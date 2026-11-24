@@ -627,8 +627,8 @@ BigBiSList = {}
 dofile("UI.lua")
 
 local UI = BigBiSList.UI
-local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
-local expectedValueKeys = { planner = "value", phase = "rank", leveling = "value", enhance = "value", wishlist = "expansion", gear = "currentRank" }
+local modes = { "planner", "phase", "leveling", "enhance", "wishlist" }
+local expectedValueKeys = { planner = "value", phase = "rank", leveling = "value", enhance = "value", wishlist = "expansion" }
 for _, mode in ipairs(modes) do
     for _, compact in ipairs({ false, true }) do
         local definitions = UI:GetViewColumnDefinitions(mode, compact)
@@ -921,6 +921,8 @@ end
 
 CreateFrame = function(_, _, parent) return frame(parent) end
 BigBiSList.Widgets = {
+    GearAdviceColor = function() return 0.83, 0.85, 0.88 end,
+    GetRankColor = function() return 1, 1, 1 end,
     CreateItemRow = function(_, parent, height)
         local row = frame(parent, 0, height)
         row.highlight = frame(row)
@@ -1206,6 +1208,7 @@ local function fakeFrame(height)
     function frame:SetPoint(...) self.pointCount = self.pointCount + 1 end
     function frame:Show() self.shown = true; self.showCount = self.showCount + 1 end
     function frame:Hide() self.shown = false; self.hideCount = self.hideCount + 1 end
+    function frame:IsShown() return self.shown end
     function frame:GetHeight() return self.height end
     function frame:SetWidth(width) self.width = width end
     function frame:GetWidth() return self.width or 1200 end
@@ -1237,6 +1240,9 @@ UI.body = fakeFrame()
 UI.details = fakeFrame()
 UI.detailsHeader = fakeFrame()
 UI.detailsBackButton = fakeFrame()
+UI.detailsBackButton.label = { SetText = function() end }
+UI.gearFrame = fakeFrame()
+UI.slotContextFrame = fakeFrame()
 UI.contentRegion = fakeFrame()
 UI.contentPanel = fakeFrame()
 UI.listToolbar = fakeFrame()
@@ -1244,6 +1250,7 @@ UI.filterDrawer = fakeFrame(140)
 UI.filterDrawerOpen = false
 UI.inspectorToggleButton = { SetSelected = function() end }
 UI.ViewSupportsFilters = function() return true end
+UI.GetSelection = function() return { tab = "Wishlist" } end
 UI.IsInspectorVisible = function() return inspectorVisible end
 UI.RefreshFilterDrawer = function() end
 UI.GetActiveFilterChips = function() return {} end
@@ -1325,6 +1332,7 @@ local function frame()
     function value:SetPoint(...) table.insert(self.points, { ... }) end
     function value:Show() self.shown = true end
     function value:Hide() self.shown = false end
+    function value:IsShown() return self.shown end
     function value:SetShown(shown) self.shown = shown end
     function value:SetWidth(width) self.width = width end
     function value:GetWidth() return self.width or 1200 end
@@ -1338,14 +1346,19 @@ UI.body = frame()
 UI.details = frame()
 UI.detailsHeader = frame()
 UI.detailsBackButton = frame()
+UI.detailsBackButton.label = { SetText = function() end }
+UI.gearFrame = frame()
+UI.slotContextFrame = frame()
 UI.contentRegion = frame()
 UI.contentPanel = frame()
+UI.contentScroll = frame()
 UI.listToolbar = frame()
 UI.filterDrawer = frame()
 UI.fixedActiveFilterBar = frame()
 UI.inspectorToggleButton = { SetSelected = function() end }
 UI.filterDrawerOpen = false
 UI.ViewSupportsFilters = function() return true end
+UI.GetSelection = function() return { tab = "Wishlist" } end
 UI.IsInspectorVisible = function() return false end
 UI.RefreshFixedActiveFilterBar = function() return 28 end
 UI.RefreshFilterDrawer = function() end
@@ -1671,6 +1684,7 @@ dofile("UI.lua")
 local UI = BigBiSList.UI
 local loaded = {}
 BigBiSList.Widgets = {
+    GetRankColor = function() return 1, 1, 1 end,
     BindTooltip = function(_, owner, render) owner.tooltipRenderer = render end,
     SetCellText = function(_, label, text, maxLines, lineHeight, width)
         label.fullText = text
@@ -1757,7 +1771,7 @@ firstButton.scripts.OnClick(firstButton, "RightButton")
 equal(inspectorCalls, 0, "empty pooled icon cannot open the previous inspector")
 ''')
 
-    def test_v17_defaults_expose_mode_view_and_inspector_state(self):
+    def test_current_defaults_expose_mode_view_and_inspector_state(self):
         self.run_lua(r'''
 BigBiSList = {}
 dofile("Config.lua")
@@ -1765,8 +1779,8 @@ BigBiSListDB = nil
 BigBiSListCharDB = nil
 BigBiSList:EnsureDatabase()
 
-equal(BigBiSListDB.profile.defaultsVersion, 17, "profile defaults version")
-equal(BigBiSListCharDB.defaultsVersion, 17, "character defaults version")
+equal(BigBiSListDB.profile.defaultsVersion, 19, "profile defaults version")
+equal(BigBiSListCharDB.defaultsVersion, 19, "character defaults version")
 equal(BigBiSList:GetContentMode(), "endgame", "default content mode")
 equal(BigBiSList:GetSelection().phase, "PR", "stored endgame phase")
 equal(BigBiSList:GetEffectivePhaseKey(), "PR", "effective endgame phase")
@@ -2193,8 +2207,9 @@ equal(hunter.not_ranked_label, nil, "relevant item has no fallback label")
 
 local blinkstrike = BigBiSList:GetWishlistExpansionSummary(31332, "Warrior", "Fury")
 local phaseOne = blinkstrike.selected_spec_ranking.phases.T4
-equal(phaseOne.short_label, "BiS", "strongest same-phase rank wins")
-equal(phaseOne.rank_group, "bis", "strongest rank group")
+equal(phaseOne.short_label, "Depends on setup", "conditional source ratings are not collapsed into BiS")
+equal(phaseOne.status, "conditional", "conditional rating status")
+expect(#phaseOne.evidence > 0, "source evidence remains available")
 
 local foreign = BigBiSList:GetWishlistExpansionSummary(29021, "Mage", "Arcane")
 equal(#foreign.relevant_spec_rankings, 0, "foreign class has no relevant specs")

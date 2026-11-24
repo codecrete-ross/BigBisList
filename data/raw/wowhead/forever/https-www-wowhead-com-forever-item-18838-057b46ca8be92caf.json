@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Dirk Item Level 78 Binds when picked up One-Hand Dagger 95 - 143 Damage Speed 2.00 (59.50 damage per second) +7 Stamina Durability 75 / 75 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 28 Attack Power. Sell Price: 4 84 58",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 18838,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.5,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +28 Attack Power.",
+        "stats": {
+          "attack_power": 28
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 18838,
+    "item_level": 78,
+    "name": "Grand Marshal's Dirk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_percent": 1.0,
+      "stamina": 7.0
+    },
+    "weapon_max_damage": 143,
+    "weapon_min_damage": 95,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18838"
+  },
+  "linked_entities": [],
+  "name": "Grand Marshal's Dirk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18838",
+  "url": "https://www.wowhead.com/forever/item=18838"
+}

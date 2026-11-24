@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Resilient Cape Item Level 29 Binds when equipped Back 21 Armor +6 Intellect Requires Level 24 Sell Price: 12 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 14400,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 21,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 14400,
+    "item_level": 29,
+    "name": "Resilient Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 24,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14400"
+  },
+  "linked_entities": [],
+  "name": "Resilient Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14400",
+  "url": "https://www.wowhead.com/forever/item=14400"
+}

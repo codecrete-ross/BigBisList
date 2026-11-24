@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1861"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:33.577578+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 7508,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1861",
+      "subject_id": 1861,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": 10,
+    "name": "Mirror Lake",
+    "quest_id": 1861,
+    "reward_item_roles": {
+      "7508": "choices",
+      "9513": "choices"
+    },
+    "side": "Both",
+    "zone": "Mage"
+  },
+  "source_content_digest": "b4fe1b11fc6f1e9481bdeaec6bdbfacb020475bc6adec6c7e4695343e0727bef",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1861"
+}

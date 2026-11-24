@@ -1,0 +1,64 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins Forever Database",
+      "source": "https://db.icy-veins.com/wow-forever/quests/92065"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:59:48.877104+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "icyveins",
+  "relationships": [
+    {
+      "object_id": 260216,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/92065",
+      "subject_id": 92065,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 260217,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/92065",
+      "subject_id": 92065,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 260218,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/92065",
+      "subject_id": 92065,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 260219,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/92065",
+      "subject_id": 92065,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 47,
+    "name": "Blackmaw Reclamation",
+    "quest_id": 92065,
+    "reward_item_roles": {
+      "260216": "choices",
+      "260217": "choices",
+      "260218": "choices",
+      "260219": "choices"
+    },
+    "side": "Both",
+    "zone": "Blackmaw Hold"
+  },
+  "source_capture_format": "indexed page, manually normalized exact public fields and reward link targets on 2026-11-12",
+  "source_content_digest": "6200d9a9e6f8212626dabb06c5c67c553c0e9760d9531a5139612d4ffa007678",
+  "url": "https://db.icy-veins.com/wow-forever/quests/92065"
+}

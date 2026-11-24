@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Strength of Mugamba Item Level 68 Binds when picked up Unique Neck +8 Strength +8 Agility +13 Stamina Classes: Warrior Equip: Increased Defense + 5.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19576,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +5.",
+        "stats": {
+          "defense": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +5."
+    ],
+    "id": 19576,
+    "item_level": 68,
+    "name": "Strength of Mugamba",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0,
+      "defense": 5.0,
+      "stamina": 13.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19576"
+  },
+  "linked_entities": [],
+  "name": "Strength of Mugamba",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19576",
+  "url": "https://www.wowhead.com/forever/item=19576"
+}

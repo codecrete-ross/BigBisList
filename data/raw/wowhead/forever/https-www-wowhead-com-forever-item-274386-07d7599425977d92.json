@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Toy Soldier Item Level 58 Binds when picked up Unique-Equipped Trinket Restores + 16 health per 5 sec. Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown) Sell Price: 1 53 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 274386,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +16 health per 5 sec.",
+        "stats": {
+          "hp5": 16
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 274386,
+    "item_level": 58,
+    "name": "Toy Soldier",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hp5": 16.0
+    },
+    "use_effects": [
+      "Use: Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274386"
+  },
+  "linked_entities": [
+    {
+      "id": 1293820,
+      "name": "Increases your chance to Dodge by 3% for 20 sec. This effect is doubled in Strongholds and Cities.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293820"
+    }
+  ],
+  "name": "Toy Soldier",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "986c49b2787916dc31c1c8bd7b1bce7f9cc420c104daef376c499919856186ea",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274386",
+  "url": "https://www.wowhead.com/forever/item=274386"
+}

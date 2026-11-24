@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seared Grove Shoulderpads Item Level 30 Binds when picked up Shoulder Cloth 35 Armor +8 Stamina +3 Intellect Requires Level 25 Equip: Improves your chance to get a critical strike by 0.5%. Sell Price: 18 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 284399,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%."
+    ],
+    "id": 284399,
+    "item_level": 30,
+    "name": "Seared Grove Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "intellect": 3.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284399"
+  },
+  "linked_entities": [],
+  "name": "Seared Grove Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d9e84c813c464e3a9fd7b7ac78c3a18c4b96515760ec71dc2f5c242ae69e3b7d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284399",
+  "url": "https://www.wowhead.com/forever/item=284399"
+}

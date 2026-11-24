@@ -24,6 +24,8 @@ class AddonShellTests(unittest.TestCase):
                 "DataIndex.lua",
                 "Widgets.lua",
                 "UI.lua",
+                "DetailsSources.lua",
+                "ComparisonUI.lua",
                 "Tooltip.lua",
                 "Minimap.lua",
                 "Core.lua",

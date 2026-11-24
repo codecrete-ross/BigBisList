@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Black Pearl Ring Item Level 24 Binds when equipped Unique Finger +2 Stamina +2 Intellect +6 Spirit Requires Level 19 Sell Price: 11 53 Dropped by: Lady Vespira Drop Chance: 35.78%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 6332,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 6332,
+    "item_level": 24,
+    "name": "Black Pearl Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 19,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 2.0,
+      "spirit": 6.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6332"
+  },
+  "linked_entities": [],
+  "name": "Black Pearl Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 35.78,
+      "entity_name": "Lady Vespira",
+      "source_url": "https://www.wowhead.com/forever/item=6332",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6332",
+  "url": "https://www.wowhead.com/forever/item=6332"
+}

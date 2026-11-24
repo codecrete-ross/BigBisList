@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handcrafted Mastersmith Girdle Item Level 63 Binds when picked up Waist Plate 369 Armor +11 Strength +10 Agility +10 Stamina +150 Armor Requires Level 58 Sell Price: 2 2 69 Dropped by: Goraluk Anvilcrack Drop Chance: 22.91%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:08.4807812Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 13502,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 369,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13502,
+    "item_level": 63,
+    "name": "Handcrafted Mastersmith Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "stamina": 10.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13502"
+  },
+  "linked_entities": [],
+  "name": "Handcrafted Mastersmith Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.91,
+      "entity_name": "Goraluk Anvilcrack",
+      "source_url": "https://www.wowhead.com/forever/item=13502",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a9685960fcd7bee7a61f8dcb04be45053f546fa547099200e076ee70c10bfc73",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13502",
+  "url": "https://www.wowhead.com/forever/item=13502"
+}

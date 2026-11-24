@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onyxia Blood Talisman Item Level 65 Binds when picked up Unique-Equipped Trinket Restores + 9 health per 5 sec. +20 Fire Resistance Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown) Sell Price: 3 38 58",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18406,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +9 health per 5 sec.",
+        "stats": {
+          "hp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 18406,
+    "item_level": 65,
+    "name": "Onyxia Blood Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 20.0,
+      "hp5": 9.0
+    },
+    "use_effects": [
+      "Use: Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18406"
+  },
+  "linked_entities": [
+    {
+      "id": 1287808,
+      "name": "Reduces your magic damage taken from Dragon Breath spells by 33% for 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1287808"
+    }
+  ],
+  "name": "Onyxia Blood Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18406",
+  "url": "https://www.wowhead.com/forever/item=18406"
+}

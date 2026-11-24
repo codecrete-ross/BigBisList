@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Evergreen Shield 3 sec cast Tools: Blacksmith Hammer Reagents: Malleable Essence of Nature (2), Legionite Bar , Heavy Thorium Bar (10) Evergreen Shield Item Level 65 Binds when equipped Off Hand Shield 2468 Armor 44 Block +16 Stamina Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects. Sell Price: 5 59 55",
+  "entity_id": 1306536,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:40+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 251290,
+      "name": "Legionite Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=251290"
+    },
+    {
+      "id": 251291,
+      "name": "Heavy Thorium Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=251291"
+    },
+    {
+      "id": 274030,
+      "name": "Malleable Essence of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=274030"
+    },
+    {
+      "id": 279262,
+      "name": "Evergreen Shield",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279262"
+    },
+    {
+      "id": 1306536,
+      "name": "Evergreen Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306536"
+    }
+  ],
+  "name": "Evergreen Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279262,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1306536",
+      "subject_id": 1306536,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1306536,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1306536",
+  "url": "https://www.wowhead.com/forever/spell=1306536"
+}

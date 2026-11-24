@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knucklebone Ring Item Level 41 Binds when picked up Unique-Equipped Finger +7 Stamina Requires Level 36 Equip: + 2 Weapon Damage. Sell Price: 58 59 Dropped by: Deathless Marrow Drop Chance: 32.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 274614,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +2 Weapon Damage.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +2 Weapon Damage."
+    ],
+    "id": 274614,
+    "item_level": 41,
+    "name": "Knucklebone Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 36,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274614"
+  },
+  "linked_entities": [],
+  "name": "Knucklebone Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.0,
+      "entity_name": "Deathless Marrow",
+      "source_url": "https://www.wowhead.com/forever/item=274614",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "53280b0209e16ea3e5eca6927576c11f9916a585042910651bc7018ce566497a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274614",
+  "url": "https://www.wowhead.com/forever/item=274614"
+}

@@ -1,0 +1,68 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Nightcrawlers Item Level 20 Requires Fishing (50) Use: When applied to your fishing pole, increases Fishing by 50 for 10 min. Max Stack: 20 Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:46:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6530,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: When applied to your fishing pole, increases Fishing by 50 for 10 min.",
+        "type": "conditional"
+      }
+    ],
+    "id": 6530,
+    "item_level": 20,
+    "name": "Nightcrawlers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: When applied to your fishing pole, increases Fishing by 50 for 10 min. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6530"
+  },
+  "linked_entities": [
+    {
+      "id": 356,
+      "name": "Fishing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=356"
+    },
+    {
+      "id": 8088,
+      "name": "When applied to your fishing pole, increases Fishing by 50 for 10 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8088"
+    }
+  ],
+  "name": "Nightcrawlers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Fishing",
+      "raw_text": "Nightcrawlers Item Level 20 Requires Fishing (50) Use: When applied to your fishing pole, increases Fishing by 50 for 10 min. Max Stack: 20 Sell Price: 25",
+      "scope": "equip_or_use",
+      "skill": 50,
+      "source_url": "https://www.wowhead.com/forever/item=6530",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "efce6e8949ca569dcf616aefdd746f7b90bcdd51086af3bb859244417a0c5c38",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6530",
+  "url": "https://www.wowhead.com/forever/item=6530"
+}

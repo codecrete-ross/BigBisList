@@ -1,0 +1,52 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:40.578370+00:00",
+  "flavor": "forever",
+  "item_id": 274948,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Bottle of Powderfuse Port Item Level 42 Binds when picked up Main Hand Dagger 20 - 38 Damage Speed 1.80 (16.11 damage per second) +7 Intellect Durability 55 / 55 Equip: Increases healing done by up to 63 and damage done by up to 21 for all magical spells and effects. Sell Price: 1 29 47",
+      "dps": 16.11,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases healing done by up to 63 and damage done by up to 21 for all magical spells and effects.",
+          "stats": {
+            "healing_power": 63,
+            "spell_damage": 21
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases healing done by up to 63 and damage done by up to 21 for all magical spells and effects."
+      ],
+      "id": 274948,
+      "item_level": 42,
+      "name": "Bottle of Powderfuse Port",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "healing_power": 63.0,
+        "intellect": 7.0,
+        "spell_damage": 21.0
+      },
+      "weapon_max_damage": 38,
+      "weapon_min_damage": 20,
+      "weapon_speed": 1.8,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274948"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "13c28fe5ae89b76606d6ed4bbc9484b652dabaa663f41294778e17796366ab6e",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/274948#sha256-13c28fe5ae89b76606d6ed4bbc9484b652dabaa663f41294778e17796366ab6e"
+}

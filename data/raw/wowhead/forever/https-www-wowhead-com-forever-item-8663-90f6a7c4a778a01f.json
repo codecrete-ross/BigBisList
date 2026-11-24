@@ -1,0 +1,54 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Mithril Insignia Item Level 40 Quest Item Unique Trinket +50 Armor Requires Blacksmithing (210) \"E Pluribus Mithril\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 8663,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 8663,
+    "item_level": 40,
+    "name": "Mithril Insignia",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=8663"
+  },
+  "linked_entities": [
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    }
+  ],
+  "name": "Mithril Insignia",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Mithril Insignia Item Level 40 Quest Item Unique Trinket +50 Armor Requires Blacksmithing (210) \"E Pluribus Mithril\"",
+      "scope": "equip_or_use",
+      "skill": 210,
+      "source_url": "https://www.wowhead.com/forever/item=8663",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c0a8025f7d71b76b582ec6abe1aed8a03e2d8d8da64f8a2be40b4446afbbcb03",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/8663",
+  "url": "https://www.wowhead.com/forever/item=8663"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bonebinder's Signet Item Level 31 Binds when picked up Unique-Equipped Finger +5 Strength +6 Spirit +40 Armor Requires Level 25 Sell Price: 24 30 Dropped by: Atrexis the Grave Knight Drop Chance: 35.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 273032,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 273032,
+    "item_level": 31,
+    "name": "Bonebinder's Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spirit": 6.0,
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273032"
+  },
+  "linked_entities": [],
+  "name": "Bonebinder's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 35.0,
+      "entity_name": "Atrexis the Grave Knight",
+      "source_url": "https://www.wowhead.com/forever/item=273032",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "fdcae48d9a9e224be1d069a4cf8fd90fc7cbab201a6b77c9dc41778f2c8080c7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273032",
+  "url": "https://www.wowhead.com/forever/item=273032"
+}

@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Earthpower Vest Item Level 66 Binds when picked up Chest Cloth 93 Armor +22 Intellect Durability 80 / 80 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 25 . Sell Price: 2 54 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21183,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 93,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 21183,
+    "item_level": 66,
+    "name": "Earthpower Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 22.0,
+      "spell_power": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21183"
+  },
+  "linked_entities": [],
+  "name": "Earthpower Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21183",
+  "url": "https://www.wowhead.com/forever/item=21183"
+}

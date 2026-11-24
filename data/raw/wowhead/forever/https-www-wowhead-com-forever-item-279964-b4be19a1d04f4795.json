@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Greenhouse Item Level 28 Requires Herbalism (140) Use: Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279964,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby.",
+        "type": "use"
+      }
+    ],
+    "id": 279964,
+    "item_level": 28,
+    "name": "Greenhouse",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279964"
+  },
+  "linked_entities": [
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=182"
+    },
+    {
+      "id": 1307248,
+      "name": "Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. May be placed over an Incense Candle to replace it. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307248"
+    }
+  ],
+  "name": "Greenhouse",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "5c06d9d025c52f58266761239caad7221567856878dd49effcef93b7d058b117",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279964",
+  "url": "https://www.wowhead.com/forever/item=279964"
+}

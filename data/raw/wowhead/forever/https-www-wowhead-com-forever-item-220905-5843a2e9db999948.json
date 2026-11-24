@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Dreadweave Mantle Item Level 55 Binds when picked up Shoulder Cloth 59 Armor +11 Stamina +9 Intellect +40 Armor Durability 50 / 50 Classes: Priest , Mage , Warlock Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 8 . Blood Guard's Dreadweave (0/6) Blood Guard's Dreadweave Hat Blood Guard's Dreadweave Mantle First Sergeant's Dreadweave Boots First Sergeant's Dreadweave Gloves Stone Guard's Dreadweave Leggings Stone Guard's Dreadweave Vest (3) Set : +15 Stamina. (6) Set : Increases damage and healing done by magical spells and effects by up to 18. Sell Price: 1 12 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 220905,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 59,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+    ],
+    "id": 220905,
+    "item_level": 55,
+    "name": "Blood Guard's Dreadweave Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 9.0,
+      "spell_power": 8.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220905"
+  },
+  "linked_entities": [
+    {
+      "id": 220904,
+      "name": "Stone Guard's Dreadweave Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220904"
+    },
+    {
+      "id": 220905,
+      "name": "Blood Guard's Dreadweave Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220905"
+    },
+    {
+      "id": 220906,
+      "name": "Stone Guard's Dreadweave Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220906"
+    },
+    {
+      "id": 220907,
+      "name": "Blood Guard's Dreadweave Hat",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220907"
+    },
+    {
+      "id": 220908,
+      "name": "First Sergeant's Dreadweave Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220908"
+    },
+    {
+      "id": 220909,
+      "name": "First Sergeant's Dreadweave Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220909"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Blood Guard's Dreadweave Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6586485a09624a38bb95d78f43c14529ea0fcfedd97a5ec9a75bf1195384fc4c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220905",
+  "url": "https://www.wowhead.com/forever/item=220905"
+}

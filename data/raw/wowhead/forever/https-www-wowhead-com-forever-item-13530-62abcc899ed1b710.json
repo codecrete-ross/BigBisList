@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fangdrip Runners Item Level 61 Binds when picked up Feet Cloth 60 Armor +20 Nature Resistance Durability 35 / 35 Requires Level 56 Equip: Increases damage done by Nature spells and effects by up to 13. Equip: Your spells pierce 3 Magical Resistance. Sell Price: 1 56 68 Dropped by: Nerub'enkan Drop Chance: 11.26%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:50.3485010Z",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 13530,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 60,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Nature spells and effects by up to 13.",
+        "stats": {
+          "nature_damage": 13
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your spells pierce 3 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Nature spells and effects by up to 13.",
+      "Equip: Your spells pierce 3 Magical Resistance."
+    ],
+    "id": 13530,
+    "item_level": 61,
+    "name": "Fangdrip Runners",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "nature_damage": 13.0,
+      "nature_resistance": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13530"
+  },
+  "linked_entities": [],
+  "name": "Fangdrip Runners",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.26,
+      "entity_name": "Nerub'enkan",
+      "source_url": "https://www.wowhead.com/forever/item=13530",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "255eaa91a34bc4aeec2cff708af43a24f3d43a660abfaec4476e5fc16b5e3a5b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13530",
+  "url": "https://www.wowhead.com/forever/item=13530"
+}

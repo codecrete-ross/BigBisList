@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchanted Lute Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Summons an enchanted lute that allows you and others sitting nearby to gain [( 60 < 10 ? 28 : ( 60 < 20 ? 71 : ( 60 < 30 ? 114 : ( 60 < 40 ? 163 : ( 60 < 50 ? 211 : ( 60 < 60 ? 260 : 308 ))))))] Armor, 13 increase to all stats, and 22 increase to all resistances, mutually exclusive with Mark of the Wild. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307234,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:16+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307234,
+      "name": "Enchanted Lute",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307234"
+    }
+  ],
+  "name": "Enchanted Lute",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "f86cdaecee18bbdb35b8782ba124fef4618caae6f43adf7dd5be498754501de5",
+  "spell_id": 1307234,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307234",
+  "url": "https://www.wowhead.com/forever/spell=1307234"
+}

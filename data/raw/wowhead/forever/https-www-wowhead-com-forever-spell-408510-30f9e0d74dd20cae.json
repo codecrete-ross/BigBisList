@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Water Shield Talent Instant Requires Shaman Requires level 20 The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time. (3.5s cooldown)",
+  "entity_id": 408510,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:59+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 408510,
+      "name": "Water Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=408510"
+    }
+  ],
+  "name": "Water Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "4fe7302597cfb898d99424582767d676eefb02bd4e562d92b61a9fa1ac5247a4",
+  "spell_id": 408510,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/408510",
+  "url": "https://www.wowhead.com/forever/spell=408510"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/547"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:14.223887+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 270046,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/547",
+      "subject_id": 547,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 26,
+    "name": "Humbert's Sword",
+    "quest_id": 547,
+    "quest_level": 30,
+    "reward_item_ids": [
+      270046
+    ],
+    "zone": "Hillsbrad Foothills"
+  },
+  "source_content_digest": "5a1d02ca2c7f12f8dd8c60d2214d1fa045d8c0cbc63510ad8771ebe5ae6d9768",
+  "url": "https://guide.wow4ever.se/en/quests/547"
+}

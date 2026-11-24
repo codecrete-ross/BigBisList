@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gold-flecked Gloves Item Level 22 Binds when picked up Hands Cloth 25 Armor +7 Strength +5 Fire Resistance Durability 20 / 20 Requires Level 17 Sell Price: 4 51 Dropped by: Sneed Drop Chance: 66.79%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 5195,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 25,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5195,
+    "item_level": 22,
+    "name": "Gold-flecked Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 5.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5195"
+  },
+  "linked_entities": [],
+  "name": "Gold-flecked Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 66.79,
+      "entity_name": "Sneed",
+      "source_url": "https://www.wowhead.com/forever/item=5195",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5195",
+  "url": "https://www.wowhead.com/forever/item=5195"
+}

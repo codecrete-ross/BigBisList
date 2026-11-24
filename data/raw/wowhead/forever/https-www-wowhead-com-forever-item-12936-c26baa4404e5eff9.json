@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Battleborn Armbraces Item Level 63 Binds when picked up Wrist Plate 287 Armor +7 Spirit Requires Level 58 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 2 2 69 Dropped by: Warchief Rend Blackhand Drop Chance: 27.94%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:56.9462740Z",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 12936,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 287,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 12936,
+    "item_level": 63,
+    "name": "Battleborn Armbraces",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "spirit": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12936"
+  },
+  "linked_entities": [],
+  "name": "Battleborn Armbraces",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.94,
+      "entity_name": "Warchief Rend Blackhand",
+      "source_url": "https://www.wowhead.com/forever/item=12936",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1ff6eaba2428eec0ac704dddb15758d316c2db7da5ab7ee3f62159383bff5911",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12936",
+  "url": "https://www.wowhead.com/forever/item=12936"
+}

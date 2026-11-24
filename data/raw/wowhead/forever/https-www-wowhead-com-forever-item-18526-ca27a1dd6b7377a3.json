@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crown of the Ogre King Item Level 63 Binds when picked up Head Cloth 73 Armor +12 Stamina +16 Intellect +11 Spirit Durability 50 / 50 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Your spells pierce 4 Magical Resistance. Sell Price: 1 72 74 Dropped by: King Gordok Drop Chance: 23.67%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18526,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 73,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your spells pierce 4 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 18526,
+    "item_level": 63,
+    "name": "Crown of the Ogre King",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 16.0,
+      "spirit": 11.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18526"
+  },
+  "linked_entities": [],
+  "name": "Crown of the Ogre King",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.67,
+      "entity_name": "King Gordok",
+      "source_url": "https://www.wowhead.com/forever/item=18526",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "44051dcbcde2025b2a8eea16ac25674e472d5ce6d3eee4b6a7ce2f9a3e865c9f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18526",
+  "url": "https://www.wowhead.com/forever/item=18526"
+}

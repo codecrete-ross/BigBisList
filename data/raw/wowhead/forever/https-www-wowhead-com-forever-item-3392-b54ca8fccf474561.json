@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ringed Helm Item Level 31 Binds when equipped Head Leather 77 Armor +9 Stamina +8 Spirit Durability 50 / 50 Requires Level 26 Sell Price: 16 63 Dropped by: Garneg Charskull Drop Chance: 31.10%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 3392,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 77,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 3392,
+    "item_level": 31,
+    "name": "Ringed Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 26,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 8.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3392"
+  },
+  "linked_entities": [],
+  "name": "Ringed Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.1,
+      "entity_name": "Garneg Charskull",
+      "source_url": "https://www.wowhead.com/forever/item=3392",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "70710675ccb13ec74134a97cfc1dda8ae3ef660e65f9409a959b1c535ded7845",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3392",
+  "url": "https://www.wowhead.com/forever/item=3392"
+}

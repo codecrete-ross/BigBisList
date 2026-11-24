@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Coated Cerulean Vial Item Level 1 Quest Item Unique Use: Fill at the orange crystal pool in Maraudon.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:16.9003624Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 17693,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Fill at the orange crystal pool in Maraudon.",
+        "type": "use"
+      }
+    ],
+    "id": 17693,
+    "item_level": 1,
+    "name": "Coated Cerulean Vial",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Fill at the orange crystal pool in Maraudon."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=17693"
+  },
+  "linked_entities": [
+    {
+      "id": 21884,
+      "name": "Fill at the orange crystal pool in Maraudon.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21884"
+    }
+  ],
+  "name": "Coated Cerulean Vial",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "1d2667aa09c552f6e12fa20bce8a02b199f27af6622619082537bba455a41922",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17693",
+  "url": "https://www.wowhead.com/forever/item=17693"
+}

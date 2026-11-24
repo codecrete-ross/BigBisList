@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ukko's Ring of Darkness Item Level 76 Binds when picked up Unique Finger +13 Stamina Restores + 18 health per 5 sec. +20 Shadow Resistance Requires Level 60 Sell Price: 10 29 95 Dropped by: Princess Yauj Drop Chance: 21.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 21687,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +18 health per 5 sec.",
+        "stats": {
+          "hp5": 18
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 21687,
+    "item_level": 76,
+    "name": "Ukko's Ring of Darkness",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hp5": 18.0,
+      "shadow_resistance": 20.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21687"
+  },
+  "linked_entities": [],
+  "name": "Ukko's Ring of Darkness",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.27,
+      "entity_name": "Princess Yauj",
+      "source_url": "https://www.wowhead.com/forever/item=21687",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21687",
+  "url": "https://www.wowhead.com/forever/item=21687"
+}

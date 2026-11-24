@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Sense Demons Instant Requires Warlock Requires level 24 Shows the location of all nearby demons on the minimap until cancelled. Only one type of tracking can be used at a time.",
+  "entity_id": 5500,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:26+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5500,
+      "name": "Sense Demons",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5500"
+    }
+  ],
+  "name": "Sense Demons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "04ee349c516b7f6b14edf49ba58a32388d6f61d44539d882e1b093abcd198c8c",
+  "spell_id": 5500,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5500",
+  "url": "https://www.wowhead.com/forever/spell=5500"
+}

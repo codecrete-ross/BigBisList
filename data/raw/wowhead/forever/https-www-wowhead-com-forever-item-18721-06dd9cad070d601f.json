@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Barrage Girdle Item Level 61 Binds when picked up Waist Mail 202 Armor +8 Stamina +8 Intellect +6 Spirit Durability 40 / 40 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 23 . Sell Price: 1 56 68 Dropped by: Cannon Master Willey Drop Chance: 19.30%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:26.5532038Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 18721,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 202,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 18721,
+    "item_level": 61,
+    "name": "Barrage Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "spell_power": 23.0,
+      "spirit": 6.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18721"
+  },
+  "linked_entities": [],
+  "name": "Barrage Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.3,
+      "entity_name": "Cannon Master Willey",
+      "source_url": "https://www.wowhead.com/forever/item=18721",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e50a5740c920db30aafd3a25f27aef4bca3715d13ed41e6138ca81e5644056a8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18721",
+  "url": "https://www.wowhead.com/forever/item=18721"
+}

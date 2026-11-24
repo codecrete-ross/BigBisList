@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heart of the Primeval Item Level 40 Binds when picked up Unique-Equipped Trinket +18 Frost Resistance Requires Level 35 Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown) Sell Price: 54 44 Dropped by: Primeval Elemental Drop Chance: 42.51%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T09:55:31.9856288Z",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 274615,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 274615,
+    "item_level": 40,
+    "name": "Heart of the Primeval",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 35,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 18.0
+    },
+    "use_effects": [
+      "Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274615"
+  },
+  "linked_entities": [
+    {
+      "id": 1295233,
+      "name": "Increases damage and healing done by magical spells and effects by up to 19 for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1295233"
+    }
+  ],
+  "name": "Heart of the Primeval",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 42.51,
+      "entity_name": "Primeval Elemental",
+      "source_url": "https://www.wowhead.com/forever/item=274615",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "44a1882175e18b6aa6f4b0dbb200fe3af91e45927eb941a3247b1141b5b9c2a9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=274615"
+}

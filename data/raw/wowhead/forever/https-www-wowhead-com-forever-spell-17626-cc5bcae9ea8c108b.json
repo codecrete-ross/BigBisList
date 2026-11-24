@@ -1,0 +1,27 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Flask of the Titans Item Effect Instant Increases the player's maximum health by 1200 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death.",
+  "entity_id": 17626,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:07+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 17626,
+      "name": "Flask of the Titans",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17626"
+    }
+  ],
+  "name": "Flask of the Titans",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 17626,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17626",
+  "url": "https://www.wowhead.com/forever/spell=17626"
+}

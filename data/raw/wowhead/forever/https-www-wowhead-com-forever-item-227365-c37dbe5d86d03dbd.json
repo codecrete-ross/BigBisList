@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227365"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:06:08.0479618Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 910,
+      "collected_at": "2026-11-13T06:06:08.0479618Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227365",
+      "source_content_digest": "07e77f5606e81bffa3b9169eda9b7f69bf08bc9c545be77486e2ec70417d70cc",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227365"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 226785,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227365",
+      "subject_id": 227365,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227365,
+    "contents_name_on_tooltip": "Feralheart Mantle",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 226785,
+    "title": "Mender's Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "07e77f5606e81bffa3b9169eda9b7f69bf08bc9c545be77486e2ec70417d70cc",
+  "url": "https://www.wowhead.com/forever/item=227365"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Swamp Roamer's Band Item Level 39 Binds when equipped Finger +6 Stamina Requires Level 34 Equip: Increases movement speed by 3% in Dustwallow Marsh and Swamp of Sorrows. Sell Price: 41 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 285089,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases movement speed by 3% in Dustwallow Marsh and Swamp of Sorrows.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases movement speed by 3% in Dustwallow Marsh and Swamp of Sorrows."
+    ],
+    "id": 285089,
+    "item_level": 39,
+    "name": "Swamp Roamer's Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=285089"
+  },
+  "linked_entities": [
+    {
+      "id": 1317486,
+      "name": "Increases movement speed by 3% in Dustwallow Marsh and Swamp of Sorrows.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317486"
+    }
+  ],
+  "name": "Swamp Roamer's Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d992cff9b1fd705cd9234b20c71805a0be38d103cd23b68d4becfb000d0ceb73",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/285089",
+  "url": "https://www.wowhead.com/forever/item=285089"
+}

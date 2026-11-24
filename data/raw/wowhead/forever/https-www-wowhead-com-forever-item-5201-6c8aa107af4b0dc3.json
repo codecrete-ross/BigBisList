@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Emberstone Staff Item Level 22 Binds when picked up Two-Hand Staff 34 - 51 Damage Speed 3.00 (14.17 damage per second) +8 Stamina +8 Fire Resistance Durability 80 / 80 Requires Level 17 Equip: Increases damage and healing done by magical spells and effects by up to 24 . Sell Price: 28 22 Dropped by: Captain Greenskin Drop Chance: 37.82%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 5201,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 14.17,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 24.",
+        "stats": {
+          "spell_power": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 24."
+    ],
+    "id": 5201,
+    "item_level": 22,
+    "name": "Emberstone Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 8.0,
+      "spell_power": 24.0,
+      "stamina": 8.0
+    },
+    "weapon_max_damage": 51,
+    "weapon_min_damage": 34,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5201"
+  },
+  "linked_entities": [],
+  "name": "Emberstone Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 37.82,
+      "entity_name": "Captain Greenskin",
+      "source_url": "https://www.wowhead.com/forever/item=5201",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5201",
+  "url": "https://www.wowhead.com/forever/item=5201"
+}

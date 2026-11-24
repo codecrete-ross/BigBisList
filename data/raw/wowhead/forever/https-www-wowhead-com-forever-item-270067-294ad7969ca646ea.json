@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wild Headdress Item Level 39 Binds when picked up Head Leather 88 Armor +11 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 42 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 270067,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 88,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 270067,
+    "item_level": 39,
+    "name": "Wild Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_power": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270067"
+  },
+  "linked_entities": [],
+  "name": "Wild Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270067",
+  "url": "https://www.wowhead.com/forever/item=270067"
+}

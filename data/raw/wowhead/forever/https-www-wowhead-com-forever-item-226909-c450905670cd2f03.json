@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deathmist Mask Item Level 60 Binds when picked up Head Cloth 75 Armor +24 Stamina +24 Intellect Durability 60 / 60 Classes: Warlock Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Deathmist Raiment (0/8) Item #226927 Item #226928 Item #226926 Item #226925 Item #226924 Item #226923 Item #226922 Item #226921 Sell Price: 1 95 98",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 226909,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 226909,
+    "item_level": 60,
+    "name": "Deathmist Mask",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 24.0,
+      "spell_power": 18.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226909"
+  },
+  "linked_entities": [],
+  "name": "Deathmist Mask",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "eb5e6a3b4d80e7f829dcfdd2cb42817941935c308bd31bb8a8507ce201caf652",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226909",
+  "url": "https://www.wowhead.com/forever/item=226909"
+}

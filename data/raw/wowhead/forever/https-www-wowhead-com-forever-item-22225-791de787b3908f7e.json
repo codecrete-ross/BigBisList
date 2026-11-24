@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonskin Cowl Item Level 60 Binds when picked up Head Cloth 69 Armor <Random enchantment> +12 Stamina +15 Intellect Durability 50 / 50 Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 18 . Sell Price: 1 49 22 Dropped by: Gyth Drop Chance: 12.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22225,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 69,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 22225,
+    "item_level": 60,
+    "name": "Dragonskin Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 18.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22225"
+  },
+  "linked_entities": [],
+  "name": "Dragonskin Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.74,
+      "entity_name": "Gyth",
+      "source_url": "https://www.wowhead.com/forever/item=22225",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "063ae13b7016769537426a9e587d9f412c5475259bfb4ac3cefa75b6620d79f6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22225",
+  "url": "https://www.wowhead.com/forever/item=22225"
+}

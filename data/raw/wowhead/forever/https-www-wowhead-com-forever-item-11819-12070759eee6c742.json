@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Second Wind Item Level 59 Binds when picked up Unique-Equipped Trinket Requires Level 54 Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects. Use: Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas. (15 Min Cooldown) Sell Price: 1 89 49 Dropped by: Golem Lord Argelmach Drop Chance: 8.99%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 11819,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 15,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 11819,
+    "item_level": 59,
+    "name": "Second Wind",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 15.0,
+      "spell_damage": 5.0
+    },
+    "use_effects": [
+      "Use: Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas. (15 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=11819"
+  },
+  "linked_entities": [
+    {
+      "id": 15604,
+      "name": "Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=15604"
+    }
+  ],
+  "name": "Second Wind",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.99,
+      "entity_name": "Golem Lord Argelmach",
+      "source_url": "https://www.wowhead.com/forever/item=11819",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e56550259938d36656ea90005c5cee7276bf3835232aeec64f59093e424d59ae",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11819",
+  "url": "https://www.wowhead.com/forever/item=11819"
+}

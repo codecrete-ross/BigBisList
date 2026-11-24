@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Transformative Cocoon Item Level 30 Binds when picked up Unique-Equipped Trinket Use: Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec. (5 Min Cooldown) Sell Price: 17 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 276895,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 276895,
+    "item_level": 30,
+    "name": "Transformative Cocoon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=276895"
+  },
+  "linked_entities": [
+    {
+      "id": 1301167,
+      "name": "Absorb up to 260 to 300 damage and Stun yourself for 5 sec. When the Stun expires, gain 60% increased movement speed for 8 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301167"
+    }
+  ],
+  "name": "Transformative Cocoon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276895",
+  "url": "https://www.wowhead.com/forever/item=276895"
+}

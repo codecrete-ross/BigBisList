@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Satin Hood Item Level 71 Binds when picked up Head Cloth 81 Armor +30 Stamina +18 Intellect +14 Spirit +50 Armor Durability 50 / 50 Classes: Priest Requires Level 60 Equip: Increases healing done by magical spells and effects by up to 40 . Lieutenant Commander's Investiture (0/6) Knight-Captain's Satin Legguards Knight-Captain's Satin Tunic Knight-Lieutenant's Satin Handwraps Knight-Lieutenant's Satin Walkers Lieutenant Commander's Satin Hood Lieutenant Commander's Satin Mantle (2) Set : Increases healing done by spells and effects by up to 44. (4) Set : Increases the duration of your Psychic Scream spell by 1 sec. (6) Set : +20 Stamina. Sell Price: 1 28 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227121,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 81,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 40.",
+        "stats": {
+          "healing_power": 40
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 40."
+    ],
+    "id": 227121,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Satin Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 17371,
+        "text": "Increases healing done by spells and effects by up to 44."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23044,
+        "text": "Increases the duration of your Psychic Scream spell by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 40.0,
+      "intellect": 18.0,
+      "spirit": 14.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227121"
+  },
+  "linked_entities": [
+    {
+      "id": 227119,
+      "name": "Lieutenant Commander's Satin Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227119"
+    },
+    {
+      "id": 227121,
+      "name": "Lieutenant Commander's Satin Hood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227121"
+    },
+    {
+      "id": 227122,
+      "name": "Knight-Captain's Satin Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227122"
+    },
+    {
+      "id": 227125,
+      "name": "Knight-Captain's Satin Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227125"
+    },
+    {
+      "id": 227128,
+      "name": "Knight-Lieutenant's Satin Handwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227128"
+    },
+    {
+      "id": 227129,
+      "name": "Knight-Lieutenant's Satin Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227129"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 17371,
+      "name": "Increases healing done by spells and effects by up to 44.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17371"
+    },
+    {
+      "id": 23044,
+      "name": "Increases the duration of your Psychic Scream spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23044"
+    }
+  ],
+  "name": "Lieutenant Commander's Satin Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "719cbb271ca8a2e92d264dfea17b48b884942a6ef770d56aece342dcd0b69f47",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227121",
+  "url": "https://www.wowhead.com/forever/item=227121"
+}

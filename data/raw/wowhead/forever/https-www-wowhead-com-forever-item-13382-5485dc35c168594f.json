@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cannonball Runner Item Level 61 Binds when picked up Unique-Equipped Trinket Requires Level 56 Equip: Improves your chance to hit by 0.5%. Use: Summons a Scarlet Cannon that fires at targets, dealing 85 to 139 Holy damage. This effect deals 2 times as much damage to Undead enemies. (5 Min Cooldown) Sell Price: 2 8 91 Dropped by: Cannon Master Willey Drop Chance: 18.28%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13382,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Summons a Scarlet Cannon that fires at targets, dealing 85 to 139 Holy damage. This effect deals 2 times as much damage to Undead enemies. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 13382,
+    "item_level": 61,
+    "name": "Cannonball Runner",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5
+    },
+    "use_effects": [
+      "Use: Summons a Scarlet Cannon that fires at targets, dealing 85 to 139 Holy damage. This effect deals 2 times as much damage to Undead enemies. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13382"
+  },
+  "linked_entities": [
+    {
+      "id": 6251,
+      "name": "Summons a Scarlet Cannon that fires at targets, dealing 85 to 139 Holy damage. This effect deals 2 times as much damage to Undead enemies.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6251"
+    }
+  ],
+  "name": "Cannonball Runner",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.28,
+      "entity_name": "Cannon Master Willey",
+      "source_url": "https://www.wowhead.com/forever/item=13382",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c59930c9421a91b9df41a9ecc1c81d2c6a9dbdda6aa958daa9c36c5c395f4a4b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13382",
+  "url": "https://www.wowhead.com/forever/item=13382"
+}

@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scalding Flamehoof Item Level 62 Binds when picked up Unique-Equipped Trinket +4 Strength +4 Agility +4 Stamina +4 Intellect +4 Spirit Requires Level 57 Use: Increases Fire damage taken by 14% and movement speed by 14% for 20 sec. (5 Min Cooldown) Sell Price: 2 11 20 Dropped by: Varrox Bleakhoof Drop Chance: 100.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 280074,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Fire damage taken by 14% and movement speed by 14% for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 280074,
+    "item_level": 62,
+    "name": "Scalding Flamehoof",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "intellect": 4.0,
+      "spirit": 4.0,
+      "stamina": 4.0,
+      "strength": 4.0
+    },
+    "use_effects": [
+      "Use: Increases Fire damage taken by 14% and movement speed by 14% for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=280074"
+  },
+  "linked_entities": [
+    {
+      "id": 1309551,
+      "name": "Increases Fire damage taken by 14% and movement speed by 14% for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1309551"
+    }
+  ],
+  "name": "Scalding Flamehoof",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 100.0,
+      "entity_name": "Varrox Bleakhoof",
+      "source_url": "https://www.wowhead.com/forever/item=280074",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "22ff1cb48434ba6129c409ec1bfd3a46afbf8f2c0491fb3d4f8ed70160547c9b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280074",
+  "url": "https://www.wowhead.com/forever/item=280074"
+}

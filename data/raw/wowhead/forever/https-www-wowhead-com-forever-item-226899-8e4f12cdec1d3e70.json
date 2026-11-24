@@ -1,0 +1,156 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Beastmaster's Shoulders Item Level 65 Binds when picked up Shoulder Mail 286 Armor +12 Agility +18 Stamina +10 Intellect Classes: Hunter Beastmaster Armor (0/8) Beastmaster's Boots Beastmaster's Chest Beastmaster's Gloves Beastmaster's Helm Beastmaster's Legs Beastmaster's Shoulders Beastmaster's Waist Beastmaster's Wrists (2) Set : +8 All Resistances. (3) Set : Restores 8 mana per 5 sec. (4) Set : Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%) (5) Set : When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown) (6) Set : +40 Attack Power. Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-17T21:34:01.103381+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 226899,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 286,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 226899,
+    "item_level": 65,
+    "name": "Beastmaster's Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 450577,
+        "text": "Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1302712,
+        "text": "When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "intellect": 10.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226899"
+  },
+  "linked_entities": [
+    {
+      "id": 226897,
+      "name": "Beastmaster's Wrists",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226897"
+    },
+    {
+      "id": 226898,
+      "name": "Beastmaster's Waist",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226898"
+    },
+    {
+      "id": 226899,
+      "name": "Beastmaster's Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226899"
+    },
+    {
+      "id": 226900,
+      "name": "Beastmaster's Legs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226900"
+    },
+    {
+      "id": 226901,
+      "name": "Beastmaster's Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226901"
+    },
+    {
+      "id": 226902,
+      "name": "Beastmaster's Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226902"
+    },
+    {
+      "id": 226903,
+      "name": "Beastmaster's Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226903"
+    },
+    {
+      "id": 226904,
+      "name": "Beastmaster's Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226904"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450577,
+      "name": "Your melee and ranged autoattacks have a 5% chance to energize you for 200 mana. (Proc chance: 5%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450577"
+    },
+    {
+      "id": 1302712,
+      "name": "When struck in combat, has a 8% chance to remove a Root effect from yourself. Can only occur once every 60 sec. (Proc chance: 8%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302712"
+    }
+  ],
+  "name": "Beastmaster's Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "456918ebed5b8c866d9d9ef337008b926c456d26bb24ebb0a02ed74390d5c073",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226899",
+  "url": "https://www.wowhead.com/forever/item=226899"
+}

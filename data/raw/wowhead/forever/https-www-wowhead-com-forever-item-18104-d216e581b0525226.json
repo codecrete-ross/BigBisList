@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feralsurge Girdle Item Level 63 Binds when picked up Waist Mail 208 Armor +9 Strength +11 Intellect Restores + 8 mana per 5 sec. Requires Level 58 Sell Price: 1 72 74 Dropped by: Warchief Rend Blackhand Drop Chance: 29.24%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:17.9696667Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 18104,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 208,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 18104,
+    "item_level": 63,
+    "name": "Feralsurge Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "mp5": 8.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18104"
+  },
+  "linked_entities": [],
+  "name": "Feralsurge Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.24,
+      "entity_name": "Warchief Rend Blackhand",
+      "source_url": "https://www.wowhead.com/forever/item=18104",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "50e98556cd09a157cc2d6072c61b00de5c39ebf77cb96c5ff5c72b642f1ce0f4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18104",
+  "url": "https://www.wowhead.com/forever/item=18104"
+}

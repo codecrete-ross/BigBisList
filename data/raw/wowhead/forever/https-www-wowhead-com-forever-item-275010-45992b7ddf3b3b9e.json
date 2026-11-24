@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Strongly Scented Hood Item Level 47 Binds when picked up Head Cloth 55 Armor +21 Spirit Requires Level 42 Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 70 75 Dropped by: Overlord Mugg Drop Chance: 9.09%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 275010,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 55,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 275010,
+    "item_level": 47,
+    "name": "Strongly Scented Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 15.0,
+      "spirit": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275010"
+  },
+  "linked_entities": [],
+  "name": "Strongly Scented Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.09,
+      "entity_name": "Overlord Mugg",
+      "source_url": "https://www.wowhead.com/forever/item=275010",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cd33002639d31a8773306a585de809e1694da5fb34fbf660488bb8d6759f6705",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275010",
+  "url": "https://www.wowhead.com/forever/item=275010"
+}

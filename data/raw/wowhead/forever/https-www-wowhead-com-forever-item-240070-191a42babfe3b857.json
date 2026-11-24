@@ -1,0 +1,164 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Waywatcher Mantle Sanctified Item Level 98 Binds when picked up Shoulder Leather 206 Armor +14 Stamina +14 Intellect Durability 70 / 70 Classes: Druid Requires Level 60 Equip: Improves your chance to hit by 2.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 42 . Waywatcher Eclipse (0/8) Waywatcher Hood Waywatcher Mantle Waywatcher Leathers Waywatcher Cord Waywatcher Kilt Waywatcher Sandals Waywatcher Bindings Waywatcher Mitts (2) Set : Your Starfire deals 20% more damage to targets with your Moonfire, and your Wrath deals 20% more damage to targets with your Sunfire. (4) Set : Your Starsurge now increases the damage of your next 2 Starfires. (6) Set : Each time your Sunfire deals periodic damage, you gain 10% increased damage to your next Wrath, stacking up to 5 times. Each time your Moonfire deals periodic damage, you gain 10% increased damage to your next Starfire, stacking up to 5 times. These bonuses do not apply to Starsurge. Sell Price: 9 8 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 240070,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 206,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+        "stats": {
+          "hit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 42.",
+        "stats": {
+          "spell_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 2.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 42."
+    ],
+    "id": 240070,
+    "item_level": 98,
+    "name": "Waywatcher Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226092,
+        "text": "Your Starfire deals 20% more damage to targets with your Moonfire, and your Wrath deals 20% more damage to targets with your Sunfire."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226103,
+        "text": "Your Starsurge now increases the damage of your next 2 Starfires."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226108,
+        "text": "Each time your Sunfire deals periodic damage, you gain 10% increased damage to your next Wrath, stacking up to 5 times. Each time your Moonfire deals periodic damage, you gain 10% increased damage to your next Starfire, stacking up to 5 times. These bonuses do not apply to Starsurge."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "hit_percent": 2.0,
+      "intellect": 14.0,
+      "spell_power": 42.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240070"
+  },
+  "linked_entities": [
+    {
+      "id": 240068,
+      "name": "Waywatcher Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240068"
+    },
+    {
+      "id": 240069,
+      "name": "Waywatcher Cord",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240069"
+    },
+    {
+      "id": 240070,
+      "name": "Waywatcher Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240070"
+    },
+    {
+      "id": 240071,
+      "name": "Waywatcher Kilt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240071"
+    },
+    {
+      "id": 240072,
+      "name": "Waywatcher Hood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240072"
+    },
+    {
+      "id": 240073,
+      "name": "Waywatcher Mitts",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240073"
+    },
+    {
+      "id": 240074,
+      "name": "Waywatcher Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240074"
+    },
+    {
+      "id": 240075,
+      "name": "Waywatcher Leathers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240075"
+    },
+    {
+      "id": 1226092,
+      "name": "Your Starfire deals 20% more damage to targets with your Moonfire, and your Wrath deals 20% more damage to targets with your Sunfire.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226092"
+    },
+    {
+      "id": 1226103,
+      "name": "Your Starsurge now increases the damage of your next 2 Starfires.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226103"
+    },
+    {
+      "id": 1226108,
+      "name": "Each time your Sunfire deals periodic damage, you gain 10% increased damage to your next Wrath, stacking up to 5 times. Each time your Moonfire deals periodic damage, you gain 10% increased damage to your next Starfire, stacking up to 5 times. These bonuses do not apply to Starsurge.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226108"
+    }
+  ],
+  "name": "Waywatcher Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "f3ca75ea0c3955bf5344ec57512d463c8ca6ff53eb2a6bf7b783cd73f76d8c05",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240070",
+  "url": "https://www.wowhead.com/forever/item=240070"
+}

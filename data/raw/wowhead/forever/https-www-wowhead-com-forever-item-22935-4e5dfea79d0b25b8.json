@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Touch of Frost Item Level 83 Binds when picked up Unique Neck +20 Stamina +24 Frost Resistance Requires Level 60 Sell Price: 8 83 55 Dropped by: Anub'Rekhan Drop Chance: 19.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 22935,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22935,
+    "item_level": 83,
+    "name": "Touch of Frost",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 24.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22935"
+  },
+  "linked_entities": [],
+  "name": "Touch of Frost",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.27,
+      "entity_name": "Anub'Rekhan",
+      "source_url": "https://www.wowhead.com/forever/item=22935",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22935",
+  "url": "https://www.wowhead.com/forever/item=22935"
+}

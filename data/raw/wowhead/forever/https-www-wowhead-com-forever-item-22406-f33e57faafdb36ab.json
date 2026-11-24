@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Redemption Item Level 61 Binds when picked up Two-Hand Staff 65 - 98 Damage Speed 2.10 (38.81 damage per second) +12 Spirit Restores + 12 mana per 5 sec. Durability 100 / 100 Requires Level 56 Equip: Increases healing done by up to 131 and damage done by up to 43 for all magical spells and effects. Sell Price: 6 52 86 Dropped by: Cannon Master Willey Drop Chance: 8.18%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:56.0718000Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 22406,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.81,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 131 and damage done by up to 43 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 131,
+          "spell_damage": 43
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +12 mana per 5 sec.",
+        "stats": {
+          "mp5": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 131 and damage done by up to 43 for all magical spells and effects."
+    ],
+    "id": 22406,
+    "item_level": 61,
+    "name": "Redemption",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 131.0,
+      "mp5": 12.0,
+      "spell_damage": 43.0,
+      "spirit": 12.0
+    },
+    "weapon_max_damage": 98,
+    "weapon_min_damage": 65,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22406"
+  },
+  "linked_entities": [],
+  "name": "Redemption",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.18,
+      "entity_name": "Cannon Master Willey",
+      "source_url": "https://www.wowhead.com/forever/item=22406",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "822ec78b30436b2ddb81bce0cbb0495ad90c1e51c15424644676b3a6a5d22bc5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22406",
+  "url": "https://www.wowhead.com/forever/item=22406"
+}

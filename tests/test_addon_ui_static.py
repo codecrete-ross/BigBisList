@@ -1,8 +1,8 @@
 import re
-import shutil
 import subprocess
 import unittest
 
+from tests.test_addon_runtime_lua import find_lua51
 from tools.project import ADDON_DIR
 
 
@@ -21,21 +21,25 @@ class AddonUIStaticTests(unittest.TestCase):
         return source.split(marker, 1)[1].split("\nfunction ", 1)[0]
 
     def test_runtime_lua_files_compile_with_lua51(self):
-        luac = shutil.which("luac")
-        if not luac:
-            self.skipTest("luac is not available")
+        lua = find_lua51()
+        if not lua:
+            self.skipTest("Lua 5.1 is not available")
         lua_files = [
             "Config.lua",
             "Core.lua",
             "Data.lua",
             "DataIndex.lua",
+            "DataForever.lua",
+            "ForeverScoring.lua",
             "Widgets.lua",
             "UI.lua",
             "Tooltip.lua",
             "Minimap.lua",
         ]
         result = subprocess.run(
-            [luac, "-p", *(str(ADDON_DIR / name) for name in lua_files)],
+            [lua, "-e", "for path in io.lines() do assert(loadfile(path)) end"],
+            input="\n".join(lua_files) + "\n",
+            cwd=ADDON_DIR,
             capture_output=True,
             text=True,
         )
@@ -68,8 +72,8 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "BigBiSList.maxLevelingLevel = 69",
-            "local DEFAULTS_VERSION = 17",
+            "BigBiSList.maxLevelingLevel = (datasetMeta.level_cap or 70) - 1",
+            "local DEFAULTS_VERSION = 19",
             "local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel",
             "window = {",
             "width = 1160",
@@ -104,7 +108,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'reputation = "all"',
             "reputations = {}",
             "rankGroups = {}",
-            'upgradeMode = "actual"',
+            'upgradeMode = "candidates"',
             "bankCache = {",
             "links = {}",
             "wishlist = {}",
@@ -200,9 +204,9 @@ class AddonUIStaticTests(unittest.TestCase):
             "function BigBiSList:ResetClassSpecAutoSelection()",
             "self.classSpecAutoSelectionActive = true",
             "function BigBiSList:ApplyDetectedPlayerSelection()",
-            "applyDetectedPlayerSelection(BigBiSListCharDB)",
-            "syncSelectionAliases(BigBiSListCharDB)",
-            "BigBiSListCharDB.manualClassSpecSelection = nil",
+            "applyDetectedPlayerSelection(activeCharacterDB())",
+            "syncSelectionAliases(activeCharacterDB())",
+            "characterDB.manualClassSpecSelection = nil",
             "selectedClass = DEFAULT_SELECTED_CLASS",
             "selectedSpec = DEFAULT_SELECTED_SPEC",
             "class = DEFAULT_SELECTED_CLASS",
@@ -216,15 +220,15 @@ class AddonUIStaticTests(unittest.TestCase):
         defaults_body = config.split("BigBiSList.defaults = {", 1)[1].split("local function applyDefaults", 1)[0]
         self.assertNotIn("manualClassSpecSelection", defaults_body)
 
-        ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("return BigBiSListDB", 1)[0]
-        self.assertIn("syncSelectionAliases(BigBiSListCharDB)", ensure_body)
-        self.assertIn("BigBiSListCharDB.manualClassSpecSelection = nil", ensure_body)
+        ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("initializedAccountDB = accountDB", 1)[0]
+        self.assertIn("syncSelectionAliases(characterDB)", ensure_body)
+        self.assertIn("characterDB.manualClassSpecSelection = nil", ensure_body)
         self.assertNotIn("applyDetectedPlayerSelection", ensure_body)
 
         apply_body = config.split("function BigBiSList:ApplyDetectedPlayerSelection()", 1)[1].split("function BigBiSList:ApplyDetectedDefaultSelection", 1)[0]
         self.assertIn("self:EnsureDatabase()", apply_body)
-        self.assertIn("applyDetectedPlayerSelection(BigBiSListCharDB)", apply_body)
-        self.assertIn("syncSelectionAliases(BigBiSListCharDB)", apply_body)
+        self.assertIn("applyDetectedPlayerSelection(activeCharacterDB())", apply_body)
+        self.assertIn("syncSelectionAliases(activeCharacterDB())", apply_body)
         self.assertIn("return changed", apply_body)
         self.assertIn("return self:ApplyDetectedPlayerSelection()", config)
 
@@ -246,17 +250,16 @@ class AddonUIStaticTests(unittest.TestCase):
             'widgets:CreateTextButton(bar, "Leveling"',
             "BigBiSListClassDropdown",
             "BigBiSListSpecDropdown",
-            "BigBiSListPhaseDropdown",
+            "self.phaseSelector",
             'widgets:CreateTextButton(bar, "Current Spec"',
             "function UI:UseMyCharacter()",
             "BigBiSList:ResetClassSpecAutoSelection()",
             "BigBiSList:ApplyDetectedPlayerSelection()",
-            "phase == BigBiSList:GetCurrentPhaseKey()",
         ]:
             self.assertIn(token, ui)
         phase_bar = self.ui_function("CreatePhaseBar")
-        self.require_tokens(phase_bar, ["Live", "BigBiSList:GetPhaseOrder()", "self:SetPhase(value)"])
-        self.assertNotIn('CreateTextButton(phaseBar, phaseLabel', phase_bar)
+        self.require_tokens(phase_bar, ["BigBiSList:GetPhaseOrder()", "CreateSegmentedControl", "self:SetPhase("])
+        self.assertNotIn("BigBiSListPhaseDropdown", ui)
         context_layout = self.ui_function("LayoutContextControls")
         self.assertIn("{ self.classDropdown, self.specDropdown, self.useCharacterButton }", context_layout)
         header = self.ui_function("CreateHeader")
@@ -275,8 +278,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "function BigBiSList:GetSelectedLevelingLevel()",
             "function BigBiSList:SetSelectedLevelingLevel(level, manual)",
             "return MAX_LEVELING_LEVEL",
-            "migrateLevelingLevel(BigBiSListCharDB)",
-            "BigBiSListCharDB.leveling.manualLevel = true",
+            "migrateLevelingLevel(characterDB)",
+            "activeCharacterDB().leveling.manualLevel = true",
         ]:
             self.assertIn(token, config)
 
@@ -316,8 +319,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "BigBiSList:RefreshUI()",
             'frame:RegisterEvent("PLAYER_LOGIN")',
             'frame:RegisterEvent("PLAYER_ENTERING_WORLD")',
-            'frame:RegisterEvent("PLAYER_TALENT_UPDATE")',
-            'frame:RegisterEvent("CHARACTER_POINTS_CHANGED")',
+            'pcall(frame.RegisterEvent, frame, "PLAYER_TALENT_UPDATE")',
+            'pcall(frame.RegisterEvent, frame, "CHARACTER_POINTS_CHANGED")',
             'or event == "PLAYER_TALENT_UPDATE"',
             'or event == "CHARACTER_POINTS_CHANGED"',
             "BigBiSList:ResetClassSpecAutoSelection()",
@@ -358,7 +361,7 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "function UI:RenderLevelingTab()",
             "BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)",
-            'local ENDGAME_TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }',
+            '{ "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }',
             'local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist" }',
             "function UI:IsLevelingMode()",
             "function UI:GetEffectivePhaseKey()",
@@ -455,7 +458,7 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")
 
-        self.assertIn('local ENDGAME_TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }', ui)
+        self.assertIn('{ "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }', ui)
         self.assertIn('local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist" }', ui)
         self.assertIn('Phase = "By Slot"', ui)
         self.assertIn('Gear = "Equipped"', ui)
@@ -465,12 +468,11 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn('["By Slot"] = "BiS List"', ui)
         self.assertIn('Equipped = "My Gear"', ui)
         self.assertIn("function UI:RenderGearTab()", ui)
-        self.require_tokens(self.ui_function("RenderGearTab"), ['row.column == "right"', 'columnIndex=column', 'mode="gear"'])
+        self.require_tokens(self.ui_function("RenderGearTab"), ['gear.slots[data.slotKey]', 'self.contentScroll:Hide()'])
         self.require_tokens(ui, [
-            'mode == "gear" and "currentRank"',
-            'gear = "Current rank"',
+            'function UI:CreateGearWorkspace(parent)',
+            'function UI:RefreshGearSelection()',
             'self:GetRowSlotDisplay(data)',
-            'data.recommendation_summary or data.overlay or "Not ranked"',
             'self:CreateDetailsPhaseMatrix(',
         ])
         self.assertIn('label = "Finger 1"', data_index)
@@ -495,7 +497,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "getContainerItemLinkSafe",
             "getInventoryItemLinkSafe",
             "enhancementItems = {}",
-            "cache.links = {}",
+            "local cache = { items = {}, links = {} }",
+            "char.bankCache = cache",
             "table.insert(cache.links, itemLink)",
             'bank = "Bank"',
         ]:
@@ -770,7 +773,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "addon:GetWishlistRows(",
             'elseif tabName == "Enhance" or tabName == "Enhancements" then',
             "addon:GetEnhancementRows(className, specName, phaseKey, filters)",
-            "addon:GetLevelingRows(className, specName, filters and filters.level, filters)",
+            "addon:GetLevelingRows(className, specName, level, filters)",
+            "addon:GetLevelingJourneyRows(className, specName, level, filters or {}, summary, groups)",
             "addon:GetPlannerRows(className, specName, phaseKey, filters)",
             "addon:GetPhaseRows(className, specName, phaseKey, filters)",
         ]:
@@ -814,14 +818,16 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         self.assertRegex(ui, r"(?i)overscan[a-z_]*\s*=\s*120")
 
-        render_body = ui.split("function UI:RenderListModel(model)", 1)[1].split("function UI:UpdateVirtualList", 1)[0]
+        render_body = ui.split("function UI:RenderListModel(model)", 1)[1].split("\nfunction ", 1)[0]
         self.assertIn("self:UpdateVirtualList(true)", render_body)
         self.assertNotIn("for _, entry in ipairs(model.entries) do", render_body)
         self.assertNotIn("self:CreateDataRow(", render_body)
 
         update_body = ui.split("function UI:UpdateVirtualList", 1)[1].split("function UI:RenderEmpty", 1)[0]
-        self.assertIn("for _, entry in ipairs", update_body)
-        self.assertIn("self:CreateDataRow(", update_body)
+        self.assertIn("self:VisitListEntries(", update_body)
+        self.assertIn("self:BindListEntry(", update_body)
+        bind_body = ui.split("function UI:BindListEntry(", 1)[1].split("\nfunction ", 1)[0]
+        self.assertIn("self:CreateDataRow(", bind_body)
         self.assertIn("LIST_OVERSCAN_PIXELS", update_body)
         self.assertIn("scroll:GetVerticalScroll()", update_body)
         self.assertIn("scroll:GetHeight()", update_body)
@@ -1126,25 +1132,13 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("local seen = {}", ui)
         self.assertIn("appendRequirementLine(lines, seen, state, requirement)", ui)
 
-    def test_current_gear_pairs_equipment_slots_and_uses_virtualized_cards(self):
+    def test_current_gear_uses_the_fixed_paper_doll_workspace(self):
         ui = self.read_lua("UI.lua")
-        config_body = ui.split("local TABLE_COLUMN_CONFIG =", 1)[1].split("function UI:GetViewColumnDefinitions", 1)[0]
-        self.require_tokens(config_body, [
-            'mode == "gear" and "currentRank"',
-            'gear = "Current rank"',
-            'columnDefinition("item",',
-            'columnDefinition(valueKey, valueLabel,',
-        ])
-        self.require_tokens(self.ui_function("CreateDataRow"), [
-            'self:GetRowSlotDisplay(data)',
-            'row.subText',
-            'bindCell("currentRank", data.recommendation_summary or data.overlay or "Not ranked")',
-        ])
         self.require_tokens(self.ui_function("RenderGearTab"), [
-            'row.column == "right"', 'columnIndex=column', 'model.cursor = top + height',
+            'self.renderModel = nil', 'self:ReleaseRenderFrames()', 'self:LayoutGearWorkspace()',
         ])
-        self.require_tokens(self.ui_function("UpdateVirtualList"), ['if entry.columnIndex then', 'self:CreateGearCard('])
-        self.assertNotIn("function UI:CreateGearSlotRow", ui)
+        self.require_tokens(self.ui_function("ApplyBodyLayout"), ['self.gearFrame:SetShown(', 'self.contentScroll:SetShown('])
+        self.assertNotIn("CreateGearCard", ui)
 
     def test_leveling_equipped_uses_leveling_recommendations(self):
         ui = self.read_lua("UI.lua")
@@ -1152,8 +1146,9 @@ class AddonUIStaticTests(unittest.TestCase):
 
         for token in [
             "function BigBiSList:GetItemBestLevelingUseForSpec",
-            "self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots)",
-            "overlay = (bestUse.category_label and bestUse.category_label ~= \"Recommended\") and bestUse.category_label or \"Leveling pick\"",
+            "self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots, nil, equipped.item_link)",
+            '(bestUse.category_label and bestUse.category_label ~= "Recommended") and bestUse.category_label',
+            'or (self.isForever and "Recommended" or "Leveling pick")',
             "level_value_text = bestUse and bestUse.level_value_text or nil",
             "display_rank_kind = itemId and displayRankKind or \"missing\"",
         ]:
@@ -1161,7 +1156,7 @@ class AddonUIStaticTests(unittest.TestCase):
 
         for token in [
             "BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)",
-            'self:CreateGearCard(',
+            'self:RefreshGearSelection()',
             "row.detailMode = mode",
             "UI:HandleEntityGesture(bound.boundData, bound.boundMode, button, bound)",
             '(detailMode == "leveling" or (detailData and detailData.leveling))',
@@ -1198,7 +1193,7 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "itemIdFromTooltipData",
             "itemIdFromTooltip(tooltip, tooltipData)",
-            "__bigBisListRenderKey",
+            "__bigBisListState",
             "OnTooltipCleared",
             "shouldAnnotateTooltip",
             "tooltip == GameTooltip or tooltip == ItemRefTooltip",
@@ -1213,28 +1208,26 @@ class AddonUIStaticTests(unittest.TestCase):
             "settings.compact and 4 or 8",
             "settings.showAllOnAlt and IsAltKeyDown",
             "local specFilters = settings.specFilters",
-            "local priorityContext = getTooltipPriorityContext()",
-            "local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase",
+            "or getTooltipPriorityContext()",
+            "local effectivePhaseKey = comparisonContext and comparisonContext.phase",
+            "self:GetEffectivePhaseKey(selection) or selection.phase",
             "local levelingMode = effectivePhaseKey == LEVELING_PHASE_KEY",
             "self:GetLevelingTooltipMatches",
             "self:GetGroupedLevelingTooltipMatches",
             "self:GetTooltipMatches",
             "self:GetGroupedTooltipMatches",
-            "showExpanded = settings.showAllOnAlt and IsAltKeyDown",
+            "showExpanded = self.isForever or (settings.showAllOnAlt and IsAltKeyDown",
             "matches = groupedMatches",
             "rawDiffersFromGrouped",
-            "tostring(effectivePhaseKey)",
-            "tostring(selectedLevel)",
-            "tostring(priorityContext and priorityContext.playerClass)",
-            "tostring(priorityContext and priorityContext.playerSpec)",
-            "self:GetTooltipSpecFilterKey(specFilters)",
+            "itemLinkFromTooltip(tooltip, nil, itemId, info) ~= state.link",
+            "tooltip.__bigBisListState ~= state",
         ]:
             self.assertIn(token, tooltip)
         self.assertNotIn("local PLAYER_CLASS_NAMES", tooltip)
         self.assertNotIn("pcall(UnitClassBase", tooltip)
         self.assertNotIn("pcall(GetTalentTabInfo", tooltip)
-        self.assertIn("function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext)", data_index)
-        self.assertIn("function BigBiSList:GetGroupedLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext, expanded)", data_index)
+        self.assertIn("function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext, itemLink)", data_index)
+        self.assertIn("function BigBiSList:GetGroupedLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext, expanded, itemLink)", data_index)
         self.assertIn("use.tooltip_level_label or use.level_label or \"Leveling\"", data_index)
         self.assertIn("if group and group.leveling then", data_index)
         self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
@@ -1304,7 +1297,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "buildTooltipGroupSlotLabel",
             "buildTooltipGroupSummary(group, expanded)",
             "tooltip_grouped = true",
-            'return "Alt"',
+            'return BigBiSList:GetGuideRatingDisplay("Alt")',
             'return "Optional"',
             'return "Main/Off Hand"',
         ]:
@@ -1427,7 +1420,7 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
         availability_body = ui.split("function UI:GetAvailabilityFilters()", 1)[1].split("function UI:GetAvailableSourceTypeValues()", 1)[0]
         for token in [
-            "self.currentOwned = self.currentOwned or self:BuildOwnedItems()",
+            "self:GetOwnedSnapshot()",
             "filters.ownedItems = self.currentOwned",
             "filters.ignoredItems = char.ignoredItems",
             "filters.hideIgnored = true",
@@ -1476,7 +1469,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'self:GetViewState("Gear Guide")',
             'self:GetViewState("Enhance")',
             'self:GetViewState("Wishlist")',
-            'filters.upgradeMode = "actual"',
+            'filters.upgradeMode = "candidates"',
             'filters.longevity = "all"',
             'recommendationCategory = "all"',
             'type = "all"',
@@ -1500,7 +1493,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "local RANK_FILTER_LABELS",
             "local LEVELING_RANK_FILTER_LABELS",
             'bis = "BiS only"',
-            'ranked = "Alts only"',
+            'ranked = BigBiSList.isForever and "Alternatives" or "Alts only"',
             'situational = "Sidegrades"',
             'option = "Optional"',
             'leveling_recommended = "Recommended"',
@@ -1594,7 +1587,7 @@ class AddonUIStaticTests(unittest.TestCase):
             '"Reputation required"',
             '"Profession required"',
             '"Recipe required"',
-            '"Upgrades only"',
+            '"Upgrade candidates"',
             '"All recommendations"',
             '"Hide item"',
         ]:
@@ -1674,7 +1667,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "Notes & provenance",
         ]:
             self.assertIn(token, details_body)
-        self.assertLess(details_body.index('"Recommendation"'), details_body.index('"Selected route"'))
+        self.assertLess(details_body.index("if owned then appendRecommendation() end"), details_body.index('"Selected route"'))
+        self.assertLess(details_body.index('"Selected route"'), details_body.index("if not owned then appendRecommendation() end"))
         self.assertLess(details_body.index('"Selected route"'), details_body.index('"Other sellers"'))
         self.assertLess(details_body.index('"Other sellers"'), details_body.index('"Additional reported sellers"'))
         self.assertLess(details_body.index('label = "Requires"'), details_body.index('"Selected route"'))
@@ -1696,7 +1690,7 @@ class AddonUIStaticTests(unittest.TestCase):
         tooltip = self.read_lua("Tooltip.lua")
 
         for token in [
-            "function UI:GetSellerDetailLines(option)",
+            "function UI:GetSellerDetailLines(option, omitSourceItems)",
             "BigBiSList:GetAccessOptionDetailFields(option)",
             "option.is_vendor_purchase == true",
             '"Vendor: "',
@@ -1810,56 +1804,19 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(snippet, data_index)
 
-    def test_upgrades_tab_defaults_to_actual_upgrade_filtering(self):
+    def test_upgrades_tab_uses_evidence_based_candidate_filters(self):
         config = self.read_lua("Config.lua")
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")
-
-        for token in [
-            'upgradeMode = "actual"',
-            "BigBiSListUpgradeModeDropdown",
-            "GetUpgradeModeDropdownItems",
-            'return upgradeModeLabel(self:GetFilters("Upgrades").upgradeMode)',
-            "upgradeMode = filters.upgradeMode",
-            'filters.upgradeMode = "actual"',
-            "upgradeComparisonText",
-            "GameTooltip:AddLine(upgradeText",
-        ]:
-            self.assertIn(token, config + ui)
-
-        for token in [
-            "includeOwnedUpgrades",
-            "BigBiSListOwnedUpgradeDropdown",
-            "GetOwnedUpgradeDropdownItems",
-            "ownedUpgradeLabel",
-        ]:
-            self.assertNotIn(token, config + ui)
-
-        for token in [
-            "local function isStrictUpgradeUse",
-            "candidate.item_id == current.item_id",
-            "local function upgradeSlotCapacity",
-            'slotName == "Ring" or slotName == "Trinket"',
-            "ownedBySlot = {}",
-            "equippedBySlot = {}",
-            "buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)",
-            "group.upgrade_state = state",
-            '"missing_upgrade"',
-            '"owned_upgrade"',
-            '"not_upgrade"',
-            'ownedState == "equipped"',
-            'ownedState == "bag" or ownedState == "bank"',
-            "upgradeComparisonContext(baselines.equippedBySlot, candidateUse)",
-            "upgradeComparisonContext(baselines.ownedBySlot, candidateUse)",
-            "group.upgrade_state == \"owned_upgrade\"",
-            "plannerGroupMatchesUpgradeMode(group, filters)",
-        ]:
-            self.assertIn(token, data_index)
-
-        planner_body = data_index.split("function BigBiSList:GetPlannerRows", 1)[1].split("local function cloneFiltersForZoneOptions", 1)[0]
-        self.assertLess(planner_body.index("annotatePlannerUpgradeGroup"), planner_body.index("plannerGroupMatchesUpgradeMode"))
-        self.assertIn('filters and filters.upgradeMode == "actual"', planner_body)
-        self.assertIn("and plannerGroupMatchesUpgradeMode(group, filters)", planner_body)
+        self.require_tokens(config + ui, [
+            'upgradeMode = "candidates"', 'includeEarlier',
+            '"Upgrade candidates"', '"Higher guide rating"', '"All recommendations"',
+            'GetUpgradeModeDropdownItems', 'upgradeMode = filters.upgradeMode',
+        ])
+        self.require_tokens(data_index, [
+            'GetEquipmentComparisonContexts', 'CompareRecommendationItems',
+            'GetRecommendationHistory', 'GetSlotComparisonRows',
+        ])
 
     def test_esc_closable_frame_is_registered(self):
         ui = self.read_lua("UI.lua")
@@ -1882,7 +1839,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "GetMinimapButton",
             "ToggleMainFrame",
             "RefreshMinimapButton",
-            "profile.minimap.hide",
+            "self:GetAccountDB().profile.minimap",
+            "minimap.hide",
         ]:
             self.assertIn(token, minimap)
         self.assertIn("Show minimap button", ui)

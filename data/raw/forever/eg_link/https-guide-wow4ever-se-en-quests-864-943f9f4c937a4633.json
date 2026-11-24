@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/864"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:32.588729+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 11502,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/864",
+      "subject_id": 864,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 38,
+    "name": "Return to Apothecary Zinge",
+    "quest_id": 864,
+    "quest_level": 46,
+    "reward_item_ids": [
+      11502
+    ],
+    "zone": "Undercity"
+  },
+  "source_content_digest": "9a5aba845c3a030e00d7f67451a8a2c97ea4ebfeb8532064641fc6ea16146d35",
+  "url": "https://guide.wow4ever.se/en/quests/864"
+}

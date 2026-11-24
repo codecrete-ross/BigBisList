@@ -1,0 +1,150 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Nethergeld Cuffs Item Level 50 Binds when picked up Requires Tailoring (205) Requires Friendly with this faction. Use: Teaches you how to craft Nethergeld Cuffs. Sell Price: 10 25",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Wrist",
+      "item_id": 254061,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 254061,
+        "name": "Nethergeld Cuffs",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Wrist",
+        "source_summary": "",
+        "stats": {
+          "intellect": 7.0,
+          "stamina": 7.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=254061"
+      },
+      "name": "Nethergeld Cuffs",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=254061"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 254062,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Nethergeld Cuffs.",
+        "type": "use"
+      }
+    ],
+    "id": 254062,
+    "item_level": 50,
+    "name": "Pattern: Nethergeld Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Nethergeld Cuffs."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=254062"
+  },
+  "linked_entities": [
+    {
+      "id": 3577,
+      "name": "Gold Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3577"
+    },
+    {
+      "id": 4339,
+      "name": "Bolt of Mageweave",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4339"
+    },
+    {
+      "id": 8343,
+      "name": "Heavy Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8343"
+    },
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 254061,
+      "name": "Nethergeld Cuffs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254061"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 1257456,
+      "name": "Teaches you how to craft Nethergeld Cuffs.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257456"
+    }
+  ],
+  "name": "Pattern: Nethergeld Cuffs",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Nethergeld Cuffs Item Level 50 Binds when picked up Requires Tailoring (205) Requires Friendly with this faction. Use: Teaches you how to craft Nethergeld Cuffs. Sell Price: 10 25",
+      "reputation": "this faction",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=254062",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Nethergeld Cuffs Item Level 50 Binds when picked up Requires Tailoring (205) Requires Friendly with this faction. Use: Teaches you how to craft Nethergeld Cuffs. Sell Price: 10 25",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=254062",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1257456
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/254062",
+  "url": "https://www.wowhead.com/forever/item=254062"
+}

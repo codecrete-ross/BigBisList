@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arena Grand Master Item Level 55 Binds when picked up Unique-Equipped: Arena Master (1) Trinket Requires Level 50 Equip: Increases your chance to Dodge an attack by 1.0%. Equip: Reduces your damage taken by 6% in the Battle Ring and The Maul. Use: Absorbs 810 to 1350 damage. Lasts 20 sec. (9 Min Cooldown) Sell Price: 1 31",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:56:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19024,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your chance to Dodge an attack by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Reduces your damage taken by 6% in the Battle Ring and The Maul.",
+        "type": "conditional"
+      },
+      {
+        "raw_text": "Use: Absorbs 810 to 1350 damage. Lasts 20 sec. (9 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your chance to Dodge an attack by 1.0%."
+    ],
+    "id": 19024,
+    "item_level": 55,
+    "name": "Arena Grand Master",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Absorbs 810 to 1350 damage. Lasts 20 sec. (9 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19024"
+  },
+  "linked_entities": [
+    {
+      "id": 23506,
+      "name": "Absorbs 810 to 1350 damage. Lasts 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23506"
+    },
+    {
+      "id": 1318318,
+      "name": "Reduces your damage taken by 6% in the Battle Ring and The Maul.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318318"
+    }
+  ],
+  "name": "Arena Grand Master",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19024",
+  "url": "https://www.wowhead.com/forever/item=19024"
+}

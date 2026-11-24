@@ -1,0 +1,137 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Public enUS hotfix cache archived by Raidbots.",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "catalog_kind": "client_hotfix",
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T04:29:47.5030675Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 23247,
+      "collected_at": "2026-11-13T04:28:48.9654757Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowf-index-current",
+      "source_content_digest": "a06c8fef2609674449ec6f65dba1a277e5753bdec16f970bf4e60a9ec892d12a",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "bytes": 35290,
+      "collected_at": "2026-11-13T03:45:12.4356525Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "item-dbd-pinned",
+      "source_content_digest": "9d1f97c67ba1d4a2823280edcd75c3ba1d9bd7f75e6352f5546d9f53e1be40f7",
+      "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/definitions/Item.dbd"
+    },
+    {
+      "bytes": 76217,
+      "collected_at": "2026-11-13T03:45:12.0512491Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "itemsparse-dbd-pinned",
+      "source_content_digest": "a16fbd4d38a8df3cbcf48dd5a0d8ccb0be3948e9b57b932f3ced930ccf21cdba",
+      "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/definitions/ItemSparse.dbd"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "raidbots",
+  "records": [
+    {
+      "armor_type": "Plate",
+      "class_mask": 1,
+      "hotfix_push": 17004074,
+      "item_id": 226858,
+      "name": "Spaulders of Heroism",
+      "race_mask": 18446744073709551615,
+      "record_digest": "b82d55192532ac1c46fb8dfccbf0b18ffd702c350de7ecb352f03adee9351f22",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Plate"
+    },
+    {
+      "armor_type": "Plate",
+      "class_mask": 1,
+      "hotfix_push": 17004083,
+      "item_id": 226867,
+      "name": "Pauldrons of Heroism",
+      "race_mask": 18446744073709551615,
+      "record_digest": "7a57da070128df0ae0bbf5b2f9e7ba4649187180ed1d83b62e2f41b821021bd8",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Plate"
+    }
+  ],
+  "relationships": [],
+  "reviewed_page_facts": {
+    "new_records_since_previous_capture": [
+      {
+        "binding": 2,
+        "item_id": 12547,
+        "name": "Mar Alom's Grip",
+        "record_digest": "db19791dc7f6e3c37f02f3dfcd3245a2fed8bac43052fe409c5e183df6a7cc42",
+        "required_level": 51,
+        "slot_id": 10
+      },
+      {
+        "binding": 1,
+        "item_id": 226857,
+        "name": "Battleboots of Heroism",
+        "record_digest": "cc07255d255f7ac83c5a905395a382af57e9838ffdc95aa217b4275cf4c77433",
+        "required_level": 0,
+        "slot_id": 8
+      },
+      {
+        "binding": 1,
+        "item_id": 226858,
+        "name": "Spaulders of Heroism",
+        "record_digest": "b82d55192532ac1c46fb8dfccbf0b18ffd702c350de7ecb352f03adee9351f22",
+        "required_level": 0,
+        "slot_id": 3
+      },
+      {
+        "binding": 1,
+        "item_id": 226859,
+        "name": "Legplates of Heroism",
+        "record_digest": "d523534dc4f0ec161ce903171f3e8a6b636eb3cb51caa7d1482b75fbe6214168",
+        "required_level": 0,
+        "slot_id": 7
+      },
+      {
+        "binding": 1,
+        "item_id": 226867,
+        "name": "Pauldrons of Heroism",
+        "record_digest": "7a57da070128df0ae0bbf5b2f9e7ba4649187180ed1d83b62e2f41b821021bd8",
+        "required_level": 0,
+        "slot_id": 3
+      },
+      {
+        "binding": 1,
+        "item_id": 226868,
+        "name": "Legguards of Heroism",
+        "record_digest": "b53c03d2e09dafe5e588646fc4fa9519b8513fe903314c758469edd81c712fd6",
+        "required_level": 0,
+        "slot_id": 7
+      },
+      {
+        "binding": 1,
+        "item_id": 226871,
+        "name": "Sabatons of Heroism",
+        "record_digest": "7cb8aad9c8060c44dc1de4af435b15db1983dcb05c56c9ccbf0dec7eafbdad89",
+        "required_level": 0,
+        "slot_id": 8
+      }
+    ]
+  },
+  "source_content_digest": "adfb56f3fa9d5d6dc4788c9d8943fbb067353e6f6635668e43c4413994254791",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-xcKJGekwZSyfq7jNWhtd6h.bin"
+}

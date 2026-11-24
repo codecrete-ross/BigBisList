@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ragged John's Neverending Cup Item Level 60 Binds when picked up Trinket Use: Increases Stamina by 40 and reduces physical damage taken by 20 for 2.1 min. However, lowers Strength and Agility by 10 and increases magical damage taken by up to 80. (10 Min Cooldown) Sell Price: 1 98 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 15873,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Stamina by 40 and reduces physical damage taken by 20 for 2.1 min. However, lowers Strength and Agility by 10 and increases magical damage taken by up to 80. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 15873,
+    "item_level": 60,
+    "name": "Ragged John's Neverending Cup",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases Stamina by 40 and reduces physical damage taken by 20 for 2.1 min. However, lowers Strength and Agility by 10 and increases magical damage taken by up to 80. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=15873"
+  },
+  "linked_entities": [
+    {
+      "id": 20587,
+      "name": "Increases Stamina by 40 and reduces physical damage taken by 20 for 2.1 min. However, lowers Strength and Agility by 10 and increases magical damage taken by up to 80.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20587"
+    }
+  ],
+  "name": "Ragged John's Neverending Cup",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6168adbcb7b7135d6615c9682e711653d7e7c24fa5ddbf97d5205c70808b946b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15873",
+  "url": "https://www.wowhead.com/forever/item=15873"
+}

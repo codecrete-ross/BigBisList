@@ -1,0 +1,57 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins Forever quest database",
+      "source": "https://db.icy-veins.com/wow-forever/quests/82068"
+    },
+    {
+      "credit": "Wowhead Forever Community Findings",
+      "source": "https://www.wowhead.com/forever"
+    }
+  ],
+  "confidence": "public_quest_listing_and_recent_sighting",
+  "fetched_at": "2026-11-13T20:24:19.224171+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 98388,
+      "collected_at": "2026-11-13T20:24:19.224171+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "icy-exact-quest-82068",
+      "source_content_digest": "d97716736f440497eb7ef499c3dfbb208dc02eb52ab8ad8e4ba083558eb53020",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/82068"
+    },
+    {
+      "bytes": 102825,
+      "collected_at": "2026-11-13T20:13:13.817871+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-community",
+      "source_content_digest": "35ca28305c610335617db14be442be2501fdc83685b89442297a27d174121316",
+      "source_url": "https://www.wowhead.com/forever"
+    },
+    {
+      "bytes": 281736,
+      "collected_at": "2026-11-13T20:10:08.126222+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-nov-update",
+      "source_content_digest": "5d65d14751ab8c7ee21aa18a98b93201a7564f4d78bf664b30ab5eb1e2f353e9",
+      "source_url": "https://www.wowhead.com/latest-dev-updates"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "icyveins",
+  "reviewed_page_facts": {
+    "availability_note": "The quest sighting and published reputation reward are evidence about this quest. They do not establish an active gear vendor, purchase eligibility or the complete set of reputation routes.",
+    "quest_id": 82068,
+    "reported_faction": "Both",
+    "reported_minimum_level": 47,
+    "reported_reputation": "Emerald Wardens",
+    "title": "Fight the Nightmare Incursions",
+    "wowhead_first_seen_at": "2026-11-11T01:38:18+00:00"
+  },
+  "source_content_digest": "d97716736f440497eb7ef499c3dfbb208dc02eb52ab8ad8e4ba083558eb53020",
+  "url": "https://db.icy-veins.com/wow-forever/quests/82068"
+}

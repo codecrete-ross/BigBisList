@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227361"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:09:01.2708701Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:09:01.2708701Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227361",
+      "source_content_digest": "5961ff1d91f819583fa2c3e4af7a1cf1187bee2fccc8fa2dfb8131aa8528ef5e",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227361"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 226798,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227361",
+      "subject_id": 227361,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227361,
+    "contents_name_on_tooltip": "Feralheart Pauldrons",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 226798,
+    "title": "Guardian's Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "5961ff1d91f819583fa2c3e4af7a1cf1187bee2fccc8fa2dfb8131aa8528ef5e",
+  "url": "https://www.wowhead.com/forever/item=227361"
+}

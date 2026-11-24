@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wyvern Heart Band Item Level 34 Binds when picked up Finger +5 Agility +5 Stamina Requires Level 29 Equip: + 15 Attack Power. Sell Price: 30 17 Dropped by: Heartrazor Drop Chance: 0.63%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 285190,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +15 Attack Power.",
+        "stats": {
+          "attack_power": 15
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +15 Attack Power."
+    ],
+    "id": 285190,
+    "item_level": 34,
+    "name": "Wyvern Heart Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 29,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 5.0,
+      "attack_power": 15.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=285190"
+  },
+  "linked_entities": [],
+  "name": "Wyvern Heart Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.63,
+      "entity_name": "Heartrazor",
+      "source_url": "https://www.wowhead.com/forever/item=285190",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b9e86374c75f38fbc0bc1f78d2b7e006eaa8054809c0bac90dd06a1399f1fb0f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/285190",
+  "url": "https://www.wowhead.com/forever/item=285190"
+}

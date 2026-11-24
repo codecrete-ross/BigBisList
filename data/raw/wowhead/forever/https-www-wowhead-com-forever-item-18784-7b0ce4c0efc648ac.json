@@ -1,0 +1,59 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Top Half of Advanced Armorsmithing: Volume III Item Level 60 Unique Requires Level 50 Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume III. Dropped by: Urok Doomhowl Drop Chance: 16.88%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:07:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18784,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume III.",
+        "type": "use"
+      }
+    ],
+    "id": 18784,
+    "item_level": 60,
+    "name": "Top Half of Advanced Armorsmithing: Volume III",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Combines the Top and Bottom Half of Advanced Armorsmithing: Volume III."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18784"
+  },
+  "linked_entities": [
+    {
+      "id": 23233,
+      "name": "Combines the Top and Bottom Half of Advanced Armorsmithing: Volume III.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23233"
+    }
+  ],
+  "name": "Top Half of Advanced Armorsmithing: Volume III",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 16.88,
+      "entity_name": "Urok Doomhowl",
+      "source_url": "https://www.wowhead.com/forever/item=18784",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18784",
+  "url": "https://www.wowhead.com/forever/item=18784"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Frost Nova Level 60 55 Mana Instant 25 sec cooldown Requires Mage Requires level 10 Blasts enemies near the caster for ( 21.5 * 1 ) to ( 23.5 * 1 ) Frost damage and freezes them in place for up to 8 sec. Damage caused may interrupt the effect.",
+  "entity_id": 122,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:34+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 122,
+      "name": "Frost Nova",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=122"
+    }
+  ],
+  "name": "Frost Nova",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "6412d23510195aa679e72fb03627130367813762a309aee78493d0303f00fdd4",
+  "spell_id": 122,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/122",
+  "url": "https://www.wowhead.com/forever/spell=122"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ferocious Idol Item Level 20 Binds when picked up Unique Relic Idol Classes: Druid Engrave your pants with the Savage Roar rune: Requires Cat Form Finishing move that increases Physical damage done by 30% while in Cat Form. Lasts longer per combo point: 1 point : (14 + 0 ) seconds 2 points: (19 + 0 ) seconds 3 points: (24 + 0 ) seconds 4 points: (29 + 0 ) seconds 5 points: (34 + 0 ) seconds \"Deal 20 instances of bleeding damage to humanoids, then use this idol to learn a new ability.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 208689,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 208689,
+    "item_level": 20,
+    "name": "Ferocious Idol",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=208689"
+  },
+  "linked_entities": [
+    {
+      "id": 407988,
+      "name": "Requires Cat Form Finishing move that increases Physical damage done by 30% while in Cat Form. Lasts longer per combo point: 1 point : (14 + 0 ) seconds 2 points: (19 + 0 ) seconds 3 points: (24 + 0 ) seconds 4 points: (29 + 0 ) seconds 5 points: (34 + 0 ) seconds",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=407988"
+    },
+    {
+      "id": 410023,
+      "name": "Engrave your pants with the Savage Roar rune: Requires Cat Form Finishing move that increases Physical damage done by 30% while in Cat Form. Lasts longer per combo point: 1 point : (14 + 0 ) seconds 2 points: (19 + 0 ) seconds 3 points: (24 + 0 ) seconds 4 points: (29 + 0 ) seconds 5 points: (34 + 0 ) seconds",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=410023"
+    }
+  ],
+  "name": "Ferocious Idol",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "39823d30f2a56273526223185abcaa6c0fd7eac7a8379b4c0cc332cc393ba5c1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/208689",
+  "url": "https://www.wowhead.com/forever/item=208689"
+}

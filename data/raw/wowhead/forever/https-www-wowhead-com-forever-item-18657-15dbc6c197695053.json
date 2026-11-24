@@ -1,0 +1,152 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Schematic: Hyper-Radiant Flame Reflector Item Level 58 Requires Engineering (290) Use: Teaches you how to make a Hyper-Radiant Flame Reflector. Sell Price: 50 Dropped by: Solakar Flamewreath Drop Chance: 8.21%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Trinket",
+      "item_id": 18638,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 18638,
+        "name": "Hyper-Radiant Flame Reflector",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Trinket",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=18638"
+      },
+      "name": "Hyper-Radiant Flame Reflector",
+      "normalized_requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Hyper-Radiant Flame Reflector ndstartndend Item Level 58 bo Binds when equipped Unique-Equippedueue Trinket rfebstatsegstatseistatsnameDescStatsrs+18 Fire Resistanceeps Requires Level rlvl53 Requires Engineering (290) rruseText:0:1 Use: Reflects Fire spells back at their caster for 5 sec. (5 Min Cooldown) useText:1itemEffects:1 pvpEquippvpEquip Sell Price: 1 25 Requires Dark Iron Bar (4), Truesilver Transformer (3), Essence of Water (6), Star Ruby (4), Azerothian Diamond (2)",
+          "scope": "equip_or_use",
+          "skill": 290,
+          "source_url": "https://www.wowhead.com/forever/item=18638",
+          "type": "profession"
+        }
+      ],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=18638"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:06:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 18657,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Hyper-Radiant Flame Reflector.",
+        "type": "use"
+      }
+    ],
+    "id": 18657,
+    "item_level": 58,
+    "name": "Schematic: Hyper-Radiant Flame Reflector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Hyper-Radiant Flame Reflector."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18657"
+  },
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 7910,
+      "name": "Star Ruby",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7910"
+    },
+    {
+      "id": 11371,
+      "name": "Dark Iron Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11371"
+    },
+    {
+      "id": 12800,
+      "name": "Azerothian Diamond",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12800"
+    },
+    {
+      "id": 18631,
+      "name": "Truesilver Transformer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18631"
+    },
+    {
+      "id": 18638,
+      "name": "Hyper-Radiant Flame Reflector",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18638"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 23081,
+      "name": "Teaches you how to make a Hyper-Radiant Flame Reflector.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23081"
+    },
+    {
+      "id": 23097,
+      "name": "Reflects Fire spells back at their caster for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23097"
+    }
+  ],
+  "name": "Schematic: Hyper-Radiant Flame Reflector",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Hyper-Radiant Flame Reflector Item Level 58 Requires Engineering (290) Use: Teaches you how to make a Hyper-Radiant Flame Reflector. Sell Price: 50 Dropped by: Solakar Flamewreath Drop Chance: 8.21%",
+      "scope": "equip_or_use",
+      "skill": 290,
+      "source_url": "https://www.wowhead.com/forever/item=18657",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.21,
+      "entity_name": "Solakar Flamewreath",
+      "source_url": "https://www.wowhead.com/forever/item=18657",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    23081
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18657",
+  "url": "https://www.wowhead.com/forever/item=18657"
+}

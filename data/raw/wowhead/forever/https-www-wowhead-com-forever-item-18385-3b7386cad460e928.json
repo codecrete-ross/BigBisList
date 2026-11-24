@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Robe of Everlasting Night Item Level 62 Binds when picked up Chest Cloth 88 Armor +11 Stamina +13 Intellect +5 Spirit +7 Shadow Resistance Durability 80 / 80 Requires Level 57 Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 2 19 36 Dropped by: Immol'thar Drop Chance: 21.03%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:22.9218870Z",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 18385,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 88,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27."
+    ],
+    "id": 18385,
+    "item_level": 62,
+    "name": "Robe of Everlasting Night",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "shadow_resistance": 7.0,
+      "spell_power": 27.0,
+      "spirit": 5.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18385"
+  },
+  "linked_entities": [],
+  "name": "Robe of Everlasting Night",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.03,
+      "entity_name": "Immol'thar",
+      "source_url": "https://www.wowhead.com/forever/item=18385",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "292d717e7ae7bae7a10e3142d01d5687a8e528ec7d310ca29a4e27371cef66e7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18385",
+  "url": "https://www.wowhead.com/forever/item=18385"
+}

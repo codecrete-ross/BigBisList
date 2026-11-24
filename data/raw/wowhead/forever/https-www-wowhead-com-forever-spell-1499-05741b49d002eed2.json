@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Freezing Trap 50 Mana Instant 30 sec cooldown Requires Hunter Requires level 20 Place a Frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec. Any damage caused will break the ice. Trap will exist for 1 min. Only one Frost trap can be active at a time.",
+  "entity_id": 1499,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:05+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1499,
+      "name": "Freezing Trap",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1499"
+    }
+  ],
+  "name": "Freezing Trap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "a711c0b1cf44c7d14613bcf7af4e6d2c155f61bc8e6afdd167f71b91580c6627",
+  "spell_id": 1499,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1499",
+  "url": "https://www.wowhead.com/forever/spell=1499"
+}

@@ -1,0 +1,119 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Mail Greaves Item Level 63 Binds when picked up Unique Feet Mail 255 Armor +15 Agility +16 Stamina +8 Intellect Durability 60 / 60 Requires Level 58 Requires The Defilers - Revered Equip: Run speed increased slightly. The Defiler's Fortitude (0/3) Defiler's Mail Girdle Defiler's Mail Greaves Defiler's Mail Pauldrons (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with melee attacks by 1.0%. Sell Price: 2 68 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 20199,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 255,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Run speed increased slightly.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Run speed increased slightly."
+    ],
+    "id": 20199,
+    "item_level": 63,
+    "name": "Defiler's Mail Greaves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 7597,
+        "text": "Improves your chance to get a critical strike with melee attacks by 1.0%."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "intellect": 8.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20199"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    },
+    {
+      "id": 20195,
+      "name": "Defiler's Mail Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20195"
+    },
+    {
+      "id": 20199,
+      "name": "Defiler's Mail Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20199"
+    },
+    {
+      "id": 20203,
+      "name": "Defiler's Mail Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20203"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 7597,
+      "name": "Improves your chance to get a critical strike with melee attacks by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7597"
+    },
+    {
+      "id": 23990,
+      "name": "Run speed increased slightly.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23990"
+    }
+  ],
+  "name": "Defiler's Mail Greaves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Mail Greaves Item Level 63 Binds when picked up Unique Feet Mail 255 Armor +15 Agility +16 Stamina +8 Intellect Durability 60 / 60 Requires Level 58 Requires The Defilers - Revered Equip: Run speed increased slightly. The Defiler's Fortitude (0/3) Defiler's Mail Girdle Defiler's Mail Greaves Defiler's Mail Pauldrons (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with melee attacks by 1.0%. Sell Price: 2 68 18",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20199",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20199",
+  "url": "https://www.wowhead.com/forever/item=20199"
+}

@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talons of Wrath Item Level 45 Binds when picked up Relic Idol Classes: Druid Requires Level 40 Equip: Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%) Sell Price: 20 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 249441,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)"
+    ],
+    "id": 249441,
+    "item_level": 45,
+    "name": "Talons of Wrath",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=249441"
+  },
+  "linked_entities": [
+    {
+      "id": 1248996,
+      "name": "Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248996"
+    }
+  ],
+  "name": "Talons of Wrath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249441",
+  "url": "https://www.wowhead.com/forever/item=249441"
+}

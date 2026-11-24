@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Chain Helm Item Level 74 Binds when picked up Head Mail 382 Armor +34 Agility +42 Stamina +12 Intellect +50 Armor Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Field Marshal's Pursuit (0/6) Field Marshal's Chain Helm Field Marshal's Chain Shoulders Field Marshal's Chain Hauberk Marshal's Chain Legguards Marshal's Chain Greaves Marshal's Chain Vices (2) Set : +20 Stamina. (3) Set : Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%) (6) Set : +20 Agility. Sell Price: 2 91 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 231580,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 382,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 231580,
+    "item_level": 74,
+    "name": "Field Marshal's Chain Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23158,
+        "text": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14384,
+        "text": "+20 Agility."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "crit_percent": 1.0,
+      "intellect": 12.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231580"
+  },
+  "linked_entities": [
+    {
+      "id": 231576,
+      "name": "Field Marshal's Chain Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231576"
+    },
+    {
+      "id": 231577,
+      "name": "Marshal's Chain Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231577"
+    },
+    {
+      "id": 231578,
+      "name": "Marshal's Chain Vices",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231578"
+    },
+    {
+      "id": 231579,
+      "name": "Marshal's Chain Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231579"
+    },
+    {
+      "id": 231580,
+      "name": "Field Marshal's Chain Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231580"
+    },
+    {
+      "id": 231581,
+      "name": "Field Marshal's Chain Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231581"
+    },
+    {
+      "id": 14384,
+      "name": "+20 Agility.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14384"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23158,
+      "name": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23158"
+    }
+  ],
+  "name": "Field Marshal's Chain Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "ffebc575f6a28693b748909afd386a76ecf6e9e89f2bd377a597a1b99d09c530",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231580",
+  "url": "https://www.wowhead.com/forever/item=231580"
+}

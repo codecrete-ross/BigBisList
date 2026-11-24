@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Girdle of Golem Strength Item Level 33 Binds when equipped Waist Mail 128 Armor +12 Strength Durability 40 / 40 Requires Level 28 Equip: Increased Defense + 3. Sell Price: 20 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 9405,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 128,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +3.",
+        "stats": {
+          "defense": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +3."
+    ],
+    "id": 9405,
+    "item_level": 33,
+    "name": "Girdle of Golem Strength",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 28,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "defense": 3.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9405"
+  },
+  "linked_entities": [],
+  "name": "Girdle of Golem Strength",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9405",
+  "url": "https://www.wowhead.com/forever/item=9405"
+}

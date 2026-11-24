@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stinging Viper Item Level 24 Binds when picked up One-Hand Mace 30 - 57 Damage Speed 2.80 (15.54 damage per second) Durability 75 / 75 Requires Level 19 Chance on hit: Poisons target for 7 Nature damage every 3 sec for 12 sec. Sell Price: 28 83 Dropped by: Lord Pythas Drop Chance: 29.88%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 6472,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.54,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Poisons target for 7 Nature damage every 3 sec for 12 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Poisons target for 7 Nature damage every 3 sec for 12 sec."
+    ],
+    "id": 6472,
+    "item_level": 24,
+    "name": "Stinging Viper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 19,
+    "slot": "One Hand",
+    "source_summary": "",
+    "weapon_max_damage": 57,
+    "weapon_min_damage": 30,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6472"
+  },
+  "linked_entities": [
+    {
+      "id": 1291663,
+      "name": "Poisons target for 7 Nature damage every 3 sec for 12 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291663"
+    }
+  ],
+  "name": "Stinging Viper",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.88,
+      "entity_name": "Lord Pythas",
+      "source_url": "https://www.wowhead.com/forever/item=6472",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6472",
+  "url": "https://www.wowhead.com/forever/item=6472"
+}

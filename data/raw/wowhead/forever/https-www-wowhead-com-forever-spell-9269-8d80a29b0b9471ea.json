@@ -1,0 +1,96 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Gnomish Universal Remote 12.5 sec cast Tools: Blacksmith Hammer , Arclight Spanner Reagents: Bronze Bar (6), Whirring Bronze Gizmo , Flask of Oil (2), Tigerseye , Malachite Gnomish Universal Remote Item Level 25 Binds when equipped Unique-Equipped Trinket Requires Engineering (125) Equip: + 18 Attack Power against Mechanical units. Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown) Sell Price: 5",
+  "entity_id": 9269,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T06:22:42+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 774,
+      "name": "Malachite",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=774"
+    },
+    {
+      "id": 814,
+      "name": "Flask of Oil",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=814"
+    },
+    {
+      "id": 818,
+      "name": "Tigerseye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=818"
+    },
+    {
+      "id": 2841,
+      "name": "Bronze Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2841"
+    },
+    {
+      "id": 4375,
+      "name": "Whirring Bronze Gizmo",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4375"
+    },
+    {
+      "id": 7506,
+      "name": "Gnomish Universal Remote",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7506"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 8344,
+      "name": "Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8344"
+    },
+    {
+      "id": 9269,
+      "name": "Gnomish Universal Remote",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9269"
+    }
+  ],
+  "name": "Gnomish Universal Remote",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Universal Remote 12.5 sec cast Tools: Blacksmith Hammer , Arclight Spanner Reagents: Bronze Bar (6), Whirring Bronze Gizmo , Flask of Oil (2), Tigerseye , Malachite Gnomish Universal Remote Item Level 25 Binds when equipped Unique-Equipped Trinket Requires Engineering (125) Equip: + 18 Attack Power against Mechanical units. Use: Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest. (3 Min Cooldown) Sell Price: 5",
+      "scope": "cast_enchant",
+      "skill": 125,
+      "source_url": "https://www.wowhead.com/forever/spell=9269",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 7506,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=9269",
+      "subject_id": 9269,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "1ce58ed494ec209e176efd1367f873e93e348619ee0423a4ed5f6bb5ef7c1e6c",
+  "spell_id": 9269,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/9269",
+  "url": "https://www.wowhead.com/forever/spell=9269"
+}

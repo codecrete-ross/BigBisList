@@ -1,0 +1,60 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 458,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:32.761Z",
+  "flavor": "forever",
+  "name": "The Woodland Protector",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 1992,
+        "name": "Tarindrella"
+      },
+      "start": {
+        "entity_id": 2077,
+        "name": "Melithar Staghelm"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Teldrassil"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 247840,
+      "object_name": "Mining for Dummies",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=458",
+      "subject_id": 458,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 247841,
+      "object_name": "Wild Harvest",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=458",
+      "subject_id": 458,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 247846,
+      "object_name": "Pelt Collecting for Beginners",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=458",
+      "subject_id": 458,
+      "subject_type": "quest"
+    }
+  ],
+  "url": "https://www.wowhead.com/forever/quest=458"
+}

@@ -1,0 +1,325 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client tables from Wago.tools.",
+      "source": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "credit": "Gethe's Blizzard UI export",
+      "source": "https://github.com/Gethe/wow-ui-source/commit/4cd0ab752a77164f654ccbca9d0c1fe8dafceebe"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_client_item_effects",
+  "fetched_at": "2026-11-13T03:59:43.4491189Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3924683,
+      "collected_at": "2026-11-13T04:11:22.5338788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70888-spelleffect",
+      "source_content_digest": "da2fb074eedb51bd1246ef53666044c0b757bdb67340c3969b712caa8481ac2b",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 36721,
+      "collected_at": "2026-11-13T04:16:58.3880233Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-itbonus",
+      "source_content_digest": "44b61eec8dbe7c22aa69a5031c38cb5521d217d2c7965987db20d3af2b5212bc",
+      "source_url": "https://wago.tools/db2/ItemXBonusTree/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "prior_effect_review": {
+    "content_digest": "c4ff77c1820508d914faf9c169ab925da6e96ddd5794a5721449b10cbc1f880c",
+    "evidence_id": "wago:d02ff6a6bf341ba68861ef54"
+  },
+  "provider": "wago",
+  "reviewed_item_effects": [
+    {
+      "finding": "Its only use consumes the pouch to produce Charm Pouch (DND), which has no gameplay stats or effects. The reverse conversion is a pouch assembly spell.",
+      "gearing_benefit": false,
+      "item_effect_links": [
+        {
+          "ID": 93590,
+          "ItemEffectID": 99718,
+          "ItemID": 12443
+        }
+      ],
+      "item_effects": [
+        {
+          "Charges": -1,
+          "ID": 99718,
+          "PlayerConditionID": 0,
+          "SpellID": 16197,
+          "TriggerType": 0
+        }
+      ],
+      "item_id": 12443,
+      "reviewed_spell_ids": [
+        16195,
+        16197
+      ],
+      "spell_effect_rows": [
+        {
+          "DifficultyID": 0,
+          "Effect": 24,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectItemType": 12443,
+          "EffectTriggerSpell": 0,
+          "ID": 693745,
+          "SpellID": 16195
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 24,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectItemType": 12442,
+          "EffectTriggerSpell": 0,
+          "ID": 693767,
+          "SpellID": 16197
+        }
+      ],
+      "tooltip_effects": [
+        "Use: Empty to create a Charm Pouch."
+      ]
+    },
+    {
+      "finding": "Its only attached use casts Cascade of Roses. The spell applies the rose-petal display, with no combat stat, damage, healing or control effect.",
+      "gearing_benefit": false,
+      "item_effect_links": [
+        {
+          "ID": 95829,
+          "ItemEffectID": 102641,
+          "ItemID": 22206
+        }
+      ],
+      "item_effects": [
+        {
+          "Charges": 0,
+          "ID": 102641,
+          "PlayerConditionID": 0,
+          "SpellID": 27571,
+          "TriggerType": 0
+        }
+      ],
+      "item_id": 22206,
+      "reviewed_spell_ids": [
+        27571
+      ],
+      "spell_effect_rows": [
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 698237,
+          "SpellID": 27571
+        }
+      ],
+      "tooltip_effects": [
+        "Use: Shower a nearby target with a cascade of rose petals! (5 Min Cooldown)"
+      ]
+    },
+    {
+      "finding": "Its equipped effects track Moon, Emerald Dream and Wild puzzle progress. Its single-use effect teaches the old pants engraving. Forever grants Lacerate as a Feral talent.",
+      "gearing_benefit": false,
+      "item_effect_links": [
+        {
+          "ID": 116198,
+          "ItemEffectID": 180499,
+          "ItemID": 210195
+        },
+        {
+          "ID": 116199,
+          "ItemEffectID": 180500,
+          "ItemID": 210195
+        },
+        {
+          "ID": 116202,
+          "ItemEffectID": 180503,
+          "ItemID": 210195
+        },
+        {
+          "ID": 116203,
+          "ItemEffectID": 180504,
+          "ItemID": 210195
+        }
+      ],
+      "item_effects": [
+        {
+          "Charges": -1,
+          "ID": 180499,
+          "PlayerConditionID": 0,
+          "SpellID": 423187,
+          "TriggerType": 0
+        },
+        {
+          "Charges": 0,
+          "ID": 180500,
+          "PlayerConditionID": 0,
+          "SpellID": 424339,
+          "TriggerType": 1
+        },
+        {
+          "Charges": 0,
+          "ID": 180503,
+          "PlayerConditionID": 0,
+          "SpellID": 424336,
+          "TriggerType": 1
+        },
+        {
+          "Charges": 0,
+          "ID": 180504,
+          "PlayerConditionID": 0,
+          "SpellID": 423186,
+          "TriggerType": 1
+        }
+      ],
+      "item_id": 210195,
+      "reviewed_spell_ids": [
+        416049,
+        423186,
+        423187,
+        423191,
+        423192,
+        423194,
+        424190,
+        424336,
+        424339
+      ],
+      "spell_effect_rows": [
+        {
+          "DifficultyID": 0,
+          "Effect": 54,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1086190,
+          "SpellID": 416049
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 424190,
+          "ID": 1099001,
+          "SpellID": 423186
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 36,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 416049,
+          "ID": 1099002,
+          "SpellID": 423187
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1099020,
+          "SpellID": 423191
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1099021,
+          "SpellID": 423192
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1099023,
+          "SpellID": 423194
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 423191,
+          "ID": 1100724,
+          "SpellID": 424190
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 423194,
+          "ID": 1101018,
+          "SpellID": 424336
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 0,
+          "EffectItemType": 0,
+          "EffectTriggerSpell": 423192,
+          "ID": 1101021,
+          "SpellID": 424339
+        }
+      ],
+      "tooltip_effects": [
+        "Use: Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability."
+      ]
+    }
+  ],
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/items/12443,22206,210195"
+}

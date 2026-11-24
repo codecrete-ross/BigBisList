@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Elemental Focus Band Item Level 65 Binds when picked up Unique Finger +8 Stamina +11 Intellect Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 22 . Sell Price: 7 35 53 Dropped by: Prince Skaldrenox Drop Chance: 30.48%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 20682,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 22.",
+        "stats": {
+          "spell_power": 22.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 22."
+    ],
+    "id": 20682,
+    "item_level": 65,
+    "name": "Elemental Focus Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_power": 22.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20682"
+  },
+  "linked_entities": [],
+  "name": "Elemental Focus Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.48,
+      "entity_name": "Prince Skaldrenox",
+      "source_url": "https://www.wowhead.com/forever/item=20682",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20682",
+  "url": "https://www.wowhead.com/forever/item=20682"
+}

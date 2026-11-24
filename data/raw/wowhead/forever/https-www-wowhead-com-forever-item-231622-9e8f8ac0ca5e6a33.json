@@ -1,0 +1,137 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Satin Hood Item Level 74 Binds when picked up Head Cloth 92 Armor +45 Stamina +28 Intellect +9 Spirit +70 Armor Durability 60 / 60 Classes: Priest Requires Level 60 Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects. Field Marshal's Investiture (0/6) Field Marshal's Satin Hood Field Marshal's Satin Mantle Field Marshal's Satin Tunic Marshal's Satin Handwraps Marshal's Satin Legguards Marshal's Satin Walkers (2) Set : +20 Stamina. (3) Set : Increases the duration of your Psychic Scream spell by 1 sec. (6) Set : Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects. Sell Price: 2 4 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 231622,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 92,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 62,
+          "spell_damage": 21
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects."
+    ],
+    "id": 231622,
+    "item_level": 74,
+    "name": "Field Marshal's Satin Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23044,
+        "text": "Increases the duration of your Psychic Scream spell by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 467550,
+        "text": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 62.0,
+      "intellect": 28.0,
+      "spell_damage": 21.0,
+      "spirit": 9.0,
+      "stamina": 45.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231622"
+  },
+  "linked_entities": [
+    {
+      "id": 231622,
+      "name": "Field Marshal's Satin Hood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231622"
+    },
+    {
+      "id": 231623,
+      "name": "Marshal's Satin Handwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231623"
+    },
+    {
+      "id": 231624,
+      "name": "Field Marshal's Satin Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231624"
+    },
+    {
+      "id": 231626,
+      "name": "Marshal's Satin Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231626"
+    },
+    {
+      "id": 231627,
+      "name": "Marshal's Satin Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231627"
+    },
+    {
+      "id": 231628,
+      "name": "Field Marshal's Satin Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231628"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23044,
+      "name": "Increases the duration of your Psychic Scream spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23044"
+    },
+    {
+      "id": 467550,
+      "name": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=467550"
+    }
+  ],
+  "name": "Field Marshal's Satin Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "649dcb119f5f1e9b7524241099a7e702b34ee9419790d9902af11f0fab3e235d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231622",
+  "url": "https://www.wowhead.com/forever/item=231622"
+}

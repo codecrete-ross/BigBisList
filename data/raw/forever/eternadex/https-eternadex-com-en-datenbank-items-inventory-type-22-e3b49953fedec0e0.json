@@ -1,0 +1,365 @@
+{
+  "attribution": [
+    {
+      "credit": "Eternadex",
+      "source": "https://eternadex.com/en/datenbank/items/"
+    }
+  ],
+  "catalog_coverage": {
+    "complete": true,
+    "inventory_types": [
+      22
+    ],
+    "level_max": 59,
+    "level_min": 1,
+    "qualities": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "slots": [
+      "Off Hand"
+    ],
+    "total": 16
+  },
+  "catalog_kind": "counted_listing",
+  "client_build": "1.60.1.70938",
+  "confidence": "catalog_identity_only",
+  "fetched_at": "2026-11-15T03:04:40.960493+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 35587,
+      "collected_at": "2026-11-15T03:04:23.065366+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/",
+      "source_content_digest": "8cb7206ea286d5e869cefe39534098da81bf69df50b352ef8211cb584be02a23",
+      "source_url": "https://eternadex.com/en/datenbank/items/",
+      "status": 200
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-15T02:01:59.003878+00:00",
+      "cycle": null,
+      "etag": null,
+      "last_modified": "Fri, 13 Nov 2026 02:30:17 GMT",
+      "response_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938",
+      "status": 200
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-15T02:01:59.644872+00:00",
+      "cycle": null,
+      "etag": null,
+      "last_modified": "Fri, 13 Nov 2026 02:29:57 GMT",
+      "response_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938",
+      "status": 200
+    },
+    {
+      "bytes": 61159,
+      "collected_at": "2026-11-15T03:04:25.627874+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/einhandaexte/",
+      "source_content_digest": "5858e4ba05c52eb02929d73ce468d9300480589b29e6f8bd9749eb6093b08f63",
+      "source_url": "https://eternadex.com/en/datenbank/items/einhandaexte/",
+      "status": 200
+    },
+    {
+      "bytes": 59145,
+      "collected_at": "2026-11-15T03:04:26.495640+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:24 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/zweihandaexte/",
+      "source_content_digest": "a885aacee74d9687fed0a9a648996d6f5dcd098d7c658c61c1731374a0919154",
+      "source_url": "https://eternadex.com/en/datenbank/items/zweihandaexte/",
+      "status": 200
+    },
+    {
+      "bytes": 72979,
+      "collected_at": "2026-11-15T03:04:27.358487+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:24 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/einhandschwerter/",
+      "source_content_digest": "e0d6347c498b6e8abdcd51dd438e3cd65aa629392c257f3526083df2535febcb",
+      "source_url": "https://eternadex.com/en/datenbank/items/einhandschwerter/",
+      "status": 200
+    },
+    {
+      "bytes": 34325,
+      "collected_at": "2026-11-15T03:04:28.079763+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/einhandschwerter/2/",
+      "source_content_digest": "7c584e18441cf664a920e4c4ca47e4be5b17105637344f4c57299b76735748de",
+      "source_url": "https://eternadex.com/en/datenbank/items/einhandschwerter/2/",
+      "status": 200
+    },
+    {
+      "bytes": 59257,
+      "collected_at": "2026-11-15T03:04:29.002375+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/zweihandschwerter/",
+      "source_content_digest": "ea4a3b2baf1d23bac47af33b7c08ca189313053019cbcb34a2a805f035ad7e91",
+      "source_url": "https://eternadex.com/en/datenbank/items/zweihandschwerter/",
+      "status": 200
+    },
+    {
+      "bytes": 72871,
+      "collected_at": "2026-11-15T03:04:30.017709+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/einhandstreitkolben/",
+      "source_content_digest": "1f4172090be09251a57f6069892bacd0bfa0fea4e46f88541f1a31dfa0106d31",
+      "source_url": "https://eternadex.com/en/datenbank/items/einhandstreitkolben/",
+      "status": 200
+    },
+    {
+      "bytes": 34557,
+      "collected_at": "2026-11-15T03:04:30.422350+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/einhandstreitkolben/2/",
+      "source_content_digest": "834252a45241dac8d089531a2e7042215e767992fd82bfe433a24b50e57348e1",
+      "source_url": "https://eternadex.com/en/datenbank/items/einhandstreitkolben/2/",
+      "status": 200
+    },
+    {
+      "bytes": 64148,
+      "collected_at": "2026-11-15T03:04:31.661417+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/zweihandstreitkolben/",
+      "source_content_digest": "56680e72ad6b1ca697c2133d4f6f62693f79b943983d364999ded62b799a9ea4",
+      "source_url": "https://eternadex.com/en/datenbank/items/zweihandstreitkolben/",
+      "status": 200
+    },
+    {
+      "bytes": 74269,
+      "collected_at": "2026-11-15T03:04:32.531006+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/dolche/",
+      "source_content_digest": "bd666e146e46f34cd6239883043f5ba0d63aac6184b403ebd744abf780f3bed1",
+      "source_url": "https://eternadex.com/en/datenbank/items/dolche/",
+      "status": 200
+    },
+    {
+      "bytes": 41627,
+      "collected_at": "2026-11-15T03:04:33.249552+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/dolche/2/",
+      "source_content_digest": "25ed4621ed89c299a188f9660a823031dccd5934fcb8442fce5a38747abd80f0",
+      "source_url": "https://eternadex.com/en/datenbank/items/dolche/2/",
+      "status": 200
+    },
+    {
+      "bytes": 37092,
+      "collected_at": "2026-11-15T03:04:34.014612+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/faustwaffen/",
+      "source_content_digest": "102cd3909ed7ba918040b92bc5cc8ada1f0e643b1244616fc82a20dcf01839d5",
+      "source_url": "https://eternadex.com/en/datenbank/items/faustwaffen/",
+      "status": 200
+    },
+    {
+      "bytes": 39118,
+      "collected_at": "2026-11-15T03:04:34.730240+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/stangenwaffen/",
+      "source_content_digest": "81c8f6223edb383aac114c31be1481447e8b66a9d9b1af4ec195f441f1a2d5b4",
+      "source_url": "https://eternadex.com/en/datenbank/items/stangenwaffen/",
+      "status": 200
+    },
+    {
+      "bytes": 72615,
+      "collected_at": "2026-11-15T03:04:35.635314+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/staebe/",
+      "source_content_digest": "46913824922cf0b82a673fc67c28ae88a44c2472818fe6207d5aaf86b1aaf42d",
+      "source_url": "https://eternadex.com/en/datenbank/items/staebe/",
+      "status": 200
+    },
+    {
+      "bytes": 31967,
+      "collected_at": "2026-11-15T03:04:36.356663+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/staebe/2/",
+      "source_content_digest": "6ee3c712e2d657da5f5f0aa1905867ebc1e567ad8f078654e640867b116a28ba",
+      "source_url": "https://eternadex.com/en/datenbank/items/staebe/2/",
+      "status": 200
+    },
+    {
+      "bytes": 54184,
+      "collected_at": "2026-11-15T03:04:37.253430+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:47 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/boegen/",
+      "source_content_digest": "2db86756fbdaf4ab6903f18b09ead93bbe04fd67be8deeaacf28a103b186c151",
+      "source_url": "https://eternadex.com/en/datenbank/items/boegen/",
+      "status": 200
+    },
+    {
+      "bytes": 31372,
+      "collected_at": "2026-11-15T03:04:37.933517+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/armbrueste/",
+      "source_content_digest": "c34ae0a02b8c11676813ea74e46083c8d2fb45b6b4fe398888c00564677bc854",
+      "source_url": "https://eternadex.com/en/datenbank/items/armbrueste/",
+      "status": 200
+    },
+    {
+      "bytes": 49240,
+      "collected_at": "2026-11-15T03:04:38.361666+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/schusswaffen/",
+      "source_content_digest": "aae2656b641337be3904d5fd0d3d4cda74be7bff3f6fd5909acf744faa7fdbc9",
+      "source_url": "https://eternadex.com/en/datenbank/items/schusswaffen/",
+      "status": 200
+    },
+    {
+      "bytes": 38500,
+      "collected_at": "2026-11-15T03:04:39.082531+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 21:22:25 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/wurfwaffen/",
+      "source_content_digest": "86bc4d0400bc807cc318f6c1fdaffa7db3ced161f346de90b11875d33753da5d",
+      "source_url": "https://eternadex.com/en/datenbank/items/wurfwaffen/",
+      "status": 200
+    },
+    {
+      "bytes": 54940,
+      "collected_at": "2026-11-15T03:04:39.888580+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/zauberstaebe/",
+      "source_content_digest": "d5d757082d5952c6df96bda8782fd745d00e4d495796d4b2f44a76413f28cc9e",
+      "source_url": "https://eternadex.com/en/datenbank/items/zauberstaebe/",
+      "status": 200
+    },
+    {
+      "bytes": 29024,
+      "collected_at": "2026-11-15T03:04:40.960493+00:00",
+      "cycle": "verified-counted-cache-1.60.1.70938",
+      "etag": null,
+      "last_modified": "Sat, 14 Nov 2026 06:18:48 GMT",
+      "response_url": "https://eternadex.com/en/datenbank/items/weitere-waffen/",
+      "source_content_digest": "f42199c028b10f4647675b03a51ac616239c1f299d1a0461764d4cee7dfbe16c",
+      "source_url": "https://eternadex.com/en/datenbank/items/weitere-waffen/",
+      "status": 200
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "eternadex",
+  "reconciliation": {
+    "ahledger_matches": 16,
+    "client_matches": 16,
+    "listing_only_ids": []
+  },
+  "records": [
+    {
+      "item_id": 9608,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 11863,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 12939,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 13399,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 15906,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 15907,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 15909,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 17738,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 18392,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 18847,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 18848,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 20005,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 256039,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 272598,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 272845,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 279507,
+      "slot": "Off Hand"
+    }
+  ],
+  "relationships": [],
+  "url": "https://eternadex.com/en/datenbank/items/#inventory-type-22"
+}

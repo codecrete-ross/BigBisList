@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Vigor Item Level 58 Binds when picked up Unique-Equipped Finger +8 Strength +7 Agility +7 Stamina +10 Spirit Requires Level 53 Sell Price: 1 80 47 Dropped by: Lethtendris Drop Chance: 28.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18302,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18302,
+    "item_level": 58,
+    "name": "Band of Vigor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "spirit": 10.0,
+      "stamina": 7.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18302"
+  },
+  "linked_entities": [],
+  "name": "Band of Vigor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 28.86,
+      "entity_name": "Lethtendris",
+      "source_url": "https://www.wowhead.com/forever/item=18302",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4ac9465ff14b309456b51beba6b6972e54a6f27dc5b7521b03295bb3fc4b2347",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18302",
+  "url": "https://www.wowhead.com/forever/item=18302"
+}

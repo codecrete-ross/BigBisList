@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talbar Mantle Item Level 26 Binds when picked up Shoulder Cloth 30 Armor +2 Stamina +4 Intellect Restores + 1 mana per 5 sec. Durability 40 / 40 Sell Price: 9 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 10657,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 30,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +1 mana per 5 sec.",
+        "stats": {
+          "mp5": 1
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 10657,
+    "item_level": 26,
+    "name": "Talbar Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 4.0,
+      "mp5": 1.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10657"
+  },
+  "linked_entities": [],
+  "name": "Talbar Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10657",
+  "url": "https://www.wowhead.com/forever/item=10657"
+}

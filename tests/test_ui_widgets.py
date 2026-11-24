@@ -160,6 +160,93 @@ button:Fire("OnHide")
 expect(not button.hovered and not button.pressed and not button.focused, "hiding clears transient input states")
 ''')
 
+    def test_dropdown_toggle_survives_native_mouse_down_dismissal(self):
+        self.run_lua(r'''
+UIDROPDOWNMENU_MAXLEVELS = 2
+DropDownList1 = CreateFrame("Frame")
+DropDownList1:Hide()
+local toggles, nativeDismissals = 0, 0
+function UIDropDownMenu_SetWidth(frame, width) frame:SetWidth(width) end
+function UIDropDownMenu_SetText(frame, text) frame.text = text end
+function UIDropDownMenu_Initialize() end
+function CloseDropDownMenus()
+    if DropDownList1:IsShown() then nativeDismissals = nativeDismissals + 1 end
+    DropDownList1:Hide()
+    UIDROPDOWNMENU_OPEN_MENU = nil
+end
+function ToggleDropDownMenu(_, _, owner)
+    toggles = toggles + 1
+    if DropDownList1:IsShown() and DropDownList1.dropdown == owner then
+        DropDownList1:Hide()
+        UIDROPDOWNMENU_OPEN_MENU = nil
+    else
+        DropDownList1.dropdown = owner
+        UIDROPDOWNMENU_OPEN_MENU = owner
+        DropDownList1:Show()
+    end
+end
+
+local function mouseInput(target, phase, button)
+    button = button or "LeftButton"
+    -- The client dismisses menus unless the mouse focus claims this event.
+    if phase == "Down" and not (target and target.HandlesGlobalMouseEvent
+        and target:HandlesGlobalMouseEvent(button, "GLOBAL_MOUSE_DOWN")) then
+        CloseDropDownMenus()
+    end
+    if not target then return end
+    target:Fire("OnMouse" .. phase, button)
+    for _, registered in ipairs(target.clicks or {}) do
+        if registered == button .. phase then
+            target:Fire("OnClick", button, phase == "Down")
+        end
+    end
+end
+local function click(target, button)
+    mouseInput(target, "Down", button)
+    mouseInput(target, "Up", button)
+end
+
+local dropdown = Widgets:CreateDropdown("MouseDropdown", nil, 120)
+click(dropdown.clickCover)
+expect(DropDownList1:IsShown(), "first full mouse click opens dropdown")
+equal(toggles, 1, "opening toggles once")
+mouseInput(dropdown.clickCover, "Down")
+expect(DropDownList1:IsShown(), "own mouse down does not dismiss dropdown before mouse up")
+mouseInput(dropdown.clickCover, "Up")
+expect(not DropDownList1:IsShown(), "second full mouse click leaves dropdown closed")
+equal(toggles, 2, "closing toggles once")
+equal(nativeDismissals, 0, "dropdown clicks bypass outside-click dismissal")
+click(dropdown.clickCover)
+expect(DropDownList1:IsShown(), "next click reopens dropdown")
+
+MouseDropdownWithArrowButton = CreateFrame("Button")
+local second = Widgets:CreateDropdown("MouseDropdownWithArrow", nil, 120)
+click(second.clickCover)
+expect(DropDownList1:IsShown(), "switching dropdowns leaves the new menu open")
+equal(DropDownList1.dropdown, second, "switching uses the new owner")
+equal(toggles, 4, "switching toggles once")
+click(second.clickCover)
+expect(not DropDownList1:IsShown(), "dropdown with a native arrow also closes")
+equal(toggles, 5, "native arrow does not duplicate full-field activation")
+second.nativeButton:SetEnabled(false)
+click(second.clickCover)
+expect(not DropDownList1:IsShown(), "disabled native arrow keeps full-field control disabled")
+equal(toggles, 5, "disabled dropdown does not toggle")
+second.nativeButton:SetEnabled(true)
+click(second.clickCover)
+
+mouseInput(nil, "Down")
+expect(not DropDownList1:IsShown(), "outside mouse down still dismisses dropdown")
+equal(nativeDismissals, 1, "outside click uses native dismissal")
+click(dropdown.clickCover)
+click(dropdown.clickCover, "RightButton")
+expect(not DropDownList1:IsShown(), "right click still dismisses dropdown")
+equal(nativeDismissals, 2, "right click is not claimed as dropdown activation")
+equal(toggles, 7, "right click never activates dropdown")
+expect(not dropdown.clickCover:HandlesGlobalMouseEvent("LeftButton", "GLOBAL_MOUSE_UP"),
+    "mouse up remains available to native global handlers")
+''')
+
     def test_tooltip_rebinding_composes_with_item_hover_without_duplicate_callbacks(self):
         self.run_lua(r'''
 local button = Widgets:CreateIconButton(nil, 30)

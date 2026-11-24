@@ -1,0 +1,50 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:13.522909+00:00",
+  "flavor": "forever",
+  "item_id": 270069,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Mindslicer Item Level 41 Binds when picked up Main Hand Dagger 20 - 38 Damage Speed 1.90 (15.26 damage per second) +7 Intellect Durability 55 / 55 Equip: Increases damage and healing done by magical spells and effects by up to 34 . Sell Price: 1 13 58",
+      "dps": 15.26,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+          "stats": {
+            "spell_power": 34.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+      ],
+      "id": 270069,
+      "item_level": 41,
+      "name": "Mindslicer",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 7.0,
+        "spell_power": 34.0
+      },
+      "weapon_max_damage": 38,
+      "weapon_min_damage": 20,
+      "weapon_speed": 1.9,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=270069"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "ff88e870b20f23f4a7f6c27dba873bce9301729cbc1b2a7b088871bf76a92dd1",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/270069#sha256-ff88e870b20f23f4a7f6c27dba873bce9301729cbc1b2a7b088871bf76a92dd1"
+}

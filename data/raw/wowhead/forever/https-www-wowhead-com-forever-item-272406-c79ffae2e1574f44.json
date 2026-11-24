@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Channeler's Ring Item Level 65 Binds when picked up Unique Finger +14 Intellect Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 2 39 61",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-23T01:03:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 272406,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 272406,
+    "item_level": 65,
+    "name": "Channeler's Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 14.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272406"
+  },
+  "linked_entities": [],
+  "name": "Channeler's Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "eeec92e72aaed30c318ab8811912d34432c1ab4499190d7d6b239d16b8994ec9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272406",
+  "url": "https://www.wowhead.com/forever/item=272406"
+}

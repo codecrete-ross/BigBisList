@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Hunt Begins Grull Hawkwind in Camp Narache wants you to bring him 7 Plainstrider Feathers and 7 pieces of Plainstrider Meat. Requirements: - Plainstrider Meat x 7 - Plainstrider Feather x 7",
+  "entity_id": 747,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:39.752Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Hunt Begins",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      },
+      "start": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4910,
+      "object_name": "Painted Chain Gloves",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=747",
+      "subject_id": 747,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4954,
+      "object_name": "Nomadic Belt",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=747",
+      "subject_id": 747,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/747",
+  "url": "https://www.wowhead.com/forever/quest=747"
+}

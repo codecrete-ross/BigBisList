@@ -1,0 +1,64 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/quest=84189/anthions-parting-words"
+    },
+    {
+      "credit": "WarcraftDB",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/84189"
+    }
+  ],
+  "confidence": "published_forever_quest_lead",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5761,
+      "collected_at": "2026-11-13T06:08:59.3783965Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wdb-q84189",
+      "source_content_digest": "d3670916119c6903e1a90d473a8bb96513ad99047c0c1ee6c432e459a4300ea6",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/84189"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 226936,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=84189/anthions-parting-words",
+      "subject_id": 84189,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "capture_method": "indexed_search_excerpt",
+    "digest_input": "normalized indexed quest-page finding",
+    "indexed_wowhead_reward_ids": [
+      226931,
+      226933,
+      226936
+    ],
+    "minimum_level": null,
+    "objective_item_ids": [
+      226730,
+      226727,
+      226726
+    ],
+    "page_crawl_age_at_review": "last month",
+    "provided_item_id": 21986,
+    "quest_id": 84189,
+    "reputation_gate": null,
+    "required_token_id": null,
+    "side": "Horde",
+    "title": "Anthion's Parting Words",
+    "warcraftdb_corroborated_reward_ids": []
+  },
+  "source_content_digest": "b79d4de72a28b2b1fcfdb8ea765c8c0984f9e5dc1d70d13d8d90246eb72441a9",
+  "url": "https://www.wowhead.com/forever/quest=84189/anthions-parting-words"
+}

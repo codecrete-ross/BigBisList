@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Rupture 25 Energy / 1 to 5 Combo Points Melee Range Instant Requires Rogue Requires level 20 Requires Melee Weapon Finishing move that causes damage over time, increased by your Attack Power. Lasts longer per combo point: 1 point : [(6.18) * (4 + 0 / 2)] damage over [(8 + 0 )] secs 2 points: [(7.36) * (5 + 0 / 2)] damage over [(10 + 0 )] secs 3 points: [(8.54) * (6 + 0 / 2)] damage over [(12 + 0 )] secs 4 points: [(9.72) * (7 + 0 / 2)] damage over [(14 + 0 )] secs 5 points: [(10.9) * (8 + 0 / 2)] damage over [(16 + 0 )] secs",
+  "entity_id": 1943,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:25+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1943,
+      "name": "Rupture",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1943"
+    }
+  ],
+  "name": "Rupture",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "2bd0660c5cfe42896a4d5ec49888e8ea82f9a34717899cf8d62b08c9e005b460",
+  "spell_id": 1943,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1943",
+  "url": "https://www.wowhead.com/forever/spell=1943"
+}

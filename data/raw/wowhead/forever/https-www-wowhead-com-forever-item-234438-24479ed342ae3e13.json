@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Classes: Priest , Warlock , Druid Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases damage and healing done by magical spells and effects by up to 28 . Equip: Increases the damage dealt by all of your damage over time spells by 3% per piece of Timeworn armor equipped. \"The Path of the Subjugator\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 234438,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases the damage dealt by all of your damage over time spells by 3% per piece of Timeworn armor equipped.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 234438,
+    "item_level": 70,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Warlock",
+        "Druid"
+      ]
+    },
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "spell_power": 28.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=234438"
+  },
+  "linked_entities": [
+    {
+      "id": 910,
+      "name": "Brood of Nozdormu",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=910"
+    },
+    {
+      "id": 1214155,
+      "name": "Increases the damage dealt by all of your damage over time spells by 3% per piece of Timeworn armor equipped.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1214155"
+    }
+  ],
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Classes: Priest , Warlock , Druid Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases damage and healing done by magical spells and effects by up to 28 . Equip: Increases the damage dealt by all of your damage over time spells by 3% per piece of Timeworn armor equipped. \"The Path of the Subjugator\" Added in Season of Discovery. May not be in WoW: Forever.",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=234438",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "01b3ede10b0c602788ce2186c0e1b30adfd94486ea4803b691f1761e8488b9f6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/234438",
+  "url": "https://www.wowhead.com/forever/item=234438"
+}

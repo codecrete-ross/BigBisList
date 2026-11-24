@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spellweaver's Turban Item Level 63 Binds when picked up Head Cloth 73 Armor +13 Spirit Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 33 . Sell Price: 1 72 74 Dropped by: General Drakkisath Drop Chance: 27.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T03:49:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22267,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 73,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 33.",
+        "stats": {
+          "spell_power": 33.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 33."
+    ],
+    "id": 22267,
+    "item_level": 63,
+    "name": "Spellweaver's Turban",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "spell_power": 33.0,
+      "spirit": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22267"
+  },
+  "linked_entities": [],
+  "name": "Spellweaver's Turban",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.86,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=22267",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "34f7aaa92e85695961a5bc7cfd79a5044e3ec7de3f15f2fd96ce69d21ab2f47d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22267",
+  "url": "https://www.wowhead.com/forever/item=22267"
+}

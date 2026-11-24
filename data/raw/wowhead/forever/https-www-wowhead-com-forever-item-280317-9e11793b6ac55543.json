@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Frying Pan Item Level 5 Binds when picked up Held In Off-hand Requires Cooking (1) Sell Price: 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 280317,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 280317,
+    "item_level": 5,
+    "name": "Frying Pan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280317"
+  },
+  "linked_entities": [
+    {
+      "id": 185,
+      "name": "Cooking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=185"
+    }
+  ],
+  "name": "Frying Pan",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "abc463aa70a8c03066adbae63acd4a0adffdba0afc728397bd0b0db0ad0041c4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280317",
+  "url": "https://www.wowhead.com/forever/item=280317"
+}

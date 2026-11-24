@@ -83,6 +83,40 @@
     }
   },
   "$defs": {
+    "foreverEvidence": {
+      "type": "object",
+      "required": ["reviewer", "reviewed_at", "reason", "source_url", "client_build"],
+      "properties": {
+        "reviewer": { "type": "string", "minLength": 1 },
+        "reviewed_at": { "type": "string", "format": "date" },
+        "reason": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "format": "uri" },
+        "client_build": { "type": "string", "pattern": "^1\\.60\\.[0-9]+\\.[0-9]+$" }
+      }
+    },
+    "foreverDestination": {
+      "$ref": "#/$defs/foreverEvidence",
+      "required": ["map_id", "x", "y", "kind", "entity_id"],
+      "properties": {
+        "map_id": { "type": "integer", "minimum": 1 },
+        "x": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y": { "type": "number", "minimum": 0, "maximum": 1 },
+        "kind": { "enum": ["quest_start", "quest_end", "objective", "vendor", "trainer", "entrance", "spawn"] },
+        "entity_id": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string" }
+      }
+    },
+    "foreverQuestStep": {
+      "$ref": "#/$defs/foreverEvidence",
+      "required": ["quest_id", "name", "kind"],
+      "properties": {
+        "quest_id": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["prerequisite", "alternative", "reward"] },
+        "start": { "$ref": "#/$defs/foreverDestination" },
+        "finish": { "$ref": "#/$defs/foreverDestination" }
+      }
+    },
     "source": {
       "type": "object",
       "required": [
@@ -112,6 +146,12 @@
         "zone": {
           "type": "string"
         },
+        "activity_zones": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
         "difficulty": {
           "type": "string"
         },
@@ -127,6 +167,11 @@
         "quest_id": {
           "type": "integer"
         },
+        "quest_steps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/foreverQuestStep" }
+        },
+        "destination": { "$ref": "#/$defs/foreverDestination" },
         "vendor_id": {
           "type": "integer"
         },
@@ -136,8 +181,44 @@
         "side": {
           "type": "string"
         },
+        "eligibility": {
+          "type": "object",
+          "required": ["min_level"],
+          "properties": {
+            "min_level": { "type": "integer", "minimum": 1, "maximum": 60 },
+            "max_level": { "type": "integer", "minimum": 1, "maximum": 60 },
+            "classes": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+            "races": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        },
         "source_url": {
           "type": "string"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["evidence_id", "content_digest"],
+            "properties": {
+              "evidence_id": { "type": "string", "minLength": 1 },
+              "content_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
+        },
+        "attribution": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["credit", "licence", "licenceUrl", "source"],
+            "properties": {
+              "credit": { "type": "string", "minLength": 1 },
+              "licence": { "type": "string", "minLength": 1 },
+              "licenceUrl": { "type": "string", "format": "uri" },
+              "source": { "type": "string", "format": "uri" }
+            }
+          }
         },
         "confidence": {
           "type": "string"

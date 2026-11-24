@@ -1,0 +1,55 @@
+{
+  "attribution": [
+    {
+      "credit": "60.tools Forever quest record",
+      "source": "https://www.60.tools/quests/7631-dreadsteed-of-xoroth"
+    },
+    {
+      "credit": "Wowhead Forever quest tooltip",
+      "source": "https://nether.wowhead.com/forever/tooltip/quest/7631"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "forever_quest_ritual_reference",
+  "fetched_at": "2026-11-14T00:35:22.304323+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 128218,
+      "collected_at": "2026-11-14T00:35:22.304323+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-items-6025",
+      "source_content_digest": "48cb135803454c1ff3e2c3c3b53cef0d9d0266178fac556ff6bed9cf1ef4d7c9",
+      "source_url": "https://www.60.tools/quests/7631-dreadsteed-of-xoroth"
+    },
+    {
+      "bytes": 345,
+      "collected_at": "2026-11-14T00:36:34.156703+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-quest-7631",
+      "source_content_digest": "26066dd873cab0b14591ae81785f5d7a34c97c566691468018c6cb9c30c9be1f",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/quest/7631"
+    },
+    {
+      "bytes": 82947,
+      "collected_at": "2026-11-14T00:35:22.420837+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-questv2",
+      "source_content_digest": "90cf939d1231e08257527add9259d4fecd429763d57b3f075a0ec2ff73f5f6dd",
+      "source_url": "https://wago.tools/db2/QuestV2/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "sixtytools",
+  "reviewed_page_facts": {
+    "class": "Warlock",
+    "finding": "The current quest text describes the summoning ritual. Use the exact Forever encounter journal for group access and do not treat the quest's level as a loot-recipient requirement.",
+    "quest_id": 7631,
+    "quest_level": 60
+  },
+  "source_content_digest": "48cb135803454c1ff3e2c3c3b53cef0d9d0266178fac556ff6bed9cf1ef4d7c9",
+  "url": "https://www.60.tools/quests/7631-dreadsteed-of-xoroth"
+}

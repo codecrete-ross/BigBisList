@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Synthesis Item Level 65 Binds when picked up Relic Idol Requires Level 60 Equip: Each of your heal over time effects on the target reduces the remaining cooldown on Swiftmend by 1 sec when you cast it. Sell Price: 1 91 61",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 272429,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Each of your heal over time effects on the target reduces the remaining cooldown on Swiftmend by 1 sec when you cast it.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Each of your heal over time effects on the target reduces the remaining cooldown on Swiftmend by 1 sec when you cast it."
+    ],
+    "id": 272429,
+    "item_level": 65,
+    "name": "Idol of Synthesis",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=272429"
+  },
+  "linked_entities": [
+    {
+      "id": 1291075,
+      "name": "Each of your heal over time effects on the target reduces the remaining cooldown on Swiftmend by 1 sec when you cast it.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291075"
+    }
+  ],
+  "name": "Idol of Synthesis",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272429",
+  "url": "https://www.wowhead.com/forever/item=272429"
+}

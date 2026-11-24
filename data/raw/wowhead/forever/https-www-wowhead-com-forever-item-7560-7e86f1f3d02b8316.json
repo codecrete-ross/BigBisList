@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Schematic: Gnomish Universal Remote Item Level 25 Binds when picked up Requires Engineering (125) Use: Teaches you how to make a Gnomish Universal Remote. Sell Price: 3 Dropped by: Mekgineer Thermaplugg Drop Chance: 0.42%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Trinket",
+      "item_id": 7506,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 7506,
+        "name": "Gnomish Universal Remote",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "uncommon",
+        "slot": "Trinket",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=7506"
+      },
+      "name": "Gnomish Universal Remote",
+      "normalized_requirements": [],
+      "quality": "uncommon",
+      "url": "https://www.wowhead.com/forever/item=7506"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T06:21:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 7560,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Gnomish Universal Remote.",
+        "type": "use"
+      }
+    ],
+    "id": 7560,
+    "item_level": 25,
+    "name": "Schematic: Gnomish Universal Remote",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Gnomish Universal Remote."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=7560"
+  },
+  "linked_entities": [
+    {
+      "id": 774,
+      "name": "Malachite",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=774"
+    },
+    {
+      "id": 814,
+      "name": "Flask of Oil",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=814"
+    },
+    {
+      "id": 818,
+      "name": "Tigerseye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=818"
+    },
+    {
+      "id": 2841,
+      "name": "Bronze Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2841"
+    },
+    {
+      "id": 4375,
+      "name": "Whirring Bronze Gizmo",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4375"
+    },
+    {
+      "id": 7506,
+      "name": "Gnomish Universal Remote",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7506"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 8344,
+      "name": "Allows control of a mechanical target for a short time. It may not always work and may just root the machine or make it very very angry. Gnomish engineering at its finest.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8344"
+    },
+    {
+      "id": 9269,
+      "name": "Teaches you how to make a Gnomish Universal Remote.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9269"
+    }
+  ],
+  "name": "Schematic: Gnomish Universal Remote",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Gnomish Universal Remote Item Level 25 Binds when picked up Requires Engineering (125) Use: Teaches you how to make a Gnomish Universal Remote. Sell Price: 3 Dropped by: Mekgineer Thermaplugg Drop Chance: 0.42%",
+      "scope": "equip_or_use",
+      "skill": 125,
+      "source_url": "https://www.wowhead.com/forever/item=7560",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.42,
+      "entity_name": "Mekgineer Thermaplugg",
+      "source_url": "https://www.wowhead.com/forever/item=7560",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "0942303c23059ab6cad616ca75049e036d82c1e290df34a7b727b267a90d493e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    9269
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7560",
+  "url": "https://www.wowhead.com/forever/item=7560"
+}

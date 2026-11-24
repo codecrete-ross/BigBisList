@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Cloth Girdle Item Level 63 Binds when picked up Unique Waist Cloth 50 Armor +7 Stamina +6 Intellect +100 Armor Durability 30 / 30 Requires Level 58 Requires The League of Arathor - Honored Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 14 . The Highlander's Intent (0/3) Highlander's Cloth Boots Highlander's Cloth Girdle Highlander's Epaulets (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 1 19 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:56:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20047,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+        "stats": {
+          "spell_power": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+    ],
+    "id": 20047,
+    "item_level": 63,
+    "name": "Highlander's Cloth Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 18384,
+        "text": "Improves your chance to get a critical strike with spells by 1.0%."
+      }
+    ],
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 6.0,
+      "spell_power": 14.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20047"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 20047,
+      "name": "Highlander's Cloth Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20047"
+    },
+    {
+      "id": 20054,
+      "name": "Highlander's Cloth Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20054"
+    },
+    {
+      "id": 20061,
+      "name": "Highlander's Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20061"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 18384,
+      "name": "Improves your chance to get a critical strike with spells by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18384"
+    }
+  ],
+  "name": "Highlander's Cloth Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Cloth Girdle Item Level 63 Binds when picked up Unique Waist Cloth 50 Armor +7 Stamina +6 Intellect +100 Armor Durability 30 / 30 Requires Level 58 Requires The League of Arathor - Honored Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 14 . The Highlander's Intent (0/3) Highlander's Cloth Boots Highlander's Cloth Girdle Highlander's Epaulets (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with spells by 1.0%. Sell Price: 1 19 11",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20047",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20047",
+  "url": "https://www.wowhead.com/forever/item=20047"
+}

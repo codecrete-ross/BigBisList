@@ -1,0 +1,97 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=22322"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "The Jaw Breaker Item Level 61 Binds when picked up One-Hand Mace 45 - 84 Damage Speed 1.60 (40.31 damage per second) Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 6 Attack Power. Equip: + 6 Attack Power against Humanoids. \"Not edible\" Sell Price: 5 22 29 Dropped by: Mor Grayhoof Drop Chance: 21.05%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T23:25:00.825666+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1423,
+      "collected_at": "2026-11-13T23:25:00.825666+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22322",
+      "source_content_digest": "0d0a052498cc585b03d7e4d04e07f59aa03d37e557818394ef8f54708afc6aa1",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22322"
+    }
+  ],
+  "inventory_slot": "One Hand",
+  "item_id": 22322,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.31,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +6 Attack Power.",
+        "stats": {
+          "attack_power": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +6 Attack Power against Humanoids.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 22322,
+    "item_level": 61,
+    "name": "The Jaw Breaker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 6.0,
+      "crit_percent": 1.0
+    },
+    "weapon_max_damage": 84,
+    "weapon_min_damage": 45,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22322"
+  },
+  "linked_entities": [],
+  "name": "The Jaw Breaker",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.05,
+      "entity_name": "Mor Grayhoof",
+      "source_url": "https://www.wowhead.com/forever/item=22322",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0d0a052498cc585b03d7e4d04e07f59aa03d37e557818394ef8f54708afc6aa1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=22322"
+}

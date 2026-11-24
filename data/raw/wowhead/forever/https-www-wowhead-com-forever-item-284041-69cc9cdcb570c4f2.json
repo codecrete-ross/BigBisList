@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ironback Signet Item Level 53 Binds when equipped Finger +10 Stamina Requires Level 48 Equip: Increased Defense + 4. Sell Price: 1 7 86",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284041,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 284041,
+    "item_level": 53,
+    "name": "Ironback Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 48,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284041"
+  },
+  "linked_entities": [],
+  "name": "Ironback Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "60e8790da2abbd843bbe1fbd1e8768f0c2ef03264fe4d4a75558335ae63cbdb7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284041",
+  "url": "https://www.wowhead.com/forever/item=284041"
+}

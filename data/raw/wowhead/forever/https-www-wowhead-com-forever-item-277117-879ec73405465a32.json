@@ -1,0 +1,140 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Savage Gladiator Shoulders Item Level 57 Binds when picked up Shoulder Mail 254 Armor +11 Strength +16 Stamina Requires Level 52 Equip: Improves your chance to hit by 1.0%. The Gladiator (0/6) Savage Gladiator Helm Savage Gladiator Chain Savage Gladiator Leggings Savage Gladiator Greaves Savage Gladiator Grips Savage Gladiator Shoulders (2) Set : Reduces the hit chance of Fear effects against you by 8%. (3) Set : +20 Attack Power. (4) Set : Chance on hit to gain 5% attack speed for 10 sec. Attacks while no allies are within 20 yds are 2 times as likely to activate this effect. (5) Set : Improves your chance to get a critical strike by 1.0%. Sell Price: 2 14",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 277117,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 254,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 277117,
+    "item_level": 57,
+    "name": "Savage Gladiator Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1301126,
+        "text": "Reduces the hit chance of Fear effects against you by 8%."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9331,
+        "text": "+20 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1301123,
+        "text": "Chance on hit to gain 5% attack speed for 10 sec. Attacks while no allies are within 20 yds are 2 times as likely to activate this effect."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1314795,
+        "text": "Improves your chance to get a critical strike by 1.0%."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "stamina": 16.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277117"
+  },
+  "linked_entities": [
+    {
+      "id": 11726,
+      "name": "Savage Gladiator Chain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11726"
+    },
+    {
+      "id": 11728,
+      "name": "Savage Gladiator Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11728"
+    },
+    {
+      "id": 11729,
+      "name": "Savage Gladiator Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11729"
+    },
+    {
+      "id": 11730,
+      "name": "Savage Gladiator Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11730"
+    },
+    {
+      "id": 11731,
+      "name": "Savage Gladiator Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11731"
+    },
+    {
+      "id": 277117,
+      "name": "Savage Gladiator Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=277117"
+    },
+    {
+      "id": 9331,
+      "name": "+20 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9331"
+    },
+    {
+      "id": 1301123,
+      "name": "Chance on hit to gain 5% attack speed for 10 sec. Attacks while no allies are within 20 yds are 2 times as likely to activate this effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301123"
+    },
+    {
+      "id": 1301126,
+      "name": "Reduces the hit chance of Fear effects against you by 8%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301126"
+    },
+    {
+      "id": 1314795,
+      "name": "Improves your chance to get a critical strike by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1314795"
+    }
+  ],
+  "name": "Savage Gladiator Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c51bcfe0f12fc954b775ab416d41fe6228ab0add04514010ac56843b40ccee3b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277117",
+  "url": "https://www.wowhead.com/forever/item=277117"
+}

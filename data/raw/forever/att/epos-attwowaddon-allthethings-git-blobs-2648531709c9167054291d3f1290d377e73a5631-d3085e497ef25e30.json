@@ -1,0 +1,289 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T15:23:11.6028255Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 31276,
+      "collected_at": "2026-11-13T15:23:11.6028255Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-1-5-onyxia-s-lair",
+      "source_content_digest": "2a6cf14fccdbb0c961557a42bee00b86c750269026ffeb29cda39924317d42cd",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/2648531709c9167054291d3f1290d377e73a5631"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 30895,
+      "collected_at": "2026-11-13T14:15:29.2426825Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-launch",
+      "source_content_digest": "7fb53128ca0e58bc0244332457535bb1965a83f929b454152b60a2db2f361b4b",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009/world-of-warcraft-forever-raid-overview-locations-raid-sizes-and-attunement"
+    },
+    {
+      "bytes": 122522,
+      "collected_at": "2026-11-13T15:28:37.4318904Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-stranglethorn",
+      "source_content_digest": "876e7a9bc633f85c8b179fd0dfce0dc5cb6dc755be27062f9d8b9eb482a2b582",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/e6a5af01f2fccdce7c8dd2840beacf52b42fd36a"
+    },
+    {
+      "bytes": 139259,
+      "collected_at": "2026-11-13T15:28:38.0520254Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-sod-stranglethorn",
+      "source_content_digest": "4f90c397d2303e6a38a98aafce427e48d33b762fb3ec92eddbe293f23623dc0d",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/150ae1479eb05e0b5eefabcfce1badc1c423629a"
+    },
+    {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T15:03:40.6311251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-1500",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 1012217,
+      "collected_at": "2026-11-13T15:02:36.4298079Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-meta-1502",
+      "source_content_digest": "d45ce274ee10356831e14593d6a19a507087a3417fe737acee37b0ae61ef513d",
+      "source_url": "https://playfulls.com/db/meta.d45ce274ee.json"
+    },
+    {
+      "bytes": 1363081,
+      "collected_at": "2026-11-13T15:02:37.5538161Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-gear-1502",
+      "source_content_digest": "4ea88c1804f5c9807dd608447d601c89ffe0c7b9edeb0661b73f01cf9258c960",
+      "source_url": "https://playfulls.com/db/gear.4ea88c1804.json"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "reviewed_page_facts": {
+    "att_commit": "1c4d146b518a3c2cda6d2488a27be6e2638d5360",
+    "att_path": ".contrib/.db/season of discovery/dungeons & raids/1.5 Onyxia's Lair.lua",
+    "exact_forever_item_grant_matches": [],
+    "finding": "The exact item IDs are listed in the pinned seasonal Onyxia's Lair module. The current Forever phase or entry conditions gate the related raid and checked dependencies. The public Forever item, loot, vendor and quest evidence supplies no competing acquisition for these exact IDs. No seasonal equip requirement or item stats are imported.",
+    "map_id": 249,
+    "reported_items": [
+      {
+        "current_inventory_type": 11,
+        "item_id": 228687,
+        "name": "Dragonslayer's Signet",
+        "reported_routes": [
+          {
+            "source_context_line": 71,
+            "source_line": 79,
+            "source_name": "Celebrating Good Times",
+            "subject": 84560,
+            "subject_type": "quest"
+          },
+          {
+            "source_context_line": 103,
+            "source_line": 111,
+            "source_name": "For All To See",
+            "subject": 84561,
+            "subject_type": "quest"
+          }
+        ],
+        "route_dependencies": [
+          {
+            "depends_on": "Head of Onyxia",
+            "quest_id": 7495,
+            "reported_minimum": 60
+          },
+          {
+            "depends_on": "Head of Onyxia",
+            "quest_id": 7490,
+            "reported_minimum": 60
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "current_inventory_type": 23,
+        "item_id": 228955,
+        "name": "Ancient Cornerstone Grimoire",
+        "reported_routes": [
+          {
+            "source_context_line": 355,
+            "source_line": 453,
+            "source_name": "Onyxia",
+            "subject": 10184,
+            "subject_type": "npc_or_loot_group"
+          }
+        ],
+        "route_dependencies": [],
+        "scope": {
+          "level_max": 4,
+          "level_min": 1,
+          "slot": "Off Hand"
+        }
+      }
+    ],
+    "reviewed_access_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/249",
+    "source_ruleset": "season_of_discovery"
+  },
+  "source_content_digest": "2a6cf14fccdbb0c961557a42bee00b86c750269026ffeb29cda39924317d42cd",
+  "unavailable_item_ids": [
+    228687,
+    228955
+  ],
+  "unavailable_scope": {
+    "level_max": 4,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/2648531709c9167054291d3f1290d377e73a5631"
+}

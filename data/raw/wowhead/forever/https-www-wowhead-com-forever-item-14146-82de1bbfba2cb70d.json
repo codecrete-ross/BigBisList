@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gloves of Spell Mastery Item Level 62 Binds when equipped Hands Cloth 60 Armor +10 Intellect Durability 35 / 35 Classes: Priest , Mage , Warlock Requires Level 57 Equip: Improves your chance to get a critical strike by 2.0%. Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 1 40 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 14146,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 60,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 14146,
+    "item_level": 62,
+    "name": "Gloves of Spell Mastery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 2.0,
+      "intellect": 10.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14146"
+  },
+  "linked_entities": [],
+  "name": "Gloves of Spell Mastery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14146",
+  "url": "https://www.wowhead.com/forever/item=14146"
+}

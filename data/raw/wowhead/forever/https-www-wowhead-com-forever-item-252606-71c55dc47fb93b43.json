@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Pristine Scorpid Leggings Item Level 61 Binds when equipped Legs Mail 344 Armor +18 Strength Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 33 . Sell Price: 4 25 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 252606,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 344,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 33.",
+        "stats": {
+          "spell_power": 33.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 33."
+    ],
+    "id": 252606,
+    "item_level": 61,
+    "name": "Pristine Scorpid Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 56,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "spell_power": 33.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=252606"
+  },
+  "linked_entities": [],
+  "name": "Pristine Scorpid Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252606",
+  "url": "https://www.wowhead.com/forever/item=252606"
+}

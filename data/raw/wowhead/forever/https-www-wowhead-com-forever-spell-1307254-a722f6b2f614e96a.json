@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Lodestone Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Erects a lodestone that allows you and others sitting nearby to gain [( 60 < 12 ? 12 : ( 60 < 22 ? 20 : ( 60 < 32 ? 32 : ( 60 < 42 ? 49 : ( 60 < 52 ? 67 : 90)))))] increased melee Attack Power, mutually exclusive with Blessing of Might. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307254,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307254,
+      "name": "Lodestone",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307254"
+    }
+  ],
+  "name": "Lodestone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "262b0e84d4b5884bfd40ecd0d1caeeea217e01772cf82364866d738bd48b1770",
+  "spell_id": 1307254,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307254",
+  "url": "https://www.wowhead.com/forever/spell=1307254"
+}

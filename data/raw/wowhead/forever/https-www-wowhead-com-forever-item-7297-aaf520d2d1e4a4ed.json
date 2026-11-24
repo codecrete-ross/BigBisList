@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Morbent's Bane Item Level 33 Binds when picked up Unique Held In Off-hand Use: Removes the protective enchantments around Morbent Fel. (3 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 7297,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Removes the protective enchantments around Morbent Fel. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 7297,
+    "item_level": 33,
+    "name": "Morbent's Bane",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Removes the protective enchantments around Morbent Fel. (3 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7297"
+  },
+  "linked_entities": [
+    {
+      "id": 8913,
+      "name": "Removes the protective enchantments around Morbent Fel.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8913"
+    }
+  ],
+  "name": "Morbent's Bane",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "64fe3167e5dde48a74ec9da1935d8194856a91bee449b8da053d792f6cd05c64",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7297",
+  "url": "https://www.wowhead.com/forever/item=7297"
+}

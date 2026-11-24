@@ -1,0 +1,94 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Benediction Item Level 40 Binds when equipped Unique Two-Hand Staff 72 - 108 Damage Speed 3.00 (30.00 damage per second) +6 Stamina +18 Intellect +7 Spirit +12 Shadow Resistance Classes: Priest Equip: Increases healing done by up to 112 and damage done by up to 37 for all magical spells and effects. Use: Calls forth Anathema. (1 Min Cooldown) Equip: Increases the critical effect chance of your Holy spells by 2%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 289296,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 30.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 112 and damage done by up to 37 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 112,
+          "spell_damage": 37
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Calls forth Anathema. (1 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases the critical effect chance of your Holy spells by 2%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 112 and damage done by up to 37 for all magical spells and effects.",
+      "Equip: Increases the critical effect chance of your Holy spells by 2%."
+    ],
+    "id": 289296,
+    "item_level": 40,
+    "name": "Benediction",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 112.0,
+      "intellect": 18.0,
+      "shadow_resistance": 12.0,
+      "spell_damage": 37.0,
+      "spirit": 7.0,
+      "stamina": 6.0
+    },
+    "use_effects": [
+      "Use: Calls forth Anathema. (1 Min Cooldown)"
+    ],
+    "weapon_max_damage": 108,
+    "weapon_min_damage": 72,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=289296"
+  },
+  "linked_entities": [
+    {
+      "id": 23236,
+      "name": "Increases the critical effect chance of your Holy spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23236"
+    },
+    {
+      "id": 1327991,
+      "name": "Calls forth Anathema.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1327991"
+    }
+  ],
+  "name": "Benediction",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "8c7ac397d9db83d25b9af9afdc035eb63ee1ac31f6e7eb3ea756e8498dac0120",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/289296",
+  "url": "https://www.wowhead.com/forever/item=289296"
+}

@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Coif of The Five Thunders Item Level 60 Binds when picked up Head Mail 314 Armor +22 Stamina +21 Intellect +12 Spirit Durability 85 / 85 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 14 . The Five Thunders (0/8) Bindings of The Five Thunders Boots of The Five Thunders Coif of The Five Thunders Cord of The Five Thunders Gauntlets of The Five Thunders Kilt of The Five Thunders Pauldrons of The Five Thunders Vest of The Five Thunders (2) Set : +8 All Resistances. (4) Set : Chance on spell cast to increase your damage and healing by up to 65 for 10 sec. (Proc chance: 4%) (6) Set : Increases damage and healing done by magical spells and effects by up to 23. (8) Set : +200 Armor. Sell Price: 3 4 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:56:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22097,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 314,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+        "stats": {
+          "spell_power": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 14."
+    ],
+    "id": 22097,
+    "item_level": 60,
+    "name": "Coif of The Five Thunders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27774,
+        "text": "Chance on spell cast to increase your damage and healing by up to 65 for 10 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 21.0,
+      "spell_power": 14.0,
+      "spirit": 12.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22097"
+  },
+  "linked_entities": [
+    {
+      "id": 22095,
+      "name": "Bindings of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22095"
+    },
+    {
+      "id": 22096,
+      "name": "Boots of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22096"
+    },
+    {
+      "id": 22097,
+      "name": "Coif of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22097"
+    },
+    {
+      "id": 22098,
+      "name": "Cord of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22098"
+    },
+    {
+      "id": 22099,
+      "name": "Gauntlets of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22099"
+    },
+    {
+      "id": 22100,
+      "name": "Kilt of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22100"
+    },
+    {
+      "id": 22101,
+      "name": "Pauldrons of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22101"
+    },
+    {
+      "id": 22102,
+      "name": "Vest of The Five Thunders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22102"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27774,
+      "name": "Chance on spell cast to increase your damage and healing by up to 65 for 10 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27774"
+    }
+  ],
+  "name": "Coif of The Five Thunders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22097",
+  "url": "https://www.wowhead.com/forever/item=22097"
+}

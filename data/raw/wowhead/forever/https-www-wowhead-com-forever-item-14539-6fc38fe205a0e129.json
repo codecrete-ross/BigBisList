@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bone Ring Helm Item Level 62 Binds when picked up Head Leather 141 Armor +6 Strength +5 Agility +30 Stamina +6 Intellect Durability 60 / 60 Requires Level 57 Equip: Increased Defense + 4. Sell Price: 2 6 20 Dropped by: Rattlegore Drop Chance: 12.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 14539,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 141,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 14539,
+    "item_level": 62,
+    "name": "Bone Ring Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 5.0,
+      "defense": 4.0,
+      "intellect": 6.0,
+      "stamina": 30.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14539"
+  },
+  "linked_entities": [],
+  "name": "Bone Ring Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.49,
+      "entity_name": "Rattlegore",
+      "source_url": "https://www.wowhead.com/forever/item=14539",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8a50a65f7202f8df2d16308358adbd953f2df30a97f1876e31fbf0ba1ae6ad8d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14539",
+  "url": "https://www.wowhead.com/forever/item=14539"
+}

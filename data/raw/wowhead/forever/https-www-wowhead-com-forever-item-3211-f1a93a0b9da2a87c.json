@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Burnished Bracers Item Level 19 Binds when equipped Wrist Mail 72 Armor +2 Strength +2 Stamina Durability 30 / 30 Requires Level 14 Sell Price: 3 73",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 3211,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 72,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 3211,
+    "item_level": 19,
+    "name": "Burnished Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 14,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 2.0,
+      "strength": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3211"
+  },
+  "linked_entities": [],
+  "name": "Burnished Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3211",
+  "url": "https://www.wowhead.com/forever/item=3211"
+}

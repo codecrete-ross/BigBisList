@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Dispel Magic 18% of base mana 30 yd range Instant Requires Priest Requires level 18 Dispels magic on the target, removing 1 harmful spell from a friend or 1 beneficial spell from an enemy.",
+  "entity_id": 527,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:20+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 527,
+      "name": "Dispel Magic",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=527"
+    }
+  ],
+  "name": "Dispel Magic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "86ba4cb638ee2c193bb91bbb68b4e934e8b90c0d11bb40898d45f9193080d3fc",
+  "spell_id": 527,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/527",
+  "url": "https://www.wowhead.com/forever/spell=527"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Boneslasher Item Level 37 Binds when equipped Two-Hand Sword 70 - 106 Damage Speed 2.70 (32.59 damage per second) +16 Strength +7 Stamina Durability 100 / 100 Requires Level 32 Equip: + 15 Attack Power against Undead. Sell Price: 1 31 31",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:06:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 10573,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 32.59,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +15 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +15 Attack Power against Undead."
+    ],
+    "id": 10573,
+    "item_level": 37,
+    "name": "Boneslasher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 32,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 7.0,
+      "strength": 16.0
+    },
+    "weapon_max_damage": 106,
+    "weapon_min_damage": 70,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10573"
+  },
+  "linked_entities": [],
+  "name": "Boneslasher",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10573",
+  "url": "https://www.wowhead.com/forever/item=10573"
+}

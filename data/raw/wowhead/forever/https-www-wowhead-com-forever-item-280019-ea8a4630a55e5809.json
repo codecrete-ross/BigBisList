@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dinofrill Casque Item Level 63 Binds when picked up Head Mail 301 Armor +17 Agility +24 Stamina Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 2 55 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 280019,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 301,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 280019,
+    "item_level": 63,
+    "name": "Dinofrill Casque",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "crit_percent": 1.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=280019"
+  },
+  "linked_entities": [],
+  "name": "Dinofrill Casque",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9fd22800237284f27f2a9c349481037e6283598e129e5fdca8e771998d30db28",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280019",
+  "url": "https://www.wowhead.com/forever/item=280019"
+}

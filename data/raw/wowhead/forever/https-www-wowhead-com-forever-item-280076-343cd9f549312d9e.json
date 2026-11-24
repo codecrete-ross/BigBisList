@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Horns of Varrox Item Level 62 Binds when picked up Head Leather 141 Armor +18 Stamina +12 Shadow Resistance Requires Level 57 Equip: + 48 Attack Power. Sell Price: 2 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 280076,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 141,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +48 Attack Power.",
+        "stats": {
+          "attack_power": 48
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +48 Attack Power."
+    ],
+    "id": 280076,
+    "item_level": 62,
+    "name": "Horns of Varrox",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 48.0,
+      "shadow_resistance": 12.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=280076"
+  },
+  "linked_entities": [],
+  "name": "Horns of Varrox",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0edaa0081781dea52a485a27218f04dabe6048914907903c1e06495f253364da",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280076",
+  "url": "https://www.wowhead.com/forever/item=280076"
+}

@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fire Hardened Gauntlets Item Level 31 Binds when picked up Hands Mail 126 Armor +6 Strength +6 Stamina Durability 35 / 35 Classes: Warrior Sell Price: 14 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 6974,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 126,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6974,
+    "item_level": 31,
+    "name": "Fire Hardened Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "stamina": 6.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6974"
+  },
+  "linked_entities": [],
+  "name": "Fire Hardened Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6974",
+  "url": "https://www.wowhead.com/forever/item=6974"
+}

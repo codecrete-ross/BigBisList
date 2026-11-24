@@ -1,0 +1,49 @@
+{
+  "attribution": [
+    {
+      "credit": "EG Link (Efficient Games)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3369"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T05:15:41+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 10657,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3369",
+      "subject_id": 3369,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 10658,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3369",
+      "subject_id": 3369,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "min_level": 10,
+    "named_turn_in_npc_id": 5769,
+    "objective_item_id": 10649,
+    "quest_level": 25,
+    "reward_choice_ids": [
+      10657,
+      10658
+    ],
+    "side": "Horde",
+    "start_npc_id": 8418
+  },
+  "source_content_digest": "cba70889e8ad486691635e8570b0d3979f8146182e5ec79892f7b85ef6e4b1d5",
+  "url": "https://guide.wow4ever.se/en/quests/3369"
+}

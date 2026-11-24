@@ -1,0 +1,55 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Public enUS hotfix cache archived by Raidbots.",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "catalog_kind": "client_hotfix",
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T08:49:04.8315972+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 23247,
+      "collected_at": "2026-11-13T08:47:42.5166825+00:00",
+      "http": "200",
+      "name": "raidbots-verified",
+      "source_content_digest": "c286cb800da58e9f7a660731da19318c58ff84c371b308e5111b7df2976dc035",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "raidbots",
+  "records": [
+    {
+      "armor_type": "Plate",
+      "binding": 2,
+      "class_mask": -1,
+      "hotfix_push": 17064258,
+      "item_id": 287042,
+      "item_level": 61,
+      "name": "Pauldrons of the Stone Guardian",
+      "race_mask": 18446744073709551615,
+      "record_digest": "a749593e59bd6cad712c546cea1898d3f2afc28bad03c910462e3362a4c00191",
+      "required_level": 56,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Shoulder",
+      "subclass": "Plate"
+    }
+  ],
+  "relationships": [],
+  "source_content_digest": "faf7dcc539bb7906bc03e730c8f14c61e12efae67b6f96454a9f8ed5872b08a2",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-eGmje6x5pPEf1G83Rv62SD.bin",
+  "verified_index_entry": {
+    "build": 70938,
+    "created": "2026-11-13T08:35:17.007Z",
+    "entries": 91141,
+    "pushIds": 5929,
+    "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-eGmje6x5pPEf1G83Rv62SD.bin",
+    "verified": true,
+    "version": "forever"
+  }
+}

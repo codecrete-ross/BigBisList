@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Plate Gloves Item Level 63 Binds when picked up Unique Hands Plate 410 Armor +16 Strength +15 Stamina Classes: Warrior Requires Level 58 Equip: Hamstring Rage cost reduced by 3. Sell Price: 59 31",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 16510,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 410,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Hamstring Rage cost reduced by 3.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Hamstring Rage cost reduced by 3."
+    ],
+    "id": 16510,
+    "item_level": 63,
+    "name": "Blood Guard's Plate Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "stamina": 15.0,
+      "strength": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16510"
+  },
+  "linked_entities": [
+    {
+      "id": 22778,
+      "name": "Hamstring Rage cost reduced by 3.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22778"
+    }
+  ],
+  "name": "Blood Guard's Plate Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16510",
+  "url": "https://www.wowhead.com/forever/item=16510"
+}

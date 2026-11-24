@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Enchanted Gold Bloodrobe Item Level 38 Binds when picked up Chest Cloth 55 Armor +10 Stamina +17 Intellect Durability 80 / 80 Classes: Warlock Sell Price: 46 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 6900,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 55,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6900,
+    "item_level": 38,
+    "name": "Enchanted Gold Bloodrobe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6900"
+  },
+  "linked_entities": [],
+  "name": "Enchanted Gold Bloodrobe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6900",
+  "url": "https://www.wowhead.com/forever/item=6900"
+}

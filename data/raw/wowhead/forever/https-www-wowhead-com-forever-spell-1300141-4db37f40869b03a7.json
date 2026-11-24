@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Wit's End Item Effect Requires level 57 Melee attacks have a 15% chance to grant a Clearcasting state, reducing the mana cost of your next damage spell by 100%. (Proc chance: 15%)",
+  "entity_id": 1300141,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:26:48.9296385Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1300141,
+      "name": "Wit's End",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1300141"
+    }
+  ],
+  "name": "Wit's End",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "31fe417672a36d63ca1de5ade0952eadf41d0831663542ab2fb96fb064e1cb56",
+  "spell_id": 1300141,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1300141?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/spell=1300141"
+}

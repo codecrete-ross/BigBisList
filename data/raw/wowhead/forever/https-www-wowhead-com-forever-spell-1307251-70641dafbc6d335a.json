@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Incense Candle Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Ignites an incense candle that allows you and others sitting nearby to gain [( 60 < 14 ? 2 : ( 60 < 28 ? 6 : ( 60 < 42 ? 12 : ( 60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307251,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:18+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307251,
+      "name": "Incense Candle",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307251"
+    }
+  ],
+  "name": "Incense Candle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ebcff94f1ffb637ace4e8543c651ee60992fcdc344daa523a79e56f29ca4382f",
+  "spell_id": 1307251,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307251",
+  "url": "https://www.wowhead.com/forever/spell=1307251"
+}

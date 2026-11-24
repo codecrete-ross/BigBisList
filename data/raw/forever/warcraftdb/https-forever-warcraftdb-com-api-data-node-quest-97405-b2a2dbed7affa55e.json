@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97405"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:56.134875+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 277980,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97405",
+      "subject_id": 97405,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": null,
+    "name": "Noise Complaints",
+    "quest_id": 97405,
+    "reward_item_ids": [
+      277979,
+      277980,
+      277981
+    ],
+    "zone": "Stranglethorn Vale"
+  },
+  "source_content_digest": "4fcc529591b019deb68e686274998361365ff73ad6433bf8f0e8e659a462232f",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97405"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/976"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:59:13.549960+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 5323,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/976",
+      "subject_id": 976,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 19,
+    "name": "Supplies to Auberdine",
+    "quest_id": 976,
+    "quest_level": 24,
+    "reward_item_ids": [
+      5323
+    ],
+    "zone": "Ashenvale"
+  },
+  "source_content_digest": "1c35760a81632271e65c17c5d0fafa84e22ed8283c346046fafd4bbf86dd3f2a",
+  "url": "https://guide.wow4ever.se/en/quests/976"
+}

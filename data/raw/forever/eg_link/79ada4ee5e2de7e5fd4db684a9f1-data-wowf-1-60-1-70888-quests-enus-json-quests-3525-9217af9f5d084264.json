@@ -1,0 +1,67 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/3525"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 10710,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/3525",
+      "subject_id": 3525,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T22:20:39.8703166Z",
+        "linked_reward_ids": [],
+        "min_level": 32,
+        "name": "Extinguishing the Idol",
+        "side": "Both",
+        "source_content_digest": "40540663a08a9bed48fe29298c7e0a135a7ce52d787d7ad6cdaca0c6d3f372e9",
+        "source_url": "https://questing.wiki/wow-forever/quests/3525/",
+        "upstream_checked_at": "2026-09-30",
+        "upstream_url": "https://www.wowhead.com/forever/quest=3525",
+        "zone": "Razorfen Downs"
+      },
+      {
+        "fetched_at": "2026-11-11T08:12:57.224115+00:00",
+        "linked_reward_ids": [],
+        "min_level": 32,
+        "name": "Extinguishing the Idol",
+        "side": "Both",
+        "source_content_digest": "5913113dadfebc40f977698d4a74093c69094b56b8e1a0ebbbab7fd77ebe426b",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/3525",
+        "zone": "Razorfen Downs"
+      }
+    ],
+    "name": "Extinguishing the Idol",
+    "observation_count": 4,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 3525,
+    "reported_min_level": 32,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "10710": "items"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/3525"
+}

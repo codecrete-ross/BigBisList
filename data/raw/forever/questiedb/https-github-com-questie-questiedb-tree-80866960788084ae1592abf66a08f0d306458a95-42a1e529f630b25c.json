@@ -1,0 +1,8566 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "context_export_digests": {
+    "quests-Alliance-DRUID.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-HUNTER.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-MAGE.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-PALADIN.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-PRIEST.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-ROGUE.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-SHAMAN.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-WARLOCK.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Alliance-WARRIOR.json": "667f8815c127d1d3ee93003eeed3ad8df9d70548d50b3ec98df9f13196f4f23b",
+    "quests-Horde-DRUID.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-HUNTER.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-MAGE.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-PALADIN.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-PRIEST.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-ROGUE.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-SHAMAN.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-WARLOCK.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a",
+    "quests-Horde-WARRIOR.json": "c72a6cd293c83b6f4e6ea54e77fdd7e3190768ace0477bb114044e8eecae1f2a"
+  },
+  "corrections_applied": true,
+  "drop_item_records": [
+    {
+      "class": 2,
+      "id": 778,
+      "itemLevel": 7,
+      "name": "Kobold Excavation Pick",
+      "npcDrops": {
+        "1": 476
+      },
+      "requiredLevel": 2,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 816,
+      "itemLevel": 11,
+      "name": "Small Hand Blade",
+      "npcDrops": {
+        "1": 36
+      },
+      "requiredLevel": 6,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 832,
+      "itemLevel": 15,
+      "name": "Silver Defias Belt",
+      "npcDrops": {
+        "1": 121
+      },
+      "requiredLevel": 10,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 872,
+      "itemLevel": 23,
+      "name": "Rockslicer",
+      "npcDrops": {
+        "1": 644
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 888,
+      "itemLevel": 27,
+      "name": "Naga Battle Gloves",
+      "npcDrops": {
+        "1": 4831
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 1077,
+      "itemLevel": 26,
+      "name": "Defias Mage Ring",
+      "npcDrops": {
+        "1": 910
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 1155,
+      "itemLevel": 29,
+      "name": "Rod of the Sleepwalker",
+      "npcDrops": {
+        "1": 4832
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 1156,
+      "itemLevel": 22,
+      "name": "Lavishly Jeweled Ring",
+      "npcDrops": {
+        "1": 1763
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 1190,
+      "itemLevel": 20,
+      "name": "Overseer's Cloak",
+      "npcDrops": {
+        "1": 125
+      },
+      "requiredLevel": 15,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 1213,
+      "itemLevel": 14,
+      "name": "Gnoll Kindred Bracers",
+      "npcDrops": {
+        "1": 712
+      },
+      "requiredLevel": 9,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 1292,
+      "itemLevel": 25,
+      "name": "Butcher's Cleaver",
+      "npcDrops": {
+        "1": 3886
+      },
+      "requiredLevel": 20,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 1388,
+      "itemLevel": 3,
+      "name": "Crooked Staff",
+      "npcDrops": {
+        "1": 2953
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 1493,
+      "itemLevel": 27,
+      "name": "Heavy Marauder Scimitar",
+      "npcDrops": {
+        "1": 4099
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 1602,
+      "itemLevel": 39,
+      "name": "Sickle Axe",
+      "npcDrops": {
+        "1": 2287
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 1925,
+      "itemLevel": 16,
+      "name": "Defias Rapier",
+      "npcDrops": {
+        "1": 1725
+      },
+      "requiredLevel": 11,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 1928,
+      "itemLevel": 16,
+      "name": "Defias Mage Staff",
+      "npcDrops": {
+        "1": 1726
+      },
+      "requiredLevel": 11,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 1930,
+      "itemLevel": 18,
+      "name": "Stonemason Cloak",
+      "npcDrops": {
+        "1": 598
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 1934,
+      "itemLevel": 20,
+      "name": "Stonemason Trousers",
+      "npcDrops": {
+        "1": 636
+      },
+      "requiredLevel": 15,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 1936,
+      "itemLevel": 18,
+      "name": "Goblin Screwdriver",
+      "npcDrops": {
+        "1": 622
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 1937,
+      "itemLevel": 23,
+      "name": "Buzz Saw",
+      "npcDrops": {
+        "1": 642
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 1943,
+      "itemLevel": 19,
+      "name": "Goblin Mail Leggings",
+      "npcDrops": {
+        "1": 3947
+      },
+      "requiredLevel": 14,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 1944,
+      "itemLevel": 18,
+      "name": "Metalworking Gloves",
+      "npcDrops": {
+        "1": 1731
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 1945,
+      "itemLevel": 18,
+      "name": "Woodworking Gloves",
+      "npcDrops": {
+        "1": 641
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 2054,
+      "itemLevel": 4,
+      "name": "Trogg Hand Axe",
+      "npcDrops": {
+        "1": 1718
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 2064,
+      "itemLevel": 11,
+      "name": "Trogg Club",
+      "npcDrops": {
+        "1": 1118
+      },
+      "requiredLevel": 6,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 2065,
+      "itemLevel": 9,
+      "name": "Rockjaw Blade",
+      "npcDrops": {
+        "1": 1116
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 2067,
+      "itemLevel": 10,
+      "name": "Frostbit Staff",
+      "npcDrops": {
+        "1": 1117
+      },
+      "requiredLevel": 5,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 2109,
+      "itemLevel": 5,
+      "name": "Frostmane Chain Vest",
+      "npcDrops": {
+        "1": 808
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 2110,
+      "itemLevel": 4,
+      "name": "Light Magesmith Robe",
+      "npcDrops": {
+        "1": 946
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 2112,
+      "itemLevel": 9,
+      "name": "Lumberjack Jerkin",
+      "npcDrops": {
+        "1": 1689
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 2114,
+      "itemLevel": 8,
+      "name": "Snowy Robe",
+      "npcDrops": {
+        "1": 1133
+      },
+      "requiredLevel": 3,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 2169,
+      "itemLevel": 21,
+      "name": "Buzzer Blade",
+      "npcDrops": {
+        "1": 642
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 2257,
+      "itemLevel": 10,
+      "name": "Frostmane Staff",
+      "npcDrops": {
+        "1": 1124
+      },
+      "requiredLevel": 5,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 2280,
+      "itemLevel": 29,
+      "name": "Kam's Walking Stick",
+      "npcDrops": {
+        "1": 1666
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 2816,
+      "itemLevel": 33,
+      "name": "Death Speaker Scepter",
+      "npcDrops": {
+        "1": 4428
+      },
+      "requiredLevel": 28,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 2941,
+      "itemLevel": 28,
+      "name": "Prison Shank",
+      "npcDrops": {
+        "1": 1720
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 2942,
+      "itemLevel": 28,
+      "name": "Iron Knuckles",
+      "npcDrops": {
+        "1": 1720
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 13
+    },
+    {
+      "class": 2,
+      "id": 3078,
+      "itemLevel": 27,
+      "name": "Naga Heartpiercer",
+      "npcDrops": {
+        "1": 4831
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 3191,
+      "itemLevel": 26,
+      "name": "Arced War Axe",
+      "npcDrops": {
+        "1": 4278
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 3228,
+      "itemLevel": 28,
+      "name": "Jimmied Handcuffs",
+      "npcDrops": {
+        "1": 1720
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 3230,
+      "itemLevel": 27,
+      "name": "Black Wolf Bracers",
+      "npcDrops": {
+        "1": 4274
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 3260,
+      "itemLevel": 4,
+      "name": "Scarlet Initiate Robes",
+      "npcDrops": {
+        "1": 1507
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 3263,
+      "itemLevel": 3,
+      "name": "Webbed Pants",
+      "npcDrops": {
+        "1": 1505
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 3293,
+      "itemLevel": 3,
+      "name": "Deadman Cleaver",
+      "npcDrops": {
+        "1": 1917
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 3294,
+      "itemLevel": 3,
+      "name": "Deadman Club",
+      "npcDrops": {
+        "1": 1918
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 3295,
+      "itemLevel": 3,
+      "name": "Deadman Blade",
+      "npcDrops": {
+        "1": 1919
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 3296,
+      "itemLevel": 3,
+      "name": "Deadman Dagger",
+      "npcDrops": {
+        "1": 1916
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 3319,
+      "itemLevel": 9,
+      "name": "Short Sabre",
+      "npcDrops": {
+        "1": 1529
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 3321,
+      "itemLevel": 9,
+      "name": "Gray Fur Booties",
+      "npcDrops": {
+        "1": 1549
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 3328,
+      "itemLevel": 9,
+      "name": "Spider Web Robe",
+      "npcDrops": {
+        "1": 1555
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 3329,
+      "itemLevel": 11,
+      "name": "Spiked Wooden Plank",
+      "npcDrops": {
+        "1": 1753
+      },
+      "requiredLevel": 6,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 3331,
+      "itemLevel": 12,
+      "name": "Melrache's Cape",
+      "npcDrops": {
+        "1": 1665
+      },
+      "requiredLevel": 7,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 3332,
+      "itemLevel": 9,
+      "name": "Perrine's Boots",
+      "npcDrops": {
+        "1": 1662
+      },
+      "requiredLevel": 4,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 3360,
+      "itemLevel": 30,
+      "name": "Stitches' Femur",
+      "npcDrops": {
+        "1": 412
+      },
+      "requiredLevel": 25,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 3748,
+      "itemLevel": 28,
+      "name": "Feline Mantle",
+      "npcDrops": {
+        "1": 3927
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 3935,
+      "itemLevel": 25,
+      "name": "Smotts' Cutlass",
+      "npcDrops": {
+        "1": 1494
+      },
+      "requiredLevel": 20,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 3985,
+      "itemLevel": 40,
+      "name": "Monogrammed Sash",
+      "npcDrops": {
+        "1": 1493
+      },
+      "requiredLevel": 35,
+      "startQuest": 8552,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4263,
+      "itemLevel": 10,
+      "name": "Standard Issue Shield",
+      "npcDrops": {
+        "1": 1660
+      },
+      "requiredLevel": 5,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 4302,
+      "itemLevel": 12,
+      "name": "Small Green Dagger",
+      "npcDrops": {
+        "1": 299,
+        "2": 1910
+      },
+      "requiredLevel": 7,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 4768,
+      "itemLevel": 17,
+      "name": "Adept's Gloves",
+      "npcDrops": {
+        "1": 3270
+      },
+      "requiredLevel": 12,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4771,
+      "itemLevel": 17,
+      "name": "Harvest Cloak",
+      "npcDrops": {
+        "1": 3270
+      },
+      "requiredLevel": 12,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4772,
+      "itemLevel": 13,
+      "name": "Warm Cloak",
+      "npcDrops": {
+        "1": 5785
+      },
+      "requiredLevel": 8,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 5040,
+      "itemLevel": 32,
+      "name": "Shadow Hunter Knife",
+      "npcDrops": {
+        "1": 2557
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 5092,
+      "itemLevel": 23,
+      "name": "Charred Razormane Wand",
+      "npcDrops": {
+        "1": 3458
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 19
+    },
+    {
+      "class": 4,
+      "id": 5094,
+      "itemLevel": 24,
+      "name": "Razormane War Shield",
+      "npcDrops": {
+        "1": 3459
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 5182,
+      "itemLevel": 22,
+      "name": "Shiver Blade",
+      "npcDrops": {
+        "1": 3398
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 5183,
+      "itemLevel": 22,
+      "name": "Pulsating Hydra Heart",
+      "npcDrops": {
+        "1": 3398
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 5187,
+      "itemLevel": 21,
+      "name": "Rhahk'Zor's Hammer",
+      "npcDrops": {
+        "1": 644
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 5
+    },
+    {
+      "class": 2,
+      "id": 5191,
+      "itemLevel": 24,
+      "name": "Cruel Barb",
+      "npcDrops": {
+        "1": 639
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 5192,
+      "itemLevel": 22,
+      "name": "Thief's Blade",
+      "npcDrops": {
+        "1": 646
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 5193,
+      "itemLevel": 24,
+      "name": "Cape of the Brotherhood",
+      "npcDrops": {
+        "1": 639
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 5194,
+      "itemLevel": 23,
+      "name": "Taskmaster Axe",
+      "npcDrops": {
+        "1": 643
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 5195,
+      "itemLevel": 22,
+      "name": "Gold-flecked Gloves",
+      "npcDrops": {
+        "1": 643
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 5196,
+      "itemLevel": 21,
+      "name": "Smite's Reaver",
+      "npcDrops": {
+        "1": 646
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 5197,
+      "itemLevel": 21,
+      "name": "Cookie's Tenderizer",
+      "npcDrops": {
+        "1": 645
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 5198,
+      "itemLevel": 22,
+      "name": "Cookie's Stirring Rod",
+      "npcDrops": {
+        "1": 645
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 19
+    },
+    {
+      "class": 4,
+      "id": 5199,
+      "itemLevel": 21,
+      "name": "Smelting Pants",
+      "npcDrops": {
+        "1": 1763
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 5200,
+      "itemLevel": 22,
+      "name": "Impaling Harpoon",
+      "npcDrops": {
+        "1": 647
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 5201,
+      "itemLevel": 22,
+      "name": "Emberstone Staff",
+      "npcDrops": {
+        "1": 647
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 5202,
+      "itemLevel": 22,
+      "name": "Corsair's Overshirt",
+      "npcDrops": {
+        "1": 639
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 5243,
+      "itemLevel": 23,
+      "name": "Firebelcher",
+      "npcDrops": {
+        "1": 5912
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 19
+    },
+    {
+      "class": 4,
+      "id": 5254,
+      "itemLevel": 22,
+      "name": "Rugged Spaulders",
+      "npcDrops": {
+        "1": 3914
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 5404,
+      "itemLevel": 23,
+      "name": "Serpent's Shoulders",
+      "npcDrops": {
+        "1": 3671
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 5443,
+      "itemLevel": 22,
+      "name": "Gold-plated Buckler",
+      "npcDrops": {
+        "1": 3586
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 5444,
+      "itemLevel": 22,
+      "name": "Miner's Cape",
+      "npcDrops": {
+        "1": 3586
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 5943,
+      "itemLevel": 25,
+      "name": "Rift Bracers",
+      "npcDrops": {
+        "1": 4627
+      },
+      "requiredLevel": 20,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 5970,
+      "itemLevel": 23,
+      "name": "Serpent Gloves",
+      "npcDrops": {
+        "1": 3673
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6196,
+      "itemLevel": 34,
+      "name": "Noboru's Cudgel",
+      "npcDrops": {
+        "1": 5477
+      },
+      "requiredLevel": 29,
+      "startQuest": 1392,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 6220,
+      "itemLevel": 28,
+      "name": "Meteor Shard",
+      "npcDrops": {
+        "1": 4275
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 6226,
+      "itemLevel": 24,
+      "name": "Bloody Apron",
+      "npcDrops": {
+        "1": 3886
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6314,
+      "itemLevel": 27,
+      "name": "Wolfmaster Cape",
+      "npcDrops": {
+        "1": 3927
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6318,
+      "itemLevel": 26,
+      "name": "Odo's Ley Staff",
+      "npcDrops": {
+        "1": 4279
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 6319,
+      "itemLevel": 26,
+      "name": "Girdle of the Blindwatcher",
+      "npcDrops": {
+        "1": 4279
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6320,
+      "itemLevel": 26,
+      "name": "Commander's Crest",
+      "npcDrops": {
+        "1": 4278
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 6321,
+      "itemLevel": 26,
+      "name": "Silverlaine's Family Seal",
+      "npcDrops": {
+        "1": 3887
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 6323,
+      "itemLevel": 26,
+      "name": "Baron's Scepter",
+      "npcDrops": {
+        "1": 3887
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 6324,
+      "itemLevel": 28,
+      "name": "Robes of Arugal",
+      "npcDrops": {
+        "1": 4275
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6340,
+      "itemLevel": 27,
+      "name": "Fenrus' Hide",
+      "npcDrops": {
+        "1": 4274
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6392,
+      "itemLevel": 28,
+      "name": "Belt of Arugal",
+      "npcDrops": {
+        "1": 4275
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6447,
+      "itemLevel": 21,
+      "name": "Worn Turtle Shell Shield",
+      "npcDrops": {
+        "1": 3653
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 6448,
+      "itemLevel": 21,
+      "name": "Tail Spike",
+      "npcDrops": {
+        "1": 3674
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 6449,
+      "itemLevel": 23,
+      "name": "Glowing Lizardscale Cloak",
+      "npcDrops": {
+        "1": 3674
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6459,
+      "itemLevel": 23,
+      "name": "Savage Trodders",
+      "npcDrops": {
+        "1": 3673
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 6460,
+      "itemLevel": 22,
+      "name": "Cobrahn's Grasp",
+      "npcDrops": {
+        "1": 3669
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 6461,
+      "itemLevel": 25,
+      "name": "Slime-encrusted Pads",
+      "npcDrops": {
+        "1": 3654
+      },
+      "requiredLevel": 20,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6463,
+      "itemLevel": 24,
+      "name": "Deep Fathom Ring",
+      "npcDrops": {
+        "1": 3654
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 6465,
+      "itemLevel": 22,
+      "name": "Robe of the Moccasin",
+      "npcDrops": {
+        "1": 3669
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6469,
+      "itemLevel": 24,
+      "name": "Venomstrike",
+      "npcDrops": {
+        "1": 3673
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 6472,
+      "itemLevel": 24,
+      "name": "Stinging Viper",
+      "npcDrops": {
+        "1": 3670
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 6473,
+      "itemLevel": 23,
+      "name": "Armor of the Fang",
+      "npcDrops": {
+        "1": 3670
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6627,
+      "itemLevel": 23,
+      "name": "Mutant Scale Breastplate",
+      "npcDrops": {
+        "1": 3654
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 6629,
+      "itemLevel": 22,
+      "name": "Sporid Cape",
+      "npcDrops": {
+        "1": 5775
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6630,
+      "itemLevel": 24,
+      "name": "Seedcloud Buckler",
+      "npcDrops": {
+        "1": 5775
+      },
+      "requiredLevel": 19,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 6631,
+      "itemLevel": 23,
+      "name": "Living Root",
+      "npcDrops": {
+        "1": 5775
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 6632,
+      "itemLevel": 21,
+      "name": "Feyscale Cloak",
+      "npcDrops": {
+        "1": 5912
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6633,
+      "itemLevel": 23,
+      "name": "Butcher's Slicer",
+      "npcDrops": {
+        "1": 3886
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 2,
+      "id": 6679,
+      "itemLevel": 29,
+      "name": "Armor Piercer",
+      "npcDrops": {
+        "1": 4438
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 6681,
+      "itemLevel": 32,
+      "name": "Thornspike",
+      "npcDrops": {
+        "1": 4424
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 6682,
+      "itemLevel": 31,
+      "name": "Death Speaker Robes",
+      "npcDrops": {
+        "1": 4428
+      },
+      "requiredLevel": 26,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6685,
+      "itemLevel": 32,
+      "name": "Death Speaker Mantle",
+      "npcDrops": {
+        "1": 4428
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6686,
+      "itemLevel": 34,
+      "name": "Tusken Helm",
+      "npcDrops": {
+        "1": 4420
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 6687,
+      "itemLevel": 34,
+      "name": "Corpsemaker",
+      "npcDrops": {
+        "1": 4420
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6688,
+      "itemLevel": 32,
+      "name": "Whisperwind Headdress",
+      "npcDrops": {
+        "1": 4842
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 6689,
+      "itemLevel": 34,
+      "name": "Wind Spirit Staff",
+      "npcDrops": {
+        "1": 4842
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 6690,
+      "itemLevel": 34,
+      "name": "Ferine Leggings",
+      "npcDrops": {
+        "1": 4422
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 6691,
+      "itemLevel": 35,
+      "name": "Swinetusk Shank",
+      "npcDrops": {
+        "1": 4422
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 6692,
+      "itemLevel": 35,
+      "name": "Pronged Reaver",
+      "npcDrops": {
+        "1": 4421
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 6693,
+      "itemLevel": 35,
+      "name": "Agamaggan's Clutch",
+      "npcDrops": {
+        "1": 4421
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 6694,
+      "itemLevel": 35,
+      "name": "Heart of Agamaggan",
+      "npcDrops": {
+        "1": 4421
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 6695,
+      "itemLevel": 34,
+      "name": "Stygian Bone Amulet",
+      "npcDrops": {
+        "1": 4425
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 6696,
+      "itemLevel": 34,
+      "name": "Nightstalker Bow",
+      "npcDrops": {
+        "1": 4425
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6697,
+      "itemLevel": 34,
+      "name": "Batwing Mantle",
+      "npcDrops": {
+        "1": 4425
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6901,
+      "itemLevel": 29,
+      "name": "Glowing Thresher Cape",
+      "npcDrops": {
+        "1": 4830
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6902,
+      "itemLevel": 27,
+      "name": "Bands of Serra'kis",
+      "npcDrops": {
+        "1": 4830
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6903,
+      "itemLevel": 28,
+      "name": "Gaze Dreamer Pants",
+      "npcDrops": {
+        "1": 4832
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6904,
+      "itemLevel": 28,
+      "name": "Bite of Serra'kis",
+      "npcDrops": {
+        "1": 4830
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 6905,
+      "itemLevel": 27,
+      "name": "Reef Axe",
+      "npcDrops": {
+        "1": 6243
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6906,
+      "itemLevel": 28,
+      "name": "Algae Fists",
+      "npcDrops": {
+        "1": 6243
+      },
+      "requiredLevel": 23,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 6907,
+      "itemLevel": 27,
+      "name": "Tortoise Armor",
+      "npcDrops": {
+        "1": 4887
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 6908,
+      "itemLevel": 27,
+      "name": "Ghamoo-ra's Bind",
+      "npcDrops": {
+        "1": 4887
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 6909,
+      "itemLevel": 31,
+      "name": "Strike of the Hydra",
+      "npcDrops": {
+        "1": 4829
+      },
+      "requiredLevel": 26,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 6910,
+      "itemLevel": 29,
+      "name": "Leech Pants",
+      "npcDrops": {
+        "1": 4829
+      },
+      "requiredLevel": 24,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6911,
+      "itemLevel": 30,
+      "name": "Moss Cinch",
+      "npcDrops": {
+        "1": 4829
+      },
+      "requiredLevel": 25,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 7094,
+      "itemLevel": 10,
+      "name": "Driftwood Branch",
+      "npcDrops": {
+        "1": 2030
+      },
+      "requiredLevel": 5,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 7230,
+      "itemLevel": 23,
+      "name": "Smite's Mighty Hammer",
+      "npcDrops": {
+        "1": 646
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 5
+    },
+    {
+      "class": 2,
+      "id": 7682,
+      "itemLevel": 34,
+      "name": "Torturing Poker",
+      "npcDrops": {
+        "1": 3983
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 7683,
+      "itemLevel": 34,
+      "name": "Bloody Brass Knuckles",
+      "npcDrops": {
+        "1": 3983
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 13
+    },
+    {
+      "class": 4,
+      "id": 7684,
+      "itemLevel": 35,
+      "name": "Bloodmage Mantle",
+      "npcDrops": {
+        "1": 4543
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 7685,
+      "itemLevel": 37,
+      "name": "Orb of the Forgotten Seer",
+      "npcDrops": {
+        "1": 4543
+      },
+      "requiredLevel": 32,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 7686,
+      "itemLevel": 35,
+      "name": "Ironspine's Eye",
+      "npcDrops": {
+        "1": 6489
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 7687,
+      "itemLevel": 35,
+      "name": "Ironspine's Fist",
+      "npcDrops": {
+        "1": 6489
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 7688,
+      "itemLevel": 35,
+      "name": "Ironspine's Ribcage",
+      "npcDrops": {
+        "1": 6489
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 7689,
+      "itemLevel": 35,
+      "name": "Morbid Dawn",
+      "npcDrops": {
+        "1": 6488
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 7690,
+      "itemLevel": 35,
+      "name": "Ebon Vise",
+      "npcDrops": {
+        "1": 6488
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 7691,
+      "itemLevel": 35,
+      "name": "Embalmed Shroud",
+      "npcDrops": {
+        "1": 6488
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 7708,
+      "itemLevel": 35,
+      "name": "Necrotic Wand",
+      "npcDrops": {
+        "1": 6490
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 19
+    },
+    {
+      "class": 4,
+      "id": 7709,
+      "itemLevel": 35,
+      "name": "Blighted Leggings",
+      "npcDrops": {
+        "1": 6490
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 7710,
+      "itemLevel": 36,
+      "name": "Loksey's Training Stick",
+      "npcDrops": {
+        "1": 3974
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 7711,
+      "itemLevel": 39,
+      "name": "Robe of Doan",
+      "npcDrops": {
+        "1": 6487
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 7712,
+      "itemLevel": 39,
+      "name": "Mantle of Doan",
+      "npcDrops": {
+        "1": 6487
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 7713,
+      "itemLevel": 39,
+      "name": "Illusionary Rod",
+      "npcDrops": {
+        "1": 6487
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 7714,
+      "itemLevel": 39,
+      "name": "Hypnotic Blade",
+      "npcDrops": {
+        "1": 6487
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 2,
+      "id": 7717,
+      "itemLevel": 42,
+      "name": "Ravager",
+      "npcDrops": {
+        "1": 3975
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 7718,
+      "itemLevel": 42,
+      "name": "Herod's Shoulder",
+      "npcDrops": {
+        "1": 3975
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 7719,
+      "itemLevel": 42,
+      "name": "Raging Berserker's Helm",
+      "npcDrops": {
+        "1": 3975
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 7720,
+      "itemLevel": 44,
+      "name": "Whitemane's Chapeau",
+      "npcDrops": {
+        "1": 3977
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 7721,
+      "itemLevel": 44,
+      "name": "Hand of Righteousness",
+      "npcDrops": {
+        "1": 3977
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 7722,
+      "itemLevel": 44,
+      "name": "Triune Amulet",
+      "npcDrops": {
+        "1": 3977
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 7723,
+      "itemLevel": 44,
+      "name": "Mograine's Might",
+      "npcDrops": {
+        "1": 3976
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 5
+    },
+    {
+      "class": 4,
+      "id": 7724,
+      "itemLevel": 44,
+      "name": "Gauntlets of Divinity",
+      "npcDrops": {
+        "1": 3976
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 7726,
+      "itemLevel": 44,
+      "name": "Aegis of the Scarlet Commander",
+      "npcDrops": {
+        "1": 3976
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 7731,
+      "itemLevel": 35,
+      "name": "Ghostshard Talisman",
+      "npcDrops": {
+        "1": 6490
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 7756,
+      "itemLevel": 36,
+      "name": "Dog Training Gloves",
+      "npcDrops": {
+        "1": 3974
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 8223,
+      "itemLevel": 39,
+      "name": "Blade of the Basilisk",
+      "npcDrops": {
+        "1": 5935
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 9387,
+      "itemLevel": 42,
+      "name": "Revelosh's Boots",
+      "npcDrops": {
+        "1": 6910
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 9388,
+      "itemLevel": 42,
+      "name": "Revelosh's Armguards",
+      "npcDrops": {
+        "1": 6910
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 9389,
+      "itemLevel": 42,
+      "name": "Revelosh's Spaulders",
+      "npcDrops": {
+        "1": 6910
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 9390,
+      "itemLevel": 42,
+      "name": "Revelosh's Gloves",
+      "npcDrops": {
+        "1": 6910
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 9394,
+      "itemLevel": 42,
+      "name": "Horned Viking Helmet",
+      "npcDrops": {
+        "1": 6907
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 9398,
+      "itemLevel": 40,
+      "name": "Worn Running Boots",
+      "npcDrops": {
+        "1": 6907
+      },
+      "requiredLevel": 35,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 6,
+      "id": 9399,
+      "itemLevel": 40,
+      "name": "Precision Arrow",
+      "npcDrops": {
+        "1": 6906
+      },
+      "requiredLevel": 35,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 9400,
+      "itemLevel": 41,
+      "name": "Baelog's Shortbow",
+      "npcDrops": {
+        "1": 6906
+      },
+      "requiredLevel": 36,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 9401,
+      "itemLevel": 43,
+      "name": "Nordic Longshank",
+      "npcDrops": {
+        "1": 6906
+      },
+      "requiredLevel": 38,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 9403,
+      "itemLevel": 40,
+      "name": "Battered Viking Shield",
+      "npcDrops": {
+        "1": 6908
+      },
+      "requiredLevel": 35,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 9404,
+      "itemLevel": 42,
+      "name": "Olaf's All Purpose Shield",
+      "npcDrops": {
+        "1": 6908
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 9407,
+      "itemLevel": 42,
+      "name": "Stoneweaver Leggings",
+      "npcDrops": {
+        "1": 7228
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 9408,
+      "itemLevel": 42,
+      "name": "Ironshod Bludgeon",
+      "npcDrops": {
+        "1": 7228
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 9409,
+      "itemLevel": 42,
+      "name": "Ironaya's Bracers",
+      "npcDrops": {
+        "1": 7228
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 9410,
+      "itemLevel": 45,
+      "name": "Cragfists",
+      "npcDrops": {
+        "1": 7206
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 9411,
+      "itemLevel": 46,
+      "name": "Rockshard Pauldrons",
+      "npcDrops": {
+        "1": 7206
+      },
+      "requiredLevel": 41,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 9412,
+      "itemLevel": 47,
+      "name": "Galgann's Fireblaster",
+      "npcDrops": {
+        "1": 7291
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 9414,
+      "itemLevel": 47,
+      "name": "Oilskin Leggings",
+      "npcDrops": {
+        "1": 4854
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 9415,
+      "itemLevel": 47,
+      "name": "Grimlok's Tribal Vestments",
+      "npcDrops": {
+        "1": 4854
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 9416,
+      "itemLevel": 47,
+      "name": "Grimlok's Charge",
+      "npcDrops": {
+        "1": 4854
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 9419,
+      "itemLevel": 46,
+      "name": "Galgann's Firehammer",
+      "npcDrops": {
+        "1": 7291
+      },
+      "requiredLevel": 41,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 9444,
+      "itemLevel": 26,
+      "name": "Techbot CPU Shell",
+      "npcDrops": {
+        "1": 6231
+      },
+      "requiredLevel": 21,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 9445,
+      "itemLevel": 34,
+      "name": "Grubbis Paws",
+      "npcDrops": {
+        "1": 7361
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 9446,
+      "itemLevel": 34,
+      "name": "Electrocutioner Leg",
+      "npcDrops": {
+        "1": 6235
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 9447,
+      "itemLevel": 34,
+      "name": "Electrocutioner Lagnut",
+      "npcDrops": {
+        "1": 6235
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 9448,
+      "itemLevel": 34,
+      "name": "Spidertank Oilrag",
+      "npcDrops": {
+        "1": 6235
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 9449,
+      "itemLevel": 34,
+      "name": "Manual Crowd Pummeler",
+      "npcDrops": {
+        "1": 6229
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 5
+    },
+    {
+      "class": 4,
+      "id": 9450,
+      "itemLevel": 34,
+      "name": "Gnomebot Operating Boots",
+      "npcDrops": {
+        "1": 6229
+      },
+      "requiredLevel": 29,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 9452,
+      "itemLevel": 32,
+      "name": "Hydrocane",
+      "npcDrops": {
+        "1": 7079
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 9453,
+      "itemLevel": 32,
+      "name": "Toxic Revenger",
+      "npcDrops": {
+        "1": 7079
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 9454,
+      "itemLevel": 32,
+      "name": "Acidic Walkers",
+      "npcDrops": {
+        "1": 7079
+      },
+      "requiredLevel": 27,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 9455,
+      "itemLevel": 35,
+      "name": "Emissary Cuffs",
+      "npcDrops": {
+        "1": 6228
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 9456,
+      "itemLevel": 35,
+      "name": "Glass Shooter",
+      "npcDrops": {
+        "1": 6228
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 2,
+      "id": 9457,
+      "itemLevel": 35,
+      "name": "Royal Diplomatic Scepter",
+      "npcDrops": {
+        "1": 6228
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 9458,
+      "itemLevel": 36,
+      "name": "Thermaplugg's Central Core",
+      "npcDrops": {
+        "1": 7800
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 9459,
+      "itemLevel": 36,
+      "name": "Thermaplugg's Left Arm",
+      "npcDrops": {
+        "1": 7800
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 9461,
+      "itemLevel": 36,
+      "name": "Charged Gear",
+      "npcDrops": {
+        "1": 7800
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 9492,
+      "itemLevel": 36,
+      "name": "Electromagnetic Gigaflux Reactivator",
+      "npcDrops": {
+        "1": 7800
+      },
+      "requiredLevel": 31,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 10328,
+      "itemLevel": 39,
+      "name": "Scarlet Chestpiece",
+      "npcDrops": {
+        "1": 3974,
+        "10": 4288,
+        "11": 4289,
+        "12": 4290,
+        "13": 4291,
+        "14": 4292,
+        "15": 4294,
+        "16": 4295,
+        "17": 4296,
+        "18": 4297,
+        "19": 4298,
+        "2": 3975,
+        "20": 4299,
+        "21": 4300,
+        "22": 4301,
+        "23": 4302,
+        "24": 4303,
+        "25": 4304,
+        "26": 4306,
+        "27": 4308,
+        "28": 4540,
+        "29": 4542,
+        "3": 3976,
+        "30": 4543,
+        "31": 6426,
+        "32": 6427,
+        "33": 6488,
+        "34": 6489,
+        "35": 6547,
+        "4": 3977,
+        "5": 3981,
+        "6": 3983,
+        "7": 4283,
+        "8": 4286,
+        "9": 4287
+      },
+      "requiredLevel": 34,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 10399,
+      "itemLevel": 22,
+      "name": "Blackened Defias Armor",
+      "npcDrops": {
+        "1": 639
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10402,
+      "itemLevel": 20,
+      "name": "Blackened Defias Boots",
+      "npcDrops": {
+        "1": 4416
+      },
+      "requiredLevel": 15,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10403,
+      "itemLevel": 22,
+      "name": "Blackened Defias Belt",
+      "npcDrops": {
+        "1": 647
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10410,
+      "itemLevel": 22,
+      "name": "Leggings of the Fang",
+      "npcDrops": {
+        "1": 3669
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10411,
+      "itemLevel": 22,
+      "name": "Footpads of the Fang",
+      "npcDrops": {
+        "1": 3673
+      },
+      "requiredLevel": 17,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10412,
+      "itemLevel": 21,
+      "name": "Belt of the Fang",
+      "npcDrops": {
+        "1": 3671
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10413,
+      "itemLevel": 19,
+      "name": "Gloves of the Fang",
+      "npcDrops": {
+        "1": 3840
+      },
+      "requiredLevel": 14,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 10761,
+      "itemLevel": 43,
+      "name": "Coldrage Dagger",
+      "npcDrops": {
+        "1": 7358
+      },
+      "requiredLevel": 38,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 10762,
+      "itemLevel": 43,
+      "name": "Robes of the Lich",
+      "npcDrops": {
+        "1": 7358
+      },
+      "requiredLevel": 38,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 10763,
+      "itemLevel": 43,
+      "name": "Icemetal Barbute",
+      "npcDrops": {
+        "1": 7358
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 10764,
+      "itemLevel": 43,
+      "name": "Deathchill Armor",
+      "npcDrops": {
+        "1": 7358
+      },
+      "requiredLevel": 39,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 10765,
+      "itemLevel": 43,
+      "name": "Bonefingers",
+      "npcDrops": {
+        "1": 7358
+      },
+      "requiredLevel": 38,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 10766,
+      "itemLevel": 40,
+      "name": "Plaguerot Sprig",
+      "npcDrops": {
+        "1": 7356
+      },
+      "requiredLevel": 35,
+      "startQuest": 0,
+      "subClass": 19
+    },
+    {
+      "class": 4,
+      "id": 10769,
+      "itemLevel": 41,
+      "name": "Glowing Eye of Mordresh",
+      "npcDrops": {
+        "1": 7357
+      },
+      "requiredLevel": 36,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 10770,
+      "itemLevel": 41,
+      "name": "Mordresh's Lifeless Skull",
+      "npcDrops": {
+        "1": 7357
+      },
+      "requiredLevel": 36,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 10771,
+      "itemLevel": 41,
+      "name": "Deathmage Sash",
+      "npcDrops": {
+        "1": 7357
+      },
+      "requiredLevel": 36,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 10772,
+      "itemLevel": 42,
+      "name": "Glutton's Cleaver",
+      "npcDrops": {
+        "1": 8567
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 10774,
+      "itemLevel": 42,
+      "name": "Fleshhide Shoulders",
+      "npcDrops": {
+        "1": 8567
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10775,
+      "itemLevel": 42,
+      "name": "Carapace of Tuten'kash",
+      "npcDrops": {
+        "1": 7355
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 10776,
+      "itemLevel": 42,
+      "name": "Silky Spider Cape",
+      "npcDrops": {
+        "1": 7355
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 10777,
+      "itemLevel": 42,
+      "name": "Arachnid Gloves",
+      "npcDrops": {
+        "1": 7355
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 11118,
+      "itemLevel": 47,
+      "name": "Archaedic Stone",
+      "npcDrops": {
+        "1": 2748
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 11121,
+      "itemLevel": 27,
+      "name": "Darkwater Talwar",
+      "npcDrops": {
+        "1": 4831
+      },
+      "requiredLevel": 22,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 11310,
+      "itemLevel": 47,
+      "name": "Flameseer Mantle",
+      "npcDrops": {
+        "1": 7291
+      },
+      "requiredLevel": 42,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11311,
+      "itemLevel": 46,
+      "name": "Emberscale Cape",
+      "npcDrops": {
+        "1": 7291
+      },
+      "requiredLevel": 41,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 13245,
+      "itemLevel": 23,
+      "name": "Kresh's Back",
+      "npcDrops": {
+        "1": 3653
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 2,
+      "id": 14145,
+      "itemLevel": 18,
+      "name": "Cursed Felblade",
+      "npcDrops": {
+        "1": 11520
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 14147,
+      "itemLevel": 18,
+      "name": "Cavedweller Bracers",
+      "npcDrops": {
+        "1": 11518
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 14148,
+      "itemLevel": 18,
+      "name": "Crystalline Cuffs",
+      "npcDrops": {
+        "1": 11520
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 14149,
+      "itemLevel": 18,
+      "name": "Subterranean Cape",
+      "npcDrops": {
+        "1": 11520
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 14150,
+      "itemLevel": 18,
+      "name": "Robe of Evocation",
+      "npcDrops": {
+        "1": 11518
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 14151,
+      "itemLevel": 18,
+      "name": "Chanting Blade",
+      "npcDrops": {
+        "1": 11518
+      },
+      "requiredLevel": 13,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 16666,
+      "itemLevel": 63,
+      "name": "Vest of Elements",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16667,
+      "itemLevel": 62,
+      "name": "Coif of Elements",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16668,
+      "itemLevel": 61,
+      "name": "Kilt of Elements",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16669,
+      "itemLevel": 60,
+      "name": "Pauldrons of Elements",
+      "npcDrops": {
+        "1": 10339
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16670,
+      "itemLevel": 59,
+      "name": "Boots of Elements",
+      "npcDrops": {
+        "1": 9196
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16672,
+      "itemLevel": 59,
+      "name": "Gauntlets of Elements",
+      "npcDrops": {
+        "1": 9816
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16674,
+      "itemLevel": 63,
+      "name": "Beaststalker's Tunic",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16675,
+      "itemLevel": 59,
+      "name": "Beaststalker's Boots",
+      "npcDrops": {
+        "1": 10437
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16676,
+      "itemLevel": 59,
+      "name": "Beaststalker's Gloves",
+      "npcDrops": {
+        "1": 9237
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16677,
+      "itemLevel": 62,
+      "name": "Beaststalker's Cap",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16678,
+      "itemLevel": 61,
+      "name": "Beaststalker's Pants",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16679,
+      "itemLevel": 60,
+      "name": "Beaststalker's Mantle",
+      "npcDrops": {
+        "1": 9568
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 16682,
+      "itemLevel": 59,
+      "name": "Magister's Boots",
+      "npcDrops": {
+        "1": 10558
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16686,
+      "itemLevel": 62,
+      "name": "Magister's Crown",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16687,
+      "itemLevel": 61,
+      "name": "Magister's Leggings",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16688,
+      "itemLevel": 63,
+      "name": "Magister's Robes",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16690,
+      "itemLevel": 63,
+      "name": "Devout Robe",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16691,
+      "itemLevel": 59,
+      "name": "Devout Sandals",
+      "npcDrops": {
+        "1": 10438
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16692,
+      "itemLevel": 59,
+      "name": "Devout Gloves",
+      "npcDrops": {
+        "1": 10811
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16693,
+      "itemLevel": 62,
+      "name": "Devout Crown",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16694,
+      "itemLevel": 61,
+      "name": "Devout Skirt",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16695,
+      "itemLevel": 60,
+      "name": "Devout Mantle",
+      "npcDrops": {
+        "1": 10264
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16698,
+      "itemLevel": 62,
+      "name": "Dreadmist Mask",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16699,
+      "itemLevel": 61,
+      "name": "Dreadmist Leggings",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16700,
+      "itemLevel": 63,
+      "name": "Dreadmist Robe",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16701,
+      "itemLevel": 60,
+      "name": "Dreadmist Mantle",
+      "npcDrops": {
+        "1": 10503
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16704,
+      "itemLevel": 59,
+      "name": "Dreadmist Sandals",
+      "npcDrops": {
+        "1": 10436
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16706,
+      "itemLevel": 63,
+      "name": "Wildheart Vest",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16707,
+      "itemLevel": 62,
+      "name": "Shadowcraft Cap",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16708,
+      "itemLevel": 60,
+      "name": "Shadowcraft Spaulders",
+      "npcDrops": {
+        "1": 10997
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16709,
+      "itemLevel": 61,
+      "name": "Shadowcraft Pants",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16711,
+      "itemLevel": 59,
+      "name": "Shadowcraft Boots",
+      "npcDrops": {
+        "1": 11622
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16712,
+      "itemLevel": 59,
+      "name": "Shadowcraft Gloves",
+      "npcDrops": {
+        "1": 9236
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16715,
+      "itemLevel": 59,
+      "name": "Wildheart Boots",
+      "npcDrops": {
+        "1": 10596
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16718,
+      "itemLevel": 60,
+      "name": "Wildheart Spaulders",
+      "npcDrops": {
+        "1": 10268
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16719,
+      "itemLevel": 61,
+      "name": "Wildheart Kilt",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16720,
+      "itemLevel": 62,
+      "name": "Wildheart Cowl",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16721,
+      "itemLevel": 63,
+      "name": "Shadowcraft Tunic",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 16726,
+      "itemLevel": 63,
+      "name": "Lightforge Breastplate",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16727,
+      "itemLevel": 62,
+      "name": "Lightforge Helm",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16728,
+      "itemLevel": 61,
+      "name": "Lightforge Legplates",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16729,
+      "itemLevel": 60,
+      "name": "Lightforge Spaulders",
+      "npcDrops": {
+        "1": 10430
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16730,
+      "itemLevel": 63,
+      "name": "Breastplate of Valor",
+      "npcDrops": {
+        "1": 10363
+      },
+      "requiredLevel": 58,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16731,
+      "itemLevel": 62,
+      "name": "Helm of Valor",
+      "npcDrops": {
+        "1": 1853
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16732,
+      "itemLevel": 61,
+      "name": "Legplates of Valor",
+      "npcDrops": {
+        "1": 10440
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16733,
+      "itemLevel": 60,
+      "name": "Spaulders of Valor",
+      "npcDrops": {
+        "1": 10429
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16734,
+      "itemLevel": 59,
+      "name": "Boots of Valor",
+      "npcDrops": {
+        "1": 10506
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 16737,
+      "itemLevel": 59,
+      "name": "Gauntlets of Valor",
+      "npcDrops": {
+        "1": 10439
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 18671,
+      "itemLevel": 59,
+      "name": "Baron Charr's Sceptre",
+      "npcDrops": {
+        "1": 14461
+      },
+      "requiredLevel": 54,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 18678,
+      "itemLevel": 61,
+      "name": "Tempestria's Frozen Necklace",
+      "npcDrops": {
+        "1": 14457
+      },
+      "requiredLevel": 56,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 18760,
+      "itemLevel": 62,
+      "name": "Necromantic Band",
+      "npcDrops": {
+        "1": 14516
+      },
+      "requiredLevel": 57,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19336,
+      "itemLevel": 76,
+      "name": "Arcane Infused Gem",
+      "npcDrops": {
+        "1": 12435
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19337,
+      "itemLevel": 76,
+      "name": "The Black Book",
+      "npcDrops": {
+        "1": 12435
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19339,
+      "itemLevel": 76,
+      "name": "Mind Quickening Gem",
+      "npcDrops": {
+        "1": 13020
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19340,
+      "itemLevel": 76,
+      "name": "Rune of Metamorphosis",
+      "npcDrops": {
+        "1": 13020
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19341,
+      "itemLevel": 76,
+      "name": "Lifegiving Gem",
+      "npcDrops": {
+        "1": 12017
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19342,
+      "itemLevel": 76,
+      "name": "Venomous Totem",
+      "npcDrops": {
+        "1": 12017
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19371,
+      "itemLevel": 74,
+      "name": "Pendant of the Fallen Dragon",
+      "npcDrops": {
+        "1": 13020
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19507,
+      "itemLevel": 42,
+      "name": "Inquisitor's Shawl",
+      "npcDrops": {
+        "1": 4542
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 19508,
+      "itemLevel": 42,
+      "name": "Branded Leather Bracers",
+      "npcDrops": {
+        "1": 4542
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 19509,
+      "itemLevel": 42,
+      "name": "Dusty Mail Boots",
+      "npcDrops": {
+        "1": 4542
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 20682,
+      "itemLevel": 65,
+      "name": "Elemental Focus Band",
+      "npcDrops": {
+        "1": 15203
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 20685,
+      "itemLevel": 65,
+      "name": "Wavefront Necklace",
+      "npcDrops": {
+        "1": 15305
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21473,
+      "itemLevel": 74,
+      "name": "Eye of Moam",
+      "npcDrops": {
+        "1": 15340
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21477,
+      "itemLevel": 74,
+      "name": "Ring of Fury",
+      "npcDrops": {
+        "1": 15340
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21483,
+      "itemLevel": 73,
+      "name": "Ring of the Desert Winds",
+      "npcDrops": {
+        "1": 15369
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21488,
+      "itemLevel": 73,
+      "name": "Fetish of Chitinous Spikes",
+      "npcDrops": {
+        "1": 15370
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21579,
+      "itemLevel": 88,
+      "name": "Vanquished Tentacle of C'Thun",
+      "npcDrops": {
+        "1": 15727
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21597,
+      "itemLevel": 81,
+      "name": "Royal Scepter of Vek'lor",
+      "npcDrops": {
+        "1": 15276
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21598,
+      "itemLevel": 81,
+      "name": "Royal Qiraji Belt",
+      "npcDrops": {
+        "1": 15276
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 21600,
+      "itemLevel": 81,
+      "name": "Boots of Epiphany",
+      "npcDrops": {
+        "1": 15276
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 21601,
+      "itemLevel": 81,
+      "name": "Ring of Emperor Vek'lor",
+      "npcDrops": {
+        "1": 15276
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21602,
+      "itemLevel": 81,
+      "name": "Qiraji Execution Bracers",
+      "npcDrops": {
+        "1": 15276
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 21604,
+      "itemLevel": 81,
+      "name": "Bracelets of Royal Redemption",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 21605,
+      "itemLevel": 81,
+      "name": "Gloves of the Hidden Temple",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 21606,
+      "itemLevel": 81,
+      "name": "Belt of the Fallen Emperor",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 21607,
+      "itemLevel": 81,
+      "name": "Grasp of the Fallen Emperor",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 21608,
+      "itemLevel": 81,
+      "name": "Amulet of Vek'nilash",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21609,
+      "itemLevel": 81,
+      "name": "Regenerating Belt of Vek'nilash",
+      "npcDrops": {
+        "1": 15275
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 21610,
+      "itemLevel": 81,
+      "name": "Wormscale Blocker",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 21611,
+      "itemLevel": 81,
+      "name": "Burrower Bracers",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 21615,
+      "itemLevel": 81,
+      "name": "Don Rigoberto's Lost Hat",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 21616,
+      "itemLevel": 78,
+      "name": "Huhuran's Stinger",
+      "npcDrops": {
+        "1": 15509
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 21618,
+      "itemLevel": 78,
+      "name": "Hive Defiler Wristguards",
+      "npcDrops": {
+        "1": 15509
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 21619,
+      "itemLevel": 78,
+      "name": "Gloves of the Messiah",
+      "npcDrops": {
+        "1": 15509
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 21620,
+      "itemLevel": 78,
+      "name": "Ring of the Martyr",
+      "npcDrops": {
+        "1": 15509
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 21622,
+      "itemLevel": 78,
+      "name": "Sharpened Silithid Femur",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 21623,
+      "itemLevel": 78,
+      "name": "Gauntlets of the Righteous Champion",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 21624,
+      "itemLevel": 78,
+      "name": "Gauntlets of Kalimdor",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 21625,
+      "itemLevel": 78,
+      "name": "Scarab Brooch",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21677,
+      "itemLevel": 78,
+      "name": "Ring of the Qiraji Fury",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21681,
+      "itemLevel": 78,
+      "name": "Ring of the Devoured",
+      "npcDrops": {
+        "1": 15511
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21685,
+      "itemLevel": 76,
+      "name": "Petrified Scarab",
+      "npcDrops": {
+        "1": 15511
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21687,
+      "itemLevel": 76,
+      "name": "Ukko's Ring of Darkness",
+      "npcDrops": {
+        "1": 15543
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 21690,
+      "itemLevel": 75,
+      "name": "Angelista's Charm",
+      "npcDrops": {
+        "1": 15544
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22399,
+      "itemLevel": 78,
+      "name": "Idol of Health",
+      "npcDrops": {
+        "1": 15299
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 22935,
+      "itemLevel": 83,
+      "name": "Touch of Frost",
+      "npcDrops": {
+        "1": 15956
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22939,
+      "itemLevel": 83,
+      "name": "Band of Unanswered Prayers",
+      "npcDrops": {
+        "1": 15956
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22940,
+      "itemLevel": 83,
+      "name": "Icebane Pauldrons",
+      "npcDrops": {
+        "1": 15953
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 22941,
+      "itemLevel": 83,
+      "name": "Polar Shoulder Pads",
+      "npcDrops": {
+        "1": 15953
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 22943,
+      "itemLevel": 83,
+      "name": "Malice Stone Pendant",
+      "npcDrops": {
+        "1": 15953
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22947,
+      "itemLevel": 85,
+      "name": "Pendant of Forgotten Names",
+      "npcDrops": {
+        "1": 15952
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22954,
+      "itemLevel": 85,
+      "name": "Kiss of the Spider",
+      "npcDrops": {
+        "1": 15952
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22961,
+      "itemLevel": 83,
+      "name": "Band of Reanimation",
+      "npcDrops": {
+        "1": 16028
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 22967,
+      "itemLevel": 83,
+      "name": "Icy Scale Spaulders",
+      "npcDrops": {
+        "1": 15931
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 22968,
+      "itemLevel": 83,
+      "name": "Glacial Mantle",
+      "npcDrops": {
+        "1": 15931
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 22981,
+      "itemLevel": 83,
+      "name": "Gluth's Missing Collar",
+      "npcDrops": {
+        "1": 15932
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23001,
+      "itemLevel": 85,
+      "name": "Eye of Diminution",
+      "npcDrops": {
+        "1": 15928
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23004,
+      "itemLevel": 83,
+      "name": "Idol of Longevity",
+      "npcDrops": {
+        "1": 16061
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 23005,
+      "itemLevel": 83,
+      "name": "Totem of Flowing Water",
+      "npcDrops": {
+        "1": 15954
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 9
+    },
+    {
+      "class": 4,
+      "id": 23006,
+      "itemLevel": 83,
+      "name": "Libram of Light",
+      "npcDrops": {
+        "1": 15954
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 7
+    },
+    {
+      "class": 4,
+      "id": 23018,
+      "itemLevel": 83,
+      "name": "Signet of the Fallen Defender",
+      "npcDrops": {
+        "1": 16061
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23019,
+      "itemLevel": 83,
+      "name": "Icebane Helmet",
+      "npcDrops": {
+        "1": 15936
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 23020,
+      "itemLevel": 83,
+      "name": "Polar Helmet",
+      "npcDrops": {
+        "1": 16060
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 23023,
+      "itemLevel": 83,
+      "name": "Sadist's Collar",
+      "npcDrops": {
+        "1": 16060
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23028,
+      "itemLevel": 83,
+      "name": "Hailstone Band",
+      "npcDrops": {
+        "1": 15954
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23031,
+      "itemLevel": 83,
+      "name": "Band of the Inevitable",
+      "npcDrops": {
+        "1": 15954
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23032,
+      "itemLevel": 83,
+      "name": "Glacial Headdress",
+      "npcDrops": {
+        "1": 16060
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 23033,
+      "itemLevel": 83,
+      "name": "Icy Scale Coif",
+      "npcDrops": {
+        "1": 15936
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 23036,
+      "itemLevel": 83,
+      "name": "Necklace of Necropsy",
+      "npcDrops": {
+        "1": 15936
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23037,
+      "itemLevel": 85,
+      "name": "Ring of Spiritual Fervor",
+      "npcDrops": {
+        "1": 16011
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23038,
+      "itemLevel": 85,
+      "name": "Band of Unnatural Forces",
+      "npcDrops": {
+        "1": 16011
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23040,
+      "itemLevel": 90,
+      "name": "Glyph of Deflection",
+      "npcDrops": {
+        "1": 15989
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23041,
+      "itemLevel": 90,
+      "name": "Slayer's Crest",
+      "npcDrops": {
+        "1": 15989
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23042,
+      "itemLevel": 85,
+      "name": "Loatheb's Reflection",
+      "npcDrops": {
+        "1": 16011
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23046,
+      "itemLevel": 90,
+      "name": "The Restrained Essence of Sapphiron",
+      "npcDrops": {
+        "1": 15989
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23047,
+      "itemLevel": 90,
+      "name": "Eye of the Dead",
+      "npcDrops": {
+        "1": 15989
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23053,
+      "itemLevel": 92,
+      "name": "Stormrage's Talisman of Seething",
+      "npcDrops": {
+        "1": 15990
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23057,
+      "itemLevel": 92,
+      "name": "Gem of Trapped Innocents",
+      "npcDrops": {
+        "1": 15990
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23125,
+      "itemLevel": 60,
+      "name": "Chains of the Lich",
+      "npcDrops": {
+        "1": 14684
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23169,
+      "itemLevel": 35,
+      "name": "Scorn's Icy Choker",
+      "npcDrops": {
+        "1": 14693
+      },
+      "requiredLevel": 30,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 23557,
+      "itemLevel": 81,
+      "name": "Larvae of the Great Worm",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 23558,
+      "itemLevel": 81,
+      "name": "The Burrower's Shell",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 23570,
+      "itemLevel": 81,
+      "name": "Jom Gabbar",
+      "npcDrops": {
+        "1": 15517
+      },
+      "requiredLevel": 60,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 283460,
+      "itemLevel": 12,
+      "name": "Decaying Flesh Belt",
+      "npcDrops": {
+        "1": 271080
+      },
+      "requiredLevel": 7,
+      "startQuest": 0,
+      "subClass": 2
+    }
+  ],
+  "export_method": "emulator/client.lua plus emulator/metadata.lua; Quest.GetAllIds/Get and Item.GetAllIds/Get after Forever addon load",
+  "fetched_at": "2026-11-06T01:36:26.809253+00:00",
+  "flavor": "forever",
+  "npc_records": [
+    {
+      "factionID": 14,
+      "id": 36,
+      "maxLevel": 12,
+      "minLevel": 11,
+      "name": "Harvest Golem",
+      "npcFlags": 0,
+      "zoneID": 40
+    },
+    {
+      "factionID": 17,
+      "id": 121,
+      "maxLevel": 16,
+      "minLevel": 15,
+      "name": "Defias Pathstalker",
+      "npcFlags": 0,
+      "zoneID": 40
+    },
+    {
+      "factionID": 20,
+      "id": 125,
+      "maxLevel": 19,
+      "minLevel": 19,
+      "name": "Riverpaw Overseer",
+      "npcFlags": 0,
+      "zoneID": 40
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 412,
+      "maxLevel": 35,
+      "minLevel": 35,
+      "name": "Stitches",
+      "npcFlags": 0,
+      "subName": "Gift from the Embalmer",
+      "zoneID": 10
+    },
+    {
+      "factionID": 26,
+      "id": 476,
+      "maxLevel": 8,
+      "minLevel": 7,
+      "name": "Kobold Geomancer",
+      "npcFlags": 0,
+      "zoneID": 12
+    },
+    {
+      "factionID": 17,
+      "id": 598,
+      "maxLevel": 18,
+      "minLevel": 18,
+      "name": "Defias Miner",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 622,
+      "maxLevel": 19,
+      "minLevel": 18,
+      "name": "Goblin Engineer",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 636,
+      "maxLevel": 20,
+      "minLevel": 19,
+      "name": "Defias Blackguard",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 639,
+      "maxLevel": 21,
+      "minLevel": 21,
+      "name": "Edwin VanCleef",
+      "npcFlags": 0,
+      "subName": "Defias Kingpin",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 641,
+      "maxLevel": 19,
+      "minLevel": 18,
+      "name": "Goblin Woodcarver",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 642,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Sneed's Shredder",
+      "npcFlags": 0,
+      "subName": "Lumbermaster",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 643,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Sneed",
+      "npcFlags": 0,
+      "subName": "Lumbermaster",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 644,
+      "maxLevel": 19,
+      "minLevel": 19,
+      "name": "Rhahk'Zor",
+      "npcFlags": 0,
+      "subName": "The Foreman",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 645,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Cookie",
+      "npcFlags": 0,
+      "subName": "The Ship's Cook",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 27,
+      "id": 646,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Mr. Smite",
+      "npcFlags": 0,
+      "subName": "The Ship's First Mate",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 17,
+      "id": 647,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Captain Greenskin",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 19,
+      "id": 712,
+      "maxLevel": 15,
+      "minLevel": 14,
+      "name": "Redridge Thrasher",
+      "npcFlags": 0,
+      "zoneID": 44
+    },
+    {
+      "factionID": 37,
+      "id": 808,
+      "maxLevel": 5,
+      "minLevel": 5,
+      "name": "Grik'nir the Cold",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 17,
+      "id": 910,
+      "maxLevel": 27,
+      "minLevel": 26,
+      "name": "Defias Enchanter",
+      "npcFlags": 0,
+      "zoneID": 10
+    },
+    {
+      "factionID": 107,
+      "id": 946,
+      "maxLevel": 4,
+      "minLevel": 3,
+      "name": "Frostmane Novice",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 59,
+      "id": 1116,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Rockjaw Ambusher",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 59,
+      "id": 1117,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Rockjaw Bonesnapper",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 59,
+      "id": 1118,
+      "maxLevel": 12,
+      "minLevel": 11,
+      "name": "Rockjaw Backbreaker",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 37,
+      "id": 1124,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Frostmane Shadowcaster",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 38,
+      "id": 1133,
+      "maxLevel": 9,
+      "minLevel": 8,
+      "name": "Starving Winter Wolf",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 778,
+      "id": 1493,
+      "maxLevel": 50,
+      "minLevel": 50,
+      "name": "Mok'rash",
+      "npcFlags": 0,
+      "zoneID": 33
+    },
+    {
+      "factionID": 14,
+      "id": 1494,
+      "maxLevel": 52,
+      "minLevel": 52,
+      "name": "Negolash",
+      "npcFlags": 0,
+      "zoneID": 33
+    },
+    {
+      "factionID": 22,
+      "id": 1505,
+      "maxLevel": 4,
+      "minLevel": 3,
+      "name": "Night Web Spider",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 67,
+      "id": 1507,
+      "maxLevel": 4,
+      "minLevel": 3,
+      "name": "Scarlet Initiate",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 21,
+      "id": 1529,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Bleeding Horror",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 38,
+      "id": 1549,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Ravenous Darkhound",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 22,
+      "id": 1555,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Vicious Night Web Spider",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 67,
+      "id": 1660,
+      "maxLevel": 8,
+      "minLevel": 8,
+      "name": "Scarlet Bodyguard",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 67,
+      "id": 1662,
+      "maxLevel": 9,
+      "minLevel": 9,
+      "name": "Captain Perrine",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 67,
+      "id": 1665,
+      "maxLevel": 12,
+      "minLevel": 12,
+      "name": "Captain Melrache",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 41,
+      "id": 1666,
+      "maxLevel": 27,
+      "minLevel": 27,
+      "name": "Kam Deepfury",
+      "npcFlags": 0,
+      "zoneID": 717
+    },
+    {
+      "factionID": 1094,
+      "friendlyToFaction": "AH",
+      "id": 1689,
+      "maxLevel": 10,
+      "minLevel": 9,
+      "name": "Scarred Crag Boar",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 59,
+      "id": 1718,
+      "maxLevel": 4,
+      "minLevel": 3,
+      "name": "Rockjaw Raider",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 17,
+      "id": 1720,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Bruegal Ironknuckle",
+      "npcFlags": 0,
+      "zoneID": 717
+    },
+    {
+      "factionID": 17,
+      "id": 1725,
+      "maxLevel": 18,
+      "minLevel": 16,
+      "name": "Defias Watchman",
+      "npcFlags": 0,
+      "zoneID": 40
+    },
+    {
+      "factionID": 17,
+      "id": 1726,
+      "maxLevel": 17,
+      "minLevel": 16,
+      "name": "Defias Magician",
+      "npcFlags": 0,
+      "zoneID": 40
+    },
+    {
+      "factionID": 17,
+      "id": 1731,
+      "maxLevel": 19,
+      "minLevel": 18,
+      "name": "Goblin Craftsman",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 70,
+      "id": 1753,
+      "maxLevel": 11,
+      "minLevel": 11,
+      "name": "Maggot Eye",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 17,
+      "id": 1763,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Gilnid",
+      "npcFlags": 0,
+      "subName": "The Smelter",
+      "zoneID": 1581
+    },
+    {
+      "factionID": 14,
+      "id": 1853,
+      "maxLevel": 61,
+      "minLevel": 61,
+      "name": "Darkmaster Gandling",
+      "npcFlags": 0,
+      "zoneID": 2057
+    },
+    {
+      "factionID": 18,
+      "id": 1910,
+      "maxLevel": 10,
+      "minLevel": 10,
+      "name": "Muad",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 1916,
+      "maxLevel": 3,
+      "minLevel": 2,
+      "name": "Stephen Bhartec",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 1917,
+      "maxLevel": 3,
+      "minLevel": 2,
+      "name": "Daniel Ulfman",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 1918,
+      "maxLevel": 3,
+      "minLevel": 2,
+      "name": "Karrel Grayves",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 1919,
+      "maxLevel": 5,
+      "minLevel": 5,
+      "name": "Samuel Fipps",
+      "npcFlags": 0,
+      "zoneID": 85
+    },
+    {
+      "factionID": 14,
+      "id": 2030,
+      "maxLevel": 11,
+      "minLevel": 10,
+      "name": "Elder Timberling",
+      "npcFlags": 0,
+      "zoneID": 141
+    },
+    {
+      "factionID": 45,
+      "id": 2287,
+      "maxLevel": 40,
+      "minLevel": 39,
+      "name": "Crushridge Warmonger",
+      "npcFlags": 0,
+      "zoneID": 36
+    },
+    {
+      "factionID": 654,
+      "id": 2557,
+      "maxLevel": 36,
+      "minLevel": 35,
+      "name": "Witherbark Shadow Hunter",
+      "npcFlags": 0,
+      "zoneID": 45
+    },
+    {
+      "factionID": 415,
+      "id": 2748,
+      "maxLevel": 47,
+      "minLevel": 47,
+      "name": "Archaedas",
+      "npcFlags": 0,
+      "subName": "Ancient Stone Watcher",
+      "zoneID": 1337
+    },
+    {
+      "factionID": 111,
+      "id": 2953,
+      "maxLevel": 4,
+      "minLevel": 3,
+      "name": "Bristleback Shaman",
+      "npcFlags": 0,
+      "zoneID": 215
+    },
+    {
+      "factionID": 109,
+      "id": 3270,
+      "maxLevel": 15,
+      "minLevel": 15,
+      "name": "Elder Mystic Razorsnout",
+      "npcFlags": 0,
+      "zoneID": 17
+    },
+    {
+      "factionID": 16,
+      "id": 3398,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Gesharahan",
+      "npcFlags": 0,
+      "zoneID": 17
+    },
+    {
+      "factionID": 109,
+      "id": 3458,
+      "maxLevel": 24,
+      "minLevel": 23,
+      "name": "Razormane Seer",
+      "npcFlags": 0,
+      "zoneID": 17
+    },
+    {
+      "factionID": 109,
+      "id": 3459,
+      "maxLevel": 25,
+      "minLevel": 24,
+      "name": "Razormane Warfrenzy",
+      "npcFlags": 0,
+      "zoneID": 17
+    },
+    {
+      "factionID": 14,
+      "id": 3586,
+      "maxLevel": 19,
+      "minLevel": 19,
+      "name": "Miner Johnson",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 3653,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Kresh",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 14,
+      "id": 3654,
+      "maxLevel": 22,
+      "minLevel": 22,
+      "name": "Mutanus the Devourer",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 270,
+      "id": 3669,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Lord Cobrahn",
+      "npcFlags": 0,
+      "subName": "Fanglord",
+      "zoneID": 718
+    },
+    {
+      "factionID": 270,
+      "id": 3670,
+      "maxLevel": 21,
+      "minLevel": 21,
+      "name": "Lord Pythas",
+      "npcFlags": 0,
+      "subName": "Fanglord",
+      "zoneID": 718
+    },
+    {
+      "factionID": 270,
+      "id": 3671,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Lady Anacondra",
+      "npcFlags": 0,
+      "subName": "Fanglord",
+      "zoneID": 0
+    },
+    {
+      "factionID": 270,
+      "id": 3673,
+      "maxLevel": 21,
+      "minLevel": 21,
+      "name": "Lord Serpentis",
+      "npcFlags": 0,
+      "subName": "Fanglord",
+      "zoneID": 718
+    },
+    {
+      "factionID": 14,
+      "id": 3674,
+      "maxLevel": 21,
+      "minLevel": 21,
+      "name": "Skum",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 270,
+      "id": 3840,
+      "maxLevel": 20,
+      "minLevel": 19,
+      "name": "Druid of the Fang",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 24,
+      "id": 3886,
+      "maxLevel": 22,
+      "minLevel": 22,
+      "name": "Razorclaw the Butcher",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 24,
+      "id": 3887,
+      "maxLevel": 24,
+      "minLevel": 24,
+      "name": "Baron Silverlaine",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 24,
+      "id": 3914,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Rethilgore",
+      "npcFlags": 0,
+      "subName": "The Cell Keeper",
+      "zoneID": 209
+    },
+    {
+      "factionID": 14,
+      "id": 3927,
+      "maxLevel": 25,
+      "minLevel": 25,
+      "name": "Wolf Master Nandos",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 17,
+      "id": 3947,
+      "maxLevel": 20,
+      "minLevel": 19,
+      "name": "Goblin Shipbuilder",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 67,
+      "id": 3974,
+      "maxLevel": 34,
+      "minLevel": 34,
+      "name": "Houndmaster Loksey",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 67,
+      "id": 3975,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Herod",
+      "npcFlags": 0,
+      "subName": "The Scarlet Champion",
+      "zoneID": 796
+    },
+    {
+      "factionID": 67,
+      "id": 3976,
+      "maxLevel": 42,
+      "minLevel": 42,
+      "name": "Scarlet Commander Mograine",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 67,
+      "id": 3977,
+      "maxLevel": 42,
+      "minLevel": 42,
+      "name": "High Inquisitor Whitemane",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 67,
+      "id": 3983,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Interrogator Vishas",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 131,
+      "id": 4099,
+      "maxLevel": 27,
+      "minLevel": 26,
+      "name": "Galak Marauder",
+      "npcFlags": 0,
+      "zoneID": 400
+    },
+    {
+      "factionID": 16,
+      "id": 4274,
+      "maxLevel": 25,
+      "minLevel": 25,
+      "name": "Fenrus the Devourer",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 24,
+      "id": 4275,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Archmage Arugal",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 24,
+      "id": 4278,
+      "maxLevel": 24,
+      "minLevel": 24,
+      "name": "Commander Springvale",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 24,
+      "id": 4279,
+      "maxLevel": 24,
+      "minLevel": 24,
+      "name": "Odo the Blindwatcher",
+      "npcFlags": 0,
+      "zoneID": 209
+    },
+    {
+      "factionID": 67,
+      "id": 4302,
+      "maxLevel": 40,
+      "minLevel": 39,
+      "name": "Scarlet Champion",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 17,
+      "id": 4416,
+      "maxLevel": 19,
+      "minLevel": 18,
+      "name": "Defias Strip Miner",
+      "npcFlags": 0,
+      "zoneID": 1581
+    },
+    {
+      "factionID": 152,
+      "id": 4420,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Overlord Ramtusk",
+      "npcFlags": 0,
+      "zoneID": 491
+    },
+    {
+      "factionID": 152,
+      "id": 4421,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Charlga Razorflank",
+      "npcFlags": 0,
+      "subName": "The Crone",
+      "zoneID": 491
+    },
+    {
+      "factionID": 16,
+      "id": 4422,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Agathelos the Raging",
+      "npcFlags": 0,
+      "zoneID": 491
+    },
+    {
+      "factionID": 152,
+      "id": 4424,
+      "maxLevel": 30,
+      "minLevel": 30,
+      "name": "Aggem Thorncurse",
+      "npcFlags": 0,
+      "subName": "Death's Head Prophet",
+      "zoneID": 491
+    },
+    {
+      "factionID": 411,
+      "id": 4425,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Blind Hunter",
+      "npcFlags": 2,
+      "zoneID": 491
+    },
+    {
+      "factionID": 16,
+      "id": 4428,
+      "maxLevel": 30,
+      "minLevel": 30,
+      "name": "Death Speaker Jargba",
+      "npcFlags": 0,
+      "subName": "Death's Head Captain",
+      "zoneID": 491
+    },
+    {
+      "factionID": 152,
+      "id": 4438,
+      "maxLevel": 30,
+      "minLevel": 29,
+      "name": "Razorfen Spearhide",
+      "npcFlags": 0,
+      "zoneID": 491
+    },
+    {
+      "factionID": 67,
+      "id": 4542,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "High Inquisitor Fairbanks",
+      "npcFlags": 1,
+      "zoneID": 796
+    },
+    {
+      "factionID": 21,
+      "id": 4543,
+      "maxLevel": 34,
+      "minLevel": 34,
+      "name": "Bloodmage Thalnos",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 24,
+      "id": 4627,
+      "maxLevel": 25,
+      "minLevel": 24,
+      "name": "Arugal's Voidwalker",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 128,
+      "id": 4829,
+      "maxLevel": 28,
+      "minLevel": 28,
+      "name": "Aku'mai",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 16,
+      "id": 4830,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Old Serra'kis",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 128,
+      "id": 4831,
+      "maxLevel": 25,
+      "minLevel": 25,
+      "name": "Lady Sarevess",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 128,
+      "id": 4832,
+      "maxLevel": 27,
+      "minLevel": 27,
+      "name": "Twilight Lord Kelris",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 152,
+      "id": 4842,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Earthcaller Halmgar",
+      "npcFlags": 0,
+      "zoneID": 491
+    },
+    {
+      "factionID": 59,
+      "id": 4854,
+      "maxLevel": 45,
+      "minLevel": 45,
+      "name": "Grimlok",
+      "npcFlags": 0,
+      "subName": "Stonevault Chieftain",
+      "zoneID": 1337
+    },
+    {
+      "factionID": 128,
+      "id": 4887,
+      "maxLevel": 25,
+      "minLevel": 25,
+      "name": "Ghamoo-ra",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 51,
+      "id": 5477,
+      "maxLevel": 39,
+      "minLevel": 39,
+      "name": "Noboru the Cudgel",
+      "npcFlags": 0,
+      "zoneID": 8
+    },
+    {
+      "factionID": 270,
+      "id": 5775,
+      "maxLevel": 21,
+      "minLevel": 21,
+      "name": "Verdan the Everliving",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 514,
+      "id": 5785,
+      "maxLevel": 11,
+      "minLevel": 11,
+      "name": "Sister Hatelash",
+      "npcFlags": 0,
+      "zoneID": 215
+    },
+    {
+      "factionID": 270,
+      "id": 5912,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Deviate Faerie Dragon",
+      "npcFlags": 0,
+      "zoneID": 718
+    },
+    {
+      "factionID": 49,
+      "id": 5935,
+      "maxLevel": 37,
+      "minLevel": 37,
+      "name": "Ironeye the Invincible",
+      "npcFlags": 0,
+      "zoneID": 400
+    },
+    {
+      "factionID": 63,
+      "id": 6228,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Dark Iron Ambassador",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 63,
+      "id": 6229,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Crowd Pummeler 9-60",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 63,
+      "id": 6231,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Techbot",
+      "npcFlags": 0,
+      "zoneID": 1
+    },
+    {
+      "factionID": 63,
+      "id": 6235,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Electrocutioner 6000",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 18,
+      "id": 6243,
+      "maxLevel": 26,
+      "minLevel": 26,
+      "name": "Gelihast",
+      "npcFlags": 0,
+      "zoneID": 719
+    },
+    {
+      "factionID": 67,
+      "id": 6487,
+      "maxLevel": 37,
+      "minLevel": 37,
+      "name": "Arcanist Doan",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 21,
+      "id": 6488,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Fallen Champion",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 21,
+      "id": 6489,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Ironspine",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 32,
+      "friendlyToFaction": "AH",
+      "id": 6490,
+      "maxLevel": 33,
+      "minLevel": 33,
+      "name": "Azshir the Sleepless",
+      "npcFlags": 0,
+      "zoneID": 796
+    },
+    {
+      "factionID": 122,
+      "friendlyToFaction": "A",
+      "id": 6906,
+      "maxLevel": 41,
+      "minLevel": 41,
+      "name": "Baelog",
+      "npcFlags": 2,
+      "questEnds": {
+        "1": 2398
+      },
+      "questStarts": {
+        "1": 2240
+      },
+      "zoneID": 1337
+    },
+    {
+      "factionID": 122,
+      "friendlyToFaction": "A",
+      "id": 6907,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Eric \"The Swift\"",
+      "npcFlags": 2,
+      "zoneID": 1337
+    },
+    {
+      "factionID": 122,
+      "friendlyToFaction": "A",
+      "id": 6908,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Olaf",
+      "npcFlags": 2,
+      "zoneID": 1337
+    },
+    {
+      "factionID": 59,
+      "id": 6910,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Revelosh",
+      "npcFlags": 0,
+      "zoneID": 1337
+    },
+    {
+      "factionID": 91,
+      "id": 7079,
+      "maxLevel": 30,
+      "minLevel": 30,
+      "name": "Viscous Fallout",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 415,
+      "id": 7206,
+      "maxLevel": 44,
+      "minLevel": 44,
+      "name": "Ancient Stone Keeper",
+      "npcFlags": 0,
+      "zoneID": 1337
+    },
+    {
+      "factionID": 416,
+      "id": 7228,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Ironaya",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 54,
+      "id": 7291,
+      "maxLevel": 45,
+      "minLevel": 45,
+      "name": "Galgann Firehammer",
+      "npcFlags": 0,
+      "zoneID": 1337
+    },
+    {
+      "factionID": 152,
+      "id": 7355,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Tuten'kash",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 14,
+      "id": 7356,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Plaguemaw the Rotting",
+      "npcFlags": 0,
+      "zoneID": 722
+    },
+    {
+      "factionID": 152,
+      "id": 7357,
+      "maxLevel": 39,
+      "minLevel": 39,
+      "name": "Mordresh Fire Eye",
+      "npcFlags": 0,
+      "zoneID": 722
+    },
+    {
+      "factionID": 152,
+      "id": 7358,
+      "maxLevel": 41,
+      "minLevel": 41,
+      "name": "Amnennar the Coldbringer",
+      "npcFlags": 0,
+      "zoneID": 722
+    },
+    {
+      "factionID": 59,
+      "id": 7361,
+      "maxLevel": 32,
+      "minLevel": 32,
+      "name": "Grubbis",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 63,
+      "id": 7800,
+      "maxLevel": 34,
+      "minLevel": 34,
+      "name": "Mekgineer Thermaplugg",
+      "npcFlags": 0,
+      "zoneID": 721
+    },
+    {
+      "factionID": 152,
+      "id": 8567,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Glutton",
+      "npcFlags": 0,
+      "zoneID": 722
+    },
+    {
+      "factionID": 40,
+      "id": 9196,
+      "maxLevel": 59,
+      "minLevel": 59,
+      "name": "Highlord Omokk",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 40,
+      "id": 9236,
+      "maxLevel": 58,
+      "minLevel": 58,
+      "name": "Shadow Hunter Vosh'gajin",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 40,
+      "id": 9237,
+      "maxLevel": 58,
+      "minLevel": 58,
+      "name": "War Master Voone",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 40,
+      "id": 9568,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Overlord Wyrmthalak",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 40,
+      "id": 9816,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Pyroguard Emberseer",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 16,
+      "id": 10264,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Solakar Flamewreath",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 14,
+      "id": 10268,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Gizrul the Slavener",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 40,
+      "id": 10339,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "Gyth",
+      "npcFlags": 0,
+      "subName": "Rend Blackhand's Mount",
+      "zoneID": 0
+    },
+    {
+      "factionID": 40,
+      "id": 10363,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "General Drakkisath",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 40,
+      "id": 10429,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "Warchief Rend Blackhand",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 14,
+      "id": 10430,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "The Beast",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 21,
+      "id": 10436,
+      "maxLevel": 59,
+      "minLevel": 59,
+      "name": "Baroness Anastari",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 21,
+      "id": 10437,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Nerub'enkan",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 21,
+      "id": 10438,
+      "maxLevel": 61,
+      "minLevel": 61,
+      "name": "Maleki the Pallid",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 21,
+      "id": 10439,
+      "maxLevel": 61,
+      "minLevel": 61,
+      "name": "Ramstein the Gorger",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 21,
+      "id": 10440,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "Baron Rivendare",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 233,
+      "id": 10503,
+      "maxLevel": 61,
+      "minLevel": 61,
+      "name": "Jandice Barov",
+      "npcFlags": 0,
+      "zoneID": 2057
+    },
+    {
+      "factionID": 14,
+      "id": 10506,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Kirtonos the Herald",
+      "npcFlags": 0,
+      "zoneID": 2057
+    },
+    {
+      "factionID": 7,
+      "friendlyToFaction": "AH",
+      "id": 10558,
+      "maxLevel": 57,
+      "minLevel": 57,
+      "name": "Hearthsinger Forresten",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 16,
+      "id": 10596,
+      "maxLevel": 59,
+      "minLevel": 59,
+      "name": "Mother Smolderweb",
+      "npcFlags": 0,
+      "zoneID": 1583
+    },
+    {
+      "factionID": 67,
+      "id": 10811,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Archivist Galford",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 67,
+      "id": 10997,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Cannon Master Willey",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 554,
+      "id": 11518,
+      "maxLevel": 16,
+      "minLevel": 16,
+      "name": "Jergosh the Invoker",
+      "npcFlags": 0,
+      "zoneID": 2437
+    },
+    {
+      "factionID": 554,
+      "id": 11520,
+      "maxLevel": 16,
+      "minLevel": 16,
+      "name": "Taragaman the Hungerer",
+      "npcFlags": 0,
+      "zoneID": 2437
+    },
+    {
+      "factionID": 233,
+      "id": 11622,
+      "maxLevel": 61,
+      "minLevel": 61,
+      "name": "Rattlegore",
+      "npcFlags": 0,
+      "zoneID": 2057
+    },
+    {
+      "factionID": 103,
+      "id": 12017,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Broodlord Lashlayer",
+      "npcFlags": 0,
+      "zoneID": 2677
+    },
+    {
+      "factionID": 1114,
+      "id": 12435,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Razorgore the Untamed",
+      "npcFlags": 0,
+      "zoneID": 2677
+    },
+    {
+      "factionID": 35,
+      "friendlyToFaction": "AH",
+      "id": 13020,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Vaelastrasz the Corrupt",
+      "npcFlags": 3,
+      "questStarts": {
+        "1": 8730
+      },
+      "zoneID": 2677
+    },
+    {
+      "factionID": 14,
+      "id": 14457,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Princess Tempestria",
+      "npcFlags": 0,
+      "zoneID": 618
+    },
+    {
+      "factionID": 91,
+      "id": 14461,
+      "maxLevel": 58,
+      "minLevel": 58,
+      "name": "Baron Charr",
+      "npcFlags": 0,
+      "zoneID": 490
+    },
+    {
+      "factionID": 14,
+      "id": 14516,
+      "maxLevel": 62,
+      "minLevel": 62,
+      "name": "Death Knight Darkreaver",
+      "npcFlags": 0,
+      "zoneID": 2057
+    },
+    {
+      "factionID": 35,
+      "friendlyToFaction": "AH",
+      "id": 14684,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Balzaphon",
+      "npcFlags": 0,
+      "zoneID": 2017
+    },
+    {
+      "factionID": 35,
+      "friendlyToFaction": "AH",
+      "id": 14693,
+      "maxLevel": 34,
+      "minLevel": 34,
+      "name": "Scorn",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 14,
+      "id": 15203,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Prince Skaldrenox",
+      "npcFlags": 0,
+      "subName": "Abyssal High Council",
+      "zoneID": 1377
+    },
+    {
+      "factionID": 16,
+      "id": 15275,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Emperor Vek'nilash",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 16,
+      "id": 15276,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Emperor Vek'lor",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 14,
+      "id": 15299,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Viscidus",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 14,
+      "id": 15305,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Lord Skwol",
+      "npcFlags": 0,
+      "subName": "Abyssal High Council",
+      "zoneID": 1377
+    },
+    {
+      "factionID": 16,
+      "id": 15340,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Moam",
+      "npcFlags": 0,
+      "zoneID": 3429
+    },
+    {
+      "factionID": 16,
+      "id": 15369,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Ayamiss the Hunter",
+      "npcFlags": 0,
+      "zoneID": 3429
+    },
+    {
+      "factionID": 16,
+      "id": 15370,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Buru the Gorger",
+      "npcFlags": 0,
+      "zoneID": 3429
+    },
+    {
+      "factionID": 16,
+      "id": 15509,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Princess Huhuran",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 16,
+      "id": 15511,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Lord Kri",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 16,
+      "id": 15517,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Ouro",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 16,
+      "id": 15543,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Princess Yauj",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 16,
+      "id": 15544,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Vem",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 370,
+      "id": 15727,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "C'Thun",
+      "npcFlags": 0,
+      "zoneID": 3428
+    },
+    {
+      "factionID": 21,
+      "id": 15928,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Thaddius",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15931,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Grobbulus",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15932,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Gluth",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15936,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Heigan the Unclean",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15952,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Maexxna",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15953,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Grand Widow Faerlina",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15954,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Noth the Plaguebringer",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15956,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Anub'Rekhan",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 15989,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Sapphiron",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 21,
+      "id": 15990,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Kel'Thuzad",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 16011,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Loatheb",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 16028,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Patchwerk",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 14,
+      "id": 16060,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Gothik the Harvester",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 21,
+      "id": 16061,
+      "maxLevel": 63,
+      "minLevel": 63,
+      "name": "Instructor Razuvious",
+      "npcFlags": 0,
+      "zoneID": 3456
+    },
+    {
+      "factionID": 0,
+      "id": 271080,
+      "maxLevel": 10,
+      "minLevel": 10,
+      "name": "Blightsculler",
+      "npcFlags": 0,
+      "zoneID": 85
+    }
+  ],
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 197
+        }
+      },
+      "id": 7,
+      "name": "Kobold Camp Cleanup",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 783
+      },
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 197
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 197
+        }
+      },
+      "id": 15,
+      "name": "Investigate Echo Ridge",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 7
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 197
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 197
+        }
+      },
+      "id": 21,
+      "name": "Skirmish at Echo Ridge",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 15
+      },
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 197
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 196
+        }
+      },
+      "id": 33,
+      "name": "Wolves Across the Border",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 196
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 240
+        }
+      },
+      "id": 54,
+      "name": "Report to Goldshire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 21
+      },
+      "questFlags": 0,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 745,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 197
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 713
+        }
+      },
+      "id": 170,
+      "name": "A New Threat",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 179
+      },
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 713
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 658
+        }
+      },
+      "id": 179,
+      "name": "Dwarven Outfitters",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 1,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 658
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 786
+        }
+      },
+      "id": 182,
+      "name": "The Troll Cave",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 4,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 786
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 714
+        }
+      },
+      "id": 183,
+      "name": "The Boar Hunter",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 714
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 786
+        }
+      },
+      "id": 218,
+      "name": "The Stolen Journal",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 182
+      },
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 786
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1569
+        }
+      },
+      "id": 364,
+      "name": "The Mindless Ones",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1569
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2079
+        }
+      },
+      "id": 456,
+      "name": "The Balance of Nature",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2079
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2079
+        }
+      },
+      "id": 457,
+      "name": "The Balance of Nature",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 456
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2079
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1992
+        }
+      },
+      "id": 458,
+      "name": "The Woodland Protector",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 1,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2077
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1992
+        }
+      },
+      "id": 459,
+      "name": "The Woodland Protector",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 458
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1992
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2993
+        }
+      },
+      "id": 745,
+      "name": "Sharing the Land",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 8,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2993
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2980
+        }
+      },
+      "id": 747,
+      "name": "The Hunt Begins",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2980
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2980
+        }
+      },
+      "id": 750,
+      "name": "The Hunt Continues",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 747
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2980
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2981
+        }
+      },
+      "id": 753,
+      "name": "A Humble Task",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2991
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2982
+        }
+      },
+      "id": 755,
+      "name": "Rites of the Earthmother",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 753
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2981
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2981
+        }
+      },
+      "id": 757,
+      "name": "Rite of Strength",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 755
+      },
+      "questFlags": 8,
+      "questLevel": 4,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2982
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2980
+        }
+      },
+      "id": 780,
+      "name": "The Battleboars",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 750
+      },
+      "questFlags": 8,
+      "questLevel": 4,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2980
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2981
+        }
+      },
+      "id": 781,
+      "name": "Attack on Camp Narache",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 4,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 4850,
+      "specialFlags": 0,
+      "startedBy": {
+        "3": {
+          "1": 4851
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 197
+        }
+      },
+      "id": 783,
+      "name": "A Threat Within",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 1,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 823
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3143
+        }
+      },
+      "id": 788,
+      "name": "Cutting Teeth",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 2,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3143
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3143
+        }
+      },
+      "id": 789,
+      "name": "Sting of the Scorpid",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 788
+      },
+      "questFlags": 8,
+      "questLevel": 3,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3143
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3287
+        }
+      },
+      "id": 790,
+      "name": "Sarkoth",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3287
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3145
+        }
+      },
+      "id": 794,
+      "name": "Burning Blade Medallion",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 792,
+        "2": 1499
+      },
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3145
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3143
+        }
+      },
+      "id": 804,
+      "name": "Sarkoth",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 790
+      },
+      "questFlags": 0,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3287
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 2082
+        }
+      },
+      "id": 917,
+      "name": "Webwood Egg",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 916
+      },
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2082
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3514
+        }
+      },
+      "id": 920,
+      "name": "Tenaron's Summons",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 917
+      },
+      "questFlags": 8,
+      "questLevel": 5,
+      "requiredClasses": 0,
+      "requiredLevel": 1,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 2082
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 251902
+        }
+      },
+      "id": 94411,
+      "name": "Meddlesome Mages",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 92595
+      },
+      "questFlags": 0,
+      "questLevel": 6,
+      "requiredClasses": 0,
+      "requiredLevel": 4,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 251902
+        }
+      }
+    }
+  ],
+  "reward_item_records": [
+    {
+      "class": 4,
+      "id": 61,
+      "itemLevel": 5,
+      "name": "Dwarven Leather Pants",
+      "questRewards": {
+        "1": 183
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 79,
+      "itemLevel": 5,
+      "name": "Dwarven Cloth Britches",
+      "questRewards": {
+        "1": 183
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 80,
+      "itemLevel": 5,
+      "name": "Soft Fur-lined Shoes",
+      "questRewards": {
+        "1": 33
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 0,
+      "id": 118,
+      "itemLevel": 5,
+      "name": "Minor Healing Potion",
+      "npcDrops": {
+        "1": 40,
+        "10": 99,
+        "100": 1535,
+        "101": 1536,
+        "102": 1537,
+        "103": 1538,
+        "104": 1539,
+        "105": 1540,
+        "106": 1543,
+        "107": 1544,
+        "108": 1545,
+        "109": 1654,
+        "11": 100,
+        "110": 1655,
+        "111": 1656,
+        "112": 1657,
+        "113": 1658,
+        "114": 1660,
+        "115": 1662,
+        "116": 1664,
+        "117": 1665,
+        "118": 1674,
+        "119": 1675,
+        "12": 114,
+        "120": 1753,
+        "121": 1767,
+        "122": 1768,
+        "123": 1769,
+        "124": 1770,
+        "125": 1772,
+        "126": 1773,
+        "127": 1779,
+        "128": 1782,
+        "129": 1865,
+        "13": 116,
+        "130": 1866,
+        "131": 1891,
+        "132": 1893,
+        "133": 1895,
+        "134": 1896,
+        "135": 1910,
+        "136": 1911,
+        "137": 1934,
+        "138": 1935,
+        "139": 1936,
+        "14": 117,
+        "140": 1941,
+        "141": 1946,
+        "142": 1949,
+        "143": 1993,
+        "144": 2002,
+        "145": 2003,
+        "146": 2004,
+        "147": 2005,
+        "148": 2006,
+        "149": 2007,
+        "15": 121,
+        "150": 2008,
+        "151": 2009,
+        "152": 2010,
+        "153": 2011,
+        "154": 2012,
+        "155": 2013,
+        "156": 2014,
+        "157": 2015,
+        "158": 2017,
+        "159": 2018,
+        "16": 122,
+        "160": 2019,
+        "161": 2020,
+        "162": 2021,
+        "163": 2022,
+        "164": 2025,
+        "165": 2027,
+        "166": 2029,
+        "167": 2030,
+        "168": 2038,
+        "169": 2039,
+        "17": 123,
+        "170": 2058,
+        "171": 2152,
+        "172": 2162,
+        "173": 2164,
+        "174": 2166,
+        "175": 2168,
+        "176": 2169,
+        "177": 2176,
+        "178": 2177,
+        "179": 2178,
+        "18": 124,
+        "180": 2179,
+        "181": 2180,
+        "182": 2189,
+        "183": 2190,
+        "184": 2212,
+        "185": 2339,
+        "186": 2949,
+        "187": 2950,
+        "188": 2951,
+        "189": 2960,
+        "19": 126,
+        "190": 2962,
+        "191": 2963,
+        "192": 2964,
+        "193": 2965,
+        "194": 2967,
+        "195": 2968,
+        "196": 2975,
+        "197": 2976,
+        "198": 2977,
+        "199": 2978,
+        "2": 43,
+        "20": 154,
+        "200": 2979,
+        "201": 2989,
+        "202": 2990,
+        "203": 3051,
+        "204": 3103,
+        "205": 3104,
+        "206": 3105,
+        "207": 3106,
+        "208": 3111,
+        "209": 3112,
+        "21": 199,
+        "210": 3113,
+        "211": 3114,
+        "212": 3115,
+        "213": 3116,
+        "214": 3117,
+        "215": 3118,
+        "216": 3119,
+        "217": 3120,
+        "218": 3121,
+        "219": 3122,
+        "22": 285,
+        "220": 3128,
+        "221": 3129,
+        "222": 3130,
+        "223": 3131,
+        "224": 3141,
+        "225": 3192,
+        "226": 3195,
+        "227": 3196,
+        "228": 3197,
+        "229": 3198,
+        "23": 327,
+        "230": 3199,
+        "231": 3203,
+        "232": 3204,
+        "233": 3205,
+        "234": 3206,
+        "235": 3207,
+        "236": 3232,
+        "237": 3265,
+        "238": 3266,
+        "239": 3267,
+        "24": 390,
+        "240": 3268,
+        "241": 3269,
+        "242": 3271,
+        "243": 3272,
+        "244": 3273,
+        "245": 3274,
+        "246": 3275,
+        "247": 3282,
+        "248": 3284,
+        "249": 3285,
+        "25": 448,
+        "250": 3379,
+        "251": 3380,
+        "252": 3381,
+        "253": 3382,
+        "254": 3397,
+        "255": 3438,
+        "256": 3461,
+        "257": 3467,
+        "258": 3528,
+        "259": 3529,
+        "26": 449,
+        "260": 3535,
+        "261": 3566,
+        "262": 3667,
+        "263": 4316,
+        "264": 5426,
+        "265": 5785,
+        "266": 5786,
+        "267": 5787,
+        "268": 5808,
+        "269": 5809,
+        "27": 452,
+        "270": 5822,
+        "271": 5824,
+        "272": 5826,
+        "273": 5837,
+        "274": 6093,
+        "275": 6113,
+        "276": 6123,
+        "277": 6124,
+        "278": 6128,
+        "279": 6846,
+        "28": 454,
+        "280": 6866,
+        "281": 6911,
+        "282": 6927,
+        "283": 7234,
+        "284": 7235,
+        "285": 7318,
+        "286": 8503,
+        "287": 10358,
+        "288": 14428,
+        "289": 14431,
+        "29": 456,
+        "290": 14432,
+        "291": 15810,
+        "292": 15812,
+        "293": 15813,
+        "3": 46,
+        "30": 471,
+        "31": 472,
+        "32": 473,
+        "33": 474,
+        "34": 475,
+        "35": 476,
+        "36": 478,
+        "37": 481,
+        "38": 500,
+        "39": 504,
+        "4": 60,
+        "40": 515,
+        "41": 583,
+        "42": 589,
+        "43": 590,
+        "44": 594,
+        "45": 619,
+        "46": 732,
+        "47": 735,
+        "48": 880,
+        "49": 881,
+        "5": 61,
+        "50": 1115,
+        "51": 1116,
+        "52": 1117,
+        "53": 1118,
+        "54": 1119,
+        "55": 1120,
+        "56": 1121,
+        "57": 1122,
+        "58": 1123,
+        "59": 1124,
+        "6": 79,
+        "60": 1134,
+        "61": 1135,
+        "62": 1137,
+        "63": 1161,
+        "64": 1162,
+        "65": 1163,
+        "66": 1164,
+        "67": 1166,
+        "68": 1172,
+        "69": 1173,
+        "7": 94,
+        "70": 1174,
+        "71": 1175,
+        "72": 1176,
+        "73": 1177,
+        "74": 1196,
+        "75": 1197,
+        "76": 1202,
+        "77": 1205,
+        "78": 1206,
+        "79": 1211,
+        "8": 95,
+        "80": 1236,
+        "81": 1260,
+        "82": 1271,
+        "83": 1388,
+        "84": 1397,
+        "85": 1425,
+        "86": 1426,
+        "87": 1520,
+        "88": 1522,
+        "89": 1523,
+        "9": 97,
+        "90": 1525,
+        "91": 1526,
+        "92": 1527,
+        "93": 1528,
+        "94": 1529,
+        "95": 1530,
+        "96": 1531,
+        "97": 1532,
+        "98": 1533,
+        "99": 1534
+      },
+      "objectDrops": {
+        "1": 2039,
+        "2": 2844,
+        "3": 2845,
+        "4": 2847,
+        "5": 106318,
+        "6": 106319
+      },
+      "questRewards": {
+        "1": 103,
+        "2": 114,
+        "3": 794,
+        "4": 92109,
+        "5": 99108
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 719,
+      "itemLevel": 5,
+      "name": "Rabbit Handler Gloves",
+      "questRewards": {
+        "1": 179
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 0,
+      "id": 961,
+      "itemLevel": 5,
+      "name": "Healing Herb",
+      "questRewards": {
+        "1": 182,
+        "2": 459
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 1382,
+      "itemLevel": 5,
+      "name": "Rock Mace",
+      "npcDrops": {
+        "1": 10478
+      },
+      "questRewards": {
+        "1": 757
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 1383,
+      "itemLevel": 5,
+      "name": "Stone Tomahawk",
+      "questRewards": {
+        "1": 757
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 2047,
+      "itemLevel": 5,
+      "name": "Anvilmar Hand Axe",
+      "questRewards": {
+        "1": 182
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 2,
+      "id": 2048,
+      "itemLevel": 5,
+      "name": "Anvilmar Hammer",
+      "questRewards": {
+        "1": 182
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 2,
+      "id": 2137,
+      "itemLevel": 5,
+      "name": "Whittling Knife",
+      "questRewards": {
+        "1": 757
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 2172,
+      "itemLevel": 5,
+      "name": "Rustic Belt",
+      "questRewards": {
+        "1": 170
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 2186,
+      "itemLevel": 5,
+      "name": "Outfitter Belt",
+      "questRewards": {
+        "1": 21
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 2,
+      "id": 2195,
+      "itemLevel": 5,
+      "name": "Anvilmar Knife",
+      "questRewards": {
+        "1": 182
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 15
+    },
+    {
+      "class": 4,
+      "id": 2547,
+      "itemLevel": 5,
+      "name": "Boar Handler Gloves",
+      "questRewards": {
+        "1": 179
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 2691,
+      "itemLevel": 5,
+      "name": "Outfitter Boots",
+      "questRewards": {
+        "1": 21
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 3275,
+      "itemLevel": 5,
+      "name": "Flax Gloves",
+      "questRewards": {
+        "1": 364
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 0,
+      "id": 4540,
+      "itemLevel": 5,
+      "name": "Tough Hunk of Bread",
+      "npcDrops": {
+        "1": 38,
+        "10": 448,
+        "100": 3121,
+        "101": 3122,
+        "102": 3125,
+        "103": 3126,
+        "104": 3129,
+        "105": 3130,
+        "106": 3131,
+        "107": 3192,
+        "108": 3195,
+        "109": 3196,
+        "11": 471,
+        "110": 3197,
+        "111": 3198,
+        "112": 3199,
+        "113": 3203,
+        "114": 3204,
+        "115": 3205,
+        "116": 3206,
+        "117": 3207,
+        "118": 3662,
+        "119": 3691,
+        "12": 472,
+        "120": 3692,
+        "121": 3693,
+        "122": 3694,
+        "123": 3695,
+        "124": 5808,
+        "125": 5822,
+        "126": 5826,
+        "127": 6123,
+        "128": 6124,
+        "129": 6866,
+        "13": 473,
+        "130": 6927,
+        "131": 7235,
+        "132": 7318,
+        "133": 8503,
+        "134": 13157,
+        "135": 14431,
+        "136": 251145,
+        "137": 251160,
+        "138": 251448,
+        "139": 251451,
+        "14": 474,
+        "140": 252666,
+        "141": 256996,
+        "142": 257521,
+        "143": 257532,
+        "15": 475,
+        "16": 478,
+        "17": 525,
+        "18": 708,
+        "19": 732,
+        "2": 46,
+        "20": 822,
+        "21": 880,
+        "22": 881,
+        "23": 1115,
+        "24": 1117,
+        "25": 1118,
+        "26": 1119,
+        "27": 1120,
+        "28": 1121,
+        "29": 1122,
+        "3": 60,
+        "30": 1123,
+        "31": 1124,
+        "32": 1135,
+        "33": 1196,
+        "34": 1201,
+        "35": 1211,
+        "36": 1388,
+        "37": 1397,
+        "38": 1501,
+        "39": 1502,
+        "4": 80,
+        "40": 1505,
+        "41": 1506,
+        "42": 1507,
+        "43": 1509,
+        "44": 1513,
+        "45": 1522,
+        "46": 1523,
+        "47": 1529,
+        "48": 1530,
+        "49": 1534,
+        "5": 94,
+        "50": 1537,
+        "51": 1662,
+        "52": 1688,
+        "53": 1890,
+        "54": 1919,
+        "55": 1949,
+        "56": 1985,
+        "57": 1986,
+        "58": 1988,
+        "59": 1989,
+        "6": 97,
+        "60": 1993,
+        "61": 1994,
+        "62": 2002,
+        "63": 2004,
+        "64": 2005,
+        "65": 2008,
+        "66": 2009,
+        "67": 2010,
+        "68": 2011,
+        "69": 2013,
+        "7": 103,
+        "70": 2014,
+        "71": 2015,
+        "72": 2017,
+        "73": 2018,
+        "74": 2020,
+        "75": 2949,
+        "76": 2950,
+        "77": 2962,
+        "78": 2964,
+        "79": 2965,
+        "8": 116,
+        "80": 2976,
+        "81": 2977,
+        "82": 2978,
+        "83": 2979,
+        "84": 2989,
+        "85": 2990,
+        "86": 3103,
+        "87": 3104,
+        "88": 3107,
+        "89": 3108,
+        "9": 285,
+        "90": 3111,
+        "91": 3112,
+        "92": 3113,
+        "93": 3114,
+        "94": 3115,
+        "95": 3116,
+        "96": 3117,
+        "97": 3118,
+        "98": 3119,
+        "99": 3120
+      },
+      "objectDrops": {
+        "1": 2843,
+        "2": 2844,
+        "3": 2845,
+        "4": 2847,
+        "5": 3719,
+        "6": 106318,
+        "7": 106319
+      },
+      "questRewards": {
+        "1": 780,
+        "2": 815,
+        "3": 1656,
+        "4": 2161
+      },
+      "requiredLevel": 1,
+      "startQuest": 0,
+      "subClass": 0,
+      "vendors": {
+        "1": 152,
+        "10": 2364,
+        "11": 2832,
+        "12": 3003,
+        "13": 3072,
+        "14": 3086,
+        "15": 3158,
+        "16": 3291,
+        "17": 3313,
+        "18": 3480,
+        "19": 3518,
+        "2": 233,
+        "20": 3546,
+        "21": 3587,
+        "22": 3689,
+        "23": 3708,
+        "24": 3883,
+        "25": 3884,
+        "26": 3937,
+        "27": 3948,
+        "28": 3959,
+        "29": 4190,
+        "3": 829,
+        "30": 4255,
+        "31": 4266,
+        "32": 4891,
+        "33": 4894,
+        "34": 5109,
+        "35": 5620,
+        "36": 6272,
+        "37": 6734,
+        "38": 6736,
+        "39": 6737,
+        "4": 1237,
+        "40": 6738,
+        "41": 6740,
+        "42": 6747,
+        "43": 7485,
+        "44": 7737,
+        "45": 7744,
+        "46": 7941,
+        "47": 8143,
+        "48": 8307,
+        "49": 8362,
+        "5": 1247,
+        "50": 10367,
+        "51": 11103,
+        "52": 11287,
+        "53": 12794,
+        "54": 16256,
+        "55": 16458,
+        "56": 243815,
+        "57": 251537,
+        "58": 251955,
+        "59": 252080,
+        "6": 1285,
+        "60": 265730,
+        "61": 267001,
+        "7": 1670,
+        "8": 2115,
+        "9": 2352
+      }
+    },
+    {
+      "class": 4,
+      "id": 4907,
+      "itemLevel": 5,
+      "name": "Woodland Tunic",
+      "questRewards": {
+        "1": 917
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 4908,
+      "itemLevel": 5,
+      "name": "Nomadic Bracers",
+      "questRewards": {
+        "1": 750
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 4910,
+      "itemLevel": 5,
+      "name": "Painted Chain Gloves",
+      "questRewards": {
+        "1": 747
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 4911,
+      "itemLevel": 5,
+      "name": "Thick Bark Buckler",
+      "questRewards": {
+        "1": 781
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 4913,
+      "itemLevel": 5,
+      "name": "Painted Chain Belt",
+      "questRewards": {
+        "1": 750
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 4914,
+      "itemLevel": 5,
+      "name": "Battleworn Leather Gloves",
+      "questRewards": {
+        "1": 788
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 4915,
+      "itemLevel": 5,
+      "name": "Soft Wool Boots",
+      "questRewards": {
+        "1": 788
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4916,
+      "itemLevel": 5,
+      "name": "Soft Wool Vest",
+      "questRewards": {
+        "1": 804
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4917,
+      "itemLevel": 5,
+      "name": "Battleworn Chain Leggings",
+      "questRewards": {
+        "1": 804
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 4919,
+      "itemLevel": 5,
+      "name": "Soft Wool Belt",
+      "questRewards": {
+        "1": 789
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4920,
+      "itemLevel": 5,
+      "name": "Battleworn Cape",
+      "questRewards": {
+        "1": 789
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 4921,
+      "itemLevel": 5,
+      "name": "Dust-covered Leggings",
+      "questRewards": {
+        "1": 794
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 4922,
+      "itemLevel": 5,
+      "name": "Jagged Chain Vest",
+      "questRewards": {
+        "1": 794
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 4954,
+      "itemLevel": 5,
+      "name": "Nomadic Belt",
+      "questRewards": {
+        "1": 747
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 6,
+      "id": 4960,
+      "itemLevel": 7,
+      "name": "Flash Pellet",
+      "questRewards": {
+        "1": 745
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 5394,
+      "itemLevel": 5,
+      "name": "Archery Training Gloves",
+      "questRewards": {
+        "1": 456
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 5395,
+      "itemLevel": 5,
+      "name": "Woodland Shield",
+      "questRewards": {
+        "1": 917
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 5398,
+      "itemLevel": 5,
+      "name": "Canopy Leggings",
+      "questRewards": {
+        "1": 459
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 5399,
+      "itemLevel": 5,
+      "name": "Tracking Boots",
+      "questRewards": {
+        "1": 459
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 5405,
+      "itemLevel": 5,
+      "name": "Draped Cloak",
+      "questRewards": {
+        "1": 457
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 5581,
+      "itemLevel": 5,
+      "name": "Smooth Walking Staff",
+      "questRewards": {
+        "1": 218
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 5761,
+      "itemLevel": 5,
+      "name": "Anvilmar Sledge",
+      "questRewards": {
+        "1": 182
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 5
+    },
+    {
+      "class": 2,
+      "id": 5776,
+      "itemLevel": 5,
+      "name": "Elder's Cane",
+      "questRewards": {
+        "1": 757
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 2,
+      "id": 5777,
+      "itemLevel": 5,
+      "name": "Brave's Axe",
+      "questRewards": {
+        "1": 757
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6058,
+      "itemLevel": 5,
+      "name": "Blackened Leather Belt",
+      "questRewards": {
+        "1": 457
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6059,
+      "itemLevel": 5,
+      "name": "Nomadic Vest",
+      "questRewards": {
+        "1": 780
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6070,
+      "itemLevel": 5,
+      "name": "Wolfskin Bracers",
+      "questRewards": {
+        "1": 33
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6078,
+      "itemLevel": 5,
+      "name": "Pikeman Shield",
+      "questRewards": {
+        "1": 54
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 6171,
+      "itemLevel": 5,
+      "name": "Wolf Handler Gloves",
+      "questRewards": {
+        "1": 179
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 6173,
+      "itemLevel": 5,
+      "name": "Snow Boots",
+      "questRewards": {
+        "1": 170
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6176,
+      "itemLevel": 5,
+      "name": "Dwarven Kite Shield",
+      "questRewards": {
+        "1": 218
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 6
+    },
+    {
+      "class": 4,
+      "id": 6185,
+      "itemLevel": 5,
+      "name": "Bear Shawl",
+      "questRewards": {
+        "1": 170
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 6713,
+      "itemLevel": 5,
+      "name": "Ripped Pants",
+      "questRewards": {
+        "1": 794
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11187,
+      "itemLevel": 5,
+      "name": "Stemleaf Bracers",
+      "questRewards": {
+        "1": 456
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11189,
+      "itemLevel": 5,
+      "name": "Woodland Robes",
+      "questRewards": {
+        "1": 917
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11190,
+      "itemLevel": 5,
+      "name": "Viny Gloves",
+      "questRewards": {
+        "1": 459
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11192,
+      "itemLevel": 5,
+      "name": "Outfitter Gloves",
+      "questRewards": {
+        "1": 21
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 11847,
+      "itemLevel": 5,
+      "name": "Battered Cloak",
+      "questRewards": {
+        "1": 364
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 0,
+      "id": 247840,
+      "itemLevel": 1,
+      "name": "Mining for Dummies",
+      "questRewards": {
+        "1": 234,
+        "2": 458,
+        "3": 752,
+        "4": 4402,
+        "5": 6395,
+        "6": 91743,
+        "7": 93552
+      },
+      "requiredLevel": 3,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 0,
+      "id": 247841,
+      "itemLevel": 1,
+      "name": "Wild Harvest",
+      "questRewards": {
+        "1": 234,
+        "2": 458,
+        "3": 752,
+        "4": 4402,
+        "5": 6395,
+        "6": 91743,
+        "7": 93552
+      },
+      "requiredLevel": 3,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 0,
+      "id": 247846,
+      "itemLevel": 1,
+      "name": "Pelt Collecting for Beginners",
+      "questRewards": {
+        "1": 234,
+        "2": 458,
+        "3": 752,
+        "4": 4402,
+        "5": 6395,
+        "6": 91743,
+        "7": 93552
+      },
+      "requiredLevel": 3,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 263411,
+      "itemLevel": 16,
+      "name": "Idol of Shifting Tides",
+      "questRewards": {
+        "1": 31,
+        "2": 5061,
+        "3": 94411
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 8
+    },
+    {
+      "class": 4,
+      "id": 263412,
+      "itemLevel": 10,
+      "name": "Totem of Charged Flames",
+      "questRewards": {
+        "1": 1527,
+        "2": 94411,
+        "3": 94468,
+        "4": 97257
+      },
+      "requiredLevel": 10,
+      "startQuest": 0,
+      "subClass": 9
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/tree/80866960788084ae1592abf66a08f0d306458a95"
+}

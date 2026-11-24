@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3341"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:27.488681+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 270081,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3341",
+      "subject_id": 3341,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 37,
+    "name": "Bring the End",
+    "quest_id": 3341,
+    "quest_level": 42,
+    "reward_item_ids": [
+      270081
+    ],
+    "zone": "Razorfen Downs"
+  },
+  "source_content_digest": "c010e659ed256048e76deadefdd299a1a9e9b08c9c77ccc6f47befb7bc3e4434",
+  "url": "https://guide.wow4ever.se/en/quests/3341"
+}

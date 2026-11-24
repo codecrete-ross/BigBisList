@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 755,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:44.753Z",
+  "flavor": "forever",
+  "name": "Rites of the Earthmother",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2982,
+        "name": "Seer Graytongue"
+      },
+      "start": {
+        "entity_id": 2981,
+        "name": "Chief Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=755"
+}

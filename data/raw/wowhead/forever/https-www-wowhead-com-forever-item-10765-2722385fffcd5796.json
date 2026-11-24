@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bonefingers Item Level 43 Binds when picked up Hands Leather 81 Armor +9 Stamina +9 Intellect Restores + 4 mana per 5 sec. Requires Level 38 Sell Price: 42 Dropped by: Amnennar the Coldbringer Drop Chance: 47.46%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:42:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 10765,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 81,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 10765,
+    "item_level": 43,
+    "name": "Bonefingers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 9.0,
+      "mp5": 4.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10765"
+  },
+  "linked_entities": [],
+  "name": "Bonefingers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 47.46,
+      "entity_name": "Amnennar the Coldbringer",
+      "source_url": "https://www.wowhead.com/forever/item=10765",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10765",
+  "url": "https://www.wowhead.com/forever/item=10765"
+}

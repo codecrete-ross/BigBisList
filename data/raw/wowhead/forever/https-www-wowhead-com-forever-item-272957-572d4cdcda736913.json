@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Theramore Shoulderguards Item Level 65 Binds when picked up Shoulder Mail 312 Armor +12 Stamina +27 Intellect Requires Level 60 Requires Theramore Expeditionary Force - Exalted Equip: Increases damage and healing done by magical spells and effects by up to 16 . Sell Price: 3 89 21",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 272957,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 312,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 272957,
+    "item_level": 65,
+    "name": "Theramore Shoulderguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_power": 16.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272957"
+  },
+  "linked_entities": [
+    {
+      "id": 2799,
+      "name": "Theramore Expeditionary Force",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2799"
+    }
+  ],
+  "name": "Theramore Shoulderguards",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Theramore Shoulderguards Item Level 65 Binds when picked up Shoulder Mail 312 Armor +12 Stamina +27 Intellect Requires Level 60 Requires Theramore Expeditionary Force - Exalted Equip: Increases damage and healing done by magical spells and effects by up to 16 . Sell Price: 3 89 21",
+      "reputation": "Theramore Expeditionary Force",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=272957",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "5d2541653e6634d19a1efd34c59c9b7a591b77f049a9e9584becb775f8f1ffad",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272957",
+  "url": "https://www.wowhead.com/forever/item=272957"
+}

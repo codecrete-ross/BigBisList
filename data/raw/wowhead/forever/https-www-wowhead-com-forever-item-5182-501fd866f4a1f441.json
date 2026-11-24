@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Shiver Blade Item Level 22 Binds when equipped Two-Hand Sword 39 - 59 Damage Speed 3.40 (14.41 damage per second) Durability 65 / 65 Requires Level 17 Chance on hit: Blasts a target for 50 Frost damage. Sell Price: 17 69 Dropped by: Gesharahan Drop Chance: 69.54%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 5182,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 14.41,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 50 Frost damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 50 Frost damage."
+    ],
+    "id": 5182,
+    "item_level": 22,
+    "name": "Shiver Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 17,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 59,
+    "weapon_min_damage": 39,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5182"
+  },
+  "linked_entities": [
+    {
+      "id": 18092,
+      "name": "Blasts a target for 50 Frost damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18092"
+    }
+  ],
+  "name": "Shiver Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 69.54,
+      "entity_name": "Gesharahan",
+      "source_url": "https://www.wowhead.com/forever/item=5182",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5182",
+  "url": "https://www.wowhead.com/forever/item=5182"
+}

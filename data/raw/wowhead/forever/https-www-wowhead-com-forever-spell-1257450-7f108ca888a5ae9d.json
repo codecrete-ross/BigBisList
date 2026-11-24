@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Nethergeld Shoulders 45 sec cast Reagents: Bolt of Mageweave (16), Heavy Silken Thread (3), Magenta Dye (4), Cerulean Dye (3), Gold Bar (8), Greater Nether Essence (2) Nethergeld Shoulders Item Level 47 Binds when picked up Shoulder Cloth 51 Armor +8 Stamina +8 Intellect +6 Spirit Requires Level 42 Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects. Sell Price: 67 79",
+  "entity_id": 1257450,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:17+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 3577,
+      "name": "Gold Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3577"
+    },
+    {
+      "id": 4339,
+      "name": "Bolt of Mageweave",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4339"
+    },
+    {
+      "id": 8343,
+      "name": "Heavy Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8343"
+    },
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 254049,
+      "name": "Nethergeld Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254049"
+    },
+    {
+      "id": 1257450,
+      "name": "Nethergeld Shoulders",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257450"
+    }
+  ],
+  "name": "Nethergeld Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 254049,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1257450",
+      "subject_id": 1257450,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1257450,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1257450",
+  "url": "https://www.wowhead.com/forever/spell=1257450"
+}

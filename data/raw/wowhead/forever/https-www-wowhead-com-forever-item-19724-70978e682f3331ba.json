@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Primal Hakkari Aegis Item Level 1 Binds when picked up Classes: Hunter , Rogue , Priest \"A legendary Paragon of Power from the old Gurubashi Empire.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T05:26:30.0403134Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 19724,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19724,
+    "item_level": 1,
+    "name": "Primal Hakkari Aegis",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Hunter",
+        "Rogue",
+        "Priest"
+      ]
+    },
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19724"
+  },
+  "linked_entities": [],
+  "name": "Primal Hakkari Aegis",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "00a4d5c3d424a86ebed00fdfde583d849d0fdb2d620db68bc2871419570a671e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19724",
+  "url": "https://www.wowhead.com/forever/item=19724"
+}

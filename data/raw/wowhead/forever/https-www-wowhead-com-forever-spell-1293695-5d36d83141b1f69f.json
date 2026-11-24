@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Demonic Brand Level 60 Talent Requires Warlock Your Searing Pain generates 50% less threat and brands the target for 10 sec. Your pet's next 3 attacks against the target deal [((( 60 - 26) * 1.5) + 14 + (0.078 * ((Shadow spell power)))) * ( 1 * 1 * 1 )] to [((( 60 - 26) * 1.5) + 17 + (0.078 * ((Shadow spell power)))) * ( 1 * 1 * 1 )] Fire or Shadow damage based on the pet. If Shadow damage is dealt, it has high threat.",
+  "entity_id": 1293695,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:10+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1293695,
+      "name": "Demonic Brand",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293695"
+    }
+  ],
+  "name": "Demonic Brand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "e404e25634ee9dadb5e2ea40c0f5a4e52d7e2c6e5458529a9346c54c08d93bb4",
+  "spell_id": 1293695,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1293695",
+  "url": "https://www.wowhead.com/forever/spell=1293695"
+}

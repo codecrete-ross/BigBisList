@@ -1,0 +1,91 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "credit": "Rexas Forever public observations",
+      "source": "https://forever.rexas.tools/dungeons"
+    }
+  ],
+  "collected_from": "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards",
+  "confidence": "corroborated_forever_dungeon_loot",
+  "fetched_at": "2026-11-13T16:54:25.2497004Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 173258,
+      "collected_at": "2026-11-13T16:54:25.2497004Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-dalaran",
+      "source_content_digest": "401e5e1fdc395185e228cde27303395a4dda1f91e4bcd5cf94e58a9a882b8d35",
+      "source_url": "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 8808,
+      "collected_at": "2026-11-13T17:04:54.5285125Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "rexas-dalaran-detail",
+      "source_content_digest": "03e80dd00bc74cc21c87b1bc1490420e2459e8720e2e535c09cfc34a142a4abe",
+      "source_url": "https://forever.rexas.tools/api/dungeons/2959?b=wowf"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 1221,
+      "collected_at": "2026-11-13T16:54:22.3196798Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-runemender",
+      "source_content_digest": "af6bbb0b8442cfcb28cae1220a86f7c6a4a345a0bc4439e0a4be2661a660c460",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/273031"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "corroborated_forever_dungeon_loot",
+      "object_id": 273031,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards",
+      "subject_id": 245999,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "boss_id": 3298,
+    "difficulty": "Normal",
+    "eg_observed_build": "1.60.1.70888",
+    "eg_observed_through": "2026-11-13",
+    "eligible_factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "item_ids": [
+      273031
+    ],
+    "map_id": 2959,
+    "npc_id": 245999,
+    "npc_name": "Arcane Anomaly",
+    "party_key": 277507
+  },
+  "source_content_digest": "401e5e1fdc395185e228cde27303395a4dda1f91e4bcd5cf94e58a9a882b8d35",
+  "url": "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards"
+}

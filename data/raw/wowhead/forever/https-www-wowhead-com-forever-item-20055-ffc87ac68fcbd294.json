@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Chain Pauldrons Item Level 65 Binds when picked up Unique Shoulder Mail 312 Armor +20 Agility +18 Stamina +17 Intellect Durability 85 / 85 Requires Level 60 Requires The League of Arathor - Exalted The Highlander's Determination (0/3) Highlander's Chain Girdle Highlander's Chain Greaves Highlander's Chain Pauldrons (2) Set : +5 Stamina. (3) Set : Improves your chance to get a critical strike with melee attacks by 1.0%. Sell Price: 3 68 67",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 20055,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 312,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20055,
+    "item_level": 65,
+    "name": "Highlander's Chain Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 7503,
+        "text": "+5 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 7597,
+        "text": "Improves your chance to get a critical strike with melee attacks by 1.0%."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "intellect": 17.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20055"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 20043,
+      "name": "Highlander's Chain Girdle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20043"
+    },
+    {
+      "id": 20050,
+      "name": "Highlander's Chain Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20050"
+    },
+    {
+      "id": 20055,
+      "name": "Highlander's Chain Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=20055"
+    },
+    {
+      "id": 7503,
+      "name": "+5 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7503"
+    },
+    {
+      "id": 7597,
+      "name": "Improves your chance to get a critical strike with melee attacks by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7597"
+    }
+  ],
+  "name": "Highlander's Chain Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20055",
+  "url": "https://www.wowhead.com/forever/item=20055"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/249"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:17:36.678537+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 5274,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/249",
+      "subject_id": 249,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 20,
+    "name": "Morganth",
+    "quest_id": 249,
+    "quest_level": 27,
+    "reward_item_ids": [
+      5274
+    ],
+    "zone": "Redridge Mountains"
+  },
+  "source_content_digest": "3e0ddc35ba7c340c94ef1d39187ebf85ccdb84d577fee4fda857e752c0cb2cf8",
+  "url": "https://guide.wow4ever.se/en/quests/249"
+}

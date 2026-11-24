@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of Demonic Guile Item Level 59 Binds when picked up Finger +10 Intellect Restores + 4 mana per 5 sec. Requires Level 54 Equip: Improves your chance to hit by 1.0%. Sell Price: 1 89 49 Dropped by: Alzzin the Wildshaper Drop Chance: 19.07%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18314,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 18314,
+    "item_level": 59,
+    "name": "Ring of Demonic Guile",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 10.0,
+      "mp5": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18314"
+  },
+  "linked_entities": [],
+  "name": "Ring of Demonic Guile",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.07,
+      "entity_name": "Alzzin the Wildshaper",
+      "source_url": "https://www.wowhead.com/forever/item=18314",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "43c0bf86514506c5b8ea2886def51128fb3665be64a0f3ac1d904f740c9bf749",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18314",
+  "url": "https://www.wowhead.com/forever/item=18314"
+}

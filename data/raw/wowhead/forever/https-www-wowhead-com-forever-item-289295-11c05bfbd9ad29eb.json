@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sulfuras, Hand of Ragnaros Item Level 45 Binds when picked up Unique Two-Hand Mace 122 - 205 Damage Speed 3.70 (44.19 damage per second) +8 Strength +8 Stamina +19 Fire Resistance Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec. Equip: Deals 7 Fire damage to anyone who strikes you with a melee attack. Sell Price: 33 26 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 289295,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 44.19,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Deals 7 Fire damage to anyone who strikes you with a melee attack.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec."
+    ],
+    "id": 289295,
+    "item_level": 45,
+    "name": "Sulfuras, Hand of Ragnaros",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "legendary",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 19.0,
+      "stamina": 8.0,
+      "strength": 8.0
+    },
+    "weapon_max_damage": 205,
+    "weapon_min_damage": 122,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=289295"
+  },
+  "linked_entities": [
+    {
+      "id": 21142,
+      "name": "Deals 7 Fire damage to anyone who strikes you with a melee attack.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21142"
+    },
+    {
+      "id": 21162,
+      "name": "Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21162"
+    }
+  ],
+  "name": "Sulfuras, Hand of Ragnaros",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "legendary",
+  "related_tables": {},
+  "source_content_digest": "b47802a0b9a675ed7ac1f0d9fabc3178f11b03f6034786eb88f324511d83204c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/289295",
+  "url": "https://www.wowhead.com/forever/item=289295"
+}

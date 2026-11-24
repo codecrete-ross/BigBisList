@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Firebird's Cowl Item Level 58 Binds when picked up Head Cloth 67 Armor +24 Stamina +7 Intellect Restores + 6 mana per 5 sec. Requires Level 53 Sell Price: 31 49",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 282558,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 282558,
+    "item_level": 58,
+    "name": "Firebird's Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "mp5": 6.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=282558"
+  },
+  "linked_entities": [],
+  "name": "Firebird's Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1152c49d6958e8f847f927c601036f6dcd586248dc5a7b577764279a911a9adc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/282558",
+  "url": "https://www.wowhead.com/forever/item=282558"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1081"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:17.664862+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 6678,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1081",
+      "subject_id": 1081,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Reception from Tyrande",
+    "quest_id": 1081,
+    "reward_item_ids": [
+      6678,
+      7334,
+      7335,
+      7336
+    ],
+    "zone": "Stonetalon Mountains"
+  },
+  "source_content_digest": "184b17762bef0b788cab556a06de8c8f5917f569da94b10410bbe5bb3c958383",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1081"
+}

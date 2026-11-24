@@ -1,0 +1,89 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/6163"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 17001,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/6163",
+      "subject_id": 6163,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 18022,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/6163",
+      "subject_id": 6163,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T22:20:58.6131330Z",
+        "linked_reward_ids": [],
+        "min_level": 56,
+        "name": "Ramstein",
+        "side": "Horde",
+        "source_content_digest": "8ebd4f6349634cf21328aef3166ecc53c4281930a5c87e4c340e15d3b21e1e5a",
+        "source_url": "https://questing.wiki/wow-forever/quests/6163/",
+        "upstream_checked_at": "2026-09-30",
+        "upstream_url": "https://www.wowhead.com/forever/quest=6163",
+        "zone": "Stratholme"
+      },
+      {
+        "fetched_at": "2026-11-12T21:23:30.081574+00:00",
+        "linked_reward_ids": [
+          17001,
+          18022
+        ],
+        "min_level": 56,
+        "name": "Ramstein",
+        "side": "Horde",
+        "source_content_digest": "4fdc5a6010d84ba52842d8b2c610c879cfb7371c99ab8c901d11152f913a63ec",
+        "source_url": "https://bindonforever.com/quest/6163",
+        "zone": "Eastern Plaguelands"
+      },
+      {
+        "fetched_at": "2026-11-11T08:12:49.326988+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "Ramstein",
+        "side": "Both",
+        "source_content_digest": "12308ab773e8e3d0afd38295481ff8b5e270e09183b732a8981ddfc2a54d9dfb",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6163",
+        "zone": "Stratholme"
+      }
+    ],
+    "name": "Ramstein",
+    "observation_count": 3,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 6163,
+    "reported_min_level": 56,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "17001": "items",
+      "18022": "items"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/6163"
+}

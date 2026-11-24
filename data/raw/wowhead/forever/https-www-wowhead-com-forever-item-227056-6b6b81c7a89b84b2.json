@@ -1,0 +1,150 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Leather Shoulders Item Level 71 Binds when picked up Shoulder Leather 146 Armor +26 Stamina +50 Armor Durability 60 / 60 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 22 Attack Power. Champion's Vestments (0/6) Blood Guard's Leather Grips Blood Guard's Leather Walkers Champion's Leather Helm Champion's Leather Shoulders Legionnaire's Leather Chestpiece Legionnaire's Leather Legguards (2) Set : +40 Attack Power. (4) Set : Reduces the cooldown of your Gouge ability by 1 sec. (6) Set : +20 Stamina. Sell Price: 1 61 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227056,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 146,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +22 Attack Power.",
+        "stats": {
+          "attack_power": 22
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 227056,
+    "item_level": 71,
+    "name": "Champion's Leather Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23048,
+        "text": "Reduces the cooldown of your Gouge ability by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "stamina": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227056"
+  },
+  "linked_entities": [
+    {
+      "id": 227056,
+      "name": "Champion's Leather Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227056"
+    },
+    {
+      "id": 227057,
+      "name": "Champion's Leather Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227057"
+    },
+    {
+      "id": 227059,
+      "name": "Legionnaire's Leather Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227059"
+    },
+    {
+      "id": 227060,
+      "name": "Legionnaire's Leather Chestpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227060"
+    },
+    {
+      "id": 227062,
+      "name": "Blood Guard's Leather Walkers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227062"
+    },
+    {
+      "id": 227063,
+      "name": "Blood Guard's Leather Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227063"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23048,
+      "name": "Reduces the cooldown of your Gouge ability by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23048"
+    }
+  ],
+  "name": "Champion's Leather Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a9c2e0eb970775f77f337fb857994ef5de216f5b242d9867026a8d23db316076",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227056",
+  "url": "https://www.wowhead.com/forever/item=227056"
+}

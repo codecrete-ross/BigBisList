@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Circlet of the Order Item Level 38 Binds when equipped Head Cloth 41 Armor +7 Stamina +3 Intellect +10 Spirit Durability 45 / 45 Requires Level 33 Sell Price: 29 26 Dropped by: Stromgarde Defender Drop Chance: 2.29%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 5624,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 41,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 5624,
+    "item_level": 38,
+    "name": "Circlet of the Order",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 33,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 3.0,
+      "spirit": 10.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5624"
+  },
+  "linked_entities": [],
+  "name": "Circlet of the Order",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 2.29,
+      "entity_name": "Stromgarde Defender",
+      "source_url": "https://www.wowhead.com/forever/item=5624",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "e996feb7a317215239a22ecd567909895f821c1546b00df95947775caf4458bd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5624",
+  "url": "https://www.wowhead.com/forever/item=5624"
+}

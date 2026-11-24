@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmoon Necklace Item Level 55 Binds when picked up Neck +6 Intellect Restores + 6 mana per 5 sec. Requires Level 50 Sell Price: 1 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19303,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 19303,
+    "item_level": 55,
+    "name": "Darkmoon Necklace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "mp5": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19303"
+  },
+  "linked_entities": [],
+  "name": "Darkmoon Necklace",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19303",
+  "url": "https://www.wowhead.com/forever/item=19303"
+}

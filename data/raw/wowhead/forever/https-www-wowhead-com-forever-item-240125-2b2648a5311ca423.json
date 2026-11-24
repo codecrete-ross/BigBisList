@@ -1,0 +1,168 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soulcrusher Mantle Sanctified Item Level 98 Binds when picked up Shoulder Mail 458 Armor +12 Stamina +34 Intellect Durability 85 / 85 Classes: Shaman Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases your attack speed and casting speed by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . The Soulcrusher's Storm (0/8) Soulcrusher Crown Soulcrusher Mantle Soulcrusher Embrace Soulcrusher Cord Soulcrusher Kilt Soulcrusher Greaves Soulcrusher Bindings Soulcrusher Mitts (2) Set : When your Lava Burst, Chain Lightning, or Lightning Bolt strikes a target afflicted with your Flame Shock Rank 5 or Rank 6, it also deals one pulse of Flame Shock's damage. (4) Set : Chance to trigger Overload increased by an additional 10% and Lava Bursts damage is increased by a percentage equal to your spell critical strike chance. When Lightning Bolt or Chain Lightning deal damage, increase the damage dealt by your next Lava Burst cast within 15 sec by 10%, stacking up to 5 times. (6) Set : When your Chain Lightning damages fewer than 3 targets, it deals 35% increased damage for each target less than 3. Sell Price: 10 51 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 240125,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 458,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your attack speed and casting speed by 1.0%.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 240125,
+    "item_level": 98,
+    "name": "Soulcrusher Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1226961,
+        "text": "When your Lava Burst, Chain Lightning, or Lightning Bolt strikes a target afflicted with your Flame Shock Rank 5 or Rank 6, it also deals one pulse of Flame Shock's damage."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1226977,
+        "text": "Chance to trigger Overload increased by an additional 10% and Lava Bursts damage is increased by a percentage equal to your spell critical strike chance. When Lightning Bolt or Chain Lightning deal damage, increase the damage dealt by your next Lava Burst cast within 15 sec by 10%, stacking up to 5 times."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 1226978,
+        "text": "When your Chain Lightning damages fewer than 3 targets, it deals 35% increased damage for each target less than 3."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "intellect": 34.0,
+      "spell_power": 18.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=240125"
+  },
+  "linked_entities": [
+    {
+      "id": 240109,
+      "name": "Soulcrusher Embrace",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240109"
+    },
+    {
+      "id": 240110,
+      "name": "Soulcrusher Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240110"
+    },
+    {
+      "id": 240122,
+      "name": "Soulcrusher Mitts",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240122"
+    },
+    {
+      "id": 240123,
+      "name": "Soulcrusher Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240123"
+    },
+    {
+      "id": 240124,
+      "name": "Soulcrusher Kilt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240124"
+    },
+    {
+      "id": 240125,
+      "name": "Soulcrusher Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240125"
+    },
+    {
+      "id": 240126,
+      "name": "Soulcrusher Cord",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240126"
+    },
+    {
+      "id": 240127,
+      "name": "Soulcrusher Bindings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=240127"
+    },
+    {
+      "id": 1226961,
+      "name": "When your Lava Burst, Chain Lightning, or Lightning Bolt strikes a target afflicted with your Flame Shock Rank 5 or Rank 6, it also deals one pulse of Flame Shock's damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226961"
+    },
+    {
+      "id": 1226977,
+      "name": "Chance to trigger Overload increased by an additional 10% and Lava Bursts damage is increased by a percentage equal to your spell critical strike chance. When Lightning Bolt or Chain Lightning deal damage, increase the damage dealt by your next Lava Burst cast within 15 sec by 10%, stacking up to 5 times.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226977"
+    },
+    {
+      "id": 1226978,
+      "name": "When your Chain Lightning damages fewer than 3 targets, it deals 35% increased damage for each target less than 3.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1226978"
+    }
+  ],
+  "name": "Soulcrusher Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "4dece8dfeed4fc322fb5a73747a13f55d820b9dd28a2076b132edd5a3c54c97f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/240125",
+  "url": "https://www.wowhead.com/forever/item=240125"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vision of Voodress Item Level 60 Binds when picked up Unique Neck +8 Stamina +8 Intellect +7 Spirit Classes: Shaman",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19606,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 19606,
+    "item_level": 60,
+    "name": "Vision of Voodress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19606"
+  },
+  "linked_entities": [],
+  "name": "Vision of Voodress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19606",
+  "url": "https://www.wowhead.com/forever/item=19606"
+}

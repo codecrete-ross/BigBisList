@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rezlak's Spare Knife Item Level 11 Binds when picked up Thrown Thrown 6 - 13 Damage Speed 1.80 (5.28 damage per second) Durability 200 / 200 Equip: + 3 Attack Power against Beasts. Sell Price: 2 57",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 287060,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 5.28,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +3 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +3 Attack Power against Beasts."
+    ],
+    "id": 287060,
+    "item_level": 11,
+    "name": "Rezlak's Spare Knife",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 13,
+    "weapon_min_damage": 6,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=287060"
+  },
+  "linked_entities": [],
+  "name": "Rezlak's Spare Knife",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287060",
+  "url": "https://www.wowhead.com/forever/item=287060"
+}

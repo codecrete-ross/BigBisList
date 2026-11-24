@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Resurrection 75% of base mana 30 yd range 10 sec cast Requires Priest Requires level 10 Brings a dead player back to life with 70 health and 135 mana. Cannot be cast when in combat.",
+  "entity_id": 2006,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:38+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2006,
+      "name": "Resurrection",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2006"
+    }
+  ],
+  "name": "Resurrection",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ac2c27e18ed448e2c9cbe7224d63a21216661f86b538672179e4fcd9d66051cc",
+  "spell_id": 2006,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/2006",
+  "url": "https://www.wowhead.com/forever/spell=2006"
+}

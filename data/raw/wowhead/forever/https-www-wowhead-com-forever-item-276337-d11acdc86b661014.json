@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thaelemaches' Talisman Item Level 59 Binds when picked up Unique-Equipped Trinket +6 Fire Resistance +6 Shadow Resistance Equip: + 18 Attack Power. Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown) Sell Price: 1 54 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 276337,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power.",
+        "stats": {
+          "attack_power": 18
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 276337,
+    "item_level": 59,
+    "name": "Thaelemaches' Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 18.0,
+      "fire_resistance": 6.0,
+      "shadow_resistance": 6.0
+    },
+    "use_effects": [
+      "Use: Fear all Demons within 15 yds for 6 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=276337"
+  },
+  "linked_entities": [
+    {
+      "id": 1299440,
+      "name": "Fear all Demons within 15 yds for 6 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1299440"
+    }
+  ],
+  "name": "Thaelemaches' Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "5c43b7365ac80825e276bb4354d4f917b418e240d0e60cf4b5d0b16e6867232b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276337",
+  "url": "https://www.wowhead.com/forever/item=276337"
+}

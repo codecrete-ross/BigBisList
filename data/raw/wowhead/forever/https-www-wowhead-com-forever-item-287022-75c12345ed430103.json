@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spaulders of Containment Item Level 52 Binds when equipped Shoulder Mail 233 Armor +10 Strength +15 Stamina Requires Level 47 Equip: Reduces chance to be Dodged or Parried by 1.0%. Sell Price: 1 43 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 287022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 233,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.0%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 1.0%."
+    ],
+    "id": 287022,
+    "item_level": 52,
+    "name": "Spaulders of Containment",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "stamina": 15.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287022"
+  },
+  "linked_entities": [],
+  "name": "Spaulders of Containment",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1c5645ccb6430be5081c67ea66e0fa1f7cf52e9eeac695bec6516ae6e80c29bb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287022",
+  "url": "https://www.wowhead.com/forever/item=287022"
+}

@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Dormant Heart of the Mountain 3 sec cast Reagents: Blood of the Mountain , Essence of Water , Small Brilliant Shard (3) Dormant Heart of the Mountain Item Level 55 Binds when picked up Unique-Equipped Trinket +7 Fire Resistance +7 Nature Resistance +7 Frost Resistance +7 Shadow Resistance Requires Level 50 Equip: Your casts of Greater Heal, Healing Touch, Healing Wave, or Holy Light in combat grant up to 40 increased healing and up to 13 increased damage for 15 sec. Sell Price: 15",
+  "entity_id": 1249114,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:11:59+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 11382,
+      "name": "Blood of the Mountain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11382"
+    },
+    {
+      "id": 14343,
+      "name": "Small Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14343"
+    },
+    {
+      "id": 249473,
+      "name": "Dormant Heart of the Mountain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249473"
+    },
+    {
+      "id": 1249114,
+      "name": "Dormant Heart of the Mountain",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249114"
+    },
+    {
+      "id": 1249118,
+      "name": "Your casts of Greater Heal, Healing Touch, Healing Wave, or Holy Light in combat grant up to 40 increased healing and up to 13 increased damage for 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249118"
+    }
+  ],
+  "name": "Dormant Heart of the Mountain",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249473,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1249114",
+      "subject_id": 1249114,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1249114,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1249114",
+  "url": "https://www.wowhead.com/forever/spell=1249114"
+}

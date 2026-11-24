@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mask of the Unforgiven Item Level 57 Binds when picked up Head Leather 132 Armor +13 Stamina Durability 60 / 60 Requires Level 52 Equip: Increased Defense + 6. Equip: Improves your chance to hit by 2.0%. Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 1 60 4 Dropped by: The Unforgiven Drop Chance: 20.64%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 13404,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 132,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +6.",
+        "stats": {
+          "defense": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 2.0%.",
+        "stats": {
+          "hit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 2.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 13404,
+    "item_level": 57,
+    "name": "Mask of the Unforgiven",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "defense": 6.0,
+      "hit_percent": 2.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13404"
+  },
+  "linked_entities": [],
+  "name": "Mask of the Unforgiven",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.64,
+      "entity_name": "The Unforgiven",
+      "source_url": "https://www.wowhead.com/forever/item=13404",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "91eb5db9b53ccd7f9dc64f5ce95cda60f2380f1596c26818cff14153a04b85b1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13404",
+  "url": "https://www.wowhead.com/forever/item=13404"
+}

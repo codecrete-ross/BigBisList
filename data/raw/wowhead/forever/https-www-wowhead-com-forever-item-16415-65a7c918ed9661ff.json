@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Silk Spaulders Item Level 63 Binds when picked up Unique Shoulder Cloth 67 Armor +16 Stamina +15 Intellect Classes: Mage Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 88 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16415,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 16415,
+    "item_level": 63,
+    "name": "Lieutenant Commander's Silk Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 12.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16415"
+  },
+  "linked_entities": [],
+  "name": "Lieutenant Commander's Silk Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16415",
+  "url": "https://www.wowhead.com/forever/item=16415"
+}

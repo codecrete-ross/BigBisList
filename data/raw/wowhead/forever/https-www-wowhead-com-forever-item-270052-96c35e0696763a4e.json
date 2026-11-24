@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Swamp Ring Item Level 35 Binds when picked up Finger +2 Agility Equip: + 14 Attack Power. Sell Price: 21 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 270052,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +14 Attack Power.",
+        "stats": {
+          "attack_power": 14
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +14 Attack Power."
+    ],
+    "id": 270052,
+    "item_level": 35,
+    "name": "Swamp Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 2.0,
+      "attack_power": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270052"
+  },
+  "linked_entities": [],
+  "name": "Swamp Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2f4f9b62aac6e18384c07c21b06347253dec773471170a45ce572d59f762f491",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270052",
+  "url": "https://www.wowhead.com/forever/item=270052"
+}

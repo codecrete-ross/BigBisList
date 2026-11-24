@@ -2266,7 +2266,7 @@ class WowheadScraperParserTests(unittest.TestCase):
             [scraper.RAW_WOWHEAD_DIR / directory for directory in scraper.ITEM_REFRESH_SNAPSHOT_DIRS],
         )
         self.assertEqual([path.name for path, _ in writes], ["items.json"])
-        parsed_args = scraper.build_parser().parse_args(["import", "--family", "items", "--dry-run"])
+        parsed_args = scraper.build_parser().parse_args(["import", "--flavor", "anniversary", "--family", "items", "--dry-run"])
         self.assertEqual(parsed_args.family, "items")
 
     def test_item_corpus_import_family_uses_all_committed_snapshots_and_regenerates_dependents(self):
@@ -2285,8 +2285,8 @@ class WowheadScraperParserTests(unittest.TestCase):
             scraper.IMPORT_FILES_BY_FAMILY["item_corpus"],
             ["item_stats.json", "item_variants.json", "leveling_recommendations.json", "recommendation_audit.json"],
         )
-        parsed_args = scraper.build_parser().parse_args(["import", "--family", "item_corpus", "--dry-run"])
-        self.assertEqual(parsed_args.input_dir, scraper.RAW_WOWHEAD_DIR)
+        parsed_args = scraper.build_parser().parse_args(["import", "--flavor", "anniversary", "--family", "item_corpus", "--dry-run"])
+        self.assertEqual(parsed_args.flavor, "anniversary")
 
     def test_leveling_import_uses_narrative_sections_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"

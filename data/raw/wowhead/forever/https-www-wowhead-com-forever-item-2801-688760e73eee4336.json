@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Blade of Hanna Item Level 64 Binds when equipped Two-Hand Sword 96 - 145 Damage Speed 2.00 (60.25 damage per second) Durability 120 / 120 Requires Level 59 Equip: Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting 490 Physical damage to your current target and increasing all your stats by 20 for 20 sec. Sell Price: 10 7 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 2801,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 60.25,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting 490 Physical damage to your current target and increasing all your stats by 20 for 20 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting 490 Physical damage to your current target and increasing all your stats by 20 for 20 sec."
+    ],
+    "id": 2801,
+    "item_level": 64,
+    "name": "Blade of Hanna",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 59,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 145,
+    "weapon_min_damage": 96,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2801"
+  },
+  "linked_entities": [
+    {
+      "id": 1325535,
+      "name": "Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting 490 Physical damage to your current target and increasing all your stats by 20 for 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1325535"
+    }
+  ],
+  "name": "Blade of Hanna",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2801",
+  "url": "https://www.wowhead.com/forever/item=2801"
+}

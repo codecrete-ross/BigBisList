@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brewmancer Nightcap Item Level 55 Binds when picked up Head Cloth 64 Armor +12 Stamina +8 Intellect Requires Level 50 Equip: Increases damage done by Shadow spells and effects by up to 29. Equip: Increases your effective stealth detection level by 2. Sell Price: 1 9 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 276877,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 64,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 29.",
+        "stats": {
+          "shadow_damage": 29
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your effective stealth detection level by 2.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Shadow spells and effects by up to 29.",
+      "Equip: Increases your effective stealth detection level by 2."
+    ],
+    "id": 276877,
+    "item_level": 55,
+    "name": "Brewmancer Nightcap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "shadow_damage": 29.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276877"
+  },
+  "linked_entities": [
+    {
+      "id": 23217,
+      "name": "Increases your effective stealth detection level by 2.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23217"
+    }
+  ],
+  "name": "Brewmancer Nightcap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "34d2178a3a4a3cd53802caac296457b690b50ec1d03aac4f72f380635d414921",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276877",
+  "url": "https://www.wowhead.com/forever/item=276877"
+}

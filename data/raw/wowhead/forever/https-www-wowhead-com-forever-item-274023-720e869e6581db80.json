@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stolen Wastewander Cowl Item Level 1 Binds when picked up Head Requires Gadgetzan - Revered Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274023,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274023,
+    "item_level": 1,
+    "name": "Stolen Wastewander Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274023"
+  },
+  "linked_entities": [
+    {
+      "id": 369,
+      "name": "Gadgetzan",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=369"
+    }
+  ],
+  "name": "Stolen Wastewander Cowl",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Stolen Wastewander Cowl Item Level 1 Binds when picked up Head Requires Gadgetzan - Revered Sell Price: 1",
+      "reputation": "Gadgetzan",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=274023",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cf503ec88cf82185abb99519d2f7a291be0de56c95545f1eb487456c530b6416",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274023",
+  "url": "https://www.wowhead.com/forever/item=274023"
+}

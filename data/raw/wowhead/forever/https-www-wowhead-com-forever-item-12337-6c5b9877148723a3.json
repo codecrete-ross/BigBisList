@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gemstone of Bloodaxe Item Level 1 Binds when picked up Unique Dropped by: Overlord Wyrmthalak Drop Chance: 40.51%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12337,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 12337,
+    "item_level": 1,
+    "name": "Gemstone of Bloodaxe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12337"
+  },
+  "linked_entities": [],
+  "name": "Gemstone of Bloodaxe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 40.51,
+      "entity_name": "Overlord Wyrmthalak",
+      "source_url": "https://www.wowhead.com/forever/item=12337",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "94e3ae81298f5ee3939ae2d4ea5b29d0cc73d335b96a5f56f7831e76fd13ede6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12337",
+  "url": "https://www.wowhead.com/forever/item=12337"
+}

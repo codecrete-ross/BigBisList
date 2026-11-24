@@ -1,0 +1,88 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of the Better Half Item Level 70 Binds when picked up Unique-Equipped Finger +18 Strength +10 Stamina Requires Level 60 Equip: Reduces chance to be Dodged or Parried by 1.2%. Partners in Crime (0/2) First Mate Band Band of the Better Half (2) Set : Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown) (2) Set : +22 Strength. Sell Price: 4 53 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284716,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces chance to be Dodged or Parried by 1.2%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces chance to be Dodged or Parried by 1.2%."
+    ],
+    "id": 284716,
+    "item_level": 70,
+    "name": "Band of the Better Half",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1317039,
+        "text": "Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown)"
+      },
+      {
+        "pieces": 2,
+        "spell_id": 1317038,
+        "text": "+22 Strength."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 10.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284716"
+  },
+  "linked_entities": [
+    {
+      "id": 284715,
+      "name": "First Mate Band",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284715"
+    },
+    {
+      "id": 284716,
+      "name": "Band of the Better Half",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284716"
+    },
+    {
+      "id": 1317038,
+      "name": "+22 Strength.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317038"
+    },
+    {
+      "id": 1317039,
+      "name": "Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317039"
+    }
+  ],
+  "name": "Band of the Better Half",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "bc2f8dde7d40208d3ba29c56926b37339198a8714cfa842b3bd7c47107405cb3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284716",
+  "url": "https://www.wowhead.com/forever/item=284716"
+}

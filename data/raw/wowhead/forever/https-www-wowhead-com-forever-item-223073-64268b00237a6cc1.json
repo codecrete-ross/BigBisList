@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Lieutenant's Mail Epaulets Item Level 55 Binds when picked up Shoulder Mail 246 Armor +9 Strength +11 Stamina +5 Intellect Durability 70 / 70 Classes: Hunter , Shaman Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Knight-Lieutenant's Mail (0/6) Knight's Mail Armor Sergeant Major's Mail Sabatons Sergeant Major's Mail Gauntlets Knight-Lieutenant's Mail Helmet Knight's Mail Legplates Knight-Lieutenant's Mail Epaulets (3) Set : +15 Stamina. (6) Set : +30 Attack Power. Sell Price: 1 76 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 223073,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 246,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 223073,
+    "item_level": 55,
+    "name": "Knight-Lieutenant's Mail Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Hunter",
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 5.0,
+      "stamina": 11.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=223073"
+  },
+  "linked_entities": [
+    {
+      "id": 223073,
+      "name": "Knight-Lieutenant's Mail Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223073"
+    },
+    {
+      "id": 223074,
+      "name": "Knight's Mail Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223074"
+    },
+    {
+      "id": 223075,
+      "name": "Knight-Lieutenant's Mail Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223075"
+    },
+    {
+      "id": 223076,
+      "name": "Sergeant Major's Mail Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223076"
+    },
+    {
+      "id": 223077,
+      "name": "Sergeant Major's Mail Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223077"
+    },
+    {
+      "id": 223078,
+      "name": "Knight's Mail Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=223078"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Knight-Lieutenant's Mail Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5a82b108c501064b13316a801305fe37be012faeee9fd5c62ba1f2c7a03101d2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/223073",
+  "url": "https://www.wowhead.com/forever/item=223073"
+}

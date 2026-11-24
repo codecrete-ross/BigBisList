@@ -1,0 +1,62 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:12.755560+00:00",
+  "flavor": "forever",
+  "item_id": 263937,
+  "items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "description": "Skyseeker's Greatstaff Item Level 15 Binds when equipped Two-Hand Staff 12 - 18 Damage Speed 2.00 (7.50 damage per second) +3 Intellect +3 Spirit Durability 55 / 55 Requires Level 10 Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects. Sell Price: 8 52 Dropped by: Den'dralass Drop Chance: 20.41%",
+      "dps": 7.5,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects.",
+          "stats": {
+            "healing_power": 15,
+            "spell_damage": 5
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases healing done by up to 15 and damage done by up to 5 for all magical spells and effects."
+      ],
+      "id": 263937,
+      "item_level": 15,
+      "name": "Skyseeker's Greatstaff",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "required_level": 10,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "healing_power": 15.0,
+        "intellect": 3.0,
+        "spell_damage": 5.0,
+        "spirit": 3.0
+      },
+      "weapon_max_damage": 18,
+      "weapon_min_damage": 12,
+      "weapon_speed": 2.0,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=263937"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.41,
+      "entity_name": "Den'dralass",
+      "source_url": "https://www.wowhead.com/forever/item=263937",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "cfcc037323b0786fb8522c6eba4d50c65b8c5f07df18cdfa39e09aacde733ee2",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/263937#sha256-cfcc037323b0786fb8522c6eba4d50c65b8c5f07df18cdfa39e09aacde733ee2"
+}

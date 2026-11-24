@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seal of Sylvanas Item Level 29 Binds when picked up Finger +8 Stamina Equip: + 6 Attack Power. Sell Price: 19 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 6414,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +6 Attack Power.",
+        "stats": {
+          "attack_power": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +6 Attack Power."
+    ],
+    "id": 6414,
+    "item_level": 29,
+    "name": "Seal of Sylvanas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 6.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6414"
+  },
+  "linked_entities": [],
+  "name": "Seal of Sylvanas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6414",
+  "url": "https://www.wowhead.com/forever/item=6414"
+}

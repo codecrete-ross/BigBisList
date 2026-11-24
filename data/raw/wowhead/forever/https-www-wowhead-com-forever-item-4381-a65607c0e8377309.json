@@ -1,0 +1,68 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Minor Recombobulator Item Level 28 Unique-Equipped Trinket Requires Engineering (140) Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:11:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 4381,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 4381,
+    "item_level": 28,
+    "name": "Minor Recombobulator",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown) 10 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=4381"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 18805,
+      "name": "Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18805"
+    }
+  ],
+  "name": "Minor Recombobulator",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Minor Recombobulator Item Level 28 Unique-Equipped Trinket Requires Engineering (140) Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+      "scope": "equip_or_use",
+      "skill": 140,
+      "source_url": "https://www.wowhead.com/forever/item=4381",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "20c66d41f7f13a1a0e63c52138e2bc631efe2c9d2f0888ca58ccdb75f6d84e8a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4381",
+  "url": "https://www.wowhead.com/forever/item=4381"
+}

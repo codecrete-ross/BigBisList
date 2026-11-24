@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brigam Girdle Item Level 63 Binds when picked up Waist Plate 369 Armor +14 Strength +18 Stamina Durability 45 / 45 Requires Level 58 Equip: Improves your chance to hit by 1.0%. Sell Price: 2 2 69 Dropped by: General Drakkisath Drop Chance: 22.53%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:01.3779581Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 13142,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 369,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 13142,
+    "item_level": 63,
+    "name": "Brigam Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "stamina": 18.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13142"
+  },
+  "linked_entities": [],
+  "name": "Brigam Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 22.53,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=13142",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7e8ac55d81fe89b25a4f2c63578165d9cb3b0027af3a0da07c262f3ed540a2e9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13142",
+  "url": "https://www.wowhead.com/forever/item=13142"
+}

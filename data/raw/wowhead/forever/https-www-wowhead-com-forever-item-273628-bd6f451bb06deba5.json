@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Enchant Weapon - Recovery PTR Only Item Level 1 Use: Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for 5% of your maximum health. Cannot occur more often than once every 10 sec. Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 273628,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for 5% of your maximum health. Cannot occur more often than once every 10 sec.",
+        "type": "conditional"
+      }
+    ],
+    "id": 273628,
+    "item_level": 1,
+    "name": "Enchant Weapon - Recovery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for 5% of your maximum health. Cannot occur more often than once every 10 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=273628"
+  },
+  "linked_entities": [
+    {
+      "id": 1248760,
+      "name": "Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for 5% of your maximum health. Cannot occur more often than once every 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248760"
+    }
+  ],
+  "name": "Enchant Weapon - Recovery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273628",
+  "url": "https://www.wowhead.com/forever/item=273628"
+}

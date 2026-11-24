@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Extra-Dimensional Ghost Revealer Item Level 1 Binds when picked up Unique Use: Allows wielder to see ghosts of the recently deceased. (1 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:08:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 22115,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Allows wielder to see ghosts of the recently deceased. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 22115,
+    "item_level": 1,
+    "name": "Extra-Dimensional Ghost Revealer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Allows wielder to see ghosts of the recently deceased. (1 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=22115"
+  },
+  "linked_entities": [
+    {
+      "id": 27616,
+      "name": "Allows wielder to see ghosts of the recently deceased.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27616"
+    }
+  ],
+  "name": "Extra-Dimensional Ghost Revealer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22115",
+  "url": "https://www.wowhead.com/forever/item=22115"
+}

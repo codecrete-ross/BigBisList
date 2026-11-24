@@ -1,0 +1,32 @@
+## Interface: 16001
+## Title: Big BiS List
+## Notes: WoW Forever pre-raid BiS lists, acquisition details, and planner.
+## Author: Big BiS List contributors
+## Version: @project-version@
+## SavedVariables: BigBiSListDB
+## SavedVariablesPerCharacter: BigBiSListCharDB
+## IconTexture: Interface\AddOns\BigBiSList\assets\icon.tga
+## X-Game-Flavor: WoW Forever
+
+ForeverStartup.lua
+lib\LibStub\LibStub.lua
+lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+lib\LibDataBroker-1.1\LibDataBroker-1.1.lua
+lib\LibDBIcon-1.0\LibDBIcon-1.0.lua
+DataForever.lua
+GuideDataForever.lua
+GuideRanksForever.lua
+Config.lua
+ForeverScoring.lua
+ForeverGearRating.lua
+DataIndex.lua
+ForeverGuide.lua
+Widgets.lua
+UI.lua
+ForeverBrowse.lua
+DetailsSources.lua
+ComparisonUI.lua
+Tooltip.lua
+AcquisitionHighlights.lua
+Minimap.lua
+Core.lua

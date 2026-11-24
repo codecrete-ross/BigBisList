@@ -49,9 +49,9 @@ for _, size in ipairs({{1020,560}, {1160,660}}) do
                 if row.boundData then
                     local mid = centerY(row)
                     near(centerY(row.iconButton), mid, label .. " icon center")
-                    if row.boundMode == "gear" then
-                        near(centerY(row.findButton), mid, label .. " equipment action center")
-                        near((row.slotText:GetTop()+row.rankText:GetBottom())/2, mid, label .. " equipment text center")
+                    if row.__bigBisBoundRenderEntry.nextAction then
+                        H.expectBounded(row.reasonText, row, label .. " action reason")
+                        H.expectBounded(row.sourceText, row, label .. " action source")
                     else
                         local lastText = row.subText:IsShown() and row.subText or row.nameText
                         near((row.nameText:GetTop()+lastText:GetBottom())/2, mid, label .. " item identity center")
@@ -67,7 +67,7 @@ for _, size in ipairs({{1020,560}, {1160,660}}) do
             end
             if ui.listToolbar:IsVisible() then
                 local controls = {}
-                for _, control in ipairs({ui.searchFrame, ui.filterToggleButton, ui.sortDropdown, ui.groupDropdown, ui.upgradeModeDropdown, ui.wishlistRelevanceDropdown, ui.inspectorToggleButton}) do
+                for _, control in ipairs({ui.slotPickerButton, ui.upgradesViewButton, ui.searchFrame, ui.filterToggleButton, ui.sortDropdown, ui.groupDropdown, ui.upgradeModeDropdown, ui.wishlistRelevanceDropdown, ui.inspectorToggleButton}) do
                     if control:IsVisible() and control:GetParent() == ui.listToolbar then controls[#controls+1] = control end
                 end
                 for _, control in ipairs(ui.enhancementSwitchButtons or {}) do if control:IsVisible() then controls[#controls+1] = control end end
@@ -86,6 +86,28 @@ for _, size in ipairs({{1020,560}, {1160,660}}) do
     end
 end
 assert(#H.errors == 0, table.concat(H.errors,"\n"))
+''')
+
+    def test_filter_button_highlights_only_when_filters_are_active(self):
+        self.run_lua(r'''
+ui:SetTab("By Slot"); H.settle()
+local button = ui.filterToggleButton
+ui:ClearFilters(); H.settle()
+button:Click(); H.settle()
+assert(ui.filterDrawerOpen and not button.selected, "opening an empty drawer must not highlight Filters")
+ui:SetFilter("ownedState", "missing"); H.settle()
+assert(button.selected and button.label:GetText() == "Filters (1)", "applying a filter highlights Filters")
+button:Click(); H.settle()
+assert(not ui.filterDrawerOpen and button.selected, "closing the drawer keeps the applied filter highlighted")
+button:Click(); H.settle()
+local state = ui:GetViewState()
+state.sort, state.sortDirection, state.groupBy = "source", "desc", "activity"
+ui.clearFiltersButton:Click()
+assert(not ui.filterDrawerOpen and not button.selected,
+    "clearing filters closes the drawer and immediately removes the highlight")
+H.settle()
+assert(not ui.filterDrawer:IsShown() and button.label:GetText() == "Filters")
+assert(state.sort == "source" and state.sortDirection == "desc" and state.groupBy == "activity")
 ''')
 
     def test_filter_scrollbar_exists_only_for_actual_overflow(self):

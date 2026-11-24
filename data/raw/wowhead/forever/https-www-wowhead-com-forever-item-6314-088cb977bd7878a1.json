@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wolfmaster Cape Item Level 27 Binds when picked up Back 22 Armor +3 Stamina Requires Level 22 Equip: + 10 Attack Power. Equip: + 9 Attack Power against Beasts. Sell Price: 12 15 Dropped by: Wolf Master Nandos Drop Chance: 37.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 6314,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 22,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +9 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +10 Attack Power.",
+      "Equip: +9 Attack Power against Beasts."
+    ],
+    "id": 6314,
+    "item_level": 27,
+    "name": "Wolfmaster Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6314"
+  },
+  "linked_entities": [],
+  "name": "Wolfmaster Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 37.27,
+      "entity_name": "Wolf Master Nandos",
+      "source_url": "https://www.wowhead.com/forever/item=6314",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6314",
+  "url": "https://www.wowhead.com/forever/item=6314"
+}

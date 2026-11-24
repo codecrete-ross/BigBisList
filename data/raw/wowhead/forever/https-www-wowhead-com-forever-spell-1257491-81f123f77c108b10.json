@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Earthenweave Cuffs 1 min cast Reagents: Bolt of Runecloth (5), Essence of Earth , Rune Thread Earthenweave Cuffs Item Level 60 Binds when equipped Wrist Cloth 34 Armor +10 Spirit Requires Level 55 Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects. Sell Price: 85 36",
+  "entity_id": 1257491,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:28+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 254131,
+      "name": "Earthenweave Cuffs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254131"
+    },
+    {
+      "id": 1257491,
+      "name": "Earthenweave Cuffs",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257491"
+    }
+  ],
+  "name": "Earthenweave Cuffs",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 254131,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1257491",
+      "subject_id": 1257491,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1257491,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1257491",
+  "url": "https://www.wowhead.com/forever/spell=1257491"
+}

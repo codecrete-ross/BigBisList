@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Emblem of Slamming Item Level 47 Binds when picked up Unique-Equipped Trinket Requires Level 42 Equip: + 14 Attack Power. Use: Stuns target and yourself for 3 sec. Ogres are Stunned for 5 sec and refund 50% of the cooldown. (15 Min Cooldown) Sell Price: 94 1 Dropped by: Overlord Mugg Drop Chance: 27.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 275009,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +14 Attack Power.",
+        "stats": {
+          "attack_power": 14
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Stuns target and yourself for 3 sec. Ogres are Stunned for 5 sec and refund 50% of the cooldown. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 275009,
+    "item_level": 47,
+    "name": "Emblem of Slamming",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 14.0
+    },
+    "use_effects": [
+      "Use: Stuns target and yourself for 3 sec. Ogres are Stunned for 5 sec and refund 50% of the cooldown. (15 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=275009"
+  },
+  "linked_entities": [
+    {
+      "id": 1315972,
+      "name": "Stuns target and yourself for 3 sec. Ogres are Stunned for 5 sec and refund 50% of the cooldown.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315972"
+    }
+  ],
+  "name": "Emblem of Slamming",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.27,
+      "entity_name": "Overlord Mugg",
+      "source_url": "https://www.wowhead.com/forever/item=275009",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c77c1492733a298d78051d3d8473cbe70e7c48a825d19c4036cc03daa1c79cc6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275009",
+  "url": "https://www.wowhead.com/forever/item=275009"
+}

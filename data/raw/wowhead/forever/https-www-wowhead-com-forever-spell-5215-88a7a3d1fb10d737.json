@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Prowl Rank 1 Instant 10 sec cooldown Requires Druid Requires level 20 Requires Cat Form Allows the Druid to prowl around, but reduces your movement speed by 40%. Lasts until cancelled.",
+  "entity_id": 5215,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:17+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5215,
+      "name": "Prowl",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5215"
+    }
+  ],
+  "name": "Prowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8e40c17c0cf562c6655cd3e06f936a9e7d9973af57b9c124477e6b123e29d73e",
+  "spell_id": 5215,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5215",
+  "url": "https://www.wowhead.com/forever/spell=5215"
+}

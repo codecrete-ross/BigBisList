@@ -1,0 +1,85 @@
+{
+  "attribution": [
+    {
+      "credit": "Forever Item Finder, by ArcForge",
+      "licence": "GPL-3.0",
+      "licenceUrl": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/LICENSE",
+      "source": "https://github.com/ArcSim/ForeverItemFinder/tree/25d072839e9ccaf6f731dc35a2086b07fc404f45"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "prior_build_catalog_crosscheck",
+  "fetched_at": "2026-11-13T21:08:30.144980+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1984927,
+      "collected_at": "2026-11-13T21:08:30.144980+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-site-catalog",
+      "source_content_digest": "553ec01fbf14c3cc10b909c8d620cec160163b8320ef5ff05bb695058eda3024",
+      "source_url": "https://forever-item-finder.pages.dev/data/index.json"
+    },
+    {
+      "bytes": 4401,
+      "collected_at": "2026-11-13T21:08:29.918929+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-site-meta",
+      "source_content_digest": "57521144f396f0a33c6c71513501915633a9e00d112d14d50ff4821aba43f6b0",
+      "source_url": "https://forever-item-finder.pages.dev/data/meta.json"
+    },
+    {
+      "bytes": 3722159,
+      "collected_at": "2026-11-13T21:07:55.725394+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-items",
+      "source_content_digest": "b57890e86083917c36fe6f3d70a4aaac295d0d52e408bf2e4c42aa6b4c7d12a3",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/Data/Items.lua"
+    },
+    {
+      "bytes": 14836,
+      "collected_at": "2026-11-13T21:07:38.675526+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-tree",
+      "source_content_digest": "265fa1ff022b5a4a865773d398ed736049915bbe3a19adfc60688355ef62f4a4",
+      "source_url": "https://api.github.com/repos/ArcSim/ForeverItemFinder/git/trees/main?recursive=1"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 35149,
+      "collected_at": "2026-11-13T21:07:55.855348+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "fif-licence",
+      "source_content_digest": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "source_url": "https://raw.githubusercontent.com/ArcSim/ForeverItemFinder/25d072839e9ccaf6f731dc35a2086b07fc404f45/LICENSE"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "forever_item_finder",
+  "reviewed_page_facts": {
+    "additional_scoped_equipment_ids": [],
+    "client_build_compared": "1.60.1.70938",
+    "finding": "Every listed equipment ID for the affected slots is already in the audit inventory. The only index ID missing from the current client Item table is a recipe. This earlier build catalog does not establish complete Wowhead partitions or current player availability.",
+    "index_only_non_equipment_ids": [
+      15754
+    ],
+    "seed_commit": "25d072839e9ccaf6f731dc35a2086b07fc404f45",
+    "seed_git_blob": "34bae91073d6ae04577f0d9eaa7381e7ad8812d8",
+    "unique_item_ids": 19023
+  },
+  "source_content_digest": "553ec01fbf14c3cc10b909c8d620cec160163b8320ef5ff05bb695058eda3024",
+  "url": "https://forever-item-finder.pages.dev/data/index.json"
+}

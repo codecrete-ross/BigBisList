@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Leather Epaulets Item Level 74 Binds when picked up Unique Shoulder Leather 165 Armor +21 Agility +27 Stamina +50 Armor Durability 70 / 70 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Sell Price: 2 53 52",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16457,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 165,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 16457,
+    "item_level": 74,
+    "name": "Field Marshal's Leather Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "hit_percent": 1.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16457"
+  },
+  "linked_entities": [],
+  "name": "Field Marshal's Leather Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16457",
+  "url": "https://www.wowhead.com/forever/item=16457"
+}

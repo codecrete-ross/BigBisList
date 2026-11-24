@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Altered Black Dragonflight Molt Item Level 1 Quest Item Unique Use: Use on the remains of Bael'Gar to capture his fiery essence. \"A dull and gray patch of black dragon skin\" Max Stack: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:15.0131600Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 11231,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Use on the remains of Bael'Gar to capture his fiery essence.",
+        "type": "use"
+      }
+    ],
+    "id": 11231,
+    "item_level": 1,
+    "name": "Altered Black Dragonflight Molt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Use on the remains of Bael'Gar to capture his fiery essence. \"A dull and gray patch of black dragon skin\" Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=11231"
+  },
+  "linked_entities": [
+    {
+      "id": 13982,
+      "name": "Use on the remains of Bael'Gar to capture his fiery essence.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13982"
+    }
+  ],
+  "name": "Altered Black Dragonflight Molt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c5ad0731d03d228b23ee09fdcc84d180eda785456d107cefc96854dae5e7f525",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11231",
+  "url": "https://www.wowhead.com/forever/item=11231"
+}

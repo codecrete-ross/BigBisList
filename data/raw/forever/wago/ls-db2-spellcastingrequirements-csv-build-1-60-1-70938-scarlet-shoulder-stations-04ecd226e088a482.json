@@ -1,0 +1,108 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Wowhead reporting on Blizzard's Forever podcast",
+      "source": "https://www.wowhead.com/forever/news/season-of-discoverys-scarlet-enclave-raid-to-return-in-wow-forever-383855"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_exact_creation_spell_focus",
+  "fetched_at": "2026-11-13T23:27:35.188938+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 87750,
+      "collected_at": "2026-11-13T23:27:35.188938+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellcastingrequirements",
+      "source_content_digest": "754499637c667ccfd94cff82e5a2031dd3bf62420eb208f468a6994434165779",
+      "source_url": "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 6471,
+      "collected_at": "2026-11-13T23:29:51.564723+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellfocus",
+      "source_content_digest": "b1a55c93823332c97019a2680ec4d9237ac57028d125a678fb11db4ef953dc5a",
+      "source_url": "https://wago.tools/db2/SpellFocusObject/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 97682,
+      "collected_at": "2026-11-13T23:37:39.075034+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-scarlet-return",
+      "source_content_digest": "3dc16b0914a6ff490e381fd38aebb9288d92b01edc450284e4d80280ad69a67c",
+      "source_url": "https://www.wowhead.com/forever/news/season-of-discoverys-scarlet-enclave-raid-to-return-in-wow-forever-383855"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The build requires a specific Scarlet crafting station for each of these spells. The announced Scarlet Enclave raid return leaves the current outdoor station access and exact recipe supply unresolved.",
+    "items": [
+      {
+        "creation_spell": 1224608,
+        "item_id": 238265,
+        "spell_focus": {
+          "ID": "2230",
+          "Name_lang": "Crusader's Loom"
+        },
+        "spell_requirement": {
+          "FacingCasterFlags": "0",
+          "ID": "226751",
+          "MinFactionID": "0",
+          "MinReputation": "0",
+          "RequiredAreasID": "0",
+          "RequiredAuraVision": "0",
+          "RequiresSpellFocus": "2230",
+          "SpellID": "1224608"
+        }
+      },
+      {
+        "creation_spell": 1224616,
+        "item_id": 238273,
+        "spell_focus": {
+          "ID": "2231",
+          "Name_lang": "Crusader's Tanning Rack"
+        },
+        "spell_requirement": {
+          "FacingCasterFlags": "0",
+          "ID": "226759",
+          "MinFactionID": "0",
+          "MinReputation": "0",
+          "RequiredAreasID": "0",
+          "RequiredAuraVision": "0",
+          "RequiresSpellFocus": "2231",
+          "SpellID": "1224616"
+        }
+      },
+      {
+        "creation_spell": 1224624,
+        "item_id": 238281,
+        "spell_focus": {
+          "ID": "2231",
+          "Name_lang": "Crusader's Tanning Rack"
+        },
+        "spell_requirement": {
+          "FacingCasterFlags": "0",
+          "ID": "226767",
+          "MinFactionID": "0",
+          "MinReputation": "0",
+          "RequiredAreasID": "0",
+          "RequiredAuraVision": "0",
+          "RequiresSpellFocus": "2231",
+          "SpellID": "1224624"
+        }
+      }
+    ]
+  },
+  "source_content_digest": "754499637c667ccfd94cff82e5a2031dd3bf62420eb208f468a6994434165779",
+  "url": "https://wago.tools/db2/SpellCastingRequirements/csv?build=1.60.1.70938#/scarlet-shoulder-stations"
+}

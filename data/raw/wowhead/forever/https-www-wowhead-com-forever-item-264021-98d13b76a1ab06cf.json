@@ -1,0 +1,43 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Craftsman's Writ: Golden Rod Journeyman Item Level 1 This Item Begins a Quest Requires Level 10 \"A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.\" Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:02:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 264021,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 264021,
+    "item_level": 1,
+    "name": "Craftsman's Writ: Golden Rod",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 10,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=264021"
+  },
+  "linked_entities": [
+    {
+      "id": 94221,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=94221"
+    }
+  ],
+  "name": "Craftsman's Writ: Golden Rod",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9efbb1c3331c7df1195abb6177dd8c917a3e90075e2a1c60d24ba8c8047f6873",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/264021",
+  "url": "https://www.wowhead.com/forever/item=264021"
+}

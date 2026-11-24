@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Lesser Magic Essence Item Level 10 Use: Turn three lesser magic essences into a greater one. Crafting Reagent Max Stack: 20 Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:42:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 10938,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Turn three lesser magic essences into a greater one.",
+        "type": "use"
+      }
+    ],
+    "id": 10938,
+    "item_level": 10,
+    "name": "Lesser Magic Essence",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Turn three lesser magic essences into a greater one. Crafting Reagent Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10938"
+  },
+  "linked_entities": [
+    {
+      "id": 13361,
+      "name": "Turn three lesser magic essences into a greater one.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13361"
+    }
+  ],
+  "name": "Lesser Magic Essence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10938",
+  "url": "https://www.wowhead.com/forever/item=10938"
+}

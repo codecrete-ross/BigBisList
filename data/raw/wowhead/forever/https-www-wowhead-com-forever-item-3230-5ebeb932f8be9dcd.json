@@ -1,0 +1,74 @@
+{
+  "armor_tooltip_review": {
+    "base_armor": 43,
+    "bonus_armor": 20,
+    "collected_at": "2026-11-11T06:02:24.987311+00:00",
+    "endpoint": "https://nether.wowhead.com/forever/tooltip/item/3230",
+    "previous_evidence": {
+      "content_digest": "59379dce5f7eb669cc88db5d71439c922334220e8ab5c3730ee5d0f7d9dcce2d",
+      "evidence_id": "wowhead:5ebeb932f8be9dcd3d0e5551"
+    },
+    "source_content_digest": "f951de7c361360e3d16b77d3177334836cb86d657c865c8c14b6d265bb39281d"
+  },
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Black Wolf Bracers Item Level 27 Binds when picked up Wrist Leather 43 Armor +7 Stamina +20 Armor Durability 30 / 30 Requires Level 22 Equip: + 4 Attack Power. Sell Price: 10 20 Dropped by: Fenrus the Devourer Drop Chance: 18.39%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 3230,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 63,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +4 Attack Power.",
+        "stats": {
+          "attack_power": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +4 Attack Power."
+    ],
+    "id": 3230,
+    "item_level": 27,
+    "name": "Black Wolf Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 4.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3230"
+  },
+  "linked_entities": [],
+  "name": "Black Wolf Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.39,
+      "entity_name": "Fenrus the Devourer",
+      "source_url": "https://www.wowhead.com/forever/item=3230",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3230",
+  "url": "https://www.wowhead.com/forever/item=3230"
+}

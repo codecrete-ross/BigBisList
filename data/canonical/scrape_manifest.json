@@ -2,6 +2,10 @@
   "conflict_policy": "Item and spell pages win for acquisition details. Guide source cells are retained as evidence and used only when item-page data is missing.",
   "parser_version": "wowhead-scraper-0.10.0",
   "registry_notes": [
+    "The independent Forever equipment inventory and build-specific random property tables are registered with source URLs and SHA-256 digests in data/canonical/forever/guide_equipment.json.",
+    "The exact Dungeon Set 2 exchange rewards and corroborated dungeon drops are recorded with their Forever quest and loot sources in data/canonical/forever/guide_source_reviews.json.",
+    "The Forever manifest registers the released dungeon loot tables, profession recipe exports, and corrected quest and vendor access evidence used to build guide_routes.json.",
+    "Forever effect benchmarks and source references for comparable proc families are recorded in data/canonical/forever/effect_benchmarks.json. Linked set members and thresholds from saved Forever tooltips are retained in comparison_item_stats.json.",
     "Gear BiS coverage is registered explicitly for every class/spec/phase unit. Shared Wowhead guide URLs are repeated when one guide backs multiple addon specs.",
     "Item, spell, gem, enchant, consumable, and leveling acquisition pages are discovered from registered guide snapshots and audited after snapshots exist.",
     "Non-gear guide URLs are explicitly registered per class/spec; class-wide guides intentionally repeat URLs across spec units."

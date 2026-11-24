@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Theka's Last Breath Item Level 47 Binds when picked up Unique-Equipped Trinket Restores + 6 mana per 5 sec. Requires Level 42 Use: Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec. (7 Min Cooldown) Sell Price: 88 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 274641,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec. (7 Min Cooldown)",
+        "type": "conditional"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 274641,
+    "item_level": 47,
+    "name": "Theka's Last Breath",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 42,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 6.0
+    },
+    "use_effects": [
+      "Use: Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec. (7 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274641"
+  },
+  "linked_entities": [
+    {
+      "id": 1294617,
+      "name": "Transform all enemies within 10 yds into scarabs, slowing movement speed by 45% for 10 sec. Qiraji and Silithid targets are stunned for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1294617"
+    }
+  ],
+  "name": "Theka's Last Breath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cce7cb25bcc08f1eba22a9867de3dfb6793e24b0df6d22c5b1f845a198f3615d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274641",
+  "url": "https://www.wowhead.com/forever/item=274641"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "First Aid Kit Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Unpacks a first aid kit that allows you and others sitting nearby to gain [( 60 < 12 ? 3 : ( 60 < 24 ? 8 : ( 60 < 36 ? 21 : ( 60 < 48 ? 34 : ( 60 < 60 ? 45 : 56)))))] increased Stamina, mutually exclusive with Power Word: Fortitude. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307244,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:17+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307244,
+      "name": "First Aid Kit",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307244"
+    }
+  ],
+  "name": "First Aid Kit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "89b6e2e8d68be2a130b76f5048f567a5a2374391e1812dd3ee19083ae67d6ac9",
+  "spell_id": 1307244,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307244",
+  "url": "https://www.wowhead.com/forever/spell=1307244"
+}

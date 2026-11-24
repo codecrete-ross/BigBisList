@@ -1,0 +1,88 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Ironfeather Breastplate 1 min cast Reagents: Rugged Leather (40), Ironfeather (120), Jade , Cured Rugged Hide , Rune Thread Ironfeather Breastplate Item Level 58 Binds when equipped Chest Leather 165 Armor +12 Intellect +28 Spirit Durability 100 / 100 Requires Level 53 Equip: Increases damage and healing done by magical spells and effects by up to 21 . Ironfeather Armor (0/2) Ironfeather Breastplate Ironfeather Shoulders Sell Price: 2 36 50",
+  "entity_id": 19086,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:30+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1529,
+      "name": "Jade",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1529"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15066,
+      "name": "Ironfeather Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15066"
+    },
+    {
+      "id": 15067,
+      "name": "Ironfeather Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15067"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15420,
+      "name": "Ironfeather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15420"
+    },
+    {
+      "id": 19086,
+      "name": "Ironfeather Breastplate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19086"
+    }
+  ],
+  "name": "Ironfeather Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 15066,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=19086",
+      "subject_id": 19086,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 15066,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=19086",
+      "subject_id": 19086,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 19086,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/19086",
+  "url": "https://www.wowhead.com/forever/spell=19086"
+}

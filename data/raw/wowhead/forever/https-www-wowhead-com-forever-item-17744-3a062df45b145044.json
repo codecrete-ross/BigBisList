@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heart of Noxxion Item Level 51 Binds when picked up Unique-Equipped Trinket +12 Nature Resistance Requires Level 46 Equip: Reduces the duration of all poison effects applied to you by 10%. Use: Removes 1 poison effect. (5 Min Cooldown) Sell Price: 1 20 2 Dropped by: Noxxion Drop Chance: 36.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 17744,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the duration of all poison effects applied to you by 10%.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Removes 1 poison effect. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 17744,
+    "item_level": 51,
+    "name": "Heart of Noxxion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 12.0
+    },
+    "use_effects": [
+      "Use: Removes 1 poison effect. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=17744"
+  },
+  "linked_entities": [
+    {
+      "id": 21954,
+      "name": "Removes 1 poison effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21954"
+    },
+    {
+      "id": 1294777,
+      "name": "Reduces the duration of all poison effects applied to you by 10%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1294777"
+    }
+  ],
+  "name": "Heart of Noxxion",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 36.01,
+      "entity_name": "Noxxion",
+      "source_url": "https://www.wowhead.com/forever/item=17744",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8ce99b51aa2dba9303aeb4395ffb70a56d78accdf1df2a9bb591333170f82e47",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17744",
+  "url": "https://www.wowhead.com/forever/item=17744"
+}

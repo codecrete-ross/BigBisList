@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Rebirth 85% of base mana 30 yd range 2 sec cast 30 min cooldown Requires Druid Requires level 60 Reagents: Ironwood Seed Returns the spirit to the body, restoring a dead target to life with 2200 health and 2800 mana.",
+  "entity_id": 20748,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:58+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 17038,
+      "name": "Ironwood Seed",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17038"
+    },
+    {
+      "id": 20748,
+      "name": "Rebirth",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20748"
+    }
+  ],
+  "name": "Rebirth",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "0c161c6f69e308410a4198468ee18f57efcb8a955edc46f4a47118158ca41fb3",
+  "spell_id": 20748,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20748",
+  "url": "https://www.wowhead.com/forever/spell=20748"
+}

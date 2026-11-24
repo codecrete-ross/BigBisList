@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/1101"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:21.986686+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 4197,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/1101",
+      "subject_id": 1101,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 29,
+    "name": "The Crone of the Kraul",
+    "quest_id": 1101,
+    "quest_level": 34,
+    "reward_item_ids": [
+      4197
+    ],
+    "zone": "Razorfen Kraul, The Barrens"
+  },
+  "source_content_digest": "cff83e6a855374548d8b19928ae07b890f198260d0ad8c26eb0c652a69695399",
+  "url": "https://guide.wow4ever.se/en/quests/1101"
+}

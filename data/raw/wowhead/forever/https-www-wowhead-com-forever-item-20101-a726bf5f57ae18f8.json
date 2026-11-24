@@ -1,0 +1,86 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Lizardhide Boots Item Level 43 Binds when picked up Unique Feet Leather 89 Armor +6 Agility +10 Stamina +5 Intellect +40 Armor Requires Level 38 Requires The League of Arathor - Revered Equip: + 6 Attack Power. Equip: Run speed increased slightly. Sell Price: 63 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 20101,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 89,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +6 Attack Power.",
+        "stats": {
+          "attack_power": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Run speed increased slightly.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +6 Attack Power.",
+      "Equip: Run speed increased slightly."
+    ],
+    "id": 20101,
+    "item_level": 43,
+    "name": "Highlander's Lizardhide Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "attack_power": 6.0,
+      "intellect": 5.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20101"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    },
+    {
+      "id": 23990,
+      "name": "Run speed increased slightly.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23990"
+    }
+  ],
+  "name": "Highlander's Lizardhide Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Lizardhide Boots Item Level 43 Binds when picked up Unique Feet Leather 89 Armor +6 Agility +10 Stamina +5 Intellect +40 Armor Requires Level 38 Requires The League of Arathor - Revered Equip: + 6 Attack Power. Equip: Run speed increased slightly. Sell Price: 63 25",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20101",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20101",
+  "url": "https://www.wowhead.com/forever/item=20101"
+}

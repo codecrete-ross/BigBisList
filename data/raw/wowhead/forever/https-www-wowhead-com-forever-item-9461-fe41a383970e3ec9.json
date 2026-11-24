@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Charged Gear Item Level 36 Binds when picked up Finger <Random enchantment> +5 Arcane Resistance +5 Nature Resistance Requires Level 31 Sell Price: 38 19 Dropped by: Mekgineer Thermaplugg Drop Chance: 32.60%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 9461,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 9461,
+    "item_level": 36,
+    "name": "Charged Gear",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 31,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 5.0,
+      "nature_resistance": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9461"
+  },
+  "linked_entities": [],
+  "name": "Charged Gear",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.6,
+      "entity_name": "Mekgineer Thermaplugg",
+      "source_url": "https://www.wowhead.com/forever/item=9461",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9461",
+  "url": "https://www.wowhead.com/forever/item=9461"
+}

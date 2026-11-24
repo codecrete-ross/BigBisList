@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Heavy Wool Bandage Item Level 1 Requires First Aid (75) Use: Heals 301 damage over 7 sec. Max Stack: 20 Sell Price: 57",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 3531,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 301 damage over 7 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 3531,
+    "item_level": 1,
+    "name": "Heavy Wool Bandage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals 301 damage over 7 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=3531"
+  },
+  "linked_entities": [
+    {
+      "id": 2942,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=2942"
+    },
+    {
+      "id": 3268,
+      "name": "Heals 301 damage over 7 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3268"
+    }
+  ],
+  "name": "Heavy Wool Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "165d8e3c22cef6ef8774aa5d426a9b570a4ab12ea9b788b6482a5e40db603dc0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3531",
+  "url": "https://www.wowhead.com/forever/item=3531"
+}

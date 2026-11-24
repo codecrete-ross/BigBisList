@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/news/new-high-level-battle-mage-weapon-discovered-in-wow-forever-383860"
+    },
+    {
+      "credit": "Kissta96, public player discovery",
+      "source": "https://www.reddit.com/r/wowforever/comments/1xucycx/scroll_of_wit_witchfang_wits_edge/"
+    }
+  ],
+  "confidence": "published_live_discovery_with_player_report",
+  "fetched_at": "2026-11-13T21:54:21.775283+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 100691,
+      "collected_at": "2026-11-13T21:54:21.775283+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wits-edge-report",
+      "source_content_digest": "0438c276bdffcee694c87e73af49823026e7a4cc8ac5f4799942558cc7373b71",
+      "source_url": "https://www.wowhead.com/forever/news/new-high-level-battle-mage-weapon-discovered-in-wow-forever-383860"
+    },
+    {
+      "bytes": 237551,
+      "collected_at": "2026-11-13T21:54:22.224470+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "method-comprehension",
+      "source_content_digest": "bcd88e3f14113b9fa5c0c9b22c8bc22b8b651c08cce5f0b66af56761adbbdf16",
+      "source_url": "https://www.method.gg/wow-forever/mage-comprehension-and-study-guide-in-wow-forever-how-scrolls-work-and-all-scroll-effects"
+    },
+    {
+      "bytes": 116852,
+      "collected_at": "2026-11-13T21:59:21.273851+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-era-comprehension",
+      "source_content_digest": "bace74a1d97539d2e153657cbf65f8817f8dafb4a63fbb4d40e1177d78aec4a0",
+      "source_url": "https://theforeverera.com/en/guides/professions/comprehension/"
+    },
+    {
+      "bytes": 50216,
+      "collected_at": "2026-11-13T21:54:22.440594+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "official-comprehension",
+      "source_content_digest": "df2d650187391fd6c36a8bc5130bb6917e5388cf925a2b4d02d4423fa928a177",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302097"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "consumable_id": 277504,
+    "finding": "The published discovery identifies the exact conversion. The player report identifies the 175-skill scroll family. The conversion tooltip and current client tables confirm the input and output. The chance of obtaining the Scroll of Wit is unquantified.",
+    "item_id": 276632,
+    "reagent_item_id": 13964,
+    "reported_drop_id": 1853,
+    "reported_drop_zone": "Scholomance",
+    "reported_skill": 175,
+    "reported_skill_source": "Kissta96",
+    "reported_skill_source_url": "https://www.reddit.com/r/wowforever/comments/1xucycx/scroll_of_wit_witchfang_wits_edge/"
+  },
+  "source_content_digest": "0438c276bdffcee694c87e73af49823026e7a4cc8ac5f4799942558cc7373b71",
+  "url": "https://www.wowhead.com/forever/news/new-high-level-battle-mage-weapon-discovered-in-wow-forever-383860"
+}

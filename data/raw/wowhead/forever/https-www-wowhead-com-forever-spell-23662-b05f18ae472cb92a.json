@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Wisdom of the Timbermaw 1 min cast Reagents: Bolt of Runecloth (8), Essence of Earth (3), Living Essence (3), Ironweb Spider Silk (2) Wisdom of the Timbermaw Item Level 58 Binds when equipped Waist Cloth 46 Armor +14 Intellect +9 Spirit Durability 30 / 30 Requires Level 53 Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Sell Price: 92 32",
+  "entity_id": 23662,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:53+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 12803,
+      "name": "Living Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12803"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14227,
+      "name": "Ironweb Spider Silk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14227"
+    },
+    {
+      "id": 19047,
+      "name": "Wisdom of the Timbermaw",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19047"
+    },
+    {
+      "id": 23662,
+      "name": "Wisdom of the Timbermaw",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23662"
+    }
+  ],
+  "name": "Wisdom of the Timbermaw",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 19047,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=23662",
+      "subject_id": 23662,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 23662,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/23662",
+  "url": "https://www.wowhead.com/forever/spell=23662"
+}

@@ -1,0 +1,165 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Pinned documented Forever emulator API after Static/Derived/Dynamic composition; curated additional dungeon item and NPC records.",
+  "fetched_at": "2026-11-06T04:53:14.048581+00:00",
+  "flavor": "forever",
+  "npc_records": [
+    {
+      "factionID": 270,
+      "id": 3671,
+      "maxLevel": 20,
+      "minLevel": 20,
+      "name": "Lady Anacondra",
+      "npcFlags": 0,
+      "subName": "Fanglord",
+      "zoneID": 0
+    },
+    {
+      "factionID": 24,
+      "id": 4627,
+      "maxLevel": 25,
+      "minLevel": 24,
+      "name": "Arugal's Voidwalker",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 416,
+      "id": 7228,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Ironaya",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 152,
+      "id": 7355,
+      "maxLevel": 40,
+      "minLevel": 40,
+      "name": "Tuten'kash",
+      "npcFlags": 0,
+      "zoneID": 0
+    },
+    {
+      "factionID": 14,
+      "id": 10268,
+      "maxLevel": 60,
+      "minLevel": 60,
+      "name": "Gizrul the Slavener",
+      "npcFlags": 0,
+      "zoneID": 0
+    }
+  ],
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "class": 4,
+      "id": 5404,
+      "itemLevel": 23,
+      "name": "Serpent's Shoulders",
+      "npcDrops": {
+        "1": 3671
+      },
+      "requiredLevel": 18,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 5943,
+      "itemLevel": 25,
+      "name": "Rift Bracers",
+      "npcDrops": {
+        "1": 4627
+      },
+      "requiredLevel": 20,
+      "startQuest": 0,
+      "subClass": 3
+    },
+    {
+      "class": 4,
+      "id": 9407,
+      "itemLevel": 42,
+      "name": "Stoneweaver Leggings",
+      "npcDrops": {
+        "1": 7228
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 2,
+      "id": 9408,
+      "itemLevel": 42,
+      "name": "Ironshod Bludgeon",
+      "npcDrops": {
+        "1": 7228
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 10
+    },
+    {
+      "class": 4,
+      "id": 10412,
+      "itemLevel": 21,
+      "name": "Belt of the Fang",
+      "npcDrops": {
+        "1": 3671
+      },
+      "requiredLevel": 16,
+      "startQuest": 0,
+      "subClass": 2
+    },
+    {
+      "class": 4,
+      "id": 10775,
+      "itemLevel": 42,
+      "name": "Carapace of Tuten'kash",
+      "npcDrops": {
+        "1": 7355
+      },
+      "requiredLevel": 40,
+      "startQuest": 0,
+      "subClass": 4
+    },
+    {
+      "class": 4,
+      "id": 10776,
+      "itemLevel": 42,
+      "name": "Silky Spider Cape",
+      "npcDrops": {
+        "1": 7355
+      },
+      "requiredLevel": 37,
+      "startQuest": 0,
+      "subClass": 1
+    },
+    {
+      "class": 4,
+      "id": 16718,
+      "itemLevel": 60,
+      "name": "Wildheart Spaulders",
+      "npcDrops": {
+        "1": 10268
+      },
+      "requiredLevel": 55,
+      "startQuest": 0,
+      "subClass": 2
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverItemDB.lua"
+}

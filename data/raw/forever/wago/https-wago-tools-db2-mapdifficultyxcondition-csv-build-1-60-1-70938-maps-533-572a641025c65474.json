@@ -1,0 +1,178 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client table exports from Wago.tools.",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:59:44.4734247Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T03:59:44.4734247Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 19410,
+      "collected_at": "2026-11-13T03:59:46.9129781Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-encounters",
+      "source_content_digest": "8e0b39eacaef229c083dff18ad4926ccf8fd3babd586ac0a2300586bb00ad245",
+      "source_url": "https://wago.tools/db2/DungeonEncounter/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 30663,
+      "collected_at": "2026-11-13T03:53:10.8299408Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "blizzard-raid-overview",
+      "source_content_digest": "c2bd4d1717f976e0434bd32d70299082ab3979c36c9fec0e1893ed625e493d84",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5178761,
+      "collected_at": "2026-11-13T04:11:17.7410311Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-quest-all",
+      "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 234773,
+      "collected_at": "2026-11-13T03:45:13.3980130Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "eg-vendors-70888",
+      "source_content_digest": "c3da2ed0c0d62e15ee261370dceb23557faaf14aaef579fa7d11067c9cdd9cfd",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "binding": "bind_on_pickup",
+    "difficulties": [
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "9",
+        "Flags": "0",
+        "ID": "4455",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "533",
+        "MaxPlayers": "40",
+        "Message_lang": "",
+        "ResetInterval": "2",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "186",
+        "Flags": "0",
+        "ID": "4985",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "533",
+        "MaxPlayers": "40",
+        "Message_lang": "",
+        "ResetInterval": "2",
+        "WorldStateExpressionID": "0"
+      }
+    ],
+    "encounter": {
+      "Bit": "4",
+      "CompleteWorldStateID": "2247",
+      "DifficultyID": "0",
+      "Faction": "-1",
+      "Flags": "1028",
+      "ID": "1111",
+      "ItemSequenceLevel": "0",
+      "MapID": "533",
+      "Name_lang": "Grobbulus",
+      "OrderIndex": "750",
+      "SpellIconFileID": "0"
+    },
+    "entry_gates": [
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "1563",
+        "MapDifficultyID": "4455",
+        "OrderIndex": "0",
+        "PlayerConditionID": "68242"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "1992",
+        "MapDifficultyID": "4455",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88118"
+      },
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "2118",
+        "MapDifficultyID": "4985",
+        "OrderIndex": "0",
+        "PlayerConditionID": "134782"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "2119",
+        "MapDifficultyID": "4985",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88118"
+      }
+    ],
+    "loot_source_npc_id": 15931,
+    "map_id": 533,
+    "matched_create_item_effects": []
+  },
+  "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+  "unavailable_item_ids": [
+    22967,
+    22968
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1,
+    "slot": "Shoulder"
+  },
+  "url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/533"
+}

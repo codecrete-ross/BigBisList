@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of The Five Thunders Item Level 65 Binds when picked up Shoulder Mail 286 Armor +12 Stamina +13 Intellect +12 Spirit Durability 70 / 70 Classes: Shaman Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects. The Five Thunders (0/8) Item #227039 Item #227040 Item #227038 Item #227037 Item #227036 Item #227035 Item #227034 Item #227033 Sell Price: 2 92 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227011,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 286,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 22,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 227011,
+    "item_level": 65,
+    "name": "Mantle of The Five Thunders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "intellect": 13.0,
+      "spell_damage": 7.0,
+      "spirit": 12.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227011"
+  },
+  "linked_entities": [],
+  "name": "Mantle of The Five Thunders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "df327635df593cb3bba7ffe9617b3f3c8e7a009f1e34a489ce923a3dd08ab155",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227011",
+  "url": "https://www.wowhead.com/forever/item=227011"
+}

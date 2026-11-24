@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Wago Tools",
+      "source": "https://wago.tools/db2/SpellItemEnchantment/csv?build=1.60.1.70888#/rows/264,2603"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "client_db2_rows",
+  "fetched_at": "2026-11-11T06:45:25+00:00",
+  "flavor": "forever",
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "export_build": "1.60.1.70888",
+    "rows": {
+      "264": {
+        "Condition_ID": "0",
+        "Duration": "600",
+        "EffectArg_0": "8083",
+        "Flags": "0",
+        "ItemLevelMax": "0",
+        "ItemLevelMin": "0",
+        "MaxLevel": "0",
+        "MinLevel": "0",
+        "RequiredSkillID": "0",
+        "RequiredSkillRank": "0"
+      },
+      "2603": {
+        "Condition_ID": "0",
+        "Duration": "0",
+        "EffectArg_0": "24303",
+        "Flags": "0",
+        "ItemLevelMax": "0",
+        "ItemLevelMin": "0",
+        "MaxLevel": "0",
+        "MinLevel": "0",
+        "RequiredSkillID": "0",
+        "RequiredSkillRank": "0"
+      }
+    },
+    "table": "SpellItemEnchantment"
+  },
+  "source_content_digest": "53bc1debe8f1ee9a10afa03fa7bf7bc507218ad993aec80843059d6b5a7db582",
+  "url": "https://wago.tools/db2/SpellItemEnchantment/csv?build=1.60.1.70888#/rows/264,2603"
+}

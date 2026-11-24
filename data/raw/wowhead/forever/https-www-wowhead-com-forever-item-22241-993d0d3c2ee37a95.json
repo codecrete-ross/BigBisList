@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dark Warder's Pauldrons Item Level 57 Binds when picked up Shoulder Leather 122 Armor +11 Strength +17 Agility +7 Stamina Durability 60 / 60 Requires Level 52 Sell Price: 1 60 4 Dropped by: Warder Stilgiss Drop Chance: 18.94%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 22241,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22241,
+    "item_level": 57,
+    "name": "Dark Warder's Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "stamina": 7.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22241"
+  },
+  "linked_entities": [],
+  "name": "Dark Warder's Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.94,
+      "entity_name": "Warder Stilgiss",
+      "source_url": "https://www.wowhead.com/forever/item=22241",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ca73e384f7ef8865e32304665415afdcf9dbc6c6d2a96b846177082246a976a8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22241",
+  "url": "https://www.wowhead.com/forever/item=22241"
+}

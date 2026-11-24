@@ -1,0 +1,85 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Talons of Wrath 10 sec cast Tools: Runed Silver Rod Reagents: Large Radiant Shard (2), Greater Nether Essence (4), Dream Dust (6), Magenta Dye (2), Cerulean Dye , Star Wood Creates talons of wrath. Talons of Wrath (0) Item Level 45 Binds when picked up Relic Idol Classes: Druid Requires Level 40 Equip: Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%) Sell Price: 20 1",
+  "entity_id": 1248974,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:11:52+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 11178,
+      "name": "Large Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11178"
+    },
+    {
+      "id": 11291,
+      "name": "Star Wood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11291"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249441,
+      "name": "Talons of Wrath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249441"
+    },
+    {
+      "id": 1248974,
+      "name": "Talons of Wrath",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248974"
+    },
+    {
+      "id": 1248996,
+      "name": "Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248996"
+    }
+  ],
+  "name": "Talons of Wrath",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249441,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1248974",
+      "subject_id": 1248974,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1248974,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1248974",
+  "url": "https://www.wowhead.com/forever/spell=1248974"
+}

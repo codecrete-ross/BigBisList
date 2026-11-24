@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Amplify Magic 150 Mana 30 yd range Instant Requires Mage Requires level 18 Amplifies magic used against the targeted party member, increasing damage taken from spells by up to 23 and healing spells by up to 45. Lasts 10 min.",
+  "entity_id": 1008,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:32+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1008,
+      "name": "Amplify Magic",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1008"
+    }
+  ],
+  "name": "Amplify Magic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "b7eda98aee9a2f0bee2b50d659cd8cba16f586568304a4101c68591415130a16",
+  "spell_id": 1008,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1008",
+  "url": "https://www.wowhead.com/forever/spell=1008"
+}

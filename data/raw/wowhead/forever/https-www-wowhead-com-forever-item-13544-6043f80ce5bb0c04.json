@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spectral Essence Item Level 60 Binds when picked up Unique-Equipped Trinket Use: Releases the spirit from an Undead corpse within 10 yds, laying it to rest and restoring 878 to 988 Health. (5 Min Cooldown) \"Allows communication with the deceased of Caer Darrow.\" Sell Price: 1 65 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13544,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Releases the spirit from an Undead corpse within 10 yds, laying it to rest and restoring 878 to 988 Health. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 13544,
+    "item_level": 60,
+    "name": "Spectral Essence",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Releases the spirit from an Undead corpse within 10 yds, laying it to rest and restoring 878 to 988 Health. (5 Min Cooldown) \"Allows communication with the deceased of Caer Darrow.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13544"
+  },
+  "linked_entities": [
+    {
+      "id": 1298497,
+      "name": "Releases the spirit from an Undead corpse within 10 yds, laying it to rest and restoring 878 to 988 Health.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1298497"
+    }
+  ],
+  "name": "Spectral Essence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "335738b57f861e369f29ec44dd7793ca472d84a6379e1d43c1b2e9d8297088e3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13544",
+  "url": "https://www.wowhead.com/forever/item=13544"
+}

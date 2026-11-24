@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Read Leyline 0.5 sec cast 2 min cooldown Requires level 1 Attempt to tap into the power of a nearby leyline, increasing your Health and Mana regeneration by 50% for 15 sec. If a leyline is nearby, you will become Attuned for the next 1 hour and the effect of this ability will be increased by 100%.",
+  "entity_id": 1259705,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:05+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1259705,
+      "name": "Read Leyline",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1259705"
+    }
+  ],
+  "name": "Read Leyline",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8f14d0e0f54b08c669af0047a6d3d8212720f1bf50535811ec53386aefc973af",
+  "spell_id": 1259705,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1259705",
+  "url": "https://www.wowhead.com/forever/spell=1259705"
+}

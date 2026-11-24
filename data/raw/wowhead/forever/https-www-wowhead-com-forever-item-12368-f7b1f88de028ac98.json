@@ -1,0 +1,70 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=12368"
+    }
+  ],
+  "binding": "quest",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Dawn's Gambit Item Level 1 Quest Item Unique Use: Place within the Viewing Room of the Scholomance.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T22:51:25.673031+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 701,
+      "collected_at": "2026-11-13T22:51:25.673031+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-dawns-use",
+      "source_content_digest": "19c69b1fdb1da9ce97e17c7fcc73ccd07583da3b427866cea8d4a95ce269cd85",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/12368"
+    }
+  ],
+  "inventory_slot": null,
+  "item_id": 12368,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Place within the Viewing Room of the Scholomance.",
+        "type": "conditional"
+      }
+    ],
+    "id": 12368,
+    "item_level": 1,
+    "name": "Dawn's Gambit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Place within the Viewing Room of the Scholomance."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12368"
+  },
+  "linked_entities": [
+    {
+      "id": 17045,
+      "name": "Place within the Viewing Room of the Scholomance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17045"
+    }
+  ],
+  "name": "Dawn's Gambit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "19c69b1fdb1da9ce97e17c7fcc73ccd07583da3b427866cea8d4a95ce269cd85",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=12368"
+}

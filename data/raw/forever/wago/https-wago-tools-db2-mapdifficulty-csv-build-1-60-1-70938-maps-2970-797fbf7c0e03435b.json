@@ -1,0 +1,244 @@
+{
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T03:59:43.3350168Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T03:59:44.4734247Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T09:58:41.2593227Z",
+      "http": "200",
+      "name": "wago-drowned-tuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 19410,
+      "collected_at": "2026-11-13T09:58:41.4809890Z",
+      "http": "200",
+      "name": "wago-drowned-encounter",
+      "source_content_digest": "8e0b39eacaef229c083dff18ad4926ccf8fd3babd586ac0a2300586bb00ad245",
+      "source_url": "https://wago.tools/db2/DungeonEncounter/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "content_tuning": {
+      "AllowedMaxOffset": "0",
+      "AllowedMinOffset": "0",
+      "DMGPrimaryStatScalingCurveID": "0",
+      "DMGScalingCurveID": "0",
+      "ExpansionID": "0",
+      "Flags": "0",
+      "HPPrimaryStatScalingCurveID": "0",
+      "HPScalingCurveID": "0",
+      "ID": "7424",
+      "ILevel": "0",
+      "LfgMaxLevel": "0",
+      "LfgMinLevel": "0",
+      "MaxLevelScalingOffset": "0",
+      "MaxLevelSquish": "60",
+      "MinLevelScalingOffset": "0",
+      "MinLevelSquish": "30",
+      "PrimaryStatScalingModPlayerDataElementCharacterID": "0",
+      "PrimaryStatScalingModPlayerDataElementCharacterMultiplier": "0",
+      "XpMultQuest": "1"
+    },
+    "encounters": [
+      {
+        "Bit": "0",
+        "CompleteWorldStateID": "30695",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1028",
+        "ID": "3474",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Zul'Alai",
+        "OrderIndex": "0",
+        "SpellIconFileID": "0"
+      },
+      {
+        "Bit": "1",
+        "CompleteWorldStateID": "30703",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1024",
+        "ID": "3475",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Var'Taka",
+        "OrderIndex": "1000",
+        "SpellIconFileID": "0"
+      },
+      {
+        "Bit": "2",
+        "CompleteWorldStateID": "30712",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1028",
+        "ID": "3476",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Captain Dreadrise",
+        "OrderIndex": "2000",
+        "SpellIconFileID": "0"
+      },
+      {
+        "Bit": "3",
+        "CompleteWorldStateID": "30716",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1028",
+        "ID": "3478",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Deathless Guardians",
+        "OrderIndex": "3000",
+        "SpellIconFileID": "0"
+      },
+      {
+        "Bit": "4",
+        "CompleteWorldStateID": "30733",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1028",
+        "ID": "3479",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Min'loth the Serpent",
+        "OrderIndex": "6000",
+        "SpellIconFileID": "0"
+      },
+      {
+        "Bit": "5",
+        "CompleteWorldStateID": "31316",
+        "DifficultyID": "0",
+        "Faction": "-1",
+        "Flags": "1024",
+        "ID": "3511",
+        "ItemSequenceLevel": "0",
+        "MapID": "2970",
+        "Name_lang": "Primeval Elemental",
+        "OrderIndex": "5000",
+        "SpellIconFileID": "0"
+      }
+    ],
+    "finding": "The build supplies the normal entrance and related level tuning. The reviewed acquisition threshold uses level 35 from Blizzard's published range.",
+    "level_condition": {
+      "ContentTuningID": "7424",
+      "Flags": "33",
+      "ID": "159268",
+      "MaxLevel": "20",
+      "MinLevel": "10"
+    },
+    "map": {
+      "AreaTableID": "16550",
+      "CorpseMapID": "-1",
+      "Corpse_0": "0",
+      "Corpse_1": "0",
+      "CosmeticParentMapID": "-1",
+      "Directory": "2970",
+      "ExpansionID": "0",
+      "Flags_0": "8404573",
+      "Flags_1": "1040",
+      "Flags_2": "2347232",
+      "ID": "2970",
+      "InstanceType": "1",
+      "LoadingScreenID": "695",
+      "MapDescription0_lang": "",
+      "MapDescription1_lang": "",
+      "MapName_lang": "The Drowned City",
+      "MapType": "1",
+      "MaxPlayers": "0",
+      "MinimapIconScale": "1",
+      "NavigationMaxDistance": "0",
+      "OceanLiquidTypeID": "1250",
+      "ParentMapID": "-1",
+      "PreloadFileDataID": "0",
+      "PvpLongDescription_lang": "",
+      "PvpShortDescription_lang": "",
+      "TimeOfDayOverride": "-1",
+      "TimeOffset": "0",
+      "WdtFileDataID": "6992746",
+      "WindSettingsID": "136",
+      "ZmpFileDataID": "0"
+    },
+    "normal_conditions": [
+      {
+        "FailureDescription_lang": "",
+        "ID": "4240",
+        "MapDifficultyID": "5935",
+        "OrderIndex": "0",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+        "ID": "4241",
+        "MapDifficultyID": "5935",
+        "OrderIndex": "1",
+        "PlayerConditionID": "159268"
+      },
+      {
+        "FailureDescription_lang": "This Dungeon is currently not available.",
+        "ID": "4282",
+        "MapDifficultyID": "5935",
+        "OrderIndex": "2",
+        "PlayerConditionID": "159323"
+      }
+    ],
+    "normal_difficulty": {
+      "ContentTuningID": "0",
+      "DifficultyID": "1",
+      "Flags": "0",
+      "ID": "5935",
+      "ItemContext": "0",
+      "ItemContextPickerID": "0",
+      "LockID": "0",
+      "MapID": "2970",
+      "MaxPlayers": "5",
+      "Message_lang": "",
+      "ResetInterval": "0",
+      "WorldStateExpressionID": "0"
+    }
+  },
+  "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+  "url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938#/maps/2970"
+}

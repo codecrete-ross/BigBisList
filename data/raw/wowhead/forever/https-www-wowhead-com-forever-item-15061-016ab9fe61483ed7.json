@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Living Shoulders Item Level 54 Binds when equipped Shoulder Leather 117 Armor +8 Stamina +13 Spirit +3 Nature Resistance Durability 60 / 60 Requires Level 49 Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects. Sell Price: 1 38 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:55:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 15061,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 117,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 31,
+          "spell_damage": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 31 and damage done by up to 10 for all magical spells and effects."
+    ],
+    "id": 15061,
+    "item_level": 54,
+    "name": "Living Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 49,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 31.0,
+      "nature_resistance": 3.0,
+      "spell_damage": 10.0,
+      "spirit": 13.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15061"
+  },
+  "linked_entities": [],
+  "name": "Living Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15061",
+  "url": "https://www.wowhead.com/forever/item=15061"
+}

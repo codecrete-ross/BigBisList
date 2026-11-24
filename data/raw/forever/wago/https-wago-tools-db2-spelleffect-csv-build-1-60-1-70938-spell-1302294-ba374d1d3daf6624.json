@@ -1,0 +1,180 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Azeroth Wiki",
+      "source": "https://azeroth.wiki/forever/dungeons/scholomance"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_current_crafting_and_access",
+  "fetched_at": "2026-11-13T03:59:43.4491189Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 291447,
+      "collected_at": "2026-11-13T17:36:00.9057280Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spellreagents",
+      "source_content_digest": "be6e987755f7097348eb072073ae3175b3d56016f43f90615a081d33d6affff6",
+      "source_url": "https://wago.tools/db2/SpellReagents/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 466574,
+      "collected_at": "2026-11-13T21:54:22.679729+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "witchblade-wiki",
+      "source_content_digest": "d6a551ac7439058fab9b4f13df68b5cdd8ce89a080e8c7d7672376107289ac38",
+      "source_url": "https://azeroth.wiki/forever/dungeons/scholomance"
+    },
+    {
+      "bytes": 546,
+      "collected_at": "2026-11-13T21:54:21.927302+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "create-wits-edge-tooltip",
+      "source_content_digest": "ce21ef7822bc348d3a2ef8de00c02e2c0069666c805adde198121faea09dfd5d",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/spell/1302294"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_client_creation_effect",
+      "object_id": 276632,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/spell/1302294",
+      "subject_id": 1302294,
+      "subject_type": "spell"
+    }
+  ],
+  "reviewed_page_facts": {
+    "comprehend_spell_id": 1296017,
+    "consumed_item_count": 1,
+    "consumed_item_id": 13964,
+    "content_tuning_dungeon_level": 57,
+    "content_tuning_entry_minimum": 50,
+    "created_item_id": 276632,
+    "creation_effect_row": 1327844,
+    "creation_spell_id": 1302294,
+    "drop_npc_id": 1853,
+    "dungeon_entry_conditions": [
+      {
+        "FailureDescription_lang": "",
+        "ID": "3049",
+        "MapDifficultyID": "28",
+        "OrderIndex": "0",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+        "ID": "4217",
+        "MapDifficultyID": "28",
+        "OrderIndex": "1",
+        "PlayerConditionID": "159274"
+      },
+      {
+        "FailureDescription_lang": "This Dungeon is currently not available.",
+        "ID": "4303",
+        "MapDifficultyID": "28",
+        "OrderIndex": "2",
+        "PlayerConditionID": "159334"
+      }
+    ],
+    "dungeon_map_id": 289,
+    "dungeon_normal_access_message": "You must be at least level 33 to enter.",
+    "finding": "The weapon drop is reviewed from level 57 at the documented shared Scholomance access threshold. This is a conservative availability threshold. The public key-holder requirement applies to the group. The separate level-57 equipment requirement applies to each Mage using the weapon.",
+    "raw_scroll_ids": [
+      281015,
+      281016,
+      281017,
+      281018
+    ],
+    "raw_scroll_skill_required": 175,
+    "reviewed_dungeon_route_level": 57,
+    "skill_line_id": 3012,
+    "use_item_id": 277504
+  },
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/spell/1302294"
+}

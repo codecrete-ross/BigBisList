@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins Forever Database",
+      "source": "https://db.icy-veins.com/wow-forever/quests/97007"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:59:49.885688+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "icyveins",
+  "relationships": [
+    {
+      "object_id": 276333,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/97007",
+      "subject_id": 97007,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 54,
+    "name": "Wood Remains",
+    "quest_id": 97007,
+    "reward_item_roles": {
+      "276333": "choices"
+    },
+    "side": "Horde",
+    "zone": "Mount Hyjal"
+  },
+  "source_capture_format": "indexed page, manually normalized exact public fields and reward link targets on 2026-11-12",
+  "source_content_digest": "b2f532be63ea6a6754abe5e0247462f63be0bda245fc86e93690da0ba500df49",
+  "url": "https://db.icy-veins.com/wow-forever/quests/97007"
+}

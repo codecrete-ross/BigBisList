@@ -1,0 +1,85 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Anathema Item Level 40 Binds when equipped Unique Two-Hand Staff 97 - 146 Damage Speed 3.00 (40.50 damage per second) +13 Stamina +18 Intellect Restores + 4 mana per 5 sec. +12 Shadow Resistance Classes: Priest Equip: Increases damage done by Shadow spells and effects by up to 40. Use: Calls forth Benediction. (1 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 289297,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 40.5,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 40.",
+        "stats": {
+          "shadow_damage": 40
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Calls forth Benediction. (1 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 289297,
+    "item_level": 40,
+    "name": "Anathema",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "mp5": 4.0,
+      "shadow_damage": 40.0,
+      "shadow_resistance": 12.0,
+      "stamina": 13.0
+    },
+    "use_effects": [
+      "Use: Calls forth Benediction. (1 Min Cooldown)"
+    ],
+    "weapon_max_damage": 146,
+    "weapon_min_damage": 97,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=289297"
+  },
+  "linked_entities": [
+    {
+      "id": 1327993,
+      "name": "Calls forth Benediction.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1327993"
+    }
+  ],
+  "name": "Anathema",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "c0269d151eba953e33f40267b728808c1a81db4a6916ea8753e507e8823508ea",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/289297",
+  "url": "https://www.wowhead.com/forever/item=289297"
+}

@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/6027"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:15.634162+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 16793,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/6027",
+      "subject_id": 6027,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 30,
+    "name": "Book of the Ancients",
+    "quest_id": 6027,
+    "reward_item_roles": {
+      "16791": "choices",
+      "16793": "choices"
+    },
+    "side": "Both",
+    "zone": "Desolace"
+  },
+  "source_content_digest": "a3fb494ed152bbcffbaf87d6aafed4baf6d64179094950b4dfcb92fbd97d9466",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/6027"
+}

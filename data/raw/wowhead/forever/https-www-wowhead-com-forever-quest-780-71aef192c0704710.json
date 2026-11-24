@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Battleboars Grull Hawkwind in Camp Narache wants you to kill Battleboars and bring back 8 Battleboar Snouts and 8 Battleboar Flanks. Requirements: - Battleboar Snout x 8 - Battleboar Flank x 8",
+  "entity_id": 780,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:48.025Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Battleboars",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      },
+      "start": {
+        "entity_id": 2980,
+        "name": "Grull Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4540,
+      "object_name": "Tough Hunk of Bread",
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=780",
+      "subject_id": 780,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 6059,
+      "object_name": "Nomadic Vest",
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=780",
+      "subject_id": 780,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/780",
+  "url": "https://www.wowhead.com/forever/quest=780"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Roogug's Severed Head Item Level 30 Binds when picked up Unique-Equipped Trinket +6 Spirit Requires Level 25 Use: Raise the severed head of Roogug, Horrifying and Silencing all Swine within 15 yds for 5 sec. (5 Min Cooldown) Sell Price: 20 73 Dropped by: Roogug Drop Chance: 2.95%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 274152,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Raise the severed head of Roogug, Horrifying and Silencing all Swine within 15 yds for 5 sec. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 274152,
+    "item_level": 30,
+    "name": "Roogug's Severed Head",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spirit": 6.0
+    },
+    "use_effects": [
+      "Use: Raise the severed head of Roogug, Horrifying and Silencing all Swine within 15 yds for 5 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274152"
+  },
+  "linked_entities": [
+    {
+      "id": 1293306,
+      "name": "Raise the severed head of Roogug, Horrifying and Silencing all Swine within 15 yds for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293306"
+    }
+  ],
+  "name": "Roogug's Severed Head",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 2.95,
+      "entity_name": "Roogug",
+      "source_url": "https://www.wowhead.com/forever/item=274152",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "bc4cbe2c52981f252e7c02c51601ee66caf85602bb765ed12614fe67253a992e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274152",
+  "url": "https://www.wowhead.com/forever/item=274152"
+}

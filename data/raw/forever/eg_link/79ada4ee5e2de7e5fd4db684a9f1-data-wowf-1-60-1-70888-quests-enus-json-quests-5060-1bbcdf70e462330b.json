@@ -1,0 +1,80 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5060"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 13475,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5060",
+      "subject_id": 5060,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T22:20:50.0634946Z",
+        "linked_reward_ids": [],
+        "min_level": 52,
+        "name": "Locked Away",
+        "side": "Both",
+        "source_content_digest": "2b0aaae1a66c09f7e1156a67f0f0f42494a6a81397c6519a400760a0c2636658",
+        "source_url": "https://questing.wiki/wow-forever/quests/5060/",
+        "upstream_checked_at": "2026-10-01",
+        "upstream_url": "https://www.wowhead.com/forever/quest=5060",
+        "zone": "Western Plaguelands"
+      },
+      {
+        "fetched_at": "2026-11-12T21:23:11.716269+00:00",
+        "linked_reward_ids": [
+          13474,
+          13475
+        ],
+        "min_level": 52,
+        "name": "Locked Away",
+        "side": "Both",
+        "source_content_digest": "b31ef6e916a5f109e270cf5d39c79312d5ee7e767a568b53731de8d12ff80283",
+        "source_url": "https://bindonforever.com/quest/5060",
+        "zone": "Western Plaguelands"
+      },
+      {
+        "fetched_at": "2026-11-11T08:13:04.084532+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "Locked Away",
+        "side": "Both",
+        "source_content_digest": "e01ab0cf4d38128fac5d1e73a4a1b27c06cac63ff8b947e46ac090bd86255d6d",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/5060",
+        "zone": "Western Plaguelands"
+      }
+    ],
+    "name": "Locked Away",
+    "observation_count": 4,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 5060,
+    "reported_min_level": 52,
+    "reported_start_item_id": null,
+    "reward_item_roles": {
+      "13475": "items"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5060"
+}

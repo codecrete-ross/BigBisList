@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3825"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:39.804945+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 11868,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3825",
+      "subject_id": 3825,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 48,
+    "name": "Ogre Head On A Stick = Party",
+    "quest_id": 3825,
+    "quest_level": 53,
+    "reward_item_ids": [
+      11868
+    ],
+    "zone": "Burning Steppes"
+  },
+  "source_content_digest": "afddc69c377b9cbc0dd66eb94b8383d9aa592699806026f23b0efa9a59ccaccc",
+  "url": "https://guide.wow4ever.se/en/quests/3825"
+}

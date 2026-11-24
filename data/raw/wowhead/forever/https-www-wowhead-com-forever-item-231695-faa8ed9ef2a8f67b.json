@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Dragonhide Helm Item Level 74 Binds when picked up Head Leather 179 Armor +46 Stamina +20 Intellect +7 Spirit +30 Armor Durability 70 / 70 Classes: Druid Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 23 . Field Marshal's Wildhide (0/6) Field Marshal's Dragonhide Armor Field Marshal's Dragonhide Helm Field Marshal's Dragonhide Spaulders Marshal's Dragonhide Boots Marshal's Dragonhide Gloves Marshal's Dragonhide Pants (2) Set : +20 Stamina. (3) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 2 48 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 231695,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 179,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 231695,
+    "item_level": 74,
+    "name": "Field Marshal's Dragonhide Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 20.0,
+      "spell_power": 23.0,
+      "spirit": 7.0,
+      "stamina": 46.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231695"
+  },
+  "linked_entities": [
+    {
+      "id": 231695,
+      "name": "Field Marshal's Dragonhide Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231695"
+    },
+    {
+      "id": 231696,
+      "name": "Field Marshal's Dragonhide Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231696"
+    },
+    {
+      "id": 231697,
+      "name": "Marshal's Dragonhide Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231697"
+    },
+    {
+      "id": 231698,
+      "name": "Marshal's Dragonhide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231698"
+    },
+    {
+      "id": 231699,
+      "name": "Field Marshal's Dragonhide Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231699"
+    },
+    {
+      "id": 231700,
+      "name": "Marshal's Dragonhide Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231700"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Field Marshal's Dragonhide Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "f64a40e5861bea25b57964634e903c0c2af6395b2558fa0b0cf2520ca88f772f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231695",
+  "url": "https://www.wowhead.com/forever/item=231695"
+}

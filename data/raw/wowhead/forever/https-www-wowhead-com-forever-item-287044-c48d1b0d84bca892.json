@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Predator's Shroud Item Level 60 Binds when equipped Back 43 Armor +9 Agility +14 Stamina Requires Level 55 Equip: + 11 Attack Power. Sell Price: 1 53 80",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:35.2818823Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 287044,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +11 Attack Power.",
+        "stats": {
+          "attack_power": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +11 Attack Power."
+    ],
+    "id": 287044,
+    "item_level": 60,
+    "name": "Predator's Shroud",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "attack_power": 11.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287044"
+  },
+  "linked_entities": [],
+  "name": "Predator's Shroud",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "147f2714b9df70d4f671dd18c6582b0814c1c6d9c9b5af21aa9275b122dae4b8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287044",
+  "url": "https://www.wowhead.com/forever/item=287044"
+}

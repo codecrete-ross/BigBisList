@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Turn Undead 75 Mana 20 yd range 1.5 sec cast 30 sec cooldown Requires Paladin Requires level 52 The targeted undead enemy will be compelled to flee for up to 20 sec. Damage caused may interrupt the effect. Only one target can be turned at a time.",
+  "entity_id": 10326,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:42+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10326,
+      "name": "Turn Undead",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10326"
+    }
+  ],
+  "name": "Turn Undead",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "044d1a83f639f090d0fdccc4be83a67fa5ca78f2ea2354131c6d9ddc53a6f355",
+  "spell_id": 10326,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10326",
+  "url": "https://www.wowhead.com/forever/spell=10326"
+}

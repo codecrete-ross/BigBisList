@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Execute Rank 1 15 Rage Melee Range Instant Requires Warrior Requires level 24 Requires Melee Weapon Requires Battle Stance, Berserker Stance Attempt to finish off a wounded foe, causing 125 damage and converting each extra point of rage into 3 additional damage. Only usable on enemies that have 20% or less health.",
+  "entity_id": 5308,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:23+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5308,
+      "name": "Execute",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5308"
+    }
+  ],
+  "name": "Execute",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "3512bfc36b2f68683879b706304bba8e104dbb8ce00ec6c79921d8e925a83eb1",
+  "spell_id": 5308,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5308",
+  "url": "https://www.wowhead.com/forever/spell=5308"
+}

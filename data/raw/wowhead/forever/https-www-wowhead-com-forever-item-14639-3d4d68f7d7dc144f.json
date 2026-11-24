@@ -1,0 +1,136 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Schematic: Minor Recombobulator Item Level 28 Requires Engineering (140) Use: Teaches you how to make a Minor Recombobulator. Sell Price: 3 75 Dropped by: Black Ooze Drop Chance: 0.12%",
+  "embedded_items": [
+    {
+      "binding": "unknown",
+      "boe": null,
+      "inventory_slot": "Trinket",
+      "item_id": 4381,
+      "item_stats": {
+        "binding": "unknown",
+        "id": 4381,
+        "name": "Minor Recombobulator",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "uncommon",
+        "slot": "Trinket",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=4381"
+      },
+      "name": "Minor Recombobulator",
+      "normalized_requirements": [],
+      "quality": "uncommon",
+      "url": "https://www.wowhead.com/forever/item=4381"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:28:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 14639,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Minor Recombobulator.",
+        "type": "use"
+      }
+    ],
+    "id": 14639,
+    "item_level": 28,
+    "name": "Schematic: Minor Recombobulator",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Minor Recombobulator."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14639"
+  },
+  "linked_entities": [
+    {
+      "id": 1206,
+      "name": "Moss Agate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1206"
+    },
+    {
+      "id": 2319,
+      "name": "Medium Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2319"
+    },
+    {
+      "id": 4371,
+      "name": "Bronze Tube",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4371"
+    },
+    {
+      "id": 4375,
+      "name": "Whirring Bronze Gizmo",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4375"
+    },
+    {
+      "id": 4381,
+      "name": "Minor Recombobulator",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4381"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 3952,
+      "name": "Teaches you how to make a Minor Recombobulator.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3952"
+    },
+    {
+      "id": 18805,
+      "name": "Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18805"
+    }
+  ],
+  "name": "Schematic: Minor Recombobulator",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Minor Recombobulator Item Level 28 Requires Engineering (140) Use: Teaches you how to make a Minor Recombobulator. Sell Price: 3 75 Dropped by: Black Ooze Drop Chance: 0.12%",
+      "scope": "equip_or_use",
+      "skill": 140,
+      "source_url": "https://www.wowhead.com/forever/item=14639",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.12,
+      "entity_name": "Black Ooze",
+      "source_url": "https://www.wowhead.com/forever/item=14639",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "381c3c01cec9edef630262ec8f91ce6707de91e46e2daa4329fcffaf04fc0091",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    3952
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14639",
+  "url": "https://www.wowhead.com/forever/item=14639"
+}

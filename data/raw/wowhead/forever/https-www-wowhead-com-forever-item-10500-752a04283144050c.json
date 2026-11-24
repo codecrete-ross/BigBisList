@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fire Goggles Item Level 41 Binds when equipped Head Cloth 44 Armor +17 Fire Resistance Durability 45 / 45 Requires Engineering (205) Sell Price: 34 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10500,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10500,
+    "item_level": 41,
+    "name": "Fire Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10500"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Fire Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Fire Goggles Item Level 41 Binds when equipped Head Cloth 44 Armor +17 Fire Resistance Durability 45 / 45 Requires Engineering (205) Sell Price: 34 78",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=10500",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "7067c6b6da0ff1fe179f85699405ba00fd637c7ac15e882e3cdba629877ea34f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10500",
+  "url": "https://www.wowhead.com/forever/item=10500"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Nomad Buckler Item Level 12 Binds when equipped Off Hand Shield 239 Armor 4 Block <Random enchantment> Durability 50 / 50 Requires Level 7 Sell Price: 2 48",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 9753,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 239,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 9753,
+    "item_level": 12,
+    "name": "Nomad Buckler",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 7,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 4.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9753"
+  },
+  "linked_entities": [],
+  "name": "Nomad Buckler",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9753",
+  "url": "https://www.wowhead.com/forever/item=9753"
+}

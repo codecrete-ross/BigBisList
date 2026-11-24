@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Herak's Head Item Level 1 Quest Item Unique Dropped by: Herak the Pillager Drop Chance: 93.28%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 286075,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 286075,
+    "item_level": 1,
+    "name": "Herak's Head",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=286075"
+  },
+  "linked_entities": [],
+  "name": "Herak's Head",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 93.28,
+      "entity_name": "Herak the Pillager",
+      "source_url": "https://www.wowhead.com/forever/item=286075",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286075",
+  "url": "https://www.wowhead.com/forever/item=286075"
+}

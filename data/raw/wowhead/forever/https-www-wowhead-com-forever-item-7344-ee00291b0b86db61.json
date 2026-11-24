@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Torch of Holy Flame Item Level 33 Binds when picked up Held In Off-hand +5 Spirit Use: Decrease the armor of target by 50 for 1 min. (1 Min Cooldown) Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 7344,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Decrease the armor of target by 50 for 1 min. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 7344,
+    "item_level": 33,
+    "name": "Torch of Holy Flame",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 5.0
+    },
+    "use_effects": [
+      "Use: Decrease the armor of target by 50 for 1 min. (1 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7344"
+  },
+  "linked_entities": [
+    {
+      "id": 9176,
+      "name": "Decrease the armor of target by 50 for 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9176"
+    }
+  ],
+  "name": "Torch of Holy Flame",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7344",
+  "url": "https://www.wowhead.com/forever/item=7344"
+}

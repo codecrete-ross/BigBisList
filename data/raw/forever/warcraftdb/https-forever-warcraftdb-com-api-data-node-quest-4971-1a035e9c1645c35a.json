@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4971"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:23.558427+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15812,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4971",
+      "subject_id": 4971,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "A Matter of Time",
+    "quest_id": 4971,
+    "reward_item_roles": {
+      "15812": "choices",
+      "15813": "choices"
+    },
+    "side": "Both",
+    "zone": "Western Plaguelands"
+  },
+  "source_content_digest": "f831b7239241bc6bf885ee8a4e5c28db76dbfcd2cf30cedb79960c69430407d8",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4971"
+}

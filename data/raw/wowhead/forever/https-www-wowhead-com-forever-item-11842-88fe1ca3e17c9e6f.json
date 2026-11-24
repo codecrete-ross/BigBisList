@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lead Surveyor's Mantle Item Level 55 Binds when picked up Shoulder Mail 246 Armor +14 Intellect +9 Spirit Durability 70 / 70 Requires Level 50 Equip: Increases damage and healing done by magical spells and effects by up to 15 . Sell Price: 1 71 22 Dropped by: Fineous Darkvire Drop Chance: 25.28%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 11842,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 246,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 11842,
+    "item_level": 55,
+    "name": "Lead Surveyor's Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "spell_power": 15.0,
+      "spirit": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11842"
+  },
+  "linked_entities": [],
+  "name": "Lead Surveyor's Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 25.28,
+      "entity_name": "Fineous Darkvire",
+      "source_url": "https://www.wowhead.com/forever/item=11842",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "22289dcecf5896884686b2e8561a9a3d387bdb835b7a65c4da8b96cec3372c77",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11842",
+  "url": "https://www.wowhead.com/forever/item=11842"
+}

@@ -1,0 +1,193 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "credit": "AoWoW archived database",
+      "source": "https://aowow.oldmanwarcraft.com/?item=4988"
+    },
+    {
+      "credit": "Wowhead Classic",
+      "source": "https://nether.wowhead.com/classic/tooltip/item/4988"
+    },
+    {
+      "credit": "The Alpha Project original archive",
+      "source": "https://db.thealphaproject.eu/?action=show_item&id=4988"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_legacy_quest_availability",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 8561018,
+      "collected_at": "2026-11-13T17:48:16.9269649Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-sparse",
+      "source_content_digest": "eef48b88d1af6ea23872155819dc59342204b2f34c0b613df0405ef06f7a5145",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 32554,
+      "collected_at": "2026-11-14T00:36:35.139232+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "retro-tremors",
+      "source_content_digest": "8dfc2e31406f4bd65aa476dbb6a7f8ebec15b13c524207ca44bd48a636a8e90f",
+      "source_url": "https://db.thealphaproject.eu/?action=show_quest&id=717"
+    },
+    {
+      "bytes": 22994,
+      "collected_at": "2026-11-14T00:27:39.354022+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "alpha-4988",
+      "source_content_digest": "4724c0ca6d517b4507f24c1b668de2a0b046364eb3c6a8e37730ec74ae653c2d",
+      "source_url": "https://db.thealphaproject.eu/?action=show_item&id=4988"
+    },
+    {
+      "bytes": 84110,
+      "collected_at": "2026-11-14T00:27:42.041515+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "aowow-4988",
+      "source_content_digest": "d60b80bd473bf609d9e239094f94d23f0737c18323c077526519c03506c474a8",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=4988"
+    },
+    {
+      "bytes": 793,
+      "collected_at": "2026-11-14T00:35:20.629705+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "archive-item-4988",
+      "source_content_digest": "5ac607caffb902c52ed8208e3babfcb23421071c9294817e8cdaed3ceea51716",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/4988"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "archived_exact_sparse_fields": {
+      "Bonding": "1",
+      "Display_lang": "Burning Obsidian Band",
+      "Flags_0": "0",
+      "Flags_1": "24580",
+      "ItemLevel": "50",
+      "OverallQualityID": "2",
+      "RequiredLevel": "0"
+    },
+    "archived_tooltip_fields": "Burning Obsidian Band Item Level 50 Binds when picked up Finger +12 Stamina Sell Price: 36 57",
+    "current_base_item": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "CraftingQualityID": "0",
+      "ID": "4988",
+      "IconFileDataID": "133346",
+      "InventoryType": "11",
+      "ItemGroupSoundsID": "14",
+      "ItemPetFoodID": "0",
+      "ItemSquishEraID": "0",
+      "Material": "5",
+      "ModifiedCraftingReagentItemID": "0",
+      "OrderSource": "0",
+      "RecraftReagentCountPercentage": "0",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "0"
+    },
+    "current_exact_sparse_fields": {
+      "Bonding": "1",
+      "Display_lang": "Burning Obsidian Band",
+      "Flags_0": "0",
+      "Flags_1": "24580",
+      "ItemLevel": "50",
+      "OverallQualityID": "2",
+      "RequiredLevel": "0"
+    },
+    "finding": "The alpha quest included the exact ring. The retained exact ring is bind-on-pickup and matches the historical item. Three live reports show the current level-40 quest's four different rewards. The archival post-alpha database explicitly marks the ring unavailable. The current creation, quest, vendor and loot sources checked contain no replacement. This review covers Horde levels 1\u20133 on the stated build.",
+    "item_id": 4988,
+    "known_quest_id": 717
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    4988
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-ring-quest-review/4988"
+}

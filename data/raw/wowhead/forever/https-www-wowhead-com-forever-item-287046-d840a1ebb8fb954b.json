@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Pylon Poker Item Level 61 Binds when equipped Two-Hand Staff 142 - 213 Damage Speed 3.40 (52.21 damage per second) +25 Strength +16 Spirit Requires Level 56 Equip: Improves your chance to hit by 1.0%. Sell Price: 6 77 73",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:46.2410704Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 287046,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 52.21,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 287046,
+    "item_level": 61,
+    "name": "Pylon Poker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "spirit": 16.0,
+      "strength": 25.0
+    },
+    "weapon_max_damage": 213,
+    "weapon_min_damage": 142,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=287046"
+  },
+  "linked_entities": [],
+  "name": "Pylon Poker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b08d5002b6b38c5bc87a970c7cb0ab262168b48bd57be9e70a03ec79337e5a63",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287046?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=287046"
+}

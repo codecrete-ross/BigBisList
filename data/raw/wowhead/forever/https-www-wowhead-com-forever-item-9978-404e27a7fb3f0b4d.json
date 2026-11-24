@@ -1,0 +1,53 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Gahz'ridian Detector Item Level 1 Quest Item Unique Head Equip: Nearby Gahz'ridian appears on the minimap.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 9978,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Nearby Gahz'ridian appears on the minimap.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Nearby Gahz'ridian appears on the minimap."
+    ],
+    "id": 9978,
+    "item_level": 1,
+    "name": "Gahz'ridian Detector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9978"
+  },
+  "linked_entities": [
+    {
+      "id": 11992,
+      "name": "Nearby Gahz'ridian appears on the minimap.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11992"
+    }
+  ],
+  "name": "Gahz'ridian Detector",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "f1c644e820df970b07771ca6691377c5f77ae5e5273a33c92721337ab7940fbe",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9978",
+  "url": "https://www.wowhead.com/forever/item=9978"
+}

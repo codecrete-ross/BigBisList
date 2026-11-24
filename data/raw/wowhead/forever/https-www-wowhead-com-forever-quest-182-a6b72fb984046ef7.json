@@ -1,0 +1,84 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "The Troll Cave Grelin Whitebeard would like you to kill 14 Frostmane Troll Whelps. Requirements: - Frostmane Troll Whelp x 14",
+  "entity_id": 182,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:23.238Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "The Troll Cave",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 786,
+        "name": "Grelin Whitebeard"
+      },
+      "start": {
+        "entity_id": 786,
+        "name": "Grelin Whitebeard"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Dun Morogh"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 961,
+      "object_name": "Healing Herb",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=182",
+      "subject_id": 182,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 2047,
+      "object_name": "Anvilmar Hand Axe",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=182",
+      "subject_id": 182,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 2048,
+      "object_name": "Anvilmar Hammer",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=182",
+      "subject_id": 182,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 2195,
+      "object_name": "Anvilmar Knife",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=182",
+      "subject_id": 182,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 5761,
+      "object_name": "Anvilmar Sledge",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=182",
+      "subject_id": 182,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/182",
+  "url": "https://www.wowhead.com/forever/quest=182"
+}

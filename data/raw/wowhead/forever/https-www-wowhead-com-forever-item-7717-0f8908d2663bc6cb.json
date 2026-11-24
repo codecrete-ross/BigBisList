@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ravager Item Level 42 Binds when picked up Two-Hand Axe 104 - 157 Damage Speed 3.50 (37.29 damage per second) Durability 100 / 100 Requires Level 37 Chance on hit: Attack all nearby enemies, dealing weapon damage plus 5 every 3 sec for 9 sec, and reducing your own movement speed by 80%. Sell Price: 1 92 93 Dropped by: Herod Drop Chance: 13.97%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 7717,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 37.29,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Attack all nearby enemies, dealing weapon damage plus 5 every 3 sec for 9 sec, and reducing your own movement speed by 80%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Attack all nearby enemies, dealing weapon damage plus 5 every 3 sec for 9 sec, and reducing your own movement speed by 80%."
+    ],
+    "id": 7717,
+    "item_level": 42,
+    "name": "Ravager",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 157,
+    "weapon_min_damage": 104,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7717"
+  },
+  "linked_entities": [
+    {
+      "id": 9632,
+      "name": "Attack all nearby enemies, dealing weapon damage plus 5 every 3 sec for 9 sec, and reducing your own movement speed by 80%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9632"
+    }
+  ],
+  "name": "Ravager",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 13.97,
+      "entity_name": "Herod",
+      "source_url": "https://www.wowhead.com/forever/item=7717",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7717",
+  "url": "https://www.wowhead.com/forever/item=7717"
+}

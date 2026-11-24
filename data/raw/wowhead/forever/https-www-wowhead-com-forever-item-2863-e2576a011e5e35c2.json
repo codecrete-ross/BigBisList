@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Coarse Sharpening Stone Item Level 15 Requires Level 5 Use: Increase sharp weapon damage by 3 for 30 minutes. Max Stack: 20 Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2863,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase sharp weapon damage by 3 for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 2863,
+    "item_level": 15,
+    "name": "Coarse Sharpening Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 5,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increase sharp weapon damage by 3 for 30 minutes. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2863"
+  },
+  "linked_entities": [
+    {
+      "id": 2829,
+      "name": "Increase sharp weapon damage by 3 for 30 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2829"
+    }
+  ],
+  "name": "Coarse Sharpening Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "2ce0d06ec98804c4b7b59e742930d5f2017d7faa9f652d6127545ad23dbf02f0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2863",
+  "url": "https://www.wowhead.com/forever/item=2863"
+}

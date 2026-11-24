@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warm Cloak Item Level 13 Binds when picked up Back 12 Armor +1 Spirit Requires Level 8 Sell Price: 70 Dropped by: Sister Hatelash Drop Chance: 46.40%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 4772,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 12,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 4772,
+    "item_level": 13,
+    "name": "Warm Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 8,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "spirit": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4772"
+  },
+  "linked_entities": [],
+  "name": "Warm Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 46.4,
+      "entity_name": "Sister Hatelash",
+      "source_url": "https://www.wowhead.com/forever/item=4772",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4772",
+  "url": "https://www.wowhead.com/forever/item=4772"
+}

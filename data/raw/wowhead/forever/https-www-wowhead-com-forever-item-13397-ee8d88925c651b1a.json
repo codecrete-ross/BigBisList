@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stoneskin Gargoyle Cape Item Level 62 Binds when picked up Back 44 Armor +7 Strength +8 Agility +14 Stamina +50 Armor Requires Level 57 Sell Price: 1 64 52 Dropped by: Stonespine Drop Chance: 31.03%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:07.1899103Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 13397,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13397,
+    "item_level": 62,
+    "name": "Stoneskin Gargoyle Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0,
+      "stamina": 14.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13397"
+  },
+  "linked_entities": [],
+  "name": "Stoneskin Gargoyle Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.03,
+      "entity_name": "Stonespine",
+      "source_url": "https://www.wowhead.com/forever/item=13397",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3570b07c08a8c9f32b6285869dfbda8d66a1ef9706c4e6c8797ec80a981e7418",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13397",
+  "url": "https://www.wowhead.com/forever/item=13397"
+}

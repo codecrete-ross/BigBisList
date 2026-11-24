@@ -1,0 +1,363 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:59:44.4734247Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T03:59:44.4734247Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1095,
+      "collected_at": "2026-11-13T04:28:58.9746329Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spelllearn",
+      "source_content_digest": "b6d101c650376c26eb39ced0e62368cf3c9bb602934b6235b58961e1e28d40d7",
+      "source_url": "https://wago.tools/db2/SpellLearnSpell/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 407525,
+      "collected_at": "2026-11-13T03:59:43.6962950Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-skills",
+      "source_content_digest": "6696abd03ef90ad250a12ac23778616c292c46f6a0082130fbe187c96ead0aa0",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 851160,
+      "collected_at": "2026-11-13T05:21:39.4249289Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spellname",
+      "source_content_digest": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5178761,
+      "collected_at": "2026-11-13T04:11:17.7410311Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-quest-all",
+      "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 234773,
+      "collected_at": "2026-11-13T03:45:13.3980130Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "eg-vendors-70888",
+      "source_content_digest": "c3da2ed0c0d62e15ee261370dceb23557faaf14aaef579fa7d11067c9cdd9cfd",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 30663,
+      "collected_at": "2026-11-13T05:28:07.0636808Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-us",
+      "source_content_digest": "c2bd4d1717f976e0434bd32d70299082ab3979c36c9fec0e1893ed625e493d84",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "creation_effects": [
+      {
+        "Effect": "24",
+        "EffectItemType": "19841",
+        "ID": "704856",
+        "SpellID": "28943"
+      },
+      {
+        "Effect": "24",
+        "EffectItemType": "19845",
+        "ID": "704877",
+        "SpellID": "28951"
+      },
+      {
+        "Effect": "24",
+        "EffectItemType": "19835",
+        "ID": "705171",
+        "SpellID": "28937"
+      },
+      {
+        "Effect": "24",
+        "EffectItemType": "19849",
+        "ID": "705555",
+        "SpellID": "28956"
+      }
+    ],
+    "listed_raid_opening": {
+      "first_raid_opening": "2026-12-09",
+      "first_raids": [
+        "Barrow Deeps",
+        "Hyjal Summit",
+        "Onyxia\u2019s Lair"
+      ]
+    },
+    "map_difficulties": [
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "148",
+        "Flags": "0",
+        "ID": "4432",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "309",
+        "MaxPlayers": "20",
+        "Message_lang": "",
+        "ResetInterval": "3",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "185",
+        "Flags": "0",
+        "ID": "4981",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "309",
+        "MaxPlayers": "20",
+        "Message_lang": "",
+        "ResetInterval": "3",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "197",
+        "Flags": "0",
+        "ID": "5589",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "30",
+        "MapID": "309",
+        "MaxPlayers": "10",
+        "Message_lang": "",
+        "ResetInterval": "5",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "226",
+        "Flags": "0",
+        "ID": "5613",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "32",
+        "MapID": "309",
+        "MaxPlayers": "20",
+        "Message_lang": "",
+        "ResetInterval": "5",
+        "WorldStateExpressionID": "0"
+      }
+    ],
+    "map_id": 309,
+    "map_name": "Zul'Gurub",
+    "observed_quest_grants": {
+      "8068": [
+        19845
+      ]
+    },
+    "other_observed_drops": [],
+    "other_observed_grants": [],
+    "other_observed_vendor_entries": [],
+    "phase_conditions": [
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "1554",
+        "MapDifficultyID": "4432",
+        "OrderIndex": "0",
+        "PlayerConditionID": "68265"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "1995",
+        "MapDifficultyID": "4432",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88346"
+      },
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "2110",
+        "MapDifficultyID": "4981",
+        "OrderIndex": "0",
+        "PlayerConditionID": "68265"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "2111",
+        "MapDifficultyID": "4981",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88346"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "3076",
+        "MapDifficultyID": "4432",
+        "OrderIndex": "2",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "3454",
+        "MapDifficultyID": "5589",
+        "OrderIndex": "0",
+        "PlayerConditionID": "128845"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "3455",
+        "MapDifficultyID": "5589",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88346"
+      },
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "3476",
+        "MapDifficultyID": "5613",
+        "OrderIndex": "0",
+        "PlayerConditionID": "128845"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "3477",
+        "MapDifficultyID": "5613",
+        "OrderIndex": "1",
+        "PlayerConditionID": "88346"
+      }
+    ],
+    "player_item_use_effects_invoking_grant": [],
+    "player_learn_spell_entries_for_grant": [],
+    "quest_dependencies": [
+      {
+        "class": "Rogue",
+        "item_grant_spell": 28937,
+        "quest_id": 8072,
+        "quest_tooltip": "https://www.wowhead.com/forever/quest=8072",
+        "required_item_id": 19719,
+        "required_item_name": "Primal Hakkari Girdle",
+        "reward_id": 19835,
+        "reward_reference": "https://forever.warcraftdb.com/api/data/node/quest/8072",
+        "spell_name": "Summon Madcap's Mantle DND",
+        "token_binding": "bind_on_pickup",
+        "token_tooltip": "https://www.wowhead.com/forever/item=19719"
+      },
+      {
+        "class": "Priest",
+        "item_grant_spell": 28943,
+        "quest_id": 8071,
+        "quest_tooltip": "https://www.wowhead.com/forever/quest=8071",
+        "required_item_id": 19724,
+        "required_item_name": "Primal Hakkari Aegis",
+        "reward_id": 19841,
+        "reward_reference": "https://forever.warcraftdb.com/api/data/node/quest/8071",
+        "spell_name": "Summon Confessor's Mantle DND",
+        "token_binding": "bind_on_pickup",
+        "token_tooltip": "https://www.wowhead.com/forever/item=19724"
+      },
+      {
+        "class": "Mage",
+        "item_grant_spell": 28951,
+        "quest_id": 8068,
+        "quest_tooltip": "https://www.wowhead.com/forever/quest=8068",
+        "required_item_id": 19721,
+        "required_item_name": "Primal Hakkari Shawl",
+        "reward_id": 19845,
+        "reward_reference": "https://forever.warcraftdb.com/api/data/node/quest/8068",
+        "spell_name": "Summon Illusionist's Mantle DND",
+        "token_binding": "bind_on_pickup",
+        "token_tooltip": "https://www.wowhead.com/forever/item=19721"
+      },
+      {
+        "class": "Warlock",
+        "item_grant_spell": 28956,
+        "quest_id": 8076,
+        "quest_tooltip": "https://www.wowhead.com/forever/quest=8076",
+        "required_item_id": 19720,
+        "required_item_name": "Primal Hakkari Sash",
+        "reward_id": 19849,
+        "reward_reference": "https://forever.warcraftdb.com/api/data/node/quest/8076",
+        "spell_name": "Summon Demoniac's Mantle DND",
+        "token_binding": "bind_on_pickup",
+        "token_tooltip": "https://www.wowhead.com/forever/item=19720"
+      }
+    ]
+  },
+  "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+  "unavailable_item_ids": [
+    19835,
+    19841,
+    19845,
+    19849
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1,
+    "slot": "Shoulder"
+  },
+  "url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/309"
+}

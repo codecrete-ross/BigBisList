@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Engrave Pants - Lacerate 3 sec cast Requires Druid Requires level 1 Requires Pants Engrave your pants with the Lacerate rune: Lacerates the enemy target, making them bleed for 50 damage over 15 sec plus 10% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to 5 times on the same target.",
+  "entity_id": 416049,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T01:11:21.9299396Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 414644,
+      "name": "Lacerates the enemy target, making them bleed for 50 damage over 15 sec plus 10% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to 5 times on the same target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=414644"
+    },
+    {
+      "id": 416049,
+      "name": "Engrave Pants - Lacerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=416049"
+    }
+  ],
+  "name": "Engrave Pants - Lacerate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "912c7833be99b4bc6a68d2cec2ab79c76bbde1de18827b713f17726d4fbac719",
+  "spell_id": 416049,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/416049",
+  "url": "https://www.wowhead.com/forever/spell=416049"
+}

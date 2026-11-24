@@ -1,0 +1,42 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Black Lotus Item Level 60 Crafting Reagent Max Stack: 20 Sell Price: 10 Dropped by: Mushgog Drop Chance: 1.41%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:08:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 13468,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 13468,
+    "item_level": 60,
+    "name": "Black Lotus",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13468"
+  },
+  "linked_entities": [],
+  "name": "Black Lotus",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.41,
+      "entity_name": "Mushgog",
+      "source_url": "https://www.wowhead.com/forever/item=13468",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13468",
+  "url": "https://www.wowhead.com/forever/item=13468"
+}

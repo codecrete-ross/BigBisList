@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rune-Etched Epaulets Item Level 41 Binds when picked up Shoulder Leather 93 Armor +11 Agility +12 Stamina Durability 60 / 60 Equip: Increased Defense + 4. Sell Price: 55 32",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 279879,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 93,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 279879,
+    "item_level": 41,
+    "name": "Rune-Etched Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "defense": 4.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279879"
+  },
+  "linked_entities": [],
+  "name": "Rune-Etched Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "18b93ff7b3a8953a2ef3eb6a90f1f00e9f7f0e299cd539a38167a4c3da7abf13",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279879",
+  "url": "https://www.wowhead.com/forever/item=279879"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mordresh's Lifeless Skull Item Level 41 Binds when picked up Held In Off-hand +5 Spirit Requires Level 36 Equip: Increases damage done by Shadow spells and effects by up to 16. Sell Price: 57 16 Dropped by: Mordresh Fire Eye Drop Chance: 32.55%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:42:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 10770,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 16.",
+        "stats": {
+          "shadow_damage": 16
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Shadow spells and effects by up to 16."
+    ],
+    "id": 10770,
+    "item_level": 41,
+    "name": "Mordresh's Lifeless Skull",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 36,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "shadow_damage": 16.0,
+      "spirit": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10770"
+  },
+  "linked_entities": [],
+  "name": "Mordresh's Lifeless Skull",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.55,
+      "entity_name": "Mordresh Fire Eye",
+      "source_url": "https://www.wowhead.com/forever/item=10770",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10770",
+  "url": "https://www.wowhead.com/forever/item=10770"
+}

@@ -1,0 +1,186 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "AoWoW Database Viewer (AzerothCore)",
+      "source": "https://aowow.oldmanwarcraft.com/?item=6706"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_legacy_unavailable_equipment",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 2331402,
+      "collected_at": "2026-11-13T17:48:10.2179027Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-item",
+      "source_content_digest": "ed354b2d391087ac6e4ec323eabf3241ac0f286656963945a208e986c5988667",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 497917,
+      "collected_at": "2026-11-13T03:39:31.5846724Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-search",
+      "source_content_digest": "96230873a8525ce4fe903bb2695ffc8309e3a81148794bc7cf7b546fd284b4e1",
+      "source_url": "https://wago.tools/db2/ItemSearchName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 88100,
+      "collected_at": "2026-11-13T20:20:30.383694+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "old-template-6706",
+      "source_content_digest": "043b4defadfa417c49ef6c90a34491c0136d23ad38974f0f27bdaf5dccbf3f7b",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=6706"
+    },
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 851160,
+      "collected_at": "2026-11-13T22:51:25.852059+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellnames",
+      "source_content_digest": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "current_item_effect": {
+      "CategoryCoolDownMSec": "0",
+      "Charges": "0",
+      "ChrSpecializationID": "0",
+      "CoolDownMSec": "0",
+      "ID": "98063",
+      "LegacySlotIndex": "0",
+      "PlayerConditionID": "0",
+      "SpellCategoryID": "38",
+      "SpellID": "8299",
+      "TriggerType": "1"
+    },
+    "current_item_effect_name": "Perm. Illusion Slime",
+    "current_item_name_and_requirements_disclosed": false,
+    "finding": "The preserved database explicitly marks NPC Equip 6706 unavailable to players. The current item matches the legacy base identity and links to the permanent slime illusion spell (8299). The reviewed Forever quest, vendor, loot and creation records contain no replacement grant for this exact ID.",
+    "historical_archive_name": "NPC Equip 6706",
+    "historical_equip_level": 1,
+    "historical_player_access": "explicitly unavailable",
+    "item_id": 6706,
+    "observed_player_grants": [],
+    "shared_item_fields": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "ID": "6706",
+      "IconFileDataID": "133346",
+      "InventoryType": "11",
+      "ItemGroupSoundsID": "14",
+      "Material": "5",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "0"
+    }
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    6706
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-equipment/6706"
+}

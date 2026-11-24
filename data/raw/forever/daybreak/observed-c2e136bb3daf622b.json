@@ -1,0 +1,87 @@
+{
+  "attribution": [
+    {
+      "credit": "Daybreak Forever",
+      "source": "https://daybreakforever.com/static/forever/datamine.json#/live_items/193"
+    }
+  ],
+  "binding": "bind_on_equip",
+  "boe": true,
+  "confidence": "server_item_stats",
+  "export_build": "1.60.1.70888",
+  "export_capture_date": "2026-11-10",
+  "export_generated_at": "2026-11-10 21:28 UTC",
+  "fetched_at": "2026-11-11T05:56:50.503505+00:00",
+  "flavor": "forever",
+  "historical_item_identity": {
+    "event_date": "2026-10-22",
+    "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/ee3416f979bbfa5b217d413cc802ebaccab13541/patches/1.60.1.70450/hotfix-112709%2B103/items.txt"
+  },
+  "inventory_slot": "Shoulder",
+  "item_id": 288850,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 84,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 288850,
+    "item_level": 30,
+    "name": "Nightslayer Shoulder Pads",
+    "parse_confidence": "server_item_stats",
+    "quality": "epic",
+    "required_level": 1,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Shoulder",
+    "stats": {
+      "agility": 13,
+      "hit_rating": 5,
+      "shadow_resistance": 3,
+      "stamina": 6,
+      "strength": 1
+    }
+  },
+  "name": "Nightslayer Shoulder Pads",
+  "page_type": "item",
+  "provider": "daybreak",
+  "quality": "epic",
+  "review_limits": [
+    "acquisition",
+    "complete effects",
+    "uniqueness",
+    "set bonuses"
+  ],
+  "source_content_digest": "b444dd766fa89fd9477859fb285c96231d2a50fb9c663a3acd24813d1a9d2bbd",
+  "source_item_stats": [
+    [
+      "Agility",
+      13,
+      false
+    ],
+    [
+      "Stamina",
+      6,
+      false
+    ],
+    [
+      "Strength",
+      1,
+      false
+    ],
+    [
+      "Shadow Resistance",
+      3,
+      false
+    ],
+    [
+      "Hit",
+      5,
+      true
+    ]
+  ],
+  "url": "https://daybreakforever.com/static/forever/datamine.json#/live_items/193"
+}

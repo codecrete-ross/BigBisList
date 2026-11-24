@@ -1,0 +1,132 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Lieutenant's Crackling Leather Spaulders Item Level 55 Binds when picked up Shoulder Leather 118 Armor +10 Stamina +10 Intellect +10 Armor Durability 60 / 60 Classes: Druid Requires Level 50 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 12 . Knight-Lieutenant's Crackling Leather (0/6) Knight's Crackling Leather Leggings Knight's Crackling Leather Tunic Knight-Lieutenant's Crackling Leather Helmet Knight-Lieutenant's Crackling Leather Spaulders Sergeant Major's Crackling Leather Boots Sergeant Major's Crackling Leather Gauntlets (3) Set : +15 Stamina. (6) Set : Increases damage and healing done by magical spells and effects by up to 18. Sell Price: 1 40 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 220870,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 118,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 220870,
+    "item_level": 55,
+    "name": "Knight-Lieutenant's Crackling Leather Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "intellect": 10.0,
+      "spell_power": 12.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220870"
+  },
+  "linked_entities": [
+    {
+      "id": 220862,
+      "name": "Sergeant Major's Crackling Leather Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220862"
+    },
+    {
+      "id": 220864,
+      "name": "Knight's Crackling Leather Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220864"
+    },
+    {
+      "id": 220866,
+      "name": "Sergeant Major's Crackling Leather Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220866"
+    },
+    {
+      "id": 220868,
+      "name": "Knight's Crackling Leather Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220868"
+    },
+    {
+      "id": 220870,
+      "name": "Knight-Lieutenant's Crackling Leather Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220870"
+    },
+    {
+      "id": 220872,
+      "name": "Knight-Lieutenant's Crackling Leather Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220872"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Knight-Lieutenant's Crackling Leather Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a109ef21b034d3de0614dea4ab559f8daab5437e85c9f0a77635f3c4b801385f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220870",
+  "url": "https://www.wowhead.com/forever/item=220870"
+}

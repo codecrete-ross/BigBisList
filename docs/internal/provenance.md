@@ -18,8 +18,11 @@ Wowhead TBC guide/item/spell pages
 
 `data/canonical/scrape_manifest.json` defines the registered source surface and
 source policy. `tools/manifest_coverage.py` and
-`tools/scrape_wowhead.py coverage --summary --strict` verify that the expected
+`tools/scrape_wowhead.py coverage --flavor anniversary --summary --strict` verify that the expected
 class/spec/phase matrix is covered.
+
+The [Forever pilot workflow](forever-pilot.md) keeps Forever snapshots,
+source approvals, scoring inputs, and generated output separate from Anniversary.
 
 ## Source Hierarchy
 

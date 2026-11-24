@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Satin Epaulets Item Level 74 Binds when picked up Shoulder Cloth 85 Armor +33 Stamina +20 Intellect +60 Armor Durability 60 / 60 Classes: Priest Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 25 . Field Marshal's Raiment (0/6) Field Marshal's Satin Crown Field Marshal's Satin Epaulets Field Marshal's Satin Robe Marshal's Satin Grips Marshal's Satin Leggings Marshal's Satin Treads (2) Set : +20 Stamina. (3) Set : Increases the duration of your Psychic Scream spell by 1 sec. (6) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 2 5 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:42:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 231621,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 85,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 231621,
+    "item_level": 74,
+    "name": "Field Marshal's Satin Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 23044,
+        "text": "Increases the duration of your Psychic Scream spell by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "spell_power": 25.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231621"
+  },
+  "linked_entities": [
+    {
+      "id": 231616,
+      "name": "Field Marshal's Satin Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231616"
+    },
+    {
+      "id": 231617,
+      "name": "Marshal's Satin Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231617"
+    },
+    {
+      "id": 231618,
+      "name": "Field Marshal's Satin Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231618"
+    },
+    {
+      "id": 231619,
+      "name": "Marshal's Satin Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231619"
+    },
+    {
+      "id": 231620,
+      "name": "Marshal's Satin Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231620"
+    },
+    {
+      "id": 231621,
+      "name": "Field Marshal's Satin Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231621"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23044,
+      "name": "Increases the duration of your Psychic Scream spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23044"
+    }
+  ],
+  "name": "Field Marshal's Satin Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "6b41024b11f7182e39f5b5e839a75ec615e4591432b68e3f09d1b43da66cd642",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231621",
+  "url": "https://www.wowhead.com/forever/item=231621"
+}

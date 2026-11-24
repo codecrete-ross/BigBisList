@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Smolderweb's Eye Item Level 60 Binds when picked up Unique-Equipped Trinket +5 Nature Resistance Requires Level 55 Equip: Improves your chance to hit by 1.0%. Use: Remove 1 Disarm effect from target ally. (8 Min Cooldown) Sell Price: 1 98 96 Dropped by: Mother Smolderweb Drop Chance: 14.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13213,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Remove 1 Disarm effect from target ally. (8 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 13213,
+    "item_level": 60,
+    "name": "Smolderweb's Eye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "nature_resistance": 5.0
+    },
+    "use_effects": [
+      "Use: Remove 1 Disarm effect from target ally. (8 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13213"
+  },
+  "linked_entities": [
+    {
+      "id": 1308917,
+      "name": "Remove 1 Disarm effect from target ally.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1308917"
+    }
+  ],
+  "name": "Smolderweb's Eye",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.0,
+      "entity_name": "Mother Smolderweb",
+      "source_url": "https://www.wowhead.com/forever/item=13213",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "db148a79573994724b523cf2a037dc4e729edc8fd5018892c8ab6db29f3d7b46",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13213",
+  "url": "https://www.wowhead.com/forever/item=13213"
+}

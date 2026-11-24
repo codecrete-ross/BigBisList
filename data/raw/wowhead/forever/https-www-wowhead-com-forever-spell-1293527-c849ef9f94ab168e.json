@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Summon Hawk 190 Mana 35 yd range 6 sec cooldown Requires Hunter Requires level 60 Command a hawk to dive-bomb your targeted enemy, dealing [108 + (Ranged Attack Power * (0.05))] Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
+  "entity_id": 1293527,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:10+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1293527,
+      "name": "Summon Hawk",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293527"
+    }
+  ],
+  "name": "Summon Hawk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "fb9f75e57d840a24e23c176050250896d5541ece50597b996d9b94f882d1f7ea",
+  "spell_id": 1293527,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1293527",
+  "url": "https://www.wowhead.com/forever/spell=1293527"
+}

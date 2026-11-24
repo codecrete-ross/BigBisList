@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ragefury Eyepatch Item Level 57 Binds when picked up Head Leather 132 Armor +6 Strength +10 Stamina Durability 60 / 60 Requires Level 52 Equip: Improves your chance to get a critical strike by 2.0%. Sell Price: 1 60 4 Dropped by: Hurley Blackbreath Drop Chance: 9.55%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 11735,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 132,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%."
+    ],
+    "id": 11735,
+    "item_level": 57,
+    "name": "Ragefury Eyepatch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 2.0,
+      "stamina": 10.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11735"
+  },
+  "linked_entities": [],
+  "name": "Ragefury Eyepatch",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.55,
+      "entity_name": "Hurley Blackbreath",
+      "source_url": "https://www.wowhead.com/forever/item=11735",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "411a07693cc3e23c9c1600d635fbd8db590bb8ae79396d73204ef508a54d20d4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11735",
+  "url": "https://www.wowhead.com/forever/item=11735"
+}

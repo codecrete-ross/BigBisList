@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Firestorm Totem Item Level 10 Binds when picked up Relic Totem Classes: Shaman Equip: Reduces the mana cost of your totems by 5%. Sell Price: 72",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:06:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 263436,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the mana cost of your totems by 5%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the mana cost of your totems by 5%."
+    ],
+    "id": 263436,
+    "item_level": 10,
+    "name": "Firestorm Totem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=263436"
+  },
+  "linked_entities": [
+    {
+      "id": 1270492,
+      "name": "Reduces the mana cost of your totems by 5%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1270492"
+    }
+  ],
+  "name": "Firestorm Totem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "6ac14b53c3657c13bf79456d1d3b094c6a6a24f118287b65200d90278dbca921",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/263436",
+  "url": "https://www.wowhead.com/forever/item=263436"
+}

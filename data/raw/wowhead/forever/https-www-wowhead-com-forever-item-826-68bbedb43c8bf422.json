@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Brutish Riverpaw Axe Item Level 15 Binds when equipped Main Hand Axe 15 - 29 Damage Speed 2.80 (7.86 damage per second) +1 Strength Durability 50 / 50 Requires Level 10 Sell Price: 7 32 Dropped by: Riverpaw Brute Drop Chance: 3.14%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 826,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 7.86,
+    "id": 826,
+    "item_level": 15,
+    "name": "Brutish Riverpaw Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 10,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "strength": 1.0
+    },
+    "weapon_max_damage": 29,
+    "weapon_min_damage": 15,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=826"
+  },
+  "linked_entities": [],
+  "name": "Brutish Riverpaw Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 3.14,
+      "entity_name": "Riverpaw Brute",
+      "source_url": "https://www.wowhead.com/forever/item=826",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/826",
+  "url": "https://www.wowhead.com/forever/item=826"
+}

@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sustaining Ring Item Level 25 Binds when picked up Finger +4 Stamina Restores + 4 health per 5 sec. Sell Price: 10 86",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 6743,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 health per 5 sec.",
+        "stats": {
+          "hp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 6743,
+    "item_level": 25,
+    "name": "Sustaining Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hp5": 4.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6743"
+  },
+  "linked_entities": [],
+  "name": "Sustaining Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6743",
+  "url": "https://www.wowhead.com/forever/item=6743"
+}

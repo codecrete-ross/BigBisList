@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "EZ-Thro Bronze Mortar Item Level 39 Binds when equipped Unique-Equipped Trinket Use: Inflicts 85 to 115 Fire damage and stuns targets in a 5 yd radius for 2 sec. Any damage will break the effect. (10 Min Cooldown) 8 Charges \"Thro mo mo tar!\" Sell Price: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T02:02:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 260802,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Inflicts 85 to 115 Fire damage and stuns targets in a 5 yd radius for 2 sec. Any damage will break the effect. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 260802,
+    "item_level": 39,
+    "name": "EZ-Thro Bronze Mortar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Inflicts 85 to 115 Fire damage and stuns targets in a 5 yd radius for 2 sec. Any damage will break the effect. (10 Min Cooldown) 8 Charges \"Thro mo mo tar!\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=260802"
+  },
+  "linked_entities": [
+    {
+      "id": 1269268,
+      "name": "Inflicts 85 to 115 Fire damage and stuns targets in a 5 yd radius for 2 sec. Any damage will break the effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1269268"
+    }
+  ],
+  "name": "EZ-Thro Bronze Mortar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "18b63519802116a6c1a360ab58ae9d0dadba2632ba38ca73ea86c22fc67fdcf3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260802",
+  "url": "https://www.wowhead.com/forever/item=260802"
+}

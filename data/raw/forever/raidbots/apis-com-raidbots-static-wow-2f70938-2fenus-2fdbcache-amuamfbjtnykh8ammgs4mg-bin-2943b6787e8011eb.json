@@ -1,0 +1,119 @@
+{
+  "attribution": [
+    {
+      "credit": "Raidbots public game cache",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "collected_from": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T16:54:48.3453520Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T16:54:48.3453520Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-current",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    },
+    {
+      "bytes": 23239,
+      "collected_at": "2026-11-13T16:54:22.5145465Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-index-now",
+      "source_content_digest": "4dd189cf9089f79f715d199268ebf840424c6045cb363f0c9fc4d7b6ec1dd1ad",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "bytes": 52567,
+      "collected_at": "2026-11-13T03:41:59.8013272Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemset",
+      "source_content_digest": "227cea07f3595d34662640c5c761e56c6a3ea2867b84ec5ef53cceccab3298db",
+      "source_url": "https://wago.tools/db2/ItemSet/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1734,
+      "collected_at": "2026-11-13T17:04:53.7667723Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-rune-other-half",
+      "source_content_digest": "bc2f8dde7d40208d3ba29c56926b37339198a8714cfa842b3bd7c47107405cb3",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/284716"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "raidbots",
+  "reviewed_page_facts": {
+    "equipped_items": [
+      {
+        "bind_on_pickup": true,
+        "hotfix_push": 16782408,
+        "item_id": 5192,
+        "item_set": 0,
+        "primary_stat_codes": [
+          3,
+          -1
+        ],
+        "record_digest": "b09920bd9dc8ce08abaf0826c331e171c803e8fb81cff45fd0067d4b5af45d87",
+        "required_level": 17,
+        "unique_equipped": true
+      },
+      {
+        "bind_on_pickup": true,
+        "hotfix_push": 17050247,
+        "item_id": 273031,
+        "item_set": 0,
+        "primary_stat_codes": [
+          5,
+          6
+        ],
+        "record_digest": "48ad4d965e3537ceac581e38ba0dcd6137525278c165a9c10ad4722e31990375",
+        "required_level": 27,
+        "unique_equipped": true
+      },
+      {
+        "bind_on_pickup": true,
+        "hotfix_push": 17061931,
+        "item_id": 284715,
+        "item_set": 2131,
+        "primary_stat_codes": [
+          7,
+          4
+        ],
+        "record_digest": "1c5a74d71932dce100cedcdf1b1a23ec66f620d8c897ea08384833b2e8701da3",
+        "required_level": 17,
+        "unique_equipped": true
+      },
+      {
+        "bind_on_pickup": true,
+        "hotfix_push": 17061932,
+        "item_id": 284716,
+        "item_set": 2131,
+        "primary_stat_codes": [
+          7,
+          4
+        ],
+        "record_digest": "2bdb169cc9114c698f7cc36077712793093971cb408945e8a280bde63650743a",
+        "required_level": 60,
+        "unique_equipped": true
+      }
+    ],
+    "two_piece_set": {
+      "id": 2131,
+      "item_ids": [
+        284715,
+        284716
+      ],
+      "second_item_equip_minimum": 60
+    }
+  },
+  "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+}

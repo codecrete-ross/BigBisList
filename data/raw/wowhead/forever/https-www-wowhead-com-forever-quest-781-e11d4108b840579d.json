@@ -1,0 +1,40 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Attack on Camp Narache Bring the Bristleback Attack Plans to Chief Hawkwind in Camp Narache.",
+  "entity_id": 781,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:49.282Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Attack on Camp Narache",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 2981,
+        "name": "Chief Hawkwind"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Mulgore"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4911,
+      "object_name": "Thick Bark Buckler",
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=781",
+      "subject_id": 781,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/781",
+  "url": "https://www.wowhead.com/forever/quest=781"
+}

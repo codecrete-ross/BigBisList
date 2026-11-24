@@ -1,0 +1,127 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Striker's Hauberk Item Level 88 Binds when picked up Chest Mail 553 Armor +39 Agility +26 Stamina +15 Intellect +7 Spirit Durability 140 / 140 Classes: Hunter Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 9 . Striker's Garb (0/5) Striker's Diadem Striker's Footguards Striker's Hauberk Striker's Leggings Striker's Pauldrons (3) Set : Reduces the cost of your Arcane Shots by 10%. (Proc chance: 20%) (5) Set : Reduces the cooldown of your Rapid Fire ability by 2 minutes. (Proc chance: 20%) Sell Price: 14 97 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21370,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 553,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 21370,
+    "item_level": 88,
+    "name": "Striker's Hauberk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26173,
+        "text": "Reduces the cost of your Arcane Shots by 10%. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26174,
+        "text": "Reduces the cooldown of your Rapid Fire ability by 2 minutes. (Proc chance: 20%)"
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 39.0,
+      "crit_percent": 1.0,
+      "intellect": 15.0,
+      "spell_power": 9.0,
+      "spirit": 7.0,
+      "stamina": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21370"
+  },
+  "linked_entities": [
+    {
+      "id": 21365,
+      "name": "Striker's Footguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21365"
+    },
+    {
+      "id": 21366,
+      "name": "Striker's Diadem",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21366"
+    },
+    {
+      "id": 21367,
+      "name": "Striker's Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21367"
+    },
+    {
+      "id": 21368,
+      "name": "Striker's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21368"
+    },
+    {
+      "id": 21370,
+      "name": "Striker's Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21370"
+    },
+    {
+      "id": 26173,
+      "name": "Reduces the cost of your Arcane Shots by 10%. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26173"
+    },
+    {
+      "id": 26174,
+      "name": "Reduces the cooldown of your Rapid Fire ability by 2 minutes. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26174"
+    }
+  ],
+  "name": "Striker's Hauberk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21370",
+  "url": "https://www.wowhead.com/forever/item=21370"
+}

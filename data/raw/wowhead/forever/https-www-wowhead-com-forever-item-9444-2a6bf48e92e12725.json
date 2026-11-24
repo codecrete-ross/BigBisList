@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Techbot CPU Shell Item Level 26 Off Hand Shield 475 Armor 9 Block Durability 80 / 80 Requires Level 21 Sell Price: 11 20 Dropped by: Techbot Drop Chance: 46.80%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 9444,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 475,
+    "armor_type": "Shield",
+    "binding": "unknown",
+    "id": 9444,
+    "item_level": 26,
+    "name": "Techbot CPU Shell",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 21,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 9.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9444"
+  },
+  "linked_entities": [],
+  "name": "Techbot CPU Shell",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 46.8,
+      "entity_name": "Techbot",
+      "source_url": "https://www.wowhead.com/forever/item=9444",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9444",
+  "url": "https://www.wowhead.com/forever/item=9444"
+}

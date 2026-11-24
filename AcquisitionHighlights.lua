@@ -1,0 +1,1338 @@
+local addon = BigBiSList
+local rating, ui, widgets = addon.ForeverGearRating, addon.UI, addon.Widgets
+local highlights = {
+    settings = {
+        { "quest", "Quest rewards" }, { "vendor", "Vendors" }, { "loot", "Loot windows" },
+        { "roll", "Group loot rolls" }, { "auction", "Auction House" }, { "trade", "Incoming trades" },
+        { "mail", "Mail attachments" }, { "crafting", "Crafting outputs" },
+        { "bags", "Gear in bags" }, { "bank", "Gear in your bank" }, { "animate", "Animate gear highlights" },
+    },
+}
+addon.AcquisitionHighlights = highlights
+
+local marks = {}
+local offers = {}
+local overlays = setmetatable({}, { __mode = "k" })
+local watchedFrames = setmetatable({}, { __mode = "k" })
+local watchedScrollBoxes = setmetatable({}, { __mode = "k" })
+local rollCards = setmetatable({}, { __mode = "k" })
+local storagePanels = setmetatable({}, { __mode = "k" })
+local baganatorItems = setmetatable({}, { __mode = "k" })
+local storageCache = {}
+local storageContext
+local tooltipJobs = {}
+local BAGANATOR_WIDGET_ID = "big_bis_list"
+local lootSlotsCleared = {}
+local hooked = {}
+local NEUTRAL = { 0.72, 0.77, 0.84 }
+local GOLD_COIN = "Interface\\MoneyFrame\\UI-GoldIcon"
+
+local function checked(ok, ...)
+    if ok then return ... end
+end
+
+local function call(api, ...)
+    if type(api) == "function" then return checked(pcall(api, ...)) end
+end
+
+local function read(value, wantedType)
+    if addon.IsReadableValue(value) and type(value) == wantedType then return value end
+end
+
+local function shown(frame)
+    return frame and read(call(frame.IsVisible or frame.IsShown, frame), "boolean") == true
+        and read(call(frame.IsForbidden, frame), "boolean") ~= true
+end
+
+local function itemIdFromLink(link)
+    return link and tonumber(link:match("item:(%d+)"))
+end
+
+local function getInfoLink(data)
+    if not read(data, "table") then return end
+    local link = read(data.hyperlink, "string")
+    if not link and read(data.guid, "string") then
+        link = read(call(C_Item and C_Item.GetItemLinkByGUID, data.guid), "string")
+    end
+    return link, read(data.id, "number")
+end
+
+local function clearMark(row, forget, quiet)
+    local overlay = overlays[row]
+    if overlay and overlay.managed and marks[row] and not quiet then highlights.baganatorDirty = true end
+    if offers[row] or marks[row] then highlights.tooltipDirty = true end
+    offers[row] = nil
+    marks[row] = nil
+    if not overlay then return end
+    if forget then overlay.visualKey = nil end
+    if overlay.managed then return end
+    if overlay.animation and overlay.animation:IsPlaying() then overlay.animation:Stop() end
+    overlay:Hide()
+end
+
+local function clearKind(kind, forget, sourceId)
+    for row, entry in pairs(offers) do
+        if entry.kind == kind and (sourceId == nil or entry.sourceId == sourceId) then clearMark(row, forget) end
+    end
+end
+
+local function watchFrame(frame, kind)
+    if not frame or not frame.HookScript or watchedFrames[frame] then return end
+    watchedFrames[frame] = true
+    frame:HookScript("OnShow", function() highlights:ScheduleRefresh() end)
+    frame:HookScript("OnHide", function()
+        clearKind(kind, true)
+        highlights:ScheduleRefresh(kind == "quest")
+    end)
+end
+
+local function watchScrollBox(scrollBox)
+    if not scrollBox or not ScrollUtil or watchedScrollBoxes[scrollBox] then return end
+    if not ScrollUtil.AddInitializedFrameCallback or not ScrollUtil.AddReleasedFrameCallback then return end
+    watchedScrollBoxes[scrollBox] = true
+    local function onReuse(_, frame)
+        clearMark(frame, true)
+        highlights:ScheduleRefresh()
+    end
+    ScrollUtil.AddInitializedFrameCallback(scrollBox, onReuse, highlights)
+    ScrollUtil.AddReleasedFrameCallback(scrollBox, function(owner, frame)
+        rollCards[frame] = nil
+        onReuse(owner, frame)
+    end, highlights)
+end
+
+local function addItem(items, entry, link, id)
+    entry.link = read(link, "string")
+    entry.itemId = itemIdFromLink(entry.link) or read(id, "number")
+    if entry.itemId and entry.itemId <= 0 then entry.itemId = nil end
+    if not itemIdFromLink(entry.link) then entry.link = nil end
+    if entry.link or entry.kind == "quest" or entry.itemId then items[#items + 1] = entry end
+end
+
+local function questRewardInfo(questLog, kind, index)
+    if not questLog then return call(GetQuestItemInfo, kind, index) end
+    local getter = kind == "choice" and GetQuestLogChoiceInfo or GetQuestLogRewardInfo
+    return call(getter, index)
+end
+
+local function collectQuest(items)
+    local info = QuestInfoFrame
+    local panel = info and info.rewardsFrame
+    watchFrame(panel, "quest")
+    if not shown(panel) then return end
+    local questLog = read(info.questLog, "boolean") == true
+    local questId = questLog and call(C_QuestLog and C_QuestLog.GetSelectedQuest) or call(GetQuestID)
+    local getLink = questLog and GetQuestLogItemLink or GetQuestItemLink
+    for _, row in ipairs(panel.RewardButtons or {}) do
+        local kind = read(row.type, "string")
+        if shown(row) and read(row.objectType, "string") == "item" and (kind == "choice" or kind == "reward") then
+            local index = read(call(row.GetID, row), "number")
+            if index and index > 0 then
+                local _, _, quantity, _, _, id = questRewardInfo(questLog, kind, index)
+                local source = tostring(read(row.questID, "number") or read(questId, "number") or "") .. ":" .. kind .. ":" .. index
+                local selected = kind == "choice" and (call(QuestInfoItem_IsSelected, row) == true)
+                addItem(items, { kind = "quest", row = row, icon = row.Icon, sourceId = source,
+                    group = kind, order = index, selected = selected, turnIn = not questLog and (shown(QuestFrameRewardPanel) or info.displayContext == "questComplete"),
+                    quantity = read(quantity, "number") }, call(getLink, kind, index), id)
+            end
+        end
+    end
+end
+
+local function collectVendor(items)
+    local panel = MerchantFrame
+    watchFrame(panel, "vendor")
+    if not shown(panel) or read(panel.selectedTab, "number") ~= 1 then return end
+    for index = 1, read(MERCHANT_ITEMS_PER_PAGE, "number") or 0 do
+        local row = _G["MerchantItem" .. index .. "ItemButton"]
+        if shown(row) and read(row.hasItem, "boolean") == true then
+            local id = read(call(row.GetID, row), "number")
+            local info = id and read(call(C_MerchantFrame and C_MerchantFrame.GetItemInfo, id), "table")
+            if info and read(info.isPurchasable, "boolean") == true and read(info.numAvailable, "number") ~= 0
+                and read(info.isUsable, "boolean") ~= false and not read(info.currencyID, "number") then
+                addItem(items, { kind = "vendor", row = row, sourceId = id }, call(GetMerchantItemLink, id), info.itemID)
+            end
+        end
+    end
+end
+
+local function collectLoot(items)
+    local panel = LootFrame
+    watchFrame(panel, "loot")
+    if not shown(panel) then return end
+    local box = panel.ScrollBox
+    watchScrollBox(box)
+    if not (box and box.ForEachFrame and Enum and Enum.LootSlotType) then return end
+    box:ForEachFrame(function(row)
+        local slot = shown(row) and read(call(row.GetSlotIndex, row), "number")
+        if slot and slot > 0 and not lootSlotsCleared[slot]
+            and read(call(GetLootSlotType, slot), "number") == Enum.LootSlotType.Item then
+            local _, _, _, _, _, locked = call(GetLootSlotInfo, slot)
+            if addon.IsReadableValue(locked) and not locked then
+                addItem(items, { kind = "loot", row = row, icon = row.Item, sourceId = slot }, call(GetLootSlotLink, slot))
+            end
+        end
+    end)
+end
+
+local function collectRolls(items)
+    watchFrame(GroupLootContainer, "roll")
+    watchFrame(GamepadGroupLootRollFrame, "roll")
+    watchScrollBox(GamepadGroupLootRollFrame and GamepadGroupLootRollFrame.ScrollBox)
+    local active = read(call(GetActiveLootRollIDs), "table")
+    local byId = {}
+    for _, value in ipairs(active or {}) do
+        local id = read(value, "number")
+        if id then byId[id] = true end
+    end
+    for row in pairs(rollCards) do
+        local id = shown(row) and read(row.rollID, "number")
+        local remaining = id and read(call(GetLootRollTimeLeft, id), "number")
+        local available = read(row.canNeed, "boolean") == true or read(row.canGreed, "boolean") == true
+            or read(row.canTransmog, "boolean") == true
+        if remaining and remaining > 0 and available and (not active or byId[id]) then
+            local link = read(call(GetLootRollItemLink, id), "string")
+            local itemId
+            if not itemIdFromLink(link) then
+                link, itemId = getInfoLink(call(C_TooltipInfo and C_TooltipInfo.GetLootRollItem, id))
+            end
+            addItem(items, { kind = "roll", row = row, icon = row.IconFrame, sourceId = id }, link, itemId)
+        end
+    end
+end
+
+local function collectAuctions(items)
+    local panel = AuctionHouseFrame and AuctionHouseFrame.ItemBuyFrame
+    watchFrame(panel, "auction")
+    if not shown(panel) then return end
+    local box = panel.ItemList and panel.ItemList.ScrollBox
+    watchScrollBox(box)
+    if not (box and box.ForEachFrame) then return end
+    box:ForEachFrame(function(row)
+        local data = shown(row) and read(row.rowData, "table")
+        local id = data and read(data.auctionID, "number")
+        if id and id > 0 and read(data.containsOwnerItem, "boolean") == false then
+            addItem(items, { kind = "auction", row = row, sourceId = id }, data.itemLink)
+        end
+    end)
+end
+
+local function collectTrade(items)
+    watchFrame(TradeFrame, "trade")
+    if not shown(TradeFrame) then return end
+    for index = 1, (read(TRADE_ENCHANT_SLOT, "number") or 7) - 1 do
+        local row = _G["TradeRecipientItem" .. index .. "ItemButton"]
+        if shown(row) then
+            local link = call(GetTradeTargetItemLink, index)
+            addItem(items, { kind = "trade", row = row, sourceId = index }, link)
+        end
+    end
+end
+
+local function collectMail(items)
+    local panel = OpenMailFrame
+    watchFrame(panel, "mail")
+    local id = shown(panel) and InboxFrame and read(InboxFrame.openMailID, "number")
+    if not id or id < 1 then return end
+    for index, row in ipairs(panel.OpenMailAttachments or {}) do
+        if shown(row) then
+            local link = read(call(GetInboxItemLink, id, index), "string")
+            local itemId
+            if not itemIdFromLink(link) then
+                link, itemId = getInfoLink(call(C_TooltipInfo and C_TooltipInfo.GetInboxItem, id, index))
+            end
+            addItem(items, { kind = "mail", row = row, sourceId = id .. ":" .. index }, link, itemId)
+        end
+    end
+end
+
+local function craftingForm()
+    local page = ProfessionsFrame and ProfessionsFrame.CraftingPage
+    return page and page.SchematicForm
+end
+
+local function collectCrafting(items)
+    local form = craftingForm()
+    watchFrame(form, "crafting")
+    if not (shown(form) and shown(form.OutputIcon) and C_TradeSkillUI and form.transaction) then return end
+    local transaction = form.transaction
+    local id = read(call(transaction.GetRecipeID, transaction), "number")
+    local info = id and read(call(C_TradeSkillUI.GetRecipeInfo, id), "table")
+    local schematic = read(form.recipeSchematic, "table")
+    if not info or read(info.learned, "boolean") ~= true or not schematic
+        or read(schematic.isRecraft, "boolean") == true or read(info.supportsQualities, "boolean") == true
+        or read(schematic.hasCraftingOperationInfo, "boolean") == true or read(form.isInspection, "boolean") == true
+        or read(call(C_TradeSkillUI.IsTradeSkillLinked), "boolean") == true then return end
+    local reagents = read(call(transaction.CreateCraftingReagentInfoTbl, transaction), "table")
+    local allocatedItem = call(transaction.GetAllocationItemGUID, transaction)
+    if not reagents or not addon.IsReadableValue(allocatedItem) or allocatedItem then return end
+    local link = getInfoLink(call(C_TradeSkillUI.GetRecipeOutputItemData, id, reagents))
+    local itemId = itemIdFromLink(link)
+    if itemId then
+        addItem(items, { kind = "crafting", row = form.OutputIcon, sourceId = id }, link)
+    end
+end
+
+local function storageLink(bag, slot)
+    return read(call(C_Container and C_Container.GetContainerItemLink or GetContainerItemLink, bag, slot), "string")
+end
+
+local function storagePosition(row, kind)
+    if kind == "bank" then
+        return read(call(row.GetBankTabID, row), "number"), read(call(row.GetContainerSlotID, row), "number")
+    end
+    return read(call(row.GetBagID, row), "number"), read(call(row.GetID, row), "number")
+end
+
+local function storageContextMatches(entry)
+    local context = entry.context
+    return context ~= nil and context == storageContext and context.owned == ui.currentOwned
+        and context.player == addon:GetTooltipPlayerContext()
+        and context.revision == (addon.ForeverScoring and addon.ForeverScoring.revision)
+        and context.phaseIndex == addon:GetAvailabilityPhaseIndex(context.player.phase)
+end
+
+local function storageGUIDMatches(first, second)
+    return not first or not second or first == second
+end
+
+local function storageBindingMatches(entry, bag, slot)
+    if not bag or not slot or entry.sourceId ~= bag .. ":" .. slot then return false end
+    if entry.kind == "bank" and not ui.personalBankOpen then return false end
+    return rating:SameExactItemLink(entry.itemId, entry.link, storageLink(bag, slot))
+        and storageGUIDMatches(entry.guid, entry.guid and ui:GetStorageItemGUID(bag, slot))
+end
+
+local function watchStoragePanel(panel, kind)
+    if not panel or not panel.HookScript or storagePanels[panel] then return end
+    storagePanels[panel] = true
+    local function refreshBindings()
+        local bankType = Enum and Enum.BankType and Enum.BankType.Character
+        local validPanel = kind ~= "bank" or (bankType ~= nil and call(panel.GetActiveBankType, panel) == bankType)
+        for row, entry in pairs(offers) do
+            if entry.kind == kind and entry.panel == panel and shown(row) then
+                local bag, slot = storagePosition(row, kind)
+                if not validPanel or not storageBindingMatches(entry, bag, slot) then
+                    clearMark(row, true)
+                end
+            end
+        end
+        highlights:ScheduleRefresh()
+    end
+    panel:HookScript("OnShow", refreshBindings)
+    for _, method in ipairs({ "UpdateItems", "GenerateItemSlotsForSelectedTab", "RefreshAllItemsForSelectedTab" }) do
+        if type(panel[method]) == "function" then
+            hooksecurefunc(panel, method, refreshBindings)
+        end
+    end
+end
+
+local function collectStorage(items, settings, checkpoint)
+    local bankTabs = {}
+    local bindings = {}
+    local bankType = Enum and Enum.BankType and Enum.BankType.Character
+    if ui.personalBankOpen and bankType ~= nil and settings.bank ~= false then
+        for _, tab in ipairs(read(call(C_Bank and C_Bank.FetchPurchasedBankTabIDs, bankType), "table") or {}) do
+            if read(tab, "number") then bankTabs[tab] = true end
+        end
+    end
+    local lastBag = ui:GetLastCarriedBagID()
+    local function add(row, bag, slot, panel, expectedLink, widget, expectedGUID)
+        if not shown(row) or not bag or not slot or slot < 1 then return end
+        local kind = bankTabs[bag] and "bank" or (bag >= 0 and bag <= lastBag and "bags")
+        if not kind or settings[kind] == false then return end
+        if kind == "bank" and not ui.personalBankOpen then return end
+        local link = storageLink(bag, slot)
+        local id = itemIdFromLink(link)
+        if not id or not rating:IsPotentialGear(id, link)
+            or (expectedLink and not rating:SameExactItemLink(id, link, expectedLink)) then return end
+        local guid = ui:GetStorageItemGUID(bag, slot)
+        if not storageGUIDMatches(guid, expectedGUID) then return end
+        addItem(items, { kind = kind, row = row, panel = panel, sourceId = bag .. ":" .. slot, bag = bag, slot = slot,
+            guid = guid or expectedGUID, owned = true, widget = widget }, link)
+    end
+    if type(ContainerFrameUtil_EnumerateContainerFrames) == "function" then
+        for _, panel in ContainerFrameUtil_EnumerateContainerFrames() do
+            watchStoragePanel(panel, "bags")
+            if settings.bags ~= false and shown(panel) and panel.EnumerateValidItems then
+                for _, row in panel:EnumerateValidItems() do
+                    local bag, slot = storagePosition(row, "bags")
+                    bindings[#bindings + 1] = { row = row, bag = bag, slot = slot, panel = panel }
+                end
+            end
+        end
+    end
+    local panel = BankFrame and BankFrame.BankPanel or BankPanel
+    watchStoragePanel(panel, "bank")
+    if ui.personalBankOpen and settings.bank ~= false and shown(panel) and bankType ~= nil
+        and call(panel.GetActiveBankType, panel) == bankType and panel.EnumerateValidItems then
+        for row in panel:EnumerateValidItems() do
+            local bag, slot = storagePosition(row, "bank")
+            bindings[#bindings + 1] = { row = row, bag = bag, slot = slot, panel = panel }
+        end
+    end
+    local api = Baganator and Baganator.API
+    local active = api and call(api.IsCornerWidgetActive, BAGANATOR_WIDGET_ID) ~= false
+    for row, entry in pairs(baganatorItems) do
+        entry.active = active
+        if active then
+            local location = read(entry.details.itemLocation, "table")
+            if location and row.BGR == entry.details then
+                local bag, slot = read(location.bagID, "number"), read(location.slotIndex, "number")
+                bindings[#bindings + 1] = { row = row, bag = bag, slot = slot, widget = entry.widget,
+                    link = read(entry.details.itemLink, "string"), guid = read(entry.details.guid, "string") }
+            end
+        end
+    end
+    for _, binding in ipairs(bindings) do
+        checkpoint()
+        add(binding.row, binding.bag, binding.slot, binding.panel, binding.link, binding.widget, binding.guid)
+    end
+end
+
+local collectors = { quest = collectQuest, vendor = collectVendor, loot = collectLoot, roll = collectRolls,
+    auction = collectAuctions, trade = collectTrade, mail = collectMail, crafting = collectCrafting }
+
+local function unresolved(result)
+    return result and (result.status == "loading" or result.status == "unavailable")
+end
+
+local function assessmentReady(result)
+    return result and not result.buildUnavailable and not unresolved(result)
+        and not unresolved(result.placement) and not unresolved(result.forecast)
+end
+
+local function appendComparisonSignature(signature, assessment)
+    local result = assessment.result
+    local comparison = result.forecast or result
+    local placement = result.placement
+    signature[#signature + 1] = table.concat({ assessment.spec.name, tostring(comparison.delta),
+        tostring(comparison.status), tostring(comparison.bank), tostring(comparison.equipNow),
+        tostring(result.conditional or comparison.conditional), tostring(comparison.level),
+        tostring(placement.status), tostring(placement.rank), tostring(placement.total) }, "\031")
+    for _, replacement in ipairs(comparison.replacements or {}) do
+        signature[#signature + 1] = replacement.name .. "\031" .. tostring(replacement.state)
+    end
+end
+
+local function rewardItem(batch, entry)
+    local id = entry.itemId
+    if not entry.link then
+        if id and not (rating.loadedItems and rating.loadedItems[id]) then batch.pending[id] = true end
+        return nil, false
+    end
+    local item = batch.items[entry.link]
+    if not item then
+        local candidate, status = rating:GetTooltipItem(id, entry.link)
+        item = { candidate = candidate, status = status }
+        batch.items[entry.link] = item
+    end
+    local candidate, status = item.candidate, item.status
+    if status == "loading" or (candidate and candidate.status == "loading") then
+        batch.pending[id] = true
+        return nil, false
+    end
+    if not candidate then return nil, status == nil end
+    if not candidate.facts then return nil, false end
+    return candidate, true
+end
+
+local function assess(batch, entry, evaluation)
+    local candidate, exact = rewardItem(batch, entry)
+    if not candidate then return nil, exact end
+    local id, spec, context = entry.itemId, evaluation.spec, evaluation.context
+    if entry.kind == "crafting" and rating:IsUnresolvedVariant(id, candidate.key) then return nil, false end
+    if context.owned.variantUnknownItems and context.owned.variantUnknownItems[id] then return nil, false end
+    local quest = entry.kind == "quest"
+    local key = not quest and (spec.name .. "\031" .. entry.link)
+    local cached = key and batch.swaps[key]
+    if cached then return cached.assessment, cached.ready end
+
+    local result = rating:CompareTooltipItem(context, candidate, false, nil, true,
+        { live = true, lookahead = true, quantity = entry.quantity })
+    local ready = assessmentReady(result)
+    local assessment = { spec = spec, result = result, guaranteed = evaluation.guaranteed }
+    if quest then
+        local slot = result.slot or result.placement.item and result.placement.item.slot
+        if context.leveling and slot and addon.IsConfirmedGearBiS then
+            local history = addon:GetRecommendationHistory(id, context.class, spec.name, "PR", slot, candidate.key)
+            if addon:IsConfirmedGearBiS(history, "PR", id, candidate.key) then
+                assessment.futureBiS = true
+            end
+        end
+    else
+        batch.swaps[key] = { assessment = assessment, ready = ready }
+    end
+    return assessment, ready
+end
+
+local function exactMark(mark, entry)
+    local copy = {}
+    for key, value in pairs(mark) do copy[key] = value end
+    copy.entry = entry
+    return copy
+end
+
+local function rankOffers(batch, entry)
+    local primary, assessments = nil, {}
+    for _, evaluation in ipairs(batch.contexts) do
+        local assessment, ready = assess(batch, entry, evaluation)
+        if assessment then
+            assessments[#assessments + 1] = assessment
+            if not primary and ready and rating:ReliableGain(assessment.result) then primary = assessment end
+        end
+    end
+    if primary then
+        primary = exactMark(primary, entry)
+        primary.assessments = assessments
+        local signature = {}
+        for _, assessment in ipairs(assessments) do appendComparisonSignature(signature, assessment) end
+        entry.assessmentKey = table.concat(signature, "\030")
+    end
+    return primary
+end
+
+local function rankStorage(batch, entry, checkpoint)
+    local candidate, exact = rewardItem(batch, entry)
+    if not candidate then return nil, exact end
+    local primary, ready, assessments, signature = nil, #batch.contexts > 0, {}, {}
+    for _, evaluation in ipairs(batch.contexts) do
+        checkpoint()
+        local context, spec = evaluation.context, evaluation.spec
+        local result = rating:GetStorageComparison(context, candidate, entry.sourceId, entry.guid)
+        local resolved = assessmentReady(result)
+        ready = ready and resolved
+        if result then
+            local assessment = { spec = spec, result = result }
+            assessments[#assessments + 1] = assessment
+            local _, futureLevel = rating:GetLevelingCue(result)
+            if resolved and (result.equipSwap or futureLevel) then
+                if not primary or (not primary.result.equipSwap and result.equipSwap) then primary = assessment end
+            end
+            appendComparisonSignature(signature, assessment)
+        end
+    end
+    entry.assessments, entry.assessmentKey = assessments, table.concat(signature, "\030")
+    return primary and exactMark(primary, entry), ready
+end
+
+local function rankRewards(batch, rewards, evaluation, rows, baselineReady, allowBest)
+    local bestGain, best = 0, {}
+    local allReady = baselineReady
+    for _, entry in ipairs(rewards) do
+        local assessment, resolved = assess(batch, entry, evaluation)
+        local quantityReady = entry.quantity and entry.quantity >= 1
+        allReady = allReady and resolved and quantityReady
+        if assessment then
+            rows[entry.row][#rows[entry.row] + 1] = assessment
+            if not baselineReady or not quantityReady then
+                assessment.result = setmetatable({ conditional = true }, { __index = assessment.result })
+            elseif resolved then
+                local gain = rating:ReliableGain(assessment.result)
+                local _, futureLevel = rating:GetLevelingCue(assessment.result)
+                assessment.show = gain ~= nil or futureLevel ~= nil
+                if gain then
+                    if gain > bestGain then bestGain, best = gain, {} end
+                    if gain == bestGain then best[#best + 1] = assessment end
+                end
+            end
+        end
+    end
+    if allowBest and allReady then
+        for _, mark in ipairs(best) do mark.bestChoice = #best == 1; mark.tiedChoice = #best > 1 end
+    end
+    return allReady
+end
+
+local function highestSellValue(batch, entries)
+    local best
+    for _, entry in ipairs(entries) do
+        local getter = C_Item and C_Item.GetItemInfo or GetItemInfo
+        local price = read(select(11, call(getter, entry.link)), "number")
+        if not price or not entry.quantity or entry.quantity < 1 then
+            local id = entry.itemId
+            if not price and id and not (rating.loadedItems and rating.loadedItems[id]) then batch.pending[id] = true end
+            return nil
+        end
+        local value = price * entry.quantity
+        if value > 0 and (not best or value > best.sellValue) then best = { entry = entry, sellValue = value } end
+    end
+    return best
+end
+
+local function recordMark(mark, visualKey, immediate)
+    local entry, result = mark.entry, mark.result
+    local row = entry.row
+    local previous = marks[row]
+    if entry.widget and not immediate and (not previous or previous.visualKey ~= visualKey) then highlights.baganatorDirty = true end
+    local placement = result and result.placement or {}
+    local textKey = table.concat({ visualKey, tostring(mark.sellValue), tostring(mark.bestChoice),
+        tostring(result and result.delta), tostring(result and result.bank), tostring(placement.rank), tostring(placement.total),
+        tostring(placement.score_percent), tostring(placement.placement_color), mark.spec and mark.spec.name or "" }, "\031")
+    textKey = textKey .. (entry.assessmentKey or "")
+    if not previous or previous.textKey ~= textKey then highlights.tooltipDirty = true end
+    mark.visualKey, mark.textKey = visualKey, textKey
+    marks[row] = mark
+end
+
+local function newStorageBadge(row)
+    local badge = CreateFrame("Frame", nil, row)
+    badge:EnableMouse(false)
+    badge:SetSize(20, 16)
+    badge.background = badge:CreateTexture(nil, "BACKGROUND")
+    badge.background:SetAllPoints()
+    badge.icon = badge:CreateTexture(nil, "ARTWORK")
+    badge.icon:SetSize(14, 14)
+    badge.icon:SetPoint("CENTER")
+    badge.cue = badge:CreateTexture(nil, "OVERLAY")
+    badge.cue:SetSize(11, 11)
+    badge.cue:SetPoint("LEFT", badge, "LEFT", 1, 0)
+    badge.bis = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    badge.bis:SetAllPoints()
+    badge.bis:SetJustifyH("CENTER")
+    badge.bis:SetJustifyV("MIDDLE")
+    badge.bis:SetText("BiS")
+    badge.bis:SetTextColor(unpack(widgets.Theme.bisGold))
+    badge.border = {}
+    for _, side in ipairs({ "TOP", "BOTTOM", "LEFT", "RIGHT" }) do
+        local edge = badge:CreateTexture(nil, "OVERLAY")
+        if side == "TOP" or side == "BOTTOM" then
+            edge:SetPoint(side .. "LEFT")
+            edge:SetPoint(side .. "RIGHT")
+            edge:SetHeight(1)
+        else
+            edge:SetPoint("TOP" .. side)
+            edge:SetPoint("BOTTOM" .. side)
+            edge:SetWidth(1)
+        end
+        badge.border[#badge.border + 1] = edge
+    end
+    badge:Hide()
+    return badge
+end
+
+local function displayStorage(mark, r, g, b, immediate, futureLevel)
+    local entry, result = mark.entry, mark.result
+    local badge = overlays[entry.row]
+    if not badge then
+        badge = newStorageBadge(entry.row)
+        badge:SetPoint("TOPRIGHT", entry.row, "TOPRIGHT", -1, -1)
+        badge:SetFrameLevel((entry.row:GetFrameLevel() or 0) + 3)
+        overlays[entry.row] = badge
+    end
+    local bis = result.bis == true
+    local icon = mark.spec and mark.spec.icon
+    if bis then r, g, b = unpack(widgets.Theme.bisGold) end
+    local visualKey = table.concat({ entry.kind, entry.sourceId, tostring(icon), tostring(bis), r, g, b, futureLevel or "" }, "\031")
+    if badge.visualKey == visualKey then
+        if not badge.managed then badge:Show() end
+        recordMark(mark, visualKey, immediate)
+        return
+    end
+    badge.visualKey = visualKey
+    if icon then
+        badge.icon:SetTexture(icon)
+        badge.icon:SetVertexColor(1, 1, 1)
+    else
+        widgets:SetIcon(badge.icon, "upgradeArrow")
+        badge.icon:SetVertexColor(r, g, b)
+    end
+    local cue = futureLevel or result.equipSwap
+    badge:SetSize(futureLevel and 44 or cue and 32 or 20, 16)
+    badge.cue:SetShown(cue ~= nil)
+    widgets:SetIcon(badge.cue, futureLevel and "clock" or "upgradeArrow")
+    badge.cue:SetVertexColor(widgets:GearAdviceColor(futureLevel and "future" or "gain"))
+    badge.bis:ClearAllPoints()
+    badge.bis:SetPoint("LEFT", cue and badge.cue or badge, cue and "RIGHT" or "LEFT", 0, 0)
+    badge.bis:SetPoint("RIGHT")
+    badge.icon:ClearAllPoints()
+    badge.icon:SetPoint("RIGHT", badge, "RIGHT", -1, 0)
+    badge.icon:SetShown(not bis and not futureLevel)
+    badge.bis:SetText(futureLevel and ("Lv " .. futureLevel) or "BiS")
+    if futureLevel then badge.bis:SetTextColor(r, g, b) else badge.bis:SetTextColor(unpack(widgets.Theme.bisGold)) end
+    badge.bis:SetShown(bis or futureLevel ~= nil)
+    if bis then
+        badge.background:SetColorTexture(r * 0.15, g * 0.15, b * 0.15, 0.95)
+    else
+        badge.background:SetColorTexture(0.05, 0.05, 0.06, 0.9)
+    end
+    for _, edge in ipairs(badge.border) do edge:SetColorTexture(r, g, b, 1) end
+    if not badge.managed then badge:Show() end
+    recordMark(mark, visualKey, immediate)
+end
+
+local function newOverlay(row)
+    local overlay = CreateFrame("Frame", nil, row)
+    overlay:EnableMouse(false)
+    overlay:SetAllPoints(row)
+    local corner = CreateFrame("Frame", nil, overlay)
+    corner:EnableMouse(false)
+    corner:SetSize(15, 15)
+    corner.background = corner:CreateTexture(nil, "BACKGROUND")
+    corner.background:SetAllPoints()
+    corner.background:SetColorTexture(0.05, 0.05, 0.06, 0.88)
+    corner.accent = corner:CreateTexture(nil, "OVERLAY")
+    corner.accent:SetPoint("BOTTOMLEFT")
+    corner.accent:SetPoint("BOTTOMRIGHT")
+    corner.accent:SetHeight(2)
+    corner.symbol = corner:CreateTexture(nil, "ARTWORK")
+    corner.symbol:SetPoint("TOPLEFT", 1, -1)
+    corner.symbol:SetPoint("BOTTOMRIGHT", -1, 2)
+    corner.arrow = corner:CreateTexture(nil, "OVERLAY")
+    corner.arrow:SetAllPoints(corner.symbol)
+    widgets:SetIcon(corner.arrow, "upgradeArrow")
+    corner.cue = corner:CreateTexture(nil, "OVERLAY")
+    corner.cue:SetSize(11, 11)
+    corner.cue:SetPoint("RIGHT", corner, "LEFT", 1, 0)
+    corner.level = corner:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    corner.level:SetPoint("CENTER")
+    overlay.corner = corner
+
+    overlay.glow = overlay:CreateTexture(nil, "ARTWORK")
+    overlay.glow:SetTexture("Interface\\Buttons\\UI-ActionButton-Border")
+    overlay.glow:SetDesaturated(true)
+    overlay.glow:SetBlendMode("ADD")
+    overlay.glow:SetSize(29, 29)
+    overlay.glow:SetPoint("CENTER", corner)
+    overlay.bis = overlay:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    overlay.bis:SetPoint("TOPLEFT", corner, "BOTTOMLEFT", 0, -1)
+    overlay.bis:SetText("BiS")
+    overlay.bis:SetTextColor(unpack(widgets.Theme.bisGold))
+    overlay.edges = {}
+    for _, side in ipairs({ "TOP", "BOTTOM", "LEFT", "RIGHT" }) do
+        local edge = overlay:CreateTexture(nil, "OVERLAY")
+        if side == "TOP" or side == "BOTTOM" then
+            local y = side == "TOP" and -1 or 1
+            edge:SetPoint(side .. "LEFT", 1, y)
+            edge:SetPoint(side .. "RIGHT", -1, y)
+            edge:SetHeight(1)
+        else
+            local x = side == "LEFT" and 1 or -1
+            edge:SetPoint("TOP" .. side, x, -1)
+            edge:SetPoint("BOTTOM" .. side, x, 1)
+            edge:SetWidth(1)
+        end
+        overlay.edges[#overlay.edges + 1] = edge
+    end
+    if corner.arrow.CreateAnimationGroup then
+        local animation = corner.arrow:CreateAnimationGroup()
+        local rise = animation:CreateAnimation("Translation")
+        rise:SetOffset(0, 4)
+        rise:SetDuration(0.45)
+        local fade = animation:CreateAnimation("Alpha")
+        fade:SetFromAlpha(1)
+        fade:SetToAlpha(0)
+        fade:SetDuration(0.45)
+        animation:SetScript("OnFinished", function()
+            corner.arrow:Hide()
+            corner.symbol:Show()
+        end)
+        overlay.animation = animation
+    end
+    overlay:Hide()
+    return overlay
+end
+
+local function display(mark, animate, immediate)
+    local entry, result = mark.entry, mark.result
+    local row, spec = entry.row, mark.spec
+    local tier = result and result.placement and result.placement.tier
+    local grade, futureLevel = rating:GetLevelingCue(result)
+    local bis = result and result.bis == true and (entry.kind ~= "quest" or mark.bestChoice)
+    local r, g, b = unpack(NEUTRAL)
+    if not futureLevel then
+        if grade and grade > 0 then r, g, b = widgets:GetRankColor(grade)
+        elseif tier and grade == nil then r, g, b = widgets:GetRankColor(tier.quality) end
+    end
+    if entry.owned then displayStorage(mark, r, g, b, immediate, futureLevel); return end
+    local overlay = overlays[row]
+    if not overlay then overlay = newOverlay(row); overlays[row] = overlay end
+    overlay:SetFrameLevel((row:GetFrameLevel() or 0) + 3)
+    local corner = overlay.corner
+    corner:ClearAllPoints()
+    if entry.kind == "auction" then
+        corner:SetPoint("LEFT", row, "LEFT", 0, 0)
+    else
+        corner:SetPoint("TOPLEFT", entry.icon or row, "TOPLEFT", 1, -1)
+    end
+    corner.accent:SetColorTexture(r, g, b, 1)
+    corner.arrow:SetVertexColor(widgets:GearAdviceColor("gain"))
+    overlay.glow:SetVertexColor(r, g, b, 0.55)
+    overlay.glow:SetShown(not mark.sellValue and not futureLevel)
+    overlay.bis:SetShown(bis)
+    for _, edge in ipairs(overlay.edges) do
+        edge:SetColorTexture(r, g, b, 0.95)
+        edge:SetShown(mark.outline == true)
+    end
+
+    local icon = not futureLevel and (mark.sellValue and GOLD_COIN or spec and spec.icon) or nil
+    local showsUpgrade = not futureLevel and rating:ReliableGain(result) ~= nil
+    local visualKey = table.concat({ entry.kind, entry.sourceId, entry.link, tostring(icon), tostring(bis),
+        tostring(grade or (tier and tier.quality)), tostring(showsUpgrade), tostring(animate), futureLevel or "" }, "\031")
+    local wasShown = overlay:IsShown()
+    overlay:Show()
+    if overlay.visualKey ~= visualKey or not wasShown then
+        local fresh = overlay.visualKey ~= visualKey
+        overlay.visualKey = visualKey
+        if overlay.animation and overlay.animation:IsPlaying() then overlay.animation:Stop() end
+        corner:SetSize(futureLevel and 32 or 15, 15)
+        corner.level:SetText(futureLevel and ("Lv " .. futureLevel) or "")
+        corner.level:SetTextColor(r, g, b)
+        corner.level:SetShown(futureLevel ~= nil)
+        widgets:SetIcon(corner.cue, futureLevel and "clock" or "upgradeArrow")
+        corner.cue:SetVertexColor(widgets:GearAdviceColor(futureLevel and "future" or "gain"))
+        corner.cue:SetShown(futureLevel ~= nil or (showsUpgrade and icon ~= nil))
+        corner.symbol:SetTexture(icon)
+        corner.symbol:SetShown(icon ~= nil)
+        corner.arrow:SetShown(not icon and showsUpgrade == true)
+        if fresh and icon and showsUpgrade and animate and overlay.animation then
+            corner.arrow:Show()
+            corner.symbol:Hide()
+            overlay.animation:Play()
+        end
+    end
+    recordMark(mark, visualKey)
+end
+
+local function checkpoint()
+    if rating.work and coroutine.running() == rating.work.thread then
+        rating.work.checkpoint()
+        return
+    end
+    highlights.steps = highlights.steps + 1
+    if highlights.generation ~= highlights.workerGeneration
+        or (debugprofilestop and debugprofilestop() >= highlights.deadline)
+        or (not debugprofilestop and highlights.steps >= 64) then
+        coroutine.yield()
+    end
+end
+
+function highlights:GetCheckpoint()
+    if self.worker and coroutine.running() == self.worker then return checkpoint end
+end
+
+local function newBatch(player, owned)
+    local batch = { contexts = {}, items = {}, swaps = {}, pending = {} }
+    if player and player.spec then
+        for _, spec in ipairs(player.specs) do
+            if spec.role == "active" or spec.role == "dual" then
+                local context = rating:GetContext(player.class, spec.name, player.phase, player.level, owned)
+                if context then
+                    batch.contexts[#batch.contexts + 1] = { spec = spec, context = context }
+                    for id in pairs(context.pending) do batch.pending[id] = true end
+                else
+                    batch.missingContext = true
+                end
+            end
+        end
+    end
+    return batch
+end
+
+local function selectStorageContext(owned, player)
+    local key = rating:GetGearSnapshotKey(owned)
+    local revision = addon.ForeverScoring and addon.ForeverScoring.revision
+    local phaseIndex = addon:GetAvailabilityPhaseIndex(player.phase)
+    local data = BigBiSListData.stat_rank
+    checkpoint()
+    local current = storageContext
+    if not current or current.key ~= key or current.player ~= player or current.revision ~= revision
+        or current.phaseIndex ~= phaseIndex or current.data ~= data then
+        storageCache = {}
+        current = { key = key, player = player, revision = revision, phaseIndex = phaseIndex,
+            data = data, pending = {} }
+        storageContext = current
+        for row, entry in pairs(offers) do
+            if entry.owned then clearMark(row, true) end
+        end
+    end
+    current.owned = owned
+    return current
+end
+
+local function liveStorageEntry(entry, settings)
+    local row, kind = entry.row, entry.kind
+    if settings[kind] == false or not shown(row) then return false end
+    local bag, slot
+    if entry.widget then
+        local state = baganatorItems[row]
+        if not state or not state.active or state.details ~= row.BGR then return false end
+        bag, slot = state.bag, state.slot
+        local api = Baganator and Baganator.API
+        if not api or call(api.IsCornerWidgetActive, BAGANATOR_WIDGET_ID) == false then return false end
+    else
+        if kind == "bank" then
+            local bankType = Enum and Enum.BankType and Enum.BankType.Character
+            if not bankType or call(entry.panel.GetActiveBankType, entry.panel) ~= bankType then return false end
+        end
+        bag, slot = storagePosition(row, kind)
+    end
+    return storageBindingMatches(entry, bag, slot)
+end
+
+local function cachedStorage(entry)
+    local cached = storageCache[entry.sourceId]
+    if cached and cached.kind == entry.kind and rating:SameExactItemLink(entry.itemId, cached.link, entry.link)
+        and storageGUIDMatches(cached.guid, entry.guid) then return cached end
+end
+
+local function publishStorage(entry, mark, animate)
+    local row = entry.row
+    local previous = offers[row]
+    if not previous or previous.assessmentKey ~= entry.assessmentKey
+        or previous.sourceId ~= entry.sourceId or previous.link ~= entry.link then highlights.tooltipDirty = true end
+    if marks[row] and not mark then clearMark(row, true) end
+    offers[row] = entry
+    if mark then display(mark, animate) end
+end
+
+local function refresh()
+    local scan = ui.pendingPersonalBankScan
+    if scan then
+        local scanned = ui.personalBankOpen and ui:ScanBankItems()
+        checkpoint()
+        ui.pendingPersonalBankScan = nil
+        if scanned then
+            addon:RefreshUI("ownership", "personal-bank-scan")
+            checkpoint()
+        end
+    end
+    local settings = addon:GetAccountDB().profile.gearHighlights
+    local items, storage, results, currentOffers = {}, {}, {}, {}
+    for _, setting in ipairs(highlights.settings) do
+        local kind = setting[1]
+        local collect = collectors[kind]
+        if collect and settings[kind] ~= false then collect(items) end
+    end
+    collectStorage(storage, settings, checkpoint)
+    if #items > 0 or #storage > 0 then
+        local player = addon:GetTooltipPlayerContext()
+        local owned = player and player.spec and ui:GetOwnedSnapshot()
+        local batch
+        if owned and #storage > 0 then
+            local context = selectStorageContext(owned, player)
+            for _, entry in ipairs(storage) do
+                checkpoint()
+                entry.context = context
+                local cached = cachedStorage(entry)
+                local mark, ready
+                if cached then
+                    entry.assessments, entry.assessmentKey = cached.assessments, cached.assessmentKey
+                    if cached.mark then mark = exactMark(cached.mark, entry) end
+                else
+                    batch = batch or newBatch(player, owned)
+                    mark, ready = rankStorage(batch, entry, checkpoint)
+                end
+                checkpoint()
+                if storageContextMatches(entry) and liveStorageEntry(entry, settings) then
+                    if not cached then
+                        storageCache[entry.sourceId] = { kind = entry.kind, link = entry.link, guid = entry.guid,
+                            mark = mark, assessments = entry.assessments, assessmentKey = entry.assessmentKey, context = context }
+                        if not ready then context.unavailable = true end
+                    end
+                    currentOffers[entry.row] = entry
+                    publishStorage(entry, mark, settings.animate ~= false)
+                end
+            end
+        end
+        if #items > 0 then batch = batch or newBatch(player, owned) end
+        local rewards = { choice = {}, reward = {} }
+        for _, entry in ipairs(items) do
+            checkpoint()
+            if entry.link then
+                local previous = offers[entry.row]
+                if not previous or previous.link ~= entry.link or previous.sourceId ~= entry.sourceId
+                    or previous.kind ~= entry.kind then highlights.tooltipDirty = true end
+                currentOffers[entry.row] = entry
+            end
+            if entry.group then
+                local group = rewards[entry.group]
+                group[#group + 1] = entry
+            else
+                local mark = rankOffers(batch, entry)
+                if mark then entry.assessments, results[entry.row] = mark.assessments, mark end
+            end
+        end
+        local guaranteed, fixedReady, selected = {}, true, false
+        for _, entry in ipairs(rewards.reward) do
+            local candidate, ready = rewardItem(batch, entry)
+            if candidate and candidate.facts.level and entry.quantity and entry.quantity >= 1 then
+                guaranteed[#guaranteed + 1] = { candidate = candidate, quantity = entry.quantity }
+            elseif candidate or not ready then
+                fixedReady = false
+            end
+        end
+        local rows = {}
+        local canSuggestSale = fixedReady and batch and #batch.contexts > 0 and not batch.missingContext
+        for _, kind in ipairs({ "reward", "choice" }) do
+            table.sort(rewards[kind], function(a, b) return a.order < b.order end)
+            for _, entry in ipairs(rewards[kind]) do
+                rows[entry.row] = {}
+                selected = selected or entry.selected
+            end
+        end
+        if next(rows) then
+            for _, evaluation in ipairs(batch.contexts) do
+                rankRewards(batch, rewards.reward, evaluation, rows, true, false)
+                local build = rating:WithCharacterBuild(evaluation.context, true)
+                local choice = { spec = evaluation.spec, context = rating:WithGuaranteedRewards(build, guaranteed),
+                    guaranteed = #guaranteed > 0 }
+                local choicesReady = rankRewards(batch, rewards.choice, choice, rows, fixedReady, #rewards.choice > 1)
+                canSuggestSale = canSuggestSale and choicesReady
+            end
+            for _, kind in ipairs({ "reward", "choice" }) do
+                for _, entry in ipairs(rewards[kind]) do
+                    entry.assessments = rows[entry.row]
+                    local primary, bestChoice
+                    local signature = {}
+                    for _, assessment in ipairs(entry.assessments) do
+                        local result = assessment.result
+                        if assessment.show and (not primary
+                            or (rating:ReliableGain(result) and not rating:ReliableGain(primary.result))) then
+                            primary = assessment
+                        end
+                        bestChoice = bestChoice or assessment.bestChoice
+                        appendComparisonSignature(signature, assessment)
+                        signature[#signature + 1] = table.concat({
+                            tostring(assessment.bestChoice), tostring(assessment.tiedChoice), tostring(assessment.futureBiS),
+                            tostring(assessment.guaranteed), tostring(entry.turnIn)}, "\031")
+                    end
+                    entry.assessmentKey = table.concat(signature, "\030")
+                    local previous = offers[entry.row]
+                    if not previous or previous.assessmentKey ~= entry.assessmentKey then highlights.tooltipDirty = true end
+                    if primary then
+                        local mark = exactMark(primary, entry)
+                        mark.assessments, mark.bestChoice = entry.assessments, bestChoice
+                        mark.outline = kind == "choice" and #rewards.choice > 1 and not selected and bestChoice
+                        results[entry.row] = mark
+                        if kind == "choice" then canSuggestSale = false end
+                    end
+                end
+            end
+            if canSuggestSale and #rewards.choice > 1 then
+                local sale = highestSellValue(batch, rewards.choice)
+                if sale then sale.outline = not selected; results[sale.entry.row] = sale end
+            end
+        end
+        if batch then
+            highlights.pendingItems = batch.pending
+            if #storage > 0 and storageContext and storageContext.owned == owned then
+                for id in pairs(batch.pending) do storageContext.pending[id] = true end
+            end
+            ui:QueueStatLoads(batch.pending)
+        end
+    else
+        highlights.pendingItems = nil
+    end
+    for row, entry in pairs(offers) do
+        if not currentOffers[row] and entry.kind == "bags" and not entry.widget and not shown(row)
+            and settings.bags ~= false and storageContextMatches(entry) then
+            -- The parent hides its badge. Keep the binding for a synchronous reopen.
+            currentOffers[row] = entry
+        elseif not currentOffers[row] or (not entry.owned and marks[row] and not results[row]) then
+            clearMark(row, true)
+        end
+    end
+    for row, entry in pairs(currentOffers) do
+        if not entry.owned and shown(row) then offers[row] = entry end
+    end
+    for row, mark in pairs(results) do
+        if shown(row) then display(mark, settings.animate ~= false) end
+    end
+    for tooltip, work in pairs(tooltipJobs) do
+        checkpoint()
+        work()
+        if tooltipJobs[tooltip] == work then tooltipJobs[tooltip] = nil end
+    end
+    if highlights.tooltipDirty then
+        highlights.tooltipDirty = nil
+        addon:ScheduleItemTooltipRefresh()
+    end
+    if highlights.baganatorDirty then
+        highlights.baganatorDirty = nil
+        local api = Baganator and Baganator.API
+        if hooked.baganator and api and api.RequestItemButtonsRefresh then
+            local reasons = Baganator.Constants and Baganator.Constants.RefreshReason
+            api.RequestItemButtonsRefresh(reasons and { reasons.ItemWidgets } or nil)
+        end
+    end
+end
+
+local function step()
+    local self = highlights
+    self.queued = nil
+    if not self.worker or self.workerGeneration ~= self.generation then
+        self.worker = coroutine.create(refresh)
+        self.workerGeneration = self.generation
+        self.requested = nil
+    end
+    self.steps = 0
+    self.deadline = debugprofilestop and debugprofilestop() + 4
+    local ok, err = coroutine.resume(self.worker)
+    if not ok or coroutine.status(self.worker) == "dead" then self.worker = nil end
+    if not ok then geterrorhandler()(err) end
+    if self.worker or self.requested then
+        self.queued = true
+        C_Timer.After(0, step)
+    end
+end
+
+function highlights:ScheduleRefresh(restart)
+    if restart then self.generation = (self.generation or 0) + 1 end
+    if not self.eventFrame then return end
+    self.requested = true
+    if BigBiSListData.guide_index and rating.QueueWork then
+        local generation = self.generation
+        if self.packedWork and self.packedGeneration == generation then return end
+        self.packedGeneration = generation
+        self.packedWork = rating:QueueWork(3, function()
+            self.requested = nil
+            self.worker, self.workerGeneration = coroutine.running(), generation
+            refresh()
+        end, function() return self.generation == generation end, function()
+            self.packedWork, self.worker = nil, nil
+            if self.requested then self:ScheduleRefresh() end
+        end)
+        return
+    end
+    if self.queued or self:GetCheckpoint() then return end
+    self.queued = true
+    C_Timer.After(0, step)
+end
+
+function highlights:OwnershipChanged()
+    self:ScheduleRefresh(true)
+end
+
+function highlights:InvalidateStorage()
+    storageCache = {}
+    storageContext = nil
+    self:OwnershipChanged()
+end
+
+function highlights:ShouldDeferStorageTooltip(owner, getter)
+    if BigBiSListData.guide_index then return false end
+    if not self.eventFrame or (ui.currentOwned and not self.worker and not self.queued) then return false end
+    return getter == "GetBagItem" or (owner and (baganatorItems[owner]
+        or type(owner.GetBagID) == "function" or type(owner.GetBankTabID) == "function"))
+end
+
+function highlights:IsStorageTooltipCurrent(owner, itemId, link, getter, args)
+    local bag, slot
+    local state = owner and baganatorItems[owner]
+    if state then
+        if not shown(owner) or state.details ~= owner.BGR then return false end
+        bag, slot = state.bag, state.slot
+    elseif owner and type(owner.GetBagID) == "function" then
+        if not shown(owner) then return false end
+        bag, slot = storagePosition(owner, "bags")
+    elseif owner and type(owner.GetBankTabID) == "function" then
+        if not shown(owner) or not ui.personalBankOpen then return false end
+        bag, slot = storagePosition(owner, "bank")
+    elseif getter == "GetBagItem" and read(args, "table") then
+        bag, slot = read(args[1], "number"), read(args[2], "number")
+    end
+    return not bag or not slot or rating:SameExactItemLink(itemId, link, storageLink(bag, slot))
+end
+
+function highlights:QueueStorageTooltip(tooltip, work)
+    tooltipJobs[tooltip] = work
+    self:ScheduleRefresh()
+end
+
+function highlights:GetTooltipOffer(owner, itemId, link)
+    while owner do
+        local entry = offers[owner]
+        if entry and shown(owner) and entry.itemId == itemId and link then
+            if entry.owned then
+                if rating:SameExactItemLink(itemId, link, entry.link) then
+                    local settings = addon:GetAccountDB().profile.gearHighlights
+                    if storageContextMatches(entry) and liveStorageEntry(entry, settings) then return entry, marks[owner] end
+                    self:ScheduleRefresh()
+                end
+            elseif rating:SameExactItemLink(itemId, link, entry.link) then
+                return entry, marks[owner]
+            end
+        end
+        owner = call(owner.GetParent, owner)
+    end
+end
+
+local function hookGlobal(name, callback)
+    if not hooked[name] and type(_G[name]) == "function" then
+        hooksecurefunc(name, callback)
+        hooked[name] = true
+    end
+end
+
+local function onUpdated(kind)
+    return function()
+        clearKind(kind)
+        highlights:ScheduleRefresh(kind == "quest")
+    end
+end
+
+local function migrateBaganatorCorner()
+    -- Baganator applies each widget's default corner once per profile.
+    local settings = addon:GetAccountDB().profile.gearHighlights
+    local config = read(BAGANATOR_CONFIG, "table")
+    local profiles = config and read(config.Profiles, "table")
+    if settings.baganatorCornerVersion == 1 or not profiles then return end
+    for _, profile in pairs(profiles) do
+        local left = read(profile.icon_top_left_corner_array, "table") or {}
+        local moved = false
+        for index = #left, 1, -1 do
+            if left[index] == BAGANATOR_WIDGET_ID then
+                table.remove(left, index)
+                moved = true
+            end
+        end
+        if moved then
+            local right = read(profile.icon_top_right_corner_array, "table") or {}
+            for index = #right, 1, -1 do
+                if right[index] == BAGANATOR_WIDGET_ID then table.remove(right, index) end
+            end
+            table.insert(right, 1, BAGANATOR_WIDGET_ID)
+            profile.icon_top_right_corner_array = right
+        end
+    end
+    settings.baganatorCornerVersion = 1
+end
+
+local function hookBaganator()
+    local api = Baganator and Baganator.API
+    if hooked.baganator or not api or not api.RegisterCornerWidget then return end
+    hooked.baganator = true
+    migrateBaganatorCorner()
+    api.RegisterCornerWidget("Big BiS List", BAGANATOR_WIDGET_ID, function(widget, details)
+        local row = widget.itemButton
+        if not read(details, "table") then clearMark(row, true); baganatorItems[row] = nil; return false end
+        local previous = baganatorItems[row]
+        local link = read(details.itemLink, "string")
+        local location = read(details.itemLocation, "table")
+        local bag = location and read(location.bagID, "number")
+        local slot = location and read(location.slotIndex, "number")
+        local live = bag and slot and storageLink(bag, slot)
+        local itemId = itemIdFromLink(live)
+        local shownGUID = read(details.guid, "string")
+        local guid = itemId and ui:GetStorageItemGUID(bag, slot)
+        if not rating:SameExactItemLink(itemId, live, link) or not storageGUIDMatches(guid, shownGUID) then
+            clearMark(row, true, true)
+            baganatorItems[row] = nil
+            return false
+        end
+        guid = guid or shownGUID
+        -- A redraw creates new metadata tables for the same physical item.
+        local changed = not previous or previous.bag ~= bag or previous.slot ~= slot or previous.active == false
+            or not rating:SameExactItemLink(itemId, previous.link, live) or not storageGUIDMatches(previous.guid, guid)
+        baganatorItems[row] = { details = details, link = live, bag = bag, slot = slot, guid = guid, widget = widget, active = true }
+        local sourceId = bag .. ":" .. slot
+        local cached = storageCache[sourceId]
+        local settings = addon:GetAccountDB().profile.gearHighlights
+        if cached and rating:SameExactItemLink(itemId, cached.link, live) and settings[cached.kind] ~= false
+            and storageGUIDMatches(guid, cached.guid)
+            and storageContextMatches(cached)
+            and (cached.kind ~= "bank" or ui.personalBankOpen) then
+            local entries = {}
+            addItem(entries, {kind = cached.kind, row = row, sourceId = sourceId, guid = guid, owned = true, widget = widget,
+                assessments = cached.assessments, assessmentKey = cached.assessmentKey,
+                context = cached.context }, live)
+            local entry = entries[1]
+            if entry then
+                offers[row] = entry
+                if cached.mark then display(exactMark(cached.mark, entry), false, true)
+                else clearMark(row, true, true); offers[row] = entry end
+                return cached.mark ~= nil
+            end
+        end
+        if changed or marks[row] then
+            clearMark(row, true, true)
+            highlights:ScheduleRefresh()
+        end
+        return marks[row] ~= nil
+    end, function(row)
+        local widget = newStorageBadge(row)
+        widget.itemButton = row
+        widget.managed = true
+        overlays[row] = widget
+        row:HookScript("OnHide", function()
+            clearMark(row, false, true)
+            baganatorItems[row] = nil
+        end)
+        return widget
+    end, { corner = "top_right", priority = 1 })
+end
+
+local function hookPanels()
+    hookBaganator()
+    hookGlobal("QuestInfo_Display", onUpdated("quest"))
+    hookGlobal("QuestInfo_ShowRewards", onUpdated("quest"))
+    hookGlobal("QuestInfoItem_OnClick", function() highlights:ScheduleRefresh(true) end)
+    hookGlobal("MerchantFrame_Update", onUpdated("vendor"))
+    hookGlobal("TradeFrame_UpdateTargetItem", onUpdated("trade"))
+    hookGlobal("GroupLootFrame_SetupItemDisplay", function(row)
+        rollCards[row] = true
+        clearMark(row)
+        highlights:ScheduleRefresh()
+    end)
+    hookGlobal("GroupLootFrame_OnHide", function(row) rollCards[row] = nil; clearMark(row, true) end)
+    if OpenMailFrame and OpenMailFrame.Update and not hooked.mail then
+        hooksecurefunc(OpenMailFrame, "Update", onUpdated("mail"))
+        hooked.mail = true
+    end
+    local form = craftingForm()
+    if form and form.UpdateOutputItem and not hooked.crafting then
+        hooksecurefunc(form, "UpdateOutputItem", onUpdated("crafting"))
+        hooked.crafting = true
+    end
+end
+
+function highlights:Initialize()
+    if self.eventFrame or not (hooksecurefunc and C_Timer and C_Timer.After) then return end
+    local frame = CreateFrame("Frame")
+    self.eventFrame = frame
+    for _, event in ipairs({ "ADDON_LOADED", "PLAYER_ENTERING_WORLD", "QUEST_ITEM_UPDATE", "QUEST_FINISHED",
+        "MERCHANT_SHOW", "MERCHANT_UPDATE", "MERCHANT_CLOSED", "LOOT_OPENED", "LOOT_CLOSED",
+        "LOOT_SLOT_CHANGED", "LOOT_SLOT_CLEARED", "START_LOOT_ROLL", "CANCEL_LOOT_ROLL", "CANCEL_ALL_LOOT_ROLLS",
+        "AUCTION_HOUSE_SHOW", "AUCTION_HOUSE_CLOSED", "ITEM_SEARCH_RESULTS_UPDATED", "ITEM_SEARCH_RESULTS_ADDED", "BIDS_UPDATED",
+        "TRADE_SHOW", "TRADE_CLOSED", "MAIL_SHOW", "MAIL_CLOSED", "MAIL_INBOX_UPDATE",
+        "BAG_UPDATE_DELAYED", "BAG_CONTAINER_UPDATE", "BANKFRAME_OPENED", "BANKFRAME_CLOSED", "BANK_TABS_CHANGED",
+        "TRADE_SKILL_SHOW", "TRADE_SKILL_CLOSE", "GET_ITEM_INFO_RECEIVED", "PLAYER_REGEN_ENABLED" }) do
+        pcall(frame.RegisterEvent, frame, event)
+    end
+    frame:SetScript("OnEvent", function(_, event, id)
+        if event == "ADDON_LOADED" or event == "PLAYER_ENTERING_WORLD" then
+            hookPanels()
+        elseif event == "QUEST_ITEM_UPDATE" or event == "QUEST_FINISHED" then
+            clearKind("quest")
+            self:ScheduleRefresh(true)
+            return
+        elseif event == "LOOT_SLOT_CHANGED" or event == "LOOT_SLOT_CLEARED" then
+            local slot = read(id, "number")
+            if slot then lootSlotsCleared[slot] = event == "LOOT_SLOT_CLEARED" or nil end
+            clearKind("loot", true, slot)
+        elseif event == "CANCEL_LOOT_ROLL" or event == "CANCEL_ALL_LOOT_ROLLS" then
+            local rollId = read(id, "number")
+            for row in pairs(rollCards) do
+                if event == "CANCEL_ALL_LOOT_ROLLS" or (rollId and read(row.rollID, "number") == rollId) then
+                    rollCards[row] = nil
+                    clearMark(row, true)
+                end
+            end
+        elseif event == "LOOT_OPENED" or event == "LOOT_CLOSED" then
+            lootSlotsCleared = {}
+            clearKind("loot", true)
+        elseif event == "GET_ITEM_INFO_RECEIVED" then
+            local itemId = read(id, "number")
+            if not ((self.pendingItems and self.pendingItems[itemId])
+                or (storageContext and storageContext.pending[itemId])) then return end
+            self:InvalidateStorage()
+        elseif event == "PLAYER_REGEN_ENABLED" then
+            if not storageContext or not storageContext.unavailable then return end
+            self:InvalidateStorage()
+        end
+        self:ScheduleRefresh()
+    end)
+    hookPanels()
+    self:ScheduleRefresh()
+end

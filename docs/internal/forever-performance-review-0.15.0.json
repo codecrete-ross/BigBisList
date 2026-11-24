@@ -1,0 +1,227 @@
+{
+  "acceptance": {
+    "first_viewport_50ms": "passed all measured views",
+    "live_gameplay": "pending",
+    "peak_interaction_4ms": "not accepted"
+  },
+  "artifact_digest": "0176afa8c36883686603a230f029fd93a83e2f440da452223fb43a670edf2417",
+  "artifact_sha256": {
+    "AcquisitionHighlights.lua": "c74a083aa952b17cf97a4829ad1c78647a4db4d210d2c8fe53da3f9e4bf69a60",
+    "BigBiSList_Camelot.toc": "cdbd4d44d606ffe21dccab9e1f2897e22d613e0787fb1a3548a21aa3bfc12f94",
+    "ComparisonUI.lua": "0c58b01ecc1edf35cf87c579db9c8e0c83220bec6a60bc839ddc8e7ef4ab505d",
+    "Config.lua": "c366acdc6d6219fd2b6b832d0ee88d735720cb3aa5296dfce4e8f6897deddb8e",
+    "Core.lua": "e1f17ba1df8ba285f756e6555601fda3f5642d9dd5d3ff9c895630608baf29b8",
+    "DataForever.lua": "c5a4dbf99b6c0e765f8163dbf734b3cfde36e2e7598399261ed1d4bece6fef0d",
+    "DataIndex.lua": "b6bddb296b8e84b9eced9b85cc3ae17b5471d0325746e1a4d1086ffd614b8679",
+    "DetailsSources.lua": "5657fa78c7b6be3497cc256bb0fe9c7b35b1fe749e8010b056ee3016df1bbb1d",
+    "ForeverBrowse.lua": "60cf5f286f960641b189ce2b7aebe53431271edadb26c208b6e2ccb4b4d9ec5e",
+    "ForeverGearRating.lua": "82b2430915dbadad1d98216061300150628fbd483635dd221f2c0ec077e65985",
+    "ForeverGuide.lua": "a753ef35ba05fccef1a49b038adcf16e7e36e95a035688f44cc35887a46ff749",
+    "ForeverScoring.lua": "8498a3a01be514e3a9df4bf19d7bafa61c7c7f7ce168b1f79a1cee1e8d537999",
+    "ForeverStartup.lua": "758b25edb64be8e1e3773cd3fbe0a301140ee64b7fe828b34382095200d4b981",
+    "GuideDataForever.lua": "a9f1fd2e8a4307a1ed2b44593314c7d5e1a80cf0e51214051641e8661b489d83",
+    "GuideRanksForever.lua": "1a6b46fb66fa31318cb662303c752c6795f6f7a2ca9f26e7263218460556606c",
+    "Minimap.lua": "1c7dbd1c55b4114fcc3315349791ca62391f036c559d759ac648d7571bbbac2f",
+    "Tooltip.lua": "9f736acc01f2964e5fed43c62076f932073cdbf0b84ab294c615e52f8c11ec78",
+    "UI.lua": "4defdd507bc60e35e2ff8a7be922c6d03f996f47ae75dc29d2afdadcd736d02c",
+    "Widgets.lua": "802af67c5f7c17ceb57a5375b19e149a6709867d0872d65802907a97772c39ad",
+    "assets/icon.tga": "4fdc551ced374a01556157d011d17a31a86ac4ca54f6ce90fce5034ef87a8571",
+    "assets/ui-icons.tga": "149b0c7e3de76076975e820d698a7bb895c0c711d32c7fd7c13d0c26bfb3fab6",
+    "lib/CallbackHandler-1.0/CallbackHandler-1.0.lua": "ff908c26615aefebdf1134648718acb1fede6a697166f94698a1b96aa0a8e13e",
+    "lib/LibDBIcon-1.0/LibDBIcon-1.0.lua": "df0457ba7f8e483ee9333975d739c3e865efaaf7f9e5cefb3c0c576ac42e1130",
+    "lib/LibDataBroker-1.1/LibDataBroker-1.1.lua": "f3d4758f2060215492c9764b1d7dc2a336826d4cd253cd54ff9ff7c6d78f04e2",
+    "lib/LibStub/LibStub.lua": "186bac9553513504fac3a5c4550ff59f3aee9e8a497376134f3ca01de2ed18d0"
+  },
+  "assumptions": "Fresh save and process for each case, full packaged payload, verified active representative Paladin talents. Comfortable/wide is 1020x790; compact/details is 900x500. All final ranks, routes and ownership are compared with the synchronous calculations even if a view exceeds its timing budget. Simulated Lua widgets differ from native client controls.",
+  "collector_diagnostic": {
+    "acceptance": false,
+    "note": "A separately instrumented Lua executable measured multi-millisecond collector steps. This diagnosis does not replace the unmodified-runtime acceptance runs. The official runtime source and executable were restored.",
+    "output": "GCSTEP 1.514 phase 1 -> 2 bytes 52378583\nGCSTEP 2.428 phase 1 -> 2 bytes 196908756\nGCSTEP 1.069 phase 3 -> 3 bytes 183331340\nGCSTEP 1.592 phase 3 -> 3 bytes 169548180\n71037 full Retribution comfortable: add-on load 1506.3 ms, login events 0.2 ms, retained Lua heap 163.5 MiB\nUpgrades: first viewport on frame 2 (9.0 ms), peak 3.0 ms (background), 597 results\nBiS List: first viewport on frame 2 (7.4 ms), peak 3.7 ms (visible rows), 120 results\n"
+  },
+  "installation": {
+    "artifact_digest": "0176afa8c36883686603a230f029fd93a83e2f440da452223fb43a670edf2417",
+    "file_sha256": {
+      "AcquisitionHighlights.lua": "c74a083aa952b17cf97a4829ad1c78647a4db4d210d2c8fe53da3f9e4bf69a60",
+      "BigBiSList_Camelot.toc": "7ec2e31b2dafefa26f3105e7355aade5b64e2dcdd90ff8d3273e85defde21d8b",
+      "ComparisonUI.lua": "0c58b01ecc1edf35cf87c579db9c8e0c83220bec6a60bc839ddc8e7ef4ab505d",
+      "Config.lua": "c366acdc6d6219fd2b6b832d0ee88d735720cb3aa5296dfce4e8f6897deddb8e",
+      "Core.lua": "e1f17ba1df8ba285f756e6555601fda3f5642d9dd5d3ff9c895630608baf29b8",
+      "DataForever.lua": "c5a4dbf99b6c0e765f8163dbf734b3cfde36e2e7598399261ed1d4bece6fef0d",
+      "DataIndex.lua": "b6bddb296b8e84b9eced9b85cc3ae17b5471d0325746e1a4d1086ffd614b8679",
+      "DetailsSources.lua": "e02dd2fb7dd119f8775870a8374c640bdb3e2c819dc436caf46c8cc44564fb7b",
+      "ForeverBrowse.lua": "60cf5f286f960641b189ce2b7aebe53431271edadb26c208b6e2ccb4b4d9ec5e",
+      "ForeverGearRating.lua": "82b2430915dbadad1d98216061300150628fbd483635dd221f2c0ec077e65985",
+      "ForeverGuide.lua": "a753ef35ba05fccef1a49b038adcf16e7e36e95a035688f44cc35887a46ff749",
+      "ForeverScoring.lua": "8498a3a01be514e3a9df4bf19d7bafa61c7c7f7ce168b1f79a1cee1e8d537999",
+      "ForeverStartup.lua": "758b25edb64be8e1e3773cd3fbe0a301140ee64b7fe828b34382095200d4b981",
+      "GuideDataForever.lua": "a9f1fd2e8a4307a1ed2b44593314c7d5e1a80cf0e51214051641e8661b489d83",
+      "GuideRanksForever.lua": "1a6b46fb66fa31318cb662303c752c6795f6f7a2ca9f26e7263218460556606c",
+      "Minimap.lua": "3984b2a31b372e910a2ef5c04b6d6476a4a00346c9392bda4688972c6235a4fe",
+      "Tooltip.lua": "0b9e48e3846bf0ae561aed8fe0884ebe4cb77f0c8f1ffe25f0cbc3dd7dcb254b",
+      "UI.lua": "4defdd507bc60e35e2ff8a7be922c6d03f996f47ae75dc29d2afdadcd736d02c",
+      "Widgets.lua": "5ff6c0d4a1f44f802ad097619535a59198bbc2df40a966c330d2cace8da31150",
+      "assets/icon.tga": "4fdc551ced374a01556157d011d17a31a86ac4ca54f6ce90fce5034ef87a8571",
+      "assets/ui-icons.tga": "149b0c7e3de76076975e820d698a7bb895c0c711d32c7fd7c13d0c26bfb3fab6",
+      "lib/CallbackHandler-1.0/CallbackHandler-1.0.lua": "e22287c261318d8602c8333d6fb1a652abc3a4c005c919ef0a81a68bcfdefebb",
+      "lib/LibDBIcon-1.0/LibDBIcon-1.0.lua": "75aeb1b19024a65aac601a081a0d91c8aee85eb6d1001e759b2ea3455ba9c02d",
+      "lib/LibDataBroker-1.1/LibDataBroker-1.1.lua": "d79b3eada649684543bbbc3c511c2515e16d644f198fa991a201ee64d045b0f2",
+      "lib/LibStub/LibStub.lua": "186bac9553513504fac3a5c4550ff59f3aee9e8a497376134f3ca01de2ed18d0"
+    },
+    "files_matched": 25,
+    "installed_at_utc": "2026-11-23T05:41:25.405024+00:00",
+    "live_acceptance": "pending",
+    "source_commit": "2c7320bc05babdeef8be925bb424b3535d8c86de",
+    "target": "G:\\Battle.net Games\\World of Warcraft\\_forever_\\Interface\\AddOns\\BigBiSList",
+    "target_client": "1.60.1.71037"
+  },
+  "measured_commit": "2c7320bc05babdeef8be925bb424b3535d8c86de",
+  "remaining": "Resolve the recorded peak-work failures and obtain the player's cold/warm client performance and gameplay acceptance before merge and tag.",
+  "reviewed_at": "2026-11-22",
+  "runs": [
+    {
+      "cases": [
+        {
+          "case": [
+            "Retribution",
+            "comfortable",
+            "wide",
+            "leveling"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Retribution comfortable: add-on load 1184.0 ms, login events 0.0 ms, retained Lua heap 163.6 MiB\nfirst row on frame 2, first viewport on frame 2 (5.0 ms of harness time), warm reopen 0.0 ms\npeak measured addon frame 3.0 ms (refresh), full ranking requests 0, unindexed level summaries 0\nitem hover 1.0 ms, route click 2.0 ms\nretained after browsing 176.3 MiB including simulated widgets\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "compact",
+            "details",
+            "leveling"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Protection compact: add-on load 1087.0 ms, login events 0.0 ms, retained Lua heap 163.6 MiB\nfirst row on frame 3, first viewport on frame 3 (10.0 ms of harness time), warm reopen 0.0 ms\npeak measured addon frame 3.0 ms (open), full ranking requests 0, unindexed level summaries 0\nitem hover 2.0 ms, route click 2.0 ms\nretained after browsing 178.8 MiB including simulated widgets\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "comfortable",
+            "wide",
+            "endgame"
+          ],
+          "exit_code": 1,
+          "stderr": "D:\\codecrete-dev\\BigBisList\\build\\forever-ranking-release-bin\\lua.exe: tests/forever_guide_timing.lua:197: Upgrades exceeded the first-page or interaction budget\nstack traceback:\n\t[C]: in function 'assert'\n\ttests/forever_guide_timing.lua:197: in main chunk\n\t[C]: ?\n",
+          "stdout": "71037 full Protection comfortable: add-on load 1131.0 ms, login events 0.0 ms, retained Lua heap 163.6 MiB\nUpgrades: first viewport on frame 2 (11.0 ms), peak 6.0 ms (background), 101 results\nBiS List: first viewport on frame 2 (6.0 ms), peak 3.0 ms (visible rows), 118 results\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "compact",
+            "details",
+            "endgame"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Protection compact: add-on load 1100.0 ms, login events 0.0 ms, retained Lua heap 163.6 MiB\nUpgrades: first viewport on frame 2 (10.0 ms), peak 3.0 ms (refresh), 101 results\nBiS List: first viewport on frame 1 (4.0 ms), peak 3.0 ms (refresh), 118 results\n"
+        },
+        {
+          "case": [
+            "Retribution",
+            "comfortable",
+            "wide",
+            "endgame"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Retribution comfortable: add-on load 1142.0 ms, login events 0.0 ms, retained Lua heap 163.6 MiB\nUpgrades: first viewport on frame 3 (9.0 ms), peak 2.0 ms (background), 597 results\nBiS List: first viewport on frame 1 (5.0 ms), peak 3.0 ms (visible rows), 120 results\n"
+        },
+        {
+          "case": [
+            "Retribution",
+            "compact",
+            "details",
+            "endgame"
+          ],
+          "exit_code": 1,
+          "stderr": "D:\\codecrete-dev\\BigBisList\\build\\forever-ranking-release-bin\\lua.exe: tests/forever_guide_timing.lua:197: BiS List exceeded the first-page or interaction budget\nstack traceback:\n\t[C]: in function 'assert'\n\ttests/forever_guide_timing.lua:197: in main chunk\n\t[C]: ?\n",
+          "stdout": "71037 full Retribution compact: add-on load 1106.0 ms, login events 1.0 ms, retained Lua heap 163.6 MiB\nUpgrades: first viewport on frame 2 (9.0 ms), peak 3.0 ms (refresh), 597 results\nBiS List: first viewport on frame 2 (6.0 ms), peak 5.0 ms (visible rows), 120 results\n"
+        }
+      ],
+      "clock": "Windows CRT os.clock wall time",
+      "runtime": "Lua 5.1.5"
+    },
+    {
+      "cases": [
+        {
+          "case": [
+            "Retribution",
+            "comfortable",
+            "wide",
+            "leveling"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Retribution comfortable: add-on load 1420.1 ms, login events 0.1 ms, retained Lua heap 163.5 MiB\nfirst row on frame 2, first viewport on frame 2 (6.3 ms of harness time), warm reopen 0.1 ms\npeak measured addon frame 2.7 ms (visible rows), full ranking requests 0, unindexed level summaries 0\nitem hover 1.3 ms, route click 2.5 ms\nretained after browsing 176.3 MiB including simulated widgets\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "compact",
+            "details",
+            "leveling"
+          ],
+          "exit_code": 1,
+          "stderr": "build/cpu-time-lua/lua-5.1.5/src/lua: tests/forever_guide_timing.lua:275: Interaction exceeded the 4 ms frame budget\nstack traceback:\n\t[C]: in function 'assert'\n\ttests/forever_guide_timing.lua:275: in main chunk\n\t[C]: ?\n",
+          "stdout": "71037 full Protection compact: add-on load 1407.4 ms, login events 0.1 ms, retained Lua heap 163.5 MiB\nfirst row on frame 2, first viewport on frame 2 (6.6 ms of harness time), warm reopen 0.0 ms\npeak measured addon frame 4.8 ms (background), full ranking requests 0, unindexed level summaries 0\nitem hover 1.6 ms, route click 2.8 ms\nretained after browsing 178.8 MiB including simulated widgets\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "comfortable",
+            "wide",
+            "endgame"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Protection comfortable: add-on load 1450.2 ms, login events 0.1 ms, retained Lua heap 163.5 MiB\nUpgrades: first viewport on frame 2 (8.0 ms), peak 2.7 ms (background), 101 results\nBiS List: first viewport on frame 2 (8.8 ms), peak 4.0 ms (visible rows), 118 results\n"
+        },
+        {
+          "case": [
+            "Protection",
+            "compact",
+            "details",
+            "endgame"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Protection compact: add-on load 1421.2 ms, login events 0.1 ms, retained Lua heap 163.5 MiB\nUpgrades: first viewport on frame 2 (8.3 ms), peak 2.5 ms (background), 101 results\nBiS List: first viewport on frame 1 (4.2 ms), peak 3.1 ms (refresh), 118 results\n"
+        },
+        {
+          "case": [
+            "Retribution",
+            "comfortable",
+            "wide",
+            "endgame"
+          ],
+          "exit_code": 1,
+          "stderr": "build/cpu-time-lua/lua-5.1.5/src/lua: tests/forever_guide_timing.lua:197: Upgrades exceeded the first-page or interaction budget\nstack traceback:\n\t[C]: in function 'assert'\n\ttests/forever_guide_timing.lua:197: in main chunk\n\t[C]: ?\n",
+          "stdout": "71037 full Retribution comfortable: add-on load 1403.2 ms, login events 0.2 ms, retained Lua heap 163.5 MiB\nUpgrades: first viewport on frame 2 (7.6 ms), peak 9.7 ms (background), 597 results\nBiS List: first viewport on frame 2 (8.4 ms), peak 3.8 ms (visible rows), 120 results\n"
+        },
+        {
+          "case": [
+            "Retribution",
+            "compact",
+            "details",
+            "endgame"
+          ],
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": "71037 full Retribution compact: add-on load 1377.7 ms, login events 0.1 ms, retained Lua heap 163.5 MiB\nUpgrades: first viewport on frame 2 (10.8 ms), peak 2.7 ms (refresh), 597 results\nBiS List: first viewport on frame 2 (7.7 ms), peak 3.2 ms (visible rows), 120 results\n"
+        }
+      ],
+      "clock": "Linux os.clock CPU time",
+      "runtime": "Lua 5.1.5"
+    }
+  ],
+  "target_client": "1.60.1.71037"
+}

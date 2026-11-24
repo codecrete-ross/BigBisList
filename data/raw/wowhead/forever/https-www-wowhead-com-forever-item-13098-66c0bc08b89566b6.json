@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Painweaver Band Item Level 63 Binds when picked up Finger +9 Stamina Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 12 Attack Power. Sell Price: 2 30 33 Dropped by: General Drakkisath Drop Chance: 37.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:48.9118601Z",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 13098,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 13098,
+    "item_level": 63,
+    "name": "Painweaver Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0,
+      "crit_percent": 1.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13098"
+  },
+  "linked_entities": [],
+  "name": "Painweaver Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 37.56,
+      "entity_name": "General Drakkisath",
+      "source_url": "https://www.wowhead.com/forever/item=13098",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8583b395d8b46d2752d507544fcca6180a6480f7085d4ca0d779b976218d518a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13098",
+  "url": "https://www.wowhead.com/forever/item=13098"
+}

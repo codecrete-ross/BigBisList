@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pendant of the Fallen Dragon Item Level 74 Binds when picked up Neck +9 Stamina +12 Intellect Restores + 9 mana per 5 sec. Requires Level 60 Sell Price: 8 83 55 Dropped by: Vaelastrasz the Corrupt Drop Chance: 19.96%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19371,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +9 mana per 5 sec.",
+        "stats": {
+          "mp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 19371,
+    "item_level": 74,
+    "name": "Pendant of the Fallen Dragon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "mp5": 9.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19371"
+  },
+  "linked_entities": [],
+  "name": "Pendant of the Fallen Dragon",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.96,
+      "entity_name": "Vaelastrasz the Corrupt",
+      "source_url": "https://www.wowhead.com/forever/item=19371",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19371",
+  "url": "https://www.wowhead.com/forever/item=19371"
+}

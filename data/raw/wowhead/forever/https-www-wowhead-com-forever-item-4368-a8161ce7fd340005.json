@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Flying Tiger Goggles Item Level 20 Binds when equipped Head Cloth 27 Armor +4 Stamina +4 Spirit Durability 35 / 35 Requires Engineering (100) Sell Price: 4 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:11:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 4368,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 27,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4368,
+    "item_level": 20,
+    "name": "Flying Tiger Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 4.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4368"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    }
+  ],
+  "name": "Flying Tiger Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Flying Tiger Goggles Item Level 20 Binds when equipped Head Cloth 27 Armor +4 Stamina +4 Spirit Durability 35 / 35 Requires Engineering (100) Sell Price: 4 8",
+      "scope": "equip_or_use",
+      "skill": 100,
+      "source_url": "https://www.wowhead.com/forever/item=4368",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "57db61ac7ed52e9158c6db8255ef72e713696532511e633f6f1ac4627cb2cabf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4368",
+  "url": "https://www.wowhead.com/forever/item=4368"
+}

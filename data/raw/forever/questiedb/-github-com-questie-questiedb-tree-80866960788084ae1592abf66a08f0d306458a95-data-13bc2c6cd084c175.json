@@ -1,0 +1,210 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Curated documented Forever emulator API after Static/Derived/Dynamic corrections, from the pinned data tree.",
+  "fetched_at": "2026-11-06T05:37:42.614632+00:00",
+  "flavor": "forever",
+  "held_minimum_conflict_records": [
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 8418
+        }
+      },
+      "id": 6981,
+      "name": "The Glowing Shard",
+      "parentQuest": 0,
+      "questFlags": 2,
+      "questLevel": 26,
+      "requiredClasses": 0,
+      "requiredLevel": 15,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 0,
+      "requiredSpell": 0,
+      "sourceItemId": 10441,
+      "specialFlags": 2,
+      "startedBy": {
+        "3": {
+          "1": 10441
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 5769
+        }
+      },
+      "id": 3369,
+      "name": "In Nightmares",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 6981
+      },
+      "questFlags": 0,
+      "questLevel": 25,
+      "requiredClasses": 0,
+      "requiredLevel": 15,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 10649,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 8418
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 4217
+        }
+      },
+      "id": 3370,
+      "name": "In Nightmares",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 6981
+      },
+      "questFlags": 0,
+      "questLevel": 25,
+      "requiredClasses": 0,
+      "requiredLevel": 15,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 10649,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 8418
+        }
+      }
+    }
+  ],
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 3188
+        }
+      },
+      "id": 97225,
+      "name": "Forgotten Loa Idols",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 9,
+      "requiredClasses": 0,
+      "requiredLevel": 4,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 3304
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1253
+        }
+      },
+      "id": 99159,
+      "name": "Finding Warmth",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 8,
+      "requiredClasses": 0,
+      "requiredLevel": 5,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1253
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1253
+        }
+      },
+      "id": 99160,
+      "name": "Rime's Wrath",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 99159
+      },
+      "questFlags": 0,
+      "questLevel": 8,
+      "requiredClasses": 0,
+      "requiredLevel": 5,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1253
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 1253
+        }
+      },
+      "id": 99161,
+      "name": "Rime's Wrath",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 99160
+      },
+      "questFlags": 0,
+      "questLevel": 8,
+      "requiredClasses": 0,
+      "requiredLevel": 5,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 1253
+        }
+      }
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/tree/80866960788084ae1592abf66a08f0d306458a95/data"
+}

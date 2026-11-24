@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highborne Memory Crystal Item Level 55 Binds when picked up Held In Off-hand +9 Spirit Equip: Increases healing done by up to 19 and damage done by up to 6 for all magical spells and effects. Sell Price: 1 24 46",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 260201,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 19 and damage done by up to 6 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 19,
+          "spell_damage": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 19 and damage done by up to 6 for all magical spells and effects."
+    ],
+    "id": 260201,
+    "item_level": 55,
+    "name": "Highborne Memory Crystal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 19.0,
+      "spell_damage": 6.0,
+      "spirit": 9.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=260201"
+  },
+  "linked_entities": [],
+  "name": "Highborne Memory Crystal",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "f65bdb1a1232cbed0b18b76bdbc64cca8c12aadd14e54ebbc3029accc96ae89c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/260201",
+  "url": "https://www.wowhead.com/forever/item=260201"
+}

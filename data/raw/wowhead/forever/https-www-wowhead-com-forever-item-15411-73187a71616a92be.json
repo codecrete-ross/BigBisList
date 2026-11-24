@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of Fordring Item Level 63 Binds when picked up Neck Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 26 Attack Power. Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:14.5240407Z",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 15411,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +26 Attack Power.",
+        "stats": {
+          "attack_power": 26
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 15411,
+    "item_level": 63,
+    "name": "Mark of Fordring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 26.0,
+      "crit_percent": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15411"
+  },
+  "linked_entities": [],
+  "name": "Mark of Fordring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "304424c9ecd9effebc2399d835d84f3659b0ab68c14b0327e810d98a00b05c0e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15411",
+  "url": "https://www.wowhead.com/forever/item=15411"
+}

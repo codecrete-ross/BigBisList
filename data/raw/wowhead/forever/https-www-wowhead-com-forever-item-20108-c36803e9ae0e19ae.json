@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Lamellar Girdle Item Level 33 Binds when picked up Unique Waist Mail 128 Armor +11 Strength +4 Stamina +5 Intellect Requires Level 28 Requires The League of Arathor - Honored Sell Price: 20 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20108,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 128,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20108,
+    "item_level": 33,
+    "name": "Highlander's Lamellar Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 28,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "stamina": 4.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20108"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    }
+  ],
+  "name": "Highlander's Lamellar Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Lamellar Girdle Item Level 33 Binds when picked up Unique Waist Mail 128 Armor +11 Strength +4 Stamina +5 Intellect Requires Level 28 Requires The League of Arathor - Honored Sell Price: 20 75",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20108",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20108",
+  "url": "https://www.wowhead.com/forever/item=20108"
+}

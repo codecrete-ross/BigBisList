@@ -1,0 +1,27 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Fire Reflector Item Effect Instant Reflects Fire spells back at their caster for 5 sec.",
+  "entity_id": 23097,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:50+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 23097,
+      "name": "Fire Reflector",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23097"
+    }
+  ],
+  "name": "Fire Reflector",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 23097,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/23097",
+  "url": "https://www.wowhead.com/forever/spell=23097"
+}

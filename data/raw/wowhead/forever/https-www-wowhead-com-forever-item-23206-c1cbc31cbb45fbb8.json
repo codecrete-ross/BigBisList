@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of the Champion Item Level 90 Binds when picked up Unique Trinket Equip: + 150 Attack Power against Demons. Equip: + 150 Attack Power against Undead.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 23206,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +150 Attack Power against Demons.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Equip: +150 Attack Power against Undead.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +150 Attack Power against Demons.",
+      "Equip: +150 Attack Power against Undead."
+    ],
+    "id": 23206,
+    "item_level": 90,
+    "name": "Mark of the Champion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=23206"
+  },
+  "linked_entities": [],
+  "name": "Mark of the Champion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23206",
+  "url": "https://www.wowhead.com/forever/item=23206"
+}

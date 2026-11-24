@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Heavy Linen Bandage Item Level 1 Requires First Aid (20) Use: Heals 114 damage over 6 sec. Max Stack: 20 Sell Price: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2581,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 114 damage over 6 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 2581,
+    "item_level": 1,
+    "name": "Heavy Linen Bandage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals 114 damage over 6 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2581"
+  },
+  "linked_entities": [
+    {
+      "id": 2942,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=2942"
+    },
+    {
+      "id": 1159,
+      "name": "Heals 114 damage over 6 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1159"
+    }
+  ],
+  "name": "Heavy Linen Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "200458c13ac74d3c01b8998424ef0076eefabc3f988b16f9395b5906f4633c1e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2581",
+  "url": "https://www.wowhead.com/forever/item=2581"
+}

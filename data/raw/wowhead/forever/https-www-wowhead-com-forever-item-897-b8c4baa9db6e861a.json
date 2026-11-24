@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Madwolf Bracers Item Level 29 Binds when equipped Wrist Leather 40 Armor +5 Agility +2 Stamina Durability 30 / 30 Requires Level 24 Sell Price: 10 22 Dropped by: Nightbane Vile Fang Drop Chance: 1.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 897,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 40,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 897,
+    "item_level": 29,
+    "name": "Madwolf Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 24,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "agility": 5.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=897"
+  },
+  "linked_entities": [],
+  "name": "Madwolf Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.86,
+      "entity_name": "Nightbane Vile Fang",
+      "source_url": "https://www.wowhead.com/forever/item=897",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/897",
+  "url": "https://www.wowhead.com/forever/item=897"
+}

@@ -24,7 +24,9 @@ for index=1,100 do
 end
 assert(score, "planner scoring closure is unavailable")
 local function use(phase, rank)
-    return { phase=phase, phaseIndex=phaseIndices[phase], rank_group=rank or "ranked" }
+    local label, grade = rank == "bis" and "Best" or "Good", rank == "bis" and 1 or 3
+    return { phase=phase, phaseIndex=phaseIndices[phase], rank_group=rank or "ranked", rank_label=label,
+        guide_evidence={{table_id="fixture:"..phase,guide_phase=phase,rating_phase=phase,original_rating=label,grade=grade,conditions={}}} }
 end
 local function group(uses, selected)
     local result = { uses=uses, bestUse=uses[1] }
@@ -91,7 +93,7 @@ equal(result.priority, 26) -- Four original alternative uses * 4, plus ten longe
 equal(result.recommendation_summary, "Alternative in Phase 2")
 equal(result.reasons[2], "Alternative in Phase 3")
 equal(result.reasons[3], "Alternative in Phase 5")
-equal(result.reasons[4], "Listed through Phase 5")
+equal(result.reasons[4], "Also recommended in Phase 5")
 equal(#result.reasons, 4)
 equal(#result.uses, 4)
 equal(result.uses, uses)

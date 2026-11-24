@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Felstriker Item Level 63 Binds when picked up Unique-Equipped One-Hand Dagger 54 - 101 Damage Speed 1.70 (45.59 damage per second) Requires Level 58 Chance on hit: All attacks are guaranteed to land and will be critical strikes for the next 3 sec. Sell Price: 7 67 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:22:52.5811195Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 12590,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 45.59,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: All attacks are guaranteed to land and will be critical strikes for the next 3 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: All attacks are guaranteed to land and will be critical strikes for the next 3 sec."
+    ],
+    "id": 12590,
+    "item_level": 63,
+    "name": "Felstriker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 58,
+    "slot": "One Hand",
+    "source_summary": "",
+    "weapon_max_damage": 101,
+    "weapon_min_damage": 54,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12590"
+  },
+  "linked_entities": [
+    {
+      "id": 16551,
+      "name": "All attacks are guaranteed to land and will be critical strikes for the next 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16551"
+    }
+  ],
+  "name": "Felstriker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "d6e8927ad431ab6d2fbb2f7fc81b3f801493fa0e3d067d7727a0d8a16abd4627",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12590",
+  "url": "https://www.wowhead.com/forever/item=12590"
+}

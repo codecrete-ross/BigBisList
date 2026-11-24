@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Horns of Eranikus Item Level 56 Binds when picked up Head Mail 271 Armor +27 Intellect +10 Spirit Durability 70 / 70 Requires Level 51 Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. Sell Price: 1 81 49 Dropped by: Shade of Eranikus Drop Chance: 31.39%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10833,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 271,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 11,
+          "spell_damage": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects."
+    ],
+    "id": 10833,
+    "item_level": 56,
+    "name": "Horns of Eranikus",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 11.0,
+      "intellect": 27.0,
+      "spell_damage": 4.0,
+      "spirit": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10833"
+  },
+  "linked_entities": [],
+  "name": "Horns of Eranikus",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 31.39,
+      "entity_name": "Shade of Eranikus",
+      "source_url": "https://www.wowhead.com/forever/item=10833",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "fa878d193876e1a07268029eb265a303aeb1cd81970caf943a1c01fc7e495867",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10833",
+  "url": "https://www.wowhead.com/forever/item=10833"
+}

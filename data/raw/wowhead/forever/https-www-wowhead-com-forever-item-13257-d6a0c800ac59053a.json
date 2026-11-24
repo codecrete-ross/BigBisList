@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Demonic Runed Spaulders Item Level 59 Binds when picked up Shoulder Leather 126 Armor +12 Strength +12 Stamina +14 Intellect Durability 60 / 60 Requires Level 54 Sell Price: 1 78 12 Dropped by: Shadow Hunter Vosh'gajin Drop Chance: 7.83%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 13257,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 126,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 13257,
+    "item_level": 59,
+    "name": "Demonic Runed Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "stamina": 12.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13257"
+  },
+  "linked_entities": [],
+  "name": "Demonic Runed Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 7.83,
+      "entity_name": "Shadow Hunter Vosh'gajin",
+      "source_url": "https://www.wowhead.com/forever/item=13257",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f3549c9294d4f03ec48204d375cacc09ed29c83cb0bd095f824f3fe24a20b479",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13257",
+  "url": "https://www.wowhead.com/forever/item=13257"
+}

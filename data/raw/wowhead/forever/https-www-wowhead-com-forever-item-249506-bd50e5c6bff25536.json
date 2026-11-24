@@ -1,0 +1,161 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Radiant Staff Item Level 44 Binds when picked up Requires Enchanting (220) Requires Friendly with this faction. Use: Teaches you how to craft a Radiant Staff. Creates a radiant staff. Sell Price: 11",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Two Hand",
+      "item_id": 249453,
+      "item_stats": {
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "dps": 32.29,
+        "id": 249453,
+        "name": "Radiant Staff",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Two Hand",
+        "source_summary": "",
+        "stats": {
+          "stamina": 19.0
+        },
+        "weapon_max_damage": 93,
+        "weapon_min_damage": 62,
+        "weapon_speed": 2.4,
+        "weapon_subtype": "Staff",
+        "weapon_type": "Two Hand",
+        "wowhead_url": "https://www.wowhead.com/forever/item=249453"
+      },
+      "name": "Radiant Staff",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=249453"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249506,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Radiant Staff.",
+        "type": "use"
+      }
+    ],
+    "id": 249506,
+    "item_level": 44,
+    "name": "Formula: Radiant Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft a Radiant Staff. Creates a radiant staff."
+    ],
+    "weapon_subtype": "Staff",
+    "wowhead_url": "https://www.wowhead.com/forever/item=249506"
+  },
+  "linked_entities": [
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 11177,
+      "name": "Small Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11177"
+    },
+    {
+      "id": 11178,
+      "name": "Large Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11178"
+    },
+    {
+      "id": 11291,
+      "name": "Star Wood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11291"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249453,
+      "name": "Radiant Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249453"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1249061,
+      "name": "Teaches you how to craft a Radiant Staff.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249061"
+    }
+  ],
+  "name": "Formula: Radiant Staff",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Radiant Staff Item Level 44 Binds when picked up Requires Enchanting (220) Requires Friendly with this faction. Use: Teaches you how to craft a Radiant Staff. Creates a radiant staff. Sell Price: 11",
+      "reputation": "this faction",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=249506",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Radiant Staff Item Level 44 Binds when picked up Requires Enchanting (220) Requires Friendly with this faction. Use: Teaches you how to craft a Radiant Staff. Creates a radiant staff. Sell Price: 11",
+      "scope": "equip_or_use",
+      "skill": 220,
+      "source_url": "https://www.wowhead.com/forever/item=249506",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1249061
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249506",
+  "url": "https://www.wowhead.com/forever/item=249506"
+}

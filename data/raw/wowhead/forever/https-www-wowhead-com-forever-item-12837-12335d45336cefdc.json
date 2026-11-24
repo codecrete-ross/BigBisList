@@ -1,0 +1,157 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Masterwork Stormhammer Item Level 63 Requires Blacksmithing (300) Requires Master Hammersmith Use: Teaches you how to make a Masterwork Stormhammer. Sell Price: 2 Dropped by: Goraluk Anvilcrack Drop Chance: 8.77%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "One Hand",
+      "item_id": 12794,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "dps": 41.25,
+        "id": 12794,
+        "name": "Masterwork Stormhammer",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "One Hand",
+        "source_summary": "",
+        "weapon_max_damage": 86,
+        "weapon_min_damage": 46,
+        "weapon_speed": 1.6,
+        "weapon_subtype": "Mace",
+        "weapon_type": "One Hand",
+        "wowhead_url": "https://www.wowhead.com/forever/item=12794"
+      },
+      "name": "Masterwork Stormhammer",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=12794"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:01:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12837,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Masterwork Stormhammer.",
+        "type": "use"
+      }
+    ],
+    "id": 12837,
+    "item_level": 63,
+    "name": "Plans: Masterwork Stormhammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Masterwork Stormhammer."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12837"
+  },
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 12364,
+      "name": "Huge Emerald",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12364"
+    },
+    {
+      "id": 12655,
+      "name": "Enchanted Thorium Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12655"
+    },
+    {
+      "id": 12794,
+      "name": "Masterwork Stormhammer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12794"
+    },
+    {
+      "id": 12799,
+      "name": "Large Opal",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12799"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 16921,
+      "name": "Blasts up to 3 targets for 105 to 145 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16921"
+    },
+    {
+      "id": 16993,
+      "name": "Teaches you how to make a Masterwork Stormhammer.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16993"
+    }
+  ],
+  "name": "Plans: Masterwork Stormhammer",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Masterwork Stormhammer Item Level 63 Requires Blacksmithing (300) Requires Master Hammersmith Use: Teaches you how to make a Masterwork Stormhammer. Sell Price: 2 Dropped by: Goraluk Anvilcrack Drop Chance: 8.77%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=12837",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Masterwork Stormhammer Item Level 63 Requires Blacksmithing (300) Requires Master Hammersmith Use: Teaches you how to make a Masterwork Stormhammer. Sell Price: 2 Dropped by: Goraluk Anvilcrack Drop Chance: 8.77%",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=12837",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.77,
+      "entity_name": "Goraluk Anvilcrack",
+      "source_url": "https://www.wowhead.com/forever/item=12837",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    16993
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12837",
+  "url": "https://www.wowhead.com/forever/item=12837"
+}

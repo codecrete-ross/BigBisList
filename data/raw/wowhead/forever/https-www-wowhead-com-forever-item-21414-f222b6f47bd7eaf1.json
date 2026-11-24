@@ -1,0 +1,99 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Vaulted Secrets Item Level 65 Binds when picked up Unique Finger +9 Stamina Classes: Mage Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Trappings of Vaulted Secrets (0/3) Band of Vaulted Secrets Blade of Vaulted Secrets Drape of Vaulted Secrets (3) Set : 15% increase to the total damage absorbed by Mana Shield.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 21414,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 21414,
+    "item_level": 65,
+    "name": "Band of Vaulted Secrets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26131,
+        "text": "15% increase to the total damage absorbed by Mana Shield."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "spell_power": 18.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21414"
+  },
+  "linked_entities": [
+    {
+      "id": 21413,
+      "name": "Blade of Vaulted Secrets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21413"
+    },
+    {
+      "id": 21414,
+      "name": "Band of Vaulted Secrets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21414"
+    },
+    {
+      "id": 21415,
+      "name": "Drape of Vaulted Secrets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21415"
+    },
+    {
+      "id": 26131,
+      "name": "15% increase to the total damage absorbed by Mana Shield.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26131"
+    }
+  ],
+  "name": "Band of Vaulted Secrets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21414",
+  "url": "https://www.wowhead.com/forever/item=21414"
+}

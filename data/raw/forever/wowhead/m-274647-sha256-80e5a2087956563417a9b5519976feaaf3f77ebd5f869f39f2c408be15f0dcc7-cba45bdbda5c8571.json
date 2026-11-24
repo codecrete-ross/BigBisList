@@ -1,0 +1,67 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:39.070704+00:00",
+  "flavor": "forever",
+  "item_id": 274647,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Farraki Kris Item Level 47 Binds when picked up Main Hand Dagger 23 - 44 Damage Speed 1.60 (20.94 damage per second) Durability 65 / 65 Requires Level 42 Equip: Increases damage and healing done by magical spells and effects by up to 54 . Equip: Your spells pierce 2 Magical Resistance. Equip: Chance on harmful spell cast to afflict the target with a draining ritual, leeching 19 health every 2 sec for 6 sec. (100ms cooldown) Sell Price: 2 26 56 Dropped by: Sergeant Bly Drop Chance: 29.82%",
+      "dps": 20.94,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+          "stats": {
+            "spell_power": 54.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Your spells pierce 2 Magical Resistance.",
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Chance on harmful spell cast to afflict the target with a draining ritual, leeching 19 health every 2 sec for 6 sec. (100ms cooldown)",
+          "type": "temporary"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+        "Equip: Chance on harmful spell cast to afflict the target with a draining ritual, leeching 19 health every 2 sec for 6 sec. (100ms cooldown)"
+      ],
+      "id": 274647,
+      "item_level": 47,
+      "name": "Farraki Kris",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 42,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "spell_power": 54.0
+      },
+      "weapon_max_damage": 44,
+      "weapon_min_damage": 23,
+      "weapon_speed": 1.6,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274647"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 29.82,
+      "entity_name": "Sergeant Bly",
+      "source_url": "https://www.wowhead.com/forever/item=274647",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "80e5a2087956563417a9b5519976feaaf3f77ebd5f869f39f2c408be15f0dcc7",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/274647#sha256-80e5a2087956563417a9b5519976feaaf3f77ebd5f869f39f2c408be15f0dcc7"
+}

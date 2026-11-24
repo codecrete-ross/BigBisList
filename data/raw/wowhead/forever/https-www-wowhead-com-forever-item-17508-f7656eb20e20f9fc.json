@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Forcestone Buckler Item Level 40 Binds when picked up Off Hand Shield 1078 Armor 20 Block +4 Stamina +8 Spirit Durability 85 / 85 Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects. Sell Price: 84 69",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 17508,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1078,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 18,
+          "spell_damage": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 18 and damage done by up to 6 for all magical spells and effects."
+    ],
+    "id": 17508,
+    "item_level": 40,
+    "name": "Forcestone Buckler",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 20.0,
+      "healing_power": 18.0,
+      "spell_damage": 6.0,
+      "spirit": 8.0,
+      "stamina": 4.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17508"
+  },
+  "linked_entities": [],
+  "name": "Forcestone Buckler",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17508",
+  "url": "https://www.wowhead.com/forever/item=17508"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Disarm 20 Rage Melee Range Instant 1 min cooldown Requires Warrior Requires level 18 Requires Defensive Stance Disarm the enemy's weapon for 10 sec.",
+  "entity_id": 676,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:53+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 676,
+      "name": "Disarm",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=676"
+    }
+  ],
+  "name": "Disarm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "a227ba33ac54a54b806e618779f1dd278290c5afc9aa9a0dfe62cdc4b78f7ccc",
+  "spell_id": 676,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/676",
+  "url": "https://www.wowhead.com/forever/spell=676"
+}

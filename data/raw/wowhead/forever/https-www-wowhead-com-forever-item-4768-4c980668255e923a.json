@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Adept's Gloves Item Level 17 Binds when picked up Hands Cloth 21 Armor +5 Stamina +5 Intellect Durability 18 / 18 Requires Level 12 Sell Price: 1 39 Dropped by: Elder Mystic Razorsnout Drop Chance: 45.10%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 4768,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 21,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 4768,
+    "item_level": 17,
+    "name": "Adept's Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 12,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4768"
+  },
+  "linked_entities": [],
+  "name": "Adept's Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 45.1,
+      "entity_name": "Elder Mystic Razorsnout",
+      "source_url": "https://www.wowhead.com/forever/item=4768",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4768",
+  "url": "https://www.wowhead.com/forever/item=4768"
+}

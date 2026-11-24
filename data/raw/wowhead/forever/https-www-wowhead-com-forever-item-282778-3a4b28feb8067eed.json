@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of the Red Flight Item Level 46 Binds when picked up Unique-Equipped Trinket Requires Level 41 Equip: + 12 Attack Power against Dragonkin. Use: Absorbs 570 Fire damage, healing for all damage absorbed. (5 Min Cooldown) Sell Price: 86 81",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 282778,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power against Dragonkin.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Absorbs 570 Fire damage, healing for all damage absorbed. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 282778,
+    "item_level": 46,
+    "name": "Mark of the Red Flight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 41,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Absorbs 570 Fire damage, healing for all damage absorbed. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=282778"
+  },
+  "linked_entities": [
+    {
+      "id": 1314412,
+      "name": "Absorbs 570 Fire damage, healing for all damage absorbed.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1314412"
+    }
+  ],
+  "name": "Mark of the Red Flight",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e55f66683a456da2fd95c12e4f7fdadbaa930a6879a6b3cf179d22205577e4fb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/282778",
+  "url": "https://www.wowhead.com/forever/item=282778"
+}

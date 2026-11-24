@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Flatland Cougar Femur Item Level 1 Quest Item Unique Dropped by: Flatland Cougar Drop Chance: 5.58%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 4805,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 4805,
+    "item_level": 1,
+    "name": "Flatland Cougar Femur",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4805"
+  },
+  "linked_entities": [],
+  "name": "Flatland Cougar Femur",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 5.58,
+      "entity_name": "Flatland Cougar",
+      "source_url": "https://www.wowhead.com/forever/item=4805",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4805",
+  "url": "https://www.wowhead.com/forever/item=4805"
+}

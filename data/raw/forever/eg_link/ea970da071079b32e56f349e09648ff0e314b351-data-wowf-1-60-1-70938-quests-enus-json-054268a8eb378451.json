@@ -1,0 +1,167 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/JIVESCORP/eg-link-output-wowf"
+    }
+  ],
+  "availability_dependencies": [
+    {
+      "entity_id": 9323,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 1,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 382155,
+          "objectId": 181344,
+          "storageIndex": 0,
+          "text": "Flame of the Blasted Lands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382156,
+          "objectId": 181338,
+          "storageIndex": 1,
+          "text": "Flame of the Plaguelands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382157,
+          "objectId": 181345,
+          "storageIndex": 2,
+          "text": "Flame of the Hinterlands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382158,
+          "objectId": 181341,
+          "storageIndex": 3,
+          "text": "Flame of Searing Gorge",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 23324
+          },
+          {
+            "count": 10,
+            "itemId": 23247
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      }
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "eg_link_observation",
+  "fetched_at": "2026-11-15T02:54:57.760632+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "records": [
+    {
+      "categoryId": 369,
+      "description": "Our celebration of the flame is spread throughout the land, $c. Not a single place remains untouched by the heat of this holiday, and the strongest fires burn a brilliant blue. Seek them out.$b$bYou'll find one just north of Blackrock Spire. The others are located deep within the Eastern Plaguelands near a decrepit town, along the road to the cliffs within the mountainous Hinterlands, and on the way to the Dark Portal within the Blasted Lands.$b$b Return once your journey is done.",
+      "flags": 8,
+      "level": 60,
+      "minLevel": 1,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 382155,
+          "objectId": 181344,
+          "storageIndex": 0,
+          "text": "Flame of the Blasted Lands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382156,
+          "objectId": 181338,
+          "storageIndex": 1,
+          "text": "Flame of the Plaguelands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382157,
+          "objectId": 181345,
+          "storageIndex": 2,
+          "text": "Flame of the Hinterlands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382158,
+          "objectId": 181341,
+          "storageIndex": 3,
+          "text": "Flame of Searing Gorge",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "objectivesText": "Visit the Fire Festival camps located in Blasted Lands, Eastern Plaguelands, the Hinterlands and Searing Gorge, then speak with the Festival Flamekeeper.",
+      "questType": 2,
+      "quest_id": 9323,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 23324
+          },
+          {
+            "count": 10,
+            "itemId": 23247
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      },
+      "sources": 1,
+      "title": "Wild Fires in the Eastern Kingdoms"
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 23324,
+      "object_type": "item",
+      "quest_min_level": 1,
+      "race_mask": "ffffffffffffffff",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/ea970da071079b32e56f349e09648ff0e314b351/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 9323,
+      "subject_type": "quest"
+    }
+  ],
+  "selection": {
+    "item_ids": [
+      23324
+    ],
+    "quest_ids": [
+      9323
+    ]
+  },
+  "source_content_digest": "b24ca50deff2edfb6e9b329ea85e4044a5d9a40ed6817fb856fe430b1843b542",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/ea970da071079b32e56f349e09648ff0e314b351/data/wowf/1.60.1.70938/quests.enUS.json"
+}

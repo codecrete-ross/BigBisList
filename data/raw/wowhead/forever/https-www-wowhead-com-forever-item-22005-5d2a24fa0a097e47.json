@@ -1,0 +1,151 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmantle Cap Item Level 60 Binds when picked up Head Leather 150 Armor +13 Strength +26 Agility +18 Stamina Durability 70 / 70 Equip: Improves your chance to get a critical strike by 1.0%. Darkmantle Armor (0/8) Darkmantle Belt Darkmantle Boots Darkmantle Bracers Darkmantle Cap Darkmantle Gloves Darkmantle Pants Darkmantle Spaulders Darkmantle Tunic (2) Set : +8 All Resistances. (4) Set : Chance on melee attack to restore 20 Energy. (6) Set : +40 Attack Power. (8) Set : +200 Armor. Sell Price: 2 61 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22005,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 150,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 22005,
+    "item_level": 60,
+    "name": "Darkmantle Cap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27787,
+        "text": "Chance on melee attack to restore 20 Energy."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 8,
+        "spell_id": 14803,
+        "text": "+200 Armor."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 26.0,
+      "crit_percent": 1.0,
+      "stamina": 18.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22005"
+  },
+  "linked_entities": [
+    {
+      "id": 22002,
+      "name": "Darkmantle Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22002"
+    },
+    {
+      "id": 22003,
+      "name": "Darkmantle Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22003"
+    },
+    {
+      "id": 22004,
+      "name": "Darkmantle Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22004"
+    },
+    {
+      "id": 22005,
+      "name": "Darkmantle Cap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22005"
+    },
+    {
+      "id": 22006,
+      "name": "Darkmantle Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22006"
+    },
+    {
+      "id": 22007,
+      "name": "Darkmantle Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22007"
+    },
+    {
+      "id": 22008,
+      "name": "Darkmantle Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22008"
+    },
+    {
+      "id": 22009,
+      "name": "Darkmantle Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=22009"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14803,
+      "name": "+200 Armor.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14803"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 27787,
+      "name": "Chance on melee attack to restore 20 Energy.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27787"
+    }
+  ],
+  "name": "Darkmantle Cap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22005",
+  "url": "https://www.wowhead.com/forever/item=22005"
+}

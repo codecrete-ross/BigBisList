@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Caretaker's Cord Item Level 60 Binds when picked up Waist Leather 104 Armor +14 Stamina +24 Spirit Classes: Druid Requires Level 60 Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects. Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 272398,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 104,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 23,
+          "spell_damage": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects."
+    ],
+    "id": 272398,
+    "item_level": 60,
+    "name": "Caretaker's Cord",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 23.0,
+      "spell_damage": 8.0,
+      "spirit": 24.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272398"
+  },
+  "linked_entities": [],
+  "name": "Caretaker's Cord",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272398",
+  "url": "https://www.wowhead.com/forever/item=272398"
+}

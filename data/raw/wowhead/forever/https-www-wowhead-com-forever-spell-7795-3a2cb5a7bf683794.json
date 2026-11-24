@@ -1,0 +1,68 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Runed Silver Rod 30 sec cast Reagents: Silver Rod , Strange Dust (3), Lesser Magic Essence (4), Shadowgem Runed Silver Rod Item Level 20 Binds when picked up Sell Price: 24",
+  "entity_id": 7795,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:02:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1210,
+      "name": "Shadowgem",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1210"
+    },
+    {
+      "id": 6338,
+      "name": "Silver Rod",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6338"
+    },
+    {
+      "id": 6339,
+      "name": "Runed Silver Rod",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6339"
+    },
+    {
+      "id": 10938,
+      "name": "Lesser Magic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10938"
+    },
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 7795,
+      "name": "Runed Silver Rod",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7795"
+    }
+  ],
+  "name": "Runed Silver Rod",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 6339,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=7795",
+      "subject_id": 7795,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "8aa21387f82199dbc36483f6cd1560b3cddd930a1e39a17ccf1e4c161dd891b0",
+  "spell_id": 7795,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/7795",
+  "url": "https://www.wowhead.com/forever/spell=7795"
+}

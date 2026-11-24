@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cenarion Reservist's Legplates Item Level 63 Binds when picked up Legs Plate 575 Armor +13 Stamina +25 Nature Resistance Durability 100 / 100 Equip: Increased Defense + 9. Sell Price: 2 27 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 20699,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 575,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +9.",
+        "stats": {
+          "defense": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +9."
+    ],
+    "id": 20699,
+    "item_level": 63,
+    "name": "Cenarion Reservist's Legplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "defense": 9.0,
+      "nature_resistance": 25.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20699"
+  },
+  "linked_entities": [],
+  "name": "Cenarion Reservist's Legplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20699",
+  "url": "https://www.wowhead.com/forever/item=20699"
+}

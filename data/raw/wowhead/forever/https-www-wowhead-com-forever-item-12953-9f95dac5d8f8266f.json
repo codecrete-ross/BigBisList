@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragoneye Coif Item Level 60 Binds when picked up Head Mail 288 Armor <Random enchantment> +17 Stamina Durability 70 / 70 Requires Level 55 Equip: + 38 Attack Power. Sell Price: 2 24 83 Dropped by: Gyth Drop Chance: 20.53%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12953,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 288,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +38 Attack Power.",
+        "stats": {
+          "attack_power": 38
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +38 Attack Power."
+    ],
+    "id": 12953,
+    "item_level": 60,
+    "name": "Dragoneye Coif",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 38.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12953"
+  },
+  "linked_entities": [],
+  "name": "Dragoneye Coif",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.53,
+      "entity_name": "Gyth",
+      "source_url": "https://www.wowhead.com/forever/item=12953",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1922151b8e8c3366d225055f9bff2331b13a071829ae586a62b27d0d8a2c8c88",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12953",
+  "url": "https://www.wowhead.com/forever/item=12953"
+}

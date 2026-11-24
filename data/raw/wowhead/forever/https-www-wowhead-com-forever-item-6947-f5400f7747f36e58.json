@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Instant Poison Item Level 20 Classes: Rogue Requires Level 20 Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy which instantly inflicts 13 to 17 Nature damage. 60 charges. (Proc chance: 20%) Max Stack: 20 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 6947,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Coats a weapon with poison that lasts for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 6947,
+    "item_level": 20,
+    "name": "Instant Poison",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 20,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy which instantly inflicts 13 to 17 Nature damage. 60 charges. (Proc chance: 20%) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=6947"
+  },
+  "linked_entities": [
+    {
+      "id": 8679,
+      "name": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a 20% chance of poisoning the enemy which instantly inflicts 13 to 17 Nature damage. 60 charges. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=8679"
+    }
+  ],
+  "name": "Instant Poison",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c071ad4348e7758190cb8c50ea0bdcb20dc4626305d9e126be918b372cdb43e4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6947",
+  "url": "https://www.wowhead.com/forever/item=6947"
+}

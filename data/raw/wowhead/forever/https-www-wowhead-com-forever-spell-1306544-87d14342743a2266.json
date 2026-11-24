@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Cloak of Earth and Sky 3 sec cast Reagents: Malleable Essence of Nature , Mooncloth , Bolt of Runecloth (5) Cloak of Earth and Sky Item Level 65 Binds when equipped Back 50 Armor +16 Stamina +14 Spirit Classes: Shaman , Druid Requires Level 60 Equip: Increases damage done by Fire spells and effects by up to 15. Equip: Increases damage done by Nature spells and effects by up to 15. Equip: Increases damage done by Arcane spells and effects by up to 15. Sell Price: 2 51 6",
+  "entity_id": 1306544,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:42+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 274030,
+      "name": "Malleable Essence of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=274030"
+    },
+    {
+      "id": 279270,
+      "name": "Cloak of Earth and Sky",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279270"
+    },
+    {
+      "id": 1306544,
+      "name": "Cloak of Earth and Sky",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306544"
+    }
+  ],
+  "name": "Cloak of Earth and Sky",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279270,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1306544",
+      "subject_id": 1306544,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1306544,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1306544",
+  "url": "https://www.wowhead.com/forever/spell=1306544"
+}

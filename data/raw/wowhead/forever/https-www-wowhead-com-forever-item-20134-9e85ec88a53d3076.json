@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skyfury Helm Item Level 62 Binds when picked up Head Mail 324 Armor +18 Strength +18 Stamina +12 Intellect +12 Spirit Durability 85 / 85 Equip: Improves your chance to get a critical strike by 1.5%. Sell Price: 3 30 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 20134,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 324,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.5%.",
+        "stats": {
+          "crit_percent": 1.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.5%."
+    ],
+    "id": 20134,
+    "item_level": 62,
+    "name": "Skyfury Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.5,
+      "intellect": 12.0,
+      "spirit": 12.0,
+      "stamina": 18.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20134"
+  },
+  "linked_entities": [],
+  "name": "Skyfury Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "e06708b55bc0edbcaeb59294c2776e6e2336ecf457aa39350bff7fdc9ebe3962",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20134",
+  "url": "https://www.wowhead.com/forever/item=20134"
+}

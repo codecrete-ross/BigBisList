@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gloves of Undead Cleansing Item Level 63 Binds when picked up Hands Cloth 56 Armor +10 Stamina +10 Intellect Durability 30 / 30 Equip: Increases damage and healing done by magical spells and effects by up to 18 . Equip: Increases damage done to Undead by magical spells and effects by up to 18. Regalia of Undead Cleansing (0/3) Item #23091 Gloves of Undead Cleansing Item #23085 (3) Set : Increases your damage against undead by 2%. Sell Price: 1 13 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 23084,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 56,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage done to Undead by magical spells and effects by up to 18.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 23084,
+    "item_level": 63,
+    "name": "Gloves of Undead Cleansing",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 29068,
+        "text": "Increases your damage against undead by 2%."
+      }
+    ],
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 18.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23084"
+  },
+  "linked_entities": [
+    {
+      "id": 23084,
+      "name": "Gloves of Undead Cleansing",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=23084"
+    },
+    {
+      "id": 29068,
+      "name": "Increases your damage against undead by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29068"
+    }
+  ],
+  "name": "Gloves of Undead Cleansing",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23084",
+  "url": "https://www.wowhead.com/forever/item=23084"
+}

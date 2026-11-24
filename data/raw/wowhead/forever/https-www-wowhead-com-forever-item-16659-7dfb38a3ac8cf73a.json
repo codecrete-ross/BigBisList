@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deftkin Belt Item Level 27 Binds when picked up Waist Leather 50 Armor +4 Agility +3 Stamina Durability 30 / 30 Equip: + 12 Attack Power. Sell Price: 8 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 16659,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power."
+    ],
+    "id": 16659,
+    "item_level": 27,
+    "name": "Deftkin Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "attack_power": 12.0,
+      "stamina": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16659"
+  },
+  "linked_entities": [],
+  "name": "Deftkin Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16659",
+  "url": "https://www.wowhead.com/forever/item=16659"
+}

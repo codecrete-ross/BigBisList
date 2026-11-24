@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Dragonhide Shoulders Item Level 71 Binds when picked up Shoulder Leather 146 Armor +12 Strength +6 Agility +18 Stamina +12 Intellect +70 Armor Durability 60 / 60 Classes: Druid Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Lieutenant Commander's Sanctuary (0/6) Knight-Captain's Dragonhide Chestpiece Knight-Captain's Dragonhide Leggings Knight-Lieutenant's Dragonhide Grips Knight-Lieutenant's Dragonhide Treads Lieutenant Commander's Dragonhide Headguard Lieutenant Commander's Dragonhide Shoulders (2) Set : +40 Attack Power. (4) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : +20 Stamina. Sell Price: 1 56 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227172,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 146,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 227172,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Dragonhide Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "crit_percent": 1.0,
+      "intellect": 12.0,
+      "stamina": 18.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227172"
+  },
+  "linked_entities": [
+    {
+      "id": 227172,
+      "name": "Lieutenant Commander's Dragonhide Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227172"
+    },
+    {
+      "id": 227173,
+      "name": "Lieutenant Commander's Dragonhide Headguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227173"
+    },
+    {
+      "id": 227176,
+      "name": "Knight-Captain's Dragonhide Chestpiece",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227176"
+    },
+    {
+      "id": 227178,
+      "name": "Knight-Captain's Dragonhide Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227178"
+    },
+    {
+      "id": 227182,
+      "name": "Knight-Lieutenant's Dragonhide Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227182"
+    },
+    {
+      "id": 227183,
+      "name": "Knight-Lieutenant's Dragonhide Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227183"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Lieutenant Commander's Dragonhide Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "fee47eac5628d43541ff4807b3f880ca65e69f28d3b03a003e44040010272b4f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227172",
+  "url": "https://www.wowhead.com/forever/item=227172"
+}

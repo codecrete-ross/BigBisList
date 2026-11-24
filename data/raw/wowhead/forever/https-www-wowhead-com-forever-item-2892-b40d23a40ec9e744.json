@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Deadly Poison Item Level 30 Classes: Rogue Requires Level 30 Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 30% chance of poisoning the enemy for 24 Nature damage over 12 sec. Stacks up to 5 times on a single target. 90 charges. (Proc chance: 30%) Max Stack: 20 Sell Price: 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2892,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Coats a weapon with poison that lasts for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 2892,
+    "item_level": 30,
+    "name": "Deadly Poison",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 30,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Coats a weapon with poison that lasts for 30 minutes. Each strike has a 30% chance of poisoning the enemy for 24 Nature damage over 12 sec. Stacks up to 5 times on a single target. 90 charges. (Proc chance: 30%) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2892"
+  },
+  "linked_entities": [
+    {
+      "id": 2823,
+      "name": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a 30% chance of poisoning the enemy for 24 Nature damage over 12 sec. Stacks up to 5 times on a single target. 90 charges. (Proc chance: 30%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2823"
+    }
+  ],
+  "name": "Deadly Poison",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "bad5258d6f141c09d1d8e170b07cc8273d5c147b5262cbe338847987eb2f2bb7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2892",
+  "url": "https://www.wowhead.com/forever/item=2892"
+}

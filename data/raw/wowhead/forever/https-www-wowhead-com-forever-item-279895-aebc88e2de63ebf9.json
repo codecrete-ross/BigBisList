@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ironforge Greathammer Item Level 18 Binds when picked up Two-Hand Mace 39 - 60 Damage Speed 3.10 (15.97 damage per second) Durability 70 / 70 Chance on hit: Blasts a target for 42 Fire damage. Sell Price: 16 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 279895,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 15.97,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 42 Fire damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 42 Fire damage."
+    ],
+    "id": 279895,
+    "item_level": 18,
+    "name": "Ironforge Greathammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 60,
+    "weapon_min_damage": 39,
+    "weapon_speed": 3.1,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279895"
+  },
+  "linked_entities": [
+    {
+      "id": 1322295,
+      "name": "Blasts a target for 42 Fire damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1322295"
+    }
+  ],
+  "name": "Ironforge Greathammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279895",
+  "url": "https://www.wowhead.com/forever/item=279895"
+}

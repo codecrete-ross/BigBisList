@@ -1,0 +1,50 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:15.010734+00:00",
+  "flavor": "forever",
+  "item_id": 270088,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Thane's Hammer Item Level 45 Binds when picked up Main Hand Mace 27 - 51 Damage Speed 2.20 (17.73 damage per second) +8 Intellect Durability 75 / 75 Equip: Increases damage and healing done by magical spells and effects by up to 38 . Sell Price: 1 38 77",
+      "dps": 17.73,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 38.",
+          "stats": {
+            "spell_power": 38.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 38."
+      ],
+      "id": 270088,
+      "item_level": 45,
+      "name": "Thane's Hammer",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 8.0,
+        "spell_power": 38.0
+      },
+      "weapon_max_damage": 51,
+      "weapon_min_damage": 27,
+      "weapon_speed": 2.2,
+      "weapon_subtype": "Mace",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=270088"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "0cdcd82064308dcdd8453123ff396df2bfeee781419f5684b03bbb44ace22809",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/270088#sha256-0cdcd82064308dcdd8453123ff396df2bfeee781419f5684b03bbb44ace22809"
+}

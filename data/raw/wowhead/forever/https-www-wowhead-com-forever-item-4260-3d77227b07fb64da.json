@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Guardian Leather Bracers Item Level 39 Binds when equipped Wrist Leather 48 Armor +6 Intellect Durability 30 / 30 Requires Level 34 Equip: Increases damage and healing done by magical spells and effects by up to 6 . Sell Price: 25 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:56:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 4260,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 48,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 6.",
+        "stats": {
+          "spell_power": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 6."
+    ],
+    "id": 4260,
+    "item_level": 39,
+    "name": "Guardian Leather Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "spell_power": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4260"
+  },
+  "linked_entities": [],
+  "name": "Guardian Leather Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4260",
+  "url": "https://www.wowhead.com/forever/item=4260"
+}

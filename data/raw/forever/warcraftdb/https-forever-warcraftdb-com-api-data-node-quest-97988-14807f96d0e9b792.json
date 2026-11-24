@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97988"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:47.820172+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281288,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97988",
+      "subject_id": 97988,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Orgrimmar's Windshapers",
+    "quest_id": 97988,
+    "reward_item_roles": {
+      "281287": "choices",
+      "281288": "choices"
+    },
+    "side": "Horde",
+    "zone": "Eastern Plaguelands"
+  },
+  "source_content_digest": "484dfacfab4fab5d07a5051a0d8a99de78b0a6a00b64409ac7c239c10a424cb2",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97988"
+}

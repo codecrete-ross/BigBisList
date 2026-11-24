@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Public enUS hotfix cache archived by Raidbots.",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "catalog_kind": "client_hotfix",
+  "client_build": "1.60.1.70938",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-13T09:10:44.1647929Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 23247,
+      "collected_at": "2026-11-13T09:09:57.8388216Z",
+      "http": "200",
+      "name": "raidbots-latest-index",
+      "source_content_digest": "64e5bb349bda78d6d2fd5a38f4a1186abfbae2c75b69d73c44e1b577292c6c50",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "raidbots",
+  "records": [
+    {
+      "armor_type": "Shield",
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 16795972,
+      "item_id": 18756,
+      "item_level": 62,
+      "name": "Dreadguard's Protector",
+      "race_mask": 18446744073709551615,
+      "record_digest": "f53be7a729dc0854cae40dc7d4b051eb84c946a236ada0ccc48fbd5964b9cbaf",
+      "required_level": 57,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "requires_dual_wield": false,
+      "slot": "Off Hand",
+      "subclass": "Shield"
+    }
+  ],
+  "relationships": [],
+  "source_content_digest": "e85e97cf36bcf0216ecdb85a54019a8b137e28229c81785bfa01975f86a05c0a",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-fW5CPGahqmxqj8g9ooVAYq.bin",
+  "verified_index_entry": {
+    "build": 70938,
+    "created": "2026-11-13T09:05:20.051Z",
+    "entries": 91403,
+    "pushIds": 5930,
+    "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-fW5CPGahqmxqj8g9ooVAYq.bin",
+    "verified": true,
+    "version": "forever"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gemstone of Smolderthorn Item Level 1 Binds when picked up Unique Dropped by: War Master Voone Drop Chance: 33.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12335,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 12335,
+    "item_level": 1,
+    "name": "Gemstone of Smolderthorn",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=12335"
+  },
+  "linked_entities": [],
+  "name": "Gemstone of Smolderthorn",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.17,
+      "entity_name": "War Master Voone",
+      "source_url": "https://www.wowhead.com/forever/item=12335",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2261b11d437bc7aac106e658b037479bd5fda2d8b872e7f5512243fa2b80bb19",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12335",
+  "url": "https://www.wowhead.com/forever/item=12335"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Swiftness Potion Item Level 15 Requires Level 5 Use: Increases run speed by 50% for 15 sec. (2 Min Cooldown) Max Stack: 5 Sell Price: 25 Dropped by: Eric \"The Swift\" Drop Chance: 42.19%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2459,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases run speed by 50% for 15 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 2459,
+    "item_level": 15,
+    "name": "Swiftness Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 5,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases run speed by 50% for 15 sec. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2459"
+  },
+  "linked_entities": [
+    {
+      "id": 2379,
+      "name": "Increases run speed by 50% for 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2379"
+    }
+  ],
+  "name": "Swiftness Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 42.19,
+      "entity_name": "Eric \"The Swift\"",
+      "source_url": "https://www.wowhead.com/forever/item=2459",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "68c6da3b4fd24312dfb48f7d6b3ba2c9469c9229bf9471b3727e67a9ea0039ce",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2459",
+  "url": "https://www.wowhead.com/forever/item=2459"
+}

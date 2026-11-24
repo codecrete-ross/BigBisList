@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Feathered Headdress Item Level 38 Binds when equipped Head Leather 86 Armor +11 Intellect +10 Spirit Durability 50 / 50 Requires Level 33 Sell Price: 28 46 Dropped by: Skhowl Drop Chance: 73.42%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 3011,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 86,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 3011,
+    "item_level": 38,
+    "name": "Feathered Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 33,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spirit": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3011"
+  },
+  "linked_entities": [],
+  "name": "Feathered Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 73.42,
+      "entity_name": "Skhowl",
+      "source_url": "https://www.wowhead.com/forever/item=3011",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "16d8408c5262f3f14cf2bd11c3afc0015a903135a57ff53de1f34c421e4b8b2f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3011",
+  "url": "https://www.wowhead.com/forever/item=3011"
+}

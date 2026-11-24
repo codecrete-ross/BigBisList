@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pristine Enchanted South Seas Kelp Item Level 65 Binds when picked up Unique Neck +6 Strength +10 Stamina +10 Intellect +9 Spirit Classes: Druid Equip: Increases the critical hit chance of Wrath and Starfire by 2%. Haruspex's Garb (0/5) Pristine Enchanted South Seas Kelp Wushoolay's Charm of Nature Zandalar Haruspex's Bracers Zandalar Haruspex's Belt Zandalar Haruspex's Tunic (2) Set : Restores 4 mana per 5 sec. (3) Set : Increases the duration of Faerie Fire by 5 sec. (5) Set : Increases the critical hit chance of your Starfire spell 3%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 19613,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases the critical hit chance of Wrath and Starfire by 2%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases the critical hit chance of Wrath and Starfire by 2%."
+    ],
+    "id": 19613,
+    "item_level": 65,
+    "name": "Pristine Enchanted South Seas Kelp",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 21618,
+        "text": "Restores 4 mana per 5 sec."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24479,
+        "text": "Increases the duration of Faerie Fire by 5 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24480,
+        "text": "Increases the critical hit chance of your Starfire spell 3%."
+      }
+    ],
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spirit": 9.0,
+      "stamina": 10.0,
+      "strength": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19613"
+  },
+  "linked_entities": [
+    {
+      "id": 19613,
+      "name": "Pristine Enchanted South Seas Kelp",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19613"
+    },
+    {
+      "id": 19838,
+      "name": "Zandalar Haruspex's Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19838"
+    },
+    {
+      "id": 19839,
+      "name": "Zandalar Haruspex's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19839"
+    },
+    {
+      "id": 19840,
+      "name": "Zandalar Haruspex's Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19840"
+    },
+    {
+      "id": 19955,
+      "name": "Wushoolay's Charm of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19955"
+    },
+    {
+      "id": 21618,
+      "name": "Restores 4 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21618"
+    },
+    {
+      "id": 24433,
+      "name": "Increases the critical hit chance of Wrath and Starfire by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24433"
+    },
+    {
+      "id": 24479,
+      "name": "Increases the duration of Faerie Fire by 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24479"
+    },
+    {
+      "id": 24480,
+      "name": "Increases the critical hit chance of your Starfire spell 3%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24480"
+    }
+  ],
+  "name": "Pristine Enchanted South Seas Kelp",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19613",
+  "url": "https://www.wowhead.com/forever/item=19613"
+}

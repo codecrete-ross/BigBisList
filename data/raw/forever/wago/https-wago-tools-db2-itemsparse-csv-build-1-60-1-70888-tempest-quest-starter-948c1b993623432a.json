@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client export from Wago.tools.",
+      "source": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888#tempest-quest-starter"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "client_metadata_only",
+  "fetched_at": "2026-11-11T00:57:43.590714+00:00",
+  "flavor": "forever",
+  "input_source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888",
+  "item_id": 212792,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "required_level": 1
+  },
+  "linked_entities": [
+    {
+      "id": 79442,
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=79442"
+    },
+    {
+      "id": 96016,
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=96016"
+    }
+  ],
+  "linked_quest_source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+  "linked_quest_source_digest": "04d7878ecceb06e2ca80e0057a4c3c61a18266fc322458bee0c3fde8f0464b18",
+  "page_type": "reference",
+  "provider": "wago",
+  "source_content_digest": "ced52fc6e5ca345805cfe3c015c05426c138aebd23ff1ad8a26cff5f1fe08be9",
+  "url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888#tempest-quest-starter"
+}

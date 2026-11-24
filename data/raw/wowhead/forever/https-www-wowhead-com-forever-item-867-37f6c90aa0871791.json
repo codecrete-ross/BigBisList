@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gloves of Holy Might Item Level 42 Binds when equipped Hands Leather 86 Armor Durability 40 / 40 Requires Level 37 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 10 Attack Power. Chance on hit: Smite your target for 101 to 123 Holy damage. Damage is tripled against Undead. Sell Price: 53 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 867,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 86,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +10 Attack Power.",
+        "stats": {
+          "attack_power": 10
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Chance on hit: Smite your target for 101 to 123 Holy damage. Damage is tripled against Undead.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Chance on hit: Smite your target for 101 to 123 Holy damage. Damage is tripled against Undead."
+    ],
+    "id": 867,
+    "item_level": 42,
+    "name": "Gloves of Holy Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 37,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "crit_percent": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=867"
+  },
+  "linked_entities": [
+    {
+      "id": 1325229,
+      "name": "Smite your target for 101 to 123 Holy damage. Damage is tripled against Undead.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1325229"
+    }
+  ],
+  "name": "Gloves of Holy Might",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/867",
+  "url": "https://www.wowhead.com/forever/item=867"
+}

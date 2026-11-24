@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Therazane's Touch Item Level 60 Binds when picked up Unique Held In Off-hand Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 29 . Sell Price: 12 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 19315,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "spell_power": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 29."
+    ],
+    "id": 19315,
+    "item_level": 60,
+    "name": "Therazane's Touch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 55,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 29.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19315"
+  },
+  "linked_entities": [],
+  "name": "Therazane's Touch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19315",
+  "url": "https://www.wowhead.com/forever/item=19315"
+}

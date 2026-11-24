@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Polished Skullcap Item Level 36 Binds when picked up Head Mail 193 Armor +7 Strength +8 Stamina +14 Shadow Resistance Durability 70 / 70 Requires Level 31 Sell Price: 43 60 Dropped by: Bloodmage Thalnos Drop Chance: 0.58%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274291,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 193,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274291,
+    "item_level": 36,
+    "name": "Polished Skullcap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 31,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "shadow_resistance": 14.0,
+      "stamina": 8.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274291"
+  },
+  "linked_entities": [],
+  "name": "Polished Skullcap",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.58,
+      "entity_name": "Bloodmage Thalnos",
+      "source_url": "https://www.wowhead.com/forever/item=274291",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a63d85ed918807bea90377dfff6fa527851bfa519e16c88dd8402c53e806b00a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274291",
+  "url": "https://www.wowhead.com/forever/item=274291"
+}

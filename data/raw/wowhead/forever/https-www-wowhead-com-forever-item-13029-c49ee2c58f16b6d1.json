@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Umbral Crystal Item Level 43 Binds when equipped Held In Off-hand +5 Stamina Requires Level 38 Equip: Increases damage done by Shadow spells and effects by up to 17. Sell Price: 56 13",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 13029,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Shadow spells and effects by up to 17.",
+        "stats": {
+          "shadow_damage": 17
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage done by Shadow spells and effects by up to 17."
+    ],
+    "id": 13029,
+    "item_level": 43,
+    "name": "Umbral Crystal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "shadow_damage": 17.0,
+      "stamina": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13029"
+  },
+  "linked_entities": [],
+  "name": "Umbral Crystal",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a1df0cde82ba2903575109ae27520abb95de7511e527da38f604f35321bada6b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13029",
+  "url": "https://www.wowhead.com/forever/item=13029"
+}

@@ -1,14 +1,11 @@
 # Big BiS List
 
-Big BiS List is an in-game TBC Anniversary gearing companion for World of
-Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
-consumable recommendations, item tooltip matches, ownership state, and a simple
-priority planner.
+Big BiS List is an in-game gearing companion for World of Warcraft. It shows
+gear recommendations, acquisition details, item tooltip matches, ownership,
+and a priority planner.
 
-This repository is prepared for the `0.14.0` release. This addon targets TBC
-Anniversary only. The `0.14.0` package uses WoW interface `20506`, matching the
-local `wow_anniversary` 2.5.6 client, and is not intended for Retail, Classic
-Era, Cataclysm Classic, Mists Classic, or other WoW releases.
+Version `0.15.0` includes TBC Anniversary (interface `20506`) and WoW Forever
+(interface `16001`). The Forever build targets client `1.60.1.71037`.
 
 ## Install
 
@@ -19,9 +16,13 @@ into your Anniversary client:
 World of Warcraft\_anniversary_\Interface\AddOns\BigBiSList
 ```
 
-The folder must contain `BigBiSList.toc` directly inside it. CurseForge's
-repository packager builds the installable file from the Git tag and root
-`.pkgmeta`; generated zip files are not committed or required for release.
+The Anniversary folder must contain `BigBiSList.toc` directly inside it.
+CurseForge builds the release package from the Git tag and root `.pkgmeta`.
+
+For a local Forever prerelease, run `scripts/deploy.ps1 -Flavor forever
+-Prerelease -NoClean`. The script installs `BigBiSList_Camelot.toc` and its files
+in `_forever_\Interface\AddOns\BigBiSList`. Each client uses bundled data and
+keeps its own saves.
 
 In game, use `/bbl` or `/bigbis` to open the main window. Use `/bbl status` to
 print the loaded data summary and `/bbltest` for a basic saved-variable smoke
@@ -30,6 +31,16 @@ test.
 ## Features
 
 - Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell, with Pre-Raid automatically following live content.
+- WoW Forever Leveling and level-60 Pre-Raid gear for 28 profiles, with race,
+  faction, and route eligibility. Supported specs can use active talent ranks
+  when comparing gear.
+- Forever comparisons account for fractional combat ratings, talent hit bonuses,
+  attack caps, and the other equipped items. Setup-dependent swaps identify
+  cases where the build or encounter can change the result.
+- Forever ranks by spec, activity, and character level. Details shows which
+  stats drive a swap and when a stronger option appears. Item tooltips identify
+  tied and projected ranks, compare future gear at its first usable level, and
+  show which quest choices serve each activity.
 - Leveling mode with guide-backed gear pickups, computed item recommendations,
   and level controls.
 - Class, spec, phase, slot, source, zone, reputation, rank, ownership, BoE, and
@@ -47,10 +58,10 @@ test.
 
 ## Data Scope
 
-The `0.14.0` release ships with generated data from audited local Wowhead TBC
-snapshots plus curated overrides where source data needed correction.
+### TBC Anniversary
 
-Current generated data includes:
+The Anniversary dataset uses audited Wowhead snapshots and reviewed
+corrections. It includes the following recommendations and item records.
 
 - 9 classes
 - 28 specs
@@ -65,19 +76,21 @@ Current generated data includes:
 - 456 guide-backed leveling gear rows
 - 42,567 computed leveling recommendations
 
-The data pipeline validates manifest coverage, source requirements, duplicate
-rows, slot compatibility, rank groups, and generated Lua consistency before
-release.
+### WoW Forever
+
+The Forever dataset includes reviewed Pre-Raid coverage for all 28 profiles
+and leveling recommendations from 1 to 59. Some slots below level 20 still
+have unreviewed availability. See the [leveling review](docs/internal/forever-leveling.md)
+and [scoring guide](docs/internal/forever-scoring.md) for the remaining work.
 
 ## Known Limitations
 
-- This release is data-heavy and should still be checked against in-game
-  behavior during normal play.
-- Leveling entries are reference guidance, not a full questing route.
-- Planner priority is heuristic; it is not a simulator and does not replace
-  class-specific stat weights.
+- Leveling guidance covers gear pickups and their recorded acquisition steps.
+- Planner priority estimates upgrade value from the reviewed recommendations.
 - Bank ownership only includes banked items after the character opens the bank.
-- No profile import/export is included in `0.14.0`.
+- Forever effects with an unverified score are marked conditional. Exact rolls
+  awaiting catalog review can show a projected rank from their readable stats.
+- No profile import/export is included in `0.15.0`.
 
 ## Release Checks
 
@@ -86,7 +99,7 @@ The authoritative release checklist is
 single release gate from the repository root before tagging or releasing:
 
 ```powershell
-.\scripts\check-release.ps1 -Version 0.14.0 -FullData
+.\scripts\check-release.ps1 -Version 0.15.0 -Flavor forever -FullData
 ```
 
 `CHANGELOG.md` preserves the complete history of player-observable addon
@@ -104,17 +117,18 @@ upload or author-UI step.
 Regenerate addon data after canonical JSON changes:
 
 ```powershell
-python tools/generate_lua.py
+python tools/generate_lua.py --flavor anniversary
+python tools/generate_lua.py --flavor forever
 ```
 
 The scraper can fetch, reprocess, import, and audit Wowhead snapshots:
 
 ```powershell
-python tools/scrape_wowhead.py coverage --summary --strict
-python tools/scrape_wowhead.py fetch
-python tools/scrape_wowhead.py reprocess --input-dir data/raw/wowhead/full_bis
-python tools/scrape_wowhead.py import --input-dir data/raw/wowhead/full_bis --family bis_lists
-python tools/scrape_wowhead.py audit
+python tools/scrape_wowhead.py coverage --flavor anniversary --summary --strict
+python tools/scrape_wowhead.py fetch --flavor anniversary
+python tools/scrape_wowhead.py reprocess --flavor anniversary --input-dir data/raw/wowhead/full_bis
+python tools/scrape_wowhead.py import --flavor anniversary --input-dir data/raw/wowhead/full_bis --family bis_lists
+python tools/scrape_wowhead.py audit --flavor anniversary
 ```
 
 Full HTML cache files live under `data/raw/wowhead/html_cache` and are ignored
@@ -126,7 +140,8 @@ by git.
 - Addon folder: `BigBiSList`
 - Source layout: addon `.toc` and Lua files at repository root for CurseForge
   auto-packaging
-- Target client: TBC Anniversary only (`## Interface: 20506`)
+- Target clients: TBC Anniversary (`BigBiSList.toc`) and WoW Forever
+  (`BigBiSList_Camelot.toc`)
 - Saved variable: `BigBiSListDB`
 - Globals: `BigBiSList`, `BigBiSListData`
 - Slash commands: `/bigbis`, `/bbl`, `/bbltest`

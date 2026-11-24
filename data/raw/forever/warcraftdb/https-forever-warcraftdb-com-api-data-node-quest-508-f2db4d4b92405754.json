@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/508"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:04.375391+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 3765,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/508",
+      "subject_id": 508,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Taretha's Gift",
+    "quest_id": 508,
+    "reward_item_ids": [
+      3764,
+      3765
+    ],
+    "zone": "Hillsbrad Foothills"
+  },
+  "source_content_digest": "76af43553375b2f73db25816571389afc5113ce38c3b3459136ec26d4694abd5",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/508"
+}

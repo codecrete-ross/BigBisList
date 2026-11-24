@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Elderwild Pants 3 sec cast Reagents: Malleable Essence of Nature (3), Fel Hide (2), Fel Leather (18) Elderwild Pants Item Level 65 Binds when equipped Legs Leather 173 Armor +27 Stamina +24 Spirit Requires Level 60 Equip: Increases healing done by up to 40 and damage done by up to 13 for all magical spells and effects. Sell Price: 4 24 71",
+  "entity_id": 1306528,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:39+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 248824,
+      "name": "Fel Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248824"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 274030,
+      "name": "Malleable Essence of Nature",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=274030"
+    },
+    {
+      "id": 279254,
+      "name": "Elderwild Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279254"
+    },
+    {
+      "id": 1306528,
+      "name": "Elderwild Pants",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1306528"
+    }
+  ],
+  "name": "Elderwild Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279254,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1306528",
+      "subject_id": 1306528,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1306528,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1306528",
+  "url": "https://www.wowhead.com/forever/spell=1306528"
+}

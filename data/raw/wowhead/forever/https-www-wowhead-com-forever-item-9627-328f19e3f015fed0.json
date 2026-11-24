@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Explorer's League Lodestar Item Level 42 Binds when picked up Held In Off-hand +7 Stamina Equip: Increases healing done by up to 14 and damage done by up to 5 for all magical spells and effects. Sell Price: 51 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:27+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 9627,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 14 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 14,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 14 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 9627,
+    "item_level": 42,
+    "name": "Explorer's League Lodestar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 14.0,
+      "spell_damage": 5.0,
+      "stamina": 7.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9627"
+  },
+  "linked_entities": [],
+  "name": "Explorer's League Lodestar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "ec588aa9776479bc002483fb8d0784836e7abff0c210dde25965d9aab3193dcd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9627",
+  "url": "https://www.wowhead.com/forever/item=9627"
+}

@@ -1,0 +1,87 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloody Claws of Attack Item Level 61 Binds when picked up One-Hand Fist Weapon 73 - 136 Damage Speed 2.60 (40.19 damage per second) Requires Level 56 Equip: Improves your chance to get a critical strike by 0.5%. Equip: Increased Fist Weapons + 1. Equip: + 8 Attack Power. Equip: Increased Fist Weapons +1. Sell Price: 5 43 65 Dropped by: Elder Shaman Bloodmane Drop Chance: 60.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T02:32:09.7110397Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 280068,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.19,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increased Fist Weapons +1.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +8 Attack Power.",
+        "stats": {
+          "attack_power": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%."
+    ],
+    "id": 280068,
+    "item_level": 61,
+    "name": "Bloody Claws of Attack",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 8.0,
+      "crit_percent": 0.5
+    },
+    "weapon_max_damage": 136,
+    "weapon_min_damage": 73,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Fist Weapon",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280068"
+  },
+  "linked_entities": [
+    {
+      "id": 1297442,
+      "name": "Increased Fist Weapons +1.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1297442"
+    }
+  ],
+  "name": "Bloody Claws of Attack",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 60.0,
+      "entity_name": "Elder Shaman Bloodmane",
+      "source_url": "https://www.wowhead.com/forever/item=280068",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9bffdc82f8813714a69c1275cefcc32e5f9d621de7966f9cf3062d05e3dcf593",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280068",
+  "url": "https://www.wowhead.com/forever/item=280068"
+}

@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Whiteout Staff Item Level 65 Binds when picked up Unique Two-Hand Staff 102 - 154 Damage Speed 3.10 (41.29 damage per second) +25 Stamina +25 Intellect Durability 100 / 100 Requires Level 60 Requires Frostwolf Clan - Revered Equip: Increases damage and healing done by magical spells and effects by up to 74 . Sell Price: 7 94 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-23T01:03:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 19101,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.29,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 74.",
+        "stats": {
+          "spell_power": 74.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 74."
+    ],
+    "id": 19101,
+    "item_level": 65,
+    "name": "Whiteout Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 25.0,
+      "spell_power": 74.0,
+      "stamina": 25.0
+    },
+    "weapon_max_damage": 154,
+    "weapon_min_damage": 102,
+    "weapon_speed": 3.1,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=19101"
+  },
+  "linked_entities": [],
+  "name": "Whiteout Staff",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Whiteout Staff Item Level 65 Binds when picked up Unique Two-Hand Staff 102 - 154 Damage Speed 3.10 (41.29 damage per second) +25 Stamina +25 Intellect Durability 100 / 100 Requires Level 60 Requires Frostwolf Clan - Revered Equip: Increases damage and healing done by magical spells and effects by up to 74 . Sell Price: 7 94 11",
+      "reputation": "Frostwolf Clan",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=19101",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "b8039657afae39e0fc3776339154be58c02886813e919bd82f163f489e934715",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19101",
+  "url": "https://www.wowhead.com/forever/item=19101"
+}

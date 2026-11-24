@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 15,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:13.856Z",
+  "flavor": "forever",
+  "name": "Investigate Echo Ridge",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      },
+      "start": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=15"
+}

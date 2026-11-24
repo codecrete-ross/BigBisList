@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cobrahn's Grasp Item Level 22 Binds when picked up Waist Mail 107 Armor +7 Strength +3 Agility Durability 35 / 35 Requires Level 17 Sell Price: 6 77 Dropped by: Lord Cobrahn Drop Chance: 19.17%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 6460,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 107,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 6460,
+    "item_level": 22,
+    "name": "Cobrahn's Grasp",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6460"
+  },
+  "linked_entities": [],
+  "name": "Cobrahn's Grasp",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.17,
+      "entity_name": "Lord Cobrahn",
+      "source_url": "https://www.wowhead.com/forever/item=6460",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6460",
+  "url": "https://www.wowhead.com/forever/item=6460"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cloud Stone Item Level 53 Binds when picked up Held In Off-hand +8 Intellect +10 Arcane Resistance Requires Level 48 Equip: Improves your chance to hit by 0.8%. Sell Price: 1 34 85 Dropped by: Landslide Drop Chance: 24.37%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 17737,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.8%.",
+        "stats": {
+          "hit_percent": 0.8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.8%."
+    ],
+    "id": 17737,
+    "item_level": 53,
+    "name": "Cloud Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 10.0,
+      "hit_percent": 0.8,
+      "intellect": 8.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17737"
+  },
+  "linked_entities": [],
+  "name": "Cloud Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.37,
+      "entity_name": "Landslide",
+      "source_url": "https://www.wowhead.com/forever/item=17737",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2e9ba7d01833159c08866923894e97585e6f29fb7a83d3eb0cdb79e893c96315",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17737",
+  "url": "https://www.wowhead.com/forever/item=17737"
+}

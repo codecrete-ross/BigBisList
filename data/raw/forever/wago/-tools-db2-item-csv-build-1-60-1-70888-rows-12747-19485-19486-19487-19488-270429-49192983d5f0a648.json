@@ -1,0 +1,120 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "catalog_kind": "client_metadata",
+  "client_build": "1.60.1.70888",
+  "confidence": "client_metadata_only",
+  "dual_wield_override_reference": {
+    "content_digest": "c7258f902655762a7a9b4080872389411488a63788d680f0451db747399b9bbd",
+    "mask": 524288,
+    "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h",
+    "symbol": "ITEM_FLAG3_ALWAYS_ALLOW_DUAL_WIELD"
+  },
+  "equipment_source_rows": [
+    {
+      "ClassID": 2,
+      "Flags_2": 0,
+      "ID": 12747,
+      "InventoryType": 22,
+      "SubclassID": 14
+    },
+    {
+      "ClassID": 2,
+      "Flags_2": 0,
+      "ID": 19485,
+      "InventoryType": 22,
+      "SubclassID": 14
+    },
+    {
+      "ClassID": 2,
+      "Flags_2": 524288,
+      "ID": 270429,
+      "InventoryType": 22,
+      "SubclassID": 9
+    },
+    {
+      "ClassID": 2,
+      "Flags_2": 0,
+      "ID": 19486,
+      "InventoryType": 22,
+      "SubclassID": 14
+    },
+    {
+      "ClassID": 2,
+      "Flags_2": 0,
+      "ID": 19487,
+      "InventoryType": 22,
+      "SubclassID": 14
+    },
+    {
+      "ClassID": 2,
+      "Flags_2": 0,
+      "ID": 19488,
+      "InventoryType": 22,
+      "SubclassID": 14
+    }
+  ],
+  "fetched_at": "2026-11-11T01:18:52+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "records": 32008,
+      "sha256": "037ac6248ce1fceaad391fb0ec717cdb7ae1e8999e8c976c11b086a05deb5c57",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70888"
+    },
+    {
+      "records": 19325,
+      "sha256": "ced52fc6e5ca345805cfe3c015c05426c138aebd23ff1ad8a26cff5f1fe08be9",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70888"
+    }
+  ],
+  "inventory_type_reference": {
+    "content_digest": "c7258f902655762a7a9b4080872389411488a63788d680f0451db747399b9bbd",
+    "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Entities/Item/ItemTemplate.h",
+    "symbol": "INVTYPE_WEAPONOFFHAND",
+    "value": 22
+  },
+  "page_type": "catalog",
+  "provider": "wago",
+  "records": [
+    {
+      "item_id": 12747,
+      "requires_dual_wield": true,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 19485,
+      "requires_dual_wield": true,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 270429,
+      "requires_dual_wield": false,
+      "slot": "Off Hand",
+      "weapon_subtype": "Warglaive"
+    },
+    {
+      "item_id": 19486,
+      "requires_dual_wield": true,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 19487,
+      "requires_dual_wield": true,
+      "slot": "Off Hand"
+    },
+    {
+      "item_id": 19488,
+      "requires_dual_wield": true,
+      "slot": "Off Hand"
+    }
+  ],
+  "relationships": [],
+  "source_content_digest": "037ac6248ce1fceaad391fb0ec717cdb7ae1e8999e8c976c11b086a05deb5c57",
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70888#/rows/12747,19485,19486,19487,19488,270429"
+}

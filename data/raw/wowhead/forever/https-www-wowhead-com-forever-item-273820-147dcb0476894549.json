@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nightskulker Ring Item Level 28 Binds when picked up Unique-Equipped Finger Requires Level 23 Equip: Reduces the hit chance of Fear effects against you by 4%. Equip: Increases movement speed by 2% in Duskwood. Sell Price: 18 6 Dropped by: Dextren Ward Drop Chance: 1.36%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 273820,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the hit chance of Fear effects against you by 4%.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Equip: Increases movement speed by 2% in Duskwood.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the hit chance of Fear effects against you by 4%."
+    ],
+    "id": 273820,
+    "item_level": 28,
+    "name": "Nightskulker Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 23,
+    "slot": "Ring",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=273820"
+  },
+  "linked_entities": [
+    {
+      "id": 1292574,
+      "name": "Reduces the hit chance of Fear effects against you by 4%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292574"
+    },
+    {
+      "id": 1292575,
+      "name": "Increases movement speed by 2% in Duskwood.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292575"
+    }
+  ],
+  "name": "Nightskulker Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.36,
+      "entity_name": "Dextren Ward",
+      "source_url": "https://www.wowhead.com/forever/item=273820",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "dcbe1555d053fb5497cde634e85d84e23d1fc4cc0978897cf71fbacdfa84adb6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273820",
+  "url": "https://www.wowhead.com/forever/item=273820"
+}

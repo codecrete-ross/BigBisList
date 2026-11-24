@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Windshrieker Pauldrons Item Level 60 Binds when picked up Shoulder Mail 266 Armor +7 Intellect +20 Arcane Resistance Durability 60 / 60 Requires Level 55 Equip: + 22 Attack Power. Sell Price: 2 24 83 Dropped by: Baroness Anastari Drop Chance: 10.44%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 13538,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 266,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +22 Attack Power.",
+        "stats": {
+          "attack_power": 22
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +22 Attack Power."
+    ],
+    "id": 13538,
+    "item_level": 60,
+    "name": "Windshrieker Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 20.0,
+      "attack_power": 22.0,
+      "intellect": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=13538"
+  },
+  "linked_entities": [],
+  "name": "Windshrieker Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 10.44,
+      "entity_name": "Baroness Anastari",
+      "source_url": "https://www.wowhead.com/forever/item=13538",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2f7578e5c5771c579e0ba2c2f5d0e8c3005d91697049446ab4dcc9e6546d5bc5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13538",
+  "url": "https://www.wowhead.com/forever/item=13538"
+}

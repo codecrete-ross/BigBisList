@@ -1,0 +1,55 @@
+{
+  "attribution": [
+    {
+      "credit": "ForeverDB public quest observations",
+      "source": "https://foreverdb.net/ru/quest/1098-deathstalkers-in-shadowfang"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T05:56:50.503505+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "foreverdb",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 3324,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://foreverdb.net/ru/quest/1098-deathstalkers-in-shadowfang",
+      "subject_id": 1098,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 270023,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://foreverdb.net/ru/quest/1098-deathstalkers-in-shadowfang",
+      "subject_id": 1098,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 270024,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://foreverdb.net/ru/quest/1098-deathstalkers-in-shadowfang",
+      "subject_id": 1098,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_min_level": 18,
+    "observed_turn_in_level": 24,
+    "quest_id": 1098,
+    "quest_level": 25,
+    "reward_item_ids": [
+      3324,
+      270023,
+      270024
+    ]
+  },
+  "source_content_digest": "37efedcb1881fc87546fc934bf33fac9d73cd4ad3007b1a87826824addf666c7",
+  "url": "https://foreverdb.net/ru/quest/1098-deathstalkers-in-shadowfang"
+}

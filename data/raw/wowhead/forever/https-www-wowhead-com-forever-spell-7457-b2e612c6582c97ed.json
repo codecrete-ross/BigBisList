@@ -1,0 +1,33 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchant Bracer - Minor Stamina 5 sec cast Requires Bracers Tools: Runed Copper Rod Reagents: Strange Dust (2) Permanently enchant bracers so they increase the wearer's Stamina by 3.",
+  "entity_id": 7457,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:21+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 7457,
+      "name": "Enchant Bracer - Minor Stamina",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=7457"
+    }
+  ],
+  "name": "Enchant Bracer - Minor Stamina",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 7457,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/7457",
+  "url": "https://www.wowhead.com/forever/spell=7457"
+}

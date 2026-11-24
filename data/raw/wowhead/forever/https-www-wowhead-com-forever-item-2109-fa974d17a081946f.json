@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Frostmane Chain Vest Item Level 5 Chest Mail 67 Armor Durability 55 / 55 Sell Price: 14 Dropped by: Grik'nir the Cold Drop Chance: 0.80%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 2109,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Mail",
+    "binding": "unknown",
+    "id": 2109,
+    "item_level": 5,
+    "name": "Frostmane Chain Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Chest",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2109"
+  },
+  "linked_entities": [],
+  "name": "Frostmane Chain Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.8,
+      "entity_name": "Grik'nir the Cold",
+      "source_url": "https://www.wowhead.com/forever/item=2109",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2109",
+  "url": "https://www.wowhead.com/forever/item=2109"
+}

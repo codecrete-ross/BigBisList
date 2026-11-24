@@ -1,0 +1,127 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stormcaller's Pauldrons Item Level 78 Binds when picked up Shoulder Mail 371 Armor +10 Strength +10 Agility +15 Stamina +13 Intellect +6 Spirit Restores + 3 mana per 5 sec. Durability 85 / 85 Classes: Shaman Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 28 . Stormcaller's Garb (0/5) Stormcaller's Diadem Stormcaller's Footguards Stormcaller's Hauberk Stormcaller's Leggings Stormcaller's Pauldrons (3) Set : Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%) (5) Set : -0 seconds on the casting time of your Chain Heal spell. Sell Price: 7 8 61",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 21376,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 371,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +3 mana per 5 sec.",
+        "stats": {
+          "mp5": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 21376,
+    "item_level": 78,
+    "name": "Stormcaller's Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26119,
+        "text": "Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26122,
+        "text": "-0 seconds on the casting time of your Chain Heal spell."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "intellect": 13.0,
+      "mp5": 3.0,
+      "spell_power": 28.0,
+      "spirit": 6.0,
+      "stamina": 15.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21376"
+  },
+  "linked_entities": [
+    {
+      "id": 21372,
+      "name": "Stormcaller's Diadem",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21372"
+    },
+    {
+      "id": 21373,
+      "name": "Stormcaller's Footguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21373"
+    },
+    {
+      "id": 21374,
+      "name": "Stormcaller's Hauberk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21374"
+    },
+    {
+      "id": 21375,
+      "name": "Stormcaller's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21375"
+    },
+    {
+      "id": 21376,
+      "name": "Stormcaller's Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21376"
+    },
+    {
+      "id": 26119,
+      "name": "Your Lightning Bolt, Chain Lightning, and Shock spells have a 20% chance to grant up to 50 Nature damage to spells for 8 sec. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26119"
+    },
+    {
+      "id": 26122,
+      "name": "-0 seconds on the casting time of your Chain Heal spell.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26122"
+    }
+  ],
+  "name": "Stormcaller's Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21376",
+  "url": "https://www.wowhead.com/forever/item=21376"
+}

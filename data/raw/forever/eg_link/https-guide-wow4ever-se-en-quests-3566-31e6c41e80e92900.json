@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3566"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:32.161385+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 10739,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3566",
+      "subject_id": 3566,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 40,
+    "name": "Rise, Obsidion!",
+    "quest_id": 3566,
+    "quest_level": 52,
+    "reward_item_ids": [
+      10739
+    ],
+    "zone": "Searing Gorge"
+  },
+  "source_content_digest": "cdba054bbdc0a5abf876256cb9194fa0dd9112d34c30a1917dfcf75fbd8e84d8",
+  "url": "https://guide.wow4ever.se/en/quests/3566"
+}

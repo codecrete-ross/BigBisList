@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Frightskull Shaft Item Level 59 Binds when picked up Two-Hand Mace 137 - 206 Damage Speed 3.40 (50.44 damage per second) Durability 100 / 100 Requires Level 54 Chance on hit: Deals 15 Shadow damage every 2 sec for 14 sec and lowers their attack power by 92 for 14 sec. Sell Price: 5 92 16 Dropped by: Rattlegore Drop Chance: 12.34%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:12.9669999Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 14531,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 50.44,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Deals 15 Shadow damage every 2 sec for 14 sec and lowers their attack power by 92 for 14 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Deals 15 Shadow damage every 2 sec for 14 sec and lowers their attack power by 92 for 14 sec."
+    ],
+    "id": 14531,
+    "item_level": 59,
+    "name": "Frightskull Shaft",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 206,
+    "weapon_min_damage": 137,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=14531"
+  },
+  "linked_entities": [
+    {
+      "id": 18633,
+      "name": "Deals 15 Shadow damage every 2 sec for 14 sec and lowers their attack power by 92 for 14 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18633"
+    }
+  ],
+  "name": "Frightskull Shaft",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.34,
+      "entity_name": "Rattlegore",
+      "source_url": "https://www.wowhead.com/forever/item=14531",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3f6d02b9b89075fb3f944c76086f9f828935f847b94a3919cb89552c8acc268b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14531",
+  "url": "https://www.wowhead.com/forever/item=14531"
+}

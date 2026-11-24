@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodsport Band Item Level 45 Binds when picked up Finger +6 Stamina Restores + 5 health per 5 sec. Equip: + 22 Attack Power. Sell Price: 79 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 275044,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +22 Attack Power.",
+        "stats": {
+          "attack_power": 22
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +5 health per 5 sec.",
+        "stats": {
+          "hp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +22 Attack Power."
+    ],
+    "id": 275044,
+    "item_level": 45,
+    "name": "Bloodsport Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "hp5": 5.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275044"
+  },
+  "linked_entities": [],
+  "name": "Bloodsport Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8fdeaa0a770aa69ed6c286f393958de5f7170301435d59ce6bc9b48a4e884df8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275044",
+  "url": "https://www.wowhead.com/forever/item=275044"
+}

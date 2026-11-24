@@ -1,0 +1,54 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:51.076721+00:00",
+  "flavor": "forever",
+  "item_id": 281750,
+  "items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "description": "Murloc Oracle's Dagger Item Level 37 Binds when equipped One-Hand Dagger 16 - 31 Damage Speed 1.80 (13.06 damage per second) +3 Stamina +5 Spirit Requires Level 32 Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects. Sell Price: 84 61",
+      "dps": 13.06,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects.",
+          "stats": {
+            "healing_power": 56,
+            "spell_damage": 18
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases healing done by up to 56 and damage done by up to 18 for all magical spells and effects."
+      ],
+      "id": 281750,
+      "item_level": 37,
+      "name": "Murloc Oracle's Dagger",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "required_level": 32,
+      "slot": "One Hand",
+      "source_summary": "",
+      "stats": {
+        "healing_power": 56.0,
+        "spell_damage": 18.0,
+        "spirit": 5.0,
+        "stamina": 3.0
+      },
+      "weapon_max_damage": 31,
+      "weapon_min_damage": 16,
+      "weapon_speed": 1.8,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=281750"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "635f4ccc88202ceaa2833a160243f77dc11b6d19fed1320721f5f782a9a1cf80",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/281750#sha256-635f4ccc88202ceaa2833a160243f77dc11b6d19fed1320721f5f782a9a1cf80"
+}

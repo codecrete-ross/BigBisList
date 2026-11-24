@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Predaceous Band Item Level 60 Binds when equipped Finger +14 Stamina Requires Level 55 Equip: + 18 Attack Power against Beasts. Equip: Movement speed increased by 2% in Forest and Grassland areas. Sell Price: 2 4 34",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 287043,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +18 Attack Power against Beasts.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Equip: Movement speed increased by 2% in Forest and Grassland areas.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +18 Attack Power against Beasts.",
+      "Equip: Movement speed increased by 2% in Forest and Grassland areas."
+    ],
+    "id": 287043,
+    "item_level": 60,
+    "name": "Predaceous Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=287043"
+  },
+  "linked_entities": [
+    {
+      "id": 1308520,
+      "name": "Movement speed increased by 2% in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1308520"
+    }
+  ],
+  "name": "Predaceous Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f2fc90055f4a701121f9a3d73c83f92fc1d057395f0ff3ee2d032b4bfa697063",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287043",
+  "url": "https://www.wowhead.com/forever/item=287043"
+}

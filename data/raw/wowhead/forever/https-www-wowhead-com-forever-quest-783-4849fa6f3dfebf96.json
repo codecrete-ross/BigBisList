@@ -1,0 +1,29 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "entity_id": 783,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:50.285Z",
+  "flavor": "forever",
+  "name": "A Threat Within",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      },
+      "start": {
+        "entity_id": 823,
+        "name": "Deputy Willem"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [],
+  "url": "https://www.wowhead.com/forever/quest=783"
+}

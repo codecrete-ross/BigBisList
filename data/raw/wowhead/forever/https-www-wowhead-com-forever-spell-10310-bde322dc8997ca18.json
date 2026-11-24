@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Lay on Hands Rank 3 40 yd range Instant 20 min cooldown Requires Paladin Requires level 50 Heals a friendly target for an amount equal to the Paladin's maximum health and restores 550 of their mana. Drains all of the Paladin's remaining Mana when used, but does not interrupt Mana regeneration.",
+  "entity_id": 10310,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:40+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10310,
+      "name": "Lay on Hands",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10310"
+    }
+  ],
+  "name": "Lay on Hands",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "c06e12bfbc5b569372dc41922ccc833292881a97bfbe484dfa6e20cf4f1aa8fb",
+  "spell_id": 10310,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10310",
+  "url": "https://www.wowhead.com/forever/spell=10310"
+}

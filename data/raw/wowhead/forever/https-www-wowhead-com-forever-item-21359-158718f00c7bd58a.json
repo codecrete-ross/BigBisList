@@ -1,0 +1,117 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deathdealer's Boots Item Level 78 Binds when picked up Feet Leather 158 Armor +14 Strength +26 Agility +17 Stamina Durability 60 / 60 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Deathdealer's Embrace (0/5) Deathdealer's Boots Deathdealer's Helm Deathdealer's Spaulders Deathdealer's Leggings Deathdealer's Vest (3) Set : Reduces the cooldown of your Evasion ability by -1 min. (5) Set : 15% increased damage to your Eviscerate ability. Sell Price: 5 94 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 21359,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 21359,
+    "item_level": 78,
+    "name": "Deathdealer's Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26112,
+        "text": "Reduces the cooldown of your Evasion ability by -1 min."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26113,
+        "text": "15% increased damage to your Eviscerate ability."
+      }
+    ],
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 26.0,
+      "hit_percent": 1.0,
+      "stamina": 17.0,
+      "strength": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21359"
+  },
+  "linked_entities": [
+    {
+      "id": 21359,
+      "name": "Deathdealer's Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21359"
+    },
+    {
+      "id": 21360,
+      "name": "Deathdealer's Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21360"
+    },
+    {
+      "id": 21361,
+      "name": "Deathdealer's Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21361"
+    },
+    {
+      "id": 21362,
+      "name": "Deathdealer's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21362"
+    },
+    {
+      "id": 21364,
+      "name": "Deathdealer's Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21364"
+    },
+    {
+      "id": 26112,
+      "name": "Reduces the cooldown of your Evasion ability by -1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26112"
+    },
+    {
+      "id": 26113,
+      "name": "15% increased damage to your Eviscerate ability.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26113"
+    }
+  ],
+  "name": "Deathdealer's Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21359",
+  "url": "https://www.wowhead.com/forever/item=21359"
+}

@@ -1,0 +1,315 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Pinned QuestieDB Forever emulator API after Static/Derived/Dynamic corrections; curated records.",
+  "fetched_at": "2026-11-06T02:44:49.503662+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "breadcrumbForQuestId": 1524,
+      "exclusiveTo": {
+        "1": 1523,
+        "2": 2983,
+        "3": 2984
+      },
+      "finishedBy": {
+        "1": {
+          "1": 5907
+        }
+      },
+      "id": 1522,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 5892
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 5900
+        }
+      },
+      "id": 1524,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 11,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 6653,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 5907
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 5900
+        }
+      },
+      "id": 1525,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 1524
+      },
+      "questFlags": 8,
+      "questLevel": 12,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 5900
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "2": {
+          "1": 61934
+        }
+      },
+      "id": 1526,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 1525
+      },
+      "questFlags": 0,
+      "questLevel": 13,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSourceItems": {
+        "1": 6636
+      },
+      "requiredSpell": 0,
+      "sourceItemId": 6653,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 5900
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 5907
+        }
+      },
+      "id": 1527,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 1526
+      },
+      "questFlags": 0,
+      "questLevel": 13,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 6654,
+      "specialFlags": 0,
+      "startedBy": {
+        "2": {
+          "1": 61934
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 257597
+        }
+      },
+      "id": 94449,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 10,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 258098,
+          "2": 258113
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 257808
+        }
+      },
+      "id": 94465,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "questFlags": 0,
+      "questLevel": 11,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 6653,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 257597
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 257808
+        }
+      },
+      "id": 94466,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 94465
+      },
+      "questFlags": 0,
+      "questLevel": 14,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 257808
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "2": {
+          "1": 61934
+        }
+      },
+      "id": 94467,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 94466
+      },
+      "questFlags": 0,
+      "questLevel": 14,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 6653,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 257808
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 257597
+        }
+      },
+      "id": 94468,
+      "name": "Call of Fire",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 94467
+      },
+      "questFlags": 0,
+      "questLevel": 14,
+      "requiredClasses": 64,
+      "requiredLevel": 10,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 6654,
+      "specialFlags": 0,
+      "startedBy": {
+        "2": {
+          "1": 61934
+        }
+      }
+    }
+  ],
+  "reward_item_records": [
+    {
+      "class": 4,
+      "id": 263412,
+      "itemLevel": 10,
+      "name": "Totem of Charged Flames",
+      "questRewards": {
+        "1": 1527,
+        "2": 94411,
+        "3": 94468,
+        "4": 97257
+      },
+      "requiredLevel": 10,
+      "startQuest": 0,
+      "subClass": 9
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/commit/80866960788084ae1592abf66a08f0d306458a95"
+}

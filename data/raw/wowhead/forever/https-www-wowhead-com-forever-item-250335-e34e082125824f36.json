@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Greater Fortitude Item Level 55 Requires Level 55 Use: Drink to increase your maximum health by 400. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20 Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250335,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Drink to increase your maximum health by 400. Lasts for 30 min. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 250335,
+    "item_level": 55,
+    "name": "Elixir of Greater Fortitude",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Drink to increase your maximum health by 400. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250335"
+  },
+  "linked_entities": [
+    {
+      "id": 1250931,
+      "name": "Drink to increase your maximum health by 400. Lasts for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1250931"
+    }
+  ],
+  "name": "Elixir of Greater Fortitude",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250335",
+  "url": "https://www.wowhead.com/forever/item=250335"
+}

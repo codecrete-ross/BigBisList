@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glowing Mantle of the Dawn Item Level 65 Binds when picked up Shoulder Leather 148 Armor +14 Agility +22 Stamina Durability 70 / 70 Requires Level 60 Requires Leatherworking (290) Equip: Increased Defense + 9. Equip: Improves your chance to hit by 1.0%. Sell Price: 3 22 6",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:42:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227818,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 148,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +9.",
+        "stats": {
+          "defense": 9
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 227818,
+    "item_level": 65,
+    "name": "Glowing Mantle of the Dawn",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "defense": 9.0,
+      "hit_percent": 1.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227818"
+  },
+  "linked_entities": [
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    }
+  ],
+  "name": "Glowing Mantle of the Dawn",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Glowing Mantle of the Dawn Item Level 65 Binds when picked up Shoulder Leather 148 Armor +14 Agility +22 Stamina Durability 70 / 70 Requires Level 60 Requires Leatherworking (290) Equip: Increased Defense + 9. Equip: Improves your chance to hit by 1.0%. Sell Price: 3 22 6",
+      "scope": "equip_or_use",
+      "skill": 290,
+      "source_url": "https://www.wowhead.com/forever/item=227818",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "39c9cc34d199e3458db65ca29e10707385de416071a7d3e6ddb911de22f5dce2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227818",
+  "url": "https://www.wowhead.com/forever/item=227818"
+}

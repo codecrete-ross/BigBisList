@@ -5,6 +5,14 @@ preparing Big BiS List releases. Other governance documents should link here
 instead of copying an independent command list. The playbook stays internal;
 `.pkgmeta` excludes `docs` from packaged addon artifacts.
 
+## Client Scope
+
+Prepare releases for Forever by default. Anniversary work resumes only at the
+user's explicit direction. That direction is required for Anniversary data
+review, refreshes, validation, generation, coverage audits, schedule checks,
+and live client verification. Keep existing Anniversary compatibility checks
+available for work in that scope.
+
 ## Version Policy
 
 Use plain numeric Git tags such as `0.6.0`; do not prefix tags with `v`.
@@ -32,7 +40,8 @@ example, a bug fix plus a new filter is a minor release.
 1. Inspect the worktree with `git status --short --branch` and preserve unrelated
    dirty changes.
 2. Review `git log <last-tag>..HEAD` and `git diff --stat <last-tag>..HEAD`.
-3. Review official Blizzard TBC Anniversary content announcements against
+3. If the user includes Anniversary in the release scope, review official
+   Blizzard TBC Anniversary content announcements against
    `data/canonical/phases.json`. Record the authoritative URL and exact UTC
    timestamp for a changed schedule, update the epoch from that same instant,
    and cover the boundary immediately before and at launch. Record that the
@@ -51,8 +60,8 @@ example, a bug fix plus a new filter is a minor release.
    version. Every reachable numeric tag must have a dated entry with bullet notes.
 6. Update release-specific README references and the fallback version in
    `Config.lua`.
-7. Regenerate `Data.lua` only when canonical data or generator behavior changed.
-   Never hand-edit generated Lua.
+7. Regenerate the affected client payload when canonical data or generator
+   behavior changes. Pass the client explicitly with `--flavor`.
 8. Run the release environment's Python with `tools/generate_release_notes.py`.
    Commit the generated `RELEASE_NOTES.md`: it contains all sections sharing the
    current version's exact `MAJOR.MINOR`, including its initial `.0`, newest
@@ -68,6 +77,10 @@ explicitly changes the target client. The `## Version` field should stay
 
 ## Automated Release Gate
 
+Forever is the default release gate scope. Select `-Flavor anniversary` explicitly for an
+authorized Anniversary release. The authoritative gate runs on the final
+clean release commit.
+
 Use a dedicated Python 3.10-or-newer virtual environment installed from the
 repository's `pyproject.toml` (for example, create the environment and run its
 Python with `-m pip install .`). Do not rely on an unrelated global Python whose
@@ -75,7 +88,7 @@ installed packages merely happen to satisfy some tests. From the clean release
 commit, run:
 
 ```powershell
-pwsh -File scripts/check-release.ps1 -Version <next-version> -PythonPath <venv-python> -FullData
+pwsh -File scripts/check-release.ps1 -Version <next-version> -Flavor forever -PythonPath <venv-python> -FullData
 ```
 
 Pass `-PythonPath <path>` when the release interpreter is not available as
@@ -101,7 +114,7 @@ gate. Do not tag from a partial run.
 
 ## Manual Release Evidence
 
-Automated checks do not replace a TBC Anniversary client smoke test. For any
+Run smoke tests on each client in the release scope. For any
 runtime, UI, saved-state, or migration change, record the client build, tester,
 date, and outcome. Exercise the affected behavior and, when applicable:
 
@@ -109,6 +122,44 @@ date, and outcome. Exercise the affected behavior and, when applicable:
 - Endgame/Leveling switching, responsive columns, inspectors, and dropdowns;
 - acquisition paths, tooltips, ownership, wishlist, and ignore actions;
 - `/bbltest`, `/bbl status`, and `/bbltest perf`.
+
+For the first Forever release, record the
+[pilot checks](forever-pilot.md), including quest progress, waypoint behavior,
+and the Forever package load list. After automated ingestion, verify that
+CurseForge recognizes the Forever package.
+
+Forever source review and live acceptance are separate gates. Reviewed profile
+documents may use `source_reviewed` before the user's gameplay session. Standard
+local deployment requires both strict data families (`leveling` and `bis_lists`).
+The explicit local Forever prerelease command
+`scripts/deploy.ps1 -Flavor forever -Prerelease -NoClean` permits uncovered
+leveling combinations. It checks leveling for validation errors, requires strict
+pre-raid coverage, and verifies generated and installed files. Both Forever
+deployment paths require the scoring audit to pass for all supported Leveling
+bands and Pre-Raid. Public publishing runs both audits and the version-scoped leveling check below. It also requires
+`data/canonical/forever/live_acceptance.json` to pass
+`python tools/scrape_wowhead.py live-acceptance-audit --flavor forever`;
+the authoritative `-FullData` gate runs that audit itself.
+[Scoring audit](forever-scoring.md#verification-and-rollout)
+
+For 0.15.x only, the full gate compares outstanding leveling cells and their unresolved item IDs
+with the reviewed integration commit `5693519f0e32cd5090ba08b2b2325f5544b82e31`.
+It also checks each candidate’s evidence digest, outstanding facts, disclosure, and route evidence.
+A patch must additionally fit the previous numeric tag’s remaining gaps. This permits
+resolved cases to drop out while blocking new or reopened cases, stale approvals, and
+scoring or Pre-Raid failures. Retain the integration history when merging the release PR.
+The ordinary strict coverage command continues reporting every unresolved cell.
+
+Record `status: accepted`, the tester, date, client build, supporting evidence
+URL, reason, and `artifact_digest`. Obtain the digest from
+`tools.forever.release_artifact_digest()` after generation; it covers the
+Forever manifest, its listed runtime files, and the packaged assets. All keys in
+`tools.forever.LIVE_ACCEPTANCE_CHECKS` must be true, and `performance` must
+include measured `startup_ms` and `first_open_ms`. A later runtime or data
+change invalidates that artifact-specific acceptance. Leave this document
+pending until the user supplies the actual gameplay results. The weekly
+data-only path uses the baseline described below and records its own
+scripted verification receipt.
 
 Record the automated gate result, content-schedule review, and in-game result in
 the release PR or handoff. A skipped applicable check must include its reason,
@@ -151,6 +202,46 @@ check of the automatically published CurseForge file should show the current
 minor line's sections and no older minor line; report ingestion as unverified
 if the new file is not yet available. This check does not introduce a manual
 publishing or correction step.
+
+## Weekly Forever data releases
+
+A fresh **Weekly Forever data refresh** chat runs in the BigBisList workspace every Wednesday
+at 9:25 a.m. Pacific using Sol 6.2 with Max reasoning. The chat dispatches the read-only
+**Forever weekly data** workflow on main and follows the run to completion. GitHub retains
+request checkpoints and the **forever-weekly-report** artifact for 30 days. A manual dispatch
+runs the same intake. The optional comparison build stages its evidence separately.
+
+The initial hosted run can emit a verified patch before a published Forever baseline exists.
+For the first release, apply verified changes in the release-preparation PR. Repeat gameplay
+acceptance when the packaged digest changes. Once that release is accepted and published,
+set the repository variables `FOREVER_LIVE_BASELINE_TAG=0.15.0` and
+`FOREVER_DATA_AUTO_RELEASE=true`. Keep the required release check and auto-merge enabled.
+
+For later data patches, fetch main and tags into an isolated checkout. Download the hosted
+**forever-weekly-report** into a run directory and **forever-refresh-state** into its `cache`
+subdirectory. For a **ready** report, use the commands below with the authenticated workspace
+GitHub CLI account. The transfer checks the bundle's parent, tree, and commit against the receipt.
+The submit step checks the entire data delta, opens or reuses the PR, and enables checked
+auto-merge. Wait for the PR to merge and obtain its actual merge SHA for verification.
+
+```powershell
+python -m tools.forever_weekly restore --state-dir $state
+python -m tools.forever_weekly submit --state-dir $state --baseline-tag $baseline
+python -m tools.forever_weekly verify-merge --state-dir $state --baseline-tag $baseline --commit $mergeSha --pr-number $prNumber
+python -m tools.forever_weekly publish --state-dir $state --baseline-tag $baseline
+```
+
+Inspect the hosted tag check and the public CurseForge file. An unchanged run keeps its version.
+Blocked runs retain the report and independently verified equipment evidence where available.
+If a run stops after merge or tag push, resume verification and publication on the original merge
+SHA. The publisher checks an existing tag and its release notes before resuming.
+
+The same live-tested baseline covers data-only patches for the same client
+build, manifest, runtime, assets, eligibility rules, and scoring configuration.
+Records of live tests stay with the baseline tag. The `-BaselineTag` gate
+verifies each changed data artifact and records scripted acceptance separately.
+The target client and the leveling and Guide source builds are recorded independently in
+`data/canonical/forever/reviewed_builds.json`. Record a fresh live baseline when the target client, runtime, or rules change.
 
 ## Convention References
 

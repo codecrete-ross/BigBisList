@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deprecated Minor Bloodstone Item Level 1 Conjured Item Binds when picked up Unique Held In Off-hand Use: Instantly restores 120 life.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 5408,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Instantly restores 120 life.",
+        "type": "use"
+      }
+    ],
+    "id": 5408,
+    "item_level": 1,
+    "name": "Deprecated Minor Bloodstone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Instantly restores 120 life."
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5408"
+  },
+  "linked_entities": [
+    {
+      "id": 6262,
+      "name": "Instantly restores 120 life.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6262"
+    }
+  ],
+  "name": "Deprecated Minor Bloodstone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "c8166ea3369783e7d470e2a45b09815f71c9c0d58d18a25e03aaecc8bcdc5b0c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5408",
+  "url": "https://www.wowhead.com/forever/item=5408"
+}

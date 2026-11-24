@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Don Mauricio's Band of Domination Item Level 63 Binds when picked up Unique-Equipped Finger +10 Stamina Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 11 . Sell Price: 2 30 33 Dropped by: Darkmaster Gandling Drop Chance: 12.34%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 22433,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 11.",
+        "stats": {
+          "spell_power": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "id": 22433,
+    "item_level": 63,
+    "name": "Don Mauricio's Band of Domination",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "spell_power": 11.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22433"
+  },
+  "linked_entities": [],
+  "name": "Don Mauricio's Band of Domination",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.34,
+      "entity_name": "Darkmaster Gandling",
+      "source_url": "https://www.wowhead.com/forever/item=22433",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "613ab751551a1c9c44fe5d3d9827ee831df98157501f9b40ef13893f3c02b6a2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22433",
+  "url": "https://www.wowhead.com/forever/item=22433"
+}

@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Counterattack Lodestone Item Level 63 Binds when picked up Unique-Equipped Trinket Requires Level 58 Equip: +30 Attack Power, doubled against Mechanical units. Use: Energize the lodestone for 10 sec, heightening its magnetic pull and drawing in the weapon of the next melee attacker that strikes you, Disarming them for 8 sec. (8 Min Cooldown) Sell Price: 2 30 33 Dropped by: Mizzle the Crafty",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18537,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +30 Attack Power, doubled against Mechanical units.",
+        "type": "target_specific"
+      },
+      {
+        "raw_text": "Use: Energize the lodestone for 10 sec, heightening its magnetic pull and drawing in the weapon of the next melee attacker that strikes you, Disarming them for 8 sec. (8 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 18537,
+    "item_level": 63,
+    "name": "Counterattack Lodestone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Energize the lodestone for 10 sec, heightening its magnetic pull and drawing in the weapon of the next melee attacker that strikes you, Disarming them for 8 sec. (8 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18537"
+  },
+  "linked_entities": [
+    {
+      "id": 1302356,
+      "name": "Energize the lodestone for 10 sec, heightening its magnetic pull and drawing in the weapon of the next melee attacker that strikes you, Disarming them for 8 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302356"
+    },
+    {
+      "id": 1318938,
+      "name": "+30 Attack Power, doubled against Mechanical units.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318938"
+    }
+  ],
+  "name": "Counterattack Lodestone",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Mizzle the Crafty",
+      "source_url": "https://www.wowhead.com/forever/item=18537",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d0c081ec679fea7d0b3d22ab82ee6d065e95e4568bb511e1a02718eeb5e9e5f2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18537",
+  "url": "https://www.wowhead.com/forever/item=18537"
+}

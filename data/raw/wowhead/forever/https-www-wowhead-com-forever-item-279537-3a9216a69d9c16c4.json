@@ -1,0 +1,44 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Rotheap Innards Item Level 1 Unique \"You feel great discomfort simply looking at this.\" Dropped by: Nightveiled Rotheap Drop Chance: 95.51%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:15:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279537,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 279537,
+    "item_level": 1,
+    "name": "Rotheap Innards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279537"
+  },
+  "linked_entities": [],
+  "name": "Rotheap Innards",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 95.51,
+      "entity_name": "Nightveiled Rotheap",
+      "source_url": "https://www.wowhead.com/forever/item=279537",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "03327ac7ae828960375e491bac335fdbaea2bd30c084b294c4f064cf96d95c19",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279537",
+  "url": "https://www.wowhead.com/forever/item=279537"
+}

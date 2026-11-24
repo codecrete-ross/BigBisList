@@ -1,0 +1,153 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://efficient.games"
+    },
+    {
+      "credit": "WoW Forever Atlas",
+      "source": "https://wowforever.gg/en/atlas/knowledge/items/bag-of-spoils-i20603/"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "published_catalog_with_current_dependency_fields",
+  "fetched_at": "2026-11-13T21:27:40.675854+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 97466,
+      "collected_at": "2026-11-13T21:27:40.675854+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-silithus",
+      "source_content_digest": "a0b77b49c8917a125414b47aec1f9f21d06de8e559dbbe1fe65a227b769396be",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1740948,
+      "collected_at": "2026-11-13T21:26:34.988732+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-tree",
+      "source_content_digest": "517c442ad4a063f2e688c280bd5fe7814cad457dc705d57882c8a1ae86f96a07",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/25f90585f2141d42e89f9dd2c655c8ec8b6344d2?recursive=1"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T21:37:13.961219+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-live-quests",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 208568,
+      "collected_at": "2026-11-13T21:37:24.873288+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "atlas-bag-of-spoils",
+      "source_content_digest": "23a9e2c8982103693c943805b863e40c0a0c66b95c1ed6e3cb587a9862cc9109",
+      "source_url": "https://wowforever.gg/en/atlas/knowledge/items/bag-of-spoils-i20603/"
+    },
+    {
+      "bytes": 35280,
+      "collected_at": "2026-11-13T21:44:15.496368+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "atlas-glowing-black-orb",
+      "source_content_digest": "54b3b669c051966dc38f24b2d662adc342db354279edb69149c0634f28a5c43d",
+      "source_url": "https://wowforever.gg/en/atlas/knowledge/items/glowing-black-orb-i20694/"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Prince Skaldrenox",
+      "object_id": 20680,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77",
+      "subject_id": 15203,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Baron Kazum",
+      "object_id": 20686,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77",
+      "subject_id": 15205,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "High Marshal Whirlaxis",
+      "object_id": 20689,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77",
+      "subject_id": 15204,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Bag of Spoils",
+      "object_id": 20694,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77",
+      "subject_id": 20603,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "att_path": ".contrib/.db/forever/zones/kalimdor/silithus.lua",
+    "bag_binding": "bind_on_pickup",
+    "bag_id": 20603,
+    "catalog_boss_drops": {
+      "20680": 15203,
+      "20686": 15205,
+      "20689": 15204
+    },
+    "finding": "The catalog links the exact shoulder IDs to the Greater Wind Stone summons. The current ring requires level 60. This is the summoner's requirement. The live loot recipient's requirement is open. The reported Bag of Spoils quest gate concerns the bag recipient. The final orb's live trade and equip requirements remain open.",
+    "orb_id": 20694,
+    "reported_bag_quests": [
+      8361,
+      8362
+    ],
+    "reported_quest_minimum": 60,
+    "summoner_ring_equip_minimum": 60,
+    "summoner_ring_id": 20451,
+    "wind_stone_id": 180466
+  },
+  "source_content_digest": "a0b77b49c8917a125414b47aec1f9f21d06de8e559dbbe1fe65a227b769396be",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/4e74a778ceddb6a031f3fcd8ac5f49476f529d77"
+}

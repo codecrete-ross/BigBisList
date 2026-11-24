@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gauntlets of Ogre Strength Item Level 32 Binds when equipped Hands Mail 128 Armor +3 Strength Durability 35 / 35 Requires Level 27 Equip: + 16 Attack Power. Sell Price: 16 21",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 3341,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 128,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +16 Attack Power."
+    ],
+    "id": 3341,
+    "item_level": 32,
+    "name": "Gauntlets of Ogre Strength",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 27,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 16.0,
+      "strength": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3341"
+  },
+  "linked_entities": [],
+  "name": "Gauntlets of Ogre Strength",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3341",
+  "url": "https://www.wowhead.com/forever/item=3341"
+}

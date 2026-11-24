@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Dense Sharpening Stone Item Level 45 Requires Level 35 Use: Increase sharp weapon damage by 8 for 30 minutes. Max Stack: 20 Sell Price: 75",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:43:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12404,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase sharp weapon damage by 8 for 30 minutes.",
+        "type": "use"
+      }
+    ],
+    "id": 12404,
+    "item_level": 45,
+    "name": "Dense Sharpening Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 35,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increase sharp weapon damage by 8 for 30 minutes. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12404"
+  },
+  "linked_entities": [
+    {
+      "id": 16138,
+      "name": "Increase sharp weapon damage by 8 for 30 minutes.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16138"
+    }
+  ],
+  "name": "Dense Sharpening Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12404",
+  "url": "https://www.wowhead.com/forever/item=12404"
+}

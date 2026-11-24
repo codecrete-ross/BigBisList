@@ -1,0 +1,471 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json"
+    }
+  ],
+  "client_build": "1.60.1.70862",
+  "confidence": "historical_live_server_quest_cache",
+  "fetched_at": "2026-11-11T07:31:13.480170+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-07",
+    "last": "2026-11-10"
+  },
+  "records": [
+    {
+      "min_level": 9,
+      "name": "A Recipe For Death",
+      "quest_id": 451,
+      "quest_level": 18,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        3451
+      ],
+      "source_count": 2
+    },
+    {
+      "min_level": 20,
+      "name": "Souvenirs of Death",
+      "quest_id": 546,
+      "quest_level": 25,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        3739
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 17,
+      "name": "Revenge of Gann",
+      "quest_id": 849,
+      "quest_level": 26,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        5313
+      ],
+      "source_count": 2
+    },
+    {
+      "min_level": 11,
+      "name": "Hezrul Bloodmark",
+      "quest_id": 852,
+      "quest_level": 19,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        5351
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 18,
+      "name": "Arugal Must Die",
+      "quest_id": 1014,
+      "quest_level": 27,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        6414
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 17,
+      "name": "Allegiance to the Old Gods",
+      "quest_id": 6565,
+      "quest_level": 26,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        17694,
+        17695
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 20,
+      "name": "Vorsha the Lasher",
+      "quest_id": 6641,
+      "quest_level": 23,
+      "race_mask": "ffffffffffffffff",
+      "reward_item_ids": [
+        17692
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 18,
+      "name": "Bloodfury Trinkets",
+      "quest_id": 86576,
+      "quest_level": 26,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "reward_item_ids": [
+        281252
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 24,
+      "name": "Starving Arcane",
+      "quest_id": 92457,
+      "quest_level": 33,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        279838
+      ],
+      "source_count": 2
+    },
+    {
+      "min_level": 36,
+      "name": "Bloodmaster's Ring",
+      "quest_id": 95063,
+      "quest_level": 45,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "reward_item_ids": [
+        275043,
+        275044,
+        275045
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 15,
+      "name": "Abominable Creatures",
+      "quest_id": 95250,
+      "quest_level": 21,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        279867
+      ],
+      "source_count": 2
+    },
+    {
+      "min_level": 36,
+      "name": "In Memoriam",
+      "quest_id": 95615,
+      "quest_level": 38,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        274915
+      ],
+      "source_count": 2
+    },
+    {
+      "min_level": 24,
+      "name": "Horrors in the Highland",
+      "quest_id": 95646,
+      "quest_level": 31,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        271670
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 30,
+      "name": "Past Due",
+      "quest_id": 96800,
+      "quest_level": 38,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        276898,
+        276899
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 24,
+      "name": "Opportunistic Education",
+      "quest_id": 96987,
+      "quest_level": 33,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "reward_item_ids": [
+        279845
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 15,
+      "name": "Unending Torment",
+      "quest_id": 97290,
+      "quest_level": 21,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "reward_item_ids": [
+        279867
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 17,
+      "name": "Baron Marinous",
+      "quest_id": 98028,
+      "quest_level": 21,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        281291,
+        281292
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 19,
+      "name": "Valuable Vantages",
+      "quest_id": 98095,
+      "quest_level": 25,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "reward_item_ids": [
+        281294
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 23,
+      "name": "Understanding Our Present",
+      "quest_id": 98216,
+      "quest_level": 31,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        281304
+      ],
+      "source_count": 3
+    },
+    {
+      "min_level": 23,
+      "name": "Old Habits",
+      "quest_id": 98223,
+      "quest_level": 31,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        281306
+      ],
+      "source_count": 1
+    },
+    {
+      "min_level": 24,
+      "name": "Gleaning Our Future",
+      "quest_id": 98310,
+      "quest_level": 32,
+      "race_mask": "55155555b1354c4d",
+      "reward_item_ids": [
+        281320
+      ],
+      "source_count": 2
+    }
+  ],
+  "relationships": [
+    {
+      "object_id": 3451,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 451,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 3739,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 546,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 5313,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 849,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 5351,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 852,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 6414,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 1014,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 17694,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 6565,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 17695,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 6565,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 17692,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 6641,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281252,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 86576,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 279838,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 92457,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 275043,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95063,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 275044,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95063,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 275045,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95063,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 279867,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95250,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 274915,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95615,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 271670,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 95646,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 276898,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 96800,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 276899,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 96800,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 279845,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 96987,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 279867,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 97290,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281291,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98028,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281292,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98028,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281294,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98095,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281304,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98216,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281306,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98223,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281320,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json",
+      "subject_id": 98310,
+      "subject_type": "quest"
+    }
+  ],
+  "source_content_digest": "04d7878ecceb06e2ca80e0057a4c3c61a18266fc322458bee0c3fde8f0464b18",
+  "source_revision": "9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/9fcae73cc74fea4f1c4f2f09df9ca811b0f893ae/data/wowf/1.60.1.70862/quests.enUS.json"
+}

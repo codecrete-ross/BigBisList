@@ -1,0 +1,46 @@
+{
+  "attribution": [
+    {
+      "credit": "Icy Veins Forever Database",
+      "source": "https://db.icy-veins.com/wow-forever/quests/96676"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:59:49.423644+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "icyveins",
+  "relationships": [
+    {
+      "object_id": 275671,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/96676",
+      "subject_id": 96676,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 275685,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://db.icy-veins.com/wow-forever/quests/96676",
+      "subject_id": 96676,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 54,
+    "name": "Unsealing Blackthorne Pact",
+    "quest_id": 96676,
+    "reward_item_roles": {
+      "275671": "items",
+      "275685": "choices"
+    },
+    "side": "Alliance",
+    "zone": "Mount Hyjal"
+  },
+  "source_capture_format": "indexed page, manually normalized exact public fields and reward link targets on 2026-11-12",
+  "source_content_digest": "e34cc29f2c6728c942d6783700764986f32489f480b20456029dba3154408ce5",
+  "url": "https://db.icy-veins.com/wow-forever/quests/96676"
+}

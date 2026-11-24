@@ -1,0 +1,41 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/7741"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "observed_forever_server_quest",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "reference",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "observed_forever_server_quest",
+      "object_id": 19065,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/7741",
+      "subject_id": 7741,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "min_level": 52,
+    "objectives": [],
+    "observations": 1,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 7741,
+    "quest_level": 59,
+    "reward_item_ids": [
+      19065
+    ],
+    "title": "Praise from the Emerald Circle <NYI> <TXT>"
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/7741"
+}

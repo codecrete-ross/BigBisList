@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crimson Felt Hat Item Level 59 Binds when picked up Head Cloth 68 Armor +8 Stamina +10 Intellect +10 Spirit Durability 50 / 50 Requires Level 54 Equip: Increases damage and healing done by magical spells and effects by up to 30 . Sell Price: 1 42 11 Dropped by: Magistrate Barthilas Drop Chance: 15.25%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18727,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 68,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
+        "stats": {
+          "spell_power": 30.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 30."
+    ],
+    "id": 18727,
+    "item_level": 59,
+    "name": "Crimson Felt Hat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 30.0,
+      "spirit": 10.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18727"
+  },
+  "linked_entities": [],
+  "name": "Crimson Felt Hat",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 15.25,
+      "entity_name": "Magistrate Barthilas",
+      "source_url": "https://www.wowhead.com/forever/item=18727",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "cd361a389b2725631d628b3ba8f1b83308c8eb76232a754633718d8d62e16e14",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18727",
+  "url": "https://www.wowhead.com/forever/item=18727"
+}

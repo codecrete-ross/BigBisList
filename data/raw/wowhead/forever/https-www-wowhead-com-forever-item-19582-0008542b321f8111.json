@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Windtalker's Wristguards Item Level 65 Binds when picked up Wrist Mail 182 Armor +8 Stamina +8 Intellect +7 Spirit Durability 50 / 50 Requires Level 60 Equip: + 38 Attack Power. Sell Price: 2 42 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 19582,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 182,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +38 Attack Power.",
+        "stats": {
+          "attack_power": 38
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +38 Attack Power."
+    ],
+    "id": 19582,
+    "item_level": 65,
+    "name": "Windtalker's Wristguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 38.0,
+      "intellect": 8.0,
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19582"
+  },
+  "linked_entities": [],
+  "name": "Windtalker's Wristguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19582",
+  "url": "https://www.wowhead.com/forever/item=19582"
+}

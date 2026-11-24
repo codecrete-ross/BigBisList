@@ -1,0 +1,99 @@
+{
+  "attribution": [
+    {
+      "credit": "All The Things Forever dungeon catalog",
+      "source": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f5d76e724ba83b71adc336a8a56a5b302c9985e0"
+    },
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/guide/lower-blackrock-spire-dungeon-overview-location-rewards"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_forever_summoned_dungeon_drop",
+  "fetched_at": "2026-11-13T09:11:23.6367865Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 62588,
+      "collected_at": "2026-11-13T09:11:23.6367865Z",
+      "http": "200",
+      "name": "att-dungeon-blackrock-spire",
+      "source_content_digest": "10c64e7d14c8b0b4d6a2539fcfb41b600ffb4b7158aff30c6f85eb4cd581d710",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f5d76e724ba83b71adc336a8a56a5b302c9985e0"
+    },
+    {
+      "bytes": 1423,
+      "collected_at": "2026-11-13T23:25:00.825666+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-22322",
+      "source_content_digest": "0d0a052498cc585b03d7e4d04e07f59aa03d37e557818394ef8f54708afc6aa1",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22322"
+    },
+    {
+      "bytes": 223294,
+      "collected_at": "2026-11-13T23:29:51.565722+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-lbrs",
+      "source_content_digest": "01cc18bf07f05c64da101c1541462e166ed69b3b08bfa8bccc6b0f9dd96eaf13",
+      "source_url": "https://www.wowhead.com/forever/guide/lower-blackrock-spire-dungeon-overview-location-rewards"
+    },
+    {
+      "bytes": 750,
+      "collected_at": "2026-11-13T23:37:37.964086+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-jaw-brazier",
+      "source_content_digest": "2105dca2f796d6e0c3a5336cddd48e2c6250589f9727eceb9cfe2d54247901ec",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22049"
+    },
+    {
+      "bytes": 765,
+      "collected_at": "2026-11-13T23:37:38.089128+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-invocation-brazier",
+      "source_content_digest": "bb770dcf1226b2aba75ab80844f81c40dfe6ab98e25e0e06814ce8d5aeaae6fc",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/22057"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "reviewed",
+      "confidence": "current_forever_drop",
+      "object_id": 22322,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f5d76e724ba83b71adc336a8a56a5b302c9985e0#/encounter/16080/item/22322",
+      "subject_id": 16080,
+      "subject_name": "Mor Grayhoof",
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "activation_item_ids": [
+      22049,
+      22057
+    ],
+    "dungeon_map_id": 229,
+    "equip_level": 56,
+    "factions": [
+      "Alliance",
+      "Horde"
+    ],
+    "finding": "The Forever tooltip and both dungeon catalogs support the exact drop and group summoning requirement. Room and waypoint remain unset pending corroboration.",
+    "item_id": 22322,
+    "location_conflict": [
+      "Wowhead lists War Master Voone's room.",
+      "The Forever ATT module lists The Beast's room."
+    ],
+    "npc_id": 16080,
+    "reviewed_route_minimum": 50
+  },
+  "source_content_digest": "10c64e7d14c8b0b4d6a2539fcfb41b600ffb4b7158aff30c6f85eb4cd581d710",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f5d76e724ba83b71adc336a8a56a5b302c9985e0#/encounter/16080/item/22322"
+}

@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Serpentbane Crown Item Level 42 Binds when picked up Head Mail 213 Armor +16 Stamina +8 Nature Resistance Durability 70 / 70 Requires Level 37 Use: Inflict 89 to 112 Fire damage to your current target and an additional 225 damage over 10 sec. Inflicts 2 times as much damage to Beast and Serpentine targets. (5 Min Cooldown) Sell Price: 70 22 Dropped by: Min'loth the Serpent Drop Chance: 30.83%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274609,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 213,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Inflict 89 to 112 Fire damage to your current target and an additional 225 damage over 10 sec. Inflicts 2 times as much damage to Beast and Serpentine targets. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 274609,
+    "item_level": 42,
+    "name": "Serpentbane Crown",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 8.0,
+      "stamina": 16.0
+    },
+    "use_effects": [
+      "Use: Inflict 89 to 112 Fire damage to your current target and an additional 225 damage over 10 sec. Inflicts 2 times as much damage to Beast and Serpentine targets. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274609"
+  },
+  "linked_entities": [
+    {
+      "id": 1295039,
+      "name": "Inflict 89 to 112 Fire damage to your current target and an additional 225 damage over 10 sec. Inflicts 2 times as much damage to Beast and Serpentine targets.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1295039"
+    }
+  ],
+  "name": "Serpentbane Crown",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 30.83,
+      "entity_name": "Min'loth the Serpent",
+      "source_url": "https://www.wowhead.com/forever/item=274609",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "73ab89d1722a869977bca6a1019a1c7d9d4c7fb030107658c49eb01e32d5f7f3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274609",
+  "url": "https://www.wowhead.com/forever/item=274609"
+}

@@ -1,0 +1,33 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enchant Chest - Superior Stamina 5 sec cast Requires Chest, Chest Tools: Runed Truesilver Rod Reagents: Vision Dust (3) Permanently enchant a piece of chest armor to grant +8 Stamina.",
+  "entity_id": 13858,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:18+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11137,
+      "name": "Vision Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11137"
+    },
+    {
+      "id": 13858,
+      "name": "Enchant Chest - Superior Stamina",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13858"
+    }
+  ],
+  "name": "Enchant Chest - Superior Stamina",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 13858,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/13858",
+  "url": "https://www.wowhead.com/forever/spell=13858"
+}

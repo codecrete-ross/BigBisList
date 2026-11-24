@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spellcrafter Wand Item Level 26 Binds when picked up Ranged Wand 24 - 45 Arcane Damage Speed 1.70 (20.29 damage per second) Durability 50 / 50 Equip: Increases damage and healing done by magical spells and effects by up to 4 . Sell Price: 24 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 6677,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 20.29,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 4.",
+        "stats": {
+          "spell_power": 4.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+    ],
+    "id": 6677,
+    "item_level": 26,
+    "name": "Spellcrafter Wand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 4.0
+    },
+    "weapon_max_damage": 45,
+    "weapon_min_damage": 24,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6677"
+  },
+  "linked_entities": [],
+  "name": "Spellcrafter Wand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6677",
+  "url": "https://www.wowhead.com/forever/item=6677"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Colorful Kilt Item Level 19 Binds when equipped Legs Cloth 29 Armor +5 Spirit Durability 50 / 50 Requires Level 14 Equip: Increases damage and healing done by magical spells and effects by up to 5 . Sell Price: 9 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:41:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 10048,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 29,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 5.",
+        "stats": {
+          "spell_power": 5.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 5."
+    ],
+    "id": 10048,
+    "item_level": 19,
+    "name": "Colorful Kilt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 14,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 5.0,
+      "spirit": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10048"
+  },
+  "linked_entities": [],
+  "name": "Colorful Kilt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10048",
+  "url": "https://www.wowhead.com/forever/item=10048"
+}

@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Health Item Level 78 Binds when picked up Unique Relic Idol Requires Level 60 Equip: Reduces the casting time of your Healing Touch spell by 0.15 sec. Sell Price: 4 93 54 Dropped by: Viscidus Drop Chance: 14.52%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 22399,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the casting time of your Healing Touch spell by 0.15 sec.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the casting time of your Healing Touch spell by 0.15 sec."
+    ],
+    "id": 22399,
+    "item_level": 78,
+    "name": "Idol of Health",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22399"
+  },
+  "linked_entities": [
+    {
+      "id": 27846,
+      "name": "Reduces the casting time of your Healing Touch spell by 0.15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27846"
+    }
+  ],
+  "name": "Idol of Health",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.52,
+      "entity_name": "Viscidus",
+      "source_url": "https://www.wowhead.com/forever/item=22399",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22399",
+  "url": "https://www.wowhead.com/forever/item=22399"
+}

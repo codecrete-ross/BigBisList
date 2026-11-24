@@ -1,0 +1,68 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Incense Candle 10 sec cast Reagents: Peacebloom , Silverleaf Craft an Incense Candle. Incense Candle Item Level 4 Requires Herbalism (20) Use: Ignites an incense candle that allows you and others sitting nearby to gain [( 60 < 14 ? 2 : ( 60 < 28 ? 6 : ( 60 < 42 ? 12 : ( 60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "entity_id": 1229705,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:49+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 765,
+      "name": "Silverleaf",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=765"
+    },
+    {
+      "id": 2447,
+      "name": "Peacebloom",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2447"
+    },
+    {
+      "id": 279962,
+      "name": "Incense Candle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279962"
+    },
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=182"
+    },
+    {
+      "id": 1229705,
+      "name": "Incense Candle",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1229705"
+    },
+    {
+      "id": 1307251,
+      "name": "Ignites an incense candle that allows you and others sitting nearby to gain [( 60 < 14 ? 2 : ( 60 < 28 ? 6 : ( 60 < 42 ? 12 : ( 60 < 56 ? 18 : 25))))] increased Intellect, mutually exclusive with Arcane Intellect. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307251"
+    }
+  ],
+  "name": "Incense Candle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279962,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1229705",
+      "subject_id": 1229705,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "cf2eb1660aa4bd9345d7b650fb5cfe472d974c79bbe69b355999c601491266f9",
+  "spell_id": 1229705,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1229705",
+  "url": "https://www.wowhead.com/forever/spell=1229705"
+}

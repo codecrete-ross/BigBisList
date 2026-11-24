@@ -1,0 +1,556 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Gibbert Weapon Merchant Level 45 Humanoid (Normal)",
+  "entity_id": 3000,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:21:07.389Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2520,
+      "name": "Broadsword",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2520"
+    },
+    {
+      "id": 2521,
+      "name": "Flamberge",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2521"
+    },
+    {
+      "id": 2522,
+      "name": "Crescent Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2522"
+    },
+    {
+      "id": 2523,
+      "name": "Bullova",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2523"
+    },
+    {
+      "id": 2524,
+      "name": "Truncheon",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2524"
+    },
+    {
+      "id": 2525,
+      "name": "War Hammer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2525"
+    },
+    {
+      "id": 2526,
+      "name": "Main Gauche",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2526"
+    },
+    {
+      "id": 2527,
+      "name": "Battle Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2527"
+    },
+    {
+      "id": 2528,
+      "name": "Falchion",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2528"
+    },
+    {
+      "id": 2529,
+      "name": "Zweihander",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2529"
+    },
+    {
+      "id": 2530,
+      "name": "Francisca",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2530"
+    },
+    {
+      "id": 2531,
+      "name": "Great Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2531"
+    },
+    {
+      "id": 2532,
+      "name": "Morning Star",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2532"
+    },
+    {
+      "id": 2533,
+      "name": "War Maul",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2533"
+    },
+    {
+      "id": 2534,
+      "name": "Rondel",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2534"
+    },
+    {
+      "id": 2535,
+      "name": "War Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2535"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 16 of 16",
+    "1 - 16 of 16"
+  ],
+  "location_name": "Un'Goro Crater",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          44,
+          7.2
+        ]
+      ]
+    },
+    "zone": 490
+  },
+  "name": "Gibbert",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 45",
+    "React: A\u00a0H",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 2,218"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2520,
+      "object_name": "Broadsword",
+      "object_type": "item",
+      "price_copper": 24628,
+      "relation": "sells",
+      "required_level": 31,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Broadsword",
+        "36",
+        "31",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "2 46 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2521,
+      "object_name": "Flamberge",
+      "object_type": "item",
+      "price_copper": 30896,
+      "relation": "sells",
+      "required_level": 31,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Flamberge",
+        "36",
+        "31",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "3 8 96"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2522,
+      "object_name": "Crescent Axe",
+      "object_type": "item",
+      "price_copper": 22548,
+      "relation": "sells",
+      "required_level": 30,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Crescent Axe",
+        "35",
+        "30",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "2 25 48"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2523,
+      "object_name": "Bullova",
+      "object_type": "item",
+      "price_copper": 28285,
+      "relation": "sells",
+      "required_level": 30,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Bullova",
+        "35",
+        "30",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "2 82 85"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2524,
+      "object_name": "Truncheon",
+      "object_type": "item",
+      "price_copper": 19192,
+      "relation": "sells",
+      "required_level": 29,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Truncheon",
+        "34",
+        "29",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "1 91 92"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2525,
+      "object_name": "War Hammer",
+      "object_type": "item",
+      "price_copper": 26489,
+      "relation": "sells",
+      "required_level": 30,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "War Hammer",
+        "35",
+        "30",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "2 64 89"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2526,
+      "object_name": "Main Gauche",
+      "object_type": "item",
+      "price_copper": 19336,
+      "relation": "sells",
+      "required_level": 29,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Main Gauche",
+        "34",
+        "29",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "1 93 36"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2527,
+      "object_name": "Battle Staff",
+      "object_type": "item",
+      "price_copper": 29356,
+      "relation": "sells",
+      "required_level": 31,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Battle Staff",
+        "36",
+        "31",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "2 93 56"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2528,
+      "object_name": "Falchion",
+      "object_type": "item",
+      "price_copper": 51836,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Falchion",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "5 18 36"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2529,
+      "object_name": "Zweihander",
+      "object_type": "item",
+      "price_copper": 65031,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Zweihander",
+        "46",
+        "41",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "6 50 31"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2530,
+      "object_name": "Francisca",
+      "object_type": "item",
+      "price_copper": 52219,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Francisca",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "5 22 19"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2531,
+      "object_name": "Great Axe",
+      "object_type": "item",
+      "price_copper": 56169,
+      "relation": "sells",
+      "required_level": 39,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Great Axe",
+        "44",
+        "39",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "5 61 69"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2532,
+      "object_name": "Morning Star",
+      "object_type": "item",
+      "price_copper": 52608,
+      "relation": "sells",
+      "required_level": 41,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Morning Star",
+        "46",
+        "41",
+        "",
+        "",
+        "Main Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "5 26 8"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2533,
+      "object_name": "War Maul",
+      "object_type": "item",
+      "price_copper": 61107,
+      "relation": "sells",
+      "required_level": 40,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "War Maul",
+        "45",
+        "40",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "6 11 7"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2534,
+      "object_name": "Rondel",
+      "object_type": "item",
+      "price_copper": 45431,
+      "relation": "sells",
+      "required_level": 39,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Rondel",
+        "44",
+        "39",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "4 54 31"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2535,
+      "object_name": "War Staff",
+      "object_type": "item",
+      "price_copper": 61556,
+      "relation": "sells",
+      "required_level": 40,
+      "source_url": "https://www.wowhead.com/forever/npc=3000",
+      "subject_id": 3000,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "War Staff",
+        "45",
+        "40",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "6 15 56"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3000",
+  "url": "https://www.wowhead.com/forever/npc=3000"
+}

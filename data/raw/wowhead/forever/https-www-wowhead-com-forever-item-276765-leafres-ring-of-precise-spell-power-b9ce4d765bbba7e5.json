@@ -1,0 +1,84 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=276765/leafres-ring-of-precise-spell-power"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T08:05:23.998501+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:57:58.1885892+00:00",
+      "http": "403",
+      "name": "leafre-spell-power",
+      "source_content_digest": "498a8de23fea151c0f05d8dcfdcf48567f713c9f1e30063b8da24b3ef68d84c3",
+      "source_url": "https://www.wowhead.com/forever/item=276765/leafres-ring-of-precise-spell-power"
+    },
+    {
+      "bytes": 983,
+      "collected_at": "2026-11-13T07:57:58.7011083+00:00",
+      "http": "200",
+      "name": "tip-276765",
+      "source_content_digest": "729ccd3a78e2ecb1305b5037e86794df96262b178d6a42a65e75c0a141f45ac0",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/276765"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "bind_on_pickup": true,
+    "capture_method": "indexed exact Forever item page",
+    "current_client_build": "1.60.1.70938",
+    "current_item_row": {
+      "ClassID": "4",
+      "ID": "276765",
+      "InventoryType": "11",
+      "SubclassID": "0"
+    },
+    "current_sparse_row": "withheld",
+    "current_tooltip_identity": "Leafre's Ring of Precise Spell Power Item Level 66 Binds when picked up Finger Equip: Increases damage and healing done by magical spells and effects by up to 100 . Sell Price: 9 14 53",
+    "digest_input": "normalized indexed item-page finding",
+    "effect_summary": "+100 spell damage and healing",
+    "indexed_crawl_age": "today",
+    "indexed_rendered_line": 41,
+    "item_id": 276765,
+    "item_level": 66,
+    "name": "Leafre's Ring of Precise Spell Power",
+    "slot": "Ring",
+    "source_locale": "en",
+    "unverified_fishing_lead": "Player comments suggest fishing without an exact live catch record. The page explicitly marks the item unavailable and AHledger lists its removal."
+  },
+  "source_content_digest": "e38d9c2117d6ce9024014dd6f3f3abdb56ddac0cf4fc93a6b12b228d6e1d22bf",
+  "unavailable_item_ids": [
+    276765
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=276765/leafres-ring-of-precise-spell-power"
+}

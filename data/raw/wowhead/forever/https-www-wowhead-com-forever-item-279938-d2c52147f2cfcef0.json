@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Trapper's Workbench Item Level 60 Requires Skinning (300) Use: Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279938,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby.",
+        "type": "use"
+      }
+    ],
+    "id": 279938,
+    "item_level": 60,
+    "name": "Trapper's Workbench",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279938"
+  },
+  "linked_entities": [
+    {
+      "id": 393,
+      "name": "Skinning",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=393"
+    },
+    {
+      "id": 1307397,
+      "name": "Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307397"
+    }
+  ],
+  "name": "Trapper's Workbench",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "30cebb90c7f6bcf6d25384802f2d9336321e0cc81806e9a91687064460ee75c8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279938",
+  "url": "https://www.wowhead.com/forever/item=279938"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Windsong Cinch Item Level 29 Binds when picked up Waist Leather 52 Armor +5 Stamina Durability 30 / 30 Equip: + 12 Attack Power. Sell Price: 10 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 15469,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 52,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power."
+    ],
+    "id": 15469,
+    "item_level": 29,
+    "name": "Windsong Cinch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15469"
+  },
+  "linked_entities": [],
+  "name": "Windsong Cinch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15469",
+  "url": "https://www.wowhead.com/forever/item=15469"
+}

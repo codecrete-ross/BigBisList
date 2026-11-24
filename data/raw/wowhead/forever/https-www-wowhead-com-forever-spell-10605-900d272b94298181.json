@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Chain Lightning Level 60 495 Mana 30 yd range 2.5 sec cast 6 sec cooldown Requires Shaman Requires level 56 Hurls a lightning bolt at the enemy, dealing 498 to 555 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30% . Affects 3 total targets.",
+  "entity_id": 10605,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:51+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10605,
+      "name": "Chain Lightning",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10605"
+    }
+  ],
+  "name": "Chain Lightning",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "fc82f20b2a017e6b24d62744dede9efc7ff2bc257cb9f050c3e4e8798d82f526",
+  "spell_id": 10605,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10605",
+  "url": "https://www.wowhead.com/forever/spell=10605"
+}

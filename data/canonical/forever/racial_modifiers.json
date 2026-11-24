@@ -1,0 +1,22 @@
+{
+  "racial_modifiers": [],
+  "review": {
+    "client_build": "1.60.1.70790",
+    "evidence_refs": [
+      {
+        "content_digest": "8fb8fb8d02258c9aef7698d4ed12c81b586560923e865777f9e10331f6e38400",
+        "evidence_id": "senseos:e183d67e2cde7d0c183e793e"
+      },
+      {
+        "content_digest": "37e37391236c5a2f9664bee287e05a76a3ef19452317eb0293794677eba80c41",
+        "evidence_id": "blizzard:aaebd5677f77714e409043ed"
+      }
+    ],
+    "reason": "Reviewed the current race/class personas and removal of old weapon-specialization preferences. Do not add TBC Human sword/mace, Orc axe or Troll bow skill bonuses. No item-conditional numeric racial effect is approved in this batch. Unconditional character-wide bonuses do not establish an item preference; unsupported values remain out of numeric scoring. Race/faction acquisition eligibility continues to be enforced independently of numeric scoring.",
+    "reviewed_at": "2026-11-06",
+    "reviewer": "Codex (offline source review)",
+    "source_url": "https://senseos.gg/guides/wow-forever/weapon-skills/"
+  },
+  "status": "reviewed",
+  "version": "forever-racial-policy-1"
+}

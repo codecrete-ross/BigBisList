@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Raging Berserker's Helm Item Level 42 Binds when picked up Head Mail 213 Armor +13 Strength +8 Stamina Durability 70 / 70 Requires Level 37 Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 69 76 Dropped by: Herod Drop Chance: 32.78%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 7719,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 213,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 7719,
+    "item_level": 42,
+    "name": "Raging Berserker's Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 8.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7719"
+  },
+  "linked_entities": [],
+  "name": "Raging Berserker's Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.78,
+      "entity_name": "Herod",
+      "source_url": "https://www.wowhead.com/forever/item=7719",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7719",
+  "url": "https://www.wowhead.com/forever/item=7719"
+}

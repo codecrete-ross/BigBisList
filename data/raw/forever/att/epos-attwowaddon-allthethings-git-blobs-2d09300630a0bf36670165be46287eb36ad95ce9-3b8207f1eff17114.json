@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "confidence": "reviewed_forever_reference",
+  "fetched_at": "2026-11-13T09:11:25.5020667Z",
+  "flavor": "forever",
+  "git_blob": "2d09300630a0bf36670165be46287eb36ad95ce9",
+  "page_type": "reference",
+  "provider": "att",
+  "related_evidence": [
+    {
+      "content_digest": "6adb57818163166d27b536c56a451bc605bc3864a01a4bc7cc8af3ad2795893f",
+      "evidence_id": "wowsims_gamedata:3a9327e7c870c598efc8af0d"
+    },
+    {
+      "content_digest": "16ebfa0105e6d65bcbf49d6d053fdc795a4135d9178bb7e3c16cbb2cfa1af349",
+      "evidence_id": "blizzard_forums:0a3d0e16fab23b5a6ddd7f8d"
+    }
+  ],
+  "reviewed_page_facts": {
+    "category": "NeverImplemented/Beta Event",
+    "conflicting_catalog_label": {
+      "finding": "The provider describes these catalog flags as item-data availability. Its methodology says an item entry does not establish acquisition.",
+      "source_url": "https://www.60.tools/about"
+    },
+    "event_end_utc": "2026-10-23T17:00:00Z",
+    "finding": "The Forever branch identifies these exact IDs as October beta-event variants and explicitly states they cannot be obtained in the live game.",
+    "matching_beta_item_ids": [
+      288825,
+      288835,
+      288844,
+      288850,
+      288862,
+      288870,
+      288874,
+      288882,
+      288894,
+      288917,
+      288919,
+      288924
+    ]
+  },
+  "source_content_digest": "1d3d08d93ed0f72b0b22aea69cfa62da8f75b7635091448948795808cd8b9c68",
+  "source_path": ".contrib/.db/forever/.nyi/beta event.lua",
+  "unavailable_item_ids": [
+    288825,
+    288835,
+    288844,
+    288850,
+    288862,
+    288870,
+    288874,
+    288882,
+    288894,
+    288917,
+    288919,
+    288924
+  ],
+  "unavailable_scope": {
+    "level_max": 19,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/2d09300630a0bf36670165be46287eb36ad95ce9"
+}

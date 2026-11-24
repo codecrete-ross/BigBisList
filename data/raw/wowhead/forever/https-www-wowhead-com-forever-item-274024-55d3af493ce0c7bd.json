@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fizzbolt's Fashionable Fedora Item Level 1 Binds when picked up Head Requires Everlook - Revered Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274024,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274024,
+    "item_level": 1,
+    "name": "Fizzbolt's Fashionable Fedora",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274024"
+  },
+  "linked_entities": [
+    {
+      "id": 577,
+      "name": "Everlook",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=577"
+    }
+  ],
+  "name": "Fizzbolt's Fashionable Fedora",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Fizzbolt's Fashionable Fedora Item Level 1 Binds when picked up Head Requires Everlook - Revered Sell Price: 1",
+      "reputation": "Everlook",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=274024",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2640f7be31b1ce792f6784d77f16b73341fdb4e9d6861f3ddf8d4b76321ca476",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274024",
+  "url": "https://www.wowhead.com/forever/item=274024"
+}

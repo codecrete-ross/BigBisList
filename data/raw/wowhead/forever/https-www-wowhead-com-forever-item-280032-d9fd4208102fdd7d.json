@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bolt's Charged Eyeball Item Level 63 Binds when picked up Unique-Equipped Trinket Requires Level 58 Equip: Dealing damage has a chance to deal 60 Nature damage to you or your current target. Deals 3 times as much damage to Dinosaurs. (Proc chance: 15%, 3s cooldown) Sell Price: 2 37 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 280032,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Dealing damage has a chance to deal 60 Nature damage to you or your current target. Deals 3 times as much damage to Dinosaurs. (Proc chance: 15%, 3s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Dealing damage has a chance to deal 60 Nature damage to you or your current target. Deals 3 times as much damage to Dinosaurs. (Proc chance: 15%, 3s cooldown)"
+    ],
+    "id": 280032,
+    "item_level": 63,
+    "name": "Bolt's Charged Eyeball",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280032"
+  },
+  "linked_entities": [
+    {
+      "id": 1311505,
+      "name": "Dealing damage has a chance to deal 60 Nature damage to you or your current target. Deals 3 times as much damage to Dinosaurs. (Proc chance: 15%, 3s cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1311505"
+    }
+  ],
+  "name": "Bolt's Charged Eyeball",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "df207c21537e197c20af77798bff81c59a3dc6bbea6ded5d2a7c55b6777f527f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280032",
+  "url": "https://www.wowhead.com/forever/item=280032"
+}

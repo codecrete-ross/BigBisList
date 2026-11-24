@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ogre Horn Ring Item Level 45 Binds when picked up Finger +4 Strength +3 Agility +10 Stamina Equip: Increased Defense + 3. Sell Price: 79 43",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 275045,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +3.",
+        "stats": {
+          "defense": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +3."
+    ],
+    "id": 275045,
+    "item_level": 45,
+    "name": "Ogre Horn Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "defense": 3.0,
+      "stamina": 10.0,
+      "strength": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275045"
+  },
+  "linked_entities": [],
+  "name": "Ogre Horn Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7264765a5ef1446ec35b8631108b479523cc849d1e51231120e49d080b9fa4fd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275045",
+  "url": "https://www.wowhead.com/forever/item=275045"
+}

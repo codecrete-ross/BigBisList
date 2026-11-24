@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Freezing Band Item Level 52 Binds when equipped Finger Requires Level 47 Equip: Increases damage done by Frost spells and effects by up to 13. Equip: When struck in combat has a 1% chance of inflicting 50 Frost damage to the attacker and freezing them for 5 sec. (Proc chance: 1%) Sell Price: 45",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 942,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage done by Frost spells and effects by up to 13.",
+        "stats": {
+          "frost_damage": 13
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: When struck in combat has a 1% chance of inflicting 50 Frost damage to the attacker and freezing them for 5 sec. (Proc chance: 1%)",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat has a 1% chance of inflicting 50 Frost damage to the attacker and freezing them for 5 sec. (Proc chance: 1%)"
+    ],
+    "id": 942,
+    "item_level": 52,
+    "name": "Freezing Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 47,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "frost_damage": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=942"
+  },
+  "linked_entities": [
+    {
+      "id": 18799,
+      "name": "When struck in combat has a 1% chance of inflicting 50 Frost damage to the attacker and freezing them for 5 sec. (Proc chance: 1%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18799"
+    }
+  ],
+  "name": "Freezing Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "f23c9ba5d54da497373014812c7d73fb1d8a74e3d8194cc57f14aa600010983d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/942",
+  "url": "https://www.wowhead.com/forever/item=942"
+}

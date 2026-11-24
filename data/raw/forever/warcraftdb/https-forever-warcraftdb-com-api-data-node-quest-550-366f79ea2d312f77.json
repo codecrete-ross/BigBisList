@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/550"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:19.930135+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 3760,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/550",
+      "subject_id": 550,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 19,
+    "name": "Battle of Hillsbrad",
+    "quest_id": 550,
+    "reward_item_ids": [
+      3760,
+      3761,
+      3822,
+      6282
+    ],
+    "zone": "Hillsbrad Foothills"
+  },
+  "source_content_digest": "7ac600bb3ec6c9cae85ffef27ee66b0f4a09cb4b661c55251a773b1f63315cdc",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/550"
+}

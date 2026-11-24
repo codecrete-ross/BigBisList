@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Archon Chestpiece Item Level 38 Binds when equipped Chest Mail 245 Armor +12 Strength +12 Stamina Durability 120 / 120 Requires Level 33 Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 68 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 7759,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 245,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 7759,
+    "item_level": 38,
+    "name": "Archon Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 33,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 9.0,
+      "stamina": 12.0,
+      "strength": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7759"
+  },
+  "linked_entities": [],
+  "name": "Archon Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7759",
+  "url": "https://www.wowhead.com/forever/item=7759"
+}

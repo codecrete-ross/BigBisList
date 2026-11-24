@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodmage Mantle Item Level 35 Binds when picked up Shoulder Cloth 38 Armor +9 Intellect Restores + 9 health per 5 sec. Durability 45 / 45 Requires Level 30 Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 26 4 Dropped by: Bloodmage Thalnos Drop Chance: 47.63%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 7684,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +9 health per 5 sec.",
+        "stats": {
+          "hp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 7684,
+    "item_level": 35,
+    "name": "Bloodmage Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 30,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "hp5": 9.0,
+      "intellect": 9.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7684"
+  },
+  "linked_entities": [],
+  "name": "Bloodmage Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 47.63,
+      "entity_name": "Bloodmage Thalnos",
+      "source_url": "https://www.wowhead.com/forever/item=7684",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7684",
+  "url": "https://www.wowhead.com/forever/item=7684"
+}

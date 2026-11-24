@@ -1,0 +1,97 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Darksoul Breastplate Item Level 65 Binds when equipped Chest Plate 676 Armor +32 Stamina +60 Armor Durability 135 / 135 Requires Level 60 Equip: Improves your chance to hit by 1.0%. The Darksoul (0/3) Requires Blacksmithing (300) Darksoul Breastplate Darksoul Leggings Darksoul Shoulders (3) Set : Increased Defense +20. Sell Price: 2 41 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:07:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 19693,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 676,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 19693,
+    "item_level": 65,
+    "name": "Darksoul Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 21416,
+        "text": "Increased Defense +20."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "stamina": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19693"
+  },
+  "linked_entities": [
+    {
+      "id": 19693,
+      "name": "Darksoul Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19693"
+    },
+    {
+      "id": 19694,
+      "name": "Darksoul Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19694"
+    },
+    {
+      "id": 19695,
+      "name": "Darksoul Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19695"
+    },
+    {
+      "id": 21416,
+      "name": "Increased Defense +20.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21416"
+    }
+  ],
+  "name": "Darksoul Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Darksoul Breastplate Item Level 65 Binds when equipped Chest Plate 676 Armor +32 Stamina +60 Armor Durability 135 / 135 Requires Level 60 Equip: Improves your chance to hit by 1.0%. The Darksoul (0/3) Requires Blacksmithing (300) Darksoul Breastplate Darksoul Leggings Darksoul Shoulders (3) Set : Increased Defense +20. Sell Price: 2 41 92",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=19693",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19693",
+  "url": "https://www.wowhead.com/forever/item=19693"
+}

@@ -1,0 +1,65 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/78830"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 277209,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/78830",
+      "subject_id": 78830,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T21:23:43.515377+00:00",
+        "linked_reward_ids": [],
+        "min_level": 26,
+        "name": "Terror of the Desert Skies",
+        "side": "Both",
+        "source_content_digest": "3f0f2fa88dcfd543ef1917742e97eed77dad64808fd2d22263ad8738b1ec0936",
+        "source_url": "https://bindonforever.com/quest/78830",
+        "zone": "Stranglethorn Vale"
+      },
+      {
+        "fetched_at": "2026-11-11T08:12:52.704849+00:00",
+        "linked_reward_ids": [],
+        "min_level": 26,
+        "name": "Terror of the Desert Skies",
+        "side": "Both",
+        "source_content_digest": "3c46de46f3ee892ee657caf366b755e42cbb5661777fb46d0980c31e74893cee",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/78830",
+        "zone": "Badlands"
+      }
+    ],
+    "name": "Terror of the Desert Skies",
+    "observation_count": 3,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 78830,
+    "reported_min_level": 26,
+    "reported_start_item_id": 211272,
+    "reward_item_roles": {
+      "277209": "choices"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/78830"
+}

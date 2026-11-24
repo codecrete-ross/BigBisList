@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Dragonhide Helm Item Level 71 Binds when picked up Head Leather 158 Armor +29 Stamina +18 Intellect +9 Spirit Durability 60 / 60 Classes: Druid Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 21 . Champion's Wildhide (0/6) Blood Guard's Dragonhide Boots Blood Guard's Dragonhide Gloves Champion's Dragonhide Helm Champion's Dragonhide Spaulders Legionnaire's Dragonhide Armor Legionnaire's Dragonhide Pants (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : +20 Stamina. Sell Price: 1 54 38",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227186,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 21.",
+        "stats": {
+          "spell_power": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 21."
+    ],
+    "id": 227186,
+    "item_level": 71,
+    "name": "Champion's Dragonhide Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 18.0,
+      "spell_power": 21.0,
+      "spirit": 9.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227186"
+  },
+  "linked_entities": [
+    {
+      "id": 227184,
+      "name": "Champion's Dragonhide Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227184"
+    },
+    {
+      "id": 227185,
+      "name": "Legionnaire's Dragonhide Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227185"
+    },
+    {
+      "id": 227186,
+      "name": "Champion's Dragonhide Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227186"
+    },
+    {
+      "id": 227187,
+      "name": "Blood Guard's Dragonhide Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227187"
+    },
+    {
+      "id": 227188,
+      "name": "Blood Guard's Dragonhide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227188"
+    },
+    {
+      "id": 227189,
+      "name": "Legionnaire's Dragonhide Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227189"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Champion's Dragonhide Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c8c33273bd5d75b71f0d596dba7209c1fb70f0844719ed427e3e8af92f45e524",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227186",
+  "url": "https://www.wowhead.com/forever/item=227186"
+}

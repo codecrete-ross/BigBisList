@@ -1,0 +1,71 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:49.563777+00:00",
+  "flavor": "forever",
+  "item_id": 280077,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Fist of Revelation Item Level 57 Binds when picked up One-Hand Fist Weapon 38 - 72 Damage Speed 2.20 (25.00 damage per second) +6 Stamina +9 Spirit Durability 65 / 65 Requires Level 52 Equip: Improves your chance to hit by 0.6%. Equip: Increases healing done by up to 124 and damage done by up to 41 for all magical spells and effects. Sell Price: 4 14 48 Dropped by: Gortek the Apprentice Drop Chance: 66.67%",
+      "dps": 25.0,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to hit by 0.6%.",
+          "stats": {
+            "hit_percent": 0.6
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases healing done by up to 124 and damage done by up to 41 for all magical spells and effects.",
+          "stats": {
+            "healing_power": 124,
+            "spell_damage": 41
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to hit by 0.6%.",
+        "Equip: Increases healing done by up to 124 and damage done by up to 41 for all magical spells and effects."
+      ],
+      "id": 280077,
+      "item_level": 57,
+      "name": "Fist of Revelation",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 52,
+      "slot": "One Hand",
+      "source_summary": "",
+      "stats": {
+        "healing_power": 124.0,
+        "hit_percent": 0.6,
+        "spell_damage": 41.0,
+        "spirit": 9.0,
+        "stamina": 6.0
+      },
+      "weapon_max_damage": 72,
+      "weapon_min_damage": 38,
+      "weapon_speed": 2.2,
+      "weapon_subtype": "Fist Weapon",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=280077"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 66.67,
+      "entity_name": "Gortek the Apprentice",
+      "source_url": "https://www.wowhead.com/forever/item=280077",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "b775bf34ed3033c302c4bc35f3ea99ec6a0f5b58ae7a93e818f7a10efb190c5a",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/280077#sha256-b775bf34ed3033c302c4bc35f3ea99ec6a0f5b58ae7a93e818f7a10efb190c5a"
+}

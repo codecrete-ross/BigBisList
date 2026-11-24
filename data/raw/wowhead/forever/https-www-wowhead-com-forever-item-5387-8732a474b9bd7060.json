@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Enchanted Moonstalker Cloak Item Level 20 Binds when picked up Unique Back 17 Armor +3 Stamina Use: Transform into a Moonstalker and become invisible for 5 min. 1 Charge",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 5387,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 17,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Transform into a Moonstalker and become invisible for 5 min.",
+        "type": "use"
+      }
+    ],
+    "id": 5387,
+    "item_level": 20,
+    "name": "Enchanted Moonstalker Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0
+    },
+    "use_effects": [
+      "Use: Transform into a Moonstalker and become invisible for 5 min. 1 Charge"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=5387"
+  },
+  "linked_entities": [
+    {
+      "id": 6298,
+      "name": "Transform into a Moonstalker and become invisible for 5 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=6298"
+    }
+  ],
+  "name": "Enchanted Moonstalker Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5387",
+  "url": "https://www.wowhead.com/forever/item=5387"
+}

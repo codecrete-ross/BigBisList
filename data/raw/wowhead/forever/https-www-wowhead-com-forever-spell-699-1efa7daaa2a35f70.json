@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Drain Life 85 Mana 20 yd range Channeled (5 sec cast) Requires Warlock Requires level 22 Transfers 14 health every 1 second from the target to the caster. Lasts 5 sec.",
+  "entity_id": 699,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:00+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 699,
+      "name": "Drain Life",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=699"
+    }
+  ],
+  "name": "Drain Life",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "4137c8cf890abcb681f14d006517d5a48070fd4b8958179cc959414ee040df1a",
+  "spell_id": 699,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/699",
+  "url": "https://www.wowhead.com/forever/spell=699"
+}

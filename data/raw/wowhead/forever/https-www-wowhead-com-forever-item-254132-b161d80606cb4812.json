@@ -1,0 +1,117 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Earthenweave Cuffs Item Level 60 Requires Tailoring (255) Use: Teaches you how to craft Earthenweave Cuffs. Sell Price: 75",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Wrist",
+      "item_id": 254131,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 254131,
+        "name": "Earthenweave Cuffs",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "uncommon",
+        "slot": "Wrist",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=254131"
+      },
+      "name": "Earthenweave Cuffs",
+      "normalized_requirements": [],
+      "quality": "uncommon",
+      "url": "https://www.wowhead.com/forever/item=254131"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 254132,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Earthenweave Cuffs.",
+        "type": "use"
+      }
+    ],
+    "id": 254132,
+    "item_level": 60,
+    "name": "Pattern: Earthenweave Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Earthenweave Cuffs."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=254132"
+  },
+  "linked_entities": [
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 254131,
+      "name": "Earthenweave Cuffs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=254131"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 1257491,
+      "name": "Teaches you how to craft Earthenweave Cuffs.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1257491"
+    }
+  ],
+  "name": "Pattern: Earthenweave Cuffs",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Earthenweave Cuffs Item Level 60 Requires Tailoring (255) Use: Teaches you how to craft Earthenweave Cuffs. Sell Price: 75",
+      "scope": "equip_or_use",
+      "skill": 255,
+      "source_url": "https://www.wowhead.com/forever/item=254132",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1257491
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/254132",
+  "url": "https://www.wowhead.com/forever/item=254132"
+}

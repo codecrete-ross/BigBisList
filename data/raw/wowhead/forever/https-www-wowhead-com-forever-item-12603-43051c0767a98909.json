@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nightbrace Tunic Item Level 61 Binds when picked up Chest Leather 172 Armor +6 Agility +10 Stamina +10 Fire Resistance +10 Shadow Resistance Durability 100 / 100 Requires Level 56 Equip: + 50 Attack Power. Sell Price: 2 61 14 Dropped by: Solakar Flamewreath Drop Chance: 17.99%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:43.9203194Z",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 12603,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 172,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +50 Attack Power.",
+        "stats": {
+          "attack_power": 50
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +50 Attack Power."
+    ],
+    "id": 12603,
+    "item_level": 61,
+    "name": "Nightbrace Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "attack_power": 50.0,
+      "fire_resistance": 10.0,
+      "shadow_resistance": 10.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12603"
+  },
+  "linked_entities": [],
+  "name": "Nightbrace Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.99,
+      "entity_name": "Solakar Flamewreath",
+      "source_url": "https://www.wowhead.com/forever/item=12603",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ee7f92cc579a06e072f27065df8f0c19816408df38fbfa81188ab1c0b39f3791",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12603",
+  "url": "https://www.wowhead.com/forever/item=12603"
+}

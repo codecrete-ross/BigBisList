@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Arcane Concentration Talent Requires Mage Requires level 1 Gives you a 100% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%. (1s cooldown)",
+  "entity_id": 11213,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:07+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11213,
+      "name": "Arcane Concentration",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=11213"
+    }
+  ],
+  "name": "Arcane Concentration",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "2d8ede89bdb2678b0822c4ca8e3947abd34e9d2fb480197af8ee5b45fb275693",
+  "spell_id": 11213,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/11213",
+  "url": "https://www.wowhead.com/forever/spell=11213"
+}

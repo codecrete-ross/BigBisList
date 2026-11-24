@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Engineering Gloves Item Level 40 Binds when equipped Hands Cloth 33 Armor +8 Strength +8 Intellect Durability 25 / 25 Requires Level 35 Sell Price: 21 36 Dropped by: Venture Co. Tinkerer Drop Chance: 0.53%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 1659,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 33,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 1659,
+    "item_level": 40,
+    "name": "Engineering Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 35,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "strength": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=1659"
+  },
+  "linked_entities": [],
+  "name": "Engineering Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.53,
+      "entity_name": "Venture Co. Tinkerer",
+      "source_url": "https://www.wowhead.com/forever/item=1659",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1659",
+  "url": "https://www.wowhead.com/forever/item=1659"
+}

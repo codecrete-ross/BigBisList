@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ketharas' Linked Belt Item Level 61 Binds when picked up Waist Mail 202 Armor +10 Stamina +13 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 20 . Sell Price: 1 58 86",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 275741,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 202,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 275741,
+    "item_level": 61,
+    "name": "Ketharas' Linked Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 20.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275741"
+  },
+  "linked_entities": [],
+  "name": "Ketharas' Linked Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275741",
+  "url": "https://www.wowhead.com/forever/item=275741"
+}

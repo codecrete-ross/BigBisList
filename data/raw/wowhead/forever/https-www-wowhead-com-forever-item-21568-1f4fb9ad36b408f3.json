@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rune of Duty Item Level 25 Binds when picked up Unique-Equipped: Rune of Battle (1) Trinket +4 Stamina +6 Arcane Resistance +6 Fire Resistance +6 Nature Resistance +6 Frost Resistance +6 Shadow Resistance +6 Holy Resistance Requires Level 20 Equip: Increases all Resistances by 2. Gain an additional 4 to all Resistances in Forest and Grassland areas. Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21568,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases all Resistances by 2. Gain an additional 4 to all Resistances in Forest and Grassland areas.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases all Resistances by 2. Gain an additional 4 to all Resistances in Forest and Grassland areas."
+    ],
+    "id": 21568,
+    "item_level": 25,
+    "name": "Rune of Duty",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "arcane_resistance": 6.0,
+      "fire_resistance": 6.0,
+      "frost_resistance": 6.0,
+      "holy_resistance": 6.0,
+      "nature_resistance": 6.0,
+      "shadow_resistance": 6.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21568"
+  },
+  "linked_entities": [
+    {
+      "id": 1315989,
+      "name": "Increases all Resistances by 2. Gain an additional 4 to all Resistances in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315989"
+    }
+  ],
+  "name": "Rune of Duty",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21568",
+  "url": "https://www.wowhead.com/forever/item=21568"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Timeworn Mace Item Level 62 Binds when picked up One-Hand Mace 62 - 117 Damage Speed 2.20 (40.68 damage per second) +7 Strength +11 Stamina +50 Armor Durability 90 / 90 Requires Level 57 Sell Price: 5 48 40 Dropped by: Prince Tortheldrin Drop Chance: 17.99%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:21.7030785Z",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 18376,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.68,
+    "id": 18376,
+    "item_level": 62,
+    "name": "Timeworn Mace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 11.0,
+      "strength": 7.0
+    },
+    "weapon_max_damage": 117,
+    "weapon_min_damage": 62,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18376"
+  },
+  "linked_entities": [],
+  "name": "Timeworn Mace",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.99,
+      "entity_name": "Prince Tortheldrin",
+      "source_url": "https://www.wowhead.com/forever/item=18376",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c0097b5b74140cb0b586f89c1f4c5daebc1405abf1c477b58d02aae1b8a56ab4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18376",
+  "url": "https://www.wowhead.com/forever/item=18376"
+}

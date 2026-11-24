@@ -1,0 +1,123 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Premier Chain Headguard Item Level 60 Binds when picked up Head Mail 288 Armor +10 Agility +19 Stamina +7 Intellect Classes: Hunter Requires Level 55 Equip: + 12 Attack Power. Champion's Pursuit (0/4) Premier Chain Gauntlets Premier Chain Boots Premier Chain Leggings Premier Chain Breastplate (2) Set : +20 Agility. (4) Set : Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%) (6) Set : +20 Stamina.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 272491,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 288,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power."
+    ],
+    "id": 272491,
+    "item_level": 60,
+    "name": "Premier Chain Headguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14384,
+        "text": "+20 Agility."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23158,
+        "text": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "attack_power": 12.0,
+      "intellect": 7.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272491"
+  },
+  "linked_entities": [
+    {
+      "id": 272490,
+      "name": "Premier Chain Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=272490"
+    },
+    {
+      "id": 272492,
+      "name": "Premier Chain Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=272492"
+    },
+    {
+      "id": 272495,
+      "name": "Premier Chain Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=272495"
+    },
+    {
+      "id": 272496,
+      "name": "Premier Chain Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=272496"
+    },
+    {
+      "id": 14384,
+      "name": "+20 Agility.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14384"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23158,
+      "name": "Reduces the cooldown of your Concussive Shot by 1 sec. (Proc chance: 4%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23158"
+    }
+  ],
+  "name": "Premier Chain Headguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "42d4b755ca83efb0ca92d9977e679f14022ebc1f32bed06a5b662b2dabd21f5c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272491",
+  "url": "https://www.wowhead.com/forever/item=272491"
+}

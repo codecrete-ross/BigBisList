@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stonemason Trousers Item Level 20 Binds when equipped Legs Leather 75 Armor +7 Agility +7 Spirit Durability 55 / 55 Requires Level 15 Sell Price: 8 53 Dropped by: Defias Blackguard Drop Chance: 5.74%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:10:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 1934,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 1934,
+    "item_level": 20,
+    "name": "Stonemason Trousers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 15,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "spirit": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=1934"
+  },
+  "linked_entities": [],
+  "name": "Stonemason Trousers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 5.74,
+      "entity_name": "Defias Blackguard",
+      "source_url": "https://www.wowhead.com/forever/item=1934",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1934",
+  "url": "https://www.wowhead.com/forever/item=1934"
+}

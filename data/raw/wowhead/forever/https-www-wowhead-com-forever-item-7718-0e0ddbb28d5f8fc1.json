@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Herod's Shoulder Item Level 42 Binds when picked up Shoulder Mail 196 Armor +15 Stamina Durability 70 / 70 Requires Level 37 Equip: + 12 Attack Power. Sell Price: 69 76 Dropped by: Herod Drop Chance: 33.57%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:16+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 7718,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 196,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power."
+    ],
+    "id": 7718,
+    "item_level": 42,
+    "name": "Herod's Shoulder",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7718"
+  },
+  "linked_entities": [],
+  "name": "Herod's Shoulder",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.57,
+      "entity_name": "Herod",
+      "source_url": "https://www.wowhead.com/forever/item=7718",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7718",
+  "url": "https://www.wowhead.com/forever/item=7718"
+}

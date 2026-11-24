@@ -1,0 +1,817 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Sana Mail Armor Merchant Level 30 Humanoid (Normal) Orgrimmar",
+  "entity_id": 3319,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:18:15.617Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 285,
+      "name": "Scalemail Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=285"
+    },
+    {
+      "id": 286,
+      "name": "Scalemail Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286"
+    },
+    {
+      "id": 287,
+      "name": "Scalemail Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=287"
+    },
+    {
+      "id": 718,
+      "name": "Scalemail Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=718"
+    },
+    {
+      "id": 847,
+      "name": "Chainmail Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=847"
+    },
+    {
+      "id": 848,
+      "name": "Chainmail Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=848"
+    },
+    {
+      "id": 849,
+      "name": "Chainmail Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=849"
+    },
+    {
+      "id": 850,
+      "name": "Chainmail Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=850"
+    },
+    {
+      "id": 1202,
+      "name": "Wall Shield",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1202"
+    },
+    {
+      "id": 1845,
+      "name": "Chainmail Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1845"
+    },
+    {
+      "id": 1846,
+      "name": "Chainmail Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1846"
+    },
+    {
+      "id": 1852,
+      "name": "Scalemail Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1852"
+    },
+    {
+      "id": 1853,
+      "name": "Scalemail Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1853"
+    },
+    {
+      "id": 2376,
+      "name": "Worn Heater Shield",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2376"
+    },
+    {
+      "id": 2398,
+      "name": "Light Chain Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2398"
+    },
+    {
+      "id": 2399,
+      "name": "Light Chain Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2399"
+    },
+    {
+      "id": 2400,
+      "name": "Light Chain Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2400"
+    },
+    {
+      "id": 2401,
+      "name": "Light Chain Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2401"
+    },
+    {
+      "id": 2402,
+      "name": "Light Chain Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2402"
+    },
+    {
+      "id": 2403,
+      "name": "Light Chain Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2403"
+    },
+    {
+      "id": 2445,
+      "name": "Large Metal Shield",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2445"
+    },
+    {
+      "id": 17185,
+      "name": "Round Buckler",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17185"
+    },
+    {
+      "id": 17187,
+      "name": "Banded Buckler",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17187"
+    },
+    {
+      "id": 17188,
+      "name": "Ringed Buckler",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=17188"
+    }
+  ],
+  "listview_pagination": [],
+  "location_name": "Orgrimmar",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          55.6,
+          73.6
+        ],
+        [
+          55.8,
+          73
+        ]
+      ]
+    },
+    "zone": 1637
+  },
+  "name": "Sana",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 30",
+    "React: H",
+    "Faction: Orgrimmar",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 1,003",
+    "Screenshots (1)",
+    "Videos",
+    "None yet \u2013 Suggest one!"
+  ],
+  "reaction": "Horde",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 285,
+      "object_name": "Scalemail Vest",
+      "object_type": "item",
+      "price_copper": 3742,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Vest",
+        "22",
+        "17",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Mail Armor",
+        "37 42"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 286,
+      "object_name": "Scalemail Pants",
+      "object_type": "item",
+      "price_copper": 3398,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Pants",
+        "22",
+        "17",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Mail Armor",
+        "33 98"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 287,
+      "object_name": "Scalemail Boots",
+      "object_type": "item",
+      "price_copper": 2441,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Boots",
+        "22",
+        "17",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Mail Armor",
+        "24 41"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 718,
+      "object_name": "Scalemail Gloves",
+      "object_type": "item",
+      "price_copper": 1614,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Gloves",
+        "22",
+        "17",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Mail Armor",
+        "16 14"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 847,
+      "object_name": "Chainmail Armor",
+      "object_type": "item",
+      "price_copper": 1749,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Armor",
+        "17",
+        "12",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Mail Armor",
+        "17 49"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 848,
+      "object_name": "Chainmail Pants",
+      "object_type": "item",
+      "price_copper": 1755,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Pants",
+        "17",
+        "12",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Mail Armor",
+        "17 55"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 849,
+      "object_name": "Chainmail Boots",
+      "object_type": "item",
+      "price_copper": 1395,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Boots",
+        "17",
+        "12",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Mail Armor",
+        "13 95"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 850,
+      "object_name": "Chainmail Gloves",
+      "object_type": "item",
+      "price_copper": 929,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Gloves",
+        "17",
+        "12",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Mail Armor",
+        "9 29"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1202,
+      "object_name": "Wall Shield",
+      "object_type": "item",
+      "price_copper": 1935,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Wall Shield",
+        "17",
+        "12",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "19 35"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1845,
+      "object_name": "Chainmail Belt",
+      "object_type": "item",
+      "price_copper": 923,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Belt",
+        "17",
+        "12",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Mail Armor",
+        "9 23"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1846,
+      "object_name": "Chainmail Bracers",
+      "object_type": "item",
+      "price_copper": 880,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Chainmail Bracers",
+        "17",
+        "12",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Mail Armor",
+        "8 80"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1852,
+      "object_name": "Scalemail Bracers",
+      "object_type": "item",
+      "price_copper": 1772,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Bracers",
+        "22",
+        "17",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Mail Armor",
+        "17 72"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 1853,
+      "object_name": "Scalemail Belt",
+      "object_type": "item",
+      "price_copper": 1778,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scalemail Belt",
+        "22",
+        "17",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Mail Armor",
+        "17 78"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2376,
+      "object_name": "Worn Heater Shield",
+      "object_type": "item",
+      "price_copper": 470,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Worn Heater Shield",
+        "10",
+        "5",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "4 70"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2398,
+      "object_name": "Light Chain Armor",
+      "object_type": "item",
+      "price_copper": 456,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Armor",
+        "10",
+        "5",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Mail Armor",
+        "4 56"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2399,
+      "object_name": "Light Chain Belt",
+      "object_type": "item",
+      "price_copper": 228,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Belt",
+        "10",
+        "5",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Mail Armor",
+        "2 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2400,
+      "object_name": "Light Chain Leggings",
+      "object_type": "item",
+      "price_copper": 437,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Leggings",
+        "10",
+        "5",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Mail Armor",
+        "4 37"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2401,
+      "object_name": "Light Chain Boots",
+      "object_type": "item",
+      "price_copper": 330,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Boots",
+        "10",
+        "5",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Mail Armor",
+        "3 30"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2402,
+      "object_name": "Light Chain Bracers",
+      "object_type": "item",
+      "price_copper": 230,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Bracers",
+        "10",
+        "5",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Mail Armor",
+        "2 30"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2403,
+      "object_name": "Light Chain Gloves",
+      "object_type": "item",
+      "price_copper": 220,
+      "relation": "sells",
+      "required_level": 5,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Light Chain Gloves",
+        "10",
+        "5",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Mail Armor",
+        "2 20"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2445,
+      "object_name": "Large Metal Shield",
+      "object_type": "item",
+      "price_copper": 3613,
+      "relation": "sells",
+      "required_level": 17,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Large Metal Shield",
+        "22",
+        "17",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "36 13"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 17185,
+      "object_name": "Round Buckler",
+      "object_type": "item",
+      "price_copper": 243,
+      "relation": "sells",
+      "required_level": 3,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Round Buckler",
+        "8",
+        "3",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "2 43"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 17187,
+      "object_name": "Banded Buckler",
+      "object_type": "item",
+      "price_copper": 1134,
+      "relation": "sells",
+      "required_level": 9,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Banded Buckler",
+        "14",
+        "9",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "11 34"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 17188,
+      "object_name": "Ringed Buckler",
+      "object_type": "item",
+      "price_copper": 2384,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3319",
+      "subject_id": 3319,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Ringed Buckler",
+        "19",
+        "14",
+        "",
+        "",
+        "Shield",
+        "Vendors",
+        "Shield",
+        "23 84"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3319",
+  "url": "https://www.wowhead.com/forever/npc=3319"
+}

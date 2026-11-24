@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Runecloth Bandage Item Level 52 Requires First Aid (200) Use: Heals 1360 damage over 8 sec. Max Stack: 20 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 14529,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 1360 damage over 8 sec.",
+        "type": "use"
+      }
+    ],
+    "id": 14529,
+    "item_level": 52,
+    "name": "Runecloth Bandage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Heals 1360 damage over 8 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14529"
+  },
+  "linked_entities": [
+    {
+      "id": 2942,
+      "name": "First Aid",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=2942"
+    },
+    {
+      "id": 18608,
+      "name": "Heals 1360 damage over 8 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18608"
+    }
+  ],
+  "name": "Runecloth Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "08625613e80661f29dfa972a1765515b03638294927434cb59195a8bf8c899c2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14529",
+  "url": "https://www.wowhead.com/forever/item=14529"
+}

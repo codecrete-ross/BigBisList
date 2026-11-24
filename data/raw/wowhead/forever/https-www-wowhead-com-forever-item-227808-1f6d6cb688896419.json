@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rugged Mantle of the Timbermaw Item Level 65 Binds when picked up Shoulder Cloth 75 Armor +15 Intellect Durability 50 / 50 Requires Level 60 Requires Tailoring (290) Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 2 58 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227808,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27."
+    ],
+    "id": 227808,
+    "item_level": 65,
+    "name": "Rugged Mantle of the Timbermaw",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 15.0,
+      "spell_power": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227808"
+  },
+  "linked_entities": [
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    }
+  ],
+  "name": "Rugged Mantle of the Timbermaw",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Rugged Mantle of the Timbermaw Item Level 65 Binds when picked up Shoulder Cloth 75 Armor +15 Intellect Durability 50 / 50 Requires Level 60 Requires Tailoring (290) Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 2 58 56",
+      "scope": "equip_or_use",
+      "skill": 290,
+      "source_url": "https://www.wowhead.com/forever/item=227808",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "0618e074c5acc4806fe7276b6d8254e3824f6b8dffc5755cd1184ba546973d88",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227808",
+  "url": "https://www.wowhead.com/forever/item=227808"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Flask of Natural Precision Item Level 60 Requires Level 55 Use: Increases your Stamina by 60. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain 5% reduced chance to be dodged or parried. Lasts for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death. (3 Sec Cooldown) Max Stack: 20 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 274275,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your Stamina by 60. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain 5% reduced chance to be dodged or parried.",
+        "type": "use"
+      }
+    ],
+    "id": 274275,
+    "item_level": 60,
+    "name": "Flask of Natural Precision",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your Stamina by 60. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain 5% reduced chance to be dodged or parried. Lasts for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274275"
+  },
+  "linked_entities": [
+    {
+      "id": 1293742,
+      "name": "Increases your Stamina by 60. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain 5% reduced chance to be dodged or parried. Lasts for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293742"
+    }
+  ],
+  "name": "Flask of Natural Precision",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "48ba7631810be44a0411abcdd9bde3f80ca56367d96dbe912b8e7f2a4f72fce6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274275",
+  "url": "https://www.wowhead.com/forever/item=274275"
+}

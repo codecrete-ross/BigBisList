@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Plainstrider Meat Item Level 1 Quest Item Max Stack: 20 Dropped by: Plainstrider Drop Chance: 47.44%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 4739,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 4739,
+    "item_level": 1,
+    "name": "Plainstrider Meat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4739"
+  },
+  "linked_entities": [],
+  "name": "Plainstrider Meat",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 47.44,
+      "entity_name": "Plainstrider",
+      "source_url": "https://www.wowhead.com/forever/item=4739",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4739",
+  "url": "https://www.wowhead.com/forever/item=4739"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Enrage Talent Requires Warrior Requires level 1 Gives you a 30% chance to deal 0% increased Physical damage for 12 sec after being the victim of any damaging attack. (Proc chance: 30%)",
+  "entity_id": 12317,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:51+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 12317,
+      "name": "Enrage",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12317"
+    }
+  ],
+  "name": "Enrage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "3d9a37642b161adc48ac326b7e074fe1509db33184a600dd9435e11e44169f49",
+  "spell_id": 12317,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/12317",
+  "url": "https://www.wowhead.com/forever/spell=12317"
+}

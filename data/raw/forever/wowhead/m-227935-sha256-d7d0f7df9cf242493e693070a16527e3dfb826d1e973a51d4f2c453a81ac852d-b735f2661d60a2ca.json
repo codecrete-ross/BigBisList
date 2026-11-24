@@ -1,0 +1,59 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:09.013702+00:00",
+  "flavor": "forever",
+  "item_id": 227935,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Hammer of the Fallen Thane Item Level 59 Binds when picked up Main Hand Mace 39 - 74 Damage Speed 2.20 (25.68 damage per second) +5 Stamina +10 Intellect Restores + 2 mana per 5 sec. Durability 75 / 75 Equip: Increases damage and healing done by magical spells and effects by up to 68 . Sell Price: 4 94 81",
+      "dps": 25.68,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 68.",
+          "stats": {
+            "spell_power": 68.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Restores +2 mana per 5 sec.",
+          "stats": {
+            "mp5": 2
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 68."
+      ],
+      "id": 227935,
+      "item_level": 59,
+      "name": "Hammer of the Fallen Thane",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 10.0,
+        "mp5": 2.0,
+        "spell_power": 68.0,
+        "stamina": 5.0
+      },
+      "weapon_max_damage": 74,
+      "weapon_min_damage": 39,
+      "weapon_speed": 2.2,
+      "weapon_subtype": "Mace",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=227935"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "d7d0f7df9cf242493e693070a16527e3dfb826d1e973a51d4f2c453a81ac852d",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/227935#sha256-d7d0f7df9cf242493e693070a16527e3dfb826d1e973a51d4f2c453a81ac852d"
+}

@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/95798"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:09:25.863895+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 279879,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/95798",
+      "subject_id": 95798,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 30,
+    "name": "The Web of Magic",
+    "quest_id": 95798,
+    "reward_item_ids": [
+      279878,
+      279879
+    ],
+    "zone": "Dalaran"
+  },
+  "source_content_digest": "4e2d2eafd8d07e4a4ac9226519fafe9b00ef7c1c986677b260be143ab4e0823a",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/95798"
+}

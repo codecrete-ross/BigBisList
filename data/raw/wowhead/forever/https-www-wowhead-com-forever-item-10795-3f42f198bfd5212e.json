@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Drakeclaw Band Item Level 54 Binds when picked up Finger <Random enchantment> Requires Level 49 Equip: Increased Defense + 4. Sell Price: 1 42 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 10795,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 10795,
+    "item_level": 54,
+    "name": "Drakeclaw Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 49,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=10795"
+  },
+  "linked_entities": [],
+  "name": "Drakeclaw Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9db726c48fa8ab5b28bdd3f6577c80548919df86621f87e7d02474da80137a16",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10795",
+  "url": "https://www.wowhead.com/forever/item=10795"
+}

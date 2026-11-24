@@ -1,0 +1,59 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=18701"
+    }
+  ],
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Innervating Band Item Level 59 Binds when equipped Unique-Equipped Finger +15 Agility +9 Stamina Restores + 6 health per 5 sec. Requires Level 54 Sell Price: 1 89 49",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T20:29:11.175440+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18701,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +6 health per 5 sec.",
+        "stats": {
+          "hp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 18701,
+    "item_level": 59,
+    "name": "Innervating Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "hp5": 6.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18701"
+  },
+  "linked_entities": [],
+  "name": "Innervating Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5566d22e8f965a0322a8f3542d9e35c3080fb042ef7d5b94ef169b6ddcdc0d7c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18701",
+  "url": "https://www.wowhead.com/forever/item=18701"
+}

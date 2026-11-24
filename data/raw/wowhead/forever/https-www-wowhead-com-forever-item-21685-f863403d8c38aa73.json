@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Petrified Scarab Item Level 76 Binds when picked up Unique Trinket Requires Level 60 Use: Increases your spell resistances by 100 for 1 min. Every time a hostile spell lands on you, this bonus is reduced by 10 resistance. (3 Min Cooldown) Sell Price: 8 71 20 Dropped by: Lord Kri Drop Chance: 19.30%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21685,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your spell resistances by 100 for 1 min. Every time a hostile spell lands on you, this bonus is reduced by 10 resistance. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21685,
+    "item_level": 76,
+    "name": "Petrified Scarab",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your spell resistances by 100 for 1 min. Every time a hostile spell lands on you, this bonus is reduced by 10 resistance. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21685"
+  },
+  "linked_entities": [
+    {
+      "id": 26463,
+      "name": "Increases your spell resistances by 100 for 1 min. Every time a hostile spell lands on you, this bonus is reduced by 10 resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26463"
+    }
+  ],
+  "name": "Petrified Scarab",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.3,
+      "entity_name": "Lord Kri",
+      "source_url": "https://www.wowhead.com/forever/item=21685",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21685",
+  "url": "https://www.wowhead.com/forever/item=21685"
+}

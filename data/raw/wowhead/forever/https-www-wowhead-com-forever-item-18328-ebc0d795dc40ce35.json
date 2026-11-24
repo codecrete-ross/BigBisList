@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shadewood Cloak Item Level 59 Binds when picked up Back 42 Armor +13 Strength +8 Stamina +8 Nature Resistance Requires Level 54 Sell Price: 1 42 11 Dropped by: Alzzin the Wildshaper Drop Chance: 18.92%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:20.1730293Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 18328,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 42,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18328,
+    "item_level": 59,
+    "name": "Shadewood Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "nature_resistance": 8.0,
+      "stamina": 8.0,
+      "strength": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18328"
+  },
+  "linked_entities": [],
+  "name": "Shadewood Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.92,
+      "entity_name": "Alzzin the Wildshaper",
+      "source_url": "https://www.wowhead.com/forever/item=18328",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0f12a601607480e0f95d31ea9ceb0c8700a257aef951aad792e4bc5f412d5594",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18328",
+  "url": "https://www.wowhead.com/forever/item=18328"
+}

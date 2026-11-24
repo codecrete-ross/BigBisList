@@ -1,0 +1,55 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97378"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:10:56.545977+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281275,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97378",
+      "subject_id": 97378,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281276,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97378",
+      "subject_id": 97378,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281277,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97378",
+      "subject_id": 97378,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Mirrorscale",
+    "quest_id": 97378,
+    "reward_item_roles": {
+      "281275": "choices",
+      "281276": "choices",
+      "281277": "choices",
+      "281278": "choices"
+    },
+    "side": "Both",
+    "zone": "Feralas"
+  },
+  "source_content_digest": "5e9856e6fae98b4204c5df759dfd8d09cf4c8d3f2fcb6f7cf107baaa78267acc",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97378"
+}

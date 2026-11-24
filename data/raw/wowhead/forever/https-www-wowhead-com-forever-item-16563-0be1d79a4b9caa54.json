@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Leather Breastplate Item Level 74 Binds when picked up Unique Chest Leather 220 Armor +26 Agility +31 Stamina +40 Armor Durability 120 / 120 Classes: Rogue Requires Level 60 Equip: Improves your chance to hit by 1.0%. Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 3 29 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 16563,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 220,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 16563,
+    "item_level": 74,
+    "name": "Warlord's Leather Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 26.0,
+      "crit_percent": 1.0,
+      "hit_percent": 1.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16563"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Leather Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16563",
+  "url": "https://www.wowhead.com/forever/item=16563"
+}

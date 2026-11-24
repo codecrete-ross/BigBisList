@@ -1,0 +1,3362 @@
+{
+  "attribution": [
+    {
+      "credit": "Data from Efficient Games (https://efficient.games), licensed under CC BY 4.0.",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://github.com/JIVESCORP/eg-link-output-wowf"
+    }
+  ],
+  "availability_dependencies": [
+    {
+      "entity_id": 9323,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 1,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 382155,
+          "objectId": 181344,
+          "storageIndex": 0,
+          "text": "Flame of the Blasted Lands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382156,
+          "objectId": 181338,
+          "storageIndex": 1,
+          "text": "Flame of the Plaguelands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382157,
+          "objectId": 181345,
+          "storageIndex": 2,
+          "text": "Flame of the Hinterlands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382158,
+          "objectId": 181341,
+          "storageIndex": 3,
+          "text": "Flame of Searing Gorge",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 23324
+          },
+          {
+            "count": 10,
+            "itemId": 23247
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 84193,
+      "entity_type": "quest",
+      "flags": 0,
+      "minLevel": 58,
+      "nextQuestId": 8960,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 452036,
+          "objectId": 16704,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 452037,
+          "objectId": 16699,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 452038,
+          "objectId": 16701,
+          "storageIndex": 2,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 226908
+          },
+          {
+            "count": 1,
+            "itemId": 226910
+          },
+          {
+            "count": 1,
+            "itemId": 226912
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 1.0
+      },
+      "startItemId": 22047
+    },
+    {
+      "entity_id": 86813,
+      "entity_type": "quest",
+      "flags": 36700160,
+      "minLevel": 47,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 457454,
+          "objectId": 236987,
+          "storageIndex": 1,
+          "text": "Panacea administered",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 260171
+          },
+          {
+            "count": 1,
+            "itemId": 260168
+          },
+          {
+            "count": 1,
+            "itemId": 260169
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 576,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      },
+      "startItemId": 235510
+    },
+    {
+      "entity_id": 91531,
+      "entity_type": "quest",
+      "flags": 0,
+      "minLevel": 44,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 462946,
+          "objectId": 10597,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 10709
+          },
+          {
+            "count": 1,
+            "itemId": 11120
+          },
+          {
+            "count": 1,
+            "itemId": 287075
+          }
+        ],
+        "money": 4000,
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 6
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "startItemId": 10597
+    },
+    {
+      "entity_id": 92457,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 24,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 475670,
+          "objectId": 247003,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 475671,
+          "objectId": 247001,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 477713,
+          "objectId": 246600,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279837
+          },
+          {
+            "count": 1,
+            "itemId": 279838
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      }
+    },
+    {
+      "entity_id": 92458,
+      "entity_type": "quest",
+      "flags": 3145728,
+      "minLevel": 24,
+      "nextQuestId": 92459,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 464809,
+          "objectId": 251961,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279839
+          },
+          {
+            "count": 1,
+            "itemId": 279840
+          },
+          {
+            "count": 1,
+            "itemId": 279841
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "startItemId": 277507
+    },
+    {
+      "entity_id": 93127,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 54,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 472769,
+          "objectId": 651979,
+          "storageIndex": 1,
+          "text": "Northern Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 472770,
+          "objectId": 651987,
+          "storageIndex": 2,
+          "text": "Western Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 472771,
+          "objectId": 651986,
+          "storageIndex": 3,
+          "text": "Southern Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 275666
+          },
+          {
+            "count": 1,
+            "itemId": 275668
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 93574,
+      "entity_type": "quest",
+      "flags": 40894464,
+      "minLevel": 35,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 466786,
+          "objectId": 259893,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 271810
+          },
+          {
+            "count": 1,
+            "itemId": 271811
+          },
+          {
+            "count": 1,
+            "itemId": 271812
+          }
+        ],
+        "money": 13000,
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 95064,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 36,
+      "objectives": [
+        {
+          "amount": 12,
+          "id": 473740,
+          "objectId": 256749,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 274959
+          },
+          {
+            "count": 1,
+            "itemId": 274961
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2826,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 95250,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 15,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474183,
+          "objectId": 268518,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279864
+          },
+          {
+            "count": 1,
+            "itemId": 279865
+          },
+          {
+            "count": 1,
+            "itemId": 279867
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.375
+      }
+    },
+    {
+      "entity_id": 95776,
+      "entity_type": "quest",
+      "flags": 33554696,
+      "minLevel": 30,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471330,
+          "objectId": 258924,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279888
+          },
+          {
+            "count": 1,
+            "itemId": 279889
+          }
+        ],
+        "money": 13000,
+        "reputation": [
+          {
+            "factionId": 530,
+            "tier": 5
+          },
+          {
+            "factionId": 76,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 2.675
+      }
+    },
+    {
+      "entity_id": 95798,
+      "entity_type": "quest",
+      "flags": 33554688,
+      "minLevel": 30,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279879
+          },
+          {
+            "count": 1,
+            "itemId": 279878
+          }
+        ],
+        "money": 3500,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 4
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      },
+      "startItemId": 270339
+    },
+    {
+      "entity_id": 95799,
+      "entity_type": "quest",
+      "flags": 33554696,
+      "minLevel": 30,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279880
+          },
+          {
+            "count": 1,
+            "itemId": 279881
+          }
+        ],
+        "items": [
+          {
+            "count": 1,
+            "itemId": 272124
+          }
+        ],
+        "money": 3500,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 4
+          },
+          {
+            "factionId": 47,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 95924,
+      "entity_type": "quest",
+      "flags": 33554696,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471733,
+          "objectId": 261813,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 6,
+          "id": 471734,
+          "objectId": 253215,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 9,
+          "id": 471735,
+          "objectId": 261786,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279903
+          },
+          {
+            "count": 1,
+            "itemId": 279905
+          }
+        ],
+        "money": 9000,
+        "reputation": [
+          {
+            "factionId": 47,
+            "tier": 5
+          },
+          {
+            "factionId": 72,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      }
+    },
+    {
+      "entity_id": 95925,
+      "entity_type": "quest",
+      "flags": 33554688,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471744,
+          "objectId": 263458,
+          "storageIndex": 0,
+          "text": "Pillar of Assimilation",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471746,
+          "objectId": 263277,
+          "storageIndex": 1,
+          "text": "The Achromatic Crystal",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471870,
+          "objectId": 263461,
+          "storageIndex": 4,
+          "text": "The Western Gates",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471871,
+          "objectId": 263460,
+          "storageIndex": 5,
+          "text": "The Regrowth Vestibule",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471872,
+          "objectId": 263462,
+          "storageIndex": 6,
+          "text": "The Unearthed Stone Watcher",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279908
+          },
+          {
+            "count": 1,
+            "itemId": 279910
+          },
+          {
+            "count": 1,
+            "itemId": 279912
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 47,
+            "tier": 5
+          },
+          {
+            "factionId": 72,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      },
+      "startItemId": 271770
+    },
+    {
+      "entity_id": 95926,
+      "entity_type": "quest",
+      "flags": 33554696,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471748,
+          "objectId": 271771,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279908
+          },
+          {
+            "count": 1,
+            "itemId": 279910
+          },
+          {
+            "count": 1,
+            "itemId": 279912
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 68,
+            "tier": 5
+          },
+          {
+            "factionId": 76,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      }
+    },
+    {
+      "entity_id": 95928,
+      "entity_type": "quest",
+      "flags": 33554696,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471856,
+          "objectId": 271894,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471857,
+          "objectId": 271898,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471858,
+          "objectId": 271902,
+          "storageIndex": 2,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471859,
+          "objectId": 271912,
+          "storageIndex": 3,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279904
+          },
+          {
+            "count": 1,
+            "itemId": 279906
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 3
+          },
+          {
+            "factionId": 2787,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      }
+    },
+    {
+      "entity_id": 96003,
+      "entity_type": "quest",
+      "flags": 36700160,
+      "minLevel": 54,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471800,
+          "objectId": 263427,
+          "storageIndex": 0,
+          "text": "Bethra'zel slain",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471805,
+          "objectId": 263426,
+          "storageIndex": 1,
+          "text": "Mazzogore slain",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 275630
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "startItemId": 271879
+    },
+    {
+      "entity_id": 96252,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 472623,
+          "objectId": 273164,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 275831
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 96332,
+      "entity_type": "quest",
+      "flags": 2097160,
+      "minLevel": 48,
+      "objectives": [
+        {
+          "amount": 15,
+          "id": 472861,
+          "objectId": 255995,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 472862,
+          "objectId": 255373,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 472863,
+          "objectId": 273883,
+          "storageIndex": 3,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279824
+          },
+          {
+            "count": 1,
+            "itemId": 279826
+          },
+          {
+            "count": 1,
+            "itemId": 279829
+          }
+        ],
+        "money": 8000,
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 4
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.85
+      }
+    },
+    {
+      "entity_id": 96381,
+      "entity_type": "quest",
+      "flags": 2097160,
+      "minLevel": 48,
+      "objectives": [
+        {
+          "amount": 15,
+          "id": 473005,
+          "objectId": 255995,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 473006,
+          "objectId": 255373,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 473007,
+          "objectId": 273883,
+          "storageIndex": 5,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279825
+          },
+          {
+            "count": 1,
+            "itemId": 279826
+          },
+          {
+            "count": 1,
+            "itemId": 279829
+          }
+        ],
+        "money": 8000,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 5
+          },
+          {
+            "factionId": 47,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.2
+      }
+    },
+    {
+      "entity_id": 96403,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 10,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 473157,
+          "objectId": 274289,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279898
+          },
+          {
+            "count": 1,
+            "itemId": 280096
+          }
+        ],
+        "money": 700,
+        "reputation": [
+          {
+            "factionId": 369,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 2.2
+      }
+    },
+    {
+      "entity_id": 96609,
+      "entity_type": "quest",
+      "flags": 264,
+      "minLevel": 44,
+      "objectives": [
+        {
+          "amount": 10,
+          "id": 473708,
+          "objectId": 274966,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 276903
+          },
+          {
+            "count": 1,
+            "itemId": 276904
+          }
+        ],
+        "items": [
+          {
+            "count": 1,
+            "itemId": 276896
+          }
+        ],
+        "money": 15500,
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 96983,
+      "entity_type": "quest",
+      "flags": 35651587,
+      "minLevel": 56,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474651,
+          "objectId": 267439,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 276335
+          },
+          {
+            "count": 1,
+            "itemId": 276336
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 96984,
+      "entity_type": "quest",
+      "flags": 3145728,
+      "minLevel": 24,
+      "nextQuestId": 97287,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474656,
+          "objectId": 251961,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279842
+          },
+          {
+            "count": 1,
+            "itemId": 279843
+          },
+          {
+            "count": 1,
+            "itemId": 279844
+          }
+        ],
+        "spellId": 370757,
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "startItemId": 277507
+    },
+    {
+      "entity_id": 96987,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 24,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474658,
+          "objectId": 275996,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279845
+          },
+          {
+            "count": 1,
+            "itemId": 279846
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      }
+    },
+    {
+      "entity_id": 97290,
+      "entity_type": "quest",
+      "flags": 36700168,
+      "minLevel": 15,
+      "nextQuestId": 97291,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279867
+          },
+          {
+            "count": 1,
+            "itemId": 279865
+          },
+          {
+            "count": 1,
+            "itemId": 279864
+          }
+        ],
+        "money": 1300,
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 97386,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 38,
+      "objectives": [
+        {
+          "amount": 3,
+          "id": 475855,
+          "objectId": 710,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475856,
+          "objectId": 709,
+          "storageIndex": 3,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475857,
+          "objectId": 678,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475858,
+          "objectId": 679,
+          "storageIndex": 5,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 277979
+          },
+          {
+            "count": 1,
+            "itemId": 277980
+          },
+          {
+            "count": 1,
+            "itemId": 277981
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 97405,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 38,
+      "objectives": [
+        {
+          "amount": 3,
+          "id": 475878,
+          "objectId": 710,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475879,
+          "objectId": 709,
+          "storageIndex": 3,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475880,
+          "objectId": 678,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475881,
+          "objectId": 679,
+          "storageIndex": 5,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 277979
+          },
+          {
+            "count": 1,
+            "itemId": 277980
+          },
+          {
+            "count": 1,
+            "itemId": 277981
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 54,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 97987,
+      "entity_type": "quest",
+      "flags": 0,
+      "minLevel": 53,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 281286
+          },
+          {
+            "count": 1,
+            "itemId": 281288
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      }
+    },
+    {
+      "entity_id": 97988,
+      "entity_type": "quest",
+      "flags": 8,
+      "minLevel": 53,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 281287
+          },
+          {
+            "count": 1,
+            "itemId": 281288
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      }
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "eg_link_observation",
+  "fetched_at": "2026-11-17T21:33:19.426538+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "records": [
+    {
+      "categoryId": 369,
+      "description": "Our celebration of the flame is spread throughout the land, $c. Not a single place remains untouched by the heat of this holiday, and the strongest fires burn a brilliant blue. Seek them out.$b$bYou'll find one just north of Blackrock Spire. The others are located deep within the Eastern Plaguelands near a decrepit town, along the road to the cliffs within the mountainous Hinterlands, and on the way to the Dark Portal within the Blasted Lands.$b$b Return once your journey is done.",
+      "flags": 8,
+      "level": 60,
+      "minLevel": 1,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 382155,
+          "objectId": 181344,
+          "storageIndex": 0,
+          "text": "Flame of the Blasted Lands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382156,
+          "objectId": 181338,
+          "storageIndex": 1,
+          "text": "Flame of the Plaguelands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382157,
+          "objectId": 181345,
+          "storageIndex": 2,
+          "text": "Flame of the Hinterlands",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 382158,
+          "objectId": 181341,
+          "storageIndex": 3,
+          "text": "Flame of Searing Gorge",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "objectivesText": "Visit the Fire Festival camps located in Blasted Lands, Eastern Plaguelands, the Hinterlands and Searing Gorge, then speak with the Festival Flamekeeper.",
+      "questType": 2,
+      "quest_id": 9323,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 23324
+          },
+          {
+            "count": 10,
+            "itemId": 23247
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      },
+      "sources": 5,
+      "title": "Wild Fires in the Eastern Kingdoms"
+    },
+    {
+      "description": "Valthalak's soul was stored in this amulet.  In our greed we foolishly split it into three parts, not knowing the curse that would await us.$B$BThe only way to stop Valthalak's spell is to put the amulet back together.  Return to Mokvar and tell him that Bodley is his only hope for finding the remaining pieces.  Speak to him about any rewards you've arranged for.$B$BI, for once, shall rest in peace.  I wish you the best of luck; you shall need every bit of it!",
+      "flags": 0,
+      "level": 60,
+      "minLevel": 58,
+      "nextQuestId": 8960,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 452036,
+          "objectId": 16704,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 452037,
+          "objectId": 16699,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 452038,
+          "objectId": 16701,
+          "storageIndex": 2,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Return to Mokvar in Orgimmar with a set of Dreadmist Sandals, Dreadmist Leggings and Dreadmist Mantle.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 84193,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 226908
+          },
+          {
+            "count": 1,
+            "itemId": 226910
+          },
+          {
+            "count": 1,
+            "itemId": 226912
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 1.0
+      },
+      "sources": 1,
+      "startItemId": 22047,
+      "title": "Anthion's Parting Words",
+      "zoneAreaId": 1637
+    },
+    {
+      "description": "I must say, $c. I have not felt this optimistic in some time. This tincture could be the panacea that saves us from the satyr's ever-expanding blight. Even if we remain in these camps for the rest of our lives we will stand strong and free of corruption.\r\n\r\nGo to Furze and give him this panacea. He has suffered for long enough. Return to me to report any findings.",
+      "flags": 36700160,
+      "itemDrops": [
+        {
+          "count": 1,
+          "itemId": 235510
+        }
+      ],
+      "level": 53,
+      "minLevel": 47,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 457454,
+          "objectId": 236987,
+          "storageIndex": 1,
+          "text": "Panacea administered",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Administer Bramblesnap's Panacea to Furze.",
+      "questType": 2,
+      "quest_id": 86813,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 260171
+          },
+          {
+            "count": 1,
+            "itemId": 260168
+          },
+          {
+            "count": 1,
+            "itemId": 260169
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 576,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "startItemId": 235510,
+      "title": "Potential Panacea",
+      "zoneAreaId": 16
+    },
+    {
+      "description": "Return to Belgrom in Orgrimmar. He will want to see her head for himself!$B$BAh, this is indeed a good day. Thank you for your help, $n.",
+      "flags": 0,
+      "level": 55,
+      "minLevel": 44,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 462946,
+          "objectId": 10597,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Bring the Head of Magus Rimtori to Belgrom Rockmaul in Orgrimmar.",
+      "questType": 2,
+      "quest_id": 91531,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 10709
+          },
+          {
+            "count": 1,
+            "itemId": 11120
+          },
+          {
+            "count": 1,
+            "itemId": 287075
+          }
+        ],
+        "money": 4000,
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 6
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 5,
+      "startItemId": 10597,
+      "title": "Revenge Exacted",
+      "zoneAreaId": 1637
+    },
+    {
+      "description": "The breach has affected many of our factotums and enchantments throughout the city, including many that are seeing to our defenses. This fragmented arcane energy has spoken to rogue elementals who seek to saturate themselves in this free flowing magic.\r\n\r\nWhile we are busy tending to the wards and other major incidents, it would be a favor to the Kirin Tor if you could cull this elemental throng.",
+      "flags": 36700168,
+      "level": 33,
+      "minLevel": 24,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 475670,
+          "objectId": 247003,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 475671,
+          "objectId": 247001,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 477713,
+          "objectId": 246600,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Defeat $1oa Seeking Remnants, $2oa Saturated Remnants, and $3oa Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 92457,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279837
+          },
+          {
+            "count": 1,
+            "itemId": 279838
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "sources": 3,
+      "title": "Starving Arcane",
+      "zoneAreaId": 16544
+    },
+    {
+      "description": "Whatever disturbed the leylines, it started at the top of the Violet Citadel. A thunderous crash rang out from the parlors above, and now we are overrun with rampant arcane power. It's taking all we have just to keep the wards in place.\r\n\r\nWe cannot afford to stall any longer. We need help.\r\n\r\nThe Kirin Tor are busy inside, but you will still need a less public approach to gain entry. Take this key and meet me in the citadel once you've made your way into the city. We must put an end to this disruption.",
+      "flags": 3145728,
+      "level": 33,
+      "minLevel": 24,
+      "nextQuestId": 92459,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 464809,
+          "objectId": 251961,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect the Arcane Mote for the Image of Archmage Modera near the City of Dalaran.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 92458,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279839
+          },
+          {
+            "count": 1,
+            "itemId": 279840
+          },
+          {
+            "count": 1,
+            "itemId": 279841
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "sources": 4,
+      "startItemId": 277507,
+      "title": "Heart of Disruption",
+      "zoneAreaId": 16544
+    },
+    {
+      "description": "The Wild King may have a numbers advantage, but we can outmaneuver him with tactics.\r\n\r\nEmpower our living sentinel stones across the encircling hills, they can track Blackthorne movements for us. The northern ridges, the southern slopes, and the western high ground all have drained stones that will activate upon detecting your allied presence.\r\n\r\nTread carefully as you work, Blackthorne patrols crowd these paths, and their presence is precisely why we must bring this land under vigilant surveillance.",
+      "flags": 8,
+      "level": 60,
+      "minLevel": 54,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 472769,
+          "objectId": 651979,
+          "storageIndex": 1,
+          "text": "Northern Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 472770,
+          "objectId": 651987,
+          "storageIndex": 2,
+          "text": "Western Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        },
+        {
+          "amount": 1,
+          "id": 472771,
+          "objectId": 651986,
+          "storageIndex": 3,
+          "text": "Southern Sentinel Stone empowered",
+          "type": "gameObject",
+          "typeId": 2
+        }
+      ],
+      "objectivesText": "Reactivate the sentinel stones north, west, and south around the Blackthorne cultists.",
+      "questType": 2,
+      "quest_id": 93127,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 275666
+          },
+          {
+            "count": 1,
+            "itemId": 275668
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "title": "Summit Sentries",
+      "zoneAreaId": 616
+    },
+    {
+      "description": "<With a terrible crunch, you removed a piece of the worm's carapace upon its demise.\r\n\r\nDespite its enormous size and hefty weight, it is disappointingly ordinary. This creature was seemingly not the result of a cruel experiment nor carefully bred to be an all-devouring beast.\r\n\r\nIt is simply an impressive shell, likely desired only by collectors. Perhaps you could find one, though other than the centaur, who else might be alive around here?>",
+      "flags": 40894464,
+      "flagsEx": 8192,
+      "level": 45,
+      "minLevel": 35,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 466786,
+          "objectId": 259893,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Find someone interested in Corpsefeeder's Carapace.",
+      "questType": 2,
+      "quest_id": 93574,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 271810
+          },
+          {
+            "count": 1,
+            "itemId": 271811
+          },
+          {
+            "count": 1,
+            "itemId": 271812
+          }
+        ],
+        "money": 13000,
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "title": "Corpsefeeder's Carapace",
+      "zoneAreaId": 16651
+    },
+    {
+      "description": "The orcs have become an encroaching threat ever since their arrival. First, claiming the lands by the river and now their presence grows within the plains...\r\n\r\nI'll never understand their kind, nor do I care, truth be told, but I'll be damned if they think there's more ground to be taken.",
+      "flags": 36700168,
+      "level": 39,
+      "minLevel": 36,
+      "objectives": [
+        {
+          "amount": 12,
+          "id": 473740,
+          "objectId": 256749,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Kill $1oa Rog'mar Trainees for Watcher Cornelius at Terral's Watch.",
+      "questType": 2,
+      "quest_id": 95064,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 274959
+          },
+          {
+            "count": 1,
+            "itemId": 274961
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 2826,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 5,
+      "title": "Preventative Measures",
+      "zoneAreaId": 16591
+    },
+    {
+      "conditionalDescriptions": [
+        {
+          "creatureId": 265701,
+          "playerConditionId": 139384,
+          "text": "Ah, a fellow human. It's about time Lordaeron sent reinforcements.\r\n\r\nMy master has already charged into the fray and has ordered me to maintain my post. It has been quite some time, however.\r\n\r\nI don't dare trust this task to any of these filthy half breeds, but if I could impose on you a favor, I beg of you to find me the Grand Marshal. He is the tallest, most statuesque hero you've ever laid eyes on. You'll know him when you see him."
+        }
+      ],
+      "description": "What do you want, $r? Can't you see there is a war to be won?\r\n\r\nMy master has already charged into the fray and has ordered me to maintain my post. It has been quite some time, however.\r\n\r\nI doubt you'll survive ten minutes in combat, but if it keeps your simple mind busy, why don't you seek out the Grand Marshal. He is the tallest, most statuesque hero you've ever laid eyes on. You'll know him when you see him.",
+      "flags": 36700168,
+      "level": 21,
+      "minLevel": 15,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474183,
+          "objectId": 268518,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect the Head of the Baron in the Ruins of Lordaeron and bring it back to Captain Truman.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95250,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279864
+          },
+          {
+            "count": 1,
+            "itemId": 279865
+          },
+          {
+            "count": 1,
+            "itemId": 279867
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.375
+      },
+      "sources": 4,
+      "title": "Abominable Creatures",
+      "zoneAreaId": 16611
+    },
+    {
+      "description": "You have done well to slay the naga just off of our coast, but the fact that they are in our waters in such numbers means there is yet a larger threat.\r\n\r\nI have spoken to Kin'weelay, and he thinks these Brinescale naga are infiltrating the ruins of the Drowned City. If the naga are there, then they are up to no good and are likely searching for something.\r\n\r\nWe can't let them get their hands on anything that could compromise us here and it is time to put an end to this. Slay their leader and return to me.",
+      "flags": 33554696,
+      "level": 38,
+      "minLevel": 30,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471330,
+          "objectId": 258924,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Slay Var'Taka in the Drowned City.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95776,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279888
+          },
+          {
+            "count": 1,
+            "itemId": 279889
+          }
+        ],
+        "money": 13000,
+        "reputation": [
+          {
+            "factionId": 530,
+            "tier": 5
+          },
+          {
+            "factionId": 76,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 2.675
+      },
+      "sources": 5,
+      "title": "The Only Good Brinescale...",
+      "zoneAreaId": 16550
+    },
+    {
+      "description": "$n, I want you to take this I'lalai Fetish to my friend Abra in Dalaran. I would love to have her examine it if she has the time to do so.\r\n\r\nShe is also particularly interested in troll practices and magic, so I believe this discovery will be exciting for her to unravel.\r\n\r\nDo be careful, though. The Kirin Tor can be a bit particular about who they let into their grand city. If you haven't already become a noteworthy visitor, you may need to find a way into their good graces.",
+      "flags": 33554688,
+      "itemDrops": [
+        {
+          "count": 1,
+          "itemId": 270339
+        }
+      ],
+      "level": 40,
+      "minLevel": 30,
+      "objectivesText": "Bring the I'lalai Fetish to Abra Cadabra in Dalaran.",
+      "questType": 2,
+      "quest_id": 95798,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279879
+          },
+          {
+            "count": 1,
+            "itemId": 279878
+          }
+        ],
+        "money": 3500,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 4
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      },
+      "sources": 2,
+      "startItemId": 270339,
+      "title": "The Web of Magic",
+      "zoneAreaId": 279
+    },
+    {
+      "description": "I must write my colleague in Ironforge at the Explorer's League immediately. This is a discovery of historical proportions.\r\n\r\nWould you mind delivering the letter to Ironforge for me? I will write a copy of my translations of the tablets for you.",
+      "flags": 33554696,
+      "level": 40,
+      "minLevel": 30,
+      "objectivesText": "Bring Loremaster Dibbs' I'lalai Translations to Historian Karnik in Ironforge.",
+      "questType": 2,
+      "quest_id": 95799,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279880
+          },
+          {
+            "count": 1,
+            "itemId": 279881
+          }
+        ],
+        "items": [
+          {
+            "count": 1,
+            "itemId": 272124
+          }
+        ],
+        "money": 3500,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 4
+          },
+          {
+            "factionId": 47,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 4,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "Findings for the Explorer's League",
+      "zoneAreaId": 1537
+    },
+    {
+      "description": "Ye there! Aye, I'm talkin' ta ye! We've made the discovery of a lifetime down in Un'Goro! Can ye believe it?\r\n\r\nThere's just one problem... our dig site's been overrun by voracious beasts of the killin' nature. Very unpleasant indeed.\r\n\r\nWith yer help, we can reclaim our camp and git back ta workin'. Now, what do ye say? I'll make it worth yer while.",
+      "flags": 33554696,
+      "level": 60,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471733,
+          "objectId": 261813,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 6,
+          "id": 471734,
+          "objectId": 253215,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 9,
+          "id": 471735,
+          "objectId": 261786,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Slay 6 Ravasaur Matriarchs, 9 Ironhide Ravasaurs and Venomridge in Shaper's Terrace.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95924,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279903
+          },
+          {
+            "count": 1,
+            "itemId": 279905
+          }
+        ],
+        "money": 9000,
+        "reputation": [
+          {
+            "factionId": 47,
+            "tier": 5
+          },
+          {
+            "factionId": 72,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      },
+      "sources": 3,
+      "title": "Panic at the Digsite",
+      "zoneAreaId": 16985
+    },
+    {
+      "description": "$C, we've made the discovery of a lifetime! I can't believe it; the ruins in Un'Goro are open!\r\n\r\nWe've already sent a team but they have encountered... trouble. If you're headed in there anyway would ya be able to finish this map?\r\n\r\nIt sounds like there's an Achromatic Crystal in there and an unearthed watcher somewhere near a giant Western Gate that sounds interesting.\r\n\r\nThe other landmarks that would be helpful are the Pillar of Assimilation, the Western Gate and the Regrowth Vestibule.",
+      "flags": 33554688,
+      "itemDrops": [
+        {
+          "count": 1,
+          "itemId": 271770
+        }
+      ],
+      "level": 60,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471744,
+          "objectId": 263458,
+          "storageIndex": 0,
+          "text": "Pillar of Assimilation",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471746,
+          "objectId": 263277,
+          "storageIndex": 1,
+          "text": "The Achromatic Crystal",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471870,
+          "objectId": 263461,
+          "storageIndex": 4,
+          "text": "The Western Gates",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471871,
+          "objectId": 263460,
+          "storageIndex": 5,
+          "text": "The Regrowth Vestibule",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471872,
+          "objectId": 263462,
+          "storageIndex": 6,
+          "text": "The Unearthed Stone Watcher",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Find Interesting Landmarks in Shaper's Terrace and fill out the explorer's map at each.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95925,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279908
+          },
+          {
+            "count": 1,
+            "itemId": 279910
+          },
+          {
+            "count": 1,
+            "itemId": 279912
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 47,
+            "tier": 5
+          },
+          {
+            "factionId": 72,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      },
+      "sources": 3,
+      "startItemId": 271770,
+      "title": "Mapping the Way Forward",
+      "zoneAreaId": 16985
+    },
+    {
+      "description": "You there! I have a job for someone of your... skills.\r\n\r\nI have gotten word from my sources of a crystal found in Shaper's Terrace that can seemingly drain the elements around it. Or perhaps it can drain life essence itself. It is unclear from this report.\r\n\r\nI must have a fragment of this crystal! Just think of the applications of such a powerful artifact.\r\n\r\nGo to Shaper's Terrace and bring me back a sample of this colorless Achromatic Crystal, and I will reward you for your efforts.",
+      "flags": 33554696,
+      "level": 60,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471748,
+          "objectId": 271771,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Gather a colorless Drained Crystal Fragment near the Achromatic Crystal in the Shaper's Terrace.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95926,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279908
+          },
+          {
+            "count": 1,
+            "itemId": 279910
+          },
+          {
+            "count": 1,
+            "itemId": 279912
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 68,
+            "tier": 5
+          },
+          {
+            "factionId": 76,
+            "tier": 3
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      },
+      "sources": 4,
+      "title": "The Dark Crystal",
+      "zoneAreaId": 16985
+    },
+    {
+      "description": "Ah, it is good you have come here, $c.\r\n\r\nI have been studying crystals of late and word has reached me about a peculiar set of crystals said to be from Un'Goro Crater. I have samples of the most basic ones, but I have heard tell of larger more potent crystals seen in a place called Shaper's Terrace.\r\n\r\nI do not know much of this place aside from it containing these crystals that supposedly have the very elements within them. If you find yourself there, please bring me a sample of each color.",
+      "flags": 33554696,
+      "level": 60,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471856,
+          "objectId": 271894,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471857,
+          "objectId": 271898,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471858,
+          "objectId": 271902,
+          "storageIndex": 2,
+          "type": "item",
+          "typeId": 1
+        },
+        {
+          "amount": 1,
+          "id": 471859,
+          "objectId": 271912,
+          "storageIndex": 3,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 95928,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279904
+          },
+          {
+            "count": 1,
+            "itemId": 279906
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 3
+          },
+          {
+            "factionId": 2787,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.675
+      },
+      "sources": 4,
+      "title": "Crystalline Elements",
+      "zoneAreaId": 16985
+    },
+    {
+      "description": "As suspected, the vessels fused into something new--something powerful.\r\n\r\nI suppose if the vessels capture stored energy, there must be a way to use that power to our advantage. Fel artifacts are rarely safe or easy to come by, but we might as well do something with it, hmm?\r\n\r\nTime for a field test.\r\n\r\nTake the crystal and use it against Bethra'zel and Mazzogore--two of their most powerful demons. Their presence alone has ensured the camp is well protected. Let's see if we can change that.",
+      "flags": 36700160,
+      "itemDrops": [
+        {
+          "count": 1,
+          "itemId": 271879
+        }
+      ],
+      "level": 60,
+      "minLevel": 54,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 471800,
+          "objectId": 263427,
+          "storageIndex": 0,
+          "text": "Bethra'zel slain",
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 471805,
+          "objectId": 263426,
+          "storageIndex": 1,
+          "text": "Mazzogore slain",
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Use the Eye of Endless Influence on Bethra'zel and Mazzogore to siphon their power, then deliver the killing blow.",
+      "questType": 2,
+      "quest_id": 96003,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 275630
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "startItemId": 271879,
+      "title": "Drawing Down the Malevolent",
+      "zoneAreaId": 616
+    },
+    {
+      "description": "$C, I would ask a favor of you. One that is deeply personal.\r\n\r\nWhen they ambushed and killed my sisters, the Wormwings took their jewelry claiming these treasures as trophies of battle. What's worse, they've stashed our treasures in their nests with their unborn young; further proof of their depravity.\r\n\r\nPlease collect my fallen sisters' treasures. Avoid harming the unhatched eggs if you can, but I'll lose no sleep over the broken eggs of our enemies.",
+      "flags": 36700168,
+      "itemDrops": [
+        {
+          "count": 1,
+          "itemId": 273164
+        }
+      ],
+      "level": 58,
+      "minLevel": 55,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 472623,
+          "objectId": 273164,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect $1oa Tarnished Highfeather Bangles from Wormwing Harpy nests.",
+      "questType": 2,
+      "quest_id": 96252,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "items": [
+          {
+            "count": 1,
+            "itemId": 275831
+          }
+        ],
+        "xpDifficulty": 3,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "Tarnished Treasures",
+      "zoneAreaId": 616
+    },
+    {
+      "description": "A second wave of Naga was approaching the keep when we were falling back. I suspect that the battle is still raging inside. \r\n\r\nWe Kor'kron play blood for blood. If you are going in there anyway, I want you to kill any Naga you see. I saw a sorceress among them as well, and you can bet that was their leader. Bring me her head.\r\n\r\nWe lost a lot of good orcs today and I won't rest easy knowing that we didn't give as good as we got.",
+      "flags": 2097160,
+      "level": 53,
+      "minLevel": 48,
+      "objectives": [
+        {
+          "amount": 15,
+          "id": 472861,
+          "objectId": 255995,
+          "storageIndex": 1,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 472862,
+          "objectId": 255373,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 472863,
+          "objectId": 273883,
+          "storageIndex": 3,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Enter the Alcaz Prison and slay $1oa Strashasz Soldiers, $2oa Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sergeant Ulka.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 96332,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279824
+          },
+          {
+            "count": 1,
+            "itemId": 279826
+          },
+          {
+            "count": 1,
+            "itemId": 279829
+          }
+        ],
+        "money": 8000,
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 4
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.85
+      },
+      "sources": 5,
+      "title": "A Little Payback",
+      "zoneAreaId": 16620
+    },
+    {
+      "description": "Was spyin' on the shore of Alcaz with my trusty lookin' glass whilst you were off eavesdroppin' on Lady Proudmoore. I think the island may be under attack. I saw naga--lots of them, chargin' onto shore. \r\n\r\nThe enemy of my enemy is certainly not my friend when it comes to naga, so let's do the world a favor and take some of them out. I also spied what looks to be the leader--a spellcaster type barkin' orders. Take her out as well, if you can.",
+      "flags": 2097160,
+      "level": 53,
+      "minLevel": 48,
+      "objectives": [
+        {
+          "amount": 15,
+          "id": 473005,
+          "objectId": 255995,
+          "storageIndex": 0,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 8,
+          "id": 473006,
+          "objectId": 255373,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 1,
+          "id": 473007,
+          "objectId": 273883,
+          "storageIndex": 5,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Enter the Alcaz Prison and slay $1oa  Strashasz Soldiers, $2oa Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sully McCleary.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 96381,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279825
+          },
+          {
+            "count": 1,
+            "itemId": 279826
+          },
+          {
+            "count": 1,
+            "itemId": 279829
+          }
+        ],
+        "money": 8000,
+        "reputation": [
+          {
+            "factionId": 72,
+            "tier": 5
+          },
+          {
+            "factionId": 47,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 2.2
+      },
+      "sources": 3,
+      "title": "A Bit of Wet Work",
+      "zoneAreaId": 16620
+    },
+    {
+      "description": "You there, adventurer... I could really use your aid.\r\n\r\nI was sneaking--uh... 'patrolling' in the vaults when a force of Dark Iron dwarves emerged from the depths in mole machines! I don't know what they are here for, but there is priceless loot--uh or, rather... I mean, 'important cultural heirlooms' down there! Please, recover any such relics you see and return them here.\r\n\r\nI assure you that anything you recover will be catalogued and returned to its proper place of honor.",
+      "flags": 8,
+      "level": 15,
+      "minLevel": 10,
+      "objectives": [
+        {
+          "amount": 8,
+          "id": 473157,
+          "objectId": 274289,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect $1oa Dwarven Heirlooms from the Hall of Thanes.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 96403,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279898
+          },
+          {
+            "count": 1,
+            "itemId": 280096
+          }
+        ],
+        "money": 700,
+        "reputation": [
+          {
+            "factionId": 369,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 2.2
+      },
+      "sources": 4,
+      "title": "Important Heirlooms",
+      "zoneAreaId": 16919
+    },
+    {
+      "description": "Are you familiar with Silvermoon Shimmerwine? It has a delicate flavor that is entirely unique to the vineyards of Eversong and it is the one thing I truly miss from my homeland.\r\n\r\nUnfortunately, it is extremely hard to find on this side of the Thalassian Gate.\r\n\r\nI had a patron bring me a bottle that he claimed to have \"liberated\" from blood elves in northern Azshara. If your adventures take you to that region and you can recover more bottles for me, I would handsomely reward your efforts.",
+      "flags": 264,
+      "level": 52,
+      "minLevel": 44,
+      "objectives": [
+        {
+          "amount": 10,
+          "id": 473708,
+          "objectId": 274966,
+          "storageIndex": 1,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Bring $1oa bottles of Silvermoon Shimmerwine to Arille Azuregaze in Dalaran city.",
+      "questType": 2,
+      "quest_id": 96609,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 276903
+          },
+          {
+            "count": 1,
+            "itemId": 276904
+          }
+        ],
+        "items": [
+          {
+            "count": 1,
+            "itemId": 276896
+          }
+        ],
+        "money": 15500,
+        "reputation": [
+          {
+            "factionId": 2740,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "A Taste of Home",
+      "zoneAreaId": 16560
+    },
+    {
+      "description": "You're capable, fast, fearless. Fire will draw the demons from their hiding places, and with them, their warlords. They will come seeking dominance. Instead, they will find vengeance waiting. This is the moment where the will of the mountain speaks through us.\r\n\r\nCome, let us carve a path through these hellspawn and end their reign. My blade yearns to cleave through their ranks.",
+      "flags": 35651587,
+      "level": 60,
+      "minLevel": 56,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474651,
+          "objectId": 267439,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Fight your way through Dae'gun with Yashiro.",
+      "questInfoId": 1,
+      "questType": 2,
+      "quest_id": 96983,
+      "raceMask": "ffffffffffffffff",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 276335
+          },
+          {
+            "count": 1,
+            "itemId": 276336
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "title": "Yashiro's Windwalk",
+      "zoneAreaId": 616
+    },
+    {
+      "description": "You may not have our best interests at heart, but I won't deny an extra pair of hands. And if Dalaran falls, it takes everything with it--including your Undercity.\r\n\r\nSo, your benefactor wants in? Fine. I'll imbue your key to work past my wards so you can enter the city. Once you're in, meet me at the Violet Citadel where this all began. With everything going on the Kirin Tor will be too busy to stop you.\r\n\r\nScavenge what you will, but whatever happens, our first priority is to prevent a catastrophe.",
+      "flags": 3145728,
+      "level": 33,
+      "minLevel": 24,
+      "nextQuestId": 97287,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474656,
+          "objectId": 251961,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect the Arcane Mote in the City of Dalaran for Magus Wordeen Voidglare in Tarren Mill.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 96984,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279842
+          },
+          {
+            "count": 1,
+            "itemId": 279843
+          },
+          {
+            "count": 1,
+            "itemId": 279844
+          }
+        ],
+        "spellId": 370757,
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "sources": 6,
+      "startItemId": 277507,
+      "title": "Heart of Disruption",
+      "zoneAreaId": 16544
+    },
+    {
+      "description": "Well if it ain't a like-minded entrepreneur. Sneakin' into Dalaran durin' such troublesome times? Tsk tsk.\r\n\r\nMy kinda $r!\r\n\r\nWhile our mage friends here are occupied, maybe we could find ourselves some 'misplaced' treasures. They gots whole libraries dedicated to fancy arcane magics. If you could bring me one of their secret tomes, I could sell it for a pretty penny. Split the profits with ya.\r\n\r\nHey hey don't look at me like that. You ain't exactly here on a field trip yourself. You want in or what?",
+      "flags": 36700168,
+      "level": 33,
+      "minLevel": 24,
+      "objectives": [
+        {
+          "amount": 1,
+          "id": 474658,
+          "objectId": 275996,
+          "storageIndex": 0,
+          "type": "item",
+          "typeId": 1
+        }
+      ],
+      "objectivesText": "Collect the Founding of Dalaran from the City of Dalaran for Rexxie Copperclutch near the sewer entrance.",
+      "questInfoId": 81,
+      "questType": 2,
+      "quest_id": 96987,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279845
+          },
+          {
+            "count": 1,
+            "itemId": 279846
+          }
+        ],
+        "xpDifficulty": 7,
+        "xpMultiplier": 2.375
+      },
+      "sources": 5,
+      "title": "Opportunistic Education",
+      "zoneAreaId": 16544
+    },
+    {
+      "description": "You... abomination...\r\n\r\nWhy should... help you...\r\n\r\nBe gone...",
+      "flags": 36700168,
+      "level": 21,
+      "minLevel": 15,
+      "nextQuestId": 97291,
+      "objectivesText": "Report your findings to Master Apothecary Faranell in Undercity.",
+      "questType": 2,
+      "quest_id": 97290,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 279867
+          },
+          {
+            "count": 1,
+            "itemId": 279865
+          },
+          {
+            "count": 1,
+            "itemId": 279864
+          }
+        ],
+        "money": 1300,
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "title": "Unending Torment",
+      "zoneAreaId": 1497
+    },
+    {
+      "description": "$n! Your arrival is timely, as always.\r\n\r\nYou have provided valuable assistance to the defense of Grom'gol, and we are grateful. After your recent push against the ogres nearby, we sent out a scout to see if there are more out there that may try to enact vengeance against us. As it turns out, there is a cave far to the east that they have claimed as their hovel.\r\n\r\nGather a friend or two and make it very clear that we will not tolerate another threat to our settlement, now or ever!",
+      "flags": 8,
+      "level": 44,
+      "minLevel": 38,
+      "objectives": [
+        {
+          "amount": 3,
+          "id": 475855,
+          "objectId": 710,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475856,
+          "objectId": 709,
+          "storageIndex": 3,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475857,
+          "objectId": 678,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475858,
+          "objectId": 679,
+          "storageIndex": 5,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Commander Aggro'gosh of the Grom'gol base camp wants you to kill ogres at the Mosh'Ogg Ogre Mount.",
+      "questInfoId": 1,
+      "questType": 2,
+      "quest_id": 97386,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 277979
+          },
+          {
+            "count": 1,
+            "itemId": 277980
+          },
+          {
+            "count": 1,
+            "itemId": 277981
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 76,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      },
+      "sources": 4,
+      "title": "The Offense of Grom'gol",
+      "zoneAreaId": 33
+    },
+    {
+      "description": "Gnaz over there has been building that death trap for the competition all the way over in Kalimdor. I have been warning him that his constant late-night tinkering is making a ton of noise, and last night I saw an ogre peeking his ugly head out from behind that tree!\r\n\r\nHe's obsessed with this ambitious dream to win the Mirage Raceway Championships, but I'm obsessed with not getting mauled to death! Please head over the hill to the north and make sure they stop snooping around the place.",
+      "flags": 8,
+      "level": 44,
+      "minLevel": 38,
+      "objectives": [
+        {
+          "amount": 3,
+          "id": 475878,
+          "objectId": 710,
+          "storageIndex": 2,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475879,
+          "objectId": 709,
+          "storageIndex": 3,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475880,
+          "objectId": 678,
+          "storageIndex": 4,
+          "type": "monster",
+          "typeId": 0
+        },
+        {
+          "amount": 3,
+          "id": 475881,
+          "objectId": 679,
+          "storageIndex": 5,
+          "type": "monster",
+          "typeId": 0
+        }
+      ],
+      "objectivesText": "Knaz Blunderflame wants you to kill $1oa Mosh'Ogg Spellcrafters, $2oa Mosh'Ogg Warmongers, $3oa Mosh'Ogg Maulers, and $4oa Mosh'Ogg Shaman at the Mosh'Ogg Ogre Mount.",
+      "questInfoId": 1,
+      "questType": 2,
+      "quest_id": 97405,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 277979
+          },
+          {
+            "count": 1,
+            "itemId": 277980
+          },
+          {
+            "count": 1,
+            "itemId": 277981
+          }
+        ],
+        "reputation": [
+          {
+            "factionId": 54,
+            "tier": 5
+          }
+        ],
+        "xpDifficulty": 6,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "Noise Complaints",
+      "zoneAreaId": 33
+    },
+    {
+      "description": "Around the time these cliffs collapsed, I heard elvish ballistae firing. Bolts struck dangerously close to my home along the road to Quel'Thalas.\r\n\r\nI fled, leaving the avalanche of trees and rubble behind. I heard shouts in what could only have been shen'dorei! It was harsh even to my ear. I caught only a few words: \"traitor,\" \"blood,\" \"enemy.\"\r\n\r\nMy suggestion: take this knowledge to Saera Wirraway, a high order skyborne in Stormwind's Park. Though not of one line, we once shared a heart for answers.",
+      "flags": 0,
+      "level": 57,
+      "minLevel": 53,
+      "objectivesText": "Speak with Saera Wirraway in Stormwind in The Park.",
+      "questType": 2,
+      "quest_id": 97987,
+      "raceMask": "55155555b1354c4d",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 281286
+          },
+          {
+            "count": 1,
+            "itemId": 281288
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "Stormwind's High Order",
+      "zoneAreaId": 139
+    },
+    {
+      "description": "Around the time these cliffs collapsed, I heard elvish ballistae firing. Bolts struck dangerously close to my home along the road to Quel'Thalas.\r\n\r\nI fled, leaving the avalanche of trees and rubble behind. I heard shouts in what could only have been shen'dorei! It was harsh even to my ear. I caught only a few words: \"traitor,\" \"blood,\" \"enemy.\"\r\n\r\nTake this knowledge to Corswyn Aseril, a windshaper skyborne in Orgrimmar's Valley of Wisdom. Though not of one line, our hearts once sought the same truth.",
+      "flags": 8,
+      "level": 57,
+      "minLevel": 53,
+      "objectivesText": "Speak with Corswyn Aseril in Orgrimmar's Valley of Wisdom.",
+      "questType": 2,
+      "quest_id": 97988,
+      "raceMask": "aa2aaaaa4e0ab3b2",
+      "rewards": {
+        "choices": [
+          {
+            "count": 1,
+            "itemId": 281287
+          },
+          {
+            "count": 1,
+            "itemId": 281288
+          }
+        ],
+        "xpDifficulty": 5,
+        "xpMultiplier": 1.0
+      },
+      "sources": 3,
+      "title": "Orgrimmar's Windshapers",
+      "zoneAreaId": 139
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 23324,
+      "object_type": "item",
+      "quest_min_level": 1,
+      "race_mask": "ffffffffffffffff",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 9323,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 226912,
+      "object_type": "item",
+      "quest_min_level": 58,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 84193,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 260169,
+      "object_type": "item",
+      "quest_min_level": 47,
+      "race_mask": "ffffffffffffffff",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 86813,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 10709,
+      "object_type": "item",
+      "quest_min_level": 44,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 91531,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279838,
+      "object_type": "item",
+      "quest_min_level": 24,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 92457,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279839,
+      "object_type": "item",
+      "quest_min_level": 24,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 92458,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 275666,
+      "object_type": "item",
+      "quest_min_level": 54,
+      "race_mask": "ffffffffffffffff",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 93127,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 271811,
+      "object_type": "item",
+      "quest_min_level": 35,
+      "race_mask": "ffffffffffffffff",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 93574,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 274961,
+      "object_type": "item",
+      "quest_min_level": 36,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95064,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279867,
+      "object_type": "item",
+      "quest_min_level": 15,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95250,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279889,
+      "object_type": "item",
+      "quest_min_level": 30,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95776,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279879,
+      "object_type": "item",
+      "quest_min_level": 30,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95798,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279880,
+      "object_type": "item",
+      "quest_min_level": 30,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95799,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279903,
+      "object_type": "item",
+      "quest_min_level": 55,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95924,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279912,
+      "object_type": "item",
+      "quest_min_level": 55,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95925,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279912,
+      "object_type": "item",
+      "quest_min_level": 55,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95926,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279904,
+      "object_type": "item",
+      "quest_min_level": 55,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 95928,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 275630,
+      "object_type": "item",
+      "quest_min_level": 54,
+      "race_mask": "ffffffffffffffff",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96003,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 275831,
+      "object_type": "item",
+      "quest_min_level": 55,
+      "race_mask": "ffffffffffffffff",
+      "relation": "rewards",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96252,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279829,
+      "object_type": "item",
+      "quest_min_level": 48,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96332,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279829,
+      "object_type": "item",
+      "quest_min_level": 48,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96381,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279898,
+      "object_type": "item",
+      "quest_min_level": 10,
+      "race_mask": "ffffffffffffffff",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96403,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 276904,
+      "object_type": "item",
+      "quest_min_level": 44,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96609,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 276336,
+      "object_type": "item",
+      "quest_min_level": 56,
+      "race_mask": "ffffffffffffffff",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96983,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279842,
+      "object_type": "item",
+      "quest_min_level": 24,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96984,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279845,
+      "object_type": "item",
+      "quest_min_level": 24,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 96987,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 279867,
+      "object_type": "item",
+      "quest_min_level": 15,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 97290,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277980,
+      "object_type": "item",
+      "quest_min_level": 38,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 97386,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 277980,
+      "object_type": "item",
+      "quest_min_level": 38,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 97405,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 281288,
+      "object_type": "item",
+      "quest_min_level": 53,
+      "race_mask": "55155555b1354c4d",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 97987,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "eg_link_observation",
+      "object_id": 281288,
+      "object_type": "item",
+      "quest_min_level": 53,
+      "race_mask": "aa2aaaaa4e0ab3b2",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json",
+      "subject_id": 97988,
+      "subject_type": "quest"
+    }
+  ],
+  "source_content_digest": "7108a8de41defdddeb52539c667d71dfa69e1c34c12bb996487f8f9cfa096911",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/06b4cc7b814c1cb16ff56b746181c2c62944fbc9/data/wowf/1.60.1.70938/quests.enUS.json"
+}

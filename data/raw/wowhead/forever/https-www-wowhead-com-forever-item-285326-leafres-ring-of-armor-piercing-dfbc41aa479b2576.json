@@ -1,0 +1,83 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=285326/leafres-ring-of-armor-piercing"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T08:05:23.998501+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:57:57.8633664+00:00",
+      "http": "403",
+      "name": "leafre-armor-piercing",
+      "source_content_digest": "9daf5cb0c40d3e1307886ae353e90c9a920c761c1f1d3420ad822c63bcee047d",
+      "source_url": "https://www.wowhead.com/forever/item=285326/leafres-ring-of-armor-piercing"
+    },
+    {
+      "bytes": 791,
+      "collected_at": "2026-11-13T07:57:58.3413462+00:00",
+      "http": "200",
+      "name": "tip-285326",
+      "source_content_digest": "a3a6c641730f40f1a768f81603390f8495d9fa80902027d367cf4ae30447cdd8",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/285326"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "This item is not available to players.",
+    "bind_on_pickup": false,
+    "capture_method": "indexed exact Forever item page",
+    "current_client_build": "1.60.1.70938",
+    "current_item_row": {
+      "ClassID": "4",
+      "ID": "285326",
+      "InventoryType": "11",
+      "SubclassID": "0"
+    },
+    "current_sparse_row": "withheld",
+    "current_tooltip_identity": "Leafre's Ring of Armor Piercing Item Level 1 Finger + 50 Armor Penetration Sell Price: 2",
+    "digest_input": "normalized indexed item-page finding",
+    "effect_summary": "+50 Armor Penetration",
+    "indexed_crawl_age": "5 days ago",
+    "indexed_rendered_line": 19,
+    "item_id": 285326,
+    "item_level": 1,
+    "name": "Leafre's Ring of Armor Piercing",
+    "slot": "Ring",
+    "source_locale": "en"
+  },
+  "source_content_digest": "4b5743df79f9ceb7b88fa40e7f056558da88d931c554ce9c52355502f4b85a05",
+  "unavailable_item_ids": [
+    285326
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/item=285326/leafres-ring-of-armor-piercing"
+}

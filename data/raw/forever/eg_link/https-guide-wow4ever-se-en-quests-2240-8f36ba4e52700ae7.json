@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/2240"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:02:04.910611+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 9627,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/2240",
+      "subject_id": 2240,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 35,
+    "name": "The Hidden Chamber",
+    "quest_id": 2240,
+    "quest_level": 40,
+    "reward_item_ids": [
+      9627
+    ],
+    "zone": "Uldaman, Badlands"
+  },
+  "source_content_digest": "05b628d301d4260369025216fd6b11191850579f7641059738c40bf2e9d46607",
+  "url": "https://guide.wow4ever.se/en/quests/2240"
+}

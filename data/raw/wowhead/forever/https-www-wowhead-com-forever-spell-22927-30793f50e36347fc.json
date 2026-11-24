@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Hide of the Wild 1 min cast Reagents: Rugged Leather (30), Living Essence (12), Essence of Water (10), Larval Acid (8), Cured Rugged Hide (3), Rune Thread (8) Hide of the Wild Item Level 62 Binds when equipped Back 48 Armor +8 Stamina +10 Intellect Requires Level 57 Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Sell Price: 2 8 89",
+  "entity_id": 22927,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:43+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 7080,
+      "name": "Essence of Water",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7080"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12803,
+      "name": "Living Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12803"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 18510,
+      "name": "Hide of the Wild",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18510"
+    },
+    {
+      "id": 18512,
+      "name": "Larval Acid",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18512"
+    },
+    {
+      "id": 22927,
+      "name": "Hide of the Wild",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22927"
+    }
+  ],
+  "name": "Hide of the Wild",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 18510,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=22927",
+      "subject_id": 22927,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 22927,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/22927",
+  "url": "https://www.wowhead.com/forever/spell=22927"
+}

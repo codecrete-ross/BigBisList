@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Fish Bowl Item Level 4 Requires Fishing (20) Use: Places a small fish bowl that allows you and others sitting nearby to gain 8% increased stats, mutually exclusive with Blessing of Kings. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279967,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a small fish bowl that allows you and others sitting nearby to gain 8% increased stats, mutually exclusive with Blessing of Kings.",
+        "type": "use"
+      }
+    ],
+    "id": 279967,
+    "item_level": 4,
+    "name": "Fish Bowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a small fish bowl that allows you and others sitting nearby to gain 8% increased stats, mutually exclusive with Blessing of Kings. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279967"
+  },
+  "linked_entities": [
+    {
+      "id": 356,
+      "name": "Fishing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=356"
+    },
+    {
+      "id": 1307245,
+      "name": "Places a small fish bowl that allows you and others sitting nearby to gain 8% increased stats, mutually exclusive with Blessing of Kings. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307245"
+    }
+  ],
+  "name": "Fish Bowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279967",
+  "url": "https://www.wowhead.com/forever/item=279967"
+}

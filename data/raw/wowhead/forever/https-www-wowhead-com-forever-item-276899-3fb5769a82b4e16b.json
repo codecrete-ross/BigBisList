@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knucklebound Thimble Item Level 38 Binds when picked up Finger +8 Stamina +50 Armor Restores + 9 health per 5 sec. Sell Price: 43 99",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 276899,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +9 health per 5 sec.",
+        "stats": {
+          "hp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 276899,
+    "item_level": 38,
+    "name": "Knucklebound Thimble",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "hp5": 9.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276899"
+  },
+  "linked_entities": [],
+  "name": "Knucklebound Thimble",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "15f404d8ae8d188404570a9086aab9cb640c2f1b43f69cbe55a373ebf1f165a1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276899",
+  "url": "https://www.wowhead.com/forever/item=276899"
+}

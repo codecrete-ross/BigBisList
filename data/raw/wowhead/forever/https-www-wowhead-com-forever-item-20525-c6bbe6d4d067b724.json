@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Earthen Sigil Item Level 52 Binds when picked up Trinket Use: Restores 400 mana over 10 sec. (3 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:56:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 20525,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 400 mana over 10 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 20525,
+    "item_level": 52,
+    "name": "Earthen Sigil",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 400 mana over 10 sec. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20525"
+  },
+  "linked_entities": [
+    {
+      "id": 24884,
+      "name": "Restores 400 mana over 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24884"
+    }
+  ],
+  "name": "Earthen Sigil",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20525",
+  "url": "https://www.wowhead.com/forever/item=20525"
+}

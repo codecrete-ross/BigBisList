@@ -1,0 +1,461 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Kiknikle Stylish Clothier Level 32 Humanoid (Normal) Ratchet",
+  "entity_id": 3683,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:28.147Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 837,
+      "name": "Heavy Weave Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=837"
+    },
+    {
+      "id": 838,
+      "name": "Heavy Weave Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=838"
+    },
+    {
+      "id": 839,
+      "name": "Heavy Weave Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=839"
+    },
+    {
+      "id": 840,
+      "name": "Heavy Weave Shoes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=840"
+    },
+    {
+      "id": 3428,
+      "name": "Common Gray Shirt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3428"
+    },
+    {
+      "id": 3589,
+      "name": "Heavy Weave Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3589"
+    },
+    {
+      "id": 3590,
+      "name": "Heavy Weave Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3590"
+    },
+    {
+      "id": 4781,
+      "name": "Whispering Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4781"
+    },
+    {
+      "id": 4782,
+      "name": "Solstice Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4782"
+    },
+    {
+      "id": 4786,
+      "name": "Wise Man's Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4786"
+    },
+    {
+      "id": 5772,
+      "name": "Pattern: Red Woolen Bag",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5772"
+    },
+    {
+      "id": 16059,
+      "name": "Common Brown Shirt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16059"
+    },
+    {
+      "id": 16060,
+      "name": "Common White Shirt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16060"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 13 of 13",
+    "1 - 13 of 13"
+  ],
+  "location_name": "The Barrens",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          41.8,
+          38.6
+        ]
+      ]
+    },
+    "zone": 17
+  },
+  "name": "Kiknikle",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 32",
+    "React: A\u00a0H",
+    "Faction: Ratchet",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 1,163"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 837,
+      "object_name": "Heavy Weave Armor",
+      "object_type": "item",
+      "price_copper": 1124,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Armor",
+        "17",
+        "12",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Cloth Armor",
+        "11 24"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 838,
+      "object_name": "Heavy Weave Pants",
+      "object_type": "item",
+      "price_copper": 1128,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Pants",
+        "17",
+        "12",
+        "",
+        "",
+        "Legs",
+        "Vendors",
+        "Cloth Armor",
+        "11 28"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 839,
+      "object_name": "Heavy Weave Gloves",
+      "object_type": "item",
+      "price_copper": 566,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Gloves",
+        "17",
+        "12",
+        "",
+        "",
+        "Hands",
+        "Vendors",
+        "Cloth Armor",
+        "5 66"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 840,
+      "object_name": "Heavy Weave Shoes",
+      "object_type": "item",
+      "price_copper": 853,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Shoes",
+        "17",
+        "12",
+        "",
+        "",
+        "Feet",
+        "Vendors",
+        "Cloth Armor",
+        "8 53"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3428,
+      "object_name": "Common Gray Shirt",
+      "object_type": "item",
+      "price_copper": 400,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Common Gray Shirt",
+        "20",
+        "",
+        "",
+        "",
+        "Shirt",
+        "Vendors",
+        "Shirt",
+        "4"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3589,
+      "object_name": "Heavy Weave Belt",
+      "object_type": "item",
+      "price_copper": 576,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Belt",
+        "17",
+        "12",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "5 76"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 3590,
+      "object_name": "Heavy Weave Bracers",
+      "object_type": "item",
+      "price_copper": 578,
+      "relation": "sells",
+      "required_level": 12,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Heavy Weave Bracers",
+        "17",
+        "12",
+        "",
+        "",
+        "Wrist",
+        "Vendors",
+        "Cloth Armor",
+        "5 78"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4781,
+      "object_name": "Whispering Vest",
+      "object_type": "item",
+      "price_copper": 2735,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Whispering Vest",
+        "20",
+        "15",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Cloth Armor",
+        "27 35"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4782,
+      "object_name": "Solstice Robe",
+      "object_type": "item",
+      "price_copper": 2076,
+      "relation": "sells",
+      "required_level": 13,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Solstice Robe",
+        "18",
+        "13",
+        "",
+        "",
+        "Chest",
+        "Vendors",
+        "Cloth Armor",
+        "20 76"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 4786,
+      "object_name": "Wise Man's Belt",
+      "object_type": "item",
+      "price_copper": 1393,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "(1)",
+        "Wise Man's Belt",
+        "20",
+        "15",
+        "",
+        "",
+        "Waist",
+        "Vendors",
+        "Cloth Armor",
+        "13 93"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 5772,
+      "object_name": "Pattern: Red Woolen Bag",
+      "object_type": "item",
+      "price_copper": 500,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Updated\nRequirements changed",
+        "(1)",
+        "Pattern: Red Woolen Bag",
+        "23",
+        "",
+        "",
+        "",
+        "",
+        "Drop, Vendor",
+        "Tailoring Pattern",
+        "5"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 16059,
+      "object_name": "Common Brown Shirt",
+      "object_type": "item",
+      "price_copper": 400,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Common Brown Shirt",
+        "20",
+        "",
+        "",
+        "",
+        "Shirt",
+        "Vendors",
+        "Shirt",
+        "4"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 16060,
+      "object_name": "Common White Shirt",
+      "object_type": "item",
+      "price_copper": 400,
+      "relation": "sells",
+      "required_level": null,
+      "source_url": "https://www.wowhead.com/forever/npc=3683",
+      "subject_id": 3683,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Common White Shirt",
+        "20",
+        "",
+        "",
+        "",
+        "Shirt",
+        "Vendors",
+        "Shirt",
+        "4"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3683",
+  "url": "https://www.wowhead.com/forever/npc=3683"
+}

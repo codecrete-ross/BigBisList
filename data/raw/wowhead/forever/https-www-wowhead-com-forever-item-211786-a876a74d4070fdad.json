@@ -1,0 +1,46 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Scroll: CHAP BALK WELLES Item Level 10 Classes: Mage Requires Comprehension (1) \"A Mage can decipher this with their Comprehension skill.\" Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 211786,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 211786,
+    "item_level": 10,
+    "name": "Scroll: CHAP BALK WELLES",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=211786"
+  },
+  "linked_entities": [
+    {
+      "id": 3012,
+      "name": "Comprehension",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=3012"
+    }
+  ],
+  "name": "Scroll: CHAP BALK WELLES",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/211786",
+  "url": "https://www.wowhead.com/forever/item=211786"
+}

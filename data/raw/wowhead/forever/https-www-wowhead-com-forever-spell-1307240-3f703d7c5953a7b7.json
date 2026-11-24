@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Faction Banner Level 60 Item Effect 1 yd range 10 sec cast 1 hour cooldown Unrolls a banner that allows you and other members of the Horde sitting nearby to gain [( 60 < 40 ? 14 : ( 60 < 50 ? 19 : ( 60 < 60 ? 27 : 32)))] increased Spirit, mutually exclusive with Divine Spirit. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+  "entity_id": 1307240,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:16+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1307240,
+      "name": "Faction Banner",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307240"
+    }
+  ],
+  "name": "Faction Banner",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d2f29823240b0e8bde096650763ee0ba53c887f2215396443eb91a7ca092f03c",
+  "spell_id": 1307240,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1307240",
+  "url": "https://www.wowhead.com/forever/spell=1307240"
+}

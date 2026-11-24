@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/97987"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T20:49:47.194455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281288,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/97987",
+      "subject_id": 97987,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Stormwind's High Order",
+    "quest_id": 97987,
+    "reward_item_roles": {
+      "281286": "choices",
+      "281288": "choices"
+    },
+    "side": "Alliance",
+    "zone": "Eastern Plaguelands"
+  },
+  "source_content_digest": "c8db481bdd79f9dbcedd86dab8b9073ae8a0cfd1bccba17ae54ec09598b0f4c2",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/97987"
+}

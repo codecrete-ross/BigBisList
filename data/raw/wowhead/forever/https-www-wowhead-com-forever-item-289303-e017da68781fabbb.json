@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Rhok'delar, Longbow of the Ancient Keepers Item Level 40 Binds when equipped Unique Ranged Bow 49 - 91 Damage Speed 2.90 (24.14 damage per second) + 10 Ranged Attack Power Classes: Hunter Equip: Improves your chance to get a critical strike by 0.6%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T00:59:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 289303,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 24.14,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.6%.",
+        "stats": {
+          "crit_percent": 0.6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.6%."
+    ],
+    "id": 289303,
+    "item_level": 40,
+    "name": "Rhok'delar, Longbow of the Ancient Keepers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.6
+    },
+    "weapon_max_damage": 91,
+    "weapon_min_damage": 49,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=289303"
+  },
+  "linked_entities": [],
+  "name": "Rhok'delar, Longbow of the Ancient Keepers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "3beb305bdecb0ca4c9b18db1575f444e737c1a76fda64a3282c20fd3cd09f1fc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/289303",
+  "url": "https://www.wowhead.com/forever/item=289303"
+}

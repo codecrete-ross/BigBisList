@@ -1,0 +1,64 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Skirmish at Echo Ridge Kill 12 Kobold Laborers, then return to Marshal McBride at Northshire Abbey. Requirements: - Kobold Laborer x 12",
+  "entity_id": 21,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:14.978Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Skirmish at Echo Ridge",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      },
+      "start": {
+        "entity_id": 197,
+        "name": "Marshal McBride"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 2186,
+      "object_name": "Outfitter Belt",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=21",
+      "subject_id": 21,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 2691,
+      "object_name": "Outfitter Boots",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=21",
+      "subject_id": 21,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 11192,
+      "object_name": "Outfitter Gloves",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=21",
+      "subject_id": 21,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/21",
+  "url": "https://www.wowhead.com/forever/quest=21"
+}

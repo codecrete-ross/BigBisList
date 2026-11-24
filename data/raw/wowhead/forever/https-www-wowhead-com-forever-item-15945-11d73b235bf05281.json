@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Runic Stave Item Level 18 Binds when equipped Held In Off-hand +2 Stamina +2 Spirit Requires Level 13 Sell Price: 8 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 15945,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 15945,
+    "item_level": 18,
+    "name": "Runic Stave",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 13,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 2.0,
+      "stamina": 2.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=15945"
+  },
+  "linked_entities": [],
+  "name": "Runic Stave",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15945",
+  "url": "https://www.wowhead.com/forever/item=15945"
+}

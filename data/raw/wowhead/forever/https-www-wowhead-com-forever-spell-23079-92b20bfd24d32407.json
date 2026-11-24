@@ -1,0 +1,83 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Major Recombobulator 25 sec cast Reagents: Thorium Tube (2), Truesilver Transformer , Runecloth (2) Major Recombobulator Item Level 55 Unique-Equipped Trinket Requires Engineering (275) Use: Dispels Polymorph effects on a friendly target. Also restores 500 to 833 Health and 228 to 380 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+  "entity_id": 23079,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:46+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 14047,
+      "name": "Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14047"
+    },
+    {
+      "id": 16000,
+      "name": "Thorium Tube",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16000"
+    },
+    {
+      "id": 18631,
+      "name": "Truesilver Transformer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18631"
+    },
+    {
+      "id": 18637,
+      "name": "Major Recombobulator",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=18637"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 23064,
+      "name": "Dispels Polymorph effects on a friendly target. Also restores 500 to 833 Health and 228 to 380 Mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23064"
+    },
+    {
+      "id": 23079,
+      "name": "Major Recombobulator",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23079"
+    }
+  ],
+  "name": "Major Recombobulator",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Major Recombobulator 25 sec cast Reagents: Thorium Tube (2), Truesilver Transformer , Runecloth (2) Major Recombobulator Item Level 55 Unique-Equipped Trinket Requires Engineering (275) Use: Dispels Polymorph effects on a friendly target. Also restores 500 to 833 Health and 228 to 380 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+      "scope": "cast_enchant",
+      "skill": 275,
+      "source_url": "https://www.wowhead.com/forever/spell=23079",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 18637,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=23079",
+      "subject_id": 23079,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 23079,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/23079",
+  "url": "https://www.wowhead.com/forever/spell=23079"
+}

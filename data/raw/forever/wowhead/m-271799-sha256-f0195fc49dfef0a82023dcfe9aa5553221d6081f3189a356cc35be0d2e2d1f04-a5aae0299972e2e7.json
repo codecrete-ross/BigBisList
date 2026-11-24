@@ -1,0 +1,52 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:19.542336+00:00",
+  "flavor": "forever",
+  "item_id": 271799,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Desert Crawler's Claw Item Level 38 Binds when picked up Main Hand Dagger 17 - 32 Damage Speed 1.80 (13.61 damage per second) +2 Stamina +5 Intellect Durability 55 / 55 Requires Level 35 Equip: Increases damage and healing done by magical spells and effects by up to 30 . Sell Price: 90 91",
+      "dps": 13.61,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
+          "stats": {
+            "spell_power": 30.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 30."
+      ],
+      "id": 271799,
+      "item_level": 38,
+      "name": "Desert Crawler's Claw",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "uncommon",
+      "required_level": 35,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 5.0,
+        "spell_power": 30.0,
+        "stamina": 2.0
+      },
+      "weapon_max_damage": 32,
+      "weapon_min_damage": 17,
+      "weapon_speed": 1.8,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=271799"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "f0195fc49dfef0a82023dcfe9aa5553221d6081f3189a356cc35be0d2e2d1f04",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/271799#sha256-f0195fc49dfef0a82023dcfe9aa5553221d6081f3189a356cc35be0d2e2d1f04"
+}

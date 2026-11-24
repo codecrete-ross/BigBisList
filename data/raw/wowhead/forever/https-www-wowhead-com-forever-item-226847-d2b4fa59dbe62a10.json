@@ -1,0 +1,155 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmantle Shoulders Item Level 65 Binds when picked up Shoulder Leather 136 Armor +24 Agility +10 Stamina Classes: Rogue Darkmantle Armor (0/8) Darkmantle Boots Darkmantle Chest Darkmantle Gloves Darkmantle Helm Darkmantle Legs Darkmantle Shoulders Darkmantle Waist Darkmantle Wrists (2) Set : +8 All Resistances. (3) Set : Restores 15 health per 5 sec. (4) Set : Chance on melee attack to restore 20 Energy. (5) Set : When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown) (6) Set : +40 Attack Power. Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-17T21:34:00.397402+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 226847,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 136,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 226847,
+    "item_level": 65,
+    "name": "Darkmantle Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 21347,
+        "text": "Restores 15 health per 5 sec."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 27787,
+        "text": "Chance on melee attack to restore 20 Energy."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1302698,
+        "text": "When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)"
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14049,
+        "text": "+40 Attack Power."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 24.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226847"
+  },
+  "linked_entities": [
+    {
+      "id": 226845,
+      "name": "Darkmantle Wrists",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226845"
+    },
+    {
+      "id": 226846,
+      "name": "Darkmantle Waist",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226846"
+    },
+    {
+      "id": 226847,
+      "name": "Darkmantle Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226847"
+    },
+    {
+      "id": 226848,
+      "name": "Darkmantle Legs",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226848"
+    },
+    {
+      "id": 226849,
+      "name": "Darkmantle Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226849"
+    },
+    {
+      "id": 226850,
+      "name": "Darkmantle Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226850"
+    },
+    {
+      "id": 226851,
+      "name": "Darkmantle Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226851"
+    },
+    {
+      "id": 226852,
+      "name": "Darkmantle Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=226852"
+    },
+    {
+      "id": 14049,
+      "name": "+40 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14049"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 21347,
+      "name": "Restores 15 health per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21347"
+    },
+    {
+      "id": 27787,
+      "name": "Chance on melee attack to restore 20 Energy.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27787"
+    },
+    {
+      "id": 1302698,
+      "name": "When struck in combat, has a 5% chance to remove a Snare effect from yourself. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302698"
+    }
+  ],
+  "name": "Darkmantle Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8ae7cdf7807cdce652ab03be43f1369f336a7a891857976b305fc62200a7051d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226847",
+  "url": "https://www.wowhead.com/forever/item=226847"
+}

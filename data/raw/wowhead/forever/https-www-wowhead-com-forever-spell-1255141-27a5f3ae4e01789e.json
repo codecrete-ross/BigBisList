@@ -1,0 +1,74 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Trapper's Leather Belt 12.5 sec cast Reagents: Light Leather (10), Cured Light Hide (2), Pristine Leather (2), Coarse Thread , Deviate Scale Trapper's Leather Belt Item Level 17 Binds when picked up Waist Leather 45 Armor +4 Agility +4 Stamina +3 Intellect Durability 25 / 25 Requires Level 12 Sell Price: 2 76",
+  "entity_id": 1255141,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:04+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2318,
+      "name": "Light Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2318"
+    },
+    {
+      "id": 2320,
+      "name": "Coarse Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2320"
+    },
+    {
+      "id": 4231,
+      "name": "Cured Light Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4231"
+    },
+    {
+      "id": 6470,
+      "name": "Deviate Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6470"
+    },
+    {
+      "id": 249427,
+      "name": "Pristine Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249427"
+    },
+    {
+      "id": 252429,
+      "name": "Trapper's Leather Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252429"
+    },
+    {
+      "id": 1255141,
+      "name": "Trapper's Leather Belt",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1255141"
+    }
+  ],
+  "name": "Trapper's Leather Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 252429,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1255141",
+      "subject_id": 1255141,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "be622401911180ad9e8687eac30c2efb175e39771ddd980d9078968d3319d8d1",
+  "spell_id": 1255141,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1255141",
+  "url": "https://www.wowhead.com/forever/spell=1255141"
+}

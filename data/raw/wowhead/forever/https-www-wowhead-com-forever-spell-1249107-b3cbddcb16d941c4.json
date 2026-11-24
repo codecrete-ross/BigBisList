@@ -1,0 +1,67 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Frozen Heart of the Mountain 3 sec cast Reagents: Blood of the Mountain , Essence of Undeath , Small Brilliant Shard (3) Frozen Heart of the Mountain Item Level 55 Binds when picked up Unique-Equipped Trinket +7 Fire Resistance +7 Nature Resistance +7 Frost Resistance +7 Shadow Resistance Requires Level 50 Equip: Improves your chance to hit by 0.9%. Use: Increases Frost and Shadow spell damage done by up to 29 for 15 sec. This effect is doubled in Snowy areas. (5 Min Cooldown) Sell Price: 15",
+  "entity_id": 1249107,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:11:57+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 11382,
+      "name": "Blood of the Mountain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11382"
+    },
+    {
+      "id": 12808,
+      "name": "Essence of Undeath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12808"
+    },
+    {
+      "id": 14343,
+      "name": "Small Brilliant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14343"
+    },
+    {
+      "id": 249469,
+      "name": "Frozen Heart of the Mountain",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249469"
+    },
+    {
+      "id": 1249107,
+      "name": "Frozen Heart of the Mountain",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249107"
+    },
+    {
+      "id": 1249110,
+      "name": "Increases Frost and Shadow spell damage done by up to 29 for 15 sec. This effect is doubled in Snowy areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1249110"
+    }
+  ],
+  "name": "Frozen Heart of the Mountain",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249469,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1249107",
+      "subject_id": 1249107,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1249107,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1249107",
+  "url": "https://www.wowhead.com/forever/spell=1249107"
+}

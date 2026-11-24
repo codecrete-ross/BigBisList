@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkspear Voodoo Seal Item Level 53 Binds when picked up Unique-Equipped: Seal of Battle (1) Trinket +10 Stamina Requires Level 48 Requires Darkspear Raiders - Friendly Requires Darkspear Raiders - Friendly Equip: Restores 5 Mana per 5 sec. Restores an additional 10 Mana per 5 sec in Forest and Grassland areas. Sell Price: 1 41 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:10:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 272061,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 5 Mana per 5 sec. Restores an additional 10 Mana per 5 sec in Forest and Grassland areas.",
+        "stats": {
+          "mp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 5 Mana per 5 sec. Restores an additional 10 Mana per 5 sec in Forest and Grassland areas."
+    ],
+    "id": 272061,
+    "item_level": 53,
+    "name": "Darkspear Voodoo Seal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 5.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=272061"
+  },
+  "linked_entities": [
+    {
+      "id": 2798,
+      "name": "Darkspear Raiders",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2798"
+    },
+    {
+      "id": 1318124,
+      "name": "Restores 5 Mana per 5 sec. Restores an additional 10 Mana per 5 sec in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318124"
+    }
+  ],
+  "name": "Darkspear Voodoo Seal",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Darkspear Voodoo Seal Item Level 53 Binds when picked up Unique-Equipped: Seal of Battle (1) Trinket +10 Stamina Requires Level 48 Requires Darkspear Raiders - Friendly Requires Darkspear Raiders - Friendly Equip: Restores 5 Mana per 5 sec. Restores an additional 10 Mana per 5 sec in Forest and Grassland areas. Sell Price: 1 41 15",
+      "reputation": "Darkspear Raiders",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=272061",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272061",
+  "url": "https://www.wowhead.com/forever/item=272061"
+}

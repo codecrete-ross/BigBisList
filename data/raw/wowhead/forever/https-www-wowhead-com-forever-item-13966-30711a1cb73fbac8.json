@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of Tyranny Item Level 63 Binds when picked up Unique-Equipped Trinket Equip: Increases your chance to Dodge an attack by 1.0%. Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown) Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13966,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your chance to Dodge an attack by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your chance to Dodge an attack by 1.0%."
+    ],
+    "id": 13966,
+    "item_level": 63,
+    "name": "Mark of Tyranny",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13966"
+  },
+  "linked_entities": [
+    {
+      "id": 1287842,
+      "name": "Increases maximum health by 620 for 15 sec. This effect is doubled in Strongholds and Cities.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1287842"
+    }
+  ],
+  "name": "Mark of Tyranny",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1de1e040f855b418c1bbe1a29b817bd0f988bb7aeece5c531729b2bd5e10ab30",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13966",
+  "url": "https://www.wowhead.com/forever/item=13966"
+}

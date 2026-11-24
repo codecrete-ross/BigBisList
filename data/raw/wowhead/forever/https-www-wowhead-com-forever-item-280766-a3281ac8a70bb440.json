@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Satchel of Potions Item Level 33 Binds when picked up Trinket Use: Reach into the bag and hope for the best. (10 Min Cooldown) \"Not every potion is meant for consumption.\" Sell Price: 24 89",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 280766,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reach into the bag and hope for the best. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 280766,
+    "item_level": 33,
+    "name": "Satchel of Potions",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Reach into the bag and hope for the best. (10 Min Cooldown) \"Not every potion is meant for consumption.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=280766"
+  },
+  "linked_entities": [
+    {
+      "id": 1309685,
+      "name": "Reach into the bag and hope for the best.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1309685"
+    }
+  ],
+  "name": "Satchel of Potions",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280766",
+  "url": "https://www.wowhead.com/forever/item=280766"
+}

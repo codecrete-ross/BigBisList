@@ -1,0 +1,166 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Tenets of the Silver Hand Item Level 26 Binds when picked up Requires Enchanting (130) Use: Teaches you how to craft Tenets of the Silver Hand. Creates a copy of the Tenets of the Silver Hand. Sell Price: 6 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Libram",
+      "item_id": 249397,
+      "item_stats": {
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 249397,
+        "name": "Tenets of the Silver Hand",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "restrictions": {
+          "classes": [
+            "Paladin"
+          ]
+        },
+        "slot": "Libram",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=249397"
+      },
+      "name": "Tenets of the Silver Hand",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=249397"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T04:56:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249477,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Tenets of the Silver Hand.",
+        "type": "use"
+      }
+    ],
+    "id": 249477,
+    "item_level": 26,
+    "name": "Formula: Tenets of the Silver Hand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Tenets of the Silver Hand. Creates a copy of the Tenets of the Silver Hand."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=249477"
+  },
+  "linked_entities": [
+    {
+      "id": 3013,
+      "name": "Scroll of Protection",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3013"
+    },
+    {
+      "id": 10939,
+      "name": "Greater Magic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10939"
+    },
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 11084,
+      "name": "Large Glimmering Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11084"
+    },
+    {
+      "id": 249397,
+      "name": "Tenets of the Silver Hand",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249397"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1248754,
+      "name": "Teaches you how to craft Tenets of the Silver Hand.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248754"
+    },
+    {
+      "id": 1302545,
+      "name": "Increases your damage against Undead by 1%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302545"
+    }
+  ],
+  "name": "Formula: Tenets of the Silver Hand",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Tenets of the Silver Hand Item Level 26 Binds when picked up Requires Enchanting (130) Use: Teaches you how to craft Tenets of the Silver Hand. Creates a copy of the Tenets of the Silver Hand. Sell Price: 6 50",
+      "scope": "equip_or_use",
+      "skill": 130,
+      "source_url": "https://www.wowhead.com/forever/item=249477",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "reviewed_page_facts": {
+    "collected_at": "2026-11-06T05:04:27.907673+00:00",
+    "costs": [
+      {
+        "amount": 45,
+        "currency_id": 3402,
+        "name": "Merchant's Favor"
+      }
+    ],
+    "creates_item_id": 249397,
+    "reputation_gate": null,
+    "reputation_note": null,
+    "retrieval_method": "public_web_search_result",
+    "sold_by": [
+      {
+        "name": "Beneris",
+        "npc_id": 248199,
+        "side": "Horde",
+        "stock": "unlimited",
+        "zone": "The Barrens"
+      },
+      {
+        "name": "Alynsia",
+        "npc_id": 256732,
+        "side": "Alliance",
+        "stock": "unlimited",
+        "zone": "Redridge Mountains"
+      }
+    ],
+    "teaches_spell_id": 1248754
+  },
+  "source_content_digest": "455f2e8b4d3f80595ded371bb72b6f278566423405296764d1c874dede9f8a37",
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1248754
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249477",
+  "url": "https://www.wowhead.com/forever/item=249477"
+}

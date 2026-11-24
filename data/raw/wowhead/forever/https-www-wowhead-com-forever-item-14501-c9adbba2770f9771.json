@@ -1,0 +1,120 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Mooncloth Vest Item Level 60 Requires Tailoring (270) Use: Teaches you how to sew a Mooncloth Vest. Sell Price: 75",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Chest",
+      "item_id": 14138,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 14138,
+        "name": "Mooncloth Vest",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Chest",
+        "source_summary": "",
+        "stats": {
+          "intellect": 20.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=14138"
+      },
+      "name": "Mooncloth Vest",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=14138"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:57:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 14501,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew a Mooncloth Vest.",
+        "type": "use"
+      }
+    ],
+    "id": 14501,
+    "item_level": 60,
+    "name": "Pattern: Mooncloth Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to sew a Mooncloth Vest."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=14501"
+  },
+  "linked_entities": [
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14138,
+      "name": "Mooncloth Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14138"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 18447,
+      "name": "Teaches you how to sew a Mooncloth Vest.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18447"
+    }
+  ],
+  "name": "Pattern: Mooncloth Vest",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Mooncloth Vest Item Level 60 Requires Tailoring (270) Use: Teaches you how to sew a Mooncloth Vest. Sell Price: 75",
+      "scope": "equip_or_use",
+      "skill": 270,
+      "source_url": "https://www.wowhead.com/forever/item=14501",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    18447
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14501",
+  "url": "https://www.wowhead.com/forever/item=14501"
+}

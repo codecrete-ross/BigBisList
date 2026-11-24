@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Comprehend Scroll 5 yd range Instant Requires Mage Requires level 6 Decipher an untranslated scroll.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T21:57:34.212999+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 555,
+      "collected_at": "2026-11-13T21:57:34.212999+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "comprehend-scroll-tooltip",
+      "source_content_digest": "fa1ee840ee34cc208df975bf83c2bf8a903ca0629d70a862210b2dc0b8a2f0b2",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/spell/1296017"
+    }
+  ],
+  "name": "Comprehend Scroll",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "source_content_digest": "fa1ee840ee34cc208df975bf83c2bf8a903ca0629d70a862210b2dc0b8a2f0b2",
+  "spell_id": 1296017,
+  "url": "https://www.wowhead.com/forever/spell=1296017"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Conjure Water Level 60 60 Mana 3 sec cast Requires Mage Requires level 4 Conjures 20 bottles of water, providing the mage and his allies with something to drink. Conjured items disappear if logged out for more than 15 minutes.",
+  "entity_id": 5504,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:27+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5504,
+      "name": "Conjure Water",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5504"
+    }
+  ],
+  "name": "Conjure Water",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "e1082e4257e2de5aa33b77d8cece1c0b39d157611d87395855866d3116e892b7",
+  "spell_id": 5504,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/5504",
+  "url": "https://www.wowhead.com/forever/spell=5504"
+}

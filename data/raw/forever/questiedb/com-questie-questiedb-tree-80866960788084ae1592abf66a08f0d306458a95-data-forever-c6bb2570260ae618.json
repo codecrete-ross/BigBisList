@@ -1,0 +1,635 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Pinned Forever emulator after corrections, independently evaluated for Alliance and Horde.",
+  "faction_quests": {
+    "Alliance": [
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78150,
+        "name": "Friend of the Library",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 79948,
+        "name": "Defensive Magics 101",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 423896
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 79949,
+        "name": "A Web of Lies: Debunking Myths and Legends",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 423897
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 79951,
+        "name": "Mummies: A Guide to the Unsavory Undead",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 423899
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78145,
+        "name": "Arcanic Systems Manual",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409700
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 79097,
+        "name": "Baxtan: On Destructive Magics",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 407566
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78143,
+        "name": "Secrets of the Dreamers",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409692
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78147,
+        "name": "Crimes Against Anatomy",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409735
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78149,
+        "name": "Fury of the Land",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409711
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78142,
+        "name": "Bewitchments and Glamours",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409562
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211033
+          }
+        },
+        "id": 78146,
+        "name": "Goaz Scrolls",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211033
+          },
+          "2": {
+            "1": 409717
+          }
+        }
+      }
+    ],
+    "Horde": [
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78150,
+        "name": "Friend of the Library",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 79948,
+        "name": "Defensive Magics 101",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 423896
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 79949,
+        "name": "A Web of Lies: Debunking Myths and Legends",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 423897
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 79951,
+        "name": "Mummies: A Guide to the Unsavory Undead",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 35,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 423899
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78145,
+        "name": "Arcanic Systems Manual",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409700
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 79097,
+        "name": "Baxtan: On Destructive Magics",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 407566
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78143,
+        "name": "Secrets of the Dreamers",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409692
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78147,
+        "name": "Crimes Against Anatomy",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409735
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78149,
+        "name": "Fury of the Land",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409711
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78142,
+        "name": "Bewitchments and Glamours",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409562
+          }
+        }
+      },
+      {
+        "breadcrumbForQuestId": 0,
+        "finishedBy": {
+          "1": {
+            "1": 211022
+          }
+        },
+        "id": 78146,
+        "name": "Goaz Scrolls",
+        "parentQuest": 0,
+        "questFlags": 0,
+        "questLevel": 20,
+        "requiredClasses": 0,
+        "requiredLevel": 1,
+        "requiredMaxLevel": 0,
+        "requiredRaces": 0,
+        "requiredSpell": 0,
+        "sourceItemId": 0,
+        "specialFlags": 0,
+        "startedBy": {
+          "1": {
+            "1": 211022
+          },
+          "2": {
+            "1": 409717
+          }
+        }
+      }
+    ]
+  },
+  "fetched_at": "2026-11-06T05:21:05.947672+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "questiedb",
+  "url": "https://github.com/Questie/QuestieDB/tree/80866960788084ae1592abf66a08f0d306458a95/data/Forever"
+}

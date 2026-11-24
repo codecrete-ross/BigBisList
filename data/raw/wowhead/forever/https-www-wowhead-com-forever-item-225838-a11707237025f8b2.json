@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Voltaic Icon Item Level 1 Binds when picked up Unique Relic Totem Classes: Shaman Engrave your cloak with the Storm, Earth, and Fire rune: Reduces the cooldown of your Chain Lightning by 50%, causes your Earthbind Totem to root targets for 5 sec when cast, and increases the periodic damage done by your Flame Shock by 60%. \"Learn a new ability after defeating 3 enemies with a single cast of Chain Lightning.\" Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Totem",
+  "item_id": 225838,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 225838,
+    "item_level": 1,
+    "name": "Voltaic Icon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Totem",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=225838"
+  },
+  "linked_entities": [
+    {
+      "id": 440569,
+      "name": "Reduces the cooldown of your Chain Lightning by 50%, causes your Earthbind Totem to root targets for 5 sec when cast, and increases the periodic damage done by your Flame Shock by 60%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=440569"
+    },
+    {
+      "id": 440634,
+      "name": "Engrave your cloak with the Storm, Earth, and Fire rune: Reduces the cooldown of your Chain Lightning by 50%, causes your Earthbind Totem to root targets for 5 sec when cast, and increases the periodic damage done by your Flame Shock by 60%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=440634"
+    }
+  ],
+  "name": "Voltaic Icon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "b2933a16051b84595c550bb7527e43dd6126b8fb2485cb16e3edd56b89035862",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/225838",
+  "url": "https://www.wowhead.com/forever/item=225838"
+}

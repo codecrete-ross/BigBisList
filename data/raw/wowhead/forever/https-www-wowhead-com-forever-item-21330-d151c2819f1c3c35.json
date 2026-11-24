@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Conqueror's Spaulders Item Level 78 Binds when picked up Shoulder Plate 659 Armor +20 Strength +16 Agility +21 Stamina Durability 100 / 100 Classes: Warrior Requires Level 60 Equip: Increased Defense + 4. Equip: Improves your chance to hit by 1.0%. Conqueror's Battlegear (0/5) Conqueror's Breastplate Conqueror's Crown Conqueror's Greaves Conqueror's Legguards Conqueror's Spaulders (3) Set : Decreases the rage cost of all Warrior shouts by 35%. (5) Set : Increase the Slow effect and damage of Thunder Clap by 50%. Sell Price: 4 59 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:03+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 21330,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 659,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 21330,
+    "item_level": 78,
+    "name": "Conqueror's Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26109,
+        "text": "Decreases the rage cost of all Warrior shouts by 35%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26110,
+        "text": "Increase the Slow effect and damage of Thunder Clap by 50%."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "defense": 4.0,
+      "hit_percent": 1.0,
+      "stamina": 21.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21330"
+  },
+  "linked_entities": [
+    {
+      "id": 21329,
+      "name": "Conqueror's Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21329"
+    },
+    {
+      "id": 21330,
+      "name": "Conqueror's Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21330"
+    },
+    {
+      "id": 21331,
+      "name": "Conqueror's Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21331"
+    },
+    {
+      "id": 21332,
+      "name": "Conqueror's Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21332"
+    },
+    {
+      "id": 21333,
+      "name": "Conqueror's Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21333"
+    },
+    {
+      "id": 26109,
+      "name": "Decreases the rage cost of all Warrior shouts by 35%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26109"
+    },
+    {
+      "id": 26110,
+      "name": "Increase the Slow effect and damage of Thunder Clap by 50%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26110"
+    }
+  ],
+  "name": "Conqueror's Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21330",
+  "url": "https://www.wowhead.com/forever/item=21330"
+}

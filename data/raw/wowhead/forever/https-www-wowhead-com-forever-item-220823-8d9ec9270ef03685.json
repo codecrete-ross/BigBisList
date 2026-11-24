@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Mail Epaulets Item Level 55 Binds when picked up Shoulder Mail 246 Armor +9 Strength +11 Stamina +5 Intellect Durability 70 / 70 Classes: Hunter , Shaman Requires Level 50 Equip: Improves your chance to get a critical strike by 1.0%. Blood Guard's Mail (0/6) Blood Guard's Mail Helmet Blood Guard's Mail Epaulets Stone Guard's Mail Armor Stone Guard's Mail Legplates First Sergeant's Mail Sabatons First Sergeant's Mail Gauntlets (3) Set : +15 Stamina. (6) Set : +30 Attack Power. Sell Price: 1 76 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 220823,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 246,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 220823,
+    "item_level": 55,
+    "name": "Blood Guard's Mail Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Hunter",
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9336,
+        "text": "+30 Attack Power."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 5.0,
+      "stamina": 11.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220823"
+  },
+  "linked_entities": [
+    {
+      "id": 220820,
+      "name": "Blood Guard's Mail Helmet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220820"
+    },
+    {
+      "id": 220823,
+      "name": "Blood Guard's Mail Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220823"
+    },
+    {
+      "id": 220826,
+      "name": "Stone Guard's Mail Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220826"
+    },
+    {
+      "id": 220831,
+      "name": "First Sergeant's Mail Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220831"
+    },
+    {
+      "id": 220834,
+      "name": "Stone Guard's Mail Legplates",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220834"
+    },
+    {
+      "id": 220835,
+      "name": "First Sergeant's Mail Sabatons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220835"
+    },
+    {
+      "id": 9336,
+      "name": "+30 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9336"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Blood Guard's Mail Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0320086163a5fa8788e29ddbbcddf3499175ef81d021d0949647ed675a50f9bc",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220823",
+  "url": "https://www.wowhead.com/forever/item=220823"
+}

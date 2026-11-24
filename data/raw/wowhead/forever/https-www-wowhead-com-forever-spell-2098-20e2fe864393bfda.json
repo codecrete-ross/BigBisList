@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Eviscerate 35 Energy / 1 to 5 Combo Points Melee Range Instant Requires Rogue Requires level 1 Requires Melee Weapon Finishing move that causes damage per combo point, increased by Attack Power: 1 point : [1 + (5 * ( 1 * 1 ))]-[5 + (5 * ( 1 * 1 ))] damage 2 points: [1 + (2 * 5 * ( 1 * 1 ))]-[5 + (2 * 5 * ( 1 * 1 ))] damage 3 points: [1 + (3 * 5 * ( 1 * 1 ))]-[5 + (3 * 5 * ( 1 * 1 ))] damage 4 points: [1 + (4 * 5 * ( 1 * 1 ))]-[5 + (4 * 5 * ( 1 * 1 ))] damage 5 points: [1 + (5 * 5 * ( 1 * 1 ))]-[5 + (5 * 5 * ( 1 * 1 ))] damage",
+  "entity_id": 2098,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:02+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2098,
+      "name": "Eviscerate",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2098"
+    }
+  ],
+  "name": "Eviscerate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "56e78278f6d2a94ebada2497fdb90327c9f06e557379669bc94c2fc3866bc981",
+  "spell_id": 2098,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/2098",
+  "url": "https://www.wowhead.com/forever/spell=2098"
+}

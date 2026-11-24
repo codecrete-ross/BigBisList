@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Cloak of Rot Item Level 33 Binds when equipped Back 23 Armor -6 Stamina +8 Intellect Requires Level 28 Sell Price: 14 25 Dropped by: Lord Malathrom Drop Chance: 19.92%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:56:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 4462,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 23,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4462,
+    "item_level": 33,
+    "name": "Cloak of Rot",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 28,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=4462"
+  },
+  "linked_entities": [],
+  "name": "Cloak of Rot",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 19.92,
+      "entity_name": "Lord Malathrom",
+      "source_url": "https://www.wowhead.com/forever/item=4462",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4462",
+  "url": "https://www.wowhead.com/forever/item=4462"
+}

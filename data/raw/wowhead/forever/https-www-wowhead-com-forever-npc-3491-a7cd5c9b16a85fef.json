@@ -1,0 +1,305 @@
+{
+  "confidence": "wowhead_rendered_listview",
+  "description": "Ironzar Weaponsmith Level 23 Humanoid (Normal) Ratchet",
+  "entity_id": 3491,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:20:31.429Z",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2024,
+      "name": "Espadon",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2024"
+    },
+    {
+      "id": 2025,
+      "name": "Bearded Axe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2025"
+    },
+    {
+      "id": 2026,
+      "name": "Rock Hammer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2026"
+    },
+    {
+      "id": 2027,
+      "name": "Scimitar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2027"
+    },
+    {
+      "id": 2028,
+      "name": "Hammer",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2028"
+    },
+    {
+      "id": 2029,
+      "name": "Cleaver",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2029"
+    },
+    {
+      "id": 2030,
+      "name": "Gnarled Staff",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2030"
+    },
+    {
+      "id": 2208,
+      "name": "Poniard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2208"
+    }
+  ],
+  "listview_pagination": [
+    "1 - 8 of 8",
+    "1 - 8 of 8"
+  ],
+  "location_name": "The Barrens",
+  "map_observation": {
+    "coords": {
+      "0": [
+        [
+          62.2,
+          37.4
+        ],
+        [
+          62.2,
+          37.6
+        ]
+      ]
+    },
+    "zone": 17
+  },
+  "name": "Ironzar",
+  "page_type": "npc",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quick_facts": [
+    "Quick Facts",
+    "Level: 23",
+    "React: A\u00a0H",
+    "Faction: Ratchet",
+    "Type: Humanoid",
+    "Can repair",
+    "Added in patch 1.13.2 \"Classic\"",
+    "Health: 617"
+  ],
+  "reaction": "Both",
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2024,
+      "object_name": "Espadon",
+      "object_type": "item",
+      "price_copper": 6078,
+      "relation": "sells",
+      "required_level": 16,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Espadon",
+        "21",
+        "16",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Sword",
+        "60 78"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2025,
+      "object_name": "Bearded Axe",
+      "object_type": "item",
+      "price_copper": 5304,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Bearded Axe",
+        "20",
+        "15",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Axe",
+        "53 4"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2026,
+      "object_name": "Rock Hammer",
+      "object_type": "item",
+      "price_copper": 6286,
+      "relation": "sells",
+      "required_level": 16,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Rock Hammer",
+        "21",
+        "16",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Two-Handed Mace",
+        "62 86"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2027,
+      "object_name": "Scimitar",
+      "object_type": "item",
+      "price_copper": 3815,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Scimitar",
+        "19",
+        "14",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Sword",
+        "38 15"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2028,
+      "object_name": "Hammer",
+      "object_type": "item",
+      "price_copper": 5065,
+      "relation": "sells",
+      "required_level": 16,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Hammer",
+        "21",
+        "16",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Mace",
+        "50 65"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2029,
+      "object_name": "Cleaver",
+      "object_type": "item",
+      "price_copper": 4419,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Cleaver",
+        "20",
+        "15",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "One-Handed Axe",
+        "44 19"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2030,
+      "object_name": "Gnarled Staff",
+      "object_type": "item",
+      "price_copper": 5544,
+      "relation": "sells",
+      "required_level": 15,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Gnarled Staff",
+        "20",
+        "15",
+        "",
+        "",
+        "Two-Hand",
+        "Vendors",
+        "Staff",
+        "55 44"
+      ]
+    },
+    {
+      "confidence": "wowhead_rendered_listview",
+      "object_id": 2208,
+      "object_name": "Poniard",
+      "object_type": "item",
+      "price_copper": 3650,
+      "relation": "sells",
+      "required_level": 14,
+      "source_url": "https://www.wowhead.com/forever/npc=3491",
+      "subject_id": 3491,
+      "subject_type": "npc",
+      "visible_cells": [
+        "",
+        "Unchanged",
+        "",
+        "Poniard",
+        "19",
+        "14",
+        "",
+        "",
+        "One-Hand",
+        "Vendors",
+        "Dagger",
+        "36 50"
+      ]
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/npc/3491",
+  "url": "https://www.wowhead.com/forever/npc=3491"
+}

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stealthblade Item Level 49 Binds when equipped Main Hand Dagger 32 - 60 Damage Speed 1.40 (32.86 damage per second) Durability 65 / 65 Requires Level 44 Equip: Increases your effective stealth level by 2. Use: Stealth to sneak around, but reduce your movement speed by 50%. Can only be used when out of combat. (30 Min Cooldown) Sell Price: 2 62 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:28+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 10625,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 32.86,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your effective stealth level by 2.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Stealth to sneak around, but reduce your movement speed by 50%. Can only be used when out of combat. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10625,
+    "item_level": 49,
+    "name": "Stealthblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 44,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Stealth to sneak around, but reduce your movement speed by 50%. Can only be used when out of combat. (30 Min Cooldown)"
+    ],
+    "weapon_max_damage": 60,
+    "weapon_min_damage": 32,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10625"
+  },
+  "linked_entities": [
+    {
+      "id": 27037,
+      "name": "Increases your effective stealth level by 2.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27037"
+    },
+    {
+      "id": 1300180,
+      "name": "Stealth to sneak around, but reduce your movement speed by 50%. Can only be used when out of combat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1300180"
+    }
+  ],
+  "name": "Stealthblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9bdf9fcadd717be07c53313beed2161e476fffe868b815c24f8774bcca27370e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10625",
+  "url": "https://www.wowhead.com/forever/item=10625"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Light Armor Kit Item Level 5 8 Armor Use: Permanently increase the Stamina value by 1 and the Armor value by 8 of an item worn on the chest, legs, hands or feet. Max Stack: 10 Sell Price: 15 Dropped by: Olaf Drop Chance: 28.32%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2304,
+  "item_kind": "other",
+  "item_stats": {
+    "armor": 8,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently increase the Stamina value by 1 and the Armor value by 8 of an item worn on the chest, legs, hands or feet.",
+        "type": "use"
+      }
+    ],
+    "id": 2304,
+    "item_level": 5,
+    "name": "Light Armor Kit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently increase the Stamina value by 1 and the Armor value by 8 of an item worn on the chest, legs, hands or feet. Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2304"
+  },
+  "linked_entities": [
+    {
+      "id": 2831,
+      "name": "Permanently increase the Stamina value by 1 and the Armor value by 8 of an item worn on the chest, legs, hands or feet.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2831"
+    }
+  ],
+  "name": "Light Armor Kit",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 28.32,
+      "entity_name": "Olaf",
+      "source_url": "https://www.wowhead.com/forever/item=2304",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "f6c075a2e5677ad690886c7b0c65cae6749ec82ec179ecf3edf5700f62f9df8e",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2304",
+  "url": "https://www.wowhead.com/forever/item=2304"
+}

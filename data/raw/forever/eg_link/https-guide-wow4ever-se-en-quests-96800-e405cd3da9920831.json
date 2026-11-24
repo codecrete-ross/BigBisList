@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/96800"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:34:17.119932+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 276898,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/96800",
+      "subject_id": 96800,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 276899,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/96800",
+      "subject_id": 96800,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 30,
+    "name": "Past Due",
+    "quest_id": 96800,
+    "quest_level": 38,
+    "reward_item_ids": [
+      276898,
+      276899
+    ],
+    "zone": "Scarlet Monastery"
+  },
+  "source_content_digest": "cdc8800a6e42f4069decd116978c1f8d6024f9c7da90072d8b3c8e69dca7b7f1",
+  "url": "https://guide.wow4ever.se/en/quests/96800"
+}

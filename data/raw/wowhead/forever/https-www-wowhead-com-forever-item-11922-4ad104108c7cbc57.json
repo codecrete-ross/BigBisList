@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood-Etched Blade Item Level 57 Binds when picked up Main Hand Dagger 26 - 49 Damage Speed 1.50 (25.00 damage per second) +12 Stamina Restores + 8 health per 5 sec. Durability 65 / 65 Requires Level 52 Equip: Increases damage and healing done by magical spells and effects by up to 66 . Sell Price: 4 25 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 11922,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 25.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 66.",
+        "stats": {
+          "spell_power": 66.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +8 health per 5 sec.",
+        "stats": {
+          "hp5": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 66."
+    ],
+    "id": 11922,
+    "item_level": 57,
+    "name": "Blood-Etched Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "hp5": 8.0,
+      "spell_power": 66.0,
+      "stamina": 12.0
+    },
+    "weapon_max_damage": 49,
+    "weapon_min_damage": 26,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11922"
+  },
+  "linked_entities": [],
+  "name": "Blood-Etched Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a1f93691fc18acdb7e9d7a3ea530b1609dd1bd16c3164629d0c049c3b79596d5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11922",
+  "url": "https://www.wowhead.com/forever/item=11922"
+}

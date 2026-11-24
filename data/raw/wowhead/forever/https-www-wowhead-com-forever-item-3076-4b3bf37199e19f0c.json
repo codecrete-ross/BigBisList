@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Smoldering Boots Item Level 23 Binds when equipped Feet Cloth 25 Armor +6 Spirit Durability 30 / 30 Requires Level 18 Sell Price: 6 36 Dropped by: Red Whelp Drop Chance: 1.14%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 3076,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 25,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 3076,
+    "item_level": 23,
+    "name": "Smoldering Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 18,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "spirit": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=3076"
+  },
+  "linked_entities": [],
+  "name": "Smoldering Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.14,
+      "entity_name": "Red Whelp",
+      "source_url": "https://www.wowhead.com/forever/item=3076",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3076",
+  "url": "https://www.wowhead.com/forever/item=3076"
+}

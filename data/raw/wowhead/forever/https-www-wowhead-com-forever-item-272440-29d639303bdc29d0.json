@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defender's Grip Stabilizer Item Level 65 Binds when picked up Unique-Equipped: Undermine Trinkets (1) Trinket Requires Level 60 Equip: Increased Defense + 13. Use: Increases your Block chance by 8% for 15 sec. This effect is doubled in Strongholds and Cities. (6 Min Cooldown) Sell Price: 2 47 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 272440,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +13.",
+        "stats": {
+          "defense": 13
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases your Block chance by 8% for 15 sec. This effect is doubled in Strongholds and Cities. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 272440,
+    "item_level": 65,
+    "name": "Defender's Grip Stabilizer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense": 13.0
+    },
+    "use_effects": [
+      "Use: Increases your Block chance by 8% for 15 sec. This effect is doubled in Strongholds and Cities. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=272440"
+  },
+  "linked_entities": [
+    {
+      "id": 1291105,
+      "name": "Increases your Block chance by 8% for 15 sec. This effect is doubled in Strongholds and Cities.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291105"
+    }
+  ],
+  "name": "Defender's Grip Stabilizer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272440",
+  "url": "https://www.wowhead.com/forever/item=272440"
+}

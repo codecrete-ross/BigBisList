@@ -1,0 +1,67 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:34.666775+00:00",
+  "flavor": "forever",
+  "item_id": 274158,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Death Prophet Spine Item Level 31 Binds when picked up Two-Hand Staff 42 - 64 Damage Speed 2.80 (18.93 damage per second) +11 Stamina Restores + 5 mana per 5 sec. Durability 100 / 100 Requires Level 26 Equip: Increases damage and healing done by magical spells and effects by up to 34 . Sell Price: 74 87 Dropped by: Aggem Thorncurse Drop Chance: 32.14%",
+      "dps": 18.93,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+          "stats": {
+            "spell_power": 34.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Restores +5 mana per 5 sec.",
+          "stats": {
+            "mp5": 5
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+      ],
+      "id": 274158,
+      "item_level": 31,
+      "name": "Death Prophet Spine",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 26,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "mp5": 5.0,
+        "spell_power": 34.0,
+        "stamina": 11.0
+      },
+      "weapon_max_damage": 64,
+      "weapon_min_damage": 42,
+      "weapon_speed": 2.8,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274158"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.14,
+      "entity_name": "Aggem Thorncurse",
+      "source_url": "https://www.wowhead.com/forever/item=274158",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "93d5b52e1cb182c37039c5d118869ca084d760c4ff5e05e0d89cd2a7764e6ad2",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/274158#sha256-93d5b52e1cb182c37039c5d118869ca084d760c4ff5e05e0d89cd2a7764e6ad2"
+}

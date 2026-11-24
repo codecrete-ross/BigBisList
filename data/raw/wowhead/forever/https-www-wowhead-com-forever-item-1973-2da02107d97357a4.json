@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_use",
+  "boe": null,
+  "description": "Orb of Deception Item Level 59 Binds when used Toy Requires Level 54 Use: Transforms caster to look like a member of the opposing faction. (30 Min Cooldown) Sell Price: 46 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 1973,
+  "item_kind": "non_equipment",
+  "item_stats": {
+    "binding": "bind_on_use",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Transforms caster to look like a member of the opposing faction. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 1973,
+    "item_level": 59,
+    "name": "Orb of Deception",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Transforms caster to look like a member of the opposing faction. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1973"
+  },
+  "linked_entities": [
+    {
+      "id": 16739,
+      "name": "Transforms caster to look like a member of the opposing faction.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16739"
+    }
+  ],
+  "name": "Orb of Deception",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6566cf4765abd9edbf4192a85915f3bbcec3a93d671672fc91dfc6366a673299",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1973",
+  "url": "https://www.wowhead.com/forever/item=1973"
+}

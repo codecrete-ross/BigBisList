@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Empty Bait Cage Item Level 1 Binds when picked up Use: Catch a critter to be used as bait. Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:28:18.3519756Z",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 211272,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Catch a critter to be used as bait.",
+        "type": "use"
+      }
+    ],
+    "id": 211272,
+    "item_level": 1,
+    "name": "Empty Bait Cage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Catch a critter to be used as bait."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=211272"
+  },
+  "linked_entities": [
+    {
+      "id": 428567,
+      "name": "Catch a critter to be used as bait.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=428567"
+    }
+  ],
+  "name": "Empty Bait Cage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "3406de95fbd55466cd999e988c0388978405ceae3bba880fb27ed84b9a4756ca",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/211272",
+  "url": "https://www.wowhead.com/forever/item=211272"
+}

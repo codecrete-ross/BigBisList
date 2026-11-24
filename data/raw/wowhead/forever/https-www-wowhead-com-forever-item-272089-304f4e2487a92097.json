@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tome of the Darkspear Prophecy Item Level 43 Binds when picked up Held In Off-hand +12 Stamina +5 Intellect Requires Level 38 Requires Darkspear Raiders - Revered Equip: Increases damage and healing done by magical spells and effects by up to 4 . Sell Price: 66 84",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 272089,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 4.",
+        "stats": {
+          "spell_power": 4.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+    ],
+    "id": 272089,
+    "item_level": 43,
+    "name": "Tome of the Darkspear Prophecy",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "spell_power": 4.0,
+      "stamina": 12.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=272089"
+  },
+  "linked_entities": [
+    {
+      "id": 2798,
+      "name": "Darkspear Raiders",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2798"
+    }
+  ],
+  "name": "Tome of the Darkspear Prophecy",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Tome of the Darkspear Prophecy Item Level 43 Binds when picked up Held In Off-hand +12 Stamina +5 Intellect Requires Level 38 Requires Darkspear Raiders - Revered Equip: Increases damage and healing done by magical spells and effects by up to 4 . Sell Price: 66 84",
+      "reputation": "Darkspear Raiders",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=272089",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "19fc5225d49296e1fe82d6488526c649812423e84d3ca4b430b0f523352740c0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272089",
+  "url": "https://www.wowhead.com/forever/item=272089"
+}

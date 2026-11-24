@@ -1,0 +1,262 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://efficient.games"
+    },
+    {
+      "credit": "Warcraft Wiki contributors",
+      "source": "https://warcraft.wiki.gg/wiki/Ragnaros_Core"
+    },
+    {
+      "credit": "Wowhead Classic and archived Thottbot community reports",
+      "source": "https://www.wowhead.com/classic/item=17982/ragnaros-core"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_retired_raid_item",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 88972,
+      "collected_at": "2026-11-13T15:23:11.1507488Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-1-0-molten-core",
+      "source_content_digest": "e08b168226a18531078fe5412c3514ec084f0a3f74bc20d5609ae63df4516bb7",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/18b04294440bf715925292d7ee5b1174bc8a58eb"
+    },
+    {
+      "bytes": 10842,
+      "collected_at": "2026-11-13T21:37:14.315953+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "historic-ragnaros-core",
+      "source_content_digest": "b63b0a1d6469eb2d452985568d0bf460b3945046cbd3f3e899db4b22eb350e46",
+      "source_url": "https://classicdb.ch/?item=17982"
+    },
+    {
+      "bytes": 44423,
+      "collected_at": "2026-11-13T21:37:13.699812+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wiki-ragnaros-core",
+      "source_content_digest": "206c39e7d214772c8749ccf29adb04b9f24e0e672b8ad6b8fef4d8195c77ca2c",
+      "source_url": "https://warcraft.wiki.gg/wiki/Ragnaros_Core"
+    },
+    {
+      "bytes": 193908,
+      "collected_at": "2026-11-13T21:43:57.423332+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowhead-ragnaros-ref",
+      "source_content_digest": "4f480f8eb0fe15050c9d8e868b5fb3107ec8da23cd1bd82854a2bc234eaed169",
+      "source_url": "https://www.wowhead.com/classic/item=17982/ragnaros-core"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 314000,
+      "collected_at": "2026-11-13T21:43:57.634361+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-schedule-latest",
+      "source_content_digest": "ead4ec999ee38dc287b3f484f714cec455b120f9fe57694e1b1ae471defd328a",
+      "source_url": "https://news.blizzard.com/en-us/article/24303009"
+    },
+    {
+      "bytes": 29224,
+      "collected_at": "2026-11-13T21:43:57.279713+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-current-molten-core",
+      "source_content_digest": "411535bbea0bdda153b223d34b3d1a11a81386b8dbb38a31885e8420777c445b",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/30ba9ebcbb69fee79d7043fae5c71b7d4c871d9a"
+    },
+    {
+      "bytes": 4179,
+      "collected_at": "2026-11-13T21:43:57.175985+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-current-bmah",
+      "source_content_digest": "524ceee831247595c567cb8e759107555c0ad0c51c695d2f1bcbe80cc2f74132",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/6565ec304ae6992fe5bb9c1a02d9f39e6b47cd6a"
+    },
+    {
+      "bytes": 8047,
+      "collected_at": "2026-11-13T09:11:25.5020667Z",
+      "http": "200",
+      "name": "att-nyi-beta-event",
+      "source_content_digest": "1d3d08d93ed0f72b0b22aea69cfa62da8f75b7635091448948795808cd8b9c68",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/2d09300630a0bf36670165be46287eb36ad95ce9"
+    },
+    {
+      "bytes": 10586359,
+      "collected_at": "2026-11-13T21:26:02.671525+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "daybreak-export",
+      "source_content_digest": "e4b8835312fe3f360a30aed52fe663f8ebf289f9fe349105685cbaf334998ef9",
+      "source_url": "https://daybreakforever.com/static/forever/datamine.json"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T21:37:13.703810+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-live-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T21:37:13.961219+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-live-quests",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "relationships": [
+    {
+      "availability": "retired_legacy_route",
+      "confidence": "historical_only",
+      "entity_name": "Ragnaros (Molten Core)",
+      "object_id": 17982,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-ragnaros-core",
+      "subject_id": 11502,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "checked_alternate_grants": [
+      "client spell outputs",
+      "client vendor items",
+      "ATT Black Market reference",
+      "EG Link observed loot, vendors, and quests for builds 70888 and 70938"
+    ],
+    "current_disclosed_equip_requirement": null,
+    "current_entry_reference": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/409",
+    "current_item_fields": {
+      "ClassID": "4",
+      "ID": "17982",
+      "IconFileDataID": "133367",
+      "InventoryType": "11",
+      "SubclassID": "0"
+    },
+    "finding": "Ragnaros Core was a bind-on-pickup drop from Ragnaros in Molten Core. The exact item was retired from that loot table in patch 1.4.0. Forever's published launch precedes Molten Core, and the current client access evidence supports the closed raid route. The beta event used separately identified items. The checked Forever client, Black Market reference, and live vendor, quest, and loot observations contain no competing grant for item 17982.",
+    "historical_binding": "bind_on_pickup",
+    "historical_boss_id": 11502,
+    "historical_equip_minimum": 60,
+    "historical_reference_line": 597,
+    "historical_removed_in": "1.4.0",
+    "item_id": 17982,
+    "listed_october_beta_copy": false,
+    "name": "Ragnaros Core",
+    "raid_map_id": 409
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "unavailable_item_ids": [
+    17982
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-ragnaros-core"
+}

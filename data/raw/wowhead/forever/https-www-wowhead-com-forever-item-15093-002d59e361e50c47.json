@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Runic Leather Belt Item Level 56 Binds when equipped Waist Leather 82 Armor +14 Intellect Durability 30 / 30 Requires Level 51 Equip: Increases damage and healing done by magical spells and effects by up to 9 . Sell Price: 83 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 15093,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 82,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 9.",
+        "stats": {
+          "spell_power": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 9."
+    ],
+    "id": 15093,
+    "item_level": 56,
+    "name": "Runic Leather Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 51,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15093"
+  },
+  "linked_entities": [],
+  "name": "Runic Leather Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15093",
+  "url": "https://www.wowhead.com/forever/item=15093"
+}

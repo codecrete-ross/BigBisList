@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Seal of Wisdom 200 Mana Instant Requires Paladin Requires level 58 Fills the Paladin with divine wisdom for 30 sec, giving each melee attack a chance to restore 90 of the Paladin's mana. Only one Seal can be active on the Paladin at any one time. Unleashing this Seal's energy will judge an enemy for 40 sec, granting attacks and spells used against the judged enemy a chance to restore 59 mana to the attacker. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
+  "entity_id": 20357,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:51+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 20357,
+      "name": "Seal of Wisdom",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20357"
+    }
+  ],
+  "name": "Seal of Wisdom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "ca676f23c4a9349fc1ac4a31c3c9e4e58db6dc7908866f4be048fabf2474b453",
+  "spell_id": 20357,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20357",
+  "url": "https://www.wowhead.com/forever/spell=20357"
+}

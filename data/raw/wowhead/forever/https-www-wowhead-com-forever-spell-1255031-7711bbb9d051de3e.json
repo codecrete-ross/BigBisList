@@ -1,0 +1,79 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mender's Leather Waistguard 12.5 sec cast Reagents: Rugged Leather (12), Cured Thick Hide (4), Pristine Hide (10), Heavy Silken Thread (2), Iridescent Pearl (8), Pristine Leather (5) Mender's Leather Waistguard Item Level 55 Binds when picked up Waist Leather 89 Armor +10 Stamina +12 Intellect Requires Level 50 Equip: Increases healing done by up to 30 and damage done by up to 10 for all magical spells and effects. Sell Price: 98 62",
+  "entity_id": 1255031,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:08+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 5500,
+      "name": "Iridescent Pearl",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=5500"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 8172,
+      "name": "Cured Thick Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8172"
+    },
+    {
+      "id": 8343,
+      "name": "Heavy Silken Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8343"
+    },
+    {
+      "id": 249427,
+      "name": "Pristine Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249427"
+    },
+    {
+      "id": 249428,
+      "name": "Pristine Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249428"
+    },
+    {
+      "id": 252477,
+      "name": "Mender's Leather Waistguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252477"
+    },
+    {
+      "id": 1255031,
+      "name": "Mender's Leather Waistguard",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1255031"
+    }
+  ],
+  "name": "Mender's Leather Waistguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 252477,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1255031",
+      "subject_id": 1255031,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1255031,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1255031",
+  "url": "https://www.wowhead.com/forever/spell=1255031"
+}

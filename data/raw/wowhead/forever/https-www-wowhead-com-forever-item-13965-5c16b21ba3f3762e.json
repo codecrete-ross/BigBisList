@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blackhand's Breadth Item Level 63 Binds when picked up Unique-Equipped Trinket Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%. Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown) Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 13965,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%."
+    ],
+    "id": 13965,
+    "item_level": 63,
+    "name": "Blackhand's Breadth",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=13965"
+  },
+  "linked_entities": [
+    {
+      "id": 1318944,
+      "name": "Marks your target, increasing your Critical Strike chance against them by 5% for 20 sec. This effect is doubled against Orcs and Ogres.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318944"
+    },
+    {
+      "id": 1318954,
+      "name": "Improves your chance to get a Critical Strike with Melee and Ranged attacks by 1.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318954"
+    }
+  ],
+  "name": "Blackhand's Breadth",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a0fe53f06ca163eace389f48637c40b8844e219d495307256d7a8d7ecfed7c4c",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13965",
+  "url": "https://www.wowhead.com/forever/item=13965"
+}

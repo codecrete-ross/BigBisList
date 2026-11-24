@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Tromping Miner's Boots Item Level 40 Binds when equipped Feet Leather 76 Armor +9 Strength +8 Stamina Durability 45 / 45 Requires Level 35 Sell Price: 36 7 Dropped by: Digmaster Shovelphlange Drop Chance: 70.43%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:01:06+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 9382,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 76,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 9382,
+    "item_level": 40,
+    "name": "Tromping Miner's Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 35,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "stamina": 8.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9382"
+  },
+  "linked_entities": [],
+  "name": "Tromping Miner's Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 70.43,
+      "entity_name": "Digmaster Shovelphlange",
+      "source_url": "https://www.wowhead.com/forever/item=9382",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9382",
+  "url": "https://www.wowhead.com/forever/item=9382"
+}

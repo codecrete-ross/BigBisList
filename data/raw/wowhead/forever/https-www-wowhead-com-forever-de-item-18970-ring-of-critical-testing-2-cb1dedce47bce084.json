@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/de/item=18970/ring-of-critical-testing-2"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 916,
+      "collected_at": "2026-11-13T07:16:48.2959435Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-18970",
+      "source_content_digest": "73dba1363c015a147fb87ad06e471bd73e556b648aac270d68669456ea49fd18",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18970"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:48.0065448Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-18970",
+      "source_content_digest": "8ace6d718d92ebd18fc4faf971218b109877101c1d5dcdedd1c0078ece3a126f",
+      "source_url": "https://www.wowhead.com/forever/de/item=18970/ring-of-critical-testing-2"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "Dieser Gegenstand ist nicht f\u00fcr Spieler verf\u00fcgbar.",
+    "capture_method": "indexed_search_excerpt",
+    "client_required_level_field": 0,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Ring of Critical Testing 2 Item Level 60 Binds when picked up Finger Equip: Improves your chance to get a critical strike by 50.0%. Sell Price: 5 60 12",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 18970,
+    "item_level": 60,
+    "name": "Ring of Critical Testing 2",
+    "page_crawl_age": "2 months ago",
+    "source_locale": "de",
+    "source_url": "https://www.wowhead.com/forever/de/item=18970/ring-of-critical-testing-2",
+    "tooltip_identity": "Finger with +50% spell critical strike"
+  },
+  "source_content_digest": "a555b183f81f8eddbb02f8d79a11ca4c7a3a941262de003523e2d44cebd59d13",
+  "unavailable_item_ids": [
+    18970
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/de/item=18970/ring-of-critical-testing-2"
+}

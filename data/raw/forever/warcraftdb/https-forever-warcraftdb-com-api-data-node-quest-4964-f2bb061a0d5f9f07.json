@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4964"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:03.011966+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15108,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4964",
+      "subject_id": 4964,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "The Completed Orb of Dar'Orahil",
+    "quest_id": 4964,
+    "reward_item_roles": {
+      "15106": "choices",
+      "15108": "choices"
+    },
+    "side": "Both",
+    "zone": "Warlock"
+  },
+  "source_content_digest": "d4bef57c5c4b0abcd8733836bed93fb42af3be17f2bb2fbb2c592daea604bd60",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4964"
+}

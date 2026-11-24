@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Curse of Recklessness 35 Mana 30 yd range Instant Requires Warlock Requires level 14 Curses the target with recklessness, reducing the target's armor by 175 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target.",
+  "entity_id": 704,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:03+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 704,
+      "name": "Curse of Recklessness",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=704"
+    }
+  ],
+  "name": "Curse of Recklessness",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "91a16f4957e77691705a64c2cf9eca08cf3e5ebdc4aefd4f3bd5b14c3ece63ec",
+  "spell_id": 704,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/704",
+  "url": "https://www.wowhead.com/forever/spell=704"
+}

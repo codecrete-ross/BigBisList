@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Desert Sonar Item Level 1 Binds when picked up Unique Trinket Equip: Detect large objects beneath the sand. Use: Emit a high-pitched sonar frequency. (30 Sec Cooldown) Sell Price: 1 Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 226546,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Detect large objects beneath the sand.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Emit a high-pitched sonar frequency. (30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 226546,
+    "item_level": 1,
+    "name": "Desert Sonar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Emit a high-pitched sonar frequency. (30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=226546"
+  },
+  "linked_entities": [
+    {
+      "id": 459217,
+      "name": "Detect large objects beneath the sand.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=459217"
+    },
+    {
+      "id": 459221,
+      "name": "Emit a high-pitched sonar frequency.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=459221"
+    }
+  ],
+  "name": "Desert Sonar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "e6ea80fcbf100967da61696e25e9d41e9d8198f5fa510bf3fc56dc5713dd3c42",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226546",
+  "url": "https://www.wowhead.com/forever/item=226546"
+}

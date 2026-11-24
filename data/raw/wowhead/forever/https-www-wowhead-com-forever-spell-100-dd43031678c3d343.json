@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Charge Rank 1 8 - 25 yd range Instant 15 sec cooldown Requires Warrior Requires level 4 Requires Battle Stance Charge an enemy, generate 9 Rage, and Stun it for 1 sec. Cannot be used in combat.",
+  "entity_id": 100,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:31+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 100,
+      "name": "Charge",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=100"
+    }
+  ],
+  "name": "Charge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d0288b23866200cdc28f343e6c3dd509fcee002e2832d09bfe98a28f3a21745a",
+  "spell_id": 100,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/100",
+  "url": "https://www.wowhead.com/forever/spell=100"
+}

@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/256"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:13.093796+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 1449,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/256",
+      "subject_id": 256,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 17,
+    "name": "WANTED: Chok'sul",
+    "quest_id": 256,
+    "reward_item_ids": [
+      1449,
+      6189,
+      6191,
+      270019
+    ],
+    "zone": "Loch Modan"
+  },
+  "source_content_digest": "e915c51140995c1313c63cb2587886dc25f2a1da79b5fcf04b65dba267f3dd4b",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/256"
+}

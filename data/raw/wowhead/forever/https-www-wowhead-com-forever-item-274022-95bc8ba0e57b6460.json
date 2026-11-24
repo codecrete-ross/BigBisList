@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tough Guy's Eyepatch Item Level 1 Binds when picked up Head Requires Booty Bay - Revered Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 274022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 274022,
+    "item_level": 1,
+    "name": "Tough Guy's Eyepatch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274022"
+  },
+  "linked_entities": [
+    {
+      "id": 21,
+      "name": "Booty Bay",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=21"
+    }
+  ],
+  "name": "Tough Guy's Eyepatch",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Tough Guy's Eyepatch Item Level 1 Binds when picked up Head Requires Booty Bay - Revered Sell Price: 1",
+      "reputation": "Booty Bay",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=274022",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "21a7aa01366d1a6ef19984aa624aee26e3845a71c36e36e2a3373a7cb93bf6d7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274022",
+  "url": "https://www.wowhead.com/forever/item=274022"
+}

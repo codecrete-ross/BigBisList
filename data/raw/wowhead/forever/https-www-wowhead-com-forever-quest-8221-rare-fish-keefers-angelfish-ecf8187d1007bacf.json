@@ -1,0 +1,31 @@
+{
+  "confidence": "public_quest_page",
+  "entity_id": 8221,
+  "fetched_at": "2026-11-11T01:46:43+00:00",
+  "flavor": "forever",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "quest_tooltip_digest": "979556cca61fb6d5e4a360f58f81890b1f30828afbdfa3f6c65a6f46cb29d383",
+  "relationships": [
+    {
+      "confidence": "public_quest_page",
+      "object_id": 19972,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=8221/rare-fish-keefers-angelfish",
+      "subject_id": 8221,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "finish_npc_id": 15079,
+    "min_level": 1,
+    "objective_item_id": 19805,
+    "quest_id": 8221,
+    "quest_level": 60,
+    "reward_item_id": 19972,
+    "side": "Both",
+    "start_npc_id": 15079
+  },
+  "url": "https://www.wowhead.com/forever/quest=8221/rare-fish-keefers-angelfish"
+}

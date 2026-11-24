@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1049"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:48.287292+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 7749,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1049",
+      "subject_id": 1049,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 28,
+    "name": "Compendium of the Fallen",
+    "quest_id": 1049,
+    "reward_item_roles": {
+      "7747": "choices",
+      "7749": "choices",
+      "17508": "choices"
+    },
+    "side": "Horde",
+    "zone": "Scarlet Monastery"
+  },
+  "source_content_digest": "839e0917523b621e0634e9a65ca6d8be2e24caa406cf5640662587f6fe961ea3",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1049"
+}

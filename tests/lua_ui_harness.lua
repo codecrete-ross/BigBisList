@@ -152,13 +152,63 @@ function methods:SetHighlightTexture(texture) self.highlightTexture = make("Text
 function methods:GetHighlightTexture() return self.highlightTexture end
 function methods:SetPushedTexture(texture) self.pushedTexture = make("Texture", nil, self); self.pushedTexture:SetTexture(texture) end
 function methods:GetPushedTexture() return self.pushedTexture end
+function methods:SetCheckedTexture(texture) self.checkedTexture = make("Texture", nil, self); self.checkedTexture:SetTexture(texture) end
+function methods:GetCheckedTexture() return self.checkedTexture end
 function methods:SetClampedToScreen(value) self.clamped = value end
 function methods:IsClampedToScreen() return self.clamped end
-for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "RegisterEvent", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
+for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
     methods[name] = function() end
+end
+function methods:SetColorTexture(r, g, b, a) self.colorTexture = { r, g, b, a } end
+function methods:SetTextColor(r, g, b, a) self.textColor = { r, g, b, a } end
+function methods:RegisterEvent(event)
+    self.events = self.events or {}
+    self.events[event] = true
+end
+function methods:UnregisterEvent(event)
+    if self.events then self.events[event] = nil end
+end
+function H.installMinimap()
+    Minimap = CreateFrame("Frame", "Minimap", UIParent)
+    Minimap:SetSize(140, 140)
+    function methods:GetVertexColor() return 1, 1, 1 end
+    function methods:CreateAnimationGroup() return make("AnimationGroup", nil) end
+    function methods:CreateAnimation() return make("Animation", nil) end
+    for _, name in ipairs({"SetOrder", "SetDuration", "SetFromAlpha", "SetToAlpha", "SetOffset", "SetStartDelay",
+        "SetToFinalAlpha", "Play", "Stop"}) do methods[name] = function() end end
+end
+function H.fireEvent(event, ...)
+    for index = 1, #H.frames do
+        local frame = H.frames[index]
+        if frame.events and frame.events[event] and frame.scripts.OnEvent then frame.scripts.OnEvent(frame, event, ...) end
+    end
 end
 CreateFrame = function(kind, name, parent, template)
     local node = make(kind, name, parent)
+    if template == "PortraitFrameTemplate" then
+        if H.noPortraitTemplate then error("PortraitFrameTemplate unavailable") end
+        local title = make("Frame", nil, node)
+        title:SetFrameLevel(510); title:SetHeight(20)
+        title:SetPoint("TOPLEFT", node, "TOPLEFT", 58, -1); title:SetPoint("TOPRIGHT", node, "TOPRIGHT", -24, -1)
+        title.TitleText = title:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        title.TitleText:SetPoint("TOP", title, "TOP", 0, -5)
+        node.TitleContainer = title
+        function node:SetTitle(text) self.TitleContainer.TitleText:SetText(text) end
+        node.PortraitContainer = make("Frame", nil, node)
+        node.PortraitContainer:SetFrameLevel(400)
+        local portrait = node.PortraitContainer:CreateTexture(nil, "OVERLAY")
+        portrait:SetSize(62, 62); portrait:SetPoint("TOPLEFT", node, "TOPLEFT", -5, 7)
+        node.PortraitContainer.portrait = portrait
+        node.CloseButton = make("Button", nil, node)
+        node.CloseButton:SetSize(24, 24); node.CloseButton:SetPoint("TOPRIGHT", node, "TOPRIGHT")
+        node.CloseButton:SetScript("OnClick", function() node:Hide() end)
+    end
+    if template and template:find("UICheckButtonTemplate", 1, true) then
+        node:SetNormalTexture("Check-Normal")
+        node:SetPushedTexture("Check-Pressed")
+        node:SetHighlightTexture("Check-Highlight")
+        node:SetCheckedTexture("Check-Checked")
+    end
     if template and template:find("UIDropDownMenuTemplate", 1, true) then
         node:SetSize(160, 32)
         node.Button = make("Button", name and name .. "Button", node)
@@ -176,7 +226,11 @@ UISpecialFrames = {}
 UIDROPDOWNMENU_MAXLEVELS = 2
 UIDropDownMenu_SetWidth = function(frame, width) frame:SetWidth(width + 40) end
 UIDropDownMenu_SetText = function(frame, text) frame.dropdownText = text end
-UIDropDownMenu_Initialize = function(frame, callback) frame.initialize = callback end
+UIDropDownMenu_Initialize = function(frame, callback, displayMode, level, menuList)
+    frame.initialize, frame.displayMode, frame.menuList = callback, displayMode, menuList
+    -- The client populates a dropdown during initialization, before it opens.
+    if callback then callback(frame, level, menuList) end
+end
 UIDropDownMenu_CreateInfo = function() return {} end
 UIDropDownMenu_AddButton = function() end
 ToggleDropDownMenu = function(_, _, frame) if frame and frame.initialize then frame.initialize(frame, 1) end end
@@ -237,27 +291,79 @@ function methods:SetItemByID(id) self:SetHyperlink("item:" .. tostring(id)) end
 function methods:SetSpellByID(id) self:SetHyperlink("spell:" .. tostring(id)) end
 function methods:GetItem() return "Fixture", self.hyperlink end
 function methods:NumLines() return #(self.lines or {}) end
-function H.settle()
-    for pass = 1, 30 do
-        local activity = false
-        for _, node in ipairs(H.frames) do
-            local width, height = node:GetWidth(), node:GetHeight()
-            if node.lastWidth ~= width or node.lastHeight ~= height then
-                node.lastWidth, node.lastHeight = width, height
-                if node.scripts.OnSizeChanged then node.scripts.OnSizeChanged(node, width, height); activity = true end
-            end
+function H.tick()
+    local activity = false
+    for _, node in ipairs(H.frames) do
+        local width, height = node:GetWidth(), node:GetHeight()
+        if node.lastWidth ~= width or node.lastHeight ~= height then
+            node.lastWidth, node.lastHeight = width, height
+            if node.scripts.OnSizeChanged then node.scripts.OnSizeChanged(node, width, height); activity = true end
         end
-        local pending = H.timers
-        H.timers = {}
-        for _, timer in ipairs(pending) do
-            if timer.at <= H.now then timer.callback(); activity = true else table.insert(H.timers, timer) end
-        end
-        if not activity then return end
     end
-    error("UI geometry or refresh timers did not settle after 30 passes")
+    local pending = H.timers
+    H.timers = {}
+    for _, timer in ipairs(pending) do
+        if timer.at <= H.now then timer.callback(); activity = true else table.insert(H.timers, timer) end
+    end
+    return activity
 end
-function H.load()
-    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+
+function H.settle()
+    -- Each visible tooltip can project up to 58 levels per spec.
+    for pass = 1, 600 do
+        if not H.tick() then return end
+        -- Each active pass is a new rendered frame. Keeping GetTime frozen
+        -- would starve work correctly deferred after a spent frame budget.
+        H.now = H.now + 1/60
+    end
+    error("UI geometry or refresh timers did not settle after 600 passes")
+end
+function H.usePaladinReferenceTalents(spec)
+    local model = BigBiSListData.character_scoring
+    local ranks = model.profiles["Paladin/" .. spec].scenarios.pre_raid.reference_ranks
+    local nodes, definitions = {}, {}
+    for entry, trait in pairs(model.traits) do
+        nodes[trait.node_id], definitions[trait.definition_id] = tonumber(entry), trait.spell_id
+    end
+    C_ClassTalents = {GetActiveConfigID = function() return 1 end}
+    C_Traits = {
+        GetConfigInfo = function() return {treeIDs = {1100}} end,
+        GetGroupDisplayInfoByTreeID = function() return {{groupID = 1, displayName = spec}} end,
+        GetGroupCurrencyInfo = function() return {{traitNodeGroupID = 1, currencyInfos = {{spent = 31}}}} end,
+        GetNodeInfo = function(_, node)
+            local entry = assert(nodes[node])
+            local rank = ranks[tostring(entry)] or 0
+            return {entryIDs = {entry}, activeEntry = rank > 0 and {entryID = entry, rank = rank} or nil}
+        end,
+        GetDefinitionInfo = function(id) return {spellID = definitions[id]} end,
+    }
+end
+
+function H.load(flavor, fullGuide)
+    local forever = flavor == "forever"
+    assert(loadfile(forever and "DataForever.lua" or "Data.lua"))("BigBiSList")
+    if forever and fullGuide then
+        dofile("GuideDataForever.lua")
+        local continuation = loadfile("GuideRanksForever.lua")
+        if continuation then continuation() end
+    end
+    assert(loadfile("Config.lua"))("BigBiSList")
+    if forever then
+        assert(loadfile("ForeverScoring.lua"))("BigBiSList")
+        assert(loadfile("ForeverGearRating.lua"))("BigBiSList")
+        -- Existing offline scoring fixtures use the published rolls and omit the live talent APIs.
+        if not GetBuildInfo then
+            GetBuildInfo = function() return "Forever", BigBiSListData.stat_rank.roll_build end
+            BigBiSList.ForeverGearRating:GetCatalog(BigBiSListData.stat_rank)
+            GetBuildInfo = nil
+        end
+    end
+    for _, file in ipairs({ "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+    if forever then
+        for _, file in ipairs({"ForeverGuide.lua", "ForeverBrowse.lua", "AcquisitionHighlights.lua"}) do
+            assert(loadfile(file))("BigBiSList")
+        end
+    end
     BigBiSList:EnsureDatabase()
     BigBiSList:InitTooltip()
     return BigBiSList.UI

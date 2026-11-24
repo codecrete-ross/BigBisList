@@ -1,4 +1,4 @@
-local addonName = ...
+local addonName, private = ...
 
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
@@ -57,6 +57,10 @@ end
 
 function BigBiSList:ShowStatus()
     printLine(self.displayName .. " " .. self.version .. " loaded.")
+    if self.isForever and GetBuildInfo then
+        local version, build, _, interface = GetBuildInfo()
+        printLine("WoW Forever " .. tostring(version) .. "." .. tostring(build) .. " · Interface " .. tostring(interface))
+    end
     printLine("Data: " .. self:GetDataSummary() .. ".")
 end
 
@@ -153,12 +157,14 @@ local function handleSlashCommand(input)
 end
 
 local addonInitialized = false
+local startupPrepared = false
 
 local function retryDetectedPlayerSelection()
     if not addonInitialized or not BigBiSList.ApplyDetectedPlayerSelection then
         return
     end
 
+    if BigBiSList.isForever then BigBiSList:RefreshTooltipPlayerContext() end
     local changed = BigBiSList:ApplyDetectedPlayerSelection()
     if BigBiSList.ApplyDetectedPlayerLevel and BigBiSList:ApplyDetectedPlayerLevel() then
         changed = true
@@ -167,22 +173,48 @@ local function retryDetectedPlayerSelection()
     if changed then
         BigBiSList:RefreshUI()
     end
+    return changed
 end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("PLAYER_TALENT_UPDATE")
-frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
+pcall(frame.RegisterEvent, frame, "PLAYER_TALENT_UPDATE")
+pcall(frame.RegisterEvent, frame, "CHARACTER_POINTS_CHANGED")
+if BigBiSList.isForever then
+    pcall(frame.RegisterEvent, frame, "TRAIT_CONFIG_UPDATED")
+    pcall(frame.RegisterEvent, frame, "ACTIVE_COMBAT_CONFIG_CHANGED")
+end
 frame:RegisterEvent("PLAYER_LEVEL_UP")
 frame:SetScript("OnEvent", function(_, event, loadedAddon)
     if event == "PLAYER_LOGIN"
         or event == "PLAYER_ENTERING_WORLD"
         or event == "PLAYER_TALENT_UPDATE"
         or event == "CHARACTER_POINTS_CHANGED"
+        or event == "TRAIT_CONFIG_UPDATED"
+        or event == "ACTIVE_COMBAT_CONFIG_CHANGED"
         or event == "PLAYER_LEVEL_UP" then
-        retryDetectedPlayerSelection()
+        local scoringChanged
+        if addonInitialized and BigBiSList.ForeverScoring then
+            scoringChanged = BigBiSList.ForeverScoring:PlayerTalentsChanged() or event == "PLAYER_LEVEL_UP"
+            if scoringChanged then
+                BigBiSList.ForeverScoring:Invalidate()
+                BigBiSList:RefreshUI("query", event)
+            elseif event ~= "PLAYER_LOGIN" and event ~= "PLAYER_ENTERING_WORLD" then
+                return
+            end
+        end
+        local selectionChanged = retryDetectedPlayerSelection()
+        local ui = BigBiSList.UI
+        if addonInitialized and event == "PLAYER_ENTERING_WORLD" and not startupPrepared
+            and ui.HasIndexedGear and ui:HasIndexedGear() and not ui:IsWindowRequested() then
+            startupPrepared = ui:PrepareRememberedWorkspace()
+        end
+        if scoringChanged or selectionChanged then
+            if BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end
+            if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:InvalidateStorage() end
+        end
         return
     end
 
@@ -194,9 +226,14 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
     BigBiSList:ResetClassSpecAutoSelection()
     BigBiSList:InitUIEvents()
     BigBiSList:InitTooltip()
+    if BigBiSList.AcquisitionHighlights then BigBiSList.AcquisitionHighlights:Initialize() end
     BigBiSList:InitMinimapButton()
     addonInitialized = true
     retryDetectedPlayerSelection()
+    if type(private) == "table" and private.loadStarted and debugprofilestop then
+        BigBiSList.loadTimeMs = debugprofilestop() - private.loadStarted
+        BigBiSList.loadHeapKB = private.heapAtLoad and collectgarbage("count") - private.heapAtLoad
+    end
     printLine("loaded. Use /bbl or /bigbis.")
 end)
 

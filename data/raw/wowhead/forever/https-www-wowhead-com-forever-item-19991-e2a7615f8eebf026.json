@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Devilsaur Eye Item Level 52 Binds when picked up Unique Trinket Classes: Hunter Equip: + 16 Attack Power. Use: Your next melee or ranged attack within 10 sec will Root the target for 2.5 sec. The duration of this effect is doubled if the target was moving. Only works against Beasts. (5 Min Cooldown) Sell Price: 1 27 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 19991,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +16 Attack Power.",
+        "stats": {
+          "attack_power": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Your next melee or ranged attack within 10 sec will Root the target for 2.5 sec. The duration of this effect is doubled if the target was moving. Only works against Beasts. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 19991,
+    "item_level": 52,
+    "name": "Devilsaur Eye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 16.0
+    },
+    "use_effects": [
+      "Use: Your next melee or ranged attack within 10 sec will Root the target for 2.5 sec. The duration of this effect is doubled if the target was moving. Only works against Beasts. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19991"
+  },
+  "linked_entities": [
+    {
+      "id": 24352,
+      "name": "Your next melee or ranged attack within 10 sec will Root the target for 2.5 sec. The duration of this effect is doubled if the target was moving. Only works against Beasts.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24352"
+    }
+  ],
+  "name": "Devilsaur Eye",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "bb18ed2d932134f5da80663f3b66fb0e4a88bd84957b72739e58cef3a15b88b7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19991",
+  "url": "https://www.wowhead.com/forever/item=19991"
+}

@@ -1,0 +1,156 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Talons of Wrath Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft Talons of Wrath. Creates talons of wrath. Sell Price: 10 50",
+  "embedded_items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "inventory_slot": "Idol",
+      "item_id": 249441,
+      "item_stats": {
+        "binding": "bind_on_pickup",
+        "boe": false,
+        "id": 249441,
+        "name": "Talons of Wrath",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "restrictions": {
+          "classes": [
+            "Druid"
+          ]
+        },
+        "slot": "Idol",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=249441"
+      },
+      "name": "Talons of Wrath",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=249441"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 249493,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Talons of Wrath.",
+        "type": "use"
+      }
+    ],
+    "id": 249493,
+    "item_level": 42,
+    "name": "Formula: Talons of Wrath",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Talons of Wrath. Creates talons of wrath."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=249493"
+  },
+  "linked_entities": [
+    {
+      "id": 11175,
+      "name": "Greater Nether Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11175"
+    },
+    {
+      "id": 11176,
+      "name": "Dream Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11176"
+    },
+    {
+      "id": 11178,
+      "name": "Large Radiant Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11178"
+    },
+    {
+      "id": 11291,
+      "name": "Star Wood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11291"
+    },
+    {
+      "id": 249409,
+      "name": "Cerulean Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249409"
+    },
+    {
+      "id": 249430,
+      "name": "Magenta Dye",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249430"
+    },
+    {
+      "id": 249441,
+      "name": "Talons of Wrath",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249441"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=333"
+    },
+    {
+      "id": 1248974,
+      "name": "Teaches you how to craft Talons of Wrath.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248974"
+    },
+    {
+      "id": 1248996,
+      "name": "Causes Wrath to have a 50% chance to restore 35 Mana. (Proc chance: 50%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248996"
+    }
+  ],
+  "name": "Formula: Talons of Wrath",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Talons of Wrath Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft Talons of Wrath. Creates talons of wrath. Sell Price: 10 50",
+      "reputation": "this faction",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=249493",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Talons of Wrath Item Level 42 Binds when picked up Requires Enchanting (210) Requires Friendly with this faction. Use: Teaches you how to craft Talons of Wrath. Creates talons of wrath. Sell Price: 10 50",
+      "scope": "equip_or_use",
+      "skill": 210,
+      "source_url": "https://www.wowhead.com/forever/item=249493",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1248974
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/249493",
+  "url": "https://www.wowhead.com/forever/item=249493"
+}

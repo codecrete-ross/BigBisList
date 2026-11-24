@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sergeant Major's Leather Armsplints Item Level 50 Binds when picked up Unique Wrist Leather 64 Armor +6 Agility +14 Stamina Durability 35 / 35 Classes: Rogue Requires Level 45 Sell Price: 33 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 18453,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 64,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 18453,
+    "item_level": 50,
+    "name": "Sergeant Major's Leather Armsplints",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18453"
+  },
+  "linked_entities": [],
+  "name": "Sergeant Major's Leather Armsplints",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18453",
+  "url": "https://www.wowhead.com/forever/item=18453"
+}

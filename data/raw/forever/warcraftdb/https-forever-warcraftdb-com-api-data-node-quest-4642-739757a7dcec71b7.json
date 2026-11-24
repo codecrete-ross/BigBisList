@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4642"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T21:22:08.311187+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15702,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4642",
+      "subject_id": 4642,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Melding of Influences",
+    "quest_id": 4642,
+    "reward_item_roles": {
+      "15702": "choices",
+      "15703": "choices"
+    },
+    "side": "Both",
+    "zone": "Undercity"
+  },
+  "source_content_digest": "7de5f26e1105bb8c722146819d41086115c51ca676149c929212dc09d1beef32",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4642"
+}

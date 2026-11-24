@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1051"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:00.995638+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 7750,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1051",
+      "subject_id": 1051,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": 25,
+    "name": "Vorrel's Revenge",
+    "quest_id": 1051,
+    "reward_item_ids": [
+      4643,
+      7750,
+      7751
+    ],
+    "zone": "Scarlet Monastery"
+  },
+  "source_content_digest": "1c359a8b79d83f3fd86801d3ac6c8af2dd80c04e8a794db83abcac1846eccd9a",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1051"
+}

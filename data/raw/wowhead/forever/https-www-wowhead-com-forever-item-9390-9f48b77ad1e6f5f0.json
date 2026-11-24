@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Revelosh's Gloves Item Level 42 Binds when picked up Hands Cloth 38 Armor <Random enchantment> Durability 25 / 25 Requires Level 37 Sell Price: 30 87 Dropped by: Revelosh Drop Chance: 21.16%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:13+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 9390,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 9390,
+    "item_level": 42,
+    "name": "Revelosh's Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Hands",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9390"
+  },
+  "linked_entities": [],
+  "name": "Revelosh's Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 21.16,
+      "entity_name": "Revelosh",
+      "source_url": "https://www.wowhead.com/forever/item=9390",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9390",
+  "url": "https://www.wowhead.com/forever/item=9390"
+}

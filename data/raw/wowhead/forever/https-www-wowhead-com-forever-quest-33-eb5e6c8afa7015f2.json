@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Wolves Across the Border Bring 8 pieces of Tough Wolf Meat to Eagan Peltskinner outside Northshire Abbey. Requirements: - Tough Wolf Meat x 8",
+  "entity_id": 33,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:16.681Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Wolves Across the Border",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 196,
+        "name": "Eagan Peltskinner"
+      },
+      "start": {
+        "entity_id": 196,
+        "name": "Eagan Peltskinner"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Alliance",
+    "zone": "Elwynn Forest"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 80,
+      "object_name": "Soft Fur-lined Shoes",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=33",
+      "subject_id": 33,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 6070,
+      "object_name": "Wolfskin Bracers",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=33",
+      "subject_id": 33,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/33",
+  "url": "https://www.wowhead.com/forever/quest=33"
+}

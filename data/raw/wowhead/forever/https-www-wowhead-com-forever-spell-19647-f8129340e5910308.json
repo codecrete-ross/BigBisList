@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Spell Lock Rank 2 200 Mana 30 yd range Instant 30 sec cooldown Requires Warlock Requires level 52 Silences the enemy for 3 sec. If used on a casting target, it will counter the enemy's spellcast, preventing any spell from that school of magic from being cast for 8 sec.",
+  "entity_id": 19647,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:33:30+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 19647,
+      "name": "Spell Lock",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19647"
+    }
+  ],
+  "name": "Spell Lock",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "920adc28143452c0d3cfcd5557351e031c92dad0159639b326ff6774399b786e",
+  "spell_id": 19647,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/19647",
+  "url": "https://www.wowhead.com/forever/spell=19647"
+}

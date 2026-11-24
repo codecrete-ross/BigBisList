@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Haggard's Dagger Item Level 15 Binds when picked up One-Hand Dagger 9 - 17 Damage Speed 1.70 (7.65 damage per second) +1 Stamina Durability 35 / 35 Classes: Warrior Sell Price: 6 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 6980,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 7.65,
+    "id": 6980,
+    "item_level": 15,
+    "name": "Haggard's Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 1.0
+    },
+    "weapon_max_damage": 17,
+    "weapon_min_damage": 9,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6980"
+  },
+  "linked_entities": [],
+  "name": "Haggard's Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6980",
+  "url": "https://www.wowhead.com/forever/item=6980"
+}

@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/98028"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:34:28.458197+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 281291,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98028",
+      "subject_id": 98028,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 281292,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98028",
+      "subject_id": 98028,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 17,
+    "name": "Baron Marinous",
+    "quest_id": 98028,
+    "quest_level": 21,
+    "reward_item_ids": [
+      281291,
+      281292
+    ],
+    "zone": "Darkshore"
+  },
+  "source_content_digest": "f81957dbfb0475793e7b20d6066f9b5679eac1cfbb71923efe6ab7cb55e7cfb6",
+  "url": "https://guide.wow4ever.se/en/quests/98028"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "90 Epic Warrior Ring Item Level 90 Binds when picked up Finger +18 Strength +17 Stamina Restores + 16 health per 5 sec. Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 78 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 20144,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +16 health per 5 sec.",
+        "stats": {
+          "hp5": 16
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 20144,
+    "item_level": 90,
+    "name": "90 Epic Warrior Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "hp5": 16.0,
+      "stamina": 17.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20144"
+  },
+  "linked_entities": [],
+  "name": "90 Epic Warrior Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "f91d3eae2c8becacca444a2bb1854495c0ea0de99565e63ee50bc5c8187d941b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20144",
+  "url": "https://www.wowhead.com/forever/item=20144"
+}

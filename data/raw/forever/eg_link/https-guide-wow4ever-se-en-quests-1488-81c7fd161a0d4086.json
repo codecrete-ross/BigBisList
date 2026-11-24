@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/1488"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:01:17.401910+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 6747,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/1488",
+      "subject_id": 1488,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 26,
+    "name": "The Corrupter",
+    "quest_id": 1488,
+    "quest_level": 40,
+    "reward_item_ids": [
+      6747
+    ],
+    "zone": "Desolace"
+  },
+  "source_content_digest": "695c7a2fd525b0bc99ad14b87a3664deb068695df11bc9cd5b972631cdebb79d",
+  "url": "https://guide.wow4ever.se/en/quests/1488"
+}

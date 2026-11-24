@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Holy Shield Talent 100 Mana Instant 10 sec cooldown Requires Paladin Requires level 30 Increases chance to block by 30% for 10 sec, and deals 75 Holy damage for each attack blocked while active. Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+  "entity_id": 20925,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:34:00+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 20925,
+      "name": "Holy Shield",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20925"
+    }
+  ],
+  "name": "Holy Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "8b68b65a586eb99e5a0029b1590f4c244df6e5c59f165aebc640544465694833",
+  "spell_id": 20925,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/20925",
+  "url": "https://www.wowhead.com/forever/spell=20925"
+}

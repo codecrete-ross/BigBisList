@@ -1,0 +1,67 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Goblin Sapper Charge Item Level 41 Requires Engineering (205) Use: Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you. (5 Min Cooldown) Max Stack: 10 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 10646,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you. (5 Min Cooldown)",
+        "type": "conditional"
+      }
+    ],
+    "id": 10646,
+    "item_level": 41,
+    "name": "Goblin Sapper Charge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you. (5 Min Cooldown) Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10646"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 13241,
+      "name": "Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13241"
+    }
+  ],
+  "name": "Goblin Sapper Charge",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Sapper Charge Item Level 41 Requires Engineering (205) Use: Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you. (5 Min Cooldown) Max Stack: 10 Sell Price: 5",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=10646",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "4cad0d3c303d0edd0f99c81c68e5c000c8099aefd97e27b0dc1546d8c3a728c1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10646",
+  "url": "https://www.wowhead.com/forever/item=10646"
+}

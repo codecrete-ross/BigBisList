@@ -1,0 +1,121 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment",
+      "source": "https://us.forums.blizzard.com/en/wow/t/known-issues-wow-forever-updated-nov-5/2402363"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "credit": "ZugZugDB beta vendor data",
+      "source": "https://zugzugdb.com/"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "dated_official_notice_with_later_vendor_observation",
+  "fetched_at": "2026-11-13T20:45:37.129291+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 18097,
+      "collected_at": "2026-11-13T20:45:37.129291+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "official-knownissues-html",
+      "source_content_digest": "25a112756141ec68b56ca0f43b36d9b9db87c6f3261bd77094a235899e238c8d",
+      "source_url": "https://us.forums.blizzard.com/en/wow/t/known-issues-wow-forever-updated-nov-5/2402363"
+    },
+    {
+      "bytes": 17736,
+      "collected_at": "2026-11-13T20:38:19.542012+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "pvp-official-known-issues",
+      "source_content_digest": "6d03e16fb3cad822637e73d3396a71ee81496b100ad06c3dbcc41257088483f2",
+      "source_url": "https://us.forums.blizzard.com/en/wow/t/known-issues-wow-forever-updated-nov-5/2402363.json"
+    },
+    {
+      "bytes": 124986,
+      "collected_at": "2026-11-13T20:44:48.933088+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-palanseer-npc",
+      "source_content_digest": "2eb73977546f48d570eddb2bb1970651b463e3218fc7b30c091b6c41f14811b8",
+      "source_url": "https://guide.wow4ever.se/en/npc/12792"
+    },
+    {
+      "bytes": 27067,
+      "collected_at": "2026-11-13T20:44:48.247535+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "zugzug-scavenger",
+      "source_content_digest": "4fa39beac69611f2fc6f7a909087c1f4dfa712bc38db5555e5784654ff7f0577",
+      "source_url": "https://zugzugdb.com/item/271808/scavengers-ring"
+    },
+    {
+      "bytes": 27095,
+      "collected_at": "2026-11-13T20:44:48.296588+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "zugzug-desolate",
+      "source_content_digest": "f4bb94a327ad84b31ffa09ebdc7c5dd1336e98b50cfc26241598c4650b827a8e",
+      "source_url": "https://zugzugdb.com/item/271809/desolate-band"
+    },
+    {
+      "bytes": 27930,
+      "collected_at": "2026-11-13T20:44:48.457841+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "zugzug-clacking",
+      "source_content_digest": "4c1b38b4c3c97d8518f9354424d690e7a5730ad823b5a3b87ebfa36cf965885b",
+      "source_url": "https://zugzugdb.com/item/271811/clacking-carapace-spaulders"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "blizzard_forums",
+  "reviewed_page_facts": {
+    "beta_stock_and_price_leads": [
+      {
+        "item_id": 271808,
+        "price_copper": 28372
+      },
+      {
+        "item_id": 271809,
+        "price_copper": 28472
+      },
+      {
+        "item_id": 271811,
+        "price_copper": 38887
+      }
+    ],
+    "finding": "The November 5 outage notice precedes the November 11 live vendor observation. The observed stock sample omits the exact three beta entries. Their current purchase eligibility remains open.",
+    "later_stock_sample_item_ids": [
+      272483,
+      272490,
+      272491,
+      272492,
+      272494,
+      272495,
+      272496,
+      272640,
+      275229,
+      275238,
+      275239,
+      275240,
+      275241,
+      275242,
+      275243,
+      275244
+    ],
+    "later_vendor_id": 12792,
+    "later_vendor_observation_date": "2026-11-11",
+    "outage_is_dated": true,
+    "published_outage_date": "2026-11-05T22:07:42.180Z"
+  },
+  "source_content_digest": "25a112756141ec68b56ca0f43b36d9b9db87c6f3261bd77094a235899e238c8d",
+  "url": "https://us.forums.blizzard.com/en/wow/t/known-issues-wow-forever-updated-nov-5/2402363"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Jewel of the Guard Captain Item Level 51 Binds when picked up Unique-Equipped Trinket Equip: Improves your chance to get a critical strike by 0.5%. Equip: Increases damage and healing done by magical spells and effects by up to 8. This effect is tripled in Forest and Grassland areas. Sell Price: 99 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 270225,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8. This effect is tripled in Forest and Grassland areas.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8. This effect is tripled in Forest and Grassland areas."
+    ],
+    "id": 270225,
+    "item_level": 51,
+    "name": "Jewel of the Guard Captain",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "spell_power": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270225"
+  },
+  "linked_entities": [
+    {
+      "id": 1287561,
+      "name": "Increases damage and healing done by magical spells and effects by up to 8. This effect is tripled in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1287561"
+    }
+  ],
+  "name": "Jewel of the Guard Captain",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270225",
+  "url": "https://www.wowhead.com/forever/item=270225"
+}

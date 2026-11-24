@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of the New Moon Item Level 61 Binds when picked up Head Leather 139 Armor +14 Stamina +14 Intellect +12 Spirit Durability 60 / 60 Requires Level 56 Equip: Increases damage and healing done by magical spells and effects by up to 23 . Sell Price: 1 96 38 Dropped by: Cannon Master Willey Drop Chance: 18.25%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 22407,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 139,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 22407,
+    "item_level": 61,
+    "name": "Helm of the New Moon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "spell_power": 23.0,
+      "spirit": 12.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22407"
+  },
+  "linked_entities": [],
+  "name": "Helm of the New Moon",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.25,
+      "entity_name": "Cannon Master Willey",
+      "source_url": "https://www.wowhead.com/forever/item=22407",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7060e70e44643a3094c69c1d2f53166a359bc179670956489b9da61cf2f8e738",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22407",
+  "url": "https://www.wowhead.com/forever/item=22407"
+}

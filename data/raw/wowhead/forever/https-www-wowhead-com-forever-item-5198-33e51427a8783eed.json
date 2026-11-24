@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cookie's Stirring Rod Item Level 22 Binds when picked up Ranged Wand 20 - 38 Arcane Damage Speed 1.30 (22.31 damage per second) Durability 50 / 50 Requires Level 17 Equip: Increases your Cooking speed by 25%. Sell Price: 16 93 Dropped by: Cookie Drop Chance: 34.08%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 5198,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 22.31,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your Cooking speed by 25%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your Cooking speed by 25%."
+    ],
+    "id": 5198,
+    "item_level": 22,
+    "name": "Cookie's Stirring Rod",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 38,
+    "weapon_min_damage": 20,
+    "weapon_speed": 1.3,
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5198"
+  },
+  "linked_entities": [
+    {
+      "id": 1322312,
+      "name": "Increases your Cooking speed by 25%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1322312"
+    }
+  ],
+  "name": "Cookie's Stirring Rod",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 34.08,
+      "entity_name": "Cookie",
+      "source_url": "https://www.wowhead.com/forever/item=5198",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5198",
+  "url": "https://www.wowhead.com/forever/item=5198"
+}

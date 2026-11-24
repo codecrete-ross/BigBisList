@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heraldic Breastplate Item Level 51 Binds when equipped Chest Leather 135 Armor +4 Strength +20 Stamina Durability 85 / 85 Requires Level 46 Sell Price: 1 27 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 8119,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 135,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 8119,
+    "item_level": 51,
+    "name": "Heraldic Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 46,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "stamina": 20.0,
+      "strength": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=8119"
+  },
+  "linked_entities": [],
+  "name": "Heraldic Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/8119",
+  "url": "https://www.wowhead.com/forever/item=8119"
+}

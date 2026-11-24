@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Al'Aketh Greaves Item Level 10 Binds when equipped Feet Mail 74 Armor +1 Strength Durability 30 / 30 Requires Level 5 Sell Price: 1 12 Dropped by: Al'Aketh Stormchaser Drop Chance: 0.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:53:47+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 277061,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 74,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 277061,
+    "item_level": 10,
+    "name": "Al'Aketh Greaves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 5,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "strength": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277061"
+  },
+  "linked_entities": [],
+  "name": "Al'Aketh Greaves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.0,
+      "entity_name": "Al'Aketh Stormchaser",
+      "source_url": "https://www.wowhead.com/forever/item=277061",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277061",
+  "url": "https://www.wowhead.com/forever/item=277061"
+}

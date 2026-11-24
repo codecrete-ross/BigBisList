@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Baron's Scepter Item Level 26 Binds when picked up Main Hand Mace 28 - 52 Damage Speed 2.40 (16.67 damage per second) +2 Strength +3 Stamina Durability 65 / 65 Requires Level 21 Equip: Cause party members within 30 yds to regenerate 4 health every 5 sec. Sell Price: 36 81 Dropped by: Baron Silverlaine Drop Chance: 37.87%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 6323,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 16.67,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Cause party members within 30 yds to regenerate 4 health every 5 sec.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Cause party members within 30 yds to regenerate 4 health every 5 sec."
+    ],
+    "id": 6323,
+    "item_level": 26,
+    "name": "Baron's Scepter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0,
+      "strength": 2.0
+    },
+    "weapon_max_damage": 52,
+    "weapon_min_damage": 28,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6323"
+  },
+  "linked_entities": [
+    {
+      "id": 1292142,
+      "name": "Cause party members within 30 yds to regenerate 4 health every 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292142"
+    }
+  ],
+  "name": "Baron's Scepter",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 37.87,
+      "entity_name": "Baron Silverlaine",
+      "source_url": "https://www.wowhead.com/forever/item=6323",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6323",
+  "url": "https://www.wowhead.com/forever/item=6323"
+}

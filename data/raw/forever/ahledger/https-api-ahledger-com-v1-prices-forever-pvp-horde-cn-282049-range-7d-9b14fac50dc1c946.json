@@ -1,0 +1,39 @@
+{
+  "attribution": [
+    {
+      "credit": "Prices from AHledger (ahledger.com)",
+      "licence": "AHledger data terms",
+      "licenceUrl": "https://ahledger.com/developers",
+      "source": "https://ahledger.com"
+    }
+  ],
+  "confidence": "observed_auction_listing",
+  "fetched_at": "2026-11-11T01:18:52+00:00",
+  "flavor": "forever",
+  "market": "forever/pvp/horde/cn",
+  "observed_at": "2026-11-10T16:34:57+00:00",
+  "observed_faction": "Horde",
+  "page_type": "observations",
+  "provider": "ahledger",
+  "records": [
+    {
+      "item_id": 282049,
+      "minimum_buyout_copper": 104000,
+      "quantity": 2
+    }
+  ],
+  "relationships": [
+    {
+      "confidence": "observed_auction_listing",
+      "object_id": 282049,
+      "object_type": "item",
+      "observed_at": "2026-11-10T16:34:57+00:00",
+      "relation": "offered_for_trade",
+      "source_url": "https://api.ahledger.com/v1/prices/forever.pvp.horde.cn/282049?range=7d",
+      "subject_id": "forever/pvp/horde/cn",
+      "subject_type": "market"
+    }
+  ],
+  "source_content_digest": "f5e6c92dfac10121fe491bc889ef2d38b082506a0712e204f03a485b080c97ef",
+  "url": "https://api.ahledger.com/v1/prices/forever.pvp.horde.cn/282049?range=7d"
+}

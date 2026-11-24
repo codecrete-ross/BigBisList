@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hermit's Pauldron Item Level 61 Binds when picked up Shoulder Mail 270 Armor +13 Spirit Equip: Improves your chance to hit by 1.3%. Equip: + 26 Attack Power. Sell Price: 2 35 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 275737,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 270,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.3%.",
+        "stats": {
+          "hit_percent": 1.3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +26 Attack Power.",
+        "stats": {
+          "attack_power": 26
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.3%."
+    ],
+    "id": 275737,
+    "item_level": 61,
+    "name": "Hermit's Pauldron",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 26.0,
+      "hit_percent": 1.3,
+      "spirit": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275737"
+  },
+  "linked_entities": [],
+  "name": "Hermit's Pauldron",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "13d2139dc4ee215f372ebda812205b81f756729932710de2b3a2c0b1b072c84b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275737",
+  "url": "https://www.wowhead.com/forever/item=275737"
+}

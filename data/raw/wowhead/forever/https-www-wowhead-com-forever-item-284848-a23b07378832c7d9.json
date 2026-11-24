@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Diamond Studded Belt Item Level 47 Binds when equipped Waist Plate 255 Armor +5 Strength +11 Stamina Requires Level 42 Equip: Increased Defense + 4. Sell Price: 69 51",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:36.3433166Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 284848,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 255,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +4.",
+        "stats": {
+          "defense": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +4."
+    ],
+    "id": 284848,
+    "item_level": 47,
+    "name": "Diamond Studded Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 42,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "defense": 4.0,
+      "stamina": 11.0,
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284848"
+  },
+  "linked_entities": [],
+  "name": "Diamond Studded Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "1af3dddaab7bce8c1a943b7ab379f7291102fda88fcaf2aff8feffeee23a7420",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284848?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=284848"
+}

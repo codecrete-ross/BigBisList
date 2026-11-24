@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soulwoven Drape Item Level 61 Binds when picked up Back 43 Armor +8 Stamina +12 Spirit Requires Level 56 Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects. Sell Price: 1 54 25",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:30.4025375Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 276072,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 20,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 276072,
+    "item_level": 61,
+    "name": "Soulwoven Drape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 20.0,
+      "spell_damage": 7.0,
+      "spirit": 12.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276072"
+  },
+  "linked_entities": [],
+  "name": "Soulwoven Drape",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d5fef859ae71340b17624c93ff5694ea0417ef5afd97b4290f62f49b830cc7b5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276072?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=276072"
+}

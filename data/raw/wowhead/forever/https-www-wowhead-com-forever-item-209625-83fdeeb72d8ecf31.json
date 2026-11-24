@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Insignia of the Horde Item Level 1 Binds when picked up Unique Trinket Classes: Shaman Use: Dispels all Immobilizing, Slowing and Stun effects. (5 Min Cooldown) Sell Price: 5 Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 209625,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispels all Immobilizing, Slowing and Stun effects. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 209625,
+    "item_level": 1,
+    "name": "Insignia of the Horde",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Dispels all Immobilizing, Slowing and Stun effects. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=209625"
+  },
+  "linked_entities": [
+    {
+      "id": 5579,
+      "name": "Dispels all Immobilizing, Slowing and Stun effects.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=5579"
+    }
+  ],
+  "name": "Insignia of the Horde",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/209625",
+  "url": "https://www.wowhead.com/forever/item=209625"
+}

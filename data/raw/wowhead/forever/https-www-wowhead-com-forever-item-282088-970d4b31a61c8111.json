@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heart of Smoldar Item Level 52 Binds when equipped Held In Off-hand +8 Stamina Requires Level 47 Equip: Increases healing done by up to 16 and damage done by up to 5 for all magical spells and effects. Sell Price: 1 2 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 282088,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 16 and damage done by up to 5 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 16,
+          "spell_damage": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 16 and damage done by up to 5 for all magical spells and effects."
+    ],
+    "id": 282088,
+    "item_level": 52,
+    "name": "Heart of Smoldar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 47,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 16.0,
+      "spell_damage": 5.0,
+      "stamina": 8.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=282088"
+  },
+  "linked_entities": [],
+  "name": "Heart of Smoldar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d1c5799922f81b1b812ebbb8ed570c7c5646a383a8b91dc5f908ae7d609eeec1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/282088",
+  "url": "https://www.wowhead.com/forever/item=282088"
+}

@@ -1,0 +1,42 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Sacred Relic Item Level 10 Unique Trinket Classes: Priest Requires Level 5 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:54:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 2920,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 2920,
+    "item_level": 10,
+    "name": "Sacred Relic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 5,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2920"
+  },
+  "linked_entities": [],
+  "name": "Sacred Relic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "3872ced6bc2201807428f68ccd703e3c00ef90c6a5a890c16e55ea3c06a37f91",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2920",
+  "url": "https://www.wowhead.com/forever/item=2920"
+}

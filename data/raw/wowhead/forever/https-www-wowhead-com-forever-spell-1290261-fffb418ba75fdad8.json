@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Weaponmaster Talent Requires Warrior Requires level 1 Requires Weapons Gives your melee weapon attacks a benefit depending on the weapon. Axe/Polearm: Increases your critical strike chance by 5%. Mace/Staff: Your attacks ignore 15% of your target's armor. Sword: Your successful melee attacks have a 5% chance to trigger an extra attack on the target.",
+  "entity_id": 1290261,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:31:08+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1290261,
+      "name": "Weaponmaster",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1290261"
+    }
+  ],
+  "name": "Weaponmaster",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "9616c6c38c2848a5322ee858b64a5097e76ee0b251fd43c8ca31e0f0c52c5bd3",
+  "spell_id": 1290261,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1290261",
+  "url": "https://www.wowhead.com/forever/spell=1290261"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skarr's Broken Gauntlet Item Level 60 Binds when picked up Unique-Equipped This Item Begins a Quest Trinket +15 Fire Resistance Requires Level 55 Sell Price: 1 60 78 Dropped by: Skarr the Unbreakable Drop Chance: 0.20%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 277557,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 277557,
+    "item_level": 60,
+    "name": "Skarr's Broken Gauntlet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277557"
+  },
+  "linked_entities": [
+    {
+      "id": 99233,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=99233"
+    }
+  ],
+  "name": "Skarr's Broken Gauntlet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.2,
+      "entity_name": "Skarr the Unbreakable",
+      "source_url": "https://www.wowhead.com/forever/item=277557",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "efee630617e8d961814b8a4493ea4243f31ebe7af3422ab90b5e3a8678ffce80",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277557",
+  "url": "https://www.wowhead.com/forever/item=277557"
+}

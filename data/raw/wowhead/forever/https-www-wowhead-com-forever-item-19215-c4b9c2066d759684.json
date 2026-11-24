@@ -1,0 +1,143 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Wisdom of the Timbermaw Item Level 58 Binds when picked up Requires Tailoring (255) Requires Timbermaw Hold - Honored Use: Teaches you how to sew the Wisdom of the Timbermaw. Sell Price: 55",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Waist",
+      "item_id": 19047,
+      "item_stats": {
+        "armor_type": "Cloth",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 19047,
+        "name": "Wisdom of the Timbermaw",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Waist",
+        "source_summary": "",
+        "stats": {
+          "intellect": 14.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=19047"
+      },
+      "name": "Wisdom of the Timbermaw",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=19047"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:57:54+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 19215,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew the Wisdom of the Timbermaw.",
+        "type": "use"
+      }
+    ],
+    "id": 19215,
+    "item_level": 58,
+    "name": "Pattern: Wisdom of the Timbermaw",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to sew the Wisdom of the Timbermaw."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=19215"
+  },
+  "linked_entities": [
+    {
+      "id": 576,
+      "name": "Timbermaw Hold",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=576"
+    },
+    {
+      "id": 7076,
+      "name": "Essence of Earth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=7076"
+    },
+    {
+      "id": 12803,
+      "name": "Living Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12803"
+    },
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14227,
+      "name": "Ironweb Spider Silk",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14227"
+    },
+    {
+      "id": 19047,
+      "name": "Wisdom of the Timbermaw",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19047"
+    },
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=197"
+    },
+    {
+      "id": 23662,
+      "name": "Teaches you how to sew the Wisdom of the Timbermaw.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23662"
+    }
+  ],
+  "name": "Pattern: Wisdom of the Timbermaw",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Wisdom of the Timbermaw Item Level 58 Binds when picked up Requires Tailoring (255) Requires Timbermaw Hold - Honored Use: Teaches you how to sew the Wisdom of the Timbermaw. Sell Price: 55",
+      "reputation": "Timbermaw Hold",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=19215",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Wisdom of the Timbermaw Item Level 58 Binds when picked up Requires Tailoring (255) Requires Timbermaw Hold - Honored Use: Teaches you how to sew the Wisdom of the Timbermaw. Sell Price: 55",
+      "scope": "equip_or_use",
+      "skill": 255,
+      "source_url": "https://www.wowhead.com/forever/item=19215",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    23662
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19215",
+  "url": "https://www.wowhead.com/forever/item=19215"
+}

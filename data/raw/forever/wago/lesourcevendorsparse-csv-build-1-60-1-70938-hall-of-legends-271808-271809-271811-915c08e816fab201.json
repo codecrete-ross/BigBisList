@@ -1,0 +1,184 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client tables exported by Wago.tools.",
+      "source": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/npc/12792"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "client_vendor_appearance_reference",
+  "fetched_at": "2026-11-13T14:51:27.5449899Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 124954,
+      "collected_at": "2026-11-13T14:50:28.1241299Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "lady-palanseer",
+      "source_content_digest": "7c2aafd377a5bdd121ef9cf166aa11412c3755369d6cf9e0c83b8b4438e01455",
+      "source_url": "https://guide.wow4ever.se/en/npc/12792"
+    },
+    {
+      "bytes": 462463,
+      "collected_at": "2026-11-13T19:36:22.458855+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "pvp-stock-gold",
+      "source_content_digest": "71380428d381e65231d0dccd140cfdcff5d5c09be06a59dd23047ff4a902d920",
+      "source_url": "https://metammo.com/wow-forever/gold-changes"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The table lists the exact three items as vendor appearance sources. The public Forever stock sample has sixteen other items. Purchase availability and eligibility remain unresolved.",
+    "live_npc_id": 12792,
+    "live_stock_sample_item_ids": [
+      272483,
+      272490,
+      272491,
+      272492,
+      272494,
+      272495,
+      272496,
+      272640,
+      275229,
+      275238,
+      275239,
+      275240,
+      275241,
+      275242,
+      275243,
+      275244
+    ],
+    "test_map_id": 2908,
+    "vendor_appearance_rows": [
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181008",
+        "CreatureID": "264239",
+        "ID": "250412",
+        "VendorItemID": "271808",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1211.5504150391",
+        "VendorPosition_1": "2684.5",
+        "VendorPosition_2": "111.17841339111",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "2917",
+        "CollectableSourceInfoID": "181008",
+        "CreatureID": "12792",
+        "ID": "250413",
+        "VendorItemID": "271808",
+        "VendorMapID": "450",
+        "VendorPosition_0": "261.77069091797",
+        "VendorPosition_1": "86.27502441406",
+        "VendorPosition_2": "25.72091293335",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181008",
+        "CreatureID": "12792",
+        "ID": "250414",
+        "VendorItemID": "271808",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1208.0920410156",
+        "VendorPosition_1": "2678.8430175781",
+        "VendorPosition_2": "111.4494934082",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181013",
+        "CreatureID": "12792",
+        "ID": "250415",
+        "VendorItemID": "271809",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1208.0920410156",
+        "VendorPosition_1": "2678.8430175781",
+        "VendorPosition_2": "111.4494934082",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "2917",
+        "CollectableSourceInfoID": "181013",
+        "CreatureID": "12792",
+        "ID": "250416",
+        "VendorItemID": "271809",
+        "VendorMapID": "450",
+        "VendorPosition_0": "261.77069091797",
+        "VendorPosition_1": "86.27502441406",
+        "VendorPosition_2": "25.72091293335",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181013",
+        "CreatureID": "264239",
+        "ID": "250417",
+        "VendorItemID": "271809",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1211.5504150391",
+        "VendorPosition_1": "2684.5",
+        "VendorPosition_2": "111.17841339111",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181026",
+        "CreatureID": "264239",
+        "ID": "250421",
+        "VendorItemID": "271811",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1211.5504150391",
+        "VendorPosition_1": "2684.5",
+        "VendorPosition_2": "111.17841339111",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "2917",
+        "CollectableSourceInfoID": "181026",
+        "CreatureID": "12792",
+        "ID": "250422",
+        "VendorItemID": "271811",
+        "VendorMapID": "450",
+        "VendorPosition_0": "261.77069091797",
+        "VendorPosition_1": "86.27502441406",
+        "VendorPosition_2": "25.72091293335",
+        "WMOGroupID": "0"
+      },
+      {
+        "AreaTableID": "16532",
+        "CollectableSourceInfoID": "181026",
+        "CreatureID": "12792",
+        "ID": "250423",
+        "VendorItemID": "271811",
+        "VendorMapID": "2908",
+        "VendorPosition_0": "-1208.0920410156",
+        "VendorPosition_1": "2678.8430175781",
+        "VendorPosition_2": "111.4494934082",
+        "WMOGroupID": "0"
+      }
+    ]
+  },
+  "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+  "url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938#/hall-of-legends/271808,271809,271811"
+}

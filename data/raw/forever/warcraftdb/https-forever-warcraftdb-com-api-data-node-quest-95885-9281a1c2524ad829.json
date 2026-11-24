@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/95885"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:15.397281+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 281673,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/95885",
+      "subject_id": 95885,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 20,
+    "name": "The Offering of Blood",
+    "quest_id": 95885,
+    "reward_item_roles": {
+      "281673": "items"
+    },
+    "side": "Both",
+    "zone": "Silverpine Forest"
+  },
+  "source_content_digest": "119c36fbad8b920a1994fcabe3264dc2c7937d9c717d0f69276ad0d1548ead15",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/95885"
+}

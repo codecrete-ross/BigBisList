@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Minor Healing Potion Item Level 5 Binds to Account Use: Restores 70 to 90 health. (2 Min Cooldown) Max Stack: 20 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 287966,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 70 to 90 health. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 287966,
+    "item_level": 5,
+    "name": "Minor Healing Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 70 to 90 health. (2 Min Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=287966"
+  },
+  "linked_entities": [
+    {
+      "id": 439,
+      "name": "Restores 70 to 90 health.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=439"
+    }
+  ],
+  "name": "Minor Healing Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "a66d73d1612c1f46a80f7c6061b074fb2bb17511451092deed3728e733173edf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/287966",
+  "url": "https://www.wowhead.com/forever/item=287966"
+}

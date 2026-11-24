@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Knight-Captain's Satin Leggings Item Level 63 Binds when picked up Unique Legs Cloth 78 Armor +16 Stamina +13 Intellect +16 Spirit Classes: Priest Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 19 . Sell Price: 1 15 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 17599,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 78,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 19.",
+        "stats": {
+          "spell_power": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 19."
+    ],
+    "id": 17599,
+    "item_level": 63,
+    "name": "Knight-Captain's Satin Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_power": 19.0,
+      "spirit": 16.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17599"
+  },
+  "linked_entities": [],
+  "name": "Knight-Captain's Satin Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17599",
+  "url": "https://www.wowhead.com/forever/item=17599"
+}

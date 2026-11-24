@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Field Guide Item Level 28 Requires Skinning (140) Use: Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 279969,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby.",
+        "type": "use"
+      }
+    ],
+    "id": 279969,
+    "item_level": 28,
+    "name": "Field Guide",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=279969"
+  },
+  "linked_entities": [
+    {
+      "id": 393,
+      "name": "Skinning",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=393"
+    },
+    {
+      "id": 1307243,
+      "name": "Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. May be placed over a Camp Chair to replace it. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307243"
+    }
+  ],
+  "name": "Field Guide",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "67ce8470521bdc914ca8bb5c06b0f1c1aeb0c969beb584eba3a19dcba832c063",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279969",
+  "url": "https://www.wowhead.com/forever/item=279969"
+}

@@ -1,0 +1,27 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Chromatic Resistance Item Effect Instant Increases your resistance to all schools of magic by 25 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death and stacks with all other resistance spells and items.",
+  "entity_id": 17629,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:11+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 17629,
+      "name": "Chromatic Resistance",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17629"
+    }
+  ],
+  "name": "Chromatic Resistance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "spell_id": 17629,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17629",
+  "url": "https://www.wowhead.com/forever/spell=17629"
+}

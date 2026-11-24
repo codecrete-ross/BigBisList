@@ -1,0 +1,837 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "WoW Classic Item Caches and Wowhead",
+      "source": "https://github.com/Napalmsteak/WoW-Classic-Item-Caches/tree/eff4560809de2e852e9164183e3edf5a795edd20"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Rexas Forever public observations",
+      "source": "https://forever.rexas.tools/dungeons"
+    },
+    {
+      "credit": "Blizzard Entertainment",
+      "source": "https://news.blizzard.com/en-us/article/24303009"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T14:21:21.1886699Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 91470,
+      "collected_at": "2026-11-13T16:15:22.4345756Z",
+      "http": "200",
+      "name": "att-sod-blackrock-spire",
+      "source_content_digest": "f559121dfbb953603a6838af36185a5b90668354f72e53ce5846374f3431d014",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/94567e6a237f7bbd99ed488ba3d575bf497e670d"
+    },
+    {
+      "bytes": 62614,
+      "collected_at": "2026-11-13T16:15:15.4981212Z",
+      "http": "200",
+      "name": "att-forever-blackrock-spire",
+      "source_content_digest": "3dcca2834ea0351216c6778993f309ee4de52b2249b742b5a4379e6a58b0a167",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/f5d76e724ba83b71adc336a8a56a5b302c9985e0"
+    },
+    {
+      "bytes": 2281,
+      "collected_at": "2026-11-13T16:22:55.8566412Z",
+      "http": "200",
+      "name": "rexas-live-brs",
+      "source_content_digest": "f9ede0c34fe4e46babda8a9247318515668e218d82885df4e3fa636ca5a37269",
+      "source_url": "https://forever.rexas.tools/api/dungeons/229?b=wowf"
+    },
+    {
+      "bytes": 15980938,
+      "collected_at": "2026-11-13T15:50:52.2009496Z",
+      "http": "200",
+      "name": "napalmsteak-pinned-sod",
+      "source_content_digest": "4561f4eb9a6fce40ba66906f1772e75f401f13d8eb466def256accd2c1f1c7e2",
+      "source_url": "https://raw.githubusercontent.com/Napalmsteak/WoW-Classic-Item-Caches/eff4560809de2e852e9164183e3edf5a795edd20/Season%20of%20Discovery%20Cache.json"
+    },
+    {
+      "bytes": 315495,
+      "collected_at": "2026-11-13T16:19:18.2246588Z",
+      "http": "200",
+      "name": "blizzard-dungeon-launch",
+      "source_content_digest": "66ac70298e20eaefd23986882857953d6266e470ad4b9dd2b1094aedc8c5a177",
+      "source_url": "https://news.blizzard.com/en-us/article/24301455"
+    },
+    {
+      "bytes": 14513755,
+      "collected_at": "2026-11-13T16:19:14.1042816Z",
+      "http": "200",
+      "name": "napalmsteak-classic",
+      "source_content_digest": "b394ff0aac7379864d0cca38cdd12eaaaccbd528adb2c0dada743cdaaf04b79c",
+      "source_url": "https://raw.githubusercontent.com/Napalmsteak/WoW-Classic-Item-Caches/eff4560809de2e852e9164183e3edf5a795edd20/Classic%20Era%20Cache.json"
+    },
+    {
+      "bytes": 71823,
+      "collected_at": "2026-11-13T16:33:16.3007639Z",
+      "http": "200",
+      "name": "father-flame-source",
+      "source_content_digest": "ed9e03853582e3a5c1e394da47f263d4faddba356efea1004c5eca4e02d24ad9",
+      "source_url": "https://senseos.gg/wiki/wow-forever/items/13371/father-flame/"
+    },
+    {
+      "bytes": 241732,
+      "collected_at": "2026-11-13T16:19:14.5779452Z",
+      "http": "200",
+      "name": "wowsrc-ubrs",
+      "source_content_digest": "03a42d08047a69741427ccd8f602c64082b5d0483c37660c580c65d0e801a3f6",
+      "source_url": "https://wowsrc.com/loot/blackrock-spire-upper/"
+    },
+    {
+      "bytes": 1131,
+      "collected_at": "2026-11-13T16:25:37.7192519Z",
+      "http": "200",
+      "name": "wowhead-classic-bonespike",
+      "source_content_digest": "5f3d14591ec077831847942292798b5ab113284fabd7139a334b13ff6ffa3f6c",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/12588"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1167,
+      "collected_at": "2026-11-13T14:21:19.8457901Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-difficulty",
+      "source_content_digest": "ffc9b9a62579ae3330d062c2c0f412f14d3bd500fa522b358fdcd7ce40146b78",
+      "source_url": "https://wago.tools/db2/Difficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1363081,
+      "collected_at": "2026-11-13T15:02:37.5538161Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-gear-1502",
+      "source_content_digest": "4ea88c1804f5c9807dd608447d601c89ffe0c7b9edeb0661b73f01cf9258c960",
+      "source_url": "https://playfulls.com/db/gear.4ea88c1804.json"
+    },
+    {
+      "bytes": 1012217,
+      "collected_at": "2026-11-13T15:02:36.4298079Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "playfulls-meta-1502",
+      "source_content_digest": "d45ce274ee10356831e14593d6a19a507087a3417fe737acee37b0ae61ef513d",
+      "source_url": "https://playfulls.com/db/meta.d45ce274ee.json"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T14:51:27.5449899Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "access": {
+      "conservative_route_lower_bound": 48,
+      "entry_condition": {
+        "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+        "ID": "4214",
+        "MapDifficultyID": "24",
+        "OrderIndex": "1",
+        "PlayerConditionID": "159274"
+      },
+      "level_tuning": {
+        "AllowedMaxOffset": "0",
+        "AllowedMinOffset": "0",
+        "DMGPrimaryStatScalingCurveID": "0",
+        "DMGScalingCurveID": "0",
+        "ExpansionID": "0",
+        "Flags": "0",
+        "HPPrimaryStatScalingCurveID": "0",
+        "HPScalingCurveID": "0",
+        "ID": "7428",
+        "ILevel": "0",
+        "LfgMaxLevel": "0",
+        "LfgMinLevel": "0",
+        "MaxLevelScalingOffset": "0",
+        "MaxLevelSquish": "60",
+        "MinLevelScalingOffset": "0",
+        "MinLevelSquish": "50",
+        "PrimaryStatScalingModPlayerDataElementCharacterID": "0",
+        "PrimaryStatScalingModPlayerDataElementCharacterMultiplier": "0",
+        "XpMultQuest": "1"
+      },
+      "map_id": 229,
+      "map_name": "Blackrock Spire",
+      "normal_difficulty": {
+        "ContentTuningID": "5239",
+        "DifficultyID": "1",
+        "Flags": "0",
+        "ID": "24",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "229",
+        "MaxPlayers": "10",
+        "Message_lang": "You must be at least level 48 to enter.",
+        "ResetInterval": "0",
+        "WorldStateExpressionID": "0"
+      }
+    },
+    "reported_items": [
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Classic Era",
+          "record_url": "https://www.wowhead.com/classic/item=12588"
+        },
+        "item_id": 12588,
+        "name": "Bonespike Shoulder",
+        "reported_exact_routes": [
+          {
+            "item_name": "Bonespike Shoulder",
+            "line": 1233,
+            "route_context": [
+              {
+                "id": 10429,
+                "kind": "n",
+                "line": 1226,
+                "name": "Warchief Rend Blackhand"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1144,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/forever/dungeons & raids/blackrock spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Classic Era",
+          "record_url": "https://www.wowhead.com/classic/item=13371"
+        },
+        "item_id": 13371,
+        "name": "Father Flame",
+        "reported_exact_routes": [
+          {
+            "item_name": "Father Flame",
+            "line": 1180,
+            "route_context": [
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1144,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/forever/dungeons & raids/blackrock spire.lua"
+          }
+        ],
+        "same_instance_chest_id": 175245,
+        "same_instance_trash_ids": [
+          9096,
+          9817,
+          9819,
+          10083,
+          10258,
+          10683
+        ],
+        "scope": {
+          "level_max": 4,
+          "level_min": 1,
+          "slot": "Off Hand"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Classic Era",
+          "record_url": "https://www.wowhead.com/classic/item=22319"
+        },
+        "item_id": 22319,
+        "name": "Tome of Divine Right",
+        "reported_exact_routes": [
+          {
+            "item_name": "Tome of Divine Right",
+            "line": 1041,
+            "route_context": [
+              {
+                "id": 16080,
+                "kind": "n",
+                "line": 1027,
+                "name": "Mor Grayhoof"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 899,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/forever/dungeons & raids/blackrock spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 4,
+          "level_min": 1,
+          "slot": "Off Hand"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Classic Era",
+          "record_url": "https://www.wowhead.com/classic/item=22339"
+        },
+        "item_id": 22339,
+        "name": "Rune Band of Wizardry",
+        "reported_exact_routes": [
+          {
+            "item_name": "Rune Band of Wizardry",
+            "line": 1281,
+            "route_context": [
+              {
+                "id": 16042,
+                "kind": "n",
+                "line": 1269,
+                "name": "Lord Valthalak"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1144,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/forever/dungeons & raids/blackrock spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228562"
+        },
+        "item_id": 228562,
+        "name": "Demonic Runed Spaulders",
+        "reported_exact_routes": [
+          {
+            "item_name": "Demonic Runed Spaulders",
+            "line": 1165,
+            "route_context": [
+              {
+                "id": 389,
+                "kind": "e",
+                "line": 1150,
+                "name": "Shadow Hunter Vosh'gajin"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 991,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228563"
+        },
+        "item_id": 228563,
+        "name": "Globe of D'sak",
+        "reported_exact_routes": [
+          {
+            "item_name": "Globe of D'sak",
+            "line": 1102,
+            "route_context": [
+              {
+                "id": 9217,
+                "kind": "n",
+                "line": 1098,
+                "name": "Spirestone Lord Magus (Rare)"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 991,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 4,
+          "level_min": 1,
+          "slot": "Off Hand"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228565"
+        },
+        "item_id": 228565,
+        "name": "Magus Ring",
+        "reported_exact_routes": [
+          {
+            "item_name": "Magus Ring",
+            "line": 1114,
+            "route_context": [
+              {
+                "id": 9217,
+                "kind": "n",
+                "line": 1098,
+                "name": "Spirestone Lord Magus (Rare)"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 991,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228583"
+        },
+        "item_id": 228583,
+        "name": "Truestrike Shoulders",
+        "reported_exact_routes": [
+          {
+            "item_name": "Truestrike Shoulders",
+            "line": 1522,
+            "route_context": [
+              {
+                "id": 9816,
+                "kind": "n",
+                "line": 1511,
+                "name": "Pyroguard Emberseer"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1483,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228585"
+        },
+        "item_id": 228585,
+        "name": "Mark of the Dragon Lord",
+        "reported_exact_routes": [
+          {
+            "item_name": "Mark of the Dragon Lord",
+            "line": 1462,
+            "route_context": [
+              {
+                "id": 396,
+                "kind": "e",
+                "line": 1425,
+                "name": "Overlord Wyrmthalak"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 991,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228590"
+        },
+        "item_id": 228590,
+        "name": "Sunderseer Mantle",
+        "reported_exact_routes": [
+          {
+            "item_name": "Sunderseer Mantle",
+            "line": 1299,
+            "route_context": [
+              {
+                "id": 10376,
+                "kind": "n",
+                "line": 1288,
+                "name": "Crystal Fang (Rare)"
+              },
+              {
+                "id": "LOWER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 991,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228605"
+        },
+        "item_id": 228605,
+        "name": "Bonespike Shoulder",
+        "reported_exact_routes": [
+          {
+            "item_name": "Bonespike Shoulder",
+            "line": 1668,
+            "route_context": [
+              {
+                "id": 10429,
+                "kind": "n",
+                "line": 1630,
+                "name": "Warchief Rend Blackhand"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1483,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228667"
+        },
+        "item_id": 228667,
+        "name": "Painweaver Band",
+        "reported_exact_routes": [
+          {
+            "item_name": "Painweaver Band",
+            "line": 1906,
+            "route_context": [
+              {
+                "id": 10363,
+                "kind": "n",
+                "line": 1819,
+                "name": "General Drakkisath"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1483,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228675"
+        },
+        "item_id": 228675,
+        "name": "Band of Rumination",
+        "reported_exact_routes": [
+          {
+            "item_name": "Band of Rumination",
+            "line": 1700,
+            "route_context": [
+              {
+                "id": 10429,
+                "kind": "n",
+                "line": 1630,
+                "name": "Warchief Rend Blackhand"
+              },
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1483,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      },
+      {
+        "binding_evidence": {
+          "binding": "pickup",
+          "observed_ruleset": "Season of Discovery",
+          "record_url": "https://www.wowhead.com/classic/item=228683"
+        },
+        "item_id": 228683,
+        "name": "Rune Band of Wizardry",
+        "reported_exact_routes": [
+          {
+            "item_name": "Rune Band of Wizardry",
+            "line": 1811,
+            "route_context": [
+              {
+                "id": "UPPER_BLACKROCK_SPIRE",
+                "kind": "n",
+                "line": 1483,
+                "name": ""
+              }
+            ],
+            "source_path": ".contrib/.db/season of discovery/dungeons & raids/Blackrock Spire.lua"
+          }
+        ],
+        "scope": {
+          "faction": "Horde",
+          "level_max": 3,
+          "level_min": 1,
+          "slot": "Ring"
+        }
+      }
+    ]
+  },
+  "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+  "unavailable_item_ids": [
+    12588,
+    13371,
+    22319,
+    22339,
+    228562,
+    228563,
+    228565,
+    228583,
+    228585,
+    228590,
+    228605,
+    228667,
+    228675,
+    228683
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/229/exact-dungeon-dependencies"
+}

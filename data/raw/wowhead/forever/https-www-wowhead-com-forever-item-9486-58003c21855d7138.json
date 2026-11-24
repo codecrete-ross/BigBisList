@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Supercharger Battle Axe Item Level 28 Binds when equipped Two-Hand Axe 51 - 78 Damage Speed 2.80 (23.04 damage per second) Durability 95 / 95 Requires Level 23 Chance on hit: Blasts a target for 93 to 117 Nature damage. Sell Price: 54 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:24+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 9486,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 23.04,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Blasts a target for 93 to 117 Nature damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Blasts a target for 93 to 117 Nature damage."
+    ],
+    "id": 9486,
+    "item_level": 28,
+    "name": "Supercharger Battle Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 23,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "weapon_max_damage": 78,
+    "weapon_min_damage": 51,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=9486"
+  },
+  "linked_entities": [
+    {
+      "id": 13527,
+      "name": "Blasts a target for 93 to 117 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13527"
+    }
+  ],
+  "name": "Supercharger Battle Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9486",
+  "url": "https://www.wowhead.com/forever/item=9486"
+}

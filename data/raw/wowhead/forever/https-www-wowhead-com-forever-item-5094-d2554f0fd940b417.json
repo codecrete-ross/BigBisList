@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Razormane War Shield Item Level 24 Binds when picked up Off Hand Shield 444 Armor 8 Block Durability 75 / 75 Requires Level 19 Sell Price: 2 33 Dropped by: Razormane Warfrenzy Drop Chance: 24.39%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:18:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 5094,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 444,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5094,
+    "item_level": 24,
+    "name": "Razormane War Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 19,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 8.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5094"
+  },
+  "linked_entities": [],
+  "name": "Razormane War Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.39,
+      "entity_name": "Razormane Warfrenzy",
+      "source_url": "https://www.wowhead.com/forever/item=5094",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5094",
+  "url": "https://www.wowhead.com/forever/item=5094"
+}

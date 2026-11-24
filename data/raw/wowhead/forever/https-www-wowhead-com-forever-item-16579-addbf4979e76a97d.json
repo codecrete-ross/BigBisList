@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "General's Mail Leggings Item Level 71 Binds when picked up Unique Legs Mail 396 Armor +23 Stamina +23 Intellect Durability 105 / 105 Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 3 36 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:55:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 16579,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 396,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27."
+    ],
+    "id": 16579,
+    "item_level": 71,
+    "name": "General's Mail Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 23.0,
+      "spell_power": 27.0,
+      "stamina": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16579"
+  },
+  "linked_entities": [],
+  "name": "General's Mail Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16579",
+  "url": "https://www.wowhead.com/forever/item=16579"
+}

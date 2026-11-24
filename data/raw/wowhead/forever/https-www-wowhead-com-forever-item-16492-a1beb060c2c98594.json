@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Silk Shoulderpads Item Level 63 Binds when picked up Unique Shoulder Cloth 67 Armor +16 Stamina +15 Intellect Classes: Mage Requires Level 58 Equip: Increases damage and healing done by magical spells and effects by up to 12 . Champion's Regalia (0/6) Blood Guard's Silk Footwraps Blood Guard's Silk Gloves Legionnaire's Silk Robes Legionnaire's Silk Pants Champion's Silk Hood Champion's Silk Shoulderpads (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Reduces the cooldown of your Blink spell by 2 sec. (6) Set : +15 Stamina. Sell Price: 89 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16492,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 16492,
+    "item_level": 63,
+    "name": "Champion's Silk Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23025,
+        "text": "Reduces the cooldown of your Blink spell by 2 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 12.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16492"
+  },
+  "linked_entities": [
+    {
+      "id": 16485,
+      "name": "Blood Guard's Silk Footwraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16485"
+    },
+    {
+      "id": 16487,
+      "name": "Blood Guard's Silk Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16487"
+    },
+    {
+      "id": 16489,
+      "name": "Champion's Silk Hood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16489"
+    },
+    {
+      "id": 16490,
+      "name": "Legionnaire's Silk Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16490"
+    },
+    {
+      "id": 16491,
+      "name": "Legionnaire's Silk Robes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16491"
+    },
+    {
+      "id": 16492,
+      "name": "Champion's Silk Shoulderpads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16492"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    },
+    {
+      "id": 23025,
+      "name": "Reduces the cooldown of your Blink spell by 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23025"
+    }
+  ],
+  "name": "Champion's Silk Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16492",
+  "url": "https://www.wowhead.com/forever/item=16492"
+}

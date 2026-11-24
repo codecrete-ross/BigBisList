@@ -1,0 +1,43 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Cougar Claws Item Level 1 Quest Item Max Stack: 20 Dropped by: Flatland Cougar Drop Chance: 24.05%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:57:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 4802,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "id": 4802,
+    "item_level": 1,
+    "name": "Cougar Claws",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=4802"
+  },
+  "linked_entities": [],
+  "name": "Cougar Claws",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.05,
+      "entity_name": "Flatland Cougar",
+      "source_url": "https://www.wowhead.com/forever/item=4802",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/4802",
+  "url": "https://www.wowhead.com/forever/item=4802"
+}

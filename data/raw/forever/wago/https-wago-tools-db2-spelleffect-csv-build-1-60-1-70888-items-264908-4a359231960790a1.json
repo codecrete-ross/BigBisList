@@ -1,0 +1,102 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client tables from Wago.tools.",
+      "source": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "reviewed_client_item_effects",
+  "fetched_at": "2026-11-13T01:11:18.7980016Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3924683,
+      "collected_at": "2026-11-13T01:11:18.7980016Z",
+      "http": 200,
+      "name": "wago-SpellEffect",
+      "source_content_digest": "da2fb074eedb51bd1246ef53666044c0b757bdb67340c3969b712caa8481ac2b",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 254286,
+      "collected_at": "2026-11-13T01:11:17.5668203Z",
+      "http": 200,
+      "name": "wago-ItemXItemEffect",
+      "source_content_digest": "15dc36eec90ca5768e00469cb8065aedf82efcf205ca03281daf6aac69ca1885",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 36721,
+      "collected_at": "2026-11-13T01:19:55.2946838Z",
+      "http": 200,
+      "name": "wago-ItemXBonusTree",
+      "source_content_digest": "44b61eec8dbe7c22aa69a5031c38cb5521d217d2c7965987db20d3af2b5212bc",
+      "source_url": "https://wago.tools/db2/ItemXBonusTree/csv?build=1.60.1.70888"
+    },
+    {
+      "bytes": 53046,
+      "collected_at": "2026-11-13T01:20:28.0552446Z",
+      "http": 200,
+      "name": "spell-aura-enums",
+      "source_content_digest": "005109d3b89408e78ba6c426758ba339d9ef37074be8402dbe5ada4be50fbe21",
+      "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Spells/Auras/SpellAuraDefines.h"
+    },
+    {
+      "bytes": 588927,
+      "collected_at": "2026-11-13T01:20:27.6946903Z",
+      "http": 200,
+      "name": "spell-effect-enums",
+      "source_content_digest": "b6b92047376041007f741d5a9a01230ec9e6634fa038d52b1425c454988e5022",
+      "source_url": "https://raw.githubusercontent.com/TrinityCore/TrinityCore/c8ec3740265a237bc4da2ded4641203ae4fc102d/src/server/game/Miscellaneous/SharedDefines.h"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_item_effects": [
+    {
+      "finding": "The statless ring reveals quest targets for Dawn Waker through the Arcane Marker aura. The current spells show invisibility detection in category 15 and its marker trigger. The observed effects provide puzzle access. The reviewed tooltip and spells show no combat gearing benefit for the level 1\u20133 ring scope.",
+      "gearing_benefit": false,
+      "item_id": 264908,
+      "reviewed_spell_ids": [
+        1313580,
+        1314017
+      ],
+      "spell_effect_rows": [
+        {
+          "DifficultyID": 0,
+          "Effect": 3,
+          "EffectAura": 0,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectTriggerSpell": 0,
+          "ID": 1345008,
+          "SpellID": 1313580
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 6,
+          "EffectAura": 19,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 15,
+          "EffectTriggerSpell": 0,
+          "ID": 1345677,
+          "SpellID": 1314017
+        },
+        {
+          "DifficultyID": 0,
+          "Effect": 64,
+          "EffectAura": 0,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 500,
+          "EffectTriggerSpell": 1313580,
+          "ID": 1345678,
+          "SpellID": 1314017
+        }
+      ],
+      "tooltip_effects": []
+    }
+  ],
+  "source_content_digest": "da2fb074eedb51bd1246ef53666044c0b757bdb67340c3969b712caa8481ac2b",
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70888#/items/264908"
+}

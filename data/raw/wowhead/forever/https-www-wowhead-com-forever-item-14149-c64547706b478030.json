@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Subterranean Cape Item Level 18 Binds when picked up Back 17 Armor +3 Strength Restores + 5 health per 5 sec. Requires Level 13 Sell Price: 3 87 Dropped by: Taragaman the Hungerer Drop Chance: 32.21%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:45:53+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 14149,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 17,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +5 health per 5 sec.",
+        "stats": {
+          "hp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 14149,
+    "item_level": 18,
+    "name": "Subterranean Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 13,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "hp5": 5.0,
+      "strength": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14149"
+  },
+  "linked_entities": [],
+  "name": "Subterranean Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.21,
+      "entity_name": "Taragaman the Hungerer",
+      "source_url": "https://www.wowhead.com/forever/item=14149",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14149",
+  "url": "https://www.wowhead.com/forever/item=14149"
+}

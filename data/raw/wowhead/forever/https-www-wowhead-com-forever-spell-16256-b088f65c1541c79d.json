@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Flurry Talent Requires Shaman Requires level 1 Increases your attack speed by 1% for your next 3 swings after dealing a melee critical strike.",
+  "entity_id": 16256,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:32:15+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 16256,
+      "name": "Flurry",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16256"
+    }
+  ],
+  "name": "Flurry",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "510c7272911539cbcc94980355ce1c8002c7827bd37286b3102541a9af5bb20c",
+  "spell_id": 16256,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/16256",
+  "url": "https://www.wowhead.com/forever/spell=16256"
+}

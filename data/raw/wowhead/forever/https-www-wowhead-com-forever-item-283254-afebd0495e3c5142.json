@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heart of Alterac Item Level 39 Binds when equipped Held In Off-hand +7 Stamina +5 Intellect Requires Level 34 Sell Price: 39 80 Dropped by: Stone Fury Drop Chance: 0.47%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:08+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 283254,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 283254,
+    "item_level": 39,
+    "name": "Heart of Alterac",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "stamina": 7.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=283254"
+  },
+  "linked_entities": [],
+  "name": "Heart of Alterac",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.47,
+      "entity_name": "Stone Fury",
+      "source_url": "https://www.wowhead.com/forever/item=283254",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "4a5d30f42d8361dd3d64b3007ccdbba0cb6e5d5fd591ad48c02778178beb049a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/283254",
+  "url": "https://www.wowhead.com/forever/item=283254"
+}

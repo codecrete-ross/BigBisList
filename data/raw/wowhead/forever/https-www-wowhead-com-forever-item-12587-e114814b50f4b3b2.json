@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eye of Rend Item Level 63 Binds when picked up Head Leather 143 Armor +15 Strength +17 Stamina Durability 60 / 60 Requires Level 58 Equip: Improves your chance to hit by 0.5%. Equip: Improves your chance to get a critical strike by 1.5%. Sell Price: 2 16 51 Dropped by: Warchief Rend Blackhand Drop Chance: 20.27%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 12587,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 143,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.5%.",
+        "stats": {
+          "crit_percent": 1.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%.",
+      "Equip: Improves your chance to get a critical strike by 1.5%."
+    ],
+    "id": 12587,
+    "item_level": 63,
+    "name": "Eye of Rend",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.5,
+      "hit_percent": 0.5,
+      "stamina": 17.0,
+      "strength": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=12587"
+  },
+  "linked_entities": [],
+  "name": "Eye of Rend",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.27,
+      "entity_name": "Warchief Rend Blackhand",
+      "source_url": "https://www.wowhead.com/forever/item=12587",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "77912860cb3f71ee454fc6a4a3e31ed3715a7980392aabd56d42f25cbb7407a8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12587",
+  "url": "https://www.wowhead.com/forever/item=12587"
+}

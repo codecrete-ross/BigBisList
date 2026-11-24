@@ -1,0 +1,142 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Champion's Satin Epaulets Item Level 71 Binds when picked up Shoulder Cloth 75 Armor +21 Stamina +12 Intellect +40 Armor Restores + 6 mana per 5 sec. Durability 50 / 50 Classes: Priest Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 16 . Champion's Raiment (0/6) Blood Guard's Satin Grips Blood Guard's Satin Treads Champion's Satin Crown Champion's Satin Epaulets Legionnaire's Satin Leggings Legionnaire's Satin Robe (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Increases the duration of your Psychic Scream spell by 1 sec. (6) Set : +20 Stamina. Sell Price: 1 31 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227130,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 75,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16."
+    ],
+    "id": 227130,
+    "item_level": 71,
+    "name": "Champion's Satin Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23044,
+        "text": "Increases the duration of your Psychic Scream spell by 1 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "mp5": 6.0,
+      "spell_power": 16.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227130"
+  },
+  "linked_entities": [
+    {
+      "id": 227130,
+      "name": "Champion's Satin Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227130"
+    },
+    {
+      "id": 227131,
+      "name": "Legionnaire's Satin Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227131"
+    },
+    {
+      "id": 227132,
+      "name": "Champion's Satin Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227132"
+    },
+    {
+      "id": 227133,
+      "name": "Blood Guard's Satin Grips",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227133"
+    },
+    {
+      "id": 227134,
+      "name": "Blood Guard's Satin Treads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227134"
+    },
+    {
+      "id": 227135,
+      "name": "Legionnaire's Satin Robe",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227135"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23044,
+      "name": "Increases the duration of your Psychic Scream spell by 1 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23044"
+    }
+  ],
+  "name": "Champion's Satin Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4fed418502e7b67fc68a9d11d70dbb752d4f3caf16f5e3db9f0d68bd6dc6f321",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227130",
+  "url": "https://www.wowhead.com/forever/item=227130"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nightclaw Mantle Item Level 20 Binds when picked up Shoulder Requires Level 15 Requires Nightclaw Druids - Exalted Sell Price: 1 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 280363,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 280363,
+    "item_level": 20,
+    "name": "Nightclaw Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 15,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=280363"
+  },
+  "linked_entities": [
+    {
+      "id": 2758,
+      "name": "Nightclaw Druids",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2758"
+    }
+  ],
+  "name": "Nightclaw Mantle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Nightclaw Mantle Item Level 20 Binds when picked up Shoulder Requires Level 15 Requires Nightclaw Druids - Exalted Sell Price: 1 63",
+      "reputation": "Nightclaw Druids",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=280363",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "68471fd1d59ac1c0ee0b2d063e04fa74aea727ac8acd5ae1741a8eb51172ca61",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280363",
+  "url": "https://www.wowhead.com/forever/item=280363"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Bael'dun Tankard Item Level 27 Binds when equipped Held In Off-hand +3 Stamina +4 Spirit Requires Level 22 Use: Restores 1345 mana over 27 sec. Must remain seated while drinking. (10 Min Cooldown) Sell Price: 14 Dropped by: Malgin Barleybrew Drop Chance: 0.34%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 286541,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 1345 mana over 27 sec. Must remain seated while drinking. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 286541,
+    "item_level": 27,
+    "name": "Bael'dun Tankard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 22,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 4.0,
+      "stamina": 3.0
+    },
+    "use_effects": [
+      "Use: Restores 1345 mana over 27 sec. Must remain seated while drinking. (10 Min Cooldown)"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=286541"
+  },
+  "linked_entities": [
+    {
+      "id": 1133,
+      "name": "Restores 1345 mana over 27 sec. Must remain seated while drinking.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1133"
+    }
+  ],
+  "name": "Bael'dun Tankard",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 0.34,
+      "entity_name": "Malgin Barleybrew",
+      "source_url": "https://www.wowhead.com/forever/item=286541",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "2b1bdd100a759673d69fef212d50c895014a89917e4487590d3a3578e5503438",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286541",
+  "url": "https://www.wowhead.com/forever/item=286541"
+}

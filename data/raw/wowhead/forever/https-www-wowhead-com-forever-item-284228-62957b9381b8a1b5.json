@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Vial of Vile Liquid Item Level 56 Binds when equipped Held In Off-hand -10 Stamina +13 Intellect Requires Level 51 Equip: Improves your chance to get a critical strike by 0.5%. \"Maybe don't drink this one.\" Sell Price: 31 13",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 284228,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%. \"Maybe don't drink this one.\""
+    ],
+    "id": 284228,
+    "item_level": 56,
+    "name": "Vial of Vile Liquid",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 51,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "intellect": 13.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=284228"
+  },
+  "linked_entities": [],
+  "name": "Vial of Vile Liquid",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "eb9b673b827270ce99572f8ea543038637d1ecd83d626af030c2e3197cc02fd8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284228",
+  "url": "https://www.wowhead.com/forever/item=284228"
+}

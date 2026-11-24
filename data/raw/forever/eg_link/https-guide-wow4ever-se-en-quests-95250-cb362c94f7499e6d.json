@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/95250"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:34:23.354743+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 279867,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/95250",
+      "subject_id": 95250,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 15,
+    "name": "Abominable Creatures",
+    "quest_id": 95250,
+    "quest_level": 21,
+    "reward_item_ids": [
+      279867
+    ],
+    "zone": "Ruins of Lordaeron"
+  },
+  "source_content_digest": "23cc221fd9cf364483bcf38c5911c67a4df40992c5503dfa9debd8ba2f365a44",
+  "url": "https://guide.wow4ever.se/en/quests/95250"
+}

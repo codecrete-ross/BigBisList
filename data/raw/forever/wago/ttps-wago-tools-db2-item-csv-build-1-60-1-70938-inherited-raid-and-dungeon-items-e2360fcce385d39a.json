@@ -1,0 +1,1376 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 7378627,
+      "collected_at": "2026-11-13T15:03:40.6311251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-1500",
+      "source_content_digest": "e6d8cf507f48de0caab548d75c77416419d6c9d4aa46f38f2e766621781ec9a0",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aMUAmfBJTNYkH8ammgS4Mg.bin"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "finding": "The current client base table retains the exact item IDs and equipment types. The detailed table has no matching row, so the review uses separate content access evidence.",
+    "items": [
+      {
+        "inventory_type": 11,
+        "item_id": 209565,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 209570,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 209575,
+        "subclass_id": 9
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 209590,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 209668,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209676,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 209677,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209678,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209679,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209692,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 209821,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 209823,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209824,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 209828,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 211458,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 211462,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 211467,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 211468,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 213282,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 213283,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 213284,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 213287,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 213301,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 213302,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 213303,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 213304,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 213413,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 213419,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 213542,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 215436,
+        "subclass_id": 9
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 216490,
+        "subclass_id": 8
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 216662,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 216673,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 216674,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 216925,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 220527,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 220528,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 220532,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 220605,
+        "subclass_id": 7
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 220607,
+        "subclass_id": 9
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 220626,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 220627,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 220628,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 220629,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 220630,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 223327,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226444,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226478,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226527,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226543,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226550,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226560,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226566,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226576,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226581,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226611,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226624,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226632,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226640,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226644,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226653,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226665,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 226674,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 227454,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 227455,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228242,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228243,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 228258,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 228259,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228261,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228268,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228274,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 228279,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 228283,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228286,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228287,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 228687,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 228955,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 230240,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 230251,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230257,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230281,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230734,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 230740,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230808,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230811,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230839,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 230841,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230846,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230854,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230855,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230867,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 230912,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230915,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230921,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230929,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 230941,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230943,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 230999,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 231000,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 231001,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 231005,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231039,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231047,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231057,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231066,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231077,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231096,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231106,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231114,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231160,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231170,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231201,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231209,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231217,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231225,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231235,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231243,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231251,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 231259,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232081,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232089,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232097,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232105,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232113,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232121,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232129,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232137,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232169,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232177,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232185,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232193,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232201,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232209,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232217,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232225,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232233,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 232241,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233379,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233383,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233387,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233394,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233403,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233409,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233413,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233419,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233422,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233425,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233428,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233431,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233434,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233437,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233440,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233443,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233496,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233507,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233521,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233524,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233563,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233565,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233566,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233569,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 233581,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233592,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 233596,
+        "subclass_id": 7
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 233597,
+        "subclass_id": 9
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233600,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 233602,
+        "subclass_id": 8
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233609,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233615,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 233616,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233638,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 233648,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233663,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233668,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233671,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233677,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233681,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233697,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233702,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233707,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233713,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233717,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 233722,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 234076,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 234078,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 234082,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 234083,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 234101,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 234111,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236013,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236022,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236026,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236031,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236034,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236035,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236041,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236044,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236052,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236056,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236065,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236067,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236070,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236074,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236084,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236085,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236089,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236093,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236102,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236105,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236108,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236112,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236116,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236130,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236139,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236145,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236150,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236153,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236157,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236163,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236167,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236172,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236176,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236189,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236190,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236194,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236198,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236203,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236207,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236212,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236216,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236223,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236226,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 236257,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236259,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236262,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 236271,
+        "subclass_id": 7
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236273,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236274,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 236275,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 236276,
+        "subclass_id": 9
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236283,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236286,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236291,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236294,
+        "subclass_id": 3
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236295,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 236298,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 236301,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 28,
+        "item_id": 236308,
+        "subclass_id": 8
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236311,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 236318,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 236328,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 236330,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 237294,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 23,
+        "item_id": 241021,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241027,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241028,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241029,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241030,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241031,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 11,
+        "item_id": 241032,
+        "subclass_id": 0
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 241079,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 241152,
+        "subclass_id": 2
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 241153,
+        "subclass_id": 1
+      },
+      {
+        "inventory_type": 3,
+        "item_id": 241154,
+        "subclass_id": 2
+      }
+    ]
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/inherited-raid-and-dungeon-items"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Chain Heal Level 60 405 Mana 40 yd range 2.5 sec cast Requires Shaman Requires level 54 Heals the friendly target for 474 to 539, then jumps to heal additional nearby targets. If cast on a party member, the heal will only jump to other party members. Each jump is 50% as effective as the previous target. Heals 3 total targets.",
+  "entity_id": 10623,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:53+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10623,
+      "name": "Chain Heal",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10623"
+    }
+  ],
+  "name": "Chain Heal",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "102f05f25022acbdb65da380b8eae70fa974213c773e8b1c85fe4f7517abafc7",
+  "spell_id": 10623,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10623",
+  "url": "https://www.wowhead.com/forever/spell=10623"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Brutality Item Level 65 Binds when picked up Relic Idol Requires Level 60 Equip: Reduces the Rage cost of Maul and Swipe by 2. Sell Price: 1 90 45 Dropped by: Magistrate Barthilas Drop Chance: 3.62%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:21+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 23198,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the Rage cost of Maul and Swipe by 2.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the Rage cost of Maul and Swipe by 2."
+    ],
+    "id": 23198,
+    "item_level": 65,
+    "name": "Idol of Brutality",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=23198"
+  },
+  "linked_entities": [
+    {
+      "id": 28855,
+      "name": "Reduces the Rage cost of Maul and Swipe by 2.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=28855"
+    }
+  ],
+  "name": "Idol of Brutality",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 3.62,
+      "entity_name": "Magistrate Barthilas",
+      "source_url": "https://www.wowhead.com/forever/item=23198",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5aa73a7c5189aaef7b5fa24765b6f5afd8cc6abc371b9b8f263ef4498ee45d63",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23198",
+  "url": "https://www.wowhead.com/forever/item=23198"
+}

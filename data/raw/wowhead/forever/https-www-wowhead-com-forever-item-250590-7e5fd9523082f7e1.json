@@ -1,0 +1,162 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Blessed Plate Bracers Item Level 57 Binds when equipped Wrist Plate 237 Armor +11 Strength +6 Stamina Requires Level 52 Equip: Increases damage and healing done by magical spells and effects by up to 4 . Blessed Plate (0/8) Blessed Plate Chest Blessed Plate Helm Blessed Plate Belt Blessed Plate Leggings Blessed Plate Bracers Blessed Plate Gauntlet Blessed Plate Boots Blessed Plate Pauldrons (2) Set : +10 Shadow Resistance. (3) Set : +20 Strength. (4) Set : All party members within 30 yds are blessed, restoring 20 health every 5 sec. (5) Set : Improves your chance to hit by 2.0%. (6) Set : Increases damage done by Holy spells and effects by up to 29. Sell Price: 1 26 21",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:09:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 250590,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 237,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 4.",
+        "stats": {
+          "spell_power": 4.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 4."
+    ],
+    "id": 250590,
+    "item_level": 57,
+    "name": "Blessed Plate Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 52,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14673,
+        "text": "+10 Shadow Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1252009,
+        "text": "+20 Strength."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302375,
+        "text": "All party members within 30 yds are blessed, restoring 20 health every 5 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1252013,
+        "text": "Improves your chance to hit by 2.0%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 21518,
+        "text": "Increases damage done by Holy spells and effects by up to 29."
+      }
+    ],
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 4.0,
+      "stamina": 6.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=250590"
+  },
+  "linked_entities": [
+    {
+      "id": 250586,
+      "name": "Blessed Plate Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250586"
+    },
+    {
+      "id": 250587,
+      "name": "Blessed Plate Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250587"
+    },
+    {
+      "id": 250588,
+      "name": "Blessed Plate Gauntlet",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250588"
+    },
+    {
+      "id": 250590,
+      "name": "Blessed Plate Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250590"
+    },
+    {
+      "id": 250591,
+      "name": "Blessed Plate Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250591"
+    },
+    {
+      "id": 250592,
+      "name": "Blessed Plate Belt",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250592"
+    },
+    {
+      "id": 250593,
+      "name": "Blessed Plate Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250593"
+    },
+    {
+      "id": 250594,
+      "name": "Blessed Plate Chest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=250594"
+    },
+    {
+      "id": 14673,
+      "name": "+10 Shadow Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14673"
+    },
+    {
+      "id": 21518,
+      "name": "Increases damage done by Holy spells and effects by up to 29.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21518"
+    },
+    {
+      "id": 1252009,
+      "name": "+20 Strength.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1252009"
+    },
+    {
+      "id": 1252013,
+      "name": "Improves your chance to hit by 2.0%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1252013"
+    },
+    {
+      "id": 1302375,
+      "name": "All party members within 30 yds are blessed, restoring 20 health every 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302375"
+    }
+  ],
+  "name": "Blessed Plate Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250590",
+  "url": "https://www.wowhead.com/forever/item=250590"
+}

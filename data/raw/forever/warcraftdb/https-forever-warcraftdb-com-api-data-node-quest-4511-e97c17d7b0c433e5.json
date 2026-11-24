@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4511"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-12T21:22:07.436602+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 11870,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4511",
+      "subject_id": 4511,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 11871,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4511",
+      "subject_id": 4511,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "Calm Before the Storm",
+    "quest_id": 4511,
+    "reward_item_roles": {
+      "11870": "choices",
+      "11871": "choices",
+      "11872": "choices"
+    },
+    "side": "Both",
+    "zone": "Orgrimmar"
+  },
+  "source_content_digest": "ccb72568cc932929d78d9096ce221d06d163986138d4113a391e2491cd930741",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4511"
+}

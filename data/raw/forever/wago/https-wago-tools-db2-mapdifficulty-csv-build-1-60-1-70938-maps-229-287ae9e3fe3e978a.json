@@ -1,0 +1,85 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Client table exports from Wago.tools.",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:59:43.3350168Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T03:59:43.3350168Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T03:59:44.4734247Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-mapcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 4691,
+      "collected_at": "2026-11-13T03:59:45.5880346Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-contenttuning",
+      "source_content_digest": "217b7e000ac156472885e048d29ea2d8ce899eb371a041b8e1a1cd2bb3a53944",
+      "source_url": "https://wago.tools/db2/ContentTuning/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "difficulty": {
+      "ContentTuningID": "5239",
+      "DifficultyID": "1",
+      "Flags": "0",
+      "ID": "24",
+      "ItemContext": "0",
+      "ItemContextPickerID": "0",
+      "LockID": "0",
+      "MapID": "229",
+      "MaxPlayers": "10",
+      "Message_lang": "You must be at least level 48 to enter.",
+      "ResetInterval": "0",
+      "WorldStateExpressionID": "0"
+    },
+    "dungeon_gate": {
+      "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+      "ID": "4214",
+      "MapDifficultyID": "24",
+      "OrderIndex": "1",
+      "PlayerConditionID": "159274"
+    },
+    "heroic_dungeon_gate": {
+      "FailureDescription_lang": "You are not high enough level for this Dungeon.",
+      "ID": "4216",
+      "MapDifficultyID": "6334",
+      "OrderIndex": "1",
+      "PlayerConditionID": "159274"
+    },
+    "map_id": 229
+  },
+  "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+  "url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938#/maps/229"
+}

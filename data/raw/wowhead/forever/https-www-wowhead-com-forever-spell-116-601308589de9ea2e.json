@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Frostbolt Level 60 25 Mana 30 yd range 1.5 sec cast Requires Mage Requires level 4 Launches a bolt of frost at the enemy, causing ( 18.8 * 1 ) to ( 20.8 * 1 ) Frost damage and slowing movement speed by 40% for 5 sec.",
+  "entity_id": 116,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:16+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 116,
+      "name": "Frostbolt",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=116"
+    }
+  ],
+  "name": "Frostbolt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "d86a9a0f70e3dcbc0afc4450ccee975306de07ba5344206f8acaf4f559edf720",
+  "spell_id": 116,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/116",
+  "url": "https://www.wowhead.com/forever/spell=116"
+}

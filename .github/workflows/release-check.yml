@@ -2,6 +2,12 @@ name: Release check
 
 on:
   workflow_dispatch:
+    inputs:
+      flavor:
+        description: Client dataset to verify
+        type: choice
+        options: [forever, anniversary]
+        default: forever
   pull_request:
   push:
     tags:
@@ -13,7 +19,7 @@ permissions:
 jobs:
   release-check:
     runs-on: windows-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
 
     steps:
       - name: Check out repository
@@ -57,9 +63,16 @@ jobs:
 
       - name: Run full release check
         shell: pwsh
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.value }}
+          RELEASE_FLAVOR: ${{ inputs.flavor || 'forever' }}
+          FOREVER_BASELINE: ${{ vars.FOREVER_LIVE_BASELINE_TAG }}
         run: |
           $python = (Get-Command python -CommandType Application | Select-Object -First 1).Source
-          ./scripts/check-release.ps1 `
-            -Version '${{ steps.version.outputs.value }}' `
-            -PythonPath $python `
-            -FullData
+          $arguments = @("-Version", $env:RELEASE_VERSION, "-Flavor", $env:RELEASE_FLAVOR, "-PythonPath", $python, "-FullData")
+          if ($env:RELEASE_FLAVOR -eq "forever" -and $env:FOREVER_BASELINE) {
+              & $python -m tools.forever_weekly eligible --baseline-tag $env:FOREVER_BASELINE *> $null
+              if ($LASTEXITCODE -eq 0) { $arguments += @("-BaselineTag", $env:FOREVER_BASELINE) }
+          }
+          pwsh -NoProfile -File scripts/check-release.ps1 @arguments
+          exit $LASTEXITCODE

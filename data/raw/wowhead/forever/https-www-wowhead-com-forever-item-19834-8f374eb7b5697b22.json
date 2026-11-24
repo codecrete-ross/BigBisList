@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Zandalar Madcap's Tunic Item Level 65 Binds when picked up Chest Leather 197 Armor +19 Stamina Durability 120 / 120 Classes: Rogue Equip: Improves your chance to get a critical strike by 2.0%. Equip: + 44 Attack Power. Madcap's Outfit (0/5) Zandalarian Shadow Mastery Talisman Renataki's Charm of Trickery Zandalar Madcap's Bracers Zandalar Madcap's Mantle Zandalar Madcap's Tunic (2) Set : +20 Attack Power. (3) Set : Decreases the cooldown of Blind by 20 sec. (5) Set : Decrease the energy cost of Eviscerate and Rupture by 5.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:50:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 19834,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 197,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 2.0%.",
+        "stats": {
+          "crit_percent": 2.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +44 Attack Power.",
+        "stats": {
+          "attack_power": 44
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 2.0%."
+    ],
+    "id": 19834,
+    "item_level": 65,
+    "name": "Zandalar Madcap's Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 9331,
+        "text": "+20 Attack Power."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 24469,
+        "text": "Decreases the cooldown of Blind by 20 sec."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 24471,
+        "text": "Decrease the energy cost of Eviscerate and Rupture by 5."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 44.0,
+      "crit_percent": 2.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19834"
+  },
+  "linked_entities": [
+    {
+      "id": 19617,
+      "name": "Zandalarian Shadow Mastery Talisman",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19617"
+    },
+    {
+      "id": 19834,
+      "name": "Zandalar Madcap's Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19834"
+    },
+    {
+      "id": 19835,
+      "name": "Zandalar Madcap's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19835"
+    },
+    {
+      "id": 19836,
+      "name": "Zandalar Madcap's Bracers",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19836"
+    },
+    {
+      "id": 19954,
+      "name": "Renataki's Charm of Trickery",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=19954"
+    },
+    {
+      "id": 9331,
+      "name": "+20 Attack Power.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9331"
+    },
+    {
+      "id": 24469,
+      "name": "Decreases the cooldown of Blind by 20 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24469"
+    },
+    {
+      "id": 24471,
+      "name": "Decrease the energy cost of Eviscerate and Rupture by 5.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=24471"
+    }
+  ],
+  "name": "Zandalar Madcap's Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19834",
+  "url": "https://www.wowhead.com/forever/item=19834"
+}

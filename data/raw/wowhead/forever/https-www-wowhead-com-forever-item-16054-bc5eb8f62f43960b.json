@@ -1,0 +1,158 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Schematic: Arcanite Dragonling Item Level 60 Requires Engineering (300) Use: Teaches you how to make an Arcanite Dragonling. Sell Price: 60 Dropped by: Cobalt Mageweaver Drop Chance: 2.31%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Trinket",
+      "item_id": 16022,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 16022,
+        "name": "Arcanite Dragonling",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Trinket",
+        "source_summary": "",
+        "wowhead_url": "https://www.wowhead.com/forever/item=16022"
+      },
+      "name": "Arcanite Dragonling",
+      "normalized_requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Arcanite Dragonling ndstartndend Item Level 60 bo Binds when equipped Unique-Equippedueue Trinket rfebstatsegstatseistatsnameDescStatsrsepsRequires Level rlvl50 Requires Engineering (300) rruseText:0:1 Use: Activates your Arcanite Dragonling to fight for you for 1 min. (1 Hour Cooldown) useText:1itemEffects:1 pvpEquippvpEquip Sell Price: 4 Requires Mithril Mechanical Dragonling , Delicate Arcanite Converter (8), Enchanted Thorium Bar (10), Thorium Widget (6), Gold Power Core (4), Enchanted Leather (6)",
+          "scope": "equip_or_use",
+          "skill": 300,
+          "source_url": "https://www.wowhead.com/forever/item=16022",
+          "type": "profession"
+        }
+      ],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=16022"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:57:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 16054,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Arcanite Dragonling.",
+        "type": "use"
+      }
+    ],
+    "id": 16054,
+    "item_level": 60,
+    "name": "Schematic: Arcanite Dragonling",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make an Arcanite Dragonling."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=16054"
+  },
+  "linked_entities": [
+    {
+      "id": 10558,
+      "name": "Gold Power Core",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10558"
+    },
+    {
+      "id": 10576,
+      "name": "Mithril Mechanical Dragonling",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10576"
+    },
+    {
+      "id": 12655,
+      "name": "Enchanted Thorium Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12655"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 15994,
+      "name": "Thorium Widget",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15994"
+    },
+    {
+      "id": 16006,
+      "name": "Delicate Arcanite Converter",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16006"
+    },
+    {
+      "id": 16022,
+      "name": "Arcanite Dragonling",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16022"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 19804,
+      "name": "Activates your Arcanite Dragonling to fight for you for 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19804"
+    },
+    {
+      "id": 19830,
+      "name": "Teaches you how to make an Arcanite Dragonling.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19830"
+    }
+  ],
+  "name": "Schematic: Arcanite Dragonling",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Arcanite Dragonling Item Level 60 Requires Engineering (300) Use: Teaches you how to make an Arcanite Dragonling. Sell Price: 60 Dropped by: Cobalt Mageweaver Drop Chance: 2.31%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=16054",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 2.31,
+      "entity_name": "Cobalt Mageweaver",
+      "source_url": "https://www.wowhead.com/forever/item=16054",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    19830
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16054",
+  "url": "https://www.wowhead.com/forever/item=16054"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shapeshifter's Helm Item Level 54 Binds when picked up Head Leather 126 Armor +18 Agility +12 Stamina +12 Intellect Equip: Increased Defense + 7. Sell Price: 1 35 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 270117,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 126,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +7.",
+        "stats": {
+          "defense": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +7."
+    ],
+    "id": 270117,
+    "item_level": 54,
+    "name": "Shapeshifter's Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "defense": 7.0,
+      "intellect": 12.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=270117"
+  },
+  "linked_entities": [],
+  "name": "Shapeshifter's Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e60ec747de7a4ad78228adfac603e7d4de876617cb9be355909a160f52e1eb2b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270117",
+  "url": "https://www.wowhead.com/forever/item=270117"
+}

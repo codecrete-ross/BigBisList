@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Truth Item Level 57 Binds when picked up Relic Libram Requires Level 52 Equip: Reduces the Mana cost of Purify and Cleanse by 10%. Sell Price: 1 27 69 Dropped by: Magmus Drop Chance: 12.33%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:07:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Libram",
+  "item_id": 22400,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the Mana cost of Purify and Cleanse by 10%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the Mana cost of Purify and Cleanse by 10%."
+    ],
+    "id": 22400,
+    "item_level": 57,
+    "name": "Libram of Truth",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Libram",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22400"
+  },
+  "linked_entities": [
+    {
+      "id": 27850,
+      "name": "Reduces the Mana cost of Purify and Cleanse by 10%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27850"
+    }
+  ],
+  "name": "Libram of Truth",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.33,
+      "entity_name": "Magmus",
+      "source_url": "https://www.wowhead.com/forever/item=22400",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6343ff9366ebfb291fe30e32ccccaf627f034c6465767ab1dc6e18b663d4fb79",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22400",
+  "url": "https://www.wowhead.com/forever/item=22400"
+}

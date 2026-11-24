@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Goblin Construction Helmet Item Level 41 Binds when picked up Head Cloth 44 Armor +15 Fire Resistance Durability 45 / 45 Requires Engineering (205) Use: Absorbs 300 to 500 Fire damage. Lasts 1 min. (1 Hour Cooldown) Sell Price: 35 17",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10543,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Absorbs 300 to 500 Fire damage. Lasts 1 min. (1 Hour Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10543,
+    "item_level": 41,
+    "name": "Goblin Construction Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 15.0
+    },
+    "use_effects": [
+      "Use: Absorbs 300 to 500 Fire damage. Lasts 1 min. (1 Hour Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10543"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 12561,
+      "name": "Absorbs 300 to 500 Fire damage. Lasts 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12561"
+    }
+  ],
+  "name": "Goblin Construction Helmet",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Construction Helmet Item Level 41 Binds when picked up Head Cloth 44 Armor +15 Fire Resistance Durability 45 / 45 Requires Engineering (205) Use: Absorbs 300 to 500 Fire damage. Lasts 1 min. (1 Hour Cooldown) Sell Price: 35 17",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/forever/item=10543",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "90d02dccf7e3bda12ac34170eea2c2c05f8c525709af6a7b17d676d6518955ce",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10543",
+  "url": "https://www.wowhead.com/forever/item=10543"
+}

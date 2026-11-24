@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Highlander's Lizardhide Girdle Item Level 43 Binds when picked up Unique Waist Leather 73 Armor +4 Stamina +15 Intellect +40 Armor Durability 35 / 35 Requires Level 38 Requires The League of Arathor - Honored Sell Price: 42 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 20104,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 73,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20104,
+    "item_level": 43,
+    "name": "Highlander's Lizardhide Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 38,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20104"
+  },
+  "linked_entities": [
+    {
+      "id": 509,
+      "name": "The League of Arathor",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=509"
+    }
+  ],
+  "name": "Highlander's Lizardhide Girdle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Highlander's Lizardhide Girdle Item Level 43 Binds when picked up Unique Waist Leather 73 Armor +4 Stamina +15 Intellect +40 Armor Durability 35 / 35 Requires Level 38 Requires The League of Arathor - Honored Sell Price: 42 62",
+      "reputation": "The League of Arathor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20104",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20104",
+  "url": "https://www.wowhead.com/forever/item=20104"
+}

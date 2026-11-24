@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Faintly Glowing Orb Item Level 62 Binds when picked up Held In Off-hand +13 Stamina +8 Spirit Equip: Increases damage and healing done by magical spells and effects by up to 11 . Sell Price: 2 20 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:07:00+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 279912,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 11.",
+        "stats": {
+          "spell_power": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 11."
+    ],
+    "id": 279912,
+    "item_level": 62,
+    "name": "Faintly Glowing Orb",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 11.0,
+      "spirit": 8.0,
+      "stamina": 13.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279912"
+  },
+  "linked_entities": [],
+  "name": "Faintly Glowing Orb",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0de557d3e8283aac303364c05694bc8f304ef6266792cc67e4a846840a9db4e3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279912",
+  "url": "https://www.wowhead.com/forever/item=279912"
+}

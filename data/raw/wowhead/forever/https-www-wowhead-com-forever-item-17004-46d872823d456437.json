@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sarah's Guide Item Level 61 Binds when picked up Two-Hand Staff 70 - 106 Damage Speed 2.50 (35.20 damage per second) +20 Stamina +15 Intellect Durability 85 / 85 Equip: Increases damage and healing done by magical spells and effects by up to 54 . Sell Price: 5 44 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:09:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 17004,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 35.2,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+        "stats": {
+          "spell_power": 54.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 54."
+    ],
+    "id": 17004,
+    "item_level": 61,
+    "name": "Sarah's Guide",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 54.0,
+      "stamina": 20.0
+    },
+    "weapon_max_damage": 106,
+    "weapon_min_damage": 70,
+    "weapon_speed": 2.5,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17004"
+  },
+  "linked_entities": [],
+  "name": "Sarah's Guide",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17004",
+  "url": "https://www.wowhead.com/forever/item=17004"
+}

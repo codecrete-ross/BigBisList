@@ -1,0 +1,37 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/1046"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:18.818658+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 1116,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/1046",
+      "subject_id": 1046,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Raene's Cleansing",
+    "quest_id": 1046,
+    "reward_item_ids": [
+      1116,
+      5815,
+      17046
+    ],
+    "zone": "Ashenvale"
+  },
+  "source_content_digest": "51c36da63bf977083fa2272895e6fe85e346bcede87accac1b285311f0d6e9df",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/1046"
+}

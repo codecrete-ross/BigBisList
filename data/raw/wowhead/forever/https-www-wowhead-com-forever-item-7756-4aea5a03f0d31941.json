@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dog Training Gloves Item Level 36 Binds when picked up Hands Leather 71 Armor Durability 30 / 30 Requires Level 31 Equip: + 24 Attack Power. Equip: + 21 Attack Power against Beasts. Sell Price: 24 6 Dropped by: Houndmaster Loksey Drop Chance: 55.97%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 7756,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 71,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +21 Attack Power against Beasts.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +24 Attack Power.",
+      "Equip: +21 Attack Power against Beasts."
+    ],
+    "id": 7756,
+    "item_level": 36,
+    "name": "Dog Training Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 31,
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7756"
+  },
+  "linked_entities": [],
+  "name": "Dog Training Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 55.97,
+      "entity_name": "Houndmaster Loksey",
+      "source_url": "https://www.wowhead.com/forever/item=7756",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7756",
+  "url": "https://www.wowhead.com/forever/item=7756"
+}

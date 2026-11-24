@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Heroic Strike 15 Rage Melee Range Next Melee Requires Warrior Requires level 1 Requires Melee Weapon A strong attack that increases melee damage by 11 and causes a high amount of threat.",
+  "entity_id": 78,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:15+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 78,
+      "name": "Heroic Strike",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=78"
+    }
+  ],
+  "name": "Heroic Strike",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "5c7e89b9043ac47023c952cdda24b1152ef0b529ab8d52f3e5900a97a979b9cd",
+  "spell_id": 78,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/78",
+  "url": "https://www.wowhead.com/forever/spell=78"
+}

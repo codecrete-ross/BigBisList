@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Barbarous Blade Item Level 63 Binds when picked up Two-Hand Sword 138 - 207 Damage Speed 3.20 (53.91 damage per second) Durability 100 / 100 Requires Level 58 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 50 Attack Power. Equip: + 33 Attack Power against Humanoids. Sell Price: 7 19 78 Dropped by: King Gordok Drop Chance: 23.70%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:25.5114272Z",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 18520,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 53.91,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +50 Attack Power.",
+        "stats": {
+          "attack_power": 50
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +33 Attack Power against Humanoids.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 18520,
+    "item_level": 63,
+    "name": "Barbarous Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 50.0,
+      "crit_percent": 1.0
+    },
+    "weapon_max_damage": 207,
+    "weapon_min_damage": 138,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18520"
+  },
+  "linked_entities": [],
+  "name": "Barbarous Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 23.7,
+      "entity_name": "King Gordok",
+      "source_url": "https://www.wowhead.com/forever/item=18520",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f9ed3f036bd55250de62975caf010bb42d2e33fd4cf51d92570e1af8a000e000",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18520",
+  "url": "https://www.wowhead.com/forever/item=18520"
+}

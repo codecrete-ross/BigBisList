@@ -23,9 +23,13 @@ if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.manifest_coverage import build_manifest_coverage
-from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
+from tools.project import (
+    CANONICAL_DIR, FOREVER_CANONICAL_DIR, FOREVER_RAW_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES,
+    add_flavor_argument, canonical_json, dataset_json, write_text,
+)
 from tools.recommend_leveling import build_recommendation_documents
 from tools.progression import expand_pre_raid_paths, resolve_source_content
+from tools.guide_evidence import apply_recommendation_context, table_evidence
 from tools.phase_source_overrides import apply_source_rule_overrides
 from tools.reputations import infer_source_side, normalize_reputation_names, requirement_side
 from tools.sources import (
@@ -291,10 +295,8 @@ def html_cache_name(url: str) -> str:
     return hashlib.sha256(url.encode("utf-8")).hexdigest() + ".html"
 
 
-def absolute_tbc_url(href: str) -> str:
-    if href.startswith("https://www.wowhead.com/tbc/"):
-        return href
-    if href.startswith("/tbc/"):
+def absolute_wowhead_url(href: str) -> str:
+    if href.startswith(("/tbc/", "/forever/")):
         return "https://www.wowhead.com" + href
     return href
 
@@ -432,7 +434,7 @@ def entity_from_link(link: Any, entity_names: dict[str, dict[int, str]] | None =
             "type": "item",
             "id": item_id,
             "name": element_text(link) or entity_names.get("item", {}).get(item_id, ""),
-            "url": absolute_tbc_url(href),
+            "url": absolute_wowhead_url(href),
         }
     spell_id = spell_id_from_href(href)
     if spell_id:
@@ -440,7 +442,7 @@ def entity_from_link(link: Any, entity_names: dict[str, dict[int, str]] | None =
             "type": "spell",
             "id": spell_id,
             "name": element_text(link) or entity_names.get("spell", {}).get(spell_id, ""),
-            "url": absolute_tbc_url(href),
+            "url": absolute_wowhead_url(href),
         }
     return None
 
@@ -463,7 +465,7 @@ def unique_entities(links: list[Any], entity_names: dict[str, dict[int, str]] | 
 def source_links_from_element(element: Any) -> list[dict[str, str]]:
     return [
         {
-            "href": absolute_tbc_url(link["href"]),
+            "href": absolute_wowhead_url(link["href"]),
             "text": element_text(link),
         }
         for link in element.find_all("a", href=True)
@@ -547,11 +549,11 @@ def canonical_standing(value: str | None) -> str | None:
     return None
 
 
-def canonical_profession(value: str | None) -> str | None:
+def canonical_profession(value: str | None, professions: tuple[str, ...] = PROFESSION_NAMES) -> str | None:
     if not value:
         return None
     normalized = value.strip().lower()
-    for profession in PROFESSION_NAMES:
+    for profession in professions:
         if profession.lower() == normalized:
             return profession
     return None
@@ -747,13 +749,17 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
 
 def extract_profession_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
     requirements: list[dict[str, Any]] = []
-    profession_pattern = "|".join(re.escape(profession) for profession in PROFESSION_NAMES)
+    professions = PROFESSION_NAMES
+    profession_pattern = "|".join(re.escape(profession) for profession in professions)
+    if source_url.startswith("https://www.wowhead.com/forever/"):
+        professions = (*professions, "Fishing")
+        profession_pattern += r"|Fishing(?!\s+Pole\b)"
     for match in re.finditer(
         rf"\b(?:Profession:\s*|Requires\s+)(?P<profession>{profession_pattern})(?:\s*\((?P<skill>\d+)\))?",
         text,
         flags=re.IGNORECASE,
     ):
-        profession = canonical_profession(match.group("profession"))
+        profession = canonical_profession(match.group("profession"), professions)
         if not profession:
             continue
         skill = int(match.group("skill")) if match.group("skill") else None
@@ -1725,18 +1731,27 @@ WEAPON_SUBTYPES = [
 ARMOR_TYPES = ["Cloth", "Leather", "Mail", "Plate"]
 
 
-def item_tooltip_lines(item_id: int | None, html: str) -> list[str]:
+def item_tooltip_lines(item_id: int | None, html: str, *, preserve_inline: bool = False) -> list[str]:
     tooltip_html = item_tooltip_html(item_id, html)
     if not tooltip_html:
         return []
-    soup = make_soup(tooltip_html)
-    return [clean_text(line) for line in soup.get_text("\n", strip=True).splitlines() if clean_text(line)]
+    return tooltip_html_lines(tooltip_html, preserve_inline=preserve_inline)
 
 
-def tooltip_html_lines(tooltip_html: str) -> list[str]:
+def tooltip_html_lines(tooltip_html: str, *, preserve_inline: bool = False) -> list[str]:
     if not tooltip_html:
         return []
     soup = make_soup(tooltip_html)
+    if preserve_inline:
+        # Inline markup and rtg comments split BeautifulSoup text nodes, not
+        # visible tooltip lines. A separator between every node loses values
+        # such as "Equip: +<!--rtg38-->4 Attack Power."
+        for element in soup.find_all("br"):
+            element.replace_with("\n")
+        for element in soup.find_all(["td", "th", "div"]):
+            element.insert_before("\n")
+            element.insert_after("\n")
+        return [clean_text(line) for line in soup.get_text("", strip=False).splitlines() if clean_text(line)]
     return [clean_text(line) for line in soup.get_text("\n", strip=True).splitlines() if clean_text(line)]
 
 
@@ -2033,7 +2048,111 @@ def parse_tooltip_stats(lines: list[str], fallback_text: str = "") -> dict[str, 
 
 
 def parse_item_stats(url: str, item_id: int | None, name: str, description: str, tooltip_lines: list[str], inventory_slot: str | None, quality: str, binding: str, boe: bool | None, sources: list[dict[str, Any]]) -> dict[str, Any]:
+    forever_recipe = url.startswith("https://www.wowhead.com/forever/") and bool(re.match(r"^(?:Plans|Pattern|Recipe|Schematic|Formula):", name))
+    if forever_recipe:
+        result_name = name.split(":", 1)[1].strip()
+        for index, line in enumerate(tooltip_lines):
+            if line == result_name:
+                tooltip_lines = tooltip_lines[:index]
+                break
     parsed = parse_tooltip_stats(tooltip_lines, description)
+    if url.startswith("https://www.wowhead.com/forever/"):
+        # Rebuild Forever effect stats from the actual complete lines. The
+        # legacy parser deliberately remains unchanged for Anniversary.
+        from tools.forever_item_effects import flat_passive_stat
+
+        effect_lines = [line for line in tooltip_lines if line.startswith(("Equip:", "Use:", "Chance on hit:"))]
+        regen_lines = [line for line in tooltip_lines if re.fullmatch(r"Restores \+?\d+ (?:health|mana) per 5 sec\.", line, re.I)]
+        base_lines = [line for line in tooltip_lines if line not in effect_lines and line not in regen_lines]
+        parsed["stats"] = parse_tooltip_stats(base_lines)["stats"]
+        parsed["effect_stats"] = []
+        for line in base_lines:
+            armor_bonus = re.fullmatch(r"\+(\d+) Armor", line, re.I)
+            if armor_bonus:
+                parsed["armor"] = (parsed["armor"] or 0) + int(armor_bonus[1])
+            resistance = re.fullmatch(r"\+(\d+) (Arcane|Fire|Frost|Holy|Nature|Shadow|All) Resistances?", line, re.I)
+            if resistance:
+                add_stat(parsed["stats"], resistance[2].lower()+"_resistance", int(resistance[1]))
+        flat_tooltip = " ".join(tooltip_lines)
+        damage = re.search(r"(\d+)\s*-\s*(\d+)\s+(?:(?:Arcane|Fire|Frost|Holy|Nature|Shadow)\s+)?Damage\s+Speed\s+([\d.]+)", flat_tooltip, re.I)
+        if damage:
+            parsed.update(weapon_min_damage=int(damage[1]),weapon_max_damage=int(damage[2]),weapon_speed=float(damage[3]))
+        for line in tooltip_lines:
+            block = re.fullmatch(r"(\d+) Block", line, re.I)
+            if block:
+                add_stat(parsed["stats"], "block_value", int(block[1]))
+        valid_slots = SLOT_NAMES | {"One Hand"}
+        # An item's name and a recipe's embedded result are not equipment evidence.
+        inventory_slot = None
+        equipment_lines = tooltip_lines[1:] if tooltip_lines and tooltip_lines[0] == name else tooltip_lines
+        for line in equipment_lines:
+            slot = canonical_inventory_slot(line)
+            if slot in valid_slots:
+                inventory_slot = slot
+                break
+        if forever_recipe:
+            inventory_slot = None
+        if inventory_slot == "Relic":
+            for subtype, class_name in (("Idol", "Druid"), ("Totem", "Shaman"), ("Libram", "Paladin")):
+                if subtype in tooltip_lines:
+                    inventory_slot = subtype
+                    parsed["restrictions"].setdefault("classes", [class_name])
+                    break
+        armor = re.search(
+            r"\b(?:Head|Shoulder|Chest|Wrist|Hands|Waist|Legs|Feet) (Cloth|Leather|Mail|Plate)\b|\bOff[- ]Hand (Shield)\b",
+            flat_tooltip, flags=re.IGNORECASE,
+        )
+        if armor:
+            parsed["armor_type"] = (armor[1] or armor[2]).title()
+        effect_texts = list(dict.fromkeys(
+            [segment for line in effect_lines for segment in effect_segments_from_text(line)]
+            + ["Equip: " + line for line in regen_lines]
+        ))
+        chance_pattern = (r"(?:Improves|Increases) your chance to (hit|critically strike|get a critical strike|dodge|parry)"
+                          r"(?: an attack)? by (\d+(?:\.\d+)?)%")
+        for text in effect_texts:
+            kind = effect_kind(text)
+            first_sentence = re.split(r"\.(?:\s+|$)", text, maxsplit=1)[0]
+            if re.search(r"\b(?:against|when fighting)\b", first_sentence, re.I):
+                kind = "target_specific"
+            elif re.search(r"\b(?:while|if|after|during|when|within|in combat|in (?:the |Forest|Grassland))\b", first_sentence, re.I):
+                kind = "conditional"
+            if re.fullmatch(rf"Equip: {chance_pattern}\.?", text, re.I):
+                kind = "passive"
+            extras = {}
+            if kind == "passive":
+                flat = flat_passive_stat(text) or flat_passive_stat(first_sentence)
+                if flat:
+                    stat, amount = flat
+                    extras[stat] = amount
+                else:
+                    extras = stats_from_effect_text(text)
+                chance = re.search(chance_pattern, text, re.I)
+                if chance:
+                    stat_name = "crit" if "crit" in chance[1].lower() else chance[1].lower()
+                    extras[stat_name + "_percent"] = float(chance[2])
+                healing = re.search(r"Increases healing done by (?:magical spells and effects by )?up to\s*(\d+)\b", text, re.I)
+                if healing:
+                    extras["healing_power"] = int(healing[1])
+                damage = re.search(r"and damage done by up to\s*(\d+)\b", text, re.I)
+                if damage:
+                    extras["spell_damage"] = int(damage[1])
+                school = re.search(r"Increases damage done by (Arcane|Fire|Frost|Holy|Nature|Shadow) spells and effects by up to\s*(\d+)\b", text, re.I)
+                if school:
+                    extras[school[1].lower()+"_damage"] = int(school[2])
+                regen = re.search(r"Restores \+?(\d+) (health|mana) per 5 sec", text, re.I)
+                if regen:
+                    extras["hp5" if regen[2].lower() == "health" else "mp5"] = int(regen[1])
+                for key, value in extras.items():
+                    add_stat(parsed["stats"], key, value)
+            effect = next((e for e in parsed["effect_stats"] if e["raw_text"] == text), None)
+            if effect is None:
+                effect = {"type":kind,"raw_text":text}
+                parsed["effect_stats"].append(effect)
+            else:
+                effect["type"] = kind
+            if extras:
+                effect.setdefault("stats", {}).update(extras)
     description_level = re.search(r"\bitem level of (\d+)\b", description, flags=re.IGNORECASE)
     if parsed["item_level"] is None and description_level:
         parsed["item_level"] = int(description_level.group(1))
@@ -2100,12 +2219,14 @@ def sanitize_item_stats_effects(row: dict[str, Any], text: str) -> dict[str, Any
 def parse_item_html(url: str, html: str) -> dict[str, Any]:
     soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
-    name = re.sub(r"\s+-\s+Item\s+-\s+TBC Classic.*$", "", title).strip()
+    name = re.sub(r"\s+-\s+Item\s+-\s+(?:TBC Classic|(?:WoW )?Forever).*$", "", title).strip()
     meta = soup.find("meta", attrs={"name": "description"})
     description = meta.get("content", "") if meta else ""
     item_id = item_id_from_href(url)
     tooltip_text = item_tooltip_text(item_id, html)
-    tooltip_lines = item_tooltip_lines(item_id, html)
+    tooltip_lines = item_tooltip_lines(item_id, html, preserve_inline=url.startswith("https://www.wowhead.com/forever/"))
+    if url.startswith("https://www.wowhead.com/forever/") and re.match(r"^(?:Plans|Pattern|Recipe|Schematic|Formula):", name):
+        tooltip_lines = [line for line in tooltip_lines if line.startswith(("Item Level", "Requires", "Use:"))][:3]
     inventory_slot = parse_inventory_slot_from_text(f"{tooltip_text} {description}", name)
     binding, boe = parse_binding_from_text(tooltip_text or description)
     listview_ids = [
@@ -2156,12 +2277,59 @@ def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
     item_id = item_id_from_href(url)
     name = str(payload.get("name") or f"Item {item_id or ''}").strip()
     tooltip_html = str(payload.get("tooltip") or "")
-    tooltip_lines = tooltip_html_lines(tooltip_html)
-    tooltip_text = element_text(make_soup(tooltip_html)) if tooltip_html else ""
+    recipe = bool(re.match(r"^(?:Plans|Pattern|Recipe|Schematic|Formula):", name))
+    linked_entities = []
+    embedded_items = []
+    if url.startswith("https://www.wowhead.com/forever/"):
+        from tools.forever_sources import linked_entities_from_html
+
+        linked_entities = linked_entities_from_html(tooltip_html, url)
+        if recipe:
+            # Wowhead appends the crafted item (and its stats) to recipe tooltips.
+            # Keep the original recipe and its links, without reading that result
+            # as if the recipe itself could be equipped.
+            own = make_soup(tooltip_html)
+            for anchor in own.select("span > a[href]"):
+                parent = anchor.parent
+                if item_id_from_href(anchor.get("href", "")) and any(re.fullmatch(r"q[0-5]", cls) for cls in parent.get("class", [])):
+                    from tools.forever_sources import canonical_url
+
+                    product_url = canonical_url("https://www.wowhead.com" + anchor["href"] if anchor["href"].startswith("/") else anchor["href"])
+                    product_html = str(parent) + "".join(str(sibling) for sibling in parent.next_siblings)
+                    product_quality = next(int(cls[1]) for cls in parent.get("class", []) if re.fullmatch(r"q[0-5]", cls))
+                    product = parse_item_tooltip_endpoint(product_url, json.dumps({
+                        "name": element_text(anchor), "quality": product_quality, "tooltip": product_html,
+                    }))
+                    embedded_items.append({key: product[key] for key in (
+                        "item_id", "name", "url", "quality", "binding", "boe", "inventory_slot", "item_stats", "normalized_requirements"
+                    )})
+                    for sibling in list(parent.next_siblings):
+                        sibling.extract()
+                    parent.extract()
+                    break
+            tooltip_html = str(own)
+    tooltip_lines = tooltip_html_lines(tooltip_html, preserve_inline=url.startswith("https://www.wowhead.com/forever/"))
+    tooltip = make_soup(tooltip_html)
+    tooltip_text = element_text(tooltip)
     inventory_slot = parse_inventory_slot_from_text(tooltip_text, name)
     binding, boe = parse_binding_from_text(tooltip_text)
     quality = item_listview_quality_name(payload.get("quality")) or "unknown"
     item_stats = parse_item_stats(url, item_id, name, "", tooltip_lines, inventory_slot, quality, binding, boe, [])
+    if url.startswith("https://www.wowhead.com/forever/"):
+        bonuses = []
+        for span in tooltip.find_all("span"):
+            if span.find("span"):
+                continue
+            text = element_text(span)
+            match = re.fullmatch(r"\((\d+)\)\s*Set\s*:\s*(.+)", text)
+            if match:
+                anchor = span.find("a", href=True)
+                spell = re.search(r"/spell=(\d+)", anchor["href"]) if anchor else None
+                bonuses.append({"pieces":int(match[1]),"text":match[2],**({"spell_id":int(spell[1])} if spell else {})})
+        if bonuses:
+            item_stats["set_bonuses"] = bonuses
+    if recipe:
+        item_stats.pop("slot", None)
     item_stats["parse_confidence"] = "tooltip_endpoint"
     normalized_requirements = extract_requirements_from_text(
         tooltip_text,
@@ -2170,8 +2338,23 @@ def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
         "wowhead_item",
         include_unknown=False,
     )
+    sources = []
+    if url.startswith("https://www.wowhead.com/forever/"):
+        dropped_by = tooltip.select_one(".whtt-droppedby")
+        drop_line = element_text(dropped_by) if dropped_by else ""
+        if drop_line.startswith("Dropped by: "):
+            source = {
+                "type": "drop", "entity_name": drop_line.removeprefix("Dropped by: "),
+                "source_url": url, "confidence": "wowhead_tooltip",
+            }
+            drop_chance = dropped_by.find_next_sibling(class_="whtt-dropchance")
+            if drop_chance:
+                match = re.fullmatch(r"Drop Chance: (\d+(?:\.\d+)?)%", element_text(drop_chance))
+                if match:
+                    source["drop_percent"] = float(match[1])
+            sources.append(source)
 
-    return {
+    snapshot = {
         "parser_version": PARSER_VERSION,
         "url": url,
         "fetched_at": now_utc(),
@@ -2180,17 +2363,33 @@ def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
         "item_id": item_id,
         "name": name,
         "quality": quality,
-        "inventory_slot": canonical_inventory_slot(inventory_slot),
+        "inventory_slot": item_stats.get("slot"),
         "binding": binding,
         "boe": boe,
         "description": clean_text(tooltip_text),
         "related_tables": {},
-        "normalized_sources": [],
+        "normalized_sources": sources,
         "normalized_requirements": normalized_requirements,
         "item_stats": item_stats,
         "taught_by_items": [],
         "teaches_spell_ids": [],
     }
+    if url.startswith("https://www.wowhead.com/forever/"):
+        snapshot["item_kind"] = "recipe" if recipe else (
+            "equipment" if item_stats.get("slot") else (
+                "quest_starter" if "This Item Begins a Quest" in tooltip_text else "other"
+            )
+        )
+        if snapshot["item_kind"] == "other":
+            toy_label = tooltip.select_one(".toycolor")
+            if toy_label and element_text(toy_label) == "Toy":
+                snapshot["item_kind"] = "non_equipment"
+        snapshot["linked_entities"] = linked_entities
+        if embedded_items:
+            snapshot["embedded_items"] = embedded_items
+        if recipe:
+            snapshot["teaches_spell_ids"] = [row["id"] for row in linked_entities if row["type"] == "spell" and "Teaches" in row["name"]]
+    return snapshot
 
 
 def parse_spell_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
@@ -2322,15 +2521,21 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
     }
 
 
+def item_list_count_metadata(html: str) -> dict[str, Any]:
+    truncated = bool(re.search(r"_truncated\s*:\s*1", html))
+    note_match = re.search(r"note:\s*\"([\d,]+)\s+items found \(([\d,]+)\s+displayed\)", html)
+    return {
+        "truncated": truncated,
+        "total_items": int(note_match.group(1).replace(",", "")) if note_match else None,
+        "displayed_items": int(note_match.group(2).replace(",", "")) if note_match else None,
+    }
+
+
 def parse_item_list_html(url: str, html: str) -> dict[str, Any]:
     soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
     listviews = extract_all_listview_data(html)
     discovered: dict[int, dict[str, Any]] = {}
-    truncated = bool(re.search(r"_truncated\s*:\s*1", html))
-    note_match = re.search(r"note:\s*\"([\d,]+)\s+items found \(([\d,]+)\s+displayed\)", html)
-    total_items = int(note_match.group(1).replace(",", "")) if note_match else None
-    displayed_items = int(note_match.group(2).replace(",", "")) if note_match else None
 
     for listview_id, rows in listviews.items():
         for row in rows:
@@ -2361,7 +2566,7 @@ def parse_item_list_html(url: str, html: str) -> dict[str, Any]:
             {
                 "id": item_id,
                 "name": element_text(link) or f"Item {item_id}",
-                "url": absolute_tbc_url(link["href"]) if "/tbc/item=" in link["href"] else item_url_for_row(item_id, element_text(link)),
+                "url": absolute_wowhead_url(link["href"]) if "/tbc/item=" in link["href"] else item_url_for_row(item_id, element_text(link)),
                 "listview_id": "link",
             },
         )
@@ -2376,14 +2581,21 @@ def parse_item_list_html(url: str, html: str) -> dict[str, Any]:
         "summary": {
             "item_refs": len(discovered),
             "listviews": sorted(listviews),
-            "truncated": truncated,
-            "total_items": total_items,
-            "displayed_items": displayed_items,
+            **item_list_count_metadata(html),
         },
     }
 
 
 def normalize_html(url: str, html: str) -> dict[str, Any]:
+    if url.startswith("https://www.wowhead.com/forever/"):
+        from tools.forever_sources import entity_key, parse_entity_html
+
+        key = entity_key(url)
+        if key and key[0] != "item":
+            source = parse_entity_html(url, html)
+            if key[0] == "spell":
+                return {**parse_spell_html(url, html), **source}
+            return source
     page_type = page_type_for_url(url)
     if page_type == "guide":
         return parse_guide_html(url, html)
@@ -2401,10 +2613,10 @@ def normalize_html(url: str, html: str) -> dict[str, Any]:
     }
 
 
-def fetch_url(url: str, cache_dir: Path, retries: int = 3, delay: float = 0.75) -> str:
+def fetch_url(url: str, cache_dir: Path, retries: int = 3, delay: float = 0.75, *, refresh: bool = False) -> str:
     cache_dir.mkdir(parents=True, exist_ok=True)
     cache_path = cache_dir / html_cache_name(url)
-    if cache_path.is_file():
+    if cache_path.is_file() and not refresh:
         return cache_path.read_text(encoding="utf-8")
 
     last_error: Exception | None = None
@@ -2418,6 +2630,8 @@ def fetch_url(url: str, cache_dir: Path, retries: int = 3, delay: float = 0.75) 
             )
             with urlopen(request, timeout=30) as response:
                 html = response.read().decode("utf-8", errors="replace")
+            if not html.strip():
+                raise URLError("empty response")
             write_text(cache_path, html)
             if delay:
                 time.sleep(delay)
@@ -3100,6 +3314,8 @@ def load_snapshots(input_dir: Path) -> list[dict[str, Any]]:
         with path.open("r", encoding="utf-8") as handle:
             snapshot = json.load(handle)
         if isinstance(snapshot, dict) and snapshot.get("parser_version"):
+            if snapshot.get("flavor") not in (None, "anniversary") or str(snapshot.get("url", "")).startswith("https://www.wowhead.com/forever/"):
+                raise ValueError(f"Cross-flavor snapshot in Anniversary import: {path}")
             snapshots.append(refresh_snapshot_normalized_sources(snapshot))
     # Refreshed acquisition evidence is shared by the endgame families. Keep
     # historical guide snapshots local to their family, not duplicated per run.
@@ -3280,6 +3496,11 @@ def merge_bis_item_entries(preferred: dict[str, Any], discarded: dict[str, Any])
     merged = dict(preferred)
     if "requirements" not in merged and discarded.get("requirements"):
         merged["requirements"] = discarded["requirements"]
+    if preferred.get("rank_label") == discarded.get("rank_label"):
+        evidence = {json.dumps(value, sort_keys=True): value
+                    for value in preferred.get("guide_evidence", []) + discarded.get("guide_evidence", [])}
+        if evidence:
+            merged["guide_evidence"] = [evidence[key] for key in sorted(evidence)]
     return merged
 
 
@@ -3293,10 +3514,12 @@ def copy_imported_bis_ranks(replacement: dict[str, Any], imported: dict[str, Any
             imported_by_id.setdefault(item["item_id"], []).append(item)
 
     for item in replacement.get("items", []):
-        if item.get("rank") is not None:
-            continue
         candidates = imported_by_id.get(item.get("item_id"), [])
         imported_item = next((candidate for candidate in candidates if candidate.get("rank_label") == item.get("rank_label")), None)
+        if imported_item and imported_item.get("guide_evidence"):
+            item["guide_evidence"] = deepcopy(imported_item["guide_evidence"])
+        if item.get("rank") is not None:
+            continue
         imported_item = imported_item or (candidates[0] if candidates else None)
         if imported_item and imported_item.get("rank") is not None:
             item["rank"] = imported_item["rank"]
@@ -3306,6 +3529,7 @@ def copy_imported_bis_ranks(replacement: dict[str, Any], imported: dict[str, Any
 def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
     item_snapshots = item_snapshots_by_id(snapshots)
+    phase_definitions = None
 
     for snapshot in select_pre_raid_snapshots(snapshots):
         if snapshot.get("page_type") != "guide":
@@ -3318,7 +3542,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
             if not class_name or not spec_name:
                 continue
 
-            for table in snapshot.get("tables", []):
+            for table_index, table in enumerate(snapshot.get("tables", []), start=1):
                 if table.get("data_family") not in (None, "bis_lists", "unknown"):
                     continue
                 items_by_phase_slot: dict[tuple[str, str], dict[int, dict[str, Any]]] = {}
@@ -3333,12 +3557,18 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                     rank_label = row.get("rank_label") or "Option"
                     context = context_from_rank_label(rank_label)
                     phase_slot = (phase, slot)
+                    if phase_definitions is None:
+                        phase_definitions = canonical_json("phases")
                     item_entry = {
                         "item_id": item_id,
                         "rank": rank_index,
                         "rank_label": rank_label,
                         "rank_group": rank_group_from_label(rank_label),
                         "context": context,
+                        "guide_evidence": [table_evidence(
+                            snapshot, table, table_index, row, phase, slot,
+                            definitions=phase_definitions,
+                            terminology=source_meta.get("content_terminology", "wowhead_classic"))],
                     }
                     requirements = row_requirements(row, snapshot["url"])
                     item_snapshot = item_snapshots.get(int(item_id))
@@ -5241,6 +5471,9 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
     for row in rows:
         for item in row.get("items", []):
             item["rank_group"] = normalize_rank_group_value(item.get("rank_group"), item.get("rank_label"))
+            if item.get("guide_evidence"):
+                item["guide_evidence"] = [apply_recommendation_context(evidence, item)
+                                          for evidence in item["guide_evidence"]]
 
     return {"coverage": imported_bis_lists.get("coverage", "scraped_snapshot"), "lists": rows}
 
@@ -5958,7 +6191,7 @@ def command_item_corpus_audit(args: argparse.Namespace) -> int:
 
 
 def command_suffix_audit(args: argparse.Namespace) -> int:
-    audit = build_suffix_audit(args.input_dir)
+    audit = build_suffix_audit(args.input_dir or RAW_WOWHEAD_DIR / "full_item_corpus")
     print(json.dumps(audit, indent=2, sort_keys=True))
     return 0 if audit["ok"] else 1
 
@@ -7043,68 +7276,490 @@ def command_coverage(args: argparse.Namespace) -> int:
     return 0 if coverage["ok"] or not args.strict else 1
 
 
+def forever_item_seeds(snapshots: dict[str, dict], registered: set[str]) -> list[str]:
+    from tools.forever import WOWHEAD_ROOT
+
+    known_ids = {item_id_from_href(url) for url in registered}
+    discovered = set()
+    for snapshot in snapshots.values():
+        if snapshot["page_type"] != "guide":
+            continue
+        for table in snapshot.get("tables", []):
+            for row in table["rows"]:
+                link = row.get("item_url")
+                item_id = row["item_id"]
+                if link and not link.startswith(WOWHEAD_ROOT + "item="):
+                    continue
+                if item_id not in known_ids:
+                    discovered.add(item_id)
+    return [f"{WOWHEAD_ROOT}item={item_id}" for item_id in sorted(discovered)]
+
+
+def fetch_forever_snapshot(url: str, output_dir: Path, *, retries: int, delay: float, refresh: bool, cached_only: bool = False) -> None:
+    from tools.forever_sources import entity_key, parse_entity_tooltip
+
+    cache_dir = output_dir / "html_cache"
+    item_id = item_id_from_href(url)
+    key = entity_key(url)
+    tooltip_url = f"https://nether.wowhead.com/forever/tooltip/{key[0]}/{key[1]}" if key and key[0] in {"item", "spell", "npc", "quest"} else None
+    html = None
+    previous_path = output_dir / snapshot_name(url)
+    previous = json.loads(previous_path.read_text(encoding="utf-8")) if previous_path.is_file() else {}
+
+    def read_source(source_url):
+        cache_path = cache_dir / html_cache_name(source_url)
+        if cached_only:
+            if not cache_path.is_file():
+                raise ValueError(f"Missing cached response: {source_url}")
+            return cache_path.read_text(encoding="utf-8")
+        return fetch_url(source_url, cache_dir, retries=retries, delay=delay, refresh=refresh)
+    cached_tooltip_only = (
+        tooltip_url and not refresh and (cache_dir / html_cache_name(tooltip_url)).is_file()
+        and not (cache_dir / html_cache_name(url)).is_file()
+    )
+    if not cached_tooltip_only:
+        try:
+            html = read_source(url)
+        except RuntimeError as exc:
+            if not tooltip_url or not any(code in str(exc) for code in ("HTTP Error 403", "HTTP Error 404")):
+                raise
+    if html is None:
+        payload = read_source(tooltip_url)
+        tooltip = json.loads(payload)
+        if not isinstance(tooltip, dict) or not tooltip.get("name") or not tooltip.get("tooltip"):
+            raise ValueError("Empty or invalid Forever tooltip")
+        snapshot = parse_item_tooltip_endpoint(url, payload) if item_id else parse_entity_tooltip(url, payload)
+        snapshot["tooltip_url"] = tooltip_url
+    else:
+        snapshot = normalize_html(url, html)
+        if not html.strip() or (snapshot["page_type"] in {"item", "guide"} and not (
+            snapshot.get("name") or snapshot.get("title")
+        )):
+            raise ValueError("Empty or invalid Forever source response")
+
+    if snapshot["page_type"] == "guide":
+        snapshot.pop("sections", None)
+        for table in snapshot["tables"]:
+            table["rows"] = [
+                {key: row[key] for key in ("item_id", "item_name", "item_url", "rank_label", "source_text", "source_links", "normalized_requirements", "level_min", "level_max", "level_label", "section") if key in row}
+                for row in table["rows"] if row.get("item_id")
+            ]
+        snapshot["tables"] = [table for table in snapshot["tables"] if table["rows"]]
+        from tools.forever_sources import guide_relationships, guide_quest_facts, linked_entities_from_html
+
+        snapshot["relationships"] = guide_relationships(snapshot)
+        entities = linked_entities_from_html(html, url)
+        snapshot["linked_entities"] = entities
+        snapshot["quest_facts"] = guide_quest_facts(html, url)
+        snapshot["zone_refs"] = [row for row in entities if row["type"] == "zone"]
+        snapshot["npc_refs"] = [row for row in entities if row["type"] == "npc"]
+    if not refresh and previous.get("fetched_at"):
+        snapshot["fetched_at"] = previous["fetched_at"]
+    # Hidden spells come from reviewed observations outside the tooltip.
+    if (snapshot.get("item_kind") == "equipment" and snapshot.get("item_id") == previous.get("item_id")
+            and previous.get("observed_item_spells")):
+        snapshot["observed_item_spells"] = previous["observed_item_spells"]
+    snapshot["source_content_digest"] = hashlib.sha256((html if html is not None else payload).encode("utf-8")).hexdigest()
+    write_snapshot({**snapshot, "flavor": "forever"}, output_dir)
+
+
+def command_forever(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    from tools import forever
+
+    if args.command == "refresh-availability":
+        from tools.forever_refresh import REFRESH_DIR, print_summary, refresh_availability
+
+        directory = args.state_dir or REFRESH_DIR
+        try:
+            report = refresh_availability(online=args.online, directory=directory, comparison_build=args.compare_build,
+                                          equipment_only=args.equipment_only, equipment_revision=args.equipment_revision)
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+        print_summary(report, directory / "compare" / args.compare_build if args.compare_build else directory)
+        return 0
+
+    if args.command == "collect-mechanics":
+        from tools.forever_mechanics import collect_mechanics
+        from tools.forever_refresh_http import Unavailable
+
+        try:
+            report = collect_mechanics(online=args.online, write=args.write, user_agent=USER_AGENT)
+        except (KeyError, ValueError, Unavailable) as exc:
+            parser.error(str(exc))
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return 0
+
+    if args.command == "scoring-audit":
+        from tools.forever_scoring import read_model, scoring_audit
+        from tools.forever_scoring_checks import ranking_coverage, ranking_snapshot
+
+        if args.input_dir and (args.rankings or args.ranking_coverage):
+            parser.error("--rankings reads the generated workspace payload. Run a separate --input-dir audit for draft inputs.")
+        if args.breakdowns and not args.strict:
+            parser.error("--breakdowns requires --strict to run the reviewed swaps")
+        result = scoring_audit(strict=args.strict, lua=args.lua, input_dir=args.input_dir, include_breakdowns=args.breakdowns)
+        if args.effects:
+            from tools.forever_comparison import compile_comparison_data
+            from tools.forever_item_effects import catalog_coverage, glossary
+            from tools.generate_lua import forever_items
+            from tools.recommend_leveling import materialized_items
+
+            inventory = {row["id"]: row for row in dataset_json("forever", "comparison_item_stats")["items"]}
+            for family in ("guide_item_reviews", "leveling_item_stats", "item_stats"):
+                for row in dataset_json("forever", family)["items" if family == "guide_item_reviews" else "item_stats"]:
+                    inventory[row["id"]] = row
+            snapshots = forever.read_snapshots(args.input_dir or FOREVER_RAW_DIR)
+            source = read_model(snapshots)
+            variants = dataset_json("forever", "item_variants")["item_variants"]
+            result["effects"] = glossary(snapshots, materialized_items(list(inventory.values()), variants),
+                                         mechanics=source[1] if source else None)
+            _, ranked_stats = forever_items(dataset_json("forever", "items")["items"],
+                                           dataset_json("forever", "item_stats")["item_stats"])
+            result["effects"]["catalog_coverage"] = catalog_coverage(compile_comparison_data(ranked_stats))
+        if args.rankings:
+            try:
+                result["rankings"] = ranking_snapshot(args.lua, args.content_phase)
+            except (OSError, ValueError) as exc:
+                result["ok"] = False
+                result["issues"].append(str(exc))
+        if args.ranking_coverage:
+            try:
+                result["ranking_coverage"] = ranking_coverage(args.lua, args.content_phase, args.coverage_levels)
+            except (OSError, ValueError) as exc:
+                result["ok"] = False
+                result["issues"].append(str(exc))
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return int(not result["ok"])
+
+    if args.command == "suffix-audit":
+        from tools.forever_variants import suffix_audit
+
+        if bool(args.client_tables) != bool(args.client_build):
+            parser.error("--client-tables and --client-build must be provided together")
+        try:
+            print(json.dumps(suffix_audit(args.client_tables, args.client_build), indent=2, sort_keys=True))
+        except (OSError, KeyError, ValueError) as exc:
+            parser.error(str(exc))
+        return 0
+
+    if args.command == "discover-sources":
+        from tools.forever_sources import discover_sources
+
+        manifest = dataset_json("forever", "scrape_manifest")
+        sources = discover_sources(forever.read_snapshots(FOREVER_RAW_DIR), forever.registered_urls())
+        if args.write and sources:
+            manifest["sources"].extend(sources)
+            write_text(FOREVER_CANONICAL_DIR / "scrape_manifest.json", json.dumps(manifest, indent=2) + "\n")
+        print(json.dumps({"new_sources": len(sources), "registered": args.write, "sources": sources}, indent=2))
+        return 0
+
+    if args.command == "gaps":
+        snapshots = forever.read_snapshots(args.input_dir or FOREVER_RAW_DIR)
+        if args.family == "leveling":
+            from tools.forever_leveling import generate
+            report = generate(snapshots, diagnostic=True)["coverage"]
+        else:
+            report = forever.gaps(snapshots)
+        if args.summary:
+            report.pop("rows")
+            report.pop("provisional_items", None)
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return 0
+
+    if args.command == "import-captures":
+        from tools.forever_capture import import_capture
+
+        print(json.dumps(import_capture(args.file, args.client_build, write=args.write), indent=2, sort_keys=True))
+        return 0
+
+    if args.command == "collect-provider":
+        from tools.forever_sources import (PROVIDER_RAW_DIR, collect_everloot, normalize_ahledger, normalize_ahledger_item_price,
+            normalize_ahledger_text, normalize_ahledger_pricetable, normalize_foreverchanges_requirement, normalize_questiedb_leads,
+            source_provider, record_attempt)
+
+        if args.url not in forever.registered_urls() or source_provider(args.url) != args.provider:
+            parser.error("register the Forever provider URL in its manifest before collecting")
+        directory = PROVIDER_RAW_DIR / args.provider
+        fetch = lambda url: json.loads(fetch_url(url, directory / "html_cache", retries=args.retries, delay=args.delay, refresh=args.refresh))
+        try:
+            if args.provider == "wowhead":
+                from tools.forever_availability import normalize_item_listing
+                snapshot = normalize_item_listing(args.url, fetch_url(args.url, directory / "html_cache",
+                    retries=args.retries, delay=args.delay, refresh=args.refresh), collected_at=now_utc())
+            elif args.provider == "foreverchanges":
+                snapshot = normalize_foreverchanges_requirement(args.url, fetch_url(args.url, directory / "html_cache",
+                    retries=args.retries, delay=args.delay, refresh=args.refresh), collected_at=now_utc())
+            elif args.provider == "questiedb":
+                snapshot = normalize_questiedb_leads(args.url, fetch_url(args.url, directory / "html_cache",
+                    retries=args.retries, delay=args.delay, refresh=args.refresh), collected_at=now_utc())
+            elif args.provider == "ahledger" and args.url.endswith("/llms-full.txt"):
+                catalog = [row for path in directory.glob("*.json") for row in load_json(path).get("records", []) if "item_id" in row]
+                snapshot = normalize_ahledger_text(args.url, fetch_url(args.url, directory / "html_cache",
+                    retries=args.retries, delay=args.delay, refresh=args.refresh), catalog, collected_at=now_utc())
+            elif args.provider == "ahledger" and "/v1/pricetable/" in args.url:
+                snapshot = normalize_ahledger_pricetable(args.url, fetch_url(args.url, directory / "html_cache",
+                    retries=args.retries, delay=args.delay, refresh=args.refresh), collected_at=now_utc())
+            elif args.provider == "ahledger" and "/v1/prices/" in args.url:
+                snapshot = normalize_ahledger_item_price(args.url, fetch(args.url), collected_at=now_utc())
+            else:
+                snapshot = (collect_everloot(args.url, fetch, collected_at=now_utc()) if args.provider == "everloot"
+                            else normalize_ahledger(args.url, fetch(args.url), collected_at=now_utc()))
+        except (RuntimeError, ValueError) as exc:
+            record_attempt(args.url, str(exc))
+            print(json.dumps({"provider": args.provider, "error": str(exc), "previous_snapshot_preserved": True}))
+            return 1
+        write_snapshot(snapshot, directory)
+        record_attempt(args.url, None)
+        print(json.dumps({"provider": args.provider, "records": len(snapshot["records"]), "url": args.url}))
+        return 0
+
+    if args.command == "reprocess":
+        directory = args.input_dir or FOREVER_RAW_DIR
+        if args.output_dir and args.output_dir.resolve() != directory.resolve():
+            parser.error("Forever cache reprocessing updates snapshots beside their cache")
+        snapshots = forever.read_snapshots(directory)
+        failures = {}
+        reprocessed = 0
+        for url in sorted(snapshots):
+            if not forever.is_forever_url(url):
+                continue
+            try:
+                fetch_forever_snapshot(url, directory, retries=0, delay=0, refresh=False, cached_only=True)
+                reprocessed += 1
+            except (RuntimeError, ValueError) as exc:
+                failures[url] = str(exc)
+        print(json.dumps({"reprocessed": reprocessed, "failures": failures}, indent=2, sort_keys=True))
+        return int(bool(failures))
+
+    if args.command == "discover-items":
+        manifest = dataset_json("forever", "scrape_manifest")
+        seeds = forever_item_seeds(forever.read_snapshots(FOREVER_RAW_DIR), forever.registered_urls())
+        if args.write and seeds:
+            manifest["item_seeds"] = sorted(set(manifest.get("item_seeds", [])) | set(seeds))
+            write_text(FOREVER_CANONICAL_DIR / "scrape_manifest.json", json.dumps(manifest, indent=2) + "\n")
+        print(json.dumps({"new_items": len(seeds), "registered": args.write, "urls": seeds}, indent=2))
+        return 0
+
+    if args.command == "coverage":
+        if args.family == "leveling":
+            from tools.forever_leveling import generate
+            result = generate(forever.read_snapshots(FOREVER_RAW_DIR), diagnostic=True)
+            report = result["coverage"]
+            if args.release_version and not report["ok"] and not report["errors"] and not report["review_issues"]:
+                from tools import forever_prerelease as prerelease
+
+                inventory = result["leveling_candidate_audit"]
+                if not (inventory.get("source_issues") or inventory.get("decision_issues")):
+                    exception = prerelease.evaluate(args.release_version, prerelease.gap_rows(report["rows"]),
+                                                    inventory["candidate_reviews"], report["summary"])
+                    report["release_exception"], report["ok"] = exception, exception["ok"]
+        elif args.family == "item_corpus":
+            from tools.forever_equipment import audit
+
+            report = audit(summary=args.summary)
+        else:
+            if args.family not in (None, "bis_lists"):
+                parser.error("Forever coverage covers pre-raid BiS lists, leveling and the equipment corpus")
+            report = forever.coverage()
+        if args.summary:
+            report.pop("missing", None)
+            report.pop("rows", None)
+            report.pop("provisional_items", None)
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return int(args.strict and not report["ok"])
+
+    if args.command == "live-acceptance-audit":
+        if args.baseline_tag:
+            from tools.forever_release import baseline_acceptance
+
+            report = baseline_acceptance(args.baseline_tag)
+        else:
+            report = forever.live_acceptance()
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return int(not report["ok"])
+
+    if args.command == "audit":
+        errors, summary = forever.validate()
+        print(json.dumps({"ok": not errors, "errors": errors, "summary": summary}, indent=2, sort_keys=True))
+        return int(bool(errors))
+
+    if args.command == "import":
+        if args.family not in (None, "leveling"):
+            parser.error("Forever imports derive pre-raid and leveling documents together; --family leveling derives only leveling")
+        if args.input_dir and args.input_dir.resolve() != FOREVER_RAW_DIR.resolve() and not args.dry_run:
+            parser.error("use --dry-run for an uncommitted Forever snapshot directory")
+        report = forever.import_snapshots(args.input_dir or FOREVER_RAW_DIR, dry_run=args.dry_run, family=args.family)
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return 0
+
+    if args.command == "fetch":
+        from tools.forever_sources import record_attempts
+
+        registered = {url for url in forever.registered_urls(args.family) if forever.is_forever_url(url)}
+        urls = sorted(set(args.url or registered))
+        if not urls or not set(urls).issubset(registered):
+            parser.error("register each Forever source in its manifest before fetching")
+        output_dir = args.output_dir or FOREVER_RAW_DIR
+        if args.missing_only:
+            urls = [url for url in urls if not (output_dir / snapshot_name(url)).is_file()]
+        failures = {}
+        fetched = 0
+        def collect_one(url):
+            try:
+                fetch_forever_snapshot(url, output_dir, retries=args.retries, delay=args.delay, refresh=args.refresh)
+            except (RuntimeError, ValueError, OSError) as exc:
+                return url, str(exc)
+            return url, None
+        def record_results(results):
+            nonlocal fetched
+            attempts = []
+            try:
+                for url, error in results:
+                    if error:
+                        failures[url] = error
+                    else:
+                        fetched += 1
+                    # Only this coordinating thread mutates the retry ledger.
+                    if output_dir.resolve() == FOREVER_RAW_DIR.resolve():
+                        attempts.append((url, error))
+                        if len(attempts) == 10:
+                            record_attempts(attempts)
+                            attempts.clear()
+            finally:
+                record_attempts(attempts)
+        if args.workers < 1 or args.workers > 8:
+            parser.error("Forever fetch workers must be between 1 and 8")
+        if args.workers == 1:
+            record_results(map(collect_one, urls[:args.limit]))
+        else:
+            with ThreadPoolExecutor(max_workers=args.workers) as executor:
+                record_results(executor.map(collect_one, urls[:args.limit]))
+        print(json.dumps({"fetched": fetched, "failures": failures}, indent=2, sort_keys=True))
+        return int(bool(failures))
+
+    parser.error(f"{args.command} does not support the Forever dataset")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Wowhead scraper for Big BiS List.")
     subparsers = parser.add_subparsers(dest="command", required=True)
+    flavor_parser = argparse.ArgumentParser(add_help=False)
+    add_flavor_argument(flavor_parser)
 
-    fetch_parser = subparsers.add_parser("fetch", help="Fetch URLs from the manifest and write normalized snapshots.")
-    fetch_parser.add_argument("--url", action="append", help="Specific Wowhead TBC URL to fetch instead of the manifest.")
-    fetch_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus"])
-    fetch_parser.add_argument("--output-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    fetch_parser = subparsers.add_parser("fetch", parents=[flavor_parser], help="Fetch URLs from the manifest and write normalized snapshots.")
+    fetch_parser.add_argument("--url", action="append", help="Specific Wowhead URL to fetch.")
+    fetch_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus", "acquisition"])
+    fetch_parser.add_argument("--output-dir", type=Path)
     fetch_parser.add_argument("--no-discover", action="store_true", help="Do not fetch item pages discovered from guide snapshots.")
     fetch_parser.add_argument("--missing-only", action="store_true", help="Skip URLs that already have normalized snapshots in the output directory.")
+    fetch_parser.add_argument("--refresh", action="store_true", help="For Forever, fetch current pages instead of using cached HTML.")
     fetch_parser.add_argument("--limit", type=int, help="Maximum number of snapshots to fetch or reprocess in this run.")
     fetch_parser.add_argument("--workers", type=int, default=1, help="Parallel fetch workers for item_corpus batches.")
     fetch_parser.add_argument("--retries", type=int, default=3)
     fetch_parser.add_argument("--delay", type=float, default=0.75)
     fetch_parser.set_defaults(func=command_fetch)
 
-    import_parser = subparsers.add_parser("import", help="Import canonical data from normalized snapshots.")
-    import_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    discover_parser = subparsers.add_parser("discover-items", parents=[flavor_parser], help="Find unregistered item URLs in Forever guide snapshots.")
+    discover_parser.add_argument("--write", action="store_true", help="Register the discovered URLs in the Forever manifest.")
+
+    sources_parser = subparsers.add_parser("discover-sources", parents=[flavor_parser], help="Find acquisition entities linked by Forever snapshots.")
+    sources_parser.add_argument("--write", action="store_true", help="Register the discovered URLs in the Forever manifest.")
+
+    refresh_parser = subparsers.add_parser("refresh-availability", parents=[flavor_parser],
+        help="Stage a bounded refresh of Forever's availability and equipment evidence.")
+    refresh_parser.add_argument("--online", action="store_true", help="Enable bounded public HTTP collection.")
+    refresh_parser.add_argument("--compare-build", help="Stage exact evidence for this other Forever client build.")
+    refresh_parser.add_argument("--state-dir", type=Path, help="Use this directory for resumable refresh artifacts.")
+    refresh_parser.add_argument("--equipment-only", action="store_true", help="Refresh the Guide equipment corpus and acquisition observations.")
+    refresh_parser.add_argument("--equipment-revision", help="Replay a pinned WoWSims Game Data revision for the Guide build.")
+
+    mechanics_parser = subparsers.add_parser("collect-mechanics", parents=[flavor_parser],
+        help="Stage build-pinned Forever mechanics snapshots.")
+    mechanics_parser.add_argument("--online", action="store_true", help="Enable bounded requests for public sources.")
+    mechanics_parser.add_argument("--write", action="store_true", help="Register the snapshot as evidence without approving it.")
+    scoring_parser = subparsers.add_parser("scoring-audit", parents=[flavor_parser],
+        help="Report character scoring coverage and stale approvals.")
+    scoring_parser.add_argument("--strict", action="store_true", help="Require all 56 contexts and execute independent swap fixtures.")
+    scoring_parser.add_argument("--rankings", action="store_true", help="Include reproducible runtime ranking results for all spec bands.")
+    scoring_parser.add_argument("--ranking-coverage", action="store_true", help="Compare inventory, eligible ranks and Guide rows in every Forever context.")
+    scoring_parser.add_argument("--coverage-levels", nargs="+", type=int, help="Limit ranking coverage to these levels. The default covers levels 1 through 60.")
+    scoring_parser.add_argument("--breakdowns", action="store_true", help="Include per-stat points from the independently verified swaps.")
+    scoring_parser.add_argument("--effects", action="store_true", help="Include effect counts and a bounded queue of unresolved mechanics.")
+    scoring_parser.add_argument("--input-dir", type=Path, help="Derive scoring bindings from a complete reviewed snapshot directory without importing it.")
+    scoring_parser.add_argument("--content-phase", default="PR", help="Content phase to use for the ranking report.")
+    scoring_parser.add_argument("--lua", help="Lua 5.1 executable for scoring checks.")
+
+    gaps_parser = subparsers.add_parser("gaps", parents=[flavor_parser], help="Report Forever candidate and review gaps without importing them.")
+    gaps_parser.add_argument("--family", choices=["bis_lists", "leveling"], default="bis_lists")
+    gaps_parser.add_argument("--input-dir", type=Path)
+    gaps_parser.add_argument("--json", action="store_true", help="Print the structured JSON report (also the default).")
+    gaps_parser.add_argument("--summary", action="store_true", help="Omit individual coverage rows.")
+
+    live_parser = subparsers.add_parser("live-acceptance-audit", parents=[flavor_parser],
+        help="Check gameplay acceptance for the current Forever release candidate.")
+    live_parser.add_argument("--baseline-tag", help="Verify a data-only patch against this live-tested release tag.")
+
+    captures_parser = subparsers.add_parser("import-captures", parents=[flavor_parser], help="Preview explicitly selected Forever SavedVariables or JSON observations without executing Lua.")
+    captures_parser.add_argument("--file", type=Path, required=True)
+    captures_parser.add_argument("--client-build", required=True, help="Exact reviewed Forever build, for example 1.60.1.70790.")
+    captures_parser.add_argument("--write", action="store_true", help="Register and save the validated observations; never approve them.")
+
+    provider_parser = subparsers.add_parser("collect-provider", parents=[flavor_parser], help="Collect registered Forever provider evidence atomically.")
+    provider_parser.add_argument("--provider", choices=["everloot", "ahledger", "foreverchanges", "questiedb", "wowhead"], required=True)
+    provider_parser.add_argument("--url", required=True)
+    provider_parser.add_argument("--retries", type=int, default=3)
+    provider_parser.add_argument("--delay", type=float, default=0.75)
+    provider_parser.add_argument("--refresh", action="store_true")
+
+    import_parser = subparsers.add_parser("import", parents=[flavor_parser], help="Import canonical data from normalized snapshots.")
+    import_parser.add_argument("--input-dir", type=Path)
     import_parser.add_argument("--family", choices=["items", "bis_lists", "gems", "enchants", "consumables", "leveling", "item_corpus", "item_stats"])
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.set_defaults(func=command_import)
 
-    reprocess_parser = subparsers.add_parser("reprocess", help="Rebuild normalized snapshots from the local html_cache without network fetches.")
-    reprocess_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    reprocess_parser = subparsers.add_parser("reprocess", parents=[flavor_parser], help="Rebuild normalized snapshots from the local html_cache without network fetches.")
+    reprocess_parser.add_argument("--input-dir", type=Path)
     reprocess_parser.add_argument("--output-dir", type=Path)
     reprocess_parser.set_defaults(func=command_reprocess)
 
-    audit_parser = subparsers.add_parser("audit", help="Audit canonical scraped data.")
+    audit_parser = subparsers.add_parser("audit", parents=[flavor_parser], help="Audit canonical scraped data.")
     audit_parser.set_defaults(func=command_audit)
 
-    requirements_audit_parser = subparsers.add_parser("requirements-audit", help="Audit normalized prerequisite extraction and missing prerequisite snapshots.")
+    requirements_audit_parser = subparsers.add_parser("requirements-audit", parents=[flavor_parser], help="Audit normalized prerequisite extraction and missing prerequisite snapshots.")
     requirements_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
     requirements_audit_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"])
     requirements_audit_parser.set_defaults(func=command_requirements_audit)
 
-    snapshot_audit_parser = subparsers.add_parser("snapshot-audit", help="Audit normalized raw snapshots before import.")
+    snapshot_audit_parser = subparsers.add_parser("snapshot-audit", parents=[flavor_parser], help="Audit normalized raw snapshots before import.")
     snapshot_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
     snapshot_audit_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"], default="bis_lists")
     snapshot_audit_parser.add_argument("--url", action="append", help="Restrict guide snapshot checks to a specific manifest URL, useful for pilots.")
     snapshot_audit_parser.add_argument("--guide-only", action="store_true", help="Only require guide snapshots and parsable guide rows.")
     snapshot_audit_parser.set_defaults(func=command_snapshot_audit)
 
-    item_corpus_report_parser = subparsers.add_parser("item-corpus-report", help="Summarize parsed item corpus stats without writing canonical data.")
+    item_corpus_report_parser = subparsers.add_parser("item-corpus-report", parents=[flavor_parser], help="Summarize parsed item corpus stats without writing canonical data.")
     item_corpus_report_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
     item_corpus_report_parser.set_defaults(func=command_item_corpus_report)
 
-    item_corpus_audit_parser = subparsers.add_parser("item-corpus-audit", help="Audit item corpus snapshots and parse completeness.")
+    item_corpus_audit_parser = subparsers.add_parser("item-corpus-audit", parents=[flavor_parser], help="Audit item corpus snapshots and parse completeness.")
     item_corpus_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
     item_corpus_audit_parser.set_defaults(func=command_item_corpus_audit)
 
-    suffix_audit_parser = subparsers.add_parser("suffix-audit", help="Audit random suffix item variants.")
-    suffix_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
+    suffix_audit_parser = subparsers.add_parser("suffix-audit", parents=[flavor_parser], help="Audit random suffix item variants.")
+    suffix_audit_parser.add_argument("--input-dir", type=Path)
+    suffix_audit_parser.add_argument("--client-tables", type=Path, help="Read captured Forever bonus tree CSVs.")
+    suffix_audit_parser.add_argument("--client-build", help="Build for the captured Forever bonus tables.")
     suffix_audit_parser.set_defaults(func=command_suffix_audit)
 
-    recommendation_audit_parser = subparsers.add_parser("recommendation-audit", help="Audit generated leveling recommendations against guide rows and source evidence.")
+    recommendation_audit_parser = subparsers.add_parser("recommendation-audit", parents=[flavor_parser], help="Audit generated leveling recommendations against guide rows and source evidence.")
     recommendation_audit_parser.add_argument("--verbose", action="store_true", help="Include every warning in the JSON output.")
     recommendation_audit_parser.add_argument("--max-warnings", type=int, default=0, help="Show this many warning samples without --verbose.")
     recommendation_audit_parser.set_defaults(func=command_recommendation_audit)
 
-    coverage_parser = subparsers.add_parser("coverage", help="Report offline manifest coverage without fetching.")
+    coverage_parser = subparsers.add_parser("coverage", parents=[flavor_parser], help="Report offline manifest coverage without fetching.")
     coverage_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus"])
     coverage_parser.add_argument("--summary", action="store_true", help="Omit the full missing-unit list.")
+    coverage_parser.add_argument("--release-version", help="Apply the reviewed Forever leveling exception for this release line.")
     coverage_parser.add_argument("--strict", action="store_true", help="Fail if the manifest does not cover every expected unit.")
     coverage_parser.set_defaults(func=command_coverage)
     return parser
@@ -7113,6 +7768,32 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    for argument in ("input_dir", "output_dir"):
+        value = getattr(args, argument, None)
+        if value is None:
+            continue
+        path = value.resolve()
+        inside_forever = path.is_relative_to(FOREVER_RAW_DIR.resolve())
+        if (args.flavor == "anniversary" and inside_forever) or (
+            args.flavor == "forever" and path.is_relative_to(RAW_WOWHEAD_DIR.resolve()) and not inside_forever
+        ):
+            parser.error(f"{argument} points to the other client's snapshot tree")
+    if args.flavor == "forever":
+        try:
+            return command_forever(args, parser)
+        except (KeyError, OSError, RuntimeError, TypeError, ValueError) as exc:
+            print(f"Forever data error: {exc}", file=sys.stderr)
+            return 1
+    if args.command in {"discover-items", "discover-sources", "refresh-availability", "gaps", "collect-provider", "import-captures", "live-acceptance-audit"}:
+        parser.error(f"{args.command} is available for Forever snapshots")
+    if args.command == "fetch" and args.refresh:
+        parser.error("--refresh is available for Forever snapshots")
+    if args.command == "fetch" and args.output_dir is None:
+        args.output_dir = RAW_WOWHEAD_DIR
+    if args.command == "import" and args.input_dir is None:
+        args.input_dir = RAW_WOWHEAD_DIR
+    if args.command == "reprocess" and args.input_dir is None:
+        args.input_dir = RAW_WOWHEAD_DIR
     if getattr(args, "url", None):
         for url in args.url:
             if not url.startswith("https://www.wowhead.com/tbc/"):

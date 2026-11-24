@@ -1,0 +1,73 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Flask of Chromatic Resistance 25 sec cast Reagents: Icecap (30), Mountain Silversage (10), Black Lotus , Crystal Vial Flask of Chromatic Resistance Item Level 60 +25 Arcane Resistance +25 Fire Resistance +25 Nature Resistance +25 Frost Resistance +25 Shadow Resistance +25 Holy Resistance Requires Level 50 Use: Increases your resistance to all schools of magic by 25 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death and stacks with all other resistance spells and items. (3 Sec Cooldown) Max Stack: 20 Sell Price: 50",
+  "entity_id": 17638,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:16+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 8925,
+      "name": "Crystal Vial",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8925"
+    },
+    {
+      "id": 13465,
+      "name": "Mountain Silversage",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13465"
+    },
+    {
+      "id": 13467,
+      "name": "Icecap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13467"
+    },
+    {
+      "id": 13468,
+      "name": "Black Lotus",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13468"
+    },
+    {
+      "id": 13513,
+      "name": "Flask of Chromatic Resistance",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=13513"
+    },
+    {
+      "id": 17629,
+      "name": "Increases your resistance to all schools of magic by 25 for 2 hrs. You can only have the effect of one flask at a time. This effect persists through death and stacks with all other resistance spells and items.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17629"
+    },
+    {
+      "id": 17638,
+      "name": "Flask of Chromatic Resistance",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17638"
+    }
+  ],
+  "name": "Flask of Chromatic Resistance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 13513,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=17638",
+      "subject_id": 17638,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 17638,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/17638",
+  "url": "https://www.wowhead.com/forever/spell=17638"
+}

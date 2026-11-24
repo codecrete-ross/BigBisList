@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Ice Armor 500 Mana Instant Requires Mage Requires level 60 Increases Armor by 560 and frost resistance by 15. If an enemy strikes the caster, they may have their movement slowed by 30% and the time between their attacks increased by 25% for 5 sec. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
+  "entity_id": 10220,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:29:38+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 10220,
+      "name": "Ice Armor",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=10220"
+    }
+  ],
+  "name": "Ice Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "c0f8ac208160d62caf26d591bcab5f6f70d35b2dcff86abff2fb69fd87435b3b",
+  "spell_id": 10220,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/10220",
+  "url": "https://www.wowhead.com/forever/spell=10220"
+}

@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "client_build": "1.60.1.70888",
+  "description": "Silithid Queen's Husk Item Level 61 Binds when picked up Chest Plate 637 Armor +23 Stamina Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 24 Attack Power. Equip: + 29 Attack Power against Humanoids. \"The swarm can't be satiated.\" Sell Price: 3 64 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:22:45.5568694Z",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 286590,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 637,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +24 Attack Power.",
+        "stats": {
+          "attack_power": 24
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +29 Attack Power against Humanoids.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 286590,
+    "item_level": 61,
+    "name": "Silithid Queen's Husk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "crit_percent": 1.0,
+      "stamina": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=286590"
+  },
+  "linked_entities": [],
+  "name": "Silithid Queen's Husk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "server_push_evidence": {
+    "collected_at": "2026-11-12T22:21:14.5385638Z",
+    "source_content_digest": "d0234c0444898e7d835eba230ebe43a9e27abe22be7cb0de4f1f16e44f3cd6e7",
+    "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/f3848e07ab826d0dfb5c0075c813ea66fad57490/patches/1.60.1.70888/hotfix-17004077%2B4/items.txt"
+  },
+  "source_content_digest": "d2de14adefbfdea2b45e3b8acf78c2c475459f4ad43e91e0c6c7e6754ee0cb06",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286590",
+  "url": "https://www.wowhead.com/forever/item=286590"
+}

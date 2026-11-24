@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heart of the Primeval Item Level 40 Binds when picked up Unique-Equipped Trinket +18 Frost Resistance Requires Level 35 Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown) Sell Price: 54 44 Dropped by: Primeval Elemental Drop Chance: 42.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:40+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 274615,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 274615,
+    "item_level": 40,
+    "name": "Heart of the Primeval",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 35,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "frost_resistance": 18.0
+    },
+    "use_effects": [
+      "Use: Increases damage and healing done by magical spells and effects by up to 19 for 30 sec. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=274615"
+  },
+  "linked_entities": [
+    {
+      "id": 1295233,
+      "name": "Increases damage and healing done by magical spells and effects by up to 19 for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1295233"
+    }
+  ],
+  "name": "Heart of the Primeval",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 42.86,
+      "entity_name": "Primeval Elemental",
+      "source_url": "https://www.wowhead.com/forever/item=274615",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "da718c4b042e2f6edbd749c33b5e9bececb4ff46b733eb71f566d257a7fa68cf",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274615",
+  "url": "https://www.wowhead.com/forever/item=274615"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Greater Eternal Essence Item Level 55 Use: Turn a greater eternal essence into three lesser ones. Crafting Reagent Max Stack: 20 Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:08:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 16203,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Turn a greater eternal essence into three lesser ones.",
+        "type": "use"
+      }
+    ],
+    "id": 16203,
+    "item_level": 55,
+    "name": "Greater Eternal Essence",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Turn a greater eternal essence into three lesser ones. Crafting Reagent Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=16203"
+  },
+  "linked_entities": [
+    {
+      "id": 20040,
+      "name": "Turn a greater eternal essence into three lesser ones.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=20040"
+    }
+  ],
+  "name": "Greater Eternal Essence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16203",
+  "url": "https://www.wowhead.com/forever/item=16203"
+}

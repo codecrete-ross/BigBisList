@@ -1,0 +1,54 @@
+{
+  "binding": "quest",
+  "boe": false,
+  "description": "Silver Totem of Aquementas Item Level 1 Quest Item Unique Held In Off-hand Use: Dispels Blazerunner's Aura.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:45+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 11522,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "quest",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Dispels Blazerunner's Aura.",
+        "type": "use"
+      }
+    ],
+    "id": 11522,
+    "item_level": 1,
+    "name": "Silver Totem of Aquementas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Dispels Blazerunner's Aura."
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11522"
+  },
+  "linked_entities": [
+    {
+      "id": 14247,
+      "name": "Dispels Blazerunner's Aura.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14247"
+    }
+  ],
+  "name": "Silver Totem of Aquementas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "f654b66c879041f3bba2d130d619c4f1c8826a8ed55402daf8e8b77d9c16f060",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11522",
+  "url": "https://www.wowhead.com/forever/item=11522"
+}

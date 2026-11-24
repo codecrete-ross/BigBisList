@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wide-Brimmed Fishing Hat Item Level 48 Binds when picked up Head Cloth 51 Armor +13 Stamina +13 Spirit Requires Fishing (1) Use: Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min. (10 Min Cooldown) Sell Price: 61 26",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:08:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 259846,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 51,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min. (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 259846,
+    "item_level": 48,
+    "name": "Wide-Brimmed Fishing Hat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "spirit": 13.0,
+      "stamina": 13.0
+    },
+    "use_effects": [
+      "Use: Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min. (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=259846"
+  },
+  "linked_entities": [
+    {
+      "id": 356,
+      "name": "Fishing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=356"
+    },
+    {
+      "id": 1265220,
+      "name": "Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1265220"
+    }
+  ],
+  "name": "Wide-Brimmed Fishing Hat",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "3eab40220a496a1a9cede9cbcbf1c3573af334a7572ace35fd5da9b07129037a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/259846",
+  "url": "https://www.wowhead.com/forever/item=259846"
+}

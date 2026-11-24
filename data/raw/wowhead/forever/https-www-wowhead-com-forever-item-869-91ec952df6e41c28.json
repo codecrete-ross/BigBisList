@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Dazzling Longsword Item Level 41 Binds when equipped Main Hand Sword 57 - 107 Damage Speed 2.60 (31.54 damage per second) Durability 105 / 105 Requires Level 36 Chance on hit: Decrease the armor of the target by 100 for 30 sec. While affected, the target cannot stealth or turn invisible. Sell Price: 1 85 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 869,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 31.54,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Decrease the armor of the target by 100 for 30 sec. While affected, the target cannot stealth or turn invisible.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Decrease the armor of the target by 100 for 30 sec. While affected, the target cannot stealth or turn invisible."
+    ],
+    "id": 869,
+    "item_level": 41,
+    "name": "Dazzling Longsword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 36,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 107,
+    "weapon_min_damage": 57,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=869"
+  },
+  "linked_entities": [
+    {
+      "id": 13752,
+      "name": "Decrease the armor of the target by 100 for 30 sec. While affected, the target cannot stealth or turn invisible.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=13752"
+    }
+  ],
+  "name": "Dazzling Longsword",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/869",
+  "url": "https://www.wowhead.com/forever/item=869"
+}

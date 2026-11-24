@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Phytoskin Spaulders Item Level 51 Binds when picked up Shoulder Leather 111 Armor +15 Agility +9 Stamina +10 Nature Resistance Durability 60 / 60 Requires Level 46 Sell Price: 1 12 82 Dropped by: Razorlash Drop Chance: 24.49%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 17749,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 111,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 17749,
+    "item_level": 51,
+    "name": "Phytoskin Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "nature_resistance": 10.0,
+      "stamina": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17749"
+  },
+  "linked_entities": [],
+  "name": "Phytoskin Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 24.49,
+      "entity_name": "Razorlash",
+      "source_url": "https://www.wowhead.com/forever/item=17749",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "35c8e7c23e9770914fc7aa862b317e7a5eae15557a671ffae1bd7d55505c82c6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17749",
+  "url": "https://www.wowhead.com/forever/item=17749"
+}

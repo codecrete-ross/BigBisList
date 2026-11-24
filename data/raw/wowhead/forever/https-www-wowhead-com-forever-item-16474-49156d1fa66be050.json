@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Field Marshal's Lamellar Faceguard Item Level 74 Binds when picked up Unique Head Plate 679 Armor +21 Strength +21 Stamina +20 Intellect Restores + 5 mana per 5 sec. Durability 100 / 100 Classes: Paladin Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 25 . Sell Price: 2 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 16474,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 679,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 16474,
+    "item_level": 74,
+    "name": "Field Marshal's Lamellar Faceguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 20.0,
+      "mp5": 5.0,
+      "spell_power": 25.0,
+      "stamina": 21.0,
+      "strength": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16474"
+  },
+  "linked_entities": [],
+  "name": "Field Marshal's Lamellar Faceguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16474",
+  "url": "https://www.wowhead.com/forever/item=16474"
+}

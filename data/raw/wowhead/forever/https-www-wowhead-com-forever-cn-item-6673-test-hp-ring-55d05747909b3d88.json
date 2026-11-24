@@ -1,0 +1,59 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/cn/item=6673/test-hp-ring"
+    }
+  ],
+  "confidence": "conflicting_item_page_lead",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 775,
+      "collected_at": "2026-11-13T07:16:47.8115236Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-6673",
+      "source_content_digest": "52f1b8037d575f133f2ea096b2e273dfcc012e6906ef04dc668d7009d6313f96",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/6673"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:47.5919256Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-6673",
+      "source_content_digest": "282a3d21cde46a3cd5106e7c7755e55f584f312c5df1ac5e4bb47ab9d409d52b",
+      "source_url": "https://www.wowhead.com/forever/cn/item=6673/test-hp-ring"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "\u8be5\u7269\u54c1\u4e0d\u5bf9\u73a9\u5bb6\u5f00\u653e\u3002",
+    "capture_method": "indexed_search_excerpt",
+    "client_required_level_field": 1,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Test HP Ring Item Level 1 Binds when equipped Finger +2,500 Health Sell Price: 10 52",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 6673,
+    "item_level": 1,
+    "name": "Test HP Ring",
+    "page_crawl_age": "last month",
+    "source_locale": "cn",
+    "source_url": "https://www.wowhead.com/forever/cn/item=6673/test-hp-ring",
+    "tooltip_identity": "Finger with -60 health"
+  },
+  "source_content_digest": "73e2943ad9fa119f4a3c560e3454cfc1a67dc61c48f8973647f51ca25956afb3",
+  "url": "https://www.wowhead.com/forever/cn/item=6673/test-hp-ring"
+}

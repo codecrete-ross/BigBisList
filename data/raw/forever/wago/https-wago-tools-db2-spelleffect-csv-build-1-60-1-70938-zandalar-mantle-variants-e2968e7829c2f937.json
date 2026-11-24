@@ -1,0 +1,271 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Data from Efficient Games",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T03:59:43.4491189Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 291447,
+      "collected_at": "2026-11-13T17:36:00.9057280Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spellreagents",
+      "source_content_digest": "be6e987755f7097348eb072073ae3175b3d56016f43f90615a081d33d6affff6",
+      "source_url": "https://wago.tools/db2/SpellReagents/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 407525,
+      "collected_at": "2026-11-13T17:36:01.0493130Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-skilllineability",
+      "source_content_digest": "6696abd03ef90ad250a12ac23778616c292c46f6a0082130fbe187c96ead0aa0",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1095,
+      "collected_at": "2026-11-13T17:36:01.1478137Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-spelllearnspell",
+      "source_content_digest": "b6d101c650376c26eb39ced0e62368cf3c9bb602934b6235b58961e1e28d40d7",
+      "source_url": "https://wago.tools/db2/SpellLearnSpell/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T17:36:01.3083983Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5812,
+      "collected_at": "2026-11-13T17:54:56.0381540Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wdb-quest-85624",
+      "source_content_digest": "9780dc1cfa671e2b90542dc35d0adacb6832f2d980a6d8f52e0bac6fa49e26eb",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/85624"
+    },
+    {
+      "bytes": 137312,
+      "collected_at": "2026-11-13T15:23:12.8684660Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "sod-att-1-7-zul-gurub",
+      "source_content_digest": "8d40a2a8ae63adbb69f96af32c2090694926d04ce594eda4315e532a4b7f5611",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/e063f73759762559dce898cf28631d111ce681ff"
+    },
+    {
+      "bytes": 68760,
+      "collected_at": "2026-11-13T17:43:44.8533584Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-forever-zg",
+      "source_content_digest": "a7a9c4e5dbedde8c3bb12bef3db0b7ec7c115d8879b1774de8e7aa6901db971f",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/eaaf915c278172660f255850250b1b8688a2718e"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T17:42:01.8332031Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-forever-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 1010393,
+      "collected_at": "2026-11-13T05:23:31.7356796-08:00",
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "0551244e35490a94084bb5b16b4e65d17ee6e098f1b79859a04b1b4ae1dc5e47",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 823,
+      "collected_at": "2026-11-13T17:54:57.4373987Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-token-19719",
+      "source_content_digest": "f03566d13c5a8ac135dfb4eb16c4e96db0c07f31f1aa11f9bb06865a5c1f71ff",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19719"
+    },
+    {
+      "bytes": 821,
+      "collected_at": "2026-11-13T17:54:57.9495740Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-token-19720",
+      "source_content_digest": "9dd90ebfc244e5c0d920863cefdaa53dce4a886d9db419cfbf39b0f4ea5b370f",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19720"
+    },
+    {
+      "bytes": 823,
+      "collected_at": "2026-11-13T17:54:58.3806981Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-token-19721",
+      "source_content_digest": "33c4effd07892b832c460d9a4a6da2ae9574046983055617252500d6feec6995",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19721"
+    },
+    {
+      "bytes": 826,
+      "collected_at": "2026-11-13T17:54:58.8297999Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "forever-token-19724",
+      "source_content_digest": "00a4d5c3d424a86ebed00fdfde583d849d0fdb2d620db68bc2871419570a671e",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/19724"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "exact_variant_items": [
+      {
+        "creation_spell_id": 469774,
+        "current_reward_quest_id": null,
+        "historical_quest_id": 8067,
+        "item_id": 231321,
+        "legacy_mantle_quest_line": 96,
+        "name": "Zandalar Predator's Mantle",
+        "player_learning_or_cast_sources": [],
+        "quest_requires_item_id": 19724,
+        "seasonal_reward_quest_line": 1378,
+        "token_binding": "pickup"
+      },
+      {
+        "creation_spell_id": 469743,
+        "current_reward_quest_id": null,
+        "historical_quest_id": 8068,
+        "item_id": 231325,
+        "legacy_mantle_quest_line": 155,
+        "name": "Zandalar Illusionist's Mantle",
+        "player_learning_or_cast_sources": [],
+        "quest_requires_item_id": 19721,
+        "seasonal_reward_quest_line": 1437,
+        "token_binding": "pickup"
+      },
+      {
+        "creation_spell_id": 469730,
+        "current_reward_quest_id": 85624,
+        "historical_quest_id": 8071,
+        "item_id": 231333,
+        "legacy_mantle_quest_line": 273,
+        "name": "Zandalar Confessor's Mantle",
+        "player_learning_or_cast_sources": [],
+        "quest_requires_item_id": 19724,
+        "seasonal_reward_quest_line": 1563,
+        "token_binding": "pickup"
+      },
+      {
+        "creation_spell_id": 469759,
+        "current_reward_quest_id": null,
+        "historical_quest_id": 8072,
+        "item_id": 231338,
+        "legacy_mantle_quest_line": 332,
+        "name": "Zandalar Madcap's Mantle",
+        "player_learning_or_cast_sources": [],
+        "quest_requires_item_id": 19719,
+        "seasonal_reward_quest_line": 1625,
+        "token_binding": "pickup"
+      },
+      {
+        "creation_spell_id": 469735,
+        "current_reward_quest_id": null,
+        "historical_quest_id": 8076,
+        "item_id": 231349,
+        "legacy_mantle_quest_line": 450,
+        "name": "Zandalar Demoniac's Mantle",
+        "player_learning_or_cast_sources": [],
+        "quest_requires_item_id": 19720,
+        "seasonal_reward_quest_line": 1751,
+        "token_binding": "pickup"
+      }
+    ],
+    "map_id": 309,
+    "raid_gate_evidence": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/309"
+  },
+  "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+  "unavailable_item_ids": [
+    231321,
+    231325,
+    231333,
+    231338,
+    231349
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938#/zandalar-mantle-variants"
+}

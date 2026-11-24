@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shroud of Arcane Mastery Item Level 61 Binds when picked up Back 43 Armor +10 Stamina +10 Intellect Requires Level 56 Equip: Your spells pierce 4 Magical Resistance. Sell Price: 1 56 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T03:53:09.5722734Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 22330,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your spells pierce 4 Magical Resistance.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your spells pierce 4 Magical Resistance."
+    ],
+    "id": 22330,
+    "item_level": 61,
+    "name": "Shroud of Arcane Mastery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22330"
+  },
+  "linked_entities": [],
+  "name": "Shroud of Arcane Mastery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "88459993ff6bbb1aebea1a693832c72943993177210b857e9888b4c227e878fa",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22330",
+  "url": "https://www.wowhead.com/forever/item=22330"
+}

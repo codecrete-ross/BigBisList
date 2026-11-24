@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Determined Band Item Level 45 Binds when picked up Finger +8 Stamina Equip: + 9 Attack Power. Sell Price: 66 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 277208,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +9 Attack Power.",
+        "stats": {
+          "attack_power": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +9 Attack Power."
+    ],
+    "id": 277208,
+    "item_level": 45,
+    "name": "Determined Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 9.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277208"
+  },
+  "linked_entities": [],
+  "name": "Determined Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "25c36bca83d03c5c04051fd29ecfaee18d573d65a0d8aef9fc36dc96d097caf5",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277208",
+  "url": "https://www.wowhead.com/forever/item=277208"
+}

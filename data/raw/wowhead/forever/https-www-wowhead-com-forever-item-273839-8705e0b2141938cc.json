@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spiked Shell Band Item Level 27 Binds when picked up Unique-Equipped Finger +5 Stamina Requires Level 22 Equip: When struck in combat, inflicts 2 Nature damage to the attacker. Sell Price: 16 36 Dropped by: Ghamoo-ra Drop Chance: 4.18%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 273839,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: When struck in combat, inflicts 2 Nature damage to the attacker.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat, inflicts 2 Nature damage to the attacker."
+    ],
+    "id": 273839,
+    "item_level": 27,
+    "name": "Spiked Shell Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273839"
+  },
+  "linked_entities": [
+    {
+      "id": 1292670,
+      "name": "When struck in combat, inflicts 2 Nature damage to the attacker.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292670"
+    }
+  ],
+  "name": "Spiked Shell Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.18,
+      "entity_name": "Ghamoo-ra",
+      "source_url": "https://www.wowhead.com/forever/item=273839",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ccea5c2334fec2bcfc89fc10cdc4f4f4ffc6223c334390c1110c40d6e65feb2a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273839",
+  "url": "https://www.wowhead.com/forever/item=273839"
+}

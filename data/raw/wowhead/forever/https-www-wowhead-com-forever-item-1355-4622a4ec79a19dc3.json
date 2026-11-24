@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Buckskin Cape Item Level 17 Binds when equipped Back 15 Armor +3 Agility Requires Level 12 Sell Price: 2 51 Dropped by: Stonearm Drop Chance: 20.89%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:45:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 1355,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 15,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 1355,
+    "item_level": 17,
+    "name": "Buckskin Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 12,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=1355"
+  },
+  "linked_entities": [],
+  "name": "Buckskin Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.89,
+      "entity_name": "Stonearm",
+      "source_url": "https://www.wowhead.com/forever/item=1355",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1355",
+  "url": "https://www.wowhead.com/forever/item=1355"
+}

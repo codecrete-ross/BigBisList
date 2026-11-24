@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Guardian Talisman Item Level 50 Binds when picked up Trinket +9 Stamina Use: Reduces the range enemies detect you by 10 yds for 15 sec. (15 Min Cooldown) Sell Price: 93 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:00:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 1490,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces the range enemies detect you by 10 yds for 15 sec. (15 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 1490,
+    "item_level": 50,
+    "name": "Guardian Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 9.0
+    },
+    "use_effects": [
+      "Use: Reduces the range enemies detect you by 10 yds for 15 sec. (15 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=1490"
+  },
+  "linked_entities": [
+    {
+      "id": 1300364,
+      "name": "Reduces the range enemies detect you by 10 yds for 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1300364"
+    }
+  ],
+  "name": "Guardian Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "d263ab2fd04f11d7ad283b11dacc876a6bc0dd328944bc5c61e7d631a2f6ef63",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/1490",
+  "url": "https://www.wowhead.com/forever/item=1490"
+}

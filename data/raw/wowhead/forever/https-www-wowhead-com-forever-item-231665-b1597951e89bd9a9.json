@@ -1,0 +1,145 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Mail Epaulets Item Level 74 Binds when picked up Shoulder Mail 353 Armor +30 Stamina +16 Intellect Durability 85 / 85 Classes: Shaman Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 37 and damage done by up to 13 for all magical spells and effects. Warlord's Wartide (0/6) Warlord's Mail Skullcap Warlord's Mail Epaulets Warlord's Mail Chestguard General's Mail Pants General's Mail Gloves General's Mail Boots (2) Set : +20 Stamina. (3) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects. Sell Price: 2 94 66",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:42:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 231665,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 353,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 37 and damage done by up to 13 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 37,
+          "spell_damage": 13
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases healing done by up to 37 and damage done by up to 13 for all magical spells and effects."
+    ],
+    "id": 231665,
+    "item_level": 74,
+    "name": "Warlord's Mail Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 22804,
+        "text": "Improves your chance to get a critical strike with all Shock spells by 2%."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 467550,
+        "text": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "healing_power": 37.0,
+      "intellect": 16.0,
+      "spell_damage": 13.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=231665"
+  },
+  "linked_entities": [
+    {
+      "id": 231665,
+      "name": "Warlord's Mail Epaulets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231665"
+    },
+    {
+      "id": 231666,
+      "name": "General's Mail Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231666"
+    },
+    {
+      "id": 231667,
+      "name": "General's Mail Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231667"
+    },
+    {
+      "id": 231668,
+      "name": "Warlord's Mail Chestguard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231668"
+    },
+    {
+      "id": 231669,
+      "name": "Warlord's Mail Skullcap",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231669"
+    },
+    {
+      "id": 231670,
+      "name": "General's Mail Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=231670"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 22804,
+      "name": "Improves your chance to get a critical strike with all Shock spells by 2%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22804"
+    },
+    {
+      "id": 467550,
+      "name": "Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=467550"
+    }
+  ],
+  "name": "Warlord's Mail Epaulets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "007c424822358659edcf650e9e8963118d1408110efcdd813dec230b9b289da9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/231665",
+  "url": "https://www.wowhead.com/forever/item=231665"
+}

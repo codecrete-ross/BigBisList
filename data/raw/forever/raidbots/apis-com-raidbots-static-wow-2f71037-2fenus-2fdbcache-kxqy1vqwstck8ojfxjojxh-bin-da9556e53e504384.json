@@ -1,0 +1,8405 @@
+{
+  "ability_triggers": {
+    "20425": {
+      "activates": [
+        "melee_on_hit"
+      ],
+      "attack": "melee",
+      "class": "Paladin",
+      "name": "Judgement of Command",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026"
+    },
+    "408498": {
+      "attack": "melee",
+      "class": "Shaman",
+      "name": "Maelstrom Weapon",
+      "ppm": [
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0
+      ],
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026",
+      "speed_slot": 16
+    }
+  },
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data via Wago Tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Blizzard game data, public enUS cache archived by Raidbots",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "credit": "Blizzard Entertainment hotfix notes",
+      "source": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026"
+    }
+  ],
+  "client_build": "1.60.1.71037",
+  "confidence": "build_pinned_client_and_observed_hotfix",
+  "enchants": {
+    "100": {
+      "name": "+6 Spirit",
+      "spell_effect_ids": [
+        685926
+      ],
+      "stats": {
+        "spirit": 6.0
+      }
+    },
+    "101": {
+      "name": "+7 Spirit",
+      "spell_effect_ids": [
+        685927
+      ],
+      "stats": {
+        "spirit": 7.0
+      }
+    },
+    "102": {
+      "name": "+4 Stamina",
+      "spell_effect_ids": [
+        685438
+      ],
+      "stats": {
+        "stamina": 4.0
+      }
+    },
+    "103": {
+      "name": "+5 Stamina",
+      "spell_effect_ids": [
+        685477
+      ],
+      "stats": {
+        "stamina": 5.0
+      }
+    },
+    "104": {
+      "name": "+6 Stamina",
+      "spell_effect_ids": [
+        685516
+      ],
+      "stats": {
+        "stamina": 6.0
+      }
+    },
+    "1043": {
+      "name": "+16 Strength",
+      "spell_effect_ids": [
+        692003
+      ],
+      "stats": {
+        "strength": 16.0
+      }
+    },
+    "1044": {
+      "name": "+17 Strength",
+      "spell_effect_ids": [
+        692023
+      ],
+      "stats": {
+        "strength": 17.0
+      }
+    },
+    "1045": {
+      "name": "+18 Strength",
+      "spell_effect_ids": [
+        692024
+      ],
+      "stats": {
+        "strength": 18.0
+      }
+    },
+    "1046": {
+      "name": "+19 Strength",
+      "spell_effect_ids": [
+        692025
+      ],
+      "stats": {
+        "strength": 19.0
+      }
+    },
+    "1047": {
+      "name": "+20 Strength",
+      "spell_effect_ids": [
+        692089
+      ],
+      "stats": {
+        "strength": 20.0
+      }
+    },
+    "1048": {
+      "name": "+21 Strength",
+      "spell_effect_ids": [
+        691410
+      ],
+      "stats": {
+        "strength": 21.0
+      }
+    },
+    "1049": {
+      "name": "+22 Strength",
+      "spell_effect_ids": [
+        692090
+      ],
+      "stats": {
+        "strength": 22.0
+      }
+    },
+    "105": {
+      "name": "+7 Stamina",
+      "spell_effect_ids": [
+        685526
+      ],
+      "stats": {
+        "stamina": 7.0
+      }
+    },
+    "1050": {
+      "name": "+23 Strength",
+      "spell_effect_ids": [
+        692878
+      ],
+      "stats": {
+        "strength": 23.0
+      }
+    },
+    "1051": {
+      "name": "+24 Strength",
+      "spell_effect_ids": [
+        692345
+      ],
+      "stats": {
+        "strength": 24.0
+      }
+    },
+    "1052": {
+      "name": "+25 Strength",
+      "spell_effect_ids": [
+        691618
+      ],
+      "stats": {
+        "strength": 25.0
+      }
+    },
+    "1053": {
+      "name": "+26 Strength",
+      "spell_effect_ids": [
+        691632
+      ],
+      "stats": {
+        "strength": 26.0
+      }
+    },
+    "1054": {
+      "name": "+27 Strength",
+      "spell_effect_ids": [
+        691633
+      ],
+      "stats": {
+        "strength": 27.0
+      }
+    },
+    "1055": {
+      "name": "+28 Strength",
+      "spell_effect_ids": [
+        691634
+      ],
+      "stats": {
+        "strength": 28.0
+      }
+    },
+    "1056": {
+      "name": "+29 Strength",
+      "spell_effect_ids": [
+        691635
+      ],
+      "stats": {
+        "strength": 29.0
+      }
+    },
+    "1057": {
+      "name": "+30 Strength",
+      "spell_effect_ids": [
+        691685
+      ],
+      "stats": {
+        "strength": 30.0
+      }
+    },
+    "1058": {
+      "name": "+31 Strength",
+      "spell_effect_ids": [
+        691349
+      ],
+      "stats": {
+        "strength": 31.0
+      }
+    },
+    "1059": {
+      "name": "+32 Strength",
+      "spell_effect_ids": [
+        692225
+      ],
+      "stats": {
+        "strength": 32.0
+      }
+    },
+    "106": {
+      "name": "+4 Strength",
+      "spell_effect_ids": [
+        685440
+      ],
+      "stats": {
+        "strength": 4.0
+      }
+    },
+    "1060": {
+      "name": "+33 Strength",
+      "spell_effect_ids": [
+        691350
+      ],
+      "stats": {
+        "strength": 33.0
+      }
+    },
+    "1061": {
+      "name": "+34 Strength",
+      "spell_effect_ids": [
+        691351
+      ],
+      "stats": {
+        "strength": 34.0
+      }
+    },
+    "1062": {
+      "name": "+35 Strength",
+      "spell_effect_ids": [
+        692084
+      ],
+      "stats": {
+        "strength": 35.0
+      }
+    },
+    "1063": {
+      "name": "+36 Strength",
+      "spell_effect_ids": [
+        691352
+      ],
+      "stats": {
+        "strength": 36.0
+      }
+    },
+    "1064": {
+      "name": "+37 Strength",
+      "spell_effect_ids": [
+        693338
+      ],
+      "stats": {
+        "strength": 37.0
+      }
+    },
+    "1065": {
+      "name": "+38 Strength",
+      "spell_effect_ids": [
+        692273
+      ],
+      "stats": {
+        "strength": 38.0
+      }
+    },
+    "1066": {
+      "name": "+39 Strength",
+      "spell_effect_ids": [
+        691836
+      ],
+      "stats": {
+        "strength": 39.0
+      }
+    },
+    "1067": {
+      "name": "+40 Strength",
+      "spell_effect_ids": [
+        691625
+      ],
+      "stats": {
+        "strength": 40.0
+      }
+    },
+    "1068": {
+      "name": "+15 Stamina",
+      "spell_effect_ids": [
+        692324
+      ],
+      "stats": {
+        "stamina": 15.0
+      }
+    },
+    "1069": {
+      "name": "+16 Stamina",
+      "spell_effect_ids": [
+        692464
+      ],
+      "stats": {
+        "stamina": 16.0
+      }
+    },
+    "107": {
+      "name": "+5 Strength",
+      "spell_effect_ids": [
+        685368
+      ],
+      "stats": {
+        "strength": 5.0
+      }
+    },
+    "1070": {
+      "name": "+17 Stamina",
+      "spell_effect_ids": [
+        692536
+      ],
+      "stats": {
+        "stamina": 17.0
+      }
+    },
+    "1071": {
+      "name": "+18 Stamina",
+      "spell_effect_ids": [
+        691662
+      ],
+      "stats": {
+        "stamina": 18.0
+      }
+    },
+    "1072": {
+      "name": "+19 Stamina",
+      "spell_effect_ids": [
+        692850
+      ],
+      "stats": {
+        "stamina": 19.0
+      }
+    },
+    "1073": {
+      "name": "+20 Stamina",
+      "spell_effect_ids": [
+        692258
+      ],
+      "stats": {
+        "stamina": 20.0
+      }
+    },
+    "1074": {
+      "name": "+21 Stamina",
+      "spell_effect_ids": [
+        692851
+      ],
+      "stats": {
+        "stamina": 21.0
+      }
+    },
+    "1075": {
+      "name": "+22 Stamina",
+      "spell_effect_ids": [
+        692852
+      ],
+      "stats": {
+        "stamina": 22.0
+      }
+    },
+    "1076": {
+      "name": "+23 Stamina",
+      "spell_effect_ids": [
+        692204
+      ],
+      "stats": {
+        "stamina": 23.0
+      }
+    },
+    "1077": {
+      "name": "+24 Stamina",
+      "spell_effect_ids": [
+        692205
+      ],
+      "stats": {
+        "stamina": 24.0
+      }
+    },
+    "1078": {
+      "name": "+25 Stamina",
+      "spell_effect_ids": [
+        691989
+      ],
+      "stats": {
+        "stamina": 25.0
+      }
+    },
+    "1079": {
+      "name": "+26 Stamina",
+      "spell_effect_ids": [
+        692259
+      ],
+      "stats": {
+        "stamina": 26.0
+      }
+    },
+    "108": {
+      "name": "+6 Strength",
+      "spell_effect_ids": [
+        685627
+      ],
+      "stats": {
+        "strength": 6.0
+      }
+    },
+    "1080": {
+      "name": "+27 Stamina",
+      "spell_effect_ids": [
+        692061
+      ],
+      "stats": {
+        "stamina": 27.0
+      }
+    },
+    "1081": {
+      "name": "+28 Stamina",
+      "spell_effect_ids": [
+        692062
+      ],
+      "stats": {
+        "stamina": 28.0
+      }
+    },
+    "1082": {
+      "name": "+29 Stamina",
+      "spell_effect_ids": [
+        691939
+      ],
+      "stats": {
+        "stamina": 29.0
+      }
+    },
+    "1083": {
+      "name": "+30 Stamina",
+      "spell_effect_ids": [
+        691940
+      ],
+      "stats": {
+        "stamina": 30.0
+      }
+    },
+    "1084": {
+      "name": "+31 Stamina",
+      "spell_effect_ids": [
+        691941
+      ],
+      "stats": {
+        "stamina": 31.0
+      }
+    },
+    "1085": {
+      "name": "+32 Stamina",
+      "spell_effect_ids": [
+        692031
+      ],
+      "stats": {
+        "stamina": 32.0
+      }
+    },
+    "1086": {
+      "name": "+33 Stamina",
+      "spell_effect_ids": [
+        691870
+      ],
+      "stats": {
+        "stamina": 33.0
+      }
+    },
+    "1087": {
+      "name": "+34 Stamina",
+      "spell_effect_ids": [
+        691832
+      ],
+      "stats": {
+        "stamina": 34.0
+      }
+    },
+    "1088": {
+      "name": "+35 Stamina",
+      "spell_effect_ids": [
+        692274
+      ],
+      "stats": {
+        "stamina": 35.0
+      }
+    },
+    "1089": {
+      "name": "+36 Stamina",
+      "spell_effect_ids": [
+        692275
+      ],
+      "stats": {
+        "stamina": 36.0
+      }
+    },
+    "109": {
+      "name": "+7 Strength",
+      "spell_effect_ids": [
+        685628
+      ],
+      "stats": {
+        "strength": 7.0
+      }
+    },
+    "1090": {
+      "name": "+37 Stamina",
+      "spell_effect_ids": [
+        691747
+      ],
+      "stats": {
+        "stamina": 37.0
+      }
+    },
+    "1091": {
+      "name": "+38 Stamina",
+      "spell_effect_ids": [
+        691748
+      ],
+      "stats": {
+        "stamina": 38.0
+      }
+    },
+    "1092": {
+      "name": "+39 Stamina",
+      "spell_effect_ids": [
+        691749
+      ],
+      "stats": {
+        "stamina": 39.0
+      }
+    },
+    "1093": {
+      "name": "+40 Stamina",
+      "spell_effect_ids": [
+        691876
+      ],
+      "stats": {
+        "stamina": 40.0
+      }
+    },
+    "1094": {
+      "name": "+17 Agility",
+      "spell_effect_ids": [
+        690096
+      ],
+      "stats": {
+        "agility": 17.0
+      }
+    },
+    "1095": {
+      "name": "+18 Agility",
+      "spell_effect_ids": [
+        690097
+      ],
+      "stats": {
+        "agility": 18.0
+      }
+    },
+    "1096": {
+      "name": "+19 Agility",
+      "spell_effect_ids": [
+        690667
+      ],
+      "stats": {
+        "agility": 19.0
+      }
+    },
+    "1097": {
+      "name": "+20 Agility",
+      "spell_effect_ids": [
+        691316
+      ],
+      "stats": {
+        "agility": 20.0
+      }
+    },
+    "1098": {
+      "name": "+21 Agility",
+      "spell_effect_ids": [
+        690927
+      ],
+      "stats": {
+        "agility": 21.0
+      }
+    },
+    "1099": {
+      "name": "+22 Agility",
+      "spell_effect_ids": [
+        691375
+      ],
+      "stats": {
+        "agility": 22.0
+      }
+    },
+    "110": {
+      "name": "+1 Defense",
+      "spell_effect_ids": [
+        685629
+      ],
+      "stats": {
+        "defense": 1.0
+      }
+    },
+    "1100": {
+      "name": "+23 Agility",
+      "spell_effect_ids": [
+        691150
+      ],
+      "stats": {
+        "agility": 23.0
+      }
+    },
+    "1101": {
+      "name": "+24 Agility",
+      "spell_effect_ids": [
+        691151
+      ],
+      "stats": {
+        "agility": 24.0
+      }
+    },
+    "1102": {
+      "name": "+25 Agility",
+      "spell_effect_ids": [
+        691219
+      ],
+      "stats": {
+        "agility": 25.0
+      }
+    },
+    "1103": {
+      "name": "+26 Agility",
+      "spell_effect_ids": [
+        691153
+      ],
+      "stats": {
+        "agility": 26.0
+      }
+    },
+    "1104": {
+      "name": "+27 Agility",
+      "spell_effect_ids": [
+        691154
+      ],
+      "stats": {
+        "agility": 27.0
+      }
+    },
+    "1105": {
+      "name": "+28 Agility",
+      "spell_effect_ids": [
+        691155
+      ],
+      "stats": {
+        "agility": 28.0
+      }
+    },
+    "1106": {
+      "name": "+29 Agility",
+      "spell_effect_ids": [
+        691156
+      ],
+      "stats": {
+        "agility": 29.0
+      }
+    },
+    "1107": {
+      "name": "+30 Agility",
+      "spell_effect_ids": [
+        690303
+      ],
+      "stats": {
+        "agility": 30.0
+      }
+    },
+    "1108": {
+      "name": "+31 Agility",
+      "spell_effect_ids": [
+        690304
+      ],
+      "stats": {
+        "agility": 31.0
+      }
+    },
+    "1109": {
+      "name": "+32 Agility",
+      "spell_effect_ids": [
+        690305
+      ],
+      "stats": {
+        "agility": 32.0
+      }
+    },
+    "111": {
+      "name": "+1 Defense",
+      "spell_effect_ids": [
+        685630
+      ],
+      "stats": {
+        "defense": 1.0
+      }
+    },
+    "1110": {
+      "name": "+33 Agility",
+      "spell_effect_ids": [
+        690306
+      ],
+      "stats": {
+        "agility": 33.0
+      }
+    },
+    "1111": {
+      "name": "+34 Agility",
+      "spell_effect_ids": [
+        690307
+      ],
+      "stats": {
+        "agility": 34.0
+      }
+    },
+    "1112": {
+      "name": "+35 Agility",
+      "spell_effect_ids": [
+        691076
+      ],
+      "stats": {
+        "agility": 35.0
+      }
+    },
+    "1113": {
+      "name": "+36 Agility",
+      "spell_effect_ids": [
+        691947
+      ],
+      "stats": {
+        "agility": 36.0
+      }
+    },
+    "1114": {
+      "name": "+37 Agility",
+      "spell_effect_ids": [
+        691948
+      ],
+      "stats": {
+        "agility": 37.0
+      }
+    },
+    "1115": {
+      "name": "+38 Agility",
+      "spell_effect_ids": [
+        691965
+      ],
+      "stats": {
+        "agility": 38.0
+      }
+    },
+    "1116": {
+      "name": "+39 Agility",
+      "spell_effect_ids": [
+        692234
+      ],
+      "stats": {
+        "agility": 39.0
+      }
+    },
+    "1117": {
+      "name": "+40 Agility",
+      "spell_effect_ids": [
+        692036
+      ],
+      "stats": {
+        "agility": 40.0
+      }
+    },
+    "1118": {
+      "name": "+15 Intellect",
+      "spell_effect_ids": [
+        692037
+      ],
+      "stats": {
+        "intellect": 15.0
+      }
+    },
+    "1119": {
+      "name": "+16 Intellect",
+      "spell_effect_ids": [
+        691920
+      ],
+      "stats": {
+        "intellect": 16.0
+      }
+    },
+    "112": {
+      "name": "+2 Defense",
+      "spell_effect_ids": [
+        685631
+      ],
+      "stats": {
+        "defense": 2.0
+      }
+    },
+    "1120": {
+      "name": "+17 Intellect",
+      "spell_effect_ids": [
+        691333
+      ],
+      "stats": {
+        "intellect": 17.0
+      }
+    },
+    "1121": {
+      "name": "+18 Intellect",
+      "spell_effect_ids": [
+        691143
+      ],
+      "stats": {
+        "intellect": 18.0
+      }
+    },
+    "1122": {
+      "name": "+19 Intellect",
+      "spell_effect_ids": [
+        692227
+      ],
+      "stats": {
+        "intellect": 19.0
+      }
+    },
+    "1123": {
+      "name": "+20 Intellect",
+      "spell_effect_ids": [
+        681557
+      ],
+      "stats": {
+        "intellect": 20.0
+      }
+    },
+    "1124": {
+      "name": "+21 Intellect",
+      "spell_effect_ids": [
+        690448
+      ],
+      "stats": {
+        "intellect": 21.0
+      }
+    },
+    "1125": {
+      "name": "+22 Intellect",
+      "spell_effect_ids": [
+        690100
+      ],
+      "stats": {
+        "intellect": 22.0
+      }
+    },
+    "1126": {
+      "name": "+23 Intellect",
+      "spell_effect_ids": [
+        690101
+      ],
+      "stats": {
+        "intellect": 23.0
+      }
+    },
+    "1127": {
+      "name": "+24 Intellect",
+      "spell_effect_ids": [
+        690608
+      ],
+      "stats": {
+        "intellect": 24.0
+      }
+    },
+    "1128": {
+      "name": "+25 Intellect",
+      "spell_effect_ids": [
+        690412
+      ],
+      "stats": {
+        "intellect": 25.0
+      }
+    },
+    "1129": {
+      "name": "+26 Intellect",
+      "spell_effect_ids": [
+        692155
+      ],
+      "stats": {
+        "intellect": 26.0
+      }
+    },
+    "113": {
+      "name": "+3 Defense",
+      "spell_effect_ids": [
+        686857
+      ],
+      "stats": {
+        "defense": 3.0
+      }
+    },
+    "1130": {
+      "name": "+27 Intellect",
+      "spell_effect_ids": [
+        692879
+      ],
+      "stats": {
+        "intellect": 27.0
+      }
+    },
+    "1131": {
+      "name": "+28 Intellect",
+      "spell_effect_ids": [
+        692880
+      ],
+      "stats": {
+        "intellect": 28.0
+      }
+    },
+    "1132": {
+      "name": "+29 Intellect",
+      "spell_effect_ids": [
+        692135
+      ],
+      "stats": {
+        "intellect": 29.0
+      }
+    },
+    "1133": {
+      "name": "+30 Intellect",
+      "spell_effect_ids": [
+        692160
+      ],
+      "stats": {
+        "intellect": 30.0
+      }
+    },
+    "1134": {
+      "name": "+31 Intellect",
+      "spell_effect_ids": [
+        692136
+      ],
+      "stats": {
+        "intellect": 31.0
+      }
+    },
+    "1135": {
+      "name": "+32 Intellect",
+      "spell_effect_ids": [
+        691851
+      ],
+      "stats": {
+        "intellect": 32.0
+      }
+    },
+    "1136": {
+      "name": "+33 Intellect",
+      "spell_effect_ids": [
+        691852
+      ],
+      "stats": {
+        "intellect": 33.0
+      }
+    },
+    "1137": {
+      "name": "+34 Intellect",
+      "spell_effect_ids": [
+        692140
+      ],
+      "stats": {
+        "intellect": 34.0
+      }
+    },
+    "1138": {
+      "name": "+35 Intellect",
+      "spell_effect_ids": [
+        692235
+      ],
+      "stats": {
+        "intellect": 35.0
+      }
+    },
+    "1139": {
+      "name": "+36 Intellect",
+      "spell_effect_ids": [
+        692141
+      ],
+      "stats": {
+        "intellect": 36.0
+      }
+    },
+    "114": {
+      "name": "+3 Defense",
+      "spell_effect_ids": [
+        685621
+      ],
+      "stats": {
+        "defense": 3.0
+      }
+    },
+    "1140": {
+      "name": "+37 Intellect",
+      "spell_effect_ids": [
+        692142
+      ],
+      "stats": {
+        "intellect": 37.0
+      }
+    },
+    "1141": {
+      "name": "+38 Intellect",
+      "spell_effect_ids": [
+        691225
+      ],
+      "stats": {
+        "intellect": 38.0
+      }
+    },
+    "1142": {
+      "name": "+39 Intellect",
+      "spell_effect_ids": [
+        691659
+      ],
+      "stats": {
+        "intellect": 39.0
+      }
+    },
+    "1143": {
+      "name": "+40 Intellect",
+      "spell_effect_ids": [
+        691660
+      ],
+      "stats": {
+        "intellect": 40.0
+      }
+    },
+    "1144": {
+      "name": "+15 Spirit",
+      "spell_effect_ids": [
+        692538
+      ],
+      "stats": {
+        "spirit": 15.0
+      }
+    },
+    "1145": {
+      "name": "+16 Spirit",
+      "spell_effect_ids": [
+        692279
+      ],
+      "stats": {
+        "spirit": 16.0
+      }
+    },
+    "1146": {
+      "name": "+17 Spirit",
+      "spell_effect_ids": [
+        692280
+      ],
+      "stats": {
+        "spirit": 17.0
+      }
+    },
+    "1147": {
+      "name": "+18 Spirit",
+      "spell_effect_ids": [
+        692281
+      ],
+      "stats": {
+        "spirit": 18.0
+      }
+    },
+    "1148": {
+      "name": "+19 Spirit",
+      "spell_effect_ids": [
+        692632
+      ],
+      "stats": {
+        "spirit": 19.0
+      }
+    },
+    "1149": {
+      "name": "+20 Spirit",
+      "spell_effect_ids": [
+        691265
+      ],
+      "stats": {
+        "spirit": 20.0
+      }
+    },
+    "115": {
+      "name": "+4 Defense",
+      "spell_effect_ids": [
+        685790
+      ],
+      "stats": {
+        "defense": 4.0
+      }
+    },
+    "1150": {
+      "name": "+21 Spirit",
+      "spell_effect_ids": [
+        691325
+      ],
+      "stats": {
+        "spirit": 21.0
+      }
+    },
+    "1151": {
+      "name": "+22 Spirit",
+      "spell_effect_ids": [
+        691326
+      ],
+      "stats": {
+        "spirit": 22.0
+      }
+    },
+    "1152": {
+      "name": "+23 Spirit",
+      "spell_effect_ids": [
+        691327
+      ],
+      "stats": {
+        "spirit": 23.0
+      }
+    },
+    "1153": {
+      "name": "+24 Spirit",
+      "spell_effect_ids": [
+        691680
+      ],
+      "stats": {
+        "spirit": 24.0
+      }
+    },
+    "1154": {
+      "name": "+25 Spirit",
+      "spell_effect_ids": [
+        691697
+      ],
+      "stats": {
+        "spirit": 25.0
+      }
+    },
+    "1155": {
+      "name": "+26 Spirit",
+      "spell_effect_ids": [
+        692215
+      ],
+      "stats": {
+        "spirit": 26.0
+      }
+    },
+    "1156": {
+      "name": "+27 Spirit",
+      "spell_effect_ids": [
+        692492
+      ],
+      "stats": {
+        "spirit": 27.0
+      }
+    },
+    "1157": {
+      "name": "+28 Spirit",
+      "spell_effect_ids": [
+        692217
+      ],
+      "stats": {
+        "spirit": 28.0
+      }
+    },
+    "1158": {
+      "name": "+29 Spirit",
+      "spell_effect_ids": [
+        691007
+      ],
+      "stats": {
+        "spirit": 29.0
+      }
+    },
+    "1159": {
+      "name": "+30 Spirit",
+      "spell_effect_ids": [
+        692218
+      ],
+      "stats": {
+        "spirit": 30.0
+      }
+    },
+    "116": {
+      "name": "+5 Defense",
+      "spell_effect_ids": [
+        685791
+      ],
+      "stats": {
+        "defense": 5.0
+      }
+    },
+    "1160": {
+      "name": "+31 Spirit",
+      "spell_effect_ids": [
+        692219
+      ],
+      "stats": {
+        "spirit": 31.0
+      }
+    },
+    "1161": {
+      "name": "+32 Spirit",
+      "spell_effect_ids": [
+        691961
+      ],
+      "stats": {
+        "spirit": 32.0
+      }
+    },
+    "1162": {
+      "name": "+33 Spirit",
+      "spell_effect_ids": [
+        691762
+      ],
+      "stats": {
+        "spirit": 33.0
+      }
+    },
+    "1163": {
+      "name": "+34 Spirit",
+      "spell_effect_ids": [
+        691763
+      ],
+      "stats": {
+        "spirit": 34.0
+      }
+    },
+    "1164": {
+      "name": "+36 Spirit",
+      "spell_effect_ids": [
+        692236
+      ],
+      "stats": {
+        "spirit": 36.0
+      }
+    },
+    "1165": {
+      "name": "+37 Spirit",
+      "spell_effect_ids": [
+        691764
+      ],
+      "stats": {
+        "spirit": 37.0
+      }
+    },
+    "1166": {
+      "name": "+38 Spirit",
+      "spell_effect_ids": [
+        691765
+      ],
+      "stats": {
+        "spirit": 38.0
+      }
+    },
+    "1167": {
+      "name": "+39 Spirit",
+      "spell_effect_ids": [
+        692166
+      ],
+      "stats": {
+        "spirit": 39.0
+      }
+    },
+    "1168": {
+      "name": "+40 Spirit",
+      "spell_effect_ids": [
+        692167
+      ],
+      "stats": {
+        "spirit": 40.0
+      }
+    },
+    "1183": {
+      "name": "+35 Spirit",
+      "spell_effect_ids": [
+        692491
+      ],
+      "stats": {
+        "spirit": 35.0
+      }
+    },
+    "1203": {
+      "name": "+41 Strength",
+      "spell_effect_ids": [
+        691930
+      ],
+      "stats": {
+        "strength": 41.0
+      }
+    },
+    "1204": {
+      "name": "+42 Strength",
+      "spell_effect_ids": [
+        691321
+      ],
+      "stats": {
+        "strength": 42.0
+      }
+    },
+    "1205": {
+      "name": "+43 Strength",
+      "spell_effect_ids": [
+        692952
+      ],
+      "stats": {
+        "strength": 43.0
+      }
+    },
+    "1206": {
+      "name": "+44 Strength",
+      "spell_effect_ids": [
+        691978
+      ],
+      "stats": {
+        "strength": 44.0
+      }
+    },
+    "1207": {
+      "name": "+45 Strength",
+      "spell_effect_ids": [
+        692969
+      ],
+      "stats": {
+        "strength": 45.0
+      }
+    },
+    "1208": {
+      "name": "+46 Strength",
+      "spell_effect_ids": [
+        692970
+      ],
+      "stats": {
+        "strength": 46.0
+      }
+    },
+    "1209": {
+      "name": "+41 Stamina",
+      "spell_effect_ids": [
+        691008
+      ],
+      "stats": {
+        "stamina": 41.0
+      }
+    },
+    "121": {
+      "name": "+20 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 20
+      }
+    },
+    "1210": {
+      "name": "+42 Stamina",
+      "spell_effect_ids": [
+        691792
+      ],
+      "stats": {
+        "stamina": 42.0
+      }
+    },
+    "1211": {
+      "name": "+43 Stamina",
+      "spell_effect_ids": [
+        691766
+      ],
+      "stats": {
+        "stamina": 43.0
+      }
+    },
+    "1212": {
+      "name": "+44 Stamina",
+      "spell_effect_ids": [
+        691928
+      ],
+      "stats": {
+        "stamina": 44.0
+      }
+    },
+    "1213": {
+      "name": "+45 Stamina",
+      "spell_effect_ids": [
+        691929
+      ],
+      "stats": {
+        "stamina": 45.0
+      }
+    },
+    "1214": {
+      "name": "+46 Stamina",
+      "spell_effect_ids": [
+        691379
+      ],
+      "stats": {
+        "stamina": 46.0
+      }
+    },
+    "1215": {
+      "name": "+41 Agility",
+      "spell_effect_ids": [
+        692004
+      ],
+      "stats": {
+        "agility": 41.0
+      }
+    },
+    "1216": {
+      "name": "+42 Agility",
+      "spell_effect_ids": [
+        692005
+      ],
+      "stats": {
+        "agility": 42.0
+      }
+    },
+    "1217": {
+      "name": "+43 Agility",
+      "spell_effect_ids": [
+        692125
+      ],
+      "stats": {
+        "agility": 43.0
+      }
+    },
+    "1218": {
+      "name": "+44 Agility",
+      "spell_effect_ids": [
+        692282
+      ],
+      "stats": {
+        "agility": 44.0
+      }
+    },
+    "1219": {
+      "name": "+45 Agility",
+      "spell_effect_ids": [
+        692015
+      ],
+      "stats": {
+        "agility": 45.0
+      }
+    },
+    "122": {
+      "name": "+24 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 24
+      }
+    },
+    "1220": {
+      "name": "+46 Agility",
+      "spell_effect_ids": [
+        692322
+      ],
+      "stats": {
+        "agility": 46.0
+      }
+    },
+    "1221": {
+      "name": "+41 Intellect",
+      "spell_effect_ids": [
+        692323
+      ],
+      "stats": {
+        "intellect": 41.0
+      }
+    },
+    "1222": {
+      "name": "+42 Intellect",
+      "spell_effect_ids": [
+        692020
+      ],
+      "stats": {
+        "intellect": 42.0
+      }
+    },
+    "1223": {
+      "name": "+43 Intellect",
+      "spell_effect_ids": [
+        692021
+      ],
+      "stats": {
+        "intellect": 43.0
+      }
+    },
+    "1224": {
+      "name": "+44 Intellect",
+      "spell_effect_ids": [
+        692022
+      ],
+      "stats": {
+        "intellect": 44.0
+      }
+    },
+    "1225": {
+      "name": "+45 Intellect",
+      "spell_effect_ids": [
+        691077
+      ],
+      "stats": {
+        "intellect": 45.0
+      }
+    },
+    "1226": {
+      "name": "+46 Intellect",
+      "spell_effect_ids": [
+        692216
+      ],
+      "stats": {
+        "intellect": 46.0
+      }
+    },
+    "1227": {
+      "name": "+41 Spirit",
+      "spell_effect_ids": [
+        691893
+      ],
+      "stats": {
+        "spirit": 41.0
+      }
+    },
+    "1228": {
+      "name": "+42 Spirit",
+      "spell_effect_ids": [
+        691078
+      ],
+      "stats": {
+        "spirit": 42.0
+      }
+    },
+    "1229": {
+      "name": "+43 Spirit",
+      "spell_effect_ids": [
+        692107
+      ],
+      "stats": {
+        "spirit": 43.0
+      }
+    },
+    "123": {
+      "name": "+28 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 28
+      }
+    },
+    "1230": {
+      "name": "+44 Spirit",
+      "spell_effect_ids": [
+        692108
+      ],
+      "stats": {
+        "spirit": 44.0
+      }
+    },
+    "1231": {
+      "name": "+45 Spirit",
+      "spell_effect_ids": [
+        692109
+      ],
+      "stats": {
+        "spirit": 45.0
+      }
+    },
+    "1232": {
+      "name": "+46 Spirit",
+      "spell_effect_ids": [
+        691080
+      ],
+      "stats": {
+        "spirit": 46.0
+      }
+    },
+    "15": {
+      "name": "Stamina +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 8,
+        "stamina": 1
+      }
+    },
+    "1506": {
+      "name": "Strength +8",
+      "spell_effect_ids": [
+        692247
+      ],
+      "stats": {
+        "strength": 8.0
+      }
+    },
+    "1507": {
+      "name": "Stamina +8",
+      "spell_effect_ids": [
+        691800
+      ],
+      "stats": {
+        "stamina": 8.0
+      }
+    },
+    "1508": {
+      "name": "Agility +8",
+      "spell_effect_ids": [
+        691924
+      ],
+      "stats": {
+        "agility": 8.0
+      }
+    },
+    "1509": {
+      "name": "Intellect +8",
+      "spell_effect_ids": [
+        691705
+      ],
+      "stats": {
+        "intellect": 8.0
+      }
+    },
+    "1510": {
+      "name": "Spirit +8",
+      "spell_effect_ids": [
+        692531
+      ],
+      "stats": {
+        "spirit": 8.0
+      }
+    },
+    "1531": {
+      "name": "STR/STA +10/10",
+      "spell_effect_ids": [
+        692414,
+        692415
+      ],
+      "stats": {
+        "stamina": 10.0,
+        "strength": 10.0
+      }
+    },
+    "16": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 16
+      }
+    },
+    "17": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 24
+      }
+    },
+    "18": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 32
+      }
+    },
+    "1843": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 40
+      }
+    },
+    "1883": {
+      "name": "Intellect +7",
+      "spell_effect_ids": [
+        691101
+      ],
+      "stats": {
+        "intellect": 7.0
+      }
+    },
+    "1884": {
+      "name": "Spirit +9",
+      "spell_effect_ids": [
+        696181
+      ],
+      "stats": {
+        "spirit": 9.0
+      }
+    },
+    "1885": {
+      "name": "Strength +9",
+      "spell_effect_ids": [
+        696179
+      ],
+      "stats": {
+        "strength": 9.0
+      }
+    },
+    "1886": {
+      "name": "Stamina +9",
+      "spell_effect_ids": [
+        696180
+      ],
+      "stats": {
+        "stamina": 9.0
+      }
+    },
+    "1887": {
+      "name": "Agility +7",
+      "spell_effect_ids": [
+        691059
+      ],
+      "stats": {
+        "agility": 7.0
+      }
+    },
+    "1889": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 70
+      }
+    },
+    "1890": {
+      "name": "Spirit +9",
+      "spell_effect_ids": [
+        696181
+      ],
+      "stats": {
+        "spirit": 9.0
+      }
+    },
+    "1891": {
+      "name": "All Stats +4",
+      "spell_effect_ids": [
+        696185
+      ],
+      "stats": {
+        "agility": 4.0,
+        "intellect": 4.0,
+        "spirit": 4.0,
+        "stamina": 4.0,
+        "strength": 4.0
+      }
+    },
+    "1892": {
+      "name": "+$k1 Stamina",
+      "spell_effect_ids": [],
+      "stats": {
+        "stamina": 10
+      }
+    },
+    "1893": {
+      "name": "Intellect +10",
+      "spell_effect_ids": [
+        696506
+      ],
+      "stats": {
+        "intellect": 10.0
+      }
+    },
+    "1901": {
+      "name": "Intellect +9",
+      "spell_effect_ids": [
+        696184
+      ],
+      "stats": {
+        "intellect": 9.0
+      }
+    },
+    "1903": {
+      "name": "Spirit +9",
+      "spell_effect_ids": [
+        696181
+      ],
+      "stats": {
+        "spirit": 9.0
+      }
+    },
+    "1904": {
+      "name": "Intellect +9",
+      "spell_effect_ids": [
+        696184
+      ],
+      "stats": {
+        "intellect": 9.0
+      }
+    },
+    "1943": {
+      "name": "+8 Defense",
+      "spell_effect_ids": [
+        691435
+      ],
+      "stats": {
+        "defense": 8.0
+      }
+    },
+    "1944": {
+      "name": "+5 Defense",
+      "spell_effect_ids": [
+        691167
+      ],
+      "stats": {
+        "defense": 5.0
+      }
+    },
+    "1945": {
+      "name": "+6 Defense",
+      "spell_effect_ids": [
+        691168
+      ],
+      "stats": {
+        "defense": 6.0
+      }
+    },
+    "1946": {
+      "name": "+7 Defense",
+      "spell_effect_ids": [
+        690896
+      ],
+      "stats": {
+        "defense": 7.0
+      }
+    },
+    "1947": {
+      "name": "+7 Defense",
+      "spell_effect_ids": [
+        691366
+      ],
+      "stats": {
+        "defense": 7.0
+      }
+    },
+    "1948": {
+      "name": "+9 Defense",
+      "spell_effect_ids": [
+        691436
+      ],
+      "stats": {
+        "defense": 9.0
+      }
+    },
+    "1949": {
+      "name": "+9 Defense",
+      "spell_effect_ids": [
+        696960
+      ],
+      "stats": {
+        "defense": 9.0
+      }
+    },
+    "1950": {
+      "name": "+10 Defense",
+      "spell_effect_ids": [
+        691584
+      ],
+      "stats": {
+        "defense": 10.0
+      }
+    },
+    "1951": {
+      "name": "+11 Defense",
+      "spell_effect_ids": [
+        692741
+      ],
+      "stats": {
+        "defense": 11.0
+      }
+    },
+    "1952": {
+      "name": "+13 Defense",
+      "spell_effect_ids": [
+        691293
+      ],
+      "stats": {
+        "defense": 13.0
+      }
+    },
+    "1953": {
+      "name": "+15 Defense",
+      "spell_effect_ids": [
+        696941
+      ],
+      "stats": {
+        "defense": 15.0
+      }
+    },
+    "1954": {
+      "name": "+17 Defense",
+      "spell_effect_ids": [
+        691368
+      ],
+      "stats": {
+        "defense": 17.0
+      }
+    },
+    "1955": {
+      "name": "+21 Defense",
+      "spell_effect_ids": [
+        695024
+      ],
+      "stats": {
+        "defense": 21.0
+      }
+    },
+    "1956": {
+      "name": "+11 Defense",
+      "spell_effect_ids": [
+        698395
+      ],
+      "stats": {
+        "defense": 11.0
+      }
+    },
+    "1957": {
+      "name": "+12 Defense",
+      "spell_effect_ids": [
+        698396
+      ],
+      "stats": {
+        "defense": 12.0
+      }
+    },
+    "1958": {
+      "name": "+13 Defense",
+      "spell_effect_ids": [
+        698397
+      ],
+      "stats": {
+        "defense": 13.0
+      }
+    },
+    "1959": {
+      "name": "+14 Defense",
+      "spell_effect_ids": [
+        699581
+      ],
+      "stats": {
+        "defense": 14.0
+      }
+    },
+    "1960": {
+      "name": "+15 Defense",
+      "spell_effect_ids": [
+        700190
+      ],
+      "stats": {
+        "defense": 15.0
+      }
+    },
+    "1961": {
+      "name": "+16 Defense",
+      "spell_effect_ids": [
+        699790
+      ],
+      "stats": {
+        "defense": 16.0
+      }
+    },
+    "1962": {
+      "name": "+17 Defense",
+      "spell_effect_ids": [
+        698796
+      ],
+      "stats": {
+        "defense": 17.0
+      }
+    },
+    "1963": {
+      "name": "+18 Defense",
+      "spell_effect_ids": [
+        699791
+      ],
+      "stats": {
+        "defense": 18.0
+      }
+    },
+    "1964": {
+      "name": "+19 Defense",
+      "spell_effect_ids": [
+        699792
+      ],
+      "stats": {
+        "defense": 19.0
+      }
+    },
+    "1965": {
+      "name": "+19 Defense",
+      "spell_effect_ids": [
+        699793
+      ],
+      "stats": {
+        "defense": 19.0
+      }
+    },
+    "1966": {
+      "name": "+20 Defense",
+      "spell_effect_ids": [
+        698911
+      ],
+      "stats": {
+        "defense": 20.0
+      }
+    },
+    "1967": {
+      "name": "+21 Defense",
+      "spell_effect_ids": [
+        698904
+      ],
+      "stats": {
+        "defense": 21.0
+      }
+    },
+    "1968": {
+      "name": "+22 Defense",
+      "spell_effect_ids": [
+        699794
+      ],
+      "stats": {
+        "defense": 22.0
+      }
+    },
+    "1969": {
+      "name": "+23 Defense",
+      "spell_effect_ids": [
+        698139
+      ],
+      "stats": {
+        "defense": 23.0
+      }
+    },
+    "1970": {
+      "name": "+23 Defense",
+      "spell_effect_ids": [
+        698140
+      ],
+      "stats": {
+        "defense": 23.0
+      }
+    },
+    "1971": {
+      "name": "+24 Defense",
+      "spell_effect_ids": [
+        698118
+      ],
+      "stats": {
+        "defense": 24.0
+      }
+    },
+    "1972": {
+      "name": "+25 Defense",
+      "spell_effect_ids": [
+        698491
+      ],
+      "stats": {
+        "defense": 25.0
+      }
+    },
+    "1973": {
+      "name": "+25 Defense",
+      "spell_effect_ids": [
+        698787
+      ],
+      "stats": {
+        "defense": 25.0
+      }
+    },
+    "206": {
+      "name": "Increases Healing +2",
+      "spell_effect_ids": [
+        685954
+      ],
+      "stats": {
+        "healing_power": 2.0
+      }
+    },
+    "207": {
+      "name": "Increases Healing +4",
+      "spell_effect_ids": [
+        685955
+      ],
+      "stats": {
+        "healing_power": 4.0
+      }
+    },
+    "208": {
+      "name": "Increases Healing +7",
+      "spell_effect_ids": [
+        686033
+      ],
+      "stats": {
+        "healing_power": 7.0
+      }
+    },
+    "209": {
+      "name": "Increases Healing +9",
+      "spell_effect_ids": [
+        685931
+      ],
+      "stats": {
+        "healing_power": 9.0
+      }
+    },
+    "210": {
+      "name": "Increases Healing +11",
+      "spell_effect_ids": [
+        686027
+      ],
+      "stats": {
+        "healing_power": 11.0
+      }
+    },
+    "211": {
+      "name": "Increases Healing +13",
+      "spell_effect_ids": [
+        686028
+      ],
+      "stats": {
+        "healing_power": 13.0
+      }
+    },
+    "212": {
+      "name": "Increases Healing +15",
+      "spell_effect_ids": [
+        686330
+      ],
+      "stats": {
+        "healing_power": 15.0
+      }
+    },
+    "2307": {
+      "name": "+2 Healing Spells",
+      "spell_effect_ids": [
+        685954
+      ],
+      "stats": {
+        "healing_power": 2.0
+      }
+    },
+    "2308": {
+      "name": "+4 Healing Spells",
+      "spell_effect_ids": [
+        685955
+      ],
+      "stats": {
+        "healing_power": 4.0
+      }
+    },
+    "2309": {
+      "name": "+7 Healing Spells",
+      "spell_effect_ids": [
+        686033
+      ],
+      "stats": {
+        "healing_power": 7.0
+      }
+    },
+    "2310": {
+      "name": "+9 Healing Spells",
+      "spell_effect_ids": [
+        685931
+      ],
+      "stats": {
+        "healing_power": 9.0
+      }
+    },
+    "2311": {
+      "name": "+11 Healing Spells",
+      "spell_effect_ids": [
+        686027
+      ],
+      "stats": {
+        "healing_power": 11.0
+      }
+    },
+    "2312": {
+      "name": "+13 Healing Spells",
+      "spell_effect_ids": [
+        686028
+      ],
+      "stats": {
+        "healing_power": 13.0
+      }
+    },
+    "2313": {
+      "name": "+15 Healing Spells",
+      "spell_effect_ids": [
+        686330
+      ],
+      "stats": {
+        "healing_power": 15.0
+      }
+    },
+    "2314": {
+      "name": "+18 Healing Spells",
+      "spell_effect_ids": [
+        687750
+      ],
+      "stats": {
+        "healing_power": 18.0
+      }
+    },
+    "2315": {
+      "name": "+20 Healing Spells",
+      "spell_effect_ids": [
+        686888
+      ],
+      "stats": {
+        "healing_power": 20.0
+      }
+    },
+    "2316": {
+      "name": "+22 Healing Spells",
+      "spell_effect_ids": [
+        686889
+      ],
+      "stats": {
+        "healing_power": 22.0
+      }
+    },
+    "2317": {
+      "name": "+24 Healing Spells",
+      "spell_effect_ids": [
+        687567
+      ],
+      "stats": {
+        "healing_power": 24.0
+      }
+    },
+    "2318": {
+      "name": "+26 Healing Spells",
+      "spell_effect_ids": [
+        687403
+      ],
+      "stats": {
+        "healing_power": 26.0
+      }
+    },
+    "2319": {
+      "name": "+29 Healing Spells",
+      "spell_effect_ids": [
+        687657
+      ],
+      "stats": {
+        "healing_power": 29.0
+      }
+    },
+    "2320": {
+      "name": "+31 Healing Spells",
+      "spell_effect_ids": [
+        687885
+      ],
+      "stats": {
+        "healing_power": 31.0
+      }
+    },
+    "2321": {
+      "name": "+33 Healing Spells",
+      "spell_effect_ids": [
+        686394
+      ],
+      "stats": {
+        "healing_power": 33.0
+      }
+    },
+    "2322": {
+      "name": "+35 Healing Spells",
+      "spell_effect_ids": [
+        695290
+      ],
+      "stats": {
+        "healing_power": 35.0
+      }
+    },
+    "2323": {
+      "name": "+37 Healing Spells",
+      "spell_effect_ids": [
+        694760
+      ],
+      "stats": {
+        "healing_power": 37.0
+      }
+    },
+    "2324": {
+      "name": "+40 Healing Spells",
+      "spell_effect_ids": [
+        695500
+      ],
+      "stats": {
+        "healing_power": 40.0
+      }
+    },
+    "2325": {
+      "name": "+42 Healing Spells",
+      "spell_effect_ids": [
+        695791
+      ],
+      "stats": {
+        "healing_power": 42.0
+      }
+    },
+    "2326": {
+      "name": "+44 Healing Spells",
+      "spell_effect_ids": [
+        694689
+      ],
+      "stats": {
+        "healing_power": 44.0
+      }
+    },
+    "2327": {
+      "name": "+46 Healing Spells",
+      "spell_effect_ids": [
+        695460
+      ],
+      "stats": {
+        "healing_power": 46.0
+      }
+    },
+    "2328": {
+      "name": "+48 Healing Spells",
+      "spell_effect_ids": [
+        695461
+      ],
+      "stats": {
+        "healing_power": 48.0
+      }
+    },
+    "2329": {
+      "name": "+51 Healing Spells",
+      "spell_effect_ids": [
+        696022
+      ],
+      "stats": {
+        "healing_power": 51.0
+      }
+    },
+    "2330": {
+      "name": "+53 Healing Spells",
+      "spell_effect_ids": [
+        693485
+      ],
+      "stats": {
+        "healing_power": 53.0
+      }
+    },
+    "2331": {
+      "name": "+55 Healing Spells",
+      "spell_effect_ids": [
+        694857
+      ],
+      "stats": {
+        "healing_power": 55.0
+      }
+    },
+    "2332": {
+      "name": "+57 Healing Spells",
+      "spell_effect_ids": [
+        694858
+      ],
+      "stats": {
+        "healing_power": 57.0
+      }
+    },
+    "2333": {
+      "name": "+59 Healing Spells",
+      "spell_effect_ids": [
+        695478
+      ],
+      "stats": {
+        "healing_power": 59.0
+      }
+    },
+    "2334": {
+      "name": "+62 Healing Spells",
+      "spell_effect_ids": [
+        695730
+      ],
+      "stats": {
+        "healing_power": 62.0
+      }
+    },
+    "2335": {
+      "name": "+64 Healing Spells",
+      "spell_effect_ids": [
+        695465
+      ],
+      "stats": {
+        "healing_power": 64.0
+      }
+    },
+    "2336": {
+      "name": "+66 Healing Spells",
+      "spell_effect_ids": [
+        695893
+      ],
+      "stats": {
+        "healing_power": 66.0
+      }
+    },
+    "2337": {
+      "name": "+68 Healing Spells",
+      "spell_effect_ids": [
+        695894
+      ],
+      "stats": {
+        "healing_power": 68.0
+      }
+    },
+    "2338": {
+      "name": "+70 Healing Spells",
+      "spell_effect_ids": [
+        694691
+      ],
+      "stats": {
+        "healing_power": 70.0
+      }
+    },
+    "2339": {
+      "name": "+73 Healing Spells",
+      "spell_effect_ids": [
+        694692
+      ],
+      "stats": {
+        "healing_power": 73.0
+      }
+    },
+    "2340": {
+      "name": "+75 Healing Spells",
+      "spell_effect_ids": [
+        694667
+      ],
+      "stats": {
+        "healing_power": 75.0
+      }
+    },
+    "2341": {
+      "name": "+77 Healing Spells",
+      "spell_effect_ids": [
+        694668
+      ],
+      "stats": {
+        "healing_power": 77.0
+      }
+    },
+    "2342": {
+      "name": "+79 Healing Spells",
+      "spell_effect_ids": [
+        695219
+      ],
+      "stats": {
+        "healing_power": 79.0
+      }
+    },
+    "2343": {
+      "name": "+81 Healing Spells",
+      "spell_effect_ids": [
+        695220
+      ],
+      "stats": {
+        "healing_power": 81.0
+      }
+    },
+    "2344": {
+      "name": "+84 Healing Spells",
+      "spell_effect_ids": [
+        694952
+      ],
+      "stats": {
+        "healing_power": 84.0
+      }
+    },
+    "24": {
+      "name": "Intellect +2",
+      "spell_effect_ids": [
+        686485
+      ],
+      "stats": {
+        "intellect": 2.0
+      }
+    },
+    "242": {
+      "name": "Stamina +3",
+      "spell_effect_ids": [
+        685393
+      ],
+      "stats": {
+        "stamina": 3.0
+      }
+    },
+    "243": {
+      "name": "Spirit +3",
+      "spell_effect_ids": [
+        686265
+      ],
+      "stats": {
+        "spirit": 3.0
+      }
+    },
+    "246": {
+      "name": "Intellect +3",
+      "spell_effect_ids": [
+        685637
+      ],
+      "stats": {
+        "intellect": 3.0
+      }
+    },
+    "247": {
+      "name": "Agility +3",
+      "spell_effect_ids": [
+        686590
+      ],
+      "stats": {
+        "agility": 3.0
+      }
+    },
+    "248": {
+      "name": "Strength +3",
+      "spell_effect_ids": [
+        686477
+      ],
+      "stats": {
+        "strength": 3.0
+      }
+    },
+    "2503": {
+      "name": "Defense +3",
+      "spell_effect_ids": [],
+      "stats": {
+        "defense": 3
+      }
+    },
+    "2504": {
+      "name": "Spell Power +30",
+      "spell_effect_ids": [
+        699671,
+        699672
+      ],
+      "stats": {
+        "healing_power": 30.0,
+        "spell_damage": 30.0
+      }
+    },
+    "2505": {
+      "name": "Healing Spells +55",
+      "spell_effect_ids": [
+        699704,
+        1251687
+      ],
+      "stats": {
+        "healing_power": 55.0,
+        "spell_damage": 19.0
+      }
+    },
+    "251": {
+      "name": "Intellect +1",
+      "spell_effect_ids": [
+        685599
+      ],
+      "stats": {
+        "intellect": 1.0
+      }
+    },
+    "254": {
+      "name": "Stamina +4",
+      "spell_effect_ids": [
+        685794
+      ],
+      "stats": {
+        "stamina": 4.0
+      }
+    },
+    "2544": {
+      "name": "Healing and Spell Damage +8",
+      "spell_effect_ids": [
+        699332,
+        699333
+      ],
+      "stats": {
+        "healing_power": 8.0,
+        "spell_damage": 8.0
+      }
+    },
+    "255": {
+      "name": "Spirit +3",
+      "spell_effect_ids": [
+        684678
+      ],
+      "stats": {
+        "spirit": 3.0
+      }
+    },
+    "2563": {
+      "name": "Strength +15",
+      "spell_effect_ids": [
+        700674
+      ],
+      "stats": {
+        "strength": 15.0
+      }
+    },
+    "2564": {
+      "name": "Agility +15",
+      "spell_effect_ids": [
+        701519
+      ],
+      "stats": {
+        "agility": 15.0
+      }
+    },
+    "2566": {
+      "name": "Healing Spells +24",
+      "spell_effect_ids": [
+        699925,
+        1251688
+      ],
+      "stats": {
+        "healing_power": 24.0,
+        "spell_damage": 8.0
+      }
+    },
+    "2567": {
+      "name": "Spirit +22",
+      "spell_effect_ids": [
+        699926
+      ],
+      "stats": {
+        "spirit": 22.0
+      }
+    },
+    "2568": {
+      "name": "Intellect +22",
+      "spell_effect_ids": [
+        699976
+      ],
+      "stats": {
+        "intellect": 22.0
+      }
+    },
+    "2584": {
+      "name": "Defense +7/Stamina +10/Healing Spells +24",
+      "spell_effect_ids": [
+        702293,
+        702294,
+        702295
+      ],
+      "stats": {
+        "defense": 7.0,
+        "healing_power": 24.0,
+        "stamina": 10.0
+      }
+    },
+    "2587": {
+      "name": "Healing and Spell Damage +13/Intellect +15",
+      "spell_effect_ids": [
+        701363,
+        701364,
+        701365
+      ],
+      "stats": {
+        "healing_power": 13.0,
+        "intellect": 15.0,
+        "spell_damage": 13.0
+      }
+    },
+    "2589": {
+      "name": "Healing and Spell Damage +18/Stamina +10",
+      "spell_effect_ids": [
+        700958,
+        700959,
+        700960
+      ],
+      "stats": {
+        "healing_power": 18.0,
+        "spell_damage": 18.0,
+        "stamina": 10.0
+      }
+    },
+    "2591": {
+      "name": "Intellect +10/Stamina +10/Healing Spells +24",
+      "spell_effect_ids": [
+        700863,
+        700864,
+        700865
+      ],
+      "stats": {
+        "healing_power": 24.0,
+        "intellect": 10.0,
+        "stamina": 10.0
+      }
+    },
+    "2604": {
+      "name": "+33 Healing Spells",
+      "spell_effect_ids": [
+        686394
+      ],
+      "stats": {
+        "healing_power": 33.0
+      }
+    },
+    "2605": {
+      "name": "+18 Spell Damage and Healing",
+      "spell_effect_ids": [
+        687763,
+        687764
+      ],
+      "stats": {
+        "healing_power": 18.0,
+        "spell_damage": 18.0
+      }
+    },
+    "2607": {
+      "name": "+12 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687232,
+        687233
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "spell_damage": 12.0
+      }
+    },
+    "2608": {
+      "name": "+13 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687818,
+        687819
+      ],
+      "stats": {
+        "healing_power": 13.0,
+        "spell_damage": 13.0
+      }
+    },
+    "2609": {
+      "name": "+15 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687732,
+        687733
+      ],
+      "stats": {
+        "healing_power": 15.0,
+        "spell_damage": 15.0
+      }
+    },
+    "2610": {
+      "name": "+14 Damage and Healing Spells",
+      "spell_effect_ids": [
+        688347,
+        688348
+      ],
+      "stats": {
+        "healing_power": 14.0,
+        "spell_damage": 14.0
+      }
+    },
+    "2611": {
+      "name": "REUSE Random - 15 Spells All",
+      "spell_effect_ids": [
+        687763,
+        687764
+      ],
+      "stats": {
+        "healing_power": 18.0,
+        "spell_damage": 18.0
+      }
+    },
+    "2612": {
+      "name": "+18 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687763,
+        687764
+      ],
+      "stats": {
+        "healing_power": 18.0,
+        "spell_damage": 18.0
+      }
+    },
+    "2617": {
+      "name": "Healing Spells +35/Damage Spells +12",
+      "spell_effect_ids": [
+        702909,
+        1251690
+      ],
+      "stats": {
+        "healing_power": 35.0,
+        "spell_damage": 12.0
+      }
+    },
+    "2618": {
+      "name": "Agility +15",
+      "spell_effect_ids": [
+        696186
+      ],
+      "stats": {
+        "agility": 9.0
+      }
+    },
+    "2646": {
+      "name": "Agility +25",
+      "spell_effect_ids": [
+        704752
+      ],
+      "stats": {
+        "agility": 25.0
+      }
+    },
+    "2802": {
+      "name": "+$i Agility",
+      "spell_effect_ids": [],
+      "stats": {
+        "agility": 0
+      }
+    },
+    "2803": {
+      "name": "+$i Stamina",
+      "spell_effect_ids": [],
+      "stats": {
+        "stamina": 0
+      }
+    },
+    "2804": {
+      "name": "+$i Intellect",
+      "spell_effect_ids": [],
+      "stats": {
+        "intellect": 0
+      }
+    },
+    "2805": {
+      "name": "+$i Strength",
+      "spell_effect_ids": [],
+      "stats": {
+        "strength": 0
+      }
+    },
+    "2806": {
+      "name": "+$i Spirit",
+      "spell_effect_ids": [],
+      "stats": {
+        "spirit": 0
+      }
+    },
+    "2817": {
+      "name": "+$i Arcane Resistance",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 0
+      }
+    },
+    "2818": {
+      "name": "+$i Fire Resistance",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 0
+      }
+    },
+    "2819": {
+      "name": "+$i Frost Resistance",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 0
+      }
+    },
+    "2820": {
+      "name": "+$i Nature Resistance",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 0
+      }
+    },
+    "2821": {
+      "name": "+$i Shadow Resistance",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 0
+      }
+    },
+    "2825": {
+      "name": "+$i Attack Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "attack_power": 0
+      }
+    },
+    "343": {
+      "name": "+8 Agility",
+      "spell_effect_ids": [
+        687520
+      ],
+      "stats": {
+        "agility": 8.0
+      }
+    },
+    "344": {
+      "name": "+32 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 32
+      }
+    },
+    "345": {
+      "name": "+40 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 40
+      }
+    },
+    "346": {
+      "name": "+36 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 36
+      }
+    },
+    "347": {
+      "name": "+44 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 44
+      }
+    },
+    "348": {
+      "name": "+48 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 48
+      }
+    },
+    "349": {
+      "name": "+9 Agility",
+      "spell_effect_ids": [
+        687658
+      ],
+      "stats": {
+        "agility": 9.0
+      }
+    },
+    "350": {
+      "name": "+8 Intellect",
+      "spell_effect_ids": [
+        687028
+      ],
+      "stats": {
+        "intellect": 8.0
+      }
+    },
+    "351": {
+      "name": "+8 Spirit",
+      "spell_effect_ids": [
+        687129
+      ],
+      "stats": {
+        "spirit": 8.0
+      }
+    },
+    "352": {
+      "name": "+8 Strength",
+      "spell_effect_ids": [
+        687198
+      ],
+      "stats": {
+        "strength": 8.0
+      }
+    },
+    "353": {
+      "name": "+8 Stamina",
+      "spell_effect_ids": [
+        687875
+      ],
+      "stats": {
+        "stamina": 8.0
+      }
+    },
+    "354": {
+      "name": "+9 Intellect",
+      "spell_effect_ids": [
+        687029
+      ],
+      "stats": {
+        "intellect": 9.0
+      }
+    },
+    "355": {
+      "name": "+9 Spirit",
+      "spell_effect_ids": [
+        687252
+      ],
+      "stats": {
+        "spirit": 9.0
+      }
+    },
+    "356": {
+      "name": "+9 Stamina",
+      "spell_effect_ids": [
+        687876
+      ],
+      "stats": {
+        "stamina": 9.0
+      }
+    },
+    "357": {
+      "name": "+9 Strength",
+      "spell_effect_ids": [
+        688469
+      ],
+      "stats": {
+        "strength": 9.0
+      }
+    },
+    "358": {
+      "name": "+10 Agility",
+      "spell_effect_ids": [
+        687659
+      ],
+      "stats": {
+        "agility": 10.0
+      }
+    },
+    "359": {
+      "name": "+10 Intellect",
+      "spell_effect_ids": [
+        687047
+      ],
+      "stats": {
+        "intellect": 10.0
+      }
+    },
+    "360": {
+      "name": "+10 Spirit",
+      "spell_effect_ids": [
+        687253
+      ],
+      "stats": {
+        "spirit": 10.0
+      }
+    },
+    "361": {
+      "name": "+10 Stamina",
+      "spell_effect_ids": [
+        688749
+      ],
+      "stats": {
+        "stamina": 10.0
+      }
+    },
+    "362": {
+      "name": "+10 Strength",
+      "spell_effect_ids": [
+        688155
+      ],
+      "stats": {
+        "strength": 10.0
+      }
+    },
+    "363": {
+      "name": "+11 Agility",
+      "spell_effect_ids": [
+        687660
+      ],
+      "stats": {
+        "agility": 11.0
+      }
+    },
+    "364": {
+      "name": "+11 Intellect",
+      "spell_effect_ids": [
+        687465
+      ],
+      "stats": {
+        "intellect": 11.0
+      }
+    },
+    "365": {
+      "name": "+11 Spirit",
+      "spell_effect_ids": [
+        687011
+      ],
+      "stats": {
+        "spirit": 11.0
+      }
+    },
+    "366": {
+      "name": "+11 Stamina",
+      "spell_effect_ids": [
+        688467
+      ],
+      "stats": {
+        "stamina": 11.0
+      }
+    },
+    "367": {
+      "name": "+11 Strength",
+      "spell_effect_ids": [
+        688156
+      ],
+      "stats": {
+        "strength": 11.0
+      }
+    },
+    "368": {
+      "name": "+12 Agility",
+      "spell_effect_ids": [
+        687570
+      ],
+      "stats": {
+        "agility": 12.0
+      }
+    },
+    "369": {
+      "name": "+12 Intellect",
+      "spell_effect_ids": [
+        687128
+      ],
+      "stats": {
+        "intellect": 12.0
+      }
+    },
+    "370": {
+      "name": "+12 Spirit",
+      "spell_effect_ids": [
+        687301
+      ],
+      "stats": {
+        "spirit": 12.0
+      }
+    },
+    "371": {
+      "name": "+12 Stamina",
+      "spell_effect_ids": [
+        688468
+      ],
+      "stats": {
+        "stamina": 12.0
+      }
+    },
+    "372": {
+      "name": "+12 Strength",
+      "spell_effect_ids": [
+        688240
+      ],
+      "stats": {
+        "strength": 12.0
+      }
+    },
+    "383": {
+      "name": "+52 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 52
+      }
+    },
+    "384": {
+      "name": "+56 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 56
+      }
+    },
+    "385": {
+      "name": "+60 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 60
+      }
+    },
+    "386": {
+      "name": "+16 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 79
+      }
+    },
+    "387": {
+      "name": "+17 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 81
+      }
+    },
+    "388": {
+      "name": "+18 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 84
+      }
+    },
+    "389": {
+      "name": "+19 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 87
+      }
+    },
+    "403": {
+      "name": "+13 Agility",
+      "spell_effect_ids": [
+        683483
+      ],
+      "stats": {
+        "agility": 13.0
+      }
+    },
+    "404": {
+      "name": "+14 Agility",
+      "spell_effect_ids": [
+        680608
+      ],
+      "stats": {
+        "agility": 14.0
+      }
+    },
+    "405": {
+      "name": "+13 Intellect",
+      "spell_effect_ids": [
+        680805
+      ],
+      "stats": {
+        "intellect": 13.0
+      }
+    },
+    "406": {
+      "name": "+14 Intellect",
+      "spell_effect_ids": [
+        680865
+      ],
+      "stats": {
+        "intellect": 14.0
+      }
+    },
+    "407": {
+      "name": "+13 Spirit",
+      "spell_effect_ids": [
+        681735
+      ],
+      "stats": {
+        "spirit": 13.0
+      }
+    },
+    "408": {
+      "name": "+14 Spirit",
+      "spell_effect_ids": [
+        681736
+      ],
+      "stats": {
+        "spirit": 14.0
+      }
+    },
+    "409": {
+      "name": "+13 Stamina",
+      "spell_effect_ids": [
+        681737
+      ],
+      "stats": {
+        "stamina": 13.0
+      }
+    },
+    "41": {
+      "name": "Stamina +2",
+      "spell_effect_ids": [
+        686560
+      ],
+      "stats": {
+        "stamina": 2.0
+      }
+    },
+    "410": {
+      "name": "+13 Strength",
+      "spell_effect_ids": [
+        681739
+      ],
+      "stats": {
+        "strength": 13.0
+      }
+    },
+    "411": {
+      "name": "+14 Stamina",
+      "spell_effect_ids": [
+        681738
+      ],
+      "stats": {
+        "stamina": 14.0
+      }
+    },
+    "412": {
+      "name": "+14 Strength",
+      "spell_effect_ids": [
+        681756
+      ],
+      "stats": {
+        "strength": 14.0
+      }
+    },
+    "423": {
+      "name": "Increase Spell Damage +1",
+      "spell_effect_ids": [
+        688238,
+        688239
+      ],
+      "stats": {
+        "healing_power": 1.0,
+        "spell_damage": 1.0
+      }
+    },
+    "424": {
+      "name": "Increase Spell Damage +2",
+      "spell_effect_ids": [
+        688245,
+        688246
+      ],
+      "stats": {
+        "healing_power": 2.0,
+        "spell_damage": 2.0
+      }
+    },
+    "425": {
+      "name": "Increase Spell Damage +4",
+      "spell_effect_ids": [
+        687131,
+        687132
+      ],
+      "stats": {
+        "healing_power": 4.0,
+        "spell_damage": 4.0
+      }
+    },
+    "426": {
+      "name": "Increase Spell Damage +5",
+      "spell_effect_ids": [
+        687133,
+        687134
+      ],
+      "stats": {
+        "healing_power": 5.0,
+        "spell_damage": 5.0
+      }
+    },
+    "427": {
+      "name": "Increase Spell Damage +6",
+      "spell_effect_ids": [
+        687700,
+        687701
+      ],
+      "stats": {
+        "healing_power": 6.0,
+        "spell_damage": 6.0
+      }
+    },
+    "428": {
+      "name": "Increase Spell Damage +7",
+      "spell_effect_ids": [
+        686986,
+        686987
+      ],
+      "stats": {
+        "healing_power": 7.0,
+        "spell_damage": 7.0
+      }
+    },
+    "429": {
+      "name": "Increase Spell Damage +8",
+      "spell_effect_ids": [
+        688213,
+        688214
+      ],
+      "stats": {
+        "healing_power": 8.0,
+        "spell_damage": 8.0
+      }
+    },
+    "430": {
+      "name": "Increase Spell Damage +9",
+      "spell_effect_ids": [
+        687751,
+        687752
+      ],
+      "stats": {
+        "healing_power": 9.0,
+        "spell_damage": 9.0
+      }
+    },
+    "431": {
+      "name": "Increase Spell Damage +11",
+      "spell_effect_ids": [
+        688728,
+        688729
+      ],
+      "stats": {
+        "healing_power": 11.0,
+        "spell_damage": 11.0
+      }
+    },
+    "432": {
+      "name": "Increase Spell Damage +12",
+      "spell_effect_ids": [
+        687232,
+        687233
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "spell_damage": 12.0
+      }
+    },
+    "440": {
+      "name": "Increases Healing +12",
+      "spell_effect_ids": [
+        687750
+      ],
+      "stats": {
+        "healing_power": 18.0
+      }
+    },
+    "441": {
+      "name": "Increases Healing +20",
+      "spell_effect_ids": [
+        686888
+      ],
+      "stats": {
+        "healing_power": 20.0
+      }
+    },
+    "442": {
+      "name": "Increases Healing +22",
+      "spell_effect_ids": [
+        686889
+      ],
+      "stats": {
+        "healing_power": 22.0
+      }
+    },
+    "583": {
+      "name": "+1 Agility / +1 Spirit",
+      "spell_effect_ids": [
+        685857,
+        685108
+      ],
+      "stats": {
+        "agility": 1.0,
+        "spirit": 1.0
+      }
+    },
+    "584": {
+      "name": "+1 Agility / +1 Intellect",
+      "spell_effect_ids": [
+        685857,
+        684632
+      ],
+      "stats": {
+        "agility": 1.0,
+        "intellect": 1.0
+      }
+    },
+    "585": {
+      "name": "+1 Agility / +1 Stamina",
+      "spell_effect_ids": [
+        685857,
+        685437
+      ],
+      "stats": {
+        "agility": 1.0,
+        "stamina": 1.0
+      }
+    },
+    "586": {
+      "name": "+1 Agility / +1 Strength",
+      "spell_effect_ids": [
+        685857,
+        685795
+      ],
+      "stats": {
+        "agility": 1.0,
+        "strength": 1.0
+      }
+    },
+    "587": {
+      "name": "+1 Intellect / +1 Spirit",
+      "spell_effect_ids": [
+        684632,
+        685108
+      ],
+      "stats": {
+        "intellect": 1.0,
+        "spirit": 1.0
+      }
+    },
+    "588": {
+      "name": "+1 Intellect / +1 Stamina",
+      "spell_effect_ids": [
+        684632,
+        685437
+      ],
+      "stats": {
+        "intellect": 1.0,
+        "stamina": 1.0
+      }
+    },
+    "589": {
+      "name": "+1 Intellect / +1 Strength",
+      "spell_effect_ids": [
+        684632,
+        685795
+      ],
+      "stats": {
+        "intellect": 1.0,
+        "strength": 1.0
+      }
+    },
+    "590": {
+      "name": "+1 Spirit / +1 Stamina",
+      "spell_effect_ids": [
+        685108,
+        685437
+      ],
+      "stats": {
+        "spirit": 1.0,
+        "stamina": 1.0
+      }
+    },
+    "591": {
+      "name": "+1 Spirit / +1 Strength",
+      "spell_effect_ids": [
+        685108,
+        685795
+      ],
+      "stats": {
+        "spirit": 1.0,
+        "strength": 1.0
+      }
+    },
+    "592": {
+      "name": "+1 Stamina / +1 Strength",
+      "spell_effect_ids": [
+        685437,
+        685795
+      ],
+      "stats": {
+        "stamina": 1.0,
+        "strength": 1.0
+      }
+    },
+    "66": {
+      "name": "Stamina +3",
+      "spell_effect_ids": [
+        686001
+      ],
+      "stats": {
+        "stamina": 3.0
+      }
+    },
+    "68": {
+      "name": "+1 Strength",
+      "spell_effect_ids": [
+        685795
+      ],
+      "stats": {
+        "strength": 1.0
+      }
+    },
+    "684": {
+      "name": "+15 Strength",
+      "spell_effect_ids": [
+        690302
+      ],
+      "stats": {
+        "strength": 15.0
+      }
+    },
+    "69": {
+      "name": "+2 Strength",
+      "spell_effect_ids": [
+        685871
+      ],
+      "stats": {
+        "strength": 2.0
+      }
+    },
+    "70": {
+      "name": "+3 Strength",
+      "spell_effect_ids": [
+        684576
+      ],
+      "stats": {
+        "strength": 3.0
+      }
+    },
+    "7007": {
+      "name": "+18 to all attributes",
+      "spell_effect_ids": [
+        691662,
+        690097,
+        692258
+      ],
+      "stats": {
+        "agility": 18.0,
+        "stamina": 38.0
+      }
+    },
+    "71": {
+      "name": "+1 Stamina",
+      "spell_effect_ids": [
+        685437
+      ],
+      "stats": {
+        "stamina": 1.0
+      }
+    },
+    "72": {
+      "name": "+2 Stamina",
+      "spell_effect_ids": [
+        693689
+      ],
+      "stats": {
+        "stamina": 2.0
+      }
+    },
+    "723": {
+      "name": "Intellect +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "intellect": 5
+      }
+    },
+    "724": {
+      "name": "Stamina +3",
+      "spell_effect_ids": [
+        690419
+      ],
+      "stats": {
+        "stamina": 3.0
+      }
+    },
+    "73": {
+      "name": "+3 Stamina",
+      "spell_effect_ids": [
+        686031
+      ],
+      "stats": {
+        "stamina": 3.0
+      }
+    },
+    "7325": {
+      "name": "+9 Spell Damage and Healing",
+      "spell_effect_ids": [
+        1143845,
+        1143846
+      ],
+      "stats": {
+        "healing_power": 9.0,
+        "spell_damage": 9.0
+      }
+    },
+    "7326": {
+      "name": "+18 Healing Spells",
+      "spell_effect_ids": [
+        1143862
+      ],
+      "stats": {
+        "healing_power": 18.0
+      }
+    },
+    "74": {
+      "name": "+1 Agility",
+      "spell_effect_ids": [
+        685857
+      ],
+      "stats": {
+        "agility": 1.0
+      }
+    },
+    "744": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 20
+      }
+    },
+    "7480": {
+      "name": "+3 Stamina",
+      "spell_effect_ids": [
+        686031
+      ],
+      "stats": {
+        "stamina": 3.0
+      }
+    },
+    "7481": {
+      "name": "+3 Intellect",
+      "spell_effect_ids": [
+        685856
+      ],
+      "stats": {
+        "intellect": 3.0
+      }
+    },
+    "7482": {
+      "name": "+4 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687131,
+        687132
+      ],
+      "stats": {
+        "healing_power": 4.0,
+        "spell_damage": 4.0
+      }
+    },
+    "7483": {
+      "name": "+7 Healing Spells",
+      "spell_effect_ids": [
+        686033
+      ],
+      "stats": {
+        "healing_power": 7.0
+      }
+    },
+    "7484": {
+      "name": "+3 Strength",
+      "spell_effect_ids": [
+        684576
+      ],
+      "stats": {
+        "strength": 3.0
+      }
+    },
+    "7485": {
+      "name": "+3 Agility",
+      "spell_effect_ids": [
+        685107
+      ],
+      "stats": {
+        "agility": 3.0
+      }
+    },
+    "7486": {
+      "name": "+16 Damage and Healing Spells",
+      "spell_effect_ids": [
+        687734,
+        687735
+      ],
+      "stats": {
+        "healing_power": 16.0,
+        "spell_damage": 16.0
+      }
+    },
+    "7487": {
+      "name": "+14 Damage and Healing Spells",
+      "spell_effect_ids": [
+        688347,
+        688348
+      ],
+      "stats": {
+        "healing_power": 14.0,
+        "spell_damage": 14.0
+      }
+    },
+    "7488": {
+      "name": "+31 Healing Spells",
+      "spell_effect_ids": [
+        687885
+      ],
+      "stats": {
+        "healing_power": 31.0
+      }
+    },
+    "7489": {
+      "name": "+19 Damage and Healing Spells",
+      "spell_effect_ids": [
+        690860,
+        690861
+      ],
+      "stats": {
+        "healing_power": 19.0,
+        "spell_damage": 19.0
+      }
+    },
+    "75": {
+      "name": "+2 Agility",
+      "spell_effect_ids": [
+        685858
+      ],
+      "stats": {
+        "agility": 2.0
+      }
+    },
+    "76": {
+      "name": "+3 Agility",
+      "spell_effect_ids": [
+        685107
+      ],
+      "stats": {
+        "agility": 3.0
+      }
+    },
+    "7603": {
+      "name": "Law of Nature",
+      "spell_effect_ids": [
+        1174823,
+        1174824
+      ],
+      "stats": {
+        "healing_power": 55.0,
+        "spell_damage": 30.0
+      }
+    },
+    "7613": {
+      "name": "Stamina +20/Intellect +10/Healing Spells +24",
+      "spell_effect_ids": [
+        1181890,
+        1181891,
+        1181892
+      ],
+      "stats": {
+        "healing_power": 22.0,
+        "intellect": 10.0,
+        "stamina": 20.0
+      }
+    },
+    "7615": {
+      "name": "Stamina +20/Strength +10/Agility +10",
+      "spell_effect_ids": [
+        1181904,
+        1181905,
+        1181906
+      ],
+      "stats": {
+        "agility": 10.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7616": {
+      "name": "Stamina +20/Strength +10/Defense +7",
+      "spell_effect_ids": [
+        1181910,
+        1181911,
+        1181912
+      ],
+      "stats": {
+        "defense": 7.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7618": {
+      "name": "Stamina +20/Defense +7/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1181920,
+        1181921,
+        1181922,
+        1181923
+      ],
+      "stats": {
+        "defense": 7.0,
+        "healing_power": 12.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0
+      }
+    },
+    "7619": {
+      "name": "Stamina +20/Strength +10/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1181925,
+        1181926,
+        1181927,
+        1181928
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7620": {
+      "name": "Stamina +20/Intellect +10/Healing Spells +22",
+      "spell_effect_ids": [
+        1181930,
+        1181931,
+        1181932
+      ],
+      "stats": {
+        "healing_power": 22.0,
+        "intellect": 10.0,
+        "stamina": 20.0
+      }
+    },
+    "7621": {
+      "name": "Stamina +20/Intellect +10/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1181937,
+        1181938,
+        1181939,
+        1181940
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "intellect": 10.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0
+      }
+    },
+    "7622": {
+      "name": "Stamina +20/Intellect +10/Healing Spells +22",
+      "spell_effect_ids": [
+        1181950,
+        1181951,
+        1181952
+      ],
+      "stats": {
+        "healing_power": 22.0,
+        "intellect": 10.0,
+        "stamina": 20.0
+      }
+    },
+    "7623": {
+      "name": "Stamina +20/Intellect +10/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1181954,
+        1181955,
+        1181956,
+        1181957
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "intellect": 10.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0
+      }
+    },
+    "7624": {
+      "name": "Stamina +20/Agility +10/Defense +7",
+      "spell_effect_ids": [
+        1181960,
+        1181961,
+        1181962
+      ],
+      "stats": {
+        "agility": 10.0,
+        "defense": 7.0,
+        "stamina": 20.0
+      }
+    },
+    "7626": {
+      "name": "Stamina +20/Strength +10/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1181971,
+        1181972,
+        1181973,
+        1181974
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7628": {
+      "name": "Stamina +20/Intellect +10/Healing Spells +22",
+      "spell_effect_ids": [
+        1181986,
+        1181987,
+        1181988
+      ],
+      "stats": {
+        "healing_power": 22.0,
+        "intellect": 10.0,
+        "stamina": 20.0
+      }
+    },
+    "7632": {
+      "name": "Stamina +20/Strength +10/Agility +10",
+      "spell_effect_ids": [
+        1182016,
+        1182017,
+        1182018
+      ],
+      "stats": {
+        "agility": 10.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7634": {
+      "name": "Stamina +20/Intellect +10/Healing and Spell Damage +12",
+      "spell_effect_ids": [
+        1182028,
+        1182029,
+        1182030,
+        1182031
+      ],
+      "stats": {
+        "healing_power": 12.0,
+        "intellect": 10.0,
+        "spell_damage": 12.0,
+        "stamina": 20.0
+      }
+    },
+    "7635": {
+      "name": "Stamina +20/Agility +10/Strength +10",
+      "spell_effect_ids": [
+        1182035,
+        1182036,
+        1182037
+      ],
+      "stats": {
+        "agility": 10.0,
+        "stamina": 20.0,
+        "strength": 10.0
+      }
+    },
+    "7638": {
+      "name": "Healing Specialization",
+      "spell_effect_ids": [
+        1182683
+      ],
+      "stats": {
+        "healing_power": 26.0
+      }
+    },
+    "7648": {
+      "name": "Spell Damage and Healing +10",
+      "spell_effect_ids": [
+        1195653,
+        1195654
+      ],
+      "stats": {
+        "healing_power": 10.0,
+        "spell_damage": 10.0
+      }
+    },
+    "7655": {
+      "name": "+$k1 Spell Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 12
+      }
+    },
+    "7656": {
+      "name": "+$k1 Agility",
+      "spell_effect_ids": [],
+      "stats": {
+        "agility": 9
+      }
+    },
+    "7659": {
+      "name": "+$k1 Intellect",
+      "spell_effect_ids": [],
+      "stats": {
+        "intellect": 9
+      }
+    },
+    "7660": {
+      "name": "+$k1 Spirit",
+      "spell_effect_ids": [],
+      "stats": {
+        "spirit": 12
+      }
+    },
+    "7661": {
+      "name": "+$k1 Intellect and +$k2 Spirit",
+      "spell_effect_ids": [],
+      "stats": {
+        "intellect": 6,
+        "spirit": 5
+      }
+    },
+    "7662": {
+      "name": "+$k1 Spell Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 65
+      }
+    },
+    "7663": {
+      "name": "+$k1 Stamina",
+      "spell_effect_ids": [],
+      "stats": {
+        "stamina": 12
+      }
+    },
+    "7665": {
+      "name": "+$k1 Spell Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 16
+      }
+    },
+    "7666": {
+      "name": "+$k1 Strength",
+      "spell_effect_ids": [],
+      "stats": {
+        "strength": 15
+      }
+    },
+    "7667": {
+      "name": "+$k1 Agility",
+      "spell_effect_ids": [],
+      "stats": {
+        "agility": 5
+      }
+    },
+    "783": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 10
+      }
+    },
+    "7885": {
+      "name": "Stamina +$1220754s2 and Defense +$1220754s3",
+      "spell_effect_ids": [
+        1206922,
+        1206923
+      ],
+      "stats": {
+        "defense": 7.0,
+        "stamina": 16.0
+      }
+    },
+    "79": {
+      "name": "+1 Intellect",
+      "spell_effect_ids": [
+        684632
+      ],
+      "stats": {
+        "intellect": 1.0
+      }
+    },
+    "80": {
+      "name": "+2 Intellect",
+      "spell_effect_ids": [
+        684654
+      ],
+      "stats": {
+        "intellect": 2.0
+      }
+    },
+    "81": {
+      "name": "+3 Intellect",
+      "spell_effect_ids": [
+        685856
+      ],
+      "stats": {
+        "intellect": 3.0
+      }
+    },
+    "82": {
+      "name": "+1 Spirit",
+      "spell_effect_ids": [
+        685108
+      ],
+      "stats": {
+        "spirit": 1.0
+      }
+    },
+    "8204": {
+      "name": "Agility +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "agility": 4
+      }
+    },
+    "8206": {
+      "name": "Agility +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "agility": 10
+      }
+    },
+    "8207": {
+      "name": "Strength +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "strength": 10
+      }
+    },
+    "8211": {
+      "name": "Spell Power +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 55
+      }
+    },
+    "8215": {
+      "name": "Strength +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "strength": 25
+      }
+    },
+    "8218": {
+      "name": "+$k1 Spell Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 6
+      }
+    },
+    "823": {
+      "name": "Strength +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "strength": 4
+      }
+    },
+    "83": {
+      "name": "+2 Spirit",
+      "spell_effect_ids": [
+        685435
+      ],
+      "stats": {
+        "spirit": 2.0
+      }
+    },
+    "84": {
+      "name": "+3 Spirit",
+      "spell_effect_ids": [
+        685436
+      ],
+      "stats": {
+        "spirit": 3.0
+      }
+    },
+    "843": {
+      "name": "Intellect +4",
+      "spell_effect_ids": [
+        691268
+      ],
+      "stats": {
+        "intellect": 4.0
+      }
+    },
+    "847": {
+      "name": "All Stats +1",
+      "spell_effect_ids": [
+        690146
+      ],
+      "stats": {
+        "agility": 1.0,
+        "intellect": 1.0,
+        "spirit": 1.0,
+        "stamina": 1.0,
+        "strength": 1.0
+      }
+    },
+    "848": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 30
+      }
+    },
+    "8481": {
+      "name": "Stamina +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 16,
+        "stamina": 2
+      }
+    },
+    "8482": {
+      "name": "Spell Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 16,
+        "spell_power": 2
+      }
+    },
+    "8483": {
+      "name": "Attack Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 16,
+        "attack_power": 4
+      }
+    },
+    "8484": {
+      "name": "Stamina +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 24,
+        "stamina": 3
+      }
+    },
+    "8485": {
+      "name": "Spell Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 24,
+        "spell_power": 4
+      }
+    },
+    "8486": {
+      "name": "Attack Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 24,
+        "attack_power": 6
+      }
+    },
+    "8487": {
+      "name": "Stamina +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 32,
+        "stamina": 4
+      }
+    },
+    "8488": {
+      "name": "Attack Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 32,
+        "attack_power": 8
+      }
+    },
+    "8489": {
+      "name": "Spell Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 32,
+        "spell_power": 5
+      }
+    },
+    "849": {
+      "name": "Agility +3",
+      "spell_effect_ids": [
+        690115
+      ],
+      "stats": {
+        "agility": 3.0
+      }
+    },
+    "8490": {
+      "name": "Stamina +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 40,
+        "stamina": 5
+      }
+    },
+    "8491": {
+      "name": "Attack Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 40,
+        "attack_power": 10
+      }
+    },
+    "8492": {
+      "name": "Spell Power +$k2 and Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 40,
+        "spell_power": 6
+      }
+    },
+    "85": {
+      "name": "+3 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 3
+      }
+    },
+    "850": {
+      "name": "Stamina +6",
+      "spell_effect_ids": [
+        691224
+      ],
+      "stats": {
+        "stamina": 6.0
+      }
+    },
+    "851": {
+      "name": "Spirit +5",
+      "spell_effect_ids": [
+        690418
+      ],
+      "stats": {
+        "spirit": 5.0
+      }
+    },
+    "852": {
+      "name": "Stamina +5",
+      "spell_effect_ids": [
+        690438
+      ],
+      "stats": {
+        "stamina": 5.0
+      }
+    },
+    "856": {
+      "name": "Strength +5",
+      "spell_effect_ids": [
+        693730
+      ],
+      "stats": {
+        "strength": 5.0
+      }
+    },
+    "857": {
+      "name": "Intellect +6",
+      "spell_effect_ids": [
+        691169
+      ],
+      "stats": {
+        "intellect": 6.0
+      }
+    },
+    "86": {
+      "name": "+8 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 8
+      }
+    },
+    "866": {
+      "name": "All Stats +2",
+      "spell_effect_ids": [
+        690914
+      ],
+      "stats": {
+        "agility": 2.0,
+        "intellect": 2.0,
+        "spirit": 2.0,
+        "stamina": 2.0,
+        "strength": 2.0
+      }
+    },
+    "8691": {
+      "name": "+$k1 Attack Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "attack_power": 60
+      }
+    },
+    "8692": {
+      "name": "+$k1 Spell Power",
+      "spell_effect_ids": [],
+      "stats": {
+        "spell_power": 35
+      }
+    },
+    "8693": {
+      "name": "+$k1 Stamina",
+      "spell_effect_ids": [],
+      "stats": {
+        "stamina": 30
+      }
+    },
+    "87": {
+      "name": "+12 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 12
+      }
+    },
+    "8719": {
+      "name": "Defense +$k1 and Stamina +$k2",
+      "spell_effect_ids": [],
+      "stats": {
+        "defense": 4,
+        "stamina": 10
+      }
+    },
+    "8734": {
+      "name": "Intellect +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "intellect": 3
+      }
+    },
+    "883": {
+      "name": "+15 Agility",
+      "spell_effect_ids": [
+        691494
+      ],
+      "stats": {
+        "agility": 15.0
+      }
+    },
+    "884": {
+      "name": "Armor +$k1",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 60
+      }
+    },
+    "89": {
+      "name": "+16 Armor",
+      "spell_effect_ids": [],
+      "stats": {
+        "armor": 16
+      }
+    },
+    "90": {
+      "name": "+4 Agility",
+      "spell_effect_ids": [
+        685397
+      ],
+      "stats": {
+        "agility": 4.0
+      }
+    },
+    "904": {
+      "name": "Agility +5",
+      "spell_effect_ids": [
+        690116
+      ],
+      "stats": {
+        "agility": 5.0
+      }
+    },
+    "905": {
+      "name": "Intellect +5",
+      "spell_effect_ids": [
+        690117
+      ],
+      "stats": {
+        "intellect": 5.0
+      }
+    },
+    "907": {
+      "name": "Spirit +7",
+      "spell_effect_ids": [
+        692256
+      ],
+      "stats": {
+        "spirit": 7.0
+      }
+    },
+    "908": {
+      "name": "Stamina +8",
+      "spell_effect_ids": [
+        691987
+      ],
+      "stats": {
+        "stamina": 8.0
+      }
+    },
+    "91": {
+      "name": "+5 Agility",
+      "spell_effect_ids": [
+        685398
+      ],
+      "stats": {
+        "agility": 5.0
+      }
+    },
+    "913": {
+      "name": "Intellect +8",
+      "spell_effect_ids": [
+        691466
+      ],
+      "stats": {
+        "intellect": 8.0
+      }
+    },
+    "92": {
+      "name": "+6 Agility",
+      "spell_effect_ids": [
+        685077
+      ],
+      "stats": {
+        "agility": 6.0
+      }
+    },
+    "923": {
+      "name": "Defense +7",
+      "spell_effect_ids": [
+        690865
+      ],
+      "stats": {
+        "defense": 7.0
+      }
+    },
+    "925": {
+      "name": "Defense +5",
+      "spell_effect_ids": [
+        691136
+      ],
+      "stats": {
+        "defense": 2.0
+      }
+    },
+    "927": {
+      "name": "Strength +7",
+      "spell_effect_ids": [
+        692045
+      ],
+      "stats": {
+        "strength": 7.0
+      }
+    },
+    "928": {
+      "name": "All Stats +3",
+      "spell_effect_ids": [
+        691100
+      ],
+      "stats": {
+        "agility": 3.0,
+        "intellect": 3.0,
+        "spirit": 3.0,
+        "stamina": 3.0,
+        "strength": 3.0
+      }
+    },
+    "929": {
+      "name": "Stamina +7",
+      "spell_effect_ids": [
+        692257
+      ],
+      "stats": {
+        "stamina": 7.0
+      }
+    },
+    "93": {
+      "name": "+7 Agility",
+      "spell_effect_ids": [
+        684826
+      ],
+      "stats": {
+        "agility": 7.0
+      }
+    },
+    "94": {
+      "name": "+4 Intellect",
+      "spell_effect_ids": [
+        685946
+      ],
+      "stats": {
+        "intellect": 4.0
+      }
+    },
+    "95": {
+      "name": "+5 Intellect",
+      "spell_effect_ids": [
+        685947
+      ],
+      "stats": {
+        "intellect": 5.0
+      }
+    },
+    "96": {
+      "name": "+6 Intellect",
+      "spell_effect_ids": [
+        685948
+      ],
+      "stats": {
+        "intellect": 6.0
+      }
+    },
+    "97": {
+      "name": "+7 Intellect",
+      "spell_effect_ids": [
+        685811
+      ],
+      "stats": {
+        "intellect": 7.0
+      }
+    },
+    "98": {
+      "name": "+4 Spirit",
+      "spell_effect_ids": [
+        685899
+      ],
+      "stats": {
+        "spirit": 4.0
+      }
+    },
+    "983": {
+      "name": "+16 Agility",
+      "spell_effect_ids": [
+        680006
+      ],
+      "stats": {
+        "agility": 16.0
+      }
+    },
+    "99": {
+      "name": "+5 Spirit",
+      "spell_effect_ids": [
+        685900
+      ],
+      "stats": {
+        "spirit": 5.0
+      }
+    }
+  },
+  "fetched_at": "2026-11-23T00:54:21.552784+00:00",
+  "flat_sets": [
+    {
+      "item_ids": [
+        16722,
+        16723,
+        16724,
+        16725,
+        16726,
+        16727,
+        16728,
+        16729
+      ],
+      "name": "Lightforge Armor",
+      "pieces": 3,
+      "set_bonus_id": 7928,
+      "set_id": 188,
+      "spell_id": 9346,
+      "stats": {
+        "spell_power": 18.0
+      }
+    },
+    {
+      "item_ids": [
+        16730,
+        16731,
+        16732,
+        16733,
+        16734,
+        16735,
+        16736,
+        16737
+      ],
+      "name": "Battlegear of Valor",
+      "pieces": 3,
+      "set_bonus_id": 7934,
+      "set_id": 189,
+      "spell_id": 13198,
+      "stats": {
+        "strength": 15.0
+      }
+    }
+  ],
+  "flavor": "forever",
+  "input_sources": {
+    "CurvePoint": {
+      "collected_at": "2026-11-23T00:54:04.333709+00:00",
+      "source_content_digest": "3d2c63605d5ea4f6f93300c499537a59d2b07d5c7855c033b6f151797133826c",
+      "source_url": "https://wago.tools/db2/CurvePoint/csv?build=1.60.1.71037"
+    },
+    "ItemSet": {
+      "collected_at": "2026-11-23T00:54:14.556015+00:00",
+      "source_content_digest": "227cea07f3595d34662640c5c761e56c6a3ea2867b84ec5ef53cceccab3298db",
+      "source_url": "https://wago.tools/db2/ItemSet/csv?build=1.60.1.71037"
+    },
+    "ItemSetSpell": {
+      "collected_at": "2026-11-23T00:54:15.984054+00:00",
+      "source_content_digest": "5249b13157f5cce2bad1e7aabd0231c289907323c03fc84ea877b02725be6b2e",
+      "source_url": "https://wago.tools/db2/ItemSetSpell/csv?build=1.60.1.71037"
+    },
+    "SkillLineAbility": {
+      "collected_at": "2026-11-23T00:54:17.381994+00:00",
+      "source_content_digest": "6696abd03ef90ad250a12ac23778616c292c46f6a0082130fbe187c96ead0aa0",
+      "source_url": "https://wago.tools/db2/SkillLineAbility/csv?build=1.60.1.71037"
+    },
+    "Spell": {
+      "collected_at": "2026-11-23T00:54:06.802900+00:00",
+      "source_content_digest": "a5878d2a6a49d562818cd1b4d2f8e7e861bc9a023900648b7ec8ec3ccc5ed20d",
+      "source_url": "https://wago.tools/db2/Spell/csv?build=1.60.1.71037"
+    },
+    "SpellEffect": {
+      "collected_at": "2026-11-23T00:54:11.652591+00:00",
+      "source_content_digest": "a0afcd6a6bfd078e6eaf77df82922c435a9a4558593cf78dfb483631a7b9bfd3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.71037"
+    },
+    "SpellEffect.db2": {
+      "collected_at": "2026-11-23T00:54:21.552784+00:00",
+      "source_content_digest": "fc5e49a4b86ca49ae68322dc4bf31c23756dac62b442eb81e68f9d9ee116a9b2",
+      "source_url": "https://wago.tools/api/casc/1140088?version=1.60.1.71037"
+    },
+    "SpellEffect.dbd": {
+      "collected_at": "2026-11-17T22:46:07.037646+00:00",
+      "source_content_digest": "0b8657e7cdafa7408ac94acbbf026370b4705d2a9ed57a0f5c0bc1de2d1c7d29",
+      "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/definitions/SpellEffect.dbd"
+    },
+    "SpellItemEnchantment": {
+      "collected_at": "2026-11-23T00:54:12.957860+00:00",
+      "source_content_digest": "730a40dfa21572097b8baae708dd3d2213b1ca0a0fbfaacdc31f7a945cea6ca9",
+      "source_url": "https://wago.tools/db2/SpellItemEnchantment/csv?build=1.60.1.71037"
+    },
+    "SpellName": {
+      "collected_at": "2026-11-23T00:54:08.843206+00:00",
+      "source_content_digest": "092602f9436e921ad62ea083f153028279a172bdf94c74f0c51f489c8f00bfc5",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.71037"
+    },
+    "TraitDefinition": {
+      "collected_at": "2026-11-23T00:54:00.589025+00:00",
+      "source_content_digest": "4c29bf0710067d94d87051dfa216ac1dbc96b7651043ce171d787012d92daea7",
+      "source_url": "https://wago.tools/db2/TraitDefinition/csv?build=1.60.1.71037"
+    },
+    "TraitDefinition.db2": {
+      "collected_at": "2026-11-23T00:54:19.704413+00:00",
+      "source_content_digest": "80e3898d1d25c4cdeeb74018b001b49f064bb86c0f1a5b812678bd75e6c4b1cc",
+      "source_url": "https://wago.tools/api/casc/4420327?version=1.60.1.71037"
+    },
+    "TraitDefinition.dbd": {
+      "collected_at": "2026-11-17T22:36:47.094478+00:00",
+      "source_content_digest": "2b6d5d40d5731466aae3b69a0316df6225d2b616ca53ec9e77cfa5429d0075c0",
+      "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/definitions/TraitDefinition.dbd"
+    },
+    "TraitDefinitionEffectPoints": {
+      "collected_at": "2026-11-23T00:54:01.988535+00:00",
+      "source_content_digest": "8f3412e50806545a6954f197640c52b6f05146c6ecb9ce36f113341d681b1bc2",
+      "source_url": "https://wago.tools/db2/TraitDefinitionEffectPoints/csv?build=1.60.1.71037"
+    },
+    "TraitNode": {
+      "collected_at": "2026-11-23T00:53:56.346556+00:00",
+      "source_content_digest": "f7f37eead7e7641cdbecdb1c548276ae1e5c1776eb5ad0539b88770a78979d44",
+      "source_url": "https://wago.tools/db2/TraitNode/csv?build=1.60.1.71037"
+    },
+    "TraitNodeEntry": {
+      "collected_at": "2026-11-23T00:53:57.735117+00:00",
+      "source_content_digest": "dccff303039c45dc3355d8d525a664db2a87de9a17bbec133f5859755e9152b0",
+      "source_url": "https://wago.tools/db2/TraitNodeEntry/csv?build=1.60.1.71037"
+    },
+    "TraitNodeXTraitNodeEntry": {
+      "collected_at": "2026-11-23T00:53:59.114064+00:00",
+      "source_content_digest": "7e9fb84e1256434748b1763365ea7498e0d6dd4871f789ad2a1c39925c071492",
+      "source_url": "https://wago.tools/db2/TraitNodeXTraitNodeEntry/csv?build=1.60.1.71037"
+    },
+    "hotfix_note": {
+      "collected_at": "2026-11-23T00:54:18.581127+00:00",
+      "source_content_digest": "39b7fb80788b151163a0a9973358fbc94de5303299d73cb1bf5f0e07de74c4af",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315281/wow-forever-hotfixes-november-13-2026"
+    },
+    "hotfixes": {
+      "collected_at": "2026-11-23T00:54:18.104770+00:00",
+      "source_content_digest": "057ccfe9639598ae6237a19f23343312b2b0c7b41bb4d8f94023eeeb16ddb68f",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F71037%2FenUS%2FDBCache-kxqY1vqWsTck8oJfxJojxH.bin"
+    },
+    "table_manifest": {
+      "collected_at": "2026-11-17T22:24:41.412844+00:00",
+      "source_content_digest": "f7b752a991d6a0321d07ecb7f06e62cd94694c1594d2fe5ce0cb7b243c71559a",
+      "source_url": "https://raw.githubusercontent.com/wowdev/WoWDBDefs/86c0801007bbcb767f4bc275413d24bc6b2d486c/manifest.json"
+    },
+    "verified_index": {
+      "collected_at": "2026-11-23T00:53:54.747707+00:00",
+      "source_content_digest": "655e27a924a6e0a97aabc32bc27b6b23c70c064af3020816d8a8ae9bf429bfbc",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    }
+  },
+  "page_type": "mechanics",
+  "provider": "raidbots",
+  "racial_scaling": [
+    {
+      "multiplier": 1.1,
+      "name": "The Human Spirit",
+      "push_id": 113276,
+      "race_id": 1,
+      "skill_ability_id": 11731,
+      "spell_effect_id": 698126,
+      "spell_id": 20598,
+      "stat": "spirit"
+    }
+  ],
+  "source_content_digest": "057ccfe9639598ae6237a19f23343312b2b0c7b41bb4d8f94023eeeb16ddb68f",
+  "traits": {
+    "129385": {
+      "definition_id": 134186,
+      "effects": [
+        {
+          "curve_id": 85323,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251429,
+              "value": 2.0
+            },
+            {
+              "row_id": 251430,
+              "value": 4.0
+            },
+            {
+              "row_id": 251431,
+              "value": 6.0
+            },
+            {
+              "row_id": 251432,
+              "value": 8.0
+            },
+            {
+              "row_id": 251433,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23745
+        },
+        {
+          "curve_id": 87379,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 258387,
+              "value": 2.0
+            },
+            {
+              "row_id": 258388,
+              "value": 4.0
+            },
+            {
+              "row_id": 258389,
+              "value": 6.0
+            },
+            {
+              "row_id": 258390,
+              "value": 8.0
+            },
+            {
+              "row_id": 258391,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23818
+        }
+      ],
+      "max_rank": 5,
+      "name": "Purification",
+      "node_id": 104725,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 693066
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 22,
+          "EffectMiscValue_1": 0,
+          "ID": 1197174
+        }
+      ],
+      "spell_id": 16178,
+      "tooltip_template": "Increases the effectiveness of your healing spells by $m1%.",
+      "tree_id": 1082
+    },
+    "129389": {
+      "definition_id": 134190,
+      "effects": [
+        {
+          "curve_id": 85321,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251421,
+              "value": -1.0
+            },
+            {
+              "row_id": 251422,
+              "value": -2.0
+            },
+            {
+              "row_id": 251423,
+              "value": -3.0
+            },
+            {
+              "row_id": 251424,
+              "value": -4.0
+            },
+            {
+              "row_id": 251425,
+              "value": -5.0
+            }
+          ],
+          "row_id": 23743
+        },
+        {
+          "curve_id": 126021,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 367033,
+              "value": 1.0
+            },
+            {
+              "row_id": 367034,
+              "value": 2.0
+            },
+            {
+              "row_id": 367035,
+              "value": 3.0
+            },
+            {
+              "row_id": 367036,
+              "value": 4.0
+            },
+            {
+              "row_id": 367037,
+              "value": 5.0
+            }
+          ],
+          "row_id": 25198
+        },
+        {
+          "curve_id": 126020,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 367028,
+              "value": 1.0
+            },
+            {
+              "row_id": 367029,
+              "value": 2.0
+            },
+            {
+              "row_id": 367030,
+              "value": 3.0
+            },
+            {
+              "row_id": 367031,
+              "value": 4.0
+            },
+            {
+              "row_id": 367032,
+              "value": 5.0
+            }
+          ],
+          "row_id": 25199
+        }
+      ],
+      "max_rank": 5,
+      "name": "Tidal Focus",
+      "node_id": 104729,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 14,
+          "EffectMiscValue_1": 0,
+          "ID": 693720
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1339216
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1339217
+        }
+      ],
+      "spell_id": 16179,
+      "tooltip_template": "Reduces the Mana cost of your healing spells by $m1% and improves your chance to hit by $m2%.",
+      "tree_id": 1082
+    },
+    "129394": {
+      "definition_id": 134195,
+      "effects": [
+        {
+          "curve_id": 85316,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251402,
+              "value": 17.0
+            },
+            {
+              "row_id": 251403,
+              "value": 33.0
+            },
+            {
+              "row_id": 251404,
+              "value": 50.0
+            }
+          ],
+          "row_id": 23738
+        }
+      ],
+      "max_rank": 3,
+      "name": "Mindfulness",
+      "node_id": 104734,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 134,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1210708
+        }
+      ],
+      "spell_id": 1223033,
+      "tooltip_template": "Allows $m1% of your Mana regeneration to continue while casting.",
+      "tree_id": 1082
+    },
+    "129401": {
+      "definition_id": 134202,
+      "effects": [
+        {
+          "curve_id": 85306,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113722,
+              "row_id": 251361,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251362,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251363,
+              "value": -20.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251364,
+              "value": -20.0
+            },
+            {
+              "row_id": 251365,
+              "value": -20.0
+            }
+          ],
+          "row_id": 23728
+        },
+        {
+          "curve_id": 128299,
+          "effect_index": 1,
+          "push_id": 113722,
+          "ranks": [
+            {
+              "push_id": 113722,
+              "row_id": 372521,
+              "value": 6.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372522,
+              "value": 7.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372523,
+              "value": 8.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372524,
+              "value": 9.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 372525,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25235
+        }
+      ],
+      "max_rank": 5,
+      "name": "Maelstrom Weapon",
+      "node_id": 104741,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1072664
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1137418,
+          "push_id": 113722
+        }
+      ],
+      "spell_id": 408498,
+      "tooltip_template": "When you deal damage with a melee attack, you have a ${($mws*$s2/60)*100}% chance (based on weapon speed) to reduce the cast time and Mana cost of your next Lightning Bolt spell by $m1%. Stacks up to $s3 times. Lasts $408505d.",
+      "tree_id": 1082
+    },
+    "129404": {
+      "definition_id": 134205,
+      "effects": [
+        {
+          "curve_id": 85303,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251354,
+              "value": 15.0
+            },
+            {
+              "row_id": 251355,
+              "value": 30.0
+            }
+          ],
+          "row_id": 23725
+        },
+        {
+          "curve_id": 85302,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 251351,
+              "value": 15.0
+            },
+            {
+              "row_id": 251352,
+              "value": 30.0
+            }
+          ],
+          "row_id": 23724
+        }
+      ],
+      "max_rank": 2,
+      "name": "Mental Quickness",
+      "node_id": 104744,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 175,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 705513
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 174,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 3,
+          "ID": 1230099
+        }
+      ],
+      "spell_id": 30812,
+      "tooltip_template": "Increases your spell damage and healing by up to $m2% of your Intellect.",
+      "tree_id": 1082
+    },
+    "129415": {
+      "definition_id": 134216,
+      "effects": [
+        {
+          "curve_id": 85272,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113722,
+              "row_id": 251264,
+              "value": 33.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251265,
+              "value": 66.0
+            },
+            {
+              "push_id": 113722,
+              "row_id": 251266,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23711
+        }
+      ],
+      "max_rank": 3,
+      "name": "Mental Dexterity",
+      "node_id": 104755,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 598,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1084846
+        }
+      ],
+      "spell_id": 415140,
+      "tooltip_template": "Increases your Attack Power by an amount equal to $m1% of your Intellect.",
+      "tree_id": 1082
+    },
+    "129416": {
+      "definition_id": 134217,
+      "effects": [
+        {
+          "curve_id": 85266,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251251,
+              "value": 2.0
+            },
+            {
+              "row_id": 251252,
+              "value": 4.0
+            },
+            {
+              "row_id": 251253,
+              "value": 6.0
+            },
+            {
+              "row_id": 251254,
+              "value": 8.0
+            },
+            {
+              "row_id": 251255,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23710
+        }
+      ],
+      "max_rank": 5,
+      "name": "Ancestral Knowledge",
+      "node_id": 104756,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 696793
+        }
+      ],
+      "spell_id": 17485,
+      "tooltip_template": "Increases your Intellect by $m1%.",
+      "tree_id": 1082
+    },
+    "129432": {
+      "definition_id": 134233,
+      "effects": [
+        {
+          "curve_id": 85215,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251080,
+              "value": 1.0
+            },
+            {
+              "row_id": 251081,
+              "value": 2.0
+            },
+            {
+              "row_id": 251082,
+              "value": 3.0
+            },
+            {
+              "row_id": 251083,
+              "value": 4.0
+            },
+            {
+              "row_id": 251084,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23689
+        }
+      ],
+      "max_rank": 5,
+      "name": "Concussion",
+      "node_id": 104772,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692593
+        }
+      ],
+      "spell_id": 16035,
+      "tooltip_template": "Increases the damage done by your Lightning Bolt, Chain Lightning, and Earth Shock spells by $m1%.",
+      "tree_id": 1082
+    },
+    "129433": {
+      "definition_id": 134234,
+      "effects": [
+        {
+          "curve_id": 85214,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251075,
+              "value": -2.0
+            },
+            {
+              "row_id": 251076,
+              "value": -4.0
+            },
+            {
+              "row_id": 251077,
+              "value": -6.0
+            },
+            {
+              "row_id": 251078,
+              "value": -8.0
+            },
+            {
+              "row_id": 251079,
+              "value": -10.0
+            }
+          ],
+          "row_id": 23688
+        }
+      ],
+      "max_rank": 5,
+      "name": "Convection",
+      "node_id": 104773,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 14,
+          "EffectMiscValue_1": 0,
+          "ID": 692508
+        }
+      ],
+      "spell_id": 16039,
+      "tooltip_template": "Reduces the mana cost of your Shock, Lightning Bolt, and Chain Lightning spells by $m1%.",
+      "tree_id": 1082
+    },
+    "129571": {
+      "definition_id": 134372,
+      "effects": [
+        {
+          "curve_id": 85407,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251696,
+              "value": 5.0
+            },
+            {
+              "row_id": 251697,
+              "value": 10.0
+            },
+            {
+              "row_id": 251698,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23795
+        }
+      ],
+      "max_rank": 3,
+      "name": "Living Spirit",
+      "node_id": 104911,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 16,
+          "ID": 1338676
+        }
+      ],
+      "spell_id": 1309631,
+      "tooltip_template": "Increases your Spirit by $m1%.",
+      "tree_id": 1089
+    },
+    "129576": {
+      "definition_id": 134377,
+      "effects": [
+        {
+          "curve_id": 85390,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251643,
+              "value": 2.0
+            },
+            {
+              "row_id": 251644,
+              "value": 4.0
+            },
+            {
+              "row_id": 251645,
+              "value": 6.0
+            },
+            {
+              "row_id": 251646,
+              "value": 8.0
+            },
+            {
+              "row_id": 251647,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23790
+        }
+      ],
+      "max_rank": 5,
+      "name": "Gift of Nature",
+      "node_id": 104916,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695243
+        }
+      ],
+      "spell_id": 17104,
+      "tooltip_template": "Increases the effect of all your healing spells by $s1%.",
+      "tree_id": 1089
+    },
+    "129582": {
+      "definition_id": 134383,
+      "effects": [
+        {
+          "curve_id": 85363,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251571,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251572,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251573,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251574,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251575,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23786
+        }
+      ],
+      "max_rank": 5,
+      "name": "Naturalist",
+      "node_id": 104922,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 127,
+          "EffectMiscValue_1": 0,
+          "ID": 1230205
+        }
+      ],
+      "spell_id": 17069,
+      "tooltip_template": "Reduces the cast time of your Healing Touch and Wild Growth spells by $/1000;S1 sec and increases all damage you deal by $m2%.",
+      "tree_id": 1089
+    },
+    "129589": {
+      "definition_id": 134390,
+      "effects": [
+        {
+          "curve_id": 85329,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 251451,
+              "value": 2.0
+            },
+            {
+              "row_id": 251452,
+              "value": 4.0
+            }
+          ],
+          "row_id": 23753
+        },
+        {
+          "curve_id": 102877,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 310783,
+              "value": 2.0
+            },
+            {
+              "row_id": 310784,
+              "value": 4.0
+            }
+          ],
+          "row_id": 24501
+        }
+      ],
+      "max_rank": 2,
+      "name": "Nature's Reach",
+      "node_id": 104929,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1234845
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1313409
+        }
+      ],
+      "spell_id": 16819,
+      "tooltip_template": "Increases the range of your offensive Balance spells by $m1% and improves your chance to hit by $m2%.",
+      "tree_id": 1089
+    },
+    "129596": {
+      "definition_id": 134397,
+      "effects": [
+        {
+          "curve_id": 85335,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 251469,
+              "value": 2.0
+            },
+            {
+              "row_id": 251470,
+              "value": 4.0
+            },
+            {
+              "row_id": 251471,
+              "value": 6.0
+            },
+            {
+              "row_id": 251472,
+              "value": 8.0
+            },
+            {
+              "row_id": 251473,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23758
+        }
+      ],
+      "max_rank": 5,
+      "name": "Moonfury",
+      "node_id": 104936,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 72,
+          "EffectMiscValue_1": 0,
+          "ID": 694153
+        }
+      ],
+      "spell_id": 16896,
+      "tooltip_template": "Increases the damage done by your Arcane and Nature spells by $m1%.",
+      "tree_id": 1089
+    },
+    "129610": {
+      "definition_id": 134411,
+      "effects": [
+        {
+          "curve_id": 125352,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 365004,
+              "value": 12.0
+            },
+            {
+              "row_id": 365005,
+              "value": 25.0
+            }
+          ],
+          "row_id": 25187
+        }
+      ],
+      "max_rank": 2,
+      "name": "Natural Instinct",
+      "node_id": 104950,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 175,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1361117
+        }
+      ],
+      "spell_id": 1223242,
+      "tooltip_template": "Increases the critical strike damage bonus of your melee abilities by $m1% and increases your spell healing by $s2% of your Intellect.",
+      "tree_id": 1089
+    },
+    "129618": {
+      "definition_id": 134419,
+      "definition_push_id": 113283,
+      "effects": [
+        {
+          "curve_id": 85361,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251561,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251562,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251563,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251564,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251565,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23783
+        },
+        {
+          "curve_id": 85360,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 251556,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251557,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251558,
+              "value": 12.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251559,
+              "value": 16.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 251560,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23784
+        },
+        {
+          "curve_id": 127962,
+          "effect_index": 2,
+          "push_id": 113283,
+          "ranks": [
+            {
+              "push_id": 113283,
+              "row_id": 371502,
+              "value": 2.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371503,
+              "value": 4.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371504,
+              "value": 6.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371505,
+              "value": 8.0
+            },
+            {
+              "push_id": 113283,
+              "row_id": 371506,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25217
+        }
+      ],
+      "max_rank": 5,
+      "name": "Heart of the Wild",
+      "node_id": 104958,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 694815
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1345817
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1345818
+        }
+      ],
+      "spell_id": 17003,
+      "tooltip_template": "Increases your Intellect by $s1%.  In addition, while in Bear Form or Dire Bear Form your Stamina is increased by $s2% and while in Cat Form your Strength is increased by $s3%.",
+      "tree_id": 1089
+    },
+    "129646": {
+      "definition_id": 134447,
+      "effects": [
+        {
+          "curve_id": 82778,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 239960,
+              "value": 3.0
+            },
+            {
+              "row_id": 239961,
+              "value": 6.0
+            },
+            {
+              "row_id": 239962,
+              "value": 9.0
+            },
+            {
+              "row_id": 239963,
+              "value": 12.0
+            },
+            {
+              "row_id": 239964,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23259
+        }
+      ],
+      "max_rank": 5,
+      "name": "Lightning Reflexes",
+      "node_id": 104982,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 2,
+          "ID": 696059
+        }
+      ],
+      "spell_id": 19168,
+      "tooltip_template": "Increases your Agility by $s1%.",
+      "tree_id": 1091
+    },
+    "129651": {
+      "definition_id": 134452,
+      "effects": [
+        {
+          "curve_id": 88007,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 260798,
+              "value": 1.0
+            },
+            {
+              "row_id": 260799,
+              "value": 2.0
+            },
+            {
+              "row_id": 260800,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23843
+        },
+        {
+          "curve_id": 127736,
+          "effect_index": 3,
+          "push_id": 113040,
+          "ranks": [
+            {
+              "push_id": 113040,
+              "row_id": 370795,
+              "value": 1.0
+            },
+            {
+              "push_id": 113040,
+              "row_id": 370796,
+              "value": 2.0
+            },
+            {
+              "push_id": 113040,
+              "row_id": 370797,
+              "value": 3.0
+            }
+          ],
+          "row_id": 25207
+        }
+      ],
+      "max_rank": 3,
+      "name": "Surefooted",
+      "node_id": 104987,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 697452
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 3,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1366114,
+          "push_id": 113040
+        }
+      ],
+      "spell_id": 19290,
+      "tooltip_template": "Increases your hit chance by $m3% and reduces the duration of movement impairing effects on you by $m2%.",
+      "tree_id": 1091
+    },
+    "129656": {
+      "definition_id": 134457,
+      "effects": [
+        {
+          "curve_id": 82789,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 239991,
+              "value": 2.0
+            },
+            {
+              "row_id": 239992,
+              "value": 4.0
+            },
+            {
+              "row_id": 251925,
+              "value": 6.0
+            },
+            {
+              "row_id": 251926,
+              "value": 8.0
+            },
+            {
+              "row_id": 251927,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23270
+        }
+      ],
+      "max_rank": 5,
+      "name": "Survivalist",
+      "node_id": 104992,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 133,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695602
+        }
+      ],
+      "spell_id": 19255,
+      "tooltip_template": "Increases your total Health by $s1%.",
+      "tree_id": 1091
+    },
+    "129662": {
+      "definition_id": 134463,
+      "effects": [
+        {
+          "curve_id": 82800,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240042,
+              "value": 1.0
+            },
+            {
+              "row_id": 240043,
+              "value": 2.0
+            },
+            {
+              "row_id": 240044,
+              "value": 3.0
+            },
+            {
+              "row_id": 240045,
+              "value": 4.0
+            },
+            {
+              "row_id": 240046,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23294
+        }
+      ],
+      "max_rank": 5,
+      "name": "Ranged Weapon Specialization",
+      "node_id": 104998,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 127,
+          "EffectMiscValue_1": 0,
+          "ID": 696995
+        }
+      ],
+      "spell_id": 19507,
+      "tooltip_template": "Increases the damage you deal with ranged weapons by $s1%.",
+      "tree_id": 1091
+    },
+    "129672": {
+      "definition_id": 134473,
+      "effects": [
+        {
+          "curve_id": 82810,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240078,
+              "value": 20.0
+            },
+            {
+              "row_id": 240079,
+              "value": 40.0
+            },
+            {
+              "row_id": 240080,
+              "value": 60.0
+            },
+            {
+              "row_id": 316609,
+              "value": 80.0
+            },
+            {
+              "row_id": 316610,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23303
+        },
+        {
+          "curve_id": 104810,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 316604,
+              "value": 20.0
+            },
+            {
+              "row_id": 316605,
+              "value": 40.0
+            },
+            {
+              "row_id": 316606,
+              "value": 60.0
+            },
+            {
+              "row_id": 316607,
+              "value": 80.0
+            },
+            {
+              "row_id": 316608,
+              "value": 100.0
+            }
+          ],
+          "row_id": 24517
+        }
+      ],
+      "max_rank": 5,
+      "name": "Careful Aim",
+      "node_id": 105008,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 580,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1212378
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 598,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 1323702
+        }
+      ],
+      "spell_id": 1223984,
+      "tooltip_template": "Increases your Attack Power by $s1% of your Intellect.",
+      "tree_id": 1091
+    },
+    "130018": {
+      "definition_id": 134819,
+      "effects": [
+        {
+          "curve_id": 82964,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 240618,
+              "value": 4.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 240619,
+              "value": 8.0
+            }
+          ],
+          "row_id": 23319
+        },
+        {
+          "curve_id": 127944,
+          "effect_index": 1,
+          "push_id": 113139,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 371447,
+              "value": -10.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371448,
+              "value": -20.0
+            }
+          ],
+          "row_id": 25216
+        }
+      ],
+      "entry_push_id": 113139,
+      "max_rank": 2,
+      "name": "Divine Precision",
+      "node_id": 105324,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 107,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 16,
+          "EffectMiscValue_1": 0,
+          "ID": 1340799,
+          "push_id": 113139
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 232,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 9,
+          "EffectMiscValue_1": 0,
+          "ID": 1367623,
+          "push_id": 113139
+        }
+      ],
+      "spell_id": 1310904,
+      "tooltip_template": "Improves your chance to hit with Holy spells by $s1%, and reduces the duration of Silence effects on you by $s2%.",
+      "tree_id": 1100
+    },
+    "130026": {
+      "definition_id": 134827,
+      "effects": [
+        {
+          "curve_id": 82973,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240639,
+              "value": 2.0
+            },
+            {
+              "row_id": 240640,
+              "value": 4.0
+            },
+            {
+              "row_id": 240641,
+              "value": 6.0
+            },
+            {
+              "row_id": 240642,
+              "value": 8.0
+            },
+            {
+              "row_id": 240643,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23328
+        }
+      ],
+      "max_rank": 5,
+      "name": "Divine Intellect",
+      "node_id": 105332,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 697891
+        }
+      ],
+      "spell_id": 20257,
+      "tooltip_template": "Increases your total Intellect by $s1%.",
+      "tree_id": 1100
+    },
+    "130027": {
+      "definition_id": 134828,
+      "effects": [
+        {
+          "curve_id": 82974,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240644,
+              "value": 4.0
+            },
+            {
+              "row_id": 240645,
+              "value": 8.0
+            },
+            {
+              "row_id": 240646,
+              "value": 12.0
+            }
+          ],
+          "row_id": 23329
+        }
+      ],
+      "max_rank": 3,
+      "name": "Healing Light",
+      "node_id": 105333,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 698059
+        }
+      ],
+      "spell_id": 20237,
+      "tooltip_template": "Increases the amount healed by your Holy Light, Flash of Light, and Holy Shock spells by $s1%.",
+      "tree_id": 1100
+    },
+    "130354": {
+      "definition_id": 135155,
+      "effects": [
+        {
+          "curve_id": 82950,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240568,
+              "value": 2.0
+            },
+            {
+              "row_id": 240569,
+              "value": 4.0
+            },
+            {
+              "row_id": 240570,
+              "value": 6.0
+            },
+            {
+              "row_id": 240571,
+              "value": 8.0
+            },
+            {
+              "row_id": 240572,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23337
+        }
+      ],
+      "max_rank": 5,
+      "name": "Toughness",
+      "node_id": 105630,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 142,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 1,
+          "EffectMiscValue_1": 0,
+          "ID": 698174
+        }
+      ],
+      "spell_id": 20143,
+      "tooltip_template": "Increases your armor value from items by $s1%.",
+      "tree_id": 1100
+    },
+    "130360": {
+      "definition_id": 135161,
+      "effects": [
+        {
+          "curve_id": 82955,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240583,
+              "value": 4.0
+            },
+            {
+              "row_id": 240584,
+              "value": 8.0
+            },
+            {
+              "row_id": 240585,
+              "value": 12.0
+            },
+            {
+              "row_id": 240586,
+              "value": 16.0
+            },
+            {
+              "row_id": 240587,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23342
+        }
+      ],
+      "max_rank": 5,
+      "name": "Anticipation",
+      "node_id": 105636,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 30,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 95,
+          "EffectMiscValue_1": 0,
+          "ID": 697627
+        }
+      ],
+      "spell_id": 20096,
+      "tooltip_template": "Increases your Defense Skill by $m1.",
+      "tree_id": 1100
+    },
+    "130362": {
+      "definition_id": 135163,
+      "effects": [
+        {
+          "curve_id": 82958,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240592,
+              "value": 1.0
+            },
+            {
+              "row_id": 240593,
+              "value": 2.0
+            },
+            {
+              "row_id": 240594,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23345
+        },
+        {
+          "curve_id": 104822,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 316663,
+              "value": 1.0
+            },
+            {
+              "row_id": 316664,
+              "value": 2.0
+            },
+            {
+              "row_id": 316665,
+              "value": 3.0
+            }
+          ],
+          "row_id": 24518
+        }
+      ],
+      "max_rank": 3,
+      "name": "Precision",
+      "node_id": 105638,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 698111
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1324040
+        }
+      ],
+      "spell_id": 20189,
+      "tooltip_template": "Improves your chance to hit by $s1%.",
+      "tree_id": 1100
+    },
+    "130425": {
+      "definition_id": 135226,
+      "effects": [],
+      "max_rank": 1,
+      "name": "Seal of Command",
+      "node_id": 105696,
+      "spell_effects": [],
+      "spell_id": 20375,
+      "tooltip_template": "Gives the Paladin a chance to deal additional Holy damage equal to $20424s1% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts $d.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing $/2;20467s1 Holy damage, $20467s1 if the target is stunned or incapacitated.",
+      "tree_id": 1100
+    },
+    "130426": {
+      "definition_id": 135227,
+      "effects": [
+        {
+          "curve_id": 82980,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240670,
+              "value": 2.0
+            },
+            {
+              "row_id": 240671,
+              "value": 4.0
+            },
+            {
+              "row_id": 316807,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23352
+        }
+      ],
+      "max_rank": 3,
+      "name": "Two-Handed Weapon Specialization",
+      "node_id": 105697,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 3,
+          "EffectMiscValue_1": 0,
+          "ID": 697263,
+          "push_id": 113542
+        }
+      ],
+      "spell_id": 20111,
+      "tooltip_template": "Increases the Physical and Holy damage you deal by $s1%, and reduces all threat you generate by $m2% while a two-handed melee weapon is equipped.",
+      "tree_id": 1100
+    },
+    "130443": {
+      "definition_id": 135244,
+      "effects": [
+        {
+          "curve_id": 83045,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240968,
+              "value": 4.0
+            },
+            {
+              "row_id": 240969,
+              "value": 8.0
+            },
+            {
+              "row_id": 336397,
+              "value": 12.0
+            },
+            {
+              "row_id": 336398,
+              "value": 16.0
+            },
+            {
+              "row_id": 336399,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23369
+        }
+      ],
+      "max_rank": 5,
+      "name": "Vile Poisons",
+      "node_id": 105714,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 693770
+        }
+      ],
+      "spell_id": 16513,
+      "tooltip_template": "Increases the damage dealt by your poisons by $m1% and gives your poisons an additional $m3% chance to resist dispel effects.",
+      "tree_id": 1111
+    },
+    "130455": {
+      "definition_id": 135256,
+      "effects": [
+        {
+          "curve_id": 83025,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240895,
+              "value": 1.0
+            },
+            {
+              "row_id": 240896,
+              "value": 2.0
+            }
+          ],
+          "row_id": 23380
+        }
+      ],
+      "max_rank": 2,
+      "name": "Weapon Expertise",
+      "node_id": 105726,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 240,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 705741
+        }
+      ],
+      "spell_id": 30919,
+      "tooltip_template": "Reduces the chance for your attacks to be Dodged or Parried by $m1%.",
+      "tree_id": 1111
+    },
+    "130456": {
+      "definition_id": 135257,
+      "effects": [
+        {
+          "curve_id": 83026,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240897,
+              "value": 1.0
+            },
+            {
+              "row_id": 240898,
+              "value": 2.0
+            },
+            {
+              "row_id": 240899,
+              "value": 3.0
+            },
+            {
+              "row_id": 240900,
+              "value": 4.0
+            },
+            {
+              "row_id": 240901,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23382
+        },
+        {
+          "curve_id": 106210,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 320222,
+              "value": 3.0
+            },
+            {
+              "row_id": 320223,
+              "value": 6.0
+            },
+            {
+              "row_id": 320224,
+              "value": 9.0
+            },
+            {
+              "row_id": 320225,
+              "value": 12.0
+            },
+            {
+              "row_id": 320226,
+              "value": 15.0
+            }
+          ],
+          "row_id": 24529
+        },
+        {
+          "curve_id": 106209,
+          "effect_index": 2,
+          "ranks": [
+            {
+              "row_id": 320217,
+              "value": 1.0
+            },
+            {
+              "row_id": 320218,
+              "value": 2.0
+            },
+            {
+              "row_id": 320219,
+              "value": 3.0
+            },
+            {
+              "row_id": 320220,
+              "value": 4.0
+            },
+            {
+              "row_id": 320221,
+              "value": 5.0
+            }
+          ],
+          "row_id": 24528
+        }
+      ],
+      "max_rank": 5,
+      "name": "Hack and Slash",
+      "node_id": 105727,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 690974
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1309137
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 2,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1309138
+        }
+      ],
+      "spell_id": 13960,
+      "tooltip_template": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    |CFFFFFFFFAxe/Sword:|R Your successful\r\n    melee attacks have a $s3% chance\r\n    to trigger an extra attack on the \r\n    target.\r\n\r\n    |CFFFFFFFFDagger/Fist:|R Increases your\r\n    critical strike chance by $s1%.\r\n\r\n    |CFFFFFFFFMace:|R Your attacks ignore $s2% of\r\n    your target's armor.",
+      "tree_id": 1111
+    },
+    "130466": {
+      "definition_id": 135267,
+      "effects": [
+        {
+          "curve_id": 83034,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240926,
+              "value": 1.0
+            },
+            {
+              "row_id": 240927,
+              "value": 2.0
+            },
+            {
+              "row_id": 240928,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23390
+        },
+        {
+          "curve_id": 87810,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 260068,
+              "value": 1.0
+            },
+            {
+              "row_id": 260069,
+              "value": 2.0
+            },
+            {
+              "row_id": 260070,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23841
+        }
+      ],
+      "max_rank": 3,
+      "name": "Precision",
+      "node_id": 105737,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 691433
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1240836
+        }
+      ],
+      "spell_id": 13705,
+      "tooltip_template": "Improves your chance to hit by $s1%.",
+      "tree_id": 1111
+    },
+    "130481": {
+      "definition_id": 135282,
+      "effects": [
+        {
+          "curve_id": 83011,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 240859,
+              "value": 3.0
+            },
+            {
+              "row_id": 240860,
+              "value": 6.0
+            },
+            {
+              "row_id": 240861,
+              "value": 9.0
+            }
+          ],
+          "row_id": 23404
+        },
+        {
+          "curve_id": 83010,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 240856,
+              "value": 10.0
+            },
+            {
+              "row_id": 240857,
+              "value": 20.0
+            },
+            {
+              "row_id": 240858,
+              "value": 30.0
+            }
+          ],
+          "row_id": 23405
+        }
+      ],
+      "max_rank": 3,
+      "name": "Serrated Blades",
+      "node_id": 105752,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 280,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 690915
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 22,
+          "EffectMiscValue_1": 0,
+          "ID": 690916
+        }
+      ],
+      "spell_id": 14171,
+      "tooltip_template": "Causes your attacks to ignore $m1% of your target's Armor and increases the damage dealt by your Rupture ability by $m2%.",
+      "tree_id": 1111
+    },
+    "130501": {
+      "definition_id": 135302,
+      "effects": [
+        {
+          "curve_id": 110791,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 332410,
+              "value": -5.0
+            },
+            {
+              "row_id": 332411,
+              "value": -10.0
+            },
+            {
+              "row_id": 332412,
+              "value": -15.0
+            }
+          ],
+          "row_id": 24626
+        }
+      ],
+      "max_rank": 3,
+      "name": "Frost Channeling",
+      "node_id": 105772,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 14,
+          "EffectMiscValue_1": 0,
+          "ID": 689304
+        }
+      ],
+      "spell_id": 11160,
+      "tooltip_template": "Reduces the mana cost of your Frost spells by $s1% and reduces the threat caused by your Frost spells by $s2%.",
+      "tree_id": 1112
+    },
+    "130506": {
+      "definition_id": 135307,
+      "effects": [
+        {
+          "curve_id": 83077,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241093,
+              "value": 20.0
+            },
+            {
+              "row_id": 241094,
+              "value": 40.0
+            },
+            {
+              "row_id": 241095,
+              "value": 60.0
+            },
+            {
+              "row_id": 241096,
+              "value": 80.0
+            },
+            {
+              "row_id": 241097,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23433
+        }
+      ],
+      "max_rank": 5,
+      "name": "Ice Shards",
+      "node_id": 105777,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 15,
+          "EffectMiscValue_1": 0,
+          "ID": 688526
+        }
+      ],
+      "spell_id": 11207,
+      "tooltip_template": "Increases the critical strike damage bonus of your Frost spells by $s1%.",
+      "tree_id": 1112
+    },
+    "130507": {
+      "definition_id": 135308,
+      "effects": [
+        {
+          "curve_id": 83078,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 112753,
+              "row_id": 241098,
+              "value": 2.0
+            },
+            {
+              "push_id": 112753,
+              "row_id": 241099,
+              "value": 4.0
+            },
+            {
+              "push_id": 112753,
+              "row_id": 241100,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23434
+        }
+      ],
+      "entry_push_id": 112753,
+      "max_rank": 3,
+      "name": "Precision",
+      "node_id": 105778,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 704780,
+          "push_id": 113277
+        }
+      ],
+      "spell_id": 29438,
+      "tooltip_template": "Improves your chance to hit with all spells by $s1%.",
+      "tree_id": 1112
+    },
+    "130511": {
+      "definition_id": 135312,
+      "effects": [
+        {
+          "curve_id": 83082,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241110,
+              "value": 1.0
+            },
+            {
+              "row_id": 241111,
+              "value": 2.0
+            },
+            {
+              "row_id": 241112,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23438
+        }
+      ],
+      "max_rank": 3,
+      "name": "Fire Power",
+      "node_id": 105782,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 689557
+        }
+      ],
+      "spell_id": 11124,
+      "tooltip_template": "Increases the damage done by your Fire spells by $s1% per your Fire effects on the target, up to a maximum increase of ${$s1*4}%. Effects which mix multiple schools of magic do not qualify.",
+      "tree_id": 1112
+    },
+    "130528": {
+      "definition_id": 135329,
+      "effects": [
+        {
+          "curve_id": 83098,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241161,
+              "value": 1.0
+            },
+            {
+              "row_id": 241162,
+              "value": 2.0
+            },
+            {
+              "row_id": 241163,
+              "value": 3.0
+            }
+          ],
+          "row_id": 23453
+        }
+      ],
+      "max_rank": 3,
+      "name": "Arcane Instability",
+      "node_id": 105799,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692455
+        }
+      ],
+      "spell_id": 15058,
+      "tooltip_template": "Increases the damage done by your spells by $m1% and your critical strike chance by $m2%.",
+      "tree_id": 1112
+    },
+    "130529": {
+      "definition_id": 135330,
+      "effects": [
+        {
+          "curve_id": 83100,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241169,
+              "value": 2.0
+            },
+            {
+              "row_id": 241170,
+              "value": 4.0
+            },
+            {
+              "row_id": 241171,
+              "value": 6.0
+            },
+            {
+              "row_id": 241172,
+              "value": 8.0
+            },
+            {
+              "row_id": 241173,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23455
+        },
+        {
+          "curve_id": 83099,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 241164,
+              "value": 20.0
+            },
+            {
+              "row_id": 241165,
+              "value": 40.0
+            },
+            {
+              "row_id": 241166,
+              "value": 60.0
+            },
+            {
+              "row_id": 241167,
+              "value": 80.0
+            },
+            {
+              "row_id": 241168,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23456
+        }
+      ],
+      "max_rank": 5,
+      "name": "Arcane Mind",
+      "node_id": 105800,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 688793
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 15,
+          "EffectMiscValue_1": 0,
+          "ID": 1230612
+        }
+      ],
+      "spell_id": 11232,
+      "tooltip_template": "Increases your Intellect by $m1% and increases the critical strike damage bonus of your Arcane spells by $m2%.",
+      "tree_id": 1112
+    },
+    "130544": {
+      "definition_id": 135345,
+      "effects": [
+        {
+          "curve_id": 83116,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241215,
+              "value": 13.0
+            },
+            {
+              "row_id": 241216,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23472
+        }
+      ],
+      "max_rank": 2,
+      "name": "Wand Specialization",
+      "node_id": 105815,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 0,
+          "ID": 683316
+        }
+      ],
+      "spell_id": 6057,
+      "tooltip_template": "Increases your damage with Wands by $s1%.",
+      "tree_id": 1112
+    },
+    "130547": {
+      "definition_id": 135348,
+      "effects": [
+        {
+          "curve_id": 83145,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241323,
+              "value": 2.0
+            },
+            {
+              "row_id": 241324,
+              "value": 4.0
+            },
+            {
+              "row_id": 241325,
+              "value": 6.0
+            },
+            {
+              "row_id": 241326,
+              "value": 8.0
+            },
+            {
+              "row_id": 241327,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23490
+        }
+      ],
+      "max_rank": 5,
+      "name": "Darkness",
+      "node_id": 105818,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 32,
+          "EffectMiscValue_1": 0,
+          "ID": 693083
+        }
+      ],
+      "spell_id": 15259,
+      "tooltip_template": "Increases your Shadow damage done by $s1%.",
+      "tree_id": 1114
+    },
+    "130566": {
+      "definition_id": 135367,
+      "effects": [
+        {
+          "curve_id": 83132,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241281,
+              "value": 2.0
+            },
+            {
+              "row_id": 241282,
+              "value": 4.0
+            },
+            {
+              "row_id": 241283,
+              "value": 6.0
+            },
+            {
+              "row_id": 241284,
+              "value": 8.0
+            },
+            {
+              "row_id": 241285,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23477
+        }
+      ],
+      "max_rank": 5,
+      "name": "Mental Strength",
+      "node_id": 105837,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 8,
+          "ID": 695981
+        }
+      ],
+      "spell_id": 18551,
+      "tooltip_template": "Increases your total Intellect by $m1%.",
+      "tree_id": 1114
+    },
+    "130579": {
+      "definition_id": 135380,
+      "effects": [
+        {
+          "curve_id": 83144,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241318,
+              "value": 13.0
+            },
+            {
+              "row_id": 241319,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23489
+        }
+      ],
+      "max_rank": 2,
+      "name": "Wand Specialization",
+      "node_id": 105850,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 0,
+          "ID": 690370
+        }
+      ],
+      "spell_id": 14524,
+      "tooltip_template": "Increases your damage with Wands by $s1%.",
+      "tree_id": 1114
+    },
+    "130581": {
+      "definition_id": 135382,
+      "effects": [
+        {
+          "curve_id": 83159,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241369,
+              "value": 3.0
+            },
+            {
+              "row_id": 241370,
+              "value": 7.0
+            },
+            {
+              "row_id": 241371,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23504
+        }
+      ],
+      "max_rank": 3,
+      "name": "Spiritual Healing",
+      "node_id": 105852,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692104
+        }
+      ],
+      "spell_id": 14898,
+      "tooltip_template": "Increases the amount healed by your spells by $s1%.",
+      "tree_id": 1114
+    },
+    "130582": {
+      "definition_id": 135383,
+      "effects": [
+        {
+          "curve_id": 83160,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241372,
+              "value": 1.0
+            },
+            {
+              "row_id": 241373,
+              "value": 3.0
+            },
+            {
+              "row_id": 241374,
+              "value": 5.0
+            },
+            {
+              "row_id": 241375,
+              "value": 6.0
+            },
+            {
+              "row_id": 241376,
+              "value": 8.0
+            }
+          ],
+          "row_id": 23505
+        },
+        {
+          "curve_id": 87617,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 259291,
+              "value": 5.0
+            },
+            {
+              "row_id": 259292,
+              "value": 10.0
+            },
+            {
+              "row_id": 259293,
+              "value": 15.0
+            },
+            {
+              "row_id": 259294,
+              "value": 20.0
+            },
+            {
+              "row_id": 259295,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23831
+        }
+      ],
+      "max_rank": 5,
+      "name": "Spiritual Guidance",
+      "node_id": 105853,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 174,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 4,
+          "ID": 692131
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 175,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 4,
+          "EffectMiscValue_1": 0,
+          "ID": 692132
+        }
+      ],
+      "spell_id": 14901,
+      "tooltip_template": "Increases your spell healing by up to $s2% of your total Spirit and your spell damage by up to $s1% of your total Spirit.",
+      "tree_id": 1114
+    },
+    "130609": {
+      "definition_id": 135410,
+      "effects": [
+        {
+          "curve_id": 83180,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 241444,
+              "value": 3.0
+            },
+            {
+              "row_id": 241445,
+              "value": 7.0
+            },
+            {
+              "row_id": 241446,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23524
+        }
+      ],
+      "max_rank": 3,
+      "name": "Agonizing Flames",
+      "node_id": 105879,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1230560
+        }
+      ],
+      "spell_id": 17927,
+      "tooltip_template": "Increases the critical strike chance of your Searing Pain spell by $m1% and the damage done by all your Destruction spells by $m2%.",
+      "tree_id": 1116
+    },
+    "130633": {
+      "definition_id": 135434,
+      "effects": [
+        {
+          "curve_id": 103061,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 311280,
+              "value": 5.0
+            },
+            {
+              "row_id": 311281,
+              "value": 10.0
+            },
+            {
+              "row_id": 311282,
+              "value": 15.0
+            }
+          ],
+          "row_id": 24503
+        }
+      ],
+      "max_rank": 3,
+      "name": "Fel Vitality",
+      "node_id": 105903,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 178,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1314665
+        }
+      ],
+      "spell_id": 18731,
+      "tooltip_template": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by $s1%, and increases your maximum Mana by $s2%.",
+      "tree_id": 1116
+    },
+    "130637": {
+      "definition_id": 135438,
+      "effects": [
+        {
+          "curve_id": 83212,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241558,
+              "value": 3.0
+            },
+            {
+              "row_id": 241559,
+              "value": 6.0
+            },
+            {
+              "row_id": 311313,
+              "value": 9.0
+            },
+            {
+              "row_id": 311314,
+              "value": 12.0
+            },
+            {
+              "row_id": 311315,
+              "value": 15.0
+            }
+          ],
+          "row_id": 23554
+        }
+      ],
+      "max_rank": 5,
+      "name": "Demonic Embrace",
+      "node_id": 105907,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 4,
+          "ID": 696832
+        }
+      ],
+      "spell_id": 18697,
+      "tooltip_template": "Increases your total Stamina by $s1%.",
+      "tree_id": 1116
+    },
+    "130640": {
+      "definition_id": 135441,
+      "effects": [
+        {
+          "curve_id": 83215,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241566,
+              "value": 2.0
+            },
+            {
+              "row_id": 241567,
+              "value": 4.0
+            },
+            {
+              "row_id": 369248,
+              "value": 6.0
+            },
+            {
+              "row_id": 369249,
+              "value": 8.0
+            },
+            {
+              "row_id": 369250,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23559
+        }
+      ],
+      "max_rank": 5,
+      "name": "Shadow Mastery",
+      "node_id": 105910,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 108,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 694067
+        }
+      ],
+      "spell_id": 18271,
+      "tooltip_template": "Increases the damage dealt or life drained by your Shadow spells by $s1%.",
+      "tree_id": 1116
+    },
+    "130651": {
+      "definition_id": 135452,
+      "effects": [
+        {
+          "curve_id": 83225,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241595,
+              "value": 10.0
+            },
+            {
+              "row_id": 241596,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23569
+        }
+      ],
+      "max_rank": 2,
+      "name": "Improved Life Tap",
+      "node_id": 105921,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 4,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695916
+        }
+      ],
+      "spell_id": 18182,
+      "tooltip_template": "Increases the amount of Mana awarded by your Life Tap spell by $s1%.",
+      "tree_id": 1116
+    },
+    "130655": {
+      "definition_id": 135456,
+      "effects": [
+        {
+          "curve_id": 83231,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241622,
+              "value": 1.0
+            },
+            {
+              "row_id": 241623,
+              "value": 2.0
+            },
+            {
+              "row_id": 241624,
+              "value": 3.0
+            },
+            {
+              "row_id": 241625,
+              "value": 4.0
+            },
+            {
+              "row_id": 241626,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23574
+        },
+        {
+          "curve_id": 88021,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 260837,
+              "value": 1.0
+            },
+            {
+              "row_id": 260838,
+              "value": 2.0
+            },
+            {
+              "row_id": 260839,
+              "value": 3.0
+            },
+            {
+              "row_id": 260840,
+              "value": 4.0
+            },
+            {
+              "row_id": 260841,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23850
+        }
+      ],
+      "max_rank": 5,
+      "name": "Suppression",
+      "node_id": 105925,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 55,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 695760
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1230309
+        }
+      ],
+      "spell_id": 18174,
+      "tooltip_template": "Improves your chance to hit by $m1% and reduces all threat you generate by $m3%.",
+      "tree_id": 1116
+    },
+    "130663": {
+      "definition_id": 135464,
+      "effects": [
+        {
+          "curve_id": 83296,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241888,
+              "value": 5.0
+            },
+            {
+              "row_id": 241889,
+              "value": 10.0
+            },
+            {
+              "row_id": 241890,
+              "value": 15.0
+            },
+            {
+              "row_id": 241891,
+              "value": 20.0
+            },
+            {
+              "row_id": 241892,
+              "value": 25.0
+            }
+          ],
+          "row_id": 23582
+        }
+      ],
+      "max_rank": 5,
+      "name": "Dual Wield Specialization",
+      "node_id": 105933,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 122,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 699937
+        }
+      ],
+      "spell_id": 23584,
+      "tooltip_template": "Increases the damage done by your off-hand weapon by $m1% and the Rage generated by your off-hand attacks by $m2%.",
+      "tree_id": 1117
+    },
+    "130678": {
+      "definition_id": 135479,
+      "effects": [
+        {
+          "curve_id": 83308,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113539,
+              "row_id": 241939,
+              "value": 2.0
+            },
+            {
+              "push_id": 113539,
+              "row_id": 241940,
+              "value": 4.0
+            },
+            {
+              "push_id": 113539,
+              "row_id": 241941,
+              "value": 6.0
+            }
+          ],
+          "row_id": 23594
+        }
+      ],
+      "max_rank": 3,
+      "name": "Two-Handed Weapon Specialization",
+      "node_id": 105948,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 1,
+          "EffectMiscValue_1": 0,
+          "ID": 689637
+        }
+      ],
+      "spell_id": 12163,
+      "tooltip_template": "Increases the damage you deal with two-handed melee weapons by $s1%.",
+      "tree_id": 1117
+    },
+    "130683": {
+      "definition_id": 135484,
+      "effects": [
+        {
+          "curve_id": 125259,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 364790,
+              "value": 4.0
+            },
+            {
+              "row_id": 364791,
+              "value": 7.0
+            },
+            {
+              "row_id": 364792,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25180
+        }
+      ],
+      "max_rank": 3,
+      "name": "Furious Precision",
+      "node_id": 105953,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 54,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1360676
+        }
+      ],
+      "spell_id": 1323963,
+      "tooltip_template": "Increases your chance to hit with off-hand attacks by $m1%.",
+      "tree_id": 1117
+    },
+    "130692": {
+      "definition_id": 135493,
+      "effects": [
+        {
+          "curve_id": 83276,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241816,
+              "value": 2.0
+            },
+            {
+              "row_id": 241817,
+              "value": 4.0
+            },
+            {
+              "row_id": 241818,
+              "value": 6.0
+            },
+            {
+              "row_id": 241819,
+              "value": 8.0
+            },
+            {
+              "row_id": 241820,
+              "value": 10.0
+            }
+          ],
+          "row_id": 23607
+        }
+      ],
+      "max_rank": 5,
+      "name": "Bastion",
+      "node_id": 105962,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 79,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 1,
+          "EffectMiscValue_1": 0,
+          "ID": 692437
+        }
+      ],
+      "spell_id": 16538,
+      "tooltip_template": "Increases all damage you deal by $s1% while a shield is equipped.",
+      "tree_id": 1117
+    },
+    "130705": {
+      "definition_id": 135506,
+      "effects": [
+        {
+          "curve_id": 83286,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241847,
+              "value": 4.0
+            },
+            {
+              "row_id": 241848,
+              "value": 8.0
+            },
+            {
+              "row_id": 241849,
+              "value": 12.0
+            },
+            {
+              "row_id": 241850,
+              "value": 16.0
+            },
+            {
+              "row_id": 241851,
+              "value": 20.0
+            }
+          ],
+          "row_id": 23618
+        }
+      ],
+      "max_rank": 5,
+      "name": "Anticipation",
+      "node_id": 105975,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 30,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 95,
+          "EffectMiscValue_1": 0,
+          "ID": 689348
+        }
+      ],
+      "spell_id": 12297,
+      "tooltip_template": "Increases your Defense Skill by $m1.",
+      "tree_id": 1117
+    },
+    "130706": {
+      "definition_id": 135507,
+      "effects": [
+        {
+          "curve_id": 83288,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "row_id": 241857,
+              "value": 1.0
+            },
+            {
+              "row_id": 241858,
+              "value": 2.0
+            },
+            {
+              "row_id": 241859,
+              "value": 3.0
+            },
+            {
+              "row_id": 241860,
+              "value": 4.0
+            },
+            {
+              "row_id": 241861,
+              "value": 5.0
+            }
+          ],
+          "row_id": 23619
+        },
+        {
+          "curve_id": 83287,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "row_id": 241852,
+              "value": 20.0
+            },
+            {
+              "row_id": 241853,
+              "value": 40.0
+            },
+            {
+              "row_id": 241854,
+              "value": 60.0
+            },
+            {
+              "row_id": 241855,
+              "value": 80.0
+            },
+            {
+              "row_id": 241856,
+              "value": 100.0
+            }
+          ],
+          "row_id": 23620
+        }
+      ],
+      "max_rank": 5,
+      "name": "Shield Specialization",
+      "node_id": 105976,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 51,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 690478
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1339750
+        }
+      ],
+      "spell_id": 12298,
+      "tooltip_template": "Increases your chance to Block attacks with your shield by $s1% and grants you a $m2% chance to generate ${$1310318m1/10} Rage when you Block.",
+      "tree_id": 1117
+    },
+    "137848": {
+      "definition_id": 142602,
+      "effects": [
+        {
+          "curve_id": 109358,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113326,
+              "row_id": 328755,
+              "value": 7.0
+            },
+            {
+              "push_id": 113326,
+              "row_id": 328756,
+              "value": 13.0
+            },
+            {
+              "push_id": 113326,
+              "row_id": 328757,
+              "value": 20.0
+            }
+          ],
+          "row_id": 24567
+        }
+      ],
+      "max_rank": 3,
+      "name": "Defiance",
+      "node_id": 110856,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 10,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 127,
+          "EffectMiscValue_1": 0,
+          "ID": 690191
+        }
+      ],
+      "spell_id": 12792,
+      "tooltip_template": "Increases all threat generated in Defensive stance by an additional $s1% while a shield is equipped.",
+      "tree_id": 1117
+    },
+    "137872": {
+      "definition_id": 142626,
+      "effects": [
+        {
+          "curve_id": 110326,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 331279,
+              "value": 15.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 331280,
+              "value": 30.0
+            }
+          ],
+          "row_id": 24611
+        },
+        {
+          "curve_id": 110325,
+          "effect_index": 1,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 331276,
+              "value": 50.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 331277,
+              "value": 100.0
+            }
+          ],
+          "row_id": 24610
+        }
+      ],
+      "entry_push_id": 113139,
+      "max_rank": 2,
+      "name": "Shield Specialization",
+      "node_id": 110874,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 272,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 697910
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 42,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 1340827
+        }
+      ],
+      "spell_id": 20150,
+      "tooltip_template": "Increases the amount of damage absorbed by your shield by $m1%, and gives your blocks a $m2% chance to restore $1310925m1% of your maximum Mana.  May only occur once every $proccooldown sec.",
+      "tree_id": 1100
+    },
+    "137880": {
+      "definition_id": 142634,
+      "effects": [
+        {
+          "curve_id": 110350,
+          "effect_index": 0,
+          "ranks": [
+            {
+              "push_id": 113542,
+              "row_id": 331369,
+              "value": 12.0
+            },
+            {
+              "push_id": 113542,
+              "row_id": 331370,
+              "value": 24.0
+            },
+            {
+              "push_id": 113542,
+              "row_id": 372118,
+              "value": 36.0
+            },
+            {
+              "push_id": 113542,
+              "row_id": 372119,
+              "value": 48.0
+            },
+            {
+              "push_id": 113542,
+              "row_id": 372120,
+              "value": 60.0
+            }
+          ],
+          "row_id": 24621
+        },
+        {
+          "curve_id": 127867,
+          "effect_index": 1,
+          "push_id": 113139,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 371200,
+              "value": -200.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371201,
+              "value": -400.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371205,
+              "value": -600.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371206,
+              "value": -800.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371207,
+              "value": -1000.0
+            }
+          ],
+          "row_id": 25209
+        }
+      ],
+      "entry_push_id": 113139,
+      "max_rank": 5,
+      "name": "Champion of the Light",
+      "node_id": 110882,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 174,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 126,
+          "EffectMiscValue_1": 3,
+          "ID": 1341129
+        },
+        {
+          "Effect": 6,
+          "EffectAura": 107,
+          "EffectIndex": 1,
+          "EffectMiscValue_0": 10,
+          "EffectMiscValue_1": 0,
+          "ID": 1367233,
+          "push_id": 113139
+        }
+      ],
+      "spell_id": 1311084,
+      "tooltip_template": "Increases your spell damage by up to $m1% of your Intellect, and reduces the cast time of your Hammer of Wrath by ${$m2/-1000}.1 sec.",
+      "tree_id": 1100
+    },
+    "141292": {
+      "definition_id": 145961,
+      "definition_push_id": 113139,
+      "effects": [
+        {
+          "curve_id": 127941,
+          "effect_index": 0,
+          "push_id": 113139,
+          "ranks": [
+            {
+              "push_id": 113139,
+              "row_id": 371426,
+              "value": 2.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371427,
+              "value": 4.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371428,
+              "value": 6.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371429,
+              "value": 8.0
+            },
+            {
+              "push_id": 113139,
+              "row_id": 371430,
+              "value": 10.0
+            }
+          ],
+          "row_id": 25213
+        }
+      ],
+      "entry_push_id": 113139,
+      "max_rank": 5,
+      "name": "Divine Strength",
+      "node_id": 113630,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 137,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 1,
+          "ID": 697895
+        }
+      ],
+      "spell_id": 20262,
+      "tooltip_template": "Increases your Strength by $s1%.",
+      "tree_id": 1100
+    },
+    "141297": {
+      "definition_id": 145965,
+      "definition_push_id": 113483,
+      "effects": [
+        {
+          "curve_id": 128136,
+          "effect_index": 0,
+          "push_id": 113483,
+          "ranks": [
+            {
+              "push_id": 113483,
+              "row_id": 372078,
+              "value": 25.0
+            },
+            {
+              "push_id": 113483,
+              "row_id": 372079,
+              "value": 50.0
+            }
+          ],
+          "row_id": 25227
+        }
+      ],
+      "entry_push_id": 113483,
+      "max_rank": 2,
+      "name": "Dual Wield Specialization",
+      "node_id": 113635,
+      "spell_effects": [
+        {
+          "Effect": 6,
+          "EffectAura": 122,
+          "EffectIndex": 0,
+          "EffectMiscValue_0": 0,
+          "EffectMiscValue_1": 0,
+          "ID": 692223
+        }
+      ],
+      "spell_id": 13715,
+      "tooltip_template": "Increases the damage done by your off-hand weapon by $s1%.",
+      "tree_id": 1111
+    }
+  },
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F71037%2FenUS%2FDBCache-kxqY1vqWsTck8oJfxJojxH.bin"
+}

@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gold-plated Buckler Item Level 22 Binds when picked up Off Hand Shield 509 Armor 10 Block +2 Agility +5 Stamina Durability 75 / 75 Requires Level 17 Equip: After entering combat, reduce the next instance of Physical damage taken within 20 sec by 15. Sell Price: 14 45 Dropped by: Miner Johnson Drop Chance: 41.31%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:58:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 5443,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 509,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: After entering combat, reduce the next instance of Physical damage taken within 20 sec by 15.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: After entering combat, reduce the next instance of Physical damage taken within 20 sec by 15."
+    ],
+    "id": 5443,
+    "item_level": 22,
+    "name": "Gold-plated Buckler",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 2.0,
+      "block_value": 10.0,
+      "stamina": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5443"
+  },
+  "linked_entities": [
+    {
+      "id": 1291906,
+      "name": "After entering combat, reduce the next instance of Physical damage taken within 20 sec by 15.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291906"
+    }
+  ],
+  "name": "Gold-plated Buckler",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 41.31,
+      "entity_name": "Miner Johnson",
+      "source_url": "https://www.wowhead.com/forever/item=5443",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5443",
+  "url": "https://www.wowhead.com/forever/item=5443"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scepter of Celebras Item Level 1 Binds when picked up Unique Use: Creates a portal, teleporting group members that use it to Earth Song Falls in inner Maraudon. (30 Sec Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 17191,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Creates a portal, teleporting group members that use it to Earth Song Falls in inner Maraudon. (30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 17191,
+    "item_level": 1,
+    "name": "Scepter of Celebras",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Creates a portal, teleporting group members that use it to Earth Song Falls in inner Maraudon. (30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=17191"
+  },
+  "linked_entities": [
+    {
+      "id": 21127,
+      "name": "Creates a portal, teleporting group members that use it to Earth Song Falls in inner Maraudon.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=21127"
+    }
+  ],
+  "name": "Scepter of Celebras",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1e87d989d3e97e2212ce3979551b114db0abb10fd56a5dfd3e54b7feb05c4ea1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17191",
+  "url": "https://www.wowhead.com/forever/item=17191"
+}

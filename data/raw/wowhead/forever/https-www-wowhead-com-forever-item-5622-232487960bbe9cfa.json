@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clergy Ring Item Level 22 Binds when picked up Finger +1 Stamina +3 Spirit Sell Price: 5 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 5622,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 5622,
+    "item_level": 22,
+    "name": "Clergy Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spirit": 3.0,
+      "stamina": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=5622"
+  },
+  "linked_entities": [],
+  "name": "Clergy Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5622",
+  "url": "https://www.wowhead.com/forever/item=5622"
+}

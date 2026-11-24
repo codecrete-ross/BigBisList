@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import time
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +13,9 @@ CANONICAL_DIR = ROOT / "data" / "canonical"
 RAW_WOWHEAD_DIR = ROOT / "data" / "raw" / "wowhead"
 SCHEMA_DIR = ROOT / "data" / "schema"
 REFERENCE_DIR = ROOT / "vendor" / "reference" / "BIS-TBC-1.15"
+FLAVORS = ("anniversary", "forever")
+FOREVER_CANONICAL_DIR = CANONICAL_DIR / "forever"
+FOREVER_RAW_DIR = RAW_WOWHEAD_DIR / "forever"
 
 PHASE_KEYS = ["PR", "T4", "T5", "T6", "ZA", "SWP"]
 SLOT_NAMES = {
@@ -64,6 +68,28 @@ CANONICAL_FILES = {
     "scrape_manifest": "scrape_manifest.json",
 }
 
+FOREVER_ONLY_CANONICAL_FILES = {
+    "stat_weight_review": "stat_weight_review.json",
+    "runtime_compatibility": "runtime_compatibility.json",
+    "effect_benchmarks": "effect_benchmarks.json",
+    "spell_effect_review": "spell_effect_review.json",
+    "comparison_item_stats": "comparison_item_stats.json",
+    "guide_item_reviews": "guide_item_reviews.json",
+    "guide_equipment": "guide_equipment.json",
+    "guide_source_reviews": "guide_source_reviews.json",
+    "guide_routes": "guide_routes.json",
+    "leveling_guide_effects": "leveling_guide_effects.json",
+    "leveling_rules": "leveling_rules.json",
+    "leveling_scoring_profiles": "leveling_scoring_profiles.json",
+    "leveling_reviews": "leveling_reviews.json",
+    "leveling_audit": "leveling_audit.json",
+    "leveling_items": "leveling_items.json",
+    "leveling_item_stats": "leveling_item_stats.json",
+    "leveling_availability": "leveling_availability.json",
+    "leveling_candidate_audit": "leveling_candidate_audit.json",
+    "scoring_model": "scoring_model.json",
+}
+
 
 def load_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
@@ -72,6 +98,18 @@ def load_json(path: Path) -> Any:
 
 def canonical_json(name: str) -> Any:
     return load_json(CANONICAL_DIR / CANONICAL_FILES[name])
+
+
+def add_flavor_argument(parser) -> None:
+    parser.add_argument("--flavor", choices=FLAVORS, required=True, help="Select the client dataset.")
+
+
+def dataset_json(flavor: str, name: str) -> Any:
+    if flavor not in FLAVORS:
+        raise ValueError(f"Unknown dataset flavor: {flavor}")
+    directory = FOREVER_CANONICAL_DIR if flavor == "forever" else CANONICAL_DIR
+    files = {**CANONICAL_FILES, **FOREVER_ONLY_CANONICAL_FILES} if flavor == "forever" else CANONICAL_FILES
+    return load_json(directory / files[name])
 
 
 def read_text(path: Path) -> str:
@@ -91,7 +129,16 @@ def write_text(path: Path, content: str) -> None:
                                          suffix=".tmp", delete=False) as handle:
             temporary = Path(handle.name)
             handle.write(content)
-        os.replace(temporary, path)
+        for attempt in range(11):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError as exc:
+                # A Windows reader (or scanner) may briefly deny replacement.
+                # Keep the previous complete artifact and retry this one write.
+                if os.name != "nt" or getattr(exc, "winerror", None) not in {5, 32} or attempt == 10:
+                    raise
+                time.sleep(0.1)
     finally:
         if temporary is not None and temporary.exists():
             temporary.unlink()

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fordring's Seal Item Level 63 Binds when picked up Finger +5 Stamina +6 Intellect Equip: Increases healing done by up to 37 and damage done by up to 12 for all magical spells and effects. Sell Price: 2 30 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 16058,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 37 and damage done by up to 12 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 37,
+          "spell_damage": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 37 and damage done by up to 12 for all magical spells and effects."
+    ],
+    "id": 16058,
+    "item_level": 63,
+    "name": "Fordring's Seal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 37.0,
+      "intellect": 6.0,
+      "spell_damage": 12.0,
+      "stamina": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16058"
+  },
+  "linked_entities": [],
+  "name": "Fordring's Seal",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e4cfe670ec26dacbc274f21ecca18c132230573386fc728fb3b5eac3e936ea63",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16058",
+  "url": "https://www.wowhead.com/forever/item=16058"
+}

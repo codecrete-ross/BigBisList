@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Verdant Keeper's Aim Item Level 53 Binds when picked up Ranged Bow 53 - 100 Damage Speed 2.80 (27.32 damage per second) Durability 75 / 75 Chance on hit: Strike your target with Keeper's Sting for 23 to 33 Nature damage. Sell Price: 2 52 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:48:37+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 17753,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 27.32,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Strike your target with Keeper's Sting for 23 to 33 Nature damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Strike your target with Keeper's Sting for 23 to 33 Nature damage."
+    ],
+    "id": 17753,
+    "item_level": 53,
+    "name": "Verdant Keeper's Aim",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 100,
+    "weapon_min_damage": 53,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=17753"
+  },
+  "linked_entities": [
+    {
+      "id": 29655,
+      "name": "Strike your target with Keeper's Sting for 23 to 33 Nature damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29655"
+    }
+  ],
+  "name": "Verdant Keeper's Aim",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17753",
+  "url": "https://www.wowhead.com/forever/item=17753"
+}

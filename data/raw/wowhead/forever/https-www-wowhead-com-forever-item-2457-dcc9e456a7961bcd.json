@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Minor Agility Item Level 12 Requires Level 2 Use: Increases Agility by 4 for 1 hour. (3 Sec Cooldown) Max Stack: 20 Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 2457,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Agility by 4 for 1 hour. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 2457,
+    "item_level": 12,
+    "name": "Elixir of Minor Agility",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 2,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases Agility by 4 for 1 hour. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2457"
+  },
+  "linked_entities": [
+    {
+      "id": 2374,
+      "name": "Increases Agility by 4 for 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=2374"
+    }
+  ],
+  "name": "Elixir of Minor Agility",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "6830e974b0c13a8e4659ff4cfa0d0f466e73d6e5af69ce3a8a22086313d4f4f4",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2457",
+  "url": "https://www.wowhead.com/forever/item=2457"
+}

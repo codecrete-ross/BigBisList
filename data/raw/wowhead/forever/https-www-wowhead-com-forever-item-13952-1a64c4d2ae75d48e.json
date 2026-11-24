@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Iceblade Hacker Item Level 62 Binds when picked up Main Hand Axe 16 - 65 Damage Speed 2.00 (20.33 damage per second) Durability 90 / 90 Requires Level 57 Equip: Melee attacks with this weapon deal 41 Frost damage. Chance on hit: Deal an additional 74 to 137 Frost damage and slow movement speed by 50% for 5 sec. Sell Price: 5 48 40 Dropped by: Ras Frostwhisper Drop Chance: 14.93%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:11.4104687Z",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 13952,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 20.33,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Melee attacks with this weapon deal 41 Frost damage.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Chance on hit: Deal an additional 74 to 137 Frost damage and slow movement speed by 50% for 5 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Deal an additional 74 to 137 Frost damage and slow movement speed by 50% for 5 sec."
+    ],
+    "id": 13952,
+    "item_level": 62,
+    "name": "Iceblade Hacker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 65,
+    "weapon_min_damage": 16,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13952"
+  },
+  "linked_entities": [
+    {
+      "id": 1298413,
+      "name": "Melee attacks with this weapon deal 41 Frost damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1298413"
+    },
+    {
+      "id": 1298416,
+      "name": "Deal an additional 74 to 137 Frost damage and slow movement speed by 50% for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1298416"
+    }
+  ],
+  "name": "Iceblade Hacker",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 14.93,
+      "entity_name": "Ras Frostwhisper",
+      "source_url": "https://www.wowhead.com/forever/item=13952",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a9b9298fe8be3b8edddf24da6fcf495fb7929a2ace9f637655d225a5d975ce6d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13952",
+  "url": "https://www.wowhead.com/forever/item=13952"
+}

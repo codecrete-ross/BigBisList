@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227366"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:09:01.5561333Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T06:09:01.5561333Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227366",
+      "source_content_digest": "29cd2e9649acb75a451f0502b2723604bb741a8782fc047d2309b8f9d2840d88",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227366"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 226884,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227366",
+      "subject_id": 227366,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227366,
+    "contents_name_on_tooltip": "Beastmaster's Mantle",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 226884,
+    "title": "Pursuer's Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "29cd2e9649acb75a451f0502b2723604bb741a8782fc047d2309b8f9d2840d88",
+  "url": "https://www.wowhead.com/forever/item=227366"
+}

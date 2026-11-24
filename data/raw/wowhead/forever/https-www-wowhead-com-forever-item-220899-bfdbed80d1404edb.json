@@ -1,0 +1,132 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Guard's Satin Cover Item Level 55 Binds when picked up Head Cloth 64 Armor +14 Stamina +13 Intellect +40 Armor Restores + 5 mana per 5 sec. Durability 50 / 50 Classes: Priest , Mage Requires Level 50 Equip: Increases healing done by magical spells and effects by up to 29 . Blood Guard's Satin (0/6) Blood Guard's Satin Cover Blood Guard's Satin Pads First Sergeant's Satin Boots First Sergeant's Satin Gloves Stone Guard's Satin Armor Stone Guard's Satin Leggings (3) Set : +15 Stamina. (6) Set : Increases healing done by spells and effects by up to 33. Sell Price: 1 18 78",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:55+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 220899,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 64,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "healing_power": 29
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 29."
+    ],
+    "id": 220899,
+    "item_level": 55,
+    "name": "Blood Guard's Satin Cover",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 14462,
+        "text": "+15 Stamina."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 9318,
+        "text": "Increases healing done by spells and effects by up to 33."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 29.0,
+      "intellect": 13.0,
+      "mp5": 5.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=220899"
+  },
+  "linked_entities": [
+    {
+      "id": 220898,
+      "name": "First Sergeant's Satin Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220898"
+    },
+    {
+      "id": 220899,
+      "name": "Blood Guard's Satin Cover",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220899"
+    },
+    {
+      "id": 220900,
+      "name": "First Sergeant's Satin Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220900"
+    },
+    {
+      "id": 220901,
+      "name": "Blood Guard's Satin Pads",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220901"
+    },
+    {
+      "id": 220902,
+      "name": "Stone Guard's Satin Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220902"
+    },
+    {
+      "id": 220903,
+      "name": "Stone Guard's Satin Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=220903"
+    },
+    {
+      "id": 9318,
+      "name": "Increases healing done by spells and effects by up to 33.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9318"
+    },
+    {
+      "id": 14462,
+      "name": "+15 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14462"
+    }
+  ],
+  "name": "Blood Guard's Satin Cover",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2fda3cbe6ee3ff9c2ad9c75b226f97653756e8f2f1f6079488b662b5ebcdac97",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/220899",
+  "url": "https://www.wowhead.com/forever/item=220899"
+}

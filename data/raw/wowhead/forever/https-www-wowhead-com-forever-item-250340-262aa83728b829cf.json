@@ -1,0 +1,51 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Lesser Mageblood Elixir Item Level 25 Requires Level 25 Use: Drink to regenerate 6 mana every 5 sec. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:51:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 250340,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Drink to regenerate 6 mana every 5 sec. Lasts for 30 min. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 250340,
+    "item_level": 25,
+    "name": "Lesser Mageblood Elixir",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 25,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Drink to regenerate 6 mana every 5 sec. Lasts for 30 min. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=250340"
+  },
+  "linked_entities": [
+    {
+      "id": 1250944,
+      "name": "Drink to regenerate 6 mana every 5 sec. Lasts for 30 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1250944"
+    }
+  ],
+  "name": "Lesser Mageblood Elixir",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/250340",
+  "url": "https://www.wowhead.com/forever/item=250340"
+}

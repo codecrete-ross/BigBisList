@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ebon Mask Item Level 52 Binds when picked up Head Leather 122 Armor +14 Stamina Durability 60 / 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 36 Attack Power. Sell Price: 1 19 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 19984,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 122,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +36 Attack Power.",
+        "stats": {
+          "attack_power": 36
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 19984,
+    "item_level": 52,
+    "name": "Ebon Mask",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "crit_percent": 1.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19984"
+  },
+  "linked_entities": [],
+  "name": "Ebon Mask",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5918901cb45c5aeb0c4b068073eb8565d74e727b62b09f3e20507df22ed8744a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19984",
+  "url": "https://www.wowhead.com/forever/item=19984"
+}

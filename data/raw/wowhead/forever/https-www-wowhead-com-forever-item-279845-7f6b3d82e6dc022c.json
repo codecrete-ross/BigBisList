@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Solid Gold Band Item Level 36 Binds when picked up Finger +5 Spirit Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. \"A small prize in exchange for tremendous knowledge.\" Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:17:39+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 279845,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 11,
+          "spell_damage": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. \"A small prize in exchange for tremendous knowledge.\""
+    ],
+    "id": 279845,
+    "item_level": 36,
+    "name": "Solid Gold Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 11.0,
+      "spell_damage": 4.0,
+      "spirit": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=279845"
+  },
+  "linked_entities": [],
+  "name": "Solid Gold Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279845",
+  "url": "https://www.wowhead.com/forever/item=279845"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood Ritual Ring Item Level 48 Binds when picked up Unique-Equipped Finger +13 Stamina Requires Level 43 Equip: Increased Defense + 3. Sell Price: 96 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:04:56+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 274642,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +3.",
+        "stats": {
+          "defense": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +3."
+    ],
+    "id": 274642,
+    "item_level": 48,
+    "name": "Blood Ritual Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 43,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 3.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=274642"
+  },
+  "linked_entities": [],
+  "name": "Blood Ritual Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "4ac2f129c937fb22ee6fe101766847cf364b48931abeda1f559e205c308052af",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274642",
+  "url": "https://www.wowhead.com/forever/item=274642"
+}

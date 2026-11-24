@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Krellack's Carapace Item Level 58 Binds when equipped Off Hand Shield 1776 Armor 32 Block +6 Spirit Requires Level 53 Equip: Increased Defense + 7. Sell Price: 2 45 34",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T03:49:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 286609,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 1776,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +7.",
+        "stats": {
+          "defense": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +7."
+    ],
+    "id": 286609,
+    "item_level": 58,
+    "name": "Krellack's Carapace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 53,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 32.0,
+      "defense": 7.0,
+      "spirit": 6.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=286609"
+  },
+  "linked_entities": [],
+  "name": "Krellack's Carapace",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "15aa0d1218131d42a98700fe75f4a559802f6bc68f1aa8e1116fd6062978f954",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286609",
+  "url": "https://www.wowhead.com/forever/item=286609"
+}

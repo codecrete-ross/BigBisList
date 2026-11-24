@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vanquished Tentacle of C'Thun Item Level 88 Binds when picked up Unique Trinket Requires Level 60 Use: Summons a Vanquished Tentacle to your aid for 30 sec. (3 Min Cooldown) Sell Price: 10 80 30 Dropped by: C'Thun Drop Chance: 12.57%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21579,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Summons a Vanquished Tentacle to your aid for 30 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21579,
+    "item_level": 88,
+    "name": "Vanquished Tentacle of C'Thun",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Summons a Vanquished Tentacle to your aid for 30 sec. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21579"
+  },
+  "linked_entities": [
+    {
+      "id": 26391,
+      "name": "Summons a Vanquished Tentacle to your aid for 30 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26391"
+    }
+  ],
+  "name": "Vanquished Tentacle of C'Thun",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.57,
+      "entity_name": "C'Thun",
+      "source_url": "https://www.wowhead.com/forever/item=21579",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21579",
+  "url": "https://www.wowhead.com/forever/item=21579"
+}

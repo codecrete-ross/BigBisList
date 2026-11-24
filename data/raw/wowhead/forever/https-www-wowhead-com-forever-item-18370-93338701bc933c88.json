@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vigilance Charm Item Level 62 Binds when picked up Unique-Equipped Trinket +10 Strength Requires Level 57 Use: Increases your chance to Dodge by 20% for 20 sec or until you Dodge 3 attacks. (6 Min Cooldown) Sell Price: 2 19 36 Dropped by: Immol'thar Drop Chance: 8.69%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18370,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your chance to Dodge by 20% for 20 sec or until you Dodge 3 attacks. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 18370,
+    "item_level": 62,
+    "name": "Vigilance Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "strength": 10.0
+    },
+    "use_effects": [
+      "Use: Increases your chance to Dodge by 20% for 20 sec or until you Dodge 3 attacks. (6 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=18370"
+  },
+  "linked_entities": [
+    {
+      "id": 1302264,
+      "name": "Increases your chance to Dodge by 20% for 20 sec or until you Dodge 3 attacks.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302264"
+    }
+  ],
+  "name": "Vigilance Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.69,
+      "entity_name": "Immol'thar",
+      "source_url": "https://www.wowhead.com/forever/item=18370",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "d9ebf06d9f17a4e9f81cbdd01b69e199f4fe953a8e4d7c8e2ba5442fc465f03b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18370",
+  "url": "https://www.wowhead.com/forever/item=18370"
+}

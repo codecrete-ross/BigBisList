@@ -1,0 +1,213 @@
+{
+  "attribution": [
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment. Public enUS hotfix caches archived by Raidbots.",
+      "source": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "credit": "WoWSims game data export",
+      "source": "https://raw.githubusercontent.com/wowsims/gamedata/fcca6ce23e2ec57b17dad9850e043fedb51c16cb/items/items.txt"
+    }
+  ],
+  "catalog_kind": "client_hotfix",
+  "client_build": "1.60.1.70938",
+  "confidence": "verified_current_public_cache",
+  "fetched_at": "2026-11-13T20:39:08.074987+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 7492268,
+      "collected_at": "2026-11-13T20:39:08.074987+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "verified-current",
+      "source_content_digest": "f646f700427bacfa23a71995a4d206c44874ed1037240a0b11ad5440e252352e",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-qLWVgDAdBMiTBbMWPnzSEU.bin"
+    },
+    {
+      "bytes": 23241,
+      "collected_at": "2026-11-13T20:38:16.185373+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-verified",
+      "source_content_digest": "1662f03004fb981b7acf3f55df238689e29237e560f5fcc9cd5bb344ee8dd299",
+      "source_url": "https://www.raidbots.com/api/dbcache/verified"
+    },
+    {
+      "bytes": 7455575,
+      "collected_at": "2026-11-13T19:11:04.739399+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-cache-1",
+      "source_content_digest": "6b16ea84555a2b6544f5187906c751a89b1ef5fed6b7ff551a8bb7be3fcf7a76",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-24yFLnJFiHhrVDPavj9Lia.bin"
+    },
+    {
+      "bytes": 202,
+      "collected_at": "2026-11-13T20:39:08.898232+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowsims-state",
+      "source_content_digest": "d93a22cb0d8f22cf010c5799123a462d9e7cc3074884063ce91b7bb28b19b83c",
+      "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/fcca6ce23e2ec57b17dad9850e043fedb51c16cb/state.json"
+    },
+    {
+      "bytes": 4795898,
+      "collected_at": "2026-11-13T20:39:09.083315+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wowsims-items",
+      "source_content_digest": "f711318a38fce5cd05679526ab5d2445ecc3780fa0e936accae0bff481dca393",
+      "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/fcca6ce23e2ec57b17dad9850e043fedb51c16cb/items/items.txt"
+    }
+  ],
+  "page_type": "catalog",
+  "provider": "raidbots",
+  "records": [
+    {
+      "armor_type": "Cloth",
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 260212,
+      "item_level": 56,
+      "name": "Bad Hat",
+      "race_mask": 18446744073709551615,
+      "record_digest": "bfe3644e7b2cf636b5397d1064f0d7aef439911dad76144ba5b969c9ba0d9b9c",
+      "required_level": 0,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Head",
+      "subclass": "Cloth"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 271913,
+      "item_level": 63,
+      "name": "Militant's Band",
+      "race_mask": 18446744073709551615,
+      "record_digest": "470ff4fcd5f67b5a8a4d9fbf63f85e2d0d17ffeddbc241cc0d366d123abb011c",
+      "required_level": 58,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 271915,
+      "item_level": 43,
+      "name": "Militant's Band",
+      "race_mask": 18446744073709551615,
+      "record_digest": "601cb96c5284a7133e1a21fe6cefd3ed45a06bff0d3c9af5be389b8cbfe6cd9f",
+      "required_level": 38,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 272068,
+      "item_level": 63,
+      "name": "Darkspear Signet",
+      "race_mask": 18446744073709551615,
+      "record_digest": "abed2f84b32e0bb7198f05f9c44d54b70351bde5d4480f6110f78da3448d386c",
+      "required_level": 58,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 272069,
+      "item_level": 53,
+      "name": "Darkspear Signet",
+      "race_mask": 18446744073709551615,
+      "record_digest": "b34c57f08cc2676b44e31d7b20d0e5f4ea41b05719c0fa5bcb47e0d3f7629cd6",
+      "required_level": 48,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 272070,
+      "item_level": 43,
+      "name": "Darkspear Signet",
+      "race_mask": 18446744073709551615,
+      "record_digest": "9b52beaace25a67f10327ab0c43d3d0e44ff35b41ce77bcc3e98f83c1a5b8036",
+      "required_level": 38,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    },
+    {
+      "binding": 1,
+      "class_mask": -1,
+      "hotfix_push": 114063,
+      "item_id": 272071,
+      "item_level": 33,
+      "name": "Darkspear Signet",
+      "race_mask": 18446744073709551615,
+      "record_digest": "57af9c93c78f40b1013af08bbee429d44e013b553549bb0de51e06f0e7583cc1",
+      "required_level": 28,
+      "required_skill": 0,
+      "required_skill_rank": 0,
+      "slot": "Ring"
+    }
+  ],
+  "relationships": [],
+  "reviewed_page_facts": {
+    "baseline_cache": {
+      "build": 70938,
+      "created": "2026-11-13T18:23:29.583Z",
+      "entries": 95052,
+      "pushIds": 5964,
+      "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-24yFLnJFiHhrVDPavj9Lia.bin",
+      "verified": true,
+      "version": "forever"
+    },
+    "finding": "The six exact PvP ring records agree with the existing level requirements of 28 to 58. The head item confirms no equip minimum. The cache does not describe how to obtain those items.",
+    "index_entry": {
+      "build": 70938,
+      "created": "2026-11-13T20:20:22.070Z",
+      "entries": 95870,
+      "pushIds": 5977,
+      "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-qLWVgDAdBMiTBbMWPnzSEU.bin",
+      "verified": true,
+      "version": "forever"
+    },
+    "matched_scoped_item_ids": [
+      260212,
+      271913,
+      271915,
+      272068,
+      272069,
+      272070,
+      272071
+    ],
+    "new_populated_item_ids": [
+      250725,
+      260212,
+      262803,
+      271913,
+      271915,
+      272068,
+      272069,
+      272070,
+      272071,
+      274749
+    ]
+  },
+  "source_content_digest": "f646f700427bacfa23a71995a4d206c44874ed1037240a0b11ad5440e252352e",
+  "url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-qLWVgDAdBMiTBbMWPnzSEU.bin"
+}

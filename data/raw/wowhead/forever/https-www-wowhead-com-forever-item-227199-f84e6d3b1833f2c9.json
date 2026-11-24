@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Dragonhide Headdress Item Level 71 Binds when picked up Head Leather 158 Armor +30 Stamina +19 Intellect +15 Spirit Durability 60 / 60 Classes: Druid Requires Level 60 Equip: Increases healing done by magical spells and effects by up to 40 . Lieutenant Commander's Refuge (0/6) Knight-Captain's Dragonhide Legguards Knight-Captain's Dragonhide Tunic Knight-Lieutenant's Dragonhide Gauntlets Knight-Lieutenant's Dragonhide Greaves Lieutenant Commander's Dragonhide Headdress Lieutenant Commander's Dragonhide Pauldrons (2) Set : Increases healing done by spells and effects by up to 44. (4) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : +20 Stamina. Sell Price: 1 55 60 Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:47:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 227199,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by magical spells and effects by up to 40.",
+        "stats": {
+          "healing_power": 40
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by magical spells and effects by up to 40."
+    ],
+    "id": 227199,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Dragonhide Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 17371,
+        "text": "Increases healing done by spells and effects by up to 44."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 40.0,
+      "intellect": 19.0,
+      "spirit": 15.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227199"
+  },
+  "linked_entities": [
+    {
+      "id": 227196,
+      "name": "Knight-Captain's Dragonhide Tunic",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227196"
+    },
+    {
+      "id": 227197,
+      "name": "Knight-Lieutenant's Dragonhide Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227197"
+    },
+    {
+      "id": 227198,
+      "name": "Knight-Lieutenant's Dragonhide Gauntlets",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227198"
+    },
+    {
+      "id": 227199,
+      "name": "Lieutenant Commander's Dragonhide Headdress",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227199"
+    },
+    {
+      "id": 227200,
+      "name": "Knight-Captain's Dragonhide Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227200"
+    },
+    {
+      "id": 227201,
+      "name": "Lieutenant Commander's Dragonhide Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227201"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 17371,
+      "name": "Increases healing done by spells and effects by up to 44.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=17371"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Lieutenant Commander's Dragonhide Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "9e6c9c7aa68e848557314ff686bfd01516e4ca7597feafa711323cf11d53cfdd",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227199",
+  "url": "https://www.wowhead.com/forever/item=227199"
+}

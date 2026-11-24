@@ -70,10 +70,8 @@ end)
 ui:SetTab("Equipped"); H.settle()
 assert(fired, "regression did not exercise the reentrant native callback")
 assertOwnership("My Gear after reentrant release")
-for _, frame in ipairs(ui.activeRenderFrames) do
-    assert(frame.__bigBisBoundRenderEntry.kind == "row", "foreign section remains in My Gear")
-    assert(frame.boundMode == "gear", "foreign recommendation remains in My Gear")
-end
+assert(#ui.activeRenderFrames == 0 and not ui.contentListLayer:IsVisible(), "list frames leaked into My Gear")
+assert(ui.gearFrame.slots.Head:IsVisible(), "paper doll did not replace the list")
 ''')
 
     def test_scroll_during_binding_uses_latest_viewport_without_rebuilding_query(self):
@@ -157,7 +155,7 @@ end
 
     def test_successful_realization_recovers_a_stranded_managed_section(self):
         self.run_lua(r'''
-ui:SetTab("Equipped"); H.settle()
+ui:SetTab("By Slot"); H.settle()
 local stale = ui:CreateVirtualSectionHeader(ui.contentListLayer, -400, "Stranded section", nil, { sectionKey="old", count=1 })
 local unrelated = CreateFrame("Frame", nil, ui.contentListLayer)
 ui:UpdateVirtualList(true); H.settle()

@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sad-Sack Sandals Item Level 57 Binds when picked up Feet Cloth 56 Armor +13 Stamina Requires Level 52 Equip: Improves your chance to get a critical strike by 0.5%. Equip: Reduces the hit chance of Fear effects against you by 8%. Sell Price: 1 26 22",
+  "discovery_listing": {
+    "collected_at": "2026-11-12T23:16:48.5261393Z",
+    "listed_reveal_time": "Nov 12, 7:18 AM UTC",
+    "provider": "Still Sixty",
+    "source_content_digest": "d34d1f67db70563675703c9d2ea6579afba000a8d896c68626304bbdeb4575e7",
+    "source_url": "https://www.stillsixty.com/hidden-items"
+  },
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T23:21:32.5086574Z",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 280081,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 56,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.5%.",
+        "stats": {
+          "crit_percent": 0.5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Reduces the hit chance of Fear effects against you by 8%.",
+        "type": "target_specific"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.5%.",
+      "Equip: Reduces the hit chance of Fear effects against you by 8%."
+    ],
+    "id": 280081,
+    "item_level": 57,
+    "name": "Sad-Sack Sandals",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.5,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=280081"
+  },
+  "linked_entities": [
+    {
+      "id": 1301126,
+      "name": "Reduces the hit chance of Fear effects against you by 8%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1301126"
+    }
+  ],
+  "name": "Sad-Sack Sandals",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "6a2c32eac3dfbbc91397298b730ddf7b79826eefb15d1237645b277c415c2c84",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280081?dataEnv=16&locale=0",
+  "url": "https://www.wowhead.com/forever/item=280081"
+}

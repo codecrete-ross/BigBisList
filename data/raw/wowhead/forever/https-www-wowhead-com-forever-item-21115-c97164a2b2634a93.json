@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Talisman Item Level 53 Binds when picked up Unique-Equipped: Talisman of Battle (1) Trinket +10 Stamina Requires Level 48 Requires The Defilers - Friendly Use: Absorbs 454 to 554 physical damage. Lasts 15 sec. (3 Min Cooldown) Sell Price: 70 57",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:12:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 21115,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Absorbs 454 to 554 physical damage. Lasts 15 sec. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21115,
+    "item_level": 53,
+    "name": "Defiler's Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 10.0
+    },
+    "use_effects": [
+      "Use: Absorbs 454 to 554 physical damage. Lasts 15 sec. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=21115"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    },
+    {
+      "id": 25746,
+      "name": "Absorbs 454 to 554 physical damage. Lasts 15 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=25746"
+    }
+  ],
+  "name": "Defiler's Talisman",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Talisman Item Level 53 Binds when picked up Unique-Equipped: Talisman of Battle (1) Trinket +10 Stamina Requires Level 48 Requires The Defilers - Friendly Use: Absorbs 454 to 554 physical damage. Lasts 15 sec. (3 Min Cooldown) Sell Price: 70 57",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=21115",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21115",
+  "url": "https://www.wowhead.com/forever/item=21115"
+}

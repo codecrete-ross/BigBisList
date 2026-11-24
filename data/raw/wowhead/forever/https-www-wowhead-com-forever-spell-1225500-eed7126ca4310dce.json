@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "The Quick and the Dead Increases movement speed while dead by 10% and your helpful spells and abilities cost no resources for 2 min after being resurrected or until you enter combat.",
+  "entity_id": 1225500,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:45+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1225500,
+      "name": "The Quick and the Dead",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1225500"
+    }
+  ],
+  "name": "The Quick and the Dead",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "2cab5b990def2ed8d95d37255418fe07577ff64e2d85ee516e695e24ebb29532",
+  "spell_id": 1225500,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1225500",
+  "url": "https://www.wowhead.com/forever/spell=1225500"
+}

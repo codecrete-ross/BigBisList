@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heartseeking Crossbow Item Level 56 Binds when equipped Ranged Crossbow 71 - 108 Damage Speed 3.10 (28.87 damage per second) +9 Agility +4 Stamina Durability 75 / 75 Requires Level 51 Equip: Chance to strike your ranged target with a Shadowbolt for 13 to 19 Shadow damage. Sell Price: 2 94 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:44:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 13040,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 28.87,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Chance to strike your ranged target with a Shadowbolt for 13 to 19 Shadow damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Chance to strike your ranged target with a Shadowbolt for 13 to 19 Shadow damage."
+    ],
+    "id": 13040,
+    "item_level": 56,
+    "name": "Heartseeking Crossbow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "stamina": 4.0
+    },
+    "weapon_max_damage": 108,
+    "weapon_min_damage": 71,
+    "weapon_speed": 3.1,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=13040"
+  },
+  "linked_entities": [
+    {
+      "id": 29626,
+      "name": "Chance to strike your ranged target with a Shadowbolt for 13 to 19 Shadow damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=29626"
+    }
+  ],
+  "name": "Heartseeking Crossbow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/13040",
+  "url": "https://www.wowhead.com/forever/item=13040"
+}

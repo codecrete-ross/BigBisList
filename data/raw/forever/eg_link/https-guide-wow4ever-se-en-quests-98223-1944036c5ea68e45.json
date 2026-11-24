@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/98223"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T07:34:32.261894+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 281306,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/98223",
+      "subject_id": 98223,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Alliance",
+    "min_level": 23,
+    "name": "Old Habits",
+    "quest_id": 98223,
+    "quest_level": 31,
+    "reward_item_ids": [
+      281306
+    ],
+    "zone": "Wetlands"
+  },
+  "source_content_digest": "91d25bf79542eb994260fab1aa0938e12dad15703b3ea0b84153b694b0969412",
+  "url": "https://guide.wow4ever.se/en/quests/98223"
+}

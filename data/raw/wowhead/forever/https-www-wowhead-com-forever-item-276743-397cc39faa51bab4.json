@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fingerbreaker Stamp Item Level 53 Binds when picked up Unique-Equipped Trinket Requires Level 48 Equip: Increased Defense + 6. Equip: Increases Strength by 38 while affected by a Bleed. Sell Price: 1 29 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 276743,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +6.",
+        "stats": {
+          "defense": 6
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases Strength by 38 while affected by a Bleed.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +6.",
+      "Equip: Increases Strength by 38 while affected by a Bleed."
+    ],
+    "id": 276743,
+    "item_level": 53,
+    "name": "Fingerbreaker Stamp",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276743"
+  },
+  "linked_entities": [
+    {
+      "id": 1314784,
+      "name": "Increases Strength by 38 while affected by a Bleed.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1314784"
+    }
+  ],
+  "name": "Fingerbreaker Stamp",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "06e8de19b571528821b870c34bc60c1085074ecd2448e08b324d5d0719ba87ac",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276743",
+  "url": "https://www.wowhead.com/forever/item=276743"
+}

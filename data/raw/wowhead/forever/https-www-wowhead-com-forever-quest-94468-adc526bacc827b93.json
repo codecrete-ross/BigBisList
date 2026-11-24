@@ -1,0 +1,36 @@
+{
+  "confidence": "quest_page_and_composed_api",
+  "description": "Call of Fire Bring the Torch of Eternal Flame to Bruegs Kindleborn in Dun Morogh.",
+  "entity_id": 94468,
+  "fetch_method": "public_web_page",
+  "fetched_at": "2026-11-06T02:44:49.503662+00:00",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Call of Fire",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "wowhead_public_quest_reward",
+      "object_id": 263412,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=94468",
+      "subject_id": 94468,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "instruction_summary": "Take the eternal torch back to Bruegs Kindleborn; the rewards include Totem of Charged Flames.",
+    "series": [
+      94449,
+      94465,
+      94466,
+      94467,
+      94468
+    ]
+  },
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/94468",
+  "url": "https://www.wowhead.com/forever/quest=94468"
+}

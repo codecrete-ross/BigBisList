@@ -1,0 +1,87 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "First Mate Band Item Level 22 Binds when picked up Unique-Equipped Finger +4 Strength +5 Stamina Requires Level 17 Partners in Crime (0/2) First Mate Band Band of the Better Half (2) Set : Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown) (2) Set : +22 Strength. Sell Price: 9 44 Dropped by: Mr. Smite Drop Chance: 1.01%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:51:12+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 284715,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 284715,
+    "item_level": 22,
+    "name": "First Mate Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1317039,
+        "text": "Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown)"
+      },
+      {
+        "pieces": 2,
+        "spell_id": 1317038,
+        "text": "+22 Strength."
+      }
+    ],
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "stamina": 5.0,
+      "strength": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=284715"
+  },
+  "linked_entities": [
+    {
+      "id": 284715,
+      "name": "First Mate Band",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284715"
+    },
+    {
+      "id": 284716,
+      "name": "Band of the Better Half",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=284716"
+    },
+    {
+      "id": 1317038,
+      "name": "+22 Strength.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317038"
+    },
+    {
+      "id": 1317039,
+      "name": "Chance on melee swing to become Angry, increasing Strength by 50 for 10 sec. (100ms cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1317039"
+    }
+  ],
+  "name": "First Mate Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.01,
+      "entity_name": "Mr. Smite",
+      "source_url": "https://www.wowhead.com/forever/item=284715",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "0b0621e7bac8bc87881e2cf7ab01ec4cc1dab6fb5448dba362e064c2a17bc4f0",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/284715",
+  "url": "https://www.wowhead.com/forever/item=284715"
+}

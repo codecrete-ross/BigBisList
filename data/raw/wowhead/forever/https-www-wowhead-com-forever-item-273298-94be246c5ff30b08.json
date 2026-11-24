@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lookie's Spyglass Item Level 23 Binds when picked up Unique-Equipped Trinket +1 Spirit Requires Level 18 Use: Allows you to look far into the distance. \"Mmmrrgglumg Cookie grgl mrg mllgrgrm. -Lookie, Former Ship Lookout\" Sell Price: 10 45 Dropped by: Cookie Drop Chance: 1.13%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:45:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 273298,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Allows you to look far into the distance.",
+        "type": "use"
+      }
+    ],
+    "id": 273298,
+    "item_level": 23,
+    "name": "Lookie's Spyglass",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 18,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spirit": 1.0
+    },
+    "use_effects": [
+      "Use: Allows you to look far into the distance. \"Mmmrrgglumg Cookie grgl mrg mllgrgrm. -Lookie, Former Ship Lookout\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=273298"
+  },
+  "linked_entities": [
+    {
+      "id": 12883,
+      "name": "Allows you to look far into the distance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=12883"
+    }
+  ],
+  "name": "Lookie's Spyglass",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 1.13,
+      "entity_name": "Cookie",
+      "source_url": "https://www.wowhead.com/forever/item=273298",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "836388cd3d02d5eceee3328cf9973f82c8b410ffdfa9a991f159b299319105e8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273298",
+  "url": "https://www.wowhead.com/forever/item=273298"
+}

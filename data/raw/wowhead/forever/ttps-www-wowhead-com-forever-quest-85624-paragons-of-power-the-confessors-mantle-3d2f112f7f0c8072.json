@@ -1,0 +1,58 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/quest=85624/paragons-of-power-the-confessors-mantle"
+    },
+    {
+      "credit": "WarcraftDB",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/85624"
+    }
+  ],
+  "confidence": "published_forever_quest_lead",
+  "fetched_at": "2026-11-13T06:38:37.142589+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 5812,
+      "collected_at": "2026-11-13T06:09:05.0933326Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wdb-q85624",
+      "source_content_digest": "9780dc1cfa671e2b90542dc35d0adacb6832f2d980a6d8f52e0bac6fa49e26eb",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/85624"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 231333,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_url": "https://www.wowhead.com/forever/quest=85624/paragons-of-power-the-confessors-mantle",
+      "subject_id": 85624,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "capture_method": "indexed_search_excerpt",
+    "digest_input": "normalized indexed quest-page finding",
+    "indexed_wowhead_reward_ids": [
+      231333
+    ],
+    "minimum_level": null,
+    "objective_item_ids": [],
+    "page_crawl_age_at_review": "last month",
+    "provided_item_id": null,
+    "quest_id": 85624,
+    "reputation_gate": "Zandalar Tribe Revered",
+    "required_token_id": 19724,
+    "side": "Both",
+    "title": "Paragons of Power: The Confessor's Mantle",
+    "warcraftdb_corroborated_reward_ids": []
+  },
+  "source_content_digest": "a7bdbb74d93e6c5dfb949fca5ad6d9f573d02f66634657f770407be6c9d7a04b",
+  "url": "https://www.wowhead.com/forever/quest=85624/paragons-of-power-the-confessors-mantle"
+}

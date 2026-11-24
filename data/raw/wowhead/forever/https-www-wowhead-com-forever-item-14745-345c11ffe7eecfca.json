@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Hulking Cloak Item Level 20 Binds when equipped Back 17 Armor +1 Strength +3 Stamina Requires Level 15 Sell Price: 4 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:46:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 14745,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 17,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 14745,
+    "item_level": 20,
+    "name": "Hulking Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 15,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "stamina": 3.0,
+      "strength": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14745"
+  },
+  "linked_entities": [],
+  "name": "Hulking Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14745",
+  "url": "https://www.wowhead.com/forever/item=14745"
+}

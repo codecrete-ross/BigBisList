@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of Vindication Item Level 45 Binds when picked up Shoulder Plate 360 Armor +10 Strength +10 Stamina Equip: Improves your chance to get a critical strike by 0.7%. Sell Price: 98 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 277236,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 360,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 0.7%.",
+        "stats": {
+          "crit_percent": 0.7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 0.7%."
+    ],
+    "id": 277236,
+    "item_level": 45,
+    "name": "Pauldrons of Vindication",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 0.7,
+      "stamina": 10.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=277236"
+  },
+  "linked_entities": [],
+  "name": "Pauldrons of Vindication",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "feaa8f4a5f19f5ff2a87c346d96744d9026d0aba6bd20083526af0c1a65bb9f1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277236",
+  "url": "https://www.wowhead.com/forever/item=277236"
+}

@@ -1,0 +1,53 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:21.037851+00:00",
+  "flavor": "forever",
+  "item_id": 271804,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Soulsplatter Mace Item Level 42 Binds when picked up Main Hand Mace 27 - 41 Damage Speed 1.80 (18.89 damage per second) +3 Stamina +6 Intellect +1 Spirit Durability 90 / 90 Requires Level 35 Equip: Increases damage and healing done by magical spells and effects by up to 48 . Sell Price: 1 51 26",
+      "dps": 18.89,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 48.",
+          "stats": {
+            "spell_power": 48.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 48."
+      ],
+      "id": 271804,
+      "item_level": 42,
+      "name": "Soulsplatter Mace",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 35,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 6.0,
+        "spell_power": 48.0,
+        "spirit": 1.0,
+        "stamina": 3.0
+      },
+      "weapon_max_damage": 41,
+      "weapon_min_damage": 27,
+      "weapon_speed": 1.8,
+      "weapon_subtype": "Mace",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=271804"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "0b665a020b935c4ea2155ee6e0c934f9c1552e21e4693567a0e4fcfe6d460ec1",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/271804#sha256-0b665a020b935c4ea2155ee6e0c934f9c1552e21e4693567a0e4fcfe6d460ec1"
+}

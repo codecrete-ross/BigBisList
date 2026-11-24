@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Unbalanced Idol Item Level 10 Binds when picked up Unique Relic Idol Classes: Druid Requires Level 10 Use: Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability. Added in Season of Discovery. May not be in WoW: Forever.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:38+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 210195,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability.",
+        "type": "use"
+      }
+    ],
+    "id": 210195,
+    "item_level": 10,
+    "name": "Unbalanced Idol",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 10,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=210195"
+  },
+  "linked_entities": [
+    {
+      "id": 423187,
+      "name": "Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=423187"
+    }
+  ],
+  "name": "Unbalanced Idol",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "8f95f415e6a495575f2f4673e29e5b186e5698a01e04da93d81344b7d215f9a3",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/210195",
+  "url": "https://www.wowhead.com/forever/item=210195"
+}

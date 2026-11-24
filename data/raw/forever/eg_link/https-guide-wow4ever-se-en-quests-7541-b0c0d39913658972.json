@@ -1,0 +1,47 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link), normalized quest facts",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/7541"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:24.370968+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "object_id": 18585,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/7541",
+      "subject_id": 7541,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 18586,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/7541",
+      "subject_id": 7541,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both factions",
+    "min_level": 30,
+    "name": "Service to the Horde",
+    "quest_id": 7541,
+    "quest_level": 40,
+    "reward_item_ids": [
+      18585,
+      18586
+    ],
+    "zone": "Dustwallow Marsh"
+  },
+  "source_content_digest": "dcbbb34138caacafb8d8f988770d0b95078d546133768b268e9c5b284e1794af",
+  "url": "https://guide.wow4ever.se/en/quests/7541"
+}

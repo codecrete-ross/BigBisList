@@ -1,0 +1,41 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Gold Bar Item Level 30 Crafting Reagent Max Stack: 20 Sell Price: 6 Dropped by: Corporal Keeshan",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:09:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 3577,
+  "item_kind": "other",
+  "item_stats": {
+    "binding": "unknown",
+    "id": 3577,
+    "item_level": 30,
+    "name": "Gold Bar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3577"
+  },
+  "linked_entities": [],
+  "name": "Gold Bar",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Corporal Keeshan",
+      "source_url": "https://www.wowhead.com/forever/item=3577",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3577",
+  "url": "https://www.wowhead.com/forever/item=3577"
+}

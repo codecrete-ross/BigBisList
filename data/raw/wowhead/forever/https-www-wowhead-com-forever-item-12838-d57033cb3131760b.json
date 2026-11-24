@@ -1,0 +1,139 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Arcanite Reaper Item Level 63 Requires Blacksmithing (300) Requires Master Axesmith Use: Teaches you how to make an Arcanite Reaper. Sell Price: 2 Dropped by: Bannok Grimaxe Drop Chance: 8.24%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Two Hand",
+      "item_id": 12784,
+      "item_stats": {
+        "binding": "bind_on_equip",
+        "boe": true,
+        "dps": 53.82,
+        "id": 12784,
+        "name": "Arcanite Reaper",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Two Hand",
+        "source_summary": "",
+        "weapon_max_damage": 256,
+        "weapon_min_damage": 153,
+        "weapon_speed": 3.8,
+        "weapon_subtype": "Axe",
+        "weapon_type": "Two Hand",
+        "wowhead_url": "https://www.wowhead.com/forever/item=12784"
+      },
+      "name": "Arcanite Reaper",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=12784"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:01:33+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 12838,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Arcanite Reaper.",
+        "type": "use"
+      }
+    ],
+    "id": 12838,
+    "item_level": 63,
+    "name": "Plans: Arcanite Reaper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make an Arcanite Reaper."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=12838"
+  },
+  "linked_entities": [
+    {
+      "id": 12360,
+      "name": "Arcanite Bar",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12360"
+    },
+    {
+      "id": 12644,
+      "name": "Dense Grinding Stone",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12644"
+    },
+    {
+      "id": 12784,
+      "name": "Arcanite Reaper",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12784"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=164"
+    },
+    {
+      "id": 16994,
+      "name": "Teaches you how to make an Arcanite Reaper.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=16994"
+    }
+  ],
+  "name": "Plans: Arcanite Reaper",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Arcanite Reaper Item Level 63 Requires Blacksmithing (300) Requires Master Axesmith Use: Teaches you how to make an Arcanite Reaper. Sell Price: 2 Dropped by: Bannok Grimaxe Drop Chance: 8.24%",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=12838",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Arcanite Reaper Item Level 63 Requires Blacksmithing (300) Requires Master Axesmith Use: Teaches you how to make an Arcanite Reaper. Sell Price: 2 Dropped by: Bannok Grimaxe Drop Chance: 8.24%",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=12838",
+      "specialization": "Master Axesmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 8.24,
+      "entity_name": "Bannok Grimaxe",
+      "source_url": "https://www.wowhead.com/forever/item=12838",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    16994
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/12838",
+  "url": "https://www.wowhead.com/forever/item=12838"
+}

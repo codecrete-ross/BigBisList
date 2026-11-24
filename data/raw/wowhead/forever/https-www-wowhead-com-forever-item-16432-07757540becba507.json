@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Plate Pauldrons Item Level 63 Binds when picked up Unique Shoulder Plate 493 Armor +7 Strength +6 Agility +23 Stamina Classes: Warrior Requires Level 58 Sell Price: 87 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:47:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16432,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 493,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 16432,
+    "item_level": 63,
+    "name": "Lieutenant Commander's Plate Pauldrons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "stamina": 23.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16432"
+  },
+  "linked_entities": [],
+  "name": "Lieutenant Commander's Plate Pauldrons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16432",
+  "url": "https://www.wowhead.com/forever/item=16432"
+}

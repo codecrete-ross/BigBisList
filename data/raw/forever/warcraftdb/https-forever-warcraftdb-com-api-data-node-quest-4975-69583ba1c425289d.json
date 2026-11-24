@@ -1,0 +1,38 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB Forever quest records",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/4975"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:04.145903+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 15107,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/4975",
+      "subject_id": 4975,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "classes": [],
+    "linked_item_ids": [],
+    "min_level": null,
+    "name": "The Completed Orb of Noh'Orahil",
+    "quest_id": 4975,
+    "reward_item_roles": {
+      "15105": "choices",
+      "15107": "choices"
+    },
+    "side": "Both",
+    "zone": "Warlock"
+  },
+  "source_content_digest": "c16450053dbeba8d3365e0b49449beeb9ff348215bdd7e1f73725e3c0a41318a",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/4975"
+}

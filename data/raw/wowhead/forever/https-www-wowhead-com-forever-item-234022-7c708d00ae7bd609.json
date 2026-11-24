@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Item Level 65 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +11 Strength +19 Stamina Requires Level 60 Requires Brood of Nozdormu - Friendly Equip: Increased Defense + 5. Equip: Reduces the chance for your attacks to be dodged or parried by 1% per piece of Timeworn armor equipped. \"The Path of the Protector\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 234022,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +5.",
+        "stats": {
+          "defense": 5
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Reduces the chance for your attacks to be dodged or parried by 1% per piece of Timeworn armor equipped.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the chance for your attacks to be dodged or parried by 1% per piece of Timeworn armor equipped. \"The Path of the Protector\""
+    ],
+    "id": 234022,
+    "item_level": 65,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 5.0,
+      "stamina": 19.0,
+      "strength": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=234022"
+  },
+  "linked_entities": [
+    {
+      "id": 910,
+      "name": "Brood of Nozdormu",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=910"
+    },
+    {
+      "id": 1213407,
+      "name": "Reduces the chance for your attacks to be dodged or parried by 1% per piece of Timeworn armor equipped.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1213407"
+    }
+  ],
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Item Level 65 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +11 Strength +19 Stamina Requires Level 60 Requires Brood of Nozdormu - Friendly Equip: Increased Defense + 5. Equip: Reduces the chance for your attacks to be dodged or parried by 1% per piece of Timeworn armor equipped. \"The Path of the Protector\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=234022",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "6d2ad71daea0f773b3dc5249674b4d325b69c012d0c9236a6d53c79866ef380d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/234022",
+  "url": "https://www.wowhead.com/forever/item=234022"
+}

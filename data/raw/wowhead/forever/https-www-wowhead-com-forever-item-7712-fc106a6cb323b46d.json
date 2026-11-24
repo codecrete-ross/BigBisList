@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of Doan Item Level 39 Binds when picked up Shoulder Cloth 39 Armor +6 Intellect +8 Spirit Durability 45 / 45 Requires Level 34 Equip: Increases damage and healing done by magical spells and effects by up to 7 . Sell Price: 30 63 Dropped by: Arcanist Doan Drop Chance: 47.31%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:00:14+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 7712,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 39,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 7.",
+        "stats": {
+          "spell_power": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 7."
+    ],
+    "id": 7712,
+    "item_level": 39,
+    "name": "Mantle of Doan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "spell_power": 7.0,
+      "spirit": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=7712"
+  },
+  "linked_entities": [],
+  "name": "Mantle of Doan",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 47.31,
+      "entity_name": "Arcanist Doan",
+      "source_url": "https://www.wowhead.com/forever/item=7712",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7712",
+  "url": "https://www.wowhead.com/forever/item=7712"
+}

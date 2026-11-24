@@ -1,0 +1,68 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/ru/item=18971/ring-of-critical-testing-3"
+    }
+  ],
+  "confidence": "published_forever_item_availability",
+  "fetched_at": "2026-11-13T07:24:54.568417+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1066,
+      "collected_at": "2026-11-13T07:16:48.7656488Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "tip-18971",
+      "source_content_digest": "1ae487ea54a93b5ccbb7f138e3a2333df60fd7455ea28bb7b213dc330bbf865c",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18971"
+    },
+    {
+      "bytes": 919,
+      "collected_at": "2026-11-13T07:16:48.4584773Z",
+      "curl_exit": 0,
+      "http": "403",
+      "name": "itempage-18971",
+      "source_content_digest": "03a031852fffc3019a0450be9e4c46ddbbcf284079e36f2f334133d40b94ff86",
+      "source_url": "https://www.wowhead.com/forever/ru/item=18971/ring-of-critical-testing-3"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "reviewed_page_facts": {
+    "availability_excerpt": "\u042d\u0442\u043e\u0442 \u043f\u0440\u0435\u0434\u043c\u0435\u0442 \u043d\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0438\u0433\u0440\u043e\u043a\u0430\u043c.",
+    "capture_method": "indexed_search_excerpt",
+    "client_required_level_field": 0,
+    "current_client_build": "1.60.1.70938",
+    "current_tooltip_identity": "Ring of Critical Testing 3 Item Level 60 Binds when picked up Finger Equip: Increases the critical effect chance of your Holy spells by 50%. Sell Price: 5 60 12",
+    "digest_input": "normalized indexed item-page finding",
+    "item_id": 18971,
+    "item_level": 60,
+    "name": "Ring of Critical Testing 3",
+    "page_crawl_age": "last month",
+    "source_locale": "ru",
+    "source_url": "https://www.wowhead.com/forever/ru/item=18971/ring-of-critical-testing-3",
+    "tooltip_identity": "Finger with +50% Holy spell critical strike"
+  },
+  "source_content_digest": "f2764a126e1fc6ea531da18322dee0f9aefdbd48e369f1944d8b20d00782566d",
+  "unavailable_item_ids": [
+    18971
+  ],
+  "unavailable_scope": {
+    "faction": "Horde",
+    "level_max": 3,
+    "level_min": 1,
+    "slot": "Ring"
+  },
+  "url": "https://www.wowhead.com/forever/ru/item=18971/ring-of-critical-testing-3"
+}

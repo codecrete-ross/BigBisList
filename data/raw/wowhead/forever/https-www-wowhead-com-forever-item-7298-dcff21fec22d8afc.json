@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blade of Cunning Item Level 13 Binds when picked up Unique One-Hand Dagger 9 - 18 Damage Speed 2.00 (6.75 damage per second) +2 Agility Durability 30 / 30 Classes: Rogue Sell Price: 4 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:48+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 7298,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 6.75,
+    "id": 7298,
+    "item_level": 13,
+    "name": "Blade of Cunning",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 2.0
+    },
+    "weapon_max_damage": 18,
+    "weapon_min_damage": 9,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=7298"
+  },
+  "linked_entities": [],
+  "name": "Blade of Cunning",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/7298",
+  "url": "https://www.wowhead.com/forever/item=7298"
+}

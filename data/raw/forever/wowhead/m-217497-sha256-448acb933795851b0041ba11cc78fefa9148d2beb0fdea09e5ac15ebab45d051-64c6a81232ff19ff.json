@@ -1,0 +1,64 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:08.267776+00:00",
+  "flavor": "forever",
+  "item_id": 217497,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Narpas Sword Item Level 42 Binds when picked up Main Hand Sword 26 - 50 Damage Speed 2.00 (19.00 damage per second) Durability 90 / 90 Classes: Mage Requires Level 34 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 48 . Sell Price: 1 47 86",
+      "dps": 19.0,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+          "stats": {
+            "hit_percent": 1.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 48.",
+          "stats": {
+            "spell_power": 48.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to hit by 1.0%.",
+        "Equip: Increases damage and healing done by magical spells and effects by up to 48."
+      ],
+      "id": 217497,
+      "item_level": 42,
+      "name": "Narpas Sword",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 34,
+      "restrictions": {
+        "classes": [
+          "Mage"
+        ]
+      },
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "hit_percent": 1.0,
+        "spell_power": 48.0
+      },
+      "weapon_max_damage": 50,
+      "weapon_min_damage": 26,
+      "weapon_speed": 2.0,
+      "weapon_subtype": "Sword",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=217497"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "448acb933795851b0041ba11cc78fefa9148d2beb0fdea09e5ac15ebab45d051",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/217497#sha256-448acb933795851b0041ba11cc78fefa9148d2beb0fdea09e5ac15ebab45d051"
+}

@@ -1,0 +1,167 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "credit": "AoWoW archived database",
+      "source": "https://aowow.oldmanwarcraft.com/?item=5010"
+    },
+    {
+      "credit": "Wowhead Classic",
+      "source": "https://nether.wowhead.com/classic/tooltip/item/5010"
+    },
+    {
+      "credit": "The Alpha Project original archive",
+      "source": "https://db.thealphaproject.eu/?action=show_item&id=5010"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "partial_legacy_ring_evidence",
+  "fetched_at": "2026-11-13T03:39:29.3503420Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1443725,
+      "collected_at": "2026-11-13T03:39:29.3503420Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-item",
+      "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+      "source_url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 8561018,
+      "collected_at": "2026-11-13T17:48:16.9269649Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-classic-sparse",
+      "source_content_digest": "eef48b88d1af6ea23872155819dc59342204b2f34c0b613df0405ef06f7a5145",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.15.9.69722"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 278179,
+      "collected_at": "2026-11-13T17:36:01.5312788Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-collectablesourcevendorsparse",
+      "source_content_digest": "db949fcff471f6075e9aa88fa9a5b91f1e9a92693d1dac8adb328d9ae7a8968e",
+      "source_url": "https://wago.tools/db2/CollectableSourceVendorSparse/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    },
+    {
+      "bytes": 23115,
+      "collected_at": "2026-11-14T00:27:39.088343+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "alpha-5010",
+      "source_content_digest": "3b1840e4c489514ad6cac220b84387ef91ebc0f4e520348351aa4251a71d7ad3",
+      "source_url": "https://db.thealphaproject.eu/?action=show_item&id=5010"
+    },
+    {
+      "bytes": 87412,
+      "collected_at": "2026-11-14T00:27:41.875347+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "aowow-5010",
+      "source_content_digest": "87e19644afc763011f0fedfb2649b55ace3942aa3f56ce59a5423e16f271a41a",
+      "source_url": "https://aowow.oldmanwarcraft.com/?item=5010"
+    },
+    {
+      "bytes": 858,
+      "collected_at": "2026-11-14T00:35:20.532196+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "archive-item-5010",
+      "source_content_digest": "efd97abac0e1bac1fc7dd1994b9921a4c9ddbf5d061f499c39c5f6035f0580da",
+      "source_url": "https://nether.wowhead.com/classic/tooltip/item/5010"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "archived_exact_sparse_fields": {
+      "Bonding": "2",
+      "Display_lang": "Inscribed Gold Ring",
+      "Flags_0": "0",
+      "Flags_1": "24580",
+      "ItemLevel": "40",
+      "OverallQualityID": "2",
+      "RequiredLevel": "35"
+    },
+    "archived_tooltip_fields": "Inscribed Gold Ring Item Level 40 Binds when equipped Finger +2 Strength +8 Stamina Requires Level 35 Sell Price: 18 3",
+    "current_base_item": {
+      "AmmunitionType": "0",
+      "ClassID": "4",
+      "ContentTuningID": "0",
+      "CraftingQualityID": "0",
+      "ID": "5010",
+      "IconFileDataID": "133345",
+      "InventoryType": "11",
+      "ItemGroupSoundsID": "14",
+      "ItemPetFoodID": "0",
+      "ItemSquishEraID": "0",
+      "Material": "3",
+      "ModifiedCraftingReagentItemID": "0",
+      "OrderSource": "0",
+      "RecraftReagentCountPercentage": "0",
+      "SheatheType": "0",
+      "Sound_override_subclassID": "-1",
+      "SubclassID": "0"
+    },
+    "current_exact_sparse_fields": {},
+    "finding": "The alpha archive marks the exact ID unused and the later archived tooltip required level 35. A later public database also marks the item unavailable. The current base row has a different material value and no disclosed equip requirements. A current exact item record is still required.",
+    "item_id": 5010,
+    "known_quest_id": null
+  },
+  "source_content_digest": "32ee11866ddee06477a4830105b084f68e972644fd6b067d77c859168cbf9df3",
+  "url": "https://wago.tools/db2/Item/csv?build=1.60.1.70938#/legacy-ring-quest-review/5010"
+}

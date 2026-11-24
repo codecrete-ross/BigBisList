@@ -1,0 +1,61 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:47.320730+00:00",
+  "flavor": "forever",
+  "item_id": 279853,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Stick No Rock Item Level 47 Binds when picked up Two-Hand Staff 80 - 121 Damage Speed 3.30 (30.45 damage per second) +10 Strength +18 Spirit Restores + 22 health per 5 sec. Durability 100 / 100 Equip: Increases healing done by up to 101 and damage done by up to 33 for all magical spells and effects. \"Need rock.\" Sell Price: 2 78 15",
+      "dps": 30.45,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases healing done by up to 101 and damage done by up to 33 for all magical spells and effects.",
+          "stats": {
+            "healing_power": 101,
+            "spell_damage": 33
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Restores +22 health per 5 sec.",
+          "stats": {
+            "hp5": 22
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases healing done by up to 101 and damage done by up to 33 for all magical spells and effects. \"Need rock.\""
+      ],
+      "id": 279853,
+      "item_level": 47,
+      "name": "Stick No Rock",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "healing_power": 101.0,
+        "hp5": 22.0,
+        "spell_damage": 33.0,
+        "spirit": 18.0,
+        "strength": 10.0
+      },
+      "weapon_max_damage": 121,
+      "weapon_min_damage": 80,
+      "weapon_speed": 3.3,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=279853"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "cbc248dce67a3a8c35f4b472398aaa531279699d20e6e67a764d380e06e2f767",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/279853#sha256-cbc248dce67a3a8c35f4b472398aaa531279699d20e6e67a764d380e06e2f767"
+}

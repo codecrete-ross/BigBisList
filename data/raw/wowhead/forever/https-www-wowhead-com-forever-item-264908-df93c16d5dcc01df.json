@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ancient Heirloom Item Level 1 Binds when picked up Finger \"Deep dents and scratches mar the dull surface of the intricate Kaldorei patterns. Faded but legible script on the inside of the band reads 'With love always, KG'.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-13T02:04:14.4344443Z",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 264908,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 264908,
+    "item_level": 1,
+    "name": "Ancient Heirloom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Ring",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=264908"
+  },
+  "linked_entities": [],
+  "name": "Ancient Heirloom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "observed_item_spells": {
+    "evidence_refs": [
+      {
+        "content_digest": "5a7f798bfaa53362fe324e3ff5b37a808dc13f0edef8428172e33f58764c0025",
+        "evidence_id": "warcraft_wiki:4b023091410310bfca8d08e3"
+      },
+      {
+        "content_digest": "ed0fa7fb4705147fb195b7a7704dbc1318cab8d3b7a015d3ca15de539a990d42",
+        "evidence_id": "wowhead:656303aeb3eb187babb1572e"
+      },
+      {
+        "content_digest": "a7a3591199ac8d9f4a89d49130b7f5096784b9e1079d9119bf6545670d356ae4",
+        "evidence_id": "wowhead:499295e674684249349a806e"
+      },
+      {
+        "content_digest": "0c641148e41388d7696972174fdba5fda0e76a5c0af117cfae2f2848cebe6074",
+        "evidence_id": "wowhead:46f885466f5b06a694d14830"
+      }
+    ],
+    "spell_ids": [
+      1314017
+    ]
+  },
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "332c132d8756613b0f1a628f2fd8d84bd4a03cb0c14e1cf06038717e71a22032",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/264908",
+  "url": "https://www.wowhead.com/forever/item=264908"
+}

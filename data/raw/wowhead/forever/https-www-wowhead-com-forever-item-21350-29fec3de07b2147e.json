@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of the Oracle Item Level 78 Binds when picked up Shoulder Cloth 89 Armor +21 Stamina +20 Intellect +8 Spirit +30 Armor Restores + 3 mana per 5 sec. + 3 Spell Penetration Durability 60 / 60 Classes: Priest Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 20 . Garments of the Oracle (0/5) Footwraps of the Oracle Mantle of the Oracle Tiara of the Oracle Trousers of the Oracle Vestments of the Oracle (3) Set : 20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%) (5) Set : Increases the duration of your Renew spell by 3 sec. Sell Price: 4 59 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:09+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 21350,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 89,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +3 mana per 5 sec.",
+        "stats": {
+          "mp5": 3
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 21350,
+    "item_level": 78,
+    "name": "Mantle of the Oracle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26169,
+        "text": "20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 26171,
+        "text": "Increases the duration of your Renew spell by 3 sec."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "mp5": 3.0,
+      "spell_power": 20.0,
+      "spirit": 8.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21350"
+  },
+  "linked_entities": [
+    {
+      "id": 21348,
+      "name": "Tiara of the Oracle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21348"
+    },
+    {
+      "id": 21349,
+      "name": "Footwraps of the Oracle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21349"
+    },
+    {
+      "id": 21350,
+      "name": "Mantle of the Oracle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21350"
+    },
+    {
+      "id": 21351,
+      "name": "Vestments of the Oracle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21351"
+    },
+    {
+      "id": 21352,
+      "name": "Trousers of the Oracle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21352"
+    },
+    {
+      "id": 26169,
+      "name": "20% chance that your heals on others will also heal you 10% of the amount healed. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26169"
+    },
+    {
+      "id": 26171,
+      "name": "Increases the duration of your Renew spell by 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26171"
+    }
+  ],
+  "name": "Mantle of the Oracle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21350",
+  "url": "https://www.wowhead.com/forever/item=21350"
+}

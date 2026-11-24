@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Noboru's Cudgel Item Level 34 Binds when picked up Unique This Item Begins a Quest Main Hand Mace 15 - 29 Damage Speed 2.10 (10.48 damage per second) Durability 75 / 75 Requires Level 29 Dropped by: Noboru the Cudgel Drop Chance: 93.30%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 6196,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 10.48,
+    "id": 6196,
+    "item_level": 34,
+    "name": "Noboru's Cudgel",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "poor",
+    "required_level": 29,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 29,
+    "weapon_min_damage": 15,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6196"
+  },
+  "linked_entities": [
+    {
+      "id": 1392,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=1392"
+    }
+  ],
+  "name": "Noboru's Cudgel",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 93.3,
+      "entity_name": "Noboru the Cudgel",
+      "source_url": "https://www.wowhead.com/forever/item=6196",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "poor",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6196",
+  "url": "https://www.wowhead.com/forever/item=6196"
+}

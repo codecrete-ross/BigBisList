@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mooncloth Vest 1 min cast Reagents: Bolt of Runecloth (6), Mooncloth (4), Rune Thread Mooncloth Vest Item Level 60 Binds when equipped Chest Cloth 85 Armor +20 Intellect +19 Spirit Durability 80 / 80 Requires Level 55 Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects. Sell Price: 2 42",
+  "entity_id": 18447,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14138,
+      "name": "Mooncloth Vest",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14138"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 18447,
+      "name": "Mooncloth Vest",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18447"
+    }
+  ],
+  "name": "Mooncloth Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 14138,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=18447",
+      "subject_id": 18447,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 18447,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/18447",
+  "url": "https://www.wowhead.com/forever/spell=18447"
+}

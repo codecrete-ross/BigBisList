@@ -1,0 +1,468 @@
+{
+  "attribution": [
+    {
+      "credit": "QuestieDB",
+      "licence": "QuestieDB licensing terms; facts only, no runtime code reused",
+      "licenceUrl": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/LICENSE.md",
+      "source": "https://github.com/Questie/QuestieDB"
+    }
+  ],
+  "commit": "80866960788084ae1592abf66a08f0d306458a95",
+  "confidence": "questiedb_composed_api",
+  "corrections_applied": true,
+  "export_method": "Documented pinned Forever emulator API after Static/Derived/Dynamic composition; curated quest trinket records.",
+  "fetched_at": "2026-11-06T04:18:01.933451+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "questiedb",
+  "records": [
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 239
+        }
+      },
+      "id": 48,
+      "name": "Sweet Amber",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 44,
+      "requiredClasses": 0,
+      "requiredLevel": 40,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 239
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 239
+        }
+      },
+      "id": 49,
+      "name": "Sweet Amber",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 48
+      },
+      "questFlags": 8,
+      "questLevel": 44,
+      "requiredClasses": 0,
+      "requiredLevel": 40,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 239
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 239
+        }
+      },
+      "id": 50,
+      "name": "Sweet Amber",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 49
+      },
+      "questFlags": 8,
+      "questLevel": 44,
+      "requiredClasses": 0,
+      "requiredLevel": 40,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 239
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 239
+        }
+      },
+      "id": 51,
+      "name": "Sweet Amber",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 50
+      },
+      "questFlags": 8,
+      "questLevel": 44,
+      "requiredClasses": 0,
+      "requiredLevel": 40,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 239
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 239
+        }
+      },
+      "id": 53,
+      "name": "Sweet Amber",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 51
+      },
+      "questFlags": 8,
+      "questLevel": 44,
+      "requiredClasses": 0,
+      "requiredLevel": 40,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 239
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7623
+        }
+      },
+      "id": 2621,
+      "name": "The Disgraced One",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2784
+      },
+      "questFlags": 8,
+      "questLevel": 50,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7572
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7643
+        }
+      },
+      "id": 2622,
+      "name": "The Missing Orders",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2621
+      },
+      "questFlags": 8,
+      "questLevel": 50,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7623
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7572
+        }
+      },
+      "id": 2623,
+      "name": "The Swamp Talker",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2622
+      },
+      "questFlags": 8,
+      "questLevel": 55,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7643
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7572
+        }
+      },
+      "id": 2681,
+      "name": "The Stones That Bind Us",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2801
+      },
+      "questFlags": 8,
+      "questLevel": 57,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 0,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7572
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "2": {
+          "1": 141980
+        }
+      },
+      "id": 2701,
+      "name": "Heroes of Old",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2702
+      },
+      "questFlags": 0,
+      "questLevel": 57,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 0,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7750
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7750
+        }
+      },
+      "id": 2702,
+      "name": "Heroes of Old",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2681
+      },
+      "questFlags": 0,
+      "questLevel": 57,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 0,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7572
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7572
+        }
+      },
+      "id": 2783,
+      "name": "Petty Squabbles",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 57,
+      "requiredClasses": 0,
+      "requiredLevel": 50,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 4294967373,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "1": {
+          "1": 7826
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7572
+        }
+      },
+      "id": 2784,
+      "name": "Fall From Grace",
+      "parentQuest": 0,
+      "questFlags": 10,
+      "questLevel": 50,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 2,
+      "startedBy": {
+        "1": {
+          "1": 7572
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 7572
+        }
+      },
+      "id": 2801,
+      "name": "A Tale of Sorrow",
+      "parentQuest": 0,
+      "preQuestSingle": {
+        "1": 2623,
+        "2": 2783
+      },
+      "questFlags": 10,
+      "questLevel": 57,
+      "requiredClasses": 0,
+      "requiredLevel": 45,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 0,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 2,
+      "startedBy": {
+        "1": {
+          "1": 7572
+        }
+      }
+    },
+    {
+      "breadcrumbForQuestId": 0,
+      "finishedBy": {
+        "1": {
+          "1": 14736
+        }
+      },
+      "id": 7862,
+      "name": "Job Opening: Guard Captain of Revantusk Village",
+      "parentQuest": 0,
+      "questFlags": 8,
+      "questLevel": 51,
+      "requiredClasses": 0,
+      "requiredLevel": 46,
+      "requiredMaxLevel": 0,
+      "requiredRaces": 8589934770,
+      "requiredSpell": 0,
+      "sourceItemId": 0,
+      "specialFlags": 0,
+      "startedBy": {
+        "2": {
+          "1": 179913
+        }
+      }
+    }
+  ],
+  "reward_item_records": [
+    {
+      "class": 4,
+      "id": 744,
+      "itemLevel": 44,
+      "name": "Thunderbrew's Boot Flask",
+      "questRewards": {
+        "1": 53
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 10659,
+      "itemLevel": 57,
+      "name": "Shard of Afrasa",
+      "questRewards": {
+        "1": 2701
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    },
+    {
+      "class": 4,
+      "id": 19120,
+      "itemLevel": 51,
+      "name": "Rune of the Guard Captain",
+      "questRewards": {
+        "1": 7862
+      },
+      "requiredLevel": 0,
+      "startQuest": 0,
+      "subClass": 0
+    }
+  ],
+  "url": "https://github.com/Questie/QuestieDB/blob/80866960788084ae1592abf66a08f0d306458a95/data/Forever/foreverQuestDB.lua"
+}

@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Lamellar Legplates Item Level 71 Binds when picked up Unique Legs Plate 703 Armor +20 Strength +20 Stamina +17 Intellect Durability 120 / 120 Classes: Paladin Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 27 . Sell Price: 2 37 93",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 16475,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 703,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27."
+    ],
+    "id": 16475,
+    "item_level": 71,
+    "name": "Marshal's Lamellar Legplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 17.0,
+      "spell_power": 27.0,
+      "stamina": 20.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16475"
+  },
+  "linked_entities": [],
+  "name": "Marshal's Lamellar Legplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16475",
+  "url": "https://www.wowhead.com/forever/item=16475"
+}

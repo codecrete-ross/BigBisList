@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sharpened Silithid Femur Item Level 78 Binds when picked up Unique Main Hand Sword 63 - 119 Damage Speed 2.30 (39.57 damage per second) +14 Stamina +7 Intellect Durability 105 / 105 Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 106 . \"Recently devoured\" Sell Price: 16 9 86 Dropped by: Viscidus Drop Chance: 13.18%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:14:01+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 21622,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 39.57,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 106.",
+        "stats": {
+          "spell_power": 106.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 106. \"Recently devoured\""
+    ],
+    "id": 21622,
+    "item_level": 78,
+    "name": "Sharpened Silithid Femur",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 7.0,
+      "spell_power": 106.0,
+      "stamina": 14.0
+    },
+    "weapon_max_damage": 119,
+    "weapon_min_damage": 63,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=21622"
+  },
+  "linked_entities": [],
+  "name": "Sharpened Silithid Femur",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 13.18,
+      "entity_name": "Viscidus",
+      "source_url": "https://www.wowhead.com/forever/item=21622",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21622",
+  "url": "https://www.wowhead.com/forever/item=21622"
+}

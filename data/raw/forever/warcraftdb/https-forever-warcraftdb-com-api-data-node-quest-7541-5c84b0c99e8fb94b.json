@@ -1,0 +1,44 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/7541"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:12:32.549130+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 18585,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/7541",
+      "subject_id": 7541,
+      "subject_type": "quest"
+    },
+    {
+      "object_id": 18586,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/7541",
+      "subject_id": 7541,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Service to the Horde",
+    "quest_id": 7541,
+    "reward_item_ids": [
+      18585,
+      18586
+    ],
+    "zone": "Dustwallow Marsh"
+  },
+  "source_content_digest": "7f5df93f5ce7ba11cd12c44d8356b038c2ae28f73a31f7af3d61a00865c209e2",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/7541"
+}

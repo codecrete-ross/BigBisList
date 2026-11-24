@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of Demonic Potency Item Level 59 Binds when picked up Finger +10 Stamina Restores + 12 health per 5 sec. Requires Level 54 Equip: Increased Defense + 7. Sell Price: 1 89 49 Dropped by: Alzzin the Wildshaper Drop Chance: 18.87%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:52+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 18315,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +7.",
+        "stats": {
+          "defense": 7
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +12 health per 5 sec.",
+        "stats": {
+          "hp5": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +7."
+    ],
+    "id": 18315,
+    "item_level": 59,
+    "name": "Ring of Demonic Potency",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 7.0,
+      "hp5": 12.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18315"
+  },
+  "linked_entities": [],
+  "name": "Ring of Demonic Potency",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.87,
+      "entity_name": "Alzzin the Wildshaper",
+      "source_url": "https://www.wowhead.com/forever/item=18315",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a184caedd195f9b02b9105acb98f51fa18407d4836dc459022dd850b8734433b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18315",
+  "url": "https://www.wowhead.com/forever/item=18315"
+}

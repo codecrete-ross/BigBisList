@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Rockjaw Blade Item Level 9 Main Hand Sword 5 - 11 Damage Speed 2.10 (3.81 damage per second) Durability 35 / 35 Requires Level 4 Sell Price: 1 13 Dropped by: Rockjaw Ambusher Drop Chance: 4.56%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:57+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 2065,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 3.81,
+    "id": 2065,
+    "item_level": 9,
+    "name": "Rockjaw Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 4,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "weapon_max_damage": 11,
+    "weapon_min_damage": 5,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=2065"
+  },
+  "linked_entities": [],
+  "name": "Rockjaw Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.56,
+      "entity_name": "Rockjaw Ambusher",
+      "source_url": "https://www.wowhead.com/forever/item=2065",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2065",
+  "url": "https://www.wowhead.com/forever/item=2065"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ornate Adamantium Breastplate Item Level 63 Binds when picked up Chest Plate 657 Armor +9 Strength +22 Stamina +150 Armor Durability 135 / 135 Equip: Increased Defense + 10. Sell Price: 4 3 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:15.1616071Z",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 15413,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 657,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +10.",
+        "stats": {
+          "defense": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +10."
+    ],
+    "id": 15413,
+    "item_level": 63,
+    "name": "Ornate Adamantium Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "defense": 10.0,
+      "stamina": 22.0,
+      "strength": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=15413"
+  },
+  "linked_entities": [],
+  "name": "Ornate Adamantium Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "774a287697137623465c19efff0ba05c09455168c25ecf7c4d297530bb18cc18",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15413",
+  "url": "https://www.wowhead.com/forever/item=15413"
+}

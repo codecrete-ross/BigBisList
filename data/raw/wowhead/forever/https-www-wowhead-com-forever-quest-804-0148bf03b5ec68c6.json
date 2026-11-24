@@ -1,0 +1,54 @@
+{
+  "confidence": "wowhead_rendered_quest",
+  "description": "Sarkoth Bring the news of Hana'zua's plight to Gornek at the Den.",
+  "entity_id": 804,
+  "fetch_method": "browser_dom",
+  "fetched_at": "2026-11-06T01:26:58.232Z",
+  "flavor": "forever",
+  "linked_entities": [],
+  "name": "Sarkoth",
+  "page_type": "quest",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quest_facts": {
+    "classes": [],
+    "endpoints": {
+      "finish": {
+        "entity_id": 3143,
+        "name": "Gornek"
+      },
+      "start": {
+        "entity_id": 3287,
+        "name": "Hana'zua"
+      }
+    },
+    "min_level": 1,
+    "races": [],
+    "side": "Horde",
+    "zone": "Durotar"
+  },
+  "relationships": [
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4916,
+      "object_name": "Soft Wool Vest",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=804",
+      "subject_id": 804,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "wowhead_rendered_quest",
+      "object_id": 4917,
+      "object_name": "Battleworn Chain Leggings",
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=804",
+      "subject_id": 804,
+      "subject_type": "quest"
+    }
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/quest/804",
+  "url": "https://www.wowhead.com/forever/quest=804"
+}

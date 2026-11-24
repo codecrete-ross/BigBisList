@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sadist's Collar Item Level 83 Binds when picked up Neck +24 Stamina Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: + 20 Attack Power. Sell Price: 8 64 43 Dropped by: Gothik the Harvester Drop Chance: 20.19%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:15:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 23023,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 23023,
+    "item_level": 83,
+    "name": "Sadist's Collar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "crit_percent": 1.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=23023"
+  },
+  "linked_entities": [],
+  "name": "Sadist's Collar",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.19,
+      "entity_name": "Gothik the Harvester",
+      "source_url": "https://www.wowhead.com/forever/item=23023",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23023",
+  "url": "https://www.wowhead.com/forever/item=23023"
+}

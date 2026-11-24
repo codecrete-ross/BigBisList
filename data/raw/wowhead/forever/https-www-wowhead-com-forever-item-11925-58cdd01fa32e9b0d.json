@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ghostshroud Item Level 57 Binds when picked up Head Leather 132 Armor +10 Strength +19 Agility +18 Stamina +5 Shadow Resistance Durability 60 / 60 Requires Level 52 Sell Price: 1 60 4 Dropped by: Anger'rel",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:59+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 11925,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 132,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 11925,
+    "item_level": 57,
+    "name": "Ghostshroud",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 19.0,
+      "shadow_resistance": 5.0,
+      "stamina": 18.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=11925"
+  },
+  "linked_entities": [],
+  "name": "Ghostshroud",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "entity_name": "Anger'rel",
+      "source_url": "https://www.wowhead.com/forever/item=11925",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "720cf9ed64e8788c27ef7d6b886b0ec1e5c0ea7c93ae4f632cabe14341ddd8a1",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11925",
+  "url": "https://www.wowhead.com/forever/item=11925"
+}

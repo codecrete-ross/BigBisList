@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Flamebreak Talisman Item Level 61 Binds when picked up Unique-Equipped Trinket +17 Fire Resistance Requires Level 56 Use: Increase your agility by 33 for 30 sec. If there is an elemental nearby, gain an additional 33. (5 Min Cooldown) Sell Price: 1 98 84 Dropped by: Unbound Spirit Drop Chance: 100.00%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:02:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 280071,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase your agility by 33 for 30 sec. If there is an elemental nearby, gain an additional 33. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 280071,
+    "item_level": 61,
+    "name": "Flamebreak Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 17.0
+    },
+    "use_effects": [
+      "Use: Increase your agility by 33 for 30 sec. If there is an elemental nearby, gain an additional 33. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=280071"
+  },
+  "linked_entities": [
+    {
+      "id": 1315878,
+      "name": "Increase your agility by 33 for 30 sec. If there is an elemental nearby, gain an additional 33.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1315878"
+    }
+  ],
+  "name": "Flamebreak Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 100.0,
+      "entity_name": "Unbound Spirit",
+      "source_url": "https://www.wowhead.com/forever/item=280071",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f43e6be2a8cb51c04719ddb86f8aafc382d51abac3163dc2bcf7b5aa94d907a2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/280071",
+  "url": "https://www.wowhead.com/forever/item=280071"
+}

@@ -1,0 +1,74 @@
+{
+  "armor_tooltip_review": {
+    "base_armor": 208,
+    "bonus_armor": 40,
+    "collected_at": "2026-11-11T06:02:25.070035+00:00",
+    "endpoint": "https://nether.wowhead.com/forever/tooltip/item/6907",
+    "previous_evidence": {
+      "content_digest": "396ccf0099345e0bf0ed22ab418b365045f067feee975ab0960a21975fd74c79",
+      "evidence_id": "wowhead:e663d0f457752fda9c85267e"
+    },
+    "source_content_digest": "9f0bbaa08a4aa05121e32ecdc239cfb918508b0a04ad0826fc65333d77ab683a"
+  },
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tortoise Armor Item Level 27 Binds when picked up Chest Mail 208 Armor +40 Armor Durability 105 / 105 Requires Level 22 Equip: Spell Damage received is reduced by 5. Sell Price: 24 30 Dropped by: Ghamoo-ra Drop Chance: 36.96%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:19:42+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 6907,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 248,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Spell Damage received is reduced by 5.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Spell Damage received is reduced by 5."
+    ],
+    "id": 6907,
+    "item_level": 27,
+    "name": "Tortoise Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Chest",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=6907"
+  },
+  "linked_entities": [
+    {
+      "id": 1292692,
+      "name": "Spell Damage received is reduced by 5.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292692"
+    }
+  ],
+  "name": "Tortoise Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 36.96,
+      "entity_name": "Ghamoo-ra",
+      "source_url": "https://www.wowhead.com/forever/item=6907",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6907",
+  "url": "https://www.wowhead.com/forever/item=6907"
+}

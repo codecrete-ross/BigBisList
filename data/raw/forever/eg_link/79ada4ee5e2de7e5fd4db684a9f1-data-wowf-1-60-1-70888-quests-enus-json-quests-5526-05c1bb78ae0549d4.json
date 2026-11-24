@@ -1,0 +1,80 @@
+{
+  "attribution": [
+    {
+      "credit": "Efficient Games (EG Link)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5526"
+    }
+  ],
+  "client_build": "1.60.1.70888",
+  "confidence": "live_forever_quest_observations",
+  "fetched_at": "2026-11-12T20:27:26.779455+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "provider_collection_days": {
+    "first": "2026-11-10",
+    "last": "2026-11-12"
+  },
+  "relationships": [
+    {
+      "object_id": 18536,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5526",
+      "subject_id": 5526,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "corroboration": [
+      {
+        "fetched_at": "2026-11-12T22:20:56.4823989Z",
+        "linked_reward_ids": [],
+        "min_level": 56,
+        "name": "Shards of the Felvine",
+        "side": "Both",
+        "source_content_digest": "b8a4176755b4c6e6e7b7c11b86288ec6626430440388423cfed3ef6b195ac1dd",
+        "source_url": "https://questing.wiki/wow-forever/quests/5526/",
+        "upstream_checked_at": "2026-09-30",
+        "upstream_url": "https://www.wowhead.com/forever/quest=5526",
+        "zone": "Moonglade"
+      },
+      {
+        "fetched_at": "2026-11-12T21:23:24.067251+00:00",
+        "linked_reward_ids": [
+          18535,
+          18536
+        ],
+        "min_level": 56,
+        "name": "Shards of the Felvine",
+        "side": "Both",
+        "source_content_digest": "fa297c1d0fd4de4ec715a8ad6f0b6ed5f7d9b1fee46c08ea280fae5aeff79f7a",
+        "source_url": "https://bindonforever.com/quest/5526",
+        "zone": "Moonglade"
+      },
+      {
+        "fetched_at": "2026-11-12T21:22:11.809632+00:00",
+        "linked_reward_ids": [],
+        "min_level": null,
+        "name": "Shards of the Felvine",
+        "side": "Both",
+        "source_content_digest": "85ce0969d58c56454bcca91cc74af8167fb00e413286d71b573836b4f3c71cae",
+        "source_url": "https://forever.warcraftdb.com/api/data/node/quest/5526",
+        "zone": "Moonglade"
+      }
+    ],
+    "name": "Shards of the Felvine",
+    "observation_count": 5,
+    "observed_race_mask": "ffffffffffffffff",
+    "quest_id": 5526,
+    "reported_min_level": 56,
+    "reported_start_item_id": 18539,
+    "reward_item_roles": {
+      "18536": "choices"
+    }
+  },
+  "source_content_digest": "433fc57290a162eca1c688c277a96234d39b7198edb1326ed4d6ec8fa4a65d60",
+  "url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/quests.enUS.json#/quests/5526"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Belt of the Ordained Item Level 60 Binds when equipped Waist Plate 353 Armor +11 Stamina +14 Intellect Durability 45 / 45 Requires Level 55 Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects. Sell Price: 1 75 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:53.3744517Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 18702,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 353,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 33,
+          "spell_damage": 11
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 33 and damage done by up to 11 for all magical spells and effects."
+    ],
+    "id": 18702,
+    "item_level": 60,
+    "name": "Belt of the Ordained",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 33.0,
+      "intellect": 14.0,
+      "spell_damage": 11.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18702"
+  },
+  "linked_entities": [],
+  "name": "Belt of the Ordained",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "ee26202ff06a7563d6f9b6b24e5e3ad88aadbd2c97b1ed3f61a8653a56c85db8",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18702",
+  "url": "https://www.wowhead.com/forever/item=18702"
+}

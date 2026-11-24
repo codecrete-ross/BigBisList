@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heart of Wyrmthalak Item Level 61 Binds when picked up Unique-Equipped Trinket +13 Fire Resistance Requires Level 56 Equip: Melee and Ranged attacks have a chance to deal 112 to 168 Fire damage. Deals 3 times as much damage to Orcs. Sell Price: 2 8 91 Dropped by: Overlord Wyrmthalak Drop Chance: 12.77%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:19+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 22321,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Melee and Ranged attacks have a chance to deal 112 to 168 Fire damage. Deals 3 times as much damage to Orcs.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Melee and Ranged attacks have a chance to deal 112 to 168 Fire damage. Deals 3 times as much damage to Orcs."
+    ],
+    "id": 22321,
+    "item_level": 61,
+    "name": "Heart of Wyrmthalak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 56,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "fire_resistance": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=22321"
+  },
+  "linked_entities": [
+    {
+      "id": 27656,
+      "name": "Melee and Ranged attacks have a chance to deal 112 to 168 Fire damage. Deals 3 times as much damage to Orcs.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27656"
+    }
+  ],
+  "name": "Heart of Wyrmthalak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 12.77,
+      "entity_name": "Overlord Wyrmthalak",
+      "source_url": "https://www.wowhead.com/forever/item=22321",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "7b99f8d169fbf5ad2b37c5c4c43d03150aaf5aa2488183d70d89ed73a0b17fe6",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22321",
+  "url": "https://www.wowhead.com/forever/item=22321"
+}

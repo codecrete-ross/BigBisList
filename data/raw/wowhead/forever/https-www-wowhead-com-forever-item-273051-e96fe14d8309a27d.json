@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Violet Sorcerer's Mantle Item Level 35 Binds when picked up Shoulder Cloth 38 Armor +9 Intellect + 4 Spell Penetration Durability 50 / 50 Requires Level 30 Violet Sorcerer's Vestments (0/5) Violet Sorcerer's Mantle Violet Sorcerer's Leggings Violet Sorcerer's Sandals Violet Sorcerer's Wraps Violet Sorcerer's Robes (2) Set : +5 Arcane Resistance. (3) Set : +10 Spirit. (4) Set : Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities. (5) Set : Chance on damaging spell to summon an Arcane elemental to aid you in combat. Sell Price: 26 59 Dropped by: Shade of the Archmage Drop Chance: 32.86%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:31+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 273051,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 273051,
+    "item_level": 35,
+    "name": "Violet Sorcerer's Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 30,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 1324311,
+        "text": "+5 Arcane Resistance."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 1324312,
+        "text": "+10 Spirit."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1324318,
+        "text": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 1324323,
+        "text": "Chance on damaging spell to summon an Arcane elemental to aid you in combat."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "intellect": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=273051"
+  },
+  "linked_entities": [
+    {
+      "id": 273044,
+      "name": "Violet Sorcerer's Robes",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273044"
+    },
+    {
+      "id": 273051,
+      "name": "Violet Sorcerer's Mantle",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=273051"
+    },
+    {
+      "id": 286987,
+      "name": "Violet Sorcerer's Sandals",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286987"
+    },
+    {
+      "id": 286988,
+      "name": "Violet Sorcerer's Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286988"
+    },
+    {
+      "id": 286989,
+      "name": "Violet Sorcerer's Wraps",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=286989"
+    },
+    {
+      "id": 1324311,
+      "name": "+5 Arcane Resistance.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324311"
+    },
+    {
+      "id": 1324312,
+      "name": "+10 Spirit.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324312"
+    },
+    {
+      "id": 1324318,
+      "name": "Chance on damaging spell to allow 15% of your Mana regeneration to continue while casting for 15 sec. This Mana Regeneration is doubled in Strongholds and Cities.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324318"
+    },
+    {
+      "id": 1324323,
+      "name": "Chance on damaging spell to summon an Arcane elemental to aid you in combat.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1324323"
+    }
+  ],
+  "name": "Violet Sorcerer's Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.86,
+      "entity_name": "Shade of the Archmage",
+      "source_url": "https://www.wowhead.com/forever/item=273051",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "f845adb32f802c5b6f17eb33ecae260c79ce2801812c0566baa46ef1b64e39f9",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/273051",
+  "url": "https://www.wowhead.com/forever/item=273051"
+}

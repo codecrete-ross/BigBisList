@@ -1,0 +1,1762 @@
+{
+  "fetched_at": "2026-11-05T07:29:36+00:00",
+  "flavor": "forever",
+  "npc_refs": [
+    {
+      "id": 3977,
+      "name": "High Inquisitor Whitemane",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=3977"
+    },
+    {
+      "id": 7357,
+      "name": "Mordresh Fire Eye",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=7357"
+    },
+    {
+      "id": 9017,
+      "name": "Lord Incendius",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=9017"
+    },
+    {
+      "id": 9056,
+      "name": "Fineous Darkvire",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=9056"
+    },
+    {
+      "id": 10268,
+      "name": "Gizrul the Slavener",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=10268"
+    },
+    {
+      "id": 10440,
+      "name": "Baron Rivendare",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=10440"
+    },
+    {
+      "id": 12201,
+      "name": "Princess Theradras",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=12201"
+    },
+    {
+      "id": 13217,
+      "name": "Thanthaldis Snowgleam",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=13217"
+    },
+    {
+      "id": 13219,
+      "name": "Jekyll Flandring",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=13219"
+    },
+    {
+      "id": 14581,
+      "name": "Sergeant Thunderhorn",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=14581"
+    },
+    {
+      "id": 14684,
+      "name": "Balzaphon",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=14684"
+    },
+    {
+      "id": 14754,
+      "name": "Kelm Hargunth",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=14754"
+    },
+    {
+      "id": 227853,
+      "name": "Pix Xizzix",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=227853"
+    },
+    {
+      "id": 256629,
+      "name": "Dala Fairmaw",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=256629"
+    },
+    {
+      "id": 263570,
+      "name": "Creeg Bothunk",
+      "type": "npc",
+      "url": "https://www.wowhead.com/forever/npc=263570"
+    }
+  ],
+  "page_type": "guide",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "relationships": [
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 14140,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mooncloth Circlet",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14509,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 14139,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mooncloth Shoulders",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14507,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 15061,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Living Shoulders",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 15734,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19050,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mantle of the Timbermaw",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 19218,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254049,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Nethergeld Shoulders",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254050,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 16718,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Gizrul the Slavener",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 10268,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 18510,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Hide of the Wild",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 18518,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272413,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19526,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Kelm Hargunth",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14754,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 14138,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mooncloth Vest",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14501,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 15066,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Ironfeather Breastplate",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 15760,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254121,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Earthenweave Vest",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254122,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19595,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Kelm Hargunth",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14754,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 11764,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Lord Incendius",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 9017,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254061,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Nethergeld Cuffs",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254062,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 252543,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mender's Leather Bracers",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 252857,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254131,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Earthenweave Cuffs",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254132,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272097,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Creeg Bothunk",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 263570,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 18409,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mooncloth Gloves",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 18417,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 252551,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mender's Leather Gauntlets",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 252871,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254095,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Gilded Gloves",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254096,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19047,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Wisdom of the Timbermaw",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 19215,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 18405,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Belt of the Archmage",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 18414,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 279252,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Elderwild Waistcord",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 279301,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272398,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 252477,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mender's Leather Waistguard",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 252876,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254081,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Gilded Waistcord",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254082,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 252486,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Ironfeather Leggings",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 252895,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 279254,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Elderwild Pants",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 279303,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 11841,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Fineous Darkvire",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 9056,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 16694,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Baron Rivendare",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 10440,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 22747,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Kelm Hargunth",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14754,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 15802,
+      "object_type": "item",
+      "relation": "profession_lead",
+      "source_text": "Mooncloth Boots",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 19435,
+      "subject_type": "spell"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 275609,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Swarmtender's Footpads",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 275585,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 254107,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Gilded Sandals",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 254108,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 252472,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Pattern: Mender's Leather Boots",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 252864,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19426,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_text": "1200 Tickets - Orb of the Darkmoon",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 7940,
+      "subject_type": "quest"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 10769,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Mordresh Fire Eye",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 7357,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 23125,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Balzaphon",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14684,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 22149,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_text": "Falrin's Vendetta",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 8949,
+      "subject_type": "quest"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 15856,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_text": "Hidden Treasures",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 5942,
+      "subject_type": "quest"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272407,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272439,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 18637,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Schematic: Major Recombobulator",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 18655,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19288,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_text": "Darkmoon Beast Deck",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 7907,
+      "subject_type": "quest"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272438,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 249473,
+      "object_type": "item",
+      "relation": "profession_lead",
+      "source_text": "Dormant Heart of the Mountain",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 1249114,
+      "subject_type": "spell"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272061,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Creeg Bothunk",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 263570,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 17710,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Princess Theradras",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 12201,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 7721,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "High Inquisitor Whitemane",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 3977,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 23469,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Sergeant Thunderhorn",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14581,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19312,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Jekyll Flandring",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 13219,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 274417,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Dala Fairmaw",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 256629,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 18874,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Sergeant Thunderhorn",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 14581,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 17743,
+      "object_type": "item",
+      "relation": "rewards",
+      "source_text": "Corruption of Earth and Seed",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 7065,
+      "subject_type": "quest"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 19102,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Thanthaldis Snowgleam",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 13217,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 279250,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Formula: Idol of Swiftness",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 279299,
+      "subject_type": "item"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 272429,
+      "object_type": "item",
+      "relation": "source_lead",
+      "source_text": "Pix Xizzix",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 227853,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "guide_claim",
+      "object_id": 249441,
+      "object_type": "item",
+      "relation": "recipe_lead",
+      "source_text": "Formula: Talons of Wrath",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+      "subject_id": 249493,
+      "subject_type": "item"
+    }
+  ],
+  "tables": [
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Head Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 252561,
+          "item_name": "Living Crown",
+          "item_url": "https://www.wowhead.com/forever/item=252561/living-crown",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 260212,
+          "item_name": "Bad Hat",
+          "item_url": "https://www.wowhead.com/forever/item=260212/bad-hat",
+          "rank_label": "Bad Hat",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 14140,
+          "item_name": "Mooncloth Circlet",
+          "item_url": "https://www.wowhead.com/forever/item=14140/mooncloth-circlet",
+          "rank_label": "Mooncloth Circlet",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=14509/pattern-mooncloth-circlet",
+              "text": "Pattern: Mooncloth Circlet"
+            }
+          ],
+          "source_text": "Pattern: Mooncloth Circlet"
+        }
+      ],
+      "slot": "Head"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Shoulder Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 14139,
+          "item_name": "Mooncloth Shoulders",
+          "item_url": "https://www.wowhead.com/forever/item=14139/mooncloth-shoulders",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=14507/pattern-mooncloth-shoulders",
+              "text": "Pattern: Mooncloth Shoulders"
+            }
+          ],
+          "source_text": "Pattern: Mooncloth Shoulders"
+        },
+        {
+          "item_id": 15061,
+          "item_name": "Living Shoulders",
+          "item_url": "https://www.wowhead.com/forever/item=15061/living-shoulders",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=15734/pattern-living-shoulders",
+              "text": "Pattern: Living Shoulders"
+            }
+          ],
+          "source_text": "Pattern: Living Shoulders"
+        },
+        {
+          "item_id": 19050,
+          "item_name": "Mantle of the Timbermaw",
+          "item_url": "https://www.wowhead.com/forever/item=19050/mantle-of-the-timbermaw",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=19218/pattern-mantle-of-the-timbermaw",
+              "text": "Pattern: Mantle of the Timbermaw"
+            }
+          ],
+          "source_text": "Pattern: Mantle of the Timbermaw"
+        },
+        {
+          "item_id": 254049,
+          "item_name": "Nethergeld Shoulders",
+          "item_url": "https://www.wowhead.com/forever/item=254049/nethergeld-shoulders",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254050/pattern-nethergeld-shoulders",
+              "text": "Pattern: Nethergeld Shoulders"
+            }
+          ],
+          "source_text": "Pattern: Nethergeld Shoulders"
+        },
+        {
+          "item_id": 16718,
+          "item_name": "Wildheart Spaulders",
+          "item_url": "https://www.wowhead.com/forever/item=16718/wildheart-spaulders",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=10268/gizrul-the-slavener",
+              "text": "Gizrul the Slavener"
+            }
+          ],
+          "source_text": "Gizrul the Slavener"
+        }
+      ],
+      "slot": "Shoulder"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Back Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 18510,
+          "item_name": "Hide of the Wild",
+          "item_url": "https://www.wowhead.com/forever/item=18510/hide-of-the-wild",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=18518/pattern-hide-of-the-wild",
+              "text": "Pattern: Hide of the Wild"
+            }
+          ],
+          "source_text": "Pattern: Hide of the Wild"
+        },
+        {
+          "item_id": 272413,
+          "item_name": "Drape of Recovery",
+          "item_url": "https://www.wowhead.com/forever/item=272413/drape-of-recovery",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 19526,
+          "item_name": "Battle Healer's Cloak",
+          "item_url": "https://www.wowhead.com/forever/item=19526/battle-healers-cloak",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14754/kelm-hargunth",
+              "text": "Kelm Hargunth"
+            }
+          ],
+          "source_text": "Kelm Hargunth"
+        },
+        {
+          "item_id": 279892,
+          "item_name": "",
+          "item_url": "https://www.wowhead.com/forever/item=279892",
+          "rank_label": "Optional",
+          "source_links": [],
+          "source_text": ""
+        }
+      ],
+      "slot": "Back"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Chest Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 273413,
+          "item_name": "Premier Warlord's Kodohide Hauberk",
+          "item_url": "https://www.wowhead.com/forever/item=273413/premier-warlords-kodohide-hauberk",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 14138,
+          "item_name": "Mooncloth Vest",
+          "item_url": "https://www.wowhead.com/forever/item=14138/mooncloth-vest",
+          "rank_label": "Mooncloth Vest",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=14501/pattern-mooncloth-vest",
+              "text": "Pattern: Mooncloth Vest"
+            }
+          ],
+          "source_text": "Pattern: Mooncloth Vest"
+        },
+        {
+          "item_id": 15066,
+          "item_name": "Ironfeather Breastplate",
+          "item_url": "https://www.wowhead.com/forever/item=15066/ironfeather-breastplate",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=15760/pattern-ironfeather-breastplate",
+              "text": "Pattern: Ironfeather Breastplate"
+            }
+          ],
+          "source_text": "Pattern: Ironfeather Breastplate"
+        },
+        {
+          "item_id": 254121,
+          "item_name": "Earthenweave Vest",
+          "item_url": "https://www.wowhead.com/forever/item=254121/earthenweave-vest",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254122/pattern-earthenweave-vest",
+              "text": "Pattern: Earthenweave Vest"
+            }
+          ],
+          "source_text": "Pattern: Earthenweave Vest"
+        }
+      ],
+      "slot": "Chest"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Wrist Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 19595,
+          "item_name": "Dryad's Wrist Bindings",
+          "item_url": "https://www.wowhead.com/forever/item=19595/dryads-wrist-bindings",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14754/kelm-hargunth",
+              "text": "Kelm Hargunth"
+            }
+          ],
+          "source_text": "Kelm Hargunth"
+        },
+        {
+          "item_id": 11764,
+          "item_name": "",
+          "item_url": "https://www.wowhead.com/forever/item=11764",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=9017/lord-incendius",
+              "text": "Lord Incendius"
+            }
+          ],
+          "source_text": "Lord Incendius"
+        },
+        {
+          "item_id": 254061,
+          "item_name": "Nethergeld Cuffs",
+          "item_url": "https://www.wowhead.com/forever/item=254061/nethergeld-cuffs",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254062/pattern-nethergeld-cuffs",
+              "text": "Pattern: Nethergeld Cuffs"
+            }
+          ],
+          "source_text": "Pattern: Nethergeld Cuffs"
+        },
+        {
+          "item_id": 252543,
+          "item_name": "Mender's Leather Bracers",
+          "item_url": "https://www.wowhead.com/forever/item=252543/menders-leather-bracers",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=252857/pattern-menders-leather-bracers",
+              "text": "Pattern: Mender's Leather Bracers"
+            }
+          ],
+          "source_text": "Pattern: Mender's Leather Bracers"
+        },
+        {
+          "item_id": 273417,
+          "item_name": "Premier Legionnaire's Kodohide Bracers",
+          "item_url": "https://www.wowhead.com/forever/item=273417/premier-legionnaires-kodohide-bracers",
+          "rank_label": "Optional",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 254131,
+          "item_name": "Earthenweave Cuffs",
+          "item_url": "https://www.wowhead.com/forever/item=254131/earthenweave-cuffs",
+          "rank_label": "Earthenweave Cuffs",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254132/pattern-earthenweave-cuffs",
+              "text": "Pattern: Earthenweave Cuffs"
+            }
+          ],
+          "source_text": "Pattern: Earthenweave Cuffs"
+        }
+      ],
+      "slot": "Wrist"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Hand Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 272097,
+          "item_name": "Raider Handwraps",
+          "item_url": "https://www.wowhead.com/forever/item=272097/raider-handwraps",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=263570/creeg-bothunk",
+              "text": "Creeg Bothunk"
+            }
+          ],
+          "source_text": "Creeg Bothunk"
+        },
+        {
+          "item_id": 18409,
+          "item_name": "Mooncloth Gloves",
+          "item_url": "https://www.wowhead.com/forever/item=18409/mooncloth-gloves",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=18417/pattern-mooncloth-gloves",
+              "text": "Pattern: Mooncloth Gloves"
+            }
+          ],
+          "source_text": "Pattern: Mooncloth Gloves"
+        },
+        {
+          "item_id": 252551,
+          "item_name": "Mender's Leather Gauntlets",
+          "item_url": "https://www.wowhead.com/forever/item=252551/menders-leather-gauntlets",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=252871/pattern-menders-leather-gauntlets",
+              "text": "Pattern: Mender's Leather Gauntlets"
+            }
+          ],
+          "source_text": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item_id": 254095,
+          "item_name": "Gilded Gloves",
+          "item_url": "https://www.wowhead.com/forever/item=254095/gilded-gloves",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254096/pattern-gilded-gloves",
+              "text": "Pattern: Gilded Gloves"
+            }
+          ],
+          "source_text": "Pattern: Gilded Gloves"
+        }
+      ],
+      "slot": "Hands"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Waist Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 19047,
+          "item_name": "Wisdom of the Timbermaw",
+          "item_url": "https://www.wowhead.com/forever/item=19047/wisdom-of-the-timbermaw",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=19215/pattern-wisdom-of-the-timbermaw",
+              "text": "Pattern: Wisdom of the Timbermaw"
+            }
+          ],
+          "source_text": "Pattern: Wisdom of the Timbermaw"
+        },
+        {
+          "item_id": 18405,
+          "item_name": "Belt of the Archmage",
+          "item_url": "https://www.wowhead.com/forever/item=18405/belt-of-the-archmage",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=18414/pattern-belt-of-the-archmage",
+              "text": "Pattern: Belt of the Archmage"
+            }
+          ],
+          "source_text": "Pattern: Belt of the Archmage"
+        },
+        {
+          "item_id": 279252,
+          "item_name": "Elderwild Waistcord",
+          "item_url": "https://www.wowhead.com/forever/item=279252/elderwild-waistcord",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=279301/pattern-elderwild-waistcord",
+              "text": "Pattern: Elderwild Waistcord"
+            }
+          ],
+          "source_text": "Pattern: Elderwild Waistcord"
+        },
+        {
+          "item_id": 272398,
+          "item_name": "Caretaker's Cord",
+          "item_url": "https://www.wowhead.com/forever/item=272398/caretakers-cord",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 252477,
+          "item_name": "Mender's Leather Waistguard",
+          "item_url": "https://www.wowhead.com/forever/item=252477/menders-leather-waistguard",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=252876/pattern-menders-leather-waistguard",
+              "text": "Pattern: Mender's Leather Waistguard"
+            }
+          ],
+          "source_text": "Pattern: Mender's Leather Waistguard"
+        },
+        {
+          "item_id": 273420,
+          "item_name": "Premier Legionnaire's Kodohide Belt",
+          "item_url": "https://www.wowhead.com/forever/item=273420/premier-legionnaires-kodohide-belt",
+          "rank_label": "Optional",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 254081,
+          "item_name": "Gilded Waistcord",
+          "item_url": "https://www.wowhead.com/forever/item=254081/gilded-waistcord",
+          "rank_label": "Gilded Waistcord",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254082/pattern-gilded-waistcord",
+              "text": "Pattern: Gilded Waistcord"
+            }
+          ],
+          "source_text": "Pattern: Gilded Waistcord"
+        }
+      ],
+      "slot": "Waist"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Leg Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 252486,
+          "item_name": "Ironfeather Leggings",
+          "item_url": "https://www.wowhead.com/forever/item=252486/ironfeather-leggings",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=252895/pattern-ironfeather-leggings",
+              "text": "Pattern: Ironfeather Leggings"
+            }
+          ],
+          "source_text": "Pattern: Ironfeather Leggings"
+        },
+        {
+          "item_id": 279254,
+          "item_name": "Elderwild Pants",
+          "item_url": "https://www.wowhead.com/forever/item=279254/elderwild-pants",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=279303/pattern-elderwild-pants",
+              "text": "Pattern: Elderwild Pants"
+            }
+          ],
+          "source_text": "Pattern: Elderwild Pants"
+        },
+        {
+          "item_id": 11841,
+          "item_name": "",
+          "item_url": "https://www.wowhead.com/forever/item=11841",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=9056/fineous-darkvire",
+              "text": "Fineous Darkvire"
+            }
+          ],
+          "source_text": "Fineous Darkvire"
+        },
+        {
+          "item_id": 16694,
+          "item_name": "Devout Skirt",
+          "item_url": "https://www.wowhead.com/forever/item=16694/devout-skirt",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=10440/baron-rivendare",
+              "text": "Baron Rivendare"
+            }
+          ],
+          "source_text": "Baron Rivendare"
+        },
+        {
+          "item_id": 22747,
+          "item_name": "Outrider's Silk Leggings",
+          "item_url": "https://www.wowhead.com/forever/item=22747/outriders-silk-leggings",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14754/kelm-hargunth",
+              "text": "Kelm Hargunth"
+            }
+          ],
+          "source_text": "Kelm Hargunth"
+        }
+      ],
+      "slot": "Legs"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Feet Armor for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 15802,
+          "item_name": "Mooncloth Boots",
+          "item_url": "https://www.wowhead.com/forever/item=15802/mooncloth-boots",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/spell=19435/mooncloth-boots",
+              "text": "Mooncloth Boots"
+            }
+          ],
+          "source_text": "Mooncloth Boots"
+        },
+        {
+          "item_id": 275609,
+          "item_name": "Swarmtender's Footpads",
+          "item_url": "https://www.wowhead.com/forever/item=275609/swarmtenders-footpads",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=275585/pattern-swarmtenders-footpads",
+              "text": "Pattern: Swarmtender's Footpads"
+            }
+          ],
+          "source_text": "Pattern: Swarmtender's Footpads"
+        },
+        {
+          "item_id": 273418,
+          "item_name": "Premier Centurion's Kodohide Boots",
+          "item_url": "https://www.wowhead.com/forever/item=273418/premier-centurions-kodohide-boots",
+          "rank_label": "Good",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 254107,
+          "item_name": "Gilded Sandals",
+          "item_url": "https://www.wowhead.com/forever/item=254107/gilded-sandals",
+          "rank_label": "Gilded Sandals",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=254108/pattern-gilded-sandals",
+              "text": "Pattern: Gilded Sandals"
+            }
+          ],
+          "source_text": "Pattern: Gilded Sandals"
+        },
+        {
+          "item_id": 252472,
+          "item_name": "Mender's Leather Boots",
+          "item_url": "https://www.wowhead.com/forever/item=252472/menders-leather-boots",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=252864/pattern-menders-leather-boots",
+              "text": "Pattern: Mender's Leather Boots"
+            }
+          ],
+          "source_text": "Pattern: Mender's Leather Boots"
+        }
+      ],
+      "slot": "Feet"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Neck Jewelry for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 19426,
+          "item_name": "Orb of the Darkmoon",
+          "item_url": "https://www.wowhead.com/forever/item=19426/orb-of-the-darkmoon",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/quest=7940/1200-tickets-orb-of-the-darkmoon",
+              "text": "1200 Tickets - Orb of the Darkmoon"
+            }
+          ],
+          "source_text": "1200 Tickets - Orb of the Darkmoon"
+        },
+        {
+          "item_id": 10769,
+          "item_name": "Glowing Eye of Mordresh",
+          "item_url": "https://www.wowhead.com/forever/item=10769/glowing-eye-of-mordresh",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=7357/mordresh-fire-eye",
+              "text": "Mordresh Fire Eye"
+            }
+          ],
+          "source_text": "Mordresh Fire Eye"
+        },
+        {
+          "item_id": 23125,
+          "item_name": "Chains of the Lich",
+          "item_url": "https://www.wowhead.com/forever/item=23125/chains-of-the-lich",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14684/balzaphon",
+              "text": "Balzaphon"
+            }
+          ],
+          "source_text": "Balzaphon"
+        },
+        {
+          "item_id": 22149,
+          "item_name": "Beads of Ogre Mojo",
+          "item_url": "https://www.wowhead.com/forever/item=22149/beads-of-ogre-mojo",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/quest=8949/falrins-vendetta",
+              "text": "Falrin's Vendetta"
+            }
+          ],
+          "source_text": "Falrin's Vendetta"
+        },
+        {
+          "item_id": 15856,
+          "item_name": "Archlight Talisman",
+          "item_url": "https://www.wowhead.com/forever/item=15856/archlight-talisman",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/quest=5942/hidden-treasures",
+              "text": "Hidden Treasures"
+            }
+          ],
+          "source_text": "Hidden Treasures"
+        }
+      ],
+      "slot": "Neck"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Ring Jewelry for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 275983,
+          "item_name": "Warden's Signet of Resolve",
+          "item_url": "https://www.wowhead.com/forever/item=275983/wardens-signet-of-resolve",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 272407,
+          "item_name": "Blessed Band of Light",
+          "item_url": "https://www.wowhead.com/forever/item=272407/blessed-band-of-light",
+          "rank_label": "Blessed Band of Light",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 275738,
+          "item_name": "Jereman's Bauble",
+          "item_url": "https://www.wowhead.com/forever/item=275738/jeremans-bauble",
+          "rank_label": "Great",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 275740,
+          "item_name": "Ring of Nature's Cycles",
+          "item_url": "https://www.wowhead.com/forever/item=275740/ring-of-natures-cycles",
+          "rank_label": "Ring of Nature's Cycles",
+          "source_links": [],
+          "source_text": ""
+        }
+      ],
+      "slot": "Ring"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 272439,
+          "item_name": "Serenity Field",
+          "item_url": "https://www.wowhead.com/forever/item=272439/serenity-field",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 18637,
+          "item_name": "Major Recombobulator",
+          "item_url": "https://www.wowhead.com/forever/item=18637/major-recombobulator",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=18655/schematic-major-recombobulator",
+              "text": "Schematic: Major Recombobulator"
+            }
+          ],
+          "source_text": "Schematic: Major Recombobulator"
+        },
+        {
+          "item_id": 19288,
+          "item_name": "Darkmoon Card: Blue Dragon",
+          "item_url": "https://www.wowhead.com/forever/item=19288/darkmoon-card-blue-dragon",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/quest=7907/darkmoon-beast-deck",
+              "text": "Darkmoon Beast Deck"
+            }
+          ],
+          "source_text": "Darkmoon Beast Deck"
+        },
+        {
+          "item_id": 272438,
+          "item_name": "Weakness Analyzer",
+          "item_url": "https://www.wowhead.com/forever/item=272438/weakness-analyzer",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 249473,
+          "item_name": "Dormant Heart of the Mountain",
+          "item_url": "https://www.wowhead.com/forever/item=249473/dormant-heart-of-the-mountain",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/spell=1249114/dormant-heart-of-the-mountain",
+              "text": "Dormant Heart of the Mountain"
+            }
+          ],
+          "source_text": "Dormant Heart of the Mountain"
+        },
+        {
+          "item_id": 270276,
+          "item_name": "Cleansed Vilebranch Icon",
+          "item_url": "https://www.wowhead.com/forever/item=270276/cleansed-vilebranch-icon",
+          "rank_label": "Optional",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 272061,
+          "item_name": "Darkspear Voodoo Seal",
+          "item_url": "https://www.wowhead.com/forever/item=272061/darkspear-voodoo-seal",
+          "rank_label": "Darkspear Voodoo Seal",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=263570/creeg-bothunk",
+              "text": "Creeg Bothunk"
+            }
+          ],
+          "source_text": "Creeg Bothunk"
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot One-Handed Weapons for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 272681,
+          "item_name": "Premier High Warlord's Battle Mace",
+          "item_url": "https://www.wowhead.com/forever/item=272681/premier-high-warlords-battle-mace",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 17710,
+          "item_name": "",
+          "item_url": "https://www.wowhead.com/forever/item=17710",
+          "rank_label": "",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=12201/princess-theradras",
+              "text": "Princess Theradras"
+            }
+          ],
+          "source_text": "Princess Theradras"
+        },
+        {
+          "item_id": 275647,
+          "item_name": "Cleansed Ritual Kris",
+          "item_url": "https://www.wowhead.com/forever/item=275647/cleansed-ritual-kris",
+          "rank_label": "Good",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 275698,
+          "item_name": "Yaely's Mending Tool",
+          "item_url": "https://www.wowhead.com/forever/item=275698/yaelys-mending-tool",
+          "rank_label": "Yaely's Mending Tool",
+          "source_links": [],
+          "source_text": ""
+        },
+        {
+          "item_id": 7721,
+          "item_name": "Hand of Righteousness",
+          "item_url": "https://www.wowhead.com/forever/item=7721/hand-of-righteousness",
+          "rank_label": "Hand of Righteousness",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=3977/high-inquisitor-whitemane",
+              "text": "High Inquisitor Whitemane"
+            }
+          ],
+          "source_text": "High Inquisitor Whitemane"
+        }
+      ],
+      "slot": "Main Hand"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Offhands for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 23469,
+          "item_name": "High Warlord's Tome of Mending",
+          "item_url": "https://www.wowhead.com/forever/item=23469/high-warlords-tome-of-mending",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14581/sergeant-thunderhorn",
+              "text": "Sergeant Thunderhorn"
+            }
+          ],
+          "source_text": "Sergeant Thunderhorn"
+        },
+        {
+          "item_id": 19312,
+          "item_name": "Lei of the Lifegiver",
+          "item_url": "https://www.wowhead.com/forever/item=19312/lei-of-the-lifegiver",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=13219/jekyll-flandring",
+              "text": "Jekyll Flandring"
+            }
+          ],
+          "source_text": "Jekyll Flandring"
+        },
+        {
+          "item_id": 274417,
+          "item_name": "Barkskin Baubles",
+          "item_url": "https://www.wowhead.com/forever/item=274417/barkskin-baubles",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=256629/dala-fairmaw",
+              "text": "Dala Fairmaw"
+            }
+          ],
+          "source_text": "Dala Fairmaw"
+        }
+      ],
+      "slot": "Off Hand"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Two-Handed Weapons for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 812,
+          "item_name": "Glowing Brightwood Staff",
+          "item_url": "https://www.wowhead.com/forever/item=812/glowing-brightwood-staff",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "BoE",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+              "type": "unknown_text"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "BoE"
+        },
+        {
+          "item_id": 18874,
+          "item_name": "High Warlord's War Staff",
+          "item_url": "https://www.wowhead.com/forever/item=18874/high-warlords-war-staff",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=14581/sergeant-thunderhorn",
+              "text": "Sergeant Thunderhorn"
+            }
+          ],
+          "source_text": "Sergeant Thunderhorn"
+        },
+        {
+          "item_id": 17743,
+          "item_name": "Resurgence Rod",
+          "item_url": "https://www.wowhead.com/forever/item=17743/resurgence-rod",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/quest=7065/corruption-of-earth-and-seed",
+              "text": "Corruption of Earth and Seed"
+            }
+          ],
+          "source_text": "Corruption of Earth and Seed"
+        },
+        {
+          "item_id": 19102,
+          "item_name": "Crackling Staff",
+          "item_url": "https://www.wowhead.com/forever/item=19102/crackling-staff",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=13217/thanthaldis-snowgleam",
+              "text": "Thanthaldis Snowgleam"
+            }
+          ],
+          "source_text": "Thanthaldis Snowgleam"
+        }
+      ],
+      "slot": "Two Hand"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Idols for Restoration Druid in WoW: Forever",
+      "rows": [
+        {
+          "item_id": 279250,
+          "item_name": "Idol of Swiftness",
+          "item_url": "https://www.wowhead.com/forever/item=279250/idol-of-swiftness",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=279299/formula-idol-of-swiftness",
+              "text": "Formula: Idol of Swiftness"
+            }
+          ],
+          "source_text": "Formula: Idol of Swiftness"
+        },
+        {
+          "item_id": 272429,
+          "item_name": "Idol of Synthesis",
+          "item_url": "https://www.wowhead.com/forever/item=272429/idol-of-synthesis",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/npc=227853/pix-xizzix",
+              "text": "Pix Xizzix"
+            }
+          ],
+          "source_text": "Pix Xizzix"
+        },
+        {
+          "item_id": 249441,
+          "item_name": "Talons of Wrath",
+          "item_url": "https://www.wowhead.com/forever/item=249441/talons-of-wrath",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/forever/item=249493/formula-talons-of-wrath",
+              "text": "Formula: Talons of Wrath"
+            }
+          ],
+          "source_text": "Formula: Talons of Wrath"
+        }
+      ],
+      "slot": "Idol"
+    }
+  ],
+  "title": "Restoration Druid Healer Phase 1 Best in Slot Gear (BiS) - WoW Forever - Wowhead",
+  "url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/bis-gear",
+  "zone_refs": []
+}

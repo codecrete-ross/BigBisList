@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wisepaw Totem Item Level 58 Binds when picked up Two-Hand Staff 94 - 142 Damage Speed 3.20 (36.88 damage per second) +19 Stamina +23 Intellect Requires Level 53 Requires Barkskin Burrow - Revered Equip: Increases damage and healing done by magical spells and effects by up to 66 . Sell Price: 5 61 31",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:44+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Two Hand",
+  "item_id": 274420,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 36.88,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 66.",
+        "stats": {
+          "spell_power": 66.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 66."
+    ],
+    "id": 274420,
+    "item_level": 58,
+    "name": "Wisepaw Totem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "spell_power": 66.0,
+      "stamina": 19.0
+    },
+    "weapon_max_damage": 142,
+    "weapon_min_damage": 94,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=274420"
+  },
+  "linked_entities": [],
+  "name": "Wisepaw Totem",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Wisepaw Totem Item Level 58 Binds when picked up Two-Hand Staff 94 - 142 Damage Speed 3.20 (36.88 damage per second) +19 Stamina +23 Intellect Requires Level 53 Requires Barkskin Burrow - Revered Equip: Increases damage and healing done by magical spells and effects by up to 66 . Sell Price: 5 61 31",
+      "reputation": "Barkskin Burrow",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=274420",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/274420",
+  "url": "https://www.wowhead.com/forever/item=274420"
+}

@@ -1,0 +1,155 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Ironfeather Breastplate Item Level 58 Requires Leatherworking (265) Requires Tribal Leatherworking Use: Teaches you how to craft an Ironfeather Breastplate. Sell Price: 55 Dropped by: Vilebranch Hideskinner Drop Chance: 4.29%",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Chest",
+      "item_id": 15066,
+      "item_stats": {
+        "armor_type": "Leather",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "id": 15066,
+        "name": "Ironfeather Breastplate",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "rare",
+        "slot": "Chest",
+        "source_summary": "",
+        "stats": {
+          "intellect": 12.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=15066"
+      },
+      "name": "Ironfeather Breastplate",
+      "normalized_requirements": [],
+      "quality": "rare",
+      "url": "https://www.wowhead.com/forever/item=15066"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:57:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 15760,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft an Ironfeather Breastplate.",
+        "type": "use"
+      }
+    ],
+    "id": 15760,
+    "item_level": 58,
+    "name": "Pattern: Ironfeather Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft an Ironfeather Breastplate."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=15760"
+  },
+  "linked_entities": [
+    {
+      "id": 1529,
+      "name": "Jade",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1529"
+    },
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15066,
+      "name": "Ironfeather Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15066"
+    },
+    {
+      "id": 15067,
+      "name": "Ironfeather Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15067"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15420,
+      "name": "Ironfeather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15420"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 19086,
+      "name": "Teaches you how to craft an Ironfeather Breastplate.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=19086"
+    }
+  ],
+  "name": "Pattern: Ironfeather Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Ironfeather Breastplate Item Level 58 Requires Leatherworking (265) Requires Tribal Leatherworking Use: Teaches you how to craft an Ironfeather Breastplate. Sell Price: 55 Dropped by: Vilebranch Hideskinner Drop Chance: 4.29%",
+      "scope": "equip_or_use",
+      "skill": 265,
+      "source_url": "https://www.wowhead.com/forever/item=15760",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Ironfeather Breastplate Item Level 58 Requires Leatherworking (265) Requires Tribal Leatherworking Use: Teaches you how to craft an Ironfeather Breastplate. Sell Price: 55 Dropped by: Vilebranch Hideskinner Drop Chance: 4.29%",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=15760",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.29,
+      "entity_name": "Vilebranch Hideskinner",
+      "source_url": "https://www.wowhead.com/forever/item=15760",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    19086
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/15760",
+  "url": "https://www.wowhead.com/forever/item=15760"
+}

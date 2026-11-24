@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gracious Cape Item Level 59 Binds when equipped Back 42 Armor +7 Intellect Restores + 6 mana per 5 sec. Requires Level 54 Equip: Increases healing done by up to 7 and damage done by up to 3 for all magical spells and effects. Sell Price: 1 42 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:28.6759340Z",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 18743,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 42,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 7 and damage done by up to 3 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 7,
+          "spell_damage": 3
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 7 and damage done by up to 3 for all magical spells and effects."
+    ],
+    "id": 18743,
+    "item_level": 59,
+    "name": "Gracious Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 54,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 7.0,
+      "intellect": 7.0,
+      "mp5": 6.0,
+      "spell_damage": 3.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18743"
+  },
+  "linked_entities": [],
+  "name": "Gracious Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3e8bfe1e0cea0bf4e24a223566ce5bb2499673a4c758d5e76147ce1666ad9474",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18743",
+  "url": "https://www.wowhead.com/forever/item=18743"
+}

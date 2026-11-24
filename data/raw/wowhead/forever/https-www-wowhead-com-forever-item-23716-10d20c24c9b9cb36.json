@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Carved Ogre Idol Item Level 1 Binds when picked up Unique Trinket Use: Become a hulking purple ogre for 10 min! (1 Hour Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:52:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 23716,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Become a hulking purple ogre for 10 min! (1 Hour Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 23716,
+    "item_level": 1,
+    "name": "Carved Ogre Idol",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Become a hulking purple ogre for 10 min! (1 Hour Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=23716"
+  },
+  "linked_entities": [
+    {
+      "id": 30167,
+      "name": "Become a hulking purple ogre for 10 min!",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=30167"
+    }
+  ],
+  "name": "Carved Ogre Idol",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/23716",
+  "url": "https://www.wowhead.com/forever/item=23716"
+}

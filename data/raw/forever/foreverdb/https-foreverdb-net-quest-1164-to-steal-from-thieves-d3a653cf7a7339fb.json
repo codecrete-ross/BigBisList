@@ -1,0 +1,34 @@
+{
+  "attribution": [
+    {
+      "credit": "ForeverDB public quest observations",
+      "source": "https://foreverdb.net/quest/1164-to-steal-from-thieves"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T08:01:11.733545+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "foreverdb",
+  "relationships": [
+    {
+      "object_id": 4443,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://foreverdb.net/quest/1164-to-steal-from-thieves",
+      "subject_id": 1164,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_min_level": 27,
+    "observation_count": 1,
+    "observed_turn_in_level": 30,
+    "quest_id": 1164,
+    "reward_item_ids": [
+      4443
+    ]
+  },
+  "source_content_digest": "bc8b872f13b9cee9ac8f796df0387e94b8bf41c869ca751de7b462b47438ab1f",
+  "url": "https://foreverdb.net/quest/1164-to-steal-from-thieves"
+}

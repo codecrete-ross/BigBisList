@@ -1,0 +1,85 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Pristine Scorpid Leggings 12.5 sec cast Reagents: Rugged Leather (20), Heavy Scorpid Scale (40), Enchanted Leather (12), Cured Rugged Hide (4), Pristine Scale (10), Rune Thread (2), Fel Leather (20) Pristine Scorpid Leggings Item Level 61 Binds when equipped Legs Mail 344 Armor +18 Strength Requires Level 56 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 33 . Sell Price: 4 25 48",
+  "entity_id": 1254967,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:12:03+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15408,
+      "name": "Heavy Scorpid Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15408"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 249429,
+      "name": "Pristine Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249429"
+    },
+    {
+      "id": 252606,
+      "name": "Pristine Scorpid Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252606"
+    },
+    {
+      "id": 1254967,
+      "name": "Pristine Scorpid Leggings",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1254967"
+    }
+  ],
+  "name": "Pristine Scorpid Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 252606,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1254967",
+      "subject_id": 1254967,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 1254967,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1254967",
+  "url": "https://www.wowhead.com/forever/spell=1254967"
+}

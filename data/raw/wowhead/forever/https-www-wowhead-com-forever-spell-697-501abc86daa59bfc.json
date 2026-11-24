@@ -1,0 +1,34 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Summon Voidwalker 100% of base mana 10 sec cast Requires Warlock Requires level 10 Reagents: Soul Shard Summons a Voidwalker under the command of the Warlock.",
+  "entity_id": 697,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:35:59+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 6265,
+      "name": "Soul Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=6265"
+    },
+    {
+      "id": 697,
+      "name": "Summon Voidwalker",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=697"
+    }
+  ],
+  "name": "Summon Voidwalker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "6a3b3a007d7ab8a405be6de9fb9ee77dfae50e11fbceb4b54e03141f624a6827",
+  "spell_id": 697,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/697",
+  "url": "https://www.wowhead.com/forever/spell=697"
+}

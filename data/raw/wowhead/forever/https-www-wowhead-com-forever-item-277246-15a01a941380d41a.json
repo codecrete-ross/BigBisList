@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ruby-Adorned Blade Item Level 36 Binds when picked up One-Hand Sword 38 - 72 Damage Speed 2.30 (23.91 damage per second) +3 Agility +8 Stamina Durability 90 / 90 Classes: Rogue Sell Price: 97 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:25:41+00:00",
+  "flavor": "forever",
+  "inventory_slot": "One Hand",
+  "item_id": 277246,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 23.91,
+    "id": 277246,
+    "item_level": 36,
+    "name": "Ruby-Adorned Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "stamina": 8.0
+    },
+    "weapon_max_damage": 72,
+    "weapon_min_damage": 38,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=277246"
+  },
+  "linked_entities": [],
+  "name": "Ruby-Adorned Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c61ffe8bcd816a90faa16a3f179ed068ae7b87dc1f25713d7bf7e7790e065238",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/277246",
+  "url": "https://www.wowhead.com/forever/item=277246"
+}

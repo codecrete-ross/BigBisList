@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood of the Martyr Item Level 61 Binds when picked up Finger +10 Stamina +10 Intellect Equip: Increases damage and healing done by magical spells and effects by up to 12 . Sell Price: 2 8 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:49+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 17045,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 17045,
+    "item_level": 61,
+    "name": "Blood of the Martyr",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 12.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=17045"
+  },
+  "linked_entities": [],
+  "name": "Blood of the Martyr",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "e0f35c35ba134834d66f8b1f693c1798e6d23889056cb3f56a82e93492f3a0af",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/17045",
+  "url": "https://www.wowhead.com/forever/item=17045"
+}

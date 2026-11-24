@@ -1,0 +1,128 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment game data, exported by Wago.tools",
+      "source": "https://wago.tools"
+    },
+    {
+      "credit": "Wowhead Forever player observations",
+      "source": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "current_item_effect_with_live_test",
+  "fetched_at": "2026-11-13T03:59:42.2317300Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 254347,
+      "collected_at": "2026-11-13T03:59:42.2317300Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemxitemeffect",
+      "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+      "source_url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 412720,
+      "collected_at": "2026-11-13T03:59:41.9615265Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-itemeffect",
+      "source_content_digest": "02b66eca6ae40a0ec67f972999456ce1d950e316c6f1f078b03f3d267d8ce420",
+      "source_url": "https://wago.tools/db2/ItemEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 851160,
+      "collected_at": "2026-11-13T22:51:25.852059+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-70938-spellnames",
+      "source_content_digest": "bd8dc963dd691c69aff531464636e7b5a944efeedb773895e7b2c4a0fb7c38b4",
+      "source_url": "https://wago.tools/db2/SpellName/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 79735,
+      "collected_at": "2026-11-13T22:39:22.413829+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wat-forever-news",
+      "source_content_digest": "9029501d1db539fb109052ae6d700c479548dc8008240cc55c939d1283c230e3",
+      "source_url": "https://www.wowhead.com/forever/news/loot-ocarina-of-time-boots-from-drowned-city-in-wow-forever-383842"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wago",
+  "reviewed_page_facts": {
+    "effect_link": {
+      "ID": "164034",
+      "ItemEffectID": "231854",
+      "ItemID": "271718"
+    },
+    "finding": "The equipped boots run scripted aura 1289404 every 500 ms. Live accounts establish the underwater movement and the substantial land speed penalty. There is no numeric movement modifier in this client effect row.",
+    "item_effect": {
+      "CategoryCoolDownMSec": "-1",
+      "Charges": "0",
+      "ChrSpecializationID": "0",
+      "CoolDownMSec": "-1",
+      "ID": "231854",
+      "LegacySlotIndex": "0",
+      "PlayerConditionID": "0",
+      "SpellCategoryID": "0",
+      "SpellID": "1289404",
+      "TriggerType": "1"
+    },
+    "item_id": 271718,
+    "spell_effect": {
+      "BonusCoefficientFromAP": "0",
+      "Coefficient": "0",
+      "DifficultyID": "0",
+      "Effect": "6",
+      "EffectAmplitude": "0",
+      "EffectAttributes": "0",
+      "EffectAura": "226",
+      "EffectAuraPeriod": "500",
+      "EffectBasePointsF": "0",
+      "EffectBonusCoefficient": "0",
+      "EffectChainAmplitude": "1",
+      "EffectChainTargets": "0",
+      "EffectIndex": "0",
+      "EffectItemType": "0",
+      "EffectMechanic": "0",
+      "EffectMiscValue_0": "0",
+      "EffectMiscValue_1": "0",
+      "EffectPointsPerResource": "0",
+      "EffectPos_facing": "0",
+      "EffectRadiusIndex_0": "0",
+      "EffectRadiusIndex_1": "0",
+      "EffectRealPointsPerLevel": "0",
+      "EffectSpellClassMask_0": "0",
+      "EffectSpellClassMask_1": "0",
+      "EffectSpellClassMask_2": "0",
+      "EffectSpellClassMask_3": "0",
+      "EffectTriggerSpell": "0",
+      "GroupSizeBasePointsCoefficient": "1",
+      "ID": "1307746",
+      "ImplicitTarget_0": "1",
+      "ImplicitTarget_1": "0",
+      "Node__Field_12_0_0_63534_001": "0",
+      "PvpMultiplier": "1",
+      "ResourceCoefficient": "0",
+      "ScalingClass": "0",
+      "SpellID": "1289404",
+      "Variance": "0"
+    },
+    "spell_name": "(DNT) Linken' Boots of Iron"
+  },
+  "source_content_digest": "4a0604e047f72390991e3a7914fe3e309829fb8773c36f5e4aff5628b7913f88",
+  "url": "https://wago.tools/db2/ItemXItemEffect/csv?build=1.60.1.70938#/item/271718"
+}

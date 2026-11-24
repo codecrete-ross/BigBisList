@@ -1,0 +1,53 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:24.051373+00:00",
+  "flavor": "forever",
+  "item_id": 272083,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Darkspear Insurgent's Spellblade Item Level 63 Binds when picked up Main Hand Dagger 27 - 50 Damage Speed 1.40 (27.50 damage per second) +8 Stamina +11 Intellect +5 Spirit Requires Level 58 Requires Darkspear Raiders - Revered Equip: Increases damage and healing done by magical spells and effects by up to 72 . Sell Price: 5 64 53",
+      "dps": 27.5,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 72.",
+          "stats": {
+            "spell_power": 72.0
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Increases damage and healing done by magical spells and effects by up to 72."
+      ],
+      "id": 272083,
+      "item_level": 63,
+      "name": "Darkspear Insurgent's Spellblade",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 58,
+      "slot": "Main Hand",
+      "source_summary": "",
+      "stats": {
+        "intellect": 11.0,
+        "spell_power": 72.0,
+        "spirit": 5.0,
+        "stamina": 8.0
+      },
+      "weapon_max_damage": 50,
+      "weapon_min_damage": 27,
+      "weapon_speed": 1.4,
+      "weapon_subtype": "Dagger",
+      "weapon_type": "One Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=272083"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "062a2ff599db25f48d2c3bc7df6067d1557b862da99d814dacc41267e5455e8b",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/272083#sha256-062a2ff599db25f48d2c3bc7df6067d1557b862da99d814dacc41267e5455e8b"
+}

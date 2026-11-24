@@ -1,0 +1,95 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blade of Eternal Justice Item Level 70 Binds when picked up Unique-Equipped Main Hand Sword 83 - 154 Damage Speed 2.30 (51.52 damage per second) +9 Strength +11 Stamina +7 Intellect Restores + 4 mana per 5 sec. Durability 105 / 105 Classes: Paladin Requires Level 60 Battlegear of Eternal Justice (0/3) Cape of Eternal Justice Blade of Eternal Justice Ring of Eternal Justice (3) Set : 20% chance to regain 100 mana when you cast a Judgement. (Proc chance: 20%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 21395,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 51.52,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "id": 21395,
+    "item_level": 70,
+    "name": "Blade of Eternal Justice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26135,
+        "text": "20% chance to regain 100 mana when you cast a Judgement. (Proc chance: 20%)"
+      }
+    ],
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 7.0,
+      "mp5": 4.0,
+      "stamina": 11.0,
+      "strength": 9.0
+    },
+    "weapon_max_damage": 154,
+    "weapon_min_damage": 83,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=21395"
+  },
+  "linked_entities": [
+    {
+      "id": 21395,
+      "name": "Blade of Eternal Justice",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21395"
+    },
+    {
+      "id": 21396,
+      "name": "Ring of Eternal Justice",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21396"
+    },
+    {
+      "id": 21397,
+      "name": "Cape of Eternal Justice",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21397"
+    },
+    {
+      "id": 26135,
+      "name": "20% chance to regain 100 mana when you cast a Judgement. (Proc chance: 20%)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26135"
+    }
+  ],
+  "name": "Blade of Eternal Justice",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21395",
+  "url": "https://www.wowhead.com/forever/item=21395"
+}

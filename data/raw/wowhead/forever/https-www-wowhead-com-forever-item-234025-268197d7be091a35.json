@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Restores + 4 mana per 5 sec. Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects. Equip: Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped. \"The Path of the Preserver\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:50:23+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 234025,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 46,
+          "spell_damage": 16
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped.",
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores +4 mana per 5 sec.",
+        "stats": {
+          "mp5": 4
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects."
+    ],
+    "id": 234025,
+    "item_level": 70,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 46.0,
+      "intellect": 8.0,
+      "mp5": 4.0,
+      "spell_damage": 16.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=234025"
+  },
+  "linked_entities": [
+    {
+      "id": 910,
+      "name": "Brood of Nozdormu",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=910"
+    },
+    {
+      "id": 1213405,
+      "name": "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1213405"
+    }
+  ],
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Item Level 70 Binds when picked up Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Restores + 4 mana per 5 sec. Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects. Equip: Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped. \"The Path of the Preserver\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=234025",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "56ff8deb9ccb043e2461b98b44b9192f0cea5f310723f0eaccfc27596345b2d7",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/234025",
+  "url": "https://www.wowhead.com/forever/item=234025"
+}

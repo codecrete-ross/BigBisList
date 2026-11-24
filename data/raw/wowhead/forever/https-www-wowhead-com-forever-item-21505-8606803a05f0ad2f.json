@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Choker of the Shifting Sands Item Level 70 Binds when picked up Neck +16 Stamina Requires Level 60 Equip: + 42 Attack Power. Sell Price: 11 16 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Neck",
+  "item_id": 21505,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +42 Attack Power.",
+        "stats": {
+          "attack_power": 42
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +42 Attack Power."
+    ],
+    "id": 21505,
+    "item_level": 70,
+    "name": "Choker of the Shifting Sands",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 42.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21505"
+  },
+  "linked_entities": [],
+  "name": "Choker of the Shifting Sands",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21505",
+  "url": "https://www.wowhead.com/forever/item=21505"
+}

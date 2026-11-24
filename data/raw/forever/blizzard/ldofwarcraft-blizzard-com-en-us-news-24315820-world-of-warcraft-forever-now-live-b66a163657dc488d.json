@@ -1,0 +1,114 @@
+{
+  "attribution": [
+    {
+      "credit": "Blizzard Entertainment",
+      "source": "https://worldofwarcraft.blizzard.com/"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "publisher_release_schedule",
+  "fetched_at": "2026-11-13T14:56:32.5219706Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 30895,
+      "collected_at": "2026-11-13T14:15:29.2426825Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-launch",
+      "source_content_digest": "7fb53128ca0e58bc0244332457535bb1965a83f929b454152b60a2db2f361b4b",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009/world-of-warcraft-forever-raid-overview-locations-raid-sizes-and-attunement"
+    },
+    {
+      "bytes": 37727,
+      "collected_at": "2026-11-13T14:56:33.2195342Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-roadmap",
+      "source_content_digest": "9b3b9b95f9f32872f65dfe9bc9939698aece8e25e6415cca26bceb14ad9226c1",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303862/world-of-warcraft-forever-whats-next"
+    },
+    {
+      "bytes": 893699,
+      "collected_at": "2026-11-13T14:56:36.4543442Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "developer-raid-ign",
+      "source_content_digest": "b147b24e1e94e91106cf6836a9ddb71a9e196ec677b4d791e052f5d2f124deef",
+      "source_url": "https://tech.yahoo.com/gaming/articles/big-world-warcraft-forever-interview-170000463.html"
+    },
+    {
+      "bytes": 482143,
+      "collected_at": "2026-11-13T15:02:01.3475651Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "developer-sportskeeda",
+      "source_content_digest": "d1a66483d2b204cf240dad4acc990a8f54d3925eb75b3922188a9d0e45709ae9",
+      "source_url": "https://hindi3.sportskeeda.com/mmo/news-they-might-reasons-welcome-forsaken-wow-forevers-kris-zierhut-michael-nuthals-visiting-gilneas-what-ifs-exclusive"
+    },
+    {
+      "bytes": 47474,
+      "collected_at": "2026-11-13T14:56:33.6367372Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-beta-event",
+      "source_content_digest": "1bd20770f898f9f60a8a88c783f5f38b5e937b6589af81ac20162a39228a0fa0",
+      "source_url": "https://us.forums.blizzard.com/en/wow/t/the-wow-forever-beta-celebration-is-underway/2389633/1"
+    },
+    {
+      "bytes": 39805,
+      "collected_at": "2026-11-13T14:56:36.6889356Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "daybreak-beta-drops",
+      "source_content_digest": "4f1bb8a292c99e69d57c205d1fbff6da9289f7941b15ebaf6498e9b92cde1e0a",
+      "source_url": "https://daybreakforever.com/blog/molten-core-loot-at-level-30"
+    },
+    {
+      "bytes": 8047,
+      "collected_at": "2026-11-13T09:11:25.5020667Z",
+      "http": "200",
+      "name": "att-nyi-beta-event",
+      "source_content_digest": "1d3d08d93ed0f72b0b22aea69cfa62da8f75b7635091448948795808cd8b9c68",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/2d09300630a0bf36670165be46287eb36ad95ce9"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "blizzard",
+  "reviewed_page_facts": {
+    "beta_end": "2026-10-23",
+    "beta_loot_id_list": ".contrib/.db/forever/.nyi/beta event.lua",
+    "finding": "Blizzard places launch before Molten Core and schedules the first three raids for December 9 at level 60. The developer interviews describe Molten Core, Blackwing Lair and Ahn'Qiraj as future raids. The October beta celebration's scaled raid rewards use separate item IDs.",
+    "first_raid_opening": "2026-12-09",
+    "first_raids": [
+      "Barrow Deeps",
+      "Hyjal Summit",
+      "Onyxia\u2019s Lair"
+    ],
+    "legacy_raids": [
+      "Molten Core",
+      "Blackwing Lair",
+      "Ahn'Qiraj"
+    ]
+  },
+  "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+  "url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+}

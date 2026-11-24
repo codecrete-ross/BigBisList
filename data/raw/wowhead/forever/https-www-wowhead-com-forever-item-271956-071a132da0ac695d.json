@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Theramore Epaulets Item Level 65 Binds when picked up Shoulder Mail 312 Armor +27 Agility +12 Stamina Requires Level 60 Requires Theramore Expeditionary Force - Exalted Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 3 83 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:29+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 271956,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 312,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 271956,
+    "item_level": 65,
+    "name": "Theramore Epaulets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 27.0,
+      "crit_percent": 1.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=271956"
+  },
+  "linked_entities": [
+    {
+      "id": 2799,
+      "name": "Theramore Expeditionary Force",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=2799"
+    }
+  ],
+  "name": "Theramore Epaulets",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Theramore Epaulets Item Level 65 Binds when picked up Shoulder Mail 312 Armor +27 Agility +12 Stamina Requires Level 60 Requires Theramore Expeditionary Force - Exalted Equip: Improves your chance to get a critical strike by 1.0%. Sell Price: 3 83 55",
+      "reputation": "Theramore Expeditionary Force",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=271956",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "source_content_digest": "331ac6edd725b618e3483e3df270f1347fe3639fa91ec0fa25c149cffad6df93",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/271956",
+  "url": "https://www.wowhead.com/forever/item=271956"
+}

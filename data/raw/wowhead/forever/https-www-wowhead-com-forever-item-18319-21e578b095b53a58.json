@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fervent Helm Item Level 58 Binds when picked up Head Mail 279 Armor <Random enchantment> +14 Stamina Restores + 12 health per 5 sec. Durability 70 / 70 Requires Level 53 Equip: Increases your chance to Parry an attack by 1.0%. Sell Price: 2 3 93 Dropped by: Zevrim Thornhoof Drop Chance: 9.97%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:50+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 18319,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 279,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your chance to Parry an attack by 1.0%.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Restores +12 health per 5 sec.",
+        "stats": {
+          "hp5": 12
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your chance to Parry an attack by 1.0%."
+    ],
+    "id": 18319,
+    "item_level": 58,
+    "name": "Fervent Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hp5": 12.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18319"
+  },
+  "linked_entities": [],
+  "name": "Fervent Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 9.97,
+      "entity_name": "Zevrim Thornhoof",
+      "source_url": "https://www.wowhead.com/forever/item=18319",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "1a81698b0fea71ed9ffbc83b672a09a274655169e77e9957dae57e9aa6ce0657",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18319",
+  "url": "https://www.wowhead.com/forever/item=18319"
+}

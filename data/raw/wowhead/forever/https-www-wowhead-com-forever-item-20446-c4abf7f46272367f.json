@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Test Defense Ring +80 Item Level 60 Binds when picked up Finger Equip: Increased Defense + 80. Sell Price: 78 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:49:26+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ring",
+  "item_id": 20446,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +80.",
+        "stats": {
+          "defense": 80
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +80."
+    ],
+    "id": 20446,
+    "item_level": 60,
+    "name": "Test Defense Ring +80",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense": 80.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20446"
+  },
+  "linked_entities": [],
+  "name": "Test Defense Ring +80",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "2cde4cb1fc7798a240d7a7c663928d70301bfcff5f962858c293c3b5d30e3d21",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20446",
+  "url": "https://www.wowhead.com/forever/item=20446"
+}

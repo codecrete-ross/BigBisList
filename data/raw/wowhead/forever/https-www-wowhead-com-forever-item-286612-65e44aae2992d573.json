@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Sand-Covered Silk Sash Item Level 59 Binds when equipped Waist Cloth 43 Armor +16 Stamina Requires Level 54 Use: Removes existing Immobilizing effects and makes you immune to Immobilizing effects for 5 sec. (30 Min Cooldown) Sell Price: 81 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T06:26:58.2587575Z",
+  "flavor": "forever",
+  "inventory_slot": "Waist",
+  "item_id": 286612,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 43,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Removes existing Immobilizing effects and makes you immune to Immobilizing effects for 5 sec. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 286612,
+    "item_level": 59,
+    "name": "Sand-Covered Silk Sash",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 54,
+    "slot": "Waist",
+    "source_summary": "",
+    "stats": {
+      "stamina": 16.0
+    },
+    "use_effects": [
+      "Use: Removes existing Immobilizing effects and makes you immune to Immobilizing effects for 5 sec. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=286612"
+  },
+  "linked_entities": [
+    {
+      "id": 9774,
+      "name": "Removes existing Immobilizing effects and makes you immune to Immobilizing effects for 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9774"
+    }
+  ],
+  "name": "Sand-Covered Silk Sash",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "91bcd049f6749108b45329e62152fa358e608bc1b943c6df6394d49653a38466",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/286612",
+  "url": "https://www.wowhead.com/forever/item=286612"
+}

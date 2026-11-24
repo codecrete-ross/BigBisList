@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import argparse
+from hashlib import sha256
+import json
 import sys
 from pathlib import Path
 
 if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from tools.project import ADDON_DIR, canonical_json, lua_value, write_text
-from tools.validate_data import validate
+from tools.project import ADDON_DIR, add_flavor_argument, dataset_json, lua_value, write_text
+from tools.validate_data import validate_dataset
+from tools.sources import summarize_sources
 
 
 OUTPUT_PATH = ADDON_DIR / "Data.lua"
+FOREVER_OUTPUT_PATH = ADDON_DIR / "DataForever.lua"
 
 SOURCE_FILTER_BY_CONTENT_TYPE = {
     "raid": "raid_drop",
@@ -104,7 +108,13 @@ SOURCE_SCHEMA = [
     "available_from_phase",
     "available_until_phase",
     "tradeable",
+    "activity_zones",
+    "quest_steps",
+    "destination",
+    "attribution",
 ]
+
+FOREVER_SOURCE_SCHEMA = SOURCE_SCHEMA + ["eligibility", "recipe_name", "reward_type", "repeatable", "market_observation"]
 
 REQUIREMENT_SCHEMA = [
     "type",
@@ -139,6 +149,12 @@ USE_SCHEMA = [
     "note",
     "requirements",
     "content_phase",
+    "guide_evidence",
+]
+
+GUIDE_EVIDENCE_SCHEMA = [
+    "table_id", "guide_phase", "rating_phase", "original_rating", "grade",
+    "conditions", "source_url", "content_phase", "table_heading",
 ]
 
 GEM_SCHEMA = [
@@ -252,7 +268,10 @@ ENCHANT_EFFECT_SCHEMA = [
 ]
 
 
+LEVELING_AVAILABILITY_SCHEMA = ["class", "spec", "faction", "race_id", "slot", "level_min", "level_max", "state", "reason"]
+
 SCHEMAS = {
+    "guide_evidence": GUIDE_EVIDENCE_SCHEMA,
     "item": ITEM_SCHEMA,
     "item_fallback": ITEM_FALLBACK_SCHEMA,
     "source": SOURCE_SCHEMA,
@@ -286,6 +305,10 @@ def compact_requirements(requirements: list[dict] | None) -> list[list] | None:
 
 
 def compact_value(schema_name: str, key: str, value):
+    if schema_name == "use" and key == "guide_evidence":
+        if value and isinstance(value[0], int):
+            return value
+        return compact_list(value, "guide_evidence") if value else None
     if schema_name in {"item", "item_fallback", "source_record"}:
         if key == "primary_source":
             return compact_source(value)
@@ -309,7 +332,15 @@ def compact_value(schema_name: str, key: str, value):
 
 
 def compact_record(record: dict, schema_name: str) -> list:
-    schema = SCHEMAS[schema_name]
+    schema = LEVELING_AVAILABILITY_SCHEMA if schema_name == "leveling_availability" else SCHEMAS[schema_name]
+    if schema_name == "cost" and "amount" not in record and "quantity" in record:
+        record = {**record, "amount": record["quantity"]}
+    if schema_name == "source" and any(field in record for field in ("eligibility", "reward_type", "repeatable", "market_observation")):
+        schema = FOREVER_SOURCE_SCHEMA
+    elif schema_name == "leveling_recommendation" and "faction" in record:
+        schema = schema + ["faction", "race_id", "variant_name", "random_suffix_id"]
+    elif schema_name == "leveling_gear" and "faction" in record:
+        schema = schema + ["race", "faction", "race_id", "variant_id", "variant_name", "random_suffix_id"]
     compacted = [
         compact_value(schema_name, key, record[key]) if key in record else None
         for key in schema
@@ -341,6 +372,8 @@ def add_zones_from_source(zones: set[str], source: dict | None, include_drop_zon
         return
     if source.get("type") != "drop" or include_drop_zone:
         add_zone(zones, source.get("zone"))
+        for zone in source.get("activity_zones", []):
+            add_zone(zones, zone)
     if source.get("type") == "token_turnin":
         for token_source in source.get("token_sources") or []:
             add_zone(zones, token_source.get("zone"))
@@ -385,8 +418,9 @@ def build_runtime_lookups(items: list[dict]) -> dict:
     }
 
 
-def build_uses(bis_lists: list[dict]) -> list[list]:
+def build_uses(bis_lists: list[dict], evidence_pool: list[list] | None = None) -> list[list]:
     uses = []
+    evidence_ids = {}
     for row in bis_lists:
         for item in row["items"]:
             use = {
@@ -398,6 +432,15 @@ def build_uses(bis_lists: list[dict]) -> list[list]:
                 "content_phase": row.get("content_phase"),
                 **item,
             }
+            if evidence_pool is not None and item.get("guide_evidence"):
+                references = []
+                for evidence in compact_list(item["guide_evidence"], "guide_evidence"):
+                    key = json.dumps(evidence, ensure_ascii=False, separators=(",", ":"))
+                    if key not in evidence_ids:
+                        evidence_pool.append(evidence)
+                        evidence_ids[key] = len(evidence_pool)
+                    references.append(evidence_ids[key])
+                use["guide_evidence"] = references
             uses.append(compact_record(use, "use"))
     return uses
 
@@ -431,28 +474,190 @@ def build_item_fallbacks(items: list[dict], item_stats: list[dict], leveling_rec
     return fallbacks
 
 
-def build_data() -> dict:
-    classes = canonical_json("classes")["classes"]
-    phases = canonical_json("phases")["phases"]
-    items = canonical_json("items")["items"]
-    item_stats = canonical_json("item_stats")["item_stats"]
-    bis_lists = canonical_json("bis_lists")["lists"]
-    gems = canonical_json("gems")["gems"]
-    gem_sources = canonical_json("gem_sources")["gem_sources"]
-    enchants = canonical_json("enchants")["enchants"]
-    enchant_sources = canonical_json("enchant_sources")["enchant_sources"]
-    enchant_effects = canonical_json("enchant_effects")["enchant_effects"]
-    consumables = canonical_json("consumables")["consumables"]
-    leveling_gear = canonical_json("leveling_gear")["leveling_gear"]
-    leveling_recommendations = canonical_json("leveling_recommendations")["leveling_recommendations"]
-    overrides = canonical_json("overrides")["overrides"]
-    manifest = canonical_json("scrape_manifest")
+def merge_forever_leveling_rows(base: list[dict], supplemental: list[dict]) -> list[dict]:
+    """Shared items retain reviewed routes from both independently audited families."""
+    merged = {row["id"]: dict(row) for row in base}
+    fact_fields = ("name", "slot", "inventory_slot", "required_level", "item_level", "armor_type", "weapon_subtype",
+                   "weapon_speed", "dps", "armor", "stats", "restrictions", "effect_stats", "equip_effects",
+                   "use_effects", "set_bonuses", "sockets", "max_equipped")
+    def route_base_identity(source):
+        if source.get("type") == "trade":
+            # Alliance and Horde price tables are distinct trade venues, not
+            # conflicting faction claims about a single drop or vendor.
+            market = source.get("market_observation", {}).get("market")
+            return ("trade", source.get("item_id"), market or source.get("source_url"))
+        keys = ("quest_id", "entity_id", "vendor_id", "spell_id", "item_id")
+        if not any(source.get(key) for key in keys):
+            return None
+        return tuple(source.get(key) for key in ("type", *keys, "zone", "content_type", "difficulty", "profession"))
+    def quest_branch(source):
+        return tuple(sorted({step["quest_id"] for step in source.get("quest_steps", [])
+                             if step.get("kind") == "prerequisite"}))
+    def recipe_branch(source):
+        # A shared craft can be learned from different faction vendors. Keep
+        # their access paths separate; faction eligibility is still compared
+        # for observations about the same named recipe supplier.
+        return tuple(sorted(json.dumps(route_base_identity(child), separators=(",", ":"))
+                            for child in source.get("recipe_sources", [])))
+    def route_identity(source):
+        identity = route_base_identity(source)
+        if identity is not None and source.get("type") == "quest":
+            # The same reward quest can have separately reviewed faction
+            # entry chains, with different acquisition minimums.
+            return (*identity, quest_branch(source))
+        if identity is not None and source.get("type") == "crafted":
+            return (*identity, recipe_branch(source))
+        return identity
+    def check_route_eligibility(left, right, item_id):
+        def eligibility(rule):
+            return {key: sorted(value) if isinstance(value, list) else value
+                    for key, value in rule.items() if key != "basis"}
+        if (left.get("side") != right.get("side") or
+                (left.get("eligibility") and right.get("eligibility")
+                 and eligibility(left["eligibility"]) != eligibility(right["eligibility"]))):
+            raise ValueError(f"Conflicting approved Forever route eligibility for item {item_id}")
+        def requirement_gates(source):
+            keys = ("type", "scope", "profession", "skill", "reputation", "standing", "standing_rank",
+                    "spell_id", "specialization", "choices")
+            return sorted(json.dumps({key: sorted(row[key]) if isinstance(row[key], list) else row[key]
+                                      for key in keys if key in row}, sort_keys=True, separators=(",", ":"))
+                          for row in source.get("requirements", [])
+                          if row.get("type") in {"profession", "profession_specialization", "recipe_known",
+                                                 "reputation", "faction_choice"})
+        if requirement_gates(left) != requirement_gates(right):
+            raise ValueError(f"Conflicting approved Forever route requirements for item {item_id}")
+        for family in ("recipe_sources", "token_sources", "quest_starter_sources"):
+            for child in right.get(family, []):
+                identity = route_identity(child)
+                match = next((row for row in left.get(family, [])
+                              if identity is not None and route_identity(row) == identity), None)
+                if match is not None:
+                    check_route_eligibility(match, child, item_id)
+    for row in supplemental:
+        previous = merged.get(row["id"])
+        if previous is None:
+            merged[row["id"]] = dict(row)
+            continue
+        for key in fact_fields:
+            if previous.get(key) is not None and row.get(key) is not None and previous[key] != row[key]:
+                raise ValueError(f"Conflicting approved Forever {key} for item {row['id']}")
+        combined = {**previous, **row}
+        sources = []
+        for source in row.get("sources", []) + previous.get("sources", []):
+            identity = route_identity(source)
+            existing = next((candidate for candidate in sources if identity is not None and route_identity(candidate)==identity),None)
+            if existing is None and source.get("type") == "quest" and identity is not None:
+                for candidate in sources:
+                    if (route_base_identity(candidate) == route_base_identity(source)
+                            and (not quest_branch(candidate) or not quest_branch(source))):
+                        # An older route without its prerequisite chain cannot
+                        # become an unrestricted alternative to a reviewed one.
+                        raise ValueError(f"Ambiguous approved Forever quest branch for item {row['id']}")
+            if existing is None and source.get("type") == "crafted" and identity is not None:
+                for candidate in sources:
+                    if (route_base_identity(candidate) == route_base_identity(source)
+                            and (not recipe_branch(candidate) or not recipe_branch(source))):
+                        raise ValueError(f"Ambiguous approved Forever recipe access for item {row['id']}")
+            if existing is not None:
+                check_route_eligibility(existing, source, row["id"])
+                # Prefer the leveling route's explicit eligibility over an
+                # older representation of that same acquisition route.
+                continue
+            if source not in sources:
+                sources.append(source)
+        if sources:
+            combined["sources"] = sources
+            combined["primary_source"] = sources[0]
+            combined["source_summary"] = summarize_sources(sources)
+        merged[row["id"]] = combined
+    return [merged[key] for key in sorted(merged)]
+
+
+def forever_items(items: list[dict], item_stats: list[dict], *, include_route_catalog=True) -> tuple[list[dict], list[dict]]:
+    from tools.forever_comparison import reviewed_guide_items, reviewed_source_items
+    from tools.project import FOREVER_CANONICAL_DIR
+
+    for name, key in (("leveling_items", "items"), ("leveling_item_stats", "item_stats")):
+        if (FOREVER_CANONICAL_DIR / (name + ".json")).is_file():
+            rows = dataset_json("forever", name)[key]
+            if key == "items":
+                items = merge_forever_leveling_rows(items, rows)
+            else:
+                item_stats = merge_forever_leveling_rows(item_stats, rows)
+    if (FOREVER_CANONICAL_DIR / "guide_item_reviews.json").is_file():
+        extra_items, extra_stats = reviewed_guide_items(dataset_json("forever", "guide_item_reviews")["items"])
+        existing = {item["id"] for item in items}
+        items = sorted([*items, *(item for item in extra_items if item["id"] not in existing)], key=lambda item: item["id"])
+        item_stats = sorted([*item_stats, *(item for item in extra_stats if item["id"] not in existing)], key=lambda item: item["id"])
+    if (FOREVER_CANONICAL_DIR / "guide_source_reviews.json").is_file():
+        source_items = reviewed_source_items(dataset_json("forever", "guide_source_reviews"), dataset_json("forever", "guide_equipment"))
+        items = merge_forever_leveling_rows(items, source_items)
+    if include_route_catalog and (FOREVER_CANONICAL_DIR / "guide_routes.json").is_file():
+        from tools.forever_guide_routes import add_catalog_routes
+        items = add_catalog_routes(items, dataset_json("forever", "guide_routes"), dataset_json("forever", "guide_equipment"))
+    return items, item_stats
+
+
+def build_data(flavor: str) -> dict:
+    def document(name: str) -> dict:
+        return dataset_json(flavor, name)
+
+    def optional_rows(name: str) -> list:
+        if flavor == "forever" and name not in {"leveling_gear", "leveling_recommendations"}:
+            return []
+        return document(name)[name]
+
+    classes = document("classes")["classes"]
+    phase_document = document("phases")
+    phases = phase_document["phases"]
+    items = document("items")["items"]
+    item_stats = document("item_stats")["item_stats"]
+    if flavor == "forever":
+        items, item_stats = forever_items(items, item_stats)
+    bis_lists = document("bis_lists")["lists"]
+    gems = optional_rows("gems")
+    gem_sources = optional_rows("gem_sources")
+    enchants = optional_rows("enchants")
+    enchant_sources = optional_rows("enchant_sources")
+    enchant_effects = optional_rows("enchant_effects")
+    consumables = optional_rows("consumables")
+    leveling_gear = optional_rows("leveling_gear")
+    leveling_recommendations = optional_rows("leveling_recommendations")
+    availability_data = {}
+    if flavor == "forever":
+        from tools.forever_comparison import compile_comparison_data
+        from tools.forever_scoring import reviewed_runtime_model
+        from tools.project import FOREVER_CANONICAL_DIR
+        availability_rows = (document("leveling_availability")["leveling_availability"]
+                             if (FOREVER_CANONICAL_DIR / "leveling_availability.json").is_file() else [])
+        rules = document("leveling_rules")
+        comparisons = compile_comparison_data(item_stats)
+        availability_data = {
+            "stat_rank": comparisons,
+            "leveling_availability": compact_list(availability_rows, "leveling_availability"),
+            "leveling_availability_rules": {
+                "common_slots": rules["common_slots"], "races": rules["races"],
+                "spec_policies": {key: {field: value[field] for field in ("slots", "slot_min_levels", "slot_max_levels") if field in value}
+                                  for key, value in rules["spec_policies"].items()},
+            },
+        }
+        character_scoring = reviewed_runtime_model()
+        if character_scoring:
+            availability_data["character_scoring"] = character_scoring
+    overrides = document("overrides")["overrides"]
+    manifest = document("scrape_manifest")
     lookups = build_runtime_lookups(items)
     item_fallbacks = build_item_fallbacks(items, item_stats, leveling_recommendations)
+    guide_evidence = []
+    uses = build_uses(bis_lists, guide_evidence)
 
-    return {
+    data = {
         "format": 2,
-        "schemas": SCHEMAS,
+        "schemas": ({**SCHEMAS, "source": FOREVER_SOURCE_SCHEMA,
+                     "leveling_availability": LEVELING_AVAILABILITY_SCHEMA,
+                     "leveling_gear": LEVELING_GEAR_SCHEMA + ["race", "faction", "race_id", "variant_id", "variant_name", "random_suffix_id"],
+                     "leveling_recommendation": LEVELING_RECOMMENDATION_SCHEMA + ["faction", "race_id", "variant_name", "random_suffix_id"]}
+                    if flavor == "forever" else SCHEMAS),
         "meta": {
             "addon": "Big BiS List",
             "data_version": "seed-0.1.0",
@@ -467,18 +672,24 @@ def build_data() -> dict:
             "leveling_recommendation_count": len(leveling_recommendations),
             "item_fallback_count": len(item_fallbacks),
             "override_count": len(overrides),
+            **({"flavor": flavor, "level_cap": 60, "supports_leveling": True} if flavor == "forever" else {}),
         },
         "classes": classes,
         "phases": phases,
-        "active_schedule": canonical_json("phases").get("active_schedule"),
-        "phase_schedules": canonical_json("phases").get("schedules", {}),
+        "active_schedule": phase_document.get("active_schedule"),
+        "phase_schedules": phase_document.get("schedules", {}),
         "items": compact_list(items, "item"),
         "item_fallbacks": compact_list(item_fallbacks, "item_fallback"),
         "item_class_restrictions": {
             item["id"]: sorted(set(item["restrictions"]["classes"]))
             for item in item_stats if item.get("restrictions", {}).get("classes")
         },
-        "uses": build_uses(bis_lists),
+        **({"item_eligibility": {item["id"]: {"min_level": item.get("required_level"),
+                "classes": item.get("restrictions", {}).get("classes", []),
+                "races": item.get("restrictions", {}).get("races", [])} for item in item_stats}}
+           if flavor == "forever" else {}),
+        "uses": uses,
+        "guide_evidence": guide_evidence,
         "gems": compact_list(gems, "gem"),
         "gem_sources": compact_list(gem_sources, "source_record"),
         "enchants": compact_list(enchants, "enchant"),
@@ -487,14 +698,141 @@ def build_data() -> dict:
         "consumables": compact_list(consumables, "consumable"),
         "leveling_gear": compact_list(leveling_gear, "leveling_gear"),
         "leveling_recommendations": compact_list(leveling_recommendations, "leveling_recommendation"),
+        **availability_data,
         "source_types": lookups["source_types"],
         "zones": lookups["zones"],
         "tooltip_aliases": lookups["tooltip_aliases"],
     }
+    if flavor == "forever":
+        by_item, by_profile = {}, {}
+        for offset, row in enumerate(leveling_recommendations, 1):
+            by_item.setdefault(row["item_id"], []).append(offset)
+            by_profile.setdefault(row["class"], {}).setdefault(row["spec"], []).append(offset)
+        alias_ids = dict(lookups["tooltip_aliases"])
+        use_positions = {field: offset for offset, field in enumerate(SCHEMAS["use"])}
+        uses_by_phase = {}
+        for phase in phases:
+            phase_key = phase["key"]
+            all_uses, tooltip_uses, by_spec, by_list = {}, {}, {}, {}
+            for offset, row in enumerate(uses, 1):
+                def field(name):
+                    position = use_positions[name]
+                    return row[position] if position < len(row) else None
+                list_key, content = field("phase"), field("content_phase")
+                if list_key == "PR" and content and content != phase_key:
+                    continue
+                item, class_name, spec = field("item_id"), field("class"), field("spec")
+                all_uses.setdefault(item, []).append(offset)
+                for key in [item, *alias_ids.get(item, [])]:
+                    tooltip_uses.setdefault(key, []).append(offset)
+                by_spec.setdefault(class_name, {}).setdefault(spec, []).append(offset)
+                by_list.setdefault(class_name, {}).setdefault(spec, {}).setdefault(list_key, []).append(offset)
+            uses_by_phase[phase_key] = [all_uses, tooltip_uses, by_spec, by_list]
+        data["runtime_indexes"] = {
+            "guide_core": core_guide_pages(leveling_recommendations, comparisons),
+            "items": {row["id"]: offset for offset, row in enumerate(items, 1)},
+            "item_fallbacks": {row["id"]: offset for offset, row in enumerate(item_fallbacks, 1)},
+            "leveling_by_item": by_item,
+            "leveling_by_profile": by_profile,
+            "uses_by_phase": uses_by_phase,
+        }
+    return data
 
 
-def render_lua() -> str:
-    data = build_data()
+def core_guide_pages(recommendations, model):
+    """Small, independently usable pages of reviewed, fixed-stat leveling rewards."""
+    profiles, pages, interned = {}, [], {}
+    for offset, row in enumerate(recommendations, 1):
+        if row.get("variant_id") or row["source_bucket"] not in {
+            "dungeon_drop", "other_drop", "quest", "vendor", "crafted", "token_turnin"
+        } or not row.get("score", 0) > 0:
+            continue
+        profile = "/".join(row[field] for field in ("class", "spec", "race", "faction"))
+        levels = profiles.setdefault(profile, {})
+        for level in range(row["level_min"], row["level_max"] + 1):
+            by_route = levels.setdefault(level, {})
+            key = (row["slot"], row["source_bucket"])
+            candidate = (row["score"], -row["item_id"], -offset)
+            if key not in by_route or candidate > by_route[key]:
+                by_route[key] = candidate
+    directory = {}
+    for profile, levels in sorted(profiles.items()):
+        refs = []
+        for level in range(1, 60):
+            page = tuple(-entry[2] for _, entry in sorted(levels.get(level, {}).items()))
+            if page not in interned:
+                pages.append(list(page))
+                interned[page] = len(pages)
+            refs.append(interned[page])
+        directory[profile] = refs
+    name_field = model["item_fields"].index("name")
+    names = sorted(model["items"], key=lambda key: (model["items"][key][name_field].lower(), key))
+    return {"pages": pages, "profiles": directory, "names": names}
+
+
+def compact_lua(value) -> str:
+    from tools.project import lua_string
+
+    if isinstance(value, list):
+        return "{" + ",".join(map(compact_lua, value)) + "}"
+    if isinstance(value, dict):
+        return "{" + ",".join(f"[{lua_string(str(key))}]={compact_lua(value[key])}" for key in sorted(value)) + "}"
+    return lua_value(value)
+
+
+def pack_leveling_recommendations(data: dict) -> None:
+    """Keep archive history accessible by item without allocating a table per row."""
+    rows = data["leveling_recommendations"]
+    names = data["schemas"]["leveling_recommendation"]
+    columns = {}
+    for index, key in enumerate(names):
+        dictionary, ids, positions = [], {}, []
+        for row in rows:
+            value = row[index] if len(row) > index else None
+            if value is None:
+                positions.append(0)
+                continue
+            identity = compact_lua(value)
+            if identity not in ids:
+                dictionary.append(value)
+                ids[identity] = len(dictionary)
+            positions.append(ids[identity])
+        if not dictionary:
+            continue
+        width = max(1, (len(dictionary).bit_length() + 5) // 6)
+        digits = "".join(chr(48 + ((value >> shift) & 63)) for value in positions
+                         for shift in range(6 * (width - 1), -1, -6))
+        columns[key] = [width, digits, dictionary]
+    data["runtime_indexes"]["recommendation_columns"] = columns
+    data["leveling_recommendations"] = []
+
+
+def render_lua(flavor: str) -> str:
+    data = build_data(flavor)
+    if flavor == "forever":
+        pack_leveling_recommendations(data)
+        encoded = json.dumps({key: data[key] for key in ("stat_rank", "items", "item_fallbacks", "item_eligibility",
+                                                          "phases", "phase_schedules", "leveling_availability_rules")},
+                             ensure_ascii=False, separators=(",", ":"), sort_keys=True).encode("utf-8")
+        data["runtime_indexes"]["guide_signature"] = sha256(encoded).hexdigest()
+        lines = ["-- Generated by tools/generate_lua.py; do not edit by hand.", "BigBiSListData = {"]
+        for key, value in sorted(data.items()):
+            if isinstance(value, list):
+                lines.append(f'    ["{key}"] = {{')
+                lines.extend("        " + compact_lua(row) + "," for row in value)
+                lines.append("    },")
+            else:
+                encode = compact_lua if key == "runtime_indexes" else lua_value
+                lines.append(f'    ["{key}"] = ' + (encode(value) if key == "runtime_indexes" else encode(value, 4)) + ",")
+        lines.extend(("}", "local index = BigBiSListData.runtime_indexes",
+                      "index.item_records = BigBiSListData.items",
+                      "index.fallback_records = BigBiSListData.item_fallbacks",
+                      "index.leveling_records = BigBiSListData.leveling_recommendations",
+                      "index.use_records = BigBiSListData.uses",
+                      "index.guide_core.data = BigBiSListData.stat_rank",
+                      "index.guide_core.items = BigBiSListData.stat_rank.items",
+                      "BigBiSListData.stat_rank.slot_key_items = BigBiSListData.stat_rank.items", ""))
+        return "\n".join(lines)
     return "\n".join(
         [
             "-- Generated by tools/generate_lua.py; do not edit by hand.",
@@ -506,29 +844,46 @@ def render_lua() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate deterministic BigBiSListData Lua.")
+    add_flavor_argument(parser)
     parser.add_argument("--check", action="store_true", help="Fail if the generated output differs from Data.lua.")
+    parser.add_argument("--lua", help="Lua 5.1 executable for compiling the Forever Guide index")
     args = parser.parse_args(argv)
 
-    result = validate()
+    result = validate_dataset(args.flavor)
     if not result.ok:
         for error in result.errors:
             print(f"validation error: {error}", file=sys.stderr)
         return 1
 
-    rendered = render_lua()
+    output_path = FOREVER_OUTPUT_PATH if args.flavor == "forever" else OUTPUT_PATH
+    rendered = render_lua(args.flavor)
     if args.check:
-        if not OUTPUT_PATH.is_file():
-            print(f"{OUTPUT_PATH} does not exist", file=sys.stderr)
+        if not output_path.is_file():
+            print(f"{output_path} does not exist", file=sys.stderr)
             return 1
-        existing = OUTPUT_PATH.read_text(encoding="utf-8").replace("\r\n", "\n")
+        existing = output_path.read_text(encoding="utf-8").replace("\r\n", "\n")
         if existing != rendered:
-            print(f"{OUTPUT_PATH} is not up to date", file=sys.stderr)
+            print(f"{output_path} is not up to date", file=sys.stderr)
             return 1
-        print(f"{OUTPUT_PATH} is up to date.")
+        if args.flavor == "forever":
+            from tools.forever_guide_index import OUTPUT, check_index
+
+            if not check_index():
+                print(f"{OUTPUT} is not up to date.", file=sys.stderr)
+                return 1
+        print(f"{output_path} is up to date.")
         return 0
 
-    write_text(OUTPUT_PATH, rendered)
-    print(f"Wrote {OUTPUT_PATH}")
+    write_text(output_path, rendered)
+    print(f"Wrote {output_path}")
+    if args.flavor == "forever":
+        from tools.forever_guide_index import check_index, compile_index, find_lua51
+
+        if not check_index():
+            lua = find_lua51(args.lua)
+            if not lua:
+                parser.error("A working Lua 5.1 executable is required for the Forever Guide index")
+            compile_index(lua)
     return 0
 
 

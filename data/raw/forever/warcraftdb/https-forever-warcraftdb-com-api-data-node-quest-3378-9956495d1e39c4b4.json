@@ -1,0 +1,36 @@
+{
+  "attribution": [
+    {
+      "credit": "Warcraft DB public Forever quest data",
+      "source": "https://forever.warcraftdb.com/api/data/node/quest/3378"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "fetched_at": "2026-11-11T08:11:11.131706+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "warcraftdb",
+  "relationships": [
+    {
+      "object_id": 10745,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://forever.warcraftdb.com/api/data/node/quest/3378",
+      "subject_id": 3378,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "listed_side": "Both",
+    "min_level": null,
+    "name": "Prayer to Elune",
+    "quest_id": 3378,
+    "reward_item_ids": [
+      10745,
+      10746
+    ],
+    "zone": "Searing Gorge"
+  },
+  "source_content_digest": "6e2df83d25752a46433034f0d56ecfbe5d08d7d064d6fa2e22fdbb89fb9ac5cb",
+  "url": "https://forever.warcraftdb.com/api/data/node/quest/3378"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Ferocity Item Level 57 Binds when picked up Relic Idol Requires Level 52 Equip: Reduces the energy cost of Claw, Rake, and Mangle by 2. Sell Price: 1 27 69 Dropped by: Lord Roccor Drop Chance: 17.65%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:20+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Idol",
+  "item_id": 22397,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Reduces the energy cost of Claw, Rake, and Mangle by 2.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Reduces the energy cost of Claw, Rake, and Mangle by 2."
+    ],
+    "id": 22397,
+    "item_level": 57,
+    "name": "Idol of Ferocity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 52,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Idol",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=22397"
+  },
+  "linked_entities": [
+    {
+      "id": 27851,
+      "name": "Reduces the energy cost of Claw, Rake, and Mangle by 2.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=27851"
+    }
+  ],
+  "name": "Idol of Ferocity",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 17.65,
+      "entity_name": "Lord Roccor",
+      "source_url": "https://www.wowhead.com/forever/item=22397",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c841bf80b5652bd667af9b8f3c82688c62a331df0c4c0b5d0593ba1ce413269f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/22397",
+  "url": "https://www.wowhead.com/forever/item=22397"
+}

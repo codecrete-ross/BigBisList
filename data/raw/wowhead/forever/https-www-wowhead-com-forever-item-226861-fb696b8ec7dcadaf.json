@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "client_build": "1.60.1.70888",
+  "description": "Gauntlets of Heroism Item Level 55 Binds when picked up Hands Plate 393 Armor +18 Strength +14 Stamina Durability 55 / 55 Classes: Warrior Equip: Improves your chance to get a critical strike by 1.0%. Battlegear of Heroism (0/8) Item #226879 Item #226880 Item #226878 Item #226877 Item #226876 Item #226875 Item #226874 Item #226873 Sell Price: 1 83 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-12T22:22:38.6185386Z",
+  "flavor": "forever",
+  "inventory_slot": "Hands",
+  "item_id": 226861,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 393,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%."
+    ],
+    "id": 226861,
+    "item_level": 55,
+    "name": "Gauntlets of Heroism",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Hands",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "stamina": 14.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=226861"
+  },
+  "linked_entities": [],
+  "name": "Gauntlets of Heroism",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "epic",
+  "related_tables": {},
+  "server_push_evidence": {
+    "collected_at": "2026-11-12T22:21:14.5385638Z",
+    "source_content_digest": "d0234c0444898e7d835eba230ebe43a9e27abe22be7cb0de4f1f16e44f3cd6e7",
+    "source_url": "https://raw.githubusercontent.com/wowsims/gamedata/f3848e07ab826d0dfb5c0075c813ea66fad57490/patches/1.60.1.70888/hotfix-17004077%2B4/items.txt"
+  },
+  "source_content_digest": "7f850d66174d01e9a0cfac27b8af1cc98e52872beaaa3bf56f2b07bdc59eb71f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/226861",
+  "url": "https://www.wowhead.com/forever/item=226861"
+}

@@ -1,0 +1,40 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever quest record",
+      "source": "https://www.wowhead.com/forever/quest=97988"
+    }
+  ],
+  "confidence": "published_forever_quest_record",
+  "entity_id": 97988,
+  "fetched_at": "2026-11-12T21:01:24.155712+00:00",
+  "flavor": "forever",
+  "name": "Orgrimmar's Windshapers",
+  "page_type": "quest",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "object_id": 281288,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://www.wowhead.com/forever/quest=97988",
+      "subject_id": 97988,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "linked_item_ids": [],
+    "min_level": 53,
+    "name": "Orgrimmar's Windshapers",
+    "quest_id": 97988,
+    "reward_item_roles": {
+      "281288": "choices"
+    },
+    "side": "Horde",
+    "zone": null
+  },
+  "source_capture_format": "indexed page, manually normalized exact public fields and reward link targets on 2026-11-12",
+  "source_content_digest": "70b017f5407cbe21d713c23dce9b70312de713e0d08aa6d99087e8e29ae82edc",
+  "url": "https://www.wowhead.com/forever/quest=97988",
+  "viewed_source_url": "https://www.wowhead.com/forever/quest=97988/orgrimmars-windshapers"
+}

@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Royal Seal of Eldre'Thalas Item Level 62 Binds when picked up Unique Trinket +15 Nature Resistance Classes: Paladin Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects. Equip: Restores 9 Mana per 5 sec in Haunted areas. \"Blessed by the Shen'dralar Ancients.\"",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:10+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 18472,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 22,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 9 Mana per 5 sec in Haunted areas.",
+        "stats": {
+          "mp5": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+      "Equip: Restores 9 Mana per 5 sec in Haunted areas. \"Blessed by the Shen'dralar Ancients.\""
+    ],
+    "id": 18472,
+    "item_level": 62,
+    "name": "Royal Seal of Eldre'Thalas",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "mp5": 9.0,
+      "nature_resistance": 15.0,
+      "spell_damage": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=18472"
+  },
+  "linked_entities": [
+    {
+      "id": 1318477,
+      "name": "Restores 9 Mana per 5 sec in Haunted areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1318477"
+    }
+  ],
+  "name": "Royal Seal of Eldre'Thalas",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "3e9ead7ef7bc9729ce26c3d1e0a34d60d3bbcde40ee2494af3a041826384ff24",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18472",
+  "url": "https://www.wowhead.com/forever/item=18472"
+}

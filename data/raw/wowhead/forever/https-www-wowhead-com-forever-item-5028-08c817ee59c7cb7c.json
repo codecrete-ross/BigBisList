@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lord Sakrasis' Scepter Item Level 47 Binds when equipped Held In Off-hand +6 Intellect Requires Level 42 Equip: Smite your target with the power of the holy spring, inflicting 56 Holy damage. \"The powers of the holy spring radiate from the scepter.\" Sell Price: 75 59 Dropped by: Lord Sakrasis Drop Chance: 47.76%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:48:34+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 5028,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Smite your target with the power of the holy spring, inflicting 56 Holy damage.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Smite your target with the power of the holy spring, inflicting 56 Holy damage."
+    ],
+    "id": 5028,
+    "item_level": 47,
+    "name": "Lord Sakrasis' Scepter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 42,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=5028"
+  },
+  "linked_entities": [
+    {
+      "id": 1326019,
+      "name": "Smite your target with the power of the holy spring, inflicting 56 Holy damage.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1326019"
+    }
+  ],
+  "name": "Lord Sakrasis' Scepter",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 47.76,
+      "entity_name": "Lord Sakrasis",
+      "source_url": "https://www.wowhead.com/forever/item=5028",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "40c7bb00100779c6cc7d25712b93fc9fedef7e180b5023a72d964f61cb21ba38",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/5028",
+  "url": "https://www.wowhead.com/forever/item=5028"
+}

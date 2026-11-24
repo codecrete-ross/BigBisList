@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mastersmith's Hammer Item Level 60 Binds when picked up Main Hand Mace 44 - 82 Damage Speed 2.40 (26.25 damage per second) +10 Stamina Requires Level 55 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 68 . Sell Price: 4 97 42 Dropped by: Goraluk Anvilcrack Drop Chance: 32.88%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T05:23:17.2064481Z",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 18048,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 26.25,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 68.",
+        "stats": {
+          "spell_power": 68.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 68."
+    ],
+    "id": 18048,
+    "item_level": 60,
+    "name": "Mastersmith's Hammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 1.0,
+      "spell_power": 68.0,
+      "stamina": 10.0
+    },
+    "weapon_max_damage": 82,
+    "weapon_min_damage": 44,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18048"
+  },
+  "linked_entities": [],
+  "name": "Mastersmith's Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.88,
+      "entity_name": "Goraluk Anvilcrack",
+      "source_url": "https://www.wowhead.com/forever/item=18048",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5392d5b67067fbb1122f296585b36b26e61de7e95fb1ba5b29bbe0e09bfbc892",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/18048",
+  "url": "https://www.wowhead.com/forever/item=18048"
+}

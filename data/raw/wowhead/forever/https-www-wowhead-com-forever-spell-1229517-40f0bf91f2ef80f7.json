@@ -1,0 +1,68 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Camp Chair 10 sec cast Reagents: Light Leather (3), Simple Wood (2) Craft a Camp Chair. Camp Chair Item Level 4 Requires Skinning (20) Use: Assembles a camp chair that allows you and others sitting nearby to gain 2% increased critical strike chance with all spells and attacks, mutually exclusive with Moonkin Aura. Requires a Campfire nearby. All camping features share a cooldown of 1 hour. (1 Hour Cooldown) Max Stack: 20",
+  "entity_id": 1229517,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:30:49+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 2318,
+      "name": "Light Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2318"
+    },
+    {
+      "id": 4470,
+      "name": "Simple Wood",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4470"
+    },
+    {
+      "id": 279979,
+      "name": "Camp Chair",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=279979"
+    },
+    {
+      "id": 393,
+      "name": "Skinning",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=393"
+    },
+    {
+      "id": 1229517,
+      "name": "Camp Chair",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1229517"
+    },
+    {
+      "id": 1307229,
+      "name": "Assembles a camp chair that allows you and others sitting nearby to gain 2% increased critical strike chance with all spells and attacks, mutually exclusive with Moonkin Aura. Requires a Campfire nearby. All camping features share a cooldown of 1 hour.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1307229"
+    }
+  ],
+  "name": "Camp Chair",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 279979,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1229517",
+      "subject_id": 1229517,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "5905e22a81e82d28e2a289fc930b85337541f068fac9b5940f1d5fe9c4830432",
+  "spell_id": 1229517,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1229517",
+  "url": "https://www.wowhead.com/forever/spell=1229517"
+}

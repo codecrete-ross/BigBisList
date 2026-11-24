@@ -1,0 +1,157 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    },
+    {
+      "credit": "Game data \u00a9 Blizzard Entertainment; client table exports from Wago.tools.",
+      "licence": "Blizzard game-file metadata; availability unconfirmed",
+      "source": "https://wago.tools"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "historical_route_leads_in_forever_catalog",
+  "fetched_at": "2026-11-13T16:25:37.1156061Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 6103,
+      "collected_at": "2026-11-13T16:25:37.1156061Z",
+      "http": "200",
+      "name": "att-forever-worldbosses",
+      "source_content_digest": "e2de611d36799e220f3ee8398d1c27d1da09140051779894cf7ccc3e09666f23",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa"
+    },
+    {
+      "bytes": 1740948,
+      "collected_at": "2026-11-13T21:26:34.988732+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-tree",
+      "source_content_digest": "517c442ad4a063f2e688c280bd5fe7814cad457dc705d57882c8a1ae86f96a07",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/25f90585f2141d42e89f9dd2c655c8ec8b6344d2?recursive=1"
+    },
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Ysondre",
+      "object_id": 20582,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa",
+      "subject_id": 14887,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Lethon",
+      "object_id": 20582,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa",
+      "subject_id": 14888,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Emeriss",
+      "object_id": 20582,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa",
+      "subject_id": 14889,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Taerar",
+      "object_id": 20582,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa",
+      "subject_id": 14890,
+      "subject_type": "npc"
+    },
+    {
+      "availability": "pending_live_review",
+      "confidence": "catalog_route_lead",
+      "entity_name": "Taerar",
+      "object_id": 20633,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa",
+      "subject_id": 14890,
+      "subject_type": "npc"
+    }
+  ],
+  "reviewed_page_facts": {
+    "att_path": ".contrib/.db/forever/dungeons & raids/0.6 - world bosses.lua",
+    "finding": "The catalog describes outdoor encounters. Nightmare Grove's instance conditions do not determine outdoor spawn availability or loot eligibility for those encounters.",
+    "reported_outdoor_loot": {
+      "20582": [
+        14887,
+        14888,
+        14889,
+        14890
+      ],
+      "20633": [
+        14890
+      ]
+    },
+    "separate_instance_conditions": [
+      {
+        "FailureDescription_lang": "",
+        "ID": "3628",
+        "MapDifficultyID": "5669",
+        "OrderIndex": "0",
+        "PlayerConditionID": "131196"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "3663",
+        "MapDifficultyID": "5669",
+        "OrderIndex": "1",
+        "PlayerConditionID": "133069"
+      }
+    ],
+    "separate_instance_map_id": 2832,
+    "separate_instance_max_players": 25
+  },
+  "source_content_digest": "e2de611d36799e220f3ee8398d1c27d1da09140051779894cf7ccc3e09666f23",
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/cb58ee016268f687921b28985dc28f6d451938fa"
+}

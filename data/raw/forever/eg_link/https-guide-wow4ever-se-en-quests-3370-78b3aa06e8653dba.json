@@ -1,0 +1,49 @@
+{
+  "attribution": [
+    {
+      "credit": "EG Link (Efficient Games)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://guide.wow4ever.se/en/quests/3370"
+    }
+  ],
+  "confidence": "published_player_quest_report",
+  "fetched_at": "2026-11-11T05:15:41+00:00",
+  "flavor": "forever",
+  "page_type": "observations",
+  "provider": "eg_link",
+  "relationships": [
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 10657,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3370",
+      "subject_id": 3370,
+      "subject_type": "quest"
+    },
+    {
+      "confidence": "published_player_quest_report",
+      "object_id": 10658,
+      "object_type": "item",
+      "relation": "reward_choice",
+      "source_url": "https://guide.wow4ever.se/en/quests/3370",
+      "subject_id": 3370,
+      "subject_type": "quest"
+    }
+  ],
+  "reviewed_page_facts": {
+    "min_level": 10,
+    "named_turn_in_npc_id": 4217,
+    "objective_item_id": 10649,
+    "quest_level": 25,
+    "reward_choice_ids": [
+      10657,
+      10658
+    ],
+    "side": "Alliance",
+    "start_npc_id": null
+  },
+  "source_content_digest": "1a9014f9450e1619feac672c34a53a2ffe13649aace3bb70b9a58cfa3e5b304e",
+  "url": "https://guide.wow4ever.se/en/quests/3370"
+}

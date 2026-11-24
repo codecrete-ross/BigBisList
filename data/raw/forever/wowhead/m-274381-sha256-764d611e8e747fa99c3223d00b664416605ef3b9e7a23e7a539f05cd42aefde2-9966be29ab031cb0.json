@@ -1,0 +1,67 @@
+{
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-20T05:34:35.317361+00:00",
+  "flavor": "forever",
+  "item_id": 274381,
+  "items": [
+    {
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "description": "Coldbringer Spine Item Level 43 Binds when picked up Two-Hand Staff 63 - 95 Damage Speed 2.80 (28.21 damage per second) +20 Spirit Durability 100 / 100 Requires Level 38 Equip: Improves your chance to hit by 1.0%. Equip: Increases damage done by Frost spells and effects by up to 59. Sell Price: 2 8 20 Dropped by: Amnennar the Coldbringer Drop Chance: 27.76%",
+      "dps": 28.21,
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+          "stats": {
+            "hit_percent": 1.0
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases damage done by Frost spells and effects by up to 59.",
+          "stats": {
+            "frost_damage": 59
+          },
+          "type": "passive"
+        }
+      ],
+      "equip_effects": [
+        "Equip: Improves your chance to hit by 1.0%."
+      ],
+      "id": 274381,
+      "item_level": 43,
+      "name": "Coldbringer Spine",
+      "parse_confidence": "tooltip_endpoint",
+      "phase": "PR",
+      "quality": "rare",
+      "required_level": 38,
+      "slot": "Two Hand",
+      "source_summary": "",
+      "stats": {
+        "frost_damage": 59.0,
+        "hit_percent": 1.0,
+        "spirit": 20.0
+      },
+      "weapon_max_damage": 95,
+      "weapon_min_damage": 63,
+      "weapon_speed": 2.8,
+      "weapon_subtype": "Staff",
+      "weapon_type": "Two Hand",
+      "wowhead_url": "https://www.wowhead.com/forever/item=274381"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 27.76,
+      "entity_name": "Amnennar the Coldbringer",
+      "source_url": "https://www.wowhead.com/forever/item=274381",
+      "type": "drop"
+    }
+  ],
+  "page_type": "equipment_facts",
+  "parser_version": "wowhead-scraper-0.10.0/equipment-1",
+  "provider": "wowhead",
+  "source_content_digest": "764d611e8e747fa99c3223d00b664416605ef3b9e7a23e7a539f05cd42aefde2",
+  "url": "https://nether.wowhead.com/forever/tooltip/item/274381#sha256-764d611e8e747fa99c3223d00b664416605ef3b9e7a23e7a539f05cd42aefde2"
+}

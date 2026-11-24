@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Evergreen Shield Item Level 65 Binds when equipped Off Hand Shield 2468 Armor 44 Block +16 Stamina Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects. Sell Price: 5 59 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:58:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 279262,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 2468,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 23,
+          "spell_damage": 8
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases healing done by up to 23 and damage done by up to 8 for all magical spells and effects."
+    ],
+    "id": 279262,
+    "item_level": 65,
+    "name": "Evergreen Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "block_value": 44.0,
+      "crit_percent": 1.0,
+      "healing_power": 23.0,
+      "spell_damage": 8.0,
+      "stamina": 16.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=279262"
+  },
+  "linked_entities": [],
+  "name": "Evergreen Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/279262",
+  "url": "https://www.wowhead.com/forever/item=279262"
+}

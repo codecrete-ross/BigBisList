@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Deprecated Talisman of Cleansing Item Level 40 Binds when equipped Unique Trinket Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (1 Min Cooldown) Sell Price: 3 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:44:51+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 2948,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 2948,
+    "item_level": 40,
+    "name": "Deprecated Talisman of Cleansing",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "poor",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Purifies the friendly target, removing 1 disease effect and 1 poison effect. (1 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=2948"
+  },
+  "linked_entities": [
+    {
+      "id": 1152,
+      "name": "Purifies the friendly target, removing 1 disease effect and 1 poison effect.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1152"
+    }
+  ],
+  "name": "Deprecated Talisman of Cleansing",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "poor",
+  "related_tables": {},
+  "source_content_digest": "e002aed39c8c4ca6bc916412e6412e8840e6c3e09882c3db1ba9daf8e822c20b",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/2948",
+  "url": "https://www.wowhead.com/forever/item=2948"
+}

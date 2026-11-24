@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Golden Banana Item Level 50 Binds when picked up Unique-Equipped Trinket Use: Increases all attributes by 16 for 15 sec. Effect and duration are doubled in Forest and Grassland areas. (5 Min Cooldown) Sell Price: 92 97",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:05+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 270226,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases all attributes by 16 for 15 sec. Effect and duration are doubled in Forest and Grassland areas. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 270226,
+    "item_level": 50,
+    "name": "Golden Banana",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases all attributes by 16 for 15 sec. Effect and duration are doubled in Forest and Grassland areas. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=270226"
+  },
+  "linked_entities": [
+    {
+      "id": 1287571,
+      "name": "Increases all attributes by 16 for 15 sec. Effect and duration are doubled in Forest and Grassland areas.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1287571"
+    }
+  ],
+  "name": "Golden Banana",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "64a6c1e3200f4ca219aaf97f7acb25d1352465553a09b660b485518bc2f26d27",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/270226",
+  "url": "https://www.wowhead.com/forever/item=270226"
+}

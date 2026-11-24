@@ -1,0 +1,100 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead Forever",
+      "source": "https://www.wowhead.com/forever/item=18755"
+    }
+  ],
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "confidence": "tooltip_endpoint",
+  "description": "Xorothian Firestick Item Level 62 Binds when picked up Ranged Gun 57 - 108 Damage Speed 2.60 (31.73 damage per second) +4 Agility +4 Stamina +4 Shadow Resistance Requires Level 57 Chance on hit: Deal 42 Fire damage over 3 sec. Sell Price: 4 11 30 Dropped by: Lord Hel'nurath Drop Chance: 25.48%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-14T01:32:42.652796+00:00",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 1460,
+      "collected_at": "2026-11-14T01:32:42.652796+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-18755",
+      "source_content_digest": "505daa360303b2c4d647cf5760bb180f6511749a6e7dd5183071168426f0a6ed",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/18755"
+    },
+    {
+      "bytes": 7552759,
+      "collected_at": "2026-11-14T01:17:27.968124+00:00",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "raidbots-70938-0050",
+      "source_content_digest": "930d52b5eb6e0a64c985e0e93c43e7f3ba3987e7b2302aa4acde749813e45c59",
+      "source_url": "https://storage.googleapis.com/raidbots-static/wow%2F70938%2FenUS%2FDBCache-aTNBERqDeCX1MKBZA8WaCU.bin"
+    }
+  ],
+  "inventory_slot": "Ranged",
+  "item_id": 18755,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 31.73,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Deal 42 Fire damage over 3 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Deal 42 Fire damage over 3 sec."
+    ],
+    "id": 18755,
+    "item_level": 62,
+    "name": "Xorothian Firestick",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "shadow_resistance": 4.0,
+      "stamina": 4.0
+    },
+    "weapon_max_damage": 108,
+    "weapon_min_damage": 57,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=18755"
+  },
+  "linked_entities": [
+    {
+      "id": 1302343,
+      "name": "Deal 42 Fire damage over 3 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302343"
+    }
+  ],
+  "name": "Xorothian Firestick",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 25.48,
+      "entity_name": "Lord Hel'nurath",
+      "source_url": "https://www.wowhead.com/forever/item=18755",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "505daa360303b2c4d647cf5760bb180f6511749a6e7dd5183071168426f0a6ed",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/forever/item=18755"
+}

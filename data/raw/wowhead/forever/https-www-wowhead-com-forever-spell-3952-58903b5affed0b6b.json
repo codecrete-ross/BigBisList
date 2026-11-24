@@ -1,0 +1,106 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Minor Recombobulator 12.5 sec cast Reagents: Bronze Tube , Whirring Bronze Gizmo (2), Medium Leather (2), Moss Agate Minor Recombobulator Item Level 28 Unique-Equipped Trinket Requires Engineering (140) Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+  "entity_id": 3952,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:28:41+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 1206,
+      "name": "Moss Agate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=1206"
+    },
+    {
+      "id": 2319,
+      "name": "Medium Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=2319"
+    },
+    {
+      "id": 4371,
+      "name": "Bronze Tube",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4371"
+    },
+    {
+      "id": 4375,
+      "name": "Whirring Bronze Gizmo",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4375"
+    },
+    {
+      "id": 4381,
+      "name": "Minor Recombobulator",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=4381"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 3952,
+      "name": "Minor Recombobulator",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=3952"
+    },
+    {
+      "id": 18805,
+      "name": "Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18805"
+    }
+  ],
+  "name": "Minor Recombobulator",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Minor Recombobulator 12.5 sec cast Reagents: Bronze Tube , Whirring Bronze Gizmo (2), Medium Leather (2), Moss Agate Minor Recombobulator Item Level 28 Unique-Equipped Trinket Requires Engineering (140) Use: Dispels Polymorph effects on a friendly target. Also restores 203 to 338 Health and 96 to 160 Mana. (5 Min Cooldown) 10 Charges Sell Price: 6",
+      "scope": "cast_enchant",
+      "skill": 140,
+      "source_url": "https://www.wowhead.com/forever/spell=3952",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 4381,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=3952",
+      "subject_id": 3952,
+      "subject_type": "spell"
+    },
+    {
+      "confidence": "public_spell_page",
+      "object_id": 14639,
+      "object_type": "item",
+      "relation": "taught_by",
+      "source_url": "https://www.wowhead.com/forever/spell=3952",
+      "subject_id": 3952,
+      "subject_type": "spell"
+    }
+  ],
+  "reviewed_page_facts": {
+    "creates_item_id": 4381,
+    "observed_at": "2026-11-06T06:04:10.382943+00:00",
+    "retrieval_method": "public_web_search_result",
+    "review_note": "The full current spell page explicitly lists Schematic: Minor Recombobulator under Taught by. Keep that relationship separate from the crafting-output tooltip.",
+    "taught_by_item_id": 14639
+  },
+  "source_content_digest": "ca66861bb7812018d8d7f598945e225cba667b2df6f766db035ff44568658d8e",
+  "spell_id": 3952,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/3952",
+  "url": "https://www.wowhead.com/forever/spell=3952"
+}

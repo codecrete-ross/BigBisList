@@ -1,0 +1,56 @@
+{
+  "attribution": [
+    {
+      "credit": "Wowhead",
+      "source": "https://www.wowhead.com/forever/item=227360"
+    }
+  ],
+  "confidence": "published_forever_bundle_lead",
+  "fetched_at": "2026-11-13T06:06:07.7408929Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 905,
+      "collected_at": "2026-11-13T06:06:07.7408929Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wh-227360",
+      "source_content_digest": "8a9e4ae486a0753fda8d892e96458e608bf5dab290cfdaadc91eff263d8fe914",
+      "source_url": "https://nether.wowhead.com/forever/tooltip/item/227360"
+    },
+    {
+      "bytes": 5345571,
+      "collected_at": "2026-11-13T03:39:29.5555154Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-sparse",
+      "source_content_digest": "fdc65396e8a1103ea5f552ea59aaebc0e73ba572612a3412c50e636b54c90b41",
+      "source_url": "https://wago.tools/db2/ItemSparse/csv?build=1.60.1.70938"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "wowhead",
+  "relationships": [
+    {
+      "confidence": "guide_lead",
+      "object_id": 226778,
+      "object_type": "item",
+      "relation": "contains",
+      "source_url": "https://www.wowhead.com/forever/item=227360",
+      "subject_id": 227360,
+      "subject_type": "item"
+    }
+  ],
+  "reviewed_page_facts": {
+    "acquisition_confirmed": false,
+    "binding": "bind_on_pickup",
+    "client_build_checked": "1.60.1.70938",
+    "container_item_id": 227360,
+    "contents_name_on_tooltip": "Feralheart Spaulders",
+    "matching_method": "Exact shoulder name and specialization in the current container tooltip",
+    "shoulder_candidate_id": 226778,
+    "title": "Astral Boots, Legs, and Shoulders Set"
+  },
+  "source_content_digest": "8a9e4ae486a0753fda8d892e96458e608bf5dab290cfdaadc91eff263d8fe914",
+  "url": "https://www.wowhead.com/forever/item=227360"
+}

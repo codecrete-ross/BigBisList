@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Royal Cap Spaulders Item Level 62 Binds when picked up Shoulder Mail 274 Armor +15 Stamina +13 Spirit Durability 70 / 70 Requires Level 57 Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects. Sell Price: 2 47 88 Dropped by: Jandice Barov Drop Chance: 11.25%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:05:11+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 14548,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 274,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 26,
+          "spell_damage": 9
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 26 and damage done by up to 9 for all magical spells and effects."
+    ],
+    "id": 14548,
+    "item_level": 62,
+    "name": "Royal Cap Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 26.0,
+      "spell_damage": 9.0,
+      "spirit": 13.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=14548"
+  },
+  "linked_entities": [],
+  "name": "Royal Cap Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 11.25,
+      "entity_name": "Jandice Barov",
+      "source_url": "https://www.wowhead.com/forever/item=14548",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "c3589ed96a928bc501db815ed5de62c0d22a4c0e6161d9d6362fbc22054093c2",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/14548",
+  "url": "https://www.wowhead.com/forever/item=14548"
+}

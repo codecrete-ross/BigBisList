@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sporid Cape Item Level 22 Binds when picked up Back 20 Armor +6 Stamina Requires Level 17 Equip: When struck in combat, inflicts 1 Nature damage to the attacker. Sell Price: 6 77 Dropped by: Verdan the Everliving Drop Chance: 20.97%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:59:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Back",
+  "item_id": 6629,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 20,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: When struck in combat, inflicts 1 Nature damage to the attacker.",
+        "type": "conditional"
+      }
+    ],
+    "equip_effects": [
+      "Equip: When struck in combat, inflicts 1 Nature damage to the attacker."
+    ],
+    "id": 6629,
+    "item_level": 22,
+    "name": "Sporid Cape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Back",
+    "source_summary": "",
+    "stats": {
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=6629"
+  },
+  "linked_entities": [
+    {
+      "id": 1291698,
+      "name": "When struck in combat, inflicts 1 Nature damage to the attacker.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1291698"
+    }
+  ],
+  "name": "Sporid Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.97,
+      "entity_name": "Verdan the Everliving",
+      "source_url": "https://www.wowhead.com/forever/item=6629",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/6629",
+  "url": "https://www.wowhead.com/forever/item=6629"
+}

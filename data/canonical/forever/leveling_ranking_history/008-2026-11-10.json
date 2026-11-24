@@ -1,0 +1,137 @@
+{
+  "client_build": "1.60.1.70888",
+  "new_decisions_digest": "d40bffbc8706f12cfb7fdce31c99c60b3cc102e93149a90d244a783c792fc1d7",
+  "old_decisions_digest": "8b55ef14cd3257bd48f5eff58baed113ab8883c8b0c13acf8a5ee37b972b40a3",
+  "rankings": [
+    {
+      "candidate_digest": "71a887c91b6a183578408cddcc2c519e5c797dcfa0a6cd8606d561756f1ed018",
+      "choices": [
+        {
+          "item_id": 249396,
+          "variant_id": null
+        }
+      ],
+      "class": "Druid",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "16308480d2782a206b49bef98de95d2cf17138d018cccd690ee296888550dca8",
+          "evidence_id": "wowhead:9470b820f60f1d752f9f7702"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 20,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        96
+      ],
+      "reason": "Reviewed the updated Druid Balance Idol pool for this race, faction and level range. The caster weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Idol",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-leveling-tips",
+      "spec": "Balance"
+    },
+    {
+      "candidate_digest": "71a887c91b6a183578408cddcc2c519e5c797dcfa0a6cd8606d561756f1ed018",
+      "choices": [
+        {
+          "item_id": 249396,
+          "variant_id": null
+        }
+      ],
+      "class": "Druid",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "1cdcfb67539c08020bd755c593627feec80286afc7e42e2b849a2f1ccce37d26",
+          "evidence_id": "wowhead:f9f23ac357cf2b65d8ac66af"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 20,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        96
+      ],
+      "reason": "Reviewed the updated Druid Feral dps Idol pool for this race, faction and level range. The melee weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Idol",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-leveling-tips",
+      "spec": "Feral dps"
+    },
+    {
+      "candidate_digest": "71a887c91b6a183578408cddcc2c519e5c797dcfa0a6cd8606d561756f1ed018",
+      "choices": [
+        {
+          "item_id": 249396,
+          "variant_id": null
+        }
+      ],
+      "class": "Druid",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "6164eb595259c73a3d1639ab3f06e6f31e5d1807bca73efda0fa86ded5bfb3ab",
+          "evidence_id": "wowhead:ea8de4b176893e976a29780c"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 20,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        96
+      ],
+      "reason": "Reviewed the updated Druid Feral tank Idol pool for this race, faction and level range. The tank weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Idol",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/feral/tank-leveling-tips",
+      "spec": "Feral tank"
+    },
+    {
+      "candidate_digest": "71a887c91b6a183578408cddcc2c519e5c797dcfa0a6cd8606d561756f1ed018",
+      "choices": [
+        {
+          "item_id": 249396,
+          "variant_id": null
+        }
+      ],
+      "class": "Druid",
+      "client_build": "1.60.1.70888",
+      "evidence_refs": [
+        {
+          "content_digest": "40fa08195fb72e567459457a881b639bd3ebaca1e7d7a87bc8a01e28653b561d",
+          "evidence_id": "wowhead:cd5ccd2dd8a0599a8fe0c263"
+        }
+      ],
+      "faction": "Horde",
+      "level_max": 59,
+      "level_min": 20,
+      "profile_version": "forever-leveling-reviewed-1",
+      "race_ids": [
+        96
+      ],
+      "reason": "Reviewed the updated Druid Restoration Idol pool for this race, faction and level range. The healer weights apply only to the verified flat stats and usable equipment. Equip gates, profession requirements and faction routes apply before ranking. Retain three leaders and positive alternatives within five percent. Keep reviewed proc, set and other conditional effects out of the numeric score.",
+      "review_method": "profile-specific scorer and route review",
+      "reviewed_at": "2026-11-10",
+      "reviewer": "Codex (offline source review)",
+      "rules_version": "forever-leveling-rules-reviewed-2",
+      "slot": "Idol",
+      "source_url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/healer-leveling-tips",
+      "spec": "Restoration"
+    }
+  ],
+  "reason": "Re-reviewed build bound ranking ranges with verified new gear and acquisition routes. Compared the choices and scores in every affected scope with the previous audit.",
+  "reviewed_at": "2026-11-10"
+}

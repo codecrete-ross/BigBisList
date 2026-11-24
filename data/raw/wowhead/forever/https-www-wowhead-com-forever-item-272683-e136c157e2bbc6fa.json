@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Premier High Warlord's Spellblade Item Level 65 Binds when picked up Main Hand Dagger 44 - 82 Damage Speed 2.00 (31.50 damage per second) +8 Stamina +7 Intellect Requires Level 60 Requires Grand Marshal / High Warlord (Rank 14) Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 94 .",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T22:57:35+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Main Hand",
+  "item_id": 272683,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 31.5,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 94.",
+        "stats": {
+          "spell_power": 94.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 94."
+    ],
+    "id": 272683,
+    "item_level": 65,
+    "name": "Premier High Warlord's Spellblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 7.0,
+      "spell_power": 94.0,
+      "stamina": 8.0
+    },
+    "weapon_max_damage": 82,
+    "weapon_min_damage": 44,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=272683"
+  },
+  "linked_entities": [],
+  "name": "Premier High Warlord's Spellblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/272683",
+  "url": "https://www.wowhead.com/forever/item=272683"
+}

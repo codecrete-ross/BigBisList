@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scoutmaster's Eyepatch Item Level 43 Binds when picked up Head Leather 95 Armor +12 Stamina +10 Spirit Equip: Improves your chance to hit by 0.5%. Sell Price: 50 6",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:09:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 276105,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 95,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 0.5%.",
+        "stats": {
+          "hit_percent": 0.5
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 0.5%."
+    ],
+    "id": 276105,
+    "item_level": 43,
+    "name": "Scoutmaster's Eyepatch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "hit_percent": 0.5,
+      "spirit": 10.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=276105"
+  },
+  "linked_entities": [],
+  "name": "Scoutmaster's Eyepatch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "952606385577158633b463f771ac7f8d63374b19764b9f5c9ad25b1463858b7d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/276105",
+  "url": "https://www.wowhead.com/forever/item=276105"
+}

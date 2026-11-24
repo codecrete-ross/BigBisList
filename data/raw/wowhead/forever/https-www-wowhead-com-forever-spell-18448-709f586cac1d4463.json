@@ -1,0 +1,61 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Mooncloth Shoulders 1 min cast Reagents: Bolt of Runecloth (5), Mooncloth (5), Rune Thread Mooncloth Shoulders Item Level 61 Binds when equipped Shoulder Cloth 65 Armor +9 Stamina +11 Spirit Durability 50 / 50 Requires Level 56 Equip: Increases healing done by up to 37 and damage done by up to 13 for all magical spells and effects. Sell Price: 1 58 40",
+  "entity_id": 18448,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T07:13:21+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 14048,
+      "name": "Bolt of Runecloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14048"
+    },
+    {
+      "id": 14139,
+      "name": "Mooncloth Shoulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14139"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 14342,
+      "name": "Mooncloth",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14342"
+    },
+    {
+      "id": 18448,
+      "name": "Mooncloth Shoulders",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18448"
+    }
+  ],
+  "name": "Mooncloth Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 14139,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=18448",
+      "subject_id": 18448,
+      "subject_type": "spell"
+    }
+  ],
+  "spell_id": 18448,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/18448",
+  "url": "https://www.wowhead.com/forever/spell=18448"
+}

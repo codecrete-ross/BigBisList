@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Goblin Rocket Helmet Item Level 47 Binds when equipped Head Cloth 50 Armor +15 Stamina Durability 45 / 45 Requires Engineering (235) Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (20 Min Cooldown) Sell Price: 58 34",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:46:07+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 10588,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (20 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 10588,
+    "item_level": 47,
+    "name": "Goblin Rocket Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (20 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=10588"
+  },
+  "linked_entities": [
+    {
+      "id": 202,
+      "name": "Engineering",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=202"
+    },
+    {
+      "id": 22641,
+      "name": "Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=22641"
+    }
+  ],
+  "name": "Goblin Rocket Helmet",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Rocket Helmet Item Level 47 Binds when equipped Head Cloth 50 Armor +15 Stamina Durability 45 / 45 Requires Engineering (235) Use: Charge an enemy, knocking it silly for 30 seconds. Also knocks you down, stunning you for a short period of time. Any damage caused will revive the target. (20 Min Cooldown) Sell Price: 58 34",
+      "scope": "equip_or_use",
+      "skill": 235,
+      "source_url": "https://www.wowhead.com/forever/item=10588",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "source_content_digest": "c1bb5673067818e81e54d282fcd0b7a4139d6f309e17f63acd67419ba4626075",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10588",
+  "url": "https://www.wowhead.com/forever/item=10588"
+}

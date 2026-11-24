@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thaurissan's Royal Scepter Item Level 60 Binds when picked up Held In Off-hand +7 Stamina +6 Intellect +10 Spirit Requires Level 55 Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects. Sell Price: 1 98 96 Dropped by: Emperor Dagran Thaurissan Drop Chance: 18.37%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:06:30+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Off Hand",
+  "item_id": 11928,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 22,
+          "spell_damage": 7
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 22 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 11928,
+    "item_level": 60,
+    "name": "Thaurissan's Royal Scepter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "intellect": 6.0,
+      "spell_damage": 7.0,
+      "spirit": 10.0,
+      "stamina": 7.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/forever/item=11928"
+  },
+  "linked_entities": [],
+  "name": "Thaurissan's Royal Scepter",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 18.37,
+      "entity_name": "Emperor Dagran Thaurissan",
+      "source_url": "https://www.wowhead.com/forever/item=11928",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "af4d68917899546c6da63af600477febd7aad2a3b87d4dc1475cd2780f1e4aeb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/11928",
+  "url": "https://www.wowhead.com/forever/item=11928"
+}

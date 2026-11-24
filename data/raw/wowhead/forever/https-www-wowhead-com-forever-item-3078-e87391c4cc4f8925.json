@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Naga Heartpiercer Item Level 27 Binds when picked up Ranged Bow 22 - 42 Damage Speed 2.40 (13.33 damage per second) Durability 60 / 60 Requires Level 22 Chance on hit: Wounds the target for 42 damage. Naga are Stunned for 2 sec. Sell Price: 30 37 Dropped by: Lady Sarevess Drop Chance: 20.46%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:55:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Ranged",
+  "item_id": 3078,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 13.33,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Wounds the target for 42 damage. Naga are Stunned for 2 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Wounds the target for 42 damage. Naga are Stunned for 2 sec."
+    ],
+    "id": 3078,
+    "item_level": 27,
+    "name": "Naga Heartpiercer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 22,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 42,
+    "weapon_min_damage": 22,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/forever/item=3078"
+  },
+  "linked_entities": [
+    {
+      "id": 1292647,
+      "name": "Wounds the target for 42 damage. Naga are Stunned for 2 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1292647"
+    }
+  ],
+  "name": "Naga Heartpiercer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 20.46,
+      "entity_name": "Lady Sarevess",
+      "source_url": "https://www.wowhead.com/forever/item=3078",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/3078",
+  "url": "https://www.wowhead.com/forever/item=3078"
+}

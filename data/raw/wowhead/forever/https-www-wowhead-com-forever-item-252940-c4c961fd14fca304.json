@@ -1,0 +1,156 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Pristine Scorpid Leggings Item Level 60 Requires Leatherworking (300) Use: Teaches you how to craft Pristine Scorpid Leggings. Sell Price: 75",
+  "embedded_items": [
+    {
+      "binding": "bind_on_equip",
+      "boe": true,
+      "inventory_slot": "Legs",
+      "item_id": 252606,
+      "item_stats": {
+        "armor_type": "Mail",
+        "binding": "bind_on_equip",
+        "boe": true,
+        "effect_stats": [
+          {
+            "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 33.itemEffects:1",
+            "stats": {
+              "spell_power": 33.0
+            },
+            "type": "passive"
+          }
+        ],
+        "equip_effects": [
+          "Equip: Increases damage and healing done by magical spells and effects by up to 33.itemEffects:1 pvpEquippvpEquip"
+        ],
+        "id": 252606,
+        "name": "Pristine Scorpid Leggings",
+        "parse_confidence": "tooltip_endpoint",
+        "phase": "PR",
+        "quality": "epic",
+        "slot": "Legs",
+        "source_summary": "",
+        "stats": {
+          "spell_power": 33.0
+        },
+        "wowhead_url": "https://www.wowhead.com/forever/item=252606"
+      },
+      "name": "Pristine Scorpid Leggings",
+      "normalized_requirements": [],
+      "quality": "epic",
+      "url": "https://www.wowhead.com/forever/item=252606"
+    }
+  ],
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T06:58:17+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 252940,
+  "item_kind": "recipe",
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Pristine Scorpid Leggings.",
+        "type": "use"
+      }
+    ],
+    "id": 252940,
+    "item_level": 60,
+    "name": "Pattern: Pristine Scorpid Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft Pristine Scorpid Leggings."
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=252940"
+  },
+  "linked_entities": [
+    {
+      "id": 8170,
+      "name": "Rugged Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=8170"
+    },
+    {
+      "id": 12810,
+      "name": "Enchanted Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=12810"
+    },
+    {
+      "id": 14341,
+      "name": "Rune Thread",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=14341"
+    },
+    {
+      "id": 15407,
+      "name": "Cured Rugged Hide",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15407"
+    },
+    {
+      "id": 15408,
+      "name": "Heavy Scorpid Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=15408"
+    },
+    {
+      "id": 248825,
+      "name": "Fel Leather",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=248825"
+    },
+    {
+      "id": 249429,
+      "name": "Pristine Scale",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249429"
+    },
+    {
+      "id": 252606,
+      "name": "Pristine Scorpid Leggings",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=252606"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "type": "skill",
+      "url": "https://www.wowhead.com/forever/skill=165"
+    },
+    {
+      "id": 1254967,
+      "name": "Teaches you how to craft Pristine Scorpid Leggings.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1254967"
+    }
+  ],
+  "name": "Pattern: Pristine Scorpid Leggings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Pristine Scorpid Leggings Item Level 60 Requires Leatherworking (300) Use: Teaches you how to craft Pristine Scorpid Leggings. Sell Price: 75",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/forever/item=252940",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    1254967
+  ],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/252940",
+  "url": "https://www.wowhead.com/forever/item=252940"
+}

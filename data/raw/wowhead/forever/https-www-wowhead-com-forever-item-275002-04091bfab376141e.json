@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "War Handler's Gaze Item Level 45 Binds when picked up Head Leather 109 Armor +11 Agility +17 Stamina +10 Intellect Requires Level 40 Sell Price: 71 94 Dropped by: War Handler Ashka Drop Chance: 33.33%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:03:32+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 275002,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 109,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 275002,
+    "item_level": 45,
+    "name": "War Handler's Gaze",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "intellect": 10.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=275002"
+  },
+  "linked_entities": [],
+  "name": "War Handler's Gaze",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 33.33,
+      "entity_name": "War Handler Ashka",
+      "source_url": "https://www.wowhead.com/forever/item=275002",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "a6dcdbe4b1d97c22472f8f2434dc551e3e28ee927cbf75e3893f44b760369afb",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/275002",
+  "url": "https://www.wowhead.com/forever/item=275002"
+}

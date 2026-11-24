@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lieutenant Commander's Dragonhide Spaulders Item Level 71 Binds when picked up Shoulder Leather 146 Armor +21 Stamina +11 Intellect +8 Spirit Durability 60 / 60 Classes: Druid Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 15 . Lieutenant Commander's Wildhide (0/6) Knight-Captain's Dragonhide Armor Knight-Captain's Dragonhide Pants Knight-Lieutenant's Dragonhide Boots Knight-Lieutenant's Dragonhide Gloves Lieutenant Commander's Dragonhide Helm Lieutenant Commander's Dragonhide Spaulders (2) Set : Increases damage and healing done by magical spells and effects by up to 23. (4) Set : Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors. (6) Set : +20 Stamina. Sell Price: 1 56 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:41:58+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 227190,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 146,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 15.",
+        "stats": {
+          "spell_power": 15.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 15."
+    ],
+    "id": 227190,
+    "item_level": 71,
+    "name": "Lieutenant Commander's Dragonhide Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 14047,
+        "text": "Increases damage and healing done by magical spells and effects by up to 23."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 23218,
+        "text": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 14467,
+        "text": "+20 Stamina."
+      }
+    ],
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "crit_percent": 1.0,
+      "intellect": 11.0,
+      "spell_power": 15.0,
+      "spirit": 8.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=227190"
+  },
+  "linked_entities": [
+    {
+      "id": 227190,
+      "name": "Lieutenant Commander's Dragonhide Spaulders",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227190"
+    },
+    {
+      "id": 227191,
+      "name": "Knight-Captain's Dragonhide Pants",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227191"
+    },
+    {
+      "id": 227192,
+      "name": "Lieutenant Commander's Dragonhide Helm",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227192"
+    },
+    {
+      "id": 227193,
+      "name": "Knight-Lieutenant's Dragonhide Gloves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227193"
+    },
+    {
+      "id": 227194,
+      "name": "Knight-Lieutenant's Dragonhide Boots",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227194"
+    },
+    {
+      "id": 227195,
+      "name": "Knight-Captain's Dragonhide Armor",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=227195"
+    },
+    {
+      "id": 14047,
+      "name": "Increases damage and healing done by magical spells and effects by up to 23.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14047"
+    },
+    {
+      "id": 14467,
+      "name": "+20 Stamina.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=14467"
+    },
+    {
+      "id": 23218,
+      "name": "Increases your movement speed by 15% while in Bear, Cat, or Travel Form. Only active outdoors.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23218"
+    }
+  ],
+  "name": "Lieutenant Commander's Dragonhide Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "8224aec694b2c3c984de5016b97d36f98c37d7e45a24487d6045757ade6bab7a",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/227190",
+  "url": "https://www.wowhead.com/forever/item=227190"
+}

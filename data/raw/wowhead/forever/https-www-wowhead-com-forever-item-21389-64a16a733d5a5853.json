@@ -1,0 +1,128 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Avenger's Breastplate Item Level 88 Binds when picked up Chest Plate 985 Armor +23 Strength +12 Agility +24 Stamina +24 Intellect +11 Spirit Durability 165 / 165 Classes: Paladin Requires Level 60 Equip: Improves your chance to get a critical strike by 1.0%. Equip: Increases damage and healing done by magical spells and effects by up to 18 . Avenger's Battlegear (0/5) Avenger's Breastplate Avenger's Crown Avenger's Greaves Avenger's Legguards Avenger's Pauldrons (3) Set : Increases the duration of your Judgements by 20%. (5) Set : Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 9 94 63",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:18+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21389,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 985,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to get a critical strike by 1.0%.",
+        "stats": {
+          "crit_percent": 1.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 18.",
+        "stats": {
+          "spell_power": 18.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to get a critical strike by 1.0%.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 18."
+    ],
+    "id": 21389,
+    "item_level": 88,
+    "name": "Avenger's Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "set_bonuses": [
+      {
+        "pieces": 3,
+        "spell_id": 26130,
+        "text": "Increases the duration of your Judgements by 20%."
+      },
+      {
+        "pieces": 5,
+        "spell_id": 23929,
+        "text": "Increases damage and healing done by magical spells and effects by up to 71."
+      }
+    ],
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "crit_percent": 1.0,
+      "intellect": 24.0,
+      "spell_power": 18.0,
+      "spirit": 11.0,
+      "stamina": 24.0,
+      "strength": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21389"
+  },
+  "linked_entities": [
+    {
+      "id": 21387,
+      "name": "Avenger's Crown",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21387"
+    },
+    {
+      "id": 21388,
+      "name": "Avenger's Greaves",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21388"
+    },
+    {
+      "id": 21389,
+      "name": "Avenger's Breastplate",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21389"
+    },
+    {
+      "id": 21390,
+      "name": "Avenger's Legguards",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21390"
+    },
+    {
+      "id": 21391,
+      "name": "Avenger's Pauldrons",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=21391"
+    },
+    {
+      "id": 23929,
+      "name": "Increases damage and healing done by magical spells and effects by up to 71.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23929"
+    },
+    {
+      "id": 26130,
+      "name": "Increases the duration of your Judgements by 20%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=26130"
+    }
+  ],
+  "name": "Avenger's Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21389",
+  "url": "https://www.wowhead.com/forever/item=21389"
+}

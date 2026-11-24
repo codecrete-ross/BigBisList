@@ -1,0 +1,85 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Defiler's Leather Boots Item Level 53 Binds when picked up Unique Feet Leather 105 Armor +11 Agility +13 Stamina +40 Armor Durability 50 / 50 Requires Level 48 Requires The Defilers - Revered Equip: + 12 Attack Power. Equip: Run speed increased slightly. Sell Price: 1 25 61",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:11:36+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Feet",
+  "item_id": 20189,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 105,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +12 Attack Power.",
+        "stats": {
+          "attack_power": 12
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Run speed increased slightly.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +12 Attack Power.",
+      "Equip: Run speed increased slightly."
+    ],
+    "id": 20189,
+    "item_level": 53,
+    "name": "Defiler's Leather Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "Feet",
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "attack_power": 12.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=20189"
+  },
+  "linked_entities": [
+    {
+      "id": 510,
+      "name": "The Defilers",
+      "type": "faction",
+      "url": "https://www.wowhead.com/forever/faction=510"
+    },
+    {
+      "id": 23990,
+      "name": "Run speed increased slightly.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=23990"
+    }
+  ],
+  "name": "Defiler's Leather Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Defiler's Leather Boots Item Level 53 Binds when picked up Unique Feet Leather 105 Armor +11 Agility +13 Stamina +40 Armor Durability 50 / 50 Requires Level 48 Requires The Defilers - Revered Equip: + 12 Attack Power. Equip: Run speed increased slightly. Sell Price: 1 25 61",
+      "reputation": "The Defilers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/forever/item=20189",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20189",
+  "url": "https://www.wowhead.com/forever/item=20189"
+}

@@ -1,0 +1,28 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Shield Bash Rank 1 10 Rage Melee Range Instant 12 sec cooldown Requires Warrior Requires level 12 Requires Battle Stance, Defensive Stance Bashes the target with your shield for 6 damage. It also interrupts spellcasting and prevents any spell in that school from being cast for 6 sec.",
+  "entity_id": 72,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:36:07+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 72,
+      "name": "Shield Bash",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=72"
+    }
+  ],
+  "name": "Shield Bash",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [],
+  "source_content_digest": "767e3ff23e7ef1d9d28a9a1034b858483c472c91da334d9aba0cc31280c6434b",
+  "spell_id": 72,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/72",
+  "url": "https://www.wowhead.com/forever/spell=72"
+}

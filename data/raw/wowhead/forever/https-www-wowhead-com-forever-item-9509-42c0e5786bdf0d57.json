@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Petrolspill Leggings Item Level 30 Binds when equipped Legs Leather 90 Armor +14 Agility +6 Stamina Durability 75 / 75 Requires Level 25 Equip: Fire damage taken increased by 10%. \"Keep away from fire.\" Sell Price: 26 95",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:20:25+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Legs",
+  "item_id": 9509,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 90,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Fire damage taken increased by 10%.",
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Fire damage taken increased by 10%."
+    ],
+    "id": 9509,
+    "item_level": 30,
+    "name": "Petrolspill Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 25,
+    "slot": "Legs",
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=9509"
+  },
+  "linked_entities": [
+    {
+      "id": 1293003,
+      "name": "Fire damage taken increased by 10%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1293003"
+    }
+  ],
+  "name": "Petrolspill Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/9509",
+  "url": "https://www.wowhead.com/forever/item=9509"
+}

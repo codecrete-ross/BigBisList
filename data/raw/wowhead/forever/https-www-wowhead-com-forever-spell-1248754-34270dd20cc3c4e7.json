@@ -1,0 +1,74 @@
+{
+  "confidence": "tooltip_endpoint",
+  "description": "Tenets of the Silver Hand 10 sec cast Tools: Runed Silver Rod Reagents: Large Glimmering Shard , Greater Magic Essence , Strange Dust (2), Scroll of Protection (5) Creates a copy of the Tenets of the Silver Hand. Tenets of the Silver Hand (0) Item Level 25 Binds when picked up Relic Libram Classes: Paladin Requires Level 20 Equip: Increases your damage against Undead by 1%. \"A pristine copy of the holy tome.\" Sell Price: 4 50",
+  "entity_id": 1248754,
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T05:02:19+00:00",
+  "flavor": "forever",
+  "linked_entities": [
+    {
+      "id": 3013,
+      "name": "Scroll of Protection",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=3013"
+    },
+    {
+      "id": 10939,
+      "name": "Greater Magic Essence",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10939"
+    },
+    {
+      "id": 10940,
+      "name": "Strange Dust",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=10940"
+    },
+    {
+      "id": 11084,
+      "name": "Large Glimmering Shard",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=11084"
+    },
+    {
+      "id": 249397,
+      "name": "Tenets of the Silver Hand",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=249397"
+    },
+    {
+      "id": 1248754,
+      "name": "Tenets of the Silver Hand",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1248754"
+    },
+    {
+      "id": 1302545,
+      "name": "Increases your damage against Undead by 1%.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302545"
+    }
+  ],
+  "name": "Tenets of the Silver Hand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "provider": "wowhead",
+  "related_tables": {},
+  "relationships": [
+    {
+      "confidence": "tooltip_endpoint",
+      "object_id": 249397,
+      "object_type": "item",
+      "relation": "creates",
+      "source_url": "https://www.wowhead.com/forever/spell=1248754",
+      "subject_id": 1248754,
+      "subject_type": "spell"
+    }
+  ],
+  "source_content_digest": "8cc94fc0cc9a94bcd54f90a312e8741da521cfd3eba455ccca0df913ddc66cdd",
+  "spell_id": 1248754,
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/spell/1248754",
+  "url": "https://www.wowhead.com/forever/spell=1248754"
+}

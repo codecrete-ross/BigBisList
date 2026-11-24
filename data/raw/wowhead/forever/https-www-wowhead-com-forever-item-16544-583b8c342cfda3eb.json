@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warlord's Plate Shoulders Item Level 74 Binds when picked up Unique Shoulder Plate 626 Armor +18 Strength +16 Agility +23 Stamina Durability 100 / 100 Classes: Warrior Requires Level 60 Equip: Improves your chance to hit by 1.0%. Sell Price: 1 98 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:08:46+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Shoulder",
+  "item_id": 16544,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 626,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your chance to hit by 1.0%.",
+        "stats": {
+          "hit_percent": 1.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your chance to hit by 1.0%."
+    ],
+    "id": 16544,
+    "item_level": 74,
+    "name": "Warlord's Plate Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Shoulder",
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "hit_percent": 1.0,
+      "stamina": 23.0,
+      "strength": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16544"
+  },
+  "linked_entities": [],
+  "name": "Warlord's Plate Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16544",
+  "url": "https://www.wowhead.com/forever/item=16544"
+}

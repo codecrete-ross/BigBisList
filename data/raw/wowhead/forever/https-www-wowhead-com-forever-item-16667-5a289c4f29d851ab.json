@@ -1,0 +1,172 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Coif of Elements Item Level 62 Binds when picked up Head Mail 297 Armor +7 Strength +13 Stamina +23 Intellect +12 Spirit Durability 70 / 70 Requires Level 57 Equip: Increases damage and healing done by magical spells and effects by up to 12 . The Elements (0/8) Cord of Elements Boots of Elements Bindings of Elements Coif of Elements Gauntlets of Elements Kilt of Elements Pauldrons of Elements Vest of Elements (2) Set : +8 All Resistances. (3) Set : Increases damage and healing done by magical spells and effects by up to 18. (4) Set : When struck in melee combat, has a 5% chance of Disarming the attacker for 4 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown) (5) Set : Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec. (6) Set : Restores 8 mana per 5 sec. Sell Price: 2 47 88 Dropped by: Darkmaster Gandling Drop Chance: 4.81%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-04T23:05:04+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Head",
+  "item_id": 16667,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 297,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 12.",
+        "stats": {
+          "spell_power": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 12."
+    ],
+    "id": 16667,
+    "item_level": 62,
+    "name": "Coif of Elements",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "set_bonuses": [
+      {
+        "pieces": 2,
+        "spell_id": 18679,
+        "text": "+8 All Resistances."
+      },
+      {
+        "pieces": 3,
+        "spell_id": 9346,
+        "text": "Increases damage and healing done by magical spells and effects by up to 18."
+      },
+      {
+        "pieces": 4,
+        "spell_id": 1302718,
+        "text": "When struck in melee combat, has a 5% chance of Disarming the attacker for 4 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)"
+      },
+      {
+        "pieces": 5,
+        "spell_id": 450626,
+        "text": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec."
+      },
+      {
+        "pieces": 6,
+        "spell_id": 18378,
+        "text": "Restores 8 mana per 5 sec."
+      }
+    ],
+    "slot": "Head",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "spell_power": 12.0,
+      "spirit": 12.0,
+      "stamina": 13.0,
+      "strength": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=16667"
+  },
+  "linked_entities": [
+    {
+      "id": 16666,
+      "name": "Vest of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16666"
+    },
+    {
+      "id": 16667,
+      "name": "Coif of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16667"
+    },
+    {
+      "id": 16668,
+      "name": "Kilt of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16668"
+    },
+    {
+      "id": 16669,
+      "name": "Pauldrons of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16669"
+    },
+    {
+      "id": 16670,
+      "name": "Boots of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16670"
+    },
+    {
+      "id": 16671,
+      "name": "Bindings of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16671"
+    },
+    {
+      "id": 16672,
+      "name": "Gauntlets of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16672"
+    },
+    {
+      "id": 16673,
+      "name": "Cord of Elements",
+      "type": "item",
+      "url": "https://www.wowhead.com/forever/item=16673"
+    },
+    {
+      "id": 9346,
+      "name": "Increases damage and healing done by magical spells and effects by up to 18.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=9346"
+    },
+    {
+      "id": 18378,
+      "name": "Restores 8 mana per 5 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18378"
+    },
+    {
+      "id": 18679,
+      "name": "+8 All Resistances.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=18679"
+    },
+    {
+      "id": 450626,
+      "name": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to 65 for 10 sec.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=450626"
+    },
+    {
+      "id": 1302718,
+      "name": "When struck in melee combat, has a 5% chance of Disarming the attacker for 4 sec. Can only occur once every 60 sec. (Proc chance: 5%, 1m cooldown)",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=1302718"
+    }
+  ],
+  "name": "Coif of Elements",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 4.81,
+      "entity_name": "Darkmaster Gandling",
+      "source_url": "https://www.wowhead.com/forever/item=16667",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/16667",
+  "url": "https://www.wowhead.com/forever/item=16667"
+}

@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Branded Leather Bracers Item Level 42 Binds when picked up Wrist Leather 55 Armor +6 Stamina Durability 30 / 30 Requires Level 37 Equip: + 20 Attack Power. Sell Price: 38 89 Dropped by: High Inquisitor Fairbanks Drop Chance: 32.42%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-05T23:49:43+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Wrist",
+  "item_id": 19508,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 55,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: +20 Attack Power.",
+        "stats": {
+          "attack_power": 20
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: +20 Attack Power."
+    ],
+    "id": 19508,
+    "item_level": 42,
+    "name": "Branded Leather Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 37,
+    "slot": "Wrist",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 20.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=19508"
+  },
+  "linked_entities": [],
+  "name": "Branded Leather Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 32.42,
+      "entity_name": "High Inquisitor Fairbanks",
+      "source_url": "https://www.wowhead.com/forever/item=19508",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/19508",
+  "url": "https://www.wowhead.com/forever/item=19508"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ursa's Embrace Item Level 58 Binds when picked up Chest Plate 552 Armor +17 Agility Durability 115 / 115 Equip: Increased Defense + 10. Sell Price: 1 51 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T00:13:02+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Chest",
+  "item_id": 21322,
+  "item_kind": "equipment",
+  "item_stats": {
+    "armor": 552,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increased Defense +10.",
+        "stats": {
+          "defense": 10
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increased Defense +10."
+    ],
+    "id": 21322,
+    "item_level": 58,
+    "name": "Ursa's Embrace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Chest",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "defense": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/forever/item=21322"
+  },
+  "linked_entities": [],
+  "name": "Ursa's Embrace",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/21322",
+  "url": "https://www.wowhead.com/forever/item=21322"
+}

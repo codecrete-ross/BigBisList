@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Diamond Flask Item Level 52 Binds when picked up Unique Trinket Classes: Warrior Use: Restores 1120 Health over 5 sec. This healing is strongest at first. If finished, gain 20 Strength for 1 min. (6 Min Cooldown) \"Served on the rocks.\" Sell Price: 1 27 22",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-11T01:01:15+00:00",
+  "flavor": "forever",
+  "inventory_slot": "Trinket",
+  "item_id": 20130,
+  "item_kind": "equipment",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 1120 Health over 5 sec. This healing is strongest at first. If finished, gain 20 Strength for 1 min. (6 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 20130,
+    "item_level": 52,
+    "name": "Diamond Flask",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 1120 Health over 5 sec. This healing is strongest at first. If finished, gain 20 Strength for 1 min. (6 Min Cooldown) \"Served on the rocks.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/forever/item=20130"
+  },
+  "linked_entities": [
+    {
+      "id": 363881,
+      "name": "Restores 1120 Health over 5 sec. This healing is strongest at first. If finished, gain 20 Strength for 1 min.",
+      "type": "spell",
+      "url": "https://www.wowhead.com/forever/spell=363881"
+    }
+  ],
+  "name": "Diamond Flask",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "source_content_digest": "5645cd46d685f74969d3c115dbc0554797330f40440e60a0ae1f014cbbdc931f",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/20130",
+  "url": "https://www.wowhead.com/forever/item=20130"
+}

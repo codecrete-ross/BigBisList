@@ -1,0 +1,625 @@
+{
+  "attribution": [
+    {
+      "credit": "ALL THE THINGS contributors",
+      "source": "https://github.com/ATTWoWAddon/AllTheThings"
+    }
+  ],
+  "client_build": "1.60.1.70938",
+  "confidence": "reviewed_content_gate",
+  "fetched_at": "2026-11-13T14:15:28.7884978Z",
+  "flavor": "forever",
+  "input_sources": [
+    {
+      "bytes": 12296,
+      "collected_at": "2026-11-13T03:41:58.1913318Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-map",
+      "source_content_digest": "a4fa6474f5bba3dc815f0e78943b3a907840b8f44bba605d4ff0680048994908",
+      "source_url": "https://wago.tools/db2/Map/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 5242,
+      "collected_at": "2026-11-13T14:21:21.0871553Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficulty",
+      "source_content_digest": "18efa9c5823859f0bc91a6650f987f97635f64b864d1c88b95364cbb3471a2cb",
+      "source_url": "https://wago.tools/db2/MapDifficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 10729,
+      "collected_at": "2026-11-13T14:21:21.1886699Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-mapdifficultyxcondition",
+      "source_content_digest": "36432f0009f3f23d93aa0f43e87440b24719cdb81ca535d73aa29d1bcd0a02f7",
+      "source_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 1167,
+      "collected_at": "2026-11-13T14:21:19.8457901Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-difficulty",
+      "source_content_digest": "ffc9b9a62579ae3330d062c2c0f412f14d3bd500fa522b358fdcd7ce40146b78",
+      "source_url": "https://wago.tools/db2/Difficulty/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 7190,
+      "collected_at": "2026-11-13T14:21:20.9816207Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-scope-lfgdungeons",
+      "source_content_digest": "5e41c3350d315d90059d99fac3b109c7fdde5c912dce2c5580b45d47eabb4611",
+      "source_url": "https://wago.tools/db2/LFGDungeons/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 46328,
+      "collected_at": "2026-11-13T14:56:32.5219706Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-launch",
+      "source_content_digest": "a72cca7d6f5aa44d25bda3154f811a9ebef2fa8ac923d57c5d95d0247ab87fa7",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820/world-of-warcraft-forever-now-live"
+    },
+    {
+      "bytes": 30895,
+      "collected_at": "2026-11-13T14:15:29.2426825Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "blizzard-raid-launch",
+      "source_content_digest": "7fb53128ca0e58bc0244332457535bb1965a83f929b454152b60a2db2f361b4b",
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303009/world-of-warcraft-forever-raid-overview-locations-raid-sizes-and-attunement"
+    },
+    {
+      "bytes": 893699,
+      "collected_at": "2026-11-13T14:56:36.4543442Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "developer-raid-ign",
+      "source_content_digest": "b147b24e1e94e91106cf6836a9ddb71a9e196ec677b4d791e052f5d2f124deef",
+      "source_url": "https://tech.yahoo.com/gaming/articles/big-world-warcraft-forever-interview-170000463.html"
+    },
+    {
+      "bytes": 706508,
+      "collected_at": "2026-11-13T03:48:43.3575625Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-playercondition",
+      "source_content_digest": "b74723df0107a3560ac9766aeaeb0dcdcac7bbfc6c235668816b6193d152473f",
+      "source_url": "https://wago.tools/db2/PlayerCondition/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 82947,
+      "collected_at": "2026-11-13T14:56:40.4782126Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "wago-questv2",
+      "source_content_digest": "90cf939d1231e08257527add9259d4fecd429763d57b3f075a0ec2ff73f5f6dd",
+      "source_url": "https://wago.tools/db2/QuestV2/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 2093467,
+      "collected_at": "2026-11-13T14:15:31.9985494Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-database-git",
+      "source_content_digest": "9548dd2fd279fc234ebcb5220424dfd76b58ce410c484fc9584092d26f965382",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/trees/1c4d146b518a3c2cda6d2488a27be6e2638d5360?recursive=1"
+    },
+    {
+      "bytes": 16102,
+      "collected_at": "2026-11-13T14:15:28.7884978Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "att-blackwing-lair",
+      "source_content_digest": "f2ed1828454b31d114b7ccbd606a25b0c238dc08d97d865d57feb9ccee2b3471",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571"
+    },
+    {
+      "bytes": 3925743,
+      "collected_at": "2026-11-13T03:59:43.4491189Z",
+      "curl_exit": 0,
+      "http": 200,
+      "name": "wago-70938-spelleffect",
+      "source_content_digest": "f419db3f95ef93b2cf052d9c3996ec355df60846f1fa24c671822aacfa8f59a3",
+      "source_url": "https://wago.tools/db2/SpellEffect/csv?build=1.60.1.70938"
+    },
+    {
+      "bytes": 724577,
+      "collected_at": "2026-11-13T04:11:16.7562251Z",
+      "curl_exit": 0,
+      "http": "200",
+      "name": "eg-70888-loot",
+      "source_content_digest": "5c1fef073bf493a18b09a36def59b5ca7fca4afa6d2067b96b7b8758d2d46409",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/164bd1e2d89579ada4ee5e2de7e5fd4db684a9f1/data/wowf/1.60.1.70888/loot.json"
+    },
+    {
+      "bytes": 5277327,
+      "collected_at": "2026-11-13T05:23:31.4383928-08:00",
+      "http": "200",
+      "name": "eg-70888-quests.enUS",
+      "source_content_digest": "14c71c5a56db629fdcb1f733779a949e248d5ba44556ede16c495672909a8a99",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/quests.enUS.json"
+    },
+    {
+      "bytes": 274738,
+      "collected_at": "2026-11-13T05:23:32.0005919-08:00",
+      "http": "200",
+      "name": "eg-70888-vendors",
+      "source_content_digest": "2d3b0e238a2f29aa6162bc8ed8a97bf6b25fe632f011c17fa89295e137bc00a6",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70888/vendors.json"
+    },
+    {
+      "bytes": 9166,
+      "collected_at": "2026-11-13T05:23:34.6401722-08:00",
+      "http": "200",
+      "name": "eg-70938-loot",
+      "source_content_digest": "7468f62109346a50f82246cd204964b821300abc2ab23acd429de7fc20b9ecb4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/loot.json"
+    },
+    {
+      "bytes": 130263,
+      "collected_at": "2026-11-13T05:23:34.3707713-08:00",
+      "http": "200",
+      "name": "eg-70938-quests.enUS",
+      "source_content_digest": "66d1fbf83e51d353051efe22e4b578fc0f7b3859eb96a80602c9ec81e2d6bde4",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/quests.enUS.json"
+    },
+    {
+      "bytes": 3263,
+      "collected_at": "2026-11-13T05:23:34.8874265-08:00",
+      "http": "200",
+      "name": "eg-70938-vendors",
+      "source_content_digest": "a5f84fef4bda37dcc81c62fcf951ccde98b9233a2c3abb8407cf21037ea5bb2c",
+      "source_url": "https://raw.githubusercontent.com/JIVESCORP/eg-link-output-wowf/e0f8585914c134d9cb5d76756bd065b1e3e92ece/data/wowf/1.60.1.70938/vendors.json"
+    }
+  ],
+  "page_type": "reference",
+  "provider": "att",
+  "relationships": [
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16832,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16902,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16917,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16924,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16932,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16937,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 16945,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 19370,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 19373,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    },
+    {
+      "availability": "phase_gated",
+      "confidence": "legacy_raid_loot_reference",
+      "entity_name": "Blackwing Lair",
+      "object_id": 19389,
+      "object_type": "item",
+      "relation": "drops",
+      "source_url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571",
+      "subject_id": 469,
+      "subject_type": "raid"
+    }
+  ],
+  "reviewed_page_facts": {
+    "access_conditions": [
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "1553",
+        "MapDifficultyID": "3065",
+        "OrderIndex": "0",
+        "PlayerConditionID": "68237"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "1996",
+        "MapDifficultyID": "3065",
+        "OrderIndex": "1",
+        "PlayerConditionID": "96225"
+      },
+      {
+        "FailureDescription_lang": "This raid is not yet available",
+        "ID": "2112",
+        "MapDifficultyID": "4982",
+        "OrderIndex": "0",
+        "PlayerConditionID": "128540"
+      },
+      {
+        "FailureDescription_lang": "This raid is not currently open for testing",
+        "ID": "2113",
+        "MapDifficultyID": "4982",
+        "OrderIndex": "1",
+        "PlayerConditionID": "96225"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "3073",
+        "MapDifficultyID": "3065",
+        "OrderIndex": "2",
+        "PlayerConditionID": "113325"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "3594",
+        "MapDifficultyID": "5638",
+        "OrderIndex": "0",
+        "PlayerConditionID": "130239"
+      },
+      {
+        "FailureDescription_lang": "",
+        "ID": "3595",
+        "MapDifficultyID": "5638",
+        "OrderIndex": "1",
+        "PlayerConditionID": "96591"
+      }
+    ],
+    "att_commit": "1c4d146b518a3c2cda6d2488a27be6e2638d5360",
+    "att_path": ".contrib/.db/forever/dungeons & raids/blackwing lair.lua",
+    "current_exact_item_creation_effects_found": [],
+    "current_live_exact_alternative_routes_found": [],
+    "finding": "Both group raid modes are listed behind an unavailable condition. The separate one-player mode has a Shaman quest, item and aura condition and supplies no observed group raid loot.",
+    "map_difficulties": [
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "9",
+        "Flags": "0",
+        "ID": "3065",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "469",
+        "MaxPlayers": "40",
+        "Message_lang": "",
+        "ResetInterval": "2",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "186",
+        "Flags": "0",
+        "ID": "4982",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "469",
+        "MaxPlayers": "40",
+        "Message_lang": "",
+        "ResetInterval": "2",
+        "WorldStateExpressionID": "0"
+      },
+      {
+        "ContentTuningID": "0",
+        "DifficultyID": "231",
+        "Flags": "4",
+        "ID": "5638",
+        "ItemContext": "0",
+        "ItemContextPickerID": "0",
+        "LockID": "0",
+        "MapID": "469",
+        "MaxPlayers": "1",
+        "Message_lang": "",
+        "ResetInterval": "0",
+        "WorldStateExpressionID": "0"
+      }
+    ],
+    "map_id": 469,
+    "map_name": "Blackwing Lair",
+    "reported_items": [
+      {
+        "item_id": 16832,
+        "name": "Bloodfang Spaulders",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 285,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Bloodfang Spaulders"
+          }
+        ]
+      },
+      {
+        "item_id": 16902,
+        "name": "Stormrage Pauldrons",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 293,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Stormrage Pauldrons"
+          }
+        ]
+      },
+      {
+        "item_id": 16917,
+        "name": "Netherwind Mantle",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 290,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Netherwind Mantle"
+          }
+        ]
+      },
+      {
+        "item_id": 16924,
+        "name": "Pauldrons of Transcendence",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 291,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Pauldrons of Transcendence"
+          }
+        ]
+      },
+      {
+        "item_id": 16932,
+        "name": "Nemesis Spaulders",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 289,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Nemesis Spaulders"
+          }
+        ]
+      },
+      {
+        "item_id": 16937,
+        "name": "Dragonstalker's Spaulders",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 286,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Dragonstalker's Spaulders"
+          }
+        ]
+      },
+      {
+        "item_id": 16945,
+        "name": "Epaulets of Ten Storms",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 287,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Epaulets of Ten Storms"
+          }
+        ]
+      },
+      {
+        "item_id": 19370,
+        "name": "Mantle of the Blackwing Cabal",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1529,
+            "line": 139,
+            "name": "Razorgore the Untamed",
+            "npc_id": 12435,
+            "source_line": 134,
+            "source_name": "Mantle of the Blackwing Cabal"
+          }
+        ]
+      },
+      {
+        "item_id": 19373,
+        "name": "Black Brood Pauldrons",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1531,
+            "line": 179,
+            "name": "Broodlord Lashlayer",
+            "npc_id": 12017,
+            "source_line": 174,
+            "source_name": "Black Brood Pauldrons"
+          }
+        ]
+      },
+      {
+        "item_id": 19389,
+        "name": "Taut Dragonhide Shoulderpads",
+        "scope": {
+          "level_max": 14,
+          "level_min": 1,
+          "slot": "Shoulder"
+        },
+        "sources": [
+          {
+            "encounter_id": 1535,
+            "line": 294,
+            "name": "Chromaggus",
+            "npc_id": 14020,
+            "source_line": 278,
+            "source_name": "Taut Dragonhide Shoulderpads"
+          }
+        ]
+      }
+    ],
+    "reviewed_access_url": "https://wago.tools/db2/MapDifficultyXCondition/csv?build=1.60.1.70938#/maps/469",
+    "scheduled_first_opening": {
+      "first_raid_opening": "2026-12-09",
+      "first_raids": [
+        "Barrow Deeps",
+        "Hyjal Summit",
+        "Onyxia\u2019s Lair"
+      ]
+    },
+    "solo_quest_condition": {
+      "AuraSpellID_0": "469262",
+      "ClassMask": "64",
+      "ID": "130239",
+      "ItemID_0": "231996",
+      "PartyStatus": "1",
+      "PrevQuestID_0": "85558"
+    }
+  },
+  "source_content_digest": "f2ed1828454b31d114b7ccbd606a25b0c238dc08d97d865d57feb9ccee2b3471",
+  "unavailable_item_ids": [
+    16832,
+    16902,
+    16917,
+    16924,
+    16932,
+    16937,
+    16945,
+    19370,
+    19373,
+    19389
+  ],
+  "unavailable_scope": {
+    "level_max": 14,
+    "level_min": 1
+  },
+  "url": "https://api.github.com/repos/ATTWoWAddon/AllTheThings/git/blobs/70c3b2609d3fb789b0c538e69ac3bb75b0921571"
+}

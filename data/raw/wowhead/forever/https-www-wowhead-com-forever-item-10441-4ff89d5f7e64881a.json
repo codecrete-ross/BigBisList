@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glowing Shard Item Level 15 Binds when picked up Unique This Item Begins a Quest Requires Level 15 Dropped by: Mutanus the Devourer Drop Chance: 65.39%",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-11-06T08:32:22+00:00",
+  "flavor": "forever",
+  "inventory_slot": null,
+  "item_id": 10441,
+  "item_kind": "quest_starter",
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 10441,
+    "item_level": 15,
+    "name": "Glowing Shard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 15,
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/forever/item=10441"
+  },
+  "linked_entities": [
+    {
+      "id": 6981,
+      "name": "This Item Begins a Quest",
+      "type": "quest",
+      "url": "https://www.wowhead.com/forever/quest=6981"
+    }
+  ],
+  "name": "Glowing Shard",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_tooltip",
+      "drop_percent": 65.39,
+      "entity_name": "Mutanus the Devourer",
+      "source_url": "https://www.wowhead.com/forever/item=10441",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "source_content_digest": "fdab1967adf446db55751181cdca52ee816ee24638247db17c838d4731bdbd9d",
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_url": "https://nether.wowhead.com/forever/tooltip/item/10441",
+  "url": "https://www.wowhead.com/forever/item=10441"
+}
