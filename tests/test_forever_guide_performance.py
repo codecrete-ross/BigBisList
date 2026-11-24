@@ -57,6 +57,121 @@ H.now = H.now + 1/60; H.tick()
 assert(ran, "Background work did not resume on the next frame")
 ''')
 
+    def test_real_open_controls_keep_the_request_through_equipment_invalidation(self):
+        setup = SETUP[:SETUP.index('local ui = H.load')]
+        for control in ("slash", "minimap"):
+            with self.subTest(control=control):
+                self.lua_run(f'local control = "{control}"\n' + r'''
+level, worn = 55, 6686
+GetBuildInfo = function() return "Forever", "71037" end
+H.installMinimap()
+SlashCmdList, strmatch = {}, string.match
+local private = {}
+for line in io.lines("BigBiSList_Camelot.toc") do
+    local file = line:match("^%s*(.-%.lua)%s*$")
+    if file then assert(loadfile((file:gsub("\\", "/"))))("BigBiSList", private) end
+end
+local addon, elapsed = BigBiSList, 0
+local ui = addon.UI
+H.usePaladinReferenceTalents("Protection")
+addon.DetectPlayerSpec = function() return "Protection" end
+H.fireEvent("ADDON_LOADED", "BigBiSList")
+addon:SetSelection("Paladin", "Protection", "LEVELING", "Gear Guide")
+addon:SetSelectedLevelingLevel(55, false)
+local window = addon:GetAccountDB().profile.window
+window.width, window.height, window.inspectorVisible = 1020, 790, true
+H.fireEvent("PLAYER_LOGIN")
+debugprofilestop = function() elapsed = elapsed + 0.02; return elapsed end
+local function tick() H.now = H.now + 1/60; H.tick() end
+local function open()
+    if control == "slash" then
+        assert(SLASH_BIGBISLIST1 == "/bigbis" and SLASH_BIGBISLIST2 == "/bbl")
+        SlashCmdList.BIGBISLIST("")
+    else
+        assert(addon.minimapButton):Click("LeftButton")
+    end
+end
+local publish = ui.PublishGuidePage
+local snapshots = {}
+function ui:PublishGuidePage(page)
+    if page.model.targetQuery and not page.scrollOnly then
+        snapshots[#snapshots + 1] = page.model.targetQuery.owned.equippedSlots.Head.item_id
+    end
+    return publish(self, page)
+end
+open()
+tick()
+local request = assert(ui.openingGuide)
+assert(not ui.frame:IsShown(), "The test missed the pending hidden open")
+worn = 9479
+H.fireEvent("PLAYER_EQUIPMENT_CHANGED", 1)
+open()
+assert(ui.openingGuide == request, "A repeated click canceled the request")
+for _ = 1, 300 do
+    tick()
+    if ui.guideDisplay and not ui.openingGuide then break end
+end
+assert(ui.frame:IsShown() and not ui.openingGuide and ui.renderModel.targetQuery.done)
+assert(#snapshots == 1 and snapshots[1] == worn, "Published obsolete gear or prepared twice")
+for _, row in ipairs(ui.activeRenderFrames) do
+    if row.boundData and row.iconButton and row.iconButton:IsVisible() then
+        row.iconButton:Click()
+        assert(ui.selectedItemData.item_id == row.boundData.item_id)
+        local selected = ui.selectedItemData
+        H.fireEvent("PLAYER_EQUIPMENT_CHANGED", 1)
+        H.fireEvent("BAG_UPDATE_DELAYED")
+        for _ = 1, 15 do tick() end
+        assert(#snapshots == 1 and ui.selectedItemData == selected, "Duplicate events repainted the page")
+        break
+    end
+end
+assert(ui.selectedItemData, "The completed page had no item click target")
+''', setup)
+
+    def test_guide_open_timeout_error_retry_and_close(self):
+        for failure in ("delay", "error", "closed"):
+            with self.subTest(failure=failure):
+                self.lua_run(f'local failure = "{failure}"\n' + r'''
+local render = ui.RenderPackedGuide
+function ui:RenderPackedGuide(...)
+    if failure == "error" then error("first render failure") end
+end
+local function tick() H.now = H.now + 1/60; H.tick() end
+if failure == "error" then
+    assert(not ui:PrepareRememberedWorkspace())
+    assert(not ui.preparingLoginPage and not ui.preparedLoginPage)
+    assert(#H.errors == 1 and H.errors[1]:find("first render failure", 1, true))
+    table.remove(H.errors)
+end
+ui:Open()
+assert(ui.openingGuide and not ui.frame:IsShown())
+tick()
+if failure == "closed" then
+    ui:Close()
+    for _ = 1, 10 do tick() end
+    assert(not ui.frame:IsShown() and not ui.openingGuide and not ui.guideStage)
+    ui:Open()
+end
+for _ = 1, 4 do tick() end
+local notice = assert(ui.guideOpenNotice)
+assert(notice:IsVisible() and ui.frame:IsShown() and notice.retry:IsVisible())
+assert(notice.retry.label:GetText() == "Retry Gear Guide")
+assert(ui.settingsButton:IsVisible())
+if failure == "error" then
+    assert(notice.label:GetText() == "Couldn't open Gear Guide.")
+    assert(#H.errors == 1 and H.errors[1]:find("first render failure", 1, true))
+    table.remove(H.errors)
+end
+ui.RenderPackedGuide = render
+notice.retry:Click()
+for _ = 1, 300 do
+    tick()
+    if ui.guideDisplay and not ui.openingGuide then break end
+end
+assert(ui.frame:IsShown() and not ui.openingGuide and not notice:IsVisible())
+assert(ui.renderModel.targetQuery.done and #ui.activeRenderFrames > 0)
+''')
+
     def test_first_page_survives_client_patches_and_index_loss(self):
         for build, index in ((70959, "shipped"), (71037, "shipped"), (71037, "missing"), (71037, "incompatible"), (71037, "partial")):
             with self.subTest(build=build, index=index):
@@ -680,6 +795,7 @@ contains(widgets:DecisionReason(painweaver, partialSwap), "Some ranged Hit is ab
 
 local set = {key="tested",name="Practice Armor",bonuses={{pieces=2,stats={stamina=10}}}}
 local function gloves(id, stats)
+    stats.armor = 200
     return {id=id,key=tostring(id),name="Gloves " .. id,slot="Hands",level=41,armor_type="Plate",stats=stats}
 end
 local ordinary, matched = gloves(90004,{stamina=4}), gloves(90005,{stamina=1})

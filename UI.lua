@@ -2697,6 +2697,11 @@ function UI:Invalidate(domains, reason)
         self.currentFilterPayload = nil
         self.currentAccessEvaluationCache = nil
         self.currentViewQueryCache = nil
+        if self.openingGuide then
+            self.openingGuide.useCached = nil
+            self:CancelGuideStage()
+            self.lastGuideRender = nil
+        end
     end
     if expanded.availability then
         self.currentAvailabilitySnapshot = nil
@@ -6070,7 +6075,6 @@ function UI:RenderEmpty(message)
     self:ReleaseRenderFrames()
     self.renderModel = nil
     self.hasRenderedContent = true
-    if self.openingGuide then self.openingGuide = nil; self.frame:Show() end
     self:RebindSelectedRowFromModel(nil)
     self:SetStickyHeaderMode(nil)
     if self.contentListLayer then self.contentListLayer:Hide() end
@@ -6105,6 +6109,7 @@ function UI:RenderEmpty(message)
     if self.resultCountText then
         self.resultCountText:SetText("0 results")
     end
+    if self.openingGuide then self:FinishGuideOpen() end
 end
 
 function UI:SetStickyHeaderMode(mode)
@@ -9405,6 +9410,10 @@ function UI:SetStatusMessage(message, undoAction)
     end
 end
 
+function UI:IsWindowRequested()
+    return self.frame and (self.frame:IsShown() or self.openingGuide ~= nil)
+end
+
 function UI:ScheduleRefresh(delay, reason)
     if not self.frame then
         return
@@ -9443,7 +9452,7 @@ function UI:ScheduleRefresh(delay, reason)
     self:CountPerformance("scheduledRefreshes", 1, reason or "unspecified")
     local function refreshNow()
         self.refreshScheduled = false
-        if self.frame and (self.frame:IsShown() or self.openingGuide) then
+        if self:IsWindowRequested() then
             self:Refresh(reason)
         end
     end
@@ -9564,8 +9573,10 @@ function UI:Refresh(reason)
         self.layoutPending = false
         self.pendingRefreshReason = nil
         self:Invalidate("query", "refresh-error")
+        if self.openingGuide then self:GuideOpenFailed(refreshError); return end
         error(refreshError, 0)
     end
+    if self.openingGuide and self:GetViewKey() ~= "gearGuide" then self:FinishGuideOpen() end
 
     local dirtyAfterRefresh = self.dirtyDomains or {}
     local needsLayout = self.layoutPending or dirtyAfterRefresh.layout
@@ -10578,7 +10589,7 @@ function UI:CreateMainFrame(hidden)
     ensureSpecialFrame("BigBiSListMainFrame")
 
     self.frame = frame
-    if hidden or self.openingGuide then frame:Hide() end
+    if hidden then frame:Hide() end
     self:ApplyResizeBounds()
     self:RestoreWindow()
     self:CreateHeader(frame)
@@ -10590,6 +10601,8 @@ function UI:CreateMainFrame(hidden)
     self:Invalidate({"layout", "controls", "details"}, "frame-create")
 
     frame:HookScript("OnHide", function()
+        if self.openingGuide then self.viewportStarted, self.firstRowsStarted = nil, nil end
+        self:ClearGuideOpen()
         self.resumeGuideRefresh = self.pendingGuideModel or self.guideStage or self.renderModel
             and (self.renderModel.targetQuery and not self.renderModel.targetQuery.done
                 or self.renderModel.endgame and not self.renderModel.complete)
@@ -10609,22 +10622,84 @@ function UI:CreateMainFrame(hidden)
 end
 
 function UI:PrepareRememberedWorkspace()
-    self:ValidateSelection()
-    local selection = self:GetSelection()
-    local filters = self:BuildFilterPayload()
-    self:PrepareGearAdvice(selection, self:GetEffectivePhaseKey(), filters.level)
-    local view = self:GetViewKey()
-    if view == "gearGuide" then self:RenderLevelingTab(true)
-    elseif view == "upgrades" then self:RenderEndgamePage("planner", selection, filters, true)
-    elseif view == "bisList" then self:RenderEndgamePage("phase", selection, filters, true) end
-    if not self.frame then self:CreateMainFrame(true) end
     self.preparingLoginPage = true
-    self:Refresh("login")
+    local ok, message = pcall(function()
+        self:ValidateSelection()
+        local selection = self:GetSelection()
+        local filters = self:BuildFilterPayload()
+        self:PrepareGearAdvice(selection, self:GetEffectivePhaseKey(), filters.level)
+        local view = self:GetViewKey()
+        if view == "gearGuide" then self:RenderLevelingTab(true)
+        elseif view == "upgrades" then self:RenderEndgamePage("planner", selection, filters, true)
+        elseif view == "bisList" then self:RenderEndgamePage("phase", selection, filters, true) end
+        if not self.frame then self:CreateMainFrame(true) end
+        self:Refresh("login")
+    end)
     self.preparingLoginPage = nil
-    self.preparedLoginPage = self.hasRenderedContent
+    if not ok then
+        self:Invalidate("query", "login preparation failed")
+        if geterrorhandler then geterrorhandler()(message) end
+    end
+    self.preparedLoginPage = ok and self.hasRenderedContent
+    return self.preparedLoginPage
+end
+
+function UI:ClearGuideOpen()
+    self.openingGuide, self.firstGuideControls = nil, nil
+    if self.guideOpenNotice then self.guideOpenNotice:Hide() end
+end
+
+function UI:FinishGuideOpen()
+    self:ClearGuideOpen()
+    self.frame:Show()
+    if self.viewportStarted then
+        local stats = self:GetPerformanceStats()
+        stats.firstViewportMs = debugprofilestop() - self.viewportStarted
+        stats.firstRowsMs = stats.firstViewportMs
+        self.viewportStarted, self.firstRowsStarted = nil, nil
+    end
+end
+
+function UI:ShowGuideOpenNotice(message)
+    if self:GetViewKey() ~= "gearGuide" then return end
+    local notice = self.guideOpenNotice
+    if not notice then
+        local widgets = BigBiSList.Widgets
+        notice = widgets:CreatePanel(nil, self.contentPanel, {0.05, 0.05, 0.06, 1})
+        notice:SetAllPoints(self.contentPanel)
+        notice:SetFrameLevel(self.contentPanel:GetFrameLevel() + 20)
+        notice:EnableMouse(true)
+        notice.label = notice:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+        notice.label:SetPoint("TOPLEFT", 16, -18)
+        notice.label:SetPoint("RIGHT", -16, 0)
+        notice.label:SetJustifyH("LEFT")
+        notice.retry = widgets:CreateTextButton(notice, "Retry Gear Guide", 152, 28, function()
+            if not self.openingGuide then return end
+            self:Invalidate("query", "retry guide")
+            self:ResetGuidePublication()
+            self:ShowGuideOpenNotice("Preparing Gear Guide…")
+            self:ScheduleRefresh(nil, "retry guide")
+        end)
+        notice.retry:SetPoint("TOPLEFT", notice.label, "BOTTOMLEFT", 0, -12)
+        self.guideOpenNotice = notice
+    end
+    notice.label:SetText(message)
+    notice:Show()
+    self.frame:Show()
+end
+
+function UI:GuideOpenFailed(message)
+    self:ResetGuidePublication()
+    self:ShowGuideOpenNotice("Couldn't open Gear Guide.")
+    if geterrorhandler then geterrorhandler()(message) end
 end
 
 function UI:Open()
+    local guide = self.HasIndexedGear and self:HasIndexedGear() and self:GetViewKey() == "gearGuide"
+    if self.openingGuide then
+        if guide then return end
+        self:ClearGuideOpen()
+    end
     local start = debugprofilestop and debugprofilestop()
     local prepared = self.preparedLoginPage
     self.preparedLoginPage = nil
@@ -10634,21 +10709,34 @@ function UI:Open()
         and (not self.frame or not self.frame:IsShown()) then
         self.gearTransition = {started = start}
     end
-    if not self.hasRenderedContent then
-        self.openingGuide = self.HasIndexedGear and self:HasIndexedGear() and self:GetViewKey() == "gearGuide"
-    end
-    if not self.frame then self:CreateMainFrame() else self:ApplyResizeBounds() end
-    if not self.openingGuide then self.frame:Show() end
+    if not self.frame then self:CreateMainFrame(guide) else self:ApplyResizeBounds() end
     if warm and self.ResetGuidePublication then self:ResetGuidePublication() end
     if self.currentViewQueryContext and self.currentViewQueryContext ~= self:GetProgressionCacheKey() then
         self:Invalidate("query", "progression-changed")
     end
     local dirty = self.dirtyDomains or {}
     local dataDirty = dirty.ownership or dirty.access or dirty.query or dirty.availability or dirty.details or dirty.controls or dirty.presentation
-    if not self.hasRenderedContent or dataDirty or self.resumeGuideRefresh then
+    local waitingForGear = guide and self.ownershipCheck and self.ownershipCheckReason ~= "PLAYER_ENTERING_WORLD"
+    local needsRefresh = not self.hasRenderedContent or dataDirty or self.resumeGuideRefresh
+    if guide and not self.frame:IsShown() and (needsRefresh or waitingForGear) then
+        local request = {useCached = not needsRefresh}
+        self.openingGuide = request
+        self.viewportStarted = self.viewportStarted or start
+        if C_Timer and C_Timer.After then
+            local elapsed = start and (debugprofilestop() - start) / 1000 or 0
+            C_Timer.After(math.max(0, 0.05 - elapsed), function()
+                if self.openingGuide == request and not self.frame:IsShown() then
+                    self:ShowGuideOpenNotice("Preparing Gear Guide…")
+                end
+            end)
+        end
+    else self.frame:Show() end
+    if needsRefresh then
         self.resumeGuideRefresh = nil
         if self:GetViewKey() == "myGear" and self.HasIndexedGear and self:HasIndexedGear() then self:Refresh("open")
         else self:ScheduleRefresh(nil, "open") end
+    elseif self.openingGuide then
+        -- The ownership check will either confirm this page or schedule a replacement.
     elseif prepared then
         if self:GetViewKey() == "myGear" then self:RefreshGearPreview() end
         if start then
@@ -10675,9 +10763,10 @@ end
 
 function UI:Close()
     if self.frame then
-        if self.openingGuide then
-            self.openingGuide, self.firstGuideControls = nil, nil
+        if self.openingGuide and not self.frame:IsShown() then
+            self:ClearGuideOpen()
             self:ResetGuidePublication()
+            self.viewportStarted, self.firstRowsStarted = nil, nil
         end
         self:SaveWindow()
         self.frame:Hide()
@@ -10693,7 +10782,7 @@ function BigBiSList:CloseMainFrame()
 end
 
 function BigBiSList:ToggleMainFrame()
-    if self.UI.frame and (self.UI.frame:IsShown() or self.UI.openingGuide) then
+    if self.UI.frame and self.UI.frame:IsShown() then
         self:CloseMainFrame()
     else
         self:OpenMainFrame()
@@ -10704,7 +10793,7 @@ function BigBiSList:RefreshUI(domains, reason)
     if self.UI then
         self.UI:Invalidate(domains or "query", reason or "external")
     end
-    if self.UI and self.UI.frame and self.UI.frame:IsShown() then
+    if self.UI and self.UI:IsWindowRequested() then
         self.UI:ScheduleRefresh(nil, reason or "external")
     end
 end
@@ -10754,7 +10843,13 @@ function UI:QueueOwnershipCheck(reason)
     end, function() return true end, function(result)
         self.ownershipCheck = nil
         if started ~= self.ownershipCheckRevision then self:QueueOwnershipCheck(self.ownershipCheckReason); return end
-        if not result then return end
+        if not result then
+            if self.openingGuide then
+                if self.guideStage then self:ScheduleGuidePaint()
+                elseif self.openingGuide.useCached then self:FinishGuideOpen() end
+            end
+            return
+        end
         local owned = result.owned
         if result.gearChanged and not result.preparedGear then BigBiSList.ForeverScoring:Invalidate() end
         self:Invalidate(result.gearChanged and "ownership" or "inventory", self.ownershipCheckReason)
@@ -10764,7 +10859,7 @@ function UI:QueueOwnershipCheck(reason)
             if result.bankChanged and not self.transientStatusMessage and self.statusText then self.statusText:SetText(self:GetBankStatusText()) end
             return
         end
-        if self.frame and self.frame:IsShown() then self:ScheduleRefresh(nil, self.ownershipCheckReason) end
+        if self:IsWindowRequested() then self:ScheduleRefresh(nil, self.ownershipCheckReason) end
         if BigBiSList.ScheduleItemTooltipRefresh then BigBiSList:ScheduleItemTooltipRefresh() end
     end)
 end

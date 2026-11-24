@@ -25,7 +25,8 @@ must accept the installed artifact in Forever before merge and publication.
 | Scoring corrections | Implemented and being revalidated. Source 70959 and target 71037 match across the reviewed talents, enchants, sets, racials, triggers and 1,783 random-property families. Ratings normalize once. Hit and Expertise use marginal loadout caps and passive talent bonuses. Hotfixed staves share their facts. Pre-Raid approvals use the Guide's reference scorer. Unknown builds and unresolved mechanics retain qualified advice. |
 | Weight calibration | All 28 numerical profiles have published coefficients, units, representative talents and encounter assumptions. The source ledger also records actual verification outfits and source limitations. SixtySim currently serves 18 profiles from November 22, nine from November 17 and one from November 14; retain each page's provenance. A review of 18 fixture swaps and 1,153 approved-pool swaps changes 23 conditional qualifications under the current healer and tank alternatives. Default coefficients stay fixed in that follow-up. |
 | Recommendation explanations | The ordinary bag hover explains the active spec’s equipped swap and keeps a verdict for each other spec. Alt shows each comparison’s reference, stat amounts and score points. My Gear names the owned upgrade or says to keep the worn item, then gives its standing in the selected Guide. The [bag and equipped-item replays](#november-23-bag-tooltips-and-my-gear) exercise both reported examples. |
-| First open and weapon advice | Prepare the remembered workspace and My Gear before showing the window. Reuse verified comparisons on reload. An unrelated bag change leaves My Gear advice alone. Guide hovers show the action and the deciding trade-off. Sul’thraze and Waveslicer use measured Forever proc rates. [First-open and weapon replays](#november-23-first-open-and-weapon-advice) |
+| First open and weapon advice | Prepare the remembered workspace and My Gear before showing the window. Keep the open request alive if new equipment cancels the first render. The window offers Retry Gear Guide after a render error or if preparation runs past 50 ms. Guide hovers show the action and the deciding trade-off. Sul’thraze and Waveslicer use measured Forever proc rates. [First-open and weapon replays](#november-23-first-open-and-weapon-advice) |
+| Armor and block comparisons | The native bag replay for Revenant Leggings of the Defender now compares against all 682 Armor on the worn Legplates of the Eternal Guardian. Only give equip advice once the required item stats are available. Protection Paladin comparisons value Block Chance with the actual shield and flag a winner that changes with blockable attacks. [Window and leggings regressions](#window-and-leggings-regressions) |
 | Client acceptance | Pending on Forever 1.60.1.71037. Record the player’s cold and warm performance, native window, return paths, normal bag and Guide hovers and open My Gear Details against the revised installation digest. |
 | Publication | [Integration PR #1](https://github.com/codecrete-ross/BigBisList/pull/1) contains the Forever work. After the required check and merge, dispatch one read-only hosted refresh from untagged main. Review the evidence in release preparation and repeat client acceptance if the packaged digest changes. Run the merged Forever full-data gate, publish the regular numeric release and verify the Forever file on CurseForge. The repository’s CurseForge push hook returned HTTP 200 for the integration branch on November 21. |
 | Weekly updates | A new BigBisList workspace chat is scheduled Wednesdays at 9:25 a.m. Pacific with Sol 6.2 and Max reasoning. Main requires the release check and supports auto-merge. Activate the published baseline after acceptance and inspect the first scheduled chat and its hosted report. |
@@ -490,6 +491,82 @@ validation, strict scoring, and strict Pre-Raid coverage. It reported the
 for byte on Forever 1.60.1.71037. The installed artifact SHA-256 is
 `b543ec780f735589b5563938d87b30092677aee6cfc1ff20733f97bb87302490`.
 The player’s in-game acceptance remains pending for this digest.
+
+## Window and leggings regressions
+
+An equipment event invalidated the queued first Gear Guide query while the
+frame was hidden. The replacement refresh required a visible frame. The slash
+command and minimap button now keep one open request through the replacement
+query. The watchdog exposes the native window and retry action if the page is
+still preparing. Closing cancels the request and a completed render publishes
+one page after the current equipment snapshot is ready.
+
+The build-71037 tooltip shows 522 base Armor and 160 bonus Armor on item
+11927. The prior comparison row had Defense and Block Chance. It treated the
+absent Armor as zero and skipped the native item read. The recorded target
+tooltip matches the 682 Armor in the item scan and the published tooltip. The
+Armor-only substitution took the level-55 Protection example from +67.83 to
++7.814 score points. Both copies' before-and-after amounts are shown under Alt
+and in Details. The equipment corpus audit reports 4,599 entries with a missing
+Armor field, including the separate item 227959 with the same name. The native
+lookup uses the exact link. If Armor is still missing, the advice names the item
+and withholds the affected verdict. [Published item tooltip](https://zephras.com/forever/enUS/item/11927/)
+
+| Leggings swap from Legplates to Revenant | Change |
+| --- | ---: |
+| Armor | −247 |
+| Defense | −9 |
+| Block Chance supplied by the item | −2 percentage points |
+| Stamina | +16 |
+| Spell Power | +8 |
+
+The personal Protection Paladin estimate scales five score points per
+percentage point of Block Chance at 55 Block Value by the setup's Block Value
+after talents. The normal benchmark assumes blockable attacks can use the full
+Block Value. Sensitivity checks cover zero blockable swings and twice the
+benchmark's blockable swings. This is an encounter estimate. Shieldless
+comparisons give Block Chance zero score and still show the intrinsic item
+difference. With the Aegis of Stormwind in the replay, Block Chance contributes
+−7.8 points and the remaining +0.014 points reverse when taking more melee
+swings. The Draconian Deflector replay reverses in encounters where attacks
+cannot be blocked. The bag tooltip gives the specific trade-off and a
+conditional verdict in both shield cases. Reference Guide picks still describe
+the published pool. [Paladin mechanics](https://worldofwarcraft.blizzard.com/en-us/news/24302099)
+
+The equipment corpus fidelity check passed. The 0.15.x exception found zero
+reopened leveling cells and zero changed pending candidates, with 3,448 cells
+and 242 candidates still covered by the existing review. Strict Pre-Raid
+coverage passed for all 28 profiles.
+
+The packed build passed the slash and native minimap opening race, timeout and
+retry, close during preparation, exact bag hover in both directions, first
+My Gear action, shield sensitivity, and missing Armor cases. The tests check
+the real click targets and the same signed numbers under Alt and in the
+comparison breakdown.
+
+Level-60 Protection's replay produced 55 actionable Upgrades. Five cloak
+comparisons now identify missing Armor. Cloak of the Tidemistress is the
+unreadable reference for Corpsefeeder's Shedding, Shadow Prowler's Cloak and
+Stoneskin Gargoyle Cape. Nightfall Drape and Regal Direhorn Drape lack the
+candidate's own Armor in the replay. BiS List still produced 118 rows.
+
+Build 71037 timing used the full manifest at 900×500 and 1020×790 in both
+densities. All first viewports took 0–16 ms of harness time. Gear Guide and
+My Gear opened on frame one and the My Gear item click stayed stable. Upgrades
+opened on frame one in 4–7 ms and its peak work was 2 ms. BiS List painted on
+frames one or two except at 1020×790 compact, where it repeatedly took four
+simulated frames after switching from Upgrades despite spending 14–16 ms in
+the harness. One compact My Gear click took 7 ms and the three repeats peaked
+at 3 ms. The simulated-frame and 4 ms interaction targets remain open.
+Cold add-on load took 1.33–1.63 seconds. Login preparation took 97–1,779 ms,
+and retained Lua heap was 165.9–182.5 MiB across the tested workspaces.
+
+The Forever prerelease installation passed scoring, leveling and Pre-Raid
+coverage, generated-data consistency and Lua 5.1 parsing. All 25 manifest
+and asset files matched the install byte for byte. The candidate digest is
+`af8b545d336d5f15ebefd5d3c154a6d497f173a974574f63eedf86c29be52051`.
+Record the player's `/reload` opening checks and the leggings bag hover
+against that digest before accepting the client build.
 
 ## Collect and review
 

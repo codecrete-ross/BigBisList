@@ -136,6 +136,13 @@ local function addSetBonus(stats, bonus, key, name, evidence)
     addStats(stats, bonus.stats)
 end
 
+function Scoring:PersonalScenario(className, specName, preset)
+    if className ~= "Paladin" or specName ~= "Protection" or not preset.effect_benchmark then return preset end
+    local scenario = copy(preset)
+    scenario.shield_block = true
+    return scenario
+end
+
 local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId, level, bonusStats, breakdown, evidence)
     local stats, sets, explanations = {}, {}, {}
     local tooltipSets
@@ -263,7 +270,7 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
         local total, caps = 0, points and evidence and evidence.caps and evidence
         for stat, weight in pairs(coefficients) do
             local contribution = 0
-            if weight ~= 0 then
+            if weight ~= 0 and not (scenario.shield_block and stat == "block_percent") then
                 local cap, bonus = (scenario.caps or {})[stat] or math.huge, talents[stat] or 0
                 local amount = math.min((stats[stat] or 0) + bonus, cap) - math.min(bonus, cap)
                 if stat == "hit_percent" and scenario.hit_curves then
@@ -279,6 +286,18 @@ local function baseLoadout(loadout, weights, operations, ranks, scenario, raceId
             end
             total = total + contribution
             if points then points[stat] = contribution end
+        end
+        if scenario.shield_block then
+            local contribution = 0
+            if shield and not scenario.no_blocks then
+                -- Scale the reviewed five points per percentage point at 55
+                -- Block Value by the damage this setup blocks per hit.
+                local chance = math.max(0, math.min(100, (stats.block_percent or 0) + (talents.block_percent or 0)))
+                local blockValue = math.max(0, (stats.block_value or 0) + (talents.block_value or 0))
+                contribution = chance * blockValue / 55 * (coefficients.block_percent or 5)
+            end
+            total = total + contribution
+            if points then points.block_percent = contribution end
         end
         return total
     end
@@ -318,6 +337,10 @@ local function scoredChannels(loadout, weights, operations, ranks, scenario, lev
     local channels, shield = {}, false
     for stat, weight in pairs(weights) do if weight ~= 0 then channels[stat] = true end end
     for _, item in pairs(loadout) do shield = shield or item.shield end
+    if scenario.shield_block and shield and not scenario.no_blocks then
+        channels.block_percent = (weights.block_percent or 5) ~= 0
+        channels.block_value = channels.block_value or channels.block_percent
+    end
     local twoHand = loadout[16] and loadout[16].slot == "Two Hand"
     for index = #operations, 1, -1 do
         local rule = operations[index]
@@ -840,7 +863,7 @@ local function acquireContext(model, profile, scenario, mode, level, raceId)
     if profile.ability and ranks[profile.ability.entry] > 0 and scenario.judgement_per_minute then
         local ability = model.triggers[tostring(profile.ability.spell)]
         if ability then
-            scenarioForScore = copy(scenario)
+            scenarioForScore = copy(scenarioForScore)
             scenarioForScore.events_per_minute = copy(scenario.events_per_minute or {})
             for _, trigger in ipairs(ability.activates) do
                 scenarioForScore.events_per_minute[trigger] = (scenarioForScore.events_per_minute[trigger] or 0) + scenario.judgement_per_minute
@@ -909,11 +932,15 @@ function Scoring:GetContext(className, specName, mode, level, filters)
         if BigBiSList:DetectPlayerSpec(className) ~= specName then
             return nil
         end
+        local rating = BigBiSList.ForeverGearRating
+        local factsVersion = rating and rating.catalog and rating.catalog.observedVersion or 0
+        if self.liveFactsVersion ~= factsVersion then self.live, self.liveFactsVersion = nil, factsVersion end
         self.live = self.live or {}
         if self.live[stateKey] then return self.live[stateKey] end
-        local context, missing = acquireContext(model, profile, scenario, mode, level, race)
+        local context, missing = acquireContext(model, profile, self:PersonalScenario(className, specName, scenario), mode, level, race)
         if context then
             context.raceName, context.faction, context.mode = actor[1], actor[2], mode
+            self.live = self.live or {}
             self.live[stateKey] = context
         end
         return context, missing

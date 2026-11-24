@@ -1021,7 +1021,7 @@ function UI:RequestPackedGuideRows(context, filters, activity, prepare)
         end
     end
     local function current()
-        return self.currentViewQueryCache == cache and cache[key] == query and self.frame and (self.frame:IsShown() or self.openingGuide)
+        return self.currentViewQueryCache == cache and cache[key] == query and self:IsWindowRequested()
             and self:GetViewKey() == "gearGuide" and self:IsLevelingActivityView() == activity
             and state.sort == query.sort and state.sortDirection == query.direction
             and self.targetRevision == query.revision
@@ -1345,7 +1345,8 @@ function UI:PaintGuidePage()
                 end
             end
         end
-        error(message, 0)
+        if self.openingGuide and not self.refreshInProgress then self:GuideOpenFailed(message)
+        else error(message, 0) end
     end
     if self.packedPaintPending and not (C_Timer and C_Timer.After) then
         self.packedPaintPending = nil
@@ -1354,7 +1355,7 @@ function UI:PaintGuidePage()
 end
 
 function UI:PaintGuideSlice()
-    if self.publishingGuide or not (self.frame:IsShown() or self.openingGuide or self.preparingLoginPage) then return end
+    if self.publishingGuide or not (self:IsWindowRequested() or self.preparingLoginPage) then return end
     local page, display = self.guideStage, self.guideDisplay
     if display and display.selected ~= self.selectedRowKey then
         display.selected = self.selectedRowKey
@@ -1424,7 +1425,10 @@ function UI:PaintGuideSlice()
     if scroll:GetVerticalScroll() ~= page.nativeOffset then
         self:QueueGuidePage(page.model, false, page.scrollOnly)
     elseif page.index > #page.entries then
-        if (display or page.model.endgame) and start and C_Timer and C_Timer.After
+        if self.openingGuide and self.ownershipCheck then
+            -- The new snapshot decides whether this staged page still fits the player's gear.
+            return
+        elseif (display or page.model.endgame) and start and C_Timer and C_Timer.After
             and spent + debugprofilestop() - start >= paintBudget and not page.commitDeferred then
             page.commitDeferred = true
             self:ScheduleGuidePaint()
@@ -1478,7 +1482,7 @@ function UI:PublishGuidePage(page)
     page.byKey, page.prepared, page.claimed, page.navigation = byKey, nil, nil, nil
     self.guideDisplay, self.publishingGuide = page, nil
     if page.personal and not page.scrollOnly then self.guidePersonalized = true end
-    if self.openingGuide then self.openingGuide = nil; self.frame:Show() end
+    if self.openingGuide then self:FinishGuideOpen() end
     if self.viewportStarted then
         local stats = self:GetPerformanceStats()
         stats.firstViewportMs = debugprofilestop() - self.viewportStarted

@@ -209,6 +209,7 @@ def comparison_document(snapshots: dict[str, dict], catalog: dict | None = None)
     catalog = dataset_json("forever", "guide_equipment") if catalog is None else catalog
     build = catalog["client_build"]
     reviewed = dataset_json("forever", "leveling_rules")["review"]["client_build"]
+    target = load_json(FOREVER_CANONICAL_DIR / "reviewed_builds.json")["target_client"]
     inventory = equipment_rows(catalog)
     observations = item_observations(snapshots)
     candidates, scans = {}, {}
@@ -256,10 +257,9 @@ def comparison_document(snapshots: dict[str, dict], catalog: dict | None = None)
             for item in source["items"]:
                 scans.setdefault(item["id"], []).append((url, item))
             continue
-        if source.get("client_build") not in {None, build}:
-            continue
         tooltip = source.get("confidence") == "forever_tooltip"
-        if not tooltip and source.get("client_build") != build:
+        source_build = source.get("client_build")
+        if tooltip and source_build not in {None, build, target} or not tooltip and source_build != build:
             continue
         priority = 3 if tooltip else 0 if source.get("confidence") == "client_armor_tables" else 1
         for item in source["items"]:

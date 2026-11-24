@@ -101,6 +101,14 @@ class ForeverEquipmentTests(unittest.TestCase):
         self.assertEqual(facts["stats"]["armor"], 45)
         self.assertEqual(facts["armor_base"], 33)
 
+    def test_target_client_tooltip_can_supply_armor_without_changing_guide_source_build(self):
+        url = "capture://forever/" + "9" * 64
+        item = {**TUNIC, "armor": 45, "description": "Chest Leather 33 Armor +12 Armor"}
+        exact = observation(url, item, exact=True, provider="local_capture", client_build="1.60.1.71037")
+        self.assertEqual(self.document({url: exact})["items"][0]["stats"]["armor"], 45)
+        exact["client_build"] = "1.60.1.70000"
+        self.assertEqual(self.document({url: exact})["items"], [])
+
     def test_normalized_stat_row_must_match_the_shipped_lua(self):
         with TemporaryDirectory() as directory:
             output = Path(directory) / "DataForever.lua"

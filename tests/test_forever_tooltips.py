@@ -273,6 +273,199 @@ excludes(tip, "2 Stamina nearly offsets"); oneSection(tip)
             with self.subTest(build=mode):
                 self.lua_run(f'local buildMode = "{mode}"\n' + script, full_catalog=True)
 
+    def test_bag_hover_compares_both_pairs_of_legs_and_the_equipped_shield(self):
+        self.lua_run(r'''
+level = 55
+UnitClass = function() return "Paladin", "PALADIN" end
+UnitRace = function() return "Human", "Human", 1 end
+H.usePaladinReferenceTalents("Protection")
+addon:GetAccountDB().profile.tooltips.compact = true
+local guardian = assert(rating:GetPublishedFacts("11927"))
+local revenant = assert(rating:GetPublishedFacts("10133:0:0:0:1:12754"))
+assert(guardian.stats.armor == 682 and guardian.stats.defense == 15 and guardian.stats.block_percent == 2)
+assert(revenant.stats.armor == 435 and revenant.stats.defense == 6)
+guardian.variant_link = "item:11927"
+local worn, bag, shield = guardian, revenant, nil
+GetInventoryItemID = function(_, slot)
+    return slot == 7 and worn.id or slot == 17 and shield and shield.id
+end
+GetInventoryItemLink = function(_, slot)
+    return slot == 7 and worn.variant_link or slot == 17 and shield and "item:" .. shield.id
+end
+C_Container = {GetContainerNumSlots = function(index) return index == 0 and 1 or 0 end,
+    GetContainerItemID = function() return bag.id end, GetContainerItemLink = function() return bag.variant_link end}
+addon:RefreshTooltipPlayerContext()
+local function view(old, new, shieldID)
+    worn, bag = old, new
+    shield = shieldID and assert(rating:GetPublishedFacts(tostring(shieldID)))
+    rating:InvalidateItem(guardian.id)
+    ui:Invalidate("ownership", "test equipment change")
+    H.modifiers.alt = false
+    showNative(GameTooltip, bag.variant_link, "GetBagItem", {0, 1})
+    H.settle()
+    oneSection(GameTooltip)
+    excludes(GameTooltip, "Gaining 435 Armor")
+    excludes(GameTooltip, "score points")
+    local _, specs = text(GameTooltip):gsub(" — ", "")
+    assert(specs == 3, text(GameTooltip))
+    local context = rating:GetContext("Paladin", "Protection", "LEVELING", 55, ui:GetOwnedSnapshot())
+    local swap = assert(rating:GetGuideSwap(context, bag, "Legs", "Legs", bag.variant_link))
+    return swap, assert(rating:GetSwapExplanation(swap))
+end
+local function changes(evidence, direction)
+    for stat, amount in pairs({armor=-247, stamina=16, spell_power=8, defense=-9, block_percent=-2}) do
+        assert(evidence.raw[stat] == amount * direction, stat)
+    end
+end
+local swap, evidence = view(guardian, revenant)
+changes(evidence, 1)
+assert(math.abs(swap.delta - 7.814) < .001 and evidence.points.block_percent == 0)
+includes(GameTooltip, "Protection — Equip now · Upgrade over Legplates of the Eternal Guardian")
+includes(GameTooltip, "You gain 16 Stamina and 8 Spell Power. You lose 247 Armor, 9 Defense and 2% chance to Block with a shield.")
+H.modifiers.alt = true
+local modifier = addon.tooltipModifierFrame
+modifier:GetScript("OnEvent")(modifier, "MODIFIER_STATE_CHANGED", "LALT", 1)
+H.settle()
+includes(GameTooltip, "−247 Armor (−21.736 score points) · 682 → 435")
+includes(GameTooltip, "−2% Block Chance (0 score points) · 2% → 0%")
+for _, selected in ipairs({false, true}) do
+    local detail = table.concat(addon.Widgets:SwapExplanationLines(swap, selected, true), "\n")
+    assert(detail:find("−247 Armor (−21.736 score points) · 682 → 435", 1, true), detail)
+end
+local reverse, reverseEvidence = view(revenant, guardian)
+changes(reverseEvidence, -1)
+assert(math.abs(reverse.delta + swap.delta) < .001)
+includes(GameTooltip, "Protection — Downgrade vs. Revenant Leggings of the Defender")
+includes(GameTooltip, "You gain 247 Armor, 9 Defense and 2% chance to Block with a shield. You lose 16 Stamina and 8 Spell Power.")
+local aegis, aegisEvidence = view(guardian, revenant, 1203)
+changes(aegisEvidence, 1)
+assert(math.abs(aegisEvidence.points.block_percent + 7.8) < .001 and math.abs(aegis.delta - .014) < .001)
+assert(aegis.conditional and aegis.blockReversal:find("several melee enemies", 1, true))
+includes(GameTooltip, "Compare with Legplates of the Eternal Guardian · Depends on how often you block")
+includes(GameTooltip, "You lose 247 Armor, 9 Defense and 2% chance to Block with a shield.")
+excludes(GameTooltip, "Equip now")
+local deflector, deflectorEvidence = view(guardian, revenant, 12602)
+assert(deflector.delta < 0 and deflector.blockReversal:find("attacks you can't block", 1, true))
+assert(deflectorEvidence.points.block_percent < aegisEvidence.points.block_percent)
+includes(GameTooltip, "Depends on how often you block")
+excludes(GameTooltip, "Equip now")
+
+view(guardian, revenant)
+addon:SetSelection("Paladin", "Protection", "LEVELING", "Equipped")
+addon:SetSelectedLevelingLevel(55, false)
+ui:PrepareRememberedWorkspace()
+ui:Open()
+local legs = assert(ui.gearFrame.slots.Legs)
+legs:Click()
+assert(ui.gearFrame.summary.rating:GetText():find("Equip Revenant Leggings of the Defender from bags", 1, true))
+local action = assert(legs.gearData.gearAction)
+assert(action.replacements[1].facts == guardian)
+changes(assert(rating:GetSwapExplanation(action)), 1)
+''', full_catalog=True)
+
+    def test_missing_armor_uses_the_exact_native_total_and_blocks_only_the_affected_swap(self):
+        self.lua_run(r'''
+level = 55
+UnitClass = function() return "Paladin", "PALADIN" end
+UnitRace = function() return "Human", "Human", 1 end
+H.usePaladinReferenceTalents("Protection")
+addon:GetAccountDB().profile.tooltips.compact = true
+local guardian = assert(rating:GetPublishedFacts("11927"))
+local revenant = assert(rating:GetPublishedFacts("10133:0:0:0:1:12754"))
+local vice = assert(rating:GetPublishedFacts("9640:0:0:0:1:13027"))
+local templar = assert(rating:GetPublishedFacts("10165:0:0:0:1:12754"))
+guardian.stats.armor = nil
+local worn = {[7] = guardian, [10] = vice}
+local bags = {revenant, templar}
+GetInventoryItemID = function(_, slot) return worn[slot] and worn[slot].id end
+GetInventoryItemLink = function(_, slot)
+    local item = worn[slot]
+    return item and (item.variant_link or "item:" .. item.id)
+end
+C_Container = {GetContainerNumSlots = function(bag) return bag == 0 and #bags or 0 end,
+    GetContainerItemID = function(_, i) return bags[i].id end,
+    GetContainerItemLink = function(_, i) return bags[i].variant_link end}
+local readable, apiArmor, reads = false, nil, 0
+C_Item = {
+    GetItemInfo = function(link)
+        if itemId(link) == guardian.id then return guardian.name, link, nil, nil, guardian.level end
+    end,
+    GetItemInfoInstant = function(link)
+        return itemId(link), "Armor", "Plate", "INVTYPE_LEGS", 1, 4, 4
+    end,
+    GetItemStats = function(link)
+        if itemId(link) ~= guardian.id then return end
+        reads = reads + 1
+        return {ITEM_MOD_DEFENSE_SKILL_RATING_SHORT = 15, RESISTANCE0_NAME = apiArmor}
+    end,
+}
+C_TooltipInfo = {GetHyperlink = function(link)
+    if itemId(link) ~= guardian.id then return {lines = {}} end
+    local lines = {{leftText = "Equip: Increases your chance to Block attacks with a shield by 2.0%."}}
+    if readable then
+        lines[#lines + 1] = {leftText = "522 Armor"}
+        lines[#lines + 1] = {leftText = "+160 Armor"}
+    end
+    return {lines = lines}
+end}
+addon:RefreshTooltipPlayerContext()
+showNative(GameTooltip, revenant.variant_link, "GetBagItem", {0, 1})
+H.settle()
+assert(reads > 0, "Never asked the client for the fixed-stat worn legs")
+includes(GameTooltip, "Protection — Compare · Need Armor for Legplates of the Eternal Guardian.")
+excludes(GameTooltip, "Equip now")
+excludes(GameTooltip, "435 Armor")
+H.modifiers.alt = true
+local modifier = addon.tooltipModifierFrame
+modifier:GetScript("OnEvent")(modifier, "MODIFIER_STATE_CHANGED", "LALT", 1)
+H.settle()
+excludes(GameTooltip, "+435 Armor")
+H.modifiers.alt = false
+local owned = ui:GetOwnedSnapshot()
+local guide = rating:GetGuideContext("Paladin", "Protection", "LEVELING", 55, "Human", "Alliance")
+local target = rating:GetGuideTargetVerdict({item_id=revenant.id, item_link=revenant.variant_link}, guide, addon:GetTooltipPlayerContext(), owned, true)
+assert(target.kind == "unavailable" and target.detail == "Need Armor for Legplates of the Eternal Guardian.")
+showNative(GameTooltip, templar.variant_link, "GetBagItem", {0, 2})
+H.settle()
+includes(GameTooltip, "Protection — Equip now")
+excludes(GameTooltip, "Need Armor")
+readable = true
+for _, amount in ipairs({522, 682, false}) do
+    apiArmor = amount or nil
+    rating:InvalidateItem(guardian.id)
+    local facts = assert(rating:GetExactBaseFacts(guardian.id, "item:11927"))
+    assert(facts.stats.armor == 682 and facts.stats.block_percent == 2)
+    showNative(GameTooltip, revenant.variant_link, "GetBagItem", {0, 1})
+    H.settle()
+    includes(GameTooltip, "You lose 247 Armor, 9 Defense and 2% chance to Block with a shield.")
+    excludes(GameTooltip, "Need Armor")
+end
+''', full_catalog=True)
+
+    def test_bag_hover_subtracts_stamina_already_equipped_and_recognizes_a_tie(self):
+        self.lua_run(r'''
+slots[#slots + 1] = "Legs"
+gear(900080, "Equipped legs", "Legs", 12)
+gear(900081, "Bag legs", "Legs", 16)
+gear(900082, "Equal legs", "Legs", 12)
+H.equipped[7] = 900080
+local bag = 900081
+C_Container = {GetContainerNumSlots = function(index) return index == 0 and 1 or 0 end,
+    GetContainerItemID = function() return bag end, GetContainerItemLink = function() return "item:" .. bag end}
+addon:GetAccountDB().profile.tooltips.compact = true
+addon:RefreshTooltipPlayerContext()
+showNative(GameTooltip, "item:" .. bag, "GetBagItem", {0, 1})
+H.settle()
+includes(GameTooltip, "Gains 4 Stamina.")
+excludes(GameTooltip, "Gains 16 Stamina.")
+bag = 900082
+ui:Invalidate("ownership", "tie")
+showNative(GameTooltip, "item:" .. bag, "GetBagItem", {0, 1})
+H.settle()
+includes(GameTooltip, "Protection — Sidegrade")
+excludes(GameTooltip, "Equip now")
+''')
+
     def test_shield_compares_the_actual_offhand_and_names_a_weapon_setup(self):
         self.lua_run(r'''
 BigBiSListData.stat_rank.item_fields[8] = "armor_type"

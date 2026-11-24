@@ -80,6 +80,7 @@ local gearStats = {
     mp5 = {"Mana per 5 sec", "mana regen", "MP5"}, hp5 = {"Health per 5 sec", "health regen", "HP5"},
     expertise = {"Expertise", "expertise"}, proc_dps = {"Damage procs", "proc damage"}, proc_hps = {"Healing and absorbs", "proc healing"},
     defense = {"Defense", "defense", "Def"}, block_value = {"Block Value", "block value", "BV"},
+    block_percent = {"Block Chance", "block chance", "Block"},
 }
 
 local function swapStatName(stat, style)
@@ -89,11 +90,29 @@ local function swapStatName(stat, style)
     return style == 1 and name:gsub("%f[%a]%l", string.upper) or name
 end
 
+local function displayEvidence(rating, result)
+    local evidence = rating:GetSwapExplanation(result, true)
+    local trace = result.comparisonTrace
+    if evidence and trace and evidence.armorComplete == nil and (evidence.raw.armor or 0) ~= 0 then
+        evidence.armorComplete = true
+        for _, loadouts in ipairs({{trace.before, trace.after}, {trace.after, trace.before}}) do
+            for slot, piece in pairs(loadouts[1]) do
+                if piece ~= loadouts[2][slot] and rating:IsArmorMissing(piece.facts) then
+                    evidence.armorComplete = false
+                    return evidence
+                end
+            end
+        end
+    end
+    return evidence
+end
+
 local function scoredChanges(explanation)
     if explanation.statChanges then return explanation.statChanges end
     local stats, included = {}, {}
     local function add(stat)
-        if included[stat] or stat == "weapon_min_damage" or stat == "weapon_max_damage" or stat == "weapon_speed" then return end
+        if included[stat] or stat == "weapon_min_damage" or stat == "weapon_max_damage" or stat == "weapon_speed"
+            or (stat == "armor" and explanation.armorComplete == false) then return end
         included[stat] = true
         local amount, points = explanation.raw[stat] or 0, explanation.points[stat] or 0
         if math.abs(amount) >= 0.000001 or math.abs(points) >= 0.000001 then
@@ -157,12 +176,13 @@ local function statAmount(change, signed)
     return numberText(signed and change.amount or math.abs(change.amount), signed) .. pct .. " " .. swapStatName(change.stat, 1)
 end
 
-local function joinBenefits(changes, first, last)
+local function joinBenefits(changes, first, last, itemStats)
     local names = {}
     for index = first, math.min(last, #changes) do
         local change = changes[index]
-        if change.amount * change.points <= 0 then return end
-        names[#names + 1] = statAmount(change, false)
+        if not itemStats and change.amount * change.points <= 0 then return end
+        names[#names + 1] = itemStats and change.stat == "block_percent"
+            and (numberText(math.abs(change.amount)) .. "% chance to Block with a shield") or statAmount(change, false)
     end
     if #names > 1 then
         local lastName = table.remove(names)
@@ -177,19 +197,36 @@ local function procDamage(item)
     end
 end
 
+local function armorTradeoff(explanation)
+    local raw = explanation.raw
+    if explanation.armorComplete == false or not raw.armor or raw.armor == 0 or not raw.block_percent or raw.block_percent == 0 then return end
+    local gains, losses = {}, {}
+    for _, change in ipairs(scoredChanges(explanation)) do
+        if change.amount ~= 0 then
+            local side = change.amount > 0 and gains or losses
+            side[#side + 1] = change
+        end
+    end
+    if #gains == 0 or #losses == 0 or #gains > 3 or #losses > 3 then return end
+    return "You gain " .. joinBenefits(gains, 1, #gains, true) .. ". You lose " .. joinBenefits(losses, 1, #losses, true) .. "."
+end
+
 function Widgets:SwapDecisionSummary(item, swap)
     local result = swap and (swap.forecast or swap)
     if result and result.status == "best_owned" then
-        if result.conditional then return self:DecisionReason(item, result) end
-        result = result.equipSwap
+        if result.conditional and not result.equippedComparison then return self:DecisionReason(item, result) end
+        result = result.equipSwap or result.equippedComparison
     end
     if not result or result.delta == nil then return end
-    if result.conditional then return self:DecisionReason(item, result) end
-    local evidence = BigBiSList.ForeverGearRating:GetSwapExplanation(result, true)
+    if result.conditional and not result.blockReversal then return self:DecisionReason(item, result) end
+    local evidence = displayEvidence(BigBiSList.ForeverGearRating, result)
     if not evidence then return end
     local mechanic = mechanicReason(evidence, result.delta)
     if mechanic then return mechanic end
     if result.delta == 0 then return "Both setups score equally." end
+    local armor = armorTradeoff(evidence)
+    if armor then return armor end
+    if result.blockReversal then return BigBiSList.ForeverGearRating:ComparisonConcern(item, result, evidence) end
     local coming = procDamage(item)
     local leaving
     for _, old in ipairs(result.replacements or {}) do leaving = leaving or procDamage(old.facts) end
@@ -304,10 +341,13 @@ function Widgets:DecisionReason(item, swap)
     local result = swap and (swap.forecast or swap)
     if not result then return end
     if result.status == "loading" or result.status == "unavailable" then
+        if result.blocker and result.blocker.stat then
+            return BigBiSList.ForeverGearRating:GuideItemDependency(result, item)
+        end
         return result.blocker and result.blocker.name
     end
     local rating = BigBiSList.ForeverGearRating
-    local explanation = rating and rating.GetSwapExplanation and rating:GetSwapExplanation(result, true)
+    local explanation = rating and rating.GetSwapExplanation and displayEvidence(rating, result)
     if result.conditional then
         return rating:ComparisonConcern(item, result, explanation)
     end
@@ -381,11 +421,11 @@ end
 
 function Widgets:SwapExplanationLines(swap, selected, detail)
     local result = swap and (swap.forecast or swap)
-    if result and result.status == "best_owned" then result = result.equipSwap end
+    if result and result.status == "best_owned" then result = result.equipSwap or result.equippedComparison end
     if not result or result.delta == nil or not result.replacements then return end
     local trace = result.comparisonTrace
     local rating = BigBiSList.ForeverGearRating
-    local evidence = rating:GetSwapExplanation(result, true)
+    local evidence = displayEvidence(rating, result)
     local lines, names = {}, {}
     for _, old in ipairs(result.replacements) do
         local slot = selected and old.slot and (" (" .. old.slot .. ")") or ""
@@ -432,7 +472,13 @@ function Widgets:SwapExplanationLines(swap, selected, detail)
                 lines[#lines + 1] = stat
                 stat = swapStatName(change.stat, 1) .. " contribution"
             end
-            lines[#lines + 1] = change.scored and (stat .. " (" .. numberText(points, true) .. " score points)") or stat
+            local line = change.scored and (stat .. " (" .. numberText(points, true) .. " score points)") or stat
+            if amount ~= 0 and evidence.before then
+                local before, after = evidence.before[change.stat] or 0, evidence.after[change.stat] or 0
+                local unit = (change.stat:find("_percent$") or change.stat == "expertise") and "%" or ""
+                line = line .. " · " .. numberText(before) .. unit .. " → " .. numberText(after) .. unit
+            end
+            lines[#lines + 1] = line
         end
     else
         local add, remove = {}, {}

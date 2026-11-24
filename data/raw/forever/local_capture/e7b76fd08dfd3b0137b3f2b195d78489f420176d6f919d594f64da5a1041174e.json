@@ -1,0 +1,41 @@
+{
+  "client_build": "1.60.1.71037",
+  "confidence": "forever_tooltip",
+  "fetched_at": "2026-11-24T07:41:55Z",
+  "flavor": "forever",
+  "items": [
+    {
+      "armor": 682,
+      "armor_type": "Plate",
+      "description": "Legs Plate 522 Armor +160 Armor",
+      "effect_stats": [
+        {
+          "raw_text": "Equip: Increased Defense +15.",
+          "stats": {
+            "defense": 15
+          },
+          "type": "passive"
+        },
+        {
+          "raw_text": "Equip: Increases your chance to Block attacks with a shield by 2.0%.",
+          "stats": {
+            "block_percent": 2.0
+          },
+          "type": "passive"
+        }
+      ],
+      "id": 11927,
+      "name": "Legplates of the Eternal Guardian",
+      "quality": "rare",
+      "required_level": 52,
+      "slot": "Legs",
+      "stats": {
+        "block_percent": 2.0,
+        "defense": 15.0
+      }
+    }
+  ],
+  "page_type": "equipment_facts",
+  "provider": "local_capture",
+  "url": "capture://forever/e7b76fd08dfd3b0137b3f2b195d78489f420176d6f919d594f64da5a1041174e"
+}

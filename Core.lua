@@ -157,6 +157,7 @@ local function handleSlashCommand(input)
 end
 
 local addonInitialized = false
+local startupPrepared = false
 
 local function retryDetectedPlayerSelection()
     if not addonInitialized or not BigBiSList.ApplyDetectedPlayerSelection then
@@ -205,9 +206,10 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
             end
         end
         local selectionChanged = retryDetectedPlayerSelection()
-        if addonInitialized and event == "PLAYER_ENTERING_WORLD" and not BigBiSList.UI.gearRatingCache
-            and BigBiSList.UI.HasIndexedGear and BigBiSList.UI:HasIndexedGear() then
-            BigBiSList.UI:PrepareRememberedWorkspace()
+        local ui = BigBiSList.UI
+        if addonInitialized and event == "PLAYER_ENTERING_WORLD" and not startupPrepared
+            and ui.HasIndexedGear and ui:HasIndexedGear() and not ui:IsWindowRequested() then
+            startupPrepared = ui:PrepareRememberedWorkspace()
         end
         if scoringChanged or selectionChanged then
             if BigBiSList.isForever then BigBiSList:ScheduleItemTooltipRefresh() end

@@ -302,9 +302,9 @@ end
 local function tooltipStatBlock(addon, candidate, player, info, offer, tooltip, tooltipData, deadline)
     local rating, ui = addon.ForeverGearRating, addon.UI
     local block = { rows = {}, pending = {} }
-    if candidate.status == "loading" or not candidate.facts or not candidate.facts.level then
+    if candidate.status == "loading" then block.pending[candidate.entry.item_id] = true end
+    if not candidate.facts or not candidate.facts.level then
         block.rows[1] = { spec = player.spec or "Gear", result = { placement = { status = candidate.status or "unavailable" } } }
-        if candidate.status == "loading" then block.pending[candidate.entry.item_id] = true end
         return block
     end
     local getter = info and readable(info.getterName)
@@ -407,6 +407,7 @@ local function compactSpecLine(row)
     local verdict = view.today
     if assessment.tiedChoice then verdict, reason = "Tied reward", "equal to another choice"
     elseif assessment.bestChoice then verdict = result.forecast and ("Best reward at level " .. evaluated.level) or "Best reward"
+    elseif evaluated.blocker and evaluated.blocker.stat then verdict = "Compare"
     elseif evaluated.status == "loading" or result.placement.status == "loading" then verdict = "Waiting for item stats"
     elseif result.forecast and evaluated.delta then
         local keep = evaluated.ownership == "bank" or evaluated.ownership == "bag" or result.ownership == "bank" or result.ownership == "bag"
@@ -436,7 +437,13 @@ local function compactSpecLine(row)
     local summary
     if row.activeSpec and not assessment.tiedChoice then
         local action = evaluated.equipSwap
-        if action and not result.forecast and action.roleDelta and action.replacements[1] then
+        if evaluated.blockReversal then
+            local reference = evaluated.equippedComparison or evaluated
+            local names = {}
+            for _, old in ipairs(reference.replacements) do names[#names + 1] = old.name end
+            if names[1] then verdict = "Compare with " .. table.concat(names, " + ") end
+            reason = "Depends on how often you block"
+        elseif action and not result.forecast and action.roleDelta and action.replacements[1] then
             local names = {}
             for _, old in ipairs(action.replacements) do names[#names + 1] = old.name end
             local grade = BigBiSList.ForeverGearRating:UpgradeSize(action)
@@ -449,7 +456,8 @@ local function compactSpecLine(row)
         end
         summary = BigBiSList.Widgets:SwapDecisionSummary(row.item, result)
         if summary == reason or (reason and summary == "Gains " .. reason:gsub("^%+", "") .. ".") then summary = nil end
-    elseif not row.activeSpec and not assessment.tiedChoice and evaluated.replacements and evaluated.replacements[1] then
+    elseif not row.activeSpec and not assessment.tiedChoice and not evaluated.blocker
+        and evaluated.replacements and evaluated.replacements[1] then
         local names = {}
         for _, old in ipairs(evaluated.replacements) do
             local location = old.state == "bag" and " in your bags" or old.state == "bank" and " in your bank" or " equipped"

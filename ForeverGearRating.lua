@@ -13,6 +13,8 @@ local SLOT_BY_LOCATION = {
     INVTYPE_RELIC = "Relic",
 }
 local ARMOR_TYPES = { [1] = "Cloth", [2] = "Leather", [3] = "Mail", [4] = "Plate", [6] = "Shield" }
+local ARMOR_SLOTS = { Head = true, Shoulder = true, Chest = true, Wrist = true,
+    Hands = true, Waist = true, Legs = true, Feet = true }
 local WEAPON_TYPES = {
     [0] = "Axe", [1] = "Axe", [2] = "Bow", [3] = "Gun", [4] = "Mace", [5] = "Mace", [6] = "Polearm",
     [7] = "Sword", [8] = "Sword", [10] = "Staff", [13] = "Fist Weapon", [15] = "Dagger", [16] = "Thrown",
@@ -406,6 +408,7 @@ end
 local TOOLTIP_CHANCES = { hit = "hit_percent", dodge = "dodge_percent", parry = "parry_percent",
     block = "block_percent", ["get a critical strike"] = "crit_percent", ["dodge an attack"] = "dodge_percent",
     ["parry an attack"] = "parry_percent", ["block an attack"] = "block_percent",
+    ["block attacks with a shield"] = "block_percent",
     ["get a critical strike with spells"] = "spell_crit_percent",
     ["get a critical strike with melee and ranged attacks"] = "physical_crit_percent" }
 local TOOLTIP_SCHOOLS = { Arcane = "arcane_damage", Fire = "fire_damage", Frost = "frost_damage",
@@ -474,6 +477,7 @@ local function readTooltip(link, stats, facts)
     local data = model()
     local flatRules = data and data.flat_passive_stats
     local passive, seenEffects, triggers = {}, {}, {}
+    local baseArmor, bonusArmor = nil, 0
     for _, line in ipairs(tooltip.lines or {}) do
         if readable(line) and type(line) == "table" then
             for _, field in ipairs({ "leftText", "rightText" }) do
@@ -485,6 +489,7 @@ local function readTooltip(link, stats, facts)
                     local dps = tonumber(text:match("^%(([%d.]+) damage per second%)$"))
                     local speed = tonumber(text:match("^Speed%s+([%d.]+)$"))
                     local armor = tonumber(text:match("^(%d+) Armor$"))
+                    local extraArmor = tonumber(text:match("^%+(%d+) Armor$"))
                     local block = tonumber(text:match("^(%d+) Block$") or text:match("^(%d+) Block Value$"))
                     local weaponLow, weaponHigh = text:match("^(%d+)%s*%-%s*(%d+) Damage$")
                     local weaponFlat = tonumber(text:match("^(%d+) Damage$"))
@@ -494,7 +499,8 @@ local function readTooltip(link, stats, facts)
                     end
                     if dps and stats.dps == nil then stats.dps = dps end
                     if speed then stats.weapon_speed = speed end
-                    if armor and stats.armor == nil then stats.armor = armor end
+                    if armor then baseArmor = armor end
+                    if extraArmor then bonusArmor = bonusArmor + extraArmor end
                     if block and facts.armor_type == "Shield" and stats.block_value == nil then stats.block_value = block end
                     local classes, races = text:match("^Classes:%s*(.+)$"), text:match("^Races:%s*(.+)$")
                     if classes then facts.classes = restrictionNames(classes) end
@@ -509,6 +515,12 @@ local function readTooltip(link, stats, facts)
             end
         end
     end
+    -- The native item link excludes enchants. A separate green Armor line
+    -- can already be included in GetItemStats, so use the tooltip total once.
+    if baseArmor then stats.armor = baseArmor + bonusArmor
+    elseif bonusArmor > 0 and not facts.armor_type and facts.slot ~= "Back" then
+        stats.armor = bonusArmor
+    end
     if passive.spell_damage and stats.spell_power == passive.spell_damage and not passive.spell_power then
         stats.spell_power = nil
     elseif stats.spell_damage ~= nil and stats.spell_power == nil and passive.spell_damage == nil then
@@ -518,6 +530,16 @@ local function readTooltip(link, stats, facts)
         if stats[stat] == nil then stats[stat] = value end
     end
     return true, triggers
+end
+
+function rating:IsArmorMissing(item)
+    local armor = item and item.stats and item.stats.armor
+    return item and not item.utility and (item.armor_type == "Shield" or item.slot == "Back"
+        or (item.armor_type and ARMOR_SLOTS[item.slot])) and not (armor and armor > 0)
+end
+
+local function missingShieldValue(item)
+    return item and item.armor_type == "Shield" and not (item.stats and item.stats.block_value)
 end
 
 function rating:ReadNative(id, key, link, base)
@@ -612,11 +634,12 @@ function rating:ReadNative(id, key, link, base)
     if readable(group) and type(group) == "string" and group ~= "" and finite(limit) and limit > 0 then
         facts.unique_group, facts.max_equipped = group, limit
     end
-    if not facts.unreadable_effects and (next(stats) or #facts.effects > 0) then
+    local incomplete = self:IsArmorMissing(facts) or missingShieldValue(facts)
+    if not incomplete and not facts.unreadable_effects and (next(stats) or #facts.effects > 0) then
         self.native[id] = cache or {}
         self.native[id][key] = facts
     end
-    return facts
+    return facts, incomplete and (pending and "loading" or "unavailable") or nil
 end
 
 function rating:InvalidateItem(id)
@@ -647,12 +670,12 @@ local function resolveLink(self, context, entry)
     local unavailable
     local checkRoll = facts and facts.roll_group and facts.variant_id
     local stats = facts and facts.stats
-    local partialShield = facts and facts.armor_type == "Shield" and stats and (not stats.armor or not stats.block_value)
+    local partialEquipment = self:IsArmorMissing(facts) or missingShieldValue(facts)
     local readEffects = facts and facts.unreadable_effects and C_TooltipInfo and C_TooltipInfo.GetHyperlink
-    if statLink and (checkRoll or not facts or facts.stats_unavailable or not facts.level or partialShield or readEffects) then
+    if statLink and (checkRoll or not facts or facts.stats_unavailable or not facts.level or partialEquipment or readEffects) then
         local native
         native, unavailable = self:ReadNative(id, key, statLink, base)
-        if native and (checkRoll or not facts or facts.stats_unavailable or partialShield or readEffects)
+        if native and (checkRoll or not facts or facts.stats_unavailable or partialEquipment or readEffects)
             and (next(native.stats or {}) or readEffects and not native.unreadable_effects) then
             -- Keep the readable exact item in the same slot pool on the next
             -- refresh. A later unreadable link never erases observed facts.
@@ -666,7 +689,7 @@ local function resolveLink(self, context, entry)
                 or not sameValues(old.races, native.races))) then
                 local observed = copy(facts)
                 for field, value in pairs(native) do observed[field] = value end
-                observed.stats = copy(partialShield and seen and seen.stats or stats)
+                observed.stats = copy(partialEquipment and seen and seen.stats or stats)
                 for stat, value in pairs(native.stats) do observed.stats[stat] = value end
                 if readEffects then observed.unreadable_effects = native.unreadable_effects end
                 observed.nativeFacts, observed.stats_unavailable = native, nil
@@ -692,7 +715,7 @@ local function resolveLink(self, context, entry)
                     self.guideData, self.levelingSummaryData = nil, nil
                 end
                 self.contexts, self.inventory = nil, nil
-                if not self.observedRefresh and addon.UI and addon.UI.frame and addon.UI.frame:IsShown()
+                if not self.observedRefresh and addon.UI and addon.UI.IsWindowRequested and addon.UI:IsWindowRequested()
                     and C_Timer and C_Timer.After then
                     self.observedRefresh = true
                     C_Timer.After(0, function()
@@ -705,7 +728,7 @@ local function resolveLink(self, context, entry)
             facts = context.catalog.observed[key]
         elseif facts and facts.stats_unavailable then
             facts = nil
-        elseif (partialShield or readEffects) and context.catalog.observed[key] then
+        elseif (partialEquipment or readEffects) and context.catalog.observed[key] then
             facts = context.catalog.observed[key]
         elseif facts and native then
             facts = copy(facts)
@@ -811,7 +834,8 @@ local function scoringContext(data, profile, className, spec, phase, level, phas
         leveling = leveling, policy = policy, weights = weights, equipment = data.equipment[className], role = profile.role,
         commonSlots = data.common_slots, feralPolicy = profile.leveling, feralDps = data.feral_uses_weapon_dps,
         phaseIndex = phaseIndex, inScope = {}, pools = {},
-        referenceScenario = scenario, isolatedScenario = isolated, raceId = raceId,
+        referenceScenario = scorer and scorer.PersonalScenario and scorer:PersonalScenario(className, spec, scenario) or scenario,
+        isolatedScenario = isolated, raceId = raceId,
     }
 end
 
@@ -975,6 +999,19 @@ local function isTank(context)
     return context.role == "tank" or context.spec == "Protection" or context.spec == "Feral tank"
 end
 
+local function missingArmorFor(context, item)
+    return (context.weights.armor or 0) > 0 and rating:IsArmorMissing(item)
+end
+
+local function missingSwapStat(item, stat, status)
+    return {status = status or "unavailable", blocker = {id = item.id, name = item.name, stat = stat},
+        pending = status == "loading" and {[item.id] = true} or nil}
+end
+
+local function blockSwap(result, missing)
+    result.delta, result.status, result.blocker, result.pending = nil, missing.status, missing.blocker, missing.pending
+end
+
 function rating:ReferenceWeights(context, roleOnly, guide)
     local weights, feral = context.weights, context.feralPolicy
     local ignoreDps = not context.feralDps and feral.weapon_style == "feral"
@@ -1126,12 +1163,12 @@ local function setRoleChange(context, result, previous, retained, proposed)
     result.roleDisplaced = math.max(0, before - roleScore(context, retained))
 end
 
-local function comparisonScore(trace)
+local function comparisonScore(trace, scenario)
     local context, active, scorer = trace.context, trace.active or trace.context.activeBuild, addon.ForeverScoring
     local weights = trace.active and trace.active.weights or rating:ReferenceWeights(context)
     return function(gear, breakdown, evidence)
         return scorer.ScoreLoadout(gear, weights, active and active.profile.operations or {}, active and active.ranks or {},
-            active and active.scenario or context.referenceScenario, active and active.race or context.raceId,
+            scenario or (active and active.scenario or context.referenceScenario), active and active.race or context.raceId,
             context.level, breakdown, evidence)
     end
 end
@@ -1141,6 +1178,50 @@ local function comparisonLoadouts(trace)
     local before = trace.scoredBefore or scoringLoadout(scorer, trace.before)
     local after = trace.scoredAfter or scoringLoadout(scorer, trace.after)
     return before, after
+end
+
+local function blockStats(gear)
+    local chance, value = 0, 0
+    for _, piece in pairs(gear) do
+        local stats = piece.facts and piece.facts.stats or {}
+        chance = chance + (stats.block_percent or (stats.block_rating or 0) / 5)
+        value = value + (stats.block_value or 0)
+    end
+    return chance, value
+end
+
+local function qualifyShieldBlock(result)
+    local trace = result and result.comparisonTrace
+    if not trace or not result.delta then return end
+    local scenario = trace.active and trace.active.scenario or trace.context.referenceScenario
+    if not scenario.shield_block then return end
+    local oldOff, newOff = trace.before.OffHand, trace.after.OffHand
+    local oldShield = oldOff and oldOff.facts and oldOff.facts.armor_type == "Shield" and oldOff
+    local newShield = newOff and newOff.facts and newOff.facts.armor_type == "Shield" and newOff
+    if not oldShield and not newShield then return end
+    local oldChance, oldValue = blockStats(trace.before)
+    local newChance, newValue = blockStats(trace.after)
+    if (oldChance == 0 and newChance == 0) or (oldShield == newShield and oldChance == newChance and oldValue == newValue) then return end
+    local incomplete = oldShield and oldChance > 0 and missingShieldValue(oldShield.facts) and oldShield
+        or newShield and newChance > 0 and missingShieldValue(newShield.facts) and newShield
+    if incomplete then
+        blockSwap(result, missingSwapStat(incomplete.facts, "Block Value", incomplete.status))
+        return
+    end
+    local before, after = comparisonLoadouts(trace)
+    local unblocked = copy(scenario)
+    unblocked.no_blocks = true
+    local score = comparisonScore(trace, unblocked)
+    local withoutBlocks = score(after) - score(before)
+    -- Compare the usual number of blockable attacks with none and twice as many.
+    -- The second case represents taking swings from multiple melee enemies.
+    local moreBlocks = result.delta + (result.delta - withoutBlocks)
+    if result.delta * withoutBlocks < -0.000001 then
+        result.blockReversal = "Against attacks you can't block, the other setup wins."
+    elseif result.delta * moreBlocks < -0.000001 then
+        result.blockReversal = "When tanking several melee enemies, the other setup wins."
+    end
+    result.conditional = result.conditional or result.blockReversal ~= nil
 end
 
 local function qualifyProcSwap(result)
@@ -1290,7 +1371,7 @@ end
 -- a selected physical slot. A ready-only read is safe while painting rows.
 local function explainedSwap(swap)
     local result = swap and (swap.forecast or swap)
-    if result and result.status == "best_owned" then return result.equipSwap end
+    if result and result.status == "best_owned" then return result.equipSwap or result.equippedComparison end
     return result
 end
 
@@ -1321,16 +1402,19 @@ function rating:GetSwapExplanation(swap, readyOnly)
     end
     local scorer = addon.ForeverScoring
     local points = scorer:StatDifferences(oldPoints, newPoints)
-    local raw = {}
-    local function addChanges(gear, other, sign)
+    local raw, oldStats, newStats = {}, {}, {}
+    local function addChanges(gear, other, values, sign)
         for position, item in pairs(gear) do
             if item ~= other[position] then
-                for stat, amount in pairs(scorer.NormalizeStats(item.stats)) do raw[stat] = (raw[stat] or 0) + sign * amount end
+                for stat, amount in pairs(scorer.NormalizeStats(item.stats)) do
+                    values[stat] = (values[stat] or 0) + amount
+                    raw[stat] = (raw[stat] or 0) + sign * amount
+                end
             end
         end
     end
-    addChanges(after, before, 1)
-    addChanges(before, after, -1)
+    addChanges(after, before, newStats, 1)
+    addChanges(before, after, oldStats, -1)
     local sets, ignored = changedSets(oldEvidence.sets, newEvidence.sets)
     local effects, unknown, beforeWithout, afterWithout
     if trace.hasEffects or next(oldApplied) or next(newApplied) then
@@ -1346,7 +1430,8 @@ function rating:GetSwapExplanation(swap, readyOnly)
         and decides(scoreGear(afterWithout or after) - scoreGear(beforeWithout or before)) then
         mechanic = {kind = "effect", changes = effects}
     end
-    trace.explanation = {raw = raw, points = points, mechanic = mechanic, sets = sets, unknown = unknown,
+    trace.explanation = {raw = raw, before = oldStats, after = newStats, points = points, mechanic = mechanic,
+        sets = sets, unknown = unknown,
         cap = cappedStat(raw, points, oldEvidence.caps, newEvidence.caps, result.delta)}
     return trace.explanation
 end
@@ -2319,7 +2404,7 @@ function rating:GetTooltipItem(itemId, link)
     local entry = { item_id = itemId, item_link = link }
     local facts, status = resolveLink(self, { catalog = catalog, pending = {} }, entry)
     local candidate = { facts = facts, status = status, entry = entry, item_link = link, key = key }
-    if status == "loading" or (facts and facts.level and not facts.unreadable_effects
+    if status == "loading" or (facts and facts.level and not self:IsArmorMissing(facts) and not facts.unreadable_effects
         and (not facts.native or next(facts.stats) or #facts.effects > 0)) then
         self.tooltipItem = candidate
     else
@@ -2373,6 +2458,10 @@ local function wornReplacement(context, result, key, label)
             result.delta = nil
             result.status = "unavailable"
         end
+        return
+    end
+    if missingArmorFor(context, equipped.facts) then
+        blockSwap(result, missingSwapStat(equipped.facts, "Armor", equipped.status))
         return
     end
     local stats, uncertain = swapStats(equipped.facts, equipped.item_link)
@@ -2437,6 +2526,10 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
                 local otherKey = group.definitions[1].key == key and group.definitions[2].key or group.definitions[1].key
                 if unreadableSlots[otherKey] then result.delta, result.status = nil, result.status or "unavailable" end
             end
+            if missingArmorFor(context, item) then
+                local status = context.pending and context.pending[item.id] and "loading"
+                blockSwap(result, missingSwapStat(item, "Armor", status))
+            end
             if result.delta ~= nil and not result.replacements[1] then result.status = "empty" end
             if result.delta ~= nil then
                 local proposal, without = copy(gear), copy(gear)
@@ -2488,9 +2581,10 @@ local function wornSwap(context, group, item, link, wornSlot, scope)
             end
         end
     end
-    if bestLive and not incompleteLive then return bestLive end
+    if bestLive and not incompleteLive then qualifyShieldBlock(bestLive); return bestLive end
     applyMissingBuild(best, missing)
     if best and incompleteLive then best.conditional = true end
+    qualifyShieldBlock(best)
     return best
 end
 
@@ -2697,11 +2791,11 @@ local function ownedLoadout(context, group)
     local unresolved = context.owned.equippedOnly and "loading" or context.owned.bagsIncomplete and "unavailable" or nil
     local blocker = unresolved and { name = "bag contents" }
     local pending = {}
-    local function markUnresolved(status, entry, item)
+    local function markUnresolved(status, entry, item, stat)
         local id = entry and entry.item_id
         if id and status == "loading" then pending[id] = true end
         if not unresolved or status == "loading" and unresolved ~= "loading" then
-            blocker = {id = id, name = item and item.name or entry and entry.name or id and ("Item " .. id) }
+            blocker = {id = id, name = item and item.name or entry and entry.name or id and ("Item " .. id), stat = stat}
         end
         if status == "loading" or not unresolved then unresolved = status or "unavailable" end
     end
@@ -2712,7 +2806,9 @@ local function ownedLoadout(context, group)
             if checkpoint then checkpoint() end
             local option = ownedOption(context, outside, definition, instance)
             if option then
-                if option.score ~= nil then
+                if missingArmorFor(context, instance.facts) then
+                    markUnresolved(instance.status, instance.entry, instance.facts, "Armor")
+                elseif option.score ~= nil then
                     option.order = order
                     choices[#choices + 1] = option
                 elseif instance.facts.utility or next(instance.facts.effects or {}) then
@@ -2849,7 +2945,8 @@ local function equipSwap(context, group, state, worn, proposal, index)
     result.weightReversal = weightReversal(result.comparisonTrace, result.delta)
     result.conditional = result.conditional or result.weightReversal ~= nil
     qualifyProcSwap(result)
-    if rating:ReliableGain(result) then return result end
+    qualifyShieldBlock(result)
+    if rating:ReliableGain(result) or result.blockReversal or result.blocker then return result end
 end
 
 local function getEquipActions(context, group, state)
@@ -2871,13 +2968,23 @@ local function getEquipActions(context, group, state)
     local independent = #changes == 2 and compatiblePair(first[1], first[2]) and compatiblePair(second[1], second[2])
     for _, index in ipairs(changes) do
         local action = independent and equipSwap(context, group, state, worn, index == 1 and first or second, index)
-        actions[best[index].instance] = action or equipSwap(context, group, state, worn, best, index)
+        if not rating:ReliableGain(action) then
+            local combined = equipSwap(context, group, state, worn, best, index)
+            if rating:ReliableGain(combined) or not action then action = combined end
+        end
+        actions[best[index].instance] = action
     end
     state.actions = actions
     return actions
 end
 
 local function ownedSwap(context, group, candidate, quantity, held)
+    if missingArmorFor(context, candidate.facts) then
+        local status = candidate.status or (context.pending and context.pending[candidate.facts.id] and "loading")
+        local missing = missingSwapStat(candidate.facts, "Armor", status)
+        missing.slot = firstUsableSlot(context, group, candidate.facts)
+        return missing
+    end
     local state = ownedLoadout(context, group)
     local instance = held or candidate
     local best, chosen, chosenIndex = ownedProposal(context, group, state, instance, quantity)
@@ -2919,6 +3026,7 @@ local function ownedSwap(context, group, candidate, quantity, held)
             result.conditional = result.conditional or result.weightReversal ~= nil
         end
         qualifyProcSwap(result)
+        qualifyShieldBlock(result)
     end
     if context.activeBuild and addon.ForeverScoring:HasUnmodeledSwap(context.activeBuild, candidate.facts,
         result.definition.inventorySlotId, result.slot) then result.conditional = true end
@@ -2927,18 +3035,22 @@ local function ownedSwap(context, group, candidate, quantity, held)
         result.blocker, result.pending = state.blocker, state.pending
     elseif candidate.facts.unique_group and next(context.owned.unreadableEquipmentSlots or {}) then
         result.delta, result.status, result.comparisonTrace = nil, "unavailable", nil
-    elseif held and groupHas(baseline, held) then
+    elseif not result.blocker and held and groupHas(baseline, held) then
         result.status = "best_owned"
         if not result.conditional and (held.state == "bag" or held.state == "bank") then
             local action = getEquipActions(context, group, state)[held]
-            if action then
+            if rating:ReliableGain(action) then
                 result.equipSwap, result.equipNow = action, held.state == "bag"
                 for _, partner in ipairs(action.incoming) do
                     if partner.state == "bank" then result.equipNow = false end
                 end
+            elseif action then
+                result.equippedComparison, result.conditional = action, true
+                result.blockReversal = action.blockReversal
+                if action.blocker then blockSwap(result, action) end
             end
         end
-    elseif not result.replacements[1] then
+    elseif not result.blocker and not result.replacements[1] then
         result.status = "empty"
     end
     return result
@@ -3163,6 +3275,8 @@ function rating:WeightReversalReason(swap)
 end
 
 function rating:ComparisonConcern(item, result, explanation)
+    if result.blocker and result.blocker.stat then return self:GuideItemDependency(result, item) end
+    if result.blockReversal then return result.blockReversal end
     if result.procReversal then return result.procReversal end
     local reversal = self:WeightReversalReason(result)
     if reversal then return reversal end
@@ -3244,7 +3358,9 @@ function rating:GetRowItem(row)
     if not row then return nil end
     local item = row.stat_rank and row.stat_rank.item
     local readEffects = item and item.unreadable_effects and C_TooltipInfo and C_TooltipInfo.GetHyperlink
-    if item and (item.stats_unavailable or readEffects) and not item.has_random_stats then
+    local observed = item and self.catalog and self.catalog.observed[item.key]
+    if observed then item = observed end
+    if item and (item.stats_unavailable or readEffects or (row.item_link and self:IsArmorMissing(item))) and not item.has_random_stats then
         local exact = row.item_link or item.variant_link or ("item:" .. item.id)
         local loaded = self:GetTooltipItem(item.id, exact)
         if loaded and loaded.facts then return loaded.facts, loaded.status end
@@ -3330,7 +3446,8 @@ end
 
 function rating:GuideItemDependency(result, row)
     local blocker = result and result.blocker
-    local name = blocker and blocker.name or row.name or ("Item " .. tostring(row.item_id))
+    local name = blocker and blocker.name or row and (row.name or ("Item " .. tostring(row.item_id))) or "this item"
+    if blocker and blocker.stat then return "Need " .. blocker.stat .. " for " .. name .. "." end
     return "Can't compare " .. name .. " yet"
 end
 
@@ -3373,7 +3490,8 @@ function rating:GetGuideTargetVerdict(row, guide, player, owned, inspecting)
     local kind, detail
     if gain then kind = "upgrade"
     elseif status == "blocked" then kind = "hidden"
-    elseif swap and swap.conditional and finite(swap.delta) and (swap.delta > 0 or swap.procReversal or swap.weightReversal) then
+    elseif swap and swap.conditional and finite(swap.delta)
+        and (swap.delta > 0 or swap.procReversal or swap.weightReversal or swap.blockReversal) then
         kind = "situational"
     elseif note and not held then kind = "utility"
     elseif result.status == "loading" or result.status == "unavailable" then
@@ -3428,7 +3546,7 @@ function rating:GetOwnedGearAction(context, physical, slots)
             -- pair. Follow what actually leaves the worn outfit.
             for _, choice in ipairs(state.baseline) do
                 local action = actions[choice.instance]
-                if action then
+                if self:ReliableGain(action) then
                     for _, old in ipairs(action.replacements) do
                         if old.slot == definition.label then return action end
                     end
@@ -3540,7 +3658,7 @@ local function gearVerdict(self, input, view)
     local status = result.status
     if status == "loading" or status == "unavailable" or status == "blocked" then
         view.today = (status == "blocked" and "Can't equip this with your gear"
-            or "Can't compare " .. (result.blocker and result.blocker.name or input.item and input.item.name or "this item") .. " yet") .. suffix
+            or self:GuideItemDependency(result, input.item)) .. suffix
         view.tone = "unknown"
         return
     end
